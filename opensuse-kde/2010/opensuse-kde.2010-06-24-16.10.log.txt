@@ -1,0 +1,568 @@
+16:10:07 <llunak> #startmeeting
+16:10:07 <bugbot> Meeting started Thu Jun 24 16:10:07 2010 UTC.  The chair is llunak. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:10:07 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:10:13 <llunak> agenda:
+16:10:32 <llunak> * old action items
+16:10:56 <llunak> * status report
+16:11:21 <llunak> * Repository reorganisation conclusion
+16:11:27 <llunak> * q&a, misc
+16:11:35 <llunak> #topic old action items
+16:12:09 <llunak> * wstephenson adds a start nepomuk button to the akonadi warning dialog
+16:13:14 <llunak> wstephenson: daddy, try to focus :)
+16:14:01 <wstephenson> WIP
+16:14:11 <wstephenson> ie very late
+16:14:31 <llunak> * reddwarf collect some informations about the default applications and
+16:14:48 <llunak> * reddwarf; once we have the list we will know if the problem triggers for 11.2
+16:14:54 <llunak> done, posted to the list
+16:15:15 <llunak> * conclusion of repository reorganization
+16:15:19 <llunak> a separate topic
+16:15:40 <llunak> * javier will create LiveCDs of unstable KDE
+16:15:50 <llunak> javier_: done I assume?
+16:16:20 <wstephenson> needs more tweaking
+16:16:28 <llunak> ok
+16:16:31 <wstephenson> but all the hard work is done, wd there
+16:17:52 <llunak> hmm ... the last minutes lack an AI section, and it's not clear to me what the status of some old AIs is
+16:17:54 <javier_> llunak: that's right. thanks to coolo who fixed the repoe config, updated the list of packages and created a script for managing it
+16:18:39 <llunak> ok ... tittiatcoke to write down a complimentary note in the minutes :)
+16:19:03 <llunak> I'll run over the old AIs too to be sure, just say it's been handled if that's the cae
+16:19:05 <llunak> case
+16:19:29 <llunak> * wstephenson, javier_ write the ksuseinstall text
+16:19:32 <wstephenson> write down accusatory note vs sebas in the minutes?
+16:19:35 <wstephenson> done, i think.
+16:19:36 <llunak> discussed on the list
+16:19:44 <wstephenson> do you know how to upload it to the site?
+16:20:00 <llunak> Beineri told me
+16:20:06 <llunak> * javier_ announce and run a bug triage
+16:20:23 <javier_> not done
+16:20:56 <javier_> i'm waiting to get someone from upstream to help me since it's my first time
+16:21:11 <javier_> as wstephenson told me
+16:21:11 <llunak> * wstephenson see if rpmlint warnings can be hung on a lime tree for easy plucking
+16:21:22 <wstephenson> not done
+16:21:37 <llunak> wstephenson: you have contacted somebody from upstream already, right?
+16:21:59 <wstephenson> llunak: i've had 2 discussions with blauzahl
+16:22:14 <wstephenson> and she hasn't contacted javier_
+16:22:34 <wstephenson> and darioandres retired
+16:22:41 <llunak> we should be able to handle this ourselves too if needed, but that might be only post 11.3 then because of akademy
+16:22:52 <javier_> wstephenson: if it's not possible, it's ok. i could try it myself
+16:23:23 <llunak> * wstephenson mail list about meeting times
+16:23:25 <llunak> ws
+16:23:39 <llunak> was this about choosing a different meeting time if needed?
+16:23:58 <wstephenson> so yes
+16:23:59 <wstephenson> yes
+16:24:02 <wstephenson> sorry, not done
+16:24:18 <llunak> * lunak,wstephenson document how-to-maintain Extra
+16:24:27 <llunak> part of the next topic, kind of done
+16:24:51 <llunak> so, the highlight of today's show, ladies and gentlemen
+16:25:22 <llunak> #topic Repository reorganisation conclusio
+16:25:26 <llunak> #topic Repository reorganisation conclusion
+16:25:47 <llunak> http://en.opensuse.org/KDE/RepositoryRenaming
+16:26:03 <llunak> I suggest everybody opens this page and we'll go over it
+16:26:27 <tittiatcoke> Ok
+16:26:36 <tigerfoot> done ...
+16:26:44 <llunak> so, let's find answers for the questions
+16:26:51 <llunak> * What should <DISTRO> stand for?
+16:27:11 <llunak> most people voted Distro, there's also SUSE as an interesting option
+16:27:51 <dirk> I like SUSE as well
+16:27:57 <tittiatcoke> +1
+16:27:59 <dirk> it is also shorter than distro :-)
+16:28:03 <tigerfoot> +1
+16:28:10 <wstephenson> and clear about what the packages mean
+16:28:12 <llunak> but it's upper-case >:)
+16:28:31 <rabauke> +1
+16:28:31 <tigerfoot> ose can be more shorter with (*) stand for openSUSE
+16:28:32 <wstephenson> SuSE?
+16:28:33 <cb400f> and it's not as good alphabetically :-)
+16:28:39 <llunak> seriously, I don't see the advantage over Distro, but I'm find with both
+16:28:57 <wstephenson> llunak: all my suggestions are about being semantically clear
+16:29:04 <llunak> so we go with SUSE?
+16:29:04 <wstephenson> and distro is just a pointer
+16:29:11 <rabauke> it includes a hint that whatever follows is not upstream kde.
+16:29:27 <llunak> somebody seriously against?
+16:29:35 <dirk> llunak: against what? Distro?
+16:29:40 <llunak> SUSE
+16:29:43 <tigerfoot> should we not stick on what others are doing in obs like http://download.opensuse.org/repositories/server:/OpenGroupware/ ?
+16:30:41 <dirk> llunak: well, I don't mind either way
+16:30:42 <cb400f> I'm almost seriously against :-/
+16:30:45 <llunak> tigerfoot: what are they doing there so special?
+16:30:53 <cb400f> people might think it's for sle
+16:30:53 <dirk> SUSE is no more like openSUSE like Distro is like openSUSE
+16:30:59 <dirk> to me it doesn't make a difference
+16:31:05 <rabauke> OOo puts whatever upstream stable version exists into STABLE, so we so not comply with that anyway.
+16:31:14 <dirk> cb400f: true, people might consider SUSE to be SLE, not openSUSE
+16:31:17 <javier_> Distro is ok
+16:31:48 <dirk> llunak: we have 5 votes for distro and 4 for SUSE
+16:31:51 <tigerfoot> llunak: they have the distro name and after that the product, but forget, it doesn't apply to kde ...
+16:32:05 <llunak> ok, everybody just write +Distro or +SUSE and I'll sum up
+16:32:11 <wstephenson> cb400f: we do have SLE repos though.
+16:32:17 <dirk> +Distro
+16:32:23 <llunak> +Distro
+16:32:26 <ctrippe> +Distro
+16:32:27 <cb400f> +Distro
+16:32:29 <wstephenson> it's still in the OBS, anyone looking for real SLE software should be shot by theirC IO
+16:32:31 <wstephenson> +SUSE
+16:32:35 <javier_> +Distro
+16:32:36 <tittiatcoke> +SUSE
+16:32:47 <tigerfoot> +openSUSE ( so SUSE)
+16:32:57 <kdepepo> +Windows7
+16:33:07 <javier_> +1
+16:33:14 <llunak> 10 seconds for slow typists ...
+16:33:26 <herby> +SUSE
+16:33:34 <wstephenson> cmon SUSE, run boy run!
+16:33:39 <krop> +Distro
+16:33:48 <llunak> 6:4 for Distro
+16:34:02 <dirk> yippie!
+16:34:08 <dirk> finally a decision..
+16:34:14 <dirk> lets move on..
+16:34:22 <dirk> KDE:Backports or KDE:UpdatedApplications
+16:34:29 <llunak> not really listed as a question, but there's an alternative name proposal for Backports
+16:34:30 <tigerfoot> dirk: but we will come back to the v12 :-)
+16:35:13 <llunak> I perso a
+16:35:29 <wstephenson> go on, slow typist :)
+16:35:31 <llunak> I personally think a bit hackerish name isn't a big deal
+16:35:32 <dirk> I still prefer Backports - it is consistent to what it was in the past, and there was on strong reason to change it
+16:35:41 <rabauke> +UpdatedApplications since nobody knows what backports is and the whole renaming does not make sense if it is not meant to make the repos more understandable for the users. devs know them anyway.
+16:36:08 <javier_> updatedapplications,.. which ones?
+16:36:09 <wstephenson> dirk: i suspect the people who don't understand backports aren't participating in the discussion
+16:36:21 <wstephenson> rabauke: thank you, that's my point.
+16:36:41 <tittiatcoke> I agree with Rabauke.
+16:36:50 <wstephenson> i am also open to equivalent suggestions
+16:36:59 <dirk> so is everyone fine with UpdatedApplications?
+16:37:00 <wstephenson> KDE:Updates is confusable with online updates
+16:37:06 <cb400f> Apps is shorter :-)
+16:37:12 <llunak> I'd shorten it at least to Apps
+16:37:16 <dirk> one thing that bothers me is that Applications is a difficult name to type right
+16:37:26 <wstephenson> true
+16:37:27 <tittiatcoke> Apps should be ok :-)
+16:37:27 <llunak> and it may possibly create confusion with online update
+16:37:42 <dirk> so KDE:Apps or KDE:UpdatedApps?
+16:37:43 <tigerfoot> LastestVersionForYourStableKdeOpensuse ? (a bit long but make sense :-))
+16:38:07 * javier_ prefers backports
+16:38:08 <ctrippe> UpdatedApps
+16:38:15 <tittiatcoke> +UpdatedApps
+16:38:19 * saschpe prefers backports too
+16:38:29 <rabauke> tigerfoot: that's why I suggested a systemsettings GUI because IMHO it is the only way to get understandable and safe repo handling for the users.
+16:38:42 <wstephenson> I hope the Update_d_ Apps makes it clear that it is not online updates
+16:38:56 <wstephenson> javier_, saschpe: why?
+16:39:01 <tigerfoot> I think backport is not a wrong choice, the wikipedia def clarify it quite well http://en.wikipedia.org/wiki/Backport
+16:39:19 <wstephenson> tigerfoot: why use a term that needs explanation though?
+16:39:28 <rabauke> people do not read wikipedia when they open yast's repo module
+16:39:31 <saschpe> wstephenson: it's a term that is used across a wide distro selection and I'd say that users that manage to find _and_ enable that repository know what they want
+16:39:37 <rabauke> they do not even read the opensuse wiki
+16:39:47 <dirk> wstephenson: Backports is also a term used in the Debian or Fedora world
+16:39:54 <dirk> wstephenson: UpdatedApps is not
+16:39:54 <javier_> saschpe: exacty, my point. it's more clear
+16:39:55 <rabauke> they just use urls they find in forums or mailinglists
+16:39:58 <wstephenson> saschpe: hopefully we will make it a lot easier to find and enable than it is now.
+16:40:07 <tigerfoot> dirk: thanks thats what I want to explain ...
+16:40:07 <javier_> updatedapps also needs clarification
+16:40:12 <saschpe> wstephenson: have less repositories then :-)
+16:40:51 <llunak> ok, let's do the vote : +Backports, +UpdatedApps
+16:40:57 <wstephenson> dirk: we should aim to include users who are not fluent with Debian or Fedora
+16:41:03 <rabauke> +UpdatedApps
+16:41:05 * saschpe +Backports
+16:41:07 <javier_> +backports
+16:41:11 <wstephenson> +UpdatedApps
+16:41:15 <tittiatcoke> +UpdatedApps
+16:41:18 <krop> +UpdatedApps
+16:41:18 <tigerfoot> +Backports
+16:41:20 <dirk> +Backports
+16:41:28 <ctrippe> +UpdatedApps
+16:41:58 * cb400f is torn
+16:42:06 <llunak> 10 ... 9 ...
+16:42:21 <llunak> you can abstain ... I do here
+16:42:22 <dirk> wstephenson: google: 2.2 million hits for backports, 2nd hit is explaining it. updatedapps 300000, and it points to apple itunes
+16:42:34 <wstephenson> dirk: because it doesn't need explanation
+16:42:36 <javier_> Apple iTunes :D
+16:42:37 <saschpe> how do gnome repos and others handle backports?
+16:42:50 <javier_> the term backport is standard
+16:43:03 <wstephenson> among a small population
+16:43:05 <rabauke> if we start that way we can also discuss the usage of  STABLE repos.
+16:43:07 <javier_> what are updatedapps? they are backports of blabla
+16:43:11 <saschpe> either way it should be done the same way across all repos
+16:43:15 <tigerfoot> gnome is Backport ..
+16:43:19 <dirk> wstephenson: well, but 2.2 million vs 300000 also shows which one is more frequent in use
+16:43:26 <tigerfoot> http://download.opensuse.org/repositories/GNOME:/Backports:/
+16:43:27 <saschpe> that's what I've guessed
+16:43:28 <rabauke> almost everybody else uses is for upstream versions.
+16:44:09 <dirk> okay, so we're 4:4 ?
+16:44:10 <wstephenson> dirk: are you sure you're not measuring the frequency of explanation of the term?
+16:44:16 <ctrippe> tigerfoot: That are no backported apps
+16:44:25 <llunak> well, 5:4 for updatedapps if I'm counting correctly
+16:44:32 <rabauke> they are just new builds. backports are patches
+16:44:47 <tigerfoot> ctrippe: so they confuse people also :-) ( I rarely goes there ... )
+16:44:51 <dirk> wstephenson: no
+16:44:53 <wstephenson> and GNOME:Backports contains the platform too
+16:45:13 <dirk> wstephenson: for example, searching for news on "UpdatedApps" gives
+16:45:21 <dirk> wstephenson: "Updated Apps* - Lists all the apps that are updated each day"
+16:45:34 <llunak> I think updatedapps is technically fine too
+16:46:15 <llunak> ok, let's go with that one
+16:46:24 <wstephenson> dirk: to me as a native speaker it's clear without explanation. i don't buy the argument that googlish is our lingua franca
+16:46:44 <llunak> * stable repo name
+16:46:48 <wstephenson> however if it really looks wrong to non-native speakers, then its a problem
+16:47:11 <llunak> there's "stable", "released", "supported"
+16:47:13 <dirk> wstephenson: no, it sounds a bit verbose, but thats fine
+16:47:29 <Chani> what does "backports" actually mean?
+16:48:12 <wstephenson> "stable" has the existing problem that nobody knows if it's KDE's stable or SUSE's stable.
+16:48:18 <wstephenson> "released" is the same
+16:48:27 <Chani> I'm getting the impression that suse's definition of backports is not the same as mine :)
+16:48:35 <cb400f> new apps for old distro :-)
+16:48:38 <tigerfoot> Chani: new version compiled to the old desktop ...
+16:48:56 <tigerfoot> new apps version  ..
+16:48:57 <wstephenson> "supported" i hope links to the established idea that suse supports things
+16:49:00 <Chani> tigerfoot: what if it's the desktop that I'm upgrading? :)
+16:49:21 <llunak> Chani: that's not what that repo contains
+16:49:27 <wstephenson> Chani: KDE:Backports (the current naming) contains only application updates, no main modules
+16:49:28 <krop> I don't find "supported" better
+16:49:32 <dirk> Chani: while the discussion is interesting (and you have a good point), can we stick to the current topic until the meeting is over, please?
+16:49:41 <Chani> dirk: oh right, sorry
+16:49:49 <dirk> Chani: note I agree with you that we used Backports incorrectly,
+16:49:58 <cb400f> is it actually supported? I thought there might be unreleased patches and such
+16:50:01 <wstephenson> of course if you had chosen SUSE for <DISTRO> Supported would give KDE:SUSE:Supported which is pretty clear IMO.
+16:50:04 <rabauke> +supported since STABLE is used by most others for upstream stable releases, e.g. Openoffice etc.
+16:50:27 <wstephenson> cb400f: technically it is supported or imminently supported :)
+16:50:54 <dirk> wstephenson: but KDE:Distro:Stable still indicates that it is the stable distro, not the stable KDE release
+16:51:10 <tigerfoot> don't like supported but stable compared to others is misleading in kde/opensuse ...
+16:51:27 <dirk> tigerfoot: but we rename from KDE:STable to KDE:Distro:Stable
+16:51:33 <wstephenson> dirk: ack
+16:51:52 <wstephenson> KDE:Distro:Supported works too
+16:52:04 <dirk> yep
+16:52:05 <tigerfoot> dirk: ah yes, I already forget Distro ...
+16:52:19 * tigerfoot mv SUSE DISTRO ...
+16:52:23 * wstephenson hands out Ritalin, since llunak already told him to focus
+16:52:26 <llunak> my problem with supported is that users might get funny ideas about the extent to which it is supported
+16:52:49 <tigerfoot> llunak: agree with that ...
+16:52:54 <wstephenson> counterproposal?
+16:52:58 <llunak> it is a community distro, not SLE
+16:53:08 <llunak> I find stable ok
+16:53:19 <tittiatcoke> +Stable
+16:53:36 <rabauke> +supported
+16:53:37 <llunak> any further discussion here?
+16:53:53 <dirk> no, lets vote
+16:54:02 <llunak> ok, vote
+16:54:09 <cb400f> +Stable
+16:54:09 <dirk> +Stable
+16:54:11 <krop> +Stable
+16:54:12 <herby> +Stable
+16:54:14 <llunak> +Stable
+16:54:15 <tittiatcoke> +Stable
+16:54:16 <ctrippe> +Stable
+16:54:18 <tigerfoot> Released ? KDE:Distro:Released so when we release 4.4.5 for example its clear ?
+16:54:20 <wstephenson> bah :)
+16:54:27 <wstephenson> +Marble
+16:54:32 <tigerfoot> :-)
+16:54:37 <llunak> I think this one is clear
+16:54:53 <llunak> although KDE:Distro:Marble is tempting :)
+16:55:15 <llunak> * Should it be grouped together with the stable and development repository?
+16:55:15 <tigerfoot> Miracle can work too ...
+16:55:20 <llunak> (snapshots repo)
+16:55:52 <wstephenson> llunak: you missed out what 'it' means.
+16:56:01 <llunak> it = snapshots repo
+16:56:05 <wstephenson> * Upstream snapshots repository -  Should it be grouped together with the stable and development repository?
+16:56:16 <wstephenson> examples
+16:56:22 <tigerfoot> this one I really prefer the wstephenson proposal KDE:Unstable:SC
+16:56:27 <krop> (was KKFD discussed already ?)
+16:56:28 <wstephenson> grouped: KDE:Distro:Snapshots
+16:56:38 <wstephenson> ungrouped: KDE:Snapshots
+16:56:53 <rabauke> ungrouped since it does not include the distro patches
+16:56:55 <wstephenson> krop: 2nd point in the wiki page, no discussion
+16:57:14 <krop> ah.. I thought that's the worse name, nm
+16:57:31 <llunak> krop: there are not questions about KKFD, consensus seems to be clear on KDE:Distro:Factory
+16:58:03 <krop> ok, back on the snapshots then
+16:58:03 <llunak> ok, maybe let's do this differently
+16:58:20 <wstephenson> so please consider my proposal for this point, KDE:Unstable:SC together with the next suggestion, that unstable apps go into KDE:Unstable
+16:58:33 <llunak> besides the unstable stuff, there is only KDE:Extra and the capitalization question, which both seem to have  clear result
+16:58:57 <llunak> so questions related to snapshots and playground is the remaining group
+16:58:58 <wstephenson> sorry i misquoted myself
+16:59:08 <wstephenson> KDE:Unstable:Extra + KDE:Unstable:SC
+16:59:35 <llunak> wstephenson: that is missing the apps that are in kkfd/updatedapps
+16:59:52 <cb400f> kde:unstable:extra replaces kde:playground?
+16:59:58 <llunak> where would unstable digikam go?
+17:00:08 <wstephenson> KDE:Unstable:Apps?
+17:00:17 <wstephenson> cb400f: no, see below
+17:00:27 <wstephenson> cb400f: "Playground Repository"
+17:00:35 <remur_030> heya, could someone hit me with a log snapshot please =)
+17:00:58 <krop> KDE:Unstable:Main (for what we have in KDE/) KDE:Unstable:Extra for extragear/playground stuff
+17:01:30 <krop> but that may become irrelevant once upstream switches to git
+17:01:40 <llunak> #save
+17:01:53 <wstephenson> remur_030: http://pastebin.com/spam.php?i=58CdH9QK
+17:02:23 <wstephenson> krop: so "Main" answers the question "only SC?" with "No"?
+17:02:33 <remur_030> thanks!
+17:02:37 <wstephenson> remur_030: http://pastebin.com/58CdH9QK
+17:02:48 <krop> I don't like all these marketing decisions
+17:03:02 <wstephenson> ooh, dirty word!
+17:03:10 * dirk is seriously confused about the discussion now
+17:03:13 <wstephenson> it's not marketing, it's usability :)
+17:03:26 <llunak> let's start with something simpler -do we have a separate (sub) repo for just KDE SC snapshots?
+17:03:51 <llunak> meaning, will we
+17:03:58 * tigerfoot join dirk in the dark ....
+17:04:09 * saschpe searches for lighters
+17:04:31 <wstephenson> llunak: your reasons for and against?
+17:04:34 <llunak> that is the "Should it contain only KDE SC snapshots or also other KDE software." question
+17:04:34 <remur_030> llunak: except unstable?
+17:04:39 <tittiatcoke> What would be the alternative ? To push everything in one repo ? Playground joins Unstable ?
+17:05:03 <saschpe> playground joins unstable sounds sensible as it is after all unstable :-)
+17:05:25 <llunak> let's put it differently, once more:
+17:05:26 <wstephenson> saschpe: well in KDE SVN we have a distinction between trunk and playground
+17:05:40 <saschpe> extragear can join the rest of KDE as there are pretty important apps in there and Git will kill that distinction anyway
+17:06:04 <llunak> we can have 1, 2 or 3 repos, for unstable stuff, 1 - KDE SC, 2 - unstable UpdatedApps (i.e. apps from kkfd), 3 - whatever else unstable
+17:06:15 <saschpe> wstephenson: i know but playground doesn't have that much apps that really deserve packaging
+17:06:34 <llunak> so the question is, how much do we join these and what the structure and naming will be
+17:06:45 <llunak> let me split into separate questions
+17:06:51 <wstephenson> saschpe: OBS KDE:Playground contains lots of deserving apps from eg kde-apps.org..
+17:07:15 <llunak> separate repo for kde sc snapshots - the wiki page seems to have quite a consensus on this being yes
+17:07:33 <llunak> questions on this, or can we conclude this as yes?
+17:07:38 <tittiatcoke> +1
+17:08:01 <krop> +1
+17:08:03 <llunak> tittiatcoke and dirk get 2 votes here :)
+17:08:08 <wstephenson> :)
+17:08:09 <tigerfoot> +1 with KDE:Unstable:SC
+17:08:16 <saschpe> wstephenson: but most kde-apps stuff will never move into trunk, so they stay in KDE:Playground forever?
+17:08:20 <rabauke> so if a user adds that repo he might get conflicts because KDE app xy depends on a lower KDE version?
+17:08:54 <llunak> rabauke: kde apps generally shouldn't have a maximum version requirement
+17:09:11 <rabauke> ok
+17:09:30 <wstephenson> saschpe: no, but once they are stably packaged they can move into KDE:Distro:Factory
+17:09:30 <llunak> ok, so this seems to be clear for now, next question
+17:09:43 <cb400f> or kde:extra
+17:09:45 <wstephenson> yeah
+17:10:12 * saschpe has currently 7 repositories that start with 'KDE' enabled and doesn't like it
+17:10:26 <llunak> the rest of unstable stuff - do we have just another repo for whatever unstable, or do we split further? (one reason why I'm asking is because KDE:Unstable:Extra will be confusing because of not matching KDE:Extra)
+17:10:49 <tittiatcoke> I would go for KDE:Unstable:Apps
+17:11:02 <llunak> the logical thing here seems to be just one unstable repo for non-SC stuff
+17:11:09 <tittiatcoke> +1
+17:11:25 <saschpe> +1
+17:11:42 <rabauke> +1
+17:11:43 <ctrippe_> +1
+17:11:55 <llunak> so the remaining question is naming/structure
+17:11:57 <wstephenson> llunak: i proposed KDE:Unstable:Extra and KDE:Development instead of KDE:Extra for that reason
+17:11:58 <rabauke> unstable already includes the "playground" hint
+17:12:27 <llunak> wstephenson: development may suggest is has -devel stuff
+17:12:53 <wstephenson> ok so one KDE:Unstable:Apps
+17:13:09 <llunak> so let's just throw a couple of proposals, just to see - I'd suggest KDE:Unstable:SC and KDE:Unstable:<good name for the other repo here>
+17:13:32 <wstephenson> would it have as repos all of KDE:Unstable:SC, KDE:Distro:Factory, KDE:Distro:Stable?
+17:13:33 <tigerfoot> when I see KDE:Unstable:Apps I understand this is App for the unstable SC release ...
+17:14:01 <ctrippe_> Will KDE:Unstable:Apps replace Playground?
+17:14:17 <wstephenson> ctrippe_: i think that's what llunak meant at 19:11
+17:14:23 <llunak> I don't like apps because it might have non-apps stuff too, let's say I put Kor there, which is more like a desktop than an app
+17:14:45 <llunak> ctrippe_: yes, we're discussing the new name for playground name
+17:14:46 <dirk> llunak: I agree. why not Extra then?
+17:14:53 <herby> I don't like Factory here, Next sounds better
+17:14:59 <llunak> the current naming is KDE:UNSTABLE:Desktop and KDE:Playground
+17:15:03 <wstephenson> so, what do we think of "KDE:Unstable:Extra"?
+17:15:10 <tittiatcoke> I guess that tigerfoot is also correct that if we keep KDE:Unstable:<good name>, it will always seems it belongs to KDE:Unstable:SC
+17:15:13 <wstephenson> herby: Factory is a reserved term :)
+17:15:28 <llunak> wstephenson: conflict with KDE:Extra
+17:15:32 <ctrippe_> llunak: wstephenson Ok, I only wanted to make sure that I understood everyting correct
+17:15:47 <dirk> KDE:Extra:Unstable ?
+17:15:59 <tittiatcoke> I would go along with that one :-)
+17:16:09 <llunak> dirk: then digikam is not in KDE:Extra but is in KDE:Extra:Unstable
+17:16:40 <wstephenson> llunak: now i'm confused, i thought you just proposed dropping KDE:Extra in favour of KDE:Unstable:Extra
+17:16:58 <llunak> huh, KDE:Extra is stable
+17:17:13 <cb400f> so if a user wants amarok beta.. he adds kde:unstable:<good name>/opensuse_11.3_Stable/
+17:17:21 <llunak> to make it clear again - we are not discussing what is now called KKUD and Playground
+17:17:33 <wstephenson> agh kill me now, i misunderstood the whole section when commenting the wiki
+17:17:36 <llunak> damn, "we are now"
+17:17:53 <tittiatcoke> :-)
+17:18:10 <llunak> backports, extra (old community), stable, factory is already decided
+17:18:14 * tigerfoot kill wstephenson has he ask it :-) don't like this job :-))
+17:18:20 <llunak> we have the 2 unstable repos remaining
+17:18:53 <llunak> for those we already decided that we will have one for KDE SC snapshots and one for everything else unstable
+17:18:56 <cb400f> I don't like moving kde:playground into kde:unstable:something
+17:19:16 <cb400f> many people will want some "playground" stuff with stable or factory
+17:19:19 * tigerfoot see that llunak has a good strong rope to navigate in repo :-)
+17:19:21 * wstephenson does
+17:19:33 <llunak> so the remaining question is name of kde sc snapshots repo and playground name repo (including their place in the structure)
+17:19:40 <wstephenson> cb400f: and we could build KDE:Unstable:GoodName vs Stable and Factory
+17:20:22 <cb400f> that means no stable apps for unstable sc :-)
+17:21:13 <llunak> one solution is to have KDE:Snapshots and KDE:Playground
+17:21:23 <wstephenson> cb400f: it doesn't exclude building KDE:Extra vs KDE:Unstable:SC
+17:21:35 <llunak> second is KDE:Unstable:Snapshots (or SC) and KDE:Unstable:<something>
+17:22:33 <tittiatcoke> personally I would rather go for the first option. At least the KDE:Playground is not grouped with KDE:Snapshots
+17:22:36 <llunak> having KDE:Snapshots and KDE:Extra:Unstable is an option too, but there I see the problem that kkfd apps, such as digikam, would not be in KDE:Extra but would be in KDE:Extra:Unstable
+17:22:54 * wstephenson is for the latter option
+17:22:57 <wstephenson> we just need a good name
+17:23:20 <wstephenson> i agree with dirk's point that the distinction is thin
+17:23:21 <tigerfoot> so under KDE:Unstable: we have all stuff marked as unstable ... ?
+17:23:43 <llunak> tigerfoot: that's an option
+17:24:01 <tigerfoot> SC (kde5), Apps (like digikam)  ...
+17:24:11 <remur_030> I am not sure I can follow, but shouldn't we try reducing the amount of repositories?
+17:24:11 <rabauke> wstephenson: a released version of digikam would be in a repo named unstable?
+17:24:23 <wstephenson> rabauke: no
+17:24:24 <remur_030> erm projects in obs terms
+17:24:41 <wstephenson> rabauke: you're confusing things. released digikam would be in KDE:Extras.
+17:24:52 <tigerfoot> rabauke: as I understand it's goes in KDE:Distro:Stable
+17:24:55 <wstephenson> snapshots of unreleased digikam would be in KDE:Unstable:Goodname
+17:25:02 <cb400f> released digikam should be in kde:updatedapps
+17:25:03 <rabauke> wstephenson: ok that makes sense
+17:25:05 <tigerfoot> damned ... wstephenson as right ...
+17:25:16 <cb400f> question is where it's built for unstable:sc
+17:25:16 <llunak> remur_030: I think we cannot go below 6 for what we want, since I think it's good to have KDE SC separately from all the playground stuff
+17:25:36 <llunak> it doesn't matter for that it is built
+17:25:48 <llunak> any repo can be built for any other repo if necessary
+17:25:57 <wstephenson> cb400f: add a KDE:Unstable:SC repo on the KDE:Extra project
+17:26:06 <wstephenson> so let's think of Goodname
+17:26:08 <llunak> kde:updatedapp can build for kde:Snaphot for all I care
+17:26:09 <wstephenson> Stuff
+17:26:17 <remur_030> llunak: ah ok, it's just looking like dependencies go cross alot of projects here
+17:26:39 <wstephenson> remur_030: let's discuss that separately
+17:27:14 <wstephenson> we have some options there
+17:27:17 <llunak> ok, so I posted 3 options above, with <something> to be filled in, other proposals?
+17:27:40 <wstephenson> how do we express "Non-SC Stuff"?
+17:28:01 <krop> not using SC at all is an interesting option
+17:28:15 <llunak> we could possibly have KDE:Unstable:SC and KDE:Unstable for the rest
+17:28:45 <tittiatcoke> Sounds logical
+17:28:46 <wstephenson> llunak: yeah i think i considered that too
+17:29:18 <wstephenson> any more schemes?
+17:29:57 <llunak> ok, let me put numbers to the proposals and then we vote
+17:30:09 <llunak> 1) KDE:Snapshot, KDE:Playground
+17:30:31 <llunak> 2) KDE:Unstable:SC, KDE:Unstable:<something>
+17:30:38 <llunak> 3) KDE:Unstable:SC, KDE:Unstable
+17:30:51 <llunak> 4) KDE:Snapshot, KDE:Extra:Unstable
+17:31:07 <llunak> ok, vote now
+17:31:09 * wstephenson votes 2
+17:31:10 <krop> 4
+17:31:12 <wstephenson> no no
+17:31:13 <wstephenson> shit
+17:31:18 * wstephenson votes 3
+17:31:27 * tittiatcoke votes 3
+17:31:36 <cb400f> 1
+17:31:58 <dirk> 4
+17:31:58 <llunak> 3
+17:32:03 <ctrippe_> 3
+17:32:03 <herby> 3
+17:32:15 <wstephenson> dirk: ? this is your territory
+17:32:32 <dirk> I'm fine with 3 as well
+17:32:43 <javier_> 2
+17:32:50 <dirk> though it is completely different than what we did before
+17:33:26 <llunak> I wonder if people wont' get a bit confused with a repo that contains both packages and a subrepo for 3
+17:33:40 <dirk> llunak: yep, my fear as well
+17:33:44 <dirk> it is confusing
+17:33:46 <wstephenson> hopefully they won't see URLs much
+17:34:08 <tigerfoot> wstephenson: I see url ... as I synchronize mirror :-)
+17:34:22 <dirk> well, those who don't see the url don't care about the repository name :-)
+17:34:26 <wstephenson> tigerfoot: corner case
+17:34:43 <llunak> hmm .. maybe let's do this only as a structure vote - KDE:Playground can stand for KDE:<anything>
+17:35:04 <dirk> llunak: then 1) and 4) is the same
+17:35:16 <llunak> 4 is in a different place
+17:35:57 <remur_030> wstephenson: fregl was quite confused today looking at the urls
+17:36:01 <tigerfoot> my vote KDE:Unstable:SC  + KDE:<anything but Playground>
+17:36:47 <llunak> please vote again, the right-most part of each repo name is a variable  (i.e. by voting for 1) you do not vote for the name to be KDE:Playground but maybe KDE:foo too)
+17:37:02 <wstephenson> 3
+17:37:17 <dirk> 1
+17:37:19 <ctrippe_> 1
+17:37:29 <krop> 1
+17:37:35 <tittiatcoke> 1
+17:37:56 <llunak> 1
+17:38:07 <tigerfoot> 3 first part, 1 second part
+17:38:14 <wstephenson> great, now define $foo $bar :)
+17:38:41 <llunak> tigerfoot: that's 1, basically
+17:38:44 * dirk is confused by the outcome of the vote
+17:39:01 <tigerfoot> no 3 ... most important is KDE:Unstable:SC
+17:39:02 <dirk> so most people like KDE:Unstable:SC, KDE:<anything>
+17:39:28 <dirk> so lets settle for KDE:Unstable:SC now
+17:39:34 <llunak> KDE:<anything for sc>, KDE:<anything for rest>, to be precise
+17:39:38 * tigerfoot really don't understand ... but agree ...
+17:39:51 <tittiatcoke> +1 for KDE:Unstable:SC
+17:39:59 <dirk> +1
+17:40:03 <tigerfoot> +1 KDE:Unstable:SC
+17:40:29 <krop> +1 KDE:whatever_without_SC
+17:40:44 <llunak> so you want SC to be in KDE:Unstable:SC and the rest in e.g. KDE:Playground ?
+17:41:04 <llunak> now I am confused :)
+17:41:21 <herby> +1 KDE:Unstable:SC
+17:41:42 <wstephenson> dirk: i understood the outcome of the penultimate vote to be 1) KDEnapshot, KDElayground
+17:41:44 <cb400f> I still don't understand where an unstable:sc user is supposed to find all the apps that exist in kkud today, but are not part of sc
+17:41:49 <wstephenson> oh fsck these emoticons
+17:42:44 <llunak> cb400f: both repo enabled, sc wins by having newer versions?
+17:43:09 <cb400f> today amarok is in kkud.. but of course it won't be in unstable:sc
+17:43:24 <llunak> tittiatcoke, dirk: ?
+17:43:31 <wstephenson> cb400f: an amarok snapshot would be in KDE:<Playground>
+17:43:54 <cb400f> so someone will make weekly snapshots of every app in factory all of a sudden?
+17:44:03 <cb400f> (non-sc app)
+17:44:30 <dirk> llunak: it seems people prefer KDE:Unstable:SC over KDE:Snapshot for (weekly snapshots of SC)
+17:44:44 <dirk> llunak: so I wanted to settle that first. we can discuss KDE:Playground vs the-rest later
+17:45:10 <dirk> llunak: for me, KDE:Unstable:SC is a bit of a  misnomer as we don't actually know (formally) what is part of the SC until it is actually released
+17:45:22 <dirk> so is kdepim in or out of KDE:Unstable:SC - you don't know
+17:45:40 <tittiatcoke> dirk: I guess that the discussion is now what we are going to put in KDE:Unstable:SC. Would we have there just the kde tarballs or would we also place there applications like amarok ?
+17:46:31 <wstephenson> i'm going to have to leave
+17:46:37 <dirk> tittiatcoke: well, if the unstable SC snapshots are built so that they can be installed in parallel, it does not matter
+17:46:57 <wstephenson> but others do most of the KKUD work so i trust you to come up with a good scheme/name combination.
+17:46:58 <tittiatcoke> dirk: True, but that would mean you need Factory and Snapshots enabled
+17:47:16 <dirk> tittiatcoke: which does not hurt as long as both packages don't overlap
+17:47:29 <dirk> it is dangerous though in case of packaging mistakes
+17:47:43 * dirk has to leave as well..
+17:47:51 <dirk> how about we postpone this part of the discussion?
+17:48:01 <dirk> I think we made great progress already today, the rest needs one more night to sleepover
+17:48:09 <tittiatcoke> Yup. Sounds good.
+17:48:11 <wstephenson> k
+17:48:19 <rabauke> +1
+17:49:00 <wstephenson> llunak: next topic?
+17:49:11 <dirk> ok, who wants teh action item of updating the page to the current decided state and the outstanding items?
+17:50:27 <dirk> it seems we lost llunak
+17:50:36 <llunak> i'm back, sorry
+17:50:55 <llunak> ok, we'll postpone the unstable discussion
+17:51:05 <llunak> we can already proceed with what we have
+17:51:58 <llunak> so, I have created http://en.opensuse.org/KDE/Backports_Repository and http://en.opensuse.org/KDE/Extra_Repository
+17:52:25 <llunak> #topic UpdatedApps repository
+17:53:24 <llunak> what I'll do is update the maintainers list for the UpdatedApps repo
+17:53:47 <llunak> and then maintainers can set it up with all the links
+17:54:08 <llunak> BTW, I think it's better to link KKFD directly rather than o:F
+17:54:32 <cb400f> yes, faster updates :-)
+17:54:49 <llunak> I know I've already asked at least twice, but maintainers, please raise your hands now
+17:55:01 <wstephenson> hand
+17:55:10 <llunak> also, is it nececessary to add something to the page?
+17:55:17 <tittiatcoke> \o/
+17:55:27 <wstephenson> llunak: change the description, you mean?
+17:55:46 <llunak> content - e.g. is it enough to say osc linkrev?
+17:56:04 <llunak> or should an example be added
+17:56:14 <wstephenson> example, or i will find a way to fsck it up
+17:56:18 <wstephenson> ;)
+17:56:25 <llunak> ok
+17:56:35 <llunak> so that's all for this repo
+17:56:41 <llunak> #topic Extra repository
+17:56:46 <llunak> basically the same here
+17:57:01 <wstephenson> \o/
+17:57:07 <tittiatcoke> \o/
+17:57:14 <llunak> we will copy packages from KDE:KDE4:Community as deemed appropriate
+17:57:31 <llunak> and somewhen later the old repos will be nuked
+17:57:32 <tittiatcoke> I believe that bitshuffler also volunteerd for maintainership here
+17:57:59 <llunak> AI: llunak write a summary about UpdatedApps and Extra repositories to the list
+17:58:13 <llunak> AI: llunak update status about repository reorganization
+17:58:25 * dirk drops off, sorry
+17:58:43 <tigerfoot> llunak: add a directory layout ( like the tree output )
+17:58:52 <llunak> ?
+17:59:01 <wstephenson> a diagram
+17:59:16 <llunak> ah
+17:59:29 <tigerfoot> llunak: do the mkdir, lauch tree on that so we can better understand where things goes ...
+17:59:36 <tigerfoot> wstephenson: yeap a diagram :-)
+17:59:45 <llunak> any other AI here?
+18:00:40 <tigerfoot> seems not ...
+18:00:49 <llunak> #topic misc, Q&A
+18:01:12 <tigerfoot> +1 for constant Capitalization ...
+18:01:25 <wstephenson> so thanks everyone for their contributions
+18:01:28 <llunak> oh, I haven't given op rights to the meetbot, that's why the topic doesn't update ... :-/
+18:01:52 <wstephenson> javier_ has done great work with the unstable-live cd and various bugfixes
+18:02:02 * tigerfoot kick off ...
+18:02:25 <javier_> not really, some small details
+18:02:45 <wstephenson> marcus also picking up distribution dev tasks
+18:02:55 <reddwarf> I arrived late, was the default apps thing talked about?
+18:03:02 <wstephenson> of course not possible without a good KKUD, we know who to thank about that :)
+18:03:15 <tittiatcoke> :-)
+18:03:15 <rabauke> I did not blog last week becaue there was not that much to blog about and I did not have anything "personal" to write about KDE. This week I do, so I'll need some info on what you did within the last fortnight.
+18:03:15 <llunak> reddwarf: no, I'll try to do it on the list
+18:03:23 <wstephenson> rabauke: cool, thank you
+18:03:29 <llunak> reddwarf: but basically I think we need to talk to upstream about the technical details
+18:03:52 <wstephenson> oh can we talk about covering the channel and community over the next couple of weeks?
+18:04:11 <wstephenson> i'll probably be out of the office and sporadically online at best
+18:04:23 <wstephenson> and llunak and dirk are at akademy soonish
+18:04:28 <tittiatcoke> I will be on holidays from the 3rd of July till 27th
+18:04:34 <wstephenson> very nice :)
+18:04:41 <reddwarf> not that I have any great idea to improve the current system, but yes, perhaps that would help
+18:05:27 <llunak> reddwarf: otherwise I agree with the suggestions for the defaults, so the best thing to do there would be to patch the .desktop file for now, where possible
+18:05:29 <wstephenson> can whoever is left please pickup any slack in welcoming new folk?
+18:05:46 <rabauke> don't we always do ;)
+18:05:53 <wstephenson> sure
+18:06:08 <wstephenson> just don't point them to ppl who are probably not going to be responsive
+18:06:14 <rabauke> ok
+18:06:36 <wstephenson> i hope 11.3 is in good shape now
+18:06:44 <llunak> next meeting in 2 weeks, which is akademy, so I don't know if I'll be available for it
+18:07:20 <llunak> ok, thanks for attending
+18:07:23 <llunak> #endmeeting

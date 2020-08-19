@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:01:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:01:44</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Jan 21 18:01:44 2013 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:01:44</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:01:58</span><span class="nk"> &lt;Ilmehtar&gt;</span> Hi all!
+<a name="l-5"></a><span class="tm">18:02:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> our first meeting topic would be...
+<a name="l-6"></a><span class="tm">18:02:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Beta1</span>
+<a name="l-7"></a><span class="tm">18:04:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> openQA results look rather poor currently with breakages happening during install and 2nd stage
+<a name="l-8"></a><span class="tm">18:05:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> then various gtk applications have display problems with cirrus' 24 bpp graphics. And there was some problem with VirtualBox kernel drivers, so that graphics was completely broken there
+<a name="l-9"></a><span class="tm">18:05:48</span><span class="nk"> &lt;Ilmehtar&gt;</span> yup, I've spotted that too, do we have a bug ID for it so I can add myself to the CC?
+<a name="l-10"></a><span class="tm">18:06:15</span><span class="nk"> &lt;LWFinger&gt;</span> I had noticed the openQA problems, and had low expectations. I also found the VB problem. Bug #799492.
+<a name="l-11"></a><span class="tm">18:06:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Ilmehtar:</span> http://openqa.opensuse.org/ lists some on the left
+<a name="l-12"></a><span class="tm">18:07:01</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">bmwiedemann:</span> I see the mention of the cirrus issue, just not a bug ID..I'll search around and make one if it needs it :)
+<a name="l-13"></a><span class="tm">18:07:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Ilmehtar:</span> the top one is a link
+<a name="l-14"></a><span class="tm">18:08:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> to bugzilla
+<a name="l-15"></a><span class="tm">18:08:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> bnc#799216
+<a name="l-16"></a><span class="tm">18:08:31</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">bmwiedemann:</span> found it, got it, thank you :)
+<a name="l-17"></a><span class="tm">18:10:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> upgrading from 12.1 seems to work, while it has some problems from 11.4
+<a name="l-18"></a><span class="tm">18:10:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> (e.g. firefox not starting)
+<a name="l-19"></a><span class="tm">18:10:27</span><span class="nk"> &lt;LWFinger&gt;</span> Is that supposed to work?
+<a name="l-20"></a><span class="tm">18:10:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> there was some hope with 11.4 getting updates from Evergreen
+<a name="l-21"></a><span class="tm">18:11:16</span><span class="nk"> &lt;LWFinger&gt;</span> On the Forums, we always recommend only 1 step at a time.
+<a name="l-22"></a><span class="tm">18:11:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> but I guess there will be cases, where the effort is not worth it
+<a name="l-23"></a><span class="tm">18:11:38</span><span class="nk"> &lt;Ilmehtar&gt;</span> I did lots of Beta1 installs during the Hackathon. the issues with LVM are really worrying for me - not only does it fail on fresh installs (of a blank hdd), but it fails if you are trying to delete the LVM partitions and create a non-LVM installation in its place
+<a name="l-24"></a><span class="tm">18:11:57</span><span class="nk"> &lt;cboltz&gt;</span> is the upgrade failure caused by something in $HOME or something system-wide?
+<a name="l-25"></a><span class="tm">18:12:09</span><span class="nk"> &lt;cboltz&gt;</span> (if $HOME, the step by step upgrade won't help much ;-)
+<a name="l-26"></a><span class="tm">18:12:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">cboltz:</span> could be some $HOME issue. did not look closer.
+<a name="l-27"></a><span class="tm">18:12:55</span><span class="nk"> &lt;LWFinger&gt;</span> A new test user should answer that question.
+<a name="l-28"></a><span class="tm">18:13:35</span><span class="nk"> &lt;LWFinger&gt;</span> My upgrade from 12.2 was OK.
+<a name="l-29"></a><span class="tm">18:13:46</span><span class="nk"> &lt;cboltz&gt;</span> I would be surprised if it's something system-wide because all system-wide files come with rpm
+<a name="l-30"></a><span class="tm">18:13:53</span><span class="nk"> &lt;cboltz&gt;</span> and I expect rpm to cleanup ;-)
+<a name="l-31"></a><span class="tm">18:14:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://openqa.opensuse.org/results/openSUSE-DVD-x86_64-Build0348-11.4kde64zdup look good apart from the missing firefox
+<a name="l-32"></a><span class="tm">18:14:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://openqa.opensuse.org/results/openSUSE-NET-i586-Build0348-11.4gnome32zdup has some error there
+<a name="l-33"></a><span class="tm">18:15:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> I will have to do another run and look closer
+<a name="l-34"></a><span class="tm">18:15:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> The LVM issues should be solved by now
+<a name="l-35"></a><span class="tm">18:16:16</span><span class="nk"> &lt;Ilmehtar&gt;</span> in beta1? or in more recent builds?
+<a name="l-36"></a><span class="tm">18:16:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> after beta1
+<a name="l-37"></a><span class="tm">18:16:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> someone did cleanup a part in linuxrc that was supposed to be unused
+<a name="l-38"></a><span class="tm">18:17:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> (and yet was still used)
+<a name="l-39"></a><span class="tm">18:17:25</span><span class="nk"> &lt;Ilmehtar&gt;</span> nifty, I'll have a play with that. I've been looking into a polish issue with systemd/luks/plymouth - when you get prompted to unlock an encrypted partition/device, if you dont respond in 90 seconds, systemd decides to keep on booting anyway
+<a name="l-40"></a><span class="tm">18:17:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> which can be the right thing, when it is /home
+<a name="l-41"></a><span class="tm">18:18:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> and you want unattended boots
+<a name="l-42"></a><span class="tm">18:18:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> I had some trouble with systemd on my remote headless server already
+<a name="l-43"></a><span class="tm">18:18:43</span><span class="nk"> &lt;Ilmehtar&gt;</span> yeah..but it's not possible logging in with GNOME if your /home/username is missing..
+<a name="l-44"></a><span class="tm">18:18:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> right
+<a name="l-45"></a><span class="tm">18:19:07</span><span class="nk"> &lt;Ilmehtar&gt;</span> and systemd does it regardless of the partition.. even /  :)
+<a name="l-46"></a><span class="tm">18:19:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> but locally, you could ctrl-alt-f1 and login as root to mount the missing partition
+<a name="l-47"></a><span class="tm">18:19:53</span><span class="nk"> &lt;cboltz&gt;</span> the timeout is a bad idea if for example your /var is encrypted ;-)
+<a name="l-48"></a><span class="tm">18:19:56</span><span class="nk"> &lt;Ilmehtar&gt;</span> yeah, it's managable, would just be nice to tune it if we can ;)
+<a name="l-49"></a><span class="tm">18:20:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes
+<a name="l-50"></a><span class="tm">18:20:21</span><span class="nk"> &lt;cboltz&gt;</span> you'll basically have to restart _everything_, and a reboot is usually faster than typing 20 restart commands ;-)
+<a name="l-51"></a><span class="tm">18:20:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> (except if your BIOS needs 3 minutes)
+<a name="l-52"></a><span class="tm">18:20:53</span><span class="nk"> &lt;cboltz&gt;</span> so I agree with Ilmehtar that the timeout should be tuneable (10000 seconds for me, please ;-)
+<a name="l-53"></a><span class="tm">18:22:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> who opens a bnc for it?
+<a name="l-54"></a><span class="tm">18:22:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> or is there one already?
+<a name="l-55"></a><span class="tm">18:22:57</span><span class="nk"> &lt;Ilmehtar&gt;</span> it's open, let me find it, gah I guess I forgot to CC myself on it
+<a name="l-56"></a><span class="tm">18:23:26</span><span class="nk"> &lt;Ilmehtar&gt;</span> bug 749706
+<a name="l-57"></a><span class="tm">18:25:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> thanks.
+<a name="l-58"></a><span class="tm">18:26:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> I will reinstall my netbook's spare partition with 12.3-Beta1 to see how it fares on intel graphics
+<a name="l-59"></a><span class="tm">18:26:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> is there anything else we could do to make 12.3 better?
+<a name="l-60"></a><span class="tm">18:27:18</span><span class="nk"> &lt;cboltz&gt;</span> can you unlock the KDE screensaver without using the mouse?
+<a name="l-61"></a><span class="tm">18:27:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> I was thinking to look deeper into bnc#799216
+<a name="l-62"></a><span class="tm">18:27:28</span><span class="nk"> &lt;LWFinger&gt;</span> Any possibility of doing VB installation tests on openQA?
+<a name="l-63"></a><span class="tm">18:27:47</span><span class="nk"> &lt;cboltz&gt;</span> (I can't - it needs at least a mouse click somewhere)
+<a name="l-64"></a><span class="tm">18:27:49</span><span class="nk"> &lt;CzP&gt;</span> I'm using now beta1 as my primary machine, and until now I ran only into problems caused by myself :)
+<a name="l-65"></a><span class="tm">18:27:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> not on the same machine, as only one can grab the hardware virt
+<a name="l-66"></a><span class="tm">18:28:03</span><span class="nk"> &lt;CzP&gt;</span> so it looks pretty promising
+<a name="l-67"></a><span class="tm">18:28:17</span><span class="nk"> &lt;LWFinger&gt;</span> Too bad.
+<a name="l-68"></a><span class="tm">18:28:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> but maybe I will find a spare machine to do it...
+<a name="l-69"></a><span class="tm">18:28:54</span><span class="nk"> &lt;LWFinger&gt;</span> I too am using Beta1 on primary box for 2 days. No real problems.
+<a name="l-70"></a><span class="tm">18:29:05</span><span class="nk"> &lt;CzP&gt;</span> ThinkPad T410 with Intel graphics, encrypted LVM (which did not work a week before...)
+<a name="l-71"></a><span class="tm">18:29:37</span><span class="nk"> &lt;LWFinger&gt;</span> Mine is HP dv2815 with nVidia.
+<a name="l-72"></a><span class="tm">18:30:21</span><span class="nk"> &lt;LWFinger&gt;</span> Anyone install from Live CD?
+<a name="l-73"></a><span class="tm">18:30:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> that sounds promising
+<a name="l-74"></a><span class="tm">18:30:35</span><span class="nk"> &lt;LWFinger&gt;</span> KDE Live CD.
+<a name="l-75"></a><span class="tm">18:30:42</span><span class="nk"> &lt;CzP&gt;</span> I used the net installer
+<a name="l-76"></a><span class="tm">18:31:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://openqa.opensuse.org/results/openSUSE-KDE-LiveCD-i686-Build0348 looked good
+<a name="l-77"></a><span class="tm">18:31:16</span><span class="nk"> &lt;LWFinger&gt;</span> My attempt with the KDE Live CD froze on installation.
+<a name="l-78"></a><span class="tm">18:31:26</span><span class="nk"> &lt;LWFinger&gt;</span> I have not investigates further.
+<a name="l-79"></a><span class="tm">18:31:42</span><span class="nk"> &lt;LWFinger&gt;</span> The media passed checks.
+<a name="l-80"></a><span class="tm">18:32:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-KDE-LiveCD-x86_64-Build0348/yast2_i-1.png but sometimes there is this "green console" bug
+<a name="l-81"></a><span class="tm">18:32:48</span><span class="nk"> &lt;LWFinger&gt;</span> I didn't see that.
+<a name="l-82"></a><span class="tm">18:32:58</span><span class="nk"> &lt;LWFinger&gt;</span> My install was NET upgrade from 12.2.
+<a name="l-83"></a><span class="tm">18:33:48</span><span class="nk"> &lt;LWFinger&gt;</span> For the first time ever, the default desktop settings had some things that were poorly visible.
+<a name="l-84"></a><span class="tm">18:33:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> seems to only hit 64bit LiveCDs
+<a name="l-85"></a><span class="tm">18:34:09</span><span class="nk"> &lt;LWFinger&gt;</span> I'm gradually getting the settings improved.
+<a name="l-86"></a><span class="tm">18:34:20</span><span class="nk"> &lt;LWFinger&gt;</span> Mine was 64-bit.
+<a name="l-87"></a><span class="tm">18:34:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> but not liveCd
+<a name="l-88"></a><span class="tm">18:34:44</span><span class="nk"> &lt;poorboywilly&gt;</span> <span class="hi">LWFinger:</span> KDE?  I've also seen a few rough areas
+<a name="l-89"></a><span class="tm">18:34:56</span><span class="nk"> &lt;LWFinger&gt;</span> Yes, KDE.
+<a name="l-90"></a><span class="tm">18:35:28</span><span class="nk"> &lt;poorboywilly&gt;</span> but only visual...everything else has been real smooth
+<a name="l-91"></a><span class="tm">18:35:52</span><span class="nk"> &lt;LWFinger&gt;</span> Yes. The worst was the Connection Manager in the NM applet.
+<a name="l-92"></a><span class="tm">18:35:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> so KDE theming issues?
+<a name="l-93"></a><span class="tm">18:36:05</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-94"></a><span class="tm">18:36:13</span><span class="nk"> &lt;poorboywilly&gt;</span> yes the new plasma theme has exposed a few problems since it is light text on dark background
+<a name="l-95"></a><span class="tm">18:36:47</span><span class="nk"> &lt;poorboywilly&gt;</span> one thing that is still very puzzling to me is the check boxes in knetworkmanager
+<a name="l-96"></a><span class="tm">18:36:55</span><span class="nk"> &lt;poorboywilly&gt;</span> I can't figure where it is getting those colors
+<a name="l-97"></a><span class="tm">18:37:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> you could try asking alin or tittiacoke for help
+<a name="l-98"></a><span class="tm">18:37:16</span><span class="nk"> &lt;LWFinger&gt;</span> They are bad. I've now got them visible.
+<a name="l-99"></a><span class="tm">18:37:28</span><span class="nk"> &lt;poorboywilly&gt;</span> what did you change?
+<a name="l-100"></a><span class="tm">18:37:55</span><span class="nk"> &lt;LWFinger&gt;</span> I was afraid you would ask. Let me look.
+<a name="l-101"></a><span class="tm">18:37:59</span><span class="nk"> &lt;poorboywilly&gt;</span> :)
+<a name="l-102"></a><span class="tm">18:38:20</span><span class="nk"> &lt;poorboywilly&gt;</span> there is an issue with combo boxes in plasmoids too...thankfully only a couple plasmoids actually have combo boxes
+<a name="l-103"></a><span class="tm">18:38:38</span><span class="nk"> &lt;LWFinger&gt;</span> I added the "Blue Sora" desktop theme. That helped.
+<a name="l-104"></a><span class="tm">18:38:39</span><span class="nk"> &lt;poorboywilly&gt;</span> I added to upstream KDE bug about the problem
+<a name="l-105"></a><span class="tm">18:39:22</span><span class="nk"> &lt;LWFinger&gt;</span> Still, the dark background is a problem.
+<a name="l-106"></a><span class="tm">18:39:36</span><span class="nk"> &lt;poorboywilly&gt;</span> the checkbox might be KDE bug too, but we also might not be supplying a proper background in the new theme
+<a name="l-107"></a><span class="tm">18:41:03</span><span class="nk"> &lt;poorboywilly&gt;</span> that's a new one, I just booted my laptop with the live CD and my mouse doesn't work...
+<a name="l-108"></a><span class="tm">18:42:36</span><span class="nk"> &lt;LWFinger&gt;</span> What sort of mouse?
+<a name="l-109"></a><span class="tm">18:44:25</span><span class="nk"> &lt;poorboywilly&gt;</span> thinkpad t60 trackpad + knobby thing
+<a name="l-110"></a><span class="tm">18:44:59</span><span class="nk"> &lt;poorboywilly&gt;</span> synpactics, that's what I couldn't think of
+<a name="l-111"></a><span class="tm">18:45:26</span><span class="nk"> &lt;LWFinger&gt;</span> My synaptics touchpad on HP has been OK.
+<a name="l-112"></a><span class="tm">18:45:53</span><span class="nk"> &lt;LWFinger&gt;</span> I also have not seen that complaint on the Beta forum.
+<a name="l-113"></a><span class="tm">18:45:57</span><span class="nk"> &lt;poorboywilly&gt;</span> I've done KDE and gnome several times and first I've had this
+<a name="l-114"></a><span class="tm">18:46:15</span><span class="nk"> &lt;LWFinger&gt;</span> Ah, wonderful intermittents.
+<a name="l-115"></a><span class="tm">18:46:33</span><span class="nk"> &lt;poorboywilly&gt;</span> dmesg has several messages and then one that says "psmouse seriol: Failed to enable mouse on isa0060/seriol"
+<a name="l-116"></a><span class="tm">18:47:29</span><span class="nk"> &lt;LWFinger&gt;</span> Is the touchpad supposed to use psmouse?
+<a name="l-117"></a><span class="tm">18:48:01</span><span class="nk"> &lt;poorboywilly&gt;</span> no idea, I haven't delved into mouse or touchpad issues at all before
+<a name="l-118"></a><span class="tm">18:48:18</span><span class="nk"> &lt;LWFinger&gt;</span> I've never had to look at the details for my touchpads other than to turn off tapping.
+<a name="l-119"></a><span class="tm">18:51:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, normally the synaptics driver is used and psmouse is only a poor fallback that does not know about tapping or scrolling
+<a name="l-120"></a><span class="tm">18:52:49</span><span class="nk"> &lt;poorboywilly&gt;</span> the first message I see about it is "psmouse seriol: synaptics: Touchpad model: 1..."
+<a name="l-121"></a><span class="tm">18:54:42</span><span class="nk"> &lt;LWFinger&gt;</span> Actually, my touchpad is an Alps Glidepoint.
+<a name="l-122"></a><span class="tm">18:55:18</span><span class="nk"> &lt;LWFinger&gt;</span> It comes in as an i8042 serial device.
+<a name="l-123"></a><span class="tm">18:56:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe we should move on then...
+<a name="l-124"></a><span class="tm">18:56:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Next meeting</span>
+<a name="l-125"></a><span class="tm">18:57:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> RC1 is scheduled for 2013-02-07
+<a name="l-126"></a><span class="tm">18:57:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> which is not far
+<a name="l-127"></a><span class="tm">18:58:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> deep freeze is starting in February
+<a name="l-128"></a><span class="tm">18:58:54</span><span class="nk"> &lt;LWFinger&gt;</span> Is 02-11 too soon after RC1?
+<a name="l-129"></a><span class="tm">18:58:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> so shall we have another meeting before RC1?
+<a name="l-130"></a><span class="tm">18:59:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> after RC1 only the most critical issues will be fixed
+<a name="l-131"></a><span class="tm">18:59:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> (or unimportant leaf packages)
+<a name="l-132"></a><span class="tm">19:00:09</span><span class="nk"> &lt;LWFinger&gt;</span> If we keep filing bugs, is another meeting useful?
+<a name="l-133"></a><span class="tm">19:00:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> hm. maybe not... if the important bugs get to the right people
+<a name="l-134"></a><span class="tm">19:01:14</span><span class="nk"> &lt;LWFinger&gt;</span> Is there a list of the "right" people?
+<a name="l-135"></a><span class="tm">19:02:01</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">LWFinger:</span> ask   osc maintainer   ;-)
+<a name="l-136"></a><span class="tm">19:02:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> there is maintainer information in OBS. I use http://aw.zq1.de/cgi-bin/public/opensusemaintainer/linuxrc
+<a name="l-137"></a><span class="tm">19:02:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> (just replace the last part with the source package name of your choice)
+<a name="l-138"></a><span class="tm">19:03:36</span><span class="nk"> &lt;LWFinger&gt;</span> Thanks for both suggestions.
+<a name="l-139"></a><span class="tm">19:05:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> so 2013-02-11 18:00 UTC for next meeting. OK?
+<a name="l-140"></a><span class="tm">19:05:23</span><span class="nk"> &lt;Holgi&gt;</span> would be fine with me
+<a name="l-141"></a><span class="tm">19:05:43</span><span class="nk"> &lt;LWFinger&gt;</span> OK here.
+<a name="l-142"></a><span class="tm">19:06:13</span><span class="nk"> &lt;poorboywilly&gt;</span> no objection
+<a name="l-143"></a><span class="tm">19:06:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">next meeting 2013-02-11 18:00 UTC</span>
+<a name="l-144"></a><span class="tm">19:06:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-145"></a><span class="tm">19:07:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> I'm still wondering if there is not a way to develop openSUSE without this kind of breakage in core components
+<a name="l-146"></a><span class="tm">19:08:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. projects like OpenStack require unit-tests and smoketests to succeed before any git commit is accepted
+<a name="l-147"></a><span class="tm">19:10:20</span><span class="nk"> &lt;LWFinger&gt;</span> The kernel changes require the approval of Linus and several senior devs, but is this possible with oS?
+<a name="l-148"></a><span class="tm">19:11:18</span><span class="nk"> &lt;cboltz&gt;</span> there's an easy trick, but it sounds funny ;-)
+<a name="l-149"></a><span class="tm">19:11:22</span><span class="nk"> &lt;poorboywilly&gt;</span> yeah I don't know that the project has the developer resources to have every change tested prior to inclusion
+<a name="l-150"></a><span class="tm">19:11:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> Linus admitted that he rarely reads code
+<a name="l-151"></a><span class="tm">19:11:38</span><span class="nk"> &lt;cboltz&gt;</span> usually the breakage is around beta1 because everybody submits the latest version before feature freeze
+<a name="l-152"></a><span class="tm">19:12:06</span><span class="nk"> &lt;cboltz&gt;</span> so just don't announce feature freeze in advance ;-)
+<a name="l-153"></a><span class="tm">19:12:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes. and bugfixes for issues that have been open for over a month
+<a name="l-154"></a><span class="tm">19:12:20</span><span class="nk"> &lt;cboltz&gt;</span> and reject late version updates more strictly
+<a name="l-155"></a><span class="tm">19:12:47</span><span class="nk"> &lt;LWFinger&gt;</span> Try to modify a key kernel component, and you soon learn that Linus does read code! Linus does not code much anymore.
+<a name="l-156"></a><span class="tm">19:13:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> so people should submit new versions prior to the first milestone... but wouldnt we then get all breakage there?
+<a name="l-157"></a><span class="tm">19:13:46</span><span class="nk"> &lt;poorboywilly&gt;</span> this is a common problem in many large projects, I think a solution is to break the development into several iterations
+<a name="l-158"></a><span class="tm">19:13:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> well. plenty of time to fix it then
+<a name="l-159"></a><span class="tm">19:13:53</span><span class="nk"> &lt;poorboywilly&gt;</span> instead of one big freeze
+<a name="l-160"></a><span class="tm">19:13:59</span><span class="nk"> &lt;poorboywilly&gt;</span> freeze 3, 4 times per release
+<a name="l-161"></a><span class="tm">19:14:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> we have tiny 3-day freezes prior of each milestone
+<a name="l-162"></a><span class="tm">19:14:31</span><span class="nk"> &lt;LWFinger&gt;</span> In the kernel, the feature freeze corresponds to the MS1 release - only bug fixes after that.
+<a name="l-163"></a><span class="tm">19:14:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> hardly enough to build
+<a name="l-164"></a><span class="tm">19:16:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> but if we freeze (core) openSUSE code before MS1, there needs to be a staging area where it is prepared...
+<a name="l-165"></a><span class="tm">19:16:16</span><span class="nk"> &lt;poorboywilly&gt;</span> two issues there, I don't think that's enough frozen (read: stabilization) time and perhaps there is still no incentive for people to put in features early
+<a name="l-166"></a><span class="tm">19:17:23</span><span class="nk"> &lt;poorboywilly&gt;</span> yes staging is a must,there is no way to stabalize something unless you control the changes coming in
+<a name="l-167"></a><span class="tm">19:18:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> of course we would get some breakage in the staging area then
+<a name="l-168"></a><span class="tm">19:18:38</span><span class="nk"> &lt;poorboywilly&gt;</span> what do you mean exactly?
+<a name="l-169"></a><span class="tm">19:19:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> just as happens today in Factory, there can be incompatible versions etc
+<a name="l-170"></a><span class="tm">19:19:44</span><span class="nk"> &lt;cboltz&gt;</span> I'm not sure if staging would help that much - basically we rename Factory to staging with that ;-)
+<a name="l-171"></a><span class="tm">19:20:10</span><span class="nk"> &lt;cboltz&gt;</span> (in other words: there will always be some breakage)
+<a name="l-172"></a><span class="tm">19:20:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">cboltz:</span> but what about the more stable Factory repo after the staging area
+<a name="l-173"></a><span class="tm">19:20:43</span><span class="nk"> &lt;poorboywilly&gt;</span> yes there will but it is nearly impossible to get stable software if you are trying to implement features and fix bugs at the same time
+<a name="l-174"></a><span class="tm">19:20:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> we dont have that today. and it might be useful
+<a name="l-175"></a><span class="tm">19:21:51</span><span class="nk"> &lt;cboltz&gt;</span> well, I'm not against trying it - it might catch some things before they hit factory
+<a name="l-176"></a><span class="tm">19:22:06</span><span class="nk"> &lt;cboltz&gt;</span> but it also adds some additional paperwork
+<a name="l-177"></a><span class="tm">19:22:49</span><span class="nk"> &lt;cboltz&gt;</span> (and we already have/had staging projects for some "big" changes)
+<a name="l-178"></a><span class="tm">19:23:29</span><span class="nk"> &lt;poorboywilly&gt;</span> well then, we need to evaluate those staging projects and determine if they helped or not
+<a name="l-179"></a><span class="tm">19:23:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> ... if there was a way to make it automated.
+<a name="l-180"></a><span class="tm">19:23:58</span><span class="nk"> &lt;cboltz&gt;</span> and, well, IMHO factory is even allowed to be broken sometimes - except in the time after beta1 ;-)
+<a name="l-181"></a><span class="tm">19:24:01</span><span class="nk"> &lt;poorboywilly&gt;</span> if they did, then create processes based on them for more
+<a name="l-182"></a><span class="tm">19:24:15</span><span class="nk"> &lt;poorboywilly&gt;</span> if not, find out why and figure out different ways to solve the problem
+<a name="l-183"></a><span class="tm">19:24:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">cboltz:</span> depends on the level of brokenness. e.g. zypper should never break
+<a name="l-184"></a><span class="tm">19:25:30</span><span class="nk"> &lt;poorboywilly&gt;</span> when is zypper allowed to be updated...any time?
+<a name="l-185"></a><span class="tm">19:25:41</span><span class="nk"> &lt;cboltz&gt;</span> if "break" just means "fails to build" without breaking something else, it doesn't hurt too much IMHO
+<a name="l-186"></a><span class="tm">19:25:43</span><span class="nk"> &lt;poorboywilly&gt;</span> and other stuff like the kernel, gcc, etc
+<a name="l-187"></a><span class="tm">19:26:04</span><span class="nk"> &lt;cboltz&gt;</span> gcc is a better example for something that shouldn't break ;-)
+<a name="l-188"></a><span class="tm">19:26:20</span><span class="nk"> &lt;cboltz&gt;</span> (and IIRC we already had staging projects for gcc updates)
+<a name="l-189"></a><span class="tm">19:26:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">cboltz:</span> no, I mean building but malfunctioning.
+<a name="l-190"></a><span class="tm">19:26:51</span><span class="nk"> &lt;cboltz&gt;</span> which brings us to the next question: who tests the packages in the staging project?
+<a name="l-191"></a><span class="tm">19:26:59</span><span class="nk"> &lt;cboltz&gt;</span> and with testing, I mean more than "it builds"
+<a name="l-192"></a><span class="tm">19:27:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> something like the openQA automatisms could
+<a name="l-193"></a><span class="tm">19:28:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> there is only a limited number of core packages (a lot of them in Base:System)
+<a name="l-194"></a><span class="tm">19:28:26</span><span class="nk"> &lt;poorboywilly&gt;</span> and then humans where that's not possible
+<a name="l-195"></a><span class="tm">19:28:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> and it could be worthwile to throw updates into a test area one-by-one
+<a name="l-196"></a><span class="tm">19:29:33</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">poorboywilly:</span> openQA will work, but I doubt many humans will test staging
+<a name="l-197"></a><span class="tm">19:29:45</span><span class="nk"> &lt;poorboywilly&gt;</span> yes...and I think at least the core packages should only be updated in waves...gather a series of updates, perform them, then work on high-level packages
+<a name="l-198"></a><span class="tm">19:30:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">cboltz:</span> that is OK. as long as the test results say, it is good, it does not need humand
+<a name="l-199"></a><span class="tm">19:30:36</span><span class="nk"> &lt;poorboywilly&gt;</span> well, my point is that openQA can't do everything.  Not yet at least :)
+<a name="l-200"></a><span class="tm">19:30:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> what things it can not do?
+<a name="l-201"></a><span class="tm">19:31:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> apart from ATI/NVidia driver testing...
+<a name="l-202"></a><span class="tm">19:31:33</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">bmwiedemann:</span> it can't do things users do "accidently"
+<a name="l-203"></a><span class="tm">19:31:50</span><span class="nk"> &lt;cboltz&gt;</span> well, it could, but nobody would ever come up with the idea to write such crazy testcases
+<a name="l-204"></a><span class="tm">19:32:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> I could insert random keystrokes ;-)
+<a name="l-205"></a><span class="tm">19:32:21</span><span class="nk"> &lt;poorboywilly&gt;</span> can it test mouse interaction?
+<a name="l-206"></a><span class="tm">19:32:29</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">bmwiedemann:</span> sounds like a good start ;-)
+<a name="l-207"></a><span class="tm">19:32:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> mouse is not so easy
+<a name="l-208"></a><span class="tm">19:32:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> but in principle, it could
+<a name="l-209"></a><span class="tm">19:34:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> the point of openQA is not, that it gives proof of bugfreeness. That is very hard in computer science. The point is to show that it can work.
+<a name="l-210"></a><span class="tm">19:34:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> so there is at least one non-broken path though the maze
+<a name="l-211"></a><span class="tm">19:35:08</span><span class="nk"> &lt;poorboywilly&gt;</span> right, which is the perfect place to start when testing new integrations of components
+<a name="l-212"></a><span class="tm">19:35:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> if Factory received less breakage, chances are, that more humans looked at it
+<a name="l-213"></a><span class="tm">19:36:05</span><span class="nk"> &lt;poorboywilly&gt;</span> and more humans is good right?
+<a name="l-214"></a><span class="tm">19:36:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes :-)
+<a name="l-215"></a><span class="tm">19:36:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> more users = more testers
+<a name="l-216"></a><span class="tm">19:36:28</span><span class="nk"> &lt;poorboywilly&gt;</span> so there is definitely motive for less breakage in Factory
+<a name="l-217"></a><span class="tm">19:37:27</span><span class="nk"> &lt;poorboywilly&gt;</span> we need 1) processes to get less breakage 2) analysis of the results 3) refining the process with data from 2
+<a name="l-218"></a><span class="tm">19:37:55</span><span class="nk"> &lt;poorboywilly&gt;</span> I think staging changes for basic go/no go type testing is certainly one likely way to help it
+<a name="l-219"></a><span class="tm">19:38:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> currently we have mandatory reviews and factory-auto checks from coolo
+<a name="l-220"></a><span class="tm">19:38:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> which tests that packages build
+<a name="l-221"></a><span class="tm">19:39:03</span><span class="nk"> &lt;poorboywilly&gt;</span> obviously a good thing!  we also agree that simple "it builds" doesn't necessarily mean it is not broken
+<a name="l-222"></a><span class="tm">19:39:25</span><span class="nk"> &lt;poorboywilly&gt;</span> so the missing link seems to be we must determine if it is reasonable to imagine this isn't broken
+<a name="l-223"></a><span class="tm">19:40:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> some core parts of openSUSE just can not be unit-tested. it needs system/integration-tests like openQA which is slower
+<a name="l-224"></a><span class="tm">19:41:58</span><span class="nk"> &lt;poorboywilly&gt;</span> so how can we do that with the resources we have?
+<a name="l-225"></a><span class="tm">19:44:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> not sure. maybe I'll have a chat with coolo about it and/or try to sum up the idea on the factory ML.
+<a name="l-226"></a><span class="tm">19:44:53</span><span class="nk"> &lt;poorboywilly&gt;</span> I don't think we can do it continuously, but in batches certainly seems reasonable
+<a name="l-227"></a><span class="tm">19:47:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> our current openQA machine can run approx 3 tests in parallel and one test typically takes an hour (because it is a full graphical install with extra tests)
+<a name="l-228"></a><span class="tm">19:48:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> so it could be possible to test updates to core packages, which should be less than 40/day
+<a name="l-229"></a><span class="tm">19:50:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> anyway... it is getting late
+<a name="l-230"></a><span class="tm">19:50:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> so let's close today's meeting
+<a name="l-231"></a><span class="tm">19:51:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-232"></a><span class="tm">19:51:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

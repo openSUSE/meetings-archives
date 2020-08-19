@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:01:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:01:51</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Aug 15 17:01:51 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:01:51</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:02:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">17:02:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-6"></a><span class="tm">17:02:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-7"></a><span class="tm">17:02:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">MS4 experience - if available</span>
+<a name="l-8"></a><span class="tm">17:03:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> actually, there is currently no real MS4 available
+<a name="l-9"></a><span class="tm">17:04:30</span><span class="nk"> &lt;LWFinger&gt;</span> I came as close as possible - I think.
+<a name="l-10"></a><span class="tm">17:04:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> so we could at most discuss the current state of factory and if/when that is suitable to snapshot for Open-Bugs-Day use
+<a name="l-11"></a><span class="tm">17:05:11</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-12"></a><span class="tm">17:05:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> openQA results show problems with all NET installs segfaulting in yast2 during second stage autoconfiguration. not so nice. but DVDs work.
+<a name="l-13"></a><span class="tm">17:06:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> and the latest KDE/KWin still has some problems
+<a name="l-14"></a><span class="tm">17:07:26</span><span class="nk"> &lt;Holgi&gt;</span> hi
+<a name="l-15"></a><span class="tm">17:07:58</span><span class="nk"> &lt;LWFinger&gt;</span> I installed KDE Live CD Build 0186 and zypper dup'd from factory up to today. It seems OK, but not much testing.
+<a name="l-16"></a><span class="tm">17:08:07</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">Holgi:</span> Hi
+<a name="l-17"></a><span class="tm">17:08:35</span><span class="nk"> &lt;LWFinger&gt;</span> I'm using a VB VM.
+<a name="l-18"></a><span class="tm">17:09:24</span><span class="nk"> &lt;LWFinger&gt;</span> At a minimum, the NetworkManager applet works, even with wireless.
+<a name="l-19"></a><span class="tm">17:10:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">btw:</span> I added code to openQA to test sound - dheidler made that concept+code and I finally fixed+merged it.
+<a name="l-20"></a><span class="tm">17:10:11</span><span class="nk"> &lt;LWFinger&gt;</span> It has some policy problems and asks for a password as often as Windows 7, but if functions.
+<a name="l-21"></a><span class="tm">17:11:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, the policykit defaults need some review. there were funny popups on entering the root PW to query background brightness
+<a name="l-22"></a><span class="tm">17:11:58</span><span class="nk"> &lt;bughunter88&gt;</span> hi everybody
+<a name="l-23"></a><span class="tm">17:12:41</span><span class="nk"> &lt;LWFinger&gt;</span> I like that bughunter nickname.
+<a name="l-24"></a><span class="tm">17:12:59</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> I know that problem from 3G connections with 11.3
+<a name="l-25"></a><span class="tm">17:13:16</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> get asked for PIN &amp; root-pw
+<a name="l-26"></a><span class="tm">17:13:43</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> several times - is it like this?
+<a name="l-27"></a><span class="tm">17:13:45</span><span class="nk"> &lt;jradzuweit&gt;</span> I too, its me ;) @ LWFinger
+<a name="l-28"></a><span class="tm">17:14:07</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">Holgi:</span> I don't use 3G stuff as I have no hardware. My testing is with normal 802.11a/b/g/n.
+<a name="l-29"></a><span class="tm">17:14:25</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> ok, but is it the same behavior?
+<a name="l-30"></a><span class="tm">17:15:24</span><span class="nk"> &lt;LWFinger&gt;</span> No. It keeps asking for the root password as "policy prevents user action".
+<a name="l-31"></a><span class="tm">17:15:36</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> ok
+<a name="l-32"></a><span class="tm">17:16:00</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> my problem cause is also policy kit
+<a name="l-33"></a><span class="tm">17:16:34</span><span class="nk"> &lt;LWFinger&gt;</span> I still need to put together the info for a proper bug report for my problem. Have you filed one?
+<a name="l-34"></a><span class="tm">17:17:30</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> no mine is for 11.3
+<a name="l-35"></a><span class="tm">17:17:46</span><span class="nk"> &lt;LWFinger&gt;</span> Is it OK in 11.4?
+<a name="l-36"></a><span class="tm">17:18:06</span><span class="nk"> &lt;Holgi&gt;</span> sorry, I ment 11.4
+<a name="l-37"></a><span class="tm">17:18:50</span><span class="nk"> &lt;LWFinger&gt;</span> For 802.11 stuff, the policies are OK in 11.4. It just broke in 12.1.
+<a name="l-38"></a><span class="tm">17:19:09</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> ok
+<a name="l-39"></a><span class="tm">17:22:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> so do we have any opinion if current factory is suitable for testing or what needs fixing urgently?
+<a name="l-40"></a><span class="tm">17:22:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe we should delay Open-Bugs-Day to happen after a real milestone release?
+<a name="l-41"></a><span class="tm">17:22:48</span><span class="nk"> &lt;LWFinger&gt;</span> I think it is OK.
+<a name="l-42"></a><span class="tm">17:23:59</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> what prevents coolo from releasing M4?
+<a name="l-43"></a><span class="tm">17:24:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> absense :D
+<a name="l-44"></a><span class="tm">17:24:40</span><span class="nk"> &lt;LWFinger&gt;</span> Having a real release would make it easier for the non-techies as you said before the meeting started.
+<a name="l-45"></a><span class="tm">17:26:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> the alternative would be to target more techy people (who know how to unbreak their system)
+<a name="l-46"></a><span class="tm">17:26:14</span><span class="nk"> &lt;Holgi&gt;</span> I agree - we should have a release
+<a name="l-47"></a><span class="tm">17:27:24</span><span class="nk"> &lt;LWFinger&gt;</span> Delaying for M5 would put our two OBD's within 3 weeks of one another. Is that wise?
+<a name="l-48"></a><span class="tm">17:27:58</span><span class="nk"> &lt;jradzuweit&gt;</span> no, not really
+<a name="l-49"></a><span class="tm">17:28:24</span><span class="nk"> &lt;Holgi&gt;</span> no
+<a name="l-50"></a><span class="tm">17:28:39</span><span class="nk"> &lt;LWFinger&gt;</span> Should we combine them? They have quite different purposes.
+<a name="l-51"></a><span class="tm">17:29:48</span><span class="nk"> &lt;Holgi&gt;</span> bad thing is
+<a name="l-52"></a><span class="tm">17:30:09</span><span class="nk"> &lt;Holgi&gt;</span> next OBD is already announced, right?
+<a name="l-53"></a><span class="tm">17:30:33</span><span class="nk"> &lt;LWFinger&gt;</span> Yes, but it could be delayed or cancelled.
+<a name="l-54"></a><span class="tm">17:31:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> of course, I could also setup a number of prepared VMs again, so that people have an easier time
+<a name="l-55"></a><span class="tm">17:31:09</span><span class="nk"> &lt;Holgi&gt;</span> what do the others think?
+<a name="l-56"></a><span class="tm">17:31:29</span><span class="nk"> &lt;jradzuweit&gt;</span> I would do it
+<a name="l-57"></a><span class="tm">17:31:45</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> using a factory build?
+<a name="l-58"></a><span class="tm">17:31:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Holgi:</span> yes.
+<a name="l-59"></a><span class="tm">17:32:05</span><span class="nk"> &lt;Holgi&gt;</span> ok
+<a name="l-60"></a><span class="tm">17:33:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Open-Bugs-Day</span>
+<a name="l-61"></a><span class="tm">17:33:32</span><span class="nk"> &lt;LWFinger&gt;</span> I would really like to see what 11.4 bugs are still present. But to get a consistent base, we do need to supply detailed instructions.
+<a name="l-62"></a><span class="tm">17:35:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> I can snapshot factory to my own server that has sufficient space+bandwidth. and maybe even have prepared VM-images for download so that different people can try the very same software
+<a name="l-63"></a><span class="tm">17:36:15</span><span class="nk"> &lt;LWFinger&gt;</span> That sounds good. Would the prepared images include those for VirtualBox?
+<a name="l-64"></a><span class="tm">17:36:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> it can run .vmdk files from VMware, right? and KVM can do that, too
+<a name="l-65"></a><span class="tm">17:37:16</span><span class="nk"> &lt;LWFinger&gt;</span> I don't know, but I can test that.
+<a name="l-66"></a><span class="tm">17:38:09</span><span class="nk"> &lt;Holgi&gt;</span> #
+<a name="l-67"></a><span class="tm">17:39:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> are there a lot of gnome/kde specific bugs or could I just prepare one image?
+<a name="l-68"></a><span class="tm">17:39:33</span><span class="nk"> &lt;jradzuweit&gt;</span> should we focus on s specific topic?
+<a name="l-69"></a><span class="tm">17:40:19</span><span class="nk"> &lt;jradzuweit&gt;</span> we can focus on kde now and next time on gnome?
+<a name="l-70"></a><span class="tm">17:40:23</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> I suspect so, and we should have both.
+<a name="l-71"></a><span class="tm">17:41:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK
+<a name="l-72"></a><span class="tm">17:42:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> if I read numbers correctly, there are around 1500 bugs for 11.4 with 1086 in NEW state, 160 NEEDINFO and 78 REOPENED
+<a name="l-73"></a><span class="tm">17:43:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> appears like a rather big number, so some focus could indeed be helpful
+<a name="l-74"></a><span class="tm">17:44:20</span><span class="nk"> &lt;jradzuweit&gt;</span> I have a total of 1324 ( incl the reopen)
+<a name="l-75"></a><span class="tm">17:44:20</span><span class="nk"> &lt;Holgi&gt;</span> agree
+<a name="l-76"></a><span class="tm">17:45:04</span><span class="nk"> &lt;LWFinger&gt;</span> How do we decide which are important?
+<a name="l-77"></a><span class="tm">17:45:30</span><span class="nk"> &lt;jradzuweit&gt;</span> Severity + Priority
+<a name="l-78"></a><span class="tm">17:46:22</span><span class="nk"> &lt;jradzuweit&gt;</span> or State NEEDINFO?
+<a name="l-79"></a><span class="tm">17:46:23</span><span class="nk"> &lt;LWFinger&gt;</span> That assumes those are set correctly. If we cut off at some level, how many are left?
+<a name="l-80"></a><span class="tm">17:46:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> around half of the bugs are marked Critical or Major
+<a name="l-81"></a><span class="tm">17:47:18</span><span class="nk"> &lt;LWFinger&gt;</span> That helps a bit.
+<a name="l-82"></a><span class="tm">17:47:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> but priority is set to P5 on quite many
+<a name="l-83"></a><span class="tm">17:48:11</span><span class="nk"> &lt;LWFinger&gt;</span> The poster frequently overstates the importance. It is affecting THEIR system.
+<a name="l-84"></a><span class="tm">17:48:38</span><span class="nk"> &lt;jradzuweit&gt;</span> then  priority is not very useful
+<a name="l-85"></a><span class="tm">17:49:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> actually, Priority is intended to be set by the developer or the project leads (coolo,AJ)
+<a name="l-86"></a><span class="tm">17:49:37</span><span class="nk"> &lt;LWFinger&gt;</span> If it was posted as Critical or Major, and it has not been downgraded, then we should look at it.
+<a name="l-87"></a><span class="tm">17:49:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> and P5 = None is just the default value
+<a name="l-88"></a><span class="tm">17:51:16</span><span class="nk"> &lt;LWFinger&gt;</span> Actually, does it matter how many bugs are in the pool? The tool is only going to present a few at a time.
+<a name="l-89"></a><span class="tm">17:51:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> as long as it presents the more important ones earlier, it does not make much difference
+<a name="l-90"></a><span class="tm">17:52:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> only that it can feel better to solve 400 of 500... instead of 400 of 1400
+<a name="l-91"></a><span class="tm">17:52:44</span><span class="nk"> &lt;jradzuweit&gt;</span> doing state=NEEDINFO first and than reopen, new etc?
+<a name="l-92"></a><span class="tm">17:53:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> I would skip the ASSIGNED ones as someone could be working on it
+<a name="l-93"></a><span class="tm">17:53:47</span><span class="nk"> &lt;jradzuweit&gt;</span> agree
+<a name="l-94"></a><span class="tm">17:57:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> so I would pull e.g. 1325 bugs from https://bugzilla.novell.com/buglist.cgi?action=wrap&amp;bug_file_loc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_id=&amp;bugidtype=include&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;classification=openSUSE&amp;deadlinefrom=&amp;deadlineto=&amp;email1=&amp;email2=&amp;emailassigned_to1=1&amp;emailassigned_to2=1&amp;emailcc2=1&amp;emailqa_contact2=1&amp;emailreporter2=1&amp;emailtype1=substring&amp;emailtype2=substring&amp;field0-0-0=noop&amp;keywords=&amp;keywords
+<a name="l-95"></a><span class="tm">17:57:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> sorted by severity
+<a name="l-96"></a><span class="tm">17:58:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> that should work
+<a name="l-97"></a><span class="tm">17:58:59</span><span class="nk"> &lt;jradzuweit&gt;</span> still a lot
+<a name="l-98"></a><span class="tm">17:59:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Holgi:</span> if we find that a bug is still in Factory - what do we do with it?
+<a name="l-99"></a><span class="tm">18:00:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> just adding a comment would not make it searchable
+<a name="l-100"></a><span class="tm">18:00:21</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> I would change product to latest
+<a name="l-101"></a><span class="tm">18:00:30</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> but you can clone it
+<a name="l-102"></a><span class="tm">18:00:46</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> and just add comment: "still in version 12.1"
+<a name="l-103"></a><span class="tm">18:01:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> 12.1-MS4?
+<a name="l-104"></a><span class="tm">18:01:18</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> yes
+<a name="l-105"></a><span class="tm">18:01:42</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> but I'm not sure about "official" way
+<a name="l-106"></a><span class="tm">18:02:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Holgi:</span> then who would?
+<a name="l-107"></a><span class="tm">18:02:22</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> most important: increase priority: description - also in new product
+<a name="l-108"></a><span class="tm">18:02:38</span><span class="nk"> &lt;jradzuweit&gt;</span> how to clone @Holgi?
+<a name="l-109"></a><span class="tm">18:03:02</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> who would know? dokomentation
+<a name="l-110"></a><span class="tm">18:03:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> there is a "Clone this bug" link on bottom right
+<a name="l-111"></a><span class="tm">18:04:32</span><span class="nk"> &lt;jradzuweit&gt;</span> this is very, very small ;)
+<a name="l-112"></a><span class="tm">18:05:23</span><span class="nk"> &lt;jradzuweit&gt;</span> I think cloning is better tahn putting some text into the original
+<a name="l-113"></a><span class="tm">18:05:42</span><span class="nk"> &lt;LWFinger&gt;</span> Agreed.
+<a name="l-114"></a><span class="tm">18:05:59</span><span class="nk"> &lt;Holgi&gt;</span> in any case: increase prio
+<a name="l-115"></a><span class="tm">18:06:23</span><span class="nk"> &lt;jradzuweit&gt;</span> ok, should I put this on the wiki?
+<a name="l-116"></a><span class="tm">18:06:48</span><span class="nk"> &lt;Holgi&gt;</span> probably not since I don't know the official way
+<a name="l-117"></a><span class="tm">18:06:56</span><span class="nk"> &lt;jradzuweit&gt;</span> ok
+<a name="l-118"></a><span class="tm">18:09:27</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> As soon as possible, I would like to have a download location for a virtual image. For publicity, I will also need the URL for the snapshots.
+<a name="l-119"></a><span class="tm">18:09:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK
+<a name="l-120"></a><span class="tm">18:10:23</span><span class="nk"> &lt;LWFinger&gt;</span> You should probably Email those as we may not want that info in the public record now.
+<a name="l-121"></a><span class="tm">18:11:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK
+<a name="l-122"></a><span class="tm">18:14:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> anything else for today?
+<a name="l-123"></a><span class="tm">18:15:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">bmwiedemann will prepare VM images for OBD and mail the location to LWFinger</span>
+<a name="l-124"></a><span class="tm">18:16:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-125"></a><span class="tm">18:16:49</span><span class="nk"> &lt;LWFinger&gt;</span> I will prepare the revised announcement message for OBD and send to the testing ML for comments.
+<a name="l-126"></a><span class="tm">18:17:55</span><span class="nk"> &lt;jradzuweit&gt;</span> any plans for OSC? @Holgi
+<a name="l-127"></a><span class="tm">18:18:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> there will be a testing BoF
+<a name="l-128"></a><span class="tm">18:19:07</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">jradzuweit:</span> I will be there
+<a name="l-129"></a><span class="tm">18:19:16</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">jradzuweit:</span> but don't have a talk
+<a name="l-130"></a><span class="tm">18:19:28</span><span class="nk"> &lt;jradzuweit&gt;</span> I will be  there, too
+<a name="l-131"></a><span class="tm">18:19:42</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">jradzuweit:</span> so it's again the three of us?
+<a name="l-132"></a><span class="tm">18:19:59</span><span class="nk"> &lt;jradzuweit&gt;</span> yes
+<a name="l-133"></a><span class="tm">18:20:32</span><span class="nk"> &lt;Holgi&gt;</span> ok
+<a name="l-134"></a><span class="tm">18:20:55</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> submitted a talk about openqa
+<a name="l-135"></a><span class="tm">18:21:13</span><span class="nk"> &lt;Holgi&gt;</span> bmwiedemann submitted a talk about openqa
+<a name="l-136"></a><span class="tm">18:21:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> titled "one year of openQA"
+<a name="l-137"></a><span class="tm">18:22:04</span><span class="nk"> &lt;jradzuweit&gt;</span> when?
+<a name="l-138"></a><span class="tm">18:22:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> some input of you would be nice.  Did it matter for you? what most?
+<a name="l-139"></a><span class="tm">18:23:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, there is no schedule, yet.
+<a name="l-140"></a><span class="tm">18:23:17</span><span class="nk"> &lt;jradzuweit&gt;</span> non seen yet
+<a name="l-141"></a><span class="tm">18:23:27</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> I guess your best customer: release manager
+<a name="l-142"></a><span class="tm">18:24:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> sure. but openQA.opensuse.org is also for the community.
+<a name="l-143"></a><span class="tm">18:24:57</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> sure
+<a name="l-144"></a><span class="tm">18:25:17</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> for me it's always a good source to check if I should install a build or not
+<a name="l-145"></a><span class="tm">18:25:29</span><span class="nk"> &lt;LWFinger&gt;</span> I do the same.
+<a name="l-146"></a><span class="tm">18:25:59</span><span class="nk"> &lt;jradzuweit&gt;</span> me too
+<a name="l-147"></a><span class="tm">18:26:29</span><span class="nk"> &lt;LWFinger&gt;</span> It is also a quick check on what is failing to build. It may not say why, but it gives an overview.
+<a name="l-148"></a><span class="tm">18:29:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> nice :)
+<a name="l-149"></a><span class="tm">18:31:24</span><span class="nk"> &lt;jradzuweit&gt;</span> Has anybody info about this Beta thing?
+<a name="l-150"></a><span class="tm">18:31:39</span><span class="nk"> &lt;jradzuweit&gt;</span> means MS6=BETA?
+<a name="l-151"></a><span class="tm">18:31:57</span><span class="nk"> &lt;LWFinger&gt;</span> Coolo has agreed to do it.
+<a name="l-152"></a><span class="tm">18:32:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes. coolo renamed it on his roadmap
+<a name="l-153"></a><span class="tm">18:32:25</span><span class="nk"> &lt;jradzuweit&gt;</span> :), so weget lots lots of new testers than?
+<a name="l-154"></a><span class="tm">18:32:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> and I updated the wiki accordingly
+<a name="l-155"></a><span class="tm">18:32:45 </span><span class="nka">* iznogood</span> <span class="ac">thinks that was a pointless change, but we'll see if it changes the number of testers</span>
+<a name="l-156"></a><span class="tm">18:33:17</span><span class="nk"> &lt;LWFinger&gt;</span> The main problem will be documenting what happened.
+<a name="l-157"></a><span class="tm">18:33:44</span><span class="nk"> &lt;Holgi&gt;</span> I think we should be happy about our request was successful!
+<a name="l-158"></a><span class="tm">18:34:47</span><span class="nk"> &lt;LWFinger&gt;</span> As I have never met coolo, I probably don't quite unerstand that comment, but I can guess.
+<a name="l-159"></a><span class="tm">18:34:48</span><span class="nk"> &lt;jradzuweit&gt;</span> yes
+<a name="l-160"></a><span class="tm">18:37:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> I guess, we are done for today then
+<a name="l-161"></a><span class="tm">18:37:35</span><span class="nk"> &lt;LWFinger&gt;</span> I think so. Next meeting?
+<a name="l-162"></a><span class="tm">18:39:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> probably around MS5  (if we do not count Open-Bugs-Day)
+<a name="l-163"></a><span class="tm">18:39:58</span><span class="nk"> &lt;jradzuweit&gt;</span> on OSC?
+<a name="l-164"></a><span class="tm">18:40:08</span><span class="nk"> &lt;jradzuweit&gt;</span> would be 12.9.
+<a name="l-165"></a><span class="tm">18:40:31</span><span class="nk"> &lt;LWFinger&gt;</span> Sep. 5 would be the likely date if MS5 is on time, but that is a holiday in the US. I might not be available.
+<a name="l-166"></a><span class="tm">18:41:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> we can still use different days than Mondays
+<a name="l-167"></a><span class="tm">18:41:23</span><span class="nk"> &lt;LWFinger&gt;</span> The 12th is better for me.
+<a name="l-168"></a><span class="tm">18:41:44</span><span class="nk"> &lt;LWFinger&gt;</span> Other days are OK, too.
+<a name="l-169"></a><span class="tm">18:42:33</span><span class="nk"> &lt;jradzuweit&gt;</span> I can arrange for other days too
+<a name="l-170"></a><span class="tm">18:44:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> so 2011-09-12 17:00 UTC?
+<a name="l-171"></a><span class="tm">18:44:51</span><span class="nk"> &lt;Holgi&gt;</span> I would stick with Mondays, everybody of us is available
+<a name="l-172"></a><span class="tm">18:45:07</span><span class="nk"> &lt;jradzuweit&gt;</span> agree
+<a name="l-173"></a><span class="tm">18:45:32</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-174"></a><span class="tm">18:46:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> very well. then thank you for attending our meeting today
+<a name="l-175"></a><span class="tm">18:46:32</span><span class="nk"> &lt;jradzuweit&gt;</span> good night
+<a name="l-176"></a><span class="tm">18:46:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-177"></a><span class="tm">18:46:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

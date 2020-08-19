@@ -1,0 +1,520 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">16:09:47</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">16:09:47</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Aug 19 16:09:47 2010 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">16:09:47</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">16:09:52</span><span class="nk"> &lt;llunak&gt;</span> I'm still on vacation today, that makes me the same like the rest of the crowd
+<a name="l-5"></a><span class="tm">16:09:59</span><span class="nk"> &lt;wstephenson&gt;</span> brave man ;)
+<a name="l-6"></a><span class="tm">16:10:16</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">agenda</span>
+<a name="l-7"></a><span class="tm">16:10:27</span><span class="nk"> &lt;kmi&gt;</span> the kde3 stuff
+<a name="l-8"></a><span class="tm">16:10:31</span><span class="nk"> &lt;llunak&gt;</span> I think you understood it the wrong way around, but whatever
+<a name="l-9"></a><span class="tm">16:10:40</span><span class="nk"> &lt;wstephenson&gt;</span> * keep kdebase3 etc for 11.4? what's left depending on kdelibs/base3
+<a name="l-10"></a><span class="tm">16:10:46</span><span class="nk"> &lt;wstephenson&gt;</span> * old items
+<a name="l-11"></a><span class="tm">16:10:50</span><span class="nk"> &lt;wstephenson&gt;</span> * status report
+<a name="l-12"></a><span class="tm">16:10:57</span><span class="nk"> &lt;wstephenson&gt;</span> * Stop fixing KDE3 packages/repos since it is perceived as maintaining,
+<a name="l-13"></a><span class="tm">16:11:04</span><span class="nk"> &lt;wstephenson&gt;</span> * Discuss openSUSE:KDE ideas 11.4
+<a name="l-14"></a><span class="tm">16:11:09</span><span class="nk"> &lt;wstephenson&gt;</span> * KDE:45 SC repo
+<a name="l-15"></a><span class="tm">16:11:19</span><span class="nk"> &lt;wstephenson&gt;</span> * KDE Four Reloaded call for testing/feedback
+<a name="l-16"></a><span class="tm">16:11:27</span><span class="nk"> &lt;wstephenson&gt;</span> * Q&amp;A, misc
+<a name="l-17"></a><span class="tm">16:11:32</span><span class="nk"> &lt;wstephenson&gt;</span> any other agenda items?
+<a name="l-18"></a><span class="tm">16:11:50</span><span class="nk"> &lt;kmi&gt;</span> i added "package new kde apps for dummies"
+<a name="l-19"></a><span class="tm">16:11:54</span><span class="nk"> &lt;kmi&gt;</span> to the wiki
+<a name="l-20"></a><span class="tm">16:12:10</span><span class="nk"> &lt;tigerfoot&gt;</span> kmi : link ?
+<a name="l-21"></a><span class="tm">16:12:10</span><span class="nk"> &lt;wstephenson&gt;</span> * Create a “Package new KDE apps” for dummies tutorial (kmi)
+<a name="l-22"></a><span class="tm">16:12:11</span><span class="nk"> &lt;kmi&gt;</span> if thats ok
+<a name="l-23"></a><span class="tm">16:12:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tigerfoot:</span> http://en.opensuse.org/openSUSE:KDE_Meetings
+<a name="l-24"></a><span class="tm">16:12:22</span><span class="nk"> &lt;wstephenson&gt;</span> so
+<a name="l-25"></a><span class="tm">16:12:24</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">kmi:</span> http://kde-apps.org/content/show.php/kde-obs-generator?content=121094
+<a name="l-26"></a><span class="tm">16:12:34</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">old action items</span>
+<a name="l-27"></a><span class="tm">16:13:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#chair </span><span class="cmdline">wstephenson</span>
+<a name="l-28"></a><span class="tm">16:13:09</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: wstephenson
+<a name="l-29"></a><span class="tm">16:13:12</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">old action items</span>
+<a name="l-30"></a><span class="tm">16:13:23</span><span class="nk"> &lt;wstephenson&gt;</span> bah
+<a name="l-31"></a><span class="tm">16:13:37</span><span class="nk"> &lt;kmi&gt;</span> bug triage results?
+<a name="l-32"></a><span class="tm">16:13:44</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">old action items</span>
+<a name="l-33"></a><span class="tm">16:13:56</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> what? the topic not changing? the bugbot needs admin, but I think it's better if the topic is actually kept intact
+<a name="l-34"></a><span class="tm">16:14:00</span><span class="nk"> &lt;wstephenson&gt;</span> * cb400f will announce the call for adoption of orphaned packages
+<a name="l-35"></a><span class="tm">16:14:10</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> i will change it manually then
+<a name="l-36"></a><span class="tm">16:14:46</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f_:</span> done, i think
+<a name="l-37"></a><span class="tm">16:14:58</span><span class="nk"> &lt;wstephenson&gt;</span> * javier_: Announce bug triage 13th-16th of August - done
+<a name="l-38"></a><span class="tm">16:15:04</span><span class="nk"> &lt;wstephenson&gt;</span> * llunak update meeting howto (meetbot, etc.)
+<a name="l-39"></a><span class="tm">16:15:09</span><span class="nk"> &lt;llunak&gt;</span> not done yet
+<a name="l-40"></a><span class="tm">16:15:12</span><span class="nk"> &lt;wstephenson&gt;</span> * llunak lead discussion about KDE:45 repo on opensuse-kde list
+<a name="l-41"></a><span class="tm">16:15:18</span><span class="nk"> &lt;wstephenson&gt;</span> we started that in your absence
+<a name="l-42"></a><span class="tm">16:15:22</span><span class="nk"> &lt;llunak&gt;</span> ok
+<a name="l-43"></a><span class="tm">16:15:27</span><span class="nk"> &lt;wstephenson&gt;</span> * remur_030 read llunak's mail on -project about what a strategy is about
+<a name="l-44"></a><span class="tm">16:15:45</span><span class="nk"> &lt;wstephenson&gt;</span> not here
+<a name="l-45"></a><span class="tm">16:15:59</span><span class="nk"> &lt;wstephenson&gt;</span> * wstephenson will send to the list the changes made on kde-four-live
+<a name="l-46"></a><span class="tm">16:16:11</span><span class="nk"> &lt;wstephenson&gt;</span> not done, but sort of worked around by direct communication
+<a name="l-47"></a><span class="tm">16:16:36</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">TOPIC:</span> status reports
+<a name="l-48"></a><span class="tm">16:16:43</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> nice caveats.odt :-)
+<a name="l-49"></a><span class="tm">16:16:54 </span><span class="nka">* wstephenson</span> <span class="ac">starts</span>
+<a name="l-50"></a><span class="tm">16:17:35</span><span class="nk"> &lt;wstephenson&gt;</span> so kde-four-live is out for a week
+<a name="l-51"></a><span class="tm">16:17:42</span><span class="nk"> &lt;wstephenson&gt;</span> and this little other thing called 4.5.0
+<a name="l-52"></a><span class="tm">16:18:02</span><span class="nk"> &lt;wstephenson&gt;</span> mostly i have been fixing akonadi and nepomuk bugs from top to bottom
+<a name="l-53"></a><span class="tm">16:18:11</span><span class="nk"> &lt;kmi&gt;</span> \o/
+<a name="l-54"></a><span class="tm">16:18:22</span><span class="nk"> &lt;wstephenson&gt;</span> preparing the online update for 4.4.4
+<a name="l-55"></a><span class="tm">16:18:33</span><span class="nk"> &lt;wstephenson&gt;</span> i think it works ootb with that update
+<a name="l-56"></a><span class="tm">16:18:40 </span><span class="nka">* tigerfoot</span> <span class="ac">congrats wstephenson ... (o) (°)</span>
+<a name="l-57"></a><span class="tm">16:18:58</span><span class="nk"> &lt;wstephenson&gt;</span> also some community things, helping alin get started with image building, hanging out here, fighting stupid on the lists.
+<a name="l-58"></a><span class="tm">16:19:02</span><span class="nk"> &lt;wstephenson&gt;</span> who's next?
+<a name="l-59"></a><span class="tm">16:19:57</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> how did the bug traiage go?
+<a name="l-60"></a><span class="tm">16:19:58</span><span class="nk"> &lt;kmi&gt;</span> releases k3b 2.0.1 a few days ago
+<a name="l-61"></a><span class="tm">16:20:08</span><span class="nk"> &lt;wstephenson&gt;</span> saw that, good work
+<a name="l-62"></a><span class="tm">16:20:17</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> well, we closed some bugs
+<a name="l-63"></a><span class="tm">16:20:35</span><span class="nk"> &lt;javier_&gt;</span> and i even built kdelibs4-apidocs (wishlist)
+<a name="l-64"></a><span class="tm">16:20:37 </span><span class="nka">* wstephenson</span> <span class="ac">closed a lot of pim bugs</span>
+<a name="l-65"></a><span class="tm">16:21:14</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> fancy doing a quick report about it?
+<a name="l-66"></a><span class="tm">16:21:26</span><span class="nk"> &lt;wstephenson&gt;</span> i saw a lot of action from ctrippe and stephen dunn
+<a name="l-67"></a><span class="tm">16:21:59</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> ok, i'll send a message to -kde to gather info about the kde bug triage
+<a name="l-68"></a><span class="tm">16:22:16</span><span class="nk"> &lt;wstephenson&gt;</span> just a short blog with who was active and how many bugs were closed. you can use bugzilla to get the numbers.
+<a name="l-69"></a><span class="tm">16:22:27</span><span class="nk"> &lt;anaumov&gt;</span> and what's about that? https://bugzilla.novell.com/show_bug.cgi?id=632216
+<a name="l-70"></a><span class="tm">16:22:30</span><span class="nk"> &lt;javier_&gt;</span> ok
+<a name="l-71"></a><span class="tm">16:22:30</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 632216 in openSUSE 11.3 (KDE4 Workspace) "unable to start KDE, graphical login always fails" [Critical,Resolved: invalid]
+<a name="l-72"></a><span class="tm">16:22:56</span><span class="nk"> &lt;wstephenson&gt;</span> rabauke blogged thoroughly :)
+<a name="l-73"></a><span class="tm">16:23:08</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> holiday report?
+<a name="l-74"></a><span class="tm">16:23:19</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> the vacation was nice, thank you
+<a name="l-75"></a><span class="tm">16:23:21</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">anaumov:</span> resolved invalid, no need to discuss
+<a name="l-76"></a><span class="tm">16:23:33</span><span class="nk"> &lt;rabauke&gt;</span> did I?
+<a name="l-77"></a><span class="tm">16:23:35</span><span class="nk"> &lt;rabauke&gt;</span> :)
+<a name="l-78"></a><span class="tm">16:23:58</span><span class="nk"> &lt;anaumov&gt;</span> llunak, ;)
+<a name="l-79"></a><span class="tm">16:24:03</span><span class="nk"> &lt;wstephenson&gt;</span> ok
+<a name="l-80"></a><span class="tm">16:24:33</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">TOPIC:</span> Stop fixing KDE3 packages/repos since it is perceived as maintaining
+<a name="l-81"></a><span class="tm">16:24:41</span><span class="nk"> &lt;kmi&gt;</span> <span class="hi">anaumov:</span> black screen looks like incompatible gpu dirvers or broken plasma config
+<a name="l-82"></a><span class="tm">16:24:56</span><span class="nk"> &lt;rabauke&gt;</span> that's mine
+<a name="l-83"></a><span class="tm">16:25:20</span><span class="nk"> &lt;rabauke&gt;</span> it seems to cause confusion if novell staff works on the kde3 repo
+<a name="l-84"></a><span class="tm">16:25:48</span><span class="nk"> &lt;llunak&gt;</span> it's irrelevant whether novell staff works on the repo too or not
+<a name="l-85"></a><span class="tm">16:25:50</span><span class="nk"> &lt;wstephenson&gt;</span> certain people are capable of creating confusion out of the scarcest facts in this regard
+<a name="l-86"></a><span class="tm">16:26:02</span><span class="nk"> &lt;kmi&gt;</span> it'll also cause confusion if the staff doesnt
+<a name="l-87"></a><span class="tm">16:26:12</span><span class="nk"> &lt;rabauke&gt;</span> why? it was dropped. period
+<a name="l-88"></a><span class="tm">16:26:16</span><span class="nk"> &lt;kmi&gt;</span> i think you cant please every1
+<a name="l-89"></a><span class="tm">16:26:54</span><span class="nk"> &lt;llunak&gt;</span> if somebody points to the repo directly, slap them with http://en.opensuse.org/KDE3
+<a name="l-90"></a><span class="tm">16:27:10</span><span class="nk"> &lt;rabauke&gt;</span> that does not work, as the mailinglist shows
+<a name="l-91"></a><span class="tm">16:27:14</span><span class="nk"> &lt;llunak&gt;</span> and if somebody doesn't understand what the word 'maintenance' means, that's their problem
+<a name="l-92"></a><span class="tm">16:28:11</span><span class="nk"> &lt;kmi&gt;</span> anybody knows what distro the trinity guys use? if oS maybe they want to maintain it
+<a name="l-93"></a><span class="tm">16:28:22</span><span class="nk"> &lt;bitshuffler__&gt;</span> buntu
+<a name="l-94"></a><span class="tm">16:29:17</span><span class="nk"> &lt;rabauke&gt;</span> I do not see any reason in helping to keep that repo working, it just makes its death longer suggesting support for kde3
+<a name="l-95"></a><span class="tm">16:29:29</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">rabauke:</span> I haven't caught up with the lists yet - it is somebody else or just Ilya again (or whatever the english transcription of the name is)?
+<a name="l-96"></a><span class="tm">16:29:47</span><span class="nk"> &lt;kmi&gt;</span> i wouldn't mind if the kde3 for 11.3 repo was even deleted completely, but i dont have any repo access numbers
+<a name="l-97"></a><span class="tm">16:30:00</span><span class="nk"> &lt;llunak&gt;</span> I use several packages from the KDE3 repo
+<a name="l-98"></a><span class="tm">16:30:14</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">rabauke:</span> so don't do that. I just don't see why not anyone else who wants to spent time with it shouldn't do it, regardless if one is a N employee or not.
+<a name="l-99"></a><span class="tm">16:30:21</span><span class="nk"> &lt;llunak&gt;</span> so I don't see why I those should be deleted or kept failing
+<a name="l-100"></a><span class="tm">16:30:28</span><span class="nk"> &lt;kmi&gt;</span> like? (that kinda affects the kdebase3 topic as well)
+<a name="l-101"></a><span class="tm">16:30:44</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> just ilya
+<a name="l-102"></a><span class="tm">16:31:16</span><span class="nk"> &lt;rabauke&gt;</span> others as well, otherwise they would not call for will etc if things are broken
+<a name="l-103"></a><span class="tm">16:31:18</span><span class="nk"> &lt;llunak&gt;</span> I've told him already, he apparently is unable to get what 'maintained' or 'supported' means, even if you slapped him with a huge dictionary
+<a name="l-104"></a><span class="tm">16:31:22</span><span class="nk"> &lt;wstephenson&gt;</span> i kind of expect strange behaviour from ppl taking on this job
+<a name="l-105"></a><span class="tm">16:31:48</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">rabauke:</span> that's why we have the KDE3 wiki page, just post the link, done
+<a name="l-106"></a><span class="tm">16:32:20</span><span class="nk"> &lt;rabauke&gt;</span> ok. but keeping that repo alive causes more harm than good imho
+<a name="l-107"></a><span class="tm">16:32:32</span><span class="nk"> &lt;bitshuffler__&gt;</span> why?
+<a name="l-108"></a><span class="tm">16:32:46</span><span class="nk"> &lt;llunak&gt;</span> we can move the repo somewhere else, so that it's not KDE:KDE3, if others think it's a good idea, but I will not support removing the packages
+<a name="l-109"></a><span class="tm">16:33:02</span><span class="nk"> &lt;kmi&gt;</span> if lubos wants a few apps from that repo, it's ok when he fixes a few issues here and there
+<a name="l-110"></a><span class="tm">16:33:10</span><span class="nk"> &lt;anaumov&gt;</span> Ilya write on planetSUSE about KDE2 too, it's funny I think...
+<a name="l-111"></a><span class="tm">16:33:28</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> i think the angry squad will be angry whatever we do
+<a name="l-112"></a><span class="tm">16:33:30</span><span class="nk"> &lt;bitshuffler__&gt;</span> I'm against moving it cause it just creates more mess and wins nothing imho.
+<a name="l-113"></a><span class="tm">16:33:43</span><span class="nk"> &lt;kmi&gt;</span> kde3 should move to the same place as unsuported SC releases (4.5, 4.7,..)
+<a name="l-114"></a><span class="tm">16:33:54</span><span class="nk"> &lt;llunak&gt;</span> and I can blog 'KDE3 is dead' if you want and think it'll make it openSUSE-oficial
+<a name="l-115"></a><span class="tm">16:33:56</span><span class="nk"> &lt;wstephenson&gt;</span> i thought about it and realised they are classic Laggards and eventually will join us in KDE 4 or go elsewhere. nothing we can do will please them.
+<a name="l-116"></a><span class="tm">16:34:00</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">kmi:</span> which wont work since it isn't unstable
+<a name="l-117"></a><span class="tm">16:34:03</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> correct. yet if its gone, its gone and it comes to an dend
+<a name="l-118"></a><span class="tm">16:34:21</span><span class="nk"> &lt;anaumov&gt;</span> llunak, +1
+<a name="l-119"></a><span class="tm">16:34:43</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> i think that will just poke the bees' nest.
+<a name="l-120"></a><span class="tm">16:34:44</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">rabauke:</span> again, in what way does the existence of that repo harm you? If you don't use it then it doesn't bother you anyways.
+<a name="l-121"></a><span class="tm">16:35:12</span><span class="nk"> &lt;javier_&gt;</span> Unsupported:KDE3?
+<a name="l-122"></a><span class="tm">16:35:22</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">bitshuffler__:</span> it makes kde3 users think that it is not eol
+<a name="l-123"></a><span class="tm">16:35:29</span><span class="nk"> &lt;bitshuffler__&gt;</span> just leave it to folks who are interested in it and be done with it. After all it is also a plus for suse that installing kde 3 is still possible.
+<a name="l-124"></a><span class="tm">16:35:49</span><span class="nk"> &lt;rabauke&gt;</span> thus stay stay around, keep on pesting
+<a name="l-125"></a><span class="tm">16:35:59</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">rabauke:</span>  slap them with the wiki page and ignore them afterwards
+<a name="l-126"></a><span class="tm">16:36:01</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">rabauke:</span> so let them use it. better than some endless "omg kde4 iis teh sucks, kde3 was thaaaaaaaaaaaaat much better".
+<a name="l-127"></a><span class="tm">16:36:17</span><span class="nk"> &lt;wstephenson&gt;</span> and meanwhile we actively moderate the lists to shut down the flames
+<a name="l-128"></a><span class="tm">16:36:18</span><span class="nk"> &lt;llunak&gt;</span> if that doesn't help, tell me and I'll slap them with the KDE3 wiki page, harder
+<a name="l-129"></a><span class="tm">16:36:18</span><span class="nk"> &lt;kmi&gt;</span> <span class="hi">bitshuffler__:</span> +1
+<a name="l-130"></a><span class="tm">16:36:32</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">bitshuffler__:</span> if the reop was gone, that discussion was gone. as long as it exists, that discussion will come up again and again
+<a name="l-131"></a><span class="tm">16:36:39</span><span class="nk"> &lt;anaumov&gt;</span> bitshuffler__, do you want to support supported KDE3?
+<a name="l-132"></a><span class="tm">16:36:56</span><span class="nk"> &lt;kmi&gt;</span> how about actively dropping it for 11.4?
+<a name="l-133"></a><span class="tm">16:37:02</span><span class="nk"> &lt;javier_&gt;</span> we would have to improve our wiki slapping skills then
+<a name="l-134"></a><span class="tm">16:37:04</span><span class="nk"> &lt;kmi&gt;</span> not even an unsupported repo
+<a name="l-135"></a><span class="tm">16:37:15</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">anaumov:</span> no, I couldn't care less about it but apparently there  are some peeps who like it and as long as they keep it building I don't see why it should get removed.
+<a name="l-136"></a><span class="tm">16:37:31</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">kmi:</span> against the sense of the OBS, ppl should be able to do stuff they want to do
+<a name="l-137"></a><span class="tm">16:38:03</span><span class="nk"> &lt;kmi&gt;</span> just offerering a compromise between rabauke and bitshuffler ;)
+<a name="l-138"></a><span class="tm">16:38:10</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">rabauke:</span> well, there simply is no reason that your will has to get forced on others who disagree with you. If you don't like it then just ignore it and forget about its existence
+<a name="l-139"></a><span class="tm">16:38:19</span><span class="nk"> &lt;bitshuffler__&gt;</span> and point anyone who doesn't get it to the wiki page
+<a name="l-140"></a><span class="tm">16:38:58</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">bitshuffler__:</span> as if that would work
+<a name="l-141"></a><span class="tm">16:39:00</span><span class="nk"> &lt;anaumov&gt;</span> bitshuffler__, you have to understand, that we need people who will help with KDE�
+<a name="l-142"></a><span class="tm">16:39:05</span><span class="nk"> &lt;anaumov&gt;</span> *KDE3
+<a name="l-143"></a><span class="tm">16:39:11</span><span class="nk"> &lt;bitshuffler__&gt;</span> seriously, we have it, it builds and it is interesting for ppl. So, if you don't like it just leave it alone and let others worry about it.
+<a name="l-144"></a><span class="tm">16:39:15</span><span class="nk"> &lt;kmi&gt;</span> <span class="hi">rabauke:</span> you could create a mail rule and filter  all kde3 mails
+<a name="l-145"></a><span class="tm">16:39:25</span><span class="nk"> &lt;szal&gt;</span> doesn't Packman have KDE3?
+<a name="l-146"></a><span class="tm">16:39:27</span><span class="nk"> &lt;wstephenson&gt;</span> oh read the "KDE3 Enthusiasts" thread on opensuse@
+<a name="l-147"></a><span class="tm">16:39:28</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">bitshuffler__:</span> it does not build without the help of the opensuse kde devs
+<a name="l-148"></a><span class="tm">16:39:45</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">anaumov:</span> *we* don't need people who will help with kde 3
+<a name="l-149"></a><span class="tm">16:39:54</span><span class="nk"> &lt;wstephenson&gt;</span> kde 3 fans seem to need it
+<a name="l-150"></a><span class="tm">16:39:57</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">anaumov:</span> well, there are ppl who "help" / care about kde 3 and fix the stuff so just let them do that if that is how they like to spent their time.
+<a name="l-151"></a><span class="tm">16:40:28</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">rabauke:</span> and if those help out there then it still is their free choice.
+<a name="l-152"></a><span class="tm">16:40:33</span><span class="nk"> &lt;rabauke&gt;</span> I would not have a problem if those that claim kde3 is still alive would keep that repo building but its those that tell them that it's dead
+<a name="l-153"></a><span class="tm">16:40:48</span><span class="nk"> &lt;kmi&gt;</span> <span class="hi">rabauke:</span> you could create a mail rule and filter  all kde3 mails
+<a name="l-154"></a><span class="tm">16:40:51</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">rabauke:</span> as in llunak just explained why he does that
+<a name="l-155"></a><span class="tm">16:41:15</span><span class="nk"> &lt;wstephenson&gt;</span> so, as chair - are we getting anywhere with this?
+<a name="l-156"></a><span class="tm">16:41:20</span><span class="nk"> &lt;kmi&gt;</span> no
+<a name="l-157"></a><span class="tm">16:41:24</span><span class="nk"> &lt;rabauke&gt;</span> no
+<a name="l-158"></a><span class="tm">16:41:28</span><span class="nk"> &lt;bitshuffler__&gt;</span> just leave it alone
+<a name="l-159"></a><span class="tm">16:41:34</span><span class="nk"> &lt;llunak&gt;</span> hmm, pity I was on vacation, I could have finally tried how moderation works
+<a name="l-160"></a><span class="tm">16:41:55</span><span class="nk"> &lt;llunak&gt;</span> next time I'll block these 'KDE3 again' threads
+<a name="l-161"></a><span class="tm">16:42:01</span><span class="nk"> &lt;rabauke&gt;</span> Yet as long as you fix kde3 I can fully understand those that think it is supported.
+<a name="l-162"></a><span class="tm">16:42:37</span><span class="nk"> &lt;kmi&gt;</span> next topic please ;)
+<a name="l-163"></a><span class="tm">16:42:38</span><span class="nk"> &lt;wstephenson&gt;</span> let's move on, and remember that the KDE3 wiki page is your best defense against them
+<a name="l-164"></a><span class="tm">16:42:51</span><span class="nk"> &lt;wstephenson&gt;</span> * Discuss openSUSE:KDE ideas 11.4
+<a name="l-165"></a><span class="tm">16:43:16</span><span class="nk"> &lt;kmi&gt;</span> martin filled the page already
+<a name="l-166"></a><span class="tm">16:43:18</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">TOPIC:</span> ^
+<a name="l-167"></a><span class="tm">16:43:21</span><span class="nk"> &lt;kmi&gt;</span> i did a bit
+<a name="l-168"></a><span class="tm">16:43:44</span><span class="nk"> &lt;kmi&gt;</span> he and i seem to agree that phonon-vlc should be default
+<a name="l-169"></a><span class="tm">16:44:16</span><span class="nk"> &lt;rabauke&gt;</span> does it actually work?
+<a name="l-170"></a><span class="tm">16:44:17</span><span class="nk"> &lt;bitshuffler__&gt;</span> and where do you get the vlc from (or isn't that necessary)?
+<a name="l-171"></a><span class="tm">16:44:27</span><span class="nk"> &lt;rabauke&gt;</span> never did here
+<a name="l-172"></a><span class="tm">16:44:35</span><span class="nk"> &lt;kmi&gt;</span> <span class="hi">bitshuffler__:</span> VLC without mpeg codecs is in playground
+<a name="l-173"></a><span class="tm">16:44:49</span><span class="nk"> &lt;kmi&gt;</span> backend works for me better than any other backend i ever tried
+<a name="l-174"></a><span class="tm">16:44:50</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">kmi:</span> and that works better than xine?
+<a name="l-175"></a><span class="tm">16:44:59</span><span class="nk"> &lt;kmi&gt;</span> just one quirk:
+<a name="l-176"></a><span class="tm">16:45:08</span><span class="nk"> &lt;bitshuffler__&gt;</span> hm, iirc I tried it some time ago and just listened to silence
+<a name="l-177"></a><span class="tm">16:45:10</span><span class="nk"> &lt;rabauke&gt;</span> what about cpu uzsage?
+<a name="l-178"></a><span class="tm">16:45:39</span><span class="nk"> &lt;rabauke&gt;</span> and it has to work with the packman vlc otherwise its pretty useless
+<a name="l-179"></a><span class="tm">16:45:40</span><span class="nk"> &lt;kmi&gt;</span> when I exit a multimedia app, instead of normal quitting, it crashes additionally, but since i exit it anyway, i don't care much
+<a name="l-180"></a><span class="tm">16:45:44</span><span class="nk"> &lt;wstephenson&gt;</span> i heard that was a bit higher.
+<a name="l-181"></a><span class="tm">16:45:51</span><span class="nk"> &lt;kmi&gt;</span> it works with pacman
+<a name="l-182"></a><span class="tm">16:45:56</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> double here
+<a name="l-183"></a><span class="tm">16:46:10</span><span class="nk"> &lt;tigerfoot&gt;</span> having a audio engine without mpeg is just useless ...
+<a name="l-184"></a><span class="tm">16:46:13</span><span class="nk"> &lt;kmi&gt;</span> I have so far no problems with cpu usabe
+<a name="l-185"></a><span class="tm">16:46:31</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">kmi:</span> does it use more than xine?
+<a name="l-186"></a><span class="tm">16:46:38</span><span class="nk"> &lt;rabauke&gt;</span> if so that is a problem
+<a name="l-187"></a><span class="tm">16:46:44</span><span class="nk"> &lt;kmi&gt;</span> if the VAAPI-VDPAU wrapper worked, i would also have GPU acceleration
+<a name="l-188"></a><span class="tm">16:46:45</span><span class="nk"> &lt;wstephenson&gt;</span> if anyone doesn't know sandsmark, he's the Phonon guy.
+<a name="l-189"></a><span class="tm">16:47:03</span><span class="nk"> &lt;llunak&gt;</span> this is discussing a bit too ahead - is it in Factory, if not, is it suitable for it?
+<a name="l-190"></a><span class="tm">16:47:04</span><span class="nk"> &lt;tigerfoot&gt;</span> it will just drive more user to make the mistake to put videolan and packman repo ...
+<a name="l-191"></a><span class="tm">16:47:05</span><span class="nk"> &lt;kmi&gt;</span> I never compared xine vs vlc CPU-wise. i don't notice a difference
+<a name="l-192"></a><span class="tm">16:47:06</span><span class="nk"> &lt;sandsmark&gt;</span> phonon-vlc apparently supports vaapi
+<a name="l-193"></a><span class="tm">16:47:17</span><span class="nk"> &lt;sandsmark&gt;</span> (probably Xine too, haven't tested, though)
+<a name="l-194"></a><span class="tm">16:47:20</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">sandsmark:</span> scrollback - http://paste.opensuse.org/80853325
+<a name="l-195"></a><span class="tm">16:47:23</span><span class="nk"> &lt;sandsmark&gt;</span> <span class="hi">kmi:</span> they both use ffmpeg
+<a name="l-196"></a><span class="tm">16:47:29</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">kmi:</span> on a netbook your battery will
+<a name="l-197"></a><span class="tm">16:47:39</span><span class="nk"> &lt;sandsmark&gt;</span> there shouldn't be a noticeable difference
+<a name="l-198"></a><span class="tm">16:47:46</span><span class="nk"> &lt;kmi&gt;</span> i have a notebook ;)
+<a name="l-199"></a><span class="tm">16:47:56</span><span class="nk"> &lt;kmi&gt;</span> i don't see any difference
+<a name="l-200"></a><span class="tm">16:47:58</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">rabauke:</span> only without the power unit  :-)
+<a name="l-201"></a><span class="tm">16:48:04</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">sandsmark:</span> are there any big ticket items preventing us from assessing p-vlc as backend?
+<a name="l-202"></a><span class="tm">16:48:06</span><span class="nk"> &lt;sandsmark&gt;</span> but I'm not sure Phonon-VLC is ready, tbh.
+<a name="l-203"></a><span class="tm">16:48:08</span><span class="nk"> &lt;kmi&gt;</span> and if vaapi works, it should even be much lover
+<a name="l-204"></a><span class="tm">16:48:18</span><span class="nk"> &lt;wstephenson&gt;</span> next release is in January, fwiw
+<a name="l-205"></a><span class="tm">16:48:23</span><span class="nk"> &lt;kmi&gt;</span> I use it since it's in playground
+<a name="l-206"></a><span class="tm">16:48:24</span><span class="nk"> &lt;sandsmark&gt;</span> <span class="hi">wstephenson:</span> there are some bugs, like missing audio effects (→ sometimes weird behaviour in amarok)
+<a name="l-207"></a><span class="tm">16:48:27</span><span class="nk"> &lt;sandsmark&gt;</span> oh
+<a name="l-208"></a><span class="tm">16:48:42</span><span class="nk"> &lt;kmi&gt;</span> works like a charm except that crash-on-exit thingie that sounds worse than it is
+<a name="l-209"></a><span class="tm">16:48:43</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">sandsmark:</span> eg crossfade
+<a name="l-210"></a><span class="tm">16:48:57</span><span class="nk"> &lt;sandsmark&gt;</span> well, amarok doesn't have crossfader with any backend yet
+<a name="l-211"></a><span class="tm">16:49:03</span><span class="nk"> &lt;sandsmark&gt;</span> (should be fairly easy, though)
+<a name="l-212"></a><span class="tm">16:49:08</span><span class="nk"> &lt;llunak&gt;</span> there's not much point in discussing playground material
+<a name="l-213"></a><span class="tm">16:49:09</span><span class="nk"> &lt;wstephenson&gt;</span> shows what i know ;)
+<a name="l-214"></a><span class="tm">16:49:20</span><span class="nk"> &lt;wstephenson&gt;</span> ok.
+<a name="l-215"></a><span class="tm">16:49:20</span><span class="nk"> &lt;llunak&gt;</span> we it needs to make it into factory, after that it may become the default
+<a name="l-216"></a><span class="tm">16:49:27</span><span class="nk"> &lt;llunak&gt;</span> s/we//
+<a name="l-217"></a><span class="tm">16:49:33</span><span class="nk"> &lt;kmi&gt;</span> just saying even as playground it works better for me than gstreamer and xine
+<a name="l-218"></a><span class="tm">16:49:58</span><span class="nk"> &lt;llunak&gt;</span> then push it for factory
+<a name="l-219"></a><span class="tm">16:50:31</span><span class="nk"> &lt;kmi&gt;</span> someone with leet programming skillz ;) just needs to look at that crash bug to make it mainstream compatible IMO
+<a name="l-220"></a><span class="tm">16:50:43</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">kmi:</span> bug#?
+<a name="l-221"></a><span class="tm">16:50:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">sandsmark:</span> know what kmi is referring to?
+<a name="l-222"></a><span class="tm">16:50:56</span><span class="nk"> &lt;sandsmark&gt;</span> nope
+<a name="l-223"></a><span class="tm">16:50:57</span><span class="nk"> &lt;kmi&gt;</span> didn't file any, because it's in playground ;)
+<a name="l-224"></a><span class="tm">16:51:06</span><span class="nk"> &lt;sandsmark&gt;</span> <span class="hi">kmi:</span> do you have a backtrace?
+<a name="l-225"></a><span class="tm">16:51:19</span><span class="nk"> &lt;kmi&gt;</span> in a minute ;)
+<a name="l-226"></a><span class="tm">16:51:50</span><span class="nk"> &lt;wstephenson&gt;</span> ok, next item on the ideas?
+<a name="l-227"></a><span class="tm">16:52:07</span><span class="nk"> &lt;wstephenson&gt;</span> who wrote "matching green icons"? for what?
+<a name="l-228"></a><span class="tm">16:52:20</span><span class="nk"> &lt;wstephenson&gt;</span> we are looking at http://en.opensuse.org/openSUSE:KDE_ideas_11.4
+<a name="l-229"></a><span class="tm">16:52:37</span><span class="nk"> &lt;kmi&gt;</span> i think its a leftover fom 11.3
+<a name="l-230"></a><span class="tm">16:52:48</span><span class="nk"> &lt;bitshuffler__&gt;</span> can I add some "get rid of green and make a blue release!"?
+<a name="l-231"></a><span class="tm">16:53:04</span><span class="nk"> &lt;javier_&gt;</span> hehe
+<a name="l-232"></a><span class="tm">16:53:07</span><span class="nk"> &lt;kmi&gt;</span> to make it look like kubuntu, mandriva, and fedora? ;)
+<a name="l-233"></a><span class="tm">16:53:21 </span><span class="nka">* wstephenson</span> <span class="ac">shrugs</span>
+<a name="l-234"></a><span class="tm">16:53:24</span><span class="nk"> &lt;wstephenson&gt;</span> lets ignore that
+<a name="l-235"></a><span class="tm">16:53:36</span><span class="nk"> &lt;kmi&gt;</span> fine with me
+<a name="l-236"></a><span class="tm">16:53:39</span><span class="nk"> &lt;bitshuffler__&gt;</span> dunno what color mandirva has but the rest is more gnome distros so ...
+<a name="l-237"></a><span class="tm">16:53:43</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f_:</span> your disable animations option
+<a name="l-238"></a><span class="tm">16:53:49</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">bitshuffler__:</span> blue
+<a name="l-239"></a><span class="tm">16:54:08</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f_:</span> appeals to me and no doubt some of the more moderate members of the angry brigade too.
+<a name="l-240"></a><span class="tm">16:54:09</span><span class="nk"> &lt;bitshuffler__&gt;</span> heh, well, blue rocks ;D
+<a name="l-241"></a><span class="tm">16:55:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f_:</span>  is afk
+<a name="l-242"></a><span class="tm">16:55:36</span><span class="nk"> &lt;wstephenson&gt;</span> so the PA thing i started separately on the list, consensus is to try it out
+<a name="l-243"></a><span class="tm">16:55:55</span><span class="nk"> &lt;wstephenson&gt;</span> i'll leave rekonq to last
+<a name="l-244"></a><span class="tm">16:56:04</span><span class="nk"> &lt;wstephenson&gt;</span> looking at the Single features list now
+<a name="l-245"></a><span class="tm">16:56:25</span><span class="nk"> &lt;bitshuffler__&gt;</span> but the kde integration for OOo &amp; firefox will stay, right?
+<a name="l-246"></a><span class="tm">16:56:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">bitshuffler__:</span> i expect so
+<a name="l-247"></a><span class="tm">16:56:45</span><span class="nk"> &lt;wstephenson&gt;</span> but we need to fix this slowdown bug
+<a name="l-248"></a><span class="tm">16:56:51</span><span class="nk"> &lt;bitshuffler__&gt;</span> fine :)
+<a name="l-249"></a><span class="tm">16:57:04</span><span class="nk"> &lt;wstephenson&gt;</span> lots of little things in the Single Features list would be good to have
+<a name="l-250"></a><span class="tm">16:57:24</span><span class="nk"> &lt;wstephenson&gt;</span> but i dunno where the engineering time is going to come from.
+<a name="l-251"></a><span class="tm">16:57:34</span><span class="nk"> &lt;bitshuffler__&gt;</span> well, would you write me some "working app to sync my mobile with kontact" if I add it there? ;P
+<a name="l-252"></a><span class="tm">16:57:36</span><span class="nk"> &lt;kmi&gt;</span> in my experience OO + KDE integration is also less stable, but since crashing OO does not start Dr. Konqui, i have no backtrace
+<a name="l-253"></a><span class="tm">16:57:54</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">bitshuffler__:</span> sure. in my sleep. :P
+<a name="l-254"></a><span class="tm">16:58:02</span><span class="nk"> &lt;bitshuffler__&gt;</span> \o/ :D
+<a name="l-255"></a><span class="tm">16:58:20</span><span class="nk"> &lt;wstephenson&gt;</span> the randr item is on my and others' todos for 4.6
+<a name="l-256"></a><span class="tm">16:58:24</span><span class="nk"> &lt;wstephenson&gt;</span> (upstream)
+<a name="l-257"></a><span class="tm">16:58:28</span><span class="nk"> &lt;wstephenson&gt;</span> so will get done
+<a name="l-258"></a><span class="tm">16:58:49</span><span class="nk"> &lt;javier_&gt;</span> anti virus plasmoid?
+<a name="l-259"></a><span class="tm">16:59:02</span><span class="nk"> &lt;wstephenson&gt;</span> *coughs*
+<a name="l-260"></a><span class="tm">16:59:18</span><span class="nk"> &lt;javier_&gt;</span> it's part of single features
+<a name="l-261"></a><span class="tm">16:59:19</span><span class="nk"> &lt;wstephenson&gt;</span> firewall status and apparmor is easy to do.
+<a name="l-262"></a><span class="tm">16:59:35</span><span class="nk"> &lt;wstephenson&gt;</span> i think antivirus is unrealistic
+<a name="l-263"></a><span class="tm">16:59:56</span><span class="nk"> &lt;wstephenson&gt;</span> unless it says 'you're using opensuse KDE, no virus writer cares about hitting such a small target' ;)
+<a name="l-264"></a><span class="tm">16:59:58</span><span class="nk"> &lt;bitshuffler__&gt;</span> what for? you need it on a server and that doesn't run X
+<a name="l-265"></a><span class="tm">17:00:14</span><span class="nk"> &lt;kmi&gt;</span> indeed
+<a name="l-266"></a><span class="tm">17:00:36</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">bitshuffler__:</span> do you mean email virus scanning?
+<a name="l-267"></a><span class="tm">17:00:46</span><span class="nk"> &lt;herby&gt;</span> A KDE client for fwzs would be nice
+<a name="l-268"></a><span class="tm">17:01:23</span><span class="nk"> &lt;wstephenson&gt;</span> http://gitorious.org/opensuse/fwzs
+<a name="l-269"></a><span class="tm">17:01:26</span><span class="nk"> &lt;wstephenson&gt;</span> first i hear of it
+<a name="l-270"></a><span class="tm">17:01:31</span><span class="nk"> &lt;wstephenson&gt;</span> "Firewall zone switcher"
+<a name="l-271"></a><span class="tm">17:01:31</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">wstephenson:</span> yes, basically you just need it for mail &amp; file servers or not?
+<a name="l-272"></a><span class="tm">17:01:33</span><span class="nk"> &lt;kmi&gt;</span> I think phishing detection in kmail makes more sense than virus checking
+<a name="l-273"></a><span class="tm">17:01:38</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">bitshuffler__:</span> yes, no need to discuss further
+<a name="l-274"></a><span class="tm">17:02:04</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">kmi:</span> we'll have enough to do with PIM just making sure we don't lose features with the akonadi port for 4.6
+<a name="l-275"></a><span class="tm">17:02:18</span><span class="nk"> &lt;kmi&gt;</span> i know.
+<a name="l-276"></a><span class="tm">17:02:21</span><span class="nk"> &lt;anaumov&gt;</span> maybe it will be better just to do what we have more stable and... just better?
+<a name="l-277"></a><span class="tm">17:02:45</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">herby:</span> looks like about 1/2 a day's work...
+<a name="l-278"></a><span class="tm">17:03:15</span><span class="nk"> &lt;wstephenson&gt;</span> just turn http://gitorious.org/opensuse/fwzs/blobs/master/fwzsapp.py into a python plasmoid.
+<a name="l-279"></a><span class="tm">17:03:29</span><span class="nk"> &lt;herby&gt;</span> <span class="hi">wstephenson:</span> Yes should be easy.
+<a name="l-280"></a><span class="tm">17:03:48</span><span class="nk"> &lt;wstephenson&gt;</span> ok so we should rank these features by prio
+<a name="l-281"></a><span class="tm">17:03:50</span><span class="nk"> &lt;wstephenson&gt;</span> i'll add a few
+<a name="l-282"></a><span class="tm">17:04:05</span><span class="nk"> &lt;wstephenson&gt;</span> i'll start that process and ask for comments.
+<a name="l-283"></a><span class="tm">17:04:20</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">TOPIC:</span> keep kdebase3 etc for 11.4? what's left depending on kdelibs/base3
+<a name="l-284"></a><span class="tm">17:04:25</span><span class="nk"> &lt;wstephenson&gt;</span> that's sort of a feature
+<a name="l-285"></a><span class="tm">17:04:38</span><span class="nk"> &lt;wstephenson&gt;</span> who added that?
+<a name="l-286"></a><span class="tm">17:05:18</span><span class="nk"> &lt;kmi&gt;</span> btw, filed https://bugzilla.novell.com/show_bug.cgi?id=632903 after I installed the debug symbols
+<a name="l-287"></a><span class="tm">17:05:22</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 632903 in openSUSE 11.3 (KDE4 Workspace) "Phonon-VLC causes segfault in app exit" [Normal,New]
+<a name="l-288"></a><span class="tm">17:05:39</span><span class="nk"> &lt;rabauke&gt;</span> it's more an upstream issue though
+<a name="l-289"></a><span class="tm">17:06:18</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> it's not a sort of a feature
+<a name="l-290"></a><span class="tm">17:06:38</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> design decision for next release then
+<a name="l-291"></a><span class="tm">17:06:38</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> we need to keep that part of the KDE3 building if we still ship it, and there may be 3rd party apps that still need the libs
+<a name="l-292"></a><span class="tm">17:07:05</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">sandsmark:</span> bug ^
+<a name="l-293"></a><span class="tm">17:07:11</span><span class="nk"> &lt;kmi&gt;</span> i don't know any. maybe llunak can enlighten us which apps he still uses
+<a name="l-294"></a><span class="tm">17:07:27</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">kmi:</span> none that must be in the release
+<a name="l-295"></a><span class="tm">17:07:44</span><span class="nk"> &lt;wstephenson&gt;</span> quanta, gambas?
+<a name="l-296"></a><span class="tm">17:08:03</span><span class="nk"> &lt;wstephenson&gt;</span> the list is getting shorter now kmymoney released
+<a name="l-297"></a><span class="tm">17:08:10</span><span class="nk"> &lt;llunak&gt;</span> there's gsoc for kde4-based quanta, although I don't know the timeline
+<a name="l-298"></a><span class="tm">17:08:25</span><span class="nk"> &lt;wstephenson&gt;</span> it was milianw so it probably succeeded.
+<a name="l-299"></a><span class="tm">17:08:37</span><span class="nk"> &lt;herby&gt;</span> I have read quanta will become part of kdevelop
+<a name="l-300"></a><span class="tm">17:08:37</span><span class="nk"> &lt;llunak&gt;</span> I wouldn't consider a BASIC IDE that important
+<a name="l-301"></a><span class="tm">17:08:42</span><span class="nk"> &lt;wstephenson&gt;</span> no,
+<a name="l-302"></a><span class="tm">17:08:52</span><span class="nk"> &lt;wstephenson&gt;</span> although it is probably used by thousands of angry old sysadmins ;)
+<a name="l-303"></a><span class="tm">17:08:55</span><span class="nk"> &lt;kmi&gt;</span> seamonkey is a better web editor anyway
+<a name="l-304"></a><span class="tm">17:09:45</span><span class="nk"> &lt;wstephenson&gt;</span> anything else?
+<a name="l-305"></a><span class="tm">17:09:46</span><span class="nk"> &lt;llunak&gt;</span> I think we should postpone this topic until late alpha or early beta phase
+<a name="l-306"></a><span class="tm">17:09:49</span><span class="nk"> &lt;wstephenson&gt;</span> ok
+<a name="l-307"></a><span class="tm">17:10:00</span><span class="nk"> &lt;kmi&gt;</span> when is that, btw?
+<a name="l-308"></a><span class="tm">17:10:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">postpone kde3* inclusion decision until late alpha/beta</span>
+<a name="l-309"></a><span class="tm">17:10:10</span><span class="nk"> &lt;kmi&gt;</span> package deadline
+<a name="l-310"></a><span class="tm">17:10:29</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">kmi:</span> http://www.suse.de/~coolo/opensuse_11.4/
+<a name="l-311"></a><span class="tm">17:10:52</span><span class="nk"> &lt;kmi&gt;</span> is that "component freeze"?
+<a name="l-312"></a><span class="tm">17:11:03</span><span class="nk"> &lt;wstephenson&gt;</span> no
+<a name="l-313"></a><span class="tm">17:11:10</span><span class="nk"> &lt;wstephenson&gt;</span> around dec/jan
+<a name="l-314"></a><span class="tm">17:11:34</span><span class="nk"> &lt;wstephenson&gt;</span> M6 16 dec
+<a name="l-315"></a><span class="tm">17:11:37</span><span class="nk"> &lt;kmi&gt;</span> ah, ok. deciding about rekonq has some time then, too
+<a name="l-316"></a><span class="tm">17:11:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">TOPIC:</span> repositories specific for KDE SC 4.5
+<a name="l-317"></a><span class="tm">17:12:15</span><span class="nk"> &lt;wstephenson&gt;</span> ok just a quick summary of what happened since last meeting
+<a name="l-318"></a><span class="tm">17:12:21</span><span class="nk"> &lt;javier_&gt;</span> this reminds me of openSUSE installer's icons... right now it's a mixture of gnome and kde icons
+<a name="l-319"></a><span class="tm">17:12:31</span><span class="nk"> &lt;wstephenson&gt;</span> javier_ is doing branding work for open-PC
+<a name="l-320"></a><span class="tm">17:12:35</span><span class="nk"> &lt;javier_&gt;</span> shouldn't be oxygen made the default?
+<a name="l-321"></a><span class="tm">17:12:40</span><span class="nk"> &lt;wstephenson&gt;</span> was going to base on KDF
+<a name="l-322"></a><span class="tm">17:12:52</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> yes, -&gt; Q&amp;A, Misc now though
+<a name="l-323"></a><span class="tm">17:12:59</span><span class="nk"> &lt;javier_&gt;</span> ok
+<a name="l-324"></a><span class="tm">17:13:21</span><span class="nk"> &lt;wstephenson&gt;</span> but since lots of people ask for 4.5 'stable' and a product release needs a stable repo
+<a name="l-325"></a><span class="tm">17:13:34</span><span class="nk"> &lt;wstephenson&gt;</span> he agreed to help maintain a KDE:45 repo
+<a name="l-326"></a><span class="tm">17:13:37</span><span class="nk"> &lt;wstephenson&gt;</span> or whatever we call it
+<a name="l-327"></a><span class="tm">17:13:47</span><span class="nk"> &lt;javier_&gt;</span> well, one possibility was using kde 4.5.0 from k:d:f with the repo disabled
+<a name="l-328"></a><span class="tm">17:13:59</span><span class="nk"> &lt;wstephenson&gt;</span> i suggest to discuss further on list, if there are no further questions.
+<a name="l-329"></a><span class="tm">17:14:10</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> that prevents people from adding new apps though.
+<a name="l-330"></a><span class="tm">17:14:21</span><span class="nk"> &lt;javier_&gt;</span> i am no maintainer expert but i would def like to help and learn in the process
+<a name="l-331"></a><span class="tm">17:14:26</span><span class="nk"> &lt;kmi&gt;</span> did the list bring any result wtr?
+<a name="l-332"></a><span class="tm">17:14:41</span><span class="nk"> &lt;kmi&gt;</span> we discussed already several times
+<a name="l-333"></a><span class="tm">17:14:43</span><span class="nk"> &lt;wstephenson&gt;</span> a stable project is a good place to learn
+<a name="l-334"></a><span class="tm">17:14:54</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> i know, that's why having kde45 is a nice idea: )
+<a name="l-335"></a><span class="tm">17:15:06</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">kmi:</span> i think it's just about agreeing the nitty gritty now
+<a name="l-336"></a><span class="tm">17:15:08</span><span class="nk"> &lt;wstephenson&gt;</span> 1) name
+<a name="l-337"></a><span class="tm">17:15:19</span><span class="nk"> &lt;wstephenson&gt;</span> 2) update policy, frequency
+<a name="l-338"></a><span class="tm">17:15:32</span><span class="nk"> &lt;wstephenson&gt;</span> 3) technical implementation, frozen linkrevs or what
+<a name="l-339"></a><span class="tm">17:15:54</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> want to kick this off on list with those subtopics as starting points?
+<a name="l-340"></a><span class="tm">17:15:54</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">wstephenson:</span> to what do you want to link?
+<a name="l-341"></a><span class="tm">17:16:13</span><span class="nk"> &lt;bitshuffler__&gt;</span> regarding the update policy: when new upstream release comes out or to add bug fix patches
+<a name="l-342"></a><span class="tm">17:16:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">bitshuffler__:</span> linking to good revs of KDF is one possibility, until it goes 4.6
+<a name="l-343"></a><span class="tm">17:16:30</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">bitshuffler__:</span> details. we'll do this on list
+<a name="l-344"></a><span class="tm">17:16:38</span><span class="nk"> &lt;wstephenson&gt;</span> but you're right, those are the kind of questions
+<a name="l-345"></a><span class="tm">17:16:46</span><span class="nk"> &lt;wstephenson&gt;</span> then javier_ has a clear program
+<a name="l-346"></a><span class="tm">17:16:52</span><span class="nk"> &lt;kmi&gt;</span> an alternative could be to switch kdf at 4.6RC,not beta...
+<a name="l-347"></a><span class="tm">17:16:52</span><span class="nk"> &lt;bitshuffler__&gt;</span> oh, I thought it is merely about a 4.5 repo
+<a name="l-348"></a><span class="tm">17:17:19</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">kmi:</span> that would slow down development for 11.4 or not?
+<a name="l-349"></a><span class="tm">17:17:23</span><span class="nk"> &lt;javier_&gt;</span> one possibility: link when there's a new stable KDE SC release
+<a name="l-350"></a><span class="tm">17:17:31</span><span class="nk"> &lt;javier_&gt;</span> only
+<a name="l-351"></a><span class="tm">17:17:50</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> I haven't caught up on the list yet
+<a name="l-352"></a><span class="tm">17:18:03</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> but I can take the AI
+<a name="l-353"></a><span class="tm">17:18:10</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> ok, i'll start the discussion so it gets done sooner.
+<a name="l-354"></a><span class="tm">17:18:30</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson start KDE:45 project implementation discussion on list</span>
+<a name="l-355"></a><span class="tm">17:18:46</span><span class="nk"> &lt;wstephenson&gt;</span> any more questions that can't be handled on list?
+<a name="l-356"></a><span class="tm">17:19:16</span><span class="nk"> &lt;kmi&gt;</span> media player / phonon-vlc?
+<a name="l-357"></a><span class="tm">17:20:56</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">kmi:</span> OT now :)
+<a name="l-358"></a><span class="tm">17:21:07</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">TOPIC:</span> KDE Four Reloaded image call for testing/feedback
+<a name="l-359"></a><span class="tm">17:21:13</span><span class="nk"> &lt;alin&gt;</span> hi boys I made it too
+<a name="l-360"></a><span class="tm">17:21:17</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> just in time
+<a name="l-361"></a><span class="tm">17:21:25</span><span class="nk"> &lt;kmi&gt;</span> i though the question was what to outource to the ML
+<a name="l-362"></a><span class="tm">17:21:42</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">kmi:</span> yes, scoped to the kde45 project discussion though.
+<a name="l-363"></a><span class="tm">17:21:50</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> ok, it's your time!
+<a name="l-364"></a><span class="tm">17:21:53</span><span class="nk"> &lt;kmi&gt;</span> k, sry
+<a name="l-365"></a><span class="tm">17:21:53</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">javier_:</span> did you update the update_packahe
+<a name="l-366"></a><span class="tm">17:22:06</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">alin:</span> no, not yet
+<a name="l-367"></a><span class="tm">17:22:15</span><span class="nk"> &lt;wstephenson&gt;</span> alin and javier_ have updated the 11.3 KDE 4.5.0 reloaded image, with suse branding
+<a name="l-368"></a><span class="tm">17:22:23</span><span class="nk"> &lt;wstephenson&gt;</span> at some point i would like to make a splash about it
+<a name="l-369"></a><span class="tm">17:22:29</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> I have been in town, they are still painting the doors so I get high if I spend too much time in the office
+<a name="l-370"></a><span class="tm">17:22:30</span><span class="nk"> &lt;wstephenson&gt;</span> and rtyler will push it on his site
+<a name="l-371"></a><span class="tm">17:22:33</span><span class="nk"> &lt;javier_&gt;</span> my idea is to have kde-reloaded the classic way: openSUSE 11.3 KDE4 Live CD packages + 4.5.0 + Updates
+<a name="l-372"></a><span class="tm">17:22:42</span><span class="nk"> &lt;wstephenson&gt;</span> agreed
+<a name="l-373"></a><span class="tm">17:22:58</span><span class="nk"> &lt;wstephenson&gt;</span> do we release it now, or wait for eg 4.5.1?
+<a name="l-374"></a><span class="tm">17:23:10</span><span class="nk"> &lt;javier_&gt;</span> I think we can release it now
+<a name="l-375"></a><span class="tm">17:23:15</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> once the packages are solved we should release it
+<a name="l-376"></a><span class="tm">17:23:20</span><span class="nk"> &lt;wstephenson&gt;</span> or keep releasing with updates from KDE:45
+<a name="l-377"></a><span class="tm">17:23:33</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> makes life easier for the ones who want to install
+<a name="l-378"></a><span class="tm">17:23:50</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> better wait then and make two announcements
+<a name="l-379"></a><span class="tm">17:23:55</span><span class="nk"> &lt;alin&gt;</span> when is KDE:45 coming to life?
+<a name="l-380"></a><span class="tm">17:23:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> apologies for being late. To be honest I didn't expect that the meeting was still ongoing
+<a name="l-381"></a><span class="tm">17:23:57</span><span class="nk"> &lt;kmi&gt;</span> wait a few days until we have a 4.5 repo and preconfigure Reloaded to access it instead of factory?
+<a name="l-382"></a><span class="tm">17:24:08</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">kmi:</span> +1
+<a name="l-383"></a><span class="tm">17:24:10</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">kmi:</span> good idea
+<a name="l-384"></a><span class="tm">17:24:13</span><span class="nk"> &lt;wstephenson&gt;</span> can someone update the README.pdf with a disclaimer that this is unsupported?
+<a name="l-385"></a><span class="tm">17:24:27</span><span class="nk"> &lt;wstephenson&gt;</span> it's made from caveats.odt in the package sources
+<a name="l-386"></a><span class="tm">17:24:37</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">kmi:</span> +1
+<a name="l-387"></a><span class="tm">17:24:42</span><span class="nk"> &lt;llunak&gt;</span> KDE:45 repo may take more than a few days
+<a name="l-388"></a><span class="tm">17:24:44</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> you MF want some bleeding edge stuff you are on your own after you click enter
+<a name="l-389"></a><span class="tm">17:24:49</span><span class="nk"> &lt;alin&gt;</span> click ok
+<a name="l-390"></a><span class="tm">17:24:52</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">llunak:</span> why?
+<a name="l-391"></a><span class="tm">17:25:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> those paint fumes smell of guinness.
+<a name="l-392"></a><span class="tm">17:25:33</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> maybe I do not know I quit drinking guiness many years ago
+<a name="l-393"></a><span class="tm">17:25:40</span><span class="nk"> &lt;llunak&gt;</span> because things usually take a bit longer than expected?
+<a name="l-394"></a><span class="tm">17:25:45</span><span class="nk"> &lt;kmi&gt;</span> <span class="hi">llunak:</span> at first we could simply agree on a name and to a symlink to factory
+<a name="l-395"></a><span class="tm">17:25:56</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">kmi:</span> +1
+<a name="l-396"></a><span class="tm">17:25:56</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">llunak:</span> we put tittiatcoke to do it and will be fast
+<a name="l-397"></a><span class="tm">17:26:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> hehehe
+<a name="l-398"></a><span class="tm">17:26:11</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">kmi:</span> hmm, ok, that might make things faster at the start
+<a name="l-399"></a><span class="tm">17:26:17</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> I thought you are hiding
+<a name="l-400"></a><span class="tm">17:26:26</span><span class="nk"> &lt;javier_&gt;</span> that would be great
+<a name="l-401"></a><span class="tm">17:26:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> Nope. I guess I arrived at the right moment
+<a name="l-402"></a><span class="tm">17:26:57</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> cool was the same with me
+<a name="l-403"></a><span class="tm">17:27:08</span><span class="nk"> &lt;wstephenson&gt;</span> i'm ok to wait a bit
+<a name="l-404"></a><span class="tm">17:27:12</span><span class="nk"> &lt;wstephenson&gt;</span> we've got enough going on atm
+<a name="l-405"></a><span class="tm">17:27:20</span><span class="nk"> &lt;tittiatcoke&gt;</span> +1
+<a name="l-406"></a><span class="tm">17:27:34</span><span class="nk"> &lt;alin&gt;</span> let us do an a-team for the kde45 and then once ready we update the live
+<a name="l-407"></a><span class="tm">17:27:46</span><span class="nk"> &lt;wstephenson&gt;</span> ok
+<a name="l-408"></a><span class="tm">17:28:04</span><span class="nk"> &lt;alin&gt;</span> who voluntiers? for the kde45 repo?
+<a name="l-409"></a><span class="tm">17:28:10</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">kde-four-reloaded-team: polish while waiting for KDE:45 to come on tap</span>
+<a name="l-410"></a><span class="tm">17:29:05</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> javier_ is going to help
+<a name="l-411"></a><span class="tm">17:29:05</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> ok... do we have size restrictions?
+<a name="l-412"></a><span class="tm">17:29:19</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> he should
+<a name="l-413"></a><span class="tm">17:29:23</span><span class="nk"> &lt;wstephenson&gt;</span> and i guess llunak and i will help get it established
+<a name="l-414"></a><span class="tm">17:29:31</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> joking
+<a name="l-415"></a><span class="tm">17:29:32</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> 732something bytes
+<a name="l-416"></a><span class="tm">17:29:44</span><span class="nk"> &lt;wstephenson&gt;</span> and remember that the x86_64 livecd is bigger than the i686 one
+<a name="l-417"></a><span class="tm">17:29:48</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> cool... we will need a list with things that have to be on
+<a name="l-418"></a><span class="tm">17:30:01</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> yes around 7MiB
+<a name="l-419"></a><span class="tm">17:30:03</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> you are empowered to go make that list.
+<a name="l-420"></a><span class="tm">17:30:18</span><span class="nk"> &lt;wstephenson&gt;</span> next topic...
+<a name="l-421"></a><span class="tm">17:30:24</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">TOPIC:</span> Create a “Package new KDE apps” for dummies tutorial
+<a name="l-422"></a><span class="tm">17:30:26</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> that is a mistake I will put only expensive one on it...
+<a name="l-423"></a><span class="tm">17:30:27</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">kmi:</span> ^
+<a name="l-424"></a><span class="tm">17:30:45</span><span class="nk"> &lt;kmi&gt;</span> you posted a kde-apps link
+<a name="l-425"></a><span class="tm">17:30:52</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> i remember you gave a me link with the package list of openSUSE 11.3 KDE4 but it wasn't quite what i was looking for. Perhaps we can make one and put it in gitorious, same place as kde4_unstable
+<a name="l-426"></a><span class="tm">17:30:58</span><span class="nk"> &lt;kmi&gt;</span> didn't look at it the past few minutes
+<a name="l-427"></a><span class="tm">17:31:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> yes, let's do that offline
+<a name="l-428"></a><span class="tm">17:31:29</span><span class="nk"> &lt;javier_&gt;</span> ok
+<a name="l-429"></a><span class="tm">17:31:30</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson put pacakge list in gitorious</span>
+<a name="l-430"></a><span class="tm">17:31:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">kmi:</span> llunak's kde-obs-generator tool is a packaging tool for dummies
+<a name="l-431"></a><span class="tm">17:32:18</span><span class="nk"> &lt;wstephenson&gt;</span> as well as that some people are working on adding it to qt creator, to make packaging for devs easier
+<a name="l-432"></a><span class="tm">17:32:20</span><span class="nk"> &lt;kmi&gt;</span> sounds perfect for me ;)
+<a name="l-433"></a><span class="tm">17:32:23</span><span class="nk"> &lt;wstephenson&gt;</span> dunno about the dummies set though
+<a name="l-434"></a><span class="tm">17:32:42</span><span class="nk"> &lt;wstephenson&gt;</span> sebas, leinir: know anything about frank's project to tell us?
+<a name="l-435"></a><span class="tm">17:33:26</span><span class="nk"> &lt;javier_&gt;</span> it's a bit offtopic, but a plasmoid workshop at the openSUSE Conference would be great
+<a name="l-436"></a><span class="tm">17:33:41</span><span class="nk"> &lt;javier_&gt;</span> are you planning any kde workshops there?
+<a name="l-437"></a><span class="tm">17:33:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> packaging plasmoids?
+<a name="l-438"></a><span class="tm">17:34:07</span><span class="nk"> &lt;wstephenson&gt;</span> no dev workshops planned but i do have one i was developing for linuxtag that i can give
+<a name="l-439"></a><span class="tm">17:34:07</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> no, creating plasmoids
+<a name="l-440"></a><span class="tm">17:34:28</span><span class="nk"> &lt;javier_&gt;</span> okis
+<a name="l-441"></a><span class="tm">17:34:56</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> which frank's project are you referring to?
+<a name="l-442"></a><span class="tm">17:34:57</span><span class="nk"> &lt;wstephenson&gt;</span> ok then
+<a name="l-443"></a><span class="tm">17:35:00</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> there's a page at techbase.kde.org
+<a name="l-444"></a><span class="tm">17:35:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> OBS packaging support in qt creator
+<a name="l-445"></a><span class="tm">17:35:20</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> your frank
+<a name="l-446"></a><span class="tm">17:35:23</span><span class="nk"> &lt;leinir&gt;</span> Well, other than that we're proceeding at pace with it, not really - if you want to check the design document, it's in the obs-qt-creator team clone on gitorious :)
+<a name="l-447"></a><span class="tm">17:35:33</span><span class="nk"> &lt;leinir&gt;</span> <span class="hi">javier_:</span> Hello, we are colleagues ;)
+<a name="l-448"></a><span class="tm">17:35:34</span><span class="nk"> &lt;javier_&gt;</span> I know, but a workshop (if possible) would be perfect
+<a name="l-449"></a><span class="tm">17:35:49</span><span class="nk"> &lt;anaumov&gt;</span> javier_, +1
+<a name="l-450"></a><span class="tm">17:35:51</span><span class="nk"> &lt;wstephenson&gt;</span> oh dragotin asked me if you are using his old qt creator obs plugin code at all?
+<a name="l-451"></a><span class="tm">17:36:00</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> gladly
+<a name="l-452"></a><span class="tm">17:36:02</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> I meant which one of frank's project
+<a name="l-453"></a><span class="tm">17:36:09</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">leinir:</span> hi ;)
+<a name="l-454"></a><span class="tm">17:36:25</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> are we on the same page now?
+<a name="l-455"></a><span class="tm">17:36:25</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">leinir:</span> are you also working on the open-pc?
+<a name="l-456"></a><span class="tm">17:36:54</span><span class="nk"> &lt;leinir&gt;</span> <span class="hi">wstephenson:</span> i didn't know there was one... but it would make sense to do so, sure :) have you got a link handy? (also, that part of the project is sebas' :) )
+<a name="l-457"></a><span class="tm">17:37:02</span><span class="nk"> &lt;leinir&gt;</span> <span class="hi">javier_:</span> No, i'm working on ocs :)
+<a name="l-458"></a><span class="tm">17:37:13</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> which page you mean?
+<a name="l-459"></a><span class="tm">17:37:19</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">leinir:</span> ocs?
+<a name="l-460"></a><span class="tm">17:37:35</span><span class="nk"> &lt;leinir&gt;</span> <span class="hi">javier_:</span> open collaboration services :)
+<a name="l-461"></a><span class="tm">17:37:37</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">leinir:</span> i'll ask dragotin for it
+<a name="l-462"></a><span class="tm">17:37:46</span><span class="nk"> &lt;leinir&gt;</span> Also, opendesktop.org's server side :)
+<a name="l-463"></a><span class="tm">17:38:00</span><span class="nk"> &lt;wstephenson&gt;</span> ok if that's it, let's talk about Frankitschek Global Empire in Q&amp;A, misc.
+<a name="l-464"></a><span class="tm">17:38:06</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">TOPIC:</span> Q&amp;A, Misc.
+<a name="l-465"></a><span class="tm">17:38:38</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">leinir:</span> perhaps it could be integrated with the Open-PC's desktop in the future :)
+<a name="l-466"></a><span class="tm">17:39:22</span><span class="nk"> &lt;leinir&gt;</span> <span class="hi">javier_:</span> it sort of already does - the social desktop plasmoid uses ocs already ;)
+<a name="l-467"></a><span class="tm">17:39:51</span><span class="nk"> &lt;javier_&gt;</span> hmm, but the plasmoid is not on the desktop (by default)
+<a name="l-468"></a><span class="tm">17:40:01</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">leinir:</span> are you coming to the opensuse conf?
+<a name="l-469"></a><span class="tm">17:40:32</span><span class="nk"> &lt;javier_&gt;</span> I think I can talk now about the installer's icons
+<a name="l-470"></a><span class="tm">17:41:11</span><span class="nk"> &lt;wstephenson&gt;</span> sure
+<a name="l-471"></a><span class="tm">17:41:32</span><span class="nk"> &lt;javier_&gt;</span> well, the installer uses different styles of icons and i was wondering if we could make oxygen's the default one
+<a name="l-472"></a><span class="tm">17:41:48</span><span class="nk"> &lt;javier_&gt;</span> since kde is the default desktop
+<a name="l-473"></a><span class="tm">17:42:06</span><span class="nk"> &lt;kmi&gt;</span> at least for DVD and KDE Live CD +1
+<a name="l-474"></a><span class="tm">17:42:23</span><span class="nk"> &lt;wstephenson&gt;</span> afaik yes this would be accepted, there was some discussion about it on -artwork or -marketing i think
+<a name="l-475"></a><span class="tm">17:42:29</span><span class="nk"> &lt;javier_&gt;</span> for some reason, YaST uses GNOME-style icons by default
+<a name="l-476"></a><span class="tm">17:42:42</span><span class="nk"> &lt;javier_&gt;</span> yes, it was on -artwork
+<a name="l-477"></a><span class="tm">17:43:06</span><span class="nk"> &lt;javier_&gt;</span> ok
+<a name="l-478"></a><span class="tm">17:43:29</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> for yast, make a bugreport (and add kde-maintainers to CC)
+<a name="l-479"></a><span class="tm">17:44:10</span><span class="nk"> &lt;leinir&gt;</span> <span class="hi">wstephenson:</span> Well, i certainly wouldn't mind that - Frank did mention it :)
+<a name="l-480"></a><span class="tm">17:44:11 </span><span class="nka">* leinir</span> <span class="ac">growls at stupid internets :P</span>
+<a name="l-481"></a><span class="tm">17:44:29</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">llunak:</span> iirc, there are two directories, the default one and another one for oxygen
+<a name="l-482"></a><span class="tm">17:44:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">leinir:</span> excellent
+<a name="l-483"></a><span class="tm">17:44:51</span><span class="nk"> &lt;javier_&gt;</span> so if the yast people change that, we wouldn't have to do anything extra
+<a name="l-484"></a><span class="tm">17:45:25</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> action for me
+<a name="l-485"></a><span class="tm">17:45:45</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">javier_ bugreport for yast to use oxygen icons in installer.</span>
+<a name="l-486"></a><span class="tm">17:45:51</span><span class="nk"> &lt;javier_&gt;</span> thanks
+<a name="l-487"></a><span class="tm">17:46:18</span><span class="nk"> &lt;wstephenson&gt;</span> well if that's it
+<a name="l-488"></a><span class="tm">17:46:31</span><span class="nk"> &lt;wstephenson&gt;</span> i will end the structured part of the meeting
+<a name="l-489"></a><span class="tm">17:46:40</span><span class="nk"> &lt;wstephenson&gt;</span> of course we can continue to chat
+<a name="l-490"></a><span class="tm">17:46:42</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">javier_:</span> do not run I will be back in 2 minutes
+<a name="l-491"></a><span class="tm">17:46:51</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">javier_:</span> I want to ask you something about packages
+<a name="l-492"></a><span class="tm">17:47:13</span><span class="nk"> &lt;wstephenson&gt;</span> thanks everyone for coming
+<a name="l-493"></a><span class="tm">17:47:15</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

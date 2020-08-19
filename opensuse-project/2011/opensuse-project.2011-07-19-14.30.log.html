@@ -1,0 +1,989 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">14:30:22</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE conference planning meeting</span>
+<a name="l-2"></a><span class="tm">14:30:22</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Tue Jul 19 14:30:22 2011 UTC.  The chair is AJaeger. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">14:30:22</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">14:31:19</span><span class="nk"> &lt;AJaeger&gt;</span> Who's here to discuss the conference? I'd like to ask around who's awake ;)
+<a name="l-5"></a><span class="tm">14:31:30 </span><span class="nka">* AlanClark</span> <span class="ac">is awake</span>
+<a name="l-6"></a><span class="tm">14:31:44 </span><span class="nka">* coolo</span> <span class="ac">is awake but has no idea about the conference up to now</span>
+<a name="l-7"></a><span class="tm">14:31:53</span><span class="nk"> &lt;GnuOwned&gt;</span> AJaeger Me!
+<a name="l-8"></a><span class="tm">14:32:03</span><span class="nk"> &lt;izabelvalverde&gt;</span> I'm here
+<a name="l-9"></a><span class="tm">14:32:38</span><span class="nk"> &lt;henne&gt;</span> here
+<a name="l-10"></a><span class="tm">14:32:40 </span><span class="nka">* vuntz</span> <span class="ac">is here but not awake ;-)</span>
+<a name="l-11"></a><span class="tm">14:33:05</span><span class="nk"> &lt;digitltom&gt;</span> i'm also there
+<a name="l-12"></a><span class="tm">14:33:06</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Will dragotin join us? He's not online
+<a name="l-13"></a><span class="tm">14:33:20</span><span class="nk"> &lt;henne&gt;</span> dragotin will come a little later
+<a name="l-14"></a><span class="tm">14:33:21</span><span class="nk"> &lt;coolo&gt;</span> he's doing bee things
+<a name="l-15"></a><span class="tm">14:33:26</span><span class="nk"> &lt;henne&gt;</span> he's heading home currently
+<a name="l-16"></a><span class="tm">14:33:34</span><span class="nk"> &lt;henne&gt;</span> jos wont make it
+<a name="l-17"></a><span class="tm">14:33:58 </span><span class="nka">* cwh</span> <span class="ac">waves</span>
+<a name="l-18"></a><span class="tm">14:34:02</span><span class="nk"> &lt;AJaeger&gt;</span> Ok, then welcome everybody! Thanks for the raising of hands!
+<a name="l-19"></a><span class="tm">14:34:15</span><span class="nk"> &lt;AJaeger&gt;</span> The goal of this meeting is to sync all of us on what's planned for
+<a name="l-20"></a><span class="tm">14:34:17</span><span class="nk"> &lt;AJaeger&gt;</span> the openSUSE conference and where we are at.
+<a name="l-21"></a><span class="tm">14:34:31</span><span class="nk"> &lt;AJaeger&gt;</span> I've put up an agenda at http://en.opensuse.org/openSUSE:Conference_meeting.
+<a name="l-22"></a><span class="tm">14:34:32</span><span class="nk"> &lt;henne&gt;</span> so we can deduct what we still need to do :)
+<a name="l-23"></a><span class="tm">14:34:47</span><span class="nk"> &lt;AJaeger&gt;</span> For each topic, let's discuss what's planned, who's responsible and
+<a name="l-24"></a><span class="tm">14:34:49</span><span class="nk"> &lt;AJaeger&gt;</span> where help is needed.
+<a name="l-25"></a><span class="tm">14:34:59</span><span class="nk"> &lt;AJaeger&gt;</span> Let's first discuss who wants to chair with me (just speak up) and how
+<a name="l-26"></a><span class="tm">14:35:00</span><span class="nk"> &lt;AJaeger&gt;</span> to record everything.
+<a name="l-27"></a><span class="tm">14:35:00 </span><span class="nka">* henne</span> <span class="ac">a.k.a. no shit sherlock</span>
+<a name="l-28"></a><span class="tm">14:35:16</span><span class="nk"> &lt;AJaeger&gt;</span> Should we have an etherpad and move the contents from their later to
+<a name="l-29"></a><span class="tm">14:35:17</span><span class="nk"> &lt;AJaeger&gt;</span> the wiki? Or should we edit the wiki directly? Shall we do it in
+<a name="l-30"></a><span class="tm">14:35:18</span><span class="nk"> &lt;henne&gt;</span> chair?
+<a name="l-31"></a><span class="tm">14:35:18</span><span class="nk"> &lt;AJaeger&gt;</span> parallel to the meeting - and who will?
+<a name="l-32"></a><span class="tm">14:35:34</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> I use the meeting bot ;)
+<a name="l-33"></a><span class="tm">14:35:52</span><span class="nk"> &lt;henne&gt;</span> then do it :)
+<a name="l-34"></a><span class="tm">14:35:54</span><span class="nk"> &lt;AJaeger&gt;</span> So, if anybody wants to issue #action items, speak up and I make you chair for this meeting
+<a name="l-35"></a><span class="tm">14:36:05</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="cmd">#chair </span><span class="cmdline">henne</span>
+<a name="l-36"></a><span class="tm">14:36:05</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: AJaeger henne
+<a name="l-37"></a><span class="tm">14:36:13</span><span class="nk"> &lt;henne&gt;</span> lets record directly on the wiki please
+<a name="l-38"></a><span class="tm">14:36:24</span><span class="nk"> &lt;henne&gt;</span> i see no point in using something in between
+<a name="l-39"></a><span class="tm">14:36:52</span><span class="nk"> &lt;AJaeger&gt;</span> etherpad has the advantage that people see what's getting typed - wiki is less overhead.
+<a name="l-40"></a><span class="tm">14:37:03</span><span class="nk"> &lt;henne&gt;</span> less overhead please
+<a name="l-41"></a><span class="tm">14:37:09</span><span class="nk"> &lt;AJaeger&gt;</span> Who volunteers to update the wiki?
+<a name="l-42"></a><span class="tm">14:37:10</span><span class="nk"> &lt;henne&gt;</span> this will be messy as it is :)
+<a name="l-43"></a><span class="tm">14:37:16 </span><span class="nka">* henne</span> <span class="ac">volunteers</span>
+<a name="l-44"></a><span class="tm">14:37:23</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Thanks a lot!
+<a name="l-45"></a><span class="tm">14:37:36</span><span class="nk"> &lt;AlanClark&gt;</span> just save the page every couple minutes, then all can simply refresh
+<a name="l-46"></a><span class="tm">14:37:57</span><span class="nk"> &lt;henne&gt;</span> no need to track it. I record
+<a name="l-47"></a><span class="tm">14:37:59</span><span class="nk"> &lt;henne&gt;</span> not invent
+<a name="l-48"></a><span class="tm">14:38:02</span><span class="nk"> &lt;henne&gt;</span> we invent here :)
+<a name="l-49"></a><span class="tm">14:38:29</span><span class="nk"> &lt;AJaeger&gt;</span> Ok, let's start:
+<a name="l-50"></a><span class="tm">14:38:44</span><span class="nk"> &lt;AJaeger&gt;</span> Here's the agenda - please tell me whether I missed anything:
+<a name="l-51"></a><span class="tm">14:38:55</span><span class="nk"> &lt;AJaeger&gt;</span> Web presence (Wiki, Indigo)
+<a name="l-52"></a><span class="tm">14:38:57</span><span class="nk"> &lt;AJaeger&gt;</span> Promotion
+<a name="l-53"></a><span class="tm">14:38:58</span><span class="nk"> &lt;AJaeger&gt;</span> Conference Program
+<a name="l-54"></a><span class="tm">14:39:00</span><span class="nk"> &lt;AJaeger&gt;</span> Budget
+<a name="l-55"></a><span class="tm">14:39:01</span><span class="nk"> &lt;AJaeger&gt;</span> Sponsoring
+<a name="l-56"></a><span class="tm">14:39:03</span><span class="nk"> &lt;AJaeger&gt;</span> Travel sponsoring
+<a name="l-57"></a><span class="tm">14:39:04</span><span class="nk"> &lt;AJaeger&gt;</span> Venue
+<a name="l-58"></a><span class="tm">14:39:06</span><span class="nk"> &lt;AJaeger&gt;</span> Location
+<a name="l-59"></a><span class="tm">14:39:07</span><span class="nk"> &lt;AJaeger&gt;</span> Technique
+<a name="l-60"></a><span class="tm">14:39:09</span><span class="nk"> &lt;AJaeger&gt;</span> Food and drinks
+<a name="l-61"></a><span class="tm">14:39:10</span><span class="nk"> &lt;AJaeger&gt;</span> Party - BBQ Evening
+<a name="l-62"></a><span class="tm">14:39:12</span><span class="nk"> &lt;AJaeger&gt;</span> Hotels and Hostels
+<a name="l-63"></a><span class="tm">14:39:13</span><span class="nk"> &lt;AJaeger&gt;</span> Supporting Program
+<a name="l-64"></a><span class="tm">14:39:15</span><span class="nk"> &lt;AJaeger&gt;</span> Registration Desk
+<a name="l-65"></a><span class="tm">14:39:16</span><span class="nk"> &lt;AJaeger&gt;</span> Internet
+<a name="l-66"></a><span class="tm">14:39:48</span><span class="nk"> &lt;henne&gt;</span> i bet we'll notice what missing once we start talking ;)
+<a name="l-67"></a><span class="tm">14:39:51</span><span class="nk"> &lt;AJaeger&gt;</span> nothing missing for now? If we notice later, we can enhance ;)
+<a name="l-68"></a><span class="tm">14:40:05</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">Web Presence</span>
+<a name="l-69"></a><span class="tm">14:40:24</span><span class="nk"> &lt;AJaeger&gt;</span> We have two areas here: The wiki and indigo.
+<a name="l-70"></a><span class="tm">14:41:03</span><span class="nk"> &lt;AJaeger&gt;</span> Status of wiki: Many pages (follow Portal:Conference and Category:Conference) have been updated, others are missing. We should review all of them...
+<a name="l-71"></a><span class="tm">14:41:07</span><span class="nk"> &lt;henne&gt;</span> the first question that comes to my mind is: do we want to stay with the wiki for the web-marketing-part?
+<a name="l-72"></a><span class="tm">14:41:31</span><span class="nk"> &lt;AJaeger&gt;</span> what do you mean with web-marketing part?
+<a name="l-73"></a><span class="tm">14:41:41</span><span class="nk"> &lt;AlanClark&gt;</span> henne, what's the alternative?
+<a name="l-74"></a><span class="tm">14:41:48</span><span class="nk"> &lt;henne&gt;</span> well. the conference web-page
+<a name="l-75"></a><span class="tm">14:42:02</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> You mean have the Portal:Conference in the wiki or not?
+<a name="l-76"></a><span class="tm">14:42:18</span><span class="nk"> &lt;henne&gt;</span> the point people go in the web if they want to know something for the conference
+<a name="l-77"></a><span class="tm">14:42:28</span><span class="nk"> &lt;henne&gt;</span> the wiki exposes a lot of other stuff to them
+<a name="l-78"></a><span class="tm">14:42:59</span><span class="nk"> &lt;AJaeger&gt;</span> conference.opensuse.org redirects right now to http://en.opensuse.org/Portal:Conference
+<a name="l-79"></a><span class="tm">14:43:01</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> a webpage not in the wiki. in previous years we used wordpress or whatever
+<a name="l-80"></a><span class="tm">14:43:20</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Last year it was the wiki as well - personally, I don't care.
+<a name="l-81"></a><span class="tm">14:43:22</span><span class="nk"> &lt;vuntz&gt;</span> last year, we used the wiki too, iirc
+<a name="l-82"></a><span class="tm">14:43:28</span><span class="nk"> &lt;henne&gt;</span> yep
+<a name="l-83"></a><span class="tm">14:43:46</span><span class="nk"> &lt;AJaeger&gt;</span> The question is who wants to drive this - and if that person/team has a preference?
+<a name="l-84"></a><span class="tm">14:44:02 </span><span class="nka">* vuntz</span> <span class="ac">tends to prefer a real web page, not on the wiki, but won't drive that</span>
+<a name="l-85"></a><span class="tm">14:44:31</span><span class="nk"> &lt;henne&gt;</span> i prefer a real page too
+<a name="l-86"></a><span class="tm">14:44:41</span><span class="nk"> &lt;AlanClark&gt;</span> question - when we have the program layed out - will that be located in indigo - meaning we have conference information located in the wiki and indigo?
+<a name="l-87"></a><span class="tm">14:45:05</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">AlanClark:</span> Yes, both wiki and indigo
+<a name="l-88"></a><span class="tm">14:46:17</span><span class="nk"> &lt;henne&gt;</span> so who is doing something in that area right now?
+<a name="l-89"></a><span class="tm">14:46:54</span><span class="nk"> &lt;henne&gt;</span> judging from the wiki histories only jos
+<a name="l-90"></a><span class="tm">14:47:02</span><span class="nk"> &lt;AJaeger&gt;</span> Some people updated pages, incl. cwh, dragotin, myself.
+<a name="l-91"></a><span class="tm">14:47:19</span><span class="nk"> &lt;AJaeger&gt;</span> Might be that Jos was the main editor of the Portal page.
+<a name="l-92"></a><span class="tm">14:47:59</span><span class="nk"> &lt;henne&gt;</span> well thats what this topic is about right? :)
+<a name="l-93"></a><span class="tm">14:48:05</span><span class="nk"> &lt;henne&gt;</span> the web presence
+<a name="l-94"></a><span class="tm">14:48:54</span><span class="nk"> &lt;AJaeger&gt;</span> Is anybody volunteering or should we volunteer Jos? ;)
+<a name="l-95"></a><span class="tm">14:49:11</span><span class="nk"> &lt;henne&gt;</span> i can do the web-presence part
+<a name="l-96"></a><span class="tm">14:49:38</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Thanks! Do you need further help?
+<a name="l-97"></a><span class="tm">14:49:50</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="cmd">#info </span><span class="cmdline">henne owns the web-presence part</span>
+<a name="l-98"></a><span class="tm">14:50:04</span><span class="nk"> &lt;henne&gt;</span> nope currently not
+<a name="l-99"></a><span class="tm">14:50:16</span><span class="nk"> &lt;henne&gt;</span> i'll go the wordpress route and kick individual people
+<a name="l-100"></a><span class="tm">14:50:32</span><span class="nk"> &lt;AJaeger&gt;</span> and review existing pages, please
+<a name="l-101"></a><span class="tm">14:50:41</span><span class="nk"> &lt;henne&gt;</span> sure
+<a name="l-102"></a><span class="tm">14:50:42</span><span class="nk"> &lt;AJaeger&gt;</span> ok, then on to Indigo.
+<a name="l-103"></a><span class="tm">14:51:07</span><span class="nk"> &lt;AJaeger&gt;</span> It's used for the conference program - dragotin adminstrates the server, a couple of us have access to the admin interface.
+<a name="l-104"></a><span class="tm">14:51:23</span><span class="nk"> &lt;henne&gt;</span> whos a couple of us?
+<a name="l-105"></a><span class="tm">14:51:41</span><span class="nk"> &lt;AlanClark&gt;</span> all on the paper committee
+<a name="l-106"></a><span class="tm">14:52:02</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> I don't have the full list of admins but I guess the cfp committee and myself
+<a name="l-107"></a><span class="tm">14:52:43</span><span class="nk"> &lt;AJaeger&gt;</span> indico is also used for registration of users. I ask everybody to sign up so that we know for how many people to cook ;)
+<a name="l-108"></a><span class="tm">14:53:31</span><span class="nk"> &lt;AJaeger&gt;</span> I expect the usage of Indico as part of the cfp team is part of tomorrow's meeting.
+<a name="l-109"></a><span class="tm">14:53:35</span><span class="nk"> &lt;henne&gt;</span> hm i think it would be great to know who can/should do what in indico
+<a name="l-110"></a><span class="tm">14:53:51</span><span class="nk"> &lt;henne&gt;</span> apart from the CFP team i mean
+<a name="l-111"></a><span class="tm">14:54:06</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> We have to ask dragotin.
+<a name="l-112"></a><span class="tm">14:54:07 </span><span class="nka">* vuntz</span> <span class="ac">is trying to find where this info is in indico :-)</span>
+<a name="l-113"></a><span class="tm">14:54:12</span><span class="nk"> &lt;henne&gt;</span> i see 3 admins in indico
+<a name="l-114"></a><span class="tm">14:54:21</span><span class="nk"> &lt;henne&gt;</span> dragoting, vuntz and myself
+<a name="l-115"></a><span class="tm">14:54:54</span><span class="nk"> &lt;suseROCKs&gt;</span> Hi folks
+<a name="l-116"></a><span class="tm">14:54:57</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">henne:</span> but that's for the whole instance, not for the event
+<a name="l-117"></a><span class="tm">14:55:15</span><span class="nk"> &lt;henne&gt;</span> ah okay
+<a name="l-118"></a><span class="tm">14:55:44</span><span class="nk"> &lt;vuntz&gt;</span> at least, that's my understanding
+<a name="l-119"></a><span class="tm">14:56:23</span><span class="nk"> &lt;AJaeger&gt;</span> AFAIU the cfp team should be able to adminstrate the 2011 event.
+<a name="l-120"></a><span class="tm">14:56:33</span><span class="nk"> &lt;henne&gt;</span> okay then lets bump this topic down until dragotin is here
+<a name="l-121"></a><span class="tm">14:56:48</span><span class="nk"> &lt;henne&gt;</span> next topic
+<a name="l-122"></a><span class="tm">14:57:17</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">Promotion</span>
+<a name="l-123"></a><span class="tm">14:57:45</span><span class="nk"> &lt;henne&gt;</span> can you explain that one? :)
+<a name="l-124"></a><span class="tm">14:57:52</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> Is the marketing team owning promotion - or is that Jos?
+<a name="l-125"></a><span class="tm">14:58:28</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   its a general purpose mainly held by the marketing team   I created a page a while ago  but not many people volunteered the tasks
+<a name="l-126"></a><span class="tm">14:58:29</span><span class="nk"> &lt;AJaeger&gt;</span> Promotion includes for me: Media partnerships (we have one with Linux magazine, LWN is under discussion) and general promotion of the event through blogs etc
+<a name="l-127"></a><span class="tm">14:58:38</span><span class="nk"> &lt;dragotin&gt;</span> hi
+<a name="l-128"></a><span class="tm">14:58:42</span><span class="nk"> &lt;dragotin&gt;</span> sorry for being late
+<a name="l-129"></a><span class="tm">14:58:46</span><span class="nk"> &lt;henne&gt;</span> thats hardly actionable
+<a name="l-130"></a><span class="tm">14:58:48</span><span class="nk"> &lt;vuntz&gt;</span> ah, I have the list: yaloki, AlanClark, AJaeger, rlihm, michael matz, jos, wstephenson and me
+<a name="l-131"></a><span class="tm">14:58:54</span><span class="nk"> &lt;suseROCKs&gt;</span> I expect to see increased promotion activities once we have more concrete info about the conference itself, including CFPs and etc.
+<a name="l-132"></a><span class="tm">14:59:05</span><span class="nk"> &lt;henne&gt;</span> lets please make this a list of actionable things
+<a name="l-133"></a><span class="tm">14:59:11</span><span class="nk"> &lt;henne&gt;</span> not some high level topics
+<a name="l-134"></a><span class="tm">14:59:19</span><span class="nk"> &lt;henne&gt;</span> we have 2 months left. not two years ;)
+<a name="l-135"></a><span class="tm">14:59:45</span><span class="nk"> &lt;henne&gt;</span> you said media partnerships
+<a name="l-136"></a><span class="tm">14:59:49</span><span class="nk"> &lt;henne&gt;</span> what does that mean?
+<a name="l-137"></a><span class="tm">14:59:56</span><span class="nk"> &lt;suseROCKs&gt;</span> less than 2 months
+<a name="l-138"></a><span class="tm">15:00:02</span><span class="nk"> &lt;henne&gt;</span> getting them?
+<a name="l-139"></a><span class="tm">15:00:09</span><span class="nk"> &lt;henne&gt;</span> caring for them?
+<a name="l-140"></a><span class="tm">15:00:28</span><span class="nk"> &lt;dragotin&gt;</span> it means that we mention the partnership on our website and they report
+<a name="l-141"></a><span class="tm">15:00:30</span><span class="nk"> &lt;AJaeger&gt;</span> With Linux Magazin it means for us: Placing (for free) and ad in their magazines, writing about the event.
+<a name="l-142"></a><span class="tm">15:00:31</span><span class="nk"> &lt;dragotin&gt;</span> AFAIK
+<a name="l-143"></a><span class="tm">15:00:44</span><span class="nk"> &lt;dragotin&gt;</span> yes, and put free ads
+<a name="l-144"></a><span class="tm">15:00:56</span><span class="nk"> &lt;henne&gt;</span> okay and what are the actionable things for us?
+<a name="l-145"></a><span class="tm">15:01:05</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">dragotin:</span> Also, it means that we mention the partnership and - if we have some - put magazines in the bags.
+<a name="l-146"></a><span class="tm">15:01:12</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> For Linux Magazine: Right now nothing.
+<a name="l-147"></a><span class="tm">15:01:23</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AJaeger:</span> yes
+<a name="l-148"></a><span class="tm">15:01:34</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Action for LWN is for Jos: Clarify status, get it rolling.
+<a name="l-149"></a><span class="tm">15:01:37</span><span class="nk"> &lt;dragotin&gt;</span> maybe would it be actionable to define the Media Partnership :)
+<a name="l-150"></a><span class="tm">15:01:37</span><span class="nk"> &lt;henne&gt;</span> okay so this is taken care of?
+<a name="l-151"></a><span class="tm">15:02:00</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">dragotin:</span> Yes, agreed, documenting what media partnership exactly is.
+<a name="l-152"></a><span class="tm">15:02:03</span><span class="nk"> &lt;suseROCKs&gt;</span> Jos is pretty much on top of it afaik
+<a name="l-153"></a><span class="tm">15:02:17</span><span class="nk"> &lt;AJaeger&gt;</span> So, that's the media partnerships - owned by Jos.
+<a name="l-154"></a><span class="tm">15:02:22</span><span class="nk"> &lt;henne&gt;</span> so actionable item for media partnership
+<a name="l-155"></a><span class="tm">15:02:28</span><span class="nk"> &lt;dragotin&gt;</span> the thing is: Does that still contribute to the conference 2011
+<a name="l-156"></a><span class="tm">15:02:28</span><span class="nk"> &lt;henne&gt;</span> clarify status with LWN
+<a name="l-157"></a><span class="tm">15:02:33</span><span class="nk"> &lt;dragotin&gt;</span> and I fear: no.
+<a name="l-158"></a><span class="tm">15:02:45</span><span class="nk"> &lt;dragotin&gt;</span> yes for clearifying status
+<a name="l-159"></a><span class="tm">15:03:07</span><span class="nk"> &lt;AJaeger&gt;</span> and also as item: Document what media partnership means
+<a name="l-160"></a><span class="tm">15:03:25</span><span class="nk"> &lt;henne&gt;</span> why?
+<a name="l-161"></a><span class="tm">15:03:43</span><span class="nk"> &lt;AJaeger&gt;</span> So, that we all know what it contains and why it's good
+<a name="l-162"></a><span class="tm">15:03:55</span><span class="nk"> &lt;dragotin&gt;</span> It is what the one who clearifies the status negotiates with LWN
+<a name="l-163"></a><span class="tm">15:04:14</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AJaeger:</span> agreed for 2012, but now its not prio 1
+<a name="l-164"></a><span class="tm">15:04:35</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">dragotin:</span> document is a sentence IMO.
+<a name="l-165"></a><span class="tm">15:04:36</span><span class="nk"> &lt;henne&gt;</span> yeah this sounds like something we don't have to do now
+<a name="l-166"></a><span class="tm">15:05:22</span><span class="nk"> &lt;henne&gt;</span> anyway. i note it down
+<a name="l-167"></a><span class="tm">15:05:30</span><span class="nk"> &lt;AJaeger&gt;</span> Rest of promotion: We need to invite people to join the confernce, so market the event. And the call for papers is open.
+<a name="l-168"></a><span class="tm">15:05:33</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AJaeger:</span> yes, might be. But still prio 2 IMO.
+<a name="l-169"></a><span class="tm">15:05:47</span><span class="nk"> &lt;henne&gt;</span> actionable
+<a name="l-170"></a><span class="tm">15:05:58</span><span class="nk"> &lt;AJaeger&gt;</span> Jos has written quite some articles.
+<a name="l-171"></a><span class="tm">15:06:05</span><span class="nk"> &lt;henne&gt;</span> something actionable includes the how BTW ;)
+<a name="l-172"></a><span class="tm">15:06:07</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> What kind of actions do we have for promotion?
+<a name="l-173"></a><span class="tm">15:07:22</span><span class="nk"> &lt;AJaeger&gt;</span> http://en.opensuse.org/openSUSE:Conference_Promotion_2011 contains a lot of items.
+<a name="l-174"></a><span class="tm">15:07:23</span><span class="nk"> &lt;henne&gt;</span> obviously blog posts on news.o.o are the main thing right?
+<a name="l-175"></a><span class="tm">15:07:36</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   atm, its sort of a blend  that involves CFP, online marketing, articles, and sponsorships
+<a name="l-176"></a><span class="tm">15:07:36</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> So far
+<a name="l-177"></a><span class="tm">15:07:53</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   that's one of the things yes.    We also need people to reach out and tell people to come to the conference
+<a name="l-178"></a><span class="tm">15:08:02</span><span class="nk"> &lt;dragotin&gt;</span> what about the actionable item: "Make sure to have an news article once a week"
+<a name="l-179"></a><span class="tm">15:08:07</span><span class="nk"> &lt;suseROCKs&gt;</span> However, that will be much easier to do once we have a better idea of what we will have actually at the conference
+<a name="l-180"></a><span class="tm">15:08:15</span><span class="nk"> &lt;dragotin&gt;</span> about the conference
+<a name="l-181"></a><span class="tm">15:08:23</span><span class="nk"> &lt;henne&gt;</span> this is actionable stuff
+<a name="l-182"></a><span class="tm">15:08:28</span><span class="nk"> &lt;henne&gt;</span> http://en.opensuse.org/openSUSE:Conference_Promotion_2011
+<a name="l-183"></a><span class="tm">15:08:38</span><span class="nk"> &lt;henne&gt;</span> this is what we are looking for today
+<a name="l-184"></a><span class="tm">15:08:55</span><span class="nk"> &lt;suseROCKs&gt;</span> dragotin,  sure.  and jos and I have done what we can to write as mucha s we can.  but we can't post hollow articles either.  So we need more meat from other parts of conf planning before we can write a heck of a lot more
+<a name="l-185"></a><span class="tm">15:09:04</span><span class="nk"> &lt;henne&gt;</span> so lets talk about that page then
+<a name="l-186"></a><span class="tm">15:09:16</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">suseROCKs:</span> I see
+<a name="l-187"></a><span class="tm">15:09:50</span><span class="nk"> &lt;henne&gt;</span> can we go over that page now and talk about the items?
+<a name="l-188"></a><span class="tm">15:09:54</span><span class="nk"> &lt;suseROCKs&gt;</span> dragotin,  I expect in a week's time we'll really blitz very well
+<a name="l-189"></a><span class="tm">15:10:18</span><span class="nk"> &lt;suseROCKs&gt;</span> dragotin,   don't forget to send the email to the CFP team about how to navigate in indico  cuz that will help speed things up
+<a name="l-190"></a><span class="tm">15:10:58</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> Could you update the page?
+<a name="l-191"></a><span class="tm">15:11:12</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   sure  I'll go through it today
+<a name="l-192"></a><span class="tm">15:11:28</span><span class="nk"> &lt;AJaeger&gt;</span> I think the next big part is the part called "Registration/Invitation Drive" - and that needs partially the program.
+<a name="l-193"></a><span class="tm">15:12:31</span><span class="nk"> &lt;dragotin&gt;</span> I mean, at least for PC members, the program is not so secret
+<a name="l-194"></a><span class="tm">15:12:32</span><span class="nk"> &lt;AJaeger&gt;</span> I see many good ideas there - but miss people to execute them. How can we get more people?
+<a name="l-195"></a><span class="tm">15:12:59</span><span class="nk"> &lt;suseROCKs&gt;</span> PC?
+<a name="l-196"></a><span class="tm">15:13:05</span><span class="nk"> &lt;dragotin&gt;</span> Program Committee
+<a name="l-197"></a><span class="tm">15:13:14</span><span class="nk"> &lt;suseROCKs&gt;</span> Politcally Coorect Members?  :-)
+<a name="l-198"></a><span class="tm">15:14:20</span><span class="nk"> &lt;izabelvalverde&gt;</span> AJaeger what is invitation drive?
+<a name="l-199"></a><span class="tm">15:14:27</span><span class="nk"> &lt;dragotin&gt;</span> what is "Registration/Invitation drive" btw?
+<a name="l-200"></a><span class="tm">15:14:33</span><span class="nk"> &lt;dragotin&gt;</span> sorry if the question is dumb
+<a name="l-201"></a><span class="tm">15:14:41</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">izabelvalverde:</span> ah :-)
+<a name="l-202"></a><span class="tm">15:14:46</span><span class="nk"> &lt;suseROCKs&gt;</span> Encouraging people to come to the conference
+<a name="l-203"></a><span class="tm">15:14:52</span><span class="nk"> &lt;dragotin&gt;</span> ok
+<a name="l-204"></a><span class="tm">15:14:57</span><span class="nk"> &lt;henne&gt;</span> please people
+<a name="l-205"></a><span class="tm">15:15:07</span><span class="nk"> &lt;henne&gt;</span> can we go over the page openSUSE:Conference_Promotion_2011
+<a name="l-206"></a><span class="tm">15:15:12</span><span class="nk"> &lt;henne&gt;</span> step by step
+<a name="l-207"></a><span class="tm">15:15:19</span><span class="nk"> &lt;henne&gt;</span> instead of discussing random topics?
+<a name="l-208"></a><span class="tm">15:15:42</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">henne:</span> we missed you for the last 5 minutes ;-)
+<a name="l-209"></a><span class="tm">15:15:48</span><span class="nk"> &lt;AJaeger&gt;</span> Ok, let's go :" Social Networks"
+<a name="l-210"></a><span class="tm">15:15:55</span><span class="nk"> &lt;izabelvalverde&gt;</span> sorry henne
+<a name="l-211"></a><span class="tm">15:15:58</span><span class="nk"> &lt;AJaeger&gt;</span> Facebook event page created?
+<a name="l-212"></a><span class="tm">15:16:03</span><span class="nk"> &lt;izabelvalverde&gt;</span> ahh dragotin ;-)
+<a name="l-213"></a><span class="tm">15:16:28</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> ?
+<a name="l-214"></a><span class="tm">15:16:30</span><span class="nk"> &lt;suseROCKs&gt;</span> long ago and amply advertised to the communityt to get involved in that event page
+<a name="l-215"></a><span class="tm">15:16:49</span><span class="nk"> &lt;AJaeger&gt;</span> "Facebook Pages and Groups " ?
+<a name="l-216"></a><span class="tm">15:16:58</span><span class="nk"> &lt;suseROCKs&gt;</span> we also post news articles there as well
+<a name="l-217"></a><span class="tm">15:17:13</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   yes  whenever we have news articles, I post to any openSUSE pages or groups on FB
+<a name="l-218"></a><span class="tm">15:17:18</span><span class="nk"> &lt;warlordfff&gt;</span> do we did anything at google + ?
+<a name="l-219"></a><span class="tm">15:17:18</span><span class="nk"> &lt;henne&gt;</span> okay cool
+<a name="l-220"></a><span class="tm">15:17:29</span><span class="nk"> &lt;AJaeger&gt;</span> "Twitter"? Could use some more help - anybody interested in joining?
+<a name="l-221"></a><span class="tm">15:17:49</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,   no   google+ did not exist  therre at the time.  And by the way,  your google+ account keeps spamming  me :-)
+<a name="l-222"></a><span class="tm">15:17:50</span><span class="nk"> &lt;henne&gt;</span> doing what?
+<a name="l-223"></a><span class="tm">15:17:51</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">warlordfff:</span> Currently not allowed by Google to create an "openSUSE account" - so individuals have to do it.
+<a name="l-224"></a><span class="tm">15:18:22</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> doing what for twitter?
+<a name="l-225"></a><span class="tm">15:18:30</span><span class="nk"> &lt;henne&gt;</span> sending stuff?
+<a name="l-226"></a><span class="tm">15:18:34</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,     I can't read cotweet (crappy design for low-vision users)  so we need volunteers.  But Chuck is AWOL these days to do that.
+<a name="l-227"></a><span class="tm">15:18:37</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">AJaeger:</span> forgot to get you out
+<a name="l-228"></a><span class="tm">15:18:44</span><span class="nk"> &lt;warlordfff&gt;</span> will do it now
+<a name="l-229"></a><span class="tm">15:18:52</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> sending stuff about the conference, cleaning up the list of speakers for the conf account
+<a name="l-230"></a><span class="tm">15:19:10</span><span class="nk"> &lt;dragotin&gt;</span> AI for everybody, no?
+<a name="l-231"></a><span class="tm">15:19:23</span><span class="nk"> &lt;henne&gt;</span> not everybody can send as @openSUSE
+<a name="l-232"></a><span class="tm">15:19:32</span><span class="nk"> &lt;AJaeger&gt;</span> So, let me take the twitter AI - and whoever wants to help, talk with me.
+<a name="l-233"></a><span class="tm">15:19:33</span><span class="nk"> &lt;dragotin&gt;</span> I see
+<a name="l-234"></a><span class="tm">15:19:43</span><span class="nk"> &lt;AJaeger&gt;</span> I can sign people up for @openSUSE and @openSUSEconf
+<a name="l-235"></a><span class="tm">15:19:47</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> i'll help there
+<a name="l-236"></a><span class="tm">15:19:59</span><span class="nk"> &lt;suseROCKs&gt;</span> dragotin,   people have to intervace @opensuse via cotweet   not directly.
+<a name="l-237"></a><span class="tm">15:20:12</span><span class="nk"> &lt;dragotin&gt;</span> k, I am too old
+<a name="l-238"></a><span class="tm">15:20:12</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Thanks. I'll set you up tomorrow.
+<a name="l-239"></a><span class="tm">15:20:17</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-240"></a><span class="tm">15:20:29</span><span class="nk"> &lt;suseROCKs&gt;</span> thanks henne
+<a name="l-241"></a><span class="tm">15:20:52</span><span class="nk"> &lt;henne&gt;</span> next topic
+<a name="l-242"></a><span class="tm">15:21:20</span><span class="nk"> &lt;AJaeger&gt;</span> "Twitter International groups "
+<a name="l-243"></a><span class="tm">15:21:39</span><span class="nk"> &lt;AJaeger&gt;</span> We have that list - but need to talk with the guys.
+<a name="l-244"></a><span class="tm">15:21:56</span><span class="nk"> &lt;AJaeger&gt;</span> Give me that AI to contact them and ask them to promote the conference.
+<a name="l-245"></a><span class="tm">15:22:00</span><span class="nk"> &lt;warlordfff&gt;</span> mmm "Twitter International groups "?
+<a name="l-246"></a><span class="tm">15:22:04</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,    ok  can you and I work on that today or tomorrow?  I didn't kno wyou had that list
+<a name="l-247"></a><span class="tm">15:22:05</span><span class="nk"> &lt;henne&gt;</span> who has that list?
+<a name="l-248"></a><span class="tm">15:22:07</span><span class="nk"> &lt;AJaeger&gt;</span> @opensuse_el
+<a name="l-249"></a><span class="tm">15:22:14</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> It's in the wiki ;)
+<a name="l-250"></a><span class="tm">15:22:25</span><span class="nk"> &lt;suseROCKs&gt;</span> (sighs)
+<a name="l-251"></a><span class="tm">15:22:44</span><span class="nk"> &lt;AJaeger&gt;</span> http://en.opensuse.org/openSUSE:Social_media_contacts
+<a name="l-252"></a><span class="tm">15:23:01</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,   there's many openSUSE groups/twitters/etc. around the world and in different langauges that we don't control but are important part of our community
+<a name="l-253"></a><span class="tm">15:23:16</span><span class="nk"> &lt;henne&gt;</span> so who is going to contact them?
+<a name="l-254"></a><span class="tm">15:23:29</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> me
+<a name="l-255"></a><span class="tm">15:23:35</span><span class="nk"> &lt;henne&gt;</span> okay wunderful
+<a name="l-256"></a><span class="tm">15:23:48</span><span class="nk"> &lt;suseROCKs&gt;</span> not wunderbar?  :-)
+<a name="l-257"></a><span class="tm">15:23:58</span><span class="nk"> &lt;AJaeger&gt;</span> "Identi.ca"?
+<a name="l-258"></a><span class="tm">15:24:04</span><span class="nk"> &lt;warlordfff&gt;</span> ok so I will find someone to do that for the Greeks at tonights meeting ;-)
+<a name="l-259"></a><span class="tm">15:24:10</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">warlordfff:</span> Thanks!
+<a name="l-260"></a><span class="tm">15:24:41</span><span class="nk"> &lt;AJaeger&gt;</span> Anybody handling "Identi.ca"?
+<a name="l-261"></a><span class="tm">15:24:52</span><span class="nk"> &lt;henne&gt;</span> isn't Identi.ca just a relay of the tweets?
+<a name="l-262"></a><span class="tm">15:25:06</span><span class="nk"> &lt;suseROCKs&gt;</span> yes  so we don't have to worry about that much anymore
+<a name="l-263"></a><span class="tm">15:25:14</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> it only gets the news.o.o articles
+<a name="l-264"></a><span class="tm">15:25:21</span><span class="nk"> &lt;AJaeger&gt;</span> but no manual tweets
+<a name="l-265"></a><span class="tm">15:25:23</span><span class="nk"> &lt;suseROCKs&gt;</span> not the actual tweets?
+<a name="l-266"></a><span class="tm">15:25:32</span><span class="nk"> &lt;henne&gt;</span> so lets set that up
+<a name="l-267"></a><span class="tm">15:25:35</span><span class="nk"> &lt;AJaeger&gt;</span> dents about news.o.o articles
+<a name="l-268"></a><span class="tm">15:25:37</span><span class="nk"> &lt;suseROCKs&gt;</span> hmm   it does for my @bryeny tweets.   we should have set that up
+<a name="l-269"></a><span class="tm">15:25:48</span><span class="nk"> &lt;henne&gt;</span> who has access to that?
+<a name="l-270"></a><span class="tm">15:26:05 </span><span class="nka">* AJaeger</span> <span class="ac">has access - and can give the passsword for whoever wants to do it ;)</span>
+<a name="l-271"></a><span class="tm">15:26:40</span><span class="nk"> &lt;henne&gt;</span> anyone?
+<a name="l-272"></a><span class="tm">15:26:53</span><span class="nk"> &lt;henne&gt;</span> setup a relay of tweets to identi.ca
+<a name="l-273"></a><span class="tm">15:26:58</span><span class="nk"> &lt;AJaeger&gt;</span> I could do it myself but currently don't know how. There's only a way fro mIdenti.ca -&gt; Twitter but I'm not aware of the other direction
+<a name="l-274"></a><span class="tm">15:27:17</span><span class="nk"> &lt;warlordfff&gt;</span> well I will do that in Gr- el tweets
+<a name="l-275"></a><span class="tm">15:27:41</span><span class="nk"> &lt;warlordfff&gt;</span> we have twitter and Iddentica linked
+<a name="l-276"></a><span class="tm">15:27:55</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">warlordfff:</span> Then tell me via email how you do it.
+<a name="l-277"></a><span class="tm">15:28:29</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> I do it if somebody tells me how - so make it an open AI to work with me on that one.
+<a name="l-278"></a><span class="tm">15:28:42</span><span class="nk"> &lt;henne&gt;</span> http://snowulf.com/2010/05/20/twitter-to-identi-ca-gateway/
+<a name="l-279"></a><span class="tm">15:28:48</span><span class="nk"> &lt;henne&gt;</span> 3rd hit in google
+<a name="l-280"></a><span class="tm">15:29:00</span><span class="nk"> &lt;henne&gt;</span> :)
+<a name="l-281"></a><span class="tm">15:29:12</span><span class="nk"> &lt;suseROCKs&gt;</span> if it was 2nd hit, we would have known about it  :-)
+<a name="l-282"></a><span class="tm">15:29:24</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">AJaeger:</span>  I ill put the guy who will finally do it to mail you the way
+<a name="l-283"></a><span class="tm">15:29:27</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> good, I should google more often.
+<a name="l-284"></a><span class="tm">15:29:33</span><span class="nk"> &lt;AJaeger&gt;</span> ok, then I take the ai.
+<a name="l-285"></a><span class="tm">15:29:43</span><span class="nk"> &lt;AJaeger&gt;</span> next topic "LinkedIn"
+<a name="l-286"></a><span class="tm">15:29:43</span><span class="nk"> &lt;henne&gt;</span> okay next thign
+<a name="l-287"></a><span class="tm">15:30:12</span><span class="nk"> &lt;suseROCKs&gt;</span> Also somehting we're going to have to take back form Chuck.  Are there any LinkedIn experts here?
+<a name="l-288"></a><span class="tm">15:30:24</span><span class="nk"> &lt;AJaeger&gt;</span> We currently have nobody handling that one - marketing team needs a volunteer.
+<a name="l-289"></a><span class="tm">15:30:54</span><span class="nk"> &lt;AJaeger&gt;</span> nobody? then mark it as open
+<a name="l-290"></a><span class="tm">15:30:57</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-291"></a><span class="tm">15:31:06</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">Next:</span> "News.o.o Editorial Schedule " - Jos driving, seems to work
+<a name="l-292"></a><span class="tm">15:31:06</span><span class="nk"> &lt;AlanClark&gt;</span> I can take on linkedin
+<a name="l-293"></a><span class="tm">15:31:15</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">AlanClark:</span> my hero ;)
+<a name="l-294"></a><span class="tm">15:31:28</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">AlanClark:</span> I make you admin of the group if you're not.
+<a name="l-295"></a><span class="tm">15:31:42 </span><span class="nka">* suseROCKs</span> <span class="ac">raises a flag to AlanClark!</span>
+<a name="l-296"></a><span class="tm">15:31:53</span><span class="nk"> &lt;AlanClark&gt;</span> AJaeger - you will need to make me admin
+<a name="l-297"></a><span class="tm">15:31:53</span><span class="nk"> &lt;suseROCKs&gt;</span> Hip Hip Hooray!  LinkedIn is saved!
+<a name="l-298"></a><span class="tm">15:32:15 </span><span class="nka">* AJaeger</span> <span class="ac">noted the personal ai to empower AlanClark</span>
+<a name="l-299"></a><span class="tm">15:32:22</span><span class="nk"> &lt;AJaeger&gt;</span> Next "Recruit News.o.owriters "
+<a name="l-300"></a><span class="tm">15:32:40</span><span class="nk"> &lt;suseROCKs&gt;</span> that's an ongoing and never fully trimphed task  :-)
+<a name="l-301"></a><span class="tm">15:32:43</span><span class="nk"> &lt;henne&gt;</span> this is something to neglect IMHO
+<a name="l-302"></a><span class="tm">15:32:52</span><span class="nk"> &lt;henne&gt;</span> we need to write. not find writers
+<a name="l-303"></a><span class="tm">15:32:53</span><span class="nk"> &lt;AJaeger&gt;</span> I agree, next one: "Podcasts"
+<a name="l-304"></a><span class="tm">15:32:57</span><span class="nk"> &lt;henne&gt;</span> the event is in 2 months :)
+<a name="l-305"></a><span class="tm">15:33:06</span><span class="nk"> &lt;AJaeger&gt;</span> nobody volunteered - should we do it?
+<a name="l-306"></a><span class="tm">15:33:07</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   that's an oxymoron  :-)
+<a name="l-307"></a><span class="tm">15:33:12</span><span class="nk"> &lt;AJaeger&gt;</span> anybody asked Sascha?
+<a name="l-308"></a><span class="tm">15:33:32</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> meaning we have to put to work what we got
+<a name="l-309"></a><span class="tm">15:34:10</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">saigkill:</span> ping
+<a name="l-310"></a><span class="tm">15:34:34</span><span class="nk"> &lt;suseROCKs&gt;</span> again, as said earlier,  we can write more... when there's more info to write about
+<a name="l-311"></a><span class="tm">15:34:59</span><span class="nk"> &lt;AJaeger&gt;</span> "Speaker Blogs " - once we have speakers announced
+<a name="l-312"></a><span class="tm">15:35:07</span><span class="nk"> &lt;suseROCKs&gt;</span> correct
+<a name="l-313"></a><span class="tm">15:35:25</span><span class="nk"> &lt;AJaeger&gt;</span> "Video Advertisement" - any volunteers to do this once we have speakers?
+<a name="l-314"></a><span class="tm">15:35:28</span><span class="nk"> &lt;saigkill&gt;</span> yeah?
+<a name="l-315"></a><span class="tm">15:35:47</span><span class="nk"> &lt;saigkill&gt;</span> Oops forgotten the meeting. sorry
+<a name="l-316"></a><span class="tm">15:35:59</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">saigkill:</span> Will you do podcasts about osc11?
+<a name="l-317"></a><span class="tm">15:36:14</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   JDD is interested in making some videos (commercials) but we need more info as well.
+<a name="l-318"></a><span class="tm">15:36:18</span><span class="nk"> &lt;AJaeger&gt;</span> To invite people to come... - so interview speakers.
+<a name="l-319"></a><span class="tm">15:36:25</span><span class="nk"> &lt;saigkill&gt;</span> Not planned. But i planned to make a workshop about podcasting
+<a name="l-320"></a><span class="tm">15:36:30</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">saigkill:</span> info about what?
+<a name="l-321"></a><span class="tm">15:36:40</span><span class="nk"> &lt;warlordfff&gt;</span> idea
+<a name="l-322"></a><span class="tm">15:36:48</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> Then make it explicit that JDD signed up.
+<a name="l-323"></a><span class="tm">15:36:55</span><span class="nk"> &lt;warlordfff&gt;</span> what about making  an international video?
+<a name="l-324"></a><span class="tm">15:37:07</span><span class="nk"> &lt;warlordfff&gt;</span> like we did the other time
+<a name="l-325"></a><span class="tm">15:37:08</span><span class="nk"> &lt;warlordfff&gt;</span> ?
+<a name="l-326"></a><span class="tm">15:37:16</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,    let's not discuss nuts and bolts here...  let's just focus on tasks
+<a name="l-327"></a><span class="tm">15:37:29</span><span class="nk"> &lt;warlordfff&gt;</span> with many people calling people in different langouages?
+<a name="l-328"></a><span class="tm">15:37:29</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">warlordfff:</span> Please talk with jdd - good idea.
+<a name="l-329"></a><span class="tm">15:37:35</span><span class="nk"> &lt;warlordfff&gt;</span> ok
+<a name="l-330"></a><span class="tm">15:37:44</span><span class="nk"> &lt;warlordfff&gt;</span> will send him an e-mail now
+<a name="l-331"></a><span class="tm">15:37:49</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">"Photos":</span> - let's do later.
+<a name="l-332"></a><span class="tm">15:38:13</span><span class="nk"> &lt;AJaeger&gt;</span> "Artwork Organization " -&gt; I think this is ok so far
+<a name="l-333"></a><span class="tm">15:38:26</span><span class="nk"> &lt;AJaeger&gt;</span> "Web Banners" - do we have some now?
+<a name="l-334"></a><span class="tm">15:38:42</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm not sure
+<a name="l-335"></a><span class="tm">15:38:52</span><span class="nk"> &lt;AJaeger&gt;</span> rlihm and javier are not around ;-(
+<a name="l-336"></a><span class="tm">15:38:57</span><span class="nk"> &lt;suseROCKs&gt;</span> we should make that a high priority though, yes.  I'll mark that and bug the artwork team about it
+<a name="l-337"></a><span class="tm">15:38:57</span><span class="nk"> &lt;henne&gt;</span> what do we do flickr later?
+<a name="l-338"></a><span class="tm">15:39:05</span><span class="nk"> &lt;henne&gt;</span> why do we do flickr later?
+<a name="l-339"></a><span class="tm">15:39:29</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Do you consider it urgent?
+<a name="l-340"></a><span class="tm">15:39:35</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-341"></a><span class="tm">15:39:43</span><span class="nk"> &lt;dragotin&gt;</span> gimme the AI for the webbanners
+<a name="l-342"></a><span class="tm">15:39:51</span><span class="nk"> &lt;dragotin&gt;</span> I'll check
+<a name="l-343"></a><span class="tm">15:39:54</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> But you're right, we should say who will do it  so make it an open AI unless somebody volunteers.
+<a name="l-344"></a><span class="tm">15:40:10</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">dragotin:</span> Could you check the whole Artwork issue with rlihm and javier?
+<a name="l-345"></a><span class="tm">15:40:13</span><span class="nk"> &lt;henne&gt;</span> we need photos from the venue. badly
+<a name="l-346"></a><span class="tm">15:40:26</span><span class="nk"> &lt;dragotin&gt;</span> hmm
+<a name="l-347"></a><span class="tm">15:40:30</span><span class="nk"> &lt;henne&gt;</span> please lets not move whole "blocks" of tasks around
+<a name="l-348"></a><span class="tm">15:40:35</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AJaeger:</span> ok
+<a name="l-349"></a><span class="tm">15:40:40</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   yes    That will be very useful for our pormotion stuff
+<a name="l-350"></a><span class="tm">15:40:44</span><span class="nk"> &lt;henne&gt;</span> we need to check that everything is going smoothly
+<a name="l-351"></a><span class="tm">15:40:52</span><span class="nk"> &lt;AJaeger&gt;</span> ok, I slow down ;)
+<a name="l-352"></a><span class="tm">15:41:03</span><span class="nk"> &lt;henne&gt;</span> we are here to sync
+<a name="l-353"></a><span class="tm">15:41:07</span><span class="nk"> &lt;AJaeger&gt;</span> Back to photos...
+<a name="l-354"></a><span class="tm">15:41:20</span><span class="nk"> &lt;suseROCKs&gt;</span> brb
+<a name="l-355"></a><span class="tm">15:41:23 </span><span class="nka">* AJaeger</span> <span class="ac">will take a camera to Zentrifuge on the next visit.</span>
+<a name="l-356"></a><span class="tm">15:41:49</span><span class="nk"> &lt;AJaeger&gt;</span> and publish them.
+<a name="l-357"></a><span class="tm">15:42:03</span><span class="nk"> &lt;dragotin&gt;</span> olli fecher might have some
+<a name="l-358"></a><span class="tm">15:42:05</span><span class="nk"> &lt;henne&gt;</span> on flickr please
+<a name="l-359"></a><span class="tm">15:42:14</span><span class="nk"> &lt;dragotin&gt;</span> and there are some on the zentrifuge page AFAIR
+<a name="l-360"></a><span class="tm">15:42:23</span><span class="nk"> &lt;henne&gt;</span> lets take our own
+<a name="l-361"></a><span class="tm">15:42:26</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> sure on flickr
+<a name="l-362"></a><span class="tm">15:42:28</span><span class="nk"> &lt;henne&gt;</span> and put them up to flickr
+<a name="l-363"></a><span class="tm">15:42:31</span><span class="nk"> &lt;henne&gt;</span> so they are CC
+<a name="l-364"></a><span class="tm">15:42:35</span><span class="nk"> &lt;AJaeger&gt;</span> yep
+<a name="l-365"></a><span class="tm">15:42:56</span><span class="nk"> &lt;AJaeger&gt;</span> So, that means I guess I also won the flicker osc11 group setup ;)
+<a name="l-366"></a><span class="tm">15:43:22</span><span class="nk"> &lt;AJaeger&gt;</span> anything else on photo?
+<a name="l-367"></a><span class="tm">15:43:49</span><span class="nk"> &lt;AJaeger&gt;</span> then we can move forward to "Countdown Banner" - correct?
+<a name="l-368"></a><span class="tm">15:44:08</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> http://www.flickr.com/groups/1691008@N25/
+<a name="l-369"></a><span class="tm">15:44:36</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> thanks - let's add a link to the osc11 pages about the group.
+<a name="l-370"></a><span class="tm">15:44:45</span><span class="nk"> &lt;suseROCKs&gt;</span> on a somewhat related note since someone will get photos of the venue... is it possible for someone to do a video walkthrough of the place?
+<a name="l-371"></a><span class="tm">15:45:01</span><span class="nk"> &lt;suseROCKs&gt;</span> that will help for our video promotion.  Just shoot some raw footage and I'll edit it.
+<a name="l-372"></a><span class="tm">15:45:18</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> I'm not sure this is really usefull...
+<a name="l-373"></a><span class="tm">15:45:43</span><span class="nk"> &lt;warlordfff&gt;</span> guys  i got to go, I have a Greek meting in 15 minutes, will read the log for more...
+<a name="l-374"></a><span class="tm">15:46:09</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> why not?
+<a name="l-375"></a><span class="tm">15:46:25</span><span class="nk"> &lt;suseROCKs&gt;</span> I think it would be
+<a name="l-376"></a><span class="tm">15:46:31</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,   take care
+<a name="l-377"></a><span class="tm">15:46:37</span><span class="nk"> &lt;henne&gt;</span> any volunteers?
+<a name="l-378"></a><span class="tm">15:46:49</span><span class="nk"> &lt;AJaeger&gt;</span> I'm not a video guy - I just know that the location will look different for the conference...
+<a name="l-379"></a><span class="tm">15:46:53</span><span class="nk"> &lt;henne&gt;</span> i can shoot stuff with my phone
+<a name="l-380"></a><span class="tm">15:47:06</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> would that be sufficient?
+<a name="l-381"></a><span class="tm">15:47:22</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   if that's the best equipment you have, then that's what we'll live with  :-)
+<a name="l-382"></a><span class="tm">15:47:25</span><span class="nk"> &lt;cartman&gt;</span> unless you have shaky hands should be OK
+<a name="l-383"></a><span class="tm">15:47:30</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-384"></a><span class="tm">15:48:03</span><span class="nk"> &lt;AJaeger&gt;</span> then we can move forward to "Countdown Banner" - correct?
+<a name="l-385"></a><span class="tm">15:48:19</span><span class="nk"> &lt;suseROCKs&gt;</span> countdown banner and web banner should be in one task I guess
+<a name="l-386"></a><span class="tm">15:48:25</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-387"></a><span class="tm">15:48:48</span><span class="nk"> &lt;suseROCKs&gt;</span> and we need someone to insert it into countdown.o.o.   Who can do that?  yaloki?
+<a name="l-388"></a><span class="tm">15:49:33</span><span class="nk"> &lt;henne&gt;</span> its on community.o.o. well manage
+<a name="l-389"></a><span class="tm">15:49:37</span><span class="nk"> &lt;suseROCKs&gt;</span> yaloki is pretty busy.  Do we have people besides yaloki who can handle c.o.o?
+<a name="l-390"></a><span class="tm">15:49:47</span><span class="nk"> &lt;henne&gt;</span> klaas and robert can
+<a name="l-391"></a><span class="tm">15:49:53</span><span class="nk"> &lt;suseROCKs&gt;</span> ok great
+<a name="l-392"></a><span class="tm">15:50:04</span><span class="nk"> &lt;dragotin&gt;</span> what can I?
+<a name="l-393"></a><span class="tm">15:50:12</span><span class="nk"> &lt;suseROCKs&gt;</span> so dragotin   Add countdown banner to your list of stuff to talk to artwork team about.
+<a name="l-394"></a><span class="tm">15:50:12</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">dragotin:</span> get the banner situation sorted
+<a name="l-395"></a><span class="tm">15:50:24</span><span class="nk"> &lt;dragotin&gt;</span> hmm, ok
+<a name="l-396"></a><span class="tm">15:50:35</span><span class="nk"> &lt;suseROCKs&gt;</span> Please.  :-)   (eyelashes fluttering)
+<a name="l-397"></a><span class="tm">15:50:41</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">dragotin:</span> thanks!
+<a name="l-398"></a><span class="tm">15:50:46</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">next:</span> "Conference Posters "
+<a name="l-399"></a><span class="tm">15:51:27</span><span class="nk"> &lt;AJaeger&gt;</span> Do we have good ones?
+<a name="l-400"></a><span class="tm">15:51:28</span><span class="nk"> &lt;dragotin&gt;</span> we have them I guess
+<a name="l-401"></a><span class="tm">15:51:35</span><span class="nk"> &lt;AJaeger&gt;</span> Who'll take care of distribution?
+<a name="l-402"></a><span class="tm">15:51:38</span><span class="nk"> &lt;AJaeger&gt;</span> and printing?
+<a name="l-403"></a><span class="tm">15:51:55</span><span class="nk"> &lt;dragotin&gt;</span> hm... do we need them printed any more?
+<a name="l-404"></a><span class="tm">15:51:58</span><span class="nk"> &lt;suseROCKs&gt;</span> is it worth printing?
+<a name="l-405"></a><span class="tm">15:52:08</span><span class="nk"> &lt;dragotin&gt;</span> well, put it on my list
+<a name="l-406"></a><span class="tm">15:52:18</span><span class="nk"> &lt;dragotin&gt;</span> I clearify with Rob, maybe we can get a bargain
+<a name="l-407"></a><span class="tm">15:52:30</span><span class="nk"> &lt;dragotin&gt;</span> posters can be useful
+<a name="l-408"></a><span class="tm">15:52:35</span><span class="nk"> &lt;AJaeger&gt;</span> not sure - we could also send the pdfs around and ask for printout ;(
+<a name="l-409"></a><span class="tm">15:52:38</span><span class="nk"> &lt;izabelvalverde&gt;</span> AJaeger would be useful at Desktop Summit
+<a name="l-410"></a><span class="tm">15:52:48</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">izabelvalverde:</span> right.
+<a name="l-411"></a><span class="tm">15:52:55</span><span class="nk"> &lt;suseROCKs&gt;</span> good point  yes
+<a name="l-412"></a><span class="tm">15:52:55</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">izabelvalverde:</span> Good idea.
+<a name="l-413"></a><span class="tm">15:53:08</span><span class="nk"> &lt;henne&gt;</span> sending posters in hardware around is a nogo with two months left
+<a name="l-414"></a><span class="tm">15:53:22</span><span class="nk"> &lt;dragotin&gt;</span> I will bring some to DS
+<a name="l-415"></a><span class="tm">15:53:27</span><span class="nk"> &lt;dragotin&gt;</span> and pin them personally ;-)
+<a name="l-416"></a><span class="tm">15:53:32</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">dragotin:</span> Thanks!
+<a name="l-417"></a><span class="tm">15:53:41</span><span class="nk"> &lt;henne&gt;</span> lets make posters for everyone to print
+<a name="l-418"></a><span class="tm">15:53:51</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> Take some to OSCON and the comunity summit?
+<a name="l-419"></a><span class="tm">15:54:00</span><span class="nk"> &lt;izabelvalverde&gt;</span> dragotin I can help you there ;-)
+<a name="l-420"></a><span class="tm">15:54:25</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> I expect we have the but we should make everybody aware of this.
+<a name="l-421"></a><span class="tm">15:54:26</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   that's this weekend.    AlanClark   Is there a way we can get one or two posters printed?
+<a name="l-422"></a><span class="tm">15:54:38</span><span class="nk"> &lt;suseROCKs&gt;</span> and bring with you this weekend?
+<a name="l-423"></a><span class="tm">15:54:39</span><span class="nk"> &lt;AJaeger&gt;</span> suseROCKs, AlanClark: Just use a color printer
+<a name="l-424"></a><span class="tm">15:55:01</span><span class="nk"> &lt;suseROCKs&gt;</span> not my printer.   just 1/4 of a poster would drain all my ink  :-)
+<a name="l-425"></a><span class="tm">15:55:03</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> so the actionable thing is a news post about posters to hang
+<a name="l-426"></a><span class="tm">15:55:07</span><span class="nk"> &lt;AlanClark&gt;</span> I can print them on a color printer
+<a name="l-427"></a><span class="tm">15:55:10</span><span class="nk"> &lt;suseROCKs&gt;</span> but Provo has enough color printers  :-)
+<a name="l-428"></a><span class="tm">15:55:18</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Yes
+<a name="l-429"></a><span class="tm">15:55:59</span><span class="nk"> &lt;AJaeger&gt;</span> "Onsite Materials" - Javier and Pascal signed up for this.
+<a name="l-430"></a><span class="tm">15:56:22</span><span class="nk"> &lt;AJaeger&gt;</span> Who's following up with them?
+<a name="l-431"></a><span class="tm">15:56:29</span><span class="nk"> &lt;suseROCKs&gt;</span> that'll be done once we have program stuff I guess
+<a name="l-432"></a><span class="tm">15:56:41</span><span class="nk"> &lt;henne&gt;</span> i think this is to broad
+<a name="l-433"></a><span class="tm">15:56:48</span><span class="nk"> &lt;henne&gt;</span> what are onsite materials?
+<a name="l-434"></a><span class="tm">15:57:00</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   its about the materials we hand out at registration desk etc.
+<a name="l-435"></a><span class="tm">15:57:10</span><span class="nk"> &lt;suseROCKs&gt;</span> programs  brochures, etc.
+<a name="l-436"></a><span class="tm">15:57:11</span><span class="nk"> &lt;henne&gt;</span> yes we need to plan that in detail
+<a name="l-437"></a><span class="tm">15:57:13</span><span class="nk"> &lt;dragotin&gt;</span> thats a whole lot of work
+<a name="l-438"></a><span class="tm">15:57:25</span><span class="nk"> &lt;suseROCKs&gt;</span> but needs to be done  :-)
+<a name="l-439"></a><span class="tm">15:57:39</span><span class="nk"> &lt;suseROCKs&gt;</span> or we just save printing (go green!) and make ginat posters of our schedules.
+<a name="l-440"></a><span class="tm">15:57:50</span><span class="nk"> &lt;AJaeger&gt;</span> Then let's add to the item the list: program, local map.
+<a name="l-441"></a><span class="tm">15:57:57</span><span class="nk"> &lt;henne&gt;</span> local map?
+<a name="l-442"></a><span class="tm">15:58:10</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   location of rooms
+<a name="l-443"></a><span class="tm">15:58:10</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Zentrifuge, kantine, underground,...
+<a name="l-444"></a><span class="tm">15:58:20</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">indeed:</span> rooms as well
+<a name="l-445"></a><span class="tm">15:58:33</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-446"></a><span class="tm">15:58:53</span><span class="nk"> &lt;henne&gt;</span> this is hardly artwork
+<a name="l-447"></a><span class="tm">15:58:57</span><span class="nk"> &lt;henne&gt;</span> i'll move it off the page
+<a name="l-448"></a><span class="tm">15:59:04</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   its both
+<a name="l-449"></a><span class="tm">15:59:15</span><span class="nk"> &lt;suseROCKs&gt;</span> others may come up with the content,  but the artwork team makes it look nice layout
+<a name="l-450"></a><span class="tm">15:59:26</span><span class="nk"> &lt;henne&gt;</span> the layout is fixed by the tool
+<a name="l-451"></a><span class="tm">15:59:33</span><span class="nk"> &lt;henne&gt;</span> right dragoti?
+<a name="l-452"></a><span class="tm">15:59:34</span><span class="nk"> &lt;suseROCKs&gt;</span> what tool?
+<a name="l-453"></a><span class="tm">15:59:37</span><span class="nk"> &lt;henne&gt;</span> indico
+<a name="l-454"></a><span class="tm">15:59:44</span><span class="nk"> &lt;henne&gt;</span> it can export the program as pdf
+<a name="l-455"></a><span class="tm">15:59:52</span><span class="nk"> &lt;suseROCKs&gt;</span> indico has a tool to map out zentrifuge, kantine, undergound?
+<a name="l-456"></a><span class="tm">15:59:54</span><span class="nk"> &lt;henne&gt;</span> dragotin?
+<a name="l-457"></a><span class="tm">15:59:54</span><span class="nk"> &lt;dragotin&gt;</span> it can
+<a name="l-458"></a><span class="tm">16:00:05</span><span class="nk"> &lt;dragotin&gt;</span> it can print the program
+<a name="l-459"></a><span class="tm">16:00:17</span><span class="nk"> &lt;dragotin&gt;</span> but I doubt its very much customizeable
+<a name="l-460"></a><span class="tm">16:00:18</span><span class="nk"> &lt;henne&gt;</span> we only have to manage the printing part
+<a name="l-461"></a><span class="tm">16:00:38</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">suseROCKs:</span> Actually it has, but its complicated
+<a name="l-462"></a><span class="tm">16:00:59</span><span class="nk"> &lt;henne&gt;</span> no need to. these are pages people throw away after a day...
+<a name="l-463"></a><span class="tm">16:01:03</span><span class="nk"> &lt;dragotin&gt;</span> we can rather combine the program pdf generated from Indico with a couple of pages we did manually
+<a name="l-464"></a><span class="tm">16:01:05</span><span class="nk"> &lt;henne&gt;</span> we have more important things to do
+<a name="l-465"></a><span class="tm">16:01:09</span><span class="nk"> &lt;dragotin&gt;</span> ack
+<a name="l-466"></a><span class="tm">16:01:13</span><span class="nk"> &lt;henne&gt;</span> so who is going to manage the printout?
+<a name="l-467"></a><span class="tm">16:01:27</span><span class="nk"> &lt;henne&gt;</span> also robert?
+<a name="l-468"></a><span class="tm">16:01:29</span><span class="nk"> &lt;dragotin&gt;</span> somebody from the Program Commitee?
+<a name="l-469"></a><span class="tm">16:01:36</span><span class="nk"> &lt;suseROCKs&gt;</span> like I said a few lines ago,  maybe instead of giving out materials, we just make big posters of our schedule.   Save on green!
+<a name="l-470"></a><span class="tm">16:01:53</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">suseROCKs:</span> I kinda agree.
+<a name="l-471"></a><span class="tm">16:01:58</span><span class="nk"> &lt;cartman&gt;</span> a mobile app for schedule would save paper
+<a name="l-472"></a><span class="tm">16:01:58</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> i cant circle what i want to see on a poster
+<a name="l-473"></a><span class="tm">16:01:59</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> We can project the schedule to the wall
+<a name="l-474"></a><span class="tm">16:02:10</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">digitltom:</span> wanted to check a mobile app
+<a name="l-475"></a><span class="tm">16:02:29</span><span class="nk"> &lt;henne&gt;</span> i cant put the paper in my pocket so i can look what i wanted to see next in the talk im sitting in right now
+<a name="l-476"></a><span class="tm">16:02:30</span><span class="nk"> &lt;suseROCKs&gt;</span> dragotin,   would be nice.   if he can do it conveniently
+<a name="l-477"></a><span class="tm">16:02:45</span><span class="nk"> &lt;henne&gt;</span> i cant put the poster*
+<a name="l-478"></a><span class="tm">16:03:01</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">henne:</span> yeah well mobile app fixes that :)
+<a name="l-479"></a><span class="tm">16:03:02</span><span class="nk"> &lt;AJaeger&gt;</span> I agree with henne, we need some kind of paper.
+<a name="l-480"></a><span class="tm">16:03:09</span><span class="nk"> &lt;henne&gt;</span> also a poster we would have to make up while the program pdf we get out of indico for free
+<a name="l-481"></a><span class="tm">16:03:13</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   but if we have 5 or 6 copies of that poster posted strategially, you can eaasily look at the poster after the session
+<a name="l-482"></a><span class="tm">16:03:20</span><span class="nk"> &lt;suseROCKs&gt;</span> during the session you're supposed to pay attention  :-)
+<a name="l-483"></a><span class="tm">16:03:51</span><span class="nk"> &lt;dragotin&gt;</span> paper is cool because it seldomly breaks, which is not the case for beamer bulbs
+<a name="l-484"></a><span class="tm">16:03:55</span><span class="nk"> &lt;henne&gt;</span> every conference has programm handouts
+<a name="l-485"></a><span class="tm">16:03:56</span><span class="nk"> &lt;digitltom&gt;</span> <span class="hi">dragotin:</span>  i had a short look, but indigo seems not to export it's schedule in a calendar format?
+<a name="l-486"></a><span class="tm">16:03:56</span><span class="nk"> &lt;henne&gt;</span> please
+<a name="l-487"></a><span class="tm">16:04:05</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">digitltom:</span> it does
+<a name="l-488"></a><span class="tm">16:04:23</span><span class="nk"> &lt;digitltom&gt;</span> <span class="hi">dragotin:</span>  link?
+<a name="l-489"></a><span class="tm">16:04:31</span><span class="nk"> &lt;izabelvalverde&gt;</span> suseROCKs let's save the green in another opportunity ;-)
+<a name="l-490"></a><span class="tm">16:04:39</span><span class="nk"> &lt;AlanClark&gt;</span> There are a couple of mobile app options
+<a name="l-491"></a><span class="tm">16:05:33</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">AlanClark:</span> Please tell digitltom off-line
+<a name="l-492"></a><span class="tm">16:05:52</span><span class="nk"> &lt;AJaeger&gt;</span> So, what actions do we want to take?
+<a name="l-493"></a><span class="tm">16:06:02</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">digitltom:</span> To look at mobile apps.
+<a name="l-494"></a><span class="tm">16:06:06</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   actually I've been to a few conferences lately where they are completely doing away with paper.   Its a pretty cool idea  (though most use USBs as handouts for materials, which isn't exactly cost saving)
+<a name="l-495"></a><span class="tm">16:06:19</span><span class="nk"> &lt;henne&gt;</span> we still need someone to printout the programm
+<a name="l-496"></a><span class="tm">16:06:25</span><span class="nk"> &lt;AJaeger&gt;</span> Create a PDF early enough that people can print it out themselves?
+<a name="l-497"></a><span class="tm">16:06:42</span><span class="nk"> &lt;henne&gt;</span> the PDF is there automatically
+<a name="l-498"></a><span class="tm">16:06:51</span><span class="nk"> &lt;henne&gt;</span> http://conference.opensuse.org/indico//conferenceTimeTable.py?confId=2#20110911
+<a name="l-499"></a><span class="tm">16:07:05</span><span class="nk"> &lt;henne&gt;</span> -&gt; print -&gt; pdf
+<a name="l-500"></a><span class="tm">16:07:13</span><span class="nk"> &lt;suseROCKs&gt;</span> ok we're getting too bogged down on this  :-)
+<a name="l-501"></a><span class="tm">16:07:14</span><span class="nk"> &lt;izabelvalverde&gt;</span> or we can put a pc and printer with like: - Print yourself :-D
+<a name="l-502"></a><span class="tm">16:07:29</span><span class="nk"> &lt;AJaeger&gt;</span> So, shall we print?
+<a name="l-503"></a><span class="tm">16:07:33</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-504"></a><span class="tm">16:07:45</span><span class="nk"> &lt;henne&gt;</span> people expect this
+<a name="l-505"></a><span class="tm">16:07:51</span><span class="nk"> &lt;AlanClark&gt;</span> +1 print
+<a name="l-506"></a><span class="tm">16:07:52</span><span class="nk"> &lt;izabelvalverde&gt;</span> I agree
+<a name="l-507"></a><span class="tm">16:08:21</span><span class="nk"> &lt;henne&gt;</span> so who is going to print it?
+<a name="l-508"></a><span class="tm">16:08:24</span><span class="nk"> &lt;henne&gt;</span> robert i say
+<a name="l-509"></a><span class="tm">16:08:31</span><span class="nk"> &lt;henne&gt;</span> he's dealing with printers anyway
+<a name="l-510"></a><span class="tm">16:08:37</span><span class="nk"> &lt;AJaeger&gt;</span> Do we want a daily printout with changes - or make a program of all four days and print once a week earlier?
+<a name="l-511"></a><span class="tm">16:09:03</span><span class="nk"> &lt;dragotin&gt;</span> Is that something we have to discuss here in detail?
+<a name="l-512"></a><span class="tm">16:09:14</span><span class="nk"> &lt;henne&gt;</span> no
+<a name="l-513"></a><span class="tm">16:09:20</span><span class="nk"> &lt;dragotin&gt;</span> Or can we leave that to a couple of people who take up on that?
+<a name="l-514"></a><span class="tm">16:09:23</span><span class="nk"> &lt;izabelvalverde&gt;</span> AJaeger I'm planning to go a littel before to Nue if so I can help on it I just need a place and printer
+<a name="l-515"></a><span class="tm">16:09:24</span><span class="nk"> &lt;henne&gt;</span> let robert handle the printout however he wants
+<a name="l-516"></a><span class="tm">16:09:40</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Fine with me!
+<a name="l-517"></a><span class="tm">16:10:05</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">izabelvalverde:</span> you're welcome in the office!
+<a name="l-518"></a><span class="tm">16:10:15</span><span class="nk"> &lt;henne&gt;</span> okay next topic
+<a name="l-519"></a><span class="tm">16:10:26</span><span class="nk"> &lt;AJaeger&gt;</span> "T-Shirt Design " - nothing done - and I'm not sure about budget.
+<a name="l-520"></a><span class="tm">16:10:28</span><span class="nk"> &lt;izabelvalverde&gt;</span> thank you... count on me
+<a name="l-521"></a><span class="tm">16:10:29</span><span class="nk"> &lt;AJaeger&gt;</span> let's remove it - ok?
+<a name="l-522"></a><span class="tm">16:10:42</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-523"></a><span class="tm">16:10:56</span><span class="nk"> &lt;AlanClark&gt;</span> +1
+<a name="l-524"></a><span class="tm">16:11:03</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-525"></a><span class="tm">16:11:11</span><span class="nk"> &lt;AJaeger&gt;</span> next one "Sponsorship Appeal"
+<a name="l-526"></a><span class="tm">16:11:17</span><span class="nk"> &lt;izabelvalverde&gt;</span> I shot several proposals for many companies but nothing yet
+<a name="l-527"></a><span class="tm">16:11:29</span><span class="nk"> &lt;AJaeger&gt;</span> We have B1 Systems as party sponsor.
+<a name="l-528"></a><span class="tm">16:11:35</span><span class="nk"> &lt;izabelvalverde&gt;</span> I still waiting for answers
+<a name="l-529"></a><span class="tm">16:11:51</span><span class="nk"> &lt;dragotin&gt;</span> Jos told me AlanClark is also behind sponsoring?
+<a name="l-530"></a><span class="tm">16:11:54</span><span class="nk"> &lt;AJaeger&gt;</span> My colleague Christian Degen is talking with his German partners.
+<a name="l-531"></a><span class="tm">16:12:26</span><span class="nk"> &lt;AlanClark&gt;</span> I'm workin on some, nothing concrete yet
+<a name="l-532"></a><span class="tm">16:12:49</span><span class="nk"> &lt;AJaeger&gt;</span> So far Christian got an offer for let's sponsor each other (without money)  - so we heck whether we get the money elsewhere out of SUSE ;)
+<a name="l-533"></a><span class="tm">16:13:02</span><span class="nk"> &lt;AJaeger&gt;</span> any actions to take down here?
+<a name="l-534"></a><span class="tm">16:13:24</span><span class="nk"> &lt;izabelvalverde&gt;</span> can we try actions like sponsor "things" ?
+<a name="l-535"></a><span class="tm">16:13:26</span><span class="nk"> &lt;henne&gt;</span> i noted all the people down who are trying
+<a name="l-536"></a><span class="tm">16:13:37</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">next:</span> "CFP Drive"
+<a name="l-537"></a><span class="tm">16:13:42</span><span class="nk"> &lt;dragotin&gt;</span> I think we have to have AlanClark and Jos working on a "Plan B"
+<a name="l-538"></a><span class="tm">16:14:00</span><span class="nk"> &lt;izabelvalverde&gt;</span> AJaeger anthing from Oracle?
+<a name="l-539"></a><span class="tm">16:14:00</span><span class="nk"> &lt;AlanClark&gt;</span> dragotin, what is plan B?
+<a name="l-540"></a><span class="tm">16:14:02</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">dragotin:</span> We have that one already . Let me fill in the rest
+<a name="l-541"></a><span class="tm">16:14:16</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">izabelvalverde:</span> I talked with Lenz: No sponsoring from them.
+<a name="l-542"></a><span class="tm">16:14:22</span><span class="nk"> &lt;izabelvalverde&gt;</span> :-(
+<a name="l-543"></a><span class="tm">16:14:26</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok
+<a name="l-544"></a><span class="tm">16:14:27</span><span class="nk"> &lt;dragotin&gt;</span> like going back to management and tell them the situation and ask for help
+<a name="l-545"></a><span class="tm">16:14:45</span><span class="nk"> &lt;AJaeger&gt;</span> For all: We have 15k USD we can use for travel sponsoring if no sponsors show up.
+<a name="l-546"></a><span class="tm">16:14:55</span><span class="nk"> &lt;dragotin&gt;</span> *applause*
+<a name="l-547"></a><span class="tm">16:14:57</span><span class="nk"> &lt;henne&gt;</span> the only thing we are looking for is travel sponsorship right?
+<a name="l-548"></a><span class="tm">16:15:11</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne not really
+<a name="l-549"></a><span class="tm">16:15:14</span><span class="nk"> &lt;henne&gt;</span> it would help to have individuals names/stories
+<a name="l-550"></a><span class="tm">16:15:17</span><span class="nk"> &lt;izabelvalverde&gt;</span> the conference in general
+<a name="l-551"></a><span class="tm">16:15:21</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Yes, the rest should be covered by B1 (party) and SUSE.
+<a name="l-552"></a><span class="tm">16:15:31</span><span class="nk"> &lt;henne&gt;</span> what else do we _need_ sponsorship for?
+<a name="l-553"></a><span class="tm">16:15:47</span><span class="nk"> &lt;AJaeger&gt;</span> Ah, I'm also looking for Wifi hardware - and internet.
+<a name="l-554"></a><span class="tm">16:15:59</span><span class="nk"> &lt;henne&gt;</span> there you go
+<a name="l-555"></a><span class="tm">16:16:04</span><span class="nk"> &lt;AJaeger&gt;</span> ;)
+<a name="l-556"></a><span class="tm">16:16:06</span><span class="nk"> &lt;cartman&gt;</span> lunch?
+<a name="l-557"></a><span class="tm">16:16:07</span><span class="nk"> &lt;suseROCKs&gt;</span> we don't have guaranteed wifi?
+<a name="l-558"></a><span class="tm">16:16:26</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> The location is not a conference location, they have wifi but not enough for all of us.
+<a name="l-559"></a><span class="tm">16:16:35</span><span class="nk"> &lt;henne&gt;</span> it helps very much if you ask sponsors for specific things
+<a name="l-560"></a><span class="tm">16:16:37</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-561"></a><span class="tm">16:16:55</span><span class="nk"> &lt;henne&gt;</span> then they actually know what money they have to put up
+<a name="l-562"></a><span class="tm">16:16:59</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne that's what I mentioned as "things" ;-)
+<a name="l-563"></a><span class="tm">16:17:16</span><span class="nk"> &lt;suseROCKs&gt;</span> for lunch, if the location is good, I'd rather we have the option to go to local eateries for lunch than to have our own lunch provided.   Last year's lunch was umm....  well I wont' say anything more  :-)
+<a name="l-564"></a><span class="tm">16:17:16</span><span class="nk"> &lt;henne&gt;</span> okay then lets collect "things"
+<a name="l-565"></a><span class="tm">16:17:28</span><span class="nk"> &lt;AJaeger&gt;</span> Regarding plan B: Jos is also asking for additional money - we call the 15k "Insurance money". So, add this as his AI.
+<a name="l-566"></a><span class="tm">16:17:43</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> We'll discuss lunch later.
+<a name="l-567"></a><span class="tm">16:17:55</span><span class="nk"> &lt;AJaeger&gt;</span> If we then need to enhance sponsorship, let's come back here...
+<a name="l-568"></a><span class="tm">16:18:14</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-569"></a><span class="tm">16:18:52</span><span class="nk"> &lt;AJaeger&gt;</span> next item: "CFP Drive" - this is nearing its end
+<a name="l-570"></a><span class="tm">16:19:24</span><span class="nk"> &lt;henne&gt;</span> get we get rid  of it then?
+<a name="l-571"></a><span class="tm">16:19:24</span><span class="nk"> &lt;AJaeger&gt;</span> any further actions needed?
+<a name="l-572"></a><span class="tm">16:19:31</span><span class="nk"> &lt;AlanClark&gt;</span> we have a program committee meeting scheduled for tomorrow.
+<a name="l-573"></a><span class="tm">16:19:36</span><span class="nk"> &lt;suseROCKs&gt;</span> after tomorrow, we will identify what holes exist and push hard for the next few days to the deadline
+<a name="l-574"></a><span class="tm">16:19:49</span><span class="nk"> &lt;AJaeger&gt;</span> ok, so for tomorrow t ofigure out.
+<a name="l-575"></a><span class="tm">16:19:57</span><span class="nk"> &lt;AJaeger&gt;</span> next "Registration/Invitation Drive"
+<a name="l-576"></a><span class="tm">16:20:03</span><span class="nk"> &lt;AlanClark&gt;</span> I'd like to move it to 14:00 instead of 15:00.  Those slated for the meeting can we do that?
+<a name="l-577"></a><span class="tm">16:20:30</span><span class="nk"> &lt;izabelvalverde&gt;</span> what is invitation drive?
+<a name="l-578"></a><span class="tm">16:20:37 </span><span class="nka">* suseROCKs</span> <span class="ac">figures out ....  right now its 16:00 right?  If so, that's fine, AlanClark</span>
+<a name="l-579"></a><span class="tm">16:20:43</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">izabelvalverde:</span> Invite pepole to come to the event
+<a name="l-580"></a><span class="tm">16:20:55</span><span class="nk"> &lt;henne&gt;</span> can you schedule your other meeting after this one? thanks ;)
+<a name="l-581"></a><span class="tm">16:20:55</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,  we talked about this topic earlier so I think we can move on
+<a name="l-582"></a><span class="tm">16:20:56</span><span class="nk"> &lt;AJaeger&gt;</span> Right now we have 16:20 UTC
+<a name="l-583"></a><span class="tm">16:21:12</span><span class="nk"> &lt;suseROCKs&gt;</span> ok AlanClark   14:00 is fine by me.  dragotin   vuntz   ok with you?
+<a name="l-584"></a><span class="tm">16:21:22</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> so everything is under control there? I would like to get rid of it from the wiki page
+<a name="l-585"></a><span class="tm">16:21:57</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   well the CFP drive is not done until the deadline is over  :-)
+<a name="l-586"></a><span class="tm">16:22:08</span><span class="nk"> &lt;izabelvalverde&gt;</span> AJaeger is specifically?
+<a name="l-587"></a><span class="tm">16:22:22</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> okay
+<a name="l-588"></a><span class="tm">16:22:39</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">izabelvalverde:</span> It's writing about the program so that people undecided join us.
+<a name="l-589"></a><span class="tm">16:22:48</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">next:</span> "Media Relations"
+<a name="l-590"></a><span class="tm">16:22:52</span><span class="nk"> &lt;AJaeger&gt;</span> Jos owns this
+<a name="l-591"></a><span class="tm">16:23:05</span><span class="nk"> &lt;suseROCKs&gt;</span> and that topic was discussed earlier in this meeting as well..   we can close out on this page now
+<a name="l-592"></a><span class="tm">16:23:24</span><span class="nk"> &lt;AJaeger&gt;</span> No idea where we are at this. I can followup with Jos and figure out the status.
+<a name="l-593"></a><span class="tm">16:23:45</span><span class="nk"> &lt;AJaeger&gt;</span> unless somebody else wants...
+<a name="l-594"></a><span class="tm">16:23:45</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AlanClark:</span> 14:00 UTC is not working for me
+<a name="l-595"></a><span class="tm">16:24:19</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AlanClark:</span> have to do a job interview at 14:00 UTC
+<a name="l-596"></a><span class="tm">16:24:25</span><span class="nk"> &lt;dragotin&gt;</span> sorry
+<a name="l-597"></a><span class="tm">16:25:12</span><span class="nk"> &lt;henne&gt;</span> alright that was that page
+<a name="l-598"></a><span class="tm">16:25:13</span><span class="nk"> &lt;AJaeger&gt;</span> This brings us to our next major topic
+<a name="l-599"></a><span class="tm">16:25:16</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">Conference Program</span>
+<a name="l-600"></a><span class="tm">16:25:41</span><span class="nk"> &lt;AJaeger&gt;</span> The cfp team will have a meeting tomorrow to discuss everything at some time ;)
+<a name="l-601"></a><span class="tm">16:25:46</span><span class="nk"> &lt;AlanClark&gt;</span> suseROCKs, dragotin, vuntz let's leave the program meeting at 15:00 as scheduled
+<a name="l-602"></a><span class="tm">16:25:55</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-603"></a><span class="tm">16:25:59</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-604"></a><span class="tm">16:26:07</span><span class="nk"> &lt;AJaeger&gt;</span> Is there anything else we need to discuss for this topic today?
+<a name="l-605"></a><span class="tm">16:26:09</span><span class="nk"> &lt;dragotin&gt;</span> sorry guys
+<a name="l-606"></a><span class="tm">16:26:27</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   no
+<a name="l-607"></a><span class="tm">16:26:37</span><span class="nk"> &lt;AlanClark&gt;</span> Should we include discussion of keynotes at tomorrows meeting?
+<a name="l-608"></a><span class="tm">16:26:49</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AlanClark:</span> Yes, I think so
+<a name="l-609"></a><span class="tm">16:26:54</span><span class="nk"> &lt;suseROCKs&gt;</span> sure
+<a name="l-610"></a><span class="tm">16:26:55</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AlanClark:</span> at least for some AIs
+<a name="l-611"></a><span class="tm">16:26:57</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> for which discussion?
+<a name="l-612"></a><span class="tm">16:27:09</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   see topic  :-)
+<a name="l-613"></a><span class="tm">16:27:21</span><span class="nk"> &lt;AlanClark&gt;</span> ok I added keynotes to tomorrows agenda
+<a name="l-614"></a><span class="tm">16:27:29</span><span class="nk"> &lt;AJaeger&gt;</span> OK, next topic then
+<a name="l-615"></a><span class="tm">16:27:34</span><span class="nk"> &lt;izabelvalverde&gt;</span> I'm lost as well which topic?
+<a name="l-616"></a><span class="tm">16:27:46</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">izabelvalverde:</span> We discuss the Conference Program
+<a name="l-617"></a><span class="tm">16:27:55</span><span class="nk"> &lt;henne&gt;</span> we are back to the general agenda
+<a name="l-618"></a><span class="tm">16:27:56</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok thank you
+<a name="l-619"></a><span class="tm">16:28:03</span><span class="nk"> &lt;henne&gt;</span> its on http://en.opensuse.org/openSUSE:Conference_meeting
+<a name="l-620"></a><span class="tm">16:28:17</span><span class="nk"> &lt;AJaeger&gt;</span> So, next topic
+<a name="l-621"></a><span class="tm">16:28:21</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">budget</span>
+<a name="l-622"></a><span class="tm">16:28:33</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne thanks
+<a name="l-623"></a><span class="tm">16:29:28</span><span class="nk"> &lt;henne&gt;</span> okay how do we track the budget?
+<a name="l-624"></a><span class="tm">16:29:32</span><span class="nk"> &lt;AJaeger&gt;</span> So far we have the 50k USD from SUSE which should cover the whole event. Jos "owns" this on the SUSE side - and I help him with spending it and currently have the spreadsheet with everything
+<a name="l-625"></a><span class="tm">16:30:05</span><span class="nk"> &lt;henne&gt;</span> can we have this spreadsheet versioned somewhere?
+<a name="l-626"></a><span class="tm">16:30:07</span><span class="nk"> &lt;izabelvalverde&gt;</span> so the things might be followed by the spreadsheet?
+<a name="l-627"></a><span class="tm">16:30:17</span><span class="nk"> &lt;AJaeger&gt;</span> I can easily share the spreadsheet.
+<a name="l-628"></a><span class="tm">16:30:39</span><span class="nk"> &lt;henne&gt;</span> can you transfer it to google docs?
+<a name="l-629"></a><span class="tm">16:30:48</span><span class="nk"> &lt;AJaeger&gt;</span> I can put it read-online on a web server and update it once I make changes.
+<a name="l-630"></a><span class="tm">16:30:49</span><span class="nk"> &lt;henne&gt;</span> so everyone can read it and some can work on it?
+<a name="l-631"></a><span class="tm">16:31:02</span><span class="nk"> &lt;AJaeger&gt;</span> Yeah, google docs work as well
+<a name="l-632"></a><span class="tm">16:31:30</span><span class="nk"> &lt;AJaeger&gt;</span> let's do that - I take the ai.
+<a name="l-633"></a><span class="tm">16:32:21</span><span class="nk"> &lt;AJaeger&gt;</span> ok, next topic
+<a name="l-634"></a><span class="tm">16:32:25</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">Sponsoring</span>
+<a name="l-635"></a><span class="tm">16:32:37</span><span class="nk"> &lt;AJaeger&gt;</span> We covered this already under the "Promotion" topic, so let's move on.
+<a name="l-636"></a><span class="tm">16:32:54</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">Travel sponsoring</span>
+<a name="l-637"></a><span class="tm">16:33:03</span><span class="nk"> &lt;henne&gt;</span> alrght
+<a name="l-638"></a><span class="tm">16:33:14</span><span class="nk"> &lt;henne&gt;</span> lets track things we need sponsoring for
+<a name="l-639"></a><span class="tm">16:33:16</span><span class="nk"> &lt;AJaeger&gt;</span> We discussed on the opensuse-conference mailing list to setup an email list and team to organize it.
+<a name="l-640"></a><span class="tm">16:33:31</span><span class="nk"> &lt;henne&gt;</span> stop. please one topic back
+<a name="l-641"></a><span class="tm">16:33:38</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">sponsoring</span>
+<a name="l-642"></a><span class="tm">16:33:40</span><span class="nk"> &lt;henne&gt;</span> general sponsoring
+<a name="l-643"></a><span class="tm">16:34:00</span><span class="nk"> &lt;henne&gt;</span> i think we should talk about the stuff we mentioned
+<a name="l-644"></a><span class="tm">16:34:03</span><span class="nk"> &lt;AJaeger&gt;</span> - we have SUSE to sponsor the main event as long as we stay in budget ;)
+<a name="l-645"></a><span class="tm">16:34:08</span><span class="nk"> &lt;AJaeger&gt;</span> - wifi hardware
+<a name="l-646"></a><span class="tm">16:34:28</span><span class="nk"> &lt;AJaeger&gt;</span> - internet (could be part of SUSE sponsoring)
+<a name="l-647"></a><span class="tm">16:34:30</span><span class="nk"> &lt;henne&gt;</span> anything else?
+<a name="l-648"></a><span class="tm">16:34:33</span><span class="nk"> &lt;AJaeger&gt;</span> - travel sponsorship
+<a name="l-649"></a><span class="tm">16:34:42</span><span class="nk"> &lt;AJaeger&gt;</span> - party - already have a sponsor
+<a name="l-650"></a><span class="tm">16:34:51</span><span class="nk"> &lt;henne&gt;</span> wifi hardware?
+<a name="l-651"></a><span class="tm">16:35:00</span><span class="nk"> &lt;suseROCKs&gt;</span> someone mentioned lunch, though I think we can work around that, but probably should make an entry anyway
+<a name="l-652"></a><span class="tm">16:35:02</span><span class="nk"> &lt;AJaeger&gt;</span> - access points
+<a name="l-653"></a><span class="tm">16:35:12</span><span class="nk"> &lt;AJaeger&gt;</span> - food sponsoring
+<a name="l-654"></a><span class="tm">16:35:21</span><span class="nk"> &lt;henne&gt;</span> dude... i know what wifi hardware is
+<a name="l-655"></a><span class="tm">16:35:34</span><span class="nk"> &lt;henne&gt;</span> what exactly would we need?
+<a name="l-656"></a><span class="tm">16:35:45</span><span class="nk"> &lt;henne&gt;</span> find a sponsor to pay for:
+<a name="l-657"></a><span class="tm">16:35:51</span><span class="nk"> &lt;henne&gt;</span> &lt;fill in&gt;
+<a name="l-658"></a><span class="tm">16:36:18</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Access points that handle 300-500 people and ways to connect the 5 different rooms via wifi
+<a name="l-659"></a><span class="tm">16:36:48</span><span class="nk"> &lt;dragotin&gt;</span> .o0( Deckel help!! )
+<a name="l-660"></a><span class="tm">16:37:06</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">dragotin:</span> I'm already talking with deckel ;)
+<a name="l-661"></a><span class="tm">16:37:16</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-662"></a><span class="tm">16:37:25</span><span class="nk"> &lt;henne&gt;</span> this is about getting a sponsor for this
+<a name="l-663"></a><span class="tm">16:37:26</span><span class="nk"> &lt;suseROCKs&gt;</span> I'll bring my linksys wifi home router if it helps  :-D
+<a name="l-664"></a><span class="tm">16:37:32</span><span class="nk"> &lt;henne&gt;</span> so you take care of this AJaeger?
+<a name="l-665"></a><span class="tm">16:37:37</span><span class="nk"> &lt;AJaeger&gt;</span> Yes
+<a name="l-666"></a><span class="tm">16:37:56</span><span class="nk"> &lt;AJaeger&gt;</span> but if anybody wants to take over, I'm happily pass it on ;)
+<a name="l-667"></a><span class="tm">16:38:01</span><span class="nk"> &lt;dragotin&gt;</span> do we have a list of companies that could provide the hardware already?
+<a name="l-668"></a><span class="tm">16:38:08</span><span class="nk"> &lt;dragotin&gt;</span> ok, details, sorry
+<a name="l-669"></a><span class="tm">16:38:22</span><span class="nk"> &lt;izabelvalverde&gt;</span> AJaeger coffee machines will be lend/rent/buy?
+<a name="l-670"></a><span class="tm">16:38:32</span><span class="nk"> &lt;henne&gt;</span> what would we need for the internet connection?
+<a name="l-671"></a><span class="tm">16:38:38</span><span class="nk"> &lt;AJaeger&gt;</span> general sponsoring: cold and warm drinks
+<a name="l-672"></a><span class="tm">16:38:50</span><span class="nk"> &lt;AJaeger&gt;</span> SDSL, 10 MBit at least
+<a name="l-673"></a><span class="tm">16:39:32</span><span class="nk"> &lt;henne&gt;</span> hm
+<a name="l-674"></a><span class="tm">16:39:54</span><span class="nk"> &lt;AJaeger&gt;</span> (that's what deckel told me)
+<a name="l-675"></a><span class="tm">16:39:58</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-676"></a><span class="tm">16:40:18</span><span class="nk"> &lt;henne&gt;</span> for travel sponsoring
+<a name="l-677"></a><span class="tm">16:40:20</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so my home-use wifi router won't work then  :-D
+<a name="l-678"></a><span class="tm">16:40:25</span><span class="nk"> &lt;henne&gt;</span> what exactly do we need there?
+<a name="l-679"></a><span class="tm">16:40:42</span><span class="nk"> &lt;AJaeger&gt;</span> Let's continue - and if there's more to add for general sponsoring, bring it up and henne will note it down.
+<a name="l-680"></a><span class="tm">16:40:46</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Next topic?
+<a name="l-681"></a><span class="tm">16:40:51</span><span class="nk"> &lt;henne&gt;</span> no
+<a name="l-682"></a><span class="tm">16:41:00</span><span class="nk"> &lt;henne&gt;</span> what do we need to do for travel sponsoring?
+<a name="l-683"></a><span class="tm">16:41:07</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Next topic is travel sponsoring ;)
+<a name="l-684"></a><span class="tm">16:41:12</span><span class="nk"> &lt;henne&gt;</span> ah okay. sorry
+<a name="l-685"></a><span class="tm">16:41:14</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne did you create travel_support@opensuse.org ?
+<a name="l-686"></a><span class="tm">16:41:19</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">travel sponsoring</span>
+<a name="l-687"></a><span class="tm">16:41:21</span><span class="nk"> &lt;AJaeger&gt;</span> We need:
+<a name="l-688"></a><span class="tm">16:41:24</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">izabelvalverde:</span> yes
+<a name="l-689"></a><span class="tm">16:41:33</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">izabelvalverde:</span> travel-support@o.o
+<a name="l-690"></a><span class="tm">16:41:42</span><span class="nk"> &lt;AJaeger&gt;</span> - the travel-support@o.o list
+<a name="l-691"></a><span class="tm">16:41:48</span><span class="nk"> &lt;AJaeger&gt;</span> - people to subscribe
+<a name="l-692"></a><span class="tm">16:41:49</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne thanks
+<a name="l-693"></a><span class="tm">16:42:04</span><span class="nk"> &lt;AJaeger&gt;</span> - the team needs to define how it handles travel sponsorship (adhoc or a policy)
+<a name="l-694"></a><span class="tm">16:42:21</span><span class="nk"> &lt;AJaeger&gt;</span> - the team needs to review applications and grant sponsorship
+<a name="l-695"></a><span class="tm">16:42:29</span><span class="nk"> &lt;AJaeger&gt;</span> - we need to pay out the money
+<a name="l-696"></a><span class="tm">16:42:33</span><span class="nk"> &lt;izabelvalverde&gt;</span> AJaeger so far could be me, Bruno, Jos, henne and you ;-)
+<a name="l-697"></a><span class="tm">16:43:03</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">izabelvalverde:</span> Me? I prefer not  - but  I fear I have to help spending money.
+<a name="l-698"></a><span class="tm">16:43:05</span><span class="nk"> &lt;izabelvalverde&gt;</span> at least was mentioned by Jos before
+<a name="l-699"></a><span class="tm">16:43:08</span><span class="nk"> &lt;AJaeger&gt;</span> Any other volunteers?
+<a name="l-700"></a><span class="tm">16:43:15</span><span class="nk"> &lt;henne&gt;</span> gah
+<a name="l-701"></a><span class="tm">16:43:21</span><span class="nk"> &lt;izabelvalverde&gt;</span> :-D
+<a name="l-702"></a><span class="tm">16:43:24</span><span class="nk"> &lt;henne&gt;</span> can we do this step by step please? :)
+<a name="l-703"></a><span class="tm">16:43:46</span><span class="nk"> &lt;henne&gt;</span> who is taking care of deciding whom to sponsor?
+<a name="l-704"></a><span class="tm">16:43:59</span><span class="nk"> &lt;henne&gt;</span> Bruno, izabelvalverde, jos, henne. is that correct?
+<a name="l-705"></a><span class="tm">16:44:04</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> The team consisting of Bruno, izabelvalverde, Jos, henne.
+<a name="l-706"></a><span class="tm">16:44:10</span><span class="nk"> &lt;izabelvalverde&gt;</span> and Klaas I believe
+<a name="l-707"></a><span class="tm">16:44:31</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">dragotin:</span> okay with you?
+<a name="l-708"></a><span class="tm">16:44:37</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">izabelvalverde:</span> no, please not
+<a name="l-709"></a><span class="tm">16:44:40</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-710"></a><span class="tm">16:44:41</span><span class="nk"> &lt;izabelvalverde&gt;</span> also he recomended a closed ML
+<a name="l-711"></a><span class="tm">16:44:46</span><span class="nk"> &lt;dragotin&gt;</span> I am bad with money ;-)
+<a name="l-712"></a><span class="tm">16:45:07</span><span class="nk"> &lt;izabelvalverde&gt;</span> dragotin I'm good with money so that's a real problem :-D
+<a name="l-713"></a><span class="tm">16:45:33</span><span class="nk"> &lt;henne&gt;</span> okay once we have a list of individuals then what?
+<a name="l-714"></a><span class="tm">16:45:57</span><span class="nk"> &lt;AJaeger&gt;</span> granting sponsorship
+<a name="l-715"></a><span class="tm">16:46:02</span><span class="nk"> &lt;izabelvalverde&gt;</span> Jos made an announce so we can publish after the ML is created
+<a name="l-716"></a><span class="tm">16:46:23</span><span class="nk"> &lt;AJaeger&gt;</span> we also need to announce the program, Jos has drafted it, it can go live once everybody is subscribed to the ML
+<a name="l-717"></a><span class="tm">16:46:38</span><span class="nk"> &lt;izabelvalverde&gt;</span> I think we can give a date to apply and we can decided in a meeting 5 of us
+<a name="l-718"></a><span class="tm">16:47:00</span><span class="nk"> &lt;henne&gt;</span> alright. so we need to announce it
+<a name="l-719"></a><span class="tm">16:47:01</span><span class="nk"> &lt;suseROCKs&gt;</span> i agree.  No need to get into that level of detail here in this general meeting
+<a name="l-720"></a><span class="tm">16:47:04</span><span class="nk"> &lt;henne&gt;</span> Jos is doing this?
+<a name="l-721"></a><span class="tm">16:47:17</span><span class="nk"> &lt;izabelvalverde&gt;</span> well He will and I can help either
+<a name="l-722"></a><span class="tm">16:47:31</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> we need tasks. otherwise we'll not finish
+<a name="l-723"></a><span class="tm">16:47:31</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Jos has written the announcement and asks us to publish it as soon as everything is ready.
+<a name="l-724"></a><span class="tm">16:47:51</span><span class="nk"> &lt;henne&gt;</span> what is everything?
+<a name="l-725"></a><span class="tm">16:48:00</span><span class="nk"> &lt;AJaeger&gt;</span> so, the AI is for the travel sponsor team to review and publish the text
+<a name="l-726"></a><span class="tm">16:48:05</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-727"></a><span class="tm">16:48:09</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Mailing list setup, people subscribed.
+<a name="l-728"></a><span class="tm">16:48:22</span><span class="nk"> &lt;AJaeger&gt;</span> people = team
+<a name="l-729"></a><span class="tm">16:48:40</span><span class="nk"> &lt;henne&gt;</span> the mailinglist is setup
+<a name="l-730"></a><span class="tm">16:48:43</span><span class="nk"> &lt;izabelvalverde&gt;</span> the subject email [opensuse-conference] travel sponsorship we talked about it
+<a name="l-731"></a><span class="tm">16:49:28</span><span class="nk"> &lt;izabelvalverde&gt;</span> and then we can decide about visa letters and so on
+<a name="l-732"></a><span class="tm">16:49:32</span><span class="nk"> &lt;izabelvalverde&gt;</span> thanks henne
+<a name="l-733"></a><span class="tm">16:49:54</span><span class="nk"> &lt;henne&gt;</span> okay i just notified the peopl
+<a name="l-734"></a><span class="tm">16:49:59</span><span class="nk"> &lt;henne&gt;</span> again
+<a name="l-735"></a><span class="tm">16:50:20</span><span class="nk"> &lt;henne&gt;</span> once we have a list of people we need to pay the money?
+<a name="l-736"></a><span class="tm">16:50:30</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Correct.
+<a name="l-737"></a><span class="tm">16:50:52</span><span class="nk"> &lt;henne&gt;</span> i guess jos is doing that right?
+<a name="l-738"></a><span class="tm">16:50:52</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">izabelvalverde:</span> I can help with paying money - and AlanClark as well...
+<a name="l-739"></a><span class="tm">16:50:56</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-740"></a><span class="tm">16:51:06</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Yes, Jos also.
+<a name="l-741"></a><span class="tm">16:51:25</span><span class="nk"> &lt;henne&gt;</span> alright
+<a name="l-742"></a><span class="tm">16:51:50</span><span class="nk"> &lt;henne&gt;</span> so how can we handle pther sponsors?
+<a name="l-743"></a><span class="tm">16:51:52</span><span class="nk"> &lt;henne&gt;</span> other*
+<a name="l-744"></a><span class="tm">16:51:55</span><span class="nk"> &lt;izabelvalverde&gt;</span> AJaeger is all that we need ;-)
+<a name="l-745"></a><span class="tm">16:52:14</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> What do you mean? Getting the money or equipment?
+<a name="l-746"></a><span class="tm">16:52:29</span><span class="nk"> &lt;henne&gt;</span> for travel sponsorship
+<a name="l-747"></a><span class="tm">16:52:31</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne subscription done
+<a name="l-748"></a><span class="tm">16:52:55</span><span class="nk"> &lt;henne&gt;</span> the plan we currently have doesn't work if I want to sponsor 500€ out of my own pocket
+<a name="l-749"></a><span class="tm">16:53:20</span><span class="nk"> &lt;henne&gt;</span> so how are we going to do that?
+<a name="l-750"></a><span class="tm">16:53:30</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Indeed that has not been discussed.
+<a name="l-751"></a><span class="tm">16:53:47</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne I sent some suggestions to Jos letś see what he thinks about
+<a name="l-752"></a><span class="tm">16:54:24</span><span class="nk"> &lt;AJaeger&gt;</span> I propose that the team discusses that.
+<a name="l-753"></a><span class="tm">16:54:32</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-754"></a><span class="tm">16:54:44</span><span class="nk"> &lt;AJaeger&gt;</span> next topic?
+<a name="l-755"></a><span class="tm">16:55:08</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-756"></a><span class="tm">16:55:11</span><span class="nk"> &lt;izabelvalverde&gt;</span> venue?
+<a name="l-757"></a><span class="tm">16:55:11</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">Venue</span>
+<a name="l-758"></a><span class="tm">16:55:15</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">izabelvalverde:</span> Yes
+<a name="l-759"></a><span class="tm">16:55:36</span><span class="nk"> &lt;AJaeger&gt;</span> dragotin, rlihm, oliver fecher and myself have handled so far the venue.
+<a name="l-760"></a><span class="tm">16:56:09</span><span class="nk"> &lt;AJaeger&gt;</span> We have the zentrifuge and four seminar rooms - and place in front for sitting outside
+<a name="l-761"></a><span class="tm">16:56:09</span><span class="nk"> &lt;henne&gt;</span> the general stuff is done right?
+<a name="l-762"></a><span class="tm">16:56:28</span><span class="nk"> &lt;henne&gt;</span> we need to get into tasks
+<a name="l-763"></a><span class="tm">16:56:40</span><span class="nk"> &lt;AJaeger&gt;</span> There's still some stuff to do like signing up for some chairs.
+<a name="l-764"></a><span class="tm">16:56:41</span><span class="nk"> &lt;dragotin&gt;</span> right
+<a name="l-765"></a><span class="tm">16:56:52</span><span class="nk"> &lt;henne&gt;</span> signing up?
+<a name="l-766"></a><span class="tm">16:57:00</span><span class="nk"> &lt;AJaeger&gt;</span> ordering I mean
+<a name="l-767"></a><span class="tm">16:57:18</span><span class="nk"> &lt;henne&gt;</span> i bet there is tons of stuff to do
+<a name="l-768"></a><span class="tm">16:57:33</span><span class="nk"> &lt;henne&gt;</span> can we go through room by room?
+<a name="l-769"></a><span class="tm">16:57:52</span><span class="nk"> &lt;dragotin&gt;</span> I suggest we make a visit there
+<a name="l-770"></a><span class="tm">16:57:52</span><span class="nk"> &lt;AJaeger&gt;</span> yep, we can.
+<a name="l-771"></a><span class="tm">16:58:00</span><span class="nk"> &lt;dragotin&gt;</span> and discuss it there
+<a name="l-772"></a><span class="tm">16:58:04</span><span class="nk"> &lt;dragotin&gt;</span> thats more effective
+<a name="l-773"></a><span class="tm">16:58:18</span><span class="nk"> &lt;henne&gt;</span> this meeting is not about effectiveness :)
+<a name="l-774"></a><span class="tm">16:58:23</span><span class="nk"> &lt;henne&gt;</span> this is about syncing everybody
+<a name="l-775"></a><span class="tm">16:58:24</span><span class="nk"> &lt;dragotin&gt;</span> I know that limits the action to the nbg guys, but still
+<a name="l-776"></a><span class="tm">16:58:49</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">henne:</span> your turn
+<a name="l-777"></a><span class="tm">16:58:54</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">dragotin:</span> Let's go briefly through the rooms - just so that we don't forget anything.
+<a name="l-778"></a><span class="tm">16:59:02</span><span class="nk"> &lt;henne&gt;</span> for instance the party people need to know what is available there
+<a name="l-779"></a><span class="tm">16:59:13</span><span class="nk"> &lt;henne&gt;</span> the programm people need to know the room layout
+<a name="l-780"></a><span class="tm">16:59:28</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Not the layout - the sizes.
+<a name="l-781"></a><span class="tm">16:59:37</span><span class="nk"> &lt;henne&gt;</span> the WIFI sponsoring people need to know that too
+<a name="l-782"></a><span class="tm">16:59:37</span><span class="nk"> &lt;henne&gt;</span> etc
+<a name="l-783"></a><span class="tm">16:59:47</span><span class="nk"> &lt;AlanClark&gt;</span> /me has to step away from IRC for awhile
+<a name="l-784"></a><span class="tm">17:00:10</span><span class="nk"> &lt;AJaeger&gt;</span> I have a map that I can share with whoever needs it
+<a name="l-785"></a><span class="tm">17:00:24</span><span class="nk"> &lt;henne&gt;</span> so what do we need for the place outside the venue?
+<a name="l-786"></a><span class="tm">17:00:33</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> that map needs to be online
+<a name="l-787"></a><span class="tm">17:00:48</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> I'll make it available.
+<a name="l-788"></a><span class="tm">17:00:55</span><span class="nk"> &lt;henne&gt;</span> ok
+<a name="l-789"></a><span class="tm">17:00:58</span><span class="nk"> &lt;henne&gt;</span> noted down
+<a name="l-790"></a><span class="tm">17:01:03</span><span class="nk"> &lt;henne&gt;</span> so what do we need for the place outside the venue?
+<a name="l-791"></a><span class="tm">17:01:04</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Bierbänke
+<a name="l-792"></a><span class="tm">17:01:13</span><span class="nk"> &lt;henne&gt;</span> dragotin you organize them right?
+<a name="l-793"></a><span class="tm">17:01:21</span><span class="nk"> &lt;AJaeger&gt;</span> benches and tables for the non-Germans
+<a name="l-794"></a><span class="tm">17:01:35</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> yes
+<a name="l-795"></a><span class="tm">17:01:57</span><span class="nk"> &lt;izabelvalverde&gt;</span> AJaeger count me in to help to "build" the place ok?
+<a name="l-796"></a><span class="tm">17:02:29</span><span class="nk"> &lt;henne&gt;</span> what about the sun?
+<a name="l-797"></a><span class="tm">17:02:34</span><span class="nk"> &lt;henne&gt;</span> it hurts ;)
+<a name="l-798"></a><span class="tm">17:02:55</span><span class="nk"> &lt;henne&gt;</span> do we need sun shades?
+<a name="l-799"></a><span class="tm">17:03:07</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> We could use some - good point.
+<a name="l-800"></a><span class="tm">17:03:28</span><span class="nk"> &lt;AJaeger&gt;</span> please add them.
+<a name="l-801"></a><span class="tm">17:03:56</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-802"></a><span class="tm">17:04:07</span><span class="nk"> &lt;henne&gt;</span> does the venue have wastebins?
+<a name="l-803"></a><span class="tm">17:04:11</span><span class="nk"> &lt;drago&gt;</span> sorry, dropped off
+<a name="l-804"></a><span class="tm">17:04:28</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> add it ask action for us to check that there wil lbe enough
+<a name="l-805"></a><span class="tm">17:04:49</span><span class="nk"> &lt;henne&gt;</span> who is us?
+<a name="l-806"></a><span class="tm">17:04:55</span><span class="nk"> &lt;henne&gt;</span> you and me?
+<a name="l-807"></a><span class="tm">17:05:07</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> the four people that I mentioned above. If you join us, make it five ;)
+<a name="l-808"></a><span class="tm">17:05:28</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-809"></a><span class="tm">17:05:59</span><span class="nk"> &lt;henne&gt;</span> what about the entertainment?
+<a name="l-810"></a><span class="tm">17:06:00</span><span class="nk"> &lt;AJaeger&gt;</span> So, let me run you quickly through the building:
+<a name="l-811"></a><span class="tm">17:06:34</span><span class="nk"> &lt;AJaeger&gt;</span> ground floor - the main zentrifuge rooom will have the reception and some soft chairs, a bar.
+<a name="l-812"></a><span class="tm">17:06:45</span><span class="nk"> &lt;AJaeger&gt;</span> After this is the main conference room.
+<a name="l-813"></a><span class="tm">17:06:59</span><span class="nk"> &lt;henne&gt;</span> who is organizing the bar?
+<a name="l-814"></a><span class="tm">17:07:06</span><span class="nk"> &lt;henne&gt;</span> who is organizing the soft chairs?
+<a name="l-815"></a><span class="tm">17:07:09</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> I'll answer later.
+<a name="l-816"></a><span class="tm">17:07:31</span><span class="nk"> &lt;suseROCKs&gt;</span> was it just me or did we just have a netsplit?
+<a name="l-817"></a><span class="tm">17:07:36</span><span class="nk"> &lt;AJaeger&gt;</span> First floor contains the Zentrifuge seminar room and also another seminar room.
+<a name="l-818"></a><span class="tm">17:07:36</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> we did
+<a name="l-819"></a><span class="tm">17:08:01</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so where are we at now?
+<a name="l-820"></a><span class="tm">17:08:14</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> venue stuff
+<a name="l-821"></a><span class="tm">17:08:21</span><span class="nk"> &lt;suseROCKs&gt;</span> aha
+<a name="l-822"></a><span class="tm">17:08:32</span><span class="nk"> &lt;suseROCKs&gt;</span> that's broad as well...
+<a name="l-823"></a><span class="tm">17:08:42</span><span class="nk"> &lt;AJaeger&gt;</span> second floor contains our largest seminar room - called the "Ballsaal" and a couple of rooms called "labyrinth". The labyrinth will have one seminar room and two  smaller rooms where people can meet.
+<a name="l-824"></a><span class="tm">17:08:45</span><span class="nk"> &lt;henne&gt;</span> that why we break it down room by room :)
+<a name="l-825"></a><span class="tm">17:08:51</span><span class="nk"> &lt;suseROCKs&gt;</span> does this mean tasks to handle DURING the event or does it relate to setting things up prior to the event?
+<a name="l-826"></a><span class="tm">17:09:11</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> both
+<a name="l-827"></a><span class="tm">17:09:20</span><span class="nk"> &lt;suseROCKs&gt;</span> e.g., I was told earlier that we'll need to get some volunteers to move charis around whenever we change room layouts.   Is that under this topic?
+<a name="l-828"></a><span class="tm">17:09:23</span><span class="nk"> &lt;AJaeger&gt;</span> We need to get chairs, tables, projectors, lightning to these.
+<a name="l-829"></a><span class="tm">17:10:01</span><span class="nk"> &lt;henne&gt;</span> okay can we go over it room by room now? ;)
+<a name="l-830"></a><span class="tm">17:10:06</span><span class="nk"> &lt;AJaeger&gt;</span> The location team is taken care of that everything is setup - but ask your questions in case we missed an item.
+<a name="l-831"></a><span class="tm">17:10:25</span><span class="nk"> &lt;AJaeger&gt;</span> Zentrifuge main room:
+<a name="l-832"></a><span class="tm">17:10:31</span><span class="nk"> &lt;henne&gt;</span> please
+<a name="l-833"></a><span class="tm">17:10:33</span><span class="nk"> &lt;suseROCKs&gt;</span> well do you need volunteers to help out with equipment movement during the confernece?
+<a name="l-834"></a><span class="tm">17:10:40</span><span class="nk"> &lt;henne&gt;</span> can we please not down tasks here and now?
+<a name="l-835"></a><span class="tm">17:10:53</span><span class="nk"> &lt;henne&gt;</span> and not defer everything somewhere else?
+<a name="l-836"></a><span class="tm">17:10:55</span><span class="nk"> &lt;suseROCKs&gt;</span> e.g. I'm told some rooms will change (a divider during some meetings and not others) and need people to physically move chairs during breaks
+<a name="l-837"></a><span class="tm">17:11:08</span><span class="nk"> &lt;drago&gt;</span> <span class="hi">suseROCKs:</span> no
+<a name="l-838"></a><span class="tm">17:11:09</span><span class="nk"> &lt;henne&gt;</span> we are here to sync our todo lists
+<a name="l-839"></a><span class="tm">17:11:11</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> I'm not aware of that - only for the party if it rains.
+<a name="l-840"></a><span class="tm">17:11:20</span><span class="nk"> &lt;AJaeger&gt;</span> and that can be done quickly.
+<a name="l-841"></a><span class="tm">17:11:42</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   well that's my question.  If there are tasks we can go out and ask people to volunteer to help out on during the conference (and not just leave it all burdened on you guys) we should list it out
+<a name="l-842"></a><span class="tm">17:11:43</span><span class="nk"> &lt;henne&gt;</span> i have to move walls for the party?
+<a name="l-843"></a><span class="tm">17:12:01</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> yes. thats what ALL of this is for
+<a name="l-844"></a><span class="tm">17:12:01</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Only if it rains and we cannot be outside
+<a name="l-845"></a><span class="tm">17:12:08</span><span class="nk"> &lt;drago&gt;</span> <span class="hi">henne:</span> parties where you are always shifts walls.
+<a name="l-846"></a><span class="tm">17:12:27</span><span class="nk"> &lt;henne&gt;</span> okay lets discuss party later
+<a name="l-847"></a><span class="tm">17:12:28</span><span class="nk"> &lt;drago&gt;</span> no, no wall shifting will be needed
+<a name="l-848"></a><span class="tm">17:12:49</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">Zentrifuge:</span> location team has the actions to setup bar (food and drinks), sofas, lightning, a speakers place, chairs, tables.
+<a name="l-849"></a><span class="tm">17:12:50</span><span class="nk"> &lt;henne&gt;</span> can we now please go through room by room like we did with the beergarden?
+<a name="l-850"></a><span class="tm">17:12:56</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so do you need any kind of muscle whatsoever during the event?
+<a name="l-851"></a><span class="tm">17:13:12</span><span class="nk"> &lt;henne&gt;</span> we need tons of stuff
+<a name="l-852"></a><span class="tm">17:13:18</span><span class="nk"> &lt;henne&gt;</span> and I want to record what
+<a name="l-853"></a><span class="tm">17:13:20</span><span class="nk"> &lt;drago&gt;</span> also muscles :)
+<a name="l-854"></a><span class="tm">17:13:25</span><span class="nk"> &lt;drago&gt;</span> and nervs ;-)
+<a name="l-855"></a><span class="tm">17:13:28</span><span class="nk"> &lt;henne&gt;</span> thats what this meeting is about right?
+<a name="l-856"></a><span class="tm">17:13:40</span><span class="nk"> &lt;izabelvalverde&gt;</span> AJaeger henne drago I have another meeting here in few minutes so can I do/help something now?
+<a name="l-857"></a><span class="tm">17:13:41</span><span class="nk"> &lt;suseROCKs&gt;</span> I believe that was my question, yes  :-)
+<a name="l-858"></a><span class="tm">17:13:44</span><span class="nk"> &lt;AJaeger&gt;</span> Projector, Leinwand, microphones, speakers,
+<a name="l-859"></a><span class="tm">17:13:50</span><span class="nk"> &lt;izabelvalverde&gt;</span> cause I must to go :-(
+<a name="l-860"></a><span class="tm">17:14:02 </span><span class="nka">* AJaeger</span> <span class="ac">is running out of time as well ;-(</span>
+<a name="l-861"></a><span class="tm">17:14:16</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">drago:</span> Anything else for Zentrifuge?
+<a name="l-862"></a><span class="tm">17:14:18</span><span class="nk"> &lt;AJaeger&gt;</span> lightning
+<a name="l-863"></a><span class="tm">17:14:27</span><span class="nk"> &lt;AJaeger&gt;</span> registration desk
+<a name="l-864"></a><span class="tm">17:14:33</span><span class="nk"> &lt;suseROCKs&gt;</span> video team
+<a name="l-865"></a><span class="tm">17:14:33</span><span class="nk"> &lt;henne&gt;</span> cables
+<a name="l-866"></a><span class="tm">17:14:36</span><span class="nk"> &lt;drago&gt;</span> registration desk == bar
+<a name="l-867"></a><span class="tm">17:14:39</span><span class="nk"> &lt;henne&gt;</span> people who man the bar
+<a name="l-868"></a><span class="tm">17:14:45</span><span class="nk"> &lt;AJaeger&gt;</span> projector to project schedule of the  day
+<a name="l-869"></a><span class="tm">17:14:50</span><span class="nk"> &lt;izabelvalverde&gt;</span> sorry
+<a name="l-870"></a><span class="tm">17:14:58</span><span class="nk"> &lt;AJaeger&gt;</span> Board to write up BOFs
+<a name="l-871"></a><span class="tm">17:15:03</span><span class="nk"> &lt;drago&gt;</span> maybe something to darken teh room, paper or textile
+<a name="l-872"></a><span class="tm">17:15:05</span><span class="nk"> &lt;izabelvalverde&gt;</span> just count me in to help on whatever is needed ok?
+<a name="l-873"></a><span class="tm">17:15:09</span><span class="nk"> &lt;henne&gt;</span> people who care about the technics
+<a name="l-874"></a><span class="tm">17:15:10</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">izabelvalverde:</span> Thanks!
+<a name="l-875"></a><span class="tm">17:15:11</span><span class="nk"> &lt;drago&gt;</span> <span class="hi">izabelvalverde:</span> thanks
+<a name="l-876"></a><span class="tm">17:15:15</span><span class="nk"> &lt;henne&gt;</span> people who visit the rooms
+<a name="l-877"></a><span class="tm">17:15:24</span><span class="nk"> &lt;henne&gt;</span> and see if something is needed for each workshop
+<a name="l-878"></a><span class="tm">17:15:34</span><span class="nk"> &lt;izabelvalverde&gt;</span> you're welcome ;-)
+<a name="l-879"></a><span class="tm">17:15:39</span><span class="nk"> &lt;izabelvalverde&gt;</span> see you later
+<a name="l-880"></a><span class="tm">17:15:40</span><span class="nk"> &lt;henne&gt;</span> we don't even have a bar yet right?
+<a name="l-881"></a><span class="tm">17:15:43</span><span class="nk"> &lt;drago&gt;</span> session chair so called
+<a name="l-882"></a><span class="tm">17:16:00</span><span class="nk"> &lt;drago&gt;</span> we agreed to build the bar from the Old Toad craddles
+<a name="l-883"></a><span class="tm">17:16:29</span><span class="nk"> &lt;suseROCKs&gt;</span> who brinigs ice for the beer chest?  :-)
+<a name="l-884"></a><span class="tm">17:16:29</span><span class="nk"> &lt;drago&gt;</span> another option is to ask Urban, but than we get a "Kerwa Bar"
+<a name="l-885"></a><span class="tm">17:16:31</span><span class="nk"> &lt;AJaeger&gt;</span> flowers
+<a name="l-886"></a><span class="tm">17:16:42</span><span class="nk"> &lt;AJaeger&gt;</span> some artwork for the walls (posters)
+<a name="l-887"></a><span class="tm">17:17:00 </span><span class="nka">* drago</span> <span class="ac">brings his favorite Bambi-Poster :-)</span>
+<a name="l-888"></a><span class="tm">17:17:00</span><span class="nk"> &lt;henne&gt;</span> so I ask one last time before I run away screaming
+<a name="l-889"></a><span class="tm">17:17:04</span><span class="nk"> &lt;suseROCKs&gt;</span> this kind of discussion is better done as a list on a page.
+<a name="l-890"></a><span class="tm">17:17:16</span><span class="nk"> &lt;henne&gt;</span> can we go room by room and record what we still need?
+<a name="l-891"></a><span class="tm">17:17:23</span><span class="nk"> &lt;henne&gt;</span> and what we have
+<a name="l-892"></a><span class="tm">17:17:29</span><span class="nk"> &lt;drago&gt;</span> <span class="hi">henne:</span> we did that
+<a name="l-893"></a><span class="tm">17:17:34</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> This is room by room - we're just at the main room.
+<a name="l-894"></a><span class="tm">17:18:14</span><span class="nk"> &lt;henne&gt;</span> how the beep should I be able to record this?
+<a name="l-895"></a><span class="tm">17:18:26</span><span class="nk"> &lt;AJaeger&gt;</span> sorry ;)
+<a name="l-896"></a><span class="tm">17:18:50</span><span class="nk"> &lt;AJaeger&gt;</span> henne I can go through the above and review what you recorded.
+<a name="l-897"></a><span class="tm">17:19:16</span><span class="nk"> &lt;henne&gt;</span> i havent recorded anything
+<a name="l-898"></a><span class="tm">17:19:34</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Then I can write it up myself if yo uprefer
+<a name="l-899"></a><span class="tm">17:19:36</span><span class="nk"> &lt;henne&gt;</span> because you just throw in some stuff
+<a name="l-900"></a><span class="tm">17:19:47</span><span class="nk"> &lt;henne&gt;</span> because you think everybody knows what you talk about
+<a name="l-901"></a><span class="tm">17:19:57</span><span class="nk"> &lt;drago&gt;</span> ok, so lets try structured:
+<a name="l-902"></a><span class="tm">17:20:02</span><span class="nk"> &lt;drago&gt;</span> 1. Wardrobe
+<a name="l-903"></a><span class="tm">17:20:03</span><span class="nk"> &lt;drago&gt;</span> 2. Bar
+<a name="l-904"></a><span class="tm">17:20:04</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   Isn't that better than spending hours here (we're already 2 hours now) discussing everything thing in minute detail?
+<a name="l-905"></a><span class="tm">17:20:18</span><span class="nk"> &lt;suseROCKs&gt;</span> Just create a list of the tasks needed onsite  and include explanation if needed
+<a name="l-906"></a><span class="tm">17:20:24</span><span class="nk"> &lt;suseROCKs&gt;</span> then people can grab what they want/can do
+<a name="l-907"></a><span class="tm">17:20:37</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> this meeting is about creating this tasklist...
+<a name="l-908"></a><span class="tm">17:20:45</span><span class="nk"> &lt;drago&gt;</span> <span class="hi">suseROCKs:</span> that leads to "nothing happens" which we def. can not afford any more
+<a name="l-909"></a><span class="tm">17:21:02</span><span class="nk"> &lt;henne&gt;</span> we already have 4 lists of stuff to do on the wiki
+<a name="l-910"></a><span class="tm">17:21:16</span><span class="nk"> &lt;suseROCKs&gt;</span> fine
+<a name="l-911"></a><span class="tm">17:21:17</span><span class="nk"> &lt;henne&gt;</span> this meeting is about getting everyone on the same page
+<a name="l-912"></a><span class="tm">17:21:26</span><span class="nk"> &lt;suseROCKs&gt;</span> and people are leaving
+<a name="l-913"></a><span class="tm">17:21:33</span><span class="nk"> &lt;henne&gt;</span> if this meeting is too long we need to do another one
+<a name="l-914"></a><span class="tm">17:21:46</span><span class="nk"> &lt;henne&gt;</span> is that what we are getting at?
+<a name="l-915"></a><span class="tm">17:21:50</span><span class="nk"> &lt;drago&gt;</span> <span class="hi">henne:</span> I think that makes sense
+<a name="l-916"></a><span class="tm">17:21:50</span><span class="nk"> &lt;suseROCKs&gt;</span> my recommendation is have a list created, and then go over that list in a meeting.  not use a meeting to create a list
+<a name="l-917"></a><span class="tm">17:22:48</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> your recommondation comes 2 hours late
+<a name="l-918"></a><span class="tm">17:23:18</span><span class="nk"> &lt;henne&gt;</span> okay so do we want to continue today?
+<a name="l-919"></a><span class="tm">17:23:22</span><span class="nk"> &lt;suseROCKs&gt;</span> ok then we sit here and build the lists.
+<a name="l-920"></a><span class="tm">17:23:23</span><span class="nk"> &lt;drago&gt;</span> for the venue stuff, I agree with suseROCKs
+<a name="l-921"></a><span class="tm">17:23:26</span><span class="nk"> &lt;AJaeger&gt;</span> So, when shall we meet again? We've spend three hours now i nthe meeting and I need to leave now as well.
+<a name="l-922"></a><span class="tm">17:23:28</span><span class="nk"> &lt;henne&gt;</span> or schedule another meeting for a lter date?
+<a name="l-923"></a><span class="tm">17:23:52</span><span class="nk"> &lt;henne&gt;</span> how about tomorrow?
+<a name="l-924"></a><span class="tm">17:23:54</span><span class="nk"> &lt;AJaeger&gt;</span> We can meet later today. But I'm offline on thursday and Friday.
+<a name="l-925"></a><span class="tm">17:23:55</span><span class="nk"> &lt;drago&gt;</span> tomorow?
+<a name="l-926"></a><span class="tm">17:24:09</span><span class="nk"> &lt;AJaeger&gt;</span> Tomorrow is the cfp meeting - or we meet at 18:00 hours.
+<a name="l-927"></a><span class="tm">17:24:19</span><span class="nk"> &lt;henne&gt;</span> tomorrow around from 3-5pm CEST
+<a name="l-928"></a><span class="tm">17:24:29</span><span class="nk"> &lt;henne&gt;</span> tomorrow from 3-5pm CEST
+<a name="l-929"></a><span class="tm">17:24:45</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> 3-5pm CEST works (13:00 to 15:00 UTC) it's before the cfp meeting
+<a name="l-930"></a><span class="tm">17:24:57</span><span class="nk"> &lt;drago&gt;</span> does not work for me
+<a name="l-931"></a><span class="tm">17:24:59</span><span class="nk"> &lt;AJaeger&gt;</span> drago, shall the two of us prepare a venue list?
+<a name="l-932"></a><span class="tm">17:25:06</span><span class="nk"> &lt;AJaeger&gt;</span> as suseROCKs proposed?
+<a name="l-933"></a><span class="tm">17:25:17</span><span class="nk"> &lt;drago&gt;</span> sure, I think there is one already
+<a name="l-934"></a><span class="tm">17:25:38</span><span class="nk"> &lt;suseROCKs&gt;</span> if there is one already, review it and see if anything to add to it, and then use it as the guide in the next meeting
+<a name="l-935"></a><span class="tm">17:25:47</span><span class="nk"> &lt;suseROCKs&gt;</span> not like what we just did a few minutes ago which was all helter skelter
+<a name="l-936"></a><span class="tm">17:25:57</span><span class="nk"> &lt;suseROCKs&gt;</span> and led to henne's ire  :-)
+<a name="l-937"></a><span class="tm">17:26:05</span><span class="nk"> &lt;drago&gt;</span> I have another meeting at 4 CEST tomorror
+<a name="l-938"></a><span class="tm">17:26:07</span><span class="nk"> &lt;AJaeger&gt;</span> we'll put it in the place that henne tells us to use ;)
+<a name="l-939"></a><span class="tm">17:26:14</span><span class="nk"> &lt;drago&gt;</span> which I cant move without trouble
+<a name="l-940"></a><span class="tm">17:26:16</span><span class="nk"> &lt;henne&gt;</span> okay then 3-4 CEST
+<a name="l-941"></a><span class="tm">17:26:20</span><span class="nk"> &lt;henne&gt;</span> and see what we get done
+<a name="l-942"></a><span class="tm">17:26:20</span><span class="nk"> &lt;AJaeger&gt;</span> ok.
+<a name="l-943"></a><span class="tm">17:26:21</span><span class="nk"> &lt;drago&gt;</span> ok
+<a name="l-944"></a><span class="tm">17:26:30</span><span class="nk"> &lt;henne&gt;</span> everyone else?
+<a name="l-945"></a><span class="tm">17:26:39</span><span class="nk"> &lt;cwh&gt;</span> what else?
+<a name="l-946"></a><span class="tm">17:26:39</span><span class="nk"> &lt;suseROCKs&gt;</span> 3-4 CEST is what UTC?
+<a name="l-947"></a><span class="tm">17:26:51</span><span class="nk"> &lt;AJaeger&gt;</span> 13:00 - 14:00
+<a name="l-948"></a><span class="tm">17:27:03</span><span class="nk"> &lt;suseROCKs&gt;</span> 8 a.m. then...   :-D
+<a name="l-949"></a><span class="tm">17:27:14</span><span class="nk"> &lt;AJaeger&gt;</span> late ;)
+<a name="l-950"></a><span class="tm">17:27:16</span><span class="nk"> &lt;suseROCKs&gt;</span> you may or may not see me.   Which might be good for you  :-)
+<a name="l-951"></a><span class="tm">17:27:33</span><span class="nk"> &lt;henne&gt;</span> as long as we record everything people can chime in afterwards
+<a name="l-952"></a><span class="tm">17:27:40</span><span class="nk"> &lt;drago&gt;</span> ok
+<a name="l-953"></a><span class="tm">17:27:42</span><span class="nk"> &lt;suseROCKs&gt;</span> drago,   since you say a list already exists, is it on the wiki already?  Can I review it?
+<a name="l-954"></a><span class="tm">17:27:43</span><span class="nk"> &lt;cwh&gt;</span> and you think we will get further in only one hour?
+<a name="l-955"></a><span class="tm">17:27:43</span><span class="nk"> &lt;AJaeger&gt;</span> ok, then see you tomorrow! Thanks everybody - and thanks henne for recording everything!
+<a name="l-956"></a><span class="tm">17:27:57</span><span class="nk"> &lt;drago&gt;</span> <span class="hi">AJaeger:</span> do you have the list?
+<a name="l-957"></a><span class="tm">17:28:04</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">cwh:</span> drago and myself write up a list and then let's go through it.
+<a name="l-958"></a><span class="tm">17:28:08</span><span class="nk"> &lt;drago&gt;</span> henne is the meeting traktor :-)
+<a name="l-959"></a><span class="tm">17:28:14</span><span class="nk"> &lt;drago&gt;</span> thanks henne
+<a name="l-960"></a><span class="tm">17:28:15</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">drago:</span> I'll put what I have tomorrow in the wiki
+<a name="l-961"></a><span class="tm">17:28:19</span><span class="nk"> &lt;cwh&gt;</span> ok, great
+<a name="l-962"></a><span class="tm">17:28:21</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

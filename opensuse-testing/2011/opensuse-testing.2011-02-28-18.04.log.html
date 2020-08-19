@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:04:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:04:56</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Feb 28 18:04:56 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:04:56</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:05:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-5"></a><span class="tm">18:05:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-6"></a><span class="tm">18:06:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Experience with 11.4 RC2</span>
+<a name="l-7"></a><span class="tm">18:07:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> I had RC2 mostly running in various VMs
+<a name="l-8"></a><span class="tm">18:07:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> on my notebooks where I tested Factory I would have had to use zypper dup with downgrades and other effects
+<a name="l-9"></a><span class="tm">18:08:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> worked fine so far. done :)
+<a name="l-10"></a><span class="tm">18:08:52</span><span class="nk"> &lt;LWFinger&gt;</span> OK, I'll go next.
+<a name="l-11"></a><span class="tm">18:09:21</span><span class="nk"> &lt;LWFinger&gt;</span> I have installed RC2 on 5 machines - 4 real, one VM.
+<a name="l-12"></a><span class="tm">18:09:50</span><span class="nk"> &lt;LWFinger&gt;</span> All but one use KDE, the other has no GUI, only CL
+<a name="l-13"></a><span class="tm">18:10:47</span><span class="nk"> &lt;LWFinger&gt;</span> The only problem is my NFS server runs V3 of NFS. An out of the box RC2 looks for V4.
+<a name="l-14"></a><span class="tm">18:12:27</span><span class="nk"> &lt;LWFinger&gt;</span> It takes a long time to time out, and NetworkManager dies.  I don't have access to the bug number right now.
+<a name="l-15"></a><span class="tm">18:13:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> does it always die?
+<a name="l-16"></a><span class="tm">18:13:43</span><span class="nk"> &lt;LWFinger&gt;</span> The workaround is to change the NFS config to default to V3. That fails immediately if the network is not up, and all goes OK.
+<a name="l-17"></a><span class="tm">18:14:29</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> It probably would not with a wired connection, but with wireless it always does.
+<a name="l-18"></a><span class="tm">18:15:16</span><span class="nk"> &lt;LWFinger&gt;</span> My main laptop was upgraded to RC2.1 2 hours ago. All seems OK. Done.
+<a name="l-19"></a><span class="tm">18:16:35</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> what about most annoying bugs list - which ones are fixed with 0017 ?
+<a name="l-20"></a><span class="tm">18:17:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> there is one about firefox close warning. upstream changed the default for firefox4-b10
+<a name="l-21"></a><span class="tm">18:18:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> but they changed it a bit more for b12 which is in RC2.1
+<a name="l-22"></a><span class="tm">18:18:21</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> ok
+<a name="l-23"></a><span class="tm">18:19:25</span><span class="nk"> &lt;LWFinger&gt;</span> That bug (https://bugzilla.novell.com/show_bug.cgi?id=669231) is now OK for me.
+<a name="l-24"></a><span class="tm">18:19:28</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 669231 in openSUSE 11.4 (Firefox) "Firefox doesn't ask for closing multiple tabs." [Normal,Resolved: upstream]
+<a name="l-25"></a><span class="tm">18:19:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://en.opensuse.org/openSUSE:Most_annoying_bugs_11.4_dev has other entries, but I can not tell much about others
+<a name="l-26"></a><span class="tm">18:19:55</span><span class="nk"> &lt;LWFinger&gt;</span> I have not checked any others.
+<a name="l-27"></a><span class="tm">18:20:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> I had seen https://bugzilla.novell.com/show_bug.cgi?id=671593 - and it is probably still in
+<a name="l-28"></a><span class="tm">18:20:39</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 671593 in openSUSE 11.4 (Live Medium) "Live-USB system hangs when installing some additional packages." [Normal,New]
+<a name="l-29"></a><span class="tm">18:21:13</span><span class="nk"> &lt;elm&gt;</span> yes, the USB subsystem seems to have many errors.
+<a name="l-30"></a><span class="tm">18:21:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> somehow clicfs is slowing down or locking when you install rpms on the writable overlay.
+<a name="l-31"></a><span class="tm">18:21:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> oh?
+<a name="l-32"></a><span class="tm">18:21:33</span><span class="nk"> &lt;elm&gt;</span> last time my machine crashed after plugging in an usb stick.
+<a name="l-33"></a><span class="tm">18:22:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> is that specific to ohci or uhci?
+<a name="l-34"></a><span class="tm">18:22:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> or ehci.
+<a name="l-35"></a><span class="tm">18:22:34</span><span class="nk"> &lt;elm&gt;</span> how can I determine this?
+<a name="l-36"></a><span class="tm">18:23:22</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">elm:</span> I have not seen that, but I don'r run a standard kernel. If USB 3, it could be xhci, or is it xehci?
+<a name="l-37"></a><span class="tm">18:23:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> you could check your controller type with "lspci |grep USB"
+<a name="l-38"></a><span class="tm">18:23:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> I did not see crashes with USB either.
+<a name="l-39"></a><span class="tm">18:24:06</span><span class="nk"> &lt;elm&gt;</span> 00:1d.0 USB Controller: Intel Corporation 82801CA/CAM USB Controller #1 (rev 02
+<a name="l-40"></a><span class="tm">18:24:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> but some radeon KMS screw-up (mailed it to testing ML)
+<a name="l-41"></a><span class="tm">18:25:55</span><span class="nk"> &lt;elm&gt;</span> Yes; I have opened up a bug report for it at https://bugzilla.kernel.org/show_bug.cgi?id=25052.
+<a name="l-42"></a><span class="tm">18:26:00</span><span class="nk"> &lt;bugbot&gt;</span> bugzilla.kernel.org bug 25052 in Drivers (Video(DRI - non Intel)) "kernel modesetting still does not work" [High,Reopened]
+<a name="l-43"></a><span class="tm">18:26:03</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">elm:</span> That one is USB2.0, probably ehci.
+<a name="l-44"></a><span class="tm">18:26:15</span><span class="nk"> &lt;elm&gt;</span> Anyone here for whom KMS does already work (radeon/nouveau)?
+<a name="l-45"></a><span class="tm">18:26:41</span><span class="nk"> &lt;LWFinger&gt;</span> No, only i915.
+<a name="l-46"></a><span class="tm">18:26:54</span><span class="nk"> &lt;elm&gt;</span> ?=i915
+<a name="l-47"></a><span class="tm">18:27:11</span><span class="nk"> &lt;LWFinger&gt;</span> The Intel 945.
+<a name="l-48"></a><span class="tm">18:27:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> I have a Laptop with Nvidia graphics which works with 11.4 nouveau out-of-the-box
+<a name="l-49"></a><span class="tm">18:27:47</span><span class="nk"> &lt;Holgi&gt;</span> I also have it working with i915
+<a name="l-50"></a><span class="tm">18:27:51</span><span class="nk"> &lt;elm&gt;</span> ok; intel graphics seems to be more compatible.
+<a name="l-51"></a><span class="tm">18:28:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> =7700 Go
+<a name="l-52"></a><span class="tm">18:28:15</span><span class="nk"> &lt;Holgi&gt;</span> out of the box
+<a name="l-53"></a><span class="tm">18:28:23</span><span class="nk"> &lt;elm&gt;</span> anyone for whom it does not work?
+<a name="l-54"></a><span class="tm">18:29:01 </span><span class="nka">* Holgi</span> <span class="ac">just used nv</span>
+<a name="l-55"></a><span class="tm">18:29:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">elm:</span> yes: http://lists.opensuse.org/archive/opensuse-testing/2011-02/msg00031.html
+<a name="l-56"></a><span class="tm">18:29:17</span><span class="nk"> &lt;elm&gt;</span> anyone who has an ATI card?
+<a name="l-57"></a><span class="tm">18:29:57</span><span class="nk"> &lt;elm&gt;</span> or anyone for whom it does not work, yet?
+<a name="l-58"></a><span class="tm">18:30:12</span><span class="nk"> &lt;Holgi&gt;</span> no, no
+<a name="l-59"></a><span class="tm">18:31:12</span><span class="nk"> &lt;elm&gt;</span> ok, fine; - then I can report that i does work in 2 settings - and that it does not in two other settings.
+<a name="l-60"></a><span class="tm">18:31:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">elm:</span> see above. ATI Radeon HD 3450 failed
+<a name="l-61"></a><span class="tm">18:31:52</span><span class="nk"> &lt;Fisiu&gt;</span> hi
+<a name="l-62"></a><span class="tm">18:31:58</span><span class="nk"> &lt;Holgi&gt;</span> hi Fisiu
+<a name="l-63"></a><span class="tm">18:32:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> hi Fisiu. do you have any experience from RC2 testing to share?
+<a name="l-64"></a><span class="tm">18:32:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. Bad Bugs (tm) ?
+<a name="l-65"></a><span class="tm">18:32:33</span><span class="nk"> &lt;elm&gt;</span> Hello Fisiu! Does KMS work for you (graphics mode setting)?
+<a name="l-66"></a><span class="tm">18:32:43</span><span class="nk"> &lt;Fisiu&gt;</span> just installed it on laptop...
+<a name="l-67"></a><span class="tm">18:33:01</span><span class="nk"> &lt;elm&gt;</span> and?
+<a name="l-68"></a><span class="tm">18:33:03</span><span class="nk"> &lt;Fisiu&gt;</span> bootsplash still has some glitches around geeko
+<a name="l-69"></a><span class="tm">18:33:18</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">LWFinger:</span> Does it work for you now? (KMS)
+<a name="l-70"></a><span class="tm">18:33:31</span><span class="nk"> &lt;Fisiu&gt;</span> scrolling in touchpad doesn't work
+<a name="l-71"></a><span class="tm">18:33:46</span><span class="nk"> &lt;LWFinger&gt;</span> On i945 - yes. On nVidia - no.
+<a name="l-72"></a><span class="tm">18:34:01</span><span class="nk"> &lt;Fisiu&gt;</span> and I can't access to touchpad settings in KDE System Settings
+<a name="l-73"></a><span class="tm">18:34:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Fisiu:</span> why can't you?
+<a name="l-74"></a><span class="tm">18:34:21</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">LWFinger:</span> have you tested it with RC2 (the nv card)?
+<a name="l-75"></a><span class="tm">18:34:36</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">elm:</span> Yes
+<a name="l-76"></a><span class="tm">18:34:36</span><span class="nk"> &lt;Fisiu&gt;</span> kms works fine (ati mobility x700)
+<a name="l-77"></a><span class="tm">18:34:46</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">LWFinger:</span> What was the result (garbeled screen with vertically pixeled lines) ?
+<a name="l-78"></a><span class="tm">18:35:38</span><span class="nk"> &lt;Fisiu&gt;</span> I have infou about "driver is not loaded or in wrong version"
+<a name="l-79"></a><span class="tm">18:36:10</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">elm:</span> The bootsplash covers only the right half of the screen. The KDE screen looks as if the horiz pixel count is wrong.
+<a name="l-80"></a><span class="tm">18:38:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> horiz pixel count wrong looks like http://openqa.opensuse.org/opensuse/permanent/bug/bnc620385-1.png ?
+<a name="l-81"></a><span class="tm">18:38:22</span><span class="nk"> &lt;elm&gt;</span> pixel count is wrong? - how does it look like?
+<a name="l-82"></a><span class="tm">18:38:36</span><span class="nk"> &lt;elm&gt;</span> is part of the screen not displayed?
+<a name="l-83"></a><span class="tm">18:39:27</span><span class="nk"> &lt;elm&gt;</span> ah vertically lined but still visible.
+<a name="l-84"></a><span class="tm">18:39:35</span><span class="nk"> &lt;elm&gt;</span> thx a lot.
+<a name="l-85"></a><span class="tm">18:39:40</span><span class="nk"> &lt;LWFinger&gt;</span> No, the entire screen is unreadable. It looks as if it has been sheared horizontally.
+<a name="l-86"></a><span class="tm">18:40:16</span><span class="nk"> &lt;Fisiu&gt;</span> http://img842.imageshack.us/img842/1321/20110228190544.jpg
+<a name="l-87"></a><span class="tm">18:40:46</span><span class="nk"> &lt;Fisiu&gt;</span> sorry for poor quality
+<a name="l-88"></a><span class="tm">18:40:46</span><span class="nk"> &lt;LWFinger&gt;</span> No, completely unreadable.
+<a name="l-89"></a><span class="tm">18:41:48</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">LWFinger:</span> there is nothing you can see except pixels in different colors? - you do not even see if a window is open or not?
+<a name="l-90"></a><span class="tm">18:41:48</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">Fisiu:</span> I do  not
+<a name="l-91"></a><span class="tm">18:41:58</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">Fisiu:</span> see the problem
+<a name="l-92"></a><span class="tm">18:42:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> this one also had one pixel too few per line: http://openqa.opensuse.org/opensuse/permanent/bug/bnc652562-1.png
+<a name="l-93"></a><span class="tm">18:42:30</span><span class="nk"> &lt;Fisiu&gt;</span> ok, I'll reproduce it on vbox then make a good screenshoot
+<a name="l-94"></a><span class="tm">18:43:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> any more RC2 experience to share?
+<a name="l-95"></a><span class="tm">18:43:34</span><span class="nk"> &lt;LWFinger&gt;</span> I can see the color changes when my different screens come up, but not read anything.
+<a name="l-96"></a><span class="tm">18:44:02</span><span class="nk"> &lt;LWFinger&gt;</span> Any instructions on how to get a screenshot when you can see noting?
+<a name="l-97"></a><span class="tm">18:44:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> with camera pointed to screen :D
+<a name="l-98"></a><span class="tm">18:44:34</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">LWFinger:</span> does it look different if you open up a console or when you just should have a black screen (no xclient)?
+<a name="l-99"></a><span class="tm">18:45:08</span><span class="nk"> &lt;Fisiu&gt;</span> vbox has screen size 1024x768 and bootsplash looks fine
+<a name="l-100"></a><span class="tm">18:45:32</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">LWFinger:</span> No, I think you will need a digital camera - or another computer with webcam.
+<a name="l-101"></a><span class="tm">18:46:20</span><span class="nk"> &lt;LWFinger&gt;</span> xclient is running. My consoles have a white background.and I see them start. Virtual consoles are OK.
+<a name="l-102"></a><span class="tm">18:47:05</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">LWFinger:</span> you actually see that there is something on the screen but everything is too sheared to read it; right?
+<a name="l-103"></a><span class="tm">18:47:29</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">elm:</span> Yes. I'll restart one of my other boxes and see if I can get a picture.
+<a name="l-104"></a><span class="tm">18:47:43</span><span class="nk"> &lt;Fisiu&gt;</span> on laptop, kms starts early and screen size is 1280x800 and bootsplash has glitches
+<a name="l-105"></a><span class="tm">18:47:51</span><span class="nk"> &lt;elm&gt;</span> Well I ask, because at me you can absolutely see nothing except different colorful pixels.
+<a name="l-106"></a><span class="tm">18:48:22</span><span class="nk"> &lt;elm&gt;</span> .
+<a name="l-107"></a><span class="tm">18:48:22</span><span class="nk"> &lt;Holgi&gt;</span> maybe wrong color depth?
+<a name="l-108"></a><span class="tm">18:48:55</span><span class="nk"> &lt;elm&gt;</span> Has anyone tested an external monitor as connected via DVI or HDMI or VGA?
+<a name="l-109"></a><span class="tm">18:49:10</span><span class="nk"> &lt;Holgi&gt;</span> vga is working here
+<a name="l-110"></a><span class="tm">18:50:59</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">LWFinge:</span> integrated laptop screen or connected via cable?
+<a name="l-111"></a><span class="tm">18:51:10</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">LWFinger:</span> integrated laptop screen or connected via
+<a name="l-112"></a><span class="tm">18:51:44</span><span class="nk"> &lt;elm&gt;</span> ah LVDS; integrated.
+<a name="l-113"></a><span class="tm">18:51:57</span><span class="nk"> &lt;elm&gt;</span> (just opened you Xorg.log)
+<a name="l-114"></a><span class="tm">18:52:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> can we move on to next topic then?
+<a name="l-115"></a><span class="tm">18:53:12</span><span class="nk"> &lt;elm&gt;</span> yes; one last question bmwiedmann
+<a name="l-116"></a><span class="tm">18:53:41</span><span class="nk"> &lt;elm&gt;</span> Did you use an integrated or an external display (laptop/cable4dsipklay)?
+<a name="l-117"></a><span class="tm">18:53:58</span><span class="nk"> &lt;Fisiu&gt;</span> <span class="hi">Holgi:</span> http://img51.imageshack.us/img51/5083/bootsplash1280x800.jpg
+<a name="l-118"></a><span class="tm">18:54:02</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">elm:</span> who?
+<a name="l-119"></a><span class="tm">18:54:18</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">elm:</span> One of each.
+<a name="l-120"></a><span class="tm">18:54:52</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">Fisiu:</span> and what should I see? pixels with wrong color?
+<a name="l-121"></a><span class="tm">18:55:06</span><span class="nk"> &lt;elm&gt;</span> and is there any difference for the itg/ext monitor?
+<a name="l-122"></a><span class="tm">18:55:34</span><span class="nk"> &lt;Fisiu&gt;</span> look into background around logo
+<a name="l-123"></a><span class="tm">18:56:02</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">Fisiu:</span> I have the same - assumed this is intended
+<a name="l-124"></a><span class="tm">18:56:22</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">Fisiu:</span> same as at me: I think they have simply used this as an image. This kind of output is intended; isn`t it?
+<a name="l-125"></a><span class="tm">18:57:26</span><span class="nk"> &lt;Fisiu&gt;</span> anyway it looks awful ;(
+<a name="l-126"></a><span class="tm">18:57:37</span><span class="nk"> &lt;elm&gt;</span> I consent.
+<a name="l-127"></a><span class="tm">18:58:24</span><span class="nk"> &lt;Fisiu&gt;</span> what's synaptics touchpad driver name?
+<a name="l-128"></a><span class="tm">18:58:25</span><span class="nk"> &lt;elm&gt;</span> <span class="hi">LWFinger:</span> do you think that you still can get a screenshot for both the integrated and the external monitor?
+<a name="l-129"></a><span class="tm">18:58:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Fisiu:</span> "synaptics" ?
+<a name="l-130"></a><span class="tm">18:58:52</span><span class="nk"> &lt;Fisiu&gt;</span> if so, it's not loaded here
+<a name="l-131"></a><span class="tm">18:58:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> it cares about all touchpads.
+<a name="l-132"></a><span class="tm">18:59:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> it is a userspace Xorg driver
+<a name="l-133"></a><span class="tm">18:59:33</span><span class="nk"> &lt;Fisiu&gt;</span> how to verify which driver is used by touchpad
+<a name="l-134"></a><span class="tm">19:00:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Fisiu:</span> check /var/log/Xorg.0.log for "Synaptics" string
+<a name="l-135"></a><span class="tm">19:02:13</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">elm:</span> I'll try. Where is a good place to post photos?
+<a name="l-136"></a><span class="tm">19:02:15</span><span class="nk"> &lt;Fisiu&gt;</span> ok, in the meantime I rebooted system and now touchpad and kde settings for it work
+<a name="l-137"></a><span class="tm">19:02:56</span><span class="nk"> &lt;Fisiu&gt;</span> I installed system from livecd, then installed all sugested packages with first yast sw run
+<a name="l-138"></a><span class="tm">19:03:16</span><span class="nk"> &lt;Fisiu&gt;</span> I guess this driver is missing in livecd
+<a name="l-139"></a><span class="tm">19:03:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> http://img.susepaste.org/
+<a name="l-140"></a><span class="tm">19:04:41</span><span class="nk"> &lt;Fisiu&gt;</span> here is log from xorg: http://paste.opensuse.org/10694765
+<a name="l-141"></a><span class="tm">19:05:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Fisiu:</span> looks good.
+<a name="l-142"></a><span class="tm">19:05:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> let's move on then.
+<a name="l-143"></a><span class="tm">19:05:33</span><span class="nk"> &lt;Fisiu&gt;</span> yep :)
+<a name="l-144"></a><span class="tm">19:05:45</span><span class="nk"> &lt;Fisiu&gt;</span> this channel is temporary?
+<a name="l-145"></a><span class="tm">19:06:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Fisiu:</span> it is permanent
+<a name="l-146"></a><span class="tm">19:06:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open-bugs bugzilla cleanup day</span>
+<a name="l-147"></a><span class="tm">19:07:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> I had sent the open-bugs-day report to ML and did not really have much time to further look through bugzilla
+<a name="l-148"></a><span class="tm">19:07:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://lists.opensuse.org/archive/opensuse-testing/2011-02/msg00020.html
+<a name="l-149"></a><span class="tm">19:08:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#link </span><span class="cmdline">http://lists.opensuse.org/archive/opensuse-testing/2011-02/msg00020.html</span>
+<a name="l-150"></a><span class="tm">19:08:48</span><span class="nk"> &lt;Fisiu&gt;</span> I want to test rc2 on desktop too
+<a name="l-151"></a><span class="tm">19:09:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> so far 7 of 10 geeko-gear collections should have been sent as rewards
+<a name="l-152"></a><span class="tm">19:09:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> the others were still unclaimed
+<a name="l-153"></a><span class="tm">19:10:24</span><span class="nk"> &lt;Fisiu&gt;</span> then I'll give You some post install news ;)
+<a name="l-154"></a><span class="tm">19:10:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Fisiu:</span> great.
+<a name="l-155"></a><span class="tm">19:10:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> is 2011-04-02 a good date for our next open-bugs-day?
+<a name="l-156"></a><span class="tm">19:11:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> and what should be the focus of it?
+<a name="l-157"></a><span class="tm">19:12:20</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> sorry - what else that open bugs?
+<a name="l-158"></a><span class="tm">19:12:33</span><span class="nk"> &lt;Holgi&gt;</span> s/that/than/
+<a name="l-159"></a><span class="tm">19:12:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Holgi:</span> there are so many old open bugs.
+<a name="l-160"></a><span class="tm">19:13:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> going through the 11.4 ones again might not yield much new information
+<a name="l-161"></a><span class="tm">19:13:22</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> but 11.4 bugs
+<a name="l-162"></a><span class="tm">19:13:35</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> ahh, I see
+<a name="l-163"></a><span class="tm">19:13:59</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> but I doubt participants will install 11.3 just for this
+<a name="l-164"></a><span class="tm">19:14:06</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> or do you think they will?
+<a name="l-165"></a><span class="tm">19:14:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> we could check for 11.[123] bugs on 11.4
+<a name="l-166"></a><span class="tm">19:14:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> which will be released as GM by then
+<a name="l-167"></a><span class="tm">19:15:02</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> sounds like a good idea
+<a name="l-168"></a><span class="tm">19:16:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> this time we have ~1 month to prepare and more people will already have 11.4 installed
+<a name="l-169"></a><span class="tm">19:16:46 </span><span class="nka">* Fisiu</span> <span class="ac">is going to test RC so needs reboot ;)</span>
+<a name="l-170"></a><span class="tm">19:17:11</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> that's true
+<a name="l-171"></a><span class="tm">19:17:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> I also got useful feedback from remur_030
+<a name="l-172"></a><span class="tm">19:18:39</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">elm:</span> The screen shot for one of my nVidea cards is at http://img.susepaste.org/7011653.
+<a name="l-173"></a><span class="tm">19:18:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> * approach the teams directly so they could maybe add it their meetings agenda and rally people as well - this is propably only useful for the bigger teams
+<a name="l-174"></a><span class="tm">19:19:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> * split up search ranges into components so a single person will find it's way
+<a name="l-175"></a><span class="tm">19:19:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> around easier
+<a name="l-176"></a><span class="tm">19:19:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> - switching from xpdf misrender to nouveau crash report to an untranslated
+<a name="l-177"></a><span class="tm">19:19:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> string requires constant reorientation
+<a name="l-178"></a><span class="tm">19:19:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> - single components often have a upstream resources that will help triaging, so people can find their way around in the xorg bugtracker and stick to it
+<a name="l-179"></a><span class="tm">19:20:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> - less community blessed teams like xorg have a single day to attract people into their world
+<a name="l-180"></a><span class="tm">19:20:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> I like the sorting by components
+<a name="l-181"></a><span class="tm">19:20:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> what do you think, what could be improved?
+<a name="l-182"></a><span class="tm">19:21:38</span><span class="nk"> &lt;LWFinger&gt;</span> Being able to sort by components would be a big help.
+<a name="l-183"></a><span class="tm">19:21:52</span><span class="nk"> &lt;Holgi&gt;</span> first of all: thanks everybody for organizing and running the cleanup day
+<a name="l-184"></a><span class="tm">19:22:03</span><span class="nk"> &lt;Holgi&gt;</span> for me it looks like a good success
+<a name="l-185"></a><span class="tm">19:22:12</span><span class="nk"> &lt;Holgi&gt;</span> even we were late in organizing
+<a name="l-186"></a><span class="tm">19:22:17</span><span class="nk"> &lt;LWFinger&gt;</span> When we had only 5 displayed, I had to keep skipping to find one for my hard/software.
+<a name="l-187"></a><span class="tm">19:22:31</span><span class="nk"> &lt;LWFinger&gt;</span> It was a big success.
+<a name="l-188"></a><span class="tm">19:23:28</span><span class="nk"> &lt;LWFinger&gt;</span> April 2 is a good date for me.
+<a name="l-189"></a><span class="tm">19:24:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> pretty close to April 1 - but since we will announce it before, it should not be mistaken for an April's fools joke
+<a name="l-190"></a><span class="tm">19:25:13</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> I don't think that should be any problem
+<a name="l-191"></a><span class="tm">19:26:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> anyone who does not agree for the focus to be "check for 11.[123] bugs on 11.4" ?
+<a name="l-192"></a><span class="tm">19:26:50</span><span class="nk"> &lt;Holgi&gt;</span> jo k0da
+<a name="l-193"></a><span class="tm">19:28:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">The focus of next Open-Bugs-Day will be "check for 11.[123] bugs on 11.4".</span>
+<a name="l-194"></a><span class="tm">19:29:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> what do you think about when to announce the details? need not be before 11.4 is out
+<a name="l-195"></a><span class="tm">19:30:05</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> but we should at least release the date ASAP
+<a name="l-196"></a><span class="tm">19:30:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Holgi:</span> it was already on news.o.o in the summary
+<a name="l-197"></a><span class="tm">19:31:01</span><span class="nk"> &lt;LWFinger&gt;</span> I agree that the daye sould be done ASAP and get it into the calenders. Details about 2 weeks in advance.
+<a name="l-198"></a><span class="tm">19:32:02</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> http://news.opensuse.org/2011/02/16/open-bugs-day-on-sunday-the-20th-of-february/#more-7039 ?
+<a name="l-199"></a><span class="tm">19:32:31</span><span class="nk"> &lt;LWFinger&gt;</span> I see it being in the News on March 19, 26, and April 1.
+<a name="l-200"></a><span class="tm">19:33:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Holgi:</span> http://news.opensuse.org/2011/02/25/open-bugs-day-held-last-sunday/
+<a name="l-201"></a><span class="tm">19:34:01</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> I see - nevertheless we should announce the date apart from mentioning it there
+<a name="l-202"></a><span class="tm">19:34:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> yep
+<a name="l-203"></a><span class="tm">19:34:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> possibly in the next testing weekly news
+<a name="l-204"></a><span class="tm">19:34:51</span><span class="nk"> &lt;LWFinger&gt;</span> OK. Date next Saturday and details 2 weeks later.
+<a name="l-205"></a><span class="tm">19:34:59</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> how to follow the suggestion to involve other teams?
+<a name="l-206"></a><span class="tm">19:35:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> we could ask on #opensuse-gnome and #opensuse-kde - they have big teams
+<a name="l-207"></a><span class="tm">19:36:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> any volunteers?
+<a name="l-208"></a><span class="tm">19:37:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> then I will, when I find time
+<a name="l-209"></a><span class="tm">19:37:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">bmwiedemann will ask on #opensuse-gnome and #opensuse-kde for Open-Bugs-Day participation</span>
+<a name="l-210"></a><span class="tm">19:38:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">LWFinger will publish Date next Saturday and details 2 weeks later</span>
+<a name="l-211"></a><span class="tm">19:39:06</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-212"></a><span class="tm">19:40:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">graphics support: KMS support</span>
+<a name="l-213"></a><span class="tm">19:40:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">elm:</span> was this topic already covered in the first part? anything to add to our meeting summary?
+<a name="l-214"></a><span class="tm">19:42:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">does work in 2 settings - and it does not in two other settings</span>
+<a name="l-215"></a><span class="tm">19:42:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-216"></a><span class="tm">19:43:07 </span><span class="nka">* Holgi</span> <span class="ac">consider this as a "yes" ;-)</span>
+<a name="l-217"></a><span class="tm">19:43:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> that was it for the agenda
+<a name="l-218"></a><span class="tm">19:43:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> any other things we could do / improve?
+<a name="l-219"></a><span class="tm">19:44:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> or just things you want mentioned
+<a name="l-220"></a><span class="tm">19:44:41</span><span class="nk"> &lt;LWFinger&gt;</span> Has the "Check media" problem been added to openQA, or was that a one-of-a-kind problem?
+<a name="l-221"></a><span class="tm">19:45:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> I talked to the linuxrc maintainer and it always uses CD/DVDs as source for checksumming. it is too complex to do for 11.4, though.
+<a name="l-222"></a><span class="tm">19:46:10</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-223"></a><span class="tm">19:46:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> or do you mean as automated test? so that it does not fail again on CDs
+<a name="l-224"></a><span class="tm">19:46:51</span><span class="nk"> &lt;LWFinger&gt;</span> Yes, that was what I meant.
+<a name="l-225"></a><span class="tm">19:47:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> I'll put it on the todo list - but far down ;)
+<a name="l-226"></a><span class="tm">19:47:57</span><span class="nk"> &lt;LWFinger&gt;</span> My workflow is to download the CD image and test it on a VM. If for an RM, I burn it and do the same test.
+<a name="l-227"></a><span class="tm">19:48:33</span><span class="nk"> &lt;LWFinger&gt;</span> The false negative fooled me until I found it in the most annoying list.
+<a name="l-228"></a><span class="tm">19:49:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> that one is fixed
+<a name="l-229"></a><span class="tm">19:50:49</span><span class="nk"> &lt;LWFinger&gt;</span> Anyone know what the "freeze" date is for 11.4 GM?
+<a name="l-230"></a><span class="tm">19:51:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">btw:</span> I just started to merge first contributions to openQA testing
+<a name="l-231"></a><span class="tm">19:52:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> GM is 2011-03-03... and building+uploading takes a day
+<a name="l-232"></a><span class="tm">19:52:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> so deadline must be around today
+<a name="l-233"></a><span class="tm">19:53:41</span><span class="nk"> &lt;LWFinger&gt;</span> Yhat means that RC2.1 is essentially GM.
+<a name="l-234"></a><span class="tm">19:54:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> there were still some checkins happening today
+<a name="l-235"></a><span class="tm">19:54:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. to have 11.4 community repos :D
+<a name="l-236"></a><span class="tm">19:55:15</span><span class="nk"> &lt;LWFinger&gt;</span> Unless something goes wrong in the next 2 days, 11.4 will be better than 11.3.
+<a name="l-237"></a><span class="tm">19:56:23</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> but in fact just huge problems get fixed
+<a name="l-238"></a><span class="tm">19:57:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> I could update my repo tomorrow and call it RC2.2
+<a name="l-239"></a><span class="tm">19:58:01</span><span class="nk"> &lt;LWFinger&gt;</span> I'll pull again tomorrow just in case.
+<a name="l-240"></a><span class="tm">19:59:00</span><span class="nk"> &lt;LWFinger&gt;</span> I have to do some Windows tech support for my sister in about 1 minute. I'll stay connected, but won't be answering questions.
+<a name="l-241"></a><span class="tm">20:00:47</span><span class="nk"> &lt;Holgi&gt;</span> I think we are done anyway - not?
+<a name="l-242"></a><span class="tm">20:01:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">schedule next meeting</span>
+<a name="l-243"></a><span class="tm">20:01:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> one thing missing :)
+<a name="l-244"></a><span class="tm">20:01:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> when shall we meet again? after GM?
+<a name="l-245"></a><span class="tm">20:02:35</span><span class="nk"> &lt;Holgi&gt;</span> after public release (10.3.)?
+<a name="l-246"></a><span class="tm">20:03:03</span><span class="nk"> &lt;Holgi&gt;</span> that would be 14.3.
+<a name="l-247"></a><span class="tm">20:03:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> we could meet one week before, to discuss things to put on the non-dev most-annoying list
+<a name="l-248"></a><span class="tm">20:04:48</span><span class="nk"> &lt;Holgi&gt;</span> but that would be next week
+<a name="l-249"></a><span class="tm">20:05:39</span><span class="nk"> &lt;Holgi&gt;</span> = Rosenmontag
+<a name="l-250"></a><span class="tm">20:06:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> oh. we could do a small and inofficial meeting here anyway?
+<a name="l-251"></a><span class="tm">20:06:35</span><span class="nk"> &lt;Holgi&gt;</span> no objections
+<a name="l-252"></a><span class="tm">20:06:49</span><span class="nk"> &lt;Holgi&gt;</span> just don't know if I will be available
+<a name="l-253"></a><span class="tm">20:08:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">next meeting on 2011-03-07 (optional) and 2011-03-14 to discuss 11.4-GM</span>
+<a name="l-254"></a><span class="tm">20:08:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> thanks everyone for attending
+<a name="l-255"></a><span class="tm">20:09:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-256"></a><span class="tm">20:09:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

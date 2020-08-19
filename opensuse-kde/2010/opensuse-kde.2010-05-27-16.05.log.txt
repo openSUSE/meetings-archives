@@ -1,0 +1,620 @@
+16:05:28 <wstephenson> #startmeeting openSUSE KDE Contributors and Users meeting.  Please wait until the Q&A section at the end if you join during the meeting with questions
+16:05:28 <bugbot> Meeting started Thu May 27 16:05:28 2010 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:05:28 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:05:46 <wstephenson> #chair remur_030
+16:05:46 <bugbot> Current chairs: remur_030 wstephenson
+16:06:17 <wstephenson> anyone else want to chair?
+16:06:55 <wstephenson> let;s go then.
+16:07:14 <wstephenson> Agenda:
+16:07:19 <wstephenson> * old action items
+16:07:37 <wstephenson> * http://help.opensuse.org/ksuseinstall
+16:07:42 <wstephenson> * most annoying 11.3 bugs
+16:07:49 <wstephenson> * making the meetings more interesting/well attended
+16:07:54 <wstephenson> * default Akonadi startup/usage
+16:08:00 <wstephenson> * repository reorganization
+16:08:09 <wstephenson> * Q&A, misc
+16:08:15 <wstephenson> Any more items for the agenda?
+16:08:26 <remur_030> wstephenson: you suggested M7 status
+16:08:44 <remur_030> but well that fits nice into the status section =)
+16:08:50 <wstephenson> remur_030: covered by most annoying 11.3 bugs too
+16:09:23 <wstephenson> #topic old action items
+16:09:45 <wstephenson> * lunak,wstephenson document how-to-maintain Extra
+16:09:58 <wstephenson> no progress from me, but i did think about it.
+16:10:06 <llunak> I intend to have a look at this during the weekend
+16:10:50 <wstephenson> #action lunak,wstephenson document how-to-maintain Extra
+16:11:01 <wstephenson> #topic http://help.opensuse.org/ksuseinstall
+16:11:16 <wstephenson> llunak: this is about providing a link to it from the greeter splash?
+16:11:18 <llunak> was that the only old AI?
+16:11:44 <remur_030> llunak: according to last meetings minutes yes
+16:11:47 <llunak> ok
+16:12:11 <llunak> so, this url is provided in the ksuseinstall dialog when it says it cannot find the package and asks whether to run 'yast2 repositories'
+16:12:49 <llunak> which is not the simplest UI there (and we can't really provide a simpler one anyway for reasons), so the URL should try to explain to Joe User what to do if their Amarok or Drkoqi show this
+16:13:04 <wstephenson> so effectively this URL has to untangle the gordian knot of which repo means what and how it can kill your system? :)
+16:13:31 <wstephenson> and at the same time not say anything that would cause a lawyer to get an ulcer
+16:13:44 <llunak> it should say what a repository is, warn about not being completely stupid with adding them :), and possibly should also cover drkonqi and amarok/kaffeine
+16:14:16 <llunak> for those cases it can say even exact steps, with the catch it this page itself cannot say anything about it :)
+16:14:32 <llunak> but that can be solved if the pages is done like http://software.opensuse.org/codecs
+16:14:41 <llunak> it has links out of opensuse space and a disclaimer
+16:14:58 <llunak> now, we'd need a person who could and would write this
+16:15:07 <llunak> would somebody try?
+16:15:15 <wstephenson> sure. i feel mouthy today.
+16:15:23 <javier_> I can help too
+16:15:47 <wstephenson> cool. javier_, have you got time after the meeting?
+16:15:51 <javier_> btw, is ksuseinstall translatable? i haven't seen any pots yet
+16:16:00 <llunak> it's in kde4-openSUSE.pot
+16:16:02 <javier_> wstephenson: yes, i do
+16:16:02 <wstephenson> we are already in extra time for i18n
+16:16:27 <javier_> ah ok, I didn't know that, I'll take a look.
+16:16:47 <wstephenson> #action wstephenson, javier_ write http://help.opensuse.org/ksuseinstall text
+16:16:56 <wstephenson> llunak: EOT?
+16:17:07 <llunak> yes
+16:17:24 <wstephenson> #topic The most annoying 11.3 bugs and M7 status
+16:17:54 <wstephenson> whose topic?
+16:18:05 <llunak> mine, without the status part :)
+16:18:11 <remur_030> sounds like a general discussion topic ;-)
+16:18:25 <llunak> basically, the usual bugzilla rules apply: if it should be fixed for the release, set the bugreport to P2
+16:18:32 <llunak> if it's something really really broken, P1
+16:18:54 <llunak> feel free to set to P1 even easy small stuff if it's something stupid and easy to fix (flicker during login e.g.)
+16:19:20 <llunak> that's all from me about this
+16:19:22 <cb400f> I have p2'ed a few bugs (akonadi always starting, nepomuk broken, desktop effects not auto-enabled with intel)
+16:19:47 <cb400f> as time goes those would be p1 candidates :-)
+16:19:57 <wstephenson> akonadi (bnc#596582) is now p1
+16:20:00 <llunak> akonadi could go even to p1 possibly, but that's separate topic for this meeting
+16:20:15 <wstephenson> i'm testing a fix now
+16:20:53 <wstephenson> what else vexeth us?
+16:21:11 <cb400f> the missing battery and device notifier widgets
+16:21:14 <wstephenson> for me the generally broken knetworkmanager and NetworkManager is a problem. wpa-eap still doesn't work
+16:21:25 <llunak> cb400f: report, set priority
+16:21:41 <wstephenson> llunak: 597162, p2
+16:21:49 <wstephenson> i need to get back to notmart and co on that
+16:21:59 <wstephenson> they said it should be fixed in 4.4.3
+16:22:38 <EagleScreen> i always get akonadi errors when I log in KDE
+16:22:49 <remur_030> should we try another bug triage week, weekend, day?
+16:23:04 <wstephenson> remur_030: yes
+16:23:06 <EagleScreen> http://img375.imageshack.us/my.php?image=akonadierrors.png
+16:23:09 <wstephenson> suggestions?
+16:23:17 <llunak> we could, but I don't have much time for it
+16:23:27 <wstephenson> modprobe castellan
+16:23:39 <llunak> would somebody take care of the bug triage running (announce, whatever)?
+16:23:55 <cb400f> another thing.. would it be possible to make some test-patches to test kupdateapplet? .. I don't trust that son of a .....
+16:24:08 <wstephenson> EagleScreen: es una problema cronologica muy dificil con la empezar de akonadi :'(
+16:24:24 <llunak> cb400f: I think such a repo exists, at least it did in the past
+16:24:53 <wstephenson> _Marcus_ and lnussel usually set up a test update repo about now
+16:25:10 <sebas> cb400f: what's broken about the battery widget?
+16:25:34 <llunak> cb400f: there is a pattern that adds testing updates
+16:26:04 <javier_> llunak: I could announce it by blogging about it, sending a msg to -kde, etc
+16:26:30 <cb400f> sebas: iirc it's not shown when first logging into a freshly installed openSUSE 11.3 milestone X system
+16:26:35 <javier_> oh wstephenson habla castellano :)
+16:26:41 <llunak> javier_: if you are willing to oversee the bug triage week or whatever, then ok - it's up to you now
+16:26:49 <wstephenson> javier_: can you spare most of a day at the weekend to hang around on irc and keep it moving?
+16:26:58 <sebas> cb400f: hm, ok
+16:27:32 <javier_> llunak: wstephenson: I haven't been involved in any bug triage weekend yet... so I would need from somebody else
+16:27:37 <remur_030> javier_: I'll try my best to hang around in the channel as well then
+16:27:41 <wstephenson> sebas: the other problem is that device notifier is not in a default 4.4 system tray
+16:27:53 <wstephenson> the upstream code to add it is broken.
+16:27:59 <llunak> javier_: there are wiki pages that describe most of it, so that should have you a lot of work
+16:28:12 <wstephenson> javier_: if you like i can get one of the upstream bug triage people to go over it with you
+16:28:53 <llunak> #action llunak point javier_ to already-existing bug triage wiki pages
+16:29:02 <javier_> wstephenson: yes, please
+16:29:07 <javier_> that way i could learn
+16:29:10 <remur_030> wstephenson: I think someone from the upstream bugsquad would be very useful
+16:29:26 <javier_> and, yes any url with info about it would be helpful
+16:29:36 <cb400f> sebas: https://bugzilla.novell.com/show_bug.cgi?id=597162
+16:29:39 <bugbot> openSUSE bug 597162 in openSUSE 11.3 (KDE4 Workspace) "Device Notifier should be in the system tray by default" [Major,Assigned]
+16:30:05 <AlbertoP> wstephenson, thanks for the gift :)
+16:30:06 <llunak> ok, so just the AIs for bug triage and I think this is covered for now
+16:30:21 <sebas> wstephenson: aight, I'll have a look
+16:30:34 <wstephenson> anything more that really kills us in M7?
+16:30:49 <remur_030> wstephenson: feels pretty solid to me
+16:30:51 <wstephenson> branding is TBD but we have the artwork from jimmac and nuno now.
+16:30:54 <remur_030> how about branding?
+16:30:59 <remur_030> heh k
+16:31:05 <wstephenson> on my desk
+16:31:16 <llunak> cb400f: will you take care of looking at kupdateapplet (testing) ?
+16:31:16 <wstephenson> has anyone else noticed instability with xrandr on intel?
+16:31:56 <cb400f> I can dig around for a test patches repo and I can poke _marcus_
+16:31:59 <llunak> wstephenson: don't forget to record AI(s) for bug triage
+16:31:59 * javier_ has to try m7 on his machine with intel graphics
+16:32:02 <remur_030> wstephenson: haven't tried around much yet, but for now everything is working nice
+16:32:18 <wstephenson> cb400f: that would involve poking opensuse-maintenance to setup a test update repo and doing the QA
+16:32:20 <llunak> #action cb400f test kupdateapplet
+16:32:20 <remur_030> llunak: I have them in the minuts =)
+16:32:28 <wstephenson> #chair llunak
+16:32:28 <bugbot> Current chairs: llunak remur_030 wstephenson
+16:33:05 <javier_> btw, what's the state of sysinfo?
+16:33:09 <wstephenson> llunak: pls repeat your actions, i think meetbot fails silently, because leet debian irc meeting people never make mistakes
+16:33:33 <wstephenson> AlbertoP: np :)
+16:33:58 <AlbertoP> :)
+16:33:58 <llunak> wstephenson: the manual doesn't say I need to be chair for # action
+16:34:13 <llunak> javier_: latest svn version is in packages
+16:34:35 <javier_> last time i tried it, it didn't work
+16:34:35 <wstephenson> llunak: what is a chair for then?
+16:34:54 <wstephenson> works here
+16:35:06 <llunak> #save
+16:35:13 <javier_> i'll try the latest version
+16:35:14 <wstephenson> although State: No Charge is a bit worrying on the battery
+16:36:14 <wstephenson> #action javier_ organise bug triage day
+16:36:30 <llunak> anyway, at least we'll see if it needs one to be chair or not, I remember the AI
+16:36:38 <wstephenson> #action wstephenson get blauzahl to give javier_ a bug triage runner introduction
+16:37:29 <wstephenson> next topic
+16:37:45 <wstephenson> #topic Making the meetings more interesting/well attended
+16:37:51 <wstephenson> this is mine
+16:38:04 <wstephenson> tbh i am very pleasantly surprised with this week's meeting
+16:38:12 <wstephenson> lots of motivated people around
+16:38:29 <wstephenson> after a few which were somewhat muted
+16:38:56 <wstephenson> so a general question to everyone who's here and wasn't the last few times
+16:39:01 <wstephenson> what changed?
+16:39:11 <wstephenson> what blocks you from meeting or talking meetings?
+16:39:13 <rabauke> in my case it's a simply matter of lack of time.
+16:39:27 <rabauke> a woman :p
+16:39:30 <remur_030> +1, I got sports on that timeslot now
+16:39:49 <javier_> the level of knowledge and how things work internally at openSUSE/KDE
+16:39:59 * wstephenson looks outside, looks like sports weather today :)
+16:40:02 <llunak> I think the question should be rather 'what could be improved?'
+16:40:17 <remur_030> wstephenson: it's canceled this week because of pfingsten at our university
+16:40:19 <wstephenson> llunak: one is derived from the other :)
+16:40:32 <wstephenson> so, do we need a different timeslot?
+16:40:39 <javier_> I was thinking about having my blog added to planetkde.org and blog about these meetings :)
+16:40:41 <wstephenson> more flexible timeslots?
+16:40:48 <wstephenson> more, smaller meetings?
+16:40:50 <wstephenson> javier_: +1
+16:40:51 <remur_030> javier_: that's a really good idea
+16:40:52 <llunak> javier_: there are even simpler things to do, like several items today, it doesn't always need that much knowledge to be useful/helpful
+16:41:13 <rabauke> javier_: very good idea, regarding blogging.
+16:41:18 <cb400f> I think it's mostly about announcing a bit earlier, and having sexy stuff on the agenda
+16:41:33 <wstephenson> do we need to lower the bar to new contributors?
+16:41:48 <llunak> cb400f: a bit earlier when? and you know it's always the same time, periodically? or you mean it as a reminder?
+16:41:58 <wstephenson> javier_: what was the factor that tipped you over the edge, from lurking to speaking out and doing stuff independently?
+16:42:00 <cb400f> .. and maybe highlighting some people.. I sometimes simply forget, even though I'm available to participate :-(
+16:42:11 <remur_030> wstephenson: what bar? there is nothing we expect from people attending here =)
+16:42:25 <rabauke> It won't solve "lack of time issues" but I think that weekly blgs about what you guys are doing increases opensuse's visibility on planetkde and spreads the information to those that might be interested but always forget about the meetings etc.
+16:42:38 <rabauke> bullet points would be enough
+16:42:39 <wstephenson> remur_030: the difference between just being here and feeling able to get stuff done here.
+16:42:52 <javier_> wstephenson: well, when you are new and want to help you have to observe how things work first, where the help is needed, what's going on regarding openSUSE/KDE, ...
+16:43:03 * herby if often here but mostly silent.
+16:43:08 * wstephenson has been super slack about blogging lately, personal issues but those are getting less now.
+16:43:19 * herby thinks why.
+16:43:34 <cb400f> llunak: sending the e-mail 2-4 days before the meeting maybe, usually it's only sent on the day or the day before, but getting the meeting in the news.o.o calendar is an important step I think
+16:43:35 <llunak> wstephenson: haha, I think you're in for figuring out that was pretty naive >:)
+16:44:07 <wstephenson> llunak: i'm better at handling one big issue than lots of little ones, you should know me well enough by now. the big issue keeps getting bigger, happily :)
+16:44:12 <rabauke> I hardly read the wiki but daily planetkde, so at least for me blogging about opensuse and your kde work would be more accessible
+16:44:21 <llunak> #action llunak add additional meeting reminder mail more days in advance
+16:44:37 <tittiatcoke> sorry guys, for being late, but had something private to do :-)
+16:44:48 <wstephenson> it's in the calendar at news.opensuse.org but that is basically useless, unless someone clicks on the calendar day.
+16:44:54 <wstephenson> tittiatcoke: np, good to have you here
+16:45:20 <wstephenson> herby: any ideas?
+16:45:35 <wstephenson> maybe herby is the guy for whom everything *just works* ;)
+16:45:43 <wstephenson> i know there is one out there...
+16:45:57 <herby> wstephenson: No that's not the case...
+16:46:14 <wstephenson> people with no time at 1800UTC thursdays, what's a better time?
+16:46:18 <javier_> llunak: +1, i almost missed this meeting :P
+16:46:41 <javier_> i think that the problem is not the day but the time
+16:46:54 <javier_> most people have the same work schedule, no?
+16:46:55 <remur_030> we shouldn't forget it's summer =)
+16:46:57 <llunak> #action llunak update meeting howto to highlight people on IRC about meeting starting (or something similar)
+16:46:59 <herby> I have little time to do real work. Only maintainif some small packages nobody else cares about.
+16:47:01 <javier_> that's right
+16:47:10 <tittiatcoke> Does it need to be in the evening hours ? Or would it be possible to move it up to maybe 3/4pm CET ?
+16:47:14 <wstephenson> i agree with rabauke that visibility is important, if we can attract lots of people with a bit of time we can still get stuff done.
+16:48:00 <wstephenson> javier_: so it's currently in the time when you do stuff after work (sport, commute, cook dinner...)?
+16:48:33 <rabauke> herby: maintaining packages is real work.
+16:48:35 <wstephenson> tittiatcoke: moving it up is fine by me, but i wonder if it's worse for people with less flexible schedules...
+16:48:40 <javier_> wstephenson: yepp, for me 18:00 UTC is ok
+16:48:42 <llunak> wstephenson: I think time is a topic for the mailing list, not here - people who have problem with this timeslot are mostly not here
+16:48:54 <javier_> +1
+16:48:58 <tittiatcoke> +1
+16:49:16 * remur_030 agrees
+16:49:20 <herby> rabauke: Time is OK for me.
+16:49:23 <wstephenson> i mentioned having more, more focused meetings on eg plasma default config, KKUD, 11.3 testing
+16:49:29 <rabauke> I think there is no ideal time and the question was raised on the ml already a few times. AFAIR there was hardly any response.
+16:49:29 <wstephenson> perhaps not on a regular schedule
+16:49:51 <wstephenson> that might workaround the "no good time for everyone" issue
+16:49:55 <herby> rabauke: Yes it's real work, but I wished I could more of it
+16:50:19 <wstephenson> herby: does the learning curve block you from doing a few small bits of pkging work when you have time?
+16:51:20 <herby> No, I am an experinenced packager Long time packmamn member.
+16:51:36 <herby> ... but a bad typist ;-)
+16:51:50 <wstephenson> herby: ah, i didn't know :)
+16:52:18 <minton> focused meetings seem good to me =)
+16:52:25 <wstephenson> herby: so is it finding out things to do that don't need much time? low hanging fruit jobs?
+16:52:47 <wstephenson> maybe if we had something like KDE's englishbreakfastnetwork.org that lists all the rpmlint warnings and links to the suggested fixes...
+16:52:57 <javier_> instead of apples, strawberries perhaps ;)
+16:53:06 <wstephenson> hey bitshuffler
+16:53:15 <bitshuffler> hi :)
+16:53:26 <wstephenson> you're missing a legendary meeting :)
+16:53:48 <wstephenson> javier_: no, packaging is a lemon tree
+16:54:08 <minton> limes. they are green
+16:54:11 <initialZero> well its legendary now that bitshuffler is present
+16:54:12 <wstephenson> true
+16:54:21 * bitshuffler blushes :D
+16:54:22 <wstephenson> initialZero: hehe
+16:54:27 <wstephenson> so
+16:54:28 * herby promises to be less passive from now on.
+16:54:31 <wstephenson> timing issues
+16:54:37 <wstephenson> and unspecified contributing issues
+16:54:53 <wstephenson> herby: no need to promise. we just need to make contributing fun and rewarding
+16:55:06 <wstephenson> then people will do it instead of e.g. washing the car :)
+16:55:15 * wstephenson adds 'easy' to that list
+16:55:24 <rabauke> tittiatcoke: do you blog about your constant contribution?
+16:55:47 <tittiatcoke> rabauke: To be honest, no. I am a silent contributor :-)
+16:55:49 <alin> wstephenson: I need a ping cause usually I forget about it
+16:56:01 <javier_> green limes, hehe :)
+16:56:14 <rabauke> I think you should blog on planetkde.org everytime you updated UNSTBALE to a new snapshot or added another kde app to a repo.
+16:56:16 <alin> probably you should setup a ping all in the channel with meeting time
+16:56:25 <wstephenson> there's a maxim "good work is done quietly" which i am often guilty of adhering to
+16:56:30 <tittiatcoke> rabauke: I guess that I should :-)
+16:56:39 <wstephenson> but it is essential that somebody makes a noise about the cool stuff we do
+16:56:41 <cb400f> now the meeting really is legendary :-)
+16:56:45 <wstephenson> because "good work attracts more good work"
+16:56:48 <tittiatcoke> Now the legendary meeting is complete :-)
+16:56:51 <alin> tittiatcoke: if needed I can write them
+16:56:52 <wstephenson> at least in this sphere.
+16:56:54 <javier_> rabauke: +1
+16:56:56 <rabauke> and if you don't wstephenson etc. shoudl include things like that into their weekly "what is happening at opensuse regarding kde"
+16:56:57 * cb400f calls for group hug
+16:57:01 <alin> tittiatcoke: creatively of course
+16:57:09 <javier_> rabauke: that way, it would attract kde developers
+16:57:20 <rabauke> I think so too
+16:57:36 <rabauke> it would increase the visibility and give at least some credit to those contributing
+16:57:48 <javier_> exactly
+16:57:50 <wstephenson> so maybe it's good if people who like to blog more than package run around and collect what the quiet workers are doing then bang some drums.
+16:58:20 <javier_> yep, we need more visibility on planet kde
+16:58:20 <rabauke> If I get the news I could even blog once a wweek and simply list those things.
+16:58:41 <wstephenson> obvious statement really but it's hard to notice when a project gets to the stage where it can house all kinds of roles.
+16:58:49 <rabauke> but I'm not around that much anymore, so I would simply gather them from emails, private irc messages and maybe some wiki page.
+16:59:20 <wstephenson> rabauke: or how about having a list of active contributors to ping once a week when writing the "kernel cousin opensuse-kde"? =)
+16:59:21 <tittiatcoke> Ok. I will give it a try to start blogging :-)
+16:59:27 <rabauke> I cannot force people to tell me what they did last week :)
+16:59:37 <wstephenson> dunno if kernel cousin still exists actually
+16:59:43 <javier_> hehe
+16:59:48 <rabauke> wstephenson: I can do that.
+16:59:49 <wstephenson> tittiatcoke: only if you want to
+17:00:04 <tittiatcoke> :-) I know, but I will give it a shot :-)
+17:00:13 <wstephenson> rabauke: obviously if you're around and can *see* what we are doing then you don't need to ping
+17:00:36 <rabauke> I'll check out the buildservice if there is a way to get some notifications if a package changes version, I could include those as well and list its maintainer
+17:00:44 <wstephenson> tittiatcoke: since my experience is if you try to force someone to do something they don't enjoy, then they don't enjoy being around the project so much...
+17:00:54 <llunak> obviously, having a "spokesperson" would have some advantages - praise from others is better than self-praise :)
+17:00:56 <wstephenson> rabauke: i can tell you that. i even blogged it a while back
+17:01:08 <wstephenson> yeah, praise and recognition
+17:01:23 <tittiatcoke> wstephenson: tell me about it. I have this in my work life also :-)  But that is why I said I will give it a try and see :-)
+17:01:45 <tittiatcoke> I guess that I already have a nice blog because of Beta 1 and KDEPIM4.5
+17:01:59 <wstephenson> i like to tell people if i notice them doing a good job, but just seeing "XXX did YYY" on a newsletter is motivating too.
+17:02:21 <rabauke> I have an account at kdedevelopers and even though I'm not I could use that one. the only bad thing about it is that one has to be a member to comment if I remember correctly
+17:02:31 <wstephenson> yes. kdevelopers is a bit sucky
+17:02:42 <javier_> I also think that besides trying to get ppl from upstream using openSUSE, we should also do it the other way around and try to get openSUSE/KDE contributors to help upstream
+17:03:00 <wstephenson> lizards.opensuse.org is also usable for us
+17:03:04 <wstephenson> if sucky in its own ways
+17:03:12 <wstephenson> javier_: +1
+17:03:15 <rabauke> wstephenson: any suggestions where to host the blog? lizards?
+17:03:25 <rabauke> or is there a third site one should use?
+17:03:28 <javier_> rabauke: beineri activated mine, i think i can use it for making comments
+17:03:47 <tittiatcoke> Maybe we can hook up with the opensue news ?  To have a section there that describes new things and changes. and if available a link to a blog post ?
+17:03:47 <wstephenson> javier_: that's the main way to differentiate ourselves from the brown plague. make openSUSE about improving FLOSS generally, not just take take.
+17:04:03 <javier_> wstephenson: exactly
+17:04:09 <wstephenson> tittiatcoke: saigkill would love it if we did a detailed section every week.
+17:04:10 <javier_> that's the whole point
+17:04:30 <rabauke> tittiatcoke: that would aim at getting opensuse users to use kde. planetkde is about getting kde users to use opensuse. both valid :)
+17:04:55 <wstephenson> rabauke: which site doesn't really matter. an own wordpress or blogspot seems to be the most powerful regarding freedom to comment though.
+17:05:03 <javier_> rabauke: i think that it doesn't matter where you host the blog as long it is active and it doesn't have black text with a black background ;)
+17:05:07 <Beineri> wstephenson: isn't purple the new brown?
+17:05:30 <rabauke> javier_: I do not know any blog hosts, that's why I'm asking I do not want to set-up one on my server.
+17:05:34 <wstephenson> Beineri: purple bruises fade to brown eventually
+17:06:09 <rabauke> wstephenson: wasn't it you who wanted to use purple for opensuse and cursed because it was already taken ;)
+17:06:19 * wstephenson coughs
+17:06:23 <rabauke> :D
+17:06:27 <wstephenson> i think i wanted fuchsia.
+17:06:32 <javier_> rabauke: ahh I understand. well, lizards.o.o is a collective blog so it isn't very customizable. wordpress.com is also a good choice
+17:07:40 <rabauke> ok, I'll set up one there and use my opensuse email (do I have one if I'm a member) to contact maintainers etc.
+17:07:41 <wstephenson> so may i start pulling some actions out of this?
+17:07:52 <wstephenson> you should have an email
+17:08:00 <rabauke> wstephenson: put me up for creating a blog
+17:08:04 <javier_> rabauke: if you need an account at lizards, let me know. I could set up an account for you
+17:08:11 <wstephenson> #action rabauke start blogging regularly about happenings in the project
+17:08:40 <wstephenson> #action everyone start blogging about the specifics you do - if you want to - else summarize to rabauke
+17:09:00 <wstephenson> #action everyone add your blogs to planetkde.org for the stuff that is upstream-relevant
+17:09:17 <wstephenson> but can i ask you to think twice what tags you use on your syndicated blogs
+17:09:21 * javier_ sees lots of actions today :D
+17:09:42 <initialZero> legendary actions
+17:09:42 <javier_> wstephenson: you mean to use a kde tag only?
+17:09:46 <wstephenson> since nothing annoys me more than when i read about Ubuntu Pet Dogs day on planetkde.org because someone has their entire blog syndicated
+17:09:53 <wstephenson> javier_: yeah
+17:10:06 <javier_> wstephenson: +1
+17:10:07 <wstephenson> for example everyone knows markusK here?
+17:10:13 <wstephenson> kamikazow
+17:10:22 <javier_> kamikazow, yes
+17:10:33 <javier_> he's a KDE contributor
+17:11:02 <wstephenson> and an opensuse user.  he's on planet now but some of his blogs have been causing 'discussion' upstream because it seemed either not relevant or a bit aggressive
+17:11:09 <wstephenson> so consider your audience
+17:11:18 <wstephenson> hm i shouldn't have named names.
+17:11:28 <javier_> it's ok
+17:11:41 <javier_> I understand what you're saying
+17:11:58 <wstephenson> but i've also asked other planet bloggers to be cool, daddy.
+17:12:06 <tittiatcoke> wstephenson: I will contact you with regards to creating those tags and how to contact my blog to planetkde.org
+17:12:22 <wstephenson> tittiatcoke: most blog software creates an rss feed for each tag
+17:12:43 <tittiatcoke> wstephenson: Ok. I will check it out :-)
+17:12:44 <wstephenson> the links in the header of planetkde.org explain how to add your blog (edit a file in svn)
+17:13:09 * wstephenson is generally for friendly, relevant, quality Planets
+17:13:14 <wstephenson> anyway
+17:13:18 <wstephenson> more actions on this topic?
+17:13:46 <wstephenson> #action everyone consider how to feed KDE info to saigkill for openSUSE Weekly News
+17:14:14 <javier_> perhaps we could also have identi.ca/twitter feeded with our blogposts
+17:14:16 <wstephenson> #action wstpehenson see if rpmlint warnings can be hung on a lime tree for easy plucking
+17:14:18 <tittiatcoke> wstephenson: The feed towards saigkill, do you want to channel this through one person ? Maybe rabauke ?
+17:14:20 <javier_> there's a tool for that
+17:14:32 <javier_> twitterfeed?
+17:14:38 <remur_030> I think we have enough, maybe we should evaluate this in the second meeting from now
+17:14:45 <wstephenson> good point.
+17:15:03 <remur_030> it's a big topic and shouldn't loose focus here
+17:15:18 <wstephenson> yes. lets see how we get on with the current actions
+17:15:20 <wstephenson> (all 5!)
+17:15:46 <wstephenson> remur_030: and it woudl be great if you can highlight the other ideas in the minutes for the next time
+17:15:49 <wstephenson> would
+17:15:57 <remur_030> I tried to collect most of them yes
+17:16:01 <wstephenson> super.
+17:16:02 <wstephenson> #
+17:16:05 <tittiatcoke> I guess it would be good that in the coming two weeks people will try things out with regards to this and then we can report back how and what
+17:16:22 <remur_030> how about the topic specific meetings? discuss in the timing mail on -kde as well?
+17:16:39 <wstephenson> yes, if we find out our individual time commitments don't work with the assigned actions, we can juggle things around.
+17:16:45 <llunak> I think that would be part of it
+17:16:55 <remur_030> btw who will write that mail?
+17:17:22 <wstephenson> remur_030: yes, although it was just a brain fart from me, i'm not really sure what the topics would be or how to split things up without reducing the 'critical mass' of community in a negative way...
+17:18:13 <remur_030> wstephenson: so you'll write that mail?
+17:18:16 <wstephenson> i suspect that if we have enough to do and are all contributing efficiently then people will say 'let's have a meeting to sort this out' without us setting them up in advance...
+17:18:29 <remur_030> wstephenson: +1
+17:18:39 <wstephenson> remur_030: i'll include that topic in the meeting mail
+17:18:42 <wstephenson> for consideration.
+17:18:51 <javier_> +1
+17:18:54 <wstephenson> ok, moving on.
+17:19:14 <wstephenson> #topic default Akonadi startup/usage
+17:19:26 <llunak> I added that
+17:19:30 <alin> wstephenson: for which version?
+17:19:31 <llunak> wstephenson: what is the current status?
+17:19:43 <wstephenson> i need to take the contacts runner out of the default config.
+17:20:06 <wstephenson> #action wstephenson mail list about meeting times
+17:20:24 <wstephenson> alin: 4.4.3, this is all 11.3 stuff.
+17:20:33 <llunak> wstephenson: is there any possibility not using akonadi at all, for certain setups? e.g. I don't use any akonadi-based stuff, only konversation needs it for some weird reason
+17:20:40 <alin> wstephenson: then is simple axe it
+17:21:08 <alin> wstephenson: let us speak about akonadi in september when kmail sends mails
+17:21:43 <wstephenson> llunak: yes, it should only be started on demand. the problem is a lot of things that were written to call KABC::StdAddressbook::self() at some point in KDE 3 still do so and now that launches akonadi.
+17:22:01 <llunak> wstephenson: can you fix this then in time for 11.3?
+17:22:16 <llunak> (to make akonadi start only when really needed)
+17:22:20 <wstephenson> llunak: for the contacts runner, yes. not sure about konversation
+17:22:37 <llunak> hmm, ok
+17:23:08 <llunak> another question: the dialog turns up every time, either about something missing, or about convering addressbook (successfully, but every time)
+17:23:10 <wstephenson> basically it should also defer touching the addressbook
+17:23:18 <llunak> what is the status there?
+17:23:21 <wstephenson> llunak: being worked on by me with help from krake
+17:23:39 <llunak> the in time for 11.3 question again then :)
+17:23:40 <wstephenson> caused by kdepim never having tested empty account migration
+17:24:00 <wstephenson> i'm optimistic.
+17:24:14 <llunak> ok, all from me here then; if you need help, shout
+17:24:24 <wstephenson> as of 1755 today i had it narrowed down to one source line.
+17:24:44 <wstephenson> the default systray applets scares me more.
+17:24:46 <alin> wstephenson: cool
+17:25:07 <llunak> wstephenson: what's there?
+17:25:18 <llunak> is there a bugreport?
+17:25:33 <wstephenson> llunak: 597162 again
+17:26:03 <remur_030> novell #597162
+17:26:03 <bugbot> openSUSE bug 597162 in openSUSE 11.3 (KDE4 Workspace) "Device Notifier should be in the system tray by default" [Major,Assigned] https://bugzilla.novell.com/597162
+17:26:03 <llunak> I see
+17:26:10 <wstephenson> neither i nor upstream really understand what happens during plasma first run, and some things happen at the same time that makes plasma think the applets being added to the default setup are already present.
+17:26:36 <cb400f> llunak: https://bugzilla.novell.com/show_bug.cgi?id=591483 :-)
+17:26:39 <bugbot> openSUSE bug 591483 in openSUSE 11.3 (KDE4 Workspace) "Akonadi tries migrate address book with every login" [Major,Assigned]
+17:26:54 <alin> wstephenson: cool that explains why sometimes I have something in the systry and on the panel too
+17:27:16 <wstephenson> alin: hm?
+17:27:26 <wstephenson> it should be deterministic
+17:27:33 <wstephenson> once it is in the config (eg manually added) its fine
+17:27:44 <wstephenson> it should not be there one minute, gone the next.
+17:28:20 <remur_030> I have no akonadi systray element
+17:28:36 <alin> wstephenson: for examp[le today I had to device notifiers asfter the 45 update one in the try one in the panel
+17:28:39 <llunak> remur_030: this is now about the device notifier
+17:28:51 <llunak> ok ... next topic?
+17:29:00 <remur_030> llunak: whops I see =)
+17:29:05 <wstephenson> remur_030: meta-topic was 'bugs that wstephenson might not get to that need to be done'
+17:29:18 <wstephenson> alin: not relevant for 11.3
+17:29:38 <wstephenson> #action wstephenson summarise to list
+17:29:52 <wstephenson> #topic Repository reorganisation update
+17:29:57 <llunak> this is mine
+17:30:00 <wstephenson> it's likeour own little git migration
+17:30:09 <llunak> apparently there is still not consensus on some things
+17:30:12 <llunak> :(
+17:30:19 <llunak> I've created http://en.opensuse.org/KDE/RepositoryRenaming
+17:30:27 <tittiatcoke> llunak: Would it be able to take decisions now ?
+17:30:40 <llunak> it lists the reorganization again, with the undecided things listed as questions
+17:30:58 <llunak> questions are mostly 1) names, 2) the Unstable repo
+17:31:16 <llunak> see the instructions near the top, I suggest we do the voting there
+17:31:19 <alin> llunak: do not touch the unstable is my reason d'etre
+17:31:33 <tittiatcoke> llunak: I like the name KDE:Snapshots :-)
+17:32:11 <alin> how many people use unstable from here?
+17:32:20 <llunak> the Unstable/Snapshots questions are basically all based on the issue - what is contains and how is it related to KKFD
+17:32:26 <alin> should be the only one allowed to vote on the issue
+17:32:58 <rabauke> alin: me on the netbook
+17:33:00 <llunak> tittiatcoke: so I'd like to hear your ideas on the repo - can you quickly see the questions and say what you think about it
+17:33:09 <tittiatcoke> Ok
+17:33:16 <alin> so that makes 3 of us
+17:34:30 <rabauke> shoudl we add our answers to the wiki or here?
+17:34:35 <llunak> my take is that the repo should be just SVN snapshots and unrelated to KKFD, but Dirk's mail today e.g. went back to having it aligned with KKFD and calling them together :Desktop: , which is against the original idea of having KKFD as the openSUSE:Factory stuff (maybe Dirk missed that, I don't know)
+17:34:49 <llunak> add your answers to the wiki, as said there
+17:35:04 <rabauke> ok
+17:35:11 <llunak> i.e. edit the page, add another "** mynick: I think this"
+17:35:13 <wstephenson> dirk: around?
+17:35:33 <remur_030> how about the netbook reference platform users, don't they have any idea?
+17:35:42 <remur_030> they propably also want extragear etc
+17:36:05 <[daemon]> o.O
+17:36:06 <tittiatcoke> llunak: I agree with your statements regarding Unstable.  We can keep it close to KDE SC (with just additional required libraries). Applications, etc should then be pushed in Playground.
+17:36:17 <wstephenson> remur_030: i don't think there are enough of them atm to have a voice..
+17:36:20 <[daemon]> remur_030: why would I want that?
+17:36:38 <llunak> tittiatcoke: ok, thanks
+17:36:38 <wstephenson> remur_030: and we usually package extragear in with main modules
+17:36:39 <remur_030> [daemon]: many consider amarok a nice showcase for kde technolofy
+17:36:41 <wstephenson> or what am i missing?
+17:36:43 <remur_030> *technology
+17:36:55 <remur_030> and other similar applications
+17:36:55 <[daemon]> I just dont want to have the akonadi server started on my netbook
+17:36:56 <llunak> tittiatcoke: maybe you should say that in an answer to dirk's mail on the list, just so that he knows
+17:37:01 <alin> techmology
+17:37:03 <tittiatcoke> Yup. Will do.
+17:37:09 <tittiatcoke> I will also place the answers in the wiki
+17:37:12 <dirk> wstephenson: yes
+17:37:20 <dirk> llunak: hmm, missed what?
+17:37:36 <llunak> dirk: see http://en.opensuse.org/KDE/RepositoryRenaming
+17:37:54 <[daemon]> wstephenson: Will, how are my chancs to get that disabled
+17:38:03 <dirk> llunak: I mentioned in the email that maybe encoding teh policy (only packages in factory) in the project name is maybe not a really important thing
+17:38:03 <llunak> dirk: we specifically designed KKFD as the repo with all KDE packages in o:F - so calling it :Desktop: is misnaming it
+17:38:23 <llunak> dirk: but that was the intended purpose of that repo
+17:38:34 <remur_030> [daemon]: what does akonadi have to do with extragear?
+17:38:44 <[daemon]> remur_030: nothing
+17:38:47 <wstephenson> s/akonadi/extragear/?
+17:38:54 <wstephenson> argh
+17:38:57 <wstephenson> s/akonadi/amarok/?
+17:39:06 * [daemon] slaps wstephenson
+17:39:06 <wstephenson> bring back k-ism.
+17:39:09 <rabauke_> my internet disconnected in case I did not answer some question.
+17:39:22 <wstephenson> rabauke_: no question.
+17:39:24 <alin> rabauke_: handy this internet
+17:39:39 <[daemon]> I'm especially pissed about having to have a mysql installed just to run KDE
+17:39:39 * remur_030 is confused
+17:39:47 <dirk> llunak: ok
+17:39:51 <wstephenson> [daemon]: OT
+17:40:00 <[daemon]> wstephenson: as usual :)
+17:40:00 <llunak> tittiatcoke: just to be clear on this - you would vote for the unstable repo not to be in KDE:Distro: (or whatever the exact name) ?
+17:40:08 <remur_030> [daemon]: huh? I was asking about extragear for the netbook spin, not akonadi or mysql
+17:40:25 <dirk> llunak: did you see the mail on the list that said that it doesn't make sense tohave KDE:Unstable and KDE:<distro>.Factory on two different levels
+17:40:33 <[daemon]> remur_030: but you still didnt answer my question
+17:40:55 <tittiatcoke> llunak: I would indeed prefer if the two are not groupped
+17:40:57 <wstephenson> remur_030, [daemon]: please focus on the repo naming
+17:41:03 <[daemon]> remur_030: what is it good for and why should I as netbook user need it
+17:41:04 <remur_030> ugh yes sorry
+17:41:39 <wstephenson> we can gladly play akonadi pinata in the next topic
+17:41:44 <llunak> dirk: I disagree with that - a) I'd like the possibility of instaling Unstable in addition for KKFD, for testing SVN, b) generally I think apps from KKFD should work with KDE SC from Unstable
+17:41:45 <alin> wstephenson: BloodingEdge... sorry BleedingEdge
+17:42:49 <tittiatcoke> llunak: Some of those apps might need to be recompiled before they really work
+17:43:25 <llunak> tittiatcoke: that would be against the promised backwards compatibility, but even if this occassionally happens, I still think the advantages win
+17:43:34 <dirk> llunak: could work as long as the qt version does not change, indeed
+17:43:58 <[daemon]> .oO(hmmm Will-Pinata sounds good)
+17:44:21 <llunak> I mean, after all, we are talking about an unstable repo - if somebody is stupid enough to install and not except problems, that's stupidity that deserves punishment
+17:44:23 <wstephenson> llunak: while i'd like a) too, the implications scare me.  we'd need parallel-installable Qt, Unstable,, and KDEHOME and XDG_DATA|CONFIG_DIRS hacks to keep things separate
+17:44:28 <wstephenson> lot of work
+17:44:32 <remur_030> wstephenson: llunak and tittiatcoke suggested using only kde main svn for unstable, and push applications into playground, that means the netbook reference guys get alot of unstable stuff here
+17:44:51 <llunak> wstephenson: I don't think it's that much work, I consider it doable
+17:45:02 <wstephenson> well we did it once for 4.0 vs 3...
+17:45:05 <remur_030> I am just trying to see what the netbook reference guys will think about that
+17:45:11 <wstephenson> maybe post 11.3 project
+17:45:29 <wstephenson> fregl: ^
+17:45:30 <tittiatcoke> Well, I would definitely need help on that topic :-)
+17:45:42 <llunak> wstephenson: I think it's mostly using a different prefix in .spec and making sure we don't hardcode /usr anywhere
+17:45:46 <llunak> wstephenson: but that's for later
+17:45:51 <dirk> llunak: how is the co-instalability of unstable/KKFD relevant for the repository naming?
+17:46:07 <dirk> llunak: are you saying it must not contain the :<Distro>: part in the name because it could be made coinstallable?
+17:46:25 <llunak> dirk: an argument for keeping KKFD, Stable and Unstable together was that you can have only one of them at a time
+17:47:33 <llunak> dirk: so making them co-installable would make this argument void, and since tittiatcoke doesn't want to keep Unstable too close to KKFD, I think the naming should keep them apart
+17:48:39 <llunak> ok, unless there are more important things to discuss for the topic, I suggest everybody adds their vote to the page
+17:48:56 <llunak> if you disagree, feel free to add longer explanation on why/how it should be done differently
+17:49:16 <dirk> good idea
+17:49:23 <dirk> thanks llunak for writing the wiki page
+17:49:26 <llunak> #action everybody vote and add comments on repository reorganization at http://en.opensuse.org/KDE/RepositoryRenaming according to the instructions there
+17:49:27 <wstephenson> +1
+17:49:36 <tittiatcoke> +1
+17:49:55 <wstephenson> #topic Q&A, Misc
+17:49:59 <llunak> dirk: I was getting lost in the topic, so I needed a good place to keep the data
+17:50:00 <cb400f> maybe unstable could be separated somehow both from stable/factory _and_ the "add-on" repos
+17:51:06 <tittiatcoke> cb400f: You mean with it's own playground and Community repos ?
+17:51:15 <llunak> no topic from me, and if nobody wants anything from me, I'll run
+17:52:06 <cb400f> no.. like kde:keep-out:unstable  + kde:playground_unstable like now
+17:52:13 <tittiatcoke> Ok.
+17:52:16 <wstephenson> llunak: run, run, be free :)
+17:52:26 <alin> boys I need to run but before let me put something serious... change the deps of kontact so when you select it will pull all the components (kmail, kaddress, knode, kjots, akgr, ktimetracker...)
+17:52:39 <wstephenson> alin: deps or suggests?
+17:52:44 <wstephenson> it's modular for a reason
+17:52:51 <tittiatcoke> alin: Already happened in KKUD and I used there suggests
+17:53:16 <alin> wstephenson: probably suggests... I mean tittiatcoke it did not happened at least not for me
+17:53:37 <tittiatcoke> alin: Because maybe you had already everything installed ?
+17:53:49 <ctrippe> suggests are ignored by yast and zypper AFAIK
+17:53:51 <wstephenson> alin: suggests are basically decorative value, nothing installs them automatically yet
+17:54:02 <alin> wstephenson: the problem with modular is that was done only half.... if you do not have all the modules installed you still have the icons of the uninstalled modules active
+17:54:09 <tittiatcoke> Hmm :-( I will change it to Requires :-)
+17:54:24 <alin> ctrippe: that explains why then
+17:55:15 <wstephenson> alin: then we need to fix the module split so the kontact .desktop files are in the subpackages. afaik that was done for kde 4.1 there is a lot of ugly code in kdepim4.spec for htat.
+17:55:39 <tittiatcoke> wstephenson: will check that one out in KKUD :-)
+17:55:56 <alin> wstephenson: .spec? I thought the mainissue is in the design of the main windows of kontact
+17:56:10 <wstephenson> alin: no, it's just a shell
+17:56:27 <wstephenson> so before everyone runs too much
+17:56:38 <wstephenson> candidates for Official Praise?
+17:56:48 <wstephenson> i've been very distracted so i won't suggest any myself
+17:57:06 <wstephenson> but if there is a community member you've noticed doing great contributions, speak up now!
+17:57:10 <javier_> official praise?
+17:57:18 <javier_> what do you need?
+17:57:26 <javier_> some help with those packages?
+17:57:37 <alin> tittiatcoke: for his continuous fight with unstable, obs and me
+17:57:47 <wstephenson> no, i just want to ack who has been a star the last 2 weeks
+17:57:47 <tittiatcoke> :-)
+17:57:50 <wstephenson> alin: lol :)
+17:57:53 <javier_> oops, n/m I was distracted
+17:58:00 <tittiatcoke> especially the alin part there :-)
+17:58:12 <wstephenson> alin: for keeping on with KKUD and kontact
+17:58:48 <remur_030> well tittiatcoke is one awesome contributor, *pats shoulder*
+17:58:59 <wstephenson> llunak: for doing all the SLE11SP1 grunt work like a hero
+17:59:07 <[daemon]> LOL
+17:59:08 * tittiatcoke starts slowly to blush here
+17:59:09 <javier_> remur_030: +1
+17:59:10 <remur_030> running unstable with all the breakage looks pretty hard
+17:59:40 <wstephenson> and covreing my back to grow a huge bug list^W^W^W^W^Wdo 11.3 stuff
+17:59:40 <alin> remur_030: what breakage? quantum behaviour I will call it
+17:59:44 <javier_> bleeding edge taken to the very extreme
+18:00:15 <alin> ok so let us call it short tittiatcoke gets the prize and the medal
+18:00:28 <alin> cut it
+18:00:41 <tittiatcoke> and the price is that I am allowed to continue the fight ?
+18:00:51 <wstephenson> hey there's plenty to go round, i didn't use any the last few weeks...
+18:00:52 <rabauke> Honour to whom honour is due.
+18:01:09 <wstephenson> well to everyone who's been doing stuff for opensuse-kde
+18:01:28 <wstephenson> if reporting bugs, i18n packaging or just keeping the lights on here
+18:01:37 <wstephenson> you know you're doing good stuff; well done from me
+18:02:20 <wstephenson> any more Q&A, Misc?
+18:02:22 <alin> see you boys and girls later... time for dart... that is dublin area rail transport
+18:02:29 <tittiatcoke> and thanks to wstephenson for being a good teacher
+18:02:46 <wstephenson> np :)
+18:02:47 <[daemon]> wstephenson: I have a Q
+18:02:48 <wstephenson> alin: cu
+18:02:51 <tittiatcoke> and being there for us with our questions :-)
+18:02:52 <wstephenson> [daemon]: go
+18:03:02 * wstephenson watches the hand with the bo stick in it.
+18:03:12 <[daemon]> wstephenson: can you come over and fix my bike again - it has a flat tire
+18:03:44 <wstephenson> [daemon]: no, you have to come here. i have a repair stand in the new flat's cellar/personal bike shop
+18:03:51 <[daemon]> wstephenson: again on the back where I dont dare to change
+18:03:59 <wstephenson> and i'll only charge you a fair rate.
+18:04:06 <wstephenson> either that or man up and do it yourself.
+18:04:13 <[daemon]> hehe
+18:04:17 <rabauke> give him fully rubber tires. they never go flat
+18:04:19 <Jetchisel> d(•‿•)b
+18:05:11 <wstephenson> [daemon]: or else you have to ride with me for as long as it takes me to fix the flat - course of my choosing =:)}>
+18:05:34 <rabauke> wstephenson: if done. could you tell me how to get notifications on changed packages from the buildservice? if not now some time later.
+18:05:36 <[daemon]> wstephenson: deal
+18:05:47 <wstephenson> notlocalhorst has yet to take me up on that offer
+18:05:54 <wstephenson> rabauke: sure
+18:06:08 <[daemon]> wstephenson: will I need a helmet and/or other gear
+18:06:40 <wstephenson> [daemon]: http://lizards.opensuse.org/2010/01/27/hot-off-the-opensuse-build-service-press/
+18:06:44 <wstephenson> just bring a sick bag
+18:06:56 <wstephenson> rabauke: ^
+18:07:40 <tittiatcoke> wstephenson: I guess the meeting is over ?
+18:07:43 <rabauke> wstephenson: ta
+18:07:51 <[daemon]> wstephenson: what should I do with hermes? do I have to write some software to test it?
+18:08:22 <[daemon]> wstephenson: sick back not needed I puke in the open :)
+18:08:37 <wstephenson> tittiatcoke: yes, if there are no more questions
+18:08:47 <wstephenson> anyone falling asleep at the back there?
+18:09:02 <wstephenson> minton: nice to see you around
+18:09:19 <wstephenson> herby: thanks for joining in
+18:09:46 <[daemon]> wstephenson: but aside of that - is it really nec. to start the aconadi server
+18:09:46 <wstephenson> and please everyone welcome sebas to our little konspiracy
+18:09:58 <wstephenson> [daemon]: no, as above, it's a bug
+18:10:07 <herby> wstephenson: I will see, if  can be a bit more active here...
+18:10:28 <[daemon]> wstephenson: good
+18:10:48 <[daemon]> wstephenson: my EeePC really does not like it
+18:10:50 * wstephenson also waves to bitshuffler, binarylooks and the absent initialZero
+18:10:56 <wstephenson> [daemon]: i bet
+18:11:05 <wstephenson> upstream are working on a sqlite backend
+18:11:20 <wstephenson> but it should not be started until you do sth to require it.
+18:12:32 <[daemon]> and make sure that kopete does not need it :)
+18:13:30 <[daemon]> Okay - there is still some sun - I gonna go and fix my race car
+18:15:27 <remur_030> wstephenson: wrap it up?
+18:15:41 <wstephenson> done
+18:15:46 <wstephenson> thanks for coming
+18:15:49 <wstephenson> #endmeeting

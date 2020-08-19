@@ -1,0 +1,440 @@
+15:10:56 <wstephenson> #startmeeting
+15:10:56 <bugbot> Meeting started Thu Feb 10 15:10:56 2011 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:10:56 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:11:02 <sebas> tittiatcoke: buienradar suggests so :)
+15:11:17 <wstephenson> so whatta we got?
+15:11:22 <wstephenson> Agenda:
+15:11:29 <wstephenson> * old action items
+15:11:33 <wstephenson> * status report
+15:11:37 <wstephenson> * 11.4 stabilisations
+15:11:41 <wstephenson> * Q&A, Misc
+15:12:05 <wstephenson> remur_030: are you ok to do minutes again?
+15:12:34 <remur_030> sure
+15:13:04 <wstephenson> #topic Team meeting - old action items
+15:13:11 <wstephenson> * wstephenson to contact i18n team with regards to openSUSE guides.
+15:13:13 <wstephenson> not done
+15:13:21 <wstephenson> * javier to further explore the live cd listings on kde-apps
+15:13:28 <wstephenson> done, Beineri gave him the listing account
+15:13:30 <sebas> seems German guides are underway and due 23rd
+15:13:38 <wstephenson> * all Check kde packagekit frontend http://en.opensuse.org/openSUSE:KDE_11.4_packagekit
+15:14:08 <sebas> pkgkit works fine on two 11.4 systems here
+15:14:12 <sebas> 3 actually
+15:14:17 <sebas> different archs
+15:14:44 <wstephenson> sebas: did you test online updates, app installation, distro upgrade, ...?
+15:14:51 <rabauke> I think it misses notifications.
+15:15:09 <sebas> I didn't test distro upgrades, the others work fine
+15:15:11 <wstephenson> i didn't test it myself, too busy
+15:15:12 <rabauke> it's not meant for dup AFAIK
+15:15:34 <sebas> rabauke: not sure notifications are really needed, the icon being visible or not is enough distraction imo
+15:15:35 <tittiatcoke> Does it follow vendor settings from zypper, etc ?
+15:16:00 <rabauke> and it lacks the option to actually add an online repo
+15:16:02 <sebas> seems so, but I didn't make sure
+15:16:06 <rabauke> or at least start the yast module
+15:16:26 <sebas> it's an update notification and installer, not a package manager
+15:16:35 <sebas> so it should be kept small and focused on just that
+15:16:42 <wstephenson> rabauke: i added that patch, should be in RC1
+15:16:51 <remur_030> sebas: the button is already there
+15:17:04 <wstephenson> the main problem is the zypp backend
+15:17:11 <sebas> which button?
+15:17:12 <wstephenson> as cb400f has been saying, it's been hacked
+15:17:22 <remur_030> at least that is how I understand the developer who wanted to know how to access yast inst_source
+15:17:26 <sebas> ok, then I'm not having the update running maybe, I only have configure
+15:17:39 <sebas> and review, and hide
+15:18:12 <wstephenson> duncanmv gave me some pointers how to fix it, but i haven't got my hands dirty yet
+15:18:14 <rabauke> if there is no icon in the systray if there are no updates available because there is not update repo how does the user find that button?
+15:18:31 <remur_030> rabauke: why should there be no update repo?
+15:18:52 <wstephenson> since it's a mixture of C, boost C++ and libzypp data structures that scare a namby-pamby Qt developer like me.
+15:19:07 <rabauke> remur_030: who knows. but kupdateapplet did have it for a reason.
+15:20:01 <wstephenson> there should be an update repo after a 11.4 GM install/upgrade
+15:20:22 <wstephenson> anyone else should be able to use yast to configure an update repo
+15:20:50 <remur_030> +1, low profile updater should be enough to keep the system uptodate
+15:21:49 <remur_030> do you get a notification after a kernel update to reboot?
+15:22:19 <anaumov> wstephenson, I have a little bit free time now. We can work together with that (and with duncanmv)
+15:22:20 <wstephenson> for everyones information, there is an 11.4 test update repo with all the usual classes of updates
+15:22:28 <wstephenson> anaumov: it's too hard for you.
+15:23:20 <wstephenson> remur_030, rabauke: did you test it?
+15:23:27 <sebas> I know what happened to me when mum or dad told me "it's too hard for you" :)
+15:23:30 <rabauke> IMHO the notifications "you should reboot" etc should not autohide
+15:23:44 <anaumov> sebas, :)
+15:23:53 <remur_030> no I didn't yet, waiting for 11.4 rc1 to be honest
+15:24:01 <rabauke> the "affects package manager" works correctly. same for "reboot needed", i.e. the notification is shown
+15:24:31 <wstephenson> good. which notifications are missing then? generally 'update available'?
+15:25:21 * sebas still thinks that no notification is just fine in this case
+15:25:27 <sebas> it doesn't need direct action
+15:25:37 <sebas> more of a "upgrade when you get some time" thing
+15:25:48 <rabauke> wstephenson: first of all the version in 11.4 does not distinguish between security and other updates. and the notification that updates are available is missing as well.
+15:25:59 <cb400f> how distinctive is the icon?
+15:26:10 <wstephenson> it's a greenish smear. not monochrome.
+15:26:12 <sebas> easily recognizable, I find
+15:26:31 <rabauke> I do think that notifications must be there because the icon might appear while the user is away and security updates should definitely get the attention and acknowledgement of the user.
+15:26:36 * cb400f tends to agree that the icon popping out is enough
+15:26:36 <wstephenson> sebas: i think security updates should be notified
+15:26:48 <rabauke> even more so if the icon is hidden after a while. not sure though if that happens.
+15:27:10 <sebas> wstephenson: I think they should be installed automatically
+15:27:17 <sebas> http://i.imgur.com/G9Dcq.png << icon
+15:27:28 <rabauke> oh and I just noticed that there is another icon added to the systray in case a reboot is needed so there is kind of a permanent notification for that case.
+15:27:51 <rabauke> cb400f: the icon does not tell you anything regarding the importance of the updates
+15:27:58 <wstephenson> hm, the icon is passive there?
+15:28:09 <sebas> right yes ... that seems a bug
+15:28:42 <sebas> I'm having a similar bug in lion mail, maybe that's why I didn't notice
+15:29:20 <wstephenson> #action report bug: update icon is passive when updates are available
+15:29:43 <wstephenson> would anyone else find a monochrome icon more pleasing?
+15:30:07 <cb400f> for reboot? or in general?
+15:30:15 <remur_030> wstephenson: whose AI is that?
+15:30:20 <rabauke> http://wstaw.org/m/2011/02/10/plasma-desktopYZ2111.jpg shows the second icon
+15:30:51 <rabauke> wstephenson: do you mena the icons apper i.e. the next kpackagekit version uses?
+15:31:17 <wstephenson> rabauke: no, since we're not shipping apper in 11.4
+15:31:29 <wstephenson> maybe we can steal them from it though, are they nice?
+15:31:29 <rabauke> those do distinguish between the different kind of updates but the "security" one is a joke regarding its signal.
+15:32:54 <remur_030> colored systray icons are for 'active' processes and monochrome ones for background stuff right?
+15:33:21 <cb400f> monochrome for "workspace", colour for "applications"
+15:33:30 <rabauke> it depends on whether you want something standing our or not. https://bugs.kde.org/show_bug.cgi?id=264051
+15:33:33 <bugbot> KDE bug 264051 in Oxygen (icons) "kpackagekit/apper needs "alarm" icon" [Normal,Unconfirmed]
+15:33:38 <wstephenson> remur_030: active icons are the ones in the tray at all times, passive ones are in the extender
+15:33:52 <rabauke> ^^there you can see the icons
+15:34:14 <remur_030> wstephenson: hm right poor choice of words, I meant it in the spirit of cb400f
+15:34:16 <rabauke> https://bugs.kde.org/attachment.cgi?id=56380
+15:34:24 <rabauke> direct link to the picture
+15:35:07 <rabauke> IMHO security updates need to shout at the user and wait for acknowledgement of their notification.
+15:35:20 <wstephenson> and what is the gear for?
+15:36:11 <remur_030> wstephenson: propably supposed to hint at 'inner workings' of the system
+15:36:19 <wstephenson> is there a chance we will get something fixed for 11.4 for this?
+15:36:46 <rabauke> wstephenson: do you mean new icons?
+15:36:55 <wstephenson> new icons, changed notifications, etc
+15:37:11 <remur_030> I think rabauke is right, persistent notification for security updates (if we can distinguish that), the icons are too tiny to really catch attention anyway
+15:37:13 <rabauke> dantii is away since weeks, so I guess not
+15:37:45 <wstephenson> anyone want to try to patch that into kpackagekit?
+15:37:53 <cb400f> guess the kupdateapplet icons could easily be "ported" if we wanted
+15:37:55 <tittiatcoke> and I wonder if he will make changes to kpackagekit or that he will implement it in Apper
+15:37:56 <rabauke> apper does already have the code
+15:37:59 <rabauke> and it works
+15:38:06 <rabauke> yet it is not released yet.
+15:38:15 <wstephenson> i think sebas might have a point but it's too late to rework the update notification UX for 11.4 now
+15:38:24 <cb400f> is apper much more than a name change? .. is it fundamentally different?
+15:38:30 <remur_030> sorry for my dumb question, but what is apper now?
+15:38:45 <wstephenson> so i suggest we make it similar to kupdateapplet for now
+15:38:48 <cb400f> it's the successor of kpk
+15:38:50 <wstephenson> ie patch in a notitification
+15:38:57 <wstephenson> i think it is the next version of kpk + new name
+15:39:18 <tittiatcoke> remur_030: Apper is the successor of kpk.
+15:39:23 <rabauke> cb400f: the UI is different and it does distinguish bettween the categories of updates. other than that there is not much that can change in such an app. :)
+15:39:39 <remur_030> ah ok, so it's mainly rework and rebranding instead of a whole new approach
+15:39:48 <rabauke> yes
+15:40:12 <remur_030> I feared apper might relate to apt
+15:40:16 <wstephenson> och no
+15:40:28 <wstephenson> moving away from packagekit would be a lot of work
+15:40:34 <rabauke> I think it does actually since apparently that pk-backend is "the best"
+15:40:55 <cb400f> better than yum? .. that would be a laugh :-)
+15:41:00 <wstephenson> does anyone want to try adding a notification to the 0.6.11 kpackagekit we are shipping?
+15:41:48 <wstephenson> ok, then let's move on, i'll work on the backend.
+15:41:59 <wstephenson> #action wstephenson, duncanmv fix packagekit-zypp some more
+15:42:12 <wstephenson> * all test phonon-gstreamer + pulseaudio combo
+15:42:14 <cb400f> I could have a look at the icons from kupdateapplet and see if they could/should replace the kpk ones
+15:42:18 <anaumov> #action anaumov study packagekit-zypp
+15:42:24 <anaumov> :)
+15:42:33 <rabauke> maybe we should put an explanation of the icon into the "hello user" message when starting kde since there is no way the user might guess what the icon stands for
+15:42:44 <rabauke> even less so without notifications
+15:42:46 <wstephenson> cb400f: good suggestion
+15:42:52 <wstephenson> give it some continuity
+15:43:02 <wstephenson> #action cb400f patch in icons from kupdateapplet
+15:43:16 <rabauke> that would help indeed
+15:43:36 <wstephenson> so, PA + gstreamer
+15:44:27 <rabauke> installing streamer plugins via kpk seems to work on 11.4 but fails on 11.3.
+15:44:51 <rabauke> the shortages regarding fading and euqalizer have been mentioned already
+15:45:17 <wstephenson> i have some bugs: 668757, and i can't find the other one atm
+15:45:21 <bugbot> openSUSE bug 668757 in openSUSE 11.4 (KDE4 Applications) "invalid sound card (HDMI output) selected by default by Kmix" [Major,Needinfo] https://bugzilla.novell.com/668757
+15:45:28 <wstephenson> reporter claimed that amarok and firefox together blocked sound
+15:46:22 <cb400f> there were some complaints on -factory ml too about borked sound.. do we know the week points of PA? .. Flash? skype? other stuff?
+15:46:23 <wstephenson> i have no problems, but then i have boring intel systems
+15:46:34 <remur_030> wstephenson: you sure that's the right report?
+15:46:48 <tittiatcoke> I guess I fall into the same category :-) Boring lenovo lappie
+15:47:17 <wstephenson> flash and skype should be ok
+15:47:21 <cb400f> actually I think they said most problems were with intel hda... but it seems to work for me too
+15:47:40 <wstephenson> remur_030: no, but i can't find actual BRs for the other ones
+15:47:50 <remur_030> cb400f: flash and skype always were the problem for me with pulseaudio, once firefox flash took alsa nothing else could use sound anymore
+15:47:52 <wstephenson> "[opensuse-factory] 11.4 M6" from De Donn Washburn etc
+15:48:21 <cb400f> but washburn has problems with _everything_ ... _always_
+15:48:33 <remur_030> if something else had sound before they worked, but I am unsure who was to blame here
+15:48:33 <wstephenson> yes
+15:48:47 <wstephenson> i need to talk to saschpe about it too, he has problems, is sane, and down the hall.
+15:50:14 <wstephenson> ok, nothing much else to discuss
+15:50:24 <wstephenson> * wstephenson make phonon 4.4.4 pkgs
+15:50:26 <wstephenson> done
+15:50:41 <wstephenson> * discussion on repo naming etc to deferred to next meeting
+15:50:49 <wstephenson> rabauke: this was yours from last meeting
+15:51:06 <wstephenson> did you mean rename the actual repos or just improve their descriptions and wiki help?
+15:51:20 <wstephenson> please let it be the latter, renaming causes mass indigestion
+15:51:38 <saschpe> wstephenson: sorry, I've been really busy and haven't yet found the time to look into it
+15:51:45 <wstephenson> saschpe: same here
+15:52:03 <wstephenson> (for "your problem" == it)
+15:52:58 <saschpe> wstephenson: btw. maybe it's not entirely pulse's (or kde's pulse integration) fault, I've had issues with only alsa. However. they went away after a reboot. rather strange it is
+15:53:27 <wstephenson> ok, we're not going into it in detail now either
+15:53:44 * wstephenson shakes rabauke
+15:54:08 <remur_030> wstephenson: we can keep it as discussion point for later and move on for now I guess
+15:54:14 <wstephenson> ok
+15:54:17 <wstephenson> remur_030: you have the floor
+15:54:24 <remur_030> Huh?
+15:54:27 <wstephenson> #topic Team meeting - 11.4 stabilization
+15:54:36 <remur_030> ah, not status before?
+15:54:46 <wstephenson> bah :)
+15:54:50 <wstephenson> #topic Team meeting - status
+15:55:40 * wstephenson 's status: Fosdem, cleaned up UI jargon strings upstream, started looking at gross memory leaks too.
+15:55:50 <remur_030> 11.4rc1 wwith kde4.6.0 going out right?
+15:56:00 <cb400f> it's out
+15:56:27 <wstephenson> last week: 11.4RC1 submissions, sometime several times over because the factory reviewers have become militant about changelog entries
+15:56:40 * tittiatcoke status:  Updates Unstable based on the KDE packages that moved to GIT
+15:57:31 <wstephenson> also: obexd updated, bluedevil obsoletes kbluetooth correctly now, packaged kamoso and qt-gstreamer for fun, fixed akonadi autostart when clock events are not shown.
+15:57:39 <wstephenson> anyone tested that in RC1 yet?
+15:58:08 * cb400f just dupped during the meeting
+15:58:09 <rabauke> wstephenson: sorry, was away.
+15:58:30 <wstephenson> rabauke: ok, we're coming back to that after status and 11.4 stabilisation efforts
+15:58:33 <rabauke> I'm constantly dupping.
+15:58:37 * wstephenson tested it now
+15:58:37 <cb400f> hmm.. obexd not in default install :-(
+15:59:11 <cb400f> did dup fail or did the patterns? .. not 100% sure the snapshot repo is up to date though.. only updated ~300 packages
+15:59:15 <cb400f> or the deps
+15:59:15 <wstephenson> maybe we should call Apper Duppy if we don't get the backend fixed: http://en.wikipedia.org/wiki/Duppy
+15:59:58 <cb400f> :-)
+15:59:58 <wstephenson> "malevolent ghost or spirit that zypper dup's your system without being asked to"
+16:00:06 <rabauke> cb400f: I had the same suspission but my release files states RC1
+16:00:31 <cb400f> bluedevil 10.2-1.1 doesn't seem to have requires obexd
+16:00:37 <cb400f> 1.0.2
+16:00:54 <wstephenson> cb400f: yeah that's on my todo
+16:01:22 <cb400f> gah.. and obexd still wants evolution-data-server
+16:01:39 <wstephenson> cb400f: ah but look what's in the obexd package :)
+16:01:55 <wstephenson> nothing important.
+16:02:10 <wstephenson> so bluedevil will pull in obex-client and obex-data server
+16:02:20 <cb400f> ah :-)
+16:02:20 <wstephenson> and the gnomes will udpate obexd and get those too
+16:02:32 * cb400f tells zypper to abort
+16:02:48 <wstephenson> i actually spent time testing 11.3 gnome update, during fosdem.
+16:02:54 <remur_030> "OK OK! Exiting immediately..." ;-)
+16:03:18 <remur_030> wstephenson: do they do a good job at it?
+16:03:26 <rabauke> cb400f: could you add an impa account to your 11.4 and test?
+16:03:38 <wstephenson> remur_030: well the obexd bit works
+16:04:18 <rabauke> cb400f: regarding that kontact crash
+16:04:32 <remur_030> rabauke: hm? I use imap on 11.3 kdf, should this be any different?
+16:04:38 <cb400f> rabauke: already have.. also already rebooted.. no crash
+16:04:53 <rabauke> then why can I reproduce with a livecd?
+16:05:01 <cb400f> build 1034, which I believe you tested with is old anyway
+16:05:05 <cb400f> rc1 is 1056 afaik
+16:05:16 <rabauke> cb400f: I disabled planner and special dates
+16:05:45 <rabauke> and I took the live cd the download section gave me.
+16:06:02 <cb400f> hrm.. obexd-client want to pull obexd ... which pulls half of gnome
+16:06:42 <rabauke> I'll download the 1056 and try again
+16:06:47 <cb400f> rabauke: you can't trust the download section, use: http://download.opensuse.org/factory/iso/
+16:06:57 <cb400f> download section pushes ms6
+16:07:04 <rabauke> but since I can reproduce it with kdf on 11.3 it should still be valid
+16:07:09 <cb400f> not the daily rebuilds
+16:07:30 <rabauke> remur_030: should be the same
+16:07:40 <remur_030> rabauke: bugid?
+16:08:06 <wstephenson> cb400f: grumble, ok, i should have tested kde upgrade too
+16:08:33 <wstephenson> any more status?
+16:08:52 <tittiatcoke> nope
+16:09:00 <cb400f> can you poke dirk with https://bugzilla.novell.com/show_bug.cgi?id=656144
+16:09:04 <bugbot> openSUSE bug 656144 in openSUSE 11.4 (X11 Applications) "Root user Qt4 applications not using Oxygen-style by default" [Minor,Reopened]
+16:09:13 <cb400f> or can/should someone else handle it?
+16:09:44 <wstephenson> http://software.opensuse.org/developer/en now pushes RC1 btw
+16:09:54 <cb400f> one guy even thought he was getting yast-gtk because of the sad qt widget style on yast :-)
+16:09:56 <tittiatcoke> cb400f: dirk is on holiday this week.
+16:11:37 <tittiatcoke> cb400f: Is it properly fixed when setting the correct style with qtconfig ?
+16:11:41 <wstephenson> we configured qt to use !oxygen a while back because oxygen was doing some stupid stuff over dbus that caused apps to block
+16:11:56 <cb400f> tittiatcoke: using "desktop settings" in qtconfig should work, but it doesn't
+16:12:10 <cb400f> setting "oxygen" in qtconfig works, but that's not correct.. that's a hack
+16:12:31 <tittiatcoke> cb400f: Maybe it is the issue that wstephenson is indicating.
+16:12:40 <remur_030> why became window deco that powerful?
+16:12:48 <wstephenson> https://bugzilla.novell.com/show_bug.cgi?id=514056
+16:12:52 <bugbot> openSUSE bug 514056 in openSUSE 11.2 (KDE4 Applications) "dbus hangs when kfmclient is run by root" [Normal,Closed: upstream]
+16:13:07 <tittiatcoke> wstephenson: I guess it is a patch to Qt ?
+16:13:08 <wstephenson> remur_030: you mean widget style
+16:13:29 <remur_030> wstephenson: right
+16:14:53 <wstephenson> ok, that looks unfixed
+16:15:13 <wstephenson> cb400f: and we have to live with 656144 until it is
+16:16:08 <cb400f> :-( .. too bad.. that'll be an FAQ in #suse
+16:16:37 <cb400f> hmm.. my imap test account subscribed to opensuse@ tells me that a guy from the lug is posting there :-)
+16:16:47 <wstephenson> #topic Team meeting - 11.4 stabilization
+16:16:57 <wstephenson> since this is what we've been discussing anyway
+16:17:31 <remur_030> yeah, rabauke pointed out the nvidia bug yesterday and I was kinda shocked how many user are affected and how many dupes there were
+16:18:20 <cb400f> oh, yeah.. we should try to verify on 11.4... and force sndirsch to make 256.x.x.x for 11.4 if it happens there too
+16:18:24 <wstephenson> so i hoped earlier in the release cycle that we would get 4.6.1 out in time for 11.4 but it's scheduled for feb 28th, which is just too risky for 11.4 GM on March 11
+16:18:34 <remur_030> meanwhile cb400f pointed out that we have alot of users not running bare opensuse anymore but spiced up with other repos, add tumbleweed and evergreen to the mix we lack people running plain opensuse
+16:19:13 <wstephenson> remur_030: conclusion, not enough plain 11.4 testing from those able to do good testing?
+16:19:18 <remur_030> cb400f: someone already said it happens on M6 as well =/
+16:19:50 <remur_030> wstephenson: yeah, I know I failed at that too
+16:20:00 <cb400f> I plan to try over the weekend... if I can get the crap blob to compile... often a problem on the milestones etc.
+16:20:04 <rabauke> at least with kr46 kde gets a lot of testers
+16:20:22 <remur_030> also testing alone isn't enough, on the nvidia bug we had a lot of people reporting this
+16:20:44 <remur_030> well admittedly at least to me it looked like the usual nvidia vs plasma case
+16:21:07 <remur_030> most people in here running 64bit propably doesn't help either =/
+16:21:13 <wstephenson> yep.  what i'd like to do is establish if it's unique to opensuse
+16:21:20 <wstephenson> anyone know?
+16:21:32 <remur_030> wstephenson: the kde bug report is long and there was not a single non-suse report
+16:21:39 <rabauke> +1
+16:21:57 <cb400f> we should find out what nvidia version is pushed by kubutno
+16:22:11 <cb400f> wouldn't surprise me one bit if all of those suckers are using oooold nvidia
+16:22:35 <rabauke> there will surely be people building their nvidia drivers so they would have got it as well even if the official kubuntu driver was older
+16:22:35 <remur_030> cb400f: i know similar stuff happened before, but atleast arch or fedora users should have chipped in on it
+16:22:52 <remur_030> plus kubuntu users propably have nvidia repos as well
+16:23:07 <rabauke> yep, not a single non-opensuse user in >100 comments
+16:23:19 <cb400f> but how can it be suse specific and happen on 11.3 and 11.4 with various different kernels etc.
+16:23:22 <cb400f> :-(
+16:23:38 <rabauke> if it walsk like a duck, looks like a duck and sounds like a duck, chances are it is a duck.
+16:23:59 <rabauke> s/duck/lizard
+16:24:02 <remur_030> cb400f: i guess it's some patch somewhere to a shared library that has a rarely used codepatch before 4.5
+16:24:10 <wstephenson> and how to tell which part of the duck is sick? our xorg, our gcc?
+16:24:13 <remur_030> sadly people didn't check the vanilla kernel...
+16:24:29 <remur_030> s/codepatch/codepath
+16:24:35 <wstephenson> this is one of those times when i wished i had llunak around
+16:24:39 <rabauke> wstephenson: that's the hard part, but it's still an opensuse issue.
+16:25:56 <cb400f> how good is nouveau on 11.4? ;-)
+16:26:18 <remur_030> cb400f: propably still not good enough power managment for mobile chips =(
+16:26:29 <wstephenson> however good it is, people will still use nvidia.
+16:27:00 <rabauke> yep, if only because they have a newer card and do not use tumbleweed to get an updated vouveau
+16:27:37 <remur_030> wstephenson: would there be someone around at suse who might be better assigned this task?
+16:27:41 <cb400f> on tumbleweed they'd have to (re)build the driver constantly
+16:27:58 <cb400f> so they'll prolly just use nouveau
+16:27:59 <wstephenson> llunak: ping
+16:28:01 <remur_030> as you said it could be anywhere
+16:28:23 <rabauke> they would always get the latest nouveau and thus not need nvidia (if nouveau would be any good)
+16:28:24 <llunak> wstephenson: what is the bugno?
+16:28:30 <wstephenson> sndirsch is the obvious guy but he's so loaded he's flinging anything with "kde" in the subject at me, irrespective of severity
+16:28:46 <remur_030> https://bugzilla.novell.com/show_bug.cgi?id=648718
+16:28:51 <bugbot> openSUSE bug 648718 in openSUSE 11.3 (KDE4 Workspace) "plasma-desktop crashes with lastes nvidia driver 260.19.12" [Critical,Assigned]
+16:28:54 <remur_030> llunak ^
+16:29:37 <wstephenson> llunak: the problem is it's only kde, and only opensuse
+16:29:51 <wstephenson> so upstream and xorg both say it's someone else's fault
+16:29:58 <cb400f> it happens with vbox too
+16:30:02 <remur_030> and only 32bit systems
+16:30:19 <wstephenson> cb400f: vbox + nvidia + virtual 3d hardware?
+16:30:20 <cb400f> vbox, amarok, and plasma (digital clock)
+16:30:22 <rabauke> but you can avoid it by running the app with strace …
+16:30:24 <wstephenson> or any vbox?
+16:30:29 <remur_030> wstephenson: no the vbox gui
+16:30:37 <wstephenson> ah right
+16:30:37 <cb400f> I think it's related to the qt ui
+16:30:58 <remur_030> rabauke: propably strace resets some bogus flags
+16:31:38 <cb400f> as I understand it people get that "floating point exception" error when just trying to launch the vbox qt ui
+16:33:15 <wstephenson> what else is a hot 11.4 problem right now?
+16:33:19 <cb400f> rabauke: second reboot.. still don't get the kontact crash... instead it's fscking up with kwallet access
+16:33:22 <wstephenson> i think pim and akonadi and nepomuk are ok
+16:33:41 <rabauke> cb400f: did you logout with kmail "open"
+16:33:42 <wstephenson> although i've seen kwallet access warnings that cb400f mentions
+16:33:42 <cb400f> .. and akonadi self test
+16:33:53 <wstephenson> i opened a bug for akonadi self test
+16:34:06 <wstephenson> cb400f: that's the "bug in old log" self test warning?
+16:34:11 <rabauke> wstephenson: powermanagmeent on desktops
+16:34:15 <cb400f> rabauke: yep.. same system, and same setup as before when I had the problem.. only a dup is the difference
+16:34:31 <cb400f> wstephenson: yup, looks like it
+16:34:42 <cb400f> we should prolly just have stuck with pim4.4.9 :-)
+16:34:59 <rabauke> and there is still that bug that "performance" on notebooks does not set brightness to 100%
+16:35:12 <cb400f> 4.4.10 seems to be a trick to force people to move to pim4.6 faster >:-)
+16:35:32 <wstephenson> rabauke: what about PM on desktops? suspending after 99 minutes?
+16:35:35 <rabauke> "recently installed apps" missing from kmenu
+16:35:59 <rabauke> wstephenson: suspending the display after 10 minutes. fixed for 4.6.1
+16:36:29 <tittiatcoke> rabauke: Maybe that can be backported to 4.6.0 ? If we find the correct patch
+16:36:39 <rabauke> the digi clock still shows no shadow for the date although sebas supposedly fixed that upstream
+16:37:12 <sebas> rabauke: Hm, maybe I forgot that ... I'll check and seek to get it into 4.6.1
+16:37:33 <rabauke> tittiatcoke: I have the bugnumer on my other computer so I can "add" it to the meeting minutes on the ml
+16:37:49 <tittiatcoke> rabauke: Yes, please. Then I will check and see if I can get it into the packages
+16:38:23 <rabauke> it also seems that opensuse patches the battery plasmoid and shows unreadable fonts for the percentage which is displayed on the battery icon. according to sebas that percentage does not exist in upstream kde
+16:38:29 <rabauke> tittiatcoke: will do
+16:38:46 * sebas checks again :)
+16:39:14 <sebas> rabauke: it does exist, but works fine here
+16:39:28 <sebas> it's an upstream bug though, and it's not 100% fixable
+16:39:51 <rabauke> http://wstaw.org/m/2011/02/10/plasma-desktopCs2111.jpg
+16:39:55 <sebas> we're bound by smallest readable font setting on one hand and size of the battery one the other, both we have no control over
+16:40:03 <rabauke> sebas: ^^ try to find the percentag on the battery icon :)
+16:40:12 <wstephenson> huh, never noticed that overlay on the battery icon
+16:40:13 <rabauke> it's a matter of colour
+16:40:33 <cb400f> grr.. getting phonon errors now too.. "blah blah not working, falling back to default"
+16:40:46 <sebas> oow, that one ... that's a problem with an upstream patch
+16:40:51 <rabauke> cb400f: I get that with any but the xine backend as soon as I start amarok
+16:41:05 * cb400f 's kneejerk reaction is to blame fdo and gstreamer
+16:41:10 <sebas> it's not there in my trunk build, and it shouldn't since it duplicates already shown information
+16:41:13 <rabauke> ok, so it's upstream and I have to reopen those bugs?
+16:41:19 <cb400f> I got it now on login for a fresh user on rc1
+16:41:27 <rabauke> oh, not upstream
+16:41:36 <sebas> rabauke: only the digiclock shadow
+16:41:51 <sebas> but it's on my kanban list now, so more likely to get picked up than just bugzilla :)
+16:41:55 <rabauke> whereever it comes from it should either be removed or fixed to show the "normal" text colour
+16:42:07 <cb400f> and some error about saving bookmarks to user-places.xbel
+16:42:20 <sebas> the battery is bugfree (tm), the patch should probably just be dropped
+16:42:37 <sebas> rabauke: removed, it's completely unnecessary
+16:42:39 <rabauke> does the upstream battery feature the "time remaining"?
+16:42:44 <sebas> percentage is readable right next to it
+16:42:54 <sebas> yes, but only after fiddling with the config
+16:43:05 <sebas> no ui for that
+16:43:06 <rabauke> ok
+16:43:25 <rabauke> so opensuse enables that by default and IMHO that should stay
+16:43:47 <sebas> fine with me
+16:43:55 * sebas has it on as well
+16:43:58 <remur_030> hmm sorry if I interrupt, but this is adressing single bugs, not even pretty big ones, could we do something to get better testing with opensuse 11.4?
+16:44:31 <wstephenson> remur_030: please
+16:44:35 <wstephenson> remur_030: what do you suggest?
+16:44:37 <remur_030> in general that is? I know we used to do bug squashing sessions, they seem to be out of fashion now, no idea if for a good reason or not
+16:45:17 <cb400f> they should be after the release or at some other time.. not 3 weeks before GM is declared
+16:45:22 <remur_030> it's obvious there are people reporting bugs on bnc, but most just fix on their single bug and don't help on other ones
+16:46:04 <rabauke> I think it will be hard to get more 11.4 testers but kde does get a fair amount of testers via kdf and kr46.
+16:46:19 <wstephenson> how about divide and conquer? we start handling incoming bugs according to area (pim, mobile, workspace, ...)
+16:46:31 <cb400f> a shitload of people will install rc1... whether they can be considered testers or not is a different matter
+16:46:38 <wstephenson> and by handle i mean good triage, and checking branch for fixes
+16:46:43 <llunak> wstephenson: the bug looks like a toolchain problem ... or at least they are the ones to have a look at it and figure something out
+16:47:32 <wstephenson> llunak: ok, so if i can get matz or richi to look at an nvidia machine exhibiting the bug you think they'll have enough to go on?
+16:48:24 <wstephenson> others: thoughts?
+16:48:51 <wstephenson> right now i feel like i'm the little dutch boy running round putting his finger in whichever leak shouts loudest atm
+16:49:01 <remur_030> wstephenson: the single teams won't have more people all of a sudden, but I guess grouping by certain expertise is a good idea
+16:49:33 <remur_030> wstephenson: =/ we can't fix most stuff ourself
+16:49:41 * tittiatcoke lends his fingers to wstephenson in order to close more holes
+16:50:32 <wstephenson> remur_030: even if we can get timely triage on incoming bugs, that saves me some time that i can spend on fixing them
+16:50:53 <remur_030> wstephenson: the more I think about your idea the more I like it, the usual bugsquashing method was going through all the kde bugs without any certain grouping, so you parctically had to find new information any time
+16:50:58 <rabauke> what about a kde bug mailinglist?
+16:51:01 <tittiatcoke> I don't know if this would help, but I could validate bugs if they have been solved upstream
+16:51:03 <cb400f> there are indeed many holes :-( ... too many late changes.. pim.. phonon.. pulse.. bluedevil... etc.
+16:51:08 * cb400f has to leave
+16:51:23 <remur_030> chances are if you do 20 strigi bugs in a row you might have an idea where to look at it
+16:51:59 <remur_030> rabauke: I don't think we'd scare people off using opensuse-kde for bugs as well
+16:52:03 <wstephenson> and i don't think it would be that hard, we don't have 20 strigi bugs yet
+16:52:15 <llunak> wstephenson: I have commented in the bugreport and yes, I think the best chance (and possibly only one) is to walk up personally to somebody who knows the dynamic loader and annoy them until they have a look
+16:52:27 <remur_030> people randomly dump there bugreports at -kde already
+16:52:30 <wstephenson> llunak: ok, thanks for looking
+16:52:54 <rabauke> remur_030: not sure but if I would get new bugs as email it would be easier to check for things I can try out.
+16:53:33 <remur_030> rabauke: ? that is already possible, watch kde-maintainers@suse.de
+16:53:36 <wstephenson> or just having a stored bugzilla query to run every day
+16:54:17 <rabauke> remur_030: ok, then I'll try that one.
+16:54:36 <wstephenson> ok, i have to leave at 1800 too
+16:54:39 <remur_030> there was actually a good wiki for that written by llunak for the bugsqash events I think
+16:54:53 <wstephenson> what else?
+16:55:31 <remur_030> rabauke: I'll look for it later
+16:55:40 <remur_030> nothing I guess for now =/
+16:55:41 <rabauke> my issue with the community repos can wait
+16:55:44 <wstephenson> remur_030: do you want to take the AI to identify areas to assign to people for timely triage?
+16:55:46 <tittiatcoke> wstephenson: I guess nothing for now
+16:56:02 <remur_030> wstephenson: yes I'll make a mail to discuss it further on the ml
+16:56:22 <wstephenson> OTOMH i would say pim, workspace, defaults, random-apps
+16:56:55 <remur_030> sounds good
+16:57:47 <tittiatcoke> remur_030: You can count on me for upstream validation. I guess I am qualified enough for it :-)
+16:58:05 <wstephenson> then it just needs one of us per area to run a query once a day on new kde-maintainers bugs, tag new bugs of that area, then run another query that shows all 11.4 bugs with the tag and keep triaging them
+16:58:13 <remur_030> tittiatcoke: upstream validation as in happens on bare kde sc trunk?
+16:58:31 <amonthoth> choqok 1.0 is always crashing since M6 to RC1
+16:58:39 <tittiatcoke> remur_030: Daily KDE updates :-) with all the patches from openSUSE
+17:00:10 <remur_030> ok
+17:00:41 <wstephenson> amonthoth: we're in a meeting, please wait
+17:00:55 <wstephenson> #action remur_030 bring up triage strategy on list.
+17:00:57 <remur_030> rabauke: http://en.opensuse.org/openSUSE:Bug_Screening_KDE#Bugreport_organization_in_bugzilla
+17:00:59 <amonthoth> sorry
+17:01:00 <wstephenson> * Q&A misc
+17:01:39 <wstephenson> going, going, ...
+17:01:43 <tittiatcoke> gone
+17:01:48 <remur_030> meeting time ok for the future?
+17:01:58 <wstephenson> ok by me, as long as it doesn't go over 2 hours
+17:01:59 <remur_030> that is thursday 15 UTC?
+17:02:09 <remur_030> agreed, we should limit that
+17:02:20 <wstephenson> tittiatcoke: you prefer Wednesdays, don't you?
+17:02:23 <tittiatcoke> As long that sometimes it can be done on Wednesday :-)
+17:02:38 <remur_030> was there any opposition to wednesdays?
+17:02:51 * remur_030 can't remember any
+17:03:01 <tittiatcoke> I don't think there was any opposition.
+17:03:26 <tittiatcoke> For me the Wednesday is easier due to travel arrangements (most of the time travelling on Thursday afternoon/evening)
+17:03:51 <wstephenson> ok, so we keep wednesdays, but at 1500UTC
+17:03:57 <tittiatcoke> Ok
+17:04:31 <wstephenson> #endmeeting

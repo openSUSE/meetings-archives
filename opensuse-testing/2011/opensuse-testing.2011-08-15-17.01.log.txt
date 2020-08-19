@@ -1,0 +1,177 @@
+17:01:51 <bmwiedemann> #startmeeting
+17:01:51 <bugbot> Meeting started Mon Aug 15 17:01:51 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:01:51 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:02:10 <bmwiedemann> Hello everyone
+17:02:10 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:02:10 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:02:35 <bmwiedemann> #topic MS4 experience - if available
+17:03:19 <bmwiedemann> actually, there is currently no real MS4 available
+17:04:30 <LWFinger> I came as close as possible - I think.
+17:04:35 <bmwiedemann> so we could at most discuss the current state of factory and if/when that is suitable to snapshot for Open-Bugs-Day use
+17:05:11 <LWFinger> OK.
+17:05:49 <bmwiedemann> openQA results show problems with all NET installs segfaulting in yast2 during second stage autoconfiguration. not so nice. but DVDs work.
+17:06:21 <bmwiedemann> and the latest KDE/KWin still has some problems
+17:07:26 <Holgi> hi
+17:07:58 <LWFinger> I installed KDE Live CD Build 0186 and zypper dup'd from factory up to today. It seems OK, but not much testing.
+17:08:07 <LWFinger> Holgi: Hi
+17:08:35 <LWFinger> I'm using a VB VM.
+17:09:24 <LWFinger> At a minimum, the NetworkManager applet works, even with wireless.
+17:10:02 <bmwiedemann> btw: I added code to openQA to test sound - dheidler made that concept+code and I finally fixed+merged it.
+17:10:11 <LWFinger> It has some policy problems and asks for a password as often as Windows 7, but if functions.
+17:11:51 <bmwiedemann> I think, the policykit defaults need some review. there were funny popups on entering the root PW to query background brightness
+17:11:58 <bughunter88> hi everybody
+17:12:41 <LWFinger> I like that bughunter nickname.
+17:12:59 <Holgi> LWFinger: I know that problem from 3G connections with 11.3
+17:13:16 <Holgi> LWFinger: get asked for PIN & root-pw
+17:13:43 <Holgi> LWFinger: several times - is it like this?
+17:13:45 <jradzuweit> I too, its me ;) @ LWFinger
+17:14:07 <LWFinger> Holgi: I don't use 3G stuff as I have no hardware. My testing is with normal 802.11a/b/g/n.
+17:14:25 <Holgi> LWFinger: ok, but is it the same behavior?
+17:15:24 <LWFinger> No. It keeps asking for the root password as "policy prevents user action".
+17:15:36 <Holgi> LWFinger: ok
+17:16:00 <Holgi> LWFinger: my problem cause is also policy kit
+17:16:34 <LWFinger> I still need to put together the info for a proper bug report for my problem. Have you filed one?
+17:17:30 <Holgi> LWFinger: no mine is for 11.3
+17:17:46 <LWFinger> Is it OK in 11.4?
+17:18:06 <Holgi> sorry, I ment 11.4
+17:18:50 <LWFinger> For 802.11 stuff, the policies are OK in 11.4. It just broke in 12.1.
+17:19:09 <Holgi> LWFinger: ok
+17:22:19 <bmwiedemann> so do we have any opinion if current factory is suitable for testing or what needs fixing urgently?
+17:22:48 <bmwiedemann> maybe we should delay Open-Bugs-Day to happen after a real milestone release?
+17:22:48 <LWFinger> I think it is OK.
+17:23:59 <Holgi> bmwiedemann: what prevents coolo from releasing M4?
+17:24:29 <bmwiedemann> absense :D
+17:24:40 <LWFinger> Having a real release would make it easier for the non-techies as you said before the meeting started.
+17:26:03 <bmwiedemann> the alternative would be to target more techy people (who know how to unbreak their system)
+17:26:14 <Holgi> I agree - we should have a release
+17:27:24 <LWFinger> Delaying for M5 would put our two OBD's within 3 weeks of one another. Is that wise?
+17:27:58 <jradzuweit> no, not really
+17:28:24 <Holgi> no
+17:28:39 <LWFinger> Should we combine them? They have quite different purposes.
+17:29:48 <Holgi> bad thing is
+17:30:09 <Holgi> next OBD is already announced, right?
+17:30:33 <LWFinger> Yes, but it could be delayed or cancelled.
+17:31:03 <bmwiedemann> of course, I could also setup a number of prepared VMs again, so that people have an easier time
+17:31:09 <Holgi> what do the others think?
+17:31:29 <jradzuweit> I would do it
+17:31:45 <Holgi> bmwiedemann: using a factory build?
+17:31:59 <bmwiedemann> Holgi: yes.
+17:32:05 <Holgi> ok
+17:33:02 <bmwiedemann> #topic Open-Bugs-Day
+17:33:32 <LWFinger> I would really like to see what 11.4 bugs are still present. But to get a consistent base, we do need to supply detailed instructions.
+17:35:03 <bmwiedemann> I can snapshot factory to my own server that has sufficient space+bandwidth. and maybe even have prepared VM-images for download so that different people can try the very same software
+17:36:15 <LWFinger> That sounds good. Would the prepared images include those for VirtualBox?
+17:36:51 <bmwiedemann> it can run .vmdk files from VMware, right? and KVM can do that, too
+17:37:16 <LWFinger> I don't know, but I can test that.
+17:38:09 <Holgi> #
+17:39:32 <bmwiedemann> are there a lot of gnome/kde specific bugs or could I just prepare one image?
+17:39:33 <jradzuweit> should we focus on s specific topic?
+17:40:19 <jradzuweit> we can focus on kde now and next time on gnome?
+17:40:23 <LWFinger> bmwiedemann: I suspect so, and we should have both.
+17:41:00 <bmwiedemann> OK
+17:42:52 <bmwiedemann> if I read numbers correctly, there are around 1500 bugs for 11.4 with 1086 in NEW state, 160 NEEDINFO and 78 REOPENED
+17:43:53 <bmwiedemann> appears like a rather big number, so some focus could indeed be helpful
+17:44:20 <jradzuweit> I have a total of 1324 ( incl the reopen)
+17:44:20 <Holgi> agree
+17:45:04 <LWFinger> How do we decide which are important?
+17:45:30 <jradzuweit> Severity + Priority
+17:46:22 <jradzuweit> or State NEEDINFO?
+17:46:23 <LWFinger> That assumes those are set correctly. If we cut off at some level, how many are left?
+17:46:59 <bmwiedemann> around half of the bugs are marked Critical or Major
+17:47:18 <LWFinger> That helps a bit.
+17:47:26 <bmwiedemann> but priority is set to P5 on quite many
+17:48:11 <LWFinger> The poster frequently overstates the importance. It is affecting THEIR system.
+17:48:38 <jradzuweit> then  priority is not very useful
+17:49:17 <bmwiedemann> actually, Priority is intended to be set by the developer or the project leads (coolo,AJ)
+17:49:37 <LWFinger> If it was posted as Critical or Major, and it has not been downgraded, then we should look at it.
+17:49:46 <bmwiedemann> and P5 = None is just the default value
+17:51:16 <LWFinger> Actually, does it matter how many bugs are in the pool? The tool is only going to present a few at a time.
+17:51:55 <bmwiedemann> as long as it presents the more important ones earlier, it does not make much difference
+17:52:21 <bmwiedemann> only that it can feel better to solve 400 of 500... instead of 400 of 1400
+17:52:44 <jradzuweit> doing state=NEEDINFO first and than reopen, new etc?
+17:53:34 <bmwiedemann> I would skip the ASSIGNED ones as someone could be working on it
+17:53:47 <jradzuweit> agree
+17:57:16 <bmwiedemann> so I would pull e.g. 1325 bugs from https://bugzilla.novell.com/buglist.cgi?action=wrap&bug_file_loc=&bug_file_loc_type=allwordssubstr&bug_id=&bugidtype=include&chfieldfrom=&chfieldto=Now&chfieldvalue=&classification=openSUSE&deadlinefrom=&deadlineto=&email1=&email2=&emailassigned_to1=1&emailassigned_to2=1&emailcc2=1&emailqa_contact2=1&emailreporter2=1&emailtype1=substring&emailtype2=substring&field0-0-0=noop&keywords=&keywords
+17:57:53 <bmwiedemann> sorted by severity
+17:58:29 <bmwiedemann> that should work
+17:58:59 <jradzuweit> still a lot
+17:59:44 <bmwiedemann> Holgi: if we find that a bug is still in Factory - what do we do with it?
+18:00:11 <bmwiedemann> just adding a comment would not make it searchable
+18:00:21 <Holgi> bmwiedemann: I would change product to latest
+18:00:30 <Holgi> bmwiedemann: but you can clone it
+18:00:46 <Holgi> bmwiedemann: and just add comment: "still in version 12.1"
+18:01:08 <bmwiedemann> 12.1-MS4?
+18:01:18 <Holgi> bmwiedemann: yes
+18:01:42 <Holgi> bmwiedemann: but I'm not sure about "official" way
+18:02:16 <bmwiedemann> Holgi: then who would?
+18:02:22 <Holgi> bmwiedemann: most important: increase priority: description - also in new product
+18:02:38 <jradzuweit> how to clone @Holgi?
+18:03:02 <Holgi> bmwiedemann: who would know? dokomentation
+18:03:29 <bmwiedemann> there is a "Clone this bug" link on bottom right
+18:04:32 <jradzuweit> this is very, very small ;)
+18:05:23 <jradzuweit> I think cloning is better tahn putting some text into the original
+18:05:42 <LWFinger> Agreed.
+18:05:59 <Holgi> in any case: increase prio
+18:06:23 <jradzuweit> ok, should I put this on the wiki?
+18:06:48 <Holgi> probably not since I don't know the official way
+18:06:56 <jradzuweit> ok
+18:09:27 <LWFinger> bmwiedemann: As soon as possible, I would like to have a download location for a virtual image. For publicity, I will also need the URL for the snapshots.
+18:09:42 <bmwiedemann> OK
+18:10:23 <LWFinger> You should probably Email those as we may not want that info in the public record now.
+18:11:24 <bmwiedemann> OK
+18:14:09 <bmwiedemann> anything else for today?
+18:15:36 <bmwiedemann> #action bmwiedemann will prepare VM images for OBD and mail the location to LWFinger
+18:16:16 <bmwiedemann> #topic open discussion
+18:16:49 <LWFinger> I will prepare the revised announcement message for OBD and send to the testing ML for comments.
+18:17:55 <jradzuweit> any plans for OSC? @Holgi
+18:18:51 <bmwiedemann> there will be a testing BoF
+18:19:07 <Holgi> jradzuweit: I will be there
+18:19:16 <Holgi> jradzuweit: but don't have a talk
+18:19:28 <jradzuweit> I will be  there, too
+18:19:42 <Holgi> jradzuweit: so it's again the three of us?
+18:19:59 <jradzuweit> yes
+18:20:32 <Holgi> ok
+18:20:55 <Holgi> bmwiedemann: submitted a talk about openqa
+18:21:13 <Holgi> bmwiedemann submitted a talk about openqa
+18:21:31 <bmwiedemann> titled "one year of openQA"
+18:22:04 <jradzuweit> when?
+18:22:39 <bmwiedemann> some input of you would be nice.  Did it matter for you? what most?
+18:23:04 <bmwiedemann> I think, there is no schedule, yet.
+18:23:17 <jradzuweit> non seen yet
+18:23:27 <Holgi> bmwiedemann: I guess your best customer: release manager
+18:24:17 <bmwiedemann> sure. but openQA.opensuse.org is also for the community.
+18:24:57 <Holgi> bmwiedemann: sure
+18:25:17 <Holgi> bmwiedemann: for me it's always a good source to check if I should install a build or not
+18:25:29 <LWFinger> I do the same.
+18:25:59 <jradzuweit> me too
+18:26:29 <LWFinger> It is also a quick check on what is failing to build. It may not say why, but it gives an overview.
+18:29:21 <bmwiedemann> nice :)
+18:31:24 <jradzuweit> Has anybody info about this Beta thing?
+18:31:39 <jradzuweit> means MS6=BETA?
+18:31:57 <LWFinger> Coolo has agreed to do it.
+18:32:07 <bmwiedemann> yes. coolo renamed it on his roadmap
+18:32:25 <jradzuweit> :), so weget lots lots of new testers than?
+18:32:39 <bmwiedemann> and I updated the wiki accordingly
+18:32:45 * iznogood thinks that was a pointless change, but we'll see if it changes the number of testers
+18:33:17 <LWFinger> The main problem will be documenting what happened.
+18:33:44 <Holgi> I think we should be happy about our request was successful!
+18:34:47 <LWFinger> As I have never met coolo, I probably don't quite unerstand that comment, but I can guess.
+18:34:48 <jradzuweit> yes
+18:37:16 <bmwiedemann> I guess, we are done for today then
+18:37:35 <LWFinger> I think so. Next meeting?
+18:39:18 <bmwiedemann> probably around MS5  (if we do not count Open-Bugs-Day)
+18:39:58 <jradzuweit> on OSC?
+18:40:08 <jradzuweit> would be 12.9.
+18:40:31 <LWFinger> Sep. 5 would be the likely date if MS5 is on time, but that is a holiday in the US. I might not be available.
+18:41:16 <bmwiedemann> we can still use different days than Mondays
+18:41:23 <LWFinger> The 12th is better for me.
+18:41:44 <LWFinger> Other days are OK, too.
+18:42:33 <jradzuweit> I can arrange for other days too
+18:44:45 <bmwiedemann> so 2011-09-12 17:00 UTC?
+18:44:51 <Holgi> I would stick with Mondays, everybody of us is available
+18:45:07 <jradzuweit> agree
+18:45:32 <LWFinger> OK.
+18:46:17 <bmwiedemann> very well. then thank you for attending our meeting today
+18:46:32 <jradzuweit> good night
+18:46:34 <bmwiedemann> I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:46:41 <bmwiedemann> #endmeeting

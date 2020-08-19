@@ -1,0 +1,176 @@
+15:09:30 <wstephenson> #startmeeting
+15:09:30 <bugbot> Meeting started Wed Mar 30 15:09:30 2011 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:09:30 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:11:35 <tittiatcoke> present
+15:12:15 <wstephenson> llunak,llunak_,cb400f, anaumov, sebas,tigerfoot,tittiatcoke, javier,javier_, remur_030,mrdocs: meeting
+15:12:18 <wstephenson> tittiatcoke: noted
+15:12:27 <wstephenson> so, what are we going to talk about?
+15:12:30 * mrdocs waves
+15:12:44 <wstephenson> For discussion this week:
+15:12:50 <wstephenson> * Remove SLE11, 11.2 and 11.3 from KDE:Unstable:Playground (krop)
+15:13:09 <wstephenson> + the usual things
+15:13:32 * tigerfoot sorry not able to participate, busy. but if needed ping me, good meetings
+15:13:52 <wstephenson> tigerfoot: thanks
+15:14:16 <tittiatcoke> Who else is in the meeting ?
+15:14:23 <wstephenson> dunno
+15:14:28 <tittiatcoke> :-)
+15:14:29 <wstephenson> do we have anything else to talk about?
+15:14:45 <wstephenson> maybe they were waiting for an announcement
+15:14:48 <tittiatcoke> Well, maybe the outcome of the brainstorm for 11.4+ ?
+15:14:51 * tigerfoot feel this one will become the shortest meeting really hard to beat :D
+15:14:55 <mrdocs> yeah
+15:14:57 <wstephenson> or maybe they are sulking because i'm a bit absent these days
+15:15:08 <wstephenson> #action wstephenson summarise brainstorm meeting
+15:15:35 <wstephenson> i'll get the log out and summarise after krop's item
+15:15:40 <tittiatcoke> Ok.
+15:15:42 <wstephenson> then write some minutes
+15:15:46 <tigerfoot> wstephenson: this meeeting is not on the news.o.o ical this time, could be that ?
+15:16:02 <wstephenson> tigerfoot: yep
+15:16:18 <wstephenson> tigerfoot: for somebody who's not participating, you're very visible. perhaps you're trolling? :P
+15:17:07 <tigerfoot> now I use the time of window's rebooting :D
+15:17:09 <wstephenson> so, old action items
+15:17:26 <wstephenson> * wstephenson: talk to dirk about KUSC updating - done
+15:17:39 <wstephenson> although i fear i did it in the least effort mode
+15:17:51 <wstephenson> good grief, anna is sucking on a micro usb jack
+15:18:12 <ilm> bzzzt
+15:18:38 <tittiatcoke> I noticed that one :-) dirk contacted me via email. Wrote a reply back, but no reply yet. So I guess that we are still stuck with an un-updated Unstable.
+15:18:44 <wstephenson> yes
+15:19:15 <wstephenson> dirk: there?
+15:19:30 <tittiatcoke> If you agree, then I will push the changes around kdegraphics this weekend to unstable and update to the latest trunk version. I will start doing that every weekend until we get word from dirk :-)
+15:20:06 <wstephenson> i think it's ok to do so. KUSC is unstable after all.
+15:20:27 <tittiatcoke> Ok.
+15:20:47 <mrdocs> any objections to pushing scribus 1.5.0.svn into playground ?
+15:21:11 * wstephenson glares at mrdocs and points at /topic
+15:21:15 <wstephenson> but nope :)
+15:21:23 <tittiatcoke> #action tittiatcoke will work on providing a weekly update for KDE:Unstable:SC
+15:21:25 <mrdocs> oops
+15:21:29 <wstephenson> no krop
+15:21:56 <wstephenson> so let's find the brainstorming notes
+15:22:33 <wstephenson> while i do that: sorry i'm not very active here atm, but i let some SLE stuff get backlogged while doing 11.4 and the india trip, and now it's haunting me.
+15:22:52 <tittiatcoke> wstephenson: I guess that krop wants to reduce the buildpower for OBS by reducing the targets for Playground.
+15:23:05 <wstephenson> yes
+15:23:12 <wstephenson> and it's a good idea IMO
+15:23:47 <tittiatcoke> Agreed.
+15:24:02 <mrdocs> i also think its a good idea
+15:24:04 <tittiatcoke> most of the stuff there requires at least 4.6 or higher
+15:24:21 <wstephenson> and i can't get 4.6 to build on SLE, everything in KDS is red
+15:24:41 <wstephenson> unless someone wants a fulltime job for a few days, we can't support it
+15:24:42 <mrdocs> as long as we can keep KDF on 11.3 for a while
+15:25:01 <tittiatcoke> If we all agree, then I will clean-up Playground to have only repo's with KDE 4.6 or higher
+15:25:04 * cb400f saw today that RHEL6 has 4.3.4.. so SLE is much better with 4.3.5 ;-)
+15:25:08 <wstephenson> mrdocs: we'll keep it as long as 11.3 is supported
+15:25:36 <mrdocs> wstephenson: thanks i have real work machines where kdf on 11.3 is working fine
+15:26:30 <wstephenson> oh ffs
+15:26:40 <wstephenson> i just found a konversation bug
+15:26:45 <tittiatcoke> :-)
+15:26:45 <wstephenson> LogfilePath=file:///home/will/.kde4/share/apps/konversation/logs
+15:26:48 <mrdocs> o?
+15:26:54 <wstephenson> doesn't work if the path doesn't exist
+15:27:11 <wstephenson> ie i have no logs since i changed my username
+15:27:16 <tittiatcoke> Oops. So there is no log from the Brainstorm ?
+15:27:21 <wstephenson> not here at least
+15:27:28 <wstephenson> the work machine was probably online and logging it
+15:27:40 <tittiatcoke> :-)
+15:28:13 <tittiatcoke> Let's conclude on krop's item. Everybody agree that Playground should just have repo's that provide 4.6 or higher ?
+15:28:38 <wstephenson> yes
+15:29:23 <tittiatcoke> #action tittiatcoke validates & cleans build repositories for KDE:Unstable:Playground
+15:29:28 <wstephenson> can't get in, i've got a temp ip address there until the new offices are on the right network
+15:29:52 <wstephenson> so
+15:29:59 <tittiatcoke> No problem :-) You have the summarize as an action item anyway
+15:30:12 <wstephenson> well, we discussed the usual ideas
+15:30:19 <wstephenson> we need to refine the proposals
+15:31:04 <wstephenson> sebas wants to do some UX work, integrating lionmail etc
+15:31:13 <tittiatcoke> Ok
+15:31:20 <wstephenson> and the rest i don't recall otomh
+15:32:32 <wstephenson> tittiatcoke: any suggestions from you since you werent' there?
+15:33:00 <tittiatcoke> not really.
+15:33:21 <wstephenson> we got one bad review that said that opensuse didn't offer anything new that other distros didn't do
+15:33:30 <wstephenson> the reviewer was using gnome though
+15:33:42 <wstephenson> i should go and stick a kde cd to him.
+15:34:30 <cb400f> whack him with some yast and obs
+15:34:32 <tittiatcoke> :-) Well, we cannot re-invent all applications :-) KDE is KDE on whatever distribution you are running it. The question would be more how stable is it running :-)
+15:34:39 <wstephenson> http://www.eweek.com/c/a/IT-Infrastructure/OpenSUSE-114-Offers-Updated-OpenSource-Apps-Components-372992/
+15:35:38 <mrdocs> grumble
+15:35:57 <mrdocs> i need to go gett my daughter instead of my wife getting her
+15:36:02 <javier> here I am
+15:36:02 <mrdocs> bb as soon as i can
+15:36:05 <wstephenson> hi javier
+15:36:18 <javier> hi
+15:36:24 <wstephenson> so i just got a tablet pc
+15:36:33 <wstephenson> i'd like to see opensuse 11.4++ kde work well on it
+15:36:40 <javier> cool
+15:36:47 <cb400f> wetab? or sumfink else?
+15:36:51 <wstephenson> wetab
+15:37:03 <cb400f> ooh.. is it reasonable with meego?
+15:37:17 * javier played with a wetab at Qt Dev Days
+15:37:20 <wstephenson> seems to work well enough as a browser host
+15:37:39 <wstephenson> it updated for about 30 minutes on first boot despite being stickered on the box as 2.0 edition
+15:37:42 <wstephenson> now it's 2.1.x
+15:37:47 <wstephenson> so i guess they are improving things
+15:37:58 <wstephenson> but i will throw out that install as soon as i have backed up the image
+15:38:17 <wstephenson> anyway
+15:38:22 <wstephenson> that's what i'd like to do for next release
+15:38:31 <javier> when I played with the wetab, the UI wasn't very pretty
+15:38:39 <wstephenson> it's not as pretty as N900
+15:38:50 <wstephenson> basic, gets the job done
+15:39:30 <tittiatcoke> how does it compare to an iPad ?
+15:39:33 <javier> smartphone, tablet, netbook, laptop, desktop computer, server, what's next?
+15:40:21 <javier> iirc, the wetab is a bit bigger and thicker than the ipad
+15:41:47 <javier> btw, http://blog.qt.nokia.com/2011/03/29/community-sponsorshi/
+15:41:50 <wstephenson> tittiatcoke: it's Atom based, 1GB ram, the UI is ugly and it has relatively few apps. but it has a webcam on first release
+15:42:13 <javier> not bad
+15:42:27 <tittiatcoke> Hmm, I don't like the Atom processor. Reminds me of slow slow netbooks :-)
+15:43:29 <wstephenson> tittiatcoke: my stock response is if we wait for perfect hardware to hack on, the software market will already be in someone else's control
+15:43:34 <wstephenson> so i jumped on it
+15:43:43 <tittiatcoke> True :-)
+15:43:43 <wstephenson> and at 250€ it's a comparative steal
+15:44:06 <tittiatcoke> That is true :-) It seems to be a lot cheaper than the iPad
+15:44:22 <cb400f> guess more atom based tablets are coming.. (even "official" Intel devices?)
+15:44:31 <wstephenson> cb400f: this one is labelled intel all over
+15:44:47 <wstephenson> i guess they paid wetab a load of sponsorship to ship a meego device
+15:44:56 <cb400f> hmm :-)
+15:45:31 <wstephenson> and now otto.de are dumping it at 50% off because it's unfinished and no ipad killer
+15:45:34 <wstephenson> so
+15:45:37 <wstephenson> enough offtopic
+15:45:47 <wstephenson> if you want a machine to make the future with, go for this one
+15:45:48 <anaumov> +1
+15:46:58 <wstephenson> looking at the brainstorming logs now
+15:47:22 <wstephenson> lionmail, pim 2, ...
+15:47:34 <wstephenson> visual identity
+15:47:44 <wstephenson> default Activities
+15:47:51 <wstephenson> better networkmanagement
+15:48:04 <wstephenson> interactive tutorial
+15:48:09 <wstephenson> desktop search client
+15:48:34 <tittiatcoke> wstephenson: There seems to be push for recoll to be the desktop search client
+15:48:35 <wstephenson> peripherals... make sure webcam, headsets, mics, "multimedia keys", bluetooth stuff etc. "just works" (cb400f)
+15:48:49 <wstephenson> tittiatcoke: where is that happening?
+15:49:04 <tittiatcoke> wstephenson: I saw a openFATE request
+15:49:05 <wstephenson> facebook and social media support, consistent 'share' function'
+15:49:07 <wstephenson> ok
+15:49:28 <wstephenson> subpixel hinting
+15:49:40 <wstephenson> tablet and netbook editions
+15:49:54 <wstephenson> phone sync
+15:50:02 <wstephenson> new app launcher?
+15:50:25 <wstephenson> arm port
+15:50:36 <wstephenson> yast facelift
+15:50:49 <wstephenson> html5 in webkit
+15:50:59 <wstephenson> colord support
+15:51:05 <wstephenson> appstream/brezn
+15:51:16 <cb400f> I still can't get over they actually made a patch for yast control center... maybe mvidner wasn't lying about the balance :-)
+15:51:23 * cb400f goes to lug meeting
+15:53:16 <wstephenson> well, i'll write that up better
+15:53:21 <wstephenson> anything else to discuss here?
+15:53:39 <wstephenson> i hope to be back on normal community facing service next week
+15:53:45 <wstephenson> and get cartman more integrated
+15:54:33 <anaumov> if you don't find student for plasma-obs-applet, maybe we can do it
+15:55:18 <wstephenson> cartman: maybe, i hear your python skills are improving
+15:55:42 <tigerfoot> oh if you can add : IPV6 in NM that could be cool
+15:56:37 <wstephenson> tigerfoot: will definitely be in
+15:56:57 <tigerfoot> thx :D
+15:57:06 <tittiatcoke> wstephenson: work on NM0.9 integration in PNM seemed to be stopped again
+15:57:44 <anaumov> wstephenson, cartman, anyway i'm going to start to work on BuildManagement in may
+15:58:03 <wstephenson> tittiatcoke: they are working in a branch afaik
+15:58:30 <tittiatcoke> wstephenson: But this should be noticable in the Activity monitor of kdegit
+15:59:03 <wstephenson> tittiatcoke: assuming they push.
+15:59:12 <tittiatcoke> Hmm, that's true :-)
+16:00:23 <wstephenson> #endmeeting

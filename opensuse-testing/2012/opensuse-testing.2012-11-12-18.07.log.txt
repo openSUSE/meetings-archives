@@ -1,0 +1,85 @@
+18:07:35 <bmwiedemann> #startmeeting
+18:07:35 <bugbot> Meeting started Mon Nov 12 18:07:35 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:07:35 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:07:44 <bmwiedemann> Hello everyone
+18:07:44 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+18:07:44 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+18:08:14 <bmwiedemann> #topic MS1 testing
+18:08:55 <bmwiedemann> I ran the usual openQA tests on factory but most of them failed for MS1 from the KVM/cirrus-X11 problem
+18:10:01 <Ilmehtar> I've seen some very weird issues with KVM in 12.2, the basics all seem fine, but stuff like Splice, which should be working, especially in GNOME Factory, seem to be really misbehaving
+18:10:33 <bmwiedemann> there was also a problem with serial console in KVM
+18:11:19 <bmwiedemann> bnc#779727
+18:11:47 <poorboywilly> testing on a usb kde live cd was pretty smooth
+18:11:58 <Ilmehtar> oh joy my bugzilla session timed out, now I get to play Novell authentication russian roulette
+18:12:24 <bmwiedemann> Ilmehtar: I read they fixed the auth problems recently
+18:12:38 <bmwiedemann> plus, to read a bug, you dont need to be logged in
+18:12:41 <Ilmehtar> actually, that was the first smooth login I've had in months, so maybe they did
+18:13:35 <Ilmehtar> true, it's a force of habit I have partner access and my day job has me looking at a lot of bugs for Novell bugs we use in the office.. and I need to login to see those
+18:13:42 <bmwiedemann> I should soon try the USB-Live thing on my machines, too
+18:14:13 <poorboywilly> I didn't test on my laptop though because the md5/sha1 sums did not match for the i586 image
+18:15:18 <bmwiedemann> GNOME-i686 one?
+18:16:52 <Ilmehtar> bmwiedemann: I guess we need to either package that reversion or see how quick qemu upstream is going to do the same
+18:17:17 <poorboywilly> yes i686, but kde
+18:18:02 <bmwiedemann> Ilmehtar: I packaged it, but it is still in my home repo only
+18:18:13 <Holgi> I do not have any experiences with 12.2 yet
+18:18:55 <Ilmehtar> bmwiedemann: and you want someone to test it..let me go grab my laptop ;-)
+18:18:56 <bmwiedemann> Holgi: 12.2 runs much smoother than 12.1 (which had some kernel problems)
+18:19:32 <Holgi> bmwiedemann: sorry typo, I mean 12.3
+18:19:42 * Holgi is using 12.2 already
+18:19:50 <Ilmehtar> Holgi: I agree, 12.2 for me has been one of those 'sweet spot' versions - normally as soon as we get the thing released I'm straight back on factory but I've been a slacker moving on from 12.2
+18:19:55 <Ilmehtar> ahh, well, I still think 12.2 is awesome
+18:21:30 <bmwiedemann> poorboywilly: just fetched the GNOME-i686 iso and it also has a mismatch of the md5sum - and that is no transmission problem, because rsync has internal checks
+18:22:33 <Ilmehtar> same here, darn, thats what I was going to use
+18:23:23 <bmwiedemann> I'd declare the checksums to be broken. Will check with coolo/adrian tomorrow
+18:23:54 <poorboywilly> interestingly the signature seems to be fine
+18:25:48 <bmwiedemann> looking at the timestamps, .iso and .asc are dated 2012-11-07 while the checksums are dated 2012-11-08
+18:27:06 <bmwiedemann> might be related to recent OBS upgrades
+18:27:24 <poorboywilly> shall I file a bug?
+18:28:27 <bmwiedemann> poorboywilly: I'll do it
+18:29:38 <bmwiedemann> for the time being, here is what I got from rsync:
+18:29:38 <bmwiedemann> c81b90394f57fd4db9b56af73b6470db4d0258bd  factory/iso/openSUSE-GNOME-LiveCD-i686-Build0166-Media.iso
+18:29:38 <bmwiedemann> 2eb4771be09bbd05e323b3240b045e0d5e23552d  factory/iso/openSUSE-GNOME-LiveCD-x86_64-Build0166-Media.iso
+18:29:38 <bmwiedemann> 3e4a5a117df77b833e058af29ad12c92ac55e54c  factory/iso/openSUSE-KDE-LiveCD-i686-Build0166-Media.iso
+18:29:38 <bmwiedemann> 8728455651d7318ded8fb8531c1905b25cb001db  factory/iso/openSUSE-KDE-LiveCD-x86_64-Build0166-Media.iso
+18:29:45 <bmwiedemann> (sha1sum that is)
+18:32:36 <Ilmehtar> thanks
+18:33:33 <poorboywilly> yep that matches the KDE-i686 I downloaded
+18:34:11 <bmwiedemann> it seems, the KDE-64 iso is the only one with matching checksums :)
+18:34:28 <bmwiedemann> I would have expected all of them to be off - for the sake of consistency
+18:38:02 <bmwiedemann> any other 12.3 testing experience to share?
+18:39:10 <Ilmehtar> not from me - I hope to dramatically change that before the next meeting ;-)
+18:40:12 <bmwiedemann> I hope we get factory installs back into a working state soon
+18:42:15 <bmwiedemann> filed OBS bug (bnc#789295)
+18:42:36 <bmwiedemann> so let's finish this topic then
+18:43:36 <bmwiedemann> #topic schedule next meeting
+18:43:48 <bmwiedemann> when shall we meet again?
+18:44:32 <bmwiedemann> MS2 is due 2012-12-13
+18:44:49 <bmwiedemann> so we could meet on 17th
+18:45:49 <poorboywilly> that sounds reasonable
+18:46:25 <Holgi> should be fine
+18:46:39 <bmwiedemann> #agreed next meeting 2012-12-17 18:00 UTC
+18:47:23 <bmwiedemann> #topic open discussion
+18:48:50 <bmwiedemann> any parts that should be covered by openQA tests?
+18:51:15 <poorboywilly> does it look at the checksums? :)
+18:52:27 <bmwiedemann> there are no checksums for factory isos
+18:52:49 <bmwiedemann> except the embedded ones
+18:53:09 <bmwiedemann> but those are not checked yet. could be an extra variant, though
+18:56:52 <bmwiedemann> will take a few minutes to integrate it
+18:57:18 <bmwiedemann> any other topics you want to talk about?
+18:58:22 <poorboywilly> we discussed last development cycle testing at least the initial loading of all applications, and having a tool that we could use mark off what has been tested
+18:58:35 <poorboywilly> does such a tool exist, or does it need to be made?
+19:00:02 <bmwiedemann> I once made http://openqa.opensuse.org/openqa/qatests/qa_runall.pl
+19:00:52 <bmwiedemann> it will output, if the program backgrounded, blocked or exited by itself
+19:00:59 <bmwiedemann> and how much output it produced
+19:01:22 <bmwiedemann> but we still would need some smart way of post-processing such output
+19:01:45 <bmwiedemann> (and it might not be safe to run - depending on what programs are installed)
+19:02:01 <poorboywilly> true
+19:02:47 <bmwiedemann> I can just add it after the tests, so it does not disturb the outcome
+19:05:55 <bmwiedemann> mostly added mediacheck now
+19:06:19 <bmwiedemann> we also had trouble with the rescue system in the past
+19:06:53 <bmwiedemann> but that will be a bit more complicated
+19:08:35 <bmwiedemann> OK. let's end today's meeting then
+19:08:42 <bmwiedemann> thanks all for joining.
+19:08:52 <bmwiedemann> I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+19:08:53 <poorboywilly> thank you
+19:09:01 <bmwiedemann> #endmeeting

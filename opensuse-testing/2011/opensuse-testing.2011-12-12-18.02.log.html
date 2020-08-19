@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:02:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:02:30</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Dec 12 18:02:30 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:02:30</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:02:32</span><span class="nk"> &lt;Holgi&gt;</span> hi bernhard
+<a name="l-5"></a><span class="tm">18:02:38</span><span class="nk"> &lt;Holgi&gt;</span> hi larry
+<a name="l-6"></a><span class="tm">18:02:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-7"></a><span class="tm">18:02:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-8"></a><span class="tm">18:02:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-9"></a><span class="tm">18:03:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">12.1 testing experience - what worked, what didn't</span>
+<a name="l-10"></a><span class="tm">18:03:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> shall I start?
+<a name="l-11"></a><span class="tm">18:04:22</span><span class="nk"> &lt;LWFinger&gt;</span> Yes
+<a name="l-12"></a><span class="tm">18:04:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> openQA has caught some issues that would very likely have remained unnoticed.
+<a name="l-13"></a><span class="tm">18:04:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> a) last-minute bugs
+<a name="l-14"></a><span class="tm">18:04:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> b) rarely tested things (e.g. zdup from 11.3)
+<a name="l-15"></a><span class="tm">18:05:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> but I was still unsatisfied with 12.1-Beta and RC1 which suffered from major bugs
+<a name="l-16"></a><span class="tm">18:05:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=720571 that remained open for 3 weeks, 9 dups
+<a name="l-17"></a><span class="tm">18:05:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=725722 that was introduced on last day, 9 dups
+<a name="l-18"></a><span class="tm">18:05:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> but overall, we have seen worse with earlier releases (such as several Milestones of 11.3 not booting)
+<a name="l-19"></a><span class="tm">18:05:28</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 720571 in openSUSE 12.1 (X.Org) "X11 evdev segfault" [Critical,Resolved: duplicate]
+<a name="l-20"></a><span class="tm">18:05:31</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 725722 in openSUSE 12.1 (Installation) "Package Manager during installation crashes yast" [Critical,Resolved: fixed]
+<a name="l-21"></a><span class="tm">18:06:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> all this time spent on filing dups could have been spent to test/file other, new &amp; interesting bugs
+<a name="l-22"></a><span class="tm">18:07:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> at least for such last-minute-bugs - shouldn't we rather release some days later?
+<a name="l-23"></a><span class="tm">18:07:50</span><span class="nk"> &lt;LWFinger&gt;</span> I find b.n.o searches for bugs to be frustrating - even when I know the bug has been filed.
+<a name="l-24"></a><span class="tm">18:07:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> at least for Beta&amp;RC
+<a name="l-25"></a><span class="tm">18:08:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> yep. I filed a bug on "not finding DUPLICATEs"
+<a name="l-26"></a><span class="tm">18:09:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> often enough, you can go to Advanced and tell it to include RESOLVED bugs
+<a name="l-27"></a><span class="tm">18:10:04</span><span class="nk"> &lt;LWFinger&gt;</span> I also think the timing between releases in the final stages is too short.
+<a name="l-28"></a><span class="tm">18:10:58</span><span class="nk"> &lt;LWFinger&gt;</span> Are we trying too much for an 8 month GM cycle?
+<a name="l-29"></a><span class="tm">18:11:06</span><span class="nk"> &lt;Holgi&gt;</span> did you talk to coolo ?
+<a name="l-30"></a><span class="tm">18:11:20</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">Holgi:</span> No.
+<a name="l-31"></a><span class="tm">18:11:36</span><span class="nk"> &lt;Holgi&gt;</span> Bernhard ?
+<a name="l-32"></a><span class="tm">18:11:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> coolo said, that after RC1, only bugfixes are included
+<a name="l-33"></a><span class="tm">18:12:25</span><span class="nk"> &lt;LWFinger&gt;</span> That is OK, but what about the ones introduced in RC1 and RC2. They are the killers.
+<a name="l-34"></a><span class="tm">18:13:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, the original planning had more time at the end, but some MS slipped and then things were rescheduled and squeezed together.
+<a name="l-35"></a><span class="tm">18:14:21</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> I do not understand what "only bugfixes are included"
+<a name="l-36"></a><span class="tm">18:14:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> and as I understood it, coolo does not want the full freeze phase takes too long
+<a name="l-37"></a><span class="tm">18:14:31</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> should mean
+<a name="l-38"></a><span class="tm">18:15:08</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> infact bug reports do report problems
+<a name="l-39"></a><span class="tm">18:15:25</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> if fixes creates new problems
+<a name="l-40"></a><span class="tm">18:15:39</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> they may not be fixed then?
+<a name="l-41"></a><span class="tm">18:16:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> yep. but it is supposed to remain more stable than in full factory mode when every new (beta)version gets in
+<a name="l-42"></a><span class="tm">18:16:47</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> I agree that we do not put in new features at that time
+<a name="l-43"></a><span class="tm">18:16:54</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> but I think nobody requested
+<a name="l-44"></a><span class="tm">18:17:19</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> what we are worrying about is that bugs are not fixed or fixes causes new problems
+<a name="l-45"></a><span class="tm">18:17:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> I once calced that the shortest useful release-test-report-fix-cycle is three weeks.
+<a name="l-46"></a><span class="tm">18:19:09</span><span class="nk"> &lt;Holgi&gt;</span> I also have issues (intel graphics) that does not get fixed - as always, developer orders his bugs, renames it but do not fix anything
+<a name="l-47"></a><span class="tm">18:19:28</span><span class="nk"> &lt;LWFinger&gt;</span> The RC timing is a problem for the many testers that do not even start with a new release until RC1.
+<a name="l-48"></a><span class="tm">18:19:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> we had 3 weeks between Beta and RC1, which was good, but between RC1-RC2 and RC2-GM was very little time
+<a name="l-49"></a><span class="tm">18:19:48</span><span class="nk"> &lt;Holgi&gt;</span> bnc#732308
+<a name="l-50"></a><span class="tm">18:20:12</span><span class="nk"> &lt;Holgi&gt;</span> bug 732308
+<a name="l-51"></a><span class="tm">18:20:25</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">Holgi:</span> Despite your issues with i915, the KMS video drivers in 12.1 are much improved.
+<a name="l-52"></a><span class="tm">18:20:26</span><span class="nk"> &lt;Holgi&gt;</span> bugbot does not like me
+<a name="l-53"></a><span class="tm">18:20:55</span><span class="nk"> &lt;Holgi&gt;</span> also I have random crashed when waking up
+<a name="l-54"></a><span class="tm">18:21:00</span><span class="nk"> &lt;Holgi&gt;</span> not report yet
+<a name="l-55"></a><span class="tm">18:21:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> most of those could be upstream issues, and we don't always have enough developers on that... or maybe the bugs just don't get to the right people
+<a name="l-56"></a><span class="tm">18:22:22</span><span class="nk"> &lt;LWFinger&gt;</span> At least it seems to me that there are fewer complaints in the forums about graphics problems. For me, i915 (1 system) and nouveau (2 systems) both work.
+<a name="l-57"></a><span class="tm">18:23:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> what do you guys think, what we should do again or do better for 12.2? so more time between RCs would be #1
+<a name="l-58"></a><span class="tm">18:24:48</span><span class="nk"> &lt;Holgi&gt;</span> to be honest - I have no idea
+<a name="l-59"></a><span class="tm">18:25:10</span><span class="nk"> &lt;Holgi&gt;</span> maybe we should change the pizza event: instead pizza for testing we offer pizza for bug fixing
+<a name="l-60"></a><span class="tm">18:25:44</span><span class="nk"> &lt;LWFinger&gt;</span> I think 12.1 was better than 11.4, but that was mostly openQA, and the rest of us can only bask in the glory.
+<a name="l-61"></a><span class="tm">18:25:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, the fixing did take place, because more developers actually ran 12.1 and saw bugs
+<a name="l-62"></a><span class="tm">18:25:53</span><span class="nk"> &lt;Holgi&gt;</span> regarding upstream: I would expect that such a bug report would go to solution "UPSTREAM" then
+<a name="l-63"></a><span class="tm">18:26:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> but then people don't find the RESOLVED bug again
+<a name="l-64"></a><span class="tm">18:27:30</span><span class="nk"> &lt;Holgi&gt;</span> but what helps an open bug where nobody is working on, just collecting all the duplicates?
+<a name="l-65"></a><span class="tm">18:27:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> how hard is it to setup a better bugtracker for openSUSE?
+<a name="l-66"></a><span class="tm">18:28:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes, better open bugs, so that people see that it is known and still needs to be fixed.
+<a name="l-67"></a><span class="tm">18:28:11</span><span class="nk"> &lt;LWFinger&gt;</span> One thing that would help is to add the upstream developer to the bug report. For me, this happens with both Fedora and Ubuntu.
+<a name="l-68"></a><span class="tm">18:28:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> if those have bnc accounts...
+<a name="l-69"></a><span class="tm">18:29:17</span><span class="nk"> &lt;LWFinger&gt;</span> Why cannot we add a non-user E-mail address?
+<a name="l-70"></a><span class="tm">18:29:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> don't think we can.
+<a name="l-71"></a><span class="tm">18:29:52</span><span class="nk"> &lt;LWFinger&gt;</span> If the developer gets reports, they can always join later.
+<a name="l-72"></a><span class="tm">18:30:14</span><span class="nk"> &lt;LWFinger&gt;</span> Should we change that policy?
+<a name="l-73"></a><span class="tm">18:31:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> problem is, we have little control on bnc. =&gt; own bugtracker?
+<a name="l-74"></a><span class="tm">18:31:40</span><span class="nk"> &lt;LWFinger&gt;</span> Is it controlled by Novell now?
+<a name="l-75"></a><span class="tm">18:32:42</span><span class="nk"> &lt;Holgi&gt;</span> it is controlled by Novell still
+<a name="l-76"></a><span class="tm">18:33:36</span><span class="nk"> &lt;Holgi&gt;</span> but I don't think this is the problem - I think you can make the developer make himself an account by opensing a bug in upstream bug tracker and just add URL of our bug
+<a name="l-77"></a><span class="tm">18:34:08</span><span class="nk"> &lt;Holgi&gt;</span> most will be curious enough ;-)
+<a name="l-78"></a><span class="tm">18:34:41</span><span class="nk"> &lt;Holgi&gt;</span> but opensuse developer needs to do this, bug reporter usually don't know
+<a name="l-79"></a><span class="tm">18:34:58</span><span class="nk"> &lt;Holgi&gt;</span> if it's an opensuse problem or upstream problem
+<a name="l-80"></a><span class="tm">18:35:04</span><span class="nk"> &lt;LWFinger&gt;</span> Unfortunately, with bugzilla.kernel.org still down, there is no upstream bug tracker for kernel issues. Still, one can post to LKML.
+<a name="l-81"></a><span class="tm">18:35:34</span><span class="nk"> &lt;Holgi&gt;</span> for me it's hard to understand that this is taking so long
+<a name="l-82"></a><span class="tm">18:35:48</span><span class="nk"> &lt;Holgi&gt;</span> we have same problems with LSB test suite
+<a name="l-83"></a><span class="tm">18:35:53</span><span class="nk"> &lt;Holgi&gt;</span> server still down
+<a name="l-84"></a><span class="tm">18:36:42</span><span class="nk"> &lt;LWFinger&gt;</span> They are being very careful to check every piece so that the penetration point is not reopened.
+<a name="l-85"></a><span class="tm">18:37:31</span><span class="nk"> &lt;LWFinger&gt;</span> I even lost my account at kernel.org because I live far away from any other kernel dev and have no way to get my key signed.
+<a name="l-86"></a><span class="tm">18:38:02</span><span class="nk"> &lt;Holgi&gt;</span> where do you live?
+<a name="l-87"></a><span class="tm">18:38:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> Greg K-H offered to sign keys on conferences
+<a name="l-88"></a><span class="tm">18:38:17</span><span class="nk"> &lt;LWFinger&gt;</span> Kansas City, Missouri, USA.
+<a name="l-89"></a><span class="tm">18:38:41</span><span class="nk"> &lt;Holgi&gt;</span> I see
+<a name="l-90"></a><span class="tm">18:39:14</span><span class="nk"> &lt;LWFinger&gt;</span> As I no longer have an employer to pay, I no longer travel. If a conference comes to Kansas City or St. Louis, I'll go.
+<a name="l-91"></a><span class="tm">18:39:50</span><span class="nk"> &lt;Holgi&gt;</span> any plans for vacation already? ;-)
+<a name="l-92"></a><span class="tm">18:40:32</span><span class="nk"> &lt;LWFinger&gt;</span> If I tried to plan a vacation "to a conference", then it would cost me alimony.
+<a name="l-93"></a><span class="tm">18:40:47</span><span class="nk"> &lt;Holgi&gt;</span> LOL
+<a name="l-94"></a><span class="tm">18:41:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> can we get back on topic?
+<a name="l-95"></a><span class="tm">18:41:52</span><span class="nk"> &lt;Holgi&gt;</span> sure
+<a name="l-96"></a><span class="tm">18:42:18</span><span class="nk"> &lt;Holgi&gt;</span> regarding keys, I had issues with enigmail accessing key servers
+<a name="l-97"></a><span class="tm">18:42:35</span><span class="nk"> &lt;Holgi&gt;</span> but this is fixed (but not released yet)
+<a name="l-98"></a><span class="tm">18:42:55</span><span class="nk"> &lt;Holgi&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=733002
+<a name="l-99"></a><span class="tm">18:42:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> so opening bugs in upstream bugtrackers for upstream bugs, it certainly a good thing to do.
+<a name="l-100"></a><span class="tm">18:42:59</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 733002 in openSUSE 12.1 (Firefox) "Thunderbird/Enigmail is endless accessing PGP Keyserver" [Normal,Assigned]
+<a name="l-101"></a><span class="tm">18:43:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> or just linking our and their bug together
+<a name="l-102"></a><span class="tm">18:43:48</span><span class="nk"> &lt;LWFinger&gt;</span> Is the issue with Kmail fixed?
+<a name="l-103"></a><span class="tm">18:44:42</span><span class="nk"> &lt;Holgi&gt;</span> which exactly?
+<a name="l-104"></a><span class="tm">18:44:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> not sure. heard of a collegue having problems with migration to kmail2
+<a name="l-105"></a><span class="tm">18:45:43</span><span class="nk"> &lt;LWFinger&gt;</span> It seemed to cause a lot of traffic on the forum - I think it had to do with migrating old mail.
+<a name="l-106"></a><span class="tm">18:46:02</span><span class="nk"> &lt;Holgi&gt;</span> bugs to both problems are still open
+<a name="l-107"></a><span class="tm">18:46:26</span><span class="nk"> &lt;Holgi&gt;</span> e.a. https://bugzilla.novell.com/show_bug.cgi?id=728755
+<a name="l-108"></a><span class="tm">18:46:30</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 728755 in openSUSE 12.1 (KDE4 Applications) "KMail migration failure with 'Unable to fetch the resource collection'" [Critical,Assigned]
+<a name="l-109"></a><span class="tm">18:46:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> there are two workarounds on http://en.opensuse.org/openSUSE:Most_annoying_bugs_12.1
+<a name="l-110"></a><span class="tm">18:46:53</span><span class="nk"> &lt;Holgi&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=731558
+<a name="l-111"></a><span class="tm">18:46:57</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 731558 in openSUSE 12.1 (KDE4 Applications) "new kmail (and its other processes) use a lot of memory and cpu and runs pretty instable" [Critical,Needinfo]
+<a name="l-112"></a><span class="tm">18:47:41</span><span class="nk"> &lt;LWFinger&gt;</span> Another bug is https://bugzilla.novell.com/show_bug.cgi?id=732692
+<a name="l-113"></a><span class="tm">18:47:45</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 732692 in openSUSE 12.1 (KDE4 Applications) "KMail migration (moving data to mysql databases) stops quietly: "Synchronizing email folder inbox" never finishes, messages never show up." [Critical,New]
+<a name="l-114"></a><span class="tm">18:47:59 </span><span class="nka">* tigerfoot</span> <span class="ac">back</span>
+<a name="l-115"></a><span class="tm">18:48:36</span><span class="nk"> &lt;tigerfoot&gt;</span> I've some report of user trying to boot livecd or even netinstall on i3+optimus =  Initializing gfx code directly, they never see the boot menu
+<a name="l-116"></a><span class="tm">18:49:09</span><span class="nk"> &lt;Holgi&gt;</span> hi tigerfoot
+<a name="l-117"></a><span class="tm">18:49:11</span><span class="nk"> &lt;tigerfoot&gt;</span> don't know if there's a workaround for those of them that can't desactivate the optimus in bios
+<a name="l-118"></a><span class="tm">18:50:07 </span><span class="nka">* tigerfoot</span> <span class="ac">has read backlog ... bmwiedemann the idea to get a more longuer period between BETAS/RC sound really reasonable to me, but we need to convince coolo &amp; end-users</span>
+<a name="l-119"></a><span class="tm">18:51:03</span><span class="nk"> &lt;tigerfoot&gt;</span> bugzilla start to fill only after the release ... and now most of people are fixing 12.1 (yeah SP2 for sles too)  and it seems pretty much nobody care about factory
+<a name="l-120"></a><span class="tm">18:52:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> factory will only get interesting next year when MS1 gets closer
+<a name="l-121"></a><span class="tm">18:53:18</span><span class="nk"> &lt;tigerfoot&gt;</span> at least for me, I think the most stable version we have actually in 11.4, this is bad in a sense ... We always act as fixing in released, so in a sense we are never preparing the future
+<a name="l-122"></a><span class="tm">18:53:25</span><span class="nk"> &lt;LWFinger&gt;</span> I don't know how to get end-users to start testing earlier - I did not make a lot of friends on the forum by asking "What is the bug number".
+<a name="l-123"></a><span class="tm">18:53:31 </span><span class="nka">* tigerfoot</span> <span class="ac">opinion</span>
+<a name="l-124"></a><span class="tm">18:53:47</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">LWFinger:</span> :D
+<a name="l-125"></a><span class="tm">18:54:39</span><span class="nk"> &lt;tigerfoot&gt;</span> we need to market the fact that only feature that end-user have tested and reported have a chance to work. but that would also less last minutes changes
+<a name="l-126"></a><span class="tm">18:54:56</span><span class="nk"> &lt;tigerfoot&gt;</span> too much things has changed between B1 and RC2
+<a name="l-127"></a><span class="tm">18:55:16</span><span class="nk"> &lt;tigerfoot&gt;</span> was exactly the same with 11.3 &amp; 11.4
+<a name="l-128"></a><span class="tm">18:55:48 </span><span class="nka">* Holgi</span> <span class="ac">agrees</span>
+<a name="l-129"></a><span class="tm">18:55:59</span><span class="nk"> &lt;Holgi&gt;</span> just think about systemd
+<a name="l-130"></a><span class="tm">18:56:15</span><span class="nk"> &lt;LWFinger&gt;</span> And the same will be true for all future releases.
+<a name="l-131"></a><span class="tm">18:56:28</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">Holgi:</span> systemd was working in B1, then in release apache2 get not started, nor postfix etc ...
+<a name="l-132"></a><span class="tm">18:56:52</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">LWFinger:</span> in that case, we just loose the battle ...
+<a name="l-133"></a><span class="tm">18:56:52</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">tigerfoot:</span> but it was developed within beta cycle
+<a name="l-134"></a><span class="tm">18:57:16</span><span class="nk"> &lt;Holgi&gt;</span> as a solution we need a hard feature freeze deadline
+<a name="l-135"></a><span class="tm">18:57:36</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">Holgi:</span> I really would like that.
+<a name="l-136"></a><span class="tm">18:57:50</span><span class="nk"> &lt;LWFinger&gt;</span> I also had problems with systemd - at least there was a workaround with SystemV.
+<a name="l-137"></a><span class="tm">18:58:33</span><span class="nk"> &lt;Holgi&gt;</span> but to me it looks like, during milestone period things are happening that should usually happen during factory time
+<a name="l-138"></a><span class="tm">18:58:41</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">LWFinger:</span> I've followed all the systemd cycle, fight a lot during Mx, then get it working nicely in B1, then start to be junked after ...
+<a name="l-139"></a><span class="tm">18:58:55</span><span class="nk"> &lt;Holgi&gt;</span> during beta cycle things are happening that should happen during milestone time
+<a name="l-140"></a><span class="tm">18:59:10</span><span class="nk"> &lt;Holgi&gt;</span> and during rc period some things are happening from beta time
+<a name="l-141"></a><span class="tm">18:59:42</span><span class="nk"> &lt;tigerfoot&gt;</span> I don't know really if there's a solution ...
+<a name="l-142"></a><span class="tm">19:00:19</span><span class="nk"> &lt;tigerfoot&gt;</span> actually it also a bit a mess in obs, like rules changing all the time (once we have to build in -devel, now it's directly factory etc ... )
+<a name="l-143"></a><span class="tm">19:00:22</span><span class="nk"> &lt;LWFinger&gt;</span> Were those cases the result of bugs in fixes that should have been in B or RC?
+<a name="l-144"></a><span class="tm">19:00:42</span><span class="nk"> &lt;tigerfoot&gt;</span> some strict rules and schema of how we work has to be settle I think ...
+<a name="l-145"></a><span class="tm">19:01:16</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">LWFinger:</span> apache2 not starting was fixed between me &amp; fcrozat in August
+<a name="l-146"></a><span class="tm">19:01:42</span><span class="nk"> &lt;tigerfoot&gt;</span> now people have apache2 not starting by default if it is set on ...
+<a name="l-147"></a><span class="tm">19:02:08</span><span class="nk"> &lt;LWFinger&gt;</span> Why?
+<a name="l-148"></a><span class="tm">19:05:47</span><span class="nk"> &lt;LWFinger&gt;</span> Systemd has problems with NFS mounts when using wireless. After changing them to automount, all is good.
+<a name="l-149"></a><span class="tm">19:06:19</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">LWFinger:</span> when I try to run automount in yast2, it ask me to setup ldap :-) why I don't have
+<a name="l-150"></a><span class="tm">19:06:24</span><span class="nk"> &lt;tigerfoot&gt;</span> which
+<a name="l-151"></a><span class="tm">19:07:07</span><span class="nk"> &lt;LWFinger&gt;</span> I admit, I did it from the command line. I did not know that YaST could do it.
+<a name="l-152"></a><span class="tm">19:08:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> but how to make it better? I expect systemd to mature more during 12.2 cycle, so we will likely not see these problems again (but grub2 is coming ;)
+<a name="l-153"></a><span class="tm">19:09:45</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> for 12.2 what we really need is grub2 (or able to use efi, hdd &gt;3.5TB etc) + drakcut/plymouth so we can drop lot of shit that will goes wrong with systemd
+<a name="l-154"></a><span class="tm">19:10:03</span><span class="nk"> &lt;tigerfoot&gt;</span> I found systemd quite usefull, working great once setup correctly ...
+<a name="l-155"></a><span class="tm">19:10:31</span><span class="nk"> &lt;LWFinger&gt;</span> Yes, and I expect problems for those that dual-boot with Windows. Fortunately, not a problem for me.
+<a name="l-156"></a><span class="tm">19:10:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> can't grub2 chainload anymore?
+<a name="l-157"></a><span class="tm">19:10:54</span><span class="nk"> &lt;tigerfoot&gt;</span> There's a lot of report about crypt+systemd, that need to be fixed too (also how to make encryption with btrfs :-)
+<a name="l-158"></a><span class="tm">19:11:15</span><span class="nk"> &lt;LWFinger&gt;</span> I don't know the details, just what I have read.
+<a name="l-159"></a><span class="tm">19:12:18</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">tigerfoot:</span> There is a new systemd that is supposed to fix that.
+<a name="l-160"></a><span class="tm">19:12:54</span><span class="nk"> &lt;LWFinger&gt;</span> Any ideas when btrfs will get a proper fsck?
+<a name="l-161"></a><span class="tm">19:14:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> not this year
+<a name="l-162"></a><span class="tm">19:15:00</span><span class="nk"> &lt;LWFinger&gt;</span> I think that the btrfs option on the installation page should have a warning. The noobs are the ones modt likely to trash their fs.
+<a name="l-163"></a><span class="tm">19:15:22</span><span class="nk"> &lt;tigerfoot&gt;</span> :D
+<a name="l-164"></a><span class="tm">19:16:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> yep. it's dangerous
+<a name="l-165"></a><span class="tm">19:17:12</span><span class="nk"> &lt;LWFinger&gt;</span> I had one response to my newsletter item about this meeting. That user noted that the final graphics are usually one of the last things.
+<a name="l-166"></a><span class="tm">19:17:55</span><span class="nk"> &lt;LWFinger&gt;</span> He usually has many installs, and would like a change in graphics beginning with MS1.
+<a name="l-167"></a><span class="tm">19:18:21</span><span class="nk"> &lt;LWFinger&gt;</span> Would a color change, or something else that is easy be possible?
+<a name="l-168"></a><span class="tm">19:18:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> we want that in 12.2 MS1. I already have a great draft for fallback artwork :D
+<a name="l-169"></a><span class="tm">19:18:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://www.zq1.de/~bernhard/temp/Kroete1-122MS1v4.png
+<a name="l-170"></a><span class="tm">19:19:23</span><span class="nk"> &lt;LWFinger&gt;</span> That would certainly catch ones eye.
+<a name="l-171"></a><span class="tm">19:20:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> so hopefully, all 12.2 releases will look different than 12.1
+<a name="l-172"></a><span class="tm">19:22:03</span><span class="nk"> &lt;LWFinger&gt;</span> It is not a problem for me as my early testing is with VB, and I keep the VM machine labels up to date.
+<a name="l-173"></a><span class="tm">19:22:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> I use kvm a lot. and I guess, this will help avoid confusion in many places.
+<a name="l-174"></a><span class="tm">19:26:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> any other proposals what to improve or what to repeat?
+<a name="l-175"></a><span class="tm">19:28:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> then, we shall move to our next topic
+<a name="l-176"></a><span class="tm">19:29:01</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">tigerfoot:</span> It appears that the only support that YaST has for automount is with LDAP. That needs to be addressed. I use "direct mapping" for my mounts.
+<a name="l-177"></a><span class="tm">19:29:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">next meeting</span>
+<a name="l-178"></a><span class="tm">19:29:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> how about 2012-01-16 ?
+<a name="l-179"></a><span class="tm">19:30:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> should still be before MS1
+<a name="l-180"></a><span class="tm">19:30:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> or we meet afterwards, to have more to discuss
+<a name="l-181"></a><span class="tm">19:31:18</span><span class="nk"> &lt;LWFinger&gt;</span> One thing I would like to discuss is the makeup and the future of the TCT, but not today.
+<a name="l-182"></a><span class="tm">19:32:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes, I suppose, there are some things that could change
+<a name="l-183"></a><span class="tm">19:32:08</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> when in M1 ?
+<a name="l-184"></a><span class="tm">19:32:12</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> when is M1 ?
+<a name="l-185"></a><span class="tm">19:32:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> Roadmap is not out yet, but my guess is end of January
+<a name="l-186"></a><span class="tm">19:33:35</span><span class="nk"> &lt;Holgi&gt;</span> ok
+<a name="l-187"></a><span class="tm">19:33:45</span><span class="nk"> &lt;LWFinger&gt;</span> January 16 is OK with me.
+<a name="l-188"></a><span class="tm">19:34:19</span><span class="nk"> &lt;Holgi&gt;</span> for me as well
+<a name="l-189"></a><span class="tm">19:34:19</span><span class="nk"> &lt;tigerfoot&gt;</span> should work for me too
+<a name="l-190"></a><span class="tm">19:34:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. so we shall meet on 2012-01-16 18:00 UTC again
+<a name="l-191"></a><span class="tm">19:35:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-192"></a><span class="tm">19:36:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">will push to have different artwork in 12.2-MS1</span>
+<a name="l-193"></a><span class="tm">19:36:48</span><span class="nk"> &lt;LWFinger&gt;</span> I have been note taking on things to put in newsletter. At this point, I have (1)suggestions on how to get testers started earlier,
+<a name="l-194"></a><span class="tm">19:36:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">want to have more time between RCs (3 weeks)</span>
+<a name="l-195"></a><span class="tm">19:37:26</span><span class="nk"> &lt;LWFinger&gt;</span> How to get them to file bug reports, and (2) distinctive artworl early in release. Anything else?
+<a name="l-196"></a><span class="tm">19:38:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> sometimes, I had wished for a place, where I could simply drop some issue I stumbled upon when I didn't have time to file a bug... would need some people to monitor that and maybe try to reproduce &amp; file
+<a name="l-197"></a><span class="tm">19:39:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> firefox betas had an nice feedback button integrated for that
+<a name="l-198"></a><span class="tm">19:40:09</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> The forum for beta would be a good place for that kind of thing.
+<a name="l-199"></a><span class="tm">19:41:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> sometimes the forum was acting strange on me, though
+<a name="l-200"></a><span class="tm">19:41:43</span><span class="nk"> &lt;LWFinger&gt;</span> How so? I usually read it with NNTP, and rarely soo the web interface.
+<a name="l-201"></a><span class="tm">19:41:52</span><span class="nk"> &lt;LWFinger&gt;</span> s/soo/see/
+<a name="l-202"></a><span class="tm">19:42:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> I only read it in browser - and sometimes it wanted me to login and then again and again
+<a name="l-203"></a><span class="tm">19:42:39</span><span class="nk"> &lt;LWFinger&gt;</span> I think that is fixed now.
+<a name="l-204"></a><span class="tm">19:43:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> good :)
+<a name="l-205"></a><span class="tm">19:46:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> what ideas did you have to attract more people to test and file?
+<a name="l-206"></a><span class="tm">19:48:10</span><span class="nk"> &lt;LWFinger&gt;</span> I don't really have any. We need a good statement of what to do - most people don't file bugs, and too many start late in the cycle.
+<a name="l-207"></a><span class="tm">19:48:45</span><span class="nk"> &lt;LWFinger&gt;</span> It seems that changing to a Beta did not help.
+<a name="l-208"></a><span class="tm">19:49:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> so we should tell them more about what happens if too few people test
+<a name="l-209"></a><span class="tm">19:49:23</span><span class="nk"> &lt;LWFinger&gt;</span> Yes. :)
+<a name="l-210"></a><span class="tm">19:49:50</span><span class="nk"> &lt;LWFinger&gt;</span> One thing I did note - When Linus found a bug, it got fixed quickly.
+<a name="l-211"></a><span class="tm">19:50:03</span><span class="nk"> &lt;Holgi&gt;</span> LOL
+<a name="l-212"></a><span class="tm">19:50:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> for one he supplied a patch. that is easy to apply
+<a name="l-213"></a><span class="tm">19:50:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> but most reporters don't include a patch
+<a name="l-214"></a><span class="tm">19:51:15</span><span class="nk"> &lt;LWFinger&gt;</span> Which is why I always try to supply a patch for Linus's bugs, but I'm not usually successful.
+<a name="l-215"></a><span class="tm">19:51:37</span><span class="nk"> &lt;LWFinger&gt;</span> But then, I don't get that many chances.
+<a name="l-216"></a><span class="tm">19:54:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> fixing bugs quickly would be a good way to motivate testers (but it is not always possible)
+<a name="l-217"></a><span class="tm">19:55:16</span><span class="nk"> &lt;LWFinger&gt;</span> Having them fixed before GM should also motivate them.
+<a name="l-218"></a><span class="tm">19:56:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes. but fast feedback also feels nice. e.g. a "thanks for reporting this - I can reproduce it and will work on it as soon as possible" message would be nice sometimes
+<a name="l-219"></a><span class="tm">19:57:40</span><span class="nk"> &lt;LWFinger&gt;</span> Why does triage take so long?
+<a name="l-220"></a><span class="tm">19:58:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> a) because many bugs first go to screening team
+<a name="l-221"></a><span class="tm">19:59:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> b) because developers don't have comparable setup
+<a name="l-222"></a><span class="tm">19:59:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> or are busy at that time
+<a name="l-223"></a><span class="tm">20:01:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> or we organize more community members to watch the opensuse-bugs@opensuse.org ML
+<a name="l-224"></a><span class="tm">20:02:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> a CGI I once made could come in handy for those - it finds who should feel responsible for a package - e.g. VBox: http://aw.lsmod.de/cgi-bin/public/opensusemaintainer/virtualbox
+<a name="l-225"></a><span class="tm">20:04:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> once bugs get to the right person, they often move faster.
+<a name="l-226"></a><span class="tm">20:05:01</span><span class="nk"> &lt;LWFinger&gt;</span> I filed https://bugzilla.novell.com/show_bug.cgi?id=735695 on December 8. I got a reference to a fix on Gnome's bugzilla, but no action from oS yet.
+<a name="l-227"></a><span class="tm">20:05:05</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 735695 in openSUSE 12.1 (X11 Applications) "Totem crashes on start" [Normal,New]
+<a name="l-228"></a><span class="tm">20:07:08</span><span class="nk"> &lt;LWFinger&gt;</span> How do I tell who handles libcogl.so?
+<a name="l-229"></a><span class="tm">20:07:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> you could check the package name with rpm -qf
+<a name="l-230"></a><span class="tm">20:09:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> then see rpm -qi libcogl2 to find that the source was named cogl and then see on http://aw.lsmod.de/cgi-bin/public/opensusemaintainer/cogl that it doesn't have a maintainer, but gnome-maintainers could maybe help
+<a name="l-231"></a><span class="tm">20:10:34</span><span class="nk"> &lt;Hubba&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=733368 - filed 29/11 and does not look like anybody looked at it yet  - I am not too worried anymore as SLES11 SP2 is unaffected but does not really encourage logging of bugs
+<a name="l-232"></a><span class="tm">20:10:38</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 733368 in openSUSE 12.1 (Other) "on btrfs: running 'tar --sparse' corrupts ASCII files and turns them into binary format with all bits set to zero" [Major,New]
+<a name="l-233"></a><span class="tm">20:11:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Hubba:</span> could be upstream tar or btrfs bugs?
+<a name="l-234"></a><span class="tm">20:14:21</span><span class="nk"> &lt;Hubba&gt;</span> not sure - have not had the time to compare 12.1 and SLES11 SP2 versions of involved components - just thought I mention it anyway to highlight earlier comment about slow feedback on bugzilla. these days
+<a name="l-235"></a><span class="tm">20:17:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes, some more feedback would be good.
+<a name="l-236"></a><span class="tm">20:17:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> it appears, Jeff M. (one of our kernel guys) had trouble reproducing it on his 12.1 machine
+<a name="l-237"></a><span class="tm">20:19:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> I could probably add a test for tar --sparse to openQA.
+<a name="l-238"></a><span class="tm">20:20:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> anyone else has ideas to improve testing of 12.2?
+<a name="l-239"></a><span class="tm">20:22:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">devs/screening/triagers should provide faster and more feedback to bugreporters</span>
+<a name="l-240"></a><span class="tm">20:23:04</span><span class="nk"> &lt;Hubba&gt;</span> I have just reprouced the tar issue on another 12.1 box and on a factory build
+<a name="l-241"></a><span class="tm">20:24:42</span><span class="nk"> &lt;LWFinger&gt;</span> Do you have any other type of fs on which to test?
+<a name="l-242"></a><span class="tm">20:25:45</span><span class="nk"> &lt;Hubba&gt;</span> <span class="hi">LWFinger:</span> Have not been able to reproduce this on reiser
+<a name="l-243"></a><span class="tm">20:26:14</span><span class="nk"> &lt;LWFinger&gt;</span> So the problem is btrfs, and not tar.
+<a name="l-244"></a><span class="tm">20:27:54</span><span class="nk"> &lt;Hubba&gt;</span> <span class="hi">LWFinger:</span> I think it is the interaction of tar with the filesystem when the --sparse option is used but I am not an expert on how that works. - It only cropped up as I was doing testing of ReaR with btrfs which uses this option
+<a name="l-245"></a><span class="tm">20:30:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> what command do you use for decompression?
+<a name="l-246"></a><span class="tm">20:30:38</span><span class="nk"> &lt;LWFinger&gt;</span> The only thing I can suggest is that you send the link to the bug report to the maintainer of btrfs and to the appropriate ML. Chris Mason &lt;chris.mason@oracle.com&gt;, and linux-btrfs@vger.kernrl.org.
+<a name="l-247"></a><span class="tm">20:31:09</span><span class="nk"> &lt;Hubba&gt;</span> I did not use compression - just tar
+<a name="l-248"></a><span class="tm">20:32:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> it has a --gzip flag for the tar creation ;)
+<a name="l-249"></a><span class="tm">20:32:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> but what command do you use to "restore" the files from the tar?
+<a name="l-250"></a><span class="tm">20:33:03</span><span class="nk"> &lt;Hubba&gt;</span> just tar -xvf
+<a name="l-251"></a><span class="tm">20:34:59</span><span class="nk"> &lt;LWFinger&gt;</span> Is the --sparse needed for untarring?
+<a name="l-252"></a><span class="tm">20:36:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> the problem does not occur, when tarring from ext4 and untarring on btrfs. but happens when tarring on btrfs and untarring on ext - so the tar is already bad.
+<a name="l-253"></a><span class="tm">20:36:24</span><span class="nk"> &lt;Hubba&gt;</span> not that I know off and it does not make a difference - just tried it - I would not expect so as you never would know if somebody else has used that option in the first place
+<a name="l-254"></a><span class="tm">20:37:06</span><span class="nk"> &lt;Hubba&gt;</span> yes - I think you can also check  that the tar is bad with the --diff option
+<a name="l-255"></a><span class="tm">20:37:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> would be good to make a minimal reproducer from that
+<a name="l-256"></a><span class="tm">20:37:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> a two-line tar call is not so nice
+<a name="l-257"></a><span class="tm">20:38:09</span><span class="nk"> &lt;Hubba&gt;</span> I know but that is basically the line that ReaR uses internally
+<a name="l-258"></a><span class="tm">20:40:47</span><span class="nk"> &lt;LWFinger&gt;</span> Does it fail with tar --sparse zcvf /test.tar.gz   /etc
+<a name="l-259"></a><span class="tm">20:41:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes
+<a name="l-260"></a><span class="tm">20:41:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> even with tar --sparse -cf /test.tar /etc
+<a name="l-261"></a><span class="tm">20:42:21</span><span class="nk"> &lt;LWFinger&gt;</span> So, compression is not involved..
+<a name="l-262"></a><span class="tm">20:42:57</span><span class="nk"> &lt;LWFinger&gt;</span> That definitely should be passed on to the btrfs developers.
+<a name="l-263"></a><span class="tm">20:43:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> yep
+<a name="l-264"></a><span class="tm">20:44:02</span><span class="nk"> &lt;LWFinger&gt;</span> One more reason to not use btrfs. :)
+<a name="l-265"></a><span class="tm">20:44:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> anyway. let us end our meeting. we can still trace these bugs after it
+<a name="l-266"></a><span class="tm">20:45:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

@@ -1,0 +1,251 @@
+13:06:38 <wstephenson> #startmeeting
+13:06:38 <bugbot> Meeting started Tue Apr  3 13:06:38 2012 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+13:06:38 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+13:07:10 <wstephenson> llunak,llunak_,cb400f, sebas,tigerfoot,tittiatcoke, javier,javier_, remur_030,mrdocs, Abhish, alin, ctrippe, maxlin: meeting
+13:09:52 <wstephenson> agenda: status report, plasma-media-center, Q&A + misc
+13:09:53 <wstephenson> Linuxsusefan: meeting
+13:09:53 <wstephenson> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+13:09:53 <wstephenson> #topic status reports
+13:09:53 <wstephenson> so, where are we?
+13:09:53 <wstephenson> 4.8.2 is ready to go
+13:09:55 <wstephenson> Factory, and Tumbleweed, have 4.8.1
+13:09:56 <wstephenson> i think overall we're in a pretty good state
+13:09:58 <wstephenson> I have been working on Klyde as I mentioned last meeting
+13:09:58 <wstephenson> I have also been very lazy in documenting last meeting's progress
+13:09:58 <wstephenson> #action wstephenson blog about last meeting's decisions
+13:10:31 <wstephenson> basically for Klyde I have been doing some finer package splitting to allow a really basic install
+13:10:52 <tittiatcoke> is it the intention to push this into KDF ?
+13:11:01 <wstephenson> you can still install eg kmail, which will pull in akonadi and nepomuk and you are back to where we started with KDF
+13:11:02 <Linuxsusefan> wstephenson: yeah, 'm here
+13:11:18 <wstephenson> yes, that means we can push it into KDF, the updated dependencies will keep the default installation the same.
+13:11:25 <tittiatcoke> Ok
+13:11:58 <tittiatcoke> Sounds good.
+13:11:58 <wstephenson> the result so far is that a minimal default install consumes about 120MB of ram and starts in 4 seconds here (warm)
+13:12:07 <wstephenson> which is less than XFCE (but not faster)
+13:12:44 <Linuxsusefan> wstephenson: if you can not because anna, then the next time I ask for plasma-mediacenter ... no problem :-)
+13:12:44 <wstephenson> IMO this is mainly performance pornography so far, not a real improvement
+13:12:52 <einar77> wstephenson: what's in the minimal default?
+13:12:53 <wstephenson> for that i would like more speed
+13:13:12 <wstephenson> einar77: no compositing, no oxygen, no PNM, otherwise default widgets
+13:13:43 <wstephenson> having said that i am only testing on a 2MB VM in a core i7
+13:13:48 <wstephenson> 2GB
+13:14:03 <wstephenson> i suspect that on a smaller machine the smaller footprint will make more difference
+13:14:22 <wstephenson> the packages are in home:wstephenson:branches:klyde
+13:14:29 <wstephenson> which also contains a pattern KDE4-KLYDE
+13:14:44 <einar77> wstephenson: I have a very low end machine, if I bring myself to reinstall it (again!) I coult see if it makes a difference
+13:14:52 <wstephenson> and these can be installed on top of 12.1's minimal x server pattern to get the basic desktop
+13:15:01 <wstephenson> (use zypper in -t package --no-recommends)
+13:15:12 <wstephenson> einar77: i have some HP netbooks with stoneage SSDs
+13:15:29 <wstephenson> EOT from me
+13:15:31 <wstephenson> more status
+13:15:33 <wstephenson> ?
+13:16:10 <rabauke> findings from last time action items?
+13:16:19 <tittiatcoke> I still have to find the time to copy the KDF packages over to KUSC, so that dirk can start with the snapshots. Hopefully I will find some time this week. I have been more working on plymouth.
+13:16:20 <wstephenson> oh BTW: ismael and I are travelling to "more interesting and innovative events" this year, and not going to linuxtag
+13:17:28 <wstephenson> rabauke: i still need to ping the data collectors on 12.2
+13:17:34 <wstephenson> will do that today and report tomorrow
+13:18:17 <wstephenson> #chair tittiatcoke
+13:18:17 <bugbot> Current chairs: tittiatcoke wstephenson
+13:18:23 * wstephenson has to step out for a child related minute
+13:18:29 <tittiatcoke> :-)
+13:18:29 <wstephenson> tittiatcoke, pls continue
+13:18:32 <tittiatcoke> Ok
+13:19:30 <tittiatcoke> any more status reports ?  einar77, cartman ?
+13:19:54 <einar77> tittiatcoke: I tried to dig in the
+13:20:01 <einar77> issue wrt LD_BIND_NOW and startkde crashing
+13:20:18 <einar77> so far the current glibc (AJaeger is testing a few things) doesn't solve the issue for me
+13:20:40 <tittiatcoke> I saw cartman's report on the new glibc and it seems to have some more issues as well
+13:20:59 <cartman> yeah aj is debugging it
+13:21:06 <einar77> from what I read on the KDE forums, it's very oS specific
+13:21:11 <einar77> (the current issue, at least)
+13:21:31 <einar77> I recommend the interested parties to
+13:21:45 <rabauke> I looked through the mailing list archives and found the following issues people had: not being able to set privileges, how to kedpim from scratch, unresponsiveness due to pnm+apper, mail search not working, no clue how to search with nepomuk, repo updates not working, i.e. deps or "cannot login", python plasmoids not working because python.-devel has to be installed, kmail autocompletion not working, how do I sync google calendar,
+13:21:45 <tittiatcoke> But do other distro's also use that particular setting for LD_BIND_NOW ?
+13:21:46 <rabauke> passwordless updates, gtk apps look bad.
+13:22:09 <einar77> tittiatcoke: it's upstream, it's our glibc that makes kdeinit crash
+13:22:09 <wstephenson> einar77: has ajaeger got a way to reproduce it locally?
+13:22:29 <einar77> wstephenson: so far no, the only clue is that the machines here have less than sse3
+13:22:33 <wstephenson> tittiatcoke: LD_BIND_NOW=1 is the upstream default
+13:22:33 <einar77> as cpu instruction set
+13:22:39 <wstephenson> tittiatcoke: it enabled kdeinit's performance boost
+13:22:43 <tittiatcoke> Ok.
+13:22:53 <einar77> I see it here on 2 intel core 2 duo, but not at work where I have an i7
+13:22:59 <wstephenson> tittiatcoke: and it typically exposes glibc bugs because it links everything and shows up symbol clashes
+13:23:08 <wstephenson> s/enabled/enables/
+13:23:35 <einar77> rabauke: most of the unresponsivenesss in pnm/apper was already fixed upstream, though (not sure if it trickled down to us yet)
+13:23:39 <krop> status: koffice is gone, calligra was accepted in O:F, akonadi-google is in KDF (akonadi-googledata will be gone soon®)
+13:23:56 <wstephenson> rabauke, krop: good work. i'll write that up
+13:25:24 <krop> and we got our first calligra bug report
+13:25:39 <tittiatcoke> wstephenson: I will update apper to the latest git snapshot ?
+13:25:48 <wstephenson> tittiatcoke: yes please
+13:26:07 <tittiatcoke> #action tittiatcoke to update apper to the latest version
+13:26:39 <tittiatcoke> is anybody running PNM from git ?
+13:26:55 <einar77> I am
+13:27:08 <tittiatcoke> einar77: from my repo, I guess ?
+13:27:12 <einar77> correct
+13:27:21 <wstephenson> einar77: any kded/plasma slowdowns
+13:27:23 <wstephenson> ?
+13:27:28 <einar77> wstephenson: not in al ong time
+13:27:48 <wstephenson> cool
+13:27:59 <wstephenson> cartman, what have you been up to?
+13:28:05 <wstephenson> maxlin: same question
+13:28:20 <einar77> wstephenson: to be more precise, in the past 3 months, I think once, in a very non-reproducible way
+13:28:29 <einar77> (i.e. I cannot be sure it was kded)
+13:28:31 <cartman> wstephenson: got apper working with appdata.xml stuff, screenshots done, description is done, working on getting categories
+13:28:43 <wstephenson> einar77: are you switching wlans, using 3G?
+13:29:01 <tittiatcoke> wstephenson: the latest PNM has a bug with regards ot Qt 4.8. However seems not 100% reproducable:  https://bugs.kde.org/show_bug.cgi?id=293731.
+13:29:03 <bugbot> KDE bug 293731 in Network Management (KDED Module) "NetworkManagement plasmoid causes kded4 crashes when activating network" [Crash,Assigned: ]
+13:29:04 <einar77> wstephenson: sadly I'm on wired ;) I did need to switch over alternative IPs to fix a router, though
+13:29:25 <wstephenson> einar77: ok. we'll need more thorough testing to be sure it's fixed
+13:29:26 <tittiatcoke> wstephenson: I am using the latest PNM with WLAN's, 3G usb stick.
+13:29:43 <wstephenson> under non-deterministic in the dictionary it says "See NetworkManager"
+13:30:37 <wstephenson> cartman: assuming i can pull myself away from my kdieting addiction, i'll look at reintegrating the OCS stuff that mateu batle did at the sprint
+13:31:47 <maxlin> wstephenson: except work on KDF, didn't do much things relate to KDE, sorry
+13:31:52 <cartman> wstephenson: cool, we'll have to redesign the frontpage I guess though.
+13:32:08 <maxlin> wstephenson: but I have following cartman's apper branch
+13:32:12 <wstephenson> maxlin: ok
+13:32:30 <wstephenson> cartman: yes, the frontpage of the brezn client was ugly QML and not really usable
+13:33:00 <maxlin> cartman: a question, in package details page, when you click thumbnail then screenshot window pop-up?
+13:35:08 <wstephenson> maxlin: can you sort that out with cartman offline?
+13:35:09 <rabauke> what about the mail loss bugs. did anyone try to reproduce?
+13:35:15 <wstephenson> rabauke: not yet
+13:35:22 <wstephenson> enough status then
+13:35:37 <maxlin> wstephenson: sure, sorry ;p
+13:35:37 <wstephenson> #topic plasma-media-center
+13:35:43 <wstephenson> Linuxsusefan: your turn
+13:35:48 <Linuxsusefan> Bille said yesterday, I should ask at the meeting: I wanted to know if the person Package: plasma-media center in K: U: P can update? has appeared for the beta. Perhaps there is even the chance the plasma-media center in the factory and 12.2 emigrated?
+13:36:25 <Linuxsusefan> see here the link from project: http://www.sinny.in/node/18
+13:36:52 <einar77> IIRC, it depends on qtmobility or something, am I mistaken?
+13:37:12 * krop doesn't understand the question
+13:37:27 <tittiatcoke> einar77: As far as I can tell from the specfile in KUP, it has normal dependencies
+13:37:29 <einar77> let me reword, are the dependencies for PMC already in?
+13:37:30 <Linuxsusefan> desktop or laptop is also running
+13:37:49 <krop> einar77: I've no idea who added it
+13:37:52 <tittiatcoke> einar77: Just workspace, taglib, phonon and gstreamer
+13:38:21 <wstephenson> i thought it had Active dependencies?
+13:38:23 <tittiatcoke> it is maintained by TheBlackCat.  I just triggered a source update.
+13:38:50 <tittiatcoke> Not seen from the spec-file.
+13:38:59 <einar77> wstephenson: at best it would use components, I think, but I haven't looked
+13:39:11 <einar77> (as in plasma components)
+13:39:25 <wstephenson> gotcha
+13:39:33 <tittiatcoke> checking the indicated link now.
+13:39:51 <wstephenson> Linuxsusefan: we'll find out if the latest version builds
+13:40:00 <einar77> I wasn't mistaken
+13:40:06 <einar77> it requries qtmultimediakit
+13:40:11 <einar77> hence qt-mobility
+13:40:12 <tittiatcoke> einar77:  PMC relies on Plasma Active’s Metadata Models
+13:40:17 <wstephenson> Linuxsusefan: if it has dependencies on plasma active, we would have to package those packages separately
+13:40:17 <einar77> and also wstephenson was right
+13:40:23 <einar77> I just checked their README
+13:40:24 <Linuxsusefan> wstephenson: I will ask blackcat?
+13:40:40 <einar77> for reference: https://projects.kde.org/projects/playground/multimedia/plasma-mediacenter/repository/revisions/master/entry/README
+13:40:42 <wstephenson> and because those are not compatible with our normal KDE packages, we would have to do a separate image with them
+13:40:47 <wstephenson> (what kubuntu are doing for PA)
+13:41:04 <wstephenson> I'm not sure if that is useful except as a PR exercise
+13:41:08 <tittiatcoke> Linuxsusefan: I will track the build and see how I can resolve it :-)
+13:41:28 <wstephenson> tittiatcoke: more bleeding edge stuff
+13:41:40 <Linuxsusefan> tittiatcoke: OK, very thanks
+13:41:40 <tittiatcoke> wstephenson: You know that I love bleeding edge stuff :-)
+13:42:08 <wstephenson> cartman: OT: can you try and ping dirk again so the release can happen?
+13:42:31 <Linuxsusefan> tittiatcoke: many, very thanks .... sorry, english is not my best ;-)
+13:42:43 <tittiatcoke> Linuxsusefan: No problem.
+13:43:04 <tittiatcoke> einar77: Seems that the source is building fine without qt-mobility, qtmultimedia and Active.
+13:43:47 <wstephenson> i wonder if it's functional
+13:44:14 <wstephenson> Linuxsusefan: can you work with titti, theblackcat etc to test it? run it in a vm and see what it does
+13:44:19 <tittiatcoke> Me too :-) Unfortunately the build complains about a missing icon in the desktopfile, but I will check it
+13:44:26 <Linuxsusefan> wstephenson: yep
+13:44:35 <wstephenson> ok, topic finished?
+13:44:58 <tittiatcoke> guess so :-)
+13:45:06 <wstephenson> any more topics?
+13:45:13 <wstephenson> (not on the agenda?)
+13:45:29 <rabauke> shall we have HUD as a showoff in 12.2?
+13:45:36 <tittiatcoke> HUD ?
+13:45:39 <rabauke> aka appmenu
+13:45:54 <tittiatcoke> rabauke: which appmenu ? The appmenu-qml from kde-looks.org ?
+13:46:05 <rabauke> type "save" in krunner and it shows you all actions with "save" from opened apps.
+13:46:34 <cartman> wstephenson: ok Dirk will review the last minute patches and will release tomorrow
+13:46:43 <wstephenson> bah, wrong answer!
+13:46:49 <tittiatcoke> :-)
+13:46:49 <cartman> he might re-roll tarballs.
+13:46:50 <wstephenson> rabauke: i like appmenu
+13:47:11 <rabauke> http://www.afiestas.org/appmenu-runner-meet-the-kde-hud/
+13:47:14 <krop> rabauke: the appmenu code is not even in playground
+13:47:22 <wstephenson> rabauke: not sure about the HUD runner though
+13:47:28 <wstephenson> it's a nice toy to have
+13:47:41 <wstephenson> #topic Q&A, Misc
+13:48:07 <rabauke> I could not get it to run, i.e. it did not show anything in krunner. but if it worked it would be something special
+13:48:24 <wstephenson> rabauke: i'd like to be able to have the menubar applet and appmenu as an activity template in 12.1
+13:48:26 <wstephenson> 12.2
+13:48:30 <wstephenson> it's not hard to do
+13:49:03 <rabauke> sounds like soemthing which people might like
+13:50:01 <rabauke> also, beclock by default to show off? with the right defaults it even fades way if the mouse moves towards it and it looks kool + is useful
+13:50:42 <rabauke> since it's an effect it can easily be switched off
+13:50:58 <wstephenson> rabauke: in general i'm conservative about tweaking the defaults, unless we do a big design job and change them all
+13:51:11 <wstephenson> rabauke: we have it-s on the team @suse to consult on things like that though
+13:52:22 <rabauke> it's only one change to make the clock disappear if one wants to click on something it covers.
+13:53:10 <rabauke> imho it is something unique to kde, useful, easy to disable and does not add much baggage to the kde repo.
+13:53:12 <Linuxsusefan> tittiatcoke: wow, you're fast .... the spec is already there. Hats off!
+13:53:17 <wstephenson> i haven't seen it first hand
+13:53:36 <rabauke> wstephenson: you can install it from extra. I've been using it for some months now.
+13:53:42 <tittiatcoke> Linuxsusefan: But it will not work. QtMultiMedia is a runtime requirement
+13:53:55 <Linuxsusefan> tittiatcoke: ok ...
+13:54:00 <rabauke> onyl thing I would change (default) is the mentioned "fade away on mouse over".
+13:55:29 <rabauke> another thing for 12.2. the greeter. I think it should have some useful docu for kdepim from scratch etc.
+13:56:01 <wstephenson> rabauke: the greeter needs a proper rework
+13:56:19 <wstephenson> and as usual it will get ignored until it's too late
+13:56:24 <rabauke> wstephenson: only if that does not hinder putting some content on the desktop. :)
+13:56:27 <wstephenson> #action add greeter to 12.2 features
+13:56:40 <rabauke> better to have some dimple "text" than the old useless greeter
+13:56:41 <wstephenson> #action wstephenson evaluate beclock
+13:57:52 <rabauke> and if not within the greeter, put a link into the release notes that points to the wiki and we put the info on how to get started/migrate kmail there
+13:58:31 <wstephenson> nice effect...
+13:58:36 <wstephenson> rabauke: yes
+13:58:46 <rabauke> and is google data installed by default?
+13:59:05 <rabauke> maybe it should, i.e. people see it while browsing the lsit of available resources
+13:59:17 <wstephenson> rabauke: perhaps
+13:59:57 <wstephenson> #action rabauke evaluate akonadi-google (not -googledata) for default install
+14:00:00 <wstephenson> so
+14:00:09 <wstephenson> what else did i want to discuss
+14:00:43 <wstephenson> can't remember now
+14:01:06 <wstephenson> ok to wrap up?
+14:01:31 <Fisiu> Hi, I just joined few minutes ago, I don't know agenda, Q/A time will be soon? :)
+14:01:40 <einar77> Fisiu: it is now I think
+14:02:31 <Fisiu> if so, I'd like to ask about subpixel hinting in KDE/Qt 4.8
+14:02:38 <tittiatcoke> Fisiu: go ahead
+14:03:11 <Fisiu> because there is a huge difference in look between KDE/Qt 4.7 and 4.8
+14:03:43 <Fisiu> not sure, it's a bug or a feature
+14:03:51 <cartman> Fisiu: Qt 4.8 introduced subpixel positioning
+14:04:09 * wstephenson did not know that
+14:04:21 * cartman loves good fonts
+14:04:55 <Fisiu> cartman: do You also use freetype with subpixel enabled?
+14:05:40 <cartman> Fisiu: home:namtrac:subpixel
+14:05:44 <wstephenson> is that the freetype with subpixel from the opensuse communities repo? or is that in upstream now?
+14:05:49 <wstephenson> what's the difference?
+14:05:57 <rigo> I wanted to ask about the broken address completion in kmail2/akonadi and whether there are plans to backport the fix
+14:06:12 <einar77> rigo: as I said, it's already fixed in 4.9
+14:06:24 <einar77> (to-be-4.9 rather)
+14:06:41 <cartman> wstephenson: well you could just enable subpixel rendering in Freetype and it would improve much but home:namtrac:subpixel includes "infinality" patches, see http://www.infinality.net/blog/
+14:06:43 <wstephenson> einar77, krop: probably backportable?
+14:06:55 <wstephenson> okay, will check out
+14:07:03 <einar77> wstephenson: I am not sure it is backportable, that's the issue, I have no idea how invasive the change is
+14:07:08 <rigo> einar77, yes, exactly, that's why I asked for "backports" to the things that will be used for 12.2 or KR48 or something that I can upgrade to
+14:07:12 <krop> wstephenson: I think
+14:07:22 <Fisiu> community repo with subpixel doesn't use "infinality" patches
+14:07:24 <wstephenson> oh, news item, i'll be offline from this thursday to monday, easter you know.
+14:07:29 <wstephenson> ic
+14:08:02 <einar77> Fisiu: infinality works best with non-Free fonts though
+14:08:12 <Fisiu> I thing "infinality" patches require additional fontconfig setup
+14:08:19 <cartman> Fisiu: just install :)
+14:08:32 * rigo uses subpixel hinting with no trouble so far, but also with not really visible improvement
+14:09:01 <Fisiu> cartman: which packages should I update from home:namtrac:subpixel?
+14:09:27 <einar77> wstephenson: about the completion, I tihnk it needs a newer akonadi release
+14:09:47 <cartman> Fisiu: dup --from subpixel
+14:10:10 <wstephenson> ok, not really OT for the meeting
+14:10:13 <wstephenson> so i will wrap up
+14:10:19 <wstephenson> OnT ^
+14:10:22 <tittiatcoke> Ok
+14:10:24 <wstephenson> 3
+14:10:26 <wstephenson> 2
+14:10:28 <wstephenson> 1
+14:10:30 <Fisiu> ok, I give a try with namtrac repo
+14:10:41 <wstephenson> #endmeeting

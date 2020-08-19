@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:03:32</span><span class="nk"> &lt;Holgi&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:03:32</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon May  9 17:03:32 2011 UTC.  The chair is Holgi. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:03:32</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:04:16</span><span class="nk"> &lt;Holgi&gt;</span> original topic was "MS1 experience (if available)"
+<a name="l-5"></a><span class="tm">17:04:39</span><span class="nk"> &lt;LWFinger&gt;</span> That won't take long. :)
+<a name="l-6"></a><span class="tm">17:04:47</span><span class="nk"> &lt;Holgi&gt;</span> right
+<a name="l-7"></a><span class="tm">17:05:17</span><span class="nk"> &lt;Holgi&gt;</span> so what else do we want to talk about
+<a name="l-8"></a><span class="tm">17:05:49</span><span class="nk"> &lt;jradzuweit&gt;</span> hi everybody
+<a name="l-9"></a><span class="tm">17:06:10</span><span class="nk"> &lt;LWFinger&gt;</span> I have nothing. I took the time off to work on wireless drivers.
+<a name="l-10"></a><span class="tm">17:06:27</span><span class="nk"> &lt;Holgi&gt;</span> hi juergen
+<a name="l-11"></a><span class="tm">17:06:32</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">jradzuweit:</span> Hi.
+<a name="l-12"></a><span class="tm">17:06:53</span><span class="nk"> &lt;Holgi&gt;</span> <span class="topic">#topic </span><span class="topicline">Prepare 12.1 Testing</span>
+<a name="l-13"></a><span class="tm">17:07:10</span><span class="nk"> &lt;Holgi&gt;</span> ok, for 11.3 we had a feature testplan
+<a name="l-14"></a><span class="tm">17:07:16</span><span class="nk"> &lt;Holgi&gt;</span> and some other test plans
+<a name="l-15"></a><span class="tm">17:07:26</span><span class="nk"> &lt;Holgi&gt;</span> we did not have any testplans for 11.4
+<a name="l-16"></a><span class="tm">17:07:32</span><span class="nk"> &lt;Holgi&gt;</span> so my questions is:
+<a name="l-17"></a><span class="tm">17:07:56</span><span class="nk"> &lt;Holgi&gt;</span> for 12.1, do we want to create test plans and if yes, which?
+<a name="l-18"></a><span class="tm">17:08:30</span><span class="nk"> &lt;jradzuweit&gt;</span> does someone used the test plans?
+<a name="l-19"></a><span class="tm">17:08:37</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">Holgi:</span> Are the new features for 12.1 published somewhere?
+<a name="l-20"></a><span class="tm">17:09:19</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> yes, at features.opensuse.org
+<a name="l-21"></a><span class="tm">17:09:59</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> 3 features so far
+<a name="l-22"></a><span class="tm">17:10:04</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> for 12.1
+<a name="l-23"></a><span class="tm">17:10:41</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> but there are a lot of open features from 11.4
+<a name="l-24"></a><span class="tm">17:11:19</span><span class="nk"> &lt;LWFinger&gt;</span> Obviously, the new features need the most testing.
+<a name="l-25"></a><span class="tm">17:11:46</span><span class="nk"> &lt;LWFinger&gt;</span> A testplan for those make sense.
+<a name="l-26"></a><span class="tm">17:12:53</span><span class="nk"> &lt;LWFinger&gt;</span> I know Gnome 3 is in the works, and 12.1 will likely get gcc 4.6.0 - both of those will gete lots of testing.
+<a name="l-27"></a><span class="tm">17:14:03</span><span class="nk"> &lt;LWFinger&gt;</span> Has a kernel version been selected?
+<a name="l-28"></a><span class="tm">17:14:59</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> I don't know
+<a name="l-29"></a><span class="tm">17:15:30</span><span class="nk"> &lt;Holgi&gt;</span> any more opinions regarding test plans?
+<a name="l-30"></a><span class="tm">17:16:01</span><span class="nk"> &lt;jradzuweit&gt;</span> no
+<a name="l-31"></a><span class="tm">17:16:19</span><span class="nk"> &lt;Holgi&gt;</span> ok
+<a name="l-32"></a><span class="tm">17:17:13</span><span class="nk"> &lt;Holgi&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">We need a Feature Test Plan for 12.1 testing</span>
+<a name="l-33"></a><span class="tm">17:17:45</span><span class="nk"> &lt;Holgi&gt;</span> anything more to prepare for 12.1 testing?
+<a name="l-34"></a><span class="tm">17:19:25</span><span class="nk"> &lt;Holgi&gt;</span> ok
+<a name="l-35"></a><span class="tm">17:19:31</span><span class="nk"> &lt;LWFinger&gt;</span> I see that openQA reports pretty good success with builds.
+<a name="l-36"></a><span class="tm">17:20:12</span><span class="nk"> &lt;LWFinger&gt;</span> That usually happens with M1 and then gets worse as new features come it, then gets better by M4 or 5.
+<a name="l-37"></a><span class="tm">17:20:46</span><span class="nk"> &lt;LWFinger&gt;</span> In other words, M1 might not be that important.
+<a name="l-38"></a><span class="tm">17:20:51</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> right, quite often there is not much new stuff checked in in M1
+<a name="l-39"></a><span class="tm">17:23:44</span><span class="nk"> &lt;LWFinger&gt;</span> I have a different question. Should we be testing Tumbleweed?
+<a name="l-40"></a><span class="tm">17:24:07</span><span class="nk"> &lt;Holgi&gt;</span> <span class="topic">#topic </span><span class="topicline">Should we be testing Tumbleweed?</span>
+<a name="l-41"></a><span class="tm">17:24:38</span><span class="nk"> &lt;Holgi&gt;</span> I guess it's a question of available resources
+<a name="l-42"></a><span class="tm">17:24:48</span><span class="nk"> &lt;LWFinger&gt;</span> Anyone here using it? I am not.
+<a name="l-43"></a><span class="tm">17:25:00</span><span class="nk"> &lt;jradzuweit&gt;</span> me neither
+<a name="l-44"></a><span class="tm">17:25:05 </span><span class="nka">* Holgi</span> <span class="ac">not</span>
+<a name="l-45"></a><span class="tm">17:25:24</span><span class="nk"> &lt;LWFinger&gt;</span> I guess that is the answer.
+<a name="l-46"></a><span class="tm">17:25:26</span><span class="nk"> &lt;jradzuweit&gt;</span> and how does it impact 12.1
+<a name="l-47"></a><span class="tm">17:26:24</span><span class="nk"> &lt;jradzuweit&gt;</span> I think makes more sence to stick with the "regular" release
+<a name="l-48"></a><span class="tm">17:26:25</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">jradzuweit:</span> I guess that most of the tumbleweed stuff goes into the new release (12.1) as well
+<a name="l-49"></a><span class="tm">17:26:25</span><span class="nk"> &lt;LWFinger&gt;</span> The only indirect part is that some things from Factory go to Tumbleweed.
+<a name="l-50"></a><span class="tm">17:27:36</span><span class="nk"> &lt;LWFinger&gt;</span> I'm busy enough without testing Tumbleweed, but the question needed to be asked.
+<a name="l-51"></a><span class="tm">17:27:54</span><span class="nk"> &lt;jradzuweit&gt;</span> and what about evergreen?
+<a name="l-52"></a><span class="tm">17:28:49</span><span class="nk"> &lt;LWFinger&gt;</span> My interest is with newer kernels. Doesn't evergreen stay with old ones?
+<a name="l-53"></a><span class="tm">17:29:40</span><span class="nk"> &lt;jradzuweit&gt;</span> yes
+<a name="l-54"></a><span class="tm">17:31:00</span><span class="nk"> &lt;Holgi&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">noboby of us is using it -&gt; no</span>
+<a name="l-55"></a><span class="tm">17:31:09</span><span class="nk"> &lt;Holgi&gt;</span> <span class="topic">#topic </span><span class="topicline">Should we be testing Evergreen?</span>
+<a name="l-56"></a><span class="tm">17:31:38</span><span class="nk"> &lt;jradzuweit&gt;</span> I don't think so
+<a name="l-57"></a><span class="tm">17:32:16</span><span class="nk"> &lt;Holgi&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">no</span>
+<a name="l-58"></a><span class="tm">17:32:32</span><span class="nk"> &lt;Holgi&gt;</span> <span class="topic">#topic </span><span class="topicline">Next Meeting</span>
+<a name="l-59"></a><span class="tm">17:32:42</span><span class="nk"> &lt;Holgi&gt;</span> when should we have our next meeting?
+<a name="l-60"></a><span class="tm">17:33:04</span><span class="nk"> &lt;Holgi&gt;</span> May 23rd would be the usual schedule
+<a name="l-61"></a><span class="tm">17:33:05</span><span class="nk"> &lt;LWFinger&gt;</span> On the Monday following the release of M1.
+<a name="l-62"></a><span class="tm">17:33:45</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> didn't we put in a week to allow of everybody to test it
+<a name="l-63"></a><span class="tm">17:33:52</span><span class="nk"> &lt;Holgi&gt;</span> ?
+<a name="l-64"></a><span class="tm">17:33:57 </span><span class="nka">* Holgi</span> <span class="ac">is not sure</span>
+<a name="l-65"></a><span class="tm">17:34:15</span><span class="nk"> &lt;jradzuweit&gt;</span> yes, one week
+<a name="l-66"></a><span class="tm">17:34:18</span><span class="nk"> &lt;Holgi&gt;</span> monday after release would be next Monday
+<a name="l-67"></a><span class="tm">17:34:41</span><span class="nk"> &lt;Holgi&gt;</span> hi ReferenceSeete
+<a name="l-68"></a><span class="tm">17:34:46</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Hello
+<a name="l-69"></a><span class="tm">17:34:48</span><span class="nk"> &lt;LWFinger&gt;</span> OK. I don't think M1 will make next week.
+<a name="l-70"></a><span class="tm">17:35:02</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> if it is on time ;-)
+<a name="l-71"></a><span class="tm">17:35:12</span><span class="nk"> &lt;Holgi&gt;</span> ok, so next Monday or on 23rd?
+<a name="l-72"></a><span class="tm">17:35:28</span><span class="nk"> &lt;LWFinger&gt;</span> I will not be available on May 30.
+<a name="l-73"></a><span class="tm">17:35:57</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> ok, that means: 23rd
+<a name="l-74"></a><span class="tm">17:36:04</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-75"></a><span class="tm">17:36:08</span><span class="nk"> &lt;jradzuweit&gt;</span> ok
+<a name="l-76"></a><span class="tm">17:36:13</span><span class="nk"> &lt;Holgi&gt;</span> good
+<a name="l-77"></a><span class="tm">17:36:29</span><span class="nk"> &lt;Holgi&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">Next meeting on May, 23rd</span>
+<a name="l-78"></a><span class="tm">17:36:38</span><span class="nk"> &lt;Holgi&gt;</span> anything more?
+<a name="l-79"></a><span class="tm">17:36:48</span><span class="nk"> &lt;LWFinger&gt;</span> Not here.
+<a name="l-80"></a><span class="tm">17:36:52</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">ReferenceSeete:</span> any input from you?
+<a name="l-81"></a><span class="tm">17:37:17</span><span class="nk"> &lt;ReferenceSeete&gt;</span> No, I'm just very sorry to have missed the meeting.
+<a name="l-82"></a><span class="tm">17:37:43</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">ReferenceSeete:</span> no worries
+<a name="l-83"></a><span class="tm">17:37:49</span><span class="nk"> &lt;Holgi&gt;</span> ok, then I think we are done
+<a name="l-84"></a><span class="tm">17:37:58</span><span class="nk"> &lt;Holgi&gt;</span> thanks to everybody for attending
+<a name="l-85"></a><span class="tm">17:38:08</span><span class="nk"> &lt;jradzuweit&gt;</span> cu
+<a name="l-86"></a><span class="tm">17:38:14</span><span class="nk"> &lt;LWFinger&gt;</span> cu
+<a name="l-87"></a><span class="tm">17:38:22</span><span class="nk"> &lt;Holgi&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

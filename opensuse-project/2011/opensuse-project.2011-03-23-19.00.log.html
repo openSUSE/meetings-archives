@@ -1,0 +1,896 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">19:00:48</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">19:00:48</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Mar 23 19:00:48 2011 UTC.  The chair is henne. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">19:00:48</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">19:01:14</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">openSUSE Project Meeting (http://en.opensuse.org/openSUSE:Project_meeting)</span>
+<a name="l-5"></a><span class="tm">19:01:25</span><span class="nk"> &lt;henne&gt;</span> Welcome to the openSUSE Project Meeting!
+<a name="l-6"></a><span class="tm">19:01:32</span><span class="nk"> &lt;henne&gt;</span> This meeting is meant to discuss the latest developments in and around openSUSE.
+<a name="l-7"></a><span class="tm">19:01:40</span><span class="nk"> &lt;henne&gt;</span> The topics for this meeting are:
+<a name="l-8"></a><span class="tm">19:01:50</span><span class="nk"> &lt;henne&gt;</span> 1. Old Action Items (30 minutes)
+<a name="l-9"></a><span class="tm">19:02:02</span><span class="nk"> &lt;henne&gt;</span> 2. Status Reports (15 minutes)
+<a name="l-10"></a><span class="tm">19:02:12</span><span class="nk"> &lt;henne&gt;</span> 3. openSUSE conference(10 minutes)
+<a name="l-11"></a><span class="tm">19:02:22</span><span class="nk"> &lt;henne&gt;</span> 4. permission@ requests (10 minutes)
+<a name="l-12"></a><span class="tm">19:02:32</span><span class="nk"> &lt;henne&gt;</span> 5. Where do we need to improve? (15 minutes)
+<a name="l-13"></a><span class="tm">19:02:40</span><span class="nk"> &lt;henne&gt;</span> 6. Questions &amp; Answers (30 minutes)
+<a name="l-14"></a><span class="tm">19:03:02</span><span class="nk"> &lt;henne&gt;</span> thats a loooooong agenda
+<a name="l-15"></a><span class="tm">19:03:14</span><span class="nk"> &lt;henne&gt;</span> lets burn through it :)
+<a name="l-16"></a><span class="tm">19:03:22</span><span class="nk"> &lt;suseROCKs&gt;</span> hmm  actually that's 10 minutes less than 2 hours.  What do we do for the remaining 10 minutes?  :-D
+<a name="l-17"></a><span class="tm">19:03:36</span><span class="nk"> &lt;henne&gt;</span> make fun of your dancing skills? ;)
+<a name="l-18"></a><span class="tm">19:03:53</span><span class="nk"> &lt;suseROCKs&gt;</span> hey I took classes recently... nothing left to mock!  :-)
+<a name="l-19"></a><span class="tm">19:03:58</span><span class="nk"> &lt;AlanClark&gt;</span> let's make sure we have enough board members here for voting. If we don't then we can agenda #4
+<a name="l-20"></a><span class="tm">19:04:02</span><span class="nk"> &lt;warlordfff&gt;</span> its the ten minutes you need to the bar ;-)
+<a name="l-21"></a><span class="tm">19:04:16</span><span class="nk"> &lt;suseROCKs&gt;</span> ok moving along
+<a name="l-22"></a><span class="tm">19:04:20 </span><span class="nka">* suseROCKs</span> <span class="ac">is here!</span>
+<a name="l-23"></a><span class="tm">19:04:36</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> i count 3 so far so yes
+<a name="l-24"></a><span class="tm">19:04:48 </span><span class="nka">* mrdocs</span> <span class="ac">waves</span>
+<a name="l-25"></a><span class="tm">19:04:50</span><span class="nk"> &lt;henne&gt;</span> 4
+<a name="l-26"></a><span class="tm">19:04:55</span><span class="nk"> &lt;dragotin&gt;</span> heya
+<a name="l-27"></a><span class="tm">19:04:56 </span><span class="nka">* cartman</span> <span class="ac">ready</span>
+<a name="l-28"></a><span class="tm">19:04:59 </span><span class="nka">* mrdocs</span> <span class="ac">skip out for dinner and return</span>
+<a name="l-29"></a><span class="tm">19:05:23</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Old Action Items</span>
+<a name="l-30"></a><span class="tm">19:05:23</span><span class="nk"> &lt;AlanClark&gt;</span> we have quorum
+<a name="l-31"></a><span class="tm">19:05:31</span><span class="nk"> &lt;henne&gt;</span> First, let's check where we are
+<a name="l-32"></a><span class="tm">19:05:41</span><span class="nk"> &lt;henne&gt;</span> Project action items you can find in bugzilla with this link. http://bit.ly/opensuse_action_items
+<a name="l-33"></a><span class="tm">19:05:55 </span><span class="nka">* suseROCKs</span> <span class="ac">opens link</span>
+<a name="l-34"></a><span class="tm">19:06:20 </span><span class="nka">* mrdocs2</span> <span class="ac">joins from downstairs</span>
+<a name="l-35"></a><span class="tm">19:06:31</span><span class="nk"> &lt;henne&gt;</span> bug #676693
+<a name="l-36"></a><span class="tm">19:06:31</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 676693 in openSUSE.org (Action Items) "Produce GNOME 3 promo DVD/CD iso" [Normal,New] https://bugzilla.novell.com/676693
+<a name="l-37"></a><span class="tm">19:06:41</span><span class="nk"> &lt;AlanClark&gt;</span> mrdocs just cloned himself
+<a name="l-38"></a><span class="tm">19:06:47</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">vuntz:</span> where are we with that?
+<a name="l-39"></a><span class="tm">19:07:38</span><span class="nk"> &lt;henne&gt;</span> I see the LinuxTag in may as first opportunity to spread them
+<a name="l-40"></a><span class="tm">19:07:51</span><span class="nk"> &lt;suseROCKs&gt;</span> earlier actually
+<a name="l-41"></a><span class="tm">19:07:56</span><span class="nk"> &lt;henne&gt;</span> thats a little less then 2 months from now
+<a name="l-42"></a><span class="tm">19:07:58</span><span class="nk"> &lt;suseROCKs&gt;</span> LFNW at end of April if we get this produced in time
+<a name="l-43"></a><span class="tm">19:08:09</span><span class="nk"> &lt;warlordfff&gt;</span> 50 days to Φοσσψομμ
+<a name="l-44"></a><span class="tm">19:08:19</span><span class="nk"> &lt;warlordfff&gt;</span> fosscomm
+<a name="l-45"></a><span class="tm">19:08:44</span><span class="nk"> &lt;suseROCKs&gt;</span> Φοσσψομμ sounds cooler even if I can't pronounce it
+<a name="l-46"></a><span class="tm">19:09:04</span><span class="nk"> &lt;warlordfff&gt;</span> it is not even Greek so...
+<a name="l-47"></a><span class="tm">19:09:21</span><span class="nk"> &lt;henne&gt;</span> this is about pure gnome3 DVDs guys
+<a name="l-48"></a><span class="tm">19:09:32</span><span class="nk"> &lt;warlordfff&gt;</span> Are we going to get any Gnome 3 DVD?
+<a name="l-49"></a><span class="tm">19:09:32</span><span class="nk"> &lt;henne&gt;</span> gnome3 is scheduled for mid april AFAIR
+<a name="l-50"></a><span class="tm">19:09:51</span><span class="nk"> &lt;AlanClark&gt;</span> henne - is this about the iso or producing a DVD?
+<a name="l-51"></a><span class="tm">19:10:11</span><span class="nk"> &lt;AlanClark&gt;</span> The DVD was discussed at yesterday's marketing meeting.
+<a name="l-52"></a><span class="tm">19:10:13</span><span class="nk"> &lt;suseROCKs&gt;</span> thought it was scheduled for April 3...
+<a name="l-53"></a><span class="tm">19:10:19</span><span class="nk"> &lt;suseROCKs&gt;</span> (the GNOME 3 release)
+<a name="l-54"></a><span class="tm">19:10:25</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> this AI is about the iso
+<a name="l-55"></a><span class="tm">19:10:37</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> april 6th
+<a name="l-56"></a><span class="tm">19:10:43</span><span class="nk"> &lt;dragotin&gt;</span> production takes around 2 weeks
+<a name="l-57"></a><span class="tm">19:10:52</span><span class="nk"> &lt;dragotin&gt;</span> if everything  works well
+<a name="l-58"></a><span class="tm">19:11:00</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so we might be able to get it shipped in time for April 30th LFNW  if God is on our side
+<a name="l-59"></a><span class="tm">19:11:10</span><span class="nk"> &lt;henne&gt;</span> thats way too early
+<a name="l-60"></a><span class="tm">19:11:36</span><span class="nk"> &lt;warlordfff&gt;</span> so we are talking about mid-May
+<a name="l-61"></a><span class="tm">19:11:37</span><span class="nk"> &lt;suseROCKs&gt;</span> In any case, we'll be there in strength so they'll still get the actual DVDs from us instead
+<a name="l-62"></a><span class="tm">19:11:50</span><span class="nk"> &lt;henne&gt;</span> even if gnome3 is released on the 6th we need another week or so for the ISO
+<a name="l-63"></a><span class="tm">19:12:05</span><span class="nk"> &lt;cartman&gt;</span> 6 of April are we talking about?
+<a name="l-64"></a><span class="tm">19:12:24</span><span class="nk"> &lt;suseROCKs&gt;</span> Then God is not on our side this time, and we move on... :-D
+<a name="l-65"></a><span class="tm">19:12:45</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> We will not ship the GNOME DVD to our events.
+<a name="l-66"></a><span class="tm">19:12:53</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> The GNOME foundation will...
+<a name="l-67"></a><span class="tm">19:13:08</span><span class="nk"> &lt;AJaeger&gt;</span> So, you won't get it for LFNW at all from openSUSE
+<a name="l-68"></a><span class="tm">19:13:09</span><span class="nk"> &lt;henne&gt;</span> yes like we discussed last meeting...
+<a name="l-69"></a><span class="tm">19:13:29</span><span class="nk"> &lt;henne&gt;</span> still i bet GNOME is on LFNW too and could use DVDs
+<a name="l-70"></a><span class="tm">19:13:38</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> agreed
+<a name="l-71"></a><span class="tm">19:13:41</span><span class="nk"> &lt;henne&gt;</span> but anyway. its not very realistic to have it there
+<a name="l-72"></a><span class="tm">19:13:45</span><span class="nk"> &lt;suseROCKs&gt;</span> that's what I meant.  i wasn't saying we get and distribute them at LFNW
+<a name="l-73"></a><span class="tm">19:13:58</span><span class="nk"> &lt;henne&gt;</span> so lets make the deadline mid may okay?
+<a name="l-74"></a><span class="tm">19:14:02</span><span class="nk"> &lt;suseROCKs&gt;</span> but as pointed out, the date makes the possibility moot, so move on
+<a name="l-75"></a><span class="tm">19:14:24</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">vuntz:</span> if thats too early for you two tell us in the next meeting
+<a name="l-76"></a><span class="tm">19:15:34</span><span class="nk"> &lt;AJaeger&gt;</span> henne, vuntz: We have budget this quarter, so we have to have the bill by end of april!
+<a name="l-77"></a><span class="tm">19:15:48</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   why not post a question in the bugzilla asking what is the expeted ETA?  Then the respected parties will be notified the question exists.  (Since it is Froczat's bug assignment)
+<a name="l-78"></a><span class="tm">19:15:51</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> So, no long delay - or no DVD - your choice.
+<a name="l-79"></a><span class="tm">19:16:25</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> my choice?
+<a name="l-80"></a><span class="tm">19:16:28</span><span class="nk"> &lt;henne&gt;</span> our choice!
+<a name="l-81"></a><span class="tm">19:16:41</span><span class="nk"> &lt;henne&gt;</span> anyway. ive updated the AI as vuntz is obviously not there
+<a name="l-82"></a><span class="tm">19:16:49</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Yeah ;)
+<a name="l-83"></a><span class="tm">19:16:54</span><span class="nk"> &lt;henne&gt;</span> Bug #676695
+<a name="l-84"></a><span class="tm">19:16:54</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 676695 in openSUSE.org (Action Items) "Produce KDE promo DVD/CD iso" [Normal,New] https://bugzilla.novell.com/676695
+<a name="l-85"></a><span class="tm">19:17:12</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AJaeger:</span> small but remarkable difference ;-)
+<a name="l-86"></a><span class="tm">19:17:45</span><span class="nk"> &lt;henne&gt;</span> Bille is also not here
+<a name="l-87"></a><span class="tm">19:17:50</span><span class="nk"> &lt;henne&gt;</span> so no update on that
+<a name="l-88"></a><span class="tm">19:18:09</span><span class="nk"> &lt;dragotin&gt;</span> he told me today that its on his todo
+<a name="l-89"></a><span class="tm">19:18:11</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">henne:</span> they were working on dvd artwork afaik
+<a name="l-90"></a><span class="tm">19:18:11</span><span class="nk"> &lt;suseROCKs&gt;</span> I got a little confused yesterday.  Is this going to include 4.6 or 4.7?
+<a name="l-91"></a><span class="tm">19:18:37</span><span class="nk"> &lt;javier&gt;</span> siddharths has finished a draft for the KDE promo dvd artwork
+<a name="l-92"></a><span class="tm">19:18:56</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">javier:</span> oh cool
+<a name="l-93"></a><span class="tm">19:19:34</span><span class="nk"> &lt;suseROCKs&gt;</span> next?
+<a name="l-94"></a><span class="tm">19:19:38</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-95"></a><span class="tm">19:19:39</span><span class="nk"> &lt;javier&gt;</span> :)
+<a name="l-96"></a><span class="tm">19:19:53</span><span class="nk"> &lt;henne&gt;</span> Bug #667631
+<a name="l-97"></a><span class="tm">19:19:53</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 667631 in openSUSE.org (Action Items) "sourcedvd@suse.de does not work" [Normal,New] https://bugzilla.novell.com/667631
+<a name="l-98"></a><span class="tm">19:20:13</span><span class="nk"> &lt;henne&gt;</span> who handles source dvd shipment
+<a name="l-99"></a><span class="tm">19:20:15</span><span class="nk"> &lt;henne&gt;</span> AJaeger?
+<a name="l-100"></a><span class="tm">19:20:53</span><span class="nk"> &lt;suseROCKs&gt;</span> what exactly is sourcedvd shipment?    I'm more ignorant than usual today
+<a name="l-101"></a><span class="tm">19:21:14</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> you can request a source dvd from us
+<a name="l-102"></a><span class="tm">19:21:36</span><span class="nk"> &lt;suseROCKs&gt;</span> what types of folks request them and for what purposes?
+<a name="l-103"></a><span class="tm">19:21:40</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> for primary costs
+<a name="l-104"></a><span class="tm">19:22:00</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> its a GPL requirement
+<a name="l-105"></a><span class="tm">19:22:09</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-106"></a><span class="tm">19:22:15</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> no need to get into if we need it or not
+<a name="l-107"></a><span class="tm">19:22:28</span><span class="nk"> &lt;henne&gt;</span> AJaeger are you handling  those shipments?
+<a name="l-108"></a><span class="tm">19:22:38</span><span class="nk"> &lt;suseROCKs&gt;</span> do we get a lot of requests for them?  Just curious
+<a name="l-109"></a><span class="tm">19:22:42</span><span class="nk"> &lt;henne&gt;</span> dunno
+<a name="l-110"></a><span class="tm">19:22:46</span><span class="nk"> &lt;henne&gt;</span> i just see that AI
+<a name="l-111"></a><span class="tm">19:23:00</span><span class="nk"> &lt;henne&gt;</span> you can eat everything, but you can't know everything dude :P
+<a name="l-112"></a><span class="tm">19:23:24</span><span class="nk"> &lt;cartman&gt;</span> words of wisdom
+<a name="l-113"></a><span class="tm">19:23:27</span><span class="nk"> &lt;suseROCKs&gt;</span> that's why I ask instead of knowing everything  :-D   but anyway,  curiousity can be fulfilled at another time...  Move along
+<a name="l-114"></a><span class="tm">19:23:46</span><span class="nk"> &lt;henne&gt;</span> well okay. i just let them point it to admin@opensuse.org for now
+<a name="l-115"></a><span class="tm">19:23:48</span><span class="nk"> &lt;dragotin&gt;</span> I guess its around 1 or two per year, IIRC from michl
+<a name="l-116"></a><span class="tm">19:23:50</span><span class="nk"> &lt;yaloki&gt;</span> a DVD with the source packages, I presume
+<a name="l-117"></a><span class="tm">19:24:08</span><span class="nk"> &lt;yaloki&gt;</span> as we are obliged to ship them when requested, as of the GPL
+<a name="l-118"></a><span class="tm">19:24:24 </span><span class="nka">* suseROCKs</span> <span class="ac">adds 6 minutes of dance time since we saved time on this topic.</span>
+<a name="l-119"></a><span class="tm">19:24:35</span><span class="nk"> &lt;yaloki&gt;</span> \o\ |o| /o/
+<a name="l-120"></a><span class="tm">19:25:10</span><span class="nk"> &lt;suseROCKs&gt;</span> next topic, henne  please
+<a name="l-121"></a><span class="tm">19:25:31</span><span class="nk"> &lt;henne&gt;</span> okay requested
+<a name="l-122"></a><span class="tm">19:25:43</span><span class="nk"> &lt;henne&gt;</span> next are the board action items
+<a name="l-123"></a><span class="tm">19:25:51</span><span class="nk"> &lt;suseROCKs&gt;</span> oh...
+<a name="l-124"></a><span class="tm">19:25:52</span><span class="nk"> &lt;henne&gt;</span> Board action items you can find in bugzilla with this link. http://bit.ly/opensuse_board_ais
+<a name="l-125"></a><span class="tm">19:25:58 </span><span class="nka">* suseROCKs</span> <span class="ac">removes the 6 minute gain</span>
+<a name="l-126"></a><span class="tm">19:26:14 </span><span class="nka">* AlanClark</span> <span class="ac">laughs</span>
+<a name="l-127"></a><span class="tm">19:26:20</span><span class="nk"> &lt;henne&gt;</span> Bug #670739
+<a name="l-128"></a><span class="tm">19:26:20</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 670739 in openSUSE.org (Board) "Setup a meeting to discuss communication with open-slx" [Critical,New] https://bugzilla.novell.com/670739
+<a name="l-129"></a><span class="tm">19:26:26</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> status of this?
+<a name="l-130"></a><span class="tm">19:26:36</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Sorry, was out for a few minutes.
+<a name="l-131"></a><span class="tm">19:26:46</span><span class="nk"> &lt;AlanClark&gt;</span> suseROCKS and I are working on this one.
+<a name="l-132"></a><span class="tm">19:26:53 </span><span class="nka">* AJaeger</span> <span class="ac">handles source DVD shipments, the address was broken but should be fixed since a week or so.</span>
+<a name="l-133"></a><span class="tm">19:27:06</span><span class="nk"> &lt;AlanClark&gt;</span> Leave this one on the list for today.
+<a name="l-134"></a><span class="tm">19:27:07</span><span class="nk"> &lt;AJaeger&gt;</span> We get less than a dozen a year
+<a name="l-135"></a><span class="tm">19:27:17</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> yeah probably with your family or other unimportant things. shame on you! 8)
+<a name="l-136"></a><span class="tm">19:27:52 </span><span class="nka">* suseROCKs</span> <span class="ac">sings Hall &amp; Oates' "Family man" for AJaeger</span>
+<a name="l-137"></a><span class="tm">19:28:09</span><span class="nk"> &lt;henne&gt;</span> Bug #670594
+<a name="l-138"></a><span class="tm">19:28:09</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 670594 in openSUSE.org (Board) "Write an announcement about the new process of creating the foundation." [Critical,Assigned] https://bugzilla.novell.com/670594
+<a name="l-139"></a><span class="tm">19:28:37</span><span class="nk"> &lt;AlanClark&gt;</span> We've had a few contributions to the text.
+<a name="l-140"></a><span class="tm">19:28:51</span><span class="nk"> &lt;AlanClark&gt;</span> Some critiques as well.
+<a name="l-141"></a><span class="tm">19:28:54</span><span class="nk"> &lt;AJaeger&gt;</span> brb... - instead of commenting
+<a name="l-142"></a><span class="tm">19:29:20</span><span class="nk"> &lt;prusnak&gt;</span> contributions and critiques from whom?
+<a name="l-143"></a><span class="tm">19:29:53</span><span class="nk"> &lt;AlanClark&gt;</span> I'd have to go back to the mailing list to pull the names
+<a name="l-144"></a><span class="tm">19:30:08</span><span class="nk"> &lt;prusnak&gt;</span> ah, okay
+<a name="l-145"></a><span class="tm">19:30:17</span><span class="nk"> &lt;prusnak&gt;</span> if it was on ML then it's ok
+<a name="l-146"></a><span class="tm">19:30:52</span><span class="nk"> &lt;AlanClark&gt;</span> I'll make a final call on the foundation@ mailing list and we can send this one out first of next week.
+<a name="l-147"></a><span class="tm">19:31:45</span><span class="nk"> &lt;AlanClark&gt;</span> I also want to make a final call on the "Charter and Purpose" section as well.
+<a name="l-148"></a><span class="tm">19:31:50</span><span class="nk"> &lt;henne&gt;</span> which mailinglist was the feedbacko n?
+<a name="l-149"></a><span class="tm">19:32:03 </span><span class="nka">* henne</span> <span class="ac">missed it</span>
+<a name="l-150"></a><span class="tm">19:32:08</span><span class="nk"> &lt;AlanClark&gt;</span> I thought it came in on foundation@
+<a name="l-151"></a><span class="tm">19:32:18</span><span class="nk"> &lt;AlanClark&gt;</span> I'd have to go look.
+<a name="l-152"></a><span class="tm">19:32:46</span><span class="nk"> &lt;henne&gt;</span> the last mail on that one is from february
+<a name="l-153"></a><span class="tm">19:33:00</span><span class="nk"> &lt;henne&gt;</span> anyway
+<a name="l-154"></a><span class="tm">19:33:01</span><span class="nk"> &lt;dragotin&gt;</span> for me the last mail on foundation arrived on feb. 6th
+<a name="l-155"></a><span class="tm">19:33:03</span><span class="nk"> &lt;prusnak&gt;</span> must've been on project
+<a name="l-156"></a><span class="tm">19:33:28</span><span class="nk"> &lt;prusnak&gt;</span> althought it's all about the GSOC last weeks
+<a name="l-157"></a><span class="tm">19:33:38</span><span class="nk"> &lt;AlanClark&gt;</span> The critique was that some of the benefits are to vague
+<a name="l-158"></a><span class="tm">19:34:18</span><span class="nk"> &lt;AlanClark&gt;</span> (aka the descriptions of benefits are to vagues)
+<a name="l-159"></a><span class="tm">19:34:34</span><span class="nk"> &lt;AlanClark&gt;</span> I'll send out a final call.... let's move on
+<a name="l-160"></a><span class="tm">19:34:43</span><span class="nk"> &lt;henne&gt;</span> can we maybe pipe this through the news team?
+<a name="l-161"></a><span class="tm">19:35:00</span><span class="nk"> &lt;henne&gt;</span> so they make an exciting news article out of what you have proposed?
+<a name="l-162"></a><span class="tm">19:35:05</span><span class="nk"> &lt;suseROCKs&gt;</span> don't see why not
+<a name="l-163"></a><span class="tm">19:35:30</span><span class="nk"> &lt;AlanClark&gt;</span> ok
+<a name="l-164"></a><span class="tm">19:36:05 </span><span class="nka">* mrdocs</span> <span class="ac">is back after record fast French meal</span>
+<a name="l-165"></a><span class="tm">19:36:32</span><span class="nk"> &lt;henne&gt;</span> fries take that long to eat?
+<a name="l-166"></a><span class="tm">19:36:44</span><span class="nk"> &lt;AlanClark&gt;</span> If we are sending it to the news team I want you make sure you review it
+<a name="l-167"></a><span class="tm">19:36:53</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">henne:</span> its not the fries, its the other 6 courses :)
+<a name="l-168"></a><span class="tm">19:37:16</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> just write a mail to news@opensuse.org and tell them you would like to have a final review
+<a name="l-169"></a><span class="tm">19:37:45</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> its nothing unusual
+<a name="l-170"></a><span class="tm">19:37:57</span><span class="nk"> &lt;AlanClark&gt;</span> ok - what I was meaning is to have the board members to be sure to look at it
+<a name="l-171"></a><span class="tm">19:38:49</span><span class="nk"> &lt;AlanClark&gt;</span> I want 1 edit from each board member  ;-)
+<a name="l-172"></a><span class="tm">19:39:07 </span><span class="nka">* mrdocs</span> <span class="ac">bookmarks</span>
+<a name="l-173"></a><span class="tm">19:39:14 </span><span class="nka">* suseROCKs</span> <span class="ac">volunteers to edit the period at the end of the article</span>
+<a name="l-174"></a><span class="tm">19:39:24</span><span class="nk"> &lt;henne&gt;</span> well this goes way beyond the board so....
+<a name="l-175"></a><span class="tm">19:39:56</span><span class="nk"> &lt;AlanClark&gt;</span> that's why the final clal
+<a name="l-176"></a><span class="tm">19:40:00</span><span class="nk"> &lt;AlanClark&gt;</span> s/clal/call
+<a name="l-177"></a><span class="tm">19:40:08</span><span class="nk"> &lt;henne&gt;</span> sure
+<a name="l-178"></a><span class="tm">19:40:35</span><span class="nk"> &lt;suseROCKs&gt;</span> move on
+<a name="l-179"></a><span class="tm">19:40:42</span><span class="nk"> &lt;AlanClark&gt;</span> ok -- we killed suseROCKS dance time
+<a name="l-180"></a><span class="tm">19:40:57</span><span class="nk"> &lt;suseROCKs&gt;</span> yup
+<a name="l-181"></a><span class="tm">19:41:03</span><span class="nk"> &lt;suseROCKs&gt;</span> and AlanClark  witnessed my Geeko Dance!
+<a name="l-182"></a><span class="tm">19:41:07</span><span class="nk"> &lt;henne&gt;</span> Bug #670589
+<a name="l-183"></a><span class="tm">19:41:07</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 670589 in openSUSE.org (Board) "Review the openSUSE Strategy Document" [Critical,New] https://bugzilla.novell.com/670589
+<a name="l-184"></a><span class="tm">19:41:21</span><span class="nk"> &lt;mrdocs&gt;</span> that's mine
+<a name="l-185"></a><span class="tm">19:41:27</span><span class="nk"> &lt;mrdocs&gt;</span> ETA end of week
+<a name="l-186"></a><span class="tm">19:41:34</span><span class="nk"> &lt;henne&gt;</span> yes. have you finished your review?
+<a name="l-187"></a><span class="tm">19:41:49</span><span class="nk"> &lt;mrdocs&gt;</span> Alan and I need to carve out some time this week to do review
+<a name="l-188"></a><span class="tm">19:41:51</span><span class="nk"> &lt;mrdocs&gt;</span> no
+<a name="l-189"></a><span class="tm">19:41:53</span><span class="nk"> &lt;mrdocs&gt;</span> but
+<a name="l-190"></a><span class="tm">19:42:10</span><span class="nk"> &lt;henne&gt;</span> okay. ETA is now the 27th
+<a name="l-191"></a><span class="tm">19:42:13</span><span class="nk"> &lt;mrdocs&gt;</span> I *do* want to get it done by end of week..
+<a name="l-192"></a><span class="tm">19:42:20</span><span class="nk"> &lt;mrdocs&gt;</span> seems feasible
+<a name="l-193"></a><span class="tm">19:42:25</span><span class="nk"> &lt;henne&gt;</span> i really really really would appreciate if this is the last extension...
+<a name="l-194"></a><span class="tm">19:42:34</span><span class="nk"> &lt;suseROCKs&gt;</span> can you guys carve out a time like... now... since we're already mid-week?   Get that time carved worked out
+<a name="l-195"></a><span class="tm">19:43:04</span><span class="nk"> &lt;prusnak&gt;</span> i would suggest to just accept it in case we'd need another extension
+<a name="l-196"></a><span class="tm">19:43:34</span><span class="nk"> &lt;AlanClark&gt;</span> I'd also like to recommend that if we don't get this done by X date that it stands approved
+<a name="l-197"></a><span class="tm">19:44:06</span><span class="nk"> &lt;mrdocs&gt;</span> OK
+<a name="l-198"></a><span class="tm">19:44:26</span><span class="nk"> &lt;mrdocs&gt;</span> then lets do this: set a firm deadline for one week
+<a name="l-199"></a><span class="tm">19:44:37</span><span class="nk"> &lt;mrdocs&gt;</span> everyone OK with this ?
+<a name="l-200"></a><span class="tm">19:44:51 </span><span class="nka">* henne</span> <span class="ac">is</span>
+<a name="l-201"></a><span class="tm">19:44:56</span><span class="nk"> &lt;AlanClark&gt;</span> +1
+<a name="l-202"></a><span class="tm">19:44:58</span><span class="nk"> &lt;prusnak&gt;</span> of course i am
+<a name="l-203"></a><span class="tm">19:45:01</span><span class="nk"> &lt;suseROCKs&gt;</span> +1
+<a name="l-204"></a><span class="tm">19:45:38</span><span class="nk"> &lt;suseROCKs&gt;</span> next
+<a name="l-205"></a><span class="tm">19:45:39</span><span class="nk"> &lt;henne&gt;</span> okay. 27th it is then
+<a name="l-206"></a><span class="tm">19:45:53</span><span class="nk"> &lt;henne&gt;</span> Bug #670590
+<a name="l-207"></a><span class="tm">19:45:53</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 670590 in openSUSE.org (Board) "user search for bugzilla" [Normal,New] https://bugzilla.novell.com/670590
+<a name="l-208"></a><span class="tm">19:46:17</span><span class="nk"> &lt;henne&gt;</span> it still slips on my TODO list
+<a name="l-209"></a><span class="tm">19:46:24</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">henne:</span> correction 30th is one week
+<a name="l-210"></a><span class="tm">19:46:27</span><span class="nk"> &lt;henne&gt;</span> and I would like to ask if someone can take this over?
+<a name="l-211"></a><span class="tm">19:46:58</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   what can be done to take over  (from a non-Novell with limited access standpoint)
+<a name="l-212"></a><span class="tm">19:47:13</span><span class="nk"> &lt;Dominian&gt;</span> What's the issue with user search?  The bug doesn't qwuite detail the problem.
+<a name="l-213"></a><span class="tm">19:47:41</span><span class="nk"> &lt;suseROCKs&gt;</span> Dominian,  you can't search for users and assign bugs to them unless you're authorized by Novell to do so
+<a name="l-214"></a><span class="tm">19:47:42</span><span class="nk"> &lt;d1g1tltom&gt;</span> isn't this blocked because of internal policies?
+<a name="l-215"></a><span class="tm">19:47:44</span><span class="nk"> &lt;Dominian&gt;</span> Or is this in reference to the search box at the top of opensuse.org?
+<a name="l-216"></a><span class="tm">19:47:47</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> you just read the couple of bugreports and open another one to get that topic straightened out
+<a name="l-217"></a><span class="tm">19:47:58</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">Dominian:</span> Yo cannot search for "Andreas Jaeger" to assign a bug to me if you don't know my email address
+<a name="l-218"></a><span class="tm">19:48:05</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">AJaeger:</span> ah
+<a name="l-219"></a><span class="tm">19:48:42</span><span class="nk"> &lt;henne&gt;</span> its just a matter of diligence
+<a name="l-220"></a><span class="tm">19:49:08</span><span class="nk"> &lt;henne&gt;</span> this AI references a bug which in turn references another couple of bugs
+<a name="l-221"></a><span class="tm">19:49:24</span><span class="nk"> &lt;suseROCKs&gt;</span> but if its an internal policy, then doesn't it need someone with internal access to strongly make the case to open it up?   Seems someone in my position can't help take over this bug?
+<a name="l-222"></a><span class="tm">19:49:40</span><span class="nk"> &lt;henne&gt;</span> nope
+<a name="l-223"></a><span class="tm">19:49:42</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">henne:</span> i can take it over
+<a name="l-224"></a><span class="tm">19:49:54</span><span class="nk"> &lt;henne&gt;</span> its not about policy
+<a name="l-225"></a><span class="tm">19:49:59 </span><span class="nka">* dragotin</span> <span class="ac">don't think its realistic to get that changed</span>
+<a name="l-226"></a><span class="tm">19:50:01</span><span class="nk"> &lt;suseROCKs&gt;</span> well prusnak taking over removes any misguided concerns I have  :-D
+<a name="l-227"></a><span class="tm">19:50:02</span><span class="nk"> &lt;henne&gt;</span> read the bugs before you assume anything
+<a name="l-228"></a><span class="tm">19:50:18</span><span class="nk"> &lt;cartman&gt;</span> I guess some Bugzilla hacking required?
+<a name="l-229"></a><span class="tm">19:50:24</span><span class="nk"> &lt;prusnak&gt;</span> i'll try bug i am not very optimistic
+<a name="l-230"></a><span class="tm">19:50:29</span><span class="nk"> &lt;d1g1tltom&gt;</span> on 2009-12-17 cboltz wrote that it's working...
+<a name="l-231"></a><span class="tm">19:50:37</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">cartman:</span> no, this is purely about social engineering
+<a name="l-232"></a><span class="tm">19:50:45</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">d1g1tltom:</span> yes. this just needs some sorting out
+<a name="l-233"></a><span class="tm">19:50:51</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">prusnak:</span> how exactly?
+<a name="l-234"></a><span class="tm">19:50:53</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Do you know who's from OPS in the Bugzilla Steering Committee? I would push it through that person.
+<a name="l-235"></a><span class="tm">19:51:19</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> nope and they would tell you to open up a report anyway...
+<a name="l-236"></a><span class="tm">19:51:21</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AJaeger:</span> do you want to be the person? I *think* I am
+<a name="l-237"></a><span class="tm">19:51:33</span><span class="nk"> &lt;henne&gt;</span> i think susanne is
+<a name="l-238"></a><span class="tm">19:51:39</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">dragotin:</span> No, I won't volunteer ;)
+<a name="l-239"></a><span class="tm">19:51:53</span><span class="nk"> &lt;suseROCKs&gt;</span> wait,  didn't prusnak just now volunteer?
+<a name="l-240"></a><span class="tm">19:51:55</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">henne:</span> its me :-(
+<a name="l-241"></a><span class="tm">19:52:06</span><span class="nk"> &lt;AJaeger&gt;</span> dragotin, so can you help?
+<a name="l-242"></a><span class="tm">19:52:09</span><span class="nk"> &lt;Dominian&gt;</span> I think i saw suseROCKs volunteer
+<a name="l-243"></a><span class="tm">19:52:13</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> yes he did
+<a name="l-244"></a><span class="tm">19:52:23</span><span class="nk"> &lt;suseROCKs&gt;</span> I backed out quickly as I regained my senses  :-)
+<a name="l-245"></a><span class="tm">19:52:28</span><span class="nk"> &lt;Dominian&gt;</span> :)
+<a name="l-246"></a><span class="tm">19:52:41</span><span class="nk"> &lt;d1g1tltom&gt;</span> dragotin has more force wrt to bugzilla ;-)
+<a name="l-247"></a><span class="tm">19:52:51</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">d1g1tltom:</span> :)
+<a name="l-248"></a><span class="tm">19:52:55</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AJaeger:</span> I don't know, but can check with prusnak
+<a name="l-249"></a><span class="tm">19:52:56</span><span class="nk"> &lt;yaloki&gt;</span> "leverage" :)
+<a name="l-250"></a><span class="tm">19:53:11</span><span class="nk"> &lt;cartman&gt;</span> Don't fear perl :P
+<a name="l-251"></a><span class="tm">19:53:26 </span><span class="nka">* mrdocs</span> <span class="ac">sends dragotin an Old Toad for volunteering :)</span>
+<a name="l-252"></a><span class="tm">19:53:32</span><span class="nk"> &lt;henne&gt;</span> okay thats it for action items
+<a name="l-253"></a><span class="tm">19:53:34</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> So, I propose prusnak drives with help from dragotin ;)
+<a name="l-254"></a><span class="tm">19:53:53</span><span class="nk"> &lt;prusnak&gt;</span> ok, i'll assign the issue to me, try to talk with bugzilla folks via bugzilla
+<a name="l-255"></a><span class="tm">19:53:56</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">AJaeger:</span> only if you take the workers council part
+<a name="l-256"></a><span class="tm">19:53:59</span><span class="nk"> &lt;henne&gt;</span> prusnak takes it over and can do whatever the heck he wants :)
+<a name="l-257"></a><span class="tm">19:54:06</span><span class="nk"> &lt;prusnak&gt;</span> and if that doesn't work out i'll talk with klaas
+<a name="l-258"></a><span class="tm">19:54:20</span><span class="nk"> &lt;henne&gt;</span> what has the workers council to do with that?
+<a name="l-259"></a><span class="tm">19:54:30 </span><span class="nka">* cartman</span> <span class="ac">is confused</span>
+<a name="l-260"></a><span class="tm">19:54:30</span><span class="nk"> &lt;suseROCKs&gt;</span> "workers council"... "Bugzilla Leadership Team"... sheesh  fancy names!
+<a name="l-261"></a><span class="tm">19:54:41</span><span class="nk"> &lt;Dominian&gt;</span> backseat driver eh?
+<a name="l-262"></a><span class="tm">19:54:42</span><span class="nk"> &lt;Dominian&gt;</span> http://www.etoyworld.com/images/catalog/thumb/back.gif
+<a name="l-263"></a><span class="tm">19:55:09</span><span class="nk"> &lt;henne&gt;</span> really
+<a name="l-264"></a><span class="tm">19:55:12</span><span class="nk"> &lt;dragotin&gt;</span> "Anna Annoy" is a nice name.
+<a name="l-265"></a><span class="tm">19:55:21</span><span class="nk"> &lt;henne&gt;</span> i'm sure prusnak can work this out
+<a name="l-266"></a><span class="tm">19:55:27</span><span class="nk"> &lt;dragotin&gt;</span> me too
+<a name="l-267"></a><span class="tm">19:55:30</span><span class="nk"> &lt;suseROCKs&gt;</span> ok moving on
+<a name="l-268"></a><span class="tm">19:55:42</span><span class="nk"> &lt;suseROCKs&gt;</span> I have a minor question before this topic is closed...
+<a name="l-269"></a><span class="tm">19:56:04</span><span class="nk"> &lt;suseROCKs&gt;</span> How can I get myself auto-cc'ed to the project bug list?  (i.e. any new bugs assigned to that particular list I get a cc?)
+<a name="l-270"></a><span class="tm">19:56:21</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#info </span><span class="cmdline">not much progress. but no wonder with the very busy weeks we just had. We only extended the ETA on a couple of AI's and re-assigned some</span>
+<a name="l-271"></a><span class="tm">19:56:42</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> what is the project bug list?
+<a name="l-272"></a><span class="tm">19:56:56</span><span class="nk"> &lt;suseROCKs&gt;</span> this one https://bugzilla.novell.com/buglist.cgi?classification=openSUSE&amp;query_format=advanced&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=NEEDINFO&amp;bug_status=REOPENED&amp;component=Action%20Items&amp;product=openSUSE.org
+<a name="l-273"></a><span class="tm">19:57:05</span><span class="nk"> &lt;suseROCKs&gt;</span> the first set of bug list you presented in this meeting
+<a name="l-274"></a><span class="tm">19:57:16</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> Let me check and get back to you off-list
+<a name="l-275"></a><span class="tm">19:57:23</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   thanks
+<a name="l-276"></a><span class="tm">19:57:44</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> You can't.
+<a name="l-277"></a><span class="tm">19:57:45</span><span class="nk"> &lt;henne&gt;</span> okay next topic then
+<a name="l-278"></a><span class="tm">19:57:55</span><span class="nk"> &lt;AJaeger&gt;</span> Henne, give me a sec.
+<a name="l-279"></a><span class="tm">19:58:05</span><span class="nk"> &lt;AJaeger&gt;</span> But we have Adrian as default assignee for "Action Items".
+<a name="l-280"></a><span class="tm">19:58:19</span><span class="nk"> &lt;AJaeger&gt;</span> We could create a mailing list and subscribe anybody that's interested on that list...
+<a name="l-281"></a><span class="tm">19:58:32</span><span class="nk"> &lt;Dominian&gt;</span> another mailing list...
+<a name="l-282"></a><span class="tm">19:58:33 </span><span class="nka">* Dominian</span> <span class="ac">dies</span>
+<a name="l-283"></a><span class="tm">19:58:34</span><span class="nk"> &lt;suseROCKs&gt;</span> project-buglist@opensuse.org?
+<a name="l-284"></a><span class="tm">19:58:55</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> or you can add URLs to bookmarks :)
+<a name="l-285"></a><span class="tm">19:58:57</span><span class="nk"> &lt;Dominian&gt;</span> If google has a limit on the amount of filters you can use, I'm sure going to find out with all these mailing lists ;)
+<a name="l-286"></a><span class="tm">19:59:03</span><span class="nk"> &lt;suseROCKs&gt;</span> Dominian,  well for some of us, that list of bugs is quite relevant and we should be aware when new things are added.   I don't want to miss boats
+<a name="l-287"></a><span class="tm">19:59:05</span><span class="nk"> &lt;henne&gt;</span> or you can have RSS
+<a name="l-288"></a><span class="tm">19:59:08</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> not sure whether that name works but yeah, something like that.
+<a name="l-289"></a><span class="tm">19:59:17</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">suseROCKs:</span> yeah I was joking, to me its a good idea
+<a name="l-290"></a><span class="tm">19:59:17</span><span class="nk"> &lt;henne&gt;</span> or we can make you the default assignee
+<a name="l-291"></a><span class="tm">19:59:25</span><span class="nk"> &lt;warlordfff&gt;</span> mailing list cross-posting Party
+<a name="l-292"></a><span class="tm">19:59:31</span><span class="nk"> &lt;Dominian&gt;</span> argh..
+<a name="l-293"></a><span class="tm">19:59:36</span><span class="nk"> &lt;AJaeger&gt;</span> or the default QA person ;)
+<a name="l-294"></a><span class="tm">19:59:38</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,   no,  it would be a read-only list
+<a name="l-295"></a><span class="tm">19:59:39</span><span class="nk"> &lt;Dominian&gt;</span> I'd rather have a new mailing list than more cross-posting
+<a name="l-296"></a><span class="tm">19:59:41</span><span class="nk"> &lt;henne&gt;</span> can we please continue?
+<a name="l-297"></a><span class="tm">19:59:49</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Yes, continue.
+<a name="l-298"></a><span class="tm">20:00:03</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Status Reports (15 minutes)</span>
+<a name="l-299"></a><span class="tm">20:00:23</span><span class="nk"> &lt;henne&gt;</span> Teams and individuals send various status reports around.
+<a name="l-300"></a><span class="tm">20:00:31</span><span class="nk"> &lt;henne&gt;</span> Coolo sends one for the distribution, the OBS team publishes meeting minutes, the boosters their "What are the boosters up to" blogposts for instance.
+<a name="l-301"></a><span class="tm">20:00:37</span><span class="nk"> &lt;henne&gt;</span> Are there any questions regarding those or do we need to discuss anything in detail?
+<a name="l-302"></a><span class="tm">20:01:21</span><span class="nk"> &lt;suseROCKs&gt;</span> don't think so.   If there's any detail issue, it should be taken directly with the team
+<a name="l-303"></a><span class="tm">20:01:26</span><span class="nk"> &lt;henne&gt;</span> Or does anyone wants to give a live status report of something? :)
+<a name="l-304"></a><span class="tm">20:01:41</span><span class="nk"> &lt;suseROCKs&gt;</span> I'll jump in with a quick status report from Marketing
+<a name="l-305"></a><span class="tm">20:01:48</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">prusnak:</span> whats the status of GSoC? :)
+<a name="l-306"></a><span class="tm">20:01:57</span><span class="nk"> &lt;henne&gt;</span> oh sorry. suseROCKs first
+<a name="l-307"></a><span class="tm">20:02:11</span><span class="nk"> &lt;suseROCKs&gt;</span> Last week we had a post-mortem 11.4 release team meeting.    We came up with some good ideas and observations and we believe the next release we'll be doing stronger with a more detailed roadmap henceforth
+<a name="l-308"></a><span class="tm">20:02:23</span><span class="nk"> &lt;prusnak&gt;</span> GSoC status: we have couple of students and mentors writing to the -project mailing list
+<a name="l-309"></a><span class="tm">20:02:42</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">prusnak:</span>  a question
+<a name="l-310"></a><span class="tm">20:02:43</span><span class="nk"> &lt;prusnak&gt;</span> but we cannot use the GSoC user interface because Google is doing some changes
+<a name="l-311"></a><span class="tm">20:02:45</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">prusnak:</span> let bryen go first please
+<a name="l-312"></a><span class="tm">20:02:47</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">prusnak:</span> do we have mentors only list yet?
+<a name="l-313"></a><span class="tm">20:02:55</span><span class="nk"> &lt;henne&gt;</span> ah
+<a name="l-314"></a><span class="tm">20:03:01</span><span class="nk"> &lt;henne&gt;</span> suseROCKs first!
+<a name="l-315"></a><span class="tm">20:03:11</span><span class="nk"> &lt;suseROCKs&gt;</span> :-P
+<a name="l-316"></a><span class="tm">20:03:19</span><span class="nk"> &lt;suseROCKs&gt;</span> ok one more statement and then prusnak can butt in
+<a name="l-317"></a><span class="tm">20:03:42</span><span class="nk"> &lt;suseROCKs&gt;</span> we're also looking at analyzing the "subset" teams, such as Ambassadors, news team, etc.  to see what can be specifically improved in those areas.
+<a name="l-318"></a><span class="tm">20:03:54</span><span class="nk"> &lt;suseROCKs&gt;</span> The End
+<a name="l-319"></a><span class="tm">20:03:59</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> what does a more detailed roadmap mean? for what?
+<a name="l-320"></a><span class="tm">20:04:07</span><span class="nk"> &lt;henne&gt;</span> the distro?
+<a name="l-321"></a><span class="tm">20:04:31</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   scheduling the tasks in a more advanced timeframe for marketing planning.  Such as for example, working on product highlights much earlier than we did this time.
+<a name="l-322"></a><span class="tm">20:04:53</span><span class="nk"> &lt;suseROCKs&gt;</span> people nearly killed themselves working sleepless nights trying to rush things out the door this time around.  We'll float next time  :-)
+<a name="l-323"></a><span class="tm">20:05:11</span><span class="nk"> &lt;henne&gt;</span> ah okay. cool
+<a name="l-324"></a><span class="tm">20:05:36</span><span class="nk"> &lt;henne&gt;</span> prusnak?
+<a name="l-325"></a><span class="tm">20:05:45</span><span class="nk"> &lt;prusnak&gt;</span> GSoC status: we have couple of students and mentors writing to the -project mailing list
+<a name="l-326"></a><span class="tm">20:05:50</span><span class="nk"> &lt;prusnak&gt;</span> but we cannot use the GSoC user interface because Google is doing some changes
+<a name="l-327"></a><span class="tm">20:06:09</span><span class="nk"> &lt;suseROCKs&gt;</span> Melange?
+<a name="l-328"></a><span class="tm">20:06:13</span><span class="nk"> &lt;prusnak&gt;</span> yes melange
+<a name="l-329"></a><span class="tm">20:06:16</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">prusnak:</span> are mentors supposed to join to the -project mailing list? Is there a mentors only list?
+<a name="l-330"></a><span class="tm">20:06:40</span><span class="nk"> &lt;prusnak&gt;</span> mentors-only ML exists - gsoc-mentors@o.o
+<a name="l-331"></a><span class="tm">20:06:54</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">prusnak:</span> what do we say to people(mentor and students) that ask us about GSoC?
+<a name="l-332"></a><span class="tm">20:06:57</span><span class="nk"> &lt;prusnak&gt;</span> me and vuntz are admins, so we'll approve subscription requests
+<a name="l-333"></a><span class="tm">20:07:01</span><span class="nk"> &lt;henne&gt;</span> but please this is for mentor coordination. not for chatting before you are a mentor
+<a name="l-334"></a><span class="tm">20:07:02</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">prusnak:</span> alright, thanks!
+<a name="l-335"></a><span class="tm">20:07:09</span><span class="nk"> &lt;henne&gt;</span> right?
+<a name="l-336"></a><span class="tm">20:07:14</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">henne:</span> right
+<a name="l-337"></a><span class="tm">20:07:16</span><span class="nk"> &lt;cartman&gt;</span> yes, /me is a mentor
+<a name="l-338"></a><span class="tm">20:07:35 </span><span class="nka">* Guest33559</span> <span class="ac">loves all</span>
+<a name="l-339"></a><span class="tm">20:07:37</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">cartman:</span> you're a mentor when your student gets picked :)
+<a name="l-340"></a><span class="tm">20:07:43</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">henne:</span> *sob*
+<a name="l-341"></a><span class="tm">20:07:51</span><span class="nk"> &lt;prusnak&gt;</span> so for now mentors and students are encouraged to communicate via -project ML, or IRC or their IMs
+<a name="l-342"></a><span class="tm">20:08:10</span><span class="nk"> &lt;henne&gt;</span> did we already match a couple?
+<a name="l-343"></a><span class="tm">20:08:54</span><span class="nk"> &lt;prusnak&gt;</span> some of the pairs are on a good route :)
+<a name="l-344"></a><span class="tm">20:08:56</span><span class="nk"> &lt;suseROCKs&gt;</span> can we not be so stringent on the "you're not a mentor until student gets picked" thing?   I'm aware of at least one instance last time around where student didn't get picked and yet was still motivated to do some work
+<a name="l-345"></a><span class="tm">20:09:11</span><span class="nk"> &lt;suseROCKs&gt;</span> let's not make it so stringent as to demotivate potential contribution regardless of acceptance
+<a name="l-346"></a><span class="tm">20:09:13</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">suseROCKs:</span> that rarely happens, yeah
+<a name="l-347"></a><span class="tm">20:09:27</span><span class="nk"> &lt;manugupt1&gt;</span> No
+<a name="l-348"></a><span class="tm">20:09:29</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> henne just wanted to say there's no point to get on this gsoc-mentors list RIGHT NOW
+<a name="l-349"></a><span class="tm">20:09:40</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-350"></a><span class="tm">20:09:51</span><span class="nk"> &lt;henne&gt;</span> and there is no use to use it as THE GSoC list
+<a name="l-351"></a><span class="tm">20:10:00</span><span class="nk"> &lt;warlordfff&gt;</span> I did not get that
+<a name="l-352"></a><span class="tm">20:10:02</span><span class="nk"> &lt;prusnak&gt;</span> if you have made a couple with your student then you can apply
+<a name="l-353"></a><span class="tm">20:10:11</span><span class="nk"> &lt;prusnak&gt;</span> and we'll add you to list with vuntz
+<a name="l-354"></a><span class="tm">20:10:24</span><span class="nk"> &lt;warlordfff&gt;</span> I did not get that 2
+<a name="l-355"></a><span class="tm">20:10:28</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">warlordfff:</span> you did not get what? :)
+<a name="l-356"></a><span class="tm">20:10:36</span><span class="nk"> &lt;prusnak&gt;</span> for everything else we have -project ML
+<a name="l-357"></a><span class="tm">20:10:58</span><span class="nk"> &lt;warlordfff&gt;</span> you mean a mentor find some students for a project and come to you and tell you that
+<a name="l-358"></a><span class="tm">20:11:00</span><span class="nk"> &lt;warlordfff&gt;</span> ?
+<a name="l-359"></a><span class="tm">20:11:10</span><span class="nk"> &lt;warlordfff&gt;</span> we made a team
+<a name="l-360"></a><span class="tm">20:11:21</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">warlordfff:</span> discussions about GSoC, about the projects and the matchmaking should happen on opensuse-project
+<a name="l-361"></a><span class="tm">20:11:26</span><span class="nk"> &lt;prusnak&gt;</span> you come to us (me and vuntz) and tell us
+<a name="l-362"></a><span class="tm">20:11:52</span><span class="nk"> &lt;prusnak&gt;</span> our IDEA is X and it is added to the wiki, A is the MENTOR, B is the STUDENT
+<a name="l-363"></a><span class="tm">20:12:01</span><span class="nk"> &lt;prusnak&gt;</span> and then we'll add A to the gsoc-mentors list
+<a name="l-364"></a><span class="tm">20:12:16</span><span class="nk"> &lt;warlordfff&gt;</span> oh ok
+<a name="l-365"></a><span class="tm">20:12:17</span><span class="nk"> &lt;suseROCKs&gt;</span> :-D
+<a name="l-366"></a><span class="tm">20:12:40</span><span class="nk"> &lt;warlordfff&gt;</span> how are we so far?
+<a name="l-367"></a><span class="tm">20:12:53</span><span class="nk"> &lt;warlordfff&gt;</span> do we have enough students and mentors?
+<a name="l-368"></a><span class="tm">20:12:55</span><span class="nk"> &lt;prusnak&gt;</span> how A communicates with B is your business, but mentors and students should use -project as matchmaking list :)
+<a name="l-369"></a><span class="tm">20:13:40</span><span class="nk"> &lt;prusnak&gt;</span> i see at least 7 "matchmakingthreads
+<a name="l-370"></a><span class="tm">20:13:48</span><span class="nk"> &lt;suseROCKs&gt;</span> this is turning into a lovefest not a codefest  :-D
+<a name="l-371"></a><span class="tm">20:13:48</span><span class="nk"> &lt;d1g1tltom&gt;</span> we should create more detailed project pages for projects where there was interest on the list i think
+<a name="l-372"></a><span class="tm">20:13:50</span><span class="nk"> &lt;prusnak&gt;</span> i see at least 7 "matchmaking" GSoC threads  on -project for now
+<a name="l-373"></a><span class="tm">20:13:54</span><span class="nk"> &lt;warlordfff&gt;</span> so a students says in Project mailing list I am in for x project?
+<a name="l-374"></a><span class="tm">20:14:06</span><span class="nk"> &lt;warlordfff&gt;</span> and looking for mentor?
+<a name="l-375"></a><span class="tm">20:14:11</span><span class="nk"> &lt;prusnak&gt;</span> yes
+<a name="l-376"></a><span class="tm">20:14:18</span><span class="nk"> &lt;warlordfff&gt;</span> cool thanks
+<a name="l-377"></a><span class="tm">20:14:24</span><span class="nk"> &lt;prusnak&gt;</span> or you can approach mentor directly if there is one listed on the ideas page
+<a name="l-378"></a><span class="tm">20:15:00</span><span class="nk"> &lt;suseROCKs&gt;</span> also for those of us who hang out here on IRC  if a student comes in saying "I have this project and I'm looking for a mentor"  try to offer help in matching them with a good mentor that fits the skillset needed
+<a name="l-379"></a><span class="tm">20:15:23</span><span class="nk"> &lt;suseROCKs&gt;</span> be helpful!   Don't just say "Go to the mailing list"   Make them feel warm and welcome here because we want these students to stay here long after GSoC is over
+<a name="l-380"></a><span class="tm">20:15:42</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">warlordfff:</span> discussions among the mentors should happen on gsoc-mentors
+<a name="l-381"></a><span class="tm">20:15:43</span><span class="nk"> &lt;henne&gt;</span> everything clear now? :)
+<a name="l-382"></a><span class="tm">20:15:49</span><span class="nk"> &lt;d1g1tltom&gt;</span> <span class="hi">warlordfff:</span> yes, and they should create a detailed application so we can choose
+<a name="l-383"></a><span class="tm">20:15:51</span><span class="nk"> &lt;warlordfff&gt;</span> υεσ
+<a name="l-384"></a><span class="tm">20:15:58</span><span class="nk"> &lt;warlordfff&gt;</span> yes
+<a name="l-385"></a><span class="tm">20:16:03</span><span class="nk"> &lt;warlordfff&gt;</span> thanks
+<a name="l-386"></a><span class="tm">20:16:25</span><span class="nk"> &lt;henne&gt;</span> okay anything else about GSoC?
+<a name="l-387"></a><span class="tm">20:16:54</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#info </span><span class="cmdline">no questions where asked about the status report. suseROCKs gave a us a live report about the marketing 11.4 post mortem and prusnak about the status of Google Summer of Code 2011</span>
+<a name="l-388"></a><span class="tm">20:16:59</span><span class="nk"> &lt;henne&gt;</span> next topic then
+<a name="l-389"></a><span class="tm">20:17:00 </span><span class="nka">* suseROCKs</span> <span class="ac">will refrain from wisecracks for once</span>
+<a name="l-390"></a><span class="tm">20:17:13</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE conference(10 minutes)</span>
+<a name="l-391"></a><span class="tm">20:17:30</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> thats yours I presume?
+<a name="l-392"></a><span class="tm">20:17:49</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Yeah, it is.
+<a name="l-393"></a><span class="tm">20:17:51</span><span class="nk"> &lt;suseROCKs&gt;</span> one of those AJaeger's just disappeared... hmm
+<a name="l-394"></a><span class="tm">20:18:17</span><span class="nk"> &lt;AlanClark&gt;</span> AJ I threw this one on the agenda for ya :-)
+<a name="l-395"></a><span class="tm">20:18:35</span><span class="nk"> &lt;AJaeger&gt;</span> I just needed a few seconds to boot up ;)
+<a name="l-396"></a><span class="tm">20:19:11</span><span class="nk"> &lt;AJaeger&gt;</span> With michl gone as master of the conference organisation, we need to figure out again how to organize one ;)
+<a name="l-397"></a><span class="tm">20:19:28</span><span class="nk"> &lt;jospoortvliet&gt;</span> meeeeeetings
+<a name="l-398"></a><span class="tm">20:19:37</span><span class="nk"> &lt;AJaeger&gt;</span> So, I met last week with dragotin and jjung and started writing up a wiki page - some kind of brainstorm - on what needs to be done.
+<a name="l-399"></a><span class="tm">20:19:42</span><span class="nk"> &lt;AJaeger&gt;</span> The page is: http://en.opensuse.org/openSUSE:Conference_Planning_2011
+<a name="l-400"></a><span class="tm">20:19:48</span><span class="nk"> &lt;AJaeger&gt;</span> Henne, an #info please ;)
+<a name="l-401"></a><span class="tm">20:20:10</span><span class="nk"> &lt;AJaeger&gt;</span> I'm currently scouting for events in the Nuernberg area.
+<a name="l-402"></a><span class="tm">20:20:21</span><span class="nk"> &lt;prusnak&gt;</span> ftr there was some discussion already on cfp@o.o but it was mostly unorganized
+<a name="l-403"></a><span class="tm">20:20:35</span><span class="nk"> &lt;prusnak&gt;</span> discussion together with wikipage is much better!
+<a name="l-404"></a><span class="tm">20:20:38</span><span class="nk"> &lt;suseROCKs&gt;</span> so we're definitely sticking with NUE?
+<a name="l-405"></a><span class="tm">20:20:42</span><span class="nk"> &lt;AJaeger&gt;</span> The SUSE Labs conference would like to join us, so we will have a slightly bigger event.
+<a name="l-406"></a><span class="tm">20:21:01</span><span class="nk"> &lt;mrdocs&gt;</span> What is the Labs Conf ?
+<a name="l-407"></a><span class="tm">20:21:02</span><span class="nk"> &lt;cbh2000&gt;</span> Hello everybody!  I am interested in participating in GSoC this year, but I do not have a lot of free time available.  Is it "okay" to select a project that I could complete in 16 hours a week?
+<a name="l-408"></a><span class="tm">20:21:05</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> Nuernberg is my first choice. If somebody wants to look elsewhere, go ahead...
+<a name="l-409"></a><span class="tm">20:21:17</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">mrdocs:</span> openSUSE Labs conference, usually happens in praque
+<a name="l-410"></a><span class="tm">20:21:20</span><span class="nk"> &lt;jospoortvliet&gt;</span> prague :D
+<a name="l-411"></a><span class="tm">20:21:21</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">mrdocs:</span> SUSE Labs are our kernel, samba etc. hackers.
+<a name="l-412"></a><span class="tm">20:21:28</span><span class="nk"> &lt;cbh2000&gt;</span> I could negotiate time off from work, but I would like to ask for input here first...
+<a name="l-413"></a><span class="tm">20:21:29</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   Praha
+<a name="l-414"></a><span class="tm">20:21:29</span><span class="nk"> &lt;mrdocs&gt;</span> cool
+<a name="l-415"></a><span class="tm">20:21:43</span><span class="nk"> &lt;AJaeger&gt;</span> They have their own conference - and merging would get some nice technical tals
+<a name="l-416"></a><span class="tm">20:21:47</span><span class="nk"> &lt;mrdocs&gt;</span> is there a site big enough to do both in Prague ?
+<a name="l-417"></a><span class="tm">20:21:49</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">cbh2000:</span> we're in the middle of a meeting. would you mind taking your question to the mailinglist? :)
+<a name="l-418"></a><span class="tm">20:21:53</span><span class="nk"> &lt;cbh2000&gt;</span> OK
+<a name="l-419"></a><span class="tm">20:21:58</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">cbh2000:</span> sorry
+<a name="l-420"></a><span class="tm">20:22:01</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">cbh2000:</span> opensuse-project@opensuse.org
+<a name="l-421"></a><span class="tm">20:22:03</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">mrdocs:</span> There is - but it needs organizing.
+<a name="l-422"></a><span class="tm">20:22:06</span><span class="nk"> &lt;cbh2000&gt;</span> thanks
+<a name="l-423"></a><span class="tm">20:22:22</span><span class="nk"> &lt;prusnak&gt;</span> most of the people I talked to prefer prague to nuernberg
+<a name="l-424"></a><span class="tm">20:22:27</span><span class="nk"> &lt;AJaeger&gt;</span> The advantage of NUE is the closeness to the office.
+<a name="l-425"></a><span class="tm">20:22:33</span><span class="nk"> &lt;mrdocs&gt;</span> my thinking is two foled
+<a name="l-426"></a><span class="tm">20:22:34</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">prusnak:</span> don't talk to people in .cz :P
+<a name="l-427"></a><span class="tm">20:22:37</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">prusnak:</span> Yeah, you talk to people living in Prague ;)
+<a name="l-428"></a><span class="tm">20:22:39</span><span class="nk"> &lt;mrdocs&gt;</span> fold even
+<a name="l-429"></a><span class="tm">20:22:43</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">AJaeger:</span> no i don't
+<a name="l-430"></a><span class="tm">20:22:50</span><span class="nk"> &lt;mrdocs&gt;</span> 1. more direct air service
+<a name="l-431"></a><span class="tm">20:22:54</span><span class="nk"> &lt;suseROCKs&gt;</span> but the advantage of Prague is the famous prusnak BBQ Party in his back yard
+<a name="l-432"></a><span class="tm">20:22:58</span><span class="nk"> &lt;mrdocs&gt;</span> 2. better food
+<a name="l-433"></a><span class="tm">20:23:00</span><span class="nk"> &lt;prusnak&gt;</span> i didn't talk to prague folks yet
+<a name="l-434"></a><span class="tm">20:23:17</span><span class="nk"> &lt;mrdocs&gt;</span> 3. .cz is important community for openSUSE
+<a name="l-435"></a><span class="tm">20:23:26</span><span class="nk"> &lt;prusnak&gt;</span> but most of the people i talked at OSC10 wanted to go to prague instead
+<a name="l-436"></a><span class="tm">20:23:28</span><span class="nk"> &lt;mrdocs&gt;</span> cons ?
+<a name="l-437"></a><span class="tm">20:23:30</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">prusnak:</span> If you want to scout in parallel, go for it - and then let's see who finds the better venue
+<a name="l-438"></a><span class="tm">20:23:38</span><span class="nk"> &lt;prusnak&gt;</span> (because they've seen literally everything in NUE already)
+<a name="l-439"></a><span class="tm">20:23:44</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">mrdocs:</span> 1. I can cycle to the conference
+<a name="l-440"></a><span class="tm">20:23:48</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">mrdocs:</span> 2. bettter beer
+<a name="l-441"></a><span class="tm">20:23:51</span><span class="nk"> &lt;suseROCKs&gt;</span> mrdocs,   the one thing that we have to take into consideration is all the people in NUE that we have to ship when if we stay in NUE we don't have to ship them.  But yes  NUE is a PITA to travel to
+<a name="l-442"></a><span class="tm">20:23:52</span><span class="nk"> &lt;cartman&gt;</span> 2. döner is good
+<a name="l-443"></a><span class="tm">20:23:58</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">mrdocs:</span> 3. I understand the language
+<a name="l-444"></a><span class="tm">20:23:59</span><span class="nk"> &lt;henne&gt;</span> guys
+<a name="l-445"></a><span class="tm">20:23:59</span><span class="nk"> &lt;oy&gt;</span> <span class="hi">mrdocs:</span> too much culture in praha ;-)
+<a name="l-446"></a><span class="tm">20:24:05</span><span class="nk"> &lt;prusnak&gt;</span> the problem is we need to persuade msrex who's paying afterall, right ...
+<a name="l-447"></a><span class="tm">20:24:16</span><span class="nk"> &lt;henne&gt;</span> can we please discuss this on a mailinglist or something?
+<a name="l-448"></a><span class="tm">20:24:17 </span><span class="nka">* javier</span> <span class="ac">hasn't seen literally everything in NUE already :P</span>
+<a name="l-449"></a><span class="tm">20:24:24</span><span class="nk"> &lt;dragotin&gt;</span> come on, do you really think you have realised whats behind conference organisation?
+<a name="l-450"></a><span class="tm">20:24:29 </span><span class="nka">* warlordfff</span> <span class="ac">likes beers in both countries the same</span>
+<a name="l-451"></a><span class="tm">20:24:38</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">dragotin:</span> do tell
+<a name="l-452"></a><span class="tm">20:24:43</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">prusnak:</span> The problem is to find a good location and time this year!
+<a name="l-453"></a><span class="tm">20:24:45</span><span class="nk"> &lt;suseROCKs&gt;</span> dont get him started  :-)
+<a name="l-454"></a><span class="tm">20:24:50</span><span class="nk"> &lt;AJaeger&gt;</span> We're quite late for this.
+<a name="l-455"></a><span class="tm">20:24:54</span><span class="nk"> &lt;prusnak&gt;</span> i know
+<a name="l-456"></a><span class="tm">20:25:00</span><span class="nk"> &lt;oy&gt;</span> <span class="hi">javier:</span> true as well
+<a name="l-457"></a><span class="tm">20:25:05</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">cartman:</span> lots! and i did this professionally a while back
+<a name="l-458"></a><span class="tm">20:25:08</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   ok so let's figure out when to boot up the conference committee and let's get started.  I want in this time!
+<a name="l-459"></a><span class="tm">20:25:08</span><span class="nk"> &lt;prusnak&gt;</span> because we kept ignoring the issue for various reasons
+<a name="l-460"></a><span class="tm">20:25:10</span><span class="nk"> &lt;dragotin&gt;</span> thats the prob: We're quite late and the conference calendar is full already
+<a name="l-461"></a><span class="tm">20:25:21</span><span class="nk"> &lt;javier&gt;</span> I didn't have time to walk around in NUE
+<a name="l-462"></a><span class="tm">20:25:34</span><span class="nk"> &lt;henne&gt;</span> guys
+<a name="l-463"></a><span class="tm">20:25:38</span><span class="nk"> &lt;AJaeger&gt;</span> A first call to action: Please enhance the wiki page I mentioned and feel free to volunteer already.
+<a name="l-464"></a><span class="tm">20:25:47</span><span class="nk"> &lt;manugupt1&gt;</span> India :)
+<a name="l-465"></a><span class="tm">20:25:48</span><span class="nk"> &lt;henne&gt;</span> you will never argue out which city it should be in
+<a name="l-466"></a><span class="tm">20:25:48</span><span class="nk"> &lt;suseROCKs&gt;</span> let's decide now to set a time/eta for starting the planning meeting
+<a name="l-467"></a><span class="tm">20:25:56</span><span class="nk"> &lt;warlordfff&gt;</span> Guys one thing
+<a name="l-468"></a><span class="tm">20:26:05</span><span class="nk"> &lt;warlordfff&gt;</span> about the conference
+<a name="l-469"></a><span class="tm">20:26:05</span><span class="nk"> &lt;henne&gt;</span> want to influence this? join the organization
+<a name="l-470"></a><span class="tm">20:26:07</span><span class="nk"> &lt;cartman&gt;</span> lets do the implementation in the wiki/mailing list.
+<a name="l-471"></a><span class="tm">20:26:11</span><span class="nk"> &lt;henne&gt;</span> otherwise just shut the fuck up :)
+<a name="l-472"></a><span class="tm">20:26:15</span><span class="nk"> &lt;warlordfff&gt;</span> tell us ASAP
+<a name="l-473"></a><span class="tm">20:26:24</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">henne:</span> tststs strong language
+<a name="l-474"></a><span class="tm">20:26:28 </span><span class="nka">* suseROCKs</span> <span class="ac">gasps at henne</span>
+<a name="l-475"></a><span class="tm">20:26:36</span><span class="nk"> &lt;javier&gt;</span> I suppose the easiest thing would be having oSC 11 in the same place as last year
+<a name="l-476"></a><span class="tm">20:26:50</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">dragotin:</span> make a note in the class register ;)
+<a name="l-477"></a><span class="tm">20:26:57</span><span class="nk"> &lt;AJaeger&gt;</span> I hope to have in the next two weeks a proposal for NUE.
+<a name="l-478"></a><span class="tm">20:27:11</span><span class="nk"> &lt;suseROCKs&gt;</span> ok ok no more logistics discussion here.  Henne has a point and we have more topics in the agenda.    Vote on ETA to start up committee  and move on!
+<a name="l-479"></a><span class="tm">20:27:19</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">henne:</span> write 10 times: I will never say naughty things again and will greet drago every morning friendly.
+<a name="l-480"></a><span class="tm">20:27:19</span><span class="nk"> &lt;warlordfff&gt;</span> we need to book tickets
+<a name="l-481"></a><span class="tm">20:27:20</span><span class="nk"> &lt;henne&gt;</span> and do it!
+<a name="l-482"></a><span class="tm">20:27:40</span><span class="nk"> &lt;AJaeger&gt;</span> So, who wants to help me choosing location and date?
+<a name="l-483"></a><span class="tm">20:27:46 </span><span class="nka">* mrdocs</span> <span class="ac">will</span>
+<a name="l-484"></a><span class="tm">20:27:50</span><span class="nk"> &lt;AJaeger&gt;</span> Or wants to search in other cities?
+<a name="l-485"></a><span class="tm">20:28:10</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">mrdocs:</span> Add yourself please to the "Nuernberg Location Search team"
+<a name="l-486"></a><span class="tm">20:28:16 </span><span class="nka">* suseROCKs</span> <span class="ac">has 4 vacant bedrooms if you want the conference in my house in Chicago</span>
+<a name="l-487"></a><span class="tm">20:28:18</span><span class="nk"> &lt;mrdocs&gt;</span> next year i want to propose Montreal
+<a name="l-488"></a><span class="tm">20:28:28</span><span class="nk"> &lt;suseROCKs&gt;</span> but I digress...  we discuss at Conference meeting!
+<a name="l-489"></a><span class="tm">20:28:29</span><span class="nk"> &lt;mrdocs&gt;</span> i have the venue already
+<a name="l-490"></a><span class="tm">20:28:32</span><span class="nk"> &lt;mrdocs&gt;</span> yes
+<a name="l-491"></a><span class="tm">20:28:34</span><span class="nk"> &lt;jospoortvliet&gt;</span> Feel free to put arguments on the wiki for Prague AND volunteer to help out organize it there. We can present it to msrex and if he's convinced he'll pay for doing it there. If you find someone else who can put 50.000 on the table for Prague we don't need msrex and can do it there anyway. I'm ok with both as I personally prefer prague anyway
+<a name="l-492"></a><span class="tm">20:28:48</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">jospoortvliet:</span> the problem is we ignored the issue for so long
+<a name="l-493"></a><span class="tm">20:28:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">prusnak:</span> yup I know
+<a name="l-494"></a><span class="tm">20:28:55</span><span class="nk"> &lt;prusnak&gt;</span> it might be impossible to find something at this time of the year
+<a name="l-495"></a><span class="tm">20:29:14</span><span class="nk"> &lt;prusnak&gt;</span> especially with all these linux foundation meetings in summer
+<a name="l-496"></a><span class="tm">20:29:20</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">prusnak:</span> Let the two of us talk tomorrow and see what you can do in Prague, ok?
+<a name="l-497"></a><span class="tm">20:29:26</span><span class="nk"> &lt;AlanClark&gt;</span> Ok - Aj's put out the call, let's move on to the next topics
+<a name="l-498"></a><span class="tm">20:29:29</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">prusnak:</span> Not summer, just all of October ;)
+<a name="l-499"></a><span class="tm">20:29:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">AJaeger:</span> doing it end of August would be nice, better weather and before ultra-busy conference season
+<a name="l-500"></a><span class="tm">20:29:51</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">AJaeger:</span> done
+<a name="l-501"></a><span class="tm">20:29:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">AJaeger:</span> but it has to be possible :D
+<a name="l-502"></a><span class="tm">20:29:58</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">AJaeger:</span> i'll talk to alena, vojtech and maybe others what do they think about it
+<a name="l-503"></a><span class="tm">20:30:06</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   quit feeding the topic.   it should be discussed in conf meeting  :-P
+<a name="l-504"></a><span class="tm">20:30:08</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-505"></a><span class="tm">20:30:12</span><span class="nk"> &lt;prusnak&gt;</span> there's no point to have a meeting without having anything concrete in our hands i guess
+<a name="l-506"></a><span class="tm">20:30:15</span><span class="nk"> &lt;mrdocs&gt;</span> next ?
+<a name="l-507"></a><span class="tm">20:30:16</span><span class="nk"> &lt;henne&gt;</span> ill move on to the next topic now
+<a name="l-508"></a><span class="tm">20:30:19</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">prusnak:</span> Ok - and then get back to me (or all of us) please
+<a name="l-509"></a><span class="tm">20:30:25</span><span class="nk"> &lt;suseROCKs&gt;</span> viva henne!
+<a name="l-510"></a><span class="tm">20:30:48</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">permission@ requests (10 minutes)</span>
+<a name="l-511"></a><span class="tm">20:30:59</span><span class="nk"> &lt;henne&gt;</span> This is a topic for the openSUSE Board
+<a name="l-512"></a><span class="tm">20:31:11</span><span class="nk"> &lt;henne&gt;</span> Several requests for use of the trademarks have been received through permission@. The board has needs to vote
+<a name="l-513"></a><span class="tm">20:31:49</span><span class="nk"> &lt;suseROCKs&gt;</span> can we list them one by one now and vote and tick off to the next one?
+<a name="l-514"></a><span class="tm">20:31:50</span><span class="nk"> &lt;henne&gt;</span> we kinda lost our ways with that one
+<a name="l-515"></a><span class="tm">20:31:55 </span><span class="nka">* mrdocs</span> <span class="ac">returns in 3 mins</span>
+<a name="l-516"></a><span class="tm">20:32:05</span><span class="nk"> &lt;henne&gt;</span> prusnak used to transfer them into retro
+<a name="l-517"></a><span class="tm">20:32:09</span><span class="nk"> &lt;henne&gt;</span> and then we voted there
+<a name="l-518"></a><span class="tm">20:32:15</span><span class="nk"> &lt;henne&gt;</span> but we never did anymore
+<a name="l-519"></a><span class="tm">20:32:25</span><span class="nk"> &lt;henne&gt;</span> do we want to vote here now?
+<a name="l-520"></a><span class="tm">20:32:33</span><span class="nk"> &lt;henne&gt;</span> (and in the future)
+<a name="l-521"></a><span class="tm">20:32:37</span><span class="nk"> &lt;AlanClark&gt;</span> most of these we commented but didn't have a clear vote
+<a name="l-522"></a><span class="tm">20:32:58</span><span class="nk"> &lt;suseROCKs&gt;</span> reto is unfortunately not a comfortable site for me to navigate to
+<a name="l-523"></a><span class="tm">20:33:05</span><span class="nk"> &lt;henne&gt;</span> yes. comments are not neccesarry
+<a name="l-524"></a><span class="tm">20:33:11</span><span class="nk"> &lt;suseROCKs&gt;</span> so let's just go ahead and tick off the list here and now and if we can vote on each one, let's do it and move on
+<a name="l-525"></a><span class="tm">20:33:22</span><span class="nk"> &lt;henne&gt;</span> except for helping you fellow board members in their vote
+<a name="l-526"></a><span class="tm">20:33:33</span><span class="nk"> &lt;henne&gt;</span> okay wonderful
+<a name="l-527"></a><span class="tm">20:33:37</span><span class="nk"> &lt;suseROCKs&gt;</span> remember the reward... the more minutes left over in the 2 hour period of meeting, the more dancing I get to do.   INCENTIVE!
+<a name="l-528"></a><span class="tm">20:34:02 </span><span class="nka">* henne</span> <span class="ac">swallows the puke again</span>
+<a name="l-529"></a><span class="tm">20:34:24</span><span class="nk"> &lt;henne&gt;</span> okay so the first one is the Greek openSUSE community asking to use the domain http://opensuse.gr
+<a name="l-530"></a><span class="tm">20:34:27</span><span class="nk"> &lt;AlanClark&gt;</span> henne - why not put that into suseROCKS hat
+<a name="l-531"></a><span class="tm">20:34:40</span><span class="nk"> &lt;AlanClark&gt;</span> +1
+<a name="l-532"></a><span class="tm">20:34:41</span><span class="nk"> &lt;suseROCKs&gt;</span> now that's just mean
+<a name="l-533"></a><span class="tm">20:34:51</span><span class="nk"> &lt;suseROCKs&gt;</span> +1
+<a name="l-534"></a><span class="tm">20:34:55</span><span class="nk"> &lt;henne&gt;</span> +1
+<a name="l-535"></a><span class="tm">20:35:10</span><span class="nk"> &lt;suseROCKs&gt;</span> c'mon one more vote!
+<a name="l-536"></a><span class="tm">20:35:12</span><span class="nk"> &lt;prusnak&gt;</span> +1
+<a name="l-537"></a><span class="tm">20:35:13</span><span class="nk"> &lt;henne&gt;</span> quorum
+<a name="l-538"></a><span class="tm">20:35:15</span><span class="nk"> &lt;suseROCKs&gt;</span> the ayes have it
+<a name="l-539"></a><span class="tm">20:35:18</span><span class="nk"> &lt;suseROCKs&gt;</span> OPA!!!!!!
+<a name="l-540"></a><span class="tm">20:35:22</span><span class="nk"> &lt;warlordfff&gt;</span> thankz
+<a name="l-541"></a><span class="tm">20:35:40</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> whats with your opa?
+<a name="l-542"></a><span class="tm">20:35:46</span><span class="nk"> &lt;Dominian&gt;</span> +1 (not that it matters)
+<a name="l-543"></a><span class="tm">20:35:56</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   greek expression.
+<a name="l-544"></a><span class="tm">20:35:58</span><span class="nk"> &lt;efagra&gt;</span> it's greek
+<a name="l-545"></a><span class="tm">20:35:58 </span><span class="nka">* Dominian</span> <span class="ac">just got done reading scroll back.</span>
+<a name="l-546"></a><span class="tm">20:36:02</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Dominian:</span> it doesnt :) only board members can vote
+<a name="l-547"></a><span class="tm">20:36:08</span><span class="nk"> &lt;Dominian&gt;</span> yeah yeah
+<a name="l-548"></a><span class="tm">20:36:22</span><span class="nk"> &lt;mrdocs&gt;</span> +1 Geek domains
+<a name="l-549"></a><span class="tm">20:36:26</span><span class="nk"> &lt;mrdocs&gt;</span> Greek even
+<a name="l-550"></a><span class="tm">20:36:36</span><span class="nk"> &lt;henne&gt;</span> okay next one is this: request to use opensuse within the domain name opensuse.by
+<a name="l-551"></a><span class="tm">20:36:49</span><span class="nk"> &lt;AlanClark&gt;</span> +1
+<a name="l-552"></a><span class="tm">20:36:51</span><span class="nk"> &lt;suseROCKs&gt;</span> ahh  a domain named for me
+<a name="l-553"></a><span class="tm">20:36:56</span><span class="nk"> &lt;suseROCKs&gt;</span> definitely +1 for that!
+<a name="l-554"></a><span class="tm">20:37:02</span><span class="nk"> &lt;prusnak&gt;</span> +1+1
+<a name="l-555"></a><span class="tm">20:37:15</span><span class="nk"> &lt;AJaeger&gt;</span> just one question: Can we revoke these approvals if opensuse.XX turns evil?
+<a name="l-556"></a><span class="tm">20:37:19</span><span class="nk"> &lt;mrdocs&gt;</span> from whom ?
+<a name="l-557"></a><span class="tm">20:37:19</span><span class="nk"> &lt;henne&gt;</span> they also use http://community.opensuse.by/
+<a name="l-558"></a><span class="tm">20:37:25</span><span class="nk"> &lt;henne&gt;</span> which seems to be a forum
+<a name="l-559"></a><span class="tm">20:37:28</span><span class="nk"> &lt;AlanClark&gt;</span> AJaeger - yes
+<a name="l-560"></a><span class="tm">20:37:38</span><span class="nk"> &lt;mrdocs&gt;</span> + for .by
+<a name="l-561"></a><span class="tm">20:37:58</span><span class="nk"> &lt;suseROCKs&gt;</span> I feel like you're all voting for me  (sniff sniff)
+<a name="l-562"></a><span class="tm">20:38:00</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">AlanClark:</span> Glad to hear, that makes approvals a bit easier ;)
+<a name="l-563"></a><span class="tm">20:38:19</span><span class="nk"> &lt;henne&gt;</span> is that .by russian?
+<a name="l-564"></a><span class="tm">20:38:23</span><span class="nk"> &lt;henne&gt;</span> anaumov?
+<a name="l-565"></a><span class="tm">20:38:25</span><span class="nk"> &lt;prusnak&gt;</span> belarus
+<a name="l-566"></a><span class="tm">20:38:29</span><span class="nk"> &lt;AlanClark&gt;</span> belarus
+<a name="l-567"></a><span class="tm">20:38:35</span><span class="nk"> &lt;suseROCKs&gt;</span> .by is my initials
+<a name="l-568"></a><span class="tm">20:38:57</span><span class="nk"> &lt;Dominian&gt;</span> http://en.wikipedia.org/wiki/Belarus
+<a name="l-569"></a><span class="tm">20:39:03</span><span class="nk"> &lt;mrdocs&gt;</span> next ?
+<a name="l-570"></a><span class="tm">20:39:27</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">opensuse.gr approved</span>
+<a name="l-571"></a><span class="tm">20:39:31</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">opensuse.by approved</span>
+<a name="l-572"></a><span class="tm">20:39:54</span><span class="nk"> &lt;henne&gt;</span> next one is: The request from Gerry Gavigan
+<a name="l-573"></a><span class="tm">20:40:05</span><span class="nk"> &lt;AlanClark&gt;</span> you skipped on
+<a name="l-574"></a><span class="tm">20:40:08</span><span class="nk"> &lt;AlanClark&gt;</span> s/on/one
+<a name="l-575"></a><span class="tm">20:40:15</span><span class="nk"> &lt;henne&gt;</span> ups
+<a name="l-576"></a><span class="tm">20:40:29</span><span class="nk"> &lt;henne&gt;</span> so next is: The request from Gabor Kum to use the trademark on items at his Hungarian Linux t-shirt shop
+<a name="l-577"></a><span class="tm">20:40:35</span><span class="nk"> &lt;AlanClark&gt;</span> -1
+<a name="l-578"></a><span class="tm">20:40:48</span><span class="nk"> &lt;mrdocs&gt;</span> -1 i see no benefit
+<a name="l-579"></a><span class="tm">20:40:50</span><span class="nk"> &lt;prusnak&gt;</span> +1
+<a name="l-580"></a><span class="tm">20:40:52</span><span class="nk"> &lt;henne&gt;</span> +1
+<a name="l-581"></a><span class="tm">20:40:54</span><span class="nk"> &lt;Dominian&gt;</span> does any of those proceeds come back to the openSUSE project?
+<a name="l-582"></a><span class="tm">20:40:56</span><span class="nk"> &lt;suseROCKs&gt;</span> may I ask why not?
+<a name="l-583"></a><span class="tm">20:40:58</span><span class="nk"> &lt;mrdocs&gt;</span> and the site was down when i looked
+<a name="l-584"></a><span class="tm">20:41:13</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">Dominian:</span> not until we have a foundation :)
+<a name="l-585"></a><span class="tm">20:41:25</span><span class="nk"> &lt;Dominian&gt;</span> Then, if I were a board member, I would go with the nays on this one.
+<a name="l-586"></a><span class="tm">20:41:36</span><span class="nk"> &lt;suseROCKs&gt;</span> Dominian,   we have no method of a) receiving and b) accounting to make sure our "royalties" are given
+<a name="l-587"></a><span class="tm">20:41:41</span><span class="nk"> &lt;AJaeger&gt;</span> Ask him to send us 500 before you approve ;)
+<a name="l-588"></a><span class="tm">20:41:47</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">AJaeger:</span> +1
+<a name="l-589"></a><span class="tm">20:41:48</span><span class="nk"> &lt;Dominian&gt;</span> hehe
+<a name="l-590"></a><span class="tm">20:41:52</span><span class="nk"> &lt;AJaeger&gt;</span> I mean 500 free t-shirts ;)
+<a name="l-591"></a><span class="tm">20:42:01</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">AJaeger:</span>  only 500?
+<a name="l-592"></a><span class="tm">20:42:03</span><span class="nk"> &lt;henne&gt;</span> can we stick to the topic please?
+<a name="l-593"></a><span class="tm">20:42:08</span><span class="nk"> &lt;Dominian&gt;</span> a trademark should benefit all parties tha tuse it.. not just one.
+<a name="l-594"></a><span class="tm">20:42:11</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">suseROCKS:</span>  They are selling with no proposal to benefit  the project
+<a name="l-595"></a><span class="tm">20:42:18</span><span class="nk"> &lt;henne&gt;</span> suseROCKs wanted to know why AlanClark and mrdocs voted -
+<a name="l-596"></a><span class="tm">20:42:18</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">warlordfff:</span> For you I should have said 2000 ;)
+<a name="l-597"></a><span class="tm">20:42:32</span><span class="nk"> &lt;warlordfff&gt;</span> yeah ;-p
+<a name="l-598"></a><span class="tm">20:42:34</span><span class="nk"> &lt;mrdocs&gt;</span> exactly..
+<a name="l-599"></a><span class="tm">20:42:43</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">suseROCKs:</span> ^^
+<a name="l-600"></a><span class="tm">20:42:45</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> are you going to vote?
+<a name="l-601"></a><span class="tm">20:42:50</span><span class="nk"> &lt;suseROCKs&gt;</span> well we've approved stuff like that before.   Our goal was never to expect some kind of monetary return but to allow for positive boosting of our visibility
+<a name="l-602"></a><span class="tm">20:42:52</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">AlanClark:</span> Agreed.  He benefits from the project.. yeah openSUSE gets some advertisement out of it, but really what benefit will that have in the long run?
+<a name="l-603"></a><span class="tm">20:43:16</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> and to maybe revoke it when we have the chance to benefit from it yes
+<a name="l-604"></a><span class="tm">20:43:22</span><span class="nk"> &lt;suseROCKs&gt;</span> if we're going to vote against, then we're reversing what we were doing in the past.
+<a name="l-605"></a><span class="tm">20:43:31</span><span class="nk"> &lt;henne&gt;</span> thats why i voted +. We don't sell shirts in hungary
+<a name="l-606"></a><span class="tm">20:43:40</span><span class="nk"> &lt;henne&gt;</span> we don't have the means to do it
+<a name="l-607"></a><span class="tm">20:43:56</span><span class="nk"> &lt;cartman&gt;</span> also note that the profit from a tshirt is very low
+<a name="l-608"></a><span class="tm">20:44:04</span><span class="nk"> &lt;AlanClark&gt;</span> looks like the vote was 3 to 2 so it passes
+<a name="l-609"></a><span class="tm">20:44:05</span><span class="nk"> &lt;suseROCKs&gt;</span> ok can we require re-approval of request on an annual basis?  if so  I'll +1
+<a name="l-610"></a><span class="tm">20:44:20</span><span class="nk"> &lt;suseROCKs&gt;</span> 3-2?  who was third?
+<a name="l-611"></a><span class="tm">20:44:22</span><span class="nk"> &lt;henne&gt;</span> we can change it anytime right?
+<a name="l-612"></a><span class="tm">20:44:34</span><span class="nk"> &lt;Dominian&gt;</span> Don't see why not, its your trademark.
+<a name="l-613"></a><span class="tm">20:44:43</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Dominian:</span> that was rethorical :)
+<a name="l-614"></a><span class="tm">20:44:52</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   a specified date is better than arbitrarily sayin "Okay we decided to change now so cough up the dough"
+<a name="l-615"></a><span class="tm">20:45:02</span><span class="nk"> &lt;AlanClark&gt;</span> yah - but are you to go tell a guy to throw away his stock of t-shirts
+<a name="l-616"></a><span class="tm">20:45:17</span><span class="nk"> &lt;henne&gt;</span> life is tough :)
+<a name="l-617"></a><span class="tm">20:45:25</span><span class="nk"> &lt;suseROCKs&gt;</span> its bad business to do that
+<a name="l-618"></a><span class="tm">20:45:40</span><span class="nk"> &lt;cartman&gt;</span> well if you are going to reverse just postpone the decision
+<a name="l-619"></a><span class="tm">20:45:48</span><span class="nk"> &lt;henne&gt;</span> then lets attach a lifetime of one year
+<a name="l-620"></a><span class="tm">20:45:52</span><span class="nk"> &lt;suseROCKs&gt;</span> I will give a +1 only on the condition we tell him he must re-request on an annual basis  (and this should go for anyone who wishes to sell using openSUSE trademarks)
+<a name="l-621"></a><span class="tm">20:46:07</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">suseROCKs:</span> that's a good compromise.
+<a name="l-622"></a><span class="tm">20:46:11</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> can we do that?
+<a name="l-623"></a><span class="tm">20:46:31</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm sure we can.  Licensing companies do it all the time
+<a name="l-624"></a><span class="tm">20:46:42</span><span class="nk"> &lt;AlanClark&gt;</span> I think we can.
+<a name="l-625"></a><span class="tm">20:46:46</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-626"></a><span class="tm">20:46:57</span><span class="nk"> &lt;suseROCKs&gt;</span> then I enter my +1 officially with that stipulation
+<a name="l-627"></a><span class="tm">20:46:58</span><span class="nk"> &lt;mrdocs&gt;</span> i think that is a reasonable condition..
+<a name="l-628"></a><span class="tm">20:47:03</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">suseROCKs:</span> AlanClark there is awebsite where we get openSUSE tshirts at a low price occasionally should they get permissions too
+<a name="l-629"></a><span class="tm">20:47:12</span><span class="nk"> &lt;mrdocs&gt;</span> im with suseROCKs in this case
+<a name="l-630"></a><span class="tm">20:47:34</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">to the request from Gerry Gavigan. on the condition that he must re-request on an annual basis</span>
+<a name="l-631"></a><span class="tm">20:47:37</span><span class="nk"> &lt;AlanClark&gt;</span> manugupt1 - they need permission to use the trademarks
+<a name="l-632"></a><span class="tm">20:47:45</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   we do have to review how we approach those who have never requested permissions formally.   We'll have to figure that out as a separate topic which we are trying to work out currently
+<a name="l-633"></a><span class="tm">20:48:13</span><span class="nk"> &lt;manugupt1&gt;</span> Hmm....... Why not we have better guidelines as Python foundation and all
+<a name="l-634"></a><span class="tm">20:48:31</span><span class="nk"> &lt;henne&gt;</span> can we please stay on topic? thanks
+<a name="l-635"></a><span class="tm">20:48:31</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">manugupt1:</span> that requires a foundation first :)
+<a name="l-636"></a><span class="tm">20:48:54</span><span class="nk"> &lt;henne&gt;</span> next one is the request from Gerry Gavigan.
+<a name="l-637"></a><span class="tm">20:49:01</span><span class="nk"> &lt;henne&gt;</span> The recommendation is that this request does not need to be addressed by the Board as the permission he is requesting is already outlined under the openSUSE license agreement.
+<a name="l-638"></a><span class="tm">20:49:15</span><span class="nk"> &lt;suseROCKs&gt;</span> which one is it again?
+<a name="l-639"></a><span class="tm">20:49:33</span><span class="nk"> &lt;AlanClark&gt;</span> He's recyling used computers
+<a name="l-640"></a><span class="tm">20:49:54</span><span class="nk"> &lt;suseROCKs&gt;</span> and putting openSUSE on them for resale or giveaway (charity)?
+<a name="l-641"></a><span class="tm">20:50:03</span><span class="nk"> &lt;henne&gt;</span> yes something like that
+<a name="l-642"></a><span class="tm">20:50:16</span><span class="nk"> &lt;suseROCKs&gt;</span> I think that's totally permissible
+<a name="l-643"></a><span class="tm">20:50:17</span><span class="nk"> &lt;mrdocs&gt;</span> we should be promoting that when we can
+<a name="l-644"></a><span class="tm">20:50:35</span><span class="nk"> &lt;suseROCKs&gt;</span> mrdocs,  yes,  we should reach out to him and do a story on him if it is interesting
+<a name="l-645"></a><span class="tm">20:50:42</span><span class="nk"> &lt;henne&gt;</span> do that
+<a name="l-646"></a><span class="tm">20:50:56 </span><span class="nka">* suseROCKs</span> <span class="ac">makes a note of it</span>
+<a name="l-647"></a><span class="tm">20:51:00</span><span class="nk"> &lt;AlanClark&gt;</span> The point here, is that what he is asking for, doesn't require permission
+<a name="l-648"></a><span class="tm">20:51:08 </span><span class="nka">* dragotin</span> <span class="ac">sent a similar organisation promo dvds already</span>
+<a name="l-649"></a><span class="tm">20:51:10</span><span class="nk"> &lt;henne&gt;</span> are we agreeing on this?
+<a name="l-650"></a><span class="tm">20:51:29</span><span class="nk"> &lt;henne&gt;</span> is that what he is asking for, doesn't require permission
+<a name="l-651"></a><span class="tm">20:51:30</span><span class="nk"> &lt;suseROCKs&gt;</span> yes but I'll enter +1 for pschychological boosting for them anyway
+<a name="l-652"></a><span class="tm">20:51:31</span><span class="nk"> &lt;henne&gt;</span> +1
+<a name="l-653"></a><span class="tm">20:51:34</span><span class="nk"> &lt;suseROCKs&gt;</span> psychological
+<a name="l-654"></a><span class="tm">20:51:56 </span><span class="nka">* suseROCKs</span> <span class="ac">needed to correct the psycho word in jospoortvliet's presence</span>
+<a name="l-655"></a><span class="tm">20:52:15</span><span class="nk"> &lt;henne&gt;</span> more votes please
+<a name="l-656"></a><span class="tm">20:52:19</span><span class="nk"> &lt;AlanClark&gt;</span> +1
+<a name="l-657"></a><span class="tm">20:52:58</span><span class="nk"> &lt;suseROCKs&gt;</span> mrdocs,  prusnak  wake up.  you're killing dance-time!
+<a name="l-658"></a><span class="tm">20:52:59</span><span class="nk"> &lt;robjo1&gt;</span> They should put "Powered by SUSE" stickers on these boxes
+<a name="l-659"></a><span class="tm">20:53:01</span><span class="nk"> &lt;henne&gt;</span> more votes please
+<a name="l-660"></a><span class="tm">20:53:08</span><span class="nk"> &lt;mrdocs&gt;</span> +1
+<a name="l-661"></a><span class="tm">20:53:17</span><span class="nk"> &lt;suseROCKs&gt;</span> ayes have it
+<a name="l-662"></a><span class="tm">20:53:41</span><span class="nk"> &lt;AlanClark&gt;</span> mrdocs - he also asked how to become an Ambassador. I think suseROCKS already responded to that.
+<a name="l-663"></a><span class="tm">20:53:48</span><span class="nk"> &lt;mrdocs&gt;</span> ahh good
+<a name="l-664"></a><span class="tm">20:54:01</span><span class="nk"> &lt;suseROCKs&gt;</span> I did?   I better check on that
+<a name="l-665"></a><span class="tm">20:54:01</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">To the request of Gerry Gavigan we agreed that what he is asking for, doesn't require permission.</span>
+<a name="l-666"></a><span class="tm">20:54:15</span><span class="nk"> &lt;prusnak&gt;</span> +1
+<a name="l-667"></a><span class="tm">20:54:18</span><span class="nk"> &lt;prusnak&gt;</span> better late then never :)
+<a name="l-668"></a><span class="tm">20:54:42</span><span class="nk"> &lt;suseROCKs&gt;</span> next?
+<a name="l-669"></a><span class="tm">20:55:04</span><span class="nk"> &lt;henne&gt;</span> okay next one is: request from our Brewery to use our trademark
+<a name="l-670"></a><span class="tm">20:55:19</span><span class="nk"> &lt;henne&gt;</span> The recommendation is that the Board hold off voting on this request until Novell reviews the request for liability risk.
+<a name="l-671"></a><span class="tm">20:55:33</span><span class="nk"> &lt;henne&gt;</span> may i ask which liability risk?
+<a name="l-672"></a><span class="tm">20:55:37</span><span class="nk"> &lt;suseROCKs&gt;</span> did I miss something or did some of the questions I raised in the brewery request get answered?
+<a name="l-673"></a><span class="tm">20:55:37 </span><span class="nka">* mrdocs</span> <span class="ac">agrees, but thinks its a great idea</span>
+<a name="l-674"></a><span class="tm">20:55:46</span><span class="nk"> &lt;robjo1&gt;</span> What could possibly be wrong with openSUSE beer?
+<a name="l-675"></a><span class="tm">20:56:10</span><span class="nk"> &lt;warlordfff&gt;</span> +100 for openSUSE Beer
+<a name="l-676"></a><span class="tm">20:56:17</span><span class="nk"> &lt;suseROCKs&gt;</span> robjo1,   a bad batch of beer (not saying that would ever happen) and people suing us because we approved use of trademark
+<a name="l-677"></a><span class="tm">20:56:36</span><span class="nk"> &lt;Dominian&gt;</span> a green openSUSE beer would've been perfect for March 17th
+<a name="l-678"></a><span class="tm">20:56:46</span><span class="nk"> &lt;Siju&gt;</span> which Brewery?
+<a name="l-679"></a><span class="tm">20:56:48</span><span class="nk"> &lt;AlanClark&gt;</span> I check with Legal here in the US.  They aren't familiar with the alcohol laws in the EU. They asked that I talk with Felix to ensure that we dont' inherit some liability.
+<a name="l-680"></a><span class="tm">20:56:59</span><span class="nk"> &lt;robjo1&gt;</span> <span class="hi">Dominian:</span> maybe next year
+<a name="l-681"></a><span class="tm">20:57:04</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">robjo1:</span> :)
+<a name="l-682"></a><span class="tm">20:57:09</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">FYI:</span> The beer is sold by the brewery, not Novell or opensuse
+<a name="l-683"></a><span class="tm">20:57:23</span><span class="nk"> &lt;suseROCKs&gt;</span> guys, we all agree this is ag reat thing.  We just want to make sure our asses are covered.  That's all.    Let's be wise about this
+<a name="l-684"></a><span class="tm">20:57:25</span><span class="nk"> &lt;dragotin&gt;</span> there is simply no connection to Novell IMO
+<a name="l-685"></a><span class="tm">20:57:28</span><span class="nk"> &lt;henne&gt;</span> we don't sell anything...
+<a name="l-686"></a><span class="tm">20:57:55</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   no but we will be handing them out, right?
+<a name="l-687"></a><span class="tm">20:57:58</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">henne:</span> its a reasonable paranoia for an American based company...
+<a name="l-688"></a><span class="tm">20:57:59</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">henne:</span> yet
+<a name="l-689"></a><span class="tm">20:58:10</span><span class="nk"> &lt;AlanClark&gt;</span> As suseROCKS pointed out the trademark owner just wants me to do a check.
+<a name="l-690"></a><span class="tm">20:58:13</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Dominian:</span> never. the brewery will
+<a name="l-691"></a><span class="tm">20:58:18</span><span class="nk"> &lt;warlordfff&gt;</span> do we get beer sponsorship?
+<a name="l-692"></a><span class="tm">20:58:51</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">henne:</span> I wasn't in reference to the beer per se
+<a name="l-693"></a><span class="tm">20:58:55</span><span class="nk"> &lt;henne&gt;</span> so what happens when someone ships as bad t-shirt?
+<a name="l-694"></a><span class="tm">20:59:04</span><span class="nk"> &lt;mrdocs&gt;</span> I understand how Europeans would think, Why the hell do we need to do that? "
+<a name="l-695"></a><span class="tm">20:59:08</span><span class="nk"> &lt;henne&gt;</span> or installs opensuse and some bot software
+<a name="l-696"></a><span class="tm">20:59:11</span><span class="nk"> &lt;henne&gt;</span> or or or
+<a name="l-697"></a><span class="tm">20:59:12</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,   all the logistics of producing and selling the beer has been worked out.  Only thing is just to make sure we don't have any liability.  That's all.
+<a name="l-698"></a><span class="tm">20:59:33</span><span class="nk"> &lt;mrdocs&gt;</span> especially when it comes to anything alcohol related and US law
+<a name="l-699"></a><span class="tm">20:59:37</span><span class="nk"> &lt;suseROCKs&gt;</span> legal perception, henne
+<a name="l-700"></a><span class="tm">20:59:46</span><span class="nk"> &lt;henne&gt;</span> hm?
+<a name="l-701"></a><span class="tm">20:59:50</span><span class="nk"> &lt;henne&gt;</span> i'm just wondering
+<a name="l-702"></a><span class="tm">20:59:55</span><span class="nk"> &lt;henne&gt;</span> where does this end?
+<a name="l-703"></a><span class="tm">21:00:04</span><span class="nk"> &lt;robjo1&gt;</span> There are too many lawyers in the world, it just has to be reviewed.
+<a name="l-704"></a><span class="tm">21:00:06</span><span class="nk"> &lt;AlanClark&gt;</span> henne,  that's why I was referred to Novell's EU legal.
+<a name="l-705"></a><span class="tm">21:00:07</span><span class="nk"> &lt;henne&gt;</span> i get that alcohol is special
+<a name="l-706"></a><span class="tm">21:00:07</span><span class="nk"> &lt;suseROCKs&gt;</span> a bad tshirt causing a freak accident would be viewed as "oops"  a bad batch of beer would be viewed as "negligence"
+<a name="l-707"></a><span class="tm">21:00:15</span><span class="nk"> &lt;henne&gt;</span> or we think it is
+<a name="l-708"></a><span class="tm">21:00:16</span><span class="nk"> &lt;robjo1&gt;</span> <span class="hi">henne:</span> it never ends it gets worse every year
+<a name="l-709"></a><span class="tm">21:00:31</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">henne:</span> its different when you have a country with 1 million plus lawyers
+<a name="l-710"></a><span class="tm">21:00:42</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">robjo1:</span> sadly yes ;(
+<a name="l-711"></a><span class="tm">21:00:46</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">suseROCKs:</span> ... and the brewery would be sued for bad beer
+<a name="l-712"></a><span class="tm">21:00:51</span><span class="nk"> &lt;suseROCKs&gt;</span> its just one more bar to cross.  that's all.  Let's just be patient.  No one is against the open Toad beer request.
+<a name="l-713"></a><span class="tm">21:01:16</span><span class="nk"> &lt;dragotin&gt;</span> <span class="hi">suseROCKs:</span> Old Toad. Open Toad would be violence I guess ;-)
+<a name="l-714"></a><span class="tm">21:01:16</span><span class="nk"> &lt;mrdocs&gt;</span> not at all I think its a great idea and what a reaction at fosdem
+<a name="l-715"></a><span class="tm">21:01:26</span><span class="nk"> &lt;henne&gt;</span> i just want to make sure that we don't start to focus on unneccesarry legal aspect
+<a name="l-716"></a><span class="tm">21:01:32</span><span class="nk"> &lt;henne&gt;</span> s
+<a name="l-717"></a><span class="tm">21:01:34</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Bring Felix a beer tomorrow to speed up the process ;)
+<a name="l-718"></a><span class="tm">21:01:41</span><span class="nk"> &lt;henne&gt;</span> we are geeks, we tend to do that
+<a name="l-719"></a><span class="tm">21:01:56</span><span class="nk"> &lt;suseROCKs&gt;</span> dragotin,   at least here in the US, even a "distributor" would be liable.   If we hand out the beer at conferences, we could be liable.   But maybe EU laws don't carry that risk and then its moot to worry about,  Just let's corss our I's and dot our T's
+<a name="l-720"></a><span class="tm">21:02:00</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">henne:</span> if it were anything else, we would not have these complications
+<a name="l-721"></a><span class="tm">21:02:32</span><span class="nk"> &lt;henne&gt;</span> so what are we checking? if we are allowed to distribute the beer on conferences?
+<a name="l-722"></a><span class="tm">21:02:36</span><span class="nk"> &lt;henne&gt;</span> or stuff?
+<a name="l-723"></a><span class="tm">21:02:38</span><span class="nk"> &lt;dragotin&gt;</span> yeah, lets see what they say. no problem
+<a name="l-724"></a><span class="tm">21:02:44</span><span class="nk"> &lt;henne&gt;</span> you don't really ask that do you?
+<a name="l-725"></a><span class="tm">21:02:57</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">henne:</span> no, checking if there is any liability
+<a name="l-726"></a><span class="tm">21:03:07</span><span class="nk"> &lt;AlanClark&gt;</span> henne - that is a different question.
+<a name="l-727"></a><span class="tm">21:03:52</span><span class="nk"> &lt;mrdocs&gt;</span> and its almost impossible to sell or even give away any kind of alcohol in the public without a license and strong insurance in the US
+<a name="l-728"></a><span class="tm">21:03:55</span><span class="nk"> &lt;henne&gt;</span> please let's not get into that
+<a name="l-729"></a><span class="tm">21:04:15</span><span class="nk"> &lt;henne&gt;</span> pelase
+<a name="l-730"></a><span class="tm">21:04:19</span><span class="nk"> &lt;henne&gt;</span> be reasonable
+<a name="l-731"></a><span class="tm">21:04:33</span><span class="nk"> &lt;suseROCKs&gt;</span> just let the question get asked and we'll get to the resolution soon enough.  unless you are saying production MUST start tonight or there's no chance the beer will be made
+<a name="l-732"></a><span class="tm">21:04:55 </span><span class="nka">* mrdocs</span> <span class="ac">votes to postpone</span>
+<a name="l-733"></a><span class="tm">21:05:09 </span><span class="nka">* suseROCKs</span> <span class="ac">votes to get liability assurances</span>
+<a name="l-734"></a><span class="tm">21:05:11</span><span class="nk"> &lt;robjo1&gt;</span> <span class="hi">henne:</span> sorry, being reasonable has long left the public conscience in the US
+<a name="l-735"></a><span class="tm">21:05:35</span><span class="nk"> &lt;suseROCKs&gt;</span> enough of this country badgering....
+<a name="l-736"></a><span class="tm">21:05:53</span><span class="nk"> &lt;suseROCKs&gt;</span> if it is clear that in EU there's no risk then there's no worry that this will get approved, right?
+<a name="l-737"></a><span class="tm">21:06:01</span><span class="nk"> &lt;AlanClark&gt;</span> let's go to the next topic
+<a name="l-738"></a><span class="tm">21:06:03</span><span class="nk"> &lt;robjo1&gt;</span> hey, I live here I can badger all I want ;)
+<a name="l-739"></a><span class="tm">21:06:04</span><span class="nk"> &lt;suseROCKs&gt;</span> if there is a risk, well gee...  guess we learned!
+<a name="l-740"></a><span class="tm">21:06:22</span><span class="nk"> &lt;suseROCKs&gt;</span> yes next topic please
+<a name="l-741"></a><span class="tm">21:06:36</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">to the brewer request. we wait for novell legal to answer some questions</span>
+<a name="l-742"></a><span class="tm">21:07:35</span><span class="nk"> &lt;suseROCKs&gt;</span> move on!
+<a name="l-743"></a><span class="tm">21:07:43</span><span class="nk"> &lt;suseROCKs&gt;</span> I have Geeko Dance Rehearsal tonight!
+<a name="l-744"></a><span class="tm">21:07:45</span><span class="nk"> &lt;henne&gt;</span> next is: Ishwon requested the use of the openSUSE and Novell trademarks
+<a name="l-745"></a><span class="tm">21:07:57</span><span class="nk"> &lt;henne&gt;</span> No action specifically needed by the Board on this request. Since it included the use of Novell trademarks Alan asked Novell MARCOM to respond to this request. MARCOM has already responded to Ishwon.
+<a name="l-746"></a><span class="tm">21:08:06</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-747"></a><span class="tm">21:08:18</span><span class="nk"> &lt;henne&gt;</span> i think we have forgotten one
+<a name="l-748"></a><span class="tm">21:08:40</span><span class="nk"> &lt;AlanClark&gt;</span> I don't think that we forgot any
+<a name="l-749"></a><span class="tm">21:08:59</span><span class="nk"> &lt;henne&gt;</span> the University of Mauritius' Computer Club seminar thing?
+<a name="l-750"></a><span class="tm">21:09:04</span><span class="nk"> &lt;suseROCKs&gt;</span> he just wants to disapprove my geeko dance so I'll never dance it in front of him
+<a name="l-751"></a><span class="tm">21:09:08</span><span class="nk"> &lt;Siju&gt;</span> whats about opensuse.us? or missed I anything?
+<a name="l-752"></a><span class="tm">21:09:09</span><span class="nk"> &lt;henne&gt;</span> or did we already answer that?
+<a name="l-753"></a><span class="tm">21:09:11</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   isn't that the same one?
+<a name="l-754"></a><span class="tm">21:09:19</span><span class="nk"> &lt;henne&gt;</span> the same as?
+<a name="l-755"></a><span class="tm">21:09:24</span><span class="nk"> &lt;AlanClark&gt;</span> That's the one that MARCOM responded to
+<a name="l-756"></a><span class="tm">21:09:28</span><span class="nk"> &lt;suseROCKs&gt;</span> ishwon?
+<a name="l-757"></a><span class="tm">21:09:29</span><span class="nk"> &lt;henne&gt;</span> ah okay
+<a name="l-758"></a><span class="tm">21:09:32</span><span class="nk"> &lt;henne&gt;</span> sorry :-/
+<a name="l-759"></a><span class="tm">21:09:36</span><span class="nk"> &lt;henne&gt;</span> next topic then
+<a name="l-760"></a><span class="tm">21:09:38</span><span class="nk"> &lt;suseROCKs&gt;</span> wow,  henne double-dipped!
+<a name="l-761"></a><span class="tm">21:09:55</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Where do we need to improve? (15 minutes)</span>
+<a name="l-762"></a><span class="tm">21:10:00</span><span class="nk"> &lt;henne&gt;</span> This topic is about quick, small, actionable problems we have. Stuff we can solve between this and the next meeting.
+<a name="l-763"></a><span class="tm">21:10:02</span><span class="nk"> &lt;suseROCKs&gt;</span> Siju,   nothing at the moment.  We're trying to figure out what our legal abilities are atm
+<a name="l-764"></a><span class="tm">21:10:09</span><span class="nk"> &lt;Siju&gt;</span> <span class="hi">suseROCKs:</span> okey, fine
+<a name="l-765"></a><span class="tm">21:10:21</span><span class="nk"> &lt;henne&gt;</span> you can find ideas in our openFATE queue
+<a name="l-766"></a><span class="tm">21:10:33</span><span class="nk"> &lt;henne&gt;</span> http://bit.ly/opensuse_improve
+<a name="l-767"></a><span class="tm">21:11:07</span><span class="nk"> &lt;henne&gt;</span> i see a couple of new infrastructure requests
+<a name="l-768"></a><span class="tm">21:11:20</span><span class="nk"> &lt;henne&gt;</span> all related to connect
+<a name="l-769"></a><span class="tm">21:11:35</span><span class="nk"> &lt;henne&gt;</span> everything else is the same there
+<a name="l-770"></a><span class="tm">21:11:45</span><span class="nk"> &lt;suseROCKs&gt;</span> i'm getting hammered by some newcomers in marketing team who think we need to add more project management tools to our infrastructure.  I'm trying to dissuade that atm
+<a name="l-771"></a><span class="tm">21:12:28</span><span class="nk"> &lt;henne&gt;</span> you can have a ton of them online...
+<a name="l-772"></a><span class="tm">21:12:29 </span><span class="nka">* rtyler</span> <span class="ac">hammers on suseROCKs some more</span>
+<a name="l-773"></a><span class="tm">21:12:29</span><span class="nk"> &lt;suseROCKs&gt;</span> but to their arguments, they're saying they're not satisfied with connect or even retro.   What can we do to give some focus on improving features on those tools, prusnak?
+<a name="l-774"></a><span class="tm">21:12:30</span><span class="nk"> &lt;warlordfff&gt;</span> Ms Spies?
+<a name="l-775"></a><span class="tm">21:12:55</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   we can have a ton, but we don't want a ton, right?  we're trying to consolidate and be more efficient around here
+<a name="l-776"></a><span class="tm">21:12:55</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> can you maybe elaborate with what they are not satisfied?
+<a name="l-777"></a><span class="tm">21:13:23</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> we want a ton with a ton of people that make long term maintenance commitments :)
+<a name="l-778"></a><span class="tm">21:13:32</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   atm all I'm hearing is "its not quite up to par yet" kind of stuff.  I haven't dived into it because frankly I don't think whatever changes can be proposed can be implemented on the turn of a dime
+<a name="l-779"></a><span class="tm">21:13:33</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> i don't think it is a tool issue
+<a name="l-780"></a><span class="tm">21:13:49</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> for every tool we host we want to see a team of old-timers taking care of it
+<a name="l-781"></a><span class="tm">21:13:55</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   that's a good way to look at it  :-)
+<a name="l-782"></a><span class="tm">21:14:03</span><span class="nk"> &lt;prusnak&gt;</span> and without very concrete points HOW to improve i am a sitting duck
+<a name="l-783"></a><span class="tm">21:14:14 </span><span class="nka">* henne</span> <span class="ac">throws some old bread at prusnak</span>
+<a name="l-784"></a><span class="tm">21:14:32</span><span class="nk"> &lt;henne&gt;</span> okay anything else? anything actionable?
+<a name="l-785"></a><span class="tm">21:14:39</span><span class="nk"> &lt;henne&gt;</span> something we fail at NOW
+<a name="l-786"></a><span class="tm">21:14:48</span><span class="nk"> &lt;henne&gt;</span> and we could fix until the next meeting
+<a name="l-787"></a><span class="tm">21:14:54</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,   I agree.   I'm not hearing specific howto's.  but my question is... if people have a concrete set of proposals (assuming they are not hugely complex)  how much time can be given to engineering it?
+<a name="l-788"></a><span class="tm">21:14:54</span><span class="nk"> &lt;henne&gt;</span> with we I mean everyone present
+<a name="l-789"></a><span class="tm">21:15:17</span><span class="nk"> &lt;suseROCKs&gt;</span> i mean, prusnak, you're seen as the go-to guy on this stuff, but surely you have a shitload of other stuff on your plate too.
+<a name="l-790"></a><span class="tm">21:15:23</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> this is an open source project. we don't do time estimates :)
+<a name="l-791"></a><span class="tm">21:15:24</span><span class="nk"> &lt;Anditosan&gt;</span> is there a way to graphically create a usb drive with a simple program for opensuse on windows or some other OS?
+<a name="l-792"></a><span class="tm">21:15:30</span><span class="nk"> &lt;javier&gt;</span> btw, Will is asking for feedback/suggestions for the KDE promo DVD sleeve draft → http://lists.kde.org/?l=kde-promo&amp;m=130091232221535&amp;w=2
+<a name="l-793"></a><span class="tm">21:15:48</span><span class="nk"> &lt;javier&gt;</span> (just in case someone wants to help)
+<a name="l-794"></a><span class="tm">21:15:52</span><span class="nk"> &lt;henne&gt;</span> !support @ Anditosan
+<a name="l-795"></a><span class="tm">21:15:52</span><span class="nk"> &lt;SUSEhelp&gt;</span> <span class="hi">Anditosan:</span> General technical support is in #suse (/join #suse), please ask over there
+<a name="l-796"></a><span class="tm">21:15:53</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> 1) let's try to come up with conrete proposals 2) let's find someone to implement it 3) profit :)
+<a name="l-797"></a><span class="tm">21:15:54</span><span class="nk"> &lt;Anditosan&gt;</span> I ran into this recently when tryin to install openSUSE 11.4. There wasn't a simple program to create images
+<a name="l-798"></a><span class="tm">21:16:13</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,   ok
+<a name="l-799"></a><span class="tm">21:16:14</span><span class="nk"> &lt;Anditosan&gt;</span> <span class="hi">henne:</span> i know, my request is not for support for the creation of a program
+<a name="l-800"></a><span class="tm">21:16:20</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Anditosan:</span> we're in the middle of a meeting
+<a name="l-801"></a><span class="tm">21:16:23</span><span class="nk"> &lt;Anditosan&gt;</span> k
+<a name="l-802"></a><span class="tm">21:16:38</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   surely we can create that program between now and next meeting  :-)
+<a name="l-803"></a><span class="tm">21:16:50</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Anditosan:</span> check out susestudio.com
+<a name="l-804"></a><span class="tm">21:16:54</span><span class="nk"> &lt;Anditosan&gt;</span> I have
+<a name="l-805"></a><span class="tm">21:17:03</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">Anditosan:</span> imagewriter
+<a name="l-806"></a><span class="tm">21:17:08</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm assuming the strange "subscribe" mess related to Connect is being looked at?
+<a name="l-807"></a><span class="tm">21:17:11</span><span class="nk"> &lt;Anditosan&gt;</span> disrregar my request if it is too difficult
+<a name="l-808"></a><span class="tm">21:17:14</span><span class="nk"> &lt;Anditosan&gt;</span> diregard
+<a name="l-809"></a><span class="tm">21:17:15</span><span class="nk"> &lt;manugupt1&gt;</span> !support @ Anditosan
+<a name="l-810"></a><span class="tm">21:17:16</span><span class="nk"> &lt;SUSEhelp&gt;</span> <span class="hi">Anditosan:</span> General technical support is in #suse (/join #suse), please ask over there
+<a name="l-811"></a><span class="tm">21:18:24</span><span class="nk"> &lt;suseROCKs&gt;</span> c'mon people... we're 18 mins over.... talk or move on
+<a name="l-812"></a><span class="tm">21:18:45</span><span class="nk"> &lt;bitshuffler__&gt;</span> <span class="hi">Anditosan:</span> unetbootin
+<a name="l-813"></a><span class="tm">21:19:13</span><span class="nk"> &lt;Anditosan&gt;</span> <span class="hi">bitshuffler:</span> thanks, I tried it.
+<a name="l-814"></a><span class="tm">21:19:17</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   I don't think people have anything for this topic then
+<a name="l-815"></a><span class="tm">21:19:42</span><span class="nk"> &lt;mrdocs&gt;</span> next ?
+<a name="l-816"></a><span class="tm">21:20:07</span><span class="nk"> &lt;suseROCKs&gt;</span> oh lordy, henne must have gone to pee.  This is going to take a long while
+<a name="l-817"></a><span class="tm">21:21:07</span><span class="nk"> &lt;suseROCKs&gt;</span> helloooooo
+<a name="l-818"></a><span class="tm">21:21:08</span><span class="nk"> &lt;Anditosan&gt;</span> <span class="hi">suseROCKs:</span> you know this guys very well, don't you
+<a name="l-819"></a><span class="tm">21:21:09</span><span class="nk"> &lt;Anditosan&gt;</span> ?
+<a name="l-820"></a><span class="tm">21:21:12</span><span class="nk"> &lt;henne&gt;</span> okay nothing broken we can quickly fix?
+<a name="l-821"></a><span class="tm">21:21:12</span><span class="nk"> &lt;henne&gt;</span> c'mon people
+<a name="l-822"></a><span class="tm">21:21:13</span><span class="nk"> &lt;henne&gt;</span> alrighty. great
+<a name="l-823"></a><span class="tm">21:21:13</span><span class="nk"> &lt;henne&gt;</span> next topic then
+<a name="l-824"></a><span class="tm">21:21:13</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#info </span><span class="cmdline">we didn't find any new suggestions in openFATE and there were also no requests in the channel</span>
+<a name="l-825"></a><span class="tm">21:21:14</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Questions &amp; Answers (30 minutes)</span>
+<a name="l-826"></a><span class="tm">21:21:14</span><span class="nk"> &lt;henne&gt;</span> Here we discuss additional topics or questions that came up during the meeting.
+<a name="l-827"></a><span class="tm">21:21:15</span><span class="nk"> &lt;henne&gt;</span> there is one question on the wiki from cboltz
+<a name="l-828"></a><span class="tm">21:21:15</span><span class="nk"> &lt;henne&gt;</span> What's the status of having all openSUSE people in one hotel preferably the speakers hotel?
+<a name="l-829"></a><span class="tm">21:21:16</span><span class="nk"> &lt;henne&gt;</span> for linuxtag
+<a name="l-830"></a><span class="tm">21:21:17</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Questions &amp; Answers (30 minutes)</span>
+<a name="l-831"></a><span class="tm">21:21:17</span><span class="nk"> &lt;henne&gt;</span> Here we discuss additional topics or questions that came up during the meeting.
+<a name="l-832"></a><span class="tm">21:21:18</span><span class="nk"> &lt;henne&gt;</span> gah. lag
+<a name="l-833"></a><span class="tm">21:21:21</span><span class="nk"> &lt;suseROCKs&gt;</span> wow henne just barfed
+<a name="l-834"></a><span class="tm">21:21:24</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-835"></a><span class="tm">21:21:24</span><span class="nk"> &lt;bugbot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Topic object at 0x12548d0&gt;
+<a name="l-836"></a><span class="tm">21:21:43</span><span class="nk"> &lt;henne&gt;</span> Here we discuss additional topics or questions that came up during the meeting.
+<a name="l-837"></a><span class="tm">21:22:20 </span><span class="nka">* henne</span> <span class="ac">swears at freenode</span>
+<a name="l-838"></a><span class="tm">21:22:44</span><span class="nk"> &lt;suseROCKs&gt;</span> ok there's a question about all in one hotel???
+<a name="l-839"></a><span class="tm">21:23:11</span><span class="nk"> &lt;henne&gt;</span> yes. for linuxtag
+<a name="l-840"></a><span class="tm">21:23:26</span><span class="nk"> &lt;suseROCKs&gt;</span> how's that a question for this meeting?
+<a name="l-841"></a><span class="tm">21:23:40</span><span class="nk"> &lt;henne&gt;</span> because we as a project go there? :)
+<a name="l-842"></a><span class="tm">21:23:53</span><span class="nk"> &lt;suseROCKs&gt;</span> und?
+<a name="l-843"></a><span class="tm">21:24:10</span><span class="nk"> &lt;suseROCKs&gt;</span> if you want to stay in the same hote, make your reservations there
+<a name="l-844"></a><span class="tm">21:24:16</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">jospoortvliet:</span> do you know any details about the plans there?
+<a name="l-845"></a><span class="tm">21:24:33</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> i didn't ask that question. cboltz did
+<a name="l-846"></a><span class="tm">21:24:52</span><span class="nk"> &lt;suseROCKs&gt;</span> i know, duh.  I'm asking how that question pertains to this type of meeting.
+<a name="l-847"></a><span class="tm">21:25:17</span><span class="nk"> &lt;henne&gt;</span> i guess we have to postpone that to mail then
+<a name="l-848"></a><span class="tm">21:25:25</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">suseROCKs:</span> when you attend those meets its nice to be all together
+<a name="l-849"></a><span class="tm">21:25:27</span><span class="nk"> &lt;henne&gt;</span> okay any other additional topic we need to discuss?
+<a name="l-850"></a><span class="tm">21:25:54</span><span class="nk"> &lt;mrdocs&gt;</span> nothing from me
+<a name="l-851"></a><span class="tm">21:25:58</span><span class="nk"> &lt;suseROCKs&gt;</span> mrdocs,   yes but how are we to have any impact on where you make your hotel rez?   that's what I mean.
+<a name="l-852"></a><span class="tm">21:26:20</span><span class="nk"> &lt;mrdocs&gt;</span> oic.. dunno where the issue is then
+<a name="l-853"></a><span class="tm">21:26:39</span><span class="nk"> &lt;suseROCKs&gt;</span> oh  just a for the record...  our previous discussions about merging some mailing lists,  e.g. artwork and marketing... are rejected from the artwork team.  So the matter is dropped
+<a name="l-854"></a><span class="tm">21:26:45</span><span class="nk"> &lt;henne&gt;</span> any other general question?
+<a name="l-855"></a><span class="tm">21:27:01</span><span class="nk"> &lt;AlanClark&gt;</span> AJ wanted me to remind the board members about the email from him regarding contributor recognition.  He will be sending an update to his previous email.
+<a name="l-856"></a><span class="tm">21:27:12</span><span class="nk"> &lt;mrdocs&gt;</span> ok
+<a name="l-857"></a><span class="tm">21:27:15</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-858"></a><span class="tm">21:27:17 </span><span class="nka">* mrdocs</span> <span class="ac">will watch</span>
+<a name="l-859"></a><span class="tm">21:27:25 </span><span class="nka">* henne</span> <span class="ac">adds this to the AIs</span>
+<a name="l-860"></a><span class="tm">21:28:11</span><span class="nk"> &lt;suseROCKs&gt;</span> if nothing else in the next 30 seconds I'm leaving my desk
+<a name="l-861"></a><span class="tm">21:28:12</span><span class="nk"> &lt;henne&gt;</span> anything else?
+<a name="l-862"></a><span class="tm">21:28:37</span><span class="nk"> &lt;henne&gt;</span> Okay that's it then. If you have more, don't hesitate to bring it up on the appropriate mailinglist.
+<a name="l-863"></a><span class="tm">21:28:49</span><span class="nk"> &lt;suseROCKs&gt;</span> thank you all for attendance
+<a name="l-864"></a><span class="tm">21:29:06</span><span class="nk"> &lt;mrdocs&gt;</span> and input
+<a name="l-865"></a><span class="tm">21:29:25</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#info </span><span class="cmdline">cboltz question about hotel booking for linuxtag was refered to the opensuse-project mailinglist. other questions were not asked</span>
+<a name="l-866"></a><span class="tm">21:29:34</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#info </span><span class="cmdline">The next project meeting will be in two weeks. Same channel (#opensuse-project), same time (19:00 UTC).</span>
+<a name="l-867"></a><span class="tm">21:29:39</span><span class="nk"> &lt;henne&gt;</span> Thank you all for participating. Good night and good luck!
+<a name="l-868"></a><span class="tm">21:29:45</span><span class="nk"> &lt;suseROCKs&gt;</span> oh wait
+<a name="l-869"></a><span class="tm">21:29:46</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

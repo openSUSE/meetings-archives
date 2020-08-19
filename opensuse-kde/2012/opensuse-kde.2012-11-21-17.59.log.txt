@@ -1,0 +1,169 @@
+17:59:42 <tittiatcoke> #startmeeting
+17:59:42 <bugbot> Meeting started Wed Nov 21 17:59:42 2012 UTC.  The chair is tittiatcoke. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:59:42 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:00:08 <tittiatcoke> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged
+18:00:25 <tittiatcoke> The agenda for tonight is:
+18:00:29 <tittiatcoke> 1. Old action items
+18:00:36 <tittiatcoke> 2. Status report
+18:00:49 <mrdocs> tittiatcoke: o/
+18:00:50 <tittiatcoke> 3. KDE Team Task list
+18:01:05 <mrdocs> tittiatcoke: im getting bothered by family FYI, so i will be on and off
+18:01:05 <tittiatcoke> 4. Apper or Kupdateapplet
+18:01:10 <tittiatcoke> mrdocs: ok
+18:01:32 <tittiatcoke> 5. Bring KDE 4.10 Beta 1 into KDF ?
+18:01:46 <tittiatcoke> 6. Q&A, Misc
+18:01:51 <tittiatcoke> Any other points ?
+18:01:53 <Bille> i'll try and be there for 5
+18:02:20 <tittiatcoke> Ok
+18:02:30 <tittiatcoke> #topic Old Action Items
+18:02:50 <tittiatcoke> Action 1:  wstephenson & einar77 create a patch-formatter to add the kde standard headers.
+18:03:05 <tittiatcoke> Bille: Anything on this one as that einar77 isn't there ?
+18:04:54 <tittiatcoke> Ok. checking the old action items, then the actionholders are not in the meeting. So let's move on to the next topic
+18:05:00 <tittiatcoke> #topic Status Report
+18:05:11 <tittiatcoke> shumski: Status on the desktoptheme ?
+18:05:27 <shumski> tittiatcoke: it is doing fine
+18:05:41 <shumski> tittiatcoke: altough i would appreciate some broader feedback
+18:05:57 <tittiatcoke> Is it now in a kind of finished state or are there still items that you want to polish ?
+18:06:43 <shumski> there are 2 bugs which are blocking a state a+i would want it to be
+18:06:58 <shumski> but i don't know when/will they be fixed
+18:06:58 <tittiatcoke> Which 2 bugs ?
+18:07:17 <shumski> screenlocker text, and nm plasmoid box
+18:07:41 <tittiatcoke> Aha. Ok. Based on this I would propose to move your work into the official kdebase4-openSUSE and then push it to Factory ?
+18:07:59 <shumski> i am for that
+18:08:15 <tittiatcoke> other opinions ?
+18:08:44 <shumski> how do you mean?
+18:08:55 <tittiatcoke> #action tittiatcoke shumski update the kdebase4-openSUSE github repo with the new plasma-theme and submit to factory
+18:09:13 <shumski> oh yeah, change the name
+18:09:17 <tittiatcoke> shumski: I just wanted to see if the other would have a different opinion about moving it to factory :-)
+18:09:20 <tittiatcoke> :-)
+18:09:26 <shumski> tittiatcoke: ok :-)
+18:10:08 <tittiatcoke> Status from my side is that I pushed a newer snapshot in KUSC (which is just a little younger than Beta 1). Unfortunately before I could publish it, both repo's got retriggered.
+18:10:36 <tittiatcoke> Also KDE in Factory is now ConsoleKit free.
+18:10:52 <tittiatcoke> any other status ?
+18:11:03 <shumski> first and only DE in openSUSE so far :-)
+18:11:31 <tittiatcoke> shumski: Nope. Gnome was ready at the same time :-)
+18:11:48 <shumski> tittiatcoke: i had gnome yesterday installed, and it still pull CK
+18:11:54 <shumski> *pullls
+18:12:05 <tittiatcoke> I see. Maybe this is caused by pulling in XDM ?
+18:12:36 <tittiatcoke> #topic KDE Team task list.
+18:12:39 <shumski> nope, gnome-session and some other things, but that is for gnome team
+18:12:51 <tittiatcoke> :-)
+18:14:05 <tittiatcoke> Ok the task list is on http://en.opensuse.org/openSUSE:KDE_packaging_tasks.  However I have the feeling that we can skip this one due to the low participation. Based on my email I got two reactions of people that want to help out, but after I indicated some thing to them no further reaction. So I guess the core team is still krop, alin, einar, shumski and myself.
+18:14:48 <tittiatcoke> Next topic, I guess :-)
+18:14:54 <shumski> tittiatcoke: i am ready and eager :-)
+18:15:00 <tittiatcoke> # topic Apper or Kupdateapplet
+18:15:00 <shumski> about the tasks
+18:15:32 <tittiatcoke> shumski: I know and you have been proving this the last weeks :-) And your work is very much appreciated
+18:15:44 <shumski> tittiatcoke: oki :-)
+18:16:03 <shumski> on the apper vs kupdate, i don't have any strong opinion
+18:16:41 <shumski> one needs a update applet for the distro, but neither imo provide a flawless solution
+18:16:45 <shumski> *on
+18:16:50 <tittiatcoke> The topic was raised by somebody that also submitted an update on the old kupdateapplet. I know that we had some discussions in the past.
+18:17:45 <alin> tittiatcoke: sorry it seems I have to go...
+18:17:57 <tittiatcoke> shumski: I know. Unfortunately it seems that PackageKit 0.8.x is heavily improved, but the zypp backend is no longer compatible. So I guess we can only take a real decision at a later point when we can compare really the latest apper and see how this works
+18:17:59 <tittiatcoke> alin: Ok
+18:18:06 <alin> tittiatcoke: sorry for missing the metting
+18:18:08 <shumski> tittiatcoke: yup
+18:18:15 <tittiatcoke> alin: No problem
+18:19:21 <tittiatcoke> #action tittiatcoke keep the discussion apper/kupdateapplet on the actionlist until we know what happens with the PackageKit zypp backend
+18:19:31 <tittiatcoke> Then the next topic.
+18:19:47 <tittiatcoke> #topic Bring KDE 4.10 Beta 1 in KDF ?
+18:19:58 <tittiatcoke> Bille: You there ?
+18:20:01 <shumski> me votes - yes
+18:20:07 <tittiatcoke> :-)
+18:20:59 <tittiatcoke> It was brought in by einar77 and the rational would be to keep 4.10 Beta 1 only in KDF until 4.10 reaches the RC state. This could mean that Factory doesn't get fixes for KDE for a certain period
+18:21:33 <shumski> that is a ~month?
+18:21:47 <tittiatcoke> Bille: krop mrdocs herby:  Any opinion on this ?
+18:21:50 <tittiatcoke> shumski: I believe so
+18:22:13 <shumski> yup, RC1 is out on 19th Dec
+18:22:24 <herby> I am for 4.10 Beta in KDF
+18:23:05 <tittiatcoke> Ok. Let's wait a little and maybe Bille is coming back :-)
+18:23:35 <tittiatcoke> ctrippe: any opinion on bringing KDE 4.10 Beta 1 into KDF and push 4.10 to Factory when it reaches the RC1 level ?
+18:24:36 <ctrippe> tittiatcoke: I'm in favor of 4.10 Beta 1 in KDF given the timeline for 12.3
+18:24:45 <tittiatcoke> Ok :-)
+18:25:38 <tittiatcoke> #info KDE 4.10 Beta 1 will be pushed into KDF.
+18:25:59 <shumski> tittiatcoke: then nepomuk indexer doesn't have to be split?
+18:26:05 <tittiatcoke> #action tittiatcoke set out an actionplan to decouple KR49 from KDF and then to update KDF with the 4.10 packages
+18:26:09 <shumski> since it builds without ffmpeg
+18:26:17 <tittiatcoke> shumski: Correct
+18:26:44 <tittiatcoke> shumski: Beta 1 is actually already in KUSC and there we have been building the nepomuk indexer already. :-)
+18:26:58 <shumski> tittiatcoke: cool :-)
+18:27:33 <tittiatcoke> Ok. I will check tomorrow what exactly needs to be done :-)
+18:27:41 <shumski> oki
+18:28:06 <tittiatcoke> last topic :-)
+18:28:11 <tittiatcoke> #topic Q&A, Misc
+18:28:34 <tittiatcoke> Anything ?
+18:28:55 <shumski> i would suggest that the list items get marked
+18:29:00 <shumski> that which are done
+18:29:10 <tittiatcoke> shumski: Which list items ?
+18:29:12 <shumski> and/or in-progrees
+18:29:19 <shumski> the KDE improvements page
+18:29:29 <tittiatcoke> Aha. Ok :-) Yeah, we need to update that one
+18:29:57 <tittiatcoke> #action tittiatcoke put the KDE improvement page as a continuous point on the agenda
+18:30:06 <shumski> i guess when more people are here :-)
+18:30:18 <tittiatcoke> #action tittiatcoke update the KDE improvement page based on the current status.
+18:30:23 <tittiatcoke> shumski: That would be nice :-)
+18:30:45 <tittiatcoke> shumski: thanks for this reminder :-)
+18:30:48 <shumski> sure
+18:30:53 <tittiatcoke> Any other points ?
+18:31:05 <shumski> kamoso currentlyy needs a patch for building against libkipi2
+18:31:24 <tittiatcoke> Ok.
+18:31:26 <shumski> and i am also for including new kcm-gofig-gtk
+18:31:31 <shumski> *config
+18:31:51 <tittiatcoke> Yeah, we need that one. :-) I have in my home repo, so easy to push :-)
+18:31:57 <shumski> i have the package ready somewhere (but i saw adra assigned)
+18:31:58 <tittiatcoke> I hope that we get a release soon :-)
+18:32:08 <shumski> tittiatcoke: it is released :-)
+18:32:15 <tittiatcoke> Ok :-)
+18:32:48 <shumski> me finds the link
+18:33:13 <adra> yeah, I have packaged the latest version packaged
+18:33:46 <shumski> can't find the link, but was couple a days ago
+18:33:53 <adra> see https://build.opensuse.org/package/show?package=kde-gtk-config&project=home%3Aadra
+18:33:59 <tittiatcoke> adra: Can you push that one to KDF ?
+18:34:14 <adra> OK
+18:34:41 <tittiatcoke> #action adra push kde-gtk-config to KDF for inclusion in Factory
+18:34:47 <shumski> oh yeah
+18:34:51 <shumski> one thing
+18:34:59 <shumski> do we want webaccouunts?
+18:35:12 <tittiatcoke> Explain :-)
+18:35:24 <Bille> tittiatcoke: +1 on 4.10b1 in KDF
+18:35:32 <tittiatcoke> Bille: Ok. Thanks :-)
+18:35:32 <Bille> is that the online accounts thing?
+18:35:39 <Bille> shumski: afiestas' baby?
+18:35:40 <shumski> yuo
+18:35:42 <shumski> yup
+18:35:51 <shumski> tittiatcoke: http://quickgit.kde.org/?p=web-accounts.git
+18:35:56 <tittiatcoke> Is that in a usable state ?
+18:36:20 <shumski> was couple of months ago, i need to test it now
+18:36:45 <shumski> *but*, it doesn't have a release afaik
+18:36:48 <Bille> sounds like a KUP thing
+18:36:50 <tittiatcoke> Seems that since beginning of October nothing happened with it
+18:36:54 <tittiatcoke> Bille: Agree
+18:37:07 <Bille> afiestas is a very busy senor
+18:37:24 <tittiatcoke> :-)
+18:37:37 <tittiatcoke> shumski: Can you create a package for it and then push it to KDE:Unstable:Playground ?
+18:37:49 <shumski> tittiatcoke: yes :-)
+18:38:01 <tittiatcoke> Bille: His new baby is also in git :-)  libkscreen and kscreen
+18:38:17 <shumski> i was also looking to package python requirements for nepomuk-metadata-extractor
+18:38:51 <Bille> must show that to jw
+18:39:05 <tittiatcoke> Bille: Doesn't work yet :-(
+18:39:19 <tittiatcoke> shumski: what python requirements ?
+18:39:35 <shumski> tittiatcoke: for the plugins
+18:39:45 <shumski> otherwise it's pretty useless :-)
+18:39:47 <tittiatcoke> I see. Ok. Go for it :-)
+18:40:25 <Bille> tittiatcoke: what's the latest on this desktop sprint plan
+18:43:10 <tittiatcoke> Bille: Not much. Still looking at the participants and if the timing is right
+18:43:24 <tittiatcoke> Any other topics for discussion ?
+18:44:01 <shumski> nope from me
+18:44:16 <Bille> not from me
+18:44:22 <ctrippe> no
+18:44:32 <Bille> just took delivery of a rasp pi
+18:44:38 <Bille> maybe i can get anna helping us using it
+18:45:56 <tittiatcoke> :-)
+18:46:05 <tittiatcoke> Ok. Then I would close the meeting. Thanks everyone
+18:46:09 <einar77> beh
+18:46:15 <einar77> I arrive just in time for it to close
+18:47:33 <tittiatcoke> einar77: Yup. :-) But we got the go for putting 4.10B1 in KDF
+18:48:03 <Bille> gotta get this one to bed now
+18:48:24 <tittiatcoke> Bille: Ok. Thanks
+18:48:29 <tittiatcoke> #endmeeting

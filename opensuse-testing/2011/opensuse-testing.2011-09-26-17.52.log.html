@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:52:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:52:03</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Sep 26 17:52:03 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:52:03</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:52:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">current Factory experience</span>
+<a name="l-5"></a><span class="tm">17:52:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">current factory is not in an installable state, but upgrading to Factory from 11.4 or MS5 works well</span>
+<a name="l-6"></a><span class="tm">17:52:49</span><span class="nk"> &lt;LWFinger&gt;</span> At 12:02, tigerfoot was leaving to eat.
+<a name="l-7"></a><span class="tm">17:53:53</span><span class="nk"> &lt;LWFinger&gt;</span> Do you want us to go in turn?
+<a name="l-8"></a><span class="tm">17:54:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> I'm using current factory on my netbook and my work desktop, plus an slightly older factory on my Notebook (as fallback)
+<a name="l-9"></a><span class="tm">17:55:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> found a wireless kernel bug and one in imagemagick (added test to openQA) - but most things work
+<a name="l-10"></a><span class="tm">17:55:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> done
+<a name="l-11"></a><span class="tm">17:56:33</span><span class="nk"> &lt;LWFinger&gt;</span> I'm using current factory on a desktop, a notebook, and a netbook.
+<a name="l-12"></a><span class="tm">17:57:33</span><span class="nk"> &lt;LWFinger&gt;</span> At first, I had problems with systemd, but those are now fixed or worked-around. The last problem was with sound.
+<a name="l-13"></a><span class="tm">17:58:16</span><span class="nk"> &lt;LWFinger&gt;</span> The workaround was to add my user to the audio group - I don't know isf the underlying permissions problem is fixed.
+<a name="l-14"></a><span class="tm">17:59:38</span><span class="nk"> &lt;LWFinger&gt;</span> I also had trouble with the KDE networkmanager applet not finding any devices. As a work around, I switched to Gnome's nm_applet.
+<a name="l-15"></a><span class="tm">18:01:03</span><span class="nk"> &lt;LWFinger&gt;</span> That also has been mostly fixed. The KDE version still asks for the root password and the encryption secret too often indicating a policy problem, but it works.
+<a name="l-16"></a><span class="tm">18:02:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> I noticed the password popups when my WLAN AP went down
+<a name="l-17"></a><span class="tm">18:03:01</span><span class="nk"> &lt;LWFinger&gt;</span> That should not happen.
+<a name="l-18"></a><span class="tm">18:03:30</span><span class="nk"> &lt;LWFinger&gt;</span> Both the desktop and laptop have nVidia graphics devices. I'm not running standard kernels and I have KMS turned off. I need to test with nouveau.
+<a name="l-19"></a><span class="tm">18:04:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> I ran the LiveUSB on one Nvidia machine and it booted into X
+<a name="l-20"></a><span class="tm">18:04:30</span><span class="nk"> &lt;LWFinger&gt;</span> The netbook has Intel i915 graphics. KMS works fine there.
+<a name="l-21"></a><span class="tm">18:04:34</span><span class="nk"> &lt;LWFinger&gt;</span> Done.
+<a name="l-22"></a><span class="tm">18:04:45</span><span class="nk"> &lt;tigerfoot&gt;</span> back
+<a name="l-23"></a><span class="tm">18:04:51 </span><span class="nka">* tigerfoot</span> <span class="ac">reading backlog</span>
+<a name="l-24"></a><span class="tm">18:06:09</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">LWFinger:</span> for the NM there's just an update today in KDF with fresh git
+<a name="l-25"></a><span class="tm">18:06:22</span><span class="nk"> &lt;tigerfoot&gt;</span> should fix my network icon too.
+<a name="l-26"></a><span class="tm">18:06:47</span><span class="nk"> &lt;tigerfoot&gt;</span> Otherwise the NM &amp; polkit thing are mostly pain in ass.
+<a name="l-27"></a><span class="tm">18:07:34</span><span class="nk"> &lt;LWFinger&gt;</span> I already have the latest from factory. Still has the problem. Agreed about the PITA.
+<a name="l-28"></a><span class="tm">18:07:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> I can check with lnussel on the topic
+<a name="l-29"></a><span class="tm">18:07:38</span><span class="nk"> &lt;tigerfoot&gt;</span> I don't want to put my normal user as admin, and then I've to enter root password when I connect a wifi (needed to update the last time use = stupid) then I have to put my kwallet password
+<a name="l-30"></a><span class="tm">18:07:51</span><span class="nk"> &lt;tigerfoot&gt;</span> which contain the wpa secret ...
+<a name="l-31"></a><span class="tm">18:08:30</span><span class="nk"> &lt;tigerfoot&gt;</span> same or even worse with modemmanager, it lock my sim card after three wrong pin code ...
+<a name="l-32"></a><span class="tm">18:09:06</span><span class="nk"> &lt;tigerfoot&gt;</span> no support for ipv6 information in status panel ...
+<a name="l-33"></a><span class="tm">18:09:15</span><span class="nk"> &lt;LWFinger&gt;</span> I have not files a bug as I need to clean out all my secrets and the wallet and start over first.
+<a name="l-34"></a><span class="tm">18:10:00</span><span class="nk"> &lt;tigerfoot&gt;</span> One day freedesktop will understand that if I open my session with a password, I shouldn't have to enter it more than once ...
+<a name="l-35"></a><span class="tm">18:10:12</span><span class="nk"> &lt;tigerfoot&gt;</span> or offer the possibility of ...
+<a name="l-36"></a><span class="tm">18:14:11</span><span class="nk"> &lt;tigerfoot&gt;</span> otherwise actually there's missing packages, etc ... but not a real report during the time needed by coolo to build B1 :D
+<a name="l-37"></a><span class="tm">18:15:36</span><span class="nk"> &lt;tigerfoot&gt;</span> I can get my hardware able to wake up from suspend, and didn't find the reason or the cause, but my system is quite complicated with dual harddrive in raid0 + encryption + lvm on top + systemd
+<a name="l-38"></a><span class="tm">18:15:57</span><span class="nk"> &lt;tigerfoot&gt;</span> suspend to ram work most of the time.
+<a name="l-39"></a><span class="tm">18:16:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> most of the time, laptops are better with suspend than desktops
+<a name="l-40"></a><span class="tm">18:16:51</span><span class="nk"> &lt;tigerfoot&gt;</span> on the kde side, 4.7.1 has real difficulties to get nepomuk working. Trueg is now back and submit more &amp; more patch, but all didn't hit our repositories yet.
+<a name="l-41"></a><span class="tm">18:17:03</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> it's a laptop :D
+<a name="l-42"></a><span class="tm">18:17:20</span><span class="nk"> &lt;tigerfoot&gt;</span> even if it can beat most of desktop outside ...
+<a name="l-43"></a><span class="tm">18:19:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> thought, because raid in laptops is rare
+<a name="l-44"></a><span class="tm">18:19:56</span><span class="nk"> &lt;LWFinger&gt;</span> The dual harddrive is unusual.
+<a name="l-45"></a><span class="tm">18:20:22</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> yeap I've replace the dvd which I don't use to get more place, and speed as I can't afford the price of 1TB ssd actually :D
+<a name="l-46"></a><span class="tm">18:20:52 </span><span class="nka">* tigerfoot</span> <span class="ac">think about experiences in factory in recent weeks.</span>
+<a name="l-47"></a><span class="tm">18:21:53</span><span class="nk"> &lt;tigerfoot&gt;</span> I'm using the nvidia 280.13 wilth the installer .run, and redo the installation each time kernel, mesa, or xorg related things change, and never get a trouble or crash in kde.
+<a name="l-48"></a><span class="tm">18:22:42</span><span class="nk"> &lt;tigerfoot&gt;</span> most of the time the installer complain about some link that are broken... So reinstall is the good way to get the system stable.
+<a name="l-49"></a><span class="tm">18:23:26</span><span class="nk"> &lt;tigerfoot&gt;</span> systemd start to be really more &amp; more usefull &amp; stable .... Work with a bunch of server daemon apache2, mysql, postgresql
+<a name="l-50"></a><span class="tm">18:24:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> it is finally getting into a usuable state.
+<a name="l-51"></a><span class="tm">18:25:20</span><span class="nk"> &lt;LWFinger&gt;</span> As I said earlier, it works for me.
+<a name="l-52"></a><span class="tm">18:25:39</span><span class="nk"> &lt;tigerfoot&gt;</span> ok next topic ?
+<a name="l-53"></a><span class="tm">18:25:59 </span><span class="nka">* tigerfoot</span> <span class="ac">knows that the phone will ring in 20minutes :D</span>
+<a name="l-54"></a><span class="tm">18:27:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">BetaPizzaParty</span>
+<a name="l-55"></a><span class="tm">18:28:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> with release date of Beta still being uncertain, I will probably discuss with AJ tomorrow to schedule the Party in 2 weeks.
+<a name="l-56"></a><span class="tm">18:28:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> so maybe 2011-10-13
+<a name="l-57"></a><span class="tm">18:29:04</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> on 14th it's the 15 years of kde ...
+<a name="l-58"></a><span class="tm">18:29:21</span><span class="nk"> &lt;tigerfoot&gt;</span> and the 09.10.11 kde launch plasma-active ...
+<a name="l-59"></a><span class="tm">18:29:34</span><span class="nk"> &lt;tigerfoot&gt;</span> We will have to make noise :)
+<a name="l-60"></a><span class="tm">18:29:54</span><span class="nk"> &lt;tigerfoot&gt;</span> or try to convince peeps to use beta-pizza to see latest kde :D
+<a name="l-61"></a><span class="tm">18:30:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> the 13th is just for the Nuremberg party. anyone else is of course free to schedule their own.
+<a name="l-62"></a><span class="tm">18:31:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> of course, there will be a nice KDE 4.7.1 in 12.1-Beta
+<a name="l-63"></a><span class="tm">18:31:51 </span><span class="nka">* manugupt1</span> <span class="ac">looks at 9..10..11 awesome date for kde release</span>
+<a name="l-64"></a><span class="tm">18:32:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> we will have our 12.1 release on 11.11.11
+<a name="l-65"></a><span class="tm">18:32:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> (hopefully)
+<a name="l-66"></a><span class="tm">18:35:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> any more topics?
+<a name="l-67"></a><span class="tm">18:36:07</span><span class="nk"> &lt;LWFinger&gt;</span> None here.
+<a name="l-68"></a><span class="tm">18:36:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> then let us close the meeting.
+<a name="l-69"></a><span class="tm">18:36:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

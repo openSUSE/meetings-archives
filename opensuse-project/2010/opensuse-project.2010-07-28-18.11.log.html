@@ -1,0 +1,573 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:11:47</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:11:47</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Jul 28 18:11:47 2010 UTC.  The chair is henne. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:11:47</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:11:49</span><span class="nk"> &lt;suseROCKs&gt;</span> :-D
+<a name="l-5"></a><span class="tm">18:11:58</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">openSUSE Board Meeting</span>
+<a name="l-6"></a><span class="tm">18:12:22</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#chair </span><span class="cmdline">rhorstkoetter yaloki suseROCKs michl prusnak</span>
+<a name="l-7"></a><span class="tm">18:12:22</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: henne michl prusnak rhorstkoetter suseROCKs yaloki
+<a name="l-8"></a><span class="tm">18:12:58</span><span class="nk"> &lt;henne&gt;</span> lets go :)
+<a name="l-9"></a><span class="tm">18:13:06 </span><span class="nka">* suseROCKs</span> <span class="ac">is actually not in a chair but hanging from a chandelier</span>
+<a name="l-10"></a><span class="tm">18:13:08</span><span class="nk"> &lt;henne&gt;</span> the agenda for this meeting is:
+<a name="l-11"></a><span class="tm">18:13:18</span><span class="nk"> &lt;henne&gt;</span> 1. openSUSE Foundation
+<a name="l-12"></a><span class="tm">18:13:24</span><span class="nk"> &lt;henne&gt;</span> 2. Where do we fail?
+<a name="l-13"></a><span class="tm">18:13:34</span><span class="nk"> &lt;henne&gt;</span> 3. Questions and Answers
+<a name="l-14"></a><span class="tm">18:13:47</span><span class="nk"> &lt;suseROCKs&gt;</span> one more topic to add
+<a name="l-15"></a><span class="tm">18:13:52</span><span class="nk"> &lt;prusnak&gt;</span> two
+<a name="l-16"></a><span class="tm">18:14:03</span><span class="nk"> &lt;suseROCKs&gt;</span> Time to think about what we want to do for the Conference as a Board
+<a name="l-17"></a><span class="tm">18:14:05</span><span class="nk"> &lt;henne&gt;</span> that would be? :)
+<a name="l-18"></a><span class="tm">18:14:26</span><span class="nk"> &lt;prusnak&gt;</span> Release Engineering Team
+<a name="l-19"></a><span class="tm">18:14:44</span><span class="nk"> &lt;suseROCKs&gt;</span> awright!  Finally we can release the Engineering Team!   :-)
+<a name="l-20"></a><span class="tm">18:14:53</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> belly dance as last year - the masses liked it
+<a name="l-21"></a><span class="tm">18:15:06</span><span class="nk"> &lt;henne&gt;</span> okay added
+<a name="l-22"></a><span class="tm">18:15:13</span><span class="nk"> &lt;prusnak&gt;</span> but let's start with 1. ...
+<a name="l-23"></a><span class="tm">18:15:18</span><span class="nk"> &lt;henne&gt;</span> yeah
+<a name="l-24"></a><span class="tm">18:15:37</span><span class="nk"> &lt;henne&gt;</span> the end of june deadline swooshed by...
+<a name="l-25"></a><span class="tm">18:15:50</span><span class="nk"> &lt;henne&gt;</span> so we go with an e.v.
+<a name="l-26"></a><span class="tm">18:15:57</span><span class="nk"> &lt;michl&gt;</span> no news on the Foundation
+<a name="l-27"></a><span class="tm">18:16:06</span><span class="nk"> &lt;michl&gt;</span> Alan was for 2 or 3 weeks on vacation or similar
+<a name="l-28"></a><span class="tm">18:16:23</span><span class="nk"> &lt;michl&gt;</span> he just sent me to day an email saying he couldn't progress much
+<a name="l-29"></a><span class="tm">18:16:31</span><span class="nk"> &lt;suseROCKs&gt;</span> actually, michl   Don't we need to do some discussing to come up with more justifications and insight for Novell?   That part we let slide since your last report because we were all so swamped
+<a name="l-30"></a><span class="tm">18:17:59</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> right the document I presented in June hasn't convinced the Execs
+<a name="l-31"></a><span class="tm">18:18:36</span><span class="nk"> &lt;suseROCKs&gt;</span> is this something you and Alan intend to finetune or do you need more from all of us?
+<a name="l-32"></a><span class="tm">18:18:48</span><span class="nk"> &lt;michl&gt;</span> what's the benefit for Novell, which risks comes with it, why Fedora and Ubuntu are doing it differently
+<a name="l-33"></a><span class="tm">18:19:41</span><span class="nk"> &lt;michl&gt;</span> we need to come up with some more reasoning
+<a name="l-34"></a><span class="tm">18:20:09</span><span class="nk"> &lt;suseROCKs&gt;</span> michl,   Want me to sit down with you next week on this?
+<a name="l-35"></a><span class="tm">18:20:37</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> isn't financing community travel costs through the foundation a good benefit for novell as a company?
+<a name="l-36"></a><span class="tm">18:20:44</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> even if its pretty tight, what about this week?
+<a name="l-37"></a><span class="tm">18:20:59</span><span class="nk"> &lt;michl&gt;</span> I'm on vacation for 2 weeks starting on Monday
+<a name="l-38"></a><span class="tm">18:21:04</span><span class="nk"> &lt;suseROCKs&gt;</span> ahhh
+<a name="l-39"></a><span class="tm">18:21:20</span><span class="nk"> &lt;suseROCKs&gt;</span> ok let's *try* for Friday then?
+<a name="l-40"></a><span class="tm">18:21:29</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">rhorstkoetter:</span> yes, but that you can just do eg. an Foundation consisting just out of Novell people
+<a name="l-41"></a><span class="tm">18:21:32 </span><span class="nka">* suseROCKs</span> <span class="ac">really needs some personal time</span>
+<a name="l-42"></a><span class="tm">18:21:44</span><span class="nk"> &lt;michl&gt;</span> and don't give any rights away to strangers like suseROCKs
+<a name="l-43"></a><span class="tm">18:21:53</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> I see
+<a name="l-44"></a><span class="tm">18:21:58</span><span class="nk"> &lt;henne&gt;</span> this was the reasoning?
+<a name="l-45"></a><span class="tm">18:22:04</span><span class="nk"> &lt;suseROCKs&gt;</span> s/strangers/strange people like suseROCKs?
+<a name="l-46"></a><span class="tm">18:22:22</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> pretty unfortunate if that's really novell's reasoning
+<a name="l-47"></a><span class="tm">18:22:37</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   I think their concerns were more in management of the Foundation.   How are we going to sustain it, maintain it, account for it, etc.
+<a name="l-48"></a><span class="tm">18:22:40</span><span class="nk"> &lt;michl&gt;</span> this was not THE reasoning but over all they haven't bought it from the arguments we gave them
+<a name="l-49"></a><span class="tm">18:22:58</span><span class="nk"> &lt;michl&gt;</span> eg. admin rights to servers then out of Novell's data center
+<a name="l-50"></a><span class="tm">18:23:16</span><span class="nk"> &lt;rhorstkoetter&gt;</span> ok, I second what Bryen said (sit ogether on friday) and work it out
+<a name="l-51"></a><span class="tm">18:23:28</span><span class="nk"> &lt;rhorstkoetter&gt;</span> I'd like to participate if desired
+<a name="l-52"></a><span class="tm">18:23:36</span><span class="nk"> &lt;michl&gt;</span> Markus straight forward said, we already have this and he's willing to give more people rights
+<a name="l-53"></a><span class="tm">18:23:46</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   I think most of the concerns are addressable.  We just have to elaborate is all.  It's perfectly normal and understandable in my opinion to question.
+<a name="l-54"></a><span class="tm">18:24:03</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> certainly
+<a name="l-55"></a><span class="tm">18:24:18</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">michl:</span> yeah, but we do not currently fund servers outside novell data center
+<a name="l-56"></a><span class="tm">18:24:25</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> would friday work out for you?
+<a name="l-57"></a><span class="tm">18:24:29</span><span class="nk"> &lt;prusnak&gt;</span> which run interesting services (opensuse-community.o for example)
+<a name="l-58"></a><span class="tm">18:24:34</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   ok  I'm willing to be up very early for this discussion.    So we are not talking at end of day Friday.  What's your avaiabliity Friday, rhorstkoetter?
+<a name="l-59"></a><span class="tm">18:24:37</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">prusnak:</span> but people already have admin rights on internal ones
+<a name="l-60"></a><span class="tm">18:24:51</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">michl:</span> yes, but we can't have opensuse-community.o there
+<a name="l-61"></a><span class="tm">18:24:58</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">prusnak:</span> right
+<a name="l-62"></a><span class="tm">18:25:09</span><span class="nk"> &lt;prusnak&gt;</span> same for packman
+<a name="l-63"></a><span class="tm">18:25:14</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> I'll go alonmg with your respectively michl's availability on friday
+<a name="l-64"></a><span class="tm">18:25:33</span><span class="nk"> &lt;rhorstkoetter&gt;</span> I'm able to put this in between whenever desired
+<a name="l-65"></a><span class="tm">18:25:44</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   So you have no life, like me?  :-)
+<a name="l-66"></a><span class="tm">18:25:48</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> rhorstkoetter let me write up some of the pain points they had, I'll send it to the Board list and we can discuss via email, others can give ipnute as well and meet on Friday if necessary
+<a name="l-67"></a><span class="tm">18:25:52</span><span class="nk"> &lt;rhorstkoetter&gt;</span> I have
+<a name="l-68"></a><span class="tm">18:26:00</span><span class="nk"> &lt;rhorstkoetter&gt;</span> but I'm flexible
+<a name="l-69"></a><span class="tm">18:26:06</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,  the other thing to consider is that oS-C is funded out of personal pockets.    And that has to stop.   yaloki is spending way too much money on it.
+<a name="l-70"></a><span class="tm">18:26:25</span><span class="nk"> &lt;suseROCKs&gt;</span> michl,   +1
+<a name="l-71"></a><span class="tm">18:26:49</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> +1
+<a name="l-72"></a><span class="tm">18:27:18</span><span class="nk"> &lt;prusnak&gt;</span> yep, that's why I raised this as an example
+<a name="l-73"></a><span class="tm">18:27:26</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> please just send an appointment in time IF we need to meet on friday
+<a name="l-74"></a><span class="tm">18:27:32</span><span class="nk"> &lt;suseROCKs&gt;</span> AlbertoP,   Are you aware that you're logging in and out every few minutes?
+<a name="l-75"></a><span class="tm">18:28:00</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">suseROCKs:</span> I'm trying to fix a bug that affects my clock and prevents my work. Sorry
+<a name="l-76"></a><span class="tm">18:28:49</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   ok I think this topic is sufficiently covered now.
+<a name="l-77"></a><span class="tm">18:28:54</span><span class="nk"> &lt;henne&gt;</span> okidoki
+<a name="l-78"></a><span class="tm">18:29:13</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Where do we fail?</span>
+<a name="l-79"></a><span class="tm">18:29:40</span><span class="nk"> &lt;henne&gt;</span> this is the every re-occuring topic where we try to fix a bug in our organisation
+<a name="l-80"></a><span class="tm">18:29:50</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> that's a rather general question. failing in what regard? the board? the project?
+<a name="l-81"></a><span class="tm">18:29:50</span><span class="nk"> &lt;suseROCKs&gt;</span> We have not successfully figured out how to make a day last 28 hours so we can get more done for openSUSE
+<a name="l-82"></a><span class="tm">18:29:52</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">henne:</span> openSUSE and fail in one sentence - ts, ts
+<a name="l-83"></a><span class="tm">18:29:54</span><span class="nk"> &lt;henne&gt;</span> do we have one? :)
+<a name="l-84"></a><span class="tm">18:30:26</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> everywhere
+<a name="l-85"></a><span class="tm">18:30:28</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   This is a new and ongoing topic we added a couple of months ago (?) in which we identify any issues that are causing barriers for the community
+<a name="l-86"></a><span class="tm">18:30:42</span><span class="nk"> &lt;suseROCKs&gt;</span> And we invite the community to submit their ires as well
+<a name="l-87"></a><span class="tm">18:30:50</span><span class="nk"> &lt;rhorstkoetter&gt;</span> IMO we fail in encouraging the user community
+<a name="l-88"></a><span class="tm">18:31:26</span><span class="nk"> &lt;henne&gt;</span> this is about more concrete stuff :)
+<a name="l-89"></a><span class="tm">18:31:33</span><span class="nk"> &lt;suseROCKs&gt;</span> specific barriers
+<a name="l-90"></a><span class="tm">18:31:43</span><span class="nk"> &lt;rhorstkoetter&gt;</span> ok, we fail to connect media
+<a name="l-91"></a><span class="tm">18:31:48</span><span class="nk"> &lt;suseROCKs&gt;</span> each barrier we remove is a win.  And eventually that should lead to more user community
+<a name="l-92"></a><span class="tm">18:31:53</span><span class="nk"> &lt;rhorstkoetter&gt;</span> forums, wiki, mailing lists
+<a name="l-93"></a><span class="tm">18:32:11</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> +1, that's what I'm talking about
+<a name="l-94"></a><span class="tm">18:32:33</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   Ok so what are some immediately fixable problems you can identify that we can address?
+<a name="l-95"></a><span class="tm">18:32:34</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">rhorstkoetter:</span> not that pessimistic - we did a pretty good job with 11.3
+<a name="l-96"></a><span class="tm">18:32:55</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">rhorstkoetter:</span> wrt media
+<a name="l-97"></a><span class="tm">18:32:57</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> no doubt about that one. I'm talking about user community
+<a name="l-98"></a><span class="tm">18:33:10</span><span class="nk"> &lt;gnokii&gt;</span> forums, wiki, mailing lists and twitter creates only user they get not out of her home
+<a name="l-99"></a><span class="tm">18:33:18</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> connecting mailing lists and forums is IMO urgently required
+<a name="l-100"></a><span class="tm">18:33:23</span><span class="nk"> &lt;michl&gt;</span> ahh
+<a name="l-101"></a><span class="tm">18:33:38</span><span class="nk"> &lt;rhorstkoetter&gt;</span> connecting wiki and forums also is
+<a name="l-102"></a><span class="tm">18:33:49</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   there was quite some discussion on the ML about doing that connection.   Seems the opinions are mixed.
+<a name="l-103"></a><span class="tm">18:33:51</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">rhorstkoetter:</span> how do you propose to connect ML and forums?
+<a name="l-104"></a><span class="tm">18:34:00</span><span class="nk"> &lt;prusnak&gt;</span> there are different audiences
+<a name="l-105"></a><span class="tm">18:35:00</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">prusnak:</span> we need to make people aware of the importance of user feedback AND we need to take care that people understand that this feedback isn't only available at the ml
+<a name="l-106"></a><span class="tm">18:35:13</span><span class="nk"> &lt;suseROCKs&gt;</span> isn't that discussion what led to henne's present experimentation with non-sub ML's?
+<a name="l-107"></a><span class="tm">18:35:24</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">prusnak:</span> we e.g. have NNTP access to the forums but developers rarely use it
+<a name="l-108"></a><span class="tm">18:35:31</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> no thats something different
+<a name="l-109"></a><span class="tm">18:35:38</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">rhorstkoetter:</span> I know I would not use it
+<a name="l-110"></a><span class="tm">18:35:46</span><span class="nk"> &lt;prusnak&gt;</span> I already have information overload
+<a name="l-111"></a><span class="tm">18:35:46</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> yes, I tried to communicate this at the list but I rather failed
+<a name="l-112"></a><span class="tm">18:36:11</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">prusnak:</span> maybe that's a general issue
+<a name="l-113"></a><span class="tm">18:36:18</span><span class="nk"> &lt;prusnak&gt;</span> it is
+<a name="l-114"></a><span class="tm">18:36:20</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   That's actually two different subjects.   1)  Connecting media in order to communicate to a larger audience  and 2) improving the way we seek out and listen to feedback
+<a name="l-115"></a><span class="tm">18:36:26</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">prusnak:</span> yes, we all have this
+<a name="l-116"></a><span class="tm">18:36:27</span><span class="nk"> &lt;michl&gt;</span> at least I suffer from infromation overload as well
+<a name="l-117"></a><span class="tm">18:36:31</span><span class="nk"> &lt;prusnak&gt;</span> developers don't have time to read forums
+<a name="l-118"></a><span class="tm">18:36:32</span><span class="nk"> &lt;suseROCKs&gt;</span> And Feedback isn't necessarily limited to just the media
+<a name="l-119"></a><span class="tm">18:36:41</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> yes, it is
+<a name="l-120"></a><span class="tm">18:36:48</span><span class="nk"> &lt;prusnak&gt;</span> users don't have ..... to subscribe to MLs
+<a name="l-121"></a><span class="tm">18:37:04</span><span class="nk"> &lt;prusnak&gt;</span> where .... is will, need, whatever.
+<a name="l-122"></a><span class="tm">18:37:08</span><span class="nk"> &lt;prusnak&gt;</span> i don't know
+<a name="l-123"></a><span class="tm">18:37:19</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">prusnak:</span> actually users don't even know what a ml is in worts case scenario
+<a name="l-124"></a><span class="tm">18:37:27</span><span class="nk"> &lt;rhorstkoetter&gt;</span> but they know what a forum is
+<a name="l-125"></a><span class="tm">18:38:04</span><span class="nk"> &lt;rhorstkoetter&gt;</span> forum users feel disconnected and developers (some of them) bashing forums audience which is only partly appropriate
+<a name="l-126"></a><span class="tm">18:38:21</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   and vice versa also exists.  But that isn't the point.  The question we have to address is how do we enjoin without overloading either side?  Particuarly because they're very different audiences
+<a name="l-127"></a><span class="tm">18:38:41</span><span class="nk"> &lt;rhorstkoetter&gt;</span> due to the nature of a forum there's a lot of useless discussion for them but there also is useful content that get neglected by the dev community
+<a name="l-128"></a><span class="tm">18:38:41</span><span class="nk"> &lt;michl&gt;</span> as this topic is on the table now for more then a year
+<a name="l-129"></a><span class="tm">18:38:45</span><span class="nk"> &lt;prusnak&gt;</span> we might want to connect MLs and Forums
+<a name="l-130"></a><span class="tm">18:38:49</span><span class="nk"> &lt;prusnak&gt;</span> but not their users
+<a name="l-131"></a><span class="tm">18:38:57</span><span class="nk"> &lt;michl&gt;</span> would be in any way able to solve that ?
+<a name="l-132"></a><span class="tm">18:39:13</span><span class="nk"> &lt;prusnak&gt;</span> there might be representative for Forums which will translate the ideas from forums to ML people
+<a name="l-133"></a><span class="tm">18:39:16</span><span class="nk"> &lt;prusnak&gt;</span> and vice versa
+<a name="l-134"></a><span class="tm">18:39:29</span><span class="nk"> &lt;michl&gt;</span> I doubt. I think this either will evolve over time and guys like pistazienfresser show up and bridge these two media
+<a name="l-135"></a><span class="tm">18:39:37</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> we have NNTP for reading forum topics as mails and we also would be able to gate ml discussions to the forums
+<a name="l-136"></a><span class="tm">18:39:38</span><span class="nk"> &lt;suseROCKs&gt;</span> michl,   I think what we're dealing with here is everyone has an opinion, and no opinion is completely wrong or completely right, but what we haven't done is to take an actual study to see what we could/should do.
+<a name="l-137"></a><span class="tm">18:39:53</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">rhorstkoetter:</span> it is not about the technology
+<a name="l-138"></a><span class="tm">18:39:57</span><span class="nk"> &lt;prusnak&gt;</span> it is about mindset
+<a name="l-139"></a><span class="tm">18:40:06</span><span class="nk"> &lt;prusnak&gt;</span> I am able to use NNTP and forums, but I am not going to
+<a name="l-140"></a><span class="tm">18:40:06</span><span class="nk"> &lt;rhorstkoetter&gt;</span> jim henderson was interested in doing so but hasn't got sufficient feedback from ml side afaik
+<a name="l-141"></a><span class="tm">18:40:16</span><span class="nk"> &lt;prusnak&gt;</span> there is so much noise for me
+<a name="l-142"></a><span class="tm">18:40:42</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">prusnak:</span> I see. I'm aware that it's about mindset but listen please
+<a name="l-143"></a><span class="tm">18:40:53</span><span class="nk"> &lt;suseROCKs&gt;</span> I think even Jim recognized there are some issues to that.    And we're not denying this needs some improvement.  We just have to do a good objective study of how to do it if at all.
+<a name="l-144"></a><span class="tm">18:40:57</span><span class="nk"> &lt;prusnak&gt;</span> so unless there is a person/group that will cherry pick the important stuff ...
+<a name="l-145"></a><span class="tm">18:41:10</span><span class="nk"> &lt;rhorstkoetter&gt;</span> you, as a developer are involved with the project and you're able to change things
+<a name="l-146"></a><span class="tm">18:41:16</span><span class="nk"> &lt;rhorstkoetter&gt;</span> a plain user isn't
+<a name="l-147"></a><span class="tm">18:41:54</span><span class="nk"> &lt;henne&gt;</span> but a ml isnt either
+<a name="l-148"></a><span class="tm">18:41:59</span><span class="nk"> &lt;rhorstkoetter&gt;</span> and thus it's those people heavily involved that need to think about how to utilize the user's feedback, how to connect them
+<a name="l-149"></a><span class="tm">18:42:06</span><span class="nk"> &lt;henne&gt;</span> most changes happen in bugzilla or over the obs
+<a name="l-150"></a><span class="tm">18:42:12</span><span class="nk"> &lt;rhorstkoetter&gt;</span> it's called market focus what I'm talking about
+<a name="l-151"></a><span class="tm">18:42:13</span><span class="nk"> &lt;henne&gt;</span> not over mailinglists
+<a name="l-152"></a><span class="tm">18:42:18</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">rhorstkoetter:</span> I'm not sure I agree
+<a name="l-153"></a><span class="tm">18:42:26</span><span class="nk"> &lt;rhorstkoetter&gt;</span> and it's rather a given that users prefer forums over mls
+<a name="l-154"></a><span class="tm">18:42:38</span><span class="nk"> &lt;henne&gt;</span> so connecting these two media will bring the forum users only closer to the mailinglist users
+<a name="l-155"></a><span class="tm">18:42:40</span><span class="nk"> &lt;prusnak&gt;</span> why it is not for the users to think how to serve their findings to the developers?
+<a name="l-156"></a><span class="tm">18:42:43</span><span class="nk"> &lt;rhorstkoetter&gt;</span> we won't chnage that but we may change awareness of developres
+<a name="l-157"></a><span class="tm">18:42:45</span><span class="nk"> &lt;prusnak&gt;</span> in form that is good for them?
+<a name="l-158"></a><span class="tm">18:43:08</span><span class="nk"> &lt;prusnak&gt;</span> we have to find compromise somewhere
+<a name="l-159"></a><span class="tm">18:43:13</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> developers need to develop
+<a name="l-160"></a><span class="tm">18:43:24</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> thats why you have to give them feedback in a standardized way
+<a name="l-161"></a><span class="tm">18:43:38</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> e.g. bugzilla, openfate, obs
+<a name="l-162"></a><span class="tm">18:43:46</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> I fully understand this
+<a name="l-163"></a><span class="tm">18:43:57</span><span class="nk"> &lt;henne&gt;</span> why do you think this communication line is so "overtooled"?
+<a name="l-164"></a><span class="tm">18:44:13</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> but you need to teach users how to do this in media they (the customer) use
+<a name="l-165"></a><span class="tm">18:44:24</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   before we go further here,  I just want to be sure you realize we're not opposed to the concept of what you're saying.    But we're all still working on trying to figure out what's best approach.  Even in the ML discussions there was no clear answer.
+<a name="l-166"></a><span class="tm">18:44:29</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> hm
+<a name="l-167"></a><span class="tm">18:44:40</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> I'm not at all against users reporting bugs in tools in place for exactly that purpose
+<a name="l-168"></a><span class="tm">18:44:43</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> you mean sticky posts explaining and stuff?
+<a name="l-169"></a><span class="tm">18:44:59</span><span class="nk"> &lt;rhorstkoetter&gt;</span> that actually is what we desire from a long term perspective
+<a name="l-170"></a><span class="tm">18:45:06</span><span class="nk"> &lt;henne&gt;</span> explaining how to report bugs in bugzilla
+<a name="l-171"></a><span class="tm">18:45:11</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> as an example, yes
+<a name="l-172"></a><span class="tm">18:45:19</span><span class="nk"> &lt;henne&gt;</span> well here we go
+<a name="l-173"></a><span class="tm">18:45:22</span><span class="nk"> &lt;suseROCKs&gt;</span> or a way to report bugs directly in forums?
+<a name="l-174"></a><span class="tm">18:45:24</span><span class="nk"> &lt;henne&gt;</span> that, we can fix! :)
+<a name="l-175"></a><span class="tm">18:45:30</span><span class="nk"> &lt;henne&gt;</span> now
+<a name="l-176"></a><span class="tm">18:45:39</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> that won't work out for devs
+<a name="l-177"></a><span class="tm">18:46:02</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   No I mean like a plugin or something that you can click on and it opens up a window that feeds to bugzilla.  Something like that
+<a name="l-178"></a><span class="tm">18:46:07</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> so what would we actually need ?
+<a name="l-179"></a><span class="tm">18:46:11</span><span class="nk"> &lt;suseROCKs&gt;</span> Reducing the steps for a user is what I'm thinking here
+<a name="l-180"></a><span class="tm">18:46:28</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> that also would be an opportunity
+<a name="l-181"></a><span class="tm">18:46:35</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> would bugzilla and features be enough?
+<a name="l-182"></a><span class="tm">18:46:56</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> unfortunately a sticky isn't enough as people are lazy and often don't read it
+<a name="l-183"></a><span class="tm">18:47:23</span><span class="nk"> &lt;rhorstkoetter&gt;</span> what I'm in general talking about is pro-actively supporting the user-community day-to-day
+<a name="l-184"></a><span class="tm">18:47:45</span><span class="nk"> &lt;suseROCKs&gt;</span> day-to-day = manpower.  Where do we get this from?
+<a name="l-185"></a><span class="tm">18:47:49</span><span class="nk"> &lt;rhorstkoetter&gt;</span> teach them and lower the border to actually participate in other media
+<a name="l-186"></a><span class="tm">18:48:23</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> I know this is an issue, but that's how an industry works :)
+<a name="l-187"></a><span class="tm">18:48:38</span><span class="nk"> &lt;rhorstkoetter&gt;</span> you need to focus on the market/customer
+<a name="l-188"></a><span class="tm">18:49:05</span><span class="nk"> &lt;rhorstkoetter&gt;</span> and if your customer use forums, you need to use forums or you'll lose the customer
+<a name="l-189"></a><span class="tm">18:49:12</span><span class="nk"> &lt;rhorstkoetter&gt;</span> I haven't invented that
+<a name="l-190"></a><span class="tm">18:49:17</span><span class="nk"> &lt;henne&gt;</span> but we are trying to find something what we can do TODAY
+<a name="l-191"></a><span class="tm">18:49:24</span><span class="nk"> &lt;rhorstkoetter&gt;</span> I just try to see the situation we have
+<a name="l-192"></a><span class="tm">18:49:40</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   I totally agree with you, but the tone of what you say implies that we don't, when in fact so many of us try to but are just simply overswamped trying to keep up with everything.    We need to appreciate that aspect and be patient as we continue to grow contributors who can take up the slack for us.
+<a name="l-193"></a><span class="tm">18:49:48</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> that's not that easy to solve. A sticky would be a start
+<a name="l-194"></a><span class="tm">18:50:10</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> okay and as second step?
+<a name="l-195"></a><span class="tm">18:50:17</span><span class="nk"> &lt;rhorstkoetter&gt;</span> what we need to do from a long term perspective IMO and that's a long road is focusing on the customer
+<a name="l-196"></a><span class="tm">18:50:32</span><span class="nk"> &lt;rhorstkoetter&gt;</span> in every aspect that we do
+<a name="l-197"></a><span class="tm">18:50:57</span><span class="nk"> &lt;rhorstkoetter&gt;</span> I'm not able to tell you a master plan in one sentence, sorry
+<a name="l-198"></a><span class="tm">18:51:08</span><span class="nk"> &lt;rhorstkoetter&gt;</span> that would be too long for this meeting
+<a name="l-199"></a><span class="tm">18:51:26</span><span class="nk"> &lt;rhorstkoetter&gt;</span> IMO that's the most important aspect we fail as opensuse
+<a name="l-200"></a><span class="tm">18:51:32</span><span class="nk"> &lt;rhorstkoetter&gt;</span> just my 0.02$
+<a name="l-201"></a><span class="tm">18:52:11</span><span class="nk"> &lt;rhorstkoetter&gt;</span> I'm certainly open for critism
+<a name="l-202"></a><span class="tm">18:52:28</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   there's no criticism for the intent of what you're saying
+<a name="l-203"></a><span class="tm">18:52:39</span><span class="nk"> &lt;suseROCKs&gt;</span> we all agree, and we've all been trying to aim for that.
+<a name="l-204"></a><span class="tm">18:52:57</span><span class="nk"> &lt;henne&gt;</span> i think what you say is a bit oversimplistic
+<a name="l-205"></a><span class="tm">18:53:06</span><span class="nk"> &lt;henne&gt;</span> yes we have "customers" in the forums
+<a name="l-206"></a><span class="tm">18:53:08</span><span class="nk"> &lt;suseROCKs&gt;</span> None of us are intentionally disregarding our customers.    But again, as I said before, your tone implies we are not caring about it, and we do, and we're all working so hard trying to.
+<a name="l-207"></a><span class="tm">18:53:13</span><span class="nk"> &lt;henne&gt;</span> but we also have customers everywhere else
+<a name="l-208"></a><span class="tm">18:53:56</span><span class="nk"> &lt;rhorstkoetter&gt;</span> no offense intended but a sentence like "why it is not for the users to think how to serve their findings to the developers?" is the root of our problem
+<a name="l-209"></a><span class="tm">18:54:16</span><span class="nk"> &lt;rhorstkoetter&gt;</span> in what industry would that work out?
+<a name="l-210"></a><span class="tm">18:54:32</span><span class="nk"> &lt;rhorstkoetter&gt;</span> if you want to sell a car, you need to look at customers need
+<a name="l-211"></a><span class="tm">18:54:49</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">rhorstkoetter:</span> that was just a antipole of what you said
+<a name="l-212"></a><span class="tm">18:54:55</span><span class="nk"> &lt;prusnak&gt;</span> it was not meant as a proposal
+<a name="l-213"></a><span class="tm">18:55:05</span><span class="nk"> &lt;rhorstkoetter&gt;</span> customers won't come to producers that fail to serve their need of a car, they just would buy another one
+<a name="l-214"></a><span class="tm">18:55:11</span><span class="nk"> &lt;rhorstkoetter&gt;</span> and they actually do
+<a name="l-215"></a><span class="tm">18:55:32</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> that is also a bit simplistic
+<a name="l-216"></a><span class="tm">18:55:43</span><span class="nk"> &lt;henne&gt;</span> try to report a bug for your car to the designers
+<a name="l-217"></a><span class="tm">18:55:50</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> it's as simple as descibed
+<a name="l-218"></a><span class="tm">18:55:57</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> lol
+<a name="l-219"></a><span class="tm">18:56:03</span><span class="nk"> &lt;rhorstkoetter&gt;</span> this was a metaphor
+<a name="l-220"></a><span class="tm">18:56:09</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   Like the toyota fiasco?  :-)
+<a name="l-221"></a><span class="tm">18:56:41</span><span class="nk"> &lt;henne&gt;</span> a metaphor still has to make sense right? :)
+<a name="l-222"></a><span class="tm">18:57:12</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> it makes sense IMO. from my perspective we fail in looking what the user community wants to have
+<a name="l-223"></a><span class="tm">18:57:13</span><span class="nk"> &lt;henne&gt;</span> it is an analogy. but car makers and car buyers are not analogue to foss developers and users
+<a name="l-224"></a><span class="tm">18:57:17</span><span class="nk"> &lt;suseROCKs&gt;</span> ok now...  to take this a bit off-topic and actually back "on-topic".....
+<a name="l-225"></a><span class="tm">18:57:43</span><span class="nk"> &lt;henne&gt;</span> it needs steps. specifically for the forum community
+<a name="l-226"></a><span class="tm">18:57:48</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,  your concerns are valid.   And shoudl be discussed.  no doubt about it.  But the "Where do we fail?" topic is actually more focused on immediate "we can fix in the next few days" kind of problems
+<a name="l-227"></a><span class="tm">18:58:15</span><span class="nk"> &lt;henne&gt;</span> things we can do.
+<a name="l-228"></a><span class="tm">18:58:30</span><span class="nk"> &lt;rhorstkoetter&gt;</span> in one sentence: we need to focus on the market. what we do is the opposite, i.e. developing a machine failing to mars (which actually is awesome) but not valuable if nobody knows how to use it
+<a name="l-229"></a><span class="tm">18:58:47</span><span class="nk"> &lt;michl&gt;</span> things like doing a great release party in Nuremberg
+<a name="l-230"></a><span class="tm">18:58:48</span><span class="nk"> &lt;henne&gt;</span> we have stickys
+<a name="l-231"></a><span class="tm">18:58:59</span><span class="nk"> &lt;michl&gt;</span> ond thing we didn't fail 2 weeks ago ;-)
+<a name="l-232"></a><span class="tm">18:59:08</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> I see. then my concern is off-topic. this isn't solvable in the next days
+<a name="l-233"></a><span class="tm">18:59:49</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   but still topical for the board as a whole and actually should be its own topic
+<a name="l-234"></a><span class="tm">18:59:58</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">rhorstkoetter:</span> we focus on the market, we have a pretty technical savvy usership and they get a good OS from us
+<a name="l-235"></a><span class="tm">19:00:04</span><span class="nk"> &lt;suseROCKs&gt;</span> I just don't want to harm this new topic we have set up in the last few meetings beecause we've done some good with it.
+<a name="l-236"></a><span class="tm">19:00:23</span><span class="nk"> &lt;henne&gt;</span> yes and we have continued today
+<a name="l-237"></a><span class="tm">19:00:34</span><span class="nk"> &lt;henne&gt;</span> if we create stickys in the forum :)
+<a name="l-238"></a><span class="tm">19:00:40</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> what we may solve in a few days is something like this http://lists.opensuse.org/opensuse-wiki-de/2010-07/msg00060.html
+<a name="l-239"></a><span class="tm">19:00:45</span><span class="nk"> &lt;suseROCKs&gt;</span> +1 if that works  :-)
+<a name="l-240"></a><span class="tm">19:00:51</span><span class="nk"> &lt;henne&gt;</span> we just need to "paste"
+<a name="l-241"></a><span class="tm">19:00:52</span><span class="nk"> &lt;henne&gt;</span> http://en.opensuse.org/openSUSE:Submitting_bug_reports
+<a name="l-242"></a><span class="tm">19:01:01</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> yes, stickies would be a start
+<a name="l-243"></a><span class="tm">19:01:22</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> I can take care that they get posted/stickied in appropriate forums
+<a name="l-244"></a><span class="tm">19:01:27</span><span class="nk"> &lt;suseROCKs&gt;</span> uhh  german...  rhorstkoetter   can you translate that link in a nutshell for me?
+<a name="l-245"></a><span class="tm">19:01:31</span><span class="nk"> &lt;rhorstkoetter&gt;</span> once the post is there
+<a name="l-246"></a><span class="tm">19:01:59</span><span class="nk"> &lt;henne&gt;</span> and
+<a name="l-247"></a><span class="tm">19:02:05</span><span class="nk"> &lt;henne&gt;</span> http://en.opensuse.org/openSUSE:Openfate_documentation
+<a name="l-248"></a><span class="tm">19:02:11</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> http://translate.google.de/translate?js=y&amp;prev=_t&amp;hl=de&amp;ie=UTF-8&amp;layout=1&amp;eotf=1&amp;u=http%3A%2F%2Flists.opensuse.org%2Fopensuse-wiki-de%2F2010-07%2Fmsg00060.html&amp;sl=de&amp;tl=en&amp;swap=1
+<a name="l-249"></a><span class="tm">19:02:15</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> i'm already unfailing that
+<a name="l-250"></a><span class="tm">19:02:28</span><span class="nk"> &lt;suseROCKs&gt;</span> that's not a nutshell  :-)  but ok
+<a name="l-251"></a><span class="tm">19:03:04</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so there's no german wiki in the new wiki?
+<a name="l-252"></a><span class="tm">19:03:28</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> they decided (the two most active contributors to the german wiki) to quit their involvemnt due to frustration
+<a name="l-253"></a><span class="tm">19:03:43</span><span class="nk"> &lt;henne&gt;</span> they are very easily frustrated
+<a name="l-254"></a><span class="tm">19:03:49</span><span class="nk"> &lt;suseROCKs&gt;</span> how long were they frustrated?
+<a name="l-255"></a><span class="tm">19:04:07</span><span class="nk"> &lt;henne&gt;</span> two days ago they were about to start with the migration
+<a name="l-256"></a><span class="tm">19:04:18</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> I doubt that. LinuxSUSEFan actually worked for several months on this
+<a name="l-257"></a><span class="tm">19:04:45</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> several months as german wiki support tends to be zero
+<a name="l-258"></a><span class="tm">19:05:01</span><span class="nk"> &lt;henne&gt;</span> huh? read the archive
+<a name="l-259"></a><span class="tm">19:05:21</span><span class="nk"> &lt;suseROCKs&gt;</span> What people need to get is that if you have issues, problems, no one is listening to you, too slow, whatever, you should feel free to escalate to the board so we can assist in looking into it and possibly speeding things up.  If we deon't know about gripes until its too late, what can we do?
+<a name="l-260"></a><span class="tm">19:05:39</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> it's not about that particular case. it's about engaged users hitting a wall
+<a name="l-261"></a><span class="tm">19:05:55</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">rhorstkoetter:</span> which wall? everything is ready to go
+<a name="l-262"></a><span class="tm">19:05:59</span><span class="nk"> &lt;rhorstkoetter&gt;</span> and that's exactly the problem I was talking about previosly
+<a name="l-263"></a><span class="tm">19:06:06</span><span class="nk"> &lt;suseROCKs&gt;</span> and when they hit a wall, they should come to us.
+<a name="l-264"></a><span class="tm">19:06:18</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> no real guidance (besides your mail)
+<a name="l-265"></a><span class="tm">19:06:42</span><span class="nk"> &lt;suseROCKs&gt;</span> we are a very accessible board, but how many "complaints" do you see being sent to us?   I see zero issues in our board@ from the community
+<a name="l-266"></a><span class="tm">19:06:45</span><span class="nk"> &lt;henne&gt;</span> uwe seems to think that there is someone called project leader that would tell him what to do
+<a name="l-267"></a><span class="tm">19:06:53</span><span class="nk"> &lt;rhorstkoetter&gt;</span> but the mail came three months too late (this just is an example, not to bash you in person)
+<a name="l-268"></a><span class="tm">19:06:56</span><span class="nk"> &lt;henne&gt;</span> i explained to him various times that HE is the project leader
+<a name="l-269"></a><span class="tm">19:07:03</span><span class="nk"> &lt;rhorstkoetter&gt;</span> we have millions of those examples
+<a name="l-270"></a><span class="tm">19:08:01</span><span class="nk"> &lt;henne&gt;</span> this is a simple misunderstanding
+<a name="l-271"></a><span class="tm">19:08:04</span><span class="nk"> &lt;rhorstkoetter&gt;</span> ok, this is most likely too specific but if you ask me ... if the project leader don't know about dewiki.o.o then there is a problem
+<a name="l-272"></a><span class="tm">19:08:10</span><span class="nk"> &lt;henne&gt;</span> and im already clearing it up again
+<a name="l-273"></a><span class="tm">19:08:35</span><span class="nk"> &lt;rhorstkoetter&gt;</span> and the peoblem is: it has been established behind closed doors and haven't been announced appropriately
+<a name="l-274"></a><span class="tm">19:08:51</span><span class="nk"> &lt;rhorstkoetter&gt;</span> at least not to my knowledge .. correct me if I'm wrong
+<a name="l-275"></a><span class="tm">19:09:17</span><span class="nk"> &lt;henne&gt;</span> everybody during that time involved in the german wiki was in the bug that requested this instance
+<a name="l-276"></a><span class="tm">19:09:22</span><span class="nk"> &lt;henne&gt;</span> and knew when it was available
+<a name="l-277"></a><span class="tm">19:09:44</span><span class="nk"> &lt;rhorstkoetter&gt;</span> linuxsusefan was not and to your reference he's project lead
+<a name="l-278"></a><span class="tm">19:09:47</span><span class="nk"> &lt;rhorstkoetter&gt;</span> ???
+<a name="l-279"></a><span class="tm">19:10:13</span><span class="nk"> &lt;henne&gt;</span> during that time you was that right?
+<a name="l-280"></a><span class="tm">19:10:27</span><span class="nk"> &lt;rhorstkoetter&gt;</span> I left the project lead at june 1st
+<a name="l-281"></a><span class="tm">19:11:09</span><span class="nk"> &lt;rhorstkoetter&gt;</span> at that time the establishment of a german wiki was WIP
+<a name="l-282"></a><span class="tm">19:11:26</span><span class="nk"> &lt;rhorstkoetter&gt;</span> i.e. the establishment ofdewiki.o.o
+<a name="l-283"></a><span class="tm">19:11:41</span><span class="nk"> &lt;michl&gt;</span> Gentlemen, may more on what to improve instead of who did what in a way someone didn't agree with
+<a name="l-284"></a><span class="tm">19:12:03</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> aligned
+<a name="l-285"></a><span class="tm">19:12:03</span><span class="nk"> &lt;henne&gt;</span> Matthew Ehle    2010-05-21 19:42:50 UTC
+<a name="l-286"></a><span class="tm">19:12:03</span><span class="nk"> &lt;henne&gt;</span> dewiki.opensuse.org is now live.
+<a name="l-287"></a><span class="tm">19:12:03</span><span class="nk"> &lt;henne&gt;</span> Please let me know what pages should be deleted, if any.  I can nuke any or all
+<a name="l-288"></a><span class="tm">19:12:06</span><span class="nk"> &lt;henne&gt;</span> namespaces.
+<a name="l-289"></a><span class="tm">19:12:12</span><span class="nk"> &lt;henne&gt;</span> anyway
+<a name="l-290"></a><span class="tm">19:13:08</span><span class="nk"> &lt;henne&gt;</span> i try to stay on top of this and get them back to the table
+<a name="l-291"></a><span class="tm">19:13:27</span><span class="nk"> &lt;henne&gt;</span> i guess i can manage that
+<a name="l-292"></a><span class="tm">19:13:34</span><span class="nk"> &lt;henne&gt;</span> so lets continue
+<a name="l-293"></a><span class="tm">19:14:06</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> I can just repeat. we need to strengthen our market focus. otherwise we'll fail growing our customer/user base but Iirc this problem isn't solvable in two days and thus we won't solve it
+<a name="l-294"></a><span class="tm">19:14:29</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   No.
+<a name="l-295"></a><span class="tm">19:14:47</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> ok, thanks
+<a name="l-296"></a><span class="tm">19:14:53</span><span class="nk"> &lt;suseROCKs&gt;</span> to clarlify... its not fitting in the "where we fail" when we talk about long term strategic issues.
+<a name="l-297"></a><span class="tm">19:15:04</span><span class="nk"> &lt;suseROCKs&gt;</span> It is however a valid topic and deserves its own dedicated and ongoing topic
+<a name="l-298"></a><span class="tm">19:15:35</span><span class="nk"> &lt;suseROCKs&gt;</span> to summarily say  "we won't solve it" was unfair.   It just was brought up in the wrong place of the meeting.  That's all.
+<a name="l-299"></a><span class="tm">19:15:37</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> ok, then we should invent such a topic for upcoming meetings
+<a name="l-300"></a><span class="tm">19:16:00</span><span class="nk"> &lt;suseROCKs&gt;</span> then you're free to do that.   :-)
+<a name="l-301"></a><span class="tm">19:16:02</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> ok, sorry if I sounded to harsh. that wasn't my intent
+<a name="l-302"></a><span class="tm">19:16:40</span><span class="nk"> &lt;suseROCKs&gt;</span> no worries
+<a name="l-303"></a><span class="tm">19:16:52</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm more concerned with you thinking we're opposed to you when we're not
+<a name="l-304"></a><span class="tm">19:17:05</span><span class="nk"> &lt;rhorstkoetter&gt;</span> it's just that I personally think that this is our major problem. we produce an awesome product and we're unable to solve the user community issues
+<a name="l-305"></a><span class="tm">19:17:13</span><span class="nk"> &lt;michl&gt;</span> one question
+<a name="l-306"></a><span class="tm">19:17:39</span><span class="nk"> &lt;michl&gt;</span> out of which country comes 25% of our over all page visits?
+<a name="l-307"></a><span class="tm">19:17:52</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> germany?
+<a name="l-308"></a><span class="tm">19:17:52</span><span class="nk"> &lt;suseROCKs&gt;</span> Siberia
+<a name="l-309"></a><span class="tm">19:18:04</span><span class="nk"> &lt;henne&gt;</span> pakistan?
+<a name="l-310"></a><span class="tm">19:18:06</span><span class="nk"> &lt;prusnak&gt;</span> russia ?
+<a name="l-311"></a><span class="tm">19:18:09</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> close, but rhorstkoetter is even closer
+<a name="l-312"></a><span class="tm">19:18:16</span><span class="nk"> &lt;suseROCKs&gt;</span> a little island in the pacific
+<a name="l-313"></a><span class="tm">19:18:32</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">prusnak:</span> good point russia catched up to 5% meanwhile
+<a name="l-314"></a><span class="tm">19:18:47</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">prusnak:</span> they were close to 0% 2 years ago
+<a name="l-315"></a><span class="tm">19:19:02</span><span class="nk"> &lt;suseROCKs&gt;</span> Ok German I guess.  And if your point is why didn't we give more attention to DE wiki, frankly I'm surprised it was an issue.  I just assumed there was lots of DE infrastructure in place.
+<a name="l-316"></a><span class="tm">19:19:06</span><span class="nk"> &lt;henne&gt;</span> whats the point of this excercise? :)
+<a name="l-317"></a><span class="tm">19:19:16</span><span class="nk"> &lt;michl&gt;</span> so, yes 25% of our web traffic comes out of Germany
+<a name="l-318"></a><span class="tm">19:19:38</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">henne:</span> simple, if you know where your customers come from it helps to serve them better
+<a name="l-319"></a><span class="tm">19:20:02</span><span class="nk"> &lt;suseROCKs&gt;</span> but isn't that two-sided?
+<a name="l-320"></a><span class="tm">19:20:06</span><span class="nk"> &lt;michl&gt;</span> and eg. the growth of Russia of the last 2 years is impressive
+<a name="l-321"></a><span class="tm">19:20:25</span><span class="nk"> &lt;henne&gt;</span> i still don't get what you are trying to say
+<a name="l-322"></a><span class="tm">19:20:29</span><span class="nk"> &lt;suseROCKs&gt;</span> I know of several Germans who say they actually prefer to read/write in English than in German  (surprising to me)
+<a name="l-323"></a><span class="tm">19:20:29</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> please tell me one thing which is not two sided
+<a name="l-324"></a><span class="tm">19:20:57</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> we fail supporting the german user community sufficiently .. I guess that's what michl tries to outline here
+<a name="l-325"></a><span class="tm">19:20:57</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> you'll find for any argument a proof
+<a name="l-326"></a><span class="tm">19:21:05</span><span class="nk"> &lt;suseROCKs&gt;</span> so with those experiences I've encountered and I love the fact that its so easy for me to communicate when I'm in Germany....  the question is... do most Germans who visit prefer English or German?
+<a name="l-327"></a><span class="tm">19:21:09</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">rhorstkoetter:</span> no
+<a name="l-328"></a><span class="tm">19:21:27</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> please correct me then
+<a name="l-329"></a><span class="tm">19:21:50</span><span class="nk"> &lt;michl&gt;</span> I'm not about fail at all
+<a name="l-330"></a><span class="tm">19:22:05</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> we could do it better
+<a name="l-331"></a><span class="tm">19:22:12</span><span class="nk"> &lt;rhorstkoetter&gt;</span> put more focus on it
+<a name="l-332"></a><span class="tm">19:22:19</span><span class="nk"> &lt;rhorstkoetter&gt;</span> better summarized?
+<a name="l-333"></a><span class="tm">19:22:22</span><span class="nk"> &lt;michl&gt;</span> I'd like to share some numbers and of course adjust the reasoning for stuff
+<a name="l-334"></a><span class="tm">19:22:40 </span><span class="nka">* rhorstkoetter</span> <span class="ac">listens</span>
+<a name="l-335"></a><span class="tm">19:23:29</span><span class="nk"> &lt;michl&gt;</span> and of course the German wiki is important, no one denies that
+<a name="l-336"></a><span class="tm">19:23:38</span><span class="nk"> &lt;michl&gt;</span> but we can't do everything at once
+<a name="l-337"></a><span class="tm">19:24:14</span><span class="nk"> &lt;michl&gt;</span> anything else on that topic?
+<a name="l-338"></a><span class="tm">19:24:37</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> funny thing is: we don't need to do it. we have contributors but they lack proper support as it seems. Henne should have a batter insight though as I handed over the project lead to him two meonths ago
+<a name="l-339"></a><span class="tm">19:24:47</span><span class="nk"> &lt;suseROCKs&gt;</span> michl,   Going on a tangent here... I think we just came up with a reasoning that could be built upon for our Foundation discussion.   The fact that we can't do everything at once and its mostly because of scare manpower.   aka  the current model we're doing isn't working well.
+<a name="l-340"></a><span class="tm">19:24:52</span><span class="nk"> &lt;rhorstkoetter&gt;</span> thus my experience is semi-professional here
+<a name="l-341"></a><span class="tm">19:24:52</span><span class="nk"> &lt;suseROCKs&gt;</span> ok back on topic  ;-)
+<a name="l-342"></a><span class="tm">19:25:11</span><span class="nk"> &lt;suseROCKs&gt;</span> s/scare/scarce/
+<a name="l-343"></a><span class="tm">19:26:05</span><span class="nk"> &lt;rhorstkoetter&gt;</span> s/experience/insight
+<a name="l-344"></a><span class="tm">19:26:24</span><span class="nk"> &lt;suseROCKs&gt;</span> you have acted totally unprofessionally here!
+<a name="l-345"></a><span class="tm">19:26:26</span><span class="nk"> &lt;rhorstkoetter&gt;</span> btw, when do we switch the meeting language to german?
+<a name="l-346"></a><span class="tm">19:26:26</span><span class="nk"> &lt;suseROCKs&gt;</span> (just kidding)
+<a name="l-347"></a><span class="tm">19:26:26</span><span class="nk"> &lt;javier_&gt;</span> I suggest having some kind of meeting with &lt;lang&gt; wiki admins to talk about the migration
+<a name="l-348"></a><span class="tm">19:26:30</span><span class="nk"> &lt;rhorstkoetter&gt;</span> just kidding
+<a name="l-349"></a><span class="tm">19:27:42</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">javier_:</span> thanks for your input. you're admin of ES?
+<a name="l-350"></a><span class="tm">19:27:49</span><span class="nk"> &lt;AlbertoP&gt;</span> some language just do not have an "admin" who is active anymore though
+<a name="l-351"></a><span class="tm">19:27:51</span><span class="nk"> &lt;javier_&gt;</span> yes
+<a name="l-352"></a><span class="tm">19:28:01</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">AlbertoP:</span> +1
+<a name="l-353"></a><span class="tm">19:28:04</span><span class="nk"> &lt;javier_&gt;</span> +1
+<a name="l-354"></a><span class="tm">19:28:26</span><span class="nk"> &lt;suseROCKs&gt;</span> btw, michl   where can we regularly check the numbers you gave out earlier about regions?
+<a name="l-355"></a><span class="tm">19:28:26</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">javier_:</span> from my perspective a valid proposal. would you like to drive this on the ml?
+<a name="l-356"></a><span class="tm">19:28:34</span><span class="nk"> &lt;AlbertoP&gt;</span> for example, the italian wiki is obsolete (most of the stuff still refers to 10.x, 11.0, and only the main page is sort of updated)
+<a name="l-357"></a><span class="tm">19:29:09</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> at Googleanalytics
+<a name="l-358"></a><span class="tm">19:29:14</span><span class="nk"> &lt;michl&gt;</span> ;.)
+<a name="l-359"></a><span class="tm">19:29:31</span><span class="nk"> &lt;suseROCKs&gt;</span> and those numbers are pulled from what pages?  wiki pages?
+<a name="l-360"></a><span class="tm">19:29:33</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">rhorstkoetter:</span> I suppose that by ml you mean -wiki
+<a name="l-361"></a><span class="tm">19:29:42</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> yes
+<a name="l-362"></a><span class="tm">19:30:12</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">javier_:</span> yes, I'd hope that most &lt;lang&gt; admins are subscribed there
+<a name="l-363"></a><span class="tm">19:30:14</span><span class="nk"> &lt;suseROCKs&gt;</span> michl,   Can we get some other overall numbers too?  like from downloads, etc.?
+<a name="l-364"></a><span class="tm">19:30:15</span><span class="nk"> &lt;michl&gt;</span> I should/could/will/may publish some numbers once in a while
+<a name="l-365"></a><span class="tm">19:30:22</span><span class="nk"> &lt;suseROCKs&gt;</span> +1
+<a name="l-366"></a><span class="tm">19:30:25</span><span class="nk"> &lt;rhorstkoetter&gt;</span> for the german wiki you may take wiki-de in CC:
+<a name="l-367"></a><span class="tm">19:30:37 </span><span class="nka">* suseROCKs</span> <span class="ac">also hopes that the SUSE offices IP addresses are excluded from GA  :-)</span>
+<a name="l-368"></a><span class="tm">19:30:47</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> we don't count donwloads as we use a mirror system ;-)
+<a name="l-369"></a><span class="tm">19:30:50</span><span class="nk"> &lt;rhorstkoetter&gt;</span> not sure if there are other wiki-&lt;lang&gt; available
+<a name="l-370"></a><span class="tm">19:30:57</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">rhorstkoetter:</span> ok. I'll send a message and we'll see how many admins reply
+<a name="l-371"></a><span class="tm">19:31:35</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">javier_:</span> great. you also may consider a posting at news.o.o/lizards.o.o
+<a name="l-372"></a><span class="tm">19:31:41</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> but we have this: http://wiki.opensuse.org/Statistics
+<a name="l-373"></a><span class="tm">19:31:55</span><span class="nk"> &lt;rhorstkoetter&gt;</span> that way you may reach those not reading the mls as well
+<a name="l-374"></a><span class="tm">19:32:00</span><span class="nk"> &lt;javier_&gt;</span> good idea
+<a name="l-375"></a><span class="tm">19:32:03</span><span class="nk"> &lt;gnokii&gt;</span> german ubuntuusers are to 95% idiots
+<a name="l-376"></a><span class="tm">19:32:04</span><span class="nk"> &lt;rhorstkoetter&gt;</span> or the forums in additio to that
+<a name="l-377"></a><span class="tm">19:32:28</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">gnokii:</span> pardon?
+<a name="l-378"></a><span class="tm">19:32:38</span><span class="nk"> &lt;suseROCKs&gt;</span> gnokii,   Let's not turn this meeting into a hatefest
+<a name="l-379"></a><span class="tm">19:32:55 </span><span class="nka">* javier_</span> <span class="ac">goes to the shower</span>
+<a name="l-380"></a><span class="tm">19:32:56</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> hehe, good proposal
+<a name="l-381"></a><span class="tm">19:33:05</span><span class="nk"> &lt;michl&gt;</span> let's start hate each other
+<a name="l-382"></a><span class="tm">19:33:06</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">gnokii:</span> well they clearly do something right, since they attract users, and we have some trouble there
+<a name="l-383"></a><span class="tm">19:33:18</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">javier_:</span> enjoy :-D
+<a name="l-384"></a><span class="tm">19:33:53</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">AlbertoP:</span> they do exactly what we don't do
+<a name="l-385"></a><span class="tm">19:33:55 </span><span class="nka">* AlbertoP</span> <span class="ac">would love to see suseROCKs bring up the board delays issue :)</span>
+<a name="l-386"></a><span class="tm">19:34:03 </span><span class="nka">* suseROCKs</span> <span class="ac">cannot hate michl until he at least gets to try some of michl's honey</span>
+<a name="l-387"></a><span class="tm">19:34:18 </span><span class="nka">* AlbertoP</span> <span class="ac">lovely hates the board ;-P</span>
+<a name="l-388"></a><span class="tm">19:34:27</span><span class="nk"> &lt;rhorstkoetter&gt;</span> michl's honey is plain awesome
+<a name="l-389"></a><span class="tm">19:34:34</span><span class="nk"> &lt;AlbertoP&gt;</span> in a very friendly way, of course
+<a name="l-390"></a><span class="tm">19:34:42</span><span class="nk"> &lt;suseROCKs&gt;</span> Alrighty, for AlbertoP's sake since I asked him several times to raise his issue to us, I'll go ahead and do for him.
+<a name="l-391"></a><span class="tm">19:34:53</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">rhorstkoetter:</span> I have to admit that's correct
+<a name="l-392"></a><span class="tm">19:34:56</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">suseROCKs:</span> better :)
+<a name="l-393"></a><span class="tm">19:35:02</span><span class="nk"> &lt;suseROCKs&gt;</span> He's a concern and I can't blame him for that, that we took a bit of time to respond to his spinoff request
+<a name="l-394"></a><span class="tm">19:35:04</span><span class="nk"> &lt;gnokii&gt;</span> wwups
+<a name="l-395"></a><span class="tm">19:35:16</span><span class="nk"> &lt;AlbertoP&gt;</span> a bit is understating it :)
+<a name="l-396"></a><span class="tm">19:35:21</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">michl:</span> but you still have a too faschistic approach with the bee queens IMO
+<a name="l-397"></a><span class="tm">19:35:30</span><span class="nk"> &lt;rhorstkoetter&gt;</span> but this certainly is off-topic here
+<a name="l-398"></a><span class="tm">19:36:02</span><span class="nk"> &lt;prusnak&gt;</span> are we going to try to wrap up this topic ?
+<a name="l-399"></a><span class="tm">19:36:07</span><span class="nk"> &lt;rhorstkoetter&gt;</span> still, I vote for a nursing home for non-performing queens
+<a name="l-400"></a><span class="tm">19:36:08</span><span class="nk"> &lt;suseROCKs&gt;</span> so... does anyone have ideas how we can speed up our trademark review process?
+<a name="l-401"></a><span class="tm">19:36:22</span><span class="nk"> &lt;AlbertoP&gt;</span> I have one :)
+<a name="l-402"></a><span class="tm">19:36:54</span><span class="nk"> &lt;AlbertoP&gt;</span> the guidelines are nice, but they automatically exclude all the use cases except plain copies of openSUSE
+<a name="l-403"></a><span class="tm">19:37:28</span><span class="nk"> &lt;AlbertoP&gt;</span> technically, if I read the guidelines, everything that adds packages out of the official repos requires either debranding or authorizations
+<a name="l-404"></a><span class="tm">19:37:33</span><span class="nk"> &lt;suseROCKs&gt;</span> Can you propose to us where it can be re-written?  Perhaps suggest some text?
+<a name="l-405"></a><span class="tm">19:38:46</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">suseROCKs:</span> well, my use case was quite simple... I added a few open packages to the base distro, and I make no money with it (I would have used the live in a university). I do not understand why I should even ask for permission in principle.
+<a name="l-406"></a><span class="tm">19:39:17</span><span class="nk"> &lt;AlbertoP&gt;</span> and btw, this seems in sort of contraddiction with what SUSE Studio is doing with the gallery, where you can technically redistribute whatever
+<a name="l-407"></a><span class="tm">19:39:25</span><span class="nk"> &lt;suseROCKs&gt;</span> michl,    Thoughts?   You're more attentive to the trademark guidelines than us.
+<a name="l-408"></a><span class="tm">19:39:32</span><span class="nk"> &lt;AlbertoP&gt;</span> no idea if legally that's allowed though
+<a name="l-409"></a><span class="tm">19:40:14</span><span class="nk"> &lt;BManojlovic&gt;</span> but really which part forbids distribution like that?
+<a name="l-410"></a><span class="tm">19:40:20</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> there's always an official way and there are work arounds ;-)
+<a name="l-411"></a><span class="tm">19:40:24</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">BManojlovic:</span> the brands
+<a name="l-412"></a><span class="tm">19:40:42</span><span class="nk"> &lt;BManojlovic&gt;</span> <span class="hi">AlbertoP:</span> which one ? "based on opensuse" ?
+<a name="l-413"></a><span class="tm">19:40:59</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">michl:</span> well that's the problem... remove the workarounds and make the official way clear, or you'll lose contributions (as it happened in my case due to time constraints)
+<a name="l-414"></a><span class="tm">19:41:07</span><span class="nk"> &lt;BManojlovic&gt;</span> that would i think go with fair use logic
+<a name="l-415"></a><span class="tm">19:41:11</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">BManojlovic:</span> yes the second case if I remember right
+<a name="l-416"></a><span class="tm">19:41:22</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">AlbertoP:</span> unfortunatelly I agree with you
+<a name="l-417"></a><span class="tm">19:41:25</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">BManojlovic:</span> it is not written anywhere though
+<a name="l-418"></a><span class="tm">19:41:38</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">BManojlovic:</span> and well...I work in US, nobody wants to risk
+<a name="l-419"></a><span class="tm">19:41:51</span><span class="nk"> &lt;suseROCKs&gt;</span> so does this mean we need to review our guidelines?
+<a name="l-420"></a><span class="tm">19:42:13</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">suseROCKs:</span> maybe that's a fun topic for Jos to start with ;-)
+<a name="l-421"></a><span class="tm">19:42:33</span><span class="nk"> &lt;suseROCKs&gt;</span> We always did say that at some point in the future we would revise our guidelines  (or at least jzb did)
+<a name="l-422"></a><span class="tm">19:42:48</span><span class="nk"> &lt;suseROCKs&gt;</span> we needed to let the guidelines encounter real issues before we could do that, and now AlbertoP has done that for us.
+<a name="l-423"></a><span class="tm">19:42:50</span><span class="nk"> &lt;AlbertoP&gt;</span> mah
+<a name="l-424"></a><span class="tm">19:42:53</span><span class="nk"> &lt;henne&gt;</span> jos is supposed to get on stage and pull his pants down
+<a name="l-425"></a><span class="tm">19:43:03</span><span class="nk"> &lt;henne&gt;</span> not to review legal documents...
+<a name="l-426"></a><span class="tm">19:43:14 </span><span class="nka">* tigerfoot</span> <span class="ac">propose the last day of OSC between 16h00 &amp; 17h00 so it only take one hour :-)</span>
+<a name="l-427"></a><span class="tm">19:43:35</span><span class="nk"> &lt;suseROCKs&gt;</span> a whole hour with the pants down???  ewww
+<a name="l-428"></a><span class="tm">19:43:48</span><span class="nk"> &lt;henne&gt;</span> so should we take this AI?
+<a name="l-429"></a><span class="tm">19:43:49</span><span class="nk"> &lt;suseROCKs&gt;</span> michl,   I agree.  let's dump this on Jos, as the last guidelines were created by CM anyway.
+<a name="l-430"></a><span class="tm">19:44:00</span><span class="nk"> &lt;henne&gt;</span> revise the guidelines?
+<a name="l-431"></a><span class="tm">19:44:10 </span><span class="nka">* tigerfoot</span> <span class="ac">was typing about the review ... not the kick in ass of jos ...</span>
+<a name="l-432"></a><span class="tm">19:44:18</span><span class="nk"> &lt;BManojlovic&gt;</span> :))
+<a name="l-433"></a><span class="tm">19:44:18</span><span class="nk"> &lt;henne&gt;</span> again. this can't be Jos job
+<a name="l-434"></a><span class="tm">19:44:38</span><span class="nk"> &lt;henne&gt;</span> if you dump that on him now you will see results in a year
+<a name="l-435"></a><span class="tm">19:44:39</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">henne:</span> please tell me why?
+<a name="l-436"></a><span class="tm">19:44:43</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   How come?  it's a guideline that fosters community development....   you know... Community Manager....
+<a name="l-437"></a><span class="tm">19:45:02</span><span class="nk"> &lt;henne&gt;</span> because we said we want someone that is rock n roll?
+<a name="l-438"></a><span class="tm">19:45:11</span><span class="nk"> &lt;suseROCKs&gt;</span> and?
+<a name="l-439"></a><span class="tm">19:45:19</span><span class="nk"> &lt;suseROCKs&gt;</span> what's one got to do with the other?
+<a name="l-440"></a><span class="tm">19:45:25</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">henne:</span> so we leave it as is :-(
+<a name="l-441"></a><span class="tm">19:45:32</span><span class="nk"> &lt;henne&gt;</span> no we take this AI
+<a name="l-442"></a><span class="tm">19:45:39</span><span class="nk"> &lt;henne&gt;</span> we're supposed to do this shit
+<a name="l-443"></a><span class="tm">19:45:42</span><span class="nk"> &lt;henne&gt;</span> not Jos :)
+<a name="l-444"></a><span class="tm">19:46:13</span><span class="nk"> &lt;suseROCKs&gt;</span> ok then let's do it
+<a name="l-445"></a><span class="tm">19:46:14</span><span class="nk"> &lt;henne&gt;</span> we're the "revise boring guidelines that foster community development" comittee
+<a name="l-446"></a><span class="tm">19:46:16</span><span class="nk"> &lt;suseROCKs&gt;</span> just get it over with
+<a name="l-447"></a><span class="tm">19:46:21</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-448"></a><span class="tm">19:46:25</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">henne:</span> add "make it SIMPLE" :)
+<a name="l-449"></a><span class="tm">19:46:41 </span><span class="nka">* suseROCKs</span> <span class="ac">now realizes he should have applied for jos's job.   No paperwork involved!</span>
+<a name="l-450"></a><span class="tm">19:47:04</span><span class="nk"> &lt;henne&gt;</span> i put this to the agenda for the next meeting okay?
+<a name="l-451"></a><span class="tm">19:47:11</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-452"></a><span class="tm">19:47:38</span><span class="nk"> &lt;suseROCKs&gt;</span> and AlbertoP   As a favor to us, in order to help us expedite on this matter,  could you email us with specifics of what passages were troublesome and some recommended text?
+<a name="l-453"></a><span class="tm">19:48:06</span><span class="nk"> &lt;suseROCKs&gt;</span> can't take you more than 5 mns to do that  ;-)
+<a name="l-454"></a><span class="tm">19:48:09</span><span class="nk"> &lt;rhorstkoetter&gt;</span> are we at Q&amp;A already?
+<a name="l-455"></a><span class="tm">19:48:15 </span><span class="nka">* rhorstkoetter</span> <span class="ac">just wonders</span>
+<a name="l-456"></a><span class="tm">19:48:15</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlbertoP:</span> or use the talk page of the document in the wiki
+<a name="l-457"></a><span class="tm">19:48:17</span><span class="nk"> &lt;suseROCKs&gt;</span> lol rhorstkoetter   nope
+<a name="l-458"></a><span class="tm">19:48:23</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">suseROCKs:</span> the troublesome passage is the 1.5 months I waited without a reply :)
+<a name="l-459"></a><span class="tm">19:48:39</span><span class="nk"> &lt;AlbertoP&gt;</span> when the promised time was 1 week
+<a name="l-460"></a><span class="tm">19:48:41</span><span class="nk"> &lt;suseROCKs&gt;</span> but I think with the times we have now,  We should postpone our added topics to next meeting
+<a name="l-461"></a><span class="tm">19:48:45</span><span class="nk"> &lt;AlbertoP&gt;</span> (autoresponder email)
+<a name="l-462"></a><span class="tm">19:49:17</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> I see. I just ask as my girl is preparing serbian bean soap for 20 UTC ;)
+<a name="l-463"></a><span class="tm">19:49:19</span><span class="nk"> &lt;suseROCKs&gt;</span> AlbertoP,    yes that one too.    Thanks for reminding me.  But I'm talking about the passage within the guidelines that you have issues with
+<a name="l-464"></a><span class="tm">19:49:23</span><span class="nk"> &lt;prusnak&gt;</span> yep, we should change the text in autoresponder email
+<a name="l-465"></a><span class="tm">19:49:28</span><span class="nk"> &lt;rhorstkoetter&gt;</span> and I don't want to miss that one
+<a name="l-466"></a><span class="tm">19:49:41</span><span class="nk"> &lt;suseROCKs&gt;</span> why the hell does rhorstkoetter want to eat soap?!?
+<a name="l-467"></a><span class="tm">19:49:49</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">prusnak:</span> can you take that AI?
+<a name="l-468"></a><span class="tm">19:49:59</span><span class="nk"> &lt;rhorstkoetter&gt;</span> soup
+<a name="l-469"></a><span class="tm">19:50:03</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">suseROCKs:</span> ok, I'll send you. I do not really want to open anything on ML or such...
+<a name="l-470"></a><span class="tm">19:50:07</span><span class="nk"> &lt;rhorstkoetter&gt;</span> s/soap/soup
+<a name="l-471"></a><span class="tm">19:50:15</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">henne:</span> AI to change email?
+<a name="l-472"></a><span class="tm">19:50:19</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">prusnak:</span> yes
+<a name="l-473"></a><span class="tm">19:50:23</span><span class="nk"> &lt;prusnak&gt;</span> okay
+<a name="l-474"></a><span class="tm">19:50:31</span><span class="nk"> &lt;suseROCKs&gt;</span> AlbertoP,   Just send to board@ and we'll take it under advisement.  It will help us alot to quickly identify and narrow down from a real live usecase issue.
+<a name="l-475"></a><span class="tm">19:50:37</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">prusnak:</span> the autoresponder is from Novell permission@novell.com :)
+<a name="l-476"></a><span class="tm">19:50:44</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">AlbertoP:</span> i know
+<a name="l-477"></a><span class="tm">19:50:48</span><span class="nk"> &lt;prusnak&gt;</span> i get these emails too
+<a name="l-478"></a><span class="tm">19:50:48</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   Aren't you using #action??
+<a name="l-479"></a><span class="tm">19:50:56</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">prusnak:</span> guess you cannot change that
+<a name="l-480"></a><span class="tm">19:51:10</span><span class="nk"> &lt;suseROCKs&gt;</span> never underestimate the power of prusnak   :-)
+<a name="l-481"></a><span class="tm">19:51:13</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">suseROCKs:</span> yes, one: kick who forgot nvidia drivers :P
+<a name="l-482"></a><span class="tm">19:51:18 </span><span class="nka">* AlbertoP</span> <span class="ac">runs</span>
+<a name="l-483"></a><span class="tm">19:51:26</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> you can do to
+<a name="l-484"></a><span class="tm">19:51:49</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   Yeah but you're assigning AI's and forgetting the #action  :-)
+<a name="l-485"></a><span class="tm">19:51:51</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#action </span><span class="cmdline">prusnak revise the text of the trademark approval autoresponder mail and get it changed</span>
+<a name="l-486"></a><span class="tm">19:51:55</span><span class="nk"> &lt;suseROCKs&gt;</span> There!
+<a name="l-487"></a><span class="tm">19:52:00</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#action </span><span class="cmdline">AlbertoP provide us with feedback about the passage within the guidelines that is a problem</span>
+<a name="l-488"></a><span class="tm">19:52:16</span><span class="nk"> &lt;henne&gt;</span> happy now bitch? ;)
+<a name="l-489"></a><span class="tm">19:52:40</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   you complete me, studmuffin  :-*
+<a name="l-490"></a><span class="tm">19:52:48</span><span class="nk"> &lt;henne&gt;</span> okay shall we continue to Q&amp;A?
+<a name="l-491"></a><span class="tm">19:52:52</span><span class="nk"> &lt;suseROCKs&gt;</span> and that ^^ went in the records
+<a name="l-492"></a><span class="tm">19:53:15</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">henne:</span> yes sir
+<a name="l-493"></a><span class="tm">19:53:18</span><span class="nk"> &lt;rhorstkoetter&gt;</span> please
+<a name="l-494"></a><span class="tm">19:53:28</span><span class="nk"> &lt;AlbertoP&gt;</span> ehm
+<a name="l-495"></a><span class="tm">19:53:54</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">henne:</span> ok, but ehm... where do I find the page again? (lovely search :-))
+<a name="l-496"></a><span class="tm">19:53:54 </span><span class="nka">* rhorstkoetter</span> <span class="ac">corrects: It's sewrbian bean soup with kraut salad</span>
+<a name="l-497"></a><span class="tm">19:54:19</span><span class="nk"> &lt;rhorstkoetter&gt;</span> s/sewrbian/serbian
+<a name="l-498"></a><span class="tm">19:54:55</span><span class="nk"> &lt;suseROCKs&gt;</span> ewww  kraut
+<a name="l-499"></a><span class="tm">19:55:08</span><span class="nk"> &lt;suseROCKs&gt;</span> Germans export many fine things... bu kraut or saurkraut isn't one of them
+<a name="l-500"></a><span class="tm">19:55:30</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlbertoP:</span> seems not transfered. please use mail :)
+<a name="l-501"></a><span class="tm">19:55:43</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlbertoP:</span> okay?
+<a name="l-502"></a><span class="tm">19:55:56</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Questions and Answers</span>
+<a name="l-503"></a><span class="tm">19:56:05</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   he needs the page in order to look at the text.  :-)    Alberto  use old-en for referrence
+<a name="l-504"></a><span class="tm">19:56:31</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">AlbertoP:</span> old-en.opensuse.org/OpenSUSE_Trademark_Guidelines_v2
+<a name="l-505"></a><span class="tm">19:56:37</span><span class="nk"> &lt;AlbertoP&gt;</span> ok thanks
+<a name="l-506"></a><span class="tm">19:57:15</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">AlbertoP:</span> and maybe transfer the page to the new wiki ;-)
+<a name="l-507"></a><span class="tm">19:57:16</span><span class="nk"> &lt;suseROCKs&gt;</span> So... does anyone here have questions that won't get rhorstkoetter riled up and unable to eat his bean soap?
+<a name="l-508"></a><span class="tm">19:57:42</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">michl:</span> :P
+<a name="l-509"></a><span class="tm">19:57:56</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">suseROCKs:</span> take note!
+<a name="l-510"></a><span class="tm">19:58:00</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> heh, thanks for supporting this. much appreciated actually
+<a name="l-511"></a><span class="tm">19:58:24</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">suseROCKs:</span> the whole   Use Cases for the openSUSE Marks  section is the problem
+<a name="l-512"></a><span class="tm">19:58:27</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   I think we have no questions from our audience
+<a name="l-513"></a><span class="tm">19:58:46</span><span class="nk"> &lt;suseROCKs&gt;</span> AlbertoP,   don't tell me  tell the email!   I'll forget what you tell me here and now
+<a name="l-514"></a><span class="tm">19:58:48</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">suseROCKs:</span> according to it, the only thing that does not require permissions is an unmodified copy of opensuse...
+<a name="l-515"></a><span class="tm">19:58:55</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">suseROCKs:</span> oh please
+<a name="l-516"></a><span class="tm">19:59:00</span><span class="nk"> &lt;AlbertoP&gt;</span> it's the damn same thing
+<a name="l-517"></a><span class="tm">19:59:17</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">AlbertoP:</span> and one just using packages out of the ftp tree
+<a name="l-518"></a><span class="tm">19:59:18</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> btw, kraut isn't necessarily sauerkraut
+<a name="l-519"></a><span class="tm">19:59:20</span><span class="nk"> &lt;suseROCKs&gt;</span> AlbertoP,   and I'll forget, especially since I'm in 4 conversations right now
+<a name="l-520"></a><span class="tm">19:59:24</span><span class="nk"> &lt;AlbertoP&gt;</span> why do you multiplicate others work requiring to ask here, write emails, discuss there?
+<a name="l-521"></a><span class="tm">19:59:30</span><span class="nk"> &lt;AlbertoP&gt;</span> really, this is another problem
+<a name="l-522"></a><span class="tm">20:00:17</span><span class="nk"> &lt;suseROCKs&gt;</span> AlbertoP,   its not multiplicating,  its inviting you to help and participate with the board.  you're actually helping to perform board matters.  You're moving up in the world.  Hot Damn!  Congrats Kiddo!
+<a name="l-523"></a><span class="tm">20:00:21</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">michl:</span> not according to that page
+<a name="l-524"></a><span class="tm">20:00:25</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> if you ever happen to visit germany again, just visit us here in darmstadt and I'll arrange a rather great dinner with kraut. you'll enjoy it
+<a name="l-525"></a><span class="tm">20:00:56</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   I'm going to be in Europe for a month in Oct, but will have to figure out if Germany is worth my time.  :-)
+<a name="l-526"></a><span class="tm">20:00:56</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">michl:</span> the section   Distributing openSUSE With Project-Based Modifications says you have to debrand
+<a name="l-527"></a><span class="tm">20:01:10</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">AlbertoP:</span> damned, you're right
+<a name="l-528"></a><span class="tm">20:01:29 </span><span class="nka">* AlbertoP</span> <span class="ac">is always right! (sort of) ;-)</span>
+<a name="l-529"></a><span class="tm">20:01:37</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> what else would be worth your time but germany? please don't tell me something like france
+<a name="l-530"></a><span class="tm">20:01:38</span><span class="nk"> &lt;BManojlovic&gt;</span> what is project based modificatrion really?
+<a name="l-531"></a><span class="tm">20:01:48</span><span class="nk"> &lt;AlbertoP&gt;</span> <span class="hi">BManojlovic:</span> add a package from OSS :)
+<a name="l-532"></a><span class="tm">20:01:53 </span><span class="nka">* suseROCKs</span> <span class="ac">doesn't comment</span>
+<a name="l-533"></a><span class="tm">20:02:06</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> switzerland is great. I've been there the last 3 days
+<a name="l-534"></a><span class="tm">20:02:22</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   and they told you to go back home?
+<a name="l-535"></a><span class="tm">20:02:33</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> grindelwald with eiger nordwand
+<a name="l-536"></a><span class="tm">20:02:48 </span><span class="nka">* rhorstkoetter</span> <span class="ac">doesn't comment</span>
+<a name="l-537"></a><span class="tm">20:03:04</span><span class="nk"> &lt;henne&gt;</span> okay can we close this meeting?
+<a name="l-538"></a><span class="tm">20:03:09</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   I'll be in Spain for 1 1/2 weeks,  then I have a week in between to Nuremberg.  I haven't decided what to do with that week yet, but leaning towards staying somewhere in southern Europe
+<a name="l-539"></a><span class="tm">20:03:17</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   I thought we already did  :-)
+<a name="l-540"></a><span class="tm">20:03:19</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> where is that dancing viseo again at youtube?
+<a name="l-541"></a><span class="tm">20:03:33</span><span class="nk"> &lt;suseROCKs&gt;</span> rhorstkoetter,   yes youtube
+<a name="l-542"></a><span class="tm">20:03:49</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> nuremberg actually is in germany ;)
+<a name="l-543"></a><span class="tm">20:04:08</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> URL please to the youtube video
+<a name="l-544"></a><span class="tm">20:04:10</span><span class="nk"> &lt;henne&gt;</span> okay thats it then
+<a name="l-545"></a><span class="tm">20:04:14</span><span class="nk"> &lt;henne&gt;</span> thanks for participating
+<a name="l-546"></a><span class="tm">20:04:17</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

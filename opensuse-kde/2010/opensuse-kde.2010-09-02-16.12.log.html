@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">16:12:01</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">16:12:01</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Sep  2 16:12:01 2010 UTC.  The chair is llunak. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">16:12:01</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">16:12:11</span><span class="nk"> &lt;llunak&gt;</span> agenda:
+<a name="l-5"></a><span class="tm">16:12:29</span><span class="nk"> &lt;llunak&gt;</span> * replacing more openSUSE:Factory KDE3 packages with KDE4 versions (kmymoney,...)
+<a name="l-6"></a><span class="tm">16:12:37</span><span class="nk"> &lt;llunak&gt;</span> old action items
+<a name="l-7"></a><span class="tm">16:12:45</span><span class="nk"> &lt;llunak&gt;</span> * status report
+<a name="l-8"></a><span class="tm">16:12:48</span><span class="nk"> &lt;llunak&gt;</span> * misc, Q&amp;A
+<a name="l-9"></a><span class="tm">16:12:53</span><span class="nk"> &lt;llunak&gt;</span> some more agenda items?
+<a name="l-10"></a><span class="tm">16:13:39</span><span class="nk"> &lt;llunak&gt;</span> ok
+<a name="l-11"></a><span class="tm">16:13:57</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">old action items</span>
+<a name="l-12"></a><span class="tm">16:14:15</span><span class="nk"> &lt;llunak&gt;</span> * llunak update meeting howto (meetbot, etc.)
+<a name="l-13"></a><span class="tm">16:14:28</span><span class="nk"> &lt;llunak&gt;</span> after the meeting is over, honest :)
+<a name="l-14"></a><span class="tm">16:14:45</span><span class="nk"> &lt;llunak&gt;</span> * wstephenson start KDE:45 project implementation discussion on list
+<a name="l-15"></a><span class="tm">16:15:11</span><span class="nk"> &lt;llunak&gt;</span> that was done, but I'm not sure what the outcome is
+<a name="l-16"></a><span class="tm">16:15:23</span><span class="nk"> &lt;llunak&gt;</span> * kde-four-reloaded-team polish while waiting for KDE:45 to come on tap
+<a name="l-17"></a><span class="tm">16:15:34</span><span class="nk"> &lt;llunak&gt;</span> hmm ... this is vague enough to be considered done I guess
+<a name="l-18"></a><span class="tm">16:15:39</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">_wstephenson:</span> noted the NetSecL
+<a name="l-19"></a><span class="tm">16:15:52</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> what is the status?
+<a name="l-20"></a><span class="tm">16:17:02</span><span class="nk"> &lt;llunak&gt;</span> oh well
+<a name="l-21"></a><span class="tm">16:17:12</span><span class="nk"> &lt;wstephenson&gt;</span> sorry folks, i've been exemplary the last few meetings...
+<a name="l-22"></a><span class="tm">16:17:28</span><span class="nk"> &lt;caf4926&gt;</span> does anyone have a heads up on the 4.5 stable repo being discussed in the ML
+<a name="l-23"></a><span class="tm">16:17:29</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> i haven't got around to showing adrian the setlinkrev bug yet
+<a name="l-24"></a><span class="tm">16:17:30</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> mind to scroll up a few lines?
+<a name="l-25"></a><span class="tm">16:17:59</span><span class="nk"> &lt;caf4926&gt;</span> <span class="hi">wstephenson:</span> I think you are involved?
+<a name="l-26"></a><span class="tm">16:18:01</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> dirk mentioned that he thinks setlinkrev is too much work
+<a name="l-27"></a><span class="tm">16:18:10</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">caf4926:</span> topic
+<a name="l-28"></a><span class="tm">16:18:14</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">caf4926:</span> see topic, and we are discussing it right now.
+<a name="l-29"></a><span class="tm">16:18:36</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> which solution is less work to have :45 based on KDF ?
+<a name="l-30"></a><span class="tm">16:18:41</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">llunak:</span> one sec
+<a name="l-31"></a><span class="tm">16:18:45</span><span class="nk"> &lt;caf4926&gt;</span> <span class="hi">wstephenson:</span> sorry
+<a name="l-32"></a><span class="tm">16:18:49</span><span class="nk"> &lt;wstephenson&gt;</span> but dirk wasn't specific in how, whether it can be eased with scripting, or What Would Dirk Mueller Do?
+<a name="l-33"></a><span class="tm">16:18:54</span><span class="nk"> &lt;Taolin&gt;</span> <span class="hi">llunak:</span> when meeting over, pls consider dev request re kmymoney - or advise me on how to submit
+<a name="l-34"></a><span class="tm">16:19:44</span><span class="nk"> &lt;caf4926&gt;</span> 4.6 and 11.4 is some time off and users are asking in the forum, I was just wondering?
+<a name="l-35"></a><span class="tm">16:19:56</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> that (what is the least work, less error prone solution to base :45 on KDF) is what i'm trying to establish
+<a name="l-36"></a><span class="tm">16:20:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">caf4926:</span> this week or next
+<a name="l-37"></a><span class="tm">16:20:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">caf4926:</span> javier_'s project depends on it
+<a name="l-38"></a><span class="tm">16:20:26</span><span class="nk"> &lt;caf4926&gt;</span> <span class="hi">wstephenson:</span> is that a cert?
+<a name="l-39"></a><span class="tm">16:20:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">caf4926:</span> 85% chance i'd say
+<a name="l-40"></a><span class="tm">16:21:05</span><span class="nk"> &lt;caf4926&gt;</span> <span class="hi">wstephenson:</span> wow, this will be good, thanks to those involved!
+<a name="l-41"></a><span class="tm">16:21:18</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">caf4926:</span> save thanks for when it's published
+<a name="l-42"></a><span class="tm">16:21:31</span><span class="nk"> &lt;caf4926&gt;</span> :-)
+<a name="l-43"></a><span class="tm">16:21:37</span><span class="nk"> &lt;llunak&gt;</span> well, ok, next item
+<a name="l-44"></a><span class="tm">16:21:47</span><span class="nk"> &lt;llunak&gt;</span> * wstephenson put package list in gitorious
+<a name="l-45"></a><span class="tm">16:21:54</span><span class="nk"> &lt;wstephenson&gt;</span> doing it during the meeting
+<a name="l-46"></a><span class="tm">16:22:23</span><span class="nk"> &lt;llunak&gt;</span> * javier_ bugreport for yast to use oxygen icons in installer
+<a name="l-47"></a><span class="tm">16:22:57</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> ^ say whenever that one sec is over
+<a name="l-48"></a><span class="tm">16:23:12</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">replacing more openSUSE:Factory KDE3 packages with KDE4 versions (kmymoney,...)</span>
+<a name="l-49"></a><span class="tm">16:23:42</span><span class="nk"> &lt;llunak&gt;</span> this one is mine - there is actually still a number of packages from KDE:KDE3 that are also in openSUSE:Factory
+<a name="l-50"></a><span class="tm">16:24:06</span><span class="nk"> &lt;llunak&gt;</span> e.g. kmymoney has kde4 version now AFAIK, so it should be replaced
+<a name="l-51"></a><span class="tm">16:24:11</span><span class="nk"> &lt;wstephenson&gt;</span> +1
+<a name="l-52"></a><span class="tm">16:24:23</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">llunak:</span> sorry. it needs a bit more testing. we would like to have kde-reloded with the kde45 repo not with kdf
+<a name="l-53"></a><span class="tm">16:24:23</span><span class="nk"> &lt;Taolin&gt;</span> +1
+<a name="l-54"></a><span class="tm">16:24:24</span><span class="nk"> &lt;llunak&gt;</span> and there's also some stuff like kdbus, which is just pointless for o:F
+<a name="l-55"></a><span class="tm">16:24:25</span><span class="nk"> &lt;anaumov&gt;</span> yep
+<a name="l-56"></a><span class="tm">16:24:41</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Taolin:</span> what did you want to say with kmymoney before?
+<a name="l-57"></a><span class="tm">16:24:48</span><span class="nk"> &lt;wstephenson&gt;</span> are there any special reasons not to replace kde3 packages, besides missing ports?
+<a name="l-58"></a><span class="tm">16:25:10</span><span class="nk"> &lt;wstephenson&gt;</span> if not we should just replace it all and notify KDE:KDE3 of each package
+<a name="l-59"></a><span class="tm">16:25:17</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">llunak:</span> i opened a bug report regarding the oxygen icons in yast, no reply yet
+<a name="l-60"></a><span class="tm">16:25:24</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> ok
+<a name="l-61"></a><span class="tm">16:25:31</span><span class="nk"> &lt;javier_&gt;</span> sorry for the delay
+<a name="l-62"></a><span class="tm">16:25:34</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Can not think of any other reason.
+<a name="l-63"></a><span class="tm">16:25:55</span><span class="nk"> &lt;llunak&gt;</span> IMO we still need to keep some, there's the kde3 runtime, which we will decide around M6 as said last time
+<a name="l-64"></a><span class="tm">16:26:00</span><span class="nk"> &lt;Taolin&gt;</span> re check writing (and plugins in general) need two things : (1) write on check forms and (2) print the whole thing, MICR, background, &amp; all
+<a name="l-65"></a><span class="tm">16:26:20</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> would you keep eg quanta, or just farm it out to OBS?
+<a name="l-66"></a><span class="tm">16:26:42</span><span class="nk"> &lt;llunak&gt;</span> there's no replacement for quanta now AFAIK, so I'd keep it, it's quite popular I'd say
+<a name="l-67"></a><span class="tm">16:26:49</span><span class="nk"> &lt;Taolin&gt;</span> existing plugins only work on old versions and are problematic to install anyway, personally, main need is to print checsk on plain paer
+<a name="l-68"></a><span class="tm">16:27:30</span><span class="nk"> &lt;llunak&gt;</span> there's also e.g. Scribus
+<a name="l-69"></a><span class="tm">16:27:46</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Taolin:</span> I don't get what you're saying - is kde4 version of kmymoney not usable yet?
+<a name="l-70"></a><span class="tm">16:27:51</span><span class="nk"> &lt;wstephenson&gt;</span> and mrdocs is on the train again.
+<a name="l-71"></a><span class="tm">16:28:44</span><span class="nk"> &lt;llunak&gt;</span> anyway, the plan is: I create a wiki with a list of all these packages, people can add info to it (whether kde4 version exists, whether to keep the kde3 version if not, etc)
+<a name="l-72"></a><span class="tm">16:28:54</span><span class="nk"> &lt;llunak&gt;</span> I'll mail the list and next meeting we sum up and proceed
+<a name="l-73"></a><span class="tm">16:29:08</span><span class="nk"> &lt;anaumov&gt;</span> llunak, +1
+<a name="l-74"></a><span class="tm">16:29:28</span><span class="nk"> &lt;Taolin&gt;</span> <span class="hi">llunak:</span> it is useable for base function of budgeting and book-keeping (and does well, thank you) but check writing, either on forms or on plain paper is not useable in kmy$ and only 1/2 in gnucash
+<a name="l-75"></a><span class="tm">16:29:52</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Taolin:</span> are you on opensuse-kde list?
+<a name="l-76"></a><span class="tm">16:30:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Taolin:</span> and this is a regression in kmy$4 compared to kmy$3?
+<a name="l-77"></a><span class="tm">16:30:42</span><span class="nk"> &lt;Taolin&gt;</span> <span class="hi">llunak:</span> I don't think so - my email input is minimal
+<a name="l-78"></a><span class="tm">16:31:49</span><span class="nk"> &lt;Taolin&gt;</span> <span class="hi">wstephenson:</span> to the extent that there is at least one plugin that exists for 3
+<a name="l-79"></a><span class="tm">16:31:53</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">llunak:</span> is it kde3 if scribus need qt4.6 ?
+<a name="l-80"></a><span class="tm">16:32:13</span><span class="nk"> &lt;Taolin&gt;</span> <span class="hi">wstephenson:</span> even it comes with a caveat about install problems
+<a name="l-81"></a><span class="tm">16:32:40</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">tigerfoot:</span> no, that means we can probably replace the qt3 version
+<a name="l-82"></a><span class="tm">16:33:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Taolin:</span> perhaps you could try new versions as they become available and mail the list with an update about remaining regressions? that way we can decide later (m6 say) whether to include kmy£3 still
+<a name="l-83"></a><span class="tm">16:33:25</span><span class="nk"> &lt;tigerfoot&gt;</span> at least their newer version 1.3.8 but they said it's not the official stable ... later when they release the 1.4
+<a name="l-84"></a><span class="tm">16:34:21</span><span class="nk"> &lt;Taolin&gt;</span> I will be glad to - (pls advise more on "list")
+<a name="l-85"></a><span class="tm">16:35:03</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Taolin:</span> http://en.opensuse.org/Portal:KDE - search for 'openSUSE KDE Mailing List'
+<a name="l-86"></a><span class="tm">16:35:10</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Taolin:</span> or send email (empty body/subject) to opensuse-kde+help@opensuse.org
+<a name="l-87"></a><span class="tm">16:35:28</span><span class="nk"> &lt;Taolin&gt;</span> excellent -
+<a name="l-88"></a><span class="tm">16:35:34</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#action </span><span class="cmdline">llunak prepare a list of openSUSE:Factory packages that comes from KDE:KDE3 and send to the list</span>
+<a name="l-89"></a><span class="tm">16:35:52</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">status report</span>
+<a name="l-90"></a><span class="tm">16:35:55</span><span class="nk"> &lt;llunak&gt;</span> 4.5.1 is out
+<a name="l-91"></a><span class="tm">16:35:59 </span><span class="nka">* Taolin</span> <span class="ac">, over-the-hill, retired mainframer &amp; COBOL guru leaps at chance to do something useful</span>
+<a name="l-92"></a><span class="tm">16:36:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> KDE:Qt updated to Qt 4.7 rc1
+<a name="l-93"></a><span class="tm">16:36:34</span><span class="nk"> &lt;llunak&gt;</span> there's a KDE3-specific mailing list opensuse-kde3@opensuse.org, for those who are interested
+<a name="l-94"></a><span class="tm">16:37:00</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Taolin:</span> that would be great. we have a lot of accumulated experience on the lists which enjoys its retirement by blowing smoke at everything new we do ;).
+<a name="l-95"></a><span class="tm">16:37:18</span><span class="nk"> &lt;Taolin&gt;</span> lol!
+<a name="l-96"></a><span class="tm">16:37:21</span><span class="nk"> &lt;llunak&gt;</span> something else worth mentioning?
+<a name="l-97"></a><span class="tm">16:37:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">llunak:</span> You saw the KDE:Qt update ?
+<a name="l-98"></a><span class="tm">16:38:01</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">tittiatcoke:</span> what you said a minute ago? of course yes :)
+<a name="l-99"></a><span class="tm">16:38:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-100"></a><span class="tm">16:38:23</span><span class="nk"> &lt;llunak&gt;</span> KDE:KDE4:Community and KDE:Community have finally been nuked, but I guess those who still cared have already found out the hard way &gt;:)
+<a name="l-101"></a><span class="tm">16:38:47</span><span class="nk"> &lt;llunak&gt;</span> ok, that's it
+<a name="l-102"></a><span class="tm">16:38:52</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A, misc</span>
+<a name="l-103"></a><span class="tm">16:38:53 </span><span class="nka">* wstephenson</span> <span class="ac">has been doing bugs, updating his todo list, on holiday, at froscon doing php, learning git (again, why won't it stick) and fixing KDF when Qt47 came out.</span>
+<a name="l-104"></a><span class="tm">16:38:55</span><span class="nk"> &lt;tigerfoot&gt;</span> will the factory updated with the 4.5.1 during the next two weeks ? So I can demo it at frOsCamp the 17 &amp; 18 September ?
+<a name="l-105"></a><span class="tm">16:39:10</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tigerfoot:</span> it will be in soon now M1 is out
+<a name="l-106"></a><span class="tm">16:39:23</span><span class="nk"> &lt;wstephenson&gt;</span> but the next milestone is M2 on 30 sept
+<a name="l-107"></a><span class="tm">16:39:42</span><span class="nk"> &lt;Taolin&gt;</span> <span class="hi">wstephenson:</span> lol again - git is one thing I have come to and enjoy
+<a name="l-108"></a><span class="tm">16:40:05</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">wstephenson:</span> so I will demo it in the middle of :-) Hope the mirror will be good the 16th ...
+<a name="l-109"></a><span class="tm">16:40:12 </span><span class="nka">* Taolin</span> <span class="ac">shuts up and ceases off-topic interference</span>
+<a name="l-110"></a><span class="tm">16:40:18</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tigerfoot:</span> otherwise take KDF on 11.3
+<a name="l-111"></a><span class="tm">16:40:43</span><span class="nk"> &lt;llunak&gt;</span> ok, the meeting is over, thanks for contributing
+<a name="l-112"></a><span class="tm">16:40:46</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

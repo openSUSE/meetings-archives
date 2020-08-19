@@ -1,0 +1,322 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-gnome log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">16:02:04</span><span class="nk"> &lt;jpr&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">16:02:04</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Jan 20 16:02:04 2011 UTC.  The chair is jpr. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">16:02:04</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">16:02:11</span><span class="nk"> &lt;psankar&gt;</span> ah neat
+<a name="l-5"></a><span class="tm">16:02:18</span><span class="nk"> &lt;psankar&gt;</span> <span class="cmd">#chair </span><span class="cmdline">metalgod sreeves</span>
+<a name="l-6"></a><span class="tm">16:02:28</span><span class="nk"> &lt;psankar&gt;</span> ah i think I cant set a chair.
+<a name="l-7"></a><span class="tm">16:02:36</span><span class="nk"> &lt;FunkyPenguin&gt;</span> you need to be op i think
+<a name="l-8"></a><span class="tm">16:02:45</span><span class="nk"> &lt;psankar&gt;</span> jpr, so like good old times, can you run the meeting ?
+<a name="l-9"></a><span class="tm">16:03:13</span><span class="nk"> &lt;jpr&gt;</span> <span class="cmd">#chair </span><span class="cmdline">sreeves1</span>
+<a name="l-10"></a><span class="tm">16:03:13</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: jpr sreeves1
+<a name="l-11"></a><span class="tm">16:03:18</span><span class="nk"> &lt;jpr&gt;</span> <span class="cmd">#chair </span><span class="cmdline">metalgod</span>
+<a name="l-12"></a><span class="tm">16:03:18</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: jpr metalgod sreeves1
+<a name="l-13"></a><span class="tm">16:03:23</span><span class="nk"> &lt;jpr&gt;</span> good?
+<a name="l-14"></a><span class="tm">16:03:26</span><span class="nk"> &lt;psankar&gt;</span> jpr, thanks :-)
+<a name="l-15"></a><span class="tm">16:03:29</span><span class="nk"> &lt;jpr&gt;</span> np
+<a name="l-16"></a><span class="tm">16:03:37</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="topic">#topic </span><span class="topicline">old action items review</span>
+<a name="l-17"></a><span class="tm">16:03:52</span><span class="nk"> &lt;sreeves1&gt;</span> ok let start with the old action items
+<a name="l-18"></a><span class="tm">16:04:02</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">psankar:</span> can you post the link to the archive again
+<a name="l-19"></a><span class="tm">16:04:15</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, http://community.opensuse.org/meetings/opensuse-gnome/2010/opensuse-gnome.2010-12-16-13.44.html
+<a name="l-20"></a><span class="tm">16:04:25</span><span class="nk"> &lt;psankar&gt;</span> I will update the AIs that I had
+<a name="l-21"></a><span class="tm">16:04:43</span><span class="nk"> &lt;psankar&gt;</span> Firstly, I had to check tumbleweed and give a small feedback
+<a name="l-22"></a><span class="tm">16:05:02</span><span class="nk"> &lt;psankar&gt;</span> unfortunately, tumbleweed turned out to be too non-usable in my laptop
+<a name="l-23"></a><span class="tm">16:05:09</span><span class="nk"> &lt;psankar&gt;</span> neither wireless not suspend worked
+<a name="l-24"></a><span class="tm">16:05:15</span><span class="nk"> &lt;psankar&gt;</span> i reported the issue to gregkh
+<a name="l-25"></a><span class="tm">16:05:21</span><span class="nk"> &lt;psankar&gt;</span> and he asked me to test with the upstream kernel
+<a name="l-26"></a><span class="tm">16:05:32</span><span class="nk"> &lt;psankar&gt;</span> and we have found that 2.6.37 solves most of the issues
+<a name="l-27"></a><span class="tm">16:05:48</span><span class="nk"> &lt;psankar&gt;</span> greg told that he will be updating tumbleweed with 2.6.37 soon. so,
+<a name="l-28"></a><span class="tm">16:05:59</span><span class="nk"> &lt;psankar&gt;</span> nohting more on tumbleweed for now
+<a name="l-29"></a><span class="tm">16:06:05</span><span class="nk"> &lt;metalgod&gt;</span> sorry guys im at a meeting :(
+<a name="l-30"></a><span class="tm">16:06:12</span><span class="nk"> &lt;psankar&gt;</span> so the second AI is
+<a name="l-31"></a><span class="tm">16:06:22</span><span class="nk"> &lt;jpr&gt;</span> <span class="hi">psankar:</span> does your machine work in factory or 11.3?
+<a name="l-32"></a><span class="tm">16:06:46</span><span class="nk"> &lt;psankar&gt;</span> jpr, suspend and wireless work with factory. but i have a different set of issues (X)
+<a name="l-33"></a><span class="tm">16:06:56</span><span class="nk"> &lt;psankar&gt;</span> 11.3 works flawless
+<a name="l-34"></a><span class="tm">16:07:18</span><span class="nk"> &lt;psankar&gt;</span> the second AI i had was to have a discussion with security team for finding an alternate to gnomesu
+<a name="l-35"></a><span class="tm">16:07:30</span><span class="nk"> &lt;psankar&gt;</span> so, bug https://bugzilla.novell.com/show_bug.cgi?id=662076 is filed
+<a name="l-36"></a><span class="tm">16:07:47</span><span class="nk"> &lt;psankar&gt;</span> security team is doing an audit on this bug.
+<a name="l-37"></a><span class="tm">16:07:56</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, may be you can make the above an #info
+<a name="l-38"></a><span class="tm">16:08:21</span><span class="nk"> &lt;psankar&gt;</span> and the next action item I had was to ask ajorg to submit smuxi to GNOME:Apps
+<a name="l-39"></a><span class="tm">16:08:31</span><span class="nk"> &lt;psankar&gt;</span> and he told he iwll be doing it. so, that is also resolved.
+<a name="l-40"></a><span class="tm">16:08:45</span><span class="nk"> &lt;psankar&gt;</span> I missed out on one AI. I and badshah400 had to
+<a name="l-41"></a><span class="tm">16:08:57</span><span class="nk"> &lt;psankar&gt;</span> find out a day for features analysis and we both missed it :(
+<a name="l-42"></a><span class="tm">16:09:04</span><span class="nk"> &lt;psankar&gt;</span> that's it from my side
+<a name="l-43"></a><span class="tm">16:09:07</span><span class="nk"> &lt;psankar&gt;</span> over to you sreeves1
+<a name="l-44"></a><span class="tm">16:09:10</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="cmd">#info </span><span class="cmdline">bug about replacement for gnomesu - https://bugzilla.novell.com/show_bug.cgi?id=662076</span>
+<a name="l-45"></a><span class="tm">16:09:33</span><span class="nk"> &lt;sreeves1&gt;</span> hmm - not sure that info command worked
+<a name="l-46"></a><span class="tm">16:09:48</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">vuntz:</span> you around to update your action items ?
+<a name="l-47"></a><span class="tm">16:09:52 </span><span class="nka">* psankar</span> <span class="ac">checks meetbot's FAQ. sreeves1 you continue iwth the rest of the items</span>
+<a name="l-48"></a><span class="tm">16:10:02</span><span class="nk"> &lt;FunkyPenguin&gt;</span> psankar, careful if you're that efficient all the time you'll be assigned all the AIs ;)
+<a name="l-49"></a><span class="tm">16:10:13</span><span class="nk"> &lt;psankar&gt;</span> FunkyPenguin, hehe :-)
+<a name="l-50"></a><span class="tm">16:10:26</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">badshah400:</span> any update on the G:S:2:32 and glib2 ?
+<a name="l-51"></a><span class="tm">16:10:31</span><span class="nk"> &lt;psankar&gt;</span> <span class="cmd">#info </span><span class="cmdline">bug about replacement for gnomesu - https://bugzilla.novell.com/show_bug.cgi?id=662076</span>
+<a name="l-52"></a><span class="tm">16:11:02</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, I htink info is async and wont give feedback (unix philosophy - success on silence) . I can grep on meeitng logs and can update later if needed.
+<a name="l-53"></a><span class="tm">16:11:12</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">psankar:</span> ok
+<a name="l-54"></a><span class="tm">16:11:39</span><span class="nk"> &lt;sreeves1&gt;</span> last action item is for metalgod - anyone know the status of mono apps for M6
+<a name="l-55"></a><span class="tm">16:11:55</span><span class="nk"> &lt;sreeves1&gt;</span> since metalgod is busy elsewhere right now
+<a name="l-56"></a><span class="tm">16:12:18</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">sreeves1:</span> submission of updated glib2 done to G:S:2.32
+<a name="l-57"></a><span class="tm">16:12:27</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">badshah400:</span> excellent
+<a name="l-58"></a><span class="tm">16:12:57</span><span class="nk"> &lt;sreeves1&gt;</span> oh - anyone know the latest status on what the background will be ?
+<a name="l-59"></a><span class="tm">16:13:06</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">sreeves1:</span> but as psankar said, I have done nothing about 2 yet :(
+<a name="l-60"></a><span class="tm">16:13:18</span><span class="nk"> &lt;psankar&gt;</span> I am afraid only vuntz knows about it (background)
+<a name="l-61"></a><span class="tm">16:13:22</span><span class="nk"> &lt;psankar&gt;</span> and I too wanted to ask about it.
+<a name="l-62"></a><span class="tm">16:13:47</span><span class="nk"> &lt;psankar&gt;</span> I have a question for you all. Did anyone else find the default wallpaper and splash screen in 11.4 to be dull ?
+<a name="l-63"></a><span class="tm">16:13:47</span><span class="nk"> &lt;fcrozat&gt;</span> I'm not sure there was a definitive decision about it :(
+<a name="l-64"></a><span class="tm">16:14:02</span><span class="nk"> &lt;psankar&gt;</span> and we are not sure who will be doing it either :(
+<a name="l-65"></a><span class="tm">16:14:09</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">fcrozat:</span> ok thats scary as we are at the last milestone
+<a name="l-66"></a><span class="tm">16:14:43</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, may be we can make it an AI on vuntz to decide and inform about a sane wallpaper
+<a name="l-67"></a><span class="tm">16:14:53</span><span class="nk"> &lt;sreeves1&gt;</span> sound like that is still an outstanding action item and should have some priority
+<a name="l-68"></a><span class="tm">16:15:02</span><span class="nk"> &lt;psankar&gt;</span> yes
+<a name="l-69"></a><span class="tm">16:15:08</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz and the background decision</span>
+<a name="l-70"></a><span class="tm">16:15:21</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="topic">#topic </span><span class="topicline">Project Update</span>
+<a name="l-71"></a><span class="tm">16:15:31</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">captain_magnus:</span> DimStar - Update ?
+<a name="l-72"></a><span class="tm">16:15:32</span><span class="nk"> &lt;badshah400&gt;</span> indeed i found the wallpaper and boot-splash themes not very attractive
+<a name="l-73"></a><span class="tm">16:15:50</span><span class="nk"> &lt;metalgod&gt;</span> ok back
+<a name="l-74"></a><span class="tm">16:16:04</span><span class="nk"> &lt;psankar&gt;</span> badshah400, ah so our culturally similarly conditioined eyes dont like it ;-)
+<a name="l-75"></a><span class="tm">16:16:10</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">metalgod:</span> cool, welcome back
+<a name="l-76"></a><span class="tm">16:16:17</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">psankar:</span> yes :)
+<a name="l-77"></a><span class="tm">16:16:24 </span><span class="nka">* sreeves1</span> <span class="ac">hands over the chair duties to metalgod</span>
+<a name="l-78"></a><span class="tm">16:16:40</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">sreeves1:</span> oh you are doing a great job please continue :)
+<a name="l-79"></a><span class="tm">16:16:47</span><span class="nk"> &lt;sreeves1&gt;</span> ok
+<a name="l-80"></a><span class="tm">16:16:52</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, I believe since you have the progress context, yo ucan continue
+<a name="l-81"></a><span class="tm">16:17:14</span><span class="nk"> &lt;metalgod&gt;</span> ok on project update
+<a name="l-82"></a><span class="tm">16:17:39</span><span class="nk"> &lt;metalgod&gt;</span> the boys here are doing the usual bugfixing on factory
+<a name="l-83"></a><span class="tm">16:17:51</span><span class="nk"> &lt;metalgod&gt;</span> and getting gnome3 on G:N repo
+<a name="l-84"></a><span class="tm">16:18:02</span><span class="nk"> &lt;metalgod&gt;</span> i guess fcrozat knows better this than me
+<a name="l-85"></a><span class="tm">16:18:06</span><span class="nk"> &lt;fcrozat&gt;</span> ;)
+<a name="l-86"></a><span class="tm">16:18:22</span><span class="nk"> &lt;sreeves1&gt;</span> thats one of the next topics
+<a name="l-87"></a><span class="tm">16:18:26</span><span class="nk"> &lt;fcrozat&gt;</span> ok
+<a name="l-88"></a><span class="tm">16:18:58</span><span class="nk"> &lt;psankar&gt;</span> i think we can move to the next topic
+<a name="l-89"></a><span class="tm">16:18:59</span><span class="nk"> &lt;sreeves1&gt;</span> I saw vuntz and DimStar did an update round and submission to Factory
+<a name="l-90"></a><span class="tm">16:19:16</span><span class="nk"> &lt;sreeves1&gt;</span> so as far as I know we are completly up to date
+<a name="l-91"></a><span class="tm">16:19:31</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="topic">#topic </span><span class="topicline">major bugs in latest milestone</span>
+<a name="l-92"></a><span class="tm">16:19:34</span><span class="nk"> &lt;psankar&gt;</span> yes. I can second that. DimStar told me about this today
+<a name="l-93"></a><span class="tm">16:19:41</span><span class="nk"> &lt;psankar&gt;</span> I have some updates for this topic.
+<a name="l-94"></a><span class="tm">16:19:48</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">psankar:</span> go
+<a name="l-95"></a><span class="tm">16:19:56</span><span class="nk"> &lt;psankar&gt;</span> I did a zypper dup on my 11.3 box to 11.4 milestone
+<a name="l-96"></a><span class="tm">16:20:04</span><span class="nk"> &lt;psankar&gt;</span> and since then, my gnome-panel is not working
+<a name="l-97"></a><span class="tm">16:20:17</span><span class="nk"> &lt;psankar&gt;</span> I am not sure if it is due to the recent GSettings migration
+<a name="l-98"></a><span class="tm">16:20:19</span><span class="nk"> &lt;psankar&gt;</span> bcos
+<a name="l-99"></a><span class="tm">16:20:23</span><span class="nk"> &lt;psankar&gt;</span> in a new user everything works fine
+<a name="l-100"></a><span class="tm">16:20:29</span><span class="nk"> &lt;badshah400&gt;</span> Does anyone else find latest factory iso's aborting whenever it tries to load xserver?
+<a name="l-101"></a><span class="tm">16:20:36</span><span class="nk"> &lt;metalgod&gt;</span> sreeves1 we got the famous bug on PK
+<a name="l-102"></a><span class="tm">16:20:49</span><span class="nk"> &lt;psankar&gt;</span> and one more really annoying issue is,
+<a name="l-103"></a><span class="tm">16:20:50</span><span class="nk"> &lt;metalgod&gt;</span> looks like there were lot's of changes in PK zypp upstream
+<a name="l-104"></a><span class="tm">16:20:50</span><span class="nk"> &lt;badshah400&gt;</span> on virtualbox that is
+<a name="l-105"></a><span class="tm">16:20:57</span><span class="nk"> &lt;metalgod&gt;</span> that changed the behavior of PK on openSUSE
+<a name="l-106"></a><span class="tm">16:21:00</span><span class="nk"> &lt;psankar&gt;</span> whenever monitor brightness changes, a dialog pops up
+<a name="l-107"></a><span class="tm">16:21:08</span><span class="nk"> &lt;psankar&gt;</span> asking me for root password to change the monitor brightness
+<a name="l-108"></a><span class="tm">16:21:20</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">psankar:</span> the brightness is a PolicyKit config issue IIRC
+<a name="l-109"></a><span class="tm">16:21:31</span><span class="nk"> &lt;psankar&gt;</span> DimStar, hey hey okay.
+<a name="l-110"></a><span class="tm">16:21:39</span><span class="nk"> &lt;psankar&gt;</span> DimStar, should I report it ?
+<a name="l-111"></a><span class="tm">16:21:48</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">psankar:</span> that was an update to M5 ?
+<a name="l-112"></a><span class="tm">16:22:04</span><span class="nk"> &lt;DimStar&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=650401
+<a name="l-113"></a><span class="tm">16:22:06</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, I did a zypper dup from 11.3
+<a name="l-114"></a><span class="tm">16:22:07</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 650401 in openSUSE 11.4 (Basesystem) "AUDIT-0: polkit-default-privs: g-p-m wants root access to change laptop brightness" [Normal,New]
+<a name="l-115"></a><span class="tm">16:22:13</span><span class="nk"> &lt;psankar&gt;</span> DimStar, ah neat :-)
+<a name="l-116"></a><span class="tm">16:22:54</span><span class="nk"> &lt;DimStar&gt;</span> Iy probably shoult be flagged ?blocker
+<a name="l-117"></a><span class="tm">16:23:07</span><span class="nk"> &lt;psankar&gt;</span> +1
+<a name="l-118"></a><span class="tm">16:23:09</span><span class="nk"> &lt;DimStar&gt;</span> and/or at least added to Most annoying bugs, if not already there
+<a name="l-119"></a><span class="tm">16:23:14</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> anyone can reproduce that besides you ?
+<a name="l-120"></a><span class="tm">16:23:20</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">DimStar:</span> are those one the most annoying list
+<a name="l-121"></a><span class="tm">16:23:24</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">metalgod:</span> yes... it's clearly there...
+<a name="l-122"></a><span class="tm">16:23:24</span><span class="nk"> &lt;psankar&gt;</span> metalgod, the monitor one ?
+<a name="l-123"></a><span class="tm">16:23:25</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">DimStar:</span> bah - you beat me
+<a name="l-124"></a><span class="tm">16:24:08</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-125"></a><span class="tm">16:24:30</span><span class="nk"> &lt;DimStar&gt;</span> seems it's not on mab yet :) (most annoying bugs)
+<a name="l-126"></a><span class="tm">16:25:04</span><span class="nk"> &lt;metalgod&gt;</span> want to discuss the PK bug or everyone is aware of it ?
+<a name="l-127"></a><span class="tm">16:25:38</span><span class="nk"> &lt;psankar&gt;</span> metalgod, which bug ? the same one ? monitor brightness asks for password ?
+<a name="l-128"></a><span class="tm">16:25:57</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">DimStar:</span> did you have a discussion about that PK bug yesterday with the KDE guys ?
+<a name="l-129"></a><span class="tm">16:26:21</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> PK = packagekit
+<a name="l-130"></a><span class="tm">16:26:35</span><span class="nk"> &lt;psankar&gt;</span> metalgod, ah okay. I thought policykit
+<a name="l-131"></a><span class="tm">16:26:53</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">sreeves1:</span> we had a short discussion, but nothing really came out other than the known stuff: not everybody expects the same behaviour
+<a name="l-132"></a><span class="tm">16:27:07</span><span class="nk"> &lt;sreeves1&gt;</span> yeah - thats the problem
+<a name="l-133"></a><span class="tm">16:27:11 </span><span class="nka">* psankar</span> <span class="ac">doesnt know about packagekit issue but that's fine to not discuss it :-)</span>
+<a name="l-134"></a><span class="tm">16:27:15</span><span class="nk"> &lt;DimStar&gt;</span> should it show patches only, patches &amp; packakes without vendor change or also vendor changes...
+<a name="l-135"></a><span class="tm">16:27:18 </span><span class="nka">* metalgod</span> <span class="ac">likes the new behavior</span>
+<a name="l-136"></a><span class="tm">16:27:31</span><span class="nk"> &lt;badshah400&gt;</span> How about the tracker problem? https://bugzilla.gnome.org/show_bug.cgi?id=639542
+<a name="l-137"></a><span class="tm">16:27:33</span><span class="nk"> &lt;bugbot&gt;</span> Gnome bug 639542 in tracker (Needle) "tracker-needle doesn't support any argument" [Normal,Resolved: fixed]
+<a name="l-138"></a><span class="tm">16:27:36</span><span class="nk"> &lt;DimStar&gt;</span> I for myself prefer patches &amp; packages, sticking to vendor
+<a name="l-139"></a><span class="tm">16:27:39</span><span class="nk"> &lt;metalgod&gt;</span> it's the same behavior seen on fedora
+<a name="l-140"></a><span class="tm">16:27:46</span><span class="nk"> &lt;badshah400&gt;</span> I am trying to patch it with Dimstar's patch but no luck so far
+<a name="l-141"></a><span class="tm">16:28:25</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">badshah400:</span> ? I can submit a package to my branch...
+<a name="l-142"></a><span class="tm">16:28:50</span><span class="nk"> &lt;metalgod&gt;</span> if PK had an option to enable/disable 3rd party repo's
+<a name="l-143"></a><span class="tm">16:29:05</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">DimStar:</span> I am trying to patch tracker with the patch you submitted on the bgo report
+<a name="l-144"></a><span class="tm">16:29:25</span><span class="nk"> &lt;wstephenson_&gt;</span> DimStar, psankar: i had a short discussion with hughsie
+<a name="l-145"></a><span class="tm">16:29:26</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">badshah400:</span> the patch is based on 0.9.34
+<a name="l-146"></a><span class="tm">16:29:36</span><span class="nk"> &lt;wstephenson_&gt;</span> about PK
+<a name="l-147"></a><span class="tm">16:29:39</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">metalgod:</span> yes but our behavior has always been different as we are patch based
+<a name="l-148"></a><span class="tm">16:29:53</span><span class="nk"> &lt;metalgod&gt;</span> true
+<a name="l-149"></a><span class="tm">16:29:55</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">DimStar:</span> then it has been rebased on master branch
+<a name="l-150"></a><span class="tm">16:30:05 </span><span class="nka">* FunkyPenguin</span> <span class="ac">despises tracker</span>
+<a name="l-151"></a><span class="tm">16:30:11</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">wstephenson_:</span> quick summary of your discussion ?
+<a name="l-152"></a><span class="tm">16:30:13</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">badshah400:</span> hmm.. I think you're right.. the one submitted is on master :) sorry
+<a name="l-153"></a><span class="tm">16:30:13</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">sreeves1:</span> personally i like the current behavior except the part it updates 3rd party repo's
+<a name="l-154"></a><span class="tm">16:30:14</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, so shall we hear out what wstephenson_ has to say ?
+<a name="l-155"></a><span class="tm">16:30:28</span><span class="nk"> &lt;psankar&gt;</span> bah :-)
+<a name="l-156"></a><span class="tm">16:30:40</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">sreeves1:</span> i didn't get it before... was the intel developer who made this change ?
+<a name="l-157"></a><span class="tm">16:32:02</span><span class="nk"> &lt;wstephenson_&gt;</span> <span class="hi">sreeves1:</span> it would be possible to present patches as metapackages with a new enum value of type 'patch'
+<a name="l-158"></a><span class="tm">16:32:29</span><span class="nk"> &lt;wstephenson_&gt;</span> <span class="hi">metalgod:</span> agreed, it is suicide if OBS repos are registered
+<a name="l-159"></a><span class="tm">16:32:36</span><span class="nk"> &lt;wstephenson_&gt;</span> vuntz says hi
+<a name="l-160"></a><span class="tm">16:33:06</span><span class="nk"> &lt;psankar&gt;</span> wstephenson_, tell vuntz that he will be piled up with AIs since he skipped today's meeting ;-)
+<a name="l-161"></a><span class="tm">16:33:37</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, i think we can go to the next item ?
+<a name="l-162"></a><span class="tm">16:34:08</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, ping
+<a name="l-163"></a><span class="tm">16:34:24</span><span class="nk"> &lt;sreeves1&gt;</span> ok we may want to discuss that PK bug more later
+<a name="l-164"></a><span class="tm">16:34:39</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="topic">#topic </span><span class="topicline">GNOME 3 packages</span>
+<a name="l-165"></a><span class="tm">16:34:47</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">fcrozat:</span> you are up
+<a name="l-166"></a><span class="tm">16:35:10</span><span class="nk"> &lt;fcrozat&gt;</span> things are moving slowly : reviewed packages are in GNOME:Next
+<a name="l-167"></a><span class="tm">16:35:22</span><span class="nk"> &lt;fcrozat&gt;</span> and pending in either dimstar or my own personal repositories
+<a name="l-168"></a><span class="tm">16:35:33</span><span class="nk"> &lt;fcrozat&gt;</span> my own repo being built for 11.3
+<a name="l-169"></a><span class="tm">16:35:45</span><span class="nk"> &lt;fcrozat&gt;</span> and is used for GNOME3 usb sticks
+<a name="l-170"></a><span class="tm">16:36:04</span><span class="nk"> &lt;fcrozat&gt;</span> so far, autodetection of hardware requirements is working (by gnome-session)
+<a name="l-171"></a><span class="tm">16:36:15</span><span class="nk"> &lt;fcrozat&gt;</span> so, if 3D support is working, gnome-shell is started
+<a name="l-172"></a><span class="tm">16:36:21</span><span class="nk"> &lt;fcrozat&gt;</span> otherwise, "old" gnome-panel is started
+<a name="l-173"></a><span class="tm">16:36:41</span><span class="nk"> &lt;fcrozat&gt;</span> (although there might be regressions in gnome-panel, compared to 2.32 panel)
+<a name="l-174"></a><span class="tm">16:36:55</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">fcrozat:</span> is your latest image still the one out on studio, or have you moved to obs+kiwi ?
+<a name="l-175"></a><span class="tm">16:37:26</span><span class="nk"> &lt;fcrozat&gt;</span> still on studio, next one will be on obs + kiwi after adrianS fixes regressions in obs 2.2 which are preventing me to build ;)
+<a name="l-176"></a><span class="tm">16:37:37</span><span class="nk"> &lt;fcrozat&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=665880
+<a name="l-177"></a><span class="tm">16:37:40</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 665880 in openSUSE Build Service (General) "kiwi image can't be build locally" [Major,New]
+<a name="l-178"></a><span class="tm">16:37:54</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">fcrozat:</span> cool - and does that image now include pulseaudio :-D
+<a name="l-179"></a><span class="tm">16:38:01</span><span class="nk"> &lt;fcrozat&gt;</span> and https://bugzilla.novell.com/show_bug.cgi?id=665184
+<a name="l-180"></a><span class="tm">16:38:04</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 665184 in openSUSE Build Service (General) "requesting kiwi image creation privilege for home:fcrozat:gnome3" [Normal,New]
+<a name="l-181"></a><span class="tm">16:38:17</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">sreeves1:</span> yes, I had forgotten about it in initial image, it has been added
+<a name="l-182"></a><span class="tm">16:38:40</span><span class="nk"> &lt;fcrozat&gt;</span> (I tried to keep images minimal)
+<a name="l-183"></a><span class="tm">16:38:48</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">fcrozat:</span> great work on that project
+<a name="l-184"></a><span class="tm">16:38:52</span><span class="nk"> &lt;fcrozat&gt;</span> thanks ;)
+<a name="l-185"></a><span class="tm">16:38:54</span><span class="nk"> &lt;psankar&gt;</span> fcrozat, I have two queries regarding GNOME shell and sorry I haven't been following it in upstream. but these are deal killers for me :(  May be I am missing something here.
+<a name="l-186"></a><span class="tm">16:39:08</span><span class="nk"> &lt;psankar&gt;</span> fcrozat, 1) Can we not navigate between workspaces vertically ?
+<a name="l-187"></a><span class="tm">16:39:13</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">psankar:</span> can we move that after meeting ?
+<a name="l-188"></a><span class="tm">16:39:20</span><span class="nk"> &lt;psankar&gt;</span> fcrozat, hhm okay. sure. thanks.
+<a name="l-189"></a><span class="tm">16:39:24</span><span class="nk"> &lt;fcrozat&gt;</span> ;)
+<a name="l-190"></a><span class="tm">16:39:33</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="topic">#topic </span><span class="topicline">meego update</span>
+<a name="l-191"></a><span class="tm">16:39:39</span><span class="nk"> &lt;fcrozat&gt;</span> oops, 1 thing
+<a name="l-192"></a><span class="tm">16:39:40</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">FunkyPenguin:</span> you are up
+<a name="l-193"></a><span class="tm">16:39:52</span><span class="nk"> &lt;FunkyPenguin&gt;</span> let fcrozat go first
+<a name="l-194"></a><span class="tm">16:40:00</span><span class="nk"> &lt;fcrozat&gt;</span> do we know why driver will be used for r600 in xorg ?
+<a name="l-195"></a><span class="tm">16:40:07</span><span class="nk"> &lt;fcrozat&gt;</span> gallium or classic ?
+<a name="l-196"></a><span class="tm">16:40:12</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> i've been on g3 bleeding edge and let me tell you that lot's of features have been removed from -shell... from 2.91.2 to current git master a lot's of things changed
+<a name="l-197"></a><span class="tm">16:40:21</span><span class="nk"> &lt;fcrozat&gt;</span> it appears rawhide and other will be using gallium
+<a name="l-198"></a><span class="tm">16:40:32</span><span class="nk"> &lt;fcrozat&gt;</span> so it might be a good idea to use it for 11.4 too
+<a name="l-199"></a><span class="tm">16:40:35</span><span class="nk"> &lt;fcrozat&gt;</span> (I didn't check)
+<a name="l-200"></a><span class="tm">16:40:38</span><span class="nk"> &lt;psankar&gt;</span> metalgod, okay
+<a name="l-201"></a><span class="tm">16:40:40</span><span class="nk"> &lt;FunkyPenguin&gt;</span> fcrozat, confirm with coolo maybe?
+<a name="l-202"></a><span class="tm">16:41:21</span><span class="nk"> &lt;FunkyPenguin&gt;</span> ok so meego update :)
+<a name="l-203"></a><span class="tm">16:41:36</span><span class="nk"> &lt;FunkyPenguin&gt;</span> i will NOT be releasing 1.1
+<a name="l-204"></a><span class="tm">16:41:36</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="cmd">#action </span><span class="cmdline">fcrozat to check on driver for r600 in xorg</span>
+<a name="l-205"></a><span class="tm">16:41:43</span><span class="nk"> &lt;fcrozat&gt;</span> kiwi image building fixed ;)
+<a name="l-206"></a><span class="tm">16:41:49 </span><span class="nka">* psankar</span> <span class="ac">puts a sad smiley for FunkyPenguin</span>
+<a name="l-207"></a><span class="tm">16:42:28</span><span class="nk"> &lt;FunkyPenguin&gt;</span> reason being is that upstream are using a horrendeous mix of versions that make packaging on opensuse a serious pita
+<a name="l-208"></a><span class="tm">16:43:30</span><span class="nk"> &lt;FunkyPenguin&gt;</span> ive just started on building the unreleased 1.2, i'd love to have it built before fosdem but we'll see
+<a name="l-209"></a><span class="tm">16:44:00 </span><span class="nka">* psankar</span> <span class="ac">puts a happy smiley</span>
+<a name="l-210"></a><span class="tm">16:44:17</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">FunkyPenguin:</span> makes sense - the mix of old gtk / new gtk, gir, ... is a mess
+<a name="l-211"></a><span class="tm">16:44:51</span><span class="nk"> &lt;sreeves1&gt;</span> I think we already covered issues with 11.4 builds
+<a name="l-212"></a><span class="tm">16:45:02</span><span class="nk"> &lt;psankar&gt;</span> I think I missed out on 1 issue alone
+<a name="l-213"></a><span class="tm">16:45:09</span><span class="nk"> &lt;psankar&gt;</span> shall I tell it now ?
+<a name="l-214"></a><span class="tm">16:45:14</span><span class="nk"> &lt;sreeves1&gt;</span> sure
+<a name="l-215"></a><span class="tm">16:45:18</span><span class="nk"> &lt;psankar&gt;</span> So the issue is,
+<a name="l-216"></a><span class="tm">16:45:32</span><span class="nk"> &lt;psankar&gt;</span> clicking on a link in any application, say xchat
+<a name="l-217"></a><span class="tm">16:45:39</span><span class="nk"> &lt;psankar&gt;</span> opens the link only in Firefox4
+<a name="l-218"></a><span class="tm">16:45:48</span><span class="nk"> &lt;psankar&gt;</span> even though my default browser is set to Chrome
+<a name="l-219"></a><span class="tm">16:46:01</span><span class="nk"> &lt;psankar&gt;</span> so probably somehting is wrong here.
+<a name="l-220"></a><span class="tm">16:46:12</span><span class="nk"> &lt;FunkyPenguin&gt;</span> hah, i cant even open a link in firefox - i get gedit instead :(
+<a name="l-221"></a><span class="tm">16:46:28</span><span class="nk"> &lt;FunkyPenguin&gt;</span> oh further to the meego update...
+<a name="l-222"></a><span class="tm">16:46:32</span><span class="nk"> &lt;psankar&gt;</span> Even though I plan to swtich to FF soon, I still believe it should be fixed if it is an issue
+<a name="l-223"></a><span class="tm">16:46:41</span><span class="nk"> &lt;psankar&gt;</span> anyone else facing that ?
+<a name="l-224"></a><span class="tm">16:46:53</span><span class="nk"> &lt;FunkyPenguin&gt;</span> Smeegol will be changing name, but im not 100% sure what to yet
+<a name="l-225"></a><span class="tm">16:47:06</span><span class="nk"> &lt;psankar&gt;</span> FunkyPenguin, hmm okay :(
+<a name="l-226"></a><span class="tm">16:47:24</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">FunkyPenguin:</span> lame upstream policy
+<a name="l-227"></a><span class="tm">16:47:36</span><span class="nk"> &lt;FunkyPenguin&gt;</span> i am also going to be discussing the current issues that opensuse/fedora have with upstream and their sponsors directly with the LF
+<a name="l-228"></a><span class="tm">16:47:48</span><span class="nk"> &lt;FunkyPenguin&gt;</span> was supposed to be today but thats been pushed back a couple of weeks
+<a name="l-229"></a><span class="tm">16:47:51</span><span class="nk"> &lt;psankar&gt;</span> FunkyPenguin, in FOSDEM ?
+<a name="l-230"></a><span class="tm">16:48:02</span><span class="nk"> &lt;psankar&gt;</span> okay
+<a name="l-231"></a><span class="tm">16:48:27</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">DimStar:</span> is psankar issue part of the conversion from preferred apps in gconf to desktop registering of mime types ?
+<a name="l-232"></a><span class="tm">16:48:44</span><span class="nk"> &lt;sreeves1&gt;</span> s/desktop/ .desktop files
+<a name="l-233"></a><span class="tm">16:49:18</span><span class="nk"> &lt;FunkyPenguin&gt;</span> psankar, soubt at FOSDEM, currently penciled on for a phone call
+<a name="l-234"></a><span class="tm">16:49:25</span><span class="nk"> &lt;psankar&gt;</span> FunkyPenguin, okay.
+<a name="l-235"></a><span class="tm">16:50:02</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">psankar:</span> talk with DimStar about your issue - I think I remember seeing an open bug about that
+<a name="l-236"></a><span class="tm">16:50:04</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">sreeves1:</span> not exactly sure.. but it surely does sound like
+<a name="l-237"></a><span class="tm">16:50:15</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="topic">#topic </span><span class="topicline">Defaults in the GNOME desktop</span>
+<a name="l-238"></a><span class="tm">16:50:17</span><span class="nk"> &lt;psankar&gt;</span> FunkyPenguin, if they come to India from LF, I will lock them up in a room and wil lthreadten to not leave them until they allow our naming ;)
+<a name="l-239"></a><span class="tm">16:50:26</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, sure. #action it on me
+<a name="l-240"></a><span class="tm">16:50:36</span><span class="nk"> &lt;psankar&gt;</span> if there is a fix posisble, I will provide that as well
+<a name="l-241"></a><span class="tm">16:50:55</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="cmd">#action </span><span class="cmdline">psankar to work on wrong action taken when clicking link</span>
+<a name="l-242"></a><span class="tm">16:51:24</span><span class="nk"> &lt;sreeves1&gt;</span> not sure who added this item to the agenda - anyone have something to say about this item ?
+<a name="l-243"></a><span class="tm">16:51:42</span><span class="nk"> &lt;badshah400&gt;</span> The idea for this topic was that we need to discus default applications etc. in the live-cd
+<a name="l-244"></a><span class="tm">16:51:46</span><span class="nk"> &lt;psankar&gt;</span> Are we going to discuss about pidgin vs empathy ? didnt we settle it already ? ;-)
+<a name="l-245"></a><span class="tm">16:51:57 </span><span class="nka">* psankar</span> <span class="ac">looks at history of the wiki page</span>
+<a name="l-246"></a><span class="tm">16:52:00</span><span class="nk"> &lt;metalgod&gt;</span> before that i would like to discuss something related to artwork
+<a name="l-247"></a><span class="tm">16:52:00</span><span class="nk"> &lt;badshah400&gt;</span> i added this one
+<a name="l-248"></a><span class="tm">16:52:08</span><span class="nk"> &lt;metalgod&gt;</span> currently we need sonar theme ported to gtk3
+<a name="l-249"></a><span class="tm">16:52:19</span><span class="nk"> &lt;metalgod&gt;</span> to make sure gtk3 and gtk2 apps looks the same
+<a name="l-250"></a><span class="tm">16:52:48</span><span class="nk"> &lt;metalgod&gt;</span> so far nobody have the expertize to perform this task
+<a name="l-251"></a><span class="tm">16:52:51</span><span class="nk"> &lt;badshah400&gt;</span> lots of defaults undecided (pitivi?, empathy/xchat, wallpaper (already discussed), etc)
+<a name="l-252"></a><span class="tm">16:53:14</span><span class="nk"> &lt;psankar&gt;</span> badshah400, oh okay
+<a name="l-253"></a><span class="tm">16:53:37</span><span class="nk"> &lt;psankar&gt;</span> badshah400, do you think it is better if you send this in a mail to opensuse-gnome ? as vuntz is also not online ?
+<a name="l-254"></a><span class="tm">16:54:07</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">psankar:</span> i think now that sending a mail out to the m-l would indeed be better
+<a name="l-255"></a><span class="tm">16:54:25</span><span class="nk"> &lt;sreeves1&gt;</span> ok lets go to QA then
+<a name="l-256"></a><span class="tm">16:54:31</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="topic">#topic </span><span class="topicline">QA</span>
+<a name="l-257"></a><span class="tm">16:54:33</span><span class="nk"> &lt;metalgod&gt;</span> we discussed this in the last release
+<a name="l-258"></a><span class="tm">16:54:39</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, i think we left out metalgod 's thing
+<a name="l-259"></a><span class="tm">16:54:49</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, sonar porting to gtk3
+<a name="l-260"></a><span class="tm">16:54:49</span><span class="nk"> &lt;metalgod&gt;</span> we changed a few
+<a name="l-261"></a><span class="tm">16:54:57</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">metalgod:</span> sorry
+<a name="l-262"></a><span class="tm">16:55:01</span><span class="nk"> &lt;metalgod&gt;</span> np
+<a name="l-263"></a><span class="tm">16:55:18</span><span class="nk"> &lt;psankar&gt;</span> metalgod, so you want to ask for some volunteers ? or have a wiki page with things to do for this ?
+<a name="l-264"></a><span class="tm">16:55:33</span><span class="nk"> &lt;metalgod&gt;</span> we need volunteers
+<a name="l-265"></a><span class="tm">16:55:41</span><span class="nk"> &lt;metalgod&gt;</span> who know css
+<a name="l-266"></a><span class="tm">16:56:02</span><span class="nk"> &lt;metalgod&gt;</span> vuntz did a post on -gnome ML about this
+<a name="l-267"></a><span class="tm">16:56:07 </span><span class="nka">* psankar</span> <span class="ac">remembers seeing a mail on this by vuntz</span>
+<a name="l-268"></a><span class="tm">16:56:08</span><span class="nk"> &lt;psankar&gt;</span> ah yes
+<a name="l-269"></a><span class="tm">16:56:27</span><span class="nk"> &lt;metalgod&gt;</span> http://lists.opensuse.org/opensuse-gnome/2011-01/msg00026.html
+<a name="l-270"></a><span class="tm">16:56:38</span><span class="nk"> &lt;psankar&gt;</span> I dont have much knowledge about it. I can spread the word in twitter
+<a name="l-271"></a><span class="tm">16:56:54</span><span class="nk"> &lt;psankar&gt;</span> asking for CSS knowledged contributors to help in gtk3-fying Sonar
+<a name="l-272"></a><span class="tm">16:56:58</span><span class="nk"> &lt;metalgod&gt;</span> also there is a "unofficial" sonar theme for gnome-shell
+<a name="l-273"></a><span class="tm">16:57:10</span><span class="nk"> &lt;metalgod&gt;</span> would be great to have it packaged
+<a name="l-274"></a><span class="tm">16:57:31</span><span class="nk"> &lt;metalgod&gt;</span> http://www.techdrivein.com/2010/08/elementary-ambiance-sonar-most.html
+<a name="l-275"></a><span class="tm">16:58:16</span><span class="nk"> &lt;metalgod&gt;</span> so psankar can you have this action item ? found someone with theming skills to port sonar to gtk3 and brand gnome-shell ?
+<a name="l-276"></a><span class="tm">16:58:41</span><span class="nk"> &lt;psankar&gt;</span> ahem. I am not sure if I can find someeone. but I will try to spread the news :-)
+<a name="l-277"></a><span class="tm">16:59:03</span><span class="nk"> &lt;amonthoth&gt;</span> not sure but maybe manugupt1 can help with css
+<a name="l-278"></a><span class="tm">16:59:10</span><span class="nk"> &lt;sreeves1&gt;</span> mabye a follow up to vuntz email asking again for help
+<a name="l-279"></a><span class="tm">16:59:32</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="cmd">#action </span><span class="cmdline">psankar to spread the word about needing help for port of sonar to gtk3</span>
+<a name="l-280"></a><span class="tm">16:59:41</span><span class="nk"> &lt;psankar&gt;</span> amonthoth, manugupt1 is having is interviews (final year in college)
+<a name="l-281"></a><span class="tm">16:59:51</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-282"></a><span class="tm">16:59:53</span><span class="nk"> &lt;metalgod&gt;</span> i'm done
+<a name="l-283"></a><span class="tm">16:59:54 </span><span class="nka">* rwobben</span> <span class="ac">likes this one(http://half-left.deviantart.com/journal/37636660/#/d371nhf) to try</span>
+<a name="l-284"></a><span class="tm">16:59:56</span><span class="nk"> &lt;psankar&gt;</span> amonthoth, so I will probably not disturb him for another few days
+<a name="l-285"></a><span class="tm">17:00:23</span><span class="nk"> &lt;amonthoth&gt;</span> psankar, good for him
+<a name="l-286"></a><span class="tm">17:00:37</span><span class="nk"> &lt;sreeves1&gt;</span> for QA - as we are way long for our meeting time maybe we should limit this to urgent QA items
+<a name="l-287"></a><span class="tm">17:00:52</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-288"></a><span class="tm">17:01:04</span><span class="nk"> &lt;metalgod&gt;</span> people any urgent question ?
+<a name="l-289"></a><span class="tm">17:01:04</span><span class="nk"> &lt;sreeves1&gt;</span> anyone have anything ?
+<a name="l-290"></a><span class="tm">17:01:05</span><span class="nk"> &lt;psankar&gt;</span> sreeves1, Is this time suitable for people in the far west ?
+<a name="l-291"></a><span class="tm">17:01:25</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">psankar:</span> yeah - I think this worked pretty well
+<a name="l-292"></a><span class="tm">17:01:46</span><span class="nk"> &lt;psankar&gt;</span> okay. We will try to have alternate times for alternate meetings in that case. Thanks.
+<a name="l-293"></a><span class="tm">17:02:20</span><span class="nk"> &lt;sreeves1&gt;</span> thanks everyone for your participation
+<a name="l-294"></a><span class="tm">17:02:31</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="hi">psankar:</span> how do I end the meeting?
+<a name="l-295"></a><span class="tm">17:02:35</span><span class="nk"> &lt;sreeves1&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

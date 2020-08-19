@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:01:25</span><span class="nk"> &lt;sysrich&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE Project Meeting</span>
+<a name="l-2"></a><span class="tm">15:01:25</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Oct 29 15:01:25 2014 UTC.  The chair is sysrich. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:01:25</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:01:31</span><span class="nk"> &lt;sysrich&gt;</span> <span class="cmd">#char </span><span class="cmdline">robjo</span>
+<a name="l-5"></a><span class="tm">15:01:34</span><span class="nk"> &lt;sysrich&gt;</span> <span class="cmd">#chair </span><span class="cmdline">robjo</span>
+<a name="l-6"></a><span class="tm">15:01:34</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: robjo sysrich
+<a name="l-7"></a><span class="tm">15:02:08</span><span class="nk"> &lt;sysrich&gt;</span> The current Agenda is at https://en.opensuse.org/openSUSE:Project_meeting - not exactly jam packed, if anyone has any last minute additions, edit the wiki :)
+<a name="l-8"></a><span class="tm">15:02:19</span><span class="nk"> &lt;sysrich&gt;</span> <span class="cmd">#Topic </span><span class="cmdline">Action Items Review</span>
+<a name="l-9"></a><span class="tm">15:02:46</span><span class="nk"> &lt;robjo&gt;</span> There were no action items from the last meeting
+<a name="l-10"></a><span class="tm">15:02:48</span><span class="nk"> &lt;sysrich&gt;</span> I don't see any action items outstanding from the last meeting minutes, but I didn't make the meeting. Is there anything people consider 'open' from the last or recent openSUSE project meetings?
+<a name="l-11"></a><span class="tm">15:03:17</span><span class="nk"> &lt;sysrich&gt;</span> Well that makes it simple enough then.. moving on..
+<a name="l-12"></a><span class="tm">15:03:26</span><span class="nk"> &lt;sysrich&gt;</span> <span class="topic">#topic </span><span class="topicline">Tumbleweed</span>
+<a name="l-13"></a><span class="tm">15:03:56</span><span class="nk"> &lt;sysrich&gt;</span> I put this in there, because I figured there might be some discussion about the recent announcement to merge the Factory and Tumbleweed rolling release - does anyone have any questions about what's going on?
+<a name="l-14"></a><span class="tm">15:05:34 </span><span class="nka">* mrdocs</span> <span class="ac">waves</span>
+<a name="l-15"></a><span class="tm">15:05:50</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">mrdocs:</span> good morning! do you have a question, or just saying hello? :)
+<a name="l-16"></a><span class="tm">15:06:00</span><span class="nk"> &lt;mrdocs&gt;</span> just saying hello :)
+<a name="l-17"></a><span class="tm">15:08:04</span><span class="nk"> &lt;sysrich&gt;</span> Okay, well, I'm judging by the broad silence and the tumbleweeds floating by, no one has any questions about the decision to rejig our rolling releases... I'll give another 30 seconds or so in case someone is just being shy and not speaking up :)
+<a name="l-18"></a><span class="tm">15:09:53</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">sysrich:</span> I only have a couple of comments on the execution :)
+<a name="l-19"></a><span class="tm">15:09:54</span><span class="nk"> &lt;sysrich&gt;</span> Okay then..
+<a name="l-20"></a><span class="tm">15:10:00</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">henne:</span> go ahead :)
+<a name="l-21"></a><span class="tm">15:11:32</span><span class="nk"> &lt;henne&gt;</span> is there a reason why this wasn't really discussed on -factory?
+<a name="l-22"></a><span class="tm">15:13:03</span><span class="nk"> &lt;henne&gt;</span> respectively I'm asking myself why this wasn't brought forward on news@
+<a name="l-23"></a><span class="tm">15:13:41</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">henne:</span> it was no https://news.opensuse.org/2014/10/24/tumbleweed-factory-rolling-releases-to-merge/
+<a name="l-24"></a><span class="tm">15:13:51</span><span class="nk"> &lt;henne&gt;</span> that's the result yes
+<a name="l-25"></a><span class="tm">15:13:57</span><span class="nk"> &lt;henne&gt;</span> no discussion
+<a name="l-26"></a><span class="tm">15:14:45</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">tigerfoot:</span> yes but henne does have a point, me and Douglas did not follow the proper procedure of actually discussing it with the news team before announcing it, and it has been kind of unconventional how this all came about in the first place
+<a name="l-27"></a><span class="tm">15:14:53</span><span class="nk"> &lt;sysrich&gt;</span> I'm happy to explain the circumstances though
+<a name="l-28"></a><span class="tm">15:14:59</span><span class="nk"> &lt;henne&gt;</span> you should
+<a name="l-29"></a><span class="tm">15:15:01</span><span class="nk"> &lt;ancorgs&gt;</span> I agree with henne, everything seemed to simply happen overnight (and sure that was not really the case)
+<a name="l-30"></a><span class="tm">15:15:03</span><span class="nk"> &lt;henne&gt;</span> :)
+<a name="l-31"></a><span class="tm">15:15:54 </span><span class="nka">* tigerfoot</span> <span class="ac">okay .. the discussing internal news team part was hidden procedural part :-)</span>
+<a name="l-32"></a><span class="tm">15:16:02</span><span class="nk"> &lt;sysrich&gt;</span> first, the not mailing news@ bit first - mea culpa - the decision to announce the merger was actually made some days before the post on news.o.o, but a lot of the final decisions, agreement from Greg, etc, came and clashed with my travel to openSUSE summit
+<a name="l-33"></a><span class="tm">15:17:09</span><span class="nk"> &lt;henne&gt;</span> It's just sad that this was pushed out without thinking about anything
+<a name="l-34"></a><span class="tm">15:17:16</span><span class="nk"> &lt;sysrich&gt;</span> so, I ended up announcing it at Summit, and then we played catch up by announcing it on news.o.o when I got back from behind the Great Firewall of China. It's not ideal, and actually I thought news@ had been involved before we pulled the trigger with the post - but I didn't double check that myself, so I'm sorry to the news team
+<a name="l-35"></a><span class="tm">15:17:24</span><span class="nk"> &lt;henne&gt;</span> it could have had a ton more impact
+<a name="l-36"></a><span class="tm">15:17:37</span><span class="nk"> &lt;henne&gt;</span> just by involving people
+<a name="l-37"></a><span class="tm">15:18:13</span><span class="nk"> &lt;henne&gt;</span> well no need to be sorry for the news team. be sorry for this announcement :)
+<a name="l-38"></a><span class="tm">15:18:37</span><span class="nk"> &lt;sysrich&gt;</span> not sorry FOR the news team, sorry to them :) they should have been more involved
+<a name="l-39"></a><span class="tm">15:18:48</span><span class="nk"> &lt;gmanu&gt;</span> Hi
+<a name="l-40"></a><span class="tm">15:18:56</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">gmanu:</span> Hi
+<a name="l-41"></a><span class="tm">15:19:04</span><span class="nk"> &lt;gmanu&gt;</span> I am manugupt1 by the way
+<a name="l-42"></a><span class="tm">15:19:10</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">sysrich:</span> next time, stick to the process
+<a name="l-43"></a><span class="tm">15:19:29</span><span class="nk"> &lt;gmanu&gt;</span> Regarding news team, I dont know if it will matter a lot or not for making announcements or discussing with the news team
+<a name="l-44"></a><span class="tm">15:19:39</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">henne:</span> Yes, I intend to
+<a name="l-45"></a><span class="tm">15:19:51</span><span class="nk"> &lt;gmanu&gt;</span> because WE DO NOT review articles
+<a name="l-46"></a><span class="tm">15:20:06</span><span class="nk"> &lt;gmanu&gt;</span> We miss posting articles when someone else asks to
+<a name="l-47"></a><span class="tm">15:20:08</span><span class="nk"> &lt;henne&gt;</span> because if we would have made a propper announcement. with propoer content, proper notification to the press
+<a name="l-48"></a><span class="tm">15:20:12</span><span class="nk"> &lt;henne&gt;</span> propoer press-kit
+<a name="l-49"></a><span class="tm">15:20:23</span><span class="nk"> &lt;henne&gt;</span> proper FAQ
+<a name="l-50"></a><span class="tm">15:20:36</span><span class="nk"> &lt;henne&gt;</span> proper timing
+<a name="l-51"></a><span class="tm">15:20:47</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> When was such stuff discussed
+<a name="l-52"></a><span class="tm">15:20:49</span><span class="nk"> &lt;gmanu&gt;</span> last
+<a name="l-53"></a><span class="tm">15:20:56</span><span class="nk"> &lt;gmanu&gt;</span> Lets get realistic over here
+<a name="l-54"></a><span class="tm">15:20:58</span><span class="nk"> &lt;henne&gt;</span> this could have easily been on of the greatest announcements we ever did
+<a name="l-55"></a><span class="tm">15:21:26</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">ancorgs:</span> had to literally go on marketing and project mailing list to ask for more help with his articles
+<a name="l-56"></a><span class="tm">15:21:35</span><span class="nk"> &lt;gmanu&gt;</span> and then people came to help in
+<a name="l-57"></a><span class="tm">15:21:39</span><span class="nk"> &lt;ancorgs&gt;</span> well, I see where henne wants to go and I completely agree that the timing was really non-optimal. But I'm not sure if our current "marketing" machinery is as good as he believes
+<a name="l-58"></a><span class="tm">15:21:51</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">ancorgs:</span> +1
+<a name="l-59"></a><span class="tm">15:22:09</span><span class="nk"> &lt;sysrich&gt;</span> I'm not unhappy with how well the announcement has been received, how far it's spread, how people seem to have picked up the message, but I do agree with henne we could do better, but I also see it's going to take us a little time to get there
+<a name="l-60"></a><span class="tm">15:22:25</span><span class="nk"> &lt;ancorgs&gt;</span> <span class="hi">gmanu:</span> yes, and all I got was an English proof read by plinnell (thanks a lot)
+<a name="l-61"></a><span class="tm">15:22:39</span><span class="nk"> &lt;sysrich&gt;</span> SUSE have hired Douglas DeMaio to help us out in that area, but he's got to learn to, so I consider henne's feedback as good 'lessons learned' from this
+<a name="l-62"></a><span class="tm">15:22:47 </span><span class="nka">* plinnell</span> <span class="ac">nods</span>
+<a name="l-63"></a><span class="tm">15:22:58</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">sysrich:</span> I am not saying people should learn
+<a name="l-64"></a><span class="tm">15:23:16</span><span class="nk"> &lt;gmanu&gt;</span> I am pointing to the fact that there is something fundamentally flawed with the news and marketing team
+<a name="l-65"></a><span class="tm">15:23:24</span><span class="nk"> &lt;ancorgs&gt;</span> I wrote almost every single word of the 13.2 release announcement and, taking into account that I don't consider myself part of the marketing team, that is not optimal
+<a name="l-66"></a><span class="tm">15:23:25</span><span class="nk"> &lt;gmanu&gt;</span> We need to fix that before talking about process
+<a name="l-67"></a><span class="tm">15:23:28</span><span class="nk"> &lt;henne&gt;</span> ancorgs, gmanu: if I would have seen a mail on news@ I would have dropped everything and worked on this
+<a name="l-68"></a><span class="tm">15:23:48</span><span class="nk"> &lt;henne&gt;</span> yes we have not too many people
+<a name="l-69"></a><span class="tm">15:23:54</span><span class="nk"> &lt;henne&gt;</span> yes they are not too responsive
+<a name="l-70"></a><span class="tm">15:24:06</span><span class="nk"> &lt;henne&gt;</span> is that a reason to just ignore everyone? no
+<a name="l-71"></a><span class="tm">15:24:21</span><span class="nk"> &lt;ancorgs&gt;</span> <span class="hi">henne:</span> no, I agree with your main point
+<a name="l-72"></a><span class="tm">15:24:39</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> if we had access to archives for news@oo
+<a name="l-73"></a><span class="tm">15:24:41</span><span class="nk"> &lt;ancorgs&gt;</span> all I say is that maybe you was a little bit optimistic in the expectations :-)
+<a name="l-74"></a><span class="tm">15:25:01</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">ancorgs:</span> I'm perfect aware of how it is :)
+<a name="l-75"></a><span class="tm">15:25:01</span><span class="nk"> &lt;gmanu&gt;</span> We can easily find out how many articles we as a news team ignore
+<a name="l-76"></a><span class="tm">15:25:02</span><span class="nk"> &lt;henne&gt;</span> still
+<a name="l-77"></a><span class="tm">15:25:03</span><span class="nk"> &lt;ancorgs&gt;</span> about press kit, FAQ and all that
+<a name="l-78"></a><span class="tm">15:25:19</span><span class="nk"> &lt;henne&gt;</span> I would have worked on this immediately
+<a name="l-79"></a><span class="tm">15:25:24</span><span class="nk"> &lt;henne&gt;</span> but I didn't have the chance
+<a name="l-80"></a><span class="tm">15:25:45</span><span class="nk"> &lt;henne&gt;</span> I would have, if sysrich would have gone through the proper process
+<a name="l-81"></a><span class="tm">15:25:51</span><span class="nk"> &lt;sysrich&gt;</span> I think it's fair to say we know we have improvements to make in this area, we've got a guy who's now paid to help in this area, I think we're on the right track - but people (like me) doing stupid stuff like bypassing news@ out of convenience doesn't help, I think that's henne's point, and I agree with it
+<a name="l-82"></a><span class="tm">15:25:52</span><span class="nk"> &lt;henne&gt;</span> :-)
+<a name="l-83"></a><span class="tm">15:25:53</span><span class="nk"> &lt;ancorgs&gt;</span> and I know henne would have done a great job, as he did when we "announced" factory as rollling
+<a name="l-84"></a><span class="tm">15:26:29</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">sysrich:</span> again.. having a paid guy does not solve the problem of getting people involved
+<a name="l-85"></a><span class="tm">15:26:35</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">sysrich:</span> guess who's training Douglas BTW :-Ü
+<a name="l-86"></a><span class="tm">15:26:42</span><span class="nk"> &lt;henne&gt;</span> guess who trained Jos
+<a name="l-87"></a><span class="tm">15:26:51</span><span class="nk"> &lt;henne&gt;</span> ...
+<a name="l-88"></a><span class="tm">15:26:53</span><span class="nk"> &lt;henne&gt;</span> anyway
+<a name="l-89"></a><span class="tm">15:27:01</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">henne:</span> let me guess - he's started ignoring everything I'm telling him and doing what he thinks is best...so, I guess you're spending too much time with him ;)
+<a name="l-90"></a><span class="tm">15:27:03</span><span class="nk"> &lt;henne&gt;</span> that was only one remark I had
+<a name="l-91"></a><span class="tm">15:27:10</span><span class="nk"> &lt;henne&gt;</span> what about the discussion on -factory?
+<a name="l-92"></a><span class="tm">15:27:49</span><span class="nk"> &lt;ancorgs&gt;</span> Having a person payed by SUSE is just a patch. The release is big enough for not needing "a payed guy" behind. And look what is happening this time :-(
+<a name="l-93"></a><span class="tm">15:28:01</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">ancorgs:</span> it happened every time
+<a name="l-94"></a><span class="tm">15:28:19</span><span class="nk"> &lt;henne&gt;</span> in the end it was always me or Jos
+<a name="l-95"></a><span class="tm">15:28:51</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> I asked news team for press support for openSUSE Asia Summit
+<a name="l-96"></a><span class="tm">15:28:52</span><span class="nk"> &lt;henne&gt;</span> and who cares who pays our salary. we don't :)
+<a name="l-97"></a><span class="tm">15:28:56</span><span class="nk"> &lt;gmanu&gt;</span> Did not get a single review
+<a name="l-98"></a><span class="tm">15:29:04</span><span class="nk"> &lt;gmanu&gt;</span> I just checked that between
+<a name="l-99"></a><span class="tm">15:29:19</span><span class="nk"> &lt;ancorgs&gt;</span> we are mixing two discussiong (mainly my fault)
+<a name="l-100"></a><span class="tm">15:29:36</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gmanu:</span> what has that to do with this discussion?
+<a name="l-101"></a><span class="tm">15:29:38</span><span class="nk"> &lt;ancorgs&gt;</span> let's focus on the merge and let's go back to marketing status afterward
+<a name="l-102"></a><span class="tm">15:30:03</span><span class="nk"> &lt;gmanu&gt;</span> cool..
+<a name="l-103"></a><span class="tm">15:30:29</span><span class="nk"> &lt;sysrich&gt;</span> okay, back to the merge "Why wasn't this discussed on -factory" - I could write a really long story here, but I'm going to try my best to keep it succinct. The short version is I and others realised that the roadmap for Tumbleweed was effectively a 'dead end'
+<a name="l-104"></a><span class="tm">15:30:37</span><span class="nk"> &lt;robjo&gt;</span> I thought he merge discussion was done, henne is right, sysrich knows better and will not go astray again ;)
+<a name="l-105"></a><span class="tm">15:33:19</span><span class="nk"> &lt;sysrich&gt;</span> I was really worried about 5000 users, who'd find their rolling release screeching to a halt with the release of 13.2 because GregKH has already decided that he wouldn't be continuing Tumbleweed as an add-on repo ontop of our regular rolling release. So, I got chatting with the 'key' people involved, Factory maintainers, leading contributors, GregKH, to try and find a way to bring the Tumbleweed and Factory rolling releases together to
+<a name="l-106"></a><span class="tm">15:33:19</span><span class="nk"> &lt;sysrich&gt;</span> handle the otherwise 'death of Tumbleweed' in a nice way for everyone
+<a name="l-107"></a><span class="tm">15:34:10</span><span class="nk"> &lt;sysrich&gt;</span> If we had more time before the release of 13.2, sure, I would have, and should have, probably opened up the discussion to the whole of the -factory ML, but we were short on time, and we don't always open up every major change to the distribution to those kind of broad discussions
+<a name="l-108"></a><span class="tm">15:35:04</span><span class="nk"> &lt;henne&gt;</span> well, I would like to disagree. We at least tell our peers before we make it so...
+<a name="l-109"></a><span class="tm">15:35:35</span><span class="nk"> &lt;sysrich&gt;</span> and you think we didn't do that here?
+<a name="l-110"></a><span class="tm">15:35:36</span><span class="nk"> &lt;ancorgs&gt;</span> probably the merge was out of question (and my feeling is that most people is happy about it), but I would have prefered to have a voice on the timing
+<a name="l-111"></a><span class="tm">15:36:06</span><span class="nk"> &lt;sysrich&gt;</span> ancorgs well, you still do - whats your opinion on the timing?
+<a name="l-112"></a><span class="tm">15:36:12</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">sysrich:</span> where did you?
+<a name="l-113"></a><span class="tm">15:37:13</span><span class="nk"> &lt;ancorgs&gt;</span> making it collide with the release is making everything messy. I cannot see the downsides of doing it some weeks later
+<a name="l-114"></a><span class="tm">15:37:38</span><span class="nk"> &lt;ancorgs&gt;</span> from the communication point of view, at least
+<a name="l-115"></a><span class="tm">15:37:39</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">henne:</span> the announcement and my FAQ/opening discussion post on the -factory ML which, while late, explicitly invited people to discuss, ask questions, etc
+<a name="l-116"></a><span class="tm">15:38:20</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">sysrich:</span> the announcement says: with the tested, user-ready rolling release assuming the name Tumbleweed from Nov. 4
+<a name="l-117"></a><span class="tm">15:38:23</span><span class="nk"> &lt;henne&gt;</span> done deal
+<a name="l-118"></a><span class="tm">15:38:37</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">ancorgs:</span> waiting until after the release is messy from a current-Tumbleweed user point of view, as the 13.2 Release will 'zero' their Tumbleweed repositories and never fill them again
+<a name="l-119"></a><span class="tm">15:38:39</span><span class="nk"> &lt;henne&gt;</span> and since when does our community work over announcements?
+<a name="l-120"></a><span class="tm">15:38:42</span><span class="nk"> &lt;henne&gt;</span> I mean really
+<a name="l-121"></a><span class="tm">15:38:50</span><span class="nk"> &lt;henne&gt;</span> I find this disturbing
+<a name="l-122"></a><span class="tm">15:39:29</span><span class="nk"> &lt;sysrich&gt;</span> we don't normally, true, so you think we should have drawn the thing out, discussed, acted later?
+<a name="l-123"></a><span class="tm">15:39:49</span><span class="nk"> &lt;henne&gt;</span> even if you have these time constraints
+<a name="l-124"></a><span class="tm">15:39:53</span><span class="nk"> &lt;ancorgs&gt;</span> but tumbleweed repositories are not filled everyday, isn't? I'm not a Tumbleweed user but in my understanding, getting "new things on top of the released version" only makes sense some time after that version is released
+<a name="l-125"></a><span class="tm">15:40:07</span><span class="nk"> &lt;henne&gt;</span> and even if this is supported by all key stakeholders
+<a name="l-126"></a><span class="tm">15:40:52 </span><span class="nka">* coolo</span> <span class="ac">still wants nothing to do with it</span>
+<a name="l-127"></a><span class="tm">15:41:07</span><span class="nk"> &lt;ancorgs&gt;</span> so there is a window of time there (between the release and tumbleweed being notice as more stalled than usual)
+<a name="l-128"></a><span class="tm">15:41:17</span><span class="nk"> &lt;henne&gt;</span> you at least write a mail to -factory saying: Hey we $people,  going to do..., because of....
+<a name="l-129"></a><span class="tm">15:41:31</span><span class="nk"> &lt;ancorgs&gt;</span> *noticed
+<a name="l-130"></a><span class="tm">15:41:32</span><span class="nk"> &lt;henne&gt;</span> in as much advance as you can
+<a name="l-131"></a><span class="tm">15:41:41</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">henne:</span> that's a fair point, true
+<a name="l-132"></a><span class="tm">15:41:53</span><span class="nk"> &lt;henne&gt;</span> even if it's not fully hashed out yet
+<a name="l-133"></a><span class="tm">15:42:07</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">ancorgs:</span> the 'Tumbleweed to zero' has been a pain point for every Tumbleweed user during every openSUSE release since Tumbleweed started
+<a name="l-134"></a><span class="tm">15:42:17</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">ancorgs:</span> you can probably find quite some -factory threads on it :)
+<a name="l-135"></a><span class="tm">15:42:40</span><span class="nk"> &lt;coolo&gt;</span> <span class="hi">sysrich:</span> because they are forced to switch to a different version at that time
+<a name="l-136"></a><span class="tm">15:42:47</span><span class="nk"> &lt;coolo&gt;</span> exactly what will happen now
+<a name="l-137"></a><span class="tm">15:43:01</span><span class="nk"> &lt;coolo&gt;</span> you don't ease their pain at all
+<a name="l-138"></a><span class="tm">15:43:09</span><span class="nk"> &lt;coolo&gt;</span> you just add more pain for every factory user
+<a name="l-139"></a><span class="tm">15:43:12</span><span class="nk"> &lt;henne&gt;</span> you see what will happen when you talk about your intentions?
+<a name="l-140"></a><span class="tm">15:43:20</span><span class="nk"> &lt;henne&gt;</span> you give people the chance to chime in
+<a name="l-141"></a><span class="tm">15:45:25</span><span class="nk"> &lt;henne&gt;</span> alright
+<a name="l-142"></a><span class="tm">15:45:31</span><span class="nk"> &lt;henne&gt;</span> enough grilling
+<a name="l-143"></a><span class="tm">15:45:38</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">coolo:</span> technically, you're correct, but every Tumbleweed user I've spoken to is excited about this, and I think we're doing a pretty good job at keeping the pain for factory users to a minimum
+<a name="l-144"></a><span class="tm">15:45:39 </span><span class="nka">* henne</span> <span class="ac">hugs sysrich</span>
+<a name="l-145"></a><span class="tm">15:45:43</span><span class="nk"> &lt;henne&gt;</span> just do better next time
+<a name="l-146"></a><span class="tm">15:46:44</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">henne:</span> you know me, you know how I normally operate, I'm willing to accept my failings, but don't worry, I haven't forgotten how we normally work - just took some different routes for the sake of speed and timing this time
+<a name="l-147"></a><span class="tm">15:46:57</span><span class="nk"> &lt;coolo&gt;</span> <span class="hi">sysrich:</span> so where is your wiki plan - http://en.opensuse.org/Portal:Factory will need a complete overhaul
+<a name="l-148"></a><span class="tm">15:47:16</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">sysrich:</span> yes. never do that again
+<a name="l-149"></a><span class="tm">15:47:47</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">coolo:</span> it'll be done if I have to do it myself or die trying
+<a name="l-150"></a><span class="tm">15:48:24</span><span class="nk"> &lt;plinnell&gt;</span> move on ?
+<a name="l-151"></a><span class="tm">15:48:40</span><span class="nk"> &lt;gmanu&gt;</span> yeah..
+<a name="l-152"></a><span class="tm">15:48:53</span><span class="nk"> &lt;sysrich&gt;</span> <span class="topic">#topic </span><span class="topicline">Any Other Business</span>
+<a name="l-153"></a><span class="tm">15:49:01</span><span class="nk"> &lt;sysrich&gt;</span> Okay then, anything else?
+<a name="l-154"></a><span class="tm">15:49:06</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">sysrich:</span> the topic which I touched earlier
+<a name="l-155"></a><span class="tm">15:49:12</span><span class="nk"> &lt;gmanu&gt;</span> marketing and news
+<a name="l-156"></a><span class="tm">15:49:44</span><span class="nk"> &lt;gmanu&gt;</span> One of the problems with the news team is well people do not respond to others request
+<a name="l-157"></a><span class="tm">15:49:59</span><span class="nk"> &lt;gmanu&gt;</span> It basically means people in news team will post just what they want to
+<a name="l-158"></a><span class="tm">15:50:00</span><span class="nk"> &lt;henne&gt;</span> there are no people, really
+<a name="l-159"></a><span class="tm">15:50:09</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> if there are none
+<a name="l-160"></a><span class="tm">15:50:26</span><span class="nk"> &lt;sysrich&gt;</span> what happened to holden87?
+<a name="l-161"></a><span class="tm">15:50:51</span><span class="nk"> &lt;gmanu&gt;</span> So if there are no people how do we fix it
+<a name="l-162"></a><span class="tm">15:50:59</span><span class="nk"> &lt;sysrich&gt;</span> find people?
+<a name="l-163"></a><span class="tm">15:51:08</span><span class="nk"> &lt;gmanu&gt;</span> Well news@oo is a private list
+<a name="l-164"></a><span class="tm">15:51:18</span><span class="nk"> &lt;gmanu&gt;</span> and there are really no press discussions on it
+<a name="l-165"></a><span class="tm">15:51:25</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gmanu:</span> c'mon. not this discussion again
+<a name="l-166"></a><span class="tm">15:51:34</span><span class="nk"> &lt;ancorgs&gt;</span> is not only about "a news team". Is about almost everything beyond packaging in the project
+<a name="l-167"></a><span class="tm">15:51:44</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">ancorgs:</span> Yes
+<a name="l-168"></a><span class="tm">15:52:03</span><span class="nk"> &lt;gmanu&gt;</span> What I am suggesting is to unify our infrastructures
+<a name="l-169"></a><span class="tm">15:52:07</span><span class="nk"> &lt;henne&gt;</span> but we'll only fix specific parts with specific actions
+<a name="l-170"></a><span class="tm">15:52:14</span><span class="nk"> &lt;henne&gt;</span> so let's stick to the news team
+<a name="l-171"></a><span class="tm">15:52:26</span><span class="nk"> &lt;gmanu&gt;</span> I am talking about marketing and news here because
+<a name="l-172"></a><span class="tm">15:52:36</span><span class="nk"> &lt;gmanu&gt;</span> news was formed by splitting marketing
+<a name="l-173"></a><span class="tm">15:52:46</span><span class="nk"> &lt;gmanu&gt;</span> Why not merge them and see the effects
+<a name="l-174"></a><span class="tm">15:52:52</span><span class="nk"> &lt;gmanu&gt;</span> news is a failure already
+<a name="l-175"></a><span class="tm">15:52:59</span><span class="nk"> &lt;gmanu&gt;</span> we might just as well be other failures
+<a name="l-176"></a><span class="tm">15:53:01</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">gmanu:</span> 0+0 = 0
+<a name="l-177"></a><span class="tm">15:53:04</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gmanu:</span> merge them?
+<a name="l-178"></a><span class="tm">15:53:10</span><span class="nk"> &lt;henne&gt;</span> what do you mean?
+<a name="l-179"></a><span class="tm">15:53:25</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> opensuse-marketing list and news list should be one
+<a name="l-180"></a><span class="tm">15:53:30</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">sysrich:</span> it is not 0 and 0
+<a name="l-181"></a><span class="tm">15:53:31</span><span class="nk"> &lt;henne&gt;</span> ...
+<a name="l-182"></a><span class="tm">15:53:40</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">sysrich:</span> one marketing list has more members
+<a name="l-183"></a><span class="tm">15:53:54</span><span class="nk"> &lt;gmanu&gt;</span> and so the opportunity to contribute is more
+<a name="l-184"></a><span class="tm">15:54:02</span><span class="nk"> &lt;gmanu&gt;</span> so we will be better off
+<a name="l-185"></a><span class="tm">15:54:17</span><span class="nk"> &lt;gmanu&gt;</span> instead of getting new contributors
+<a name="l-186"></a><span class="tm">15:54:21</span><span class="nk"> &lt;gmanu&gt;</span> we go to them now
+<a name="l-187"></a><span class="tm">15:54:28</span><span class="nk"> &lt;gmanu&gt;</span> people who are already there
+<a name="l-188"></a><span class="tm">15:54:39</span><span class="nk"> &lt;gmanu&gt;</span> it needs to be a slow continuous process but it will work I am sure
+<a name="l-189"></a><span class="tm">15:54:54</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">gmanu:</span> ARe you proposing to discuss news publically before it is public?
+<a name="l-190"></a><span class="tm">15:55:02</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">robjo:</span> yes
+<a name="l-191"></a><span class="tm">15:55:11</span><span class="nk"> &lt;gmanu&gt;</span> Because it does not really matter
+<a name="l-192"></a><span class="tm">15:55:19</span><span class="nk"> &lt;gmanu&gt;</span> If people are not discussing news
+<a name="l-193"></a><span class="tm">15:55:26</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">gmanu:</span> didn't we discuss this 6 months ago?
+<a name="l-194"></a><span class="tm">15:55:33</span><span class="nk"> &lt;robjo&gt;</span> Then lets not have news, as they are no longer news,
+<a name="l-195"></a><span class="tm">15:55:39</span><span class="nk"> &lt;henne&gt;</span> http://paste.opensuse.org/view/raw/87009269
+<a name="l-196"></a><span class="tm">15:55:42</span><span class="nk"> &lt;slk021&gt;</span> we had a openSUSE News Survey
+<a name="l-197"></a><span class="tm">15:55:57</span><span class="nk"> &lt;henne&gt;</span> my previous answer to you previous suggestion to marge the lists
+<a name="l-198"></a><span class="tm">15:55:59</span><span class="nk"> &lt;henne&gt;</span> merge*
+<a name="l-199"></a><span class="tm">15:56:04</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">sysrich:</span> yes, this discussion is like a bad penny or dare I say the discussion about systemd ;)
+<a name="l-200"></a><span class="tm">15:56:13</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> well we are not
+<a name="l-201"></a><span class="tm">15:56:19</span><span class="nk"> &lt;gmanu&gt;</span> getting support
+<a name="l-202"></a><span class="tm">15:56:29</span><span class="nk"> &lt;gmanu&gt;</span> Well if I ask news team for press support
+<a name="l-203"></a><span class="tm">15:56:31</span><span class="nk"> &lt;gmanu&gt;</span> I did not get it
+<a name="l-204"></a><span class="tm">15:56:47</span><span class="nk"> &lt;gmanu&gt;</span> and then we have no one in the news team
+<a name="l-205"></a><span class="tm">15:56:51</span><span class="nk"> &lt;henne&gt;</span> and that's a problem we should fix
+<a name="l-206"></a><span class="tm">15:56:59</span><span class="nk"> &lt;gmanu&gt;</span> How do we do that?
+<a name="l-207"></a><span class="tm">15:57:06</span><span class="nk"> &lt;henne&gt;</span> we're discussing your fix
+<a name="l-208"></a><span class="tm">15:57:31</span><span class="nk"> &lt;gmanu&gt;</span> discussing.. where?
+<a name="l-209"></a><span class="tm">15:57:44</span><span class="nk"> &lt;henne&gt;</span> Get Douglas up to speed. Have him talk to people asking him to join
+<a name="l-210"></a><span class="tm">15:57:53</span><span class="nk"> &lt;henne&gt;</span> would be my suggestions
+<a name="l-211"></a><span class="tm">15:57:54</span><span class="nk"> &lt;sysrich&gt;</span> Okay, hold up - I'd like to go back a bit and pick up on something ancorgs said. I have an opinion on ancors point that outside of packaging, other areas of community activity seem lacking
+<a name="l-212"></a><span class="tm">15:57:54</span><span class="nk"> &lt;henne&gt;</span> -s
+<a name="l-213"></a><span class="tm">15:58:08</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gmanu:</span> right here. right now
+<a name="l-214"></a><span class="tm">15:58:37</span><span class="nk"> &lt;henne&gt;</span> having a plan on how to do this
+<a name="l-215"></a><span class="tm">15:58:49</span><span class="nk"> &lt;henne&gt;</span> having rules and dokumentation about it
+<a name="l-216"></a><span class="tm">15:58:50</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> lets discuss this I will like to fix this area by area
+<a name="l-217"></a><span class="tm">15:58:51</span><span class="nk"> &lt;henne&gt;</span> train people
+<a name="l-218"></a><span class="tm">15:58:55</span><span class="nk"> &lt;sysrich&gt;</span> I think it's fair to say that in the last year or so, non-technical enthusiasm from openSUSE contributors has been lower than we're used to. We could go into lots of discussion as to why, but I dont think that's very productive, fact is, we are where we are and we have to get better from here.
+<a name="l-219"></a><span class="tm">15:59:39</span><span class="nk"> &lt;henne&gt;</span> that would be my plan for the news team
+<a name="l-220"></a><span class="tm">15:59:55</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> and how to find new contributors
+<a name="l-221"></a><span class="tm">16:00:02</span><span class="nk"> &lt;gmanu&gt;</span> that is something we should consider too
+<a name="l-222"></a><span class="tm">16:00:32</span><span class="nk"> &lt;sysrich&gt;</span> I'd like to ask that people stop expecting things right now to be 'like they used to be' and accept how they are right now - non-technical contributors are sometimes harder to keep, motivate, energise - it's not like packaging where there's always something new to work on. Lets focus on positive ways on how we can get more people involved, and make the people we have involved more active and encouraged
+<a name="l-223"></a><span class="tm">16:00:36</span><span class="nk"> &lt;henne&gt;</span> Douglas (as "leader") talks to specific people who have shown an interest and talent to write, asking him them join
+<a name="l-224"></a><span class="tm">16:00:59</span><span class="nk"> &lt;plinnell&gt;</span> has the discussion of merging news and marketing finished or decided ?
+<a name="l-225"></a><span class="tm">16:01:02</span><span class="nk"> &lt;henne&gt;</span> asking *them* to join. sorry
+<a name="l-226"></a><span class="tm">16:01:28</span><span class="nk"> &lt;ancorgs&gt;</span> I think that it have never worked beyond jos and henne. Last two releases worked because jos was full-time writing and pushing people. Not really because we were an enthusiastic community :-/
+<a name="l-227"></a><span class="tm">16:01:43</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">ancorgs:</span> you should see it this way
+<a name="l-228"></a><span class="tm">16:01:48</span><span class="nk"> &lt;henne&gt;</span> Jos was the enthusiastic community
+<a name="l-229"></a><span class="tm">16:01:49</span><span class="nk"> &lt;gmanu&gt;</span> 1. Release - Henne and Jos
+<a name="l-230"></a><span class="tm">16:01:51</span><span class="nk"> &lt;henne&gt;</span> I'm the enthusiastic community
+<a name="l-231"></a><span class="tm">16:01:53</span><span class="nk"> &lt;gmanu&gt;</span> 2. GSoC - Me
+<a name="l-232"></a><span class="tm">16:01:59</span><span class="nk"> &lt;gmanu&gt;</span> 3. Conference - Jos
+<a name="l-233"></a><span class="tm">16:02:01</span><span class="nk"> &lt;henne&gt;</span> what's the problem?
+<a name="l-234"></a><span class="tm">16:02:01</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">ancorgs:</span> in the past we had marketing hackathons where we had a good number of people involved
+<a name="l-235"></a><span class="tm">16:02:11</span><span class="nk"> &lt;gmanu&gt;</span> 4. Education - education team
+<a name="l-236"></a><span class="tm">16:02:15</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">sysrich:</span> resulting in nothing really
+<a name="l-237"></a><span class="tm">16:02:23</span><span class="nk"> &lt;gmanu&gt;</span> and then you find everyone is doing what everyone is interested in
+<a name="l-238"></a><span class="tm">16:02:25</span><span class="nk"> &lt;gmanu&gt;</span> but not as a tem
+<a name="l-239"></a><span class="tm">16:02:56</span><span class="nk"> &lt;henne&gt;</span> and the education team should take care of the marketing of it
+<a name="l-240"></a><span class="tm">16:03:07</span><span class="nk"> &lt;henne&gt;</span> the news team will help them making their content great
+<a name="l-241"></a><span class="tm">16:03:18</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> that is the ideal case
+<a name="l-242"></a><span class="tm">16:03:21</span><span class="nk"> &lt;henne&gt;</span> teaching them how, when, where to do it
+<a name="l-243"></a><span class="tm">16:03:26</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> ok..
+<a name="l-244"></a><span class="tm">16:03:36</span><span class="nk"> &lt;gmanu&gt;</span> henne and douglas I am up for a wiki page
+<a name="l-245"></a><span class="tm">16:03:41</span><span class="nk"> &lt;gmanu&gt;</span> or anything like that
+<a name="l-246"></a><span class="tm">16:03:49</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">henne:</span> hey, I worked really hard on all those GNOME articles tyvm.. I think we need to be careful about dismissing the hard work people do - if it's not filling the gaps we need, then I think we need to do a better job of identifying those gaps.. but it really is demoralising when people here the stuff they've been working on is 'nothing really'
+<a name="l-247"></a><span class="tm">16:03:52</span><span class="nk"> &lt;gmanu&gt;</span> or rules and doc which help us do better
+<a name="l-248"></a><span class="tm">16:04:02</span><span class="nk"> &lt;plinnell&gt;</span> <span class="hi">sysrich:</span> maybe a marketing/news hackathon should be part of the mini-summit ?
+<a name="l-249"></a><span class="tm">16:04:52</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">sysrich:</span> fair enough
+<a name="l-250"></a><span class="tm">16:05:02</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">plinnell:</span> given it's in the West Coast of the USA and most of our marketing/news people are no where near there.. I dont think the budget will stretch that far. but a marketing/news hackathon does sound like a good idea, get people together, sort this out
+<a name="l-251"></a><span class="tm">16:05:12 </span><span class="nka">* plinnell</span> <span class="ac">nods</span>
+<a name="l-252"></a><span class="tm">16:05:21</span><span class="nk"> &lt;gmanu&gt;</span> mini summit?
+<a name="l-253"></a><span class="tm">16:05:25</span><span class="nk"> &lt;gmanu&gt;</span> When is it :/
+<a name="l-254"></a><span class="tm">16:05:25</span><span class="nk"> &lt;plinnell&gt;</span> perhaps in NUE
+<a name="l-255"></a><span class="tm">16:05:29</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gmanu:</span> like I said. having a plan on how to do this. having rules and docu about it. train people
+<a name="l-256"></a><span class="tm">16:05:42</span><span class="nk"> &lt;plinnell&gt;</span> <span class="hi">gmanu:</span> in LAX as a part of SCALEX
+<a name="l-257"></a><span class="tm">16:05:47</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> lets discuss this at news@oo.
+<a name="l-258"></a><span class="tm">16:05:56</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">plinnell:</span> I plan to attend SCALE as part of openSUSE
+<a name="l-259"></a><span class="tm">16:06:01</span><span class="nk"> &lt;plinnell&gt;</span> https://www.socallinuxexpo.org/scale13x
+<a name="l-260"></a><span class="tm">16:06:02</span><span class="nk"> &lt;gmanu&gt;</span> so I can help you over there
+<a name="l-261"></a><span class="tm">16:06:11</span><span class="nk"> &lt;plinnell&gt;</span> <span class="hi">gmanu:</span> cool, im already booked as well
+<a name="l-262"></a><span class="tm">16:06:28</span><span class="nk"> &lt;plinnell&gt;</span> suse will have a 'secondary' presence too
+<a name="l-263"></a><span class="tm">16:06:37</span><span class="nk"> &lt;plinnell&gt;</span> not to take away from openSUSE
+<a name="l-264"></a><span class="tm">16:06:56</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">plinnell:</span> can you take this discussion opensuse-marketing
+<a name="l-265"></a><span class="tm">16:07:00</span><span class="nk"> &lt;gmanu&gt;</span> and it will be great
+<a name="l-266"></a><span class="tm">16:07:01</span><span class="nk"> &lt;plinnell&gt;</span> the local team there is excellent
+<a name="l-267"></a><span class="tm">16:07:13</span><span class="nk"> &lt;plinnell&gt;</span> for sure, im on the list
+<a name="l-268"></a><span class="tm">16:07:14</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gmanu:</span> I'm currently trying to get douglas up to speed. then take it from there
+<a name="l-269"></a><span class="tm">16:07:28</span><span class="nk"> &lt;sysrich&gt;</span> and henne's doing a good job at that
+<a name="l-270"></a><span class="tm">16:07:44</span><span class="nk"> &lt;henne&gt;</span> yup
+<a name="l-271"></a><span class="tm">16:07:49</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> cool.. thanks a lot.. but once he is upto speed, lets discuss on the news list
+<a name="l-272"></a><span class="tm">16:08:03</span><span class="nk"> &lt;henne&gt;</span> he has all the tools in his belt. he knows writing
+<a name="l-273"></a><span class="tm">16:08:15 </span><span class="nka">* plinnell</span> <span class="ac">needs to jump</span>
+<a name="l-274"></a><span class="tm">16:08:18</span><span class="nk"> &lt;henne&gt;</span> he just doesn't know all the software etc. etc.
+<a name="l-275"></a><span class="tm">16:08:32</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gmanu:</span> for sure :)
+<a name="l-276"></a><span class="tm">16:08:48</span><span class="nk"> &lt;coolo&gt;</span> <span class="hi">plinnell:</span> the fate of the little poeple - they need to jump to be seen
+<a name="l-277"></a><span class="tm">16:08:50</span><span class="nk"> &lt;gmanu&gt;</span> <span class="hi">henne:</span> cool.. bye for now everyone
+<a name="l-278"></a><span class="tm">16:09:00</span><span class="nk"> &lt;plinnell&gt;</span> <span class="hi">coolo:</span> lol
+<a name="l-279"></a><span class="tm">16:09:53</span><span class="nk"> &lt;ancorgs&gt;</span> my
+<a name="l-280"></a><span class="tm">16:09:57</span><span class="nk"> &lt;sysrich&gt;</span> Okay, any other topics to discuss? This meeting has gone for over an hour :)
+<a name="l-281"></a><span class="tm">16:10:08</span><span class="nk"> &lt;ancorgs&gt;</span> just one last point about it
+<a name="l-282"></a><span class="tm">16:10:27</span><span class="nk"> &lt;ancorgs&gt;</span> I would like to call everybody to fill https://en.opensuse.org/openSUSE:Major_features
+<a name="l-283"></a><span class="tm">16:10:46</span><span class="nk"> &lt;ancorgs&gt;</span> I still miss a lot of information (btrfs, snapper, wicked, more about the kernel, development tools),
+<a name="l-284"></a><span class="tm">16:10:50</span><span class="nk"> &lt;sysrich&gt;</span> <span class="cmd">#info </span><span class="cmdline">Please help fill in the Major Features wiki page for 13.2 at https://en.opensuse.org/openSUSE:Major_features</span>
+<a name="l-285"></a><span class="tm">16:10:53</span><span class="nk"> &lt;ancorgs&gt;</span> ven if it's already late for using that information in the release announcement or the press kit, I think that filling it is still worth it
+<a name="l-286"></a><span class="tm">16:11:14</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#info </span><span class="cmdline">Board elections are coming up, we need Election committee volunteers and candidates, see the announcement on -project</span>
+<a name="l-287"></a><span class="tm">16:11:26</span><span class="nk"> &lt;sysrich&gt;</span> <span class="hi">ancorgs:</span> okay, will do
+<a name="l-288"></a><span class="tm">16:13:19</span><span class="nk"> &lt;sysrich&gt;</span> Anything else?
+<a name="l-289"></a><span class="tm">16:15:23</span><span class="nk"> &lt;sysrich&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

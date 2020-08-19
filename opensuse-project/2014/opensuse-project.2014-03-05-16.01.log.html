@@ -1,0 +1,505 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">16:01:32</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">oSC14</span>
+<a name="l-2"></a><span class="tm">16:01:32</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Mar  5 16:01:32 2014 UTC.  The chair is robjo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">16:01:32</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">16:01:47</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">Svebor:</span> your meeting, go ;0
+<a name="l-5"></a><span class="tm">16:02:42</span><span class="nk"> &lt;Svebor&gt;</span> thanks robjo, hi again everyone, thanks for participating!
+<a name="l-6"></a><span class="tm">16:03:34</span><span class="nk"> &lt;anditosan_tablet&gt;</span> you bet!
+<a name="l-7"></a><span class="tm">16:03:52</span><span class="nk"> &lt;Svebor&gt;</span> first I wanted to say we've been running back and forth between SUSE and UNIDU, it is going slower than expected, but things are on track
+<a name="l-8"></a><span class="tm">16:04:10</span><span class="nk"> &lt;henne&gt;</span> things?
+<a name="l-9"></a><span class="tm">16:04:26</span><span class="nk"> &lt;robjo&gt;</span> that's the venue contract and related issues
+<a name="l-10"></a><span class="tm">16:04:32</span><span class="nk"> &lt;Svebor&gt;</span> the things are - venue contract mostly
+<a name="l-11"></a><span class="tm">16:04:33</span><span class="nk"> &lt;robjo&gt;</span> like insurance etc.
+<a name="l-12"></a><span class="tm">16:04:47</span><span class="nk"> &lt;henne&gt;</span> k
+<a name="l-13"></a><span class="tm">16:04:56</span><span class="nk"> &lt;henne&gt;</span> where does it hang currently?
+<a name="l-14"></a><span class="tm">16:05:28</span><span class="nk"> &lt;Svebor&gt;</span> SUSE has to find a way to go around the University's unwillingness to insure the participants
+<a name="l-15"></a><span class="tm">16:05:55</span><span class="nk"> &lt;Svebor&gt;</span> Roland started looking into it
+<a name="l-16"></a><span class="tm">16:06:36</span><span class="nk"> &lt;henne&gt;</span> He told me this is resolved
+<a name="l-17"></a><span class="tm">16:06:51</span><span class="nk"> &lt;Svebor&gt;</span> wow, that's great news!
+<a name="l-18"></a><span class="tm">16:07:10</span><span class="nk"> &lt;Svebor&gt;</span> Ivona (from UNIDU) emailed me today that she talked with Roland yesterday
+<a name="l-19"></a><span class="tm">16:07:32</span><span class="nk"> &lt;Svebor&gt;</span> and that he asked about insurance and that she again said the Univesity wouldn't do it
+<a name="l-20"></a><span class="tm">16:07:34</span><span class="nk"> &lt;henne&gt;</span> yes and the outcome was that there doesn't have to be an insurance
+<a name="l-21"></a><span class="tm">16:07:43</span><span class="nk"> &lt;Svebor&gt;</span> oh
+<a name="l-22"></a><span class="tm">16:08:22</span><span class="nk"> &lt;Svebor&gt;</span> ok, cool.. are we ok with that? no worries?
+<a name="l-23"></a><span class="tm">16:08:49</span><span class="nk"> &lt;henne&gt;</span> we as in?
+<a name="l-24"></a><span class="tm">16:09:00</span><span class="nk"> &lt;Svebor&gt;</span> the community, SUSE
+<a name="l-25"></a><span class="tm">16:09:01</span><span class="nk"> &lt;robjo&gt;</span> well, in the end it is up to SUSE, as they are the legal entity
+<a name="l-26"></a><span class="tm">16:09:07</span><span class="nk"> &lt;henne&gt;</span> they don't care
+<a name="l-27"></a><span class="tm">16:09:18</span><span class="nk"> &lt;henne&gt;</span> they=SUSE
+<a name="l-28"></a><span class="tm">16:09:28</span><span class="nk"> &lt;Svebor&gt;</span> ok, fine. we have that resolved then
+<a name="l-29"></a><span class="tm">16:09:33</span><span class="nk"> &lt;ilmehtar&gt;</span> if Roland is happy, then I'm happy
+<a name="l-30"></a><span class="tm">16:10:05</span><span class="nk"> &lt;henne&gt;</span> so where is the contract hanging now?
+<a name="l-31"></a><span class="tm">16:10:20</span><span class="nk"> &lt;robjo&gt;</span> signatures
+<a name="l-32"></a><span class="tm">16:10:20</span><span class="nk"> &lt;Svebor&gt;</span> great that was the big deal, there is one more thing concerning the contract that seems smaller in comparison, but that I also wanted to discuss
+<a name="l-33"></a><span class="tm">16:10:21</span><span class="nk"> &lt;henne&gt;</span> and who has the contract?
+<a name="l-34"></a><span class="tm">16:10:32</span><span class="nk"> &lt;Svebor&gt;</span> Roland has it
+<a name="l-35"></a><span class="tm">16:10:35</span><span class="nk"> &lt;henne&gt;</span> nope
+<a name="l-36"></a><span class="tm">16:10:53</span><span class="nk"> &lt;henne&gt;</span> he told me he doesn't know where it is
+<a name="l-37"></a><span class="tm">16:10:54</span><span class="nk"> &lt;Svebor&gt;</span> i emailed all the changes and additions I made with Agustin to him
+<a name="l-38"></a><span class="tm">16:11:24</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">Svebor:</span> can you please resend it?
+<a name="l-39"></a><span class="tm">16:11:28</span><span class="nk"> &lt;Svebor&gt;</span> I can repeat the email after the meeting to you and him
+<a name="l-40"></a><span class="tm">16:11:31</span><span class="nk"> &lt;anditosan_tablet&gt;</span> where is Roland?
+<a name="l-41"></a><span class="tm">16:11:38</span><span class="nk"> &lt;henne&gt;</span> vacation
+<a name="l-42"></a><span class="tm">16:11:44</span><span class="nk"> &lt;Svebor&gt;</span> and cc the board, sure..
+<a name="l-43"></a><span class="tm">16:11:50</span><span class="nk"> &lt;anditosan_tablet&gt;</span> oh!
+<a name="l-44"></a><span class="tm">16:12:08</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Svebor:</span> yes please re-send the contract
+<a name="l-45"></a><span class="tm">16:12:19</span><span class="nk"> &lt;robjo&gt;</span> well if Roland is on vacation someone else has to stand in and sign it
+<a name="l-46"></a><span class="tm">16:12:20</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Svebor:</span> please take me into CC
+<a name="l-47"></a><span class="tm">16:12:33</span><span class="nk"> &lt;henne&gt;</span> Roland can't sign contracts. only lawyers can :)
+<a name="l-48"></a><span class="tm">16:12:40</span><span class="nk"> &lt;Svebor&gt;</span> will do!
+<a name="l-49"></a><span class="tm">16:12:48</span><span class="nk"> &lt;Svebor&gt;</span> second contract related thing - we were offered rooms on 3 floors, the third floor only one room
+<a name="l-50"></a><span class="tm">16:12:50</span><span class="nk"> &lt;henne&gt;</span> I know SUSE's. take me into the CC and I hand it to him
+<a name="l-51"></a><span class="tm">16:12:51</span><span class="nk"> &lt;robjo&gt;</span> lets appoint henne as the Nuremberg local messenger to get this done ;)
+<a name="l-52"></a><span class="tm">16:13:15</span><span class="nk"> &lt;Svebor&gt;</span> robjo, henne is the messenger +1
+<a name="l-53"></a><span class="tm">16:13:48</span><span class="nk"> &lt;henne&gt;</span> shoot me
+<a name="l-54"></a><span class="tm">16:14:00</span><span class="nk"> &lt;Svebor&gt;</span> Agustin and I wanted to talk about this further with UNIDU, find a way to make it only two floors - and I mentioned this to Roland
+<a name="l-55"></a><span class="tm">16:14:01</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">Svebor semd contract to henne to get into the right hands for signature by SUSE</span>
+<a name="l-56"></a><span class="tm">16:14:20</span><span class="nk"> &lt;Svebor&gt;</span> did he (Roland) comment anything on that?
+<a name="l-57"></a><span class="tm">16:14:50</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yes:</span> go ahead
+<a name="l-58"></a><span class="tm">16:15:05</span><span class="nk"> &lt;Svebor&gt;</span> talked to Ivona about it? and is having 3 floors acceptable for the conference if it fails?
+<a name="l-59"></a><span class="tm">16:15:06</span><span class="nk"> &lt;henne&gt;</span> that's the general comment
+<a name="l-60"></a><span class="tm">16:15:51</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">Svebor:</span> do we understand UNIDU's concern about the 2 floor arrangement? Is it a room constraint, or other?
+<a name="l-61"></a><span class="tm">16:15:59</span><span class="nk"> &lt;Svebor&gt;</span> it is other
+<a name="l-62"></a><span class="tm">16:16:06</span><span class="nk"> &lt;Svebor&gt;</span> each floor is another department
+<a name="l-63"></a><span class="tm">16:16:31</span><span class="nk"> &lt;Svebor&gt;</span> and as I see it .. they don't want to go through the trouble to coordinate between departments
+<a name="l-64"></a><span class="tm">16:16:42</span><span class="nk"> &lt;henne&gt;</span> jeez
+<a name="l-65"></a><span class="tm">16:16:45</span><span class="nk"> &lt;Svebor&gt;</span> to move students and lectures from one floor to the other
+<a name="l-66"></a><span class="tm">16:16:46</span><span class="nk"> &lt;robjo&gt;</span> That would imply we impact 3 departments if we have 3 floors vs, only 2 on 2 floors, should be an advantage to them to have 2 floors only???
+<a name="l-67"></a><span class="tm">16:18:02</span><span class="nk"> &lt;Svebor&gt;</span> they have these rooms free - the departments are ok with us using them. If they move a lecture from the 2nd floor to the 3rd, then they have to talk to 2 departments... I personally really don't see the issue... they could take care of it in half an hour...
+<a name="l-68"></a><span class="tm">16:18:16</span><span class="nk"> &lt;Svebor&gt;</span> that's why I wanted Agustin or Roland to pressure them from SUSE side
+<a name="l-69"></a><span class="tm">16:18:19</span><span class="nk"> &lt;henne&gt;</span> so let's ask them to do it
+<a name="l-70"></a><span class="tm">16:18:36</span><span class="nk"> &lt;henne&gt;</span> you can pressure them in SUSEs name
+<a name="l-71"></a><span class="tm">16:18:43</span><span class="nk"> &lt;henne&gt;</span> what we decide here is authorative
+<a name="l-72"></a><span class="tm">16:18:44</span><span class="nk"> &lt;Svebor&gt;</span> well, I asked a couple of times and the reply was it cannot be done..
+<a name="l-73"></a><span class="tm">16:19:12</span><span class="nk"> &lt;robjo&gt;</span> Lets have the lawyer ask the question as he has signature power as well
+<a name="l-74"></a><span class="tm">16:19:14</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">Svebor:</span> and what's the alternative in that case?
+<a name="l-75"></a><span class="tm">16:19:19</span><span class="nk"> &lt;henne&gt;</span> so what do you think will help?
+<a name="l-76"></a><span class="tm">16:19:29</span><span class="nk"> &lt;henne&gt;</span> that Roland asks them?
+<a name="l-77"></a><span class="tm">16:20:20</span><span class="nk"> &lt;Svebor&gt;</span> henne, yes, they see SUSE as the money provider.. if the money provider says it's not ok they might hopefully reconsider...
+<a name="l-78"></a><span class="tm">16:20:33</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-79"></a><span class="tm">16:20:49</span><span class="nk"> &lt;Svebor&gt;</span> differentreality, if it stays the way it is.. we can either accept it or cancel the room on the third floor
+<a name="l-80"></a><span class="tm">16:21:05</span><span class="nk"> &lt;Svebor&gt;</span> that would leave 4 lecture rooms available
+<a name="l-81"></a><span class="tm">16:21:34</span><span class="nk"> &lt;robjo&gt;</span> How big is the room on the 3rd floor?
+<a name="l-82"></a><span class="tm">16:21:36</span><span class="nk"> &lt;differentreality&gt;</span> 4 rooms of what capacity?
+<a name="l-83"></a><span class="tm">16:21:46</span><span class="nk"> &lt;henne&gt;</span> you need to document somehow the rooms, their sizes and location
+<a name="l-84"></a><span class="tm">16:22:02</span><span class="nk"> &lt;Svebor&gt;</span> ~42 people
+<a name="l-85"></a><span class="tm">16:22:10</span><span class="nk"> &lt;Svebor&gt;</span> with desks setup
+<a name="l-86"></a><span class="tm">16:22:13</span><span class="nk"> &lt;henne&gt;</span> sorry if you don't want to "release" the floor plan youve got
+<a name="l-87"></a><span class="tm">16:22:19</span><span class="nk"> &lt;henne&gt;</span> then you need to draw one yourself
+<a name="l-88"></a><span class="tm">16:22:35</span><span class="nk"> &lt;henne&gt;</span> or someone with access to the secret floor plan needs to
+<a name="l-89"></a><span class="tm">16:22:41</span><span class="nk"> &lt;Svebor&gt;</span> no problem, I sent it to Roland too for this purpose.. and few minutes ago to CfP
+<a name="l-90"></a><span class="tm">16:23:04</span><span class="nk"> &lt;Svebor&gt;</span> I will forward it again.. let me quickly find the capacities
+<a name="l-91"></a><span class="tm">16:23:12</span><span class="nk"> &lt;TomoS&gt;</span> I can also go tomorrow talk to Ivona to see can something be done with that room on 3rd floor
+<a name="l-92"></a><span class="tm">16:23:31</span><span class="nk"> &lt;differentreality&gt;</span> if Juergen is coordinating the video recording again this year, you would need to come up with your own designs any way, to show the necessary measures that are needed for the cameras etc
+<a name="l-93"></a><span class="tm">16:23:35</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Svebor:</span> we need this for everyone
+<a name="l-94"></a><span class="tm">16:23:52</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Svebor:</span> not individual mails....
+<a name="l-95"></a><span class="tm">16:24:05</span><span class="nk"> &lt;Svebor&gt;</span> TomoS, yes if you can do anything to help...
+<a name="l-96"></a><span class="tm">16:24:17</span><span class="nk"> &lt;henne&gt;</span> a floor plan is crucial to a ton of dangling decision
+<a name="l-97"></a><span class="tm">16:24:18</span><span class="nk"> &lt;henne&gt;</span> s
+<a name="l-98"></a><span class="tm">16:24:31</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">henne:</span> as long as this is not sorted out where we have a room on the 3rd floor or not waht's the point in parading it around in public?
+<a name="l-99"></a><span class="tm">16:24:44</span><span class="nk"> &lt;henne&gt;</span> this is not public
+<a name="l-100"></a><span class="tm">16:24:51</span><span class="nk"> &lt;Svebor&gt;</span> henne, ok then I will make this a priority to provide a draft floor plan through Trello too
+<a name="l-101"></a><span class="tm">16:24:58</span><span class="nk"> &lt;henne&gt;</span> this is our trello board we're talking about
+<a name="l-102"></a><span class="tm">16:25:07</span><span class="nk"> &lt;Svebor&gt;</span> is it ok if it's done in a day?
+<a name="l-103"></a><span class="tm">16:25:12</span><span class="nk"> &lt;henne&gt;</span> sure
+<a name="l-104"></a><span class="tm">16:25:36</span><span class="nk"> &lt;henne&gt;</span> action someone
+<a name="l-105"></a><span class="tm">16:25:40</span><span class="nk"> &lt;Svebor&gt;</span> ok, and I'll email forward the plan with the contract right after the meeting...
+<a name="l-106"></a><span class="tm">16:26:22</span><span class="nk"> &lt;henne&gt;</span> do we need to sort this out before signing the contract?
+<a name="l-107"></a><span class="tm">16:26:45</span><span class="nk"> &lt;henne&gt;</span> are the floors subject of the contract?
+<a name="l-108"></a><span class="tm">16:26:48</span><span class="nk"> &lt;Svebor&gt;</span> yes, because the map is the attachment to the contract
+<a name="l-109"></a><span class="tm">16:26:51</span><span class="nk"> &lt;henne&gt;</span> ok
+<a name="l-110"></a><span class="tm">16:26:54</span><span class="nk"> &lt;Svebor&gt;</span> and it references it
+<a name="l-111"></a><span class="tm">16:27:08</span><span class="nk"> &lt;henne&gt;</span> then I would propose we set ourselves a deadline of 1 week
+<a name="l-112"></a><span class="tm">16:27:16</span><span class="nk"> &lt;henne&gt;</span> to get the room onto the second floor
+<a name="l-113"></a><span class="tm">16:27:18</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">henne:</span> differentreality: lets look at this from a different angle
+<a name="l-114"></a><span class="tm">16:27:24</span><span class="nk"> &lt;Svebor&gt;</span> and the contract references the map that is..
+<a name="l-115"></a><span class="tm">16:27:38</span><span class="nk"> &lt;robjo&gt;</span> do we think we have enough submissions to potentially run 4 lsessions in parallel?
+<a name="l-116"></a><span class="tm">16:28:00</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> I didn't know the number of rooms until half an hour ago
+<a name="l-117"></a><span class="tm">16:28:05</span><span class="nk"> &lt;robjo&gt;</span> from my point of view we can drop the room on the 3rd floor
+<a name="l-118"></a><span class="tm">16:28:17</span><span class="nk"> &lt;henne&gt;</span> people not on cfp@ don't know even now
+<a name="l-119"></a><span class="tm">16:28:27</span><span class="nk"> &lt;robjo&gt;</span> well now you know, can you you form an opinion?
+<a name="l-120"></a><span class="tm">16:28:50</span><span class="nk"> &lt;robjo&gt;</span> it is a @cfp decision, we make the program
+<a name="l-121"></a><span class="tm">16:29:04</span><span class="nk"> &lt;henne&gt;</span> I can't because I don't know the size of the rooms
+<a name="l-122"></a><span class="tm">16:29:42</span><span class="nk"> &lt;Svebor&gt;</span> We basically started from these requirements: https://trello.com/c/vuG5Xl0d/2-venue-requirements-reservation-and-contract
+<a name="l-123"></a><span class="tm">16:30:15</span><span class="nk"> &lt;henne&gt;</span> that means?
+<a name="l-124"></a><span class="tm">16:30:16</span><span class="nk"> &lt;Svebor&gt;</span> and they are satisfied + a little more..
+<a name="l-125"></a><span class="tm">16:30:23</span><span class="nk"> &lt;robjo&gt;</span> We have 2 large lecture halls with 50+ seats
+<a name="l-126"></a><span class="tm">16:30:31</span><span class="nk"> &lt;robjo&gt;</span> and one room with about 30 seats
+<a name="l-127"></a><span class="tm">16:30:52</span><span class="nk"> &lt;robjo&gt;</span> based on my estimation of what Svebor sent to cfp@
+<a name="l-128"></a><span class="tm">16:31:09</span><span class="nk"> &lt;Svebor&gt;</span> yes, + 2 amphitheaters 250+ seats
+<a name="l-129"></a><span class="tm">16:31:17</span><span class="nk"> &lt;henne&gt;</span> uhm
+<a name="l-130"></a><span class="tm">16:32:00</span><span class="nk"> &lt;robjo&gt;</span> I think the 3 rooms reserved for lectures fits our capacity needs, we can run 3 sessions at one time
+<a name="l-131"></a><span class="tm">16:32:31</span><span class="nk"> &lt;robjo&gt;</span> The smaller room should hold the workshops
+<a name="l-132"></a><span class="tm">16:32:33</span><span class="nk"> &lt;henne&gt;</span> sounds about right
+<a name="l-133"></a><span class="tm">16:32:54</span><span class="nk"> &lt;henne&gt;</span> how many people fit into the smaller rooms
+<a name="l-134"></a><span class="tm">16:33:03</span><span class="nk"> &lt;differentreality&gt;</span> 2 amphitheaters x 250 ppl each, 1 room x 30 ppl, 2 rooms x 50 ppl? That's what we are talking about ?
+<a name="l-135"></a><span class="tm">16:33:23</span><span class="nk"> &lt;robjo&gt;</span> nope, 2 amphitheaters x 250 ppl each, 1 room x 30 ppl
+<a name="l-136"></a><span class="tm">16:33:23</span><span class="nk"> &lt;Svebor&gt;</span> differentreality, yes
+<a name="l-137"></a><span class="tm">16:33:31</span><span class="nk"> &lt;Svebor&gt;</span> :-)
+<a name="l-138"></a><span class="tm">16:33:49</span><span class="nk"> &lt;differentreality&gt;</span> i see :)
+<a name="l-139"></a><span class="tm">16:33:59</span><span class="nk"> &lt;henne&gt;</span> okay I guess we can skip the third floor then
+<a name="l-140"></a><span class="tm">16:34:08</span><span class="nk"> &lt;Svebor&gt;</span> differentreality, the current offer from the unidu is what you wrote, robjo is talking about the plan what to use
+<a name="l-141"></a><span class="tm">16:34:15</span><span class="nk"> &lt;differentreality&gt;</span> can we make up our minds and put the info in a simple way?
+<a name="l-142"></a><span class="tm">16:34:50</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">Svebor:</span> the map you sent to cfp@ has the 2 amphitheatrs, and one lecture room on floor 2 and one on floor 3
+<a name="l-143"></a><span class="tm">16:35:26</span><span class="nk"> &lt;robjo&gt;</span> plus space for press meetings etc, that's somewhat immaterial  for the current discussion
+<a name="l-144"></a><span class="tm">16:35:40</span><span class="nk"> &lt;henne&gt;</span> guys, we need to sort this out on a simple floor plan
+<a name="l-145"></a><span class="tm">16:35:46</span><span class="nk"> &lt;henne&gt;</span> then revisit this issue
+<a name="l-146"></a><span class="tm">16:36:10</span><span class="nk"> &lt;henne&gt;</span> everybody is talking about something different apparently
+<a name="l-147"></a><span class="tm">16:36:11</span><span class="nk"> &lt;robjo&gt;</span> look at the map Svebor sent it is simple, 3 pages, one for each slide
+<a name="l-148"></a><span class="tm">16:36:26</span><span class="nk"> &lt;robjo&gt;</span> one page for each floor
+<a name="l-149"></a><span class="tm">16:36:30</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> yeah and even Svebor seems confused about it :)
+<a name="l-150"></a><span class="tm">16:36:44</span><span class="nk"> &lt;robjo&gt;</span> what is highlighted in green is the plan
+<a name="l-151"></a><span class="tm">16:37:01</span><span class="nk"> &lt;henne&gt;</span> there are 8 green rooms on this plan
+<a name="l-152"></a><span class="tm">16:37:21</span><span class="nk"> &lt;henne&gt;</span> 5 on the first floor
+<a name="l-153"></a><span class="tm">16:37:27</span><span class="nk"> &lt;henne&gt;</span> 2 on the second
+<a name="l-154"></a><span class="tm">16:37:31</span><span class="nk"> &lt;robjo&gt;</span> yup, meeting rooms and rooms for the press are not suitable for lectures
+<a name="l-155"></a><span class="tm">16:37:41</span><span class="nk"> &lt;robjo&gt;</span> neither is the kitchen area
+<a name="l-156"></a><span class="tm">16:38:06</span><span class="nk"> &lt;differentreality&gt;</span> what kitchen area? :(
+<a name="l-157"></a><span class="tm">16:38:09</span><span class="nk"> &lt;henne&gt;</span> kitchen area?
+<a name="l-158"></a><span class="tm">16:38:10</span><span class="nk"> &lt;henne&gt;</span> wtf?
+<a name="l-159"></a><span class="tm">16:38:17</span><span class="nk"> &lt;henne&gt;</span> draw a plan already
+<a name="l-160"></a><span class="tm">16:38:19</span><span class="nk"> &lt;henne&gt;</span> jeez
+<a name="l-161"></a><span class="tm">16:38:23</span><span class="nk"> &lt;henne&gt;</span> label rooms
+<a name="l-162"></a><span class="tm">16:38:32</span><span class="nk"> &lt;henne&gt;</span> put down their seating arrangements
+<a name="l-163"></a><span class="tm">16:38:58</span><span class="nk"> &lt;robjo&gt;</span> I give up
+<a name="l-164"></a><span class="tm">16:39:07</span><span class="nk"> &lt;henne&gt;</span> Svebor can you please do this?
+<a name="l-165"></a><span class="tm">16:39:14</span><span class="nk"> &lt;Svebor&gt;</span> ok
+<a name="l-166"></a><span class="tm">16:39:16</span><span class="nk"> &lt;henne&gt;</span> ok
+<a name="l-167"></a><span class="tm">16:39:32</span><span class="nk"> &lt;anditosan_tablet&gt;</span> much better
+<a name="l-168"></a><span class="tm">16:39:57</span><span class="nk"> &lt;Svebor&gt;</span> I will redraw the map and label it in a clear way and then follow up through trello, and .. we have a week tops to finalize this
+<a name="l-169"></a><span class="tm">16:39:59</span><span class="nk"> &lt;Svebor&gt;</span> and decide
+<a name="l-170"></a><span class="tm">16:40:07</span><span class="nk"> &lt;henne&gt;</span> cool
+<a name="l-171"></a><span class="tm">16:40:21</span><span class="nk"> &lt;Svebor&gt;</span> ok, action on this?
+<a name="l-172"></a><span class="tm">16:40:44</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">Svebor draw a new floor plan and label it to meet henne's needs</span>
+<a name="l-173"></a><span class="tm">16:40:52</span><span class="nk"> &lt;Svebor&gt;</span> :-)
+<a name="l-174"></a><span class="tm">16:41:16</span><span class="nk"> &lt;Svebor&gt;</span> thank you .. I want henne to be happy..
+<a name="l-175"></a><span class="tm">16:41:24</span><span class="nk"> &lt;differentreality&gt;</span> well it's everybody's needs...
+<a name="l-176"></a><span class="tm">16:41:29</span><span class="nk"> &lt;robjo&gt;</span> that's impossible
+<a name="l-177"></a><span class="tm">16:41:31</span><span class="nk"> &lt;anditosan_tablet&gt;</span> me too... scary man
+<a name="l-178"></a><span class="tm">16:42:08</span><span class="nk"> &lt;henne&gt;</span> is there anything else we need to discuss regarding the venue?
+<a name="l-179"></a><span class="tm">16:42:12</span><span class="nk"> &lt;Svebor&gt;</span> next up... bbq party, although this is a point for the board to decide on depending on the latest info I emailed.. do we talk about it here?
+<a name="l-180"></a><span class="tm">16:42:42</span><span class="nk"> &lt;henne&gt;</span> can I suggest that if we don't talk about things here, they don't happen :)
+<a name="l-181"></a><span class="tm">16:42:43</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">Svebor:</span> you will get an email from me right after the meeting
+<a name="l-182"></a><span class="tm">16:42:49</span><span class="nk"> &lt;Svebor&gt;</span> excellent
+<a name="l-183"></a><span class="tm">16:43:07</span><span class="nk"> &lt;anditosan_tablet&gt;</span> as long as the bbq includes meat, im in!
+<a name="l-184"></a><span class="tm">16:43:32</span><span class="nk"> &lt;differentreality&gt;</span> so what's the deal with the bbq party ?
+<a name="l-185"></a><span class="tm">16:43:46</span><span class="nk"> &lt;Svebor&gt;</span> it does, mucho meat. :-) next up, we need to think of ways to promote the event more aggressively
+<a name="l-186"></a><span class="tm">16:44:14</span><span class="nk"> &lt;henne&gt;</span> very much so
+<a name="l-187"></a><span class="tm">16:44:24</span><span class="nk"> &lt;warlordfff&gt;</span> +100 on that
+<a name="l-188"></a><span class="tm">16:44:36</span><span class="nk"> &lt;henne&gt;</span> I've created a lot of cards in trello about this
+<a name="l-189"></a><span class="tm">16:44:38</span><span class="nk"> &lt;anditosan_tablet&gt;</span> i am already making web banners
+<a name="l-190"></a><span class="tm">16:44:48</span><span class="nk"> &lt;anditosan_tablet&gt;</span> and also the inspiring artwork
+<a name="l-191"></a><span class="tm">16:45:14</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">robjo:</span> You already wrote one article about the keynote speaker right? Can we sart with this?
+<a name="l-192"></a><span class="tm">16:45:14</span><span class="nk"> &lt;Svebor&gt;</span> anditosan_tablet, great! I have a few croatian portals ready to put them up
+<a name="l-193"></a><span class="tm">16:45:41</span><span class="nk"> &lt;henne&gt;</span> I think the most pressing ones are: Press Kit, Banners, Articles
+<a name="l-194"></a><span class="tm">16:45:51</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> jospoortvliet is using the draft and adding some pictures etc. should get posted today to news.o.o
+<a name="l-195"></a><span class="tm">16:46:02</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">robjo:</span> cool
+<a name="l-196"></a><span class="tm">16:46:06</span><span class="nk"> &lt;jospoortvliet&gt;</span> indeed :D
+<a name="l-197"></a><span class="tm">16:46:16</span><span class="nk"> &lt;anditosan&gt;</span> I need to get dimensions soon as well
+<a name="l-198"></a><span class="tm">16:46:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> https://news.opensuse.org/?p=17681&amp;preview=true
+<a name="l-199"></a><span class="tm">16:46:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> ;-)
+<a name="l-200"></a><span class="tm">16:46:26</span><span class="nk"> &lt;warlordfff&gt;</span> I can try and make something with the other talks to post at some point maybe next week
+<a name="l-201"></a><span class="tm">16:46:48</span><span class="nk"> &lt;anditosan&gt;</span> <span class="hi">jospoortvliet:</span> maybe we have a few people volunteer to write articles
+<a name="l-202"></a><span class="tm">16:46:50</span><span class="nk"> &lt;anditosan&gt;</span> that possible?
+<a name="l-203"></a><span class="tm">16:46:52</span><span class="nk"> &lt;warlordfff&gt;</span> I think we have some that are definatelly happening, right?
+<a name="l-204"></a><span class="tm">16:46:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> yes
+<a name="l-205"></a><span class="tm">16:47:05</span><span class="nk"> &lt;jospoortvliet&gt;</span> the thing is content - like, WHAT to write about
+<a name="l-206"></a><span class="tm">16:47:05</span><span class="nk"> &lt;anditosan&gt;</span> also, quick idea everyone....
+<a name="l-207"></a><span class="tm">16:47:09</span><span class="nk"> &lt;jospoortvliet&gt;</span> I have time
+<a name="l-208"></a><span class="tm">16:47:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> not ideas or content...
+<a name="l-209"></a><span class="tm">16:47:13</span><span class="nk"> &lt;anditosan&gt;</span> me too
+<a name="l-210"></a><span class="tm">16:47:20</span><span class="nk"> &lt;jospoortvliet&gt;</span> cool
+<a name="l-211"></a><span class="tm">16:47:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> so - anybody, tell us what to write and we do it... :D
+<a name="l-212"></a><span class="tm">16:47:40</span><span class="nk"> &lt;henne&gt;</span> there are several cards
+<a name="l-213"></a><span class="tm">16:47:41</span><span class="nk"> &lt;warlordfff&gt;</span> then let's just mindstorm on saturday
+<a name="l-214"></a><span class="tm">16:47:56</span><span class="nk"> &lt;warlordfff&gt;</span> if you guys have time
+<a name="l-215"></a><span class="tm">16:48:00</span><span class="nk"> &lt;henne&gt;</span> https://trello.com/c/KXwAHmR6/66-location-venue-sneak-peak
+<a name="l-216"></a><span class="tm">16:48:06</span><span class="nk"> &lt;henne&gt;</span> https://trello.com/c/eHdzvAdV/67-program-sneak-peak
+<a name="l-217"></a><span class="tm">16:48:06</span><span class="nk"> &lt;Svebor&gt;</span> great! do you guys also have contacts with some popular portals to publish the announcement?
+<a name="l-218"></a><span class="tm">16:48:06</span><span class="nk"> &lt;warlordfff&gt;</span> and yes its brainstorm
+<a name="l-219"></a><span class="tm">16:48:11</span><span class="nk"> &lt;henne&gt;</span> https://trello.com/c/B4pn1Skn/68-keynote-sneak-peak
+<a name="l-220"></a><span class="tm">16:48:11</span><span class="nk"> &lt;anditosan&gt;</span> talking to Drew sometime ago, he had the idea of making a "green couch" where we could interview people and generate videos for the community on what each person is doing. I think it sounds cool and if we have the equipment it would be nice to make somthing like that to self promote the conference
+<a name="l-221"></a><span class="tm">16:48:37</span><span class="nk"> &lt;warlordfff&gt;</span> That is cool
+<a name="l-222"></a><span class="tm">16:48:48</span><span class="nk"> &lt;henne&gt;</span> please not more ideas....
+<a name="l-223"></a><span class="tm">16:48:59</span><span class="nk"> &lt;henne&gt;</span> new ideas are great and all
+<a name="l-224"></a><span class="tm">16:49:06</span><span class="nk"> &lt;robjo&gt;</span> we need stuff done
+<a name="l-225"></a><span class="tm">16:49:08</span><span class="nk"> &lt;henne&gt;</span> but we need to do the bread&amp;butter tasks
+<a name="l-226"></a><span class="tm">16:49:13</span><span class="nk"> &lt;anditosan&gt;</span> <span class="hi">henne:</span> just saying... that's for during the conferece
+<a name="l-227"></a><span class="tm">16:49:17</span><span class="nk"> &lt;anditosan&gt;</span> sure
+<a name="l-228"></a><span class="tm">16:49:24</span><span class="nk"> &lt;henne&gt;</span> we need a press kit
+<a name="l-229"></a><span class="tm">16:49:26</span><span class="nk"> &lt;robjo&gt;</span> if you can arrange interviews and do them on public hangout to get them to YouTube great
+<a name="l-230"></a><span class="tm">16:49:35</span><span class="nk"> &lt;henne&gt;</span> we need banners
+<a name="l-231"></a><span class="tm">16:50:03</span><span class="nk"> &lt;henne&gt;</span> we need articles
+<a name="l-232"></a><span class="tm">16:50:07</span><span class="nk"> &lt;anditosan&gt;</span> I am making banners now, but I have no idea what the press kit includes, if we can manage a comprehensive list, I can help putting it together
+<a name="l-233"></a><span class="tm">16:50:11</span><span class="nk"> &lt;warlordfff&gt;</span> Last year we had a banner about Video recording
+<a name="l-234"></a><span class="tm">16:50:15</span><span class="nk"> &lt;henne&gt;</span> after we have those, we can come up with new ideas :)
+<a name="l-235"></a><span class="tm">16:50:16</span><span class="nk"> &lt;warlordfff&gt;</span> I have that
+<a name="l-236"></a><span class="tm">16:50:31</span><span class="nk"> &lt;warlordfff&gt;</span> should I bring it to Dubrovnic?
+<a name="l-237"></a><span class="tm">16:50:34</span><span class="nk"> &lt;anditosan&gt;</span> also, there is the idea of having an entrance banner to the venue and I have no details on what the format will be
+<a name="l-238"></a><span class="tm">16:50:47</span><span class="nk"> &lt;henne&gt;</span> web banner dude....
+<a name="l-239"></a><span class="tm">16:50:53</span><span class="nk"> &lt;henne&gt;</span> not physical banners
+<a name="l-240"></a><span class="tm">16:50:59</span><span class="nk"> &lt;anditosan&gt;</span> henne, I know
+<a name="l-241"></a><span class="tm">16:51:10</span><span class="nk"> &lt;henne&gt;</span> ok
+<a name="l-242"></a><span class="tm">16:51:13</span><span class="nk"> &lt;robjo&gt;</span> who is working on the physical banners?
+<a name="l-243"></a><span class="tm">16:51:17</span><span class="nk"> &lt;robjo&gt;</span> we need those as well
+<a name="l-244"></a><span class="tm">16:51:34</span><span class="nk"> &lt;anditosan&gt;</span> I could, but I have no details on them yet
+<a name="l-245"></a><span class="tm">16:51:57</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">robjo:</span> lucijana I guess? https://trello.com/c/QVC9CrRN/54-decorations
+<a name="l-246"></a><span class="tm">16:52:04</span><span class="nk"> &lt;lucijana&gt;</span> phisycal banners for entrance to the venue are 2 "flags".
+<a name="l-247"></a><span class="tm">16:52:06</span><span class="nk"> &lt;Svebor&gt;</span> anditosan, robjo, we cannot put the banner on the entrance ... only two flags were allowed.
+<a name="l-248"></a><span class="tm">16:52:12</span><span class="nk"> &lt;anditosan&gt;</span> ok
+<a name="l-249"></a><span class="tm">16:52:28</span><span class="nk"> &lt;Svebor&gt;</span> the inside of the venue, we can put banners there...
+<a name="l-250"></a><span class="tm">16:52:40</span><span class="nk"> &lt;anditosan&gt;</span> if Lucijana is working on those, then cool :D
+<a name="l-251"></a><span class="tm">16:52:44</span><span class="nk"> &lt;henne&gt;</span> we don't have to put up any banner if people don't sign up....
+<a name="l-252"></a><span class="tm">16:52:53</span><span class="nk"> &lt;lucijana&gt;</span> we ordered 4 rollup banners for inside. They are not yet designed.
+<a name="l-253"></a><span class="tm">16:53:13</span><span class="nk"> &lt;henne&gt;</span> you don't need to put up banners for 50 people...
+<a name="l-254"></a><span class="tm">16:53:25</span><span class="nk"> &lt;Svebor&gt;</span> henne, true.. we need virtual banners ..
+<a name="l-255"></a><span class="tm">16:53:46</span><span class="nk"> &lt;henne&gt;</span> yes. web banners, press kit and news.o.o articles
+<a name="l-256"></a><span class="tm">16:53:48</span><span class="nk"> &lt;Svebor&gt;</span> and we need to spread them around the web
+<a name="l-257"></a><span class="tm">16:54:00</span><span class="nk"> &lt;henne&gt;</span> so they get picked up by our usual press people
+<a name="l-258"></a><span class="tm">16:54:13</span><span class="nk"> &lt;anditosan&gt;</span> After I make the banners, can work on making twitter and FB and G+ ones
+<a name="l-259"></a><span class="tm">16:54:14</span><span class="nk"> &lt;henne&gt;</span> so can we focus on those please?
+<a name="l-260"></a><span class="tm">16:54:54</span><span class="nk"> &lt;Svebor&gt;</span> and not just news.o.o... other portals need to promote the conference... does anyone have any contacts in that area?
+<a name="l-261"></a><span class="tm">16:54:57</span><span class="nk"> &lt;henne&gt;</span> so anditosan makes web banners
+<a name="l-262"></a><span class="tm">16:55:02</span><span class="nk"> &lt;henne&gt;</span> who is going to do a press-kit?
+<a name="l-263"></a><span class="tm">16:55:23</span><span class="nk"> &lt;Svebor&gt;</span> opensource.com, muktware.com and the likes
+<a name="l-264"></a><span class="tm">16:55:35</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Svebor:</span> jospoortvliet has. it's his job
+<a name="l-265"></a><span class="tm">16:55:55</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">jospoortvliet:</span> can you work on the press kit and teach anditosan how to do this in the process?
+<a name="l-266"></a><span class="tm">16:56:06</span><span class="nk"> &lt;henne&gt;</span> anyway. we still need a press-kit so they get picked up by larger publications
+<a name="l-267"></a><span class="tm">16:56:07</span><span class="nk"> &lt;anditosan&gt;</span> <span class="hi">jospoortvliet:</span> that would be lovely
+<a name="l-268"></a><span class="tm">16:56:44</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> action for jos please
+<a name="l-269"></a><span class="tm">16:57:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> will do
+<a name="l-270"></a><span class="tm">16:57:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> :D
+<a name="l-271"></a><span class="tm">16:57:18</span><span class="nk"> &lt;henne&gt;</span> for both, news.o.o and press-kit
+<a name="l-272"></a><span class="tm">16:57:21</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">jospoortvliet create press kit and tutor anditosan in creating press kist</span>
+<a name="l-273"></a><span class="tm">16:57:21</span><span class="nk"> &lt;henne&gt;</span> ?
+<a name="l-274"></a><span class="tm">16:57:24</span><span class="nk"> &lt;Svebor&gt;</span> great!
+<a name="l-275"></a><span class="tm">16:57:35</span><span class="nk"> &lt;robjo&gt;</span> s/kist/kits/
+<a name="l-276"></a><span class="tm">16:58:10</span><span class="nk"> &lt;anditosan&gt;</span> also, we could make more announcements in different ways, change topics on IRC to mention that, request our members to feature social network conference artwork, etc
+<a name="l-277"></a><span class="tm">16:58:30</span><span class="nk"> &lt;henne&gt;</span> anditosan thats why you have to create artwork
+<a name="l-278"></a><span class="tm">16:58:54</span><span class="nk"> &lt;anditosan&gt;</span> henne, you be happy when I am done with those ;D
+<a name="l-279"></a><span class="tm">16:59:03</span><span class="nk"> &lt;warlordfff&gt;</span> yeap, that is why we need Banners...
+<a name="l-280"></a><span class="tm">16:59:21</span><span class="nk"> &lt;henne&gt;</span> so then we have banners, press kit
+<a name="l-281"></a><span class="tm">16:59:26</span><span class="nk"> &lt;henne&gt;</span> now we only need articles
+<a name="l-282"></a><span class="tm">16:59:38</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">specifically:</span> Location/Venue Sneak Peak
+<a name="l-283"></a><span class="tm">16:59:42</span><span class="nk"> &lt;anditosan&gt;</span> what i mean is having a more active approach to the promotion. Right now we make banners but it means little if we don't ask our members to feature those somewhere visible
+<a name="l-284"></a><span class="tm">17:00:18</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> once we have stuff we can put it into the press-kit, the articles, the web page
+<a name="l-285"></a><span class="tm">17:00:23</span><span class="nk"> &lt;anditosan&gt;</span> kk
+<a name="l-286"></a><span class="tm">17:00:51</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">anditosan:</span> yeah, make some nice stuff like badges saying "I'm going to oSC14" and we can do an article to get ppl to put it on their blogs etc
+<a name="l-287"></a><span class="tm">17:00:54</span><span class="nk"> &lt;jospoortvliet&gt;</span> that stuff is cool
+<a name="l-288"></a><span class="tm">17:00:57</span><span class="nk"> &lt;jospoortvliet&gt;</span> just make something awesome :D
+<a name="l-289"></a><span class="tm">17:01:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> and it will spread....
+<a name="l-290"></a><span class="tm">17:01:03</span><span class="nk"> &lt;henne&gt;</span> so who knows Dubrovnik &amp; the uni well enough to write a location/venue sneak peak?
+<a name="l-291"></a><span class="tm">17:01:11</span><span class="nk"> &lt;Svebor&gt;</span> TomoS, can you also get a few volunteers to shoot a few videos around and inside the venue, more pictures?
+<a name="l-292"></a><span class="tm">17:01:17</span><span class="nk"> &lt;Svebor&gt;</span> TomoS, does
+<a name="l-293"></a><span class="tm">17:02:12</span><span class="nk"> &lt;henne&gt;</span> okay, sounds like an action for him then :)
+<a name="l-294"></a><span class="tm">17:02:15</span><span class="nk"> &lt;Svebor&gt;</span> I guess TomoS can make guidelines for Jos e.g. to create an article?
+<a name="l-295"></a><span class="tm">17:02:25</span><span class="nk"> &lt;Svebor&gt;</span> artocle*s*
+<a name="l-296"></a><span class="tm">17:02:27</span><span class="nk"> &lt;TomoS&gt;</span> I can check with marketing and Media department if they have some video materials of the venue
+<a name="l-297"></a><span class="tm">17:02:29</span><span class="nk"> &lt;Svebor&gt;</span> *articles...
+<a name="l-298"></a><span class="tm">17:02:53</span><span class="nk"> &lt;henne&gt;</span> you can write a rough draft and send it to news@opensuse.org
+<a name="l-299"></a><span class="tm">17:03:14</span><span class="nk"> &lt;TomoS&gt;</span> OK
+<a name="l-300"></a><span class="tm">17:03:14</span><span class="nk"> &lt;henne&gt;</span> we'll then try to beef it up
+<a name="l-301"></a><span class="tm">17:03:25</span><span class="nk"> &lt;henne&gt;</span> okay who can write a program sneak peak?
+<a name="l-302"></a><span class="tm">17:03:37</span><span class="nk"> &lt;henne&gt;</span> someone from the paper team I guess
+<a name="l-303"></a><span class="tm">17:03:38</span><span class="nk"> &lt;warlordfff&gt;</span> and Just shoot some videos with your mobile if you have a decent camera
+<a name="l-304"></a><span class="tm">17:03:41</span><span class="nk"> &lt;anditosan&gt;</span> <span class="hi">henne:</span> I can edit
+<a name="l-305"></a><span class="tm">17:03:59</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> writing
+<a name="l-306"></a><span class="tm">17:04:37</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">TomoS write draft article about venue and Dubrovnic</span>
+<a name="l-307"></a><span class="tm">17:04:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> I can go over the talks and make a sneak peek...
+<a name="l-308"></a><span class="tm">17:04:44</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">jospoortvliet:</span> cool
+<a name="l-309"></a><span class="tm">17:05:04</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">jospoortvliet write sneak peak article about sessions</span>
+<a name="l-310"></a><span class="tm">17:05:37</span><span class="nk"> &lt;Svebor&gt;</span> do we have to define deadlines for these actions or we just agree to do them as soon as possible?
+<a name="l-311"></a><span class="tm">17:05:46</span><span class="nk"> &lt;henne&gt;</span> everything is ASAP :)
+<a name="l-312"></a><span class="tm">17:05:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> ASAP it is then :D
+<a name="l-313"></a><span class="tm">17:06:04</span><span class="nk"> &lt;Svebor&gt;</span> :-) great
+<a name="l-314"></a><span class="tm">17:06:50</span><span class="nk"> &lt;henne&gt;</span> okay, do we have a G+ / facbook event page?
+<a name="l-315"></a><span class="tm">17:06:58</span><span class="nk"> &lt;Svebor&gt;</span> yes
+<a name="l-316"></a><span class="tm">17:07:06</span><span class="nk"> &lt;warlordfff&gt;</span> who hanles that now?
+<a name="l-317"></a><span class="tm">17:07:15</span><span class="nk"> &lt;Svebor&gt;</span> https://www.facebook.com/events/581478758605508/
+<a name="l-318"></a><span class="tm">17:07:26</span><span class="nk"> &lt;Svebor&gt;</span> Stathis Iosifidis
+<a name="l-319"></a><span class="tm">17:07:52</span><span class="nk"> &lt;henne&gt;</span> what about G+?
+<a name="l-320"></a><span class="tm">17:07:53</span><span class="nk"> &lt;warlordfff&gt;</span> oh
+<a name="l-321"></a><span class="tm">17:08:07</span><span class="nk"> &lt;warlordfff&gt;</span> I think Stathis is all over it
+<a name="l-322"></a><span class="tm">17:08:14</span><span class="nk"> &lt;henne&gt;</span> https://plus.google.com/events/c8v2n62kf4dqqt2odqb1aub88fg
+<a name="l-323"></a><span class="tm">17:08:20</span><span class="nk"> &lt;Svebor&gt;</span> trying to find the link for g+
+<a name="l-324"></a><span class="tm">17:08:29</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">eiosifidis:</span> around?
+<a name="l-325"></a><span class="tm">17:08:30</span><span class="nk"> &lt;Svebor&gt;</span> yup
+<a name="l-326"></a><span class="tm">17:08:37</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-327"></a><span class="tm">17:08:45</span><span class="nk"> &lt;eiosifidis&gt;</span> Yes
+<a name="l-328"></a><span class="tm">17:09:03</span><span class="nk"> &lt;henne&gt;</span> another place to look out for are our forums
+<a name="l-329"></a><span class="tm">17:09:03</span><span class="nk"> &lt;warlordfff&gt;</span> talking about g+ and facebook dude
+<a name="l-330"></a><span class="tm">17:09:14</span><span class="nk"> &lt;henne&gt;</span> anyone taking care of that?
+<a name="l-331"></a><span class="tm">17:09:33</span><span class="nk"> &lt;eiosifidis&gt;</span> Yes, we have facebook, g+, lanyard
+<a name="l-332"></a><span class="tm">17:09:46</span><span class="nk"> &lt;eiosifidis&gt;</span> need the banners since I made some very fast
+<a name="l-333"></a><span class="tm">17:09:55</span><span class="nk"> &lt;eiosifidis&gt;</span> just to create the events
+<a name="l-334"></a><span class="tm">17:10:01</span><span class="nk"> &lt;anditosan&gt;</span> it still looks good eiosifidis
+<a name="l-335"></a><span class="tm">17:10:07</span><span class="nk"> &lt;anditosan&gt;</span> I wouldn't change them
+<a name="l-336"></a><span class="tm">17:10:18</span><span class="nk"> &lt;eiosifidis&gt;</span> thanks anditosan
+<a name="l-337"></a><span class="tm">17:10:31</span><span class="nk"> &lt;Svebor&gt;</span> henne, I don't know about the forums
+<a name="l-338"></a><span class="tm">17:10:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> https://news.opensuse.org/2014/03/05/osc14-keynote-confirmed-more-awesome-coming/ -&gt; out
+<a name="l-339"></a><span class="tm">17:11:49</span><span class="nk"> &lt;Svebor&gt;</span> henne, any experiences with how to keep an eye on the forums? or did you think we promote the event there?
+<a name="l-340"></a><span class="tm">17:11:50</span><span class="nk"> &lt;henne&gt;</span> okay who can take care of promoting the event to our forums?
+<a name="l-341"></a><span class="tm">17:12:47</span><span class="nk"> &lt;henne&gt;</span> okay. I can try
+<a name="l-342"></a><span class="tm">17:12:48</span><span class="nk"> &lt;Ada_Lovelace&gt;</span> I'm there every day.
+<a name="l-343"></a><span class="tm">17:12:51</span><span class="nk"> &lt;henne&gt;</span> ah
+<a name="l-344"></a><span class="tm">17:13:02</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">henne:</span> you can send the logo to Kim Groneman and he'll do the rest ;)
+<a name="l-345"></a><span class="tm">17:13:31</span><span class="nk"> &lt;eiosifidis&gt;</span> forums has a little box taking rss from the news. But as robjo need a banner there.
+<a name="l-346"></a><span class="tm">17:13:32</span><span class="nk"> &lt;henne&gt;</span> Ada_Lovelace cool. please can you take care about adding what happens to come out here
+<a name="l-347"></a><span class="tm">17:13:33</span><span class="nk"> &lt;Svebor&gt;</span> yes, why not put a banner on the forums?
+<a name="l-348"></a><span class="tm">17:13:35</span><span class="nk"> &lt;henne&gt;</span> https://news.opensuse.org/category/project/events/osc/
+<a name="l-349"></a><span class="tm">17:13:36</span><span class="nk"> &lt;henne&gt;</span> as forum posts
+<a name="l-350"></a><span class="tm">17:13:51</span><span class="nk"> &lt;henne&gt;</span> we need banners first. then we can do the rest :)
+<a name="l-351"></a><span class="tm">17:14:23</span><span class="nk"> &lt;anditosan&gt;</span> <span class="hi">henne:</span> no need to remind me... lol
+<a name="l-352"></a><span class="tm">17:14:34</span><span class="nk"> &lt;Svebor&gt;</span> :-)
+<a name="l-353"></a><span class="tm">17:15:08</span><span class="nk"> &lt;henne&gt;</span> Another article to write is about the sponsors
+<a name="l-354"></a><span class="tm">17:15:15</span><span class="nk"> &lt;henne&gt;</span> anyone knows the status there?
+<a name="l-355"></a><span class="tm">17:15:18</span><span class="nk"> &lt;henne&gt;</span> where is it tracked?
+<a name="l-356"></a><span class="tm">17:15:26</span><span class="nk"> &lt;Svebor&gt;</span> also, might be good to put a banner on opensuse.org somewhere
+<a name="l-357"></a><span class="tm">17:15:41</span><span class="nk"> &lt;henne&gt;</span> there is a card about it
+<a name="l-358"></a><span class="tm">17:15:47</span><span class="nk"> &lt;Ada_Lovelace&gt;</span> <span class="hi">henne:</span> Yes. But you want to do that all into the forums.
+<a name="l-359"></a><span class="tm">17:16:04</span><span class="nk"> &lt;Svebor&gt;</span> sponsors are Oracle and Arm so far
+<a name="l-360"></a><span class="tm">17:16:42</span><span class="nk"> &lt;henne&gt;</span> any more in the pipeline?
+<a name="l-361"></a><span class="tm">17:16:46</span><span class="nk"> &lt;henne&gt;</span> what about media partners?
+<a name="l-362"></a><span class="tm">17:16:50</span><span class="nk"> &lt;henne&gt;</span> jospoortvliet?
+<a name="l-363"></a><span class="tm">17:18:20</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Svebor:</span> where do we track potential sponsors?
+<a name="l-364"></a><span class="tm">17:18:41</span><span class="nk"> &lt;Svebor&gt;</span> Two Croatian media partners interested for now, a few more have been contacted, I will ping them.
+<a name="l-365"></a><span class="tm">17:19:04</span><span class="nk"> &lt;Svebor&gt;</span> Izabel tracks herself, we don't have a trello task
+<a name="l-366"></a><span class="tm">17:19:08</span><span class="nk"> &lt;henne&gt;</span> hm okay
+<a name="l-367"></a><span class="tm">17:19:24</span><span class="nk"> &lt;henne&gt;</span> we should
+<a name="l-368"></a><span class="tm">17:19:25</span><span class="nk"> &lt;Svebor&gt;</span> we can ask her to add to trello
+<a name="l-369"></a><span class="tm">17:19:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Svebor:</span> I can contact some international press
+<a name="l-370"></a><span class="tm">17:19:54</span><span class="nk"> &lt;Svebor&gt;</span> jospoortvliet, great, adding you to the trello card
+<a name="l-371"></a><span class="tm">17:20:07</span><span class="nk"> &lt;henne&gt;</span> ok
+<a name="l-372"></a><span class="tm">17:21:12</span><span class="nk"> &lt;henne&gt;</span> who is going to ask izabel?
+<a name="l-373"></a><span class="tm">17:21:34</span><span class="nk"> &lt;Svebor&gt;</span> I'll do it
+<a name="l-374"></a><span class="tm">17:21:36</span><span class="nk"> &lt;henne&gt;</span> ok
+<a name="l-375"></a><span class="tm">17:22:01</span><span class="nk"> &lt;henne&gt;</span> that leaves us with Program tasks
+<a name="l-376"></a><span class="tm">17:22:23</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> action please
+<a name="l-377"></a><span class="tm">17:22:41</span><span class="nk"> &lt;henne&gt;</span> what about LPI exams?
+<a name="l-378"></a><span class="tm">17:22:49</span><span class="nk"> &lt;robjo&gt;</span> sorry, distracted, what action?
+<a name="l-379"></a><span class="tm">17:23:09</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> jos to ask internation press for media partnership
+<a name="l-380"></a><span class="tm">17:23:26</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> Svebor to get izabel to track sponsors on trello
+<a name="l-381"></a><span class="tm">17:23:46</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">jospoortvliet ping international press for media partnership for oSC</span>
+<a name="l-382"></a><span class="tm">17:23:59</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Svebor:</span> you have added some Ivan to the card. What does that mean?
+<a name="l-383"></a><span class="tm">17:24:04</span><span class="nk"> &lt;Svebor&gt;</span> henne, Ivan was supposed to handle the LPI among other things
+<a name="l-384"></a><span class="tm">17:24:06</span><span class="nk"> &lt;differentreality&gt;</span> trello task for LPI https://trello.com/c/Zg20YQiW/78-lpi-exams Svebor added Ivan, but I havent seen Ivan around for quite some time
+<a name="l-385"></a><span class="tm">17:24:13</span><span class="nk"> &lt;henne&gt;</span> k
+<a name="l-386"></a><span class="tm">17:24:18</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">Svebor follow up with Izabel to track sponsors on trello</span>
+<a name="l-387"></a><span class="tm">17:24:29</span><span class="nk"> &lt;henne&gt;</span> so who can track Ivan down? :)
+<a name="l-388"></a><span class="tm">17:25:22</span><span class="nk"> &lt;Svebor&gt;</span> I will call him after the IRC meeting. I have pinged him several times in different ways on various tasks... did he contact the rest of CfP team ever?
+<a name="l-389"></a><span class="tm">17:26:05</span><span class="nk"> &lt;henne&gt;</span> not on cfp@
+<a name="l-390"></a><span class="tm">17:26:06</span><span class="nk"> &lt;differentreality&gt;</span> nop (except for when he signed up in cfp@ after several pings from you)
+<a name="l-391"></a><span class="tm">17:26:17</span><span class="nk"> &lt;Svebor&gt;</span> sigh
+<a name="l-392"></a><span class="tm">17:26:36</span><span class="nk"> &lt;Svebor&gt;</span> ok, we will have a talk..
+<a name="l-393"></a><span class="tm">17:26:38</span><span class="nk"> &lt;differentreality&gt;</span> he isn't taking any participation at all in the proposal selection / scheduling/ etc
+<a name="l-394"></a><span class="tm">17:27:15</span><span class="nk"> &lt;Svebor&gt;</span> there's no use having him there if he will not start working... I will talk to him...
+<a name="l-395"></a><span class="tm">17:27:40</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> action for Svebor to beat up Ivan
+<a name="l-396"></a><span class="tm">17:27:47</span><span class="nk"> &lt;anditosan&gt;</span> literally
+<a name="l-397"></a><span class="tm">17:27:52</span><span class="nk"> &lt;henne&gt;</span> 8)
+<a name="l-398"></a><span class="tm">17:27:54</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">Svebor track down Ivan</span>
+<a name="l-399"></a><span class="tm">17:28:05</span><span class="nk"> &lt;Svebor&gt;</span> thanks! :-)
+<a name="l-400"></a><span class="tm">17:28:15</span><span class="nk"> &lt;henne&gt;</span> alright the last big question from me about Program are the keynotes
+<a name="l-401"></a><span class="tm">17:28:24</span><span class="nk"> &lt;henne&gt;</span> we have the board on friday
+<a name="l-402"></a><span class="tm">17:28:29</span><span class="nk"> &lt;henne&gt;</span> michal on saturday
+<a name="l-403"></a><span class="tm">17:28:35</span><span class="nk"> &lt;henne&gt;</span> and that's it right?
+<a name="l-404"></a><span class="tm">17:28:40</span><span class="nk"> &lt;henne&gt;</span> no other keynotes
+<a name="l-405"></a><span class="tm">17:29:00</span><span class="nk"> &lt;differentreality&gt;</span> yes
+<a name="l-406"></a><span class="tm">17:29:00</span><span class="nk"> &lt;robjo&gt;</span> I posted a question on trello about the Sunday keynote
+<a name="l-407"></a><span class="tm">17:29:26</span><span class="nk"> &lt;robjo&gt;</span> shall we offer the slot to SUSE or find someone else?
+<a name="l-408"></a><span class="tm">17:29:49</span><span class="nk"> &lt;robjo&gt;</span> We'll need to find someone who is going already, no more travel $ for an additional external keynote speaker
+<a name="l-409"></a><span class="tm">17:29:59</span><span class="nk"> &lt;henne&gt;</span> do we have a party on Saturday?
+<a name="l-410"></a><span class="tm">17:30:02</span><span class="nk"> &lt;anditosan&gt;</span> can it be anyone?
+<a name="l-411"></a><span class="tm">17:30:31</span><span class="nk"> &lt;robjo&gt;</span> yes the bbq party is saturday, I think, Svebor?
+<a name="l-412"></a><span class="tm">17:30:32</span><span class="nk"> &lt;Svebor&gt;</span> vuntz_ signed the invitation letter to Ricardo Bimbo that I sent, any info on that?
+<a name="l-413"></a><span class="tm">17:31:03</span><span class="nk"> &lt;Svebor&gt;</span> no, we tried to move it but it wasn't possible, the venue was booked already.. it's on sunday
+<a name="l-414"></a><span class="tm">17:31:05</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">anditosan:</span> well, it cannot be anyone, it has to be someone that is a good speaker
+<a name="l-415"></a><span class="tm">17:31:36</span><span class="nk"> &lt;robjo&gt;</span> OK that's fine, sponsor party is on Sunday
+<a name="l-416"></a><span class="tm">17:32:48</span><span class="nk"> &lt;anditosan&gt;</span> I have done public speaking before in front of large audiences, that's what I mean by anyone lol
+<a name="l-417"></a><span class="tm">17:33:08</span><span class="nk"> &lt;henne&gt;</span> alright so we need to find a keynote speaker for sunday
+<a name="l-418"></a><span class="tm">17:33:10</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">henne:</span> I think I know your concern, which is out of the way with the party being SUnday
+<a name="l-419"></a><span class="tm">17:33:29</span><span class="nk"> &lt;robjo&gt;</span> you favor to offer it to SUSE then?
+<a name="l-420"></a><span class="tm">17:33:33</span><span class="nk"> &lt;henne&gt;</span> yes offer it
+<a name="l-421"></a><span class="tm">17:33:52</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">robjo sent offer for keynote slot to SUSE</span>
+<a name="l-422"></a><span class="tm">17:34:53</span><span class="nk"> &lt;henne&gt;</span> okay do we have an idea how the business track goes?
+<a name="l-423"></a><span class="tm">17:35:20</span><span class="nk"> &lt;differentreality&gt;</span> I havent marked anything as business track so far - which doesn't mean that there is no material for business track
+<a name="l-424"></a><span class="tm">17:35:27</span><span class="nk"> &lt;robjo&gt;</span> there are no submissions to OSEM that I would classify as Business track
+<a name="l-425"></a><span class="tm">17:35:39</span><span class="nk"> &lt;robjo&gt;</span> thus it looks like that's falling out
+<a name="l-426"></a><span class="tm">17:36:06</span><span class="nk"> &lt;henne&gt;</span> k
+<a name="l-427"></a><span class="tm">17:36:18</span><span class="nk"> &lt;henne&gt;</span> maybe we should get SUSE to promote it
+<a name="l-428"></a><span class="tm">17:36:21</span><span class="nk"> &lt;henne&gt;</span> I can try that
+<a name="l-429"></a><span class="tm">17:36:28</span><span class="nk"> &lt;robjo&gt;</span> Do we have a way in OSEM yet that allows me to enter the Saturday keynote and have it assigned to Michael Meeks without my name showing up?
+<a name="l-430"></a><span class="tm">17:36:31</span><span class="nk"> &lt;differentreality&gt;</span> oracle has sent a couple that could fit into business track
+<a name="l-431"></a><span class="tm">17:36:37</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> no
+<a name="l-432"></a><span class="tm">17:36:51</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> I can do it manually
+<a name="l-433"></a><span class="tm">17:37:00</span><span class="nk"> &lt;Svebor&gt;</span> henne, getting suse to promote it sounds like it might work
+<a name="l-434"></a><span class="tm">17:37:18</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">henne manually enter keynote place holder assigned to Michael Meeks for Saturday</span>
+<a name="l-435"></a><span class="tm">17:37:31</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> why can't he submit it?
+<a name="l-436"></a><span class="tm">17:38:24</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> action for me please. get SUSE to promote the business track
+<a name="l-437"></a><span class="tm">17:38:28</span><span class="nk"> &lt;robjo&gt;</span> I'll ask Michael, but it is a general issue, we need this functionality
+<a name="l-438"></a><span class="tm">17:38:46</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">henne get SUSE to promot business track at oSC</span>
+<a name="l-439"></a><span class="tm">17:40:19</span><span class="nk"> &lt;henne&gt;</span> alright. anything else regarding the program?
+<a name="l-440"></a><span class="tm">17:41:02</span><span class="nk"> &lt;henne&gt;</span> ah yes. the android app
+<a name="l-441"></a><span class="tm">17:41:10</span><span class="nk"> &lt;henne&gt;</span> we don't have anyone taking care of it
+<a name="l-442"></a><span class="tm">17:41:22</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">zoumpis:</span> can you?
+<a name="l-443"></a><span class="tm">17:42:18</span><span class="nk"> &lt;henne&gt;</span> okay I guess that's a no.
+<a name="l-444"></a><span class="tm">17:42:21</span><span class="nk"> &lt;henne&gt;</span> let's move on
+<a name="l-445"></a><span class="tm">17:42:54</span><span class="nk"> &lt;anditosan&gt;</span> kk
+<a name="l-446"></a><span class="tm">17:42:55</span><span class="nk"> &lt;henne&gt;</span> is there something to move on to?
+<a name="l-447"></a><span class="tm">17:43:18</span><span class="nk"> &lt;henne&gt;</span> when is the next meeting?
+<a name="l-448"></a><span class="tm">17:43:25</span><span class="nk"> &lt;henne&gt;</span> I would propose we do this weekly now
+<a name="l-449"></a><span class="tm">17:43:27</span><span class="nk"> &lt;anditosan&gt;</span> questions, concerns, miscellaneous?
+<a name="l-450"></a><span class="tm">17:44:08</span><span class="nk"> &lt;henne&gt;</span> hello?
+<a name="l-451"></a><span class="tm">17:44:11</span><span class="nk"> &lt;Svebor&gt;</span> henne, yes, I agree weekly meetings should go from now on
+<a name="l-452"></a><span class="tm">17:44:15</span><span class="nk"> &lt;zoumpis&gt;</span> henna : no I can't :( . That's why I didn't do anything concerning the App this year
+<a name="l-453"></a><span class="tm">17:44:18</span><span class="nk"> &lt;zoumpis&gt;</span> henne:
+<a name="l-454"></a><span class="tm">17:44:18</span><span class="nk"> &lt;Svebor&gt;</span> or even more often if needed
+<a name="l-455"></a><span class="tm">17:44:26</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">zoumpis:</span> ok
+<a name="l-456"></a><span class="tm">17:44:42</span><span class="nk"> &lt;Svebor&gt;</span> we coul do the next meeting next week same time?
+<a name="l-457"></a><span class="tm">17:45:09</span><span class="nk"> &lt;Svebor&gt;</span> Wednesday, 12.3. 16:00 UTC?
+<a name="l-458"></a><span class="tm">17:45:20</span><span class="nk"> &lt;henne&gt;</span> sounds good to me
+<a name="l-459"></a><span class="tm">17:45:28</span><span class="nk"> &lt;anditosan&gt;</span> +1
+<a name="l-460"></a><span class="tm">17:45:38</span><span class="nk"> &lt;henne&gt;</span> always wednesdays at 16:00
+<a name="l-461"></a><span class="tm">17:45:48</span><span class="nk"> &lt;Svebor&gt;</span> yep, every Wednesday from now on
+<a name="l-462"></a><span class="tm">17:45:53</span><span class="nk"> &lt;TomoS&gt;</span> +1
+<a name="l-463"></a><span class="tm">17:46:04</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">jospoortvliet edit openSUSE calendar and post weekly oSC meetings for the next 6 weeks, same time, same place</span>
+<a name="l-464"></a><span class="tm">17:46:37</span><span class="nk"> &lt;robjo&gt;</span> note there is a time change during the next 6 weeks
+<a name="l-465"></a><span class="tm">17:46:47</span><span class="nk"> &lt;robjo&gt;</span> in the US we change to summer time this weekend
+<a name="l-466"></a><span class="tm">17:47:01</span><span class="nk"> &lt;robjo&gt;</span> anything else?
+<a name="l-467"></a><span class="tm">17:47:08</span><span class="nk"> &lt;Svebor&gt;</span> great, do we need to talk anything else, or we just get to work now?
+<a name="l-468"></a><span class="tm">17:47:24</span><span class="nk"> &lt;robjo&gt;</span> get to work ;) and hurry ;)
+<a name="l-469"></a><span class="tm">17:47:27</span><span class="nk"> &lt;anditosan&gt;</span> I really need dimensions for tangible banners
+<a name="l-470"></a><span class="tm">17:47:34</span><span class="nk"> &lt;anditosan&gt;</span> just a note
+<a name="l-471"></a><span class="tm">17:47:41</span><span class="nk"> &lt;Svebor&gt;</span> anditosan, could this be a reference? http://www.simplygraphix.com/banners_sizes.html
+<a name="l-472"></a><span class="tm">17:47:48</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">henne:</span> is the web expert
+<a name="l-473"></a><span class="tm">17:48:05</span><span class="nk"> &lt;anditosan&gt;</span> not for web banners, for the physical ones at the venue
+<a name="l-474"></a><span class="tm">17:48:37</span><span class="nk"> &lt;Svebor&gt;</span> oh, that ...
+<a name="l-475"></a><span class="tm">17:48:39</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">anditosan:</span> web banners first.... I thought we agreed on that ;)
+<a name="l-476"></a><span class="tm">17:48:57</span><span class="nk"> &lt;robjo&gt;</span> OK, I think we are really done
+<a name="l-477"></a><span class="tm">17:49:02</span><span class="nk"> &lt;anditosan&gt;</span> that only delays the flow of my work. But have it as you may...
+<a name="l-478"></a><span class="tm">17:49:02</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

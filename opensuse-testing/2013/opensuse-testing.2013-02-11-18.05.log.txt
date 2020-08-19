@@ -1,0 +1,219 @@
+18:05:39 <Holgi> #startmeeting
+18:05:39 <bugbot> Meeting started Mon Feb 11 18:05:39 2013 UTC.  The chair is Holgi. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:05:39 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:05:46 * wstephenson was pushed ;)
+18:06:08 <LWFinger> Whatever it takes!!
+18:06:09 <Holgi> #topic 12.3 RC1 testing
+18:06:31 <Holgi> I installed RC1 on my test machine and the work station
+18:06:51 <Holgi> problem I had was that netwaork installation was not working for me#
+18:07:03 <Holgi> and I was not able to compile the nvidia drivers
+18:07:48 <Holgi> I wanted to double check if the network installation is the same as in SLES 11 SP3 where NFS installation is not working
+18:07:57 <Holgi> but did not havae the time for it so far
+18:08:12 <Holgi> any other RC1 reports ?
+18:08:14 <LWFinger> Was that due to the lack of network, or the nvidia not building under kernel 3.7?
+18:08:32 <Holgi> network issue was different from nvidia
+18:08:47 <Holgi> system hangs when fetching DHCP information#
+18:08:50 <wstephenson> Holgi: i spent 2 days last week testing RC1, mainly install and upgrade
+18:09:14 <wstephenson> Holgi: background is, Agustin asked me to do QA on 12.3 until release
+18:09:21 <Holgi> bille: did you install with install=nfs://xx.xx.xx.xx/... ?
+18:09:40 <wstephenson> the aim is to avoid reproducible failure like the Apper situation in 12.2
+18:10:03 <wstephenson> Holgi: nope, i was using usb media
+18:10:04 <Holgi> bille: glad to hear - welcome to the testing team! :-)
+18:10:24 <wstephenson> so i tested 12.1 and 12.2 upgrade, vanilla, +KDE 4.9
+18:10:31 <wstephenson> straight install
+18:10:33 <wstephenson> NET install
+18:10:40 <wstephenson> Live CD boot and install, kde and gnome
+18:10:57 <wstephenson> then a few hardware things that openQA can't test
+18:11:17 <wstephenson> wifi, fingerprint, webcam, tablet, bluetooth, sound
+18:11:24 <Holgi> ok, sounds you were quite busy then
+18:11:40 <Holgi> are there any issues you found that are worth to be reported here?
+18:11:42 <wstephenson> well, when you have the whole work day to throw at it
+18:11:53 <wstephenson> netconfig is totally hosed
+18:11:59 <wstephenson> as you mentioned, dhcp hangs
+18:12:06 <wstephenson> resolv.conf not getting written
+18:12:11 <wstephenson> default route not set
+18:12:27 <wstephenson> ntp hanging during boot, on an upgraded system
+18:12:48 <Holgi> bille: is there a fix in place already for the netconfig stuff?
+18:14:06 <wstephenson> no :(
+18:14:12 <Holgi> too bad
+18:14:14 <wstephenson> it's all in the most annoying bugs page i set up
+18:14:23 <Holgi> yes, I saw this
+18:14:29 <LWFinger> Me too.
+18:14:33 <wstephenson> hopefully werner and reinhard will be joining us as of today to fix stuff
+18:15:01 <wstephenson> other things, virtualbox needs an upgrade to boot rc1
+18:15:23 <wstephenson> and there are still too many apper bugs around EULA and ordering of notifications during updates
+18:15:30 <LWFinger> What VB? I did not see that.
+18:15:42 <wstephenson> 12.2 VB
+18:15:47 <Holgi> ok, any plans to have a 2nd RC then if we have so much issues in RC1?
+18:16:25 <Holgi> or what ever we call it (if not RC)?!
+18:16:29 <wstephenson> Holgi: 28 Feb
+18:16:37 <LWFinger> I'm running VB 4.2.6 downloaded from Oracle - seems OK.
+18:17:03 <wstephenson> also kde crashes on login if a given applet is added - that's a stinker
+18:17:05 <wstephenson> anyway
+18:17:21 <wstephenson> i wanted to ask you guys professional opinion how to setup a QA plan
+18:17:28 <wstephenson> apart from random self-interested testing
+18:17:57 <wstephenson> i asked SUSE for official help, but enterprise stuff has the team fully loaded
+18:18:03 <wstephenson> so i'm asking on the down low.
+18:18:42 <Holgi> bille: my problem is SP3 :-/
+18:18:54 <LWFinger> As I try to carry on local work during release testing, I concentrate on the self-interest.
+18:19:00 <wstephenson> that's the boyo ;)
+18:19:41 <wstephenson> here's my sketch:
+18:19:58 <Holgi> is your focus on tests or exit criteria?
+18:20:03 <wstephenson> http://paste.opensuse.org/48354601
+18:20:32 <wstephenson> Holgi: i am not well informed about formal testing methods
+18:20:57 <wstephenson> my aim is to reduce the number of critical defects that escape to GM
+18:21:08 <wstephenson> whatever you'd call that ;)
+18:21:30 <wstephenson> so how does this team do it?
+18:21:35 <LWFinger> Do you read the Beta forum?
+18:21:45 <Holgi> ok, if it is about man-power: I would suggest to ask for help of trainees
+18:21:51 <wstephenson> i've been reading the 12.3 comments forum, same thing?
+18:22:03 <wstephenson> LWFinger: ? https://forums.opensuse.org/english/get-technical-help-here/pre-release-beta/483056-12-3rc1-comment-thread-3.html
+18:22:24 <LWFinger> Yes, that is the one.
+18:22:26 <Holgi> trainees = Azubis
+18:22:40 <wstephenson> Holgi: also about a test plan to use whatever resources i can find in house and in the community effectively
+18:23:11 <wstephenson> so far i've just been asking opensuse team members with different hardware (intel, nvidia, amd, uefi, etc) to test things out
+18:23:16 <Holgi> in past time we focused on: installation & update testing
+18:23:21 <Holgi> feature testing
+18:23:32 <Holgi> running our automated test suites
+18:23:35 <wstephenson> Holgi: more structured version of that paste that only you can read: https://wiki.innerweb.novell.com/index.php/OpenSUSE_123_QA_Plan
+18:23:48 <wstephenson> same info, just with bullets.
+18:24:31 <Holgi> if we had more time/resources we had a bunch of manual test cases, but I guess most of theme are outdated today
+18:24:47 <wstephenson> if you have the list, i can probably update them to their equivalents
+18:25:33 <LWFinger> I do relatively complete wifi testing. If you have any other specific tasks you want tested, let me know.
+18:25:34 <Holgi> I need to look in testopia, can you send me a reminder via e-mail please, I will check tomorrow
+18:26:32 <LWFinger> Want my experiences?
+18:26:43 <wstephenson> LWFinger: great. i am not sure i have time to get my wrt54g up and running again
+18:26:56 <wstephenson> LWFinger: briefly - i guess real problems are reported?
+18:28:15 <LWFinger> I ran into th rtkit bug with a zypper dup from 12.3 Beta1. Aborted upgrade and recovered Bug 80525
+18:28:45 <wstephenson> missing digit?
+18:29:01 <LWFinger> Grub2 install missed a Fedora 17 installation - known problem, not sure of bug #
+18:29:17 <LWFinger> 802525.
+18:29:38 <wstephenson> LWFinger: multiple boots another area worth investigating
+18:29:58 <wstephenson> i got a second drive for my laptop and grub2's detection of other systems is patchy
+18:30:08 <wstephenson> esp on firstboot. not sure if there is a special mode there
+18:30:43 <LWFinger> Machine 2: uninstalled rtkit and upgrade from 12.3 beta1 to rc1 was OK. No non-openSUSE systems there, grub2 OK.
+18:31:26 <wstephenson> we also tested windows shrink and dualboot, no problems there
+18:31:33 <LWFinger> I use special /etc/resolv.conf as my ISP has lousy servers. That was overwritten.
+18:31:50 <wstephenson> hmph. most of the time nothing gets overwritten, even when supposed to :(
+18:32:00 <LWFinger> The new one was also wrong.
+18:32:24 <wstephenson> we have a real dark zone around anything bigger than a laptop though
+18:32:36 <LWFinger> Perhaps due to bug #800365.
+18:32:55 <LWFinger> What dark zone?
+18:33:02 <wstephenson> LWFinger: lack of test coverage.
+18:33:16 <Holgi> we should for sure have an eye on the network stuff - that part really need to work in GM
+18:33:25 <wstephenson> LWFinger: i'm not testing on servers, raid or lvm yet
+18:33:33 <wstephenson> and only did basic crypted fs testing
+18:33:43 <Holgi> otherwise we will get a lot of bad credits and people might not be able to install updates as well
+18:33:55 <wstephenson> it's cynical, but i'm testing on the kind of hardware reviewers will use :P
+18:34:22 <wstephenson> Holgi: yeah, nothing is shipping with this netconfig problem as it stands
+18:34:31 <LWFinger> Yes, GM has to work for noobs.
+18:35:13 <wstephenson> i've also found a few visual bugs around the new kde theme and colour palettes
+18:35:30 <wstephenson> since i expect ppl to try us out due to those
+18:36:01 <wstephenson> Holgi: any specialised strategies to split testing among team members?
+18:36:21 <wstephenson> assuming a set of equally motivated and flexible volunteers...
+18:36:21 <poorboywilly> KDE 4.10 corrected the worst theme problem
+18:36:21 <Holgi> what team members? the three of us?
+18:36:33 <poorboywilly> the checkbox in networkmanager
+18:36:46 <wstephenson> well, say i get 10 half days from other opensuse team members between now and RC2
+18:36:55 <wstephenson> poorboywilly: bug#?
+18:37:04 <wstephenson> networkmanager is full of checkboxes.
+18:37:16 <poorboywilly> the plasmoid checkboxes
+18:37:27 <Holgi> if we are able to come up with a test plan, then everybody can just "select" his tests
+18:38:34 <wstephenson> poorboywilly: not reflecting actual NM state/hardware state?
+18:38:41 <LWFinger> The closest thing I have to a server is off limits for testing. I'm limited to laptop mode.
+18:38:53 <wstephenson> poorboywilly: or were they not themed properly?
+18:39:24 <poorboywilly> wstephenson: the "enable networking" and "enable wifi" checkboxes, there was a bug of some sort in plasma where it wasn't using the proper theme colors
+18:39:44 <poorboywilly> now it is using the plasma theme colors
+18:39:52 <poorboywilly> they always showed correct state, it was just almost impossible to read
+18:39:52 <wstephenson> poorboywilly: ah ok. the problems i am finding are black text on dark dark grey backgrounds
+18:40:28 <poorboywilly> wstephenson: can you say what areas off the top of your head?  I've been digging around a lot in plasma for a few of these theme problems
+18:40:41 <wstephenson> poorboywilly: not just plasma but apps
+18:40:59 <wstephenson> if they don't use KColorScheme, but QPalette directly, they don't theme properly
+18:41:10 <wstephenson> poorboywilly: do you know CheckColorRoles?
+18:41:55 <wstephenson> http://kde-look.org/content/show.php?action=content&content=90034
+18:42:13 <poorboywilly> wstephenson: I do not, but I am looking at it now
+18:43:11 <wstephenson> it makes your desktop look like a cocktail party in 1978, but it works.
+18:43:36 <LWFinger> What do you do with that file?
+18:43:46 <wstephenson> LWFinger: import it in kde's colour config module
+18:44:12 <wstephenson> LWFinger: then screenshot any cases where text and background do not match
+18:44:20 <wstephenson> eg lightgreen/darkgreen,
+18:44:28 <wstephenson> blue, yellow, purple etc
+18:44:36 <wstephenson> sorry, that's not very clear
+18:44:47 <wstephenson> dark green text on light green background is correct
+18:45:07 <wstephenson> dark purple on yellow signals a programming error
+18:45:13 <wstephenson> (for example)
+18:45:25 <wstephenson> think of it as being like dentist's disclosing mouthwash.
+18:45:30 <poorboywilly> or if there is white or black text, then something is hard-coded?
+18:46:04 <wstephenson> poorboywilly: yup
+18:47:37 <wstephenson> any feedback on the partial plan i posted?
+18:47:57 <wstephenson> i need to move on to reading bedtime stories shortly.
+18:48:01 <Holgi> you mean: https://wiki.innerweb.novell.com/index.php/OpenSUSE_123_QA_Plan ?
+18:48:07 <poorboywilly> wstephenson: is it that paste with 29 things?
+18:48:13 <wstephenson> yes and yes
+18:48:41 <Holgi> it's a long list and not everything is clear to me
+18:49:06 <Holgi> maybe we should spend some time tomorrow face2face
+18:49:41 <wstephenson> Holgi: whenever you like :)
+18:50:00 <Holgi> after yoga
+18:50:17 <wstephenson> that's until 1300?
+18:50:25 <wstephenson> i know i should have registered for that course
+18:50:27 <Holgi> ~13:30
+18:52:12 <poorboywilly> no. 17 is hilarious is about all the feedback I can present :)
+18:52:56 <Holgi> bille: is topic 1.1 already covered or should I call it now?
+18:54:13 <wstephenson> Holgicalled
+18:54:18 <wstephenson> Holgi: call it
+18:54:31 <Holgi> #topic Presenting myself as an extra testing resource (Will Stephenson)
+18:54:56 <Holgi> ok bille, go ahead
+18:55:16 <wstephenson> Holgi: ah, i thought was already in that topic
+18:55:19 <wstephenson> ok, for the records:
+18:55:34 <wstephenson> opensuse team wants 12.3 to be A Good Release
+18:55:54 <wstephenson> 7.2, 11.3, 9.1, whatever your cherished past release was.
+18:56:12 <wstephenson> so i'll be doing QA on it full time until it's released
+18:56:37 <wstephenson> i'm a developer not a professional QA, but i'll do my best
+18:56:56 <Holgi> as I said before: that's good news
+18:57:07 <wstephenson> next topic
+18:57:13 <poorboywilly> hear hear
+18:57:20 <Holgi> #topic Next Meeting
+18:57:25 <poorboywilly> (to the good news part)
+18:57:37 <Holgi> according to the schedule, RC2 is on Feb, 28th
+18:57:59 <Holgi> so have the next meeting on Mar 4th?
+18:58:35 <Holgi> any opinions?
+18:58:57 <poorboywilly> sounds reasonable
+18:59:01 <Holgi> any objections?
+18:59:05 <wstephenson> if you're not having more frequent meetings during the release laready, would that be a possibility?
+18:59:13 <wstephenson> to keep the tempo up?
+18:59:36 <Holgi> I'm open if there is anything to discuss
+18:59:38 <wstephenson> that's dependent on drumming up more testers, or we'll all be exhausted
+18:59:45 <LWFinger> I got some new updates today. Will they be continuing?
+19:00:01 <Holgi> problem in times like this is the long time without a new build
+19:00:14 <wstephenson> so is the usual format of testing meetings to present problems as we have been doing today?
+19:00:56 <Holgi> there is not usual meeting, meetings are happening like participants contribute
+19:01:09 <wstephenson> ok
+19:01:27 <Holgi> you are a member now and can "steer" the meeting
+19:01:52 <wstephenson> atm i'm an enthusiastic amateur with a lot of time
+19:02:04 <LWFinger> If we met in 1 week, what would that accomplish?
+19:02:08 <wstephenson> i'd like to learn from your experience
+19:02:17 <Holgi> nobody had to prove that he is a real QA guy here
+19:02:35 <wstephenson> not sure, that's why i'm asking how things usually work around here
+19:02:41 <wstephenson> LWFinger: one thing it might do
+19:03:00 <Holgi> my guess is: members are open if it makes sense
+19:03:02 <wstephenson> is if i get a bunch more enthusiastic amateurs, is to point them at the test plan, answer any worries, get them on the right track.
+19:03:09 <Holgi> if you can convince us to meet earlier
+19:03:12 <Holgi> no problem
+19:03:15 <wstephenson> ok
+19:03:21 <poorboywilly> yes I don't recall ever claiming I'm providing any useful service here personally :)
+19:03:32 <wstephenson> you're just here for the tea and biscuits? ;)
+19:03:48 <LWFinger> Virtual, at that.
+19:04:16 <wstephenson> ok. then i'm going to dash and put my kids to bed now
+19:04:19 <wstephenson> will check in later.
+19:04:36 <Holgi> good luck!
+19:05:29 <Holgi> #agreed next meeting 2013-03-04
+19:05:36 <LWFinger> OK
+19:05:51 <Holgi> #topic open discussion
+19:05:56 <Holgi> so we are done with the regular topics
+19:05:59 <Holgi> anything more?
+19:06:09 <LWFinger> Meeting at 18:00 UTC
+19:06:32 <Holgi> larry: yes, as usual
+19:06:52 <Holgi> anything more?
+19:07:19 <Holgi> ok, then let's call it a day
+19:07:27 <LWFinger> OK.
+19:07:43 <Holgi> #endmeeting

@@ -1,0 +1,317 @@
+20:02:30 <yaloki> #startmeeting
+20:02:30 <bugbot> Meeting started Wed Mar  7 20:02:30 2012 UTC.  The chair is yaloki. Information about MeetBot at http://wiki.debian.org/MeetBot.
+20:02:30 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+20:02:39 * AlanClark wakes from reading emails
+20:02:49 <yaloki> #chair AlanClark henne mrdocs FunkyPenguin
+20:02:49 <bugbot> Current chairs: AlanClark FunkyPenguin henne mrdocs yaloki
+20:02:55 <yaloki> moaning
+20:03:09 <yaloki> We have 5 items on the agenda: http://en.opensuse.org/openSUSE:Project_meeting
+20:03:20 <yaloki> 1. Discussing how to communicate well to Asians or others who are not able to attend meetings and also how to answer their queries related to project-cum-board related meeting. (Manu)
+20:03:26 <yaloki> 2. a question related to ambassador travel programme
+20:03:33 <yaloki> (who added that? what question?)
+20:03:39 <yaloki> 3. Membership lapse discussion update/follow up/discussion (robjo)
+20:03:42 <yaloki> #chair wstephenson
+20:03:42 <bugbot> Current chairs: AlanClark FunkyPenguin henne mrdocs wstephenson yaloki
+20:03:54 <yaloki> 4. Failing infrastructure, by tigerfoot
+20:04:01 <yaloki> 5. Face to face meeting results (Alan)
+20:04:03 <yaloki> let's get going
+20:04:14 <yaloki> #topic Discussing how to communicate well to Asians or others who are not able to attend meetings
+20:04:49 <yaloki> think the bot is asleep
+20:04:52 <yaloki> #topic Discussing how to communicate well to Asians or others who are not able to attend meetings
+20:04:56 <yaloki> oh well
+20:04:59 <yaloki> manugupt1: here?
+20:05:23 <yaloki> 3
+20:05:25 <yaloki> 2
+20:05:27 <yaloki> 1
+20:05:31 <yaloki> please discuss by email on the list
+20:05:38 <yaloki> 2. a question related to ambassador travel programme
+20:05:44 <yaloki> ok, let's look up who added that item
+20:05:54 <cboltz> yaloki: it was manugupt1
+20:05:57 <wstephenson> thought so
+20:06:22 <yaloki> yes
+20:06:39 <yaloki> #info to discuss on the list, manugupt1 is afk
+20:06:42 <AlanClark> warlordfff or Izabel - Do you have any idea what question manugupt1 had?
+20:06:54 <izabelvalverde> no idea
+20:07:00 <izabelvalverde> last meeting I was supposed to talk about it but I think won't be necessary now
+20:07:00 <wstephenson> making a point?
+20:07:13 <izabelvalverde> don't know what is his question
+20:07:18 <manugupt1> Brb in 6 mins
+20:07:28 <yaloki> okay, we'll pick those up then
+20:07:31 <yaloki> #topic Membership lapse discussion update/follow up/discussion (robjo)
+20:07:36 <yaloki> robjo: awake? :)
+20:07:52 * yaloki feels it's going to be a quick one
+20:08:17 <shayonj_> ^^
+20:08:18 <yaloki> #topic Failing infrastructure
+20:08:20 <yaloki> tigerfoot: ping
+20:08:23 <tigerfoot> pong
+20:08:26 <tigerfoot> hurray :D
+20:08:28 <yaloki> damn!
+20:08:28 <yaloki> :D
+20:08:47 <yaloki> how can we track failures & remove impediments about contributions. (tigerfoot) During the last months, we've got especially on week-ends failures in wikis, mailing list, forums, bugzilla, obs. A big chunk of our contributors have free time during week-end. Can we improve the situation, like pre-announcing cleary maintenance period? Have a "crisis" cell able to push quickly and rapidly informations (emails,forums,websites,irc ...
+20:08:54 <yaloki> ... channels). Can we try to find a right balance between maintenance needs, and availability during off business hours? (Editing this sample part take me 10 tries, on a 28 hours range ...)
+20:08:57 <yaloki> that is the question
+20:09:23 <tigerfoot> okay I just first want to improve the situation, not telling that infra is in bad state or not maintained ( admin, etc does a really fantastic jobs)
+20:09:34 <wstephenson> is that mainly about ichain issues?
+20:09:38 <yaloki> tigerfoot: to be honest, either convince our main sponsor of putting more money into the infrastructure, or find another sponsor for infrastructure elsewhere
+20:09:44 <yaloki> wstephenson: we don't even know
+20:09:53 <yaloki> wstephenson: there have been proxy issues in provo since a few weeks
+20:10:15 <yaloki> wstephenson: that lead to www.o.o, en.o.o, forums, etc. to be offline or only intermittently available during long periods
+20:10:36 <tigerfoot> wstephenson: it was about ichain migration, wiki migration, then wikis not availaible, forums not available, also the incident of harddrive failure blocking obs 3 days.
+20:10:41 <yaloki> matthew ehle tries to wrestle with it, but I think that one issue is information about it (no announcements of failure anywhere or that it's being worked on)
+20:10:49 <yaloki> and .. well .. dare I say QoS
+20:11:09 * wstephenson nods
+20:11:22 <yaloki> I don't doubt matthew's skills, so maybe there isn't enough time for him and his team to take care of the opensuse infrastructure
+20:11:29 <tigerfoot> so the idea if it's possible to implement is trying to add a infrastructure status panel in www.o.o
+20:11:41 <tigerfoot> with green,amber,red light for main website
+20:11:46 <yaloki> tigerfoot: www.o.o is down often enough too
+20:11:54 <tigerfoot> with a redondant in community.o.o
+20:11:57 <yaloki> tigerfoot: and as long as the admins don't react, it's only partly useful :\
+20:12:10 <cboltz> one "popular" problem is that the redirect en.o.o/ -> en.o.o/Main_Page fails
+20:12:29 <cboltz> Matthew usually fixes it quite quickly - at least at the hours when I mail him
+20:12:39 <tigerfoot> yaloki: depending of how we do it, like simple monitor, and yes a place where admins can push a message kinda of rss
+20:12:43 <yaloki> yes but not having the issue in the first place is more sound
+20:12:43 <cboltz> nevertheless, having a mail address of the datacenter would probably be a good idea
+20:12:50 <cboltz> (Matthew isn't awake 24/7 ;-)
+20:12:53 <yaloki> tigerfoot: twitter ;)
+20:13:02 <wstephenson> tigerfoot: if that message is up to date, yes
+20:13:08 <tigerfoot> that just will improve the way we get the information and where we can send users to more informations
+20:13:30 <yaloki> but the root of the problem is something else
+20:13:32 <wstephenson> eg the build.o.o status panel is only updated for major outages, which is frustrating when does not contain info on the current outage
+20:13:47 * manugupt1 is back
+20:13:56 <yaloki> to be honest, I have learned a few things about the current infrastructure situation for openSUSE related things
+20:14:03 <yaloki> and I won't even spell out what it is publicly
+20:14:13 <yaloki> it's fragile at best
+20:14:15 <cboltz> AFAIK Matthew plans to do setup some status monitoring, but I don't know when this will be done
+20:14:34 <tigerfoot> cboltz: okay that's a first step at least .
+20:14:48 <yaloki> so either more money invested into that, or find other options elsewhere
+20:14:52 <cboltz> yes, it will speed up the "get notified" part
+20:14:54 <yaloki> and for OBS the issues are even more complicated
+20:14:56 <wstephenson> let's make a list of the popular issues and see if we can find mitigation ideas
+20:15:09 <yaloki> yeah, nothing we can act on during this meeting
+20:15:14 <tigerfoot> yaloki: so my concern ... if we want to have a growing community, we can't afford 8 weeks-end without contributions ...
+20:15:20 <wstephenson> agreed
+20:15:27 <yaloki> anyone up to own that task and trigger the discussion on -project? (and collect some points)
+20:15:32 <yaloki> tigerfoot: oh I know
+20:15:42 <yaloki> tigerfoot: to be honest, I believe the only viable option is to move out
+20:15:45 <suseROCKs> hi I'm actually running out the door.  but if I may offer my view of "popular issues"  part of the problem is also ability to contact whomever is able to fix the problem.
+20:15:47 <yaloki> but let's see what can be done
+20:16:00 <tigerfoot> yaloki: okay push me on action ... for that, and if -project react well, then I will open openfate
+20:16:03 <yaloki> suseROCKs: indeed, part of the problem
+20:16:14 <suseROCKs> Matt is awesome, he seems to respond within an hour in most cases, but generally if something goes down on weekends outside of his domain, we don't have any relief until Monday morning
+20:16:33 <yaloki> #action tigerfoot trigger thread on project list about recurring infrastructure issues, collect on openFATE
+20:16:54 <tigerfoot> thx yaloki now you can achieve the speedy boarding :D
+20:16:55 <yaloki> suseROCKs: but we cannot seriously have thousands of contributors who do that during their spare time be dependent on one or two admins
+20:17:05 <cboltz> yaloki: please include Matthew in CC - I doubt he's subscribed on -project
+20:17:14 <yaloki> and we're lucky to have darix who's often around at impossible times
+20:17:17 <tigerfoot> cboltz: okay
+20:17:19 <suseROCKs> yaloki,   agreed.  But there's a few of us who are around enough that we can be a conduit
+20:17:33 <yaloki> suseROCKs: we should be able to contribute to fix, not just alert
+20:17:43 <yaloki> anyhow, let's move on, and discuss on -project
+20:17:53 <suseROCKs> yaloki,   absolutely,  I'm not saying ignore the fix  :-)
+20:17:55 <yaloki> #topic Discussing how to communicate well to Asians or others who are not able to attend meetings and also how to answer their queries related to project-cum-board related meeting
+20:18:09 <yaloki> manugupt1: how did you manage to put "cum" into an agenda item?
+20:18:17 <suseROCKs> anyway... gotta go.   Good luck all with the meeting
+20:18:21 <wstephenson> yaloki: we should also discuss with Michael and Alan how to get QoS up to the same level as suse.com infrastructure
+20:18:22 <manugupt1> yaloki: Hmm was on phone..
+20:18:36 <manugupt1> Sorry
+20:18:41 <yaloki> manugupt1: phone sex then
+20:18:42 <yaloki> ^^
+20:18:52 <suseROCKs> no chit chat!  :-)
+20:18:53 <suseROCKs> Bye
+20:18:53 <AlanClark> wstephenson:  I'll take it up with Michael
+20:18:55 <wstephenson> yaloki: if we don't want SLE and openSUSE communities to grow up seperately, they both need shared reliable infrastructure
+20:18:55 <yaloki> okay, those are two items
+20:19:02 <yaloki> wstephenson: yep
+20:19:04 <yaloki> next item please
+20:19:10 <yaloki> okay, so first
+20:19:10 * wstephenson yields
+20:19:18 <yaloki> Discussing how to communicate well to Asians or others who are not able to attend meetings
+20:19:22 <yaloki> I only see one option
+20:19:30 <yaloki> stop doing project meetings on IRC
+20:19:37 <yaloki> that's the only thing that can be done
+20:19:42 <manugupt1> yaloki: I have one solution
+20:19:47 <yaloki> and I'm actually in favour of that
+20:20:02 <yaloki> manugupt1: go ahead
+20:20:42 <manugupt1> yaloki: if anyone has anyquestions they can mark the thread as [questions from project meeting], so that those threads can be written and read
+20:21:13 <yaloki> but questions from the project meeting are just questions
+20:21:35 <manugupt1> yaloki: Well someone should reply right?
+20:21:46 <yaloki> anyone is free to reply
+20:21:48 <AlanClark> questions or clarifications?
+20:22:03 <manugupt1> Well clarification, doubts fromt the log
+20:22:06 <manugupt1> That is what I mean
+20:22:16 <manugupt1> Not anything outside it..
+20:22:40 <yaloki> that doesn't solve the timezone issues
+20:22:51 <manugupt1> yaloki: That gives an opportunity to speak up atleast
+20:22:54 <yaloki> personally, I'd just kill the irc meetings
+20:23:11 <yaloki> apart from the board team, there are 4-5 people present and participating at best
+20:23:19 <yaloki> we'll never resolve the timezone issue
+20:23:25 <izabelvalverde_> maybe at least 1 per 1-2 months
+20:23:35 <yaloki> and anything that is discussed here can be done equally so on the project mailing-list, imho
+20:23:50 <manugupt1> Yes.. lets discuss it via mail
+20:23:54 <yaloki> okay
+20:23:55 <manugupt1> Ok?
+20:24:03 <manugupt1> Can I ask my next question
+20:24:09 <yaloki> #action yaloki propose killing the IRC project meetings on the project list
+20:24:12 <yaloki> sure:)
+20:24:26 <yaloki> the other one from the agenda ?
+20:24:26 <manugupt1> My second question is from the travel program.
+20:24:30 <manugupt1> yes
+20:24:34 <yaloki> #topic a question related to ambassador travel programme (manu)
+20:24:43 <yaloki> okay, please do, the agenda item is a bit vague ^^
+20:24:45 <manugupt1> First of all I will congratulate everyone
+20:25:14 <manugupt1> related to the program.. however there is an item that specifically addresses gsoc students.. which I do not like
+20:25:23 <amonthoth> using mailing list, irc and wiki to keep action updates or calling for
+20:25:34 <manugupt1> I had rather sponsor someone who has contributing without gsoc
+20:25:51 <yaloki> manugupt1: sorry I don't understand your last line
+20:26:17 <yaloki> please rephrase :)
+20:26:28 <AlanClark> I'm not catching the tie to the travel program
+20:26:30 <manugupt1> yaloki: I mean I know students who have been rejected but still have contributed to openSUSE, those students need to be sponsored
+20:26:40 <izabelvalverde_> we have written: Exceptions The Travel Committee may occasionally sponsor people who are not active openSUSE contributors. For example, Google Summer of Code or locals needing to cover openSUSE attendance in major conferences or needed events.
+20:26:59 <AJaeger> manugupt1: sponsored for what?
+20:27:02 <yaloki> manugupt1: "those students need to be sponsored", why?
+20:27:06 <manugupt1> izabelvalverde_: Exactly this line, I do not like the mention to gsoc..
+20:27:18 <manugupt1> AJaeger: local events, etc
+20:27:36 <manugupt1> yaloki: as an encouragement dont you think so?
+20:27:41 <izabelvalverde_> with this line we give them a chance to be sponsored even if they don't stay longer around
+20:27:41 <yaloki> oh really?
+20:27:58 <shayonj_> well it says occassinaly, so i think its good.
+20:28:10 <izabelvalverde_> exactly
+20:28:13 <AJaeger> manugupt1: Do you have a problem with wording or do you think the program does not apply insome cases?
+20:28:17 <shayonj_> occasionally *
+20:28:45 <manugupt1> AJaeger: Special mention to gsoc is something I do not like honestly
+20:28:55 <manugupt1> AJaeger: Its like special mention to SUSE employees
+20:28:56 <manugupt1> here
+20:29:15 <manugupt1> People who are part of community *ARE*, no need to make a distinction
+20:29:16 <shayonj_> manugupt1, you sure you reading it right ? :) .
+20:29:19 <yaloki> well it's an example
+20:29:36 * manugupt1 is a pro gsoc :)
+20:29:36 <izabelvalverde_> manugupt1 also I don't know which student you are talking about
+20:29:41 <yaloki> manugupt1: I don't see any distinction in giving two examples ("gsoc students or locals")
+20:29:52 <izabelvalverde_> I have a list from those who applied for oSC2011
+20:30:03 <manugupt1> izabelvalverde_: Saurabh Sood is one :)
+20:30:13 <izabelvalverde_> let me check
+20:30:19 <shayonj_> ah
+20:30:25 <manugupt1> Not just oSC but also FOSDEM
+20:30:41 <manugupt1> He was selected for a talk but did not get sponsored wstephenson is witness I gues
+20:30:55 <yaloki> I believe you have a pretty wild theory about whom should get sponsored for what
+20:31:13 <manugupt1> yaloki: No.. I am just asking to remove the word gsoc from it
+20:31:25 <AJaeger> manugupt1: We cannot sponsor every single person - and just having a presentation that is somehow openSUSE related is not a reason to have sponsorship.
+20:31:31 <yaloki> AJaeger: +1
+20:31:41 <izabelvalverde_> +1
+20:31:50 <manugupt1> AJaeger: Agreed, he was promised with Jos but
+20:31:57 <manugupt1> Jos had told him
+20:31:58 <mrdocs> AJaeger: +1
+20:32:01 <AJaeger> manugupt1: You're reading far more in the gsoc than it is, it's an example.
+20:32:03 <yaloki> ah, it's jos now?
+20:32:06 <yaloki> interesting
+20:32:12 <wstephenson> i think it's difficult
+20:32:34 <wstephenson> ... to say we'll sponsor all accepted speakers' travel
+20:32:35 <AJaeger> manugupt1: Then talk with jospoortvliet about what he said - or what you understood.
+20:32:51 <AJaeger> The travel committee is not bound by what Jos on his own says.
+20:33:08 * manugupt1 still does not like the word gsoc there.. gsoc results are temporary
+20:33:14 <manugupt1> usually
+20:33:28 <AJaeger> izabelvalverde_: Let's discuss with kostas how to improve the wording via email, ok?
+20:33:38 <yaloki> well, it's an example, and it seems to be fine with everyone else, we should move on here
+20:33:40 <manugupt1> Also gsoc is not an ambassador thing
+20:33:40 <izabelvalverde_> AJaeger ok
+20:33:45 <mrdocs> bbi 3
+20:33:46 <yaloki> robjo: there?
+20:33:49 <robjo> yes
+20:33:54 <yaloki> oh neat
+20:33:55 <AJaeger> manugupt1: And since they are temporary, they are a perfect example of some people that are not active in openSUSE.
+20:34:01 <yaloki> #topic Membership lapse discussion update/follow up/discussion (robjo)
+20:34:05 <yaloki> --------- next topic
+20:34:08 <yaloki> please move on :)
+20:34:12 <yaloki> robjo: the stage is yours sir
+20:34:19 <AJaeger> yaloki: give me and izabell an action to discuss this further via email ;)
+20:34:33 <robjo> I added something to the memebership page for review by the membership team
+20:34:36 <AJaeger> yaloki: Otherwise I agree.
+20:34:48 <yaloki> #action AJaeger izabelvalverde_ manugupt1 discuss the wording/inclusion of "gsoc" in the travel program
+20:34:54 <izabelvalverde_> no
+20:35:11 <izabelvalverde_> Izabel and AJ yaloki please
+20:35:13 <yaloki> #action AJaeger manugupt1 discuss the wording/inclusion of "gsoc" in the travel program
+20:35:16 <yaloki> err
+20:35:16 <robjo> I've also sent a message to the membership team to get feedback and/or an OK to use the proposed text for a ballot
+20:35:22 <yaloki> #action AJaeger izabelvalverde_ discuss the wording/inclusion of "gsoc" in the travel program
+20:35:27 <robjo> I have not heard anything back
+20:35:27 <yaloki> like this then ^^ sorry ^^
+20:35:33 <yaloki> robjo: yep
+20:35:48 <izabelvalverde_> yaloki thanks
+20:36:05 <yaloki> I think the membership team needs some support and caretaking, only a very few ones seem active and/or aware of what needs to be done
+20:36:13 <robjo> Maybe the board should just take a look at this and then we can move to have the wording approved by the memebship?
+20:36:16 <yaloki> looks like no one feels in charge of the topic amongst the team members
+20:36:29 <tigerfoot> robjo I personnally not seen it in -project, but perhaps it was on the same thread I automatically mark as read :(
+20:37:11 <AlanClark> robjo - can you give a url to the page?  I'm not seeing it on the membership page I'm looking at
+20:37:12 * tigerfoot agree yaloki's comments about membership team ...
+20:37:33 <robjo> just a sec
+20:38:28 <robjo> http://en.opensuse.org/openSUSE:Members
+20:38:39 <robjo> Look for Maintaining your membership
+20:38:48 <robjo> http://en.opensuse.org/openSUSE:Members#Maintaining_your_membership
+20:38:53 <AlanClark> got it
+20:39:38 <yaloki> I guess that more than half of the people listed there as membership team members aren't even aware of it ^^
+20:39:53 <wolfiR> robjo: what kind of feedback do you expect?
+20:40:18 <yaloki> afaik 99% of the work there lies on wolfiR's shoulders
+20:40:21 <robjo> wolfiR: yes, no, reword
+20:41:02 <wolfiR> robjo: it's a project and board decision IMHO. The membership team "only" has to execute
+20:42:02 <robjo> wolfiR: Shouldn't the membership team agree to what they are "executing"?
+20:42:14 <yaloki> robjo: my impression is that we won't really find a quorum/agreement on the project list. or do you have a different opinion?
+20:42:28 <yaloki> wolfiR: probably, but we should also have the opinion of the people who are in charge of that :)
+20:42:48 <shayonj_> at least it should not look like, they are doing what they are just told to do. :)
+20:43:02 <yaloki> indeed :)
+20:43:09 <robjo> yaloki: yes, I think the project list discussion has run it's course, we've seen all arguments, probably twice.
+20:43:28 <yaloki> it's an important role and people on that team need to have the trust of many, to avoid watering down the value of membership
+20:43:31 <robjo> I think the new text added to the page gives us a way forward
+20:43:35 <yaloki> it's a lot more than "just executing" imho :)
+20:43:53 <yaloki> robjo: agreed, it's concise :)
+20:44:07 <wolfiR> personally I do not agree with that kind of handling member status
+20:44:33 <yaloki> wolfiR: membership is perpetual in your opinion?
+20:44:59 <AlanClark> That discussion was undertaken on the mailing list; let's not redo it here
+20:45:17 <wolfiR> yaloki: I skipped this discussion as I tend to perpetual but also have no strong argument about it
+20:45:17 <robjo> AlanClark: +1
+20:45:25 <yaloki> okay
+20:45:33 <yaloki> so how should we move on on that topic
+20:45:44 <yaloki> board vote?
+20:45:54 <yaloki> we'll still have to fiddle the details
+20:46:07 <yaloki> "not active for 2 years", we need to find out when that happens
+20:46:17 <yaloki> as discussed already, really calls for some proper tooling
+20:46:21 <robjo> I make a motion that the board evaluate the new text and if the board can agree or wordsmith lets put this up for vote, if we still think that voting is appropriate.
+20:46:46 <wolfiR> I just wanted to say that individuals caring about the topic likely have contributed to the -project discussion and you won't get more "membership team" opinions on it
+20:46:56 <yaloki> wolfiR: true
+20:47:05 <yaloki> good point
+20:47:13 <wstephenson> the board could poll the rest of the membership team
+20:47:24 <tigerfoot> wstephenson: +1
+20:47:30 <yaloki> okay
+20:47:34 <wstephenson> they should have an opinion on this, or step back.
+20:47:38 <yaloki> I'd propose to move that topic to the board now then
+20:47:50 <wstephenson> i can take that on
+20:47:52 <yaloki> we'll probably try to prod the others on the membership team
+20:47:56 <tigerfoot> robjo: thanks the text is really clear, especially if in the meantime there's option in connect to pull/push past contributions.
+20:48:00 <yaloki> and then circulate and vote
+20:48:26 <yaloki> well the really tricky part will be "not active for 2 years", how will we notice
+20:48:34 <yaloki> (-> tools)
+20:49:23 <AJaeger> I would just ask for clicking somewhere on connect ;)
+20:49:25 <yaloki> #action wstephenson poke the other members of the membership team for their opinion on the membership lapse topic http://en.opensuse.org/openSUSE:Members#Maintaining_your_membership
+20:49:28 <robjo> suseROCKs had pointed out in the discussion that we need to separate process from policy, this new text follows this proposal.
+20:49:39 <yaloki> robjo: absolutely
+20:49:44 <yaloki> robjo: thanks for driving the topic so far
+20:49:59 <yaloki> #action board vote to enact or reject http://en.opensuse.org/openSUSE:Members#Maintaining_your_membership
+20:50:00 <AlanClark> I agree with the proposed action and am wondering what we can put down as a response time.  Not sure how quickly we can poll the membership team
+20:50:09 <mrdocs> yes robjo very helpful
+20:50:11 <robjo> We can have another discussion on how we detect the 2 year of inactivity and implement tools as needed. These would not require a vote anyway
+20:50:24 <yaloki> AlanClark: two weeks seems like a realistic timeframe
+20:50:33 <yaloki> robjo: indeed
+20:50:33 <wstephenson> AlanClark: +1
+20:50:42 <mrdocs> +1
+20:50:56 <yaloki> if we don't get a reply within two weeks, well, tough luck really
+20:51:12 <yaloki> assuming wstephenson will send out prodding emails in the next few days
+20:51:39 <yaloki> #topic Face to face meeting results (Alan)
+20:51:46 <yaloki> okay, last topic, 10min left
+20:52:02 <yaloki> AlanClark: is it a Q&A or is there more to add to your email to the list on that topic?
+20:52:12 <AlanClark> Actually I didn't put this on the agenda, so am not sure what is being asked for?
+20:52:23 <yaloki> oh, okay
+20:52:25 <AlanClark> Was there questions?
+20:52:47 * yaloki thinks mediawiki needs a blame feature
+20:53:07 <yaloki> anyway, there is a thread on that topic on the project list
+20:53:10 <yaloki> questions can be asked there
+20:53:23 <AlanClark> +1
+20:53:23 <yaloki> #endmeeting

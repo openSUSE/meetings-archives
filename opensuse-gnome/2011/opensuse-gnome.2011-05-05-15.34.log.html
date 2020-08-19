@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-gnome log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:34:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE GNOME Meeting</span>
+<a name="l-2"></a><span class="tm">15:34:39</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu May  5 15:34:39 2011 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:34:39</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:34:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> sure
+<a name="l-5"></a><span class="tm">15:35:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">SONAR theme for gnome-shell</span>
+<a name="l-6"></a><span class="tm">15:35:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> go ahead
+<a name="l-7"></a><span class="tm">15:35:40</span><span class="nk"> &lt;nmarques&gt;</span> hi
+<a name="l-8"></a><span class="tm">15:36:21</span><span class="nk"> &lt;nmarques&gt;</span> I was wondering if we want a Sonar/GTK3+ theme, and if I should look for an artist to do them. In case I find one, what should be the requirements we should ask for ?
+<a name="l-9"></a><span class="tm">15:36:45</span><span class="nk"> &lt;nmarques&gt;</span> currently there are artists looking for ideas in deviant-art, I would consider taking that opportunity to have them done
+<a name="l-10"></a><span class="tm">15:37:15</span><span class="nk"> &lt;nmarques&gt;</span> this doesn't cover the icons part (be mindful of that, though I can ask for it also, but would probably become less atractive)
+<a name="l-11"></a><span class="tm">15:37:24</span><span class="nk"> &lt;nmarques&gt;</span> that's pretty much it :)
+<a name="l-12"></a><span class="tm">15:37:43</span><span class="nk"> &lt;vuntz&gt;</span> can you define "Sonar/GTK3+"?
+<a name="l-13"></a><span class="tm">15:37:51</span><span class="nk"> &lt;vuntz&gt;</span> do you mean "Sonar ported to GTK+ 3"?
+<a name="l-14"></a><span class="tm">15:37:55</span><span class="nk"> &lt;nmarques&gt;</span> gnome-shell theme and GTK3+ theme
+<a name="l-15"></a><span class="tm">15:37:57</span><span class="nk"> &lt;vuntz&gt;</span> or "openSUSE-specific theme"?
+<a name="l-16"></a><span class="tm">15:38:16</span><span class="nk"> &lt;DimStar&gt;</span> hmm.. didn't we already have a gtk3-metatheme-sonar (built by gtk2-metatheme-sonar)? At least that's what I'm running (and I for one feel more comfortable with it than adwaita)
+<a name="l-17"></a><span class="tm">15:38:27</span><span class="nk"> &lt;vuntz&gt;</span> and is the goal to have that theme used by default in openSUSE?
+<a name="l-18"></a><span class="tm">15:38:47</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, if you guys want it, else maybe distribute it as alternative for people like you who love it :)
+<a name="l-19"></a><span class="tm">15:38:55</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, though defaulting it would probably be more attractive
+<a name="l-20"></a><span class="tm">15:39:12</span><span class="nk"> &lt;nmarques&gt;</span> and given the current state of the artwork team and the fact that Robert is probably burried in work
+<a name="l-21"></a><span class="tm">15:39:16</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> hrm, I think the gtk3-metatheme-sonar hack got dropped for now, wasn't it?
+<a name="l-22"></a><span class="tm">15:39:34</span><span class="nk"> &lt;nmarques&gt;</span> it would be nice to try and bring new people aboard :)
+<a name="l-23"></a><span class="tm">15:39:38</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> yes.. looks like... the package is no longer in the repos... what a luck I still have it :) )
+<a name="l-24"></a><span class="tm">15:40:46</span><span class="nk"> &lt;vuntz&gt;</span> so my main worry about a gnome-shell theme is that it can break at any time (since it's not officially supported)
+<a name="l-25"></a><span class="tm">15:42:15</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, maybe a supplement to user theme extension? (though it won't actually ensure that it won't break)
+<a name="l-26"></a><span class="tm">15:43:03</span><span class="nk"> &lt;vuntz&gt;</span> anybody with an opinion on this topic?
+<a name="l-27"></a><span class="tm">15:43:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">malcolmlewis:</span> any opinion on that? (since you've been looking at gnome-shell themes, iirc)
+<a name="l-28"></a><span class="tm">15:43:56</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, my opinion is that we should keep the diferentiation and continue the 'tradition', but I have to say it's a bit of a risk to enroll a new contributor and keep it to maintain it
+<a name="l-29"></a><span class="tm">15:43:57</span><span class="nk"> &lt;DimStar&gt;</span> I for one like the sonar hack style (which of course should be nicely / completely done). If we can get an artist / art team on board with some commitment to maintain it should it break, I'm all for it.
+<a name="l-30"></a><span class="tm">15:45:18</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I'll gladly do the packaging for it and cover that part, and I'm sure the artwork work team will help with gitorious
+<a name="l-31"></a><span class="tm">15:45:28</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I can ping javier about it
+<a name="l-32"></a><span class="tm">15:45:36</span><span class="nk"> &lt;vuntz&gt;</span> oh, packaging and using git isn't the hard part
+<a name="l-33"></a><span class="tm">15:45:57</span><span class="nk"> &lt;Ilmehtar&gt;</span> darkmatter has been working on a rather nice looking theme
+<a name="l-34"></a><span class="tm">15:46:36</span><span class="nk"> &lt;vuntz&gt;</span> so, I guess it doesn't harm to ask people to work on that
+<a name="l-35"></a><span class="tm">15:46:50</span><span class="nk"> &lt;vuntz&gt;</span> but I guess we can't commit to using the result as default until, well, we see the result :-)
+<a name="l-36"></a><span class="tm">15:47:27</span><span class="nk"> &lt;DimStar&gt;</span> but we can commit to the goal of using it.
+<a name="l-37"></a><span class="tm">15:47:37</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, that's pretty fair ;) so in the request I'll say that the GNOME Team will decide it if it fits the conditions ?
+<a name="l-38"></a><span class="tm">15:47:42</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> as in "packaging it"?
+<a name="l-39"></a><span class="tm">15:48:09</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I'll work on a document for review and mail it to the gnome-list so people can improve the ideas and we do it the right way ?
+<a name="l-40"></a><span class="tm">15:48:15</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> as in "if there is nothing wrong with it we will want to use it" I'm sure that's more motivational than 'just doing it for the sake of doing it'
+<a name="l-41"></a><span class="tm">15:48:47</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">nmarques suggests to reach out to deviant-art artists to write a new gnome-shell/gtk+3 theme (possibly based on the sonar gtk+2 theme)</span>
+<a name="l-42"></a><span class="tm">15:48:52</span><span class="nk"> &lt;nmarques&gt;</span> DimStar, if we get a go from the artists commitment to maintain it, I would like it
+<a name="l-43"></a><span class="tm">15:49:01</span><span class="nk"> &lt;DimStar&gt;</span> the wording "if it fits the conditions" is very vague, especially when the conditions are not known to the artists.
+<a name="l-44"></a><span class="tm">15:49:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> I'm not even sure we can commit to that
+<a name="l-45"></a><span class="tm">15:49:31</span><span class="nk"> &lt;nmarques&gt;</span> DimStar, that's why I can run a document though the list before making it public ;)
+<a name="l-46"></a><span class="tm">15:49:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> unless it's really really really good, I'd vote for sticking with upstream. And if it's really really really good, then it should be moved upstream :-)
+<a name="l-47"></a><span class="tm">15:49:37</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> why not? It would be bringing back the openSUSE branding / styling.
+<a name="l-48"></a><span class="tm">15:50:18</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, that of moving upstream would bring added motivation ;P
+<a name="l-49"></a><span class="tm">15:50:29</span><span class="nk"> &lt;DimStar&gt;</span> style / colors are always personal preference and help a lot with recognition. Are you planning on 'upstreaming' all styles?
+<a name="l-50"></a><span class="tm">15:50:52</span><span class="nk"> &lt;nmarques&gt;</span> DimStar, at this point there are not much GTK3+ stuff
+<a name="l-51"></a><span class="tm">15:51:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> if the style is there to stay, yes
+<a name="l-52"></a><span class="tm">15:51:06</span><span class="nk"> &lt;nmarques&gt;</span> DimStar, so it's not really a bad idea to have it upstreamed also ;)
+<a name="l-53"></a><span class="tm">15:51:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> that's the only way to ensure it will have real chances to stay maintained
+<a name="l-54"></a><span class="tm">15:52:04</span><span class="nk"> &lt;vuntz&gt;</span> there's also the whole topic of whether we want our GNOME to be branded openSUSE, and if yes, in which ways
+<a name="l-55"></a><span class="tm">15:52:43</span><span class="nk"> &lt;DimStar&gt;</span> true... but that's a much longer topic :)
+<a name="l-56"></a><span class="tm">15:52:48</span><span class="nk"> &lt;vuntz&gt;</span> heh
+<a name="l-57"></a><span class="tm">15:53:21</span><span class="nk"> &lt;vuntz&gt;</span> it's just that I'm not sure we can say at this point that we will use the result, even if good, as default
+<a name="l-58"></a><span class="tm">15:53:49</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, we could always trim that to user choice ;)
+<a name="l-59"></a><span class="tm">15:53:54</span><span class="nk"> &lt;vuntz&gt;</span> but we can surely say that it can be evaluated in the context of "do we want to move away from upstream's default?"
+<a name="l-60"></a><span class="tm">15:54:01</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, just making it available as optional would be a good start for 12.1
+<a name="l-61"></a><span class="tm">15:54:22</span><span class="nk"> &lt;DimStar&gt;</span> ok. we commit to package and ship it, and based on further discussions and quality of the style might consider using it as the default
+<a name="l-62"></a><span class="tm">15:55:02</span><span class="nk"> &lt;vuntz&gt;</span> okay, let's do this
+<a name="l-63"></a><span class="tm">15:55:04</span><span class="nk"> &lt;malcolmlewis&gt;</span> I tend to agree with nmarques on having some options
+<a name="l-64"></a><span class="tm">15:55:18</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, we're beatin' virgin territory :)
+<a name="l-65"></a><span class="tm">15:55:29</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">we commit to package and ship the resulting theme, and based on further discussions and quality of the style we might consider using it as the default</span>
+<a name="l-66"></a><span class="tm">15:55:48</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I'll still run the document through the list before making it public ;)
+<a name="l-67"></a><span class="tm">15:55:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">nmarques to contact deviant(art artists</span>
+<a name="l-68"></a><span class="tm">15:55:57</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-69"></a><span class="tm">15:55:57</span><span class="nk"> &lt;bugbot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Action object at 0x13f5d50&gt;
+<a name="l-70"></a><span class="tm">15:56:01</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">nmarques to contact deviant-art artists</span>
+<a name="l-71"></a><span class="tm">15:56:11</span><span class="nk"> &lt;vuntz&gt;</span> sounds good
+<a name="l-72"></a><span class="tm">15:56:13</span><span class="nk"> &lt;vuntz&gt;</span> anything else?
+<a name="l-73"></a><span class="tm">15:56:29</span><span class="nk"> &lt;nmarques&gt;</span> cool with me, please carry on tonext topic
+<a name="l-74"></a><span class="tm">15:56:53</span><span class="nk"> &lt;vuntz&gt;</span> thanks nmarques
+<a name="l-75"></a><span class="tm">15:57:03</span><span class="nk"> &lt;vuntz&gt;</span> err
+<a name="l-76"></a><span class="tm">15:57:04</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Project Update</span>
+<a name="l-77"></a><span class="tm">15:57:12</span><span class="nk"> &lt;vuntz&gt;</span> sooo
+<a name="l-78"></a><span class="tm">15:57:20</span><span class="nk"> &lt;vuntz&gt;</span> current status
+<a name="l-79"></a><span class="tm">15:57:26</span><span class="nk"> &lt;vuntz&gt;</span> we have GNOME 3.0.1 in G:F
+<a name="l-80"></a><span class="tm">15:57:30</span><span class="nk"> &lt;vuntz&gt;</span> and also in G:S:3.0
+<a name="l-81"></a><span class="tm">15:57:41</span><span class="nk"> &lt;vuntz&gt;</span> G:N will disappear after this meeting
+<a name="l-82"></a><span class="tm">15:58:02</span><span class="nk"> &lt;vuntz&gt;</span> and home:fcrozat:gnome3 should disappear soon too
+<a name="l-83"></a><span class="tm">15:58:14</span><span class="nk"> &lt;vuntz&gt;</span> and most of GNOME 3 is now in Factory itself
+<a name="l-84"></a><span class="tm">15:58:27</span><span class="nk"> &lt;vuntz&gt;</span> a few packages are still being reviewed (mostly by legal team)
+<a name="l-85"></a><span class="tm">15:58:43</span><span class="nk"> &lt;vuntz&gt;</span> we have a good number of build failures caused by GNOME 3, though
+<a name="l-86"></a><span class="tm">15:58:55</span><span class="nk"> &lt;vuntz&gt;</span> that should be our main focus for the next few weeks
+<a name="l-87"></a><span class="tm">15:59:12</span><span class="nk"> &lt;DimStar&gt;</span> build failures in G:* or oS:F?
+<a name="l-88"></a><span class="tm">15:59:28</span><span class="nk"> &lt;vuntz&gt;</span> and then we can focus on the bugs we filed when reviewing GNOME 3 for Factory (patches needing rebase, for instance)
+<a name="l-89"></a><span class="tm">15:59:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> G:*
+<a name="l-90"></a><span class="tm">15:59:52</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> when I checked the G:A repo that is built against G:F, there were something like 20+ failures
+<a name="l-91"></a><span class="tm">16:00:12</span><span class="nk"> &lt;vuntz&gt;</span> the difficult parts are:
+<a name="l-92"></a><span class="tm">16:00:26</span><span class="nk"> &lt;DimStar&gt;</span> ok... I think it's safe to say: for G:F we do _not_ care for any other target than Factory. For G:A we try to build down to 11.3 and SLE11SP1
+<a name="l-93"></a><span class="tm">16:00:28</span><span class="nk"> &lt;vuntz&gt;</span> - panel applets (I might write a bridge to make new gnome-panel understand old panel applets)
+<a name="l-94"></a><span class="tm">16:00:38</span><span class="nk"> &lt;vuntz&gt;</span> - nautilus extensions (especially python ones)
+<a name="l-95"></a><span class="tm">16:01:02</span><span class="nk"> &lt;vuntz&gt;</span> and similar stuff
+<a name="l-96"></a><span class="tm">16:01:49</span><span class="nk"> &lt;vuntz&gt;</span> also, gcc 4.6 will be the default soon
+<a name="l-97"></a><span class="tm">16:01:56</span><span class="nk"> &lt;vuntz&gt;</span> this might cause additonial failures
+<a name="l-98"></a><span class="tm">16:02:42</span><span class="nk"> &lt;vuntz&gt;</span> else, we're relatively up-to-date for other packages, version-wise
+<a name="l-99"></a><span class="tm">16:02:57</span><span class="nk"> &lt;DimStar&gt;</span> probably wil...gcc 4.5 introduce: return value of function ignored =&gt; error / gcc 4.6 says: you ignore the variable you stored the return value to =&gt; error
+<a name="l-100"></a><span class="tm">16:03:03</span><span class="nk"> &lt;vuntz&gt;</span> and we don't have too many pending sr (a few ones are old, and need to be discussed)
+<a name="l-101"></a><span class="tm">16:03:11</span><span class="nk"> &lt;vuntz&gt;</span> that's it from me, I guess
+<a name="l-102"></a><span class="tm">16:03:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">GNOME 3.0.1 is in G:F/G:S:3.0 and will enter Factory soon</span>
+<a name="l-103"></a><span class="tm">16:03:41</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">G:N and home:fcrozat:gnome3 will disappear really soon</span>
+<a name="l-104"></a><span class="tm">16:04:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we will have some build failures to fix in the next few weeks (for instance: old panel applets, old nautilus extensions, etc.)</span>
+<a name="l-105"></a><span class="tm">16:04:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> anything else you can think of?
+<a name="l-106"></a><span class="tm">16:05:03</span><span class="nk"> &lt;DimStar&gt;</span> only the entering factory 'pain' we had this time... which we hopefully won't run into that quick again, as we have minor updates coming in again.
+<a name="l-107"></a><span class="tm">16:05:17</span><span class="nk"> &lt;vuntz&gt;</span> yeah
+<a name="l-108"></a><span class="tm">16:05:20</span><span class="nk"> &lt;DimStar&gt;</span> (and a few external missing dependencies which might cause headaches)
+<a name="l-109"></a><span class="tm">16:05:35</span><span class="nk"> &lt;vuntz&gt;</span> even when we'll move to 3.2 and later, I don't expect that much pain
+<a name="l-110"></a><span class="tm">16:05:49</span><span class="nk"> &lt;vuntz&gt;</span> this was really a big switch this time, and it probably won't happen before a few years
+<a name="l-111"></a><span class="tm">16:05:55</span><span class="nk"> &lt;DimStar&gt;</span> no, they are much closer (no librenames and the like)
+<a name="l-112"></a><span class="tm">16:06:13</span><span class="nk"> &lt;vuntz&gt;</span> this time, it's really a combination of two things:
+<a name="l-113"></a><span class="tm">16:06:23</span><span class="nk"> &lt;vuntz&gt;</span> a) GNOME 2 -&gt; GNOME 3
+<a name="l-114"></a><span class="tm">16:06:23</span><span class="nk"> &lt;DimStar&gt;</span> on the other hand this new 'submit package xy when all deps are built in snapshot' is rather annoying.
+<a name="l-115"></a><span class="tm">16:06:40</span><span class="nk"> &lt;vuntz&gt;</span> b) we were not able to push 2.91.x to Factory, so it couldn't be done in small steps
+<a name="l-116"></a><span class="tm">16:07:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> maybe. I prefer to evaluate how annoying it is after GNOME 3 is in Factory
+<a name="l-117"></a><span class="tm">16:07:44</span><span class="nk"> &lt;vuntz&gt;</span> right now, our view is pretty biased ("everything that slows us down is bad" :-))
+<a name="l-118"></a><span class="tm">16:08:17</span><span class="nk"> &lt;DimStar&gt;</span> of course :)
+<a name="l-119"></a><span class="tm">16:08:47</span><span class="nk"> &lt;vuntz&gt;</span> oh
+<a name="l-120"></a><span class="tm">16:08:50</span><span class="nk"> &lt;vuntz&gt;</span> one other thing
+<a name="l-121"></a><span class="tm">16:09:05</span><span class="nk"> &lt;vuntz&gt;</span> we now have the schedule for 12.1
+<a name="l-122"></a><span class="tm">16:09:20</span><span class="nk"> &lt;vuntz&gt;</span> our goal is to release 12.1 with GNOME 3.2
+<a name="l-123"></a><span class="tm">16:09:52</span><span class="nk"> &lt;vuntz&gt;</span> 3.2.0 will be out on Sep 28
+<a name="l-124"></a><span class="tm">16:10:05</span><span class="nk"> &lt;DimStar&gt;</span> that should be fine. G3.2 is 09.11 (or so) and we should be done 11.11...
+<a name="l-125"></a><span class="tm">16:10:16</span><span class="nk"> &lt;vuntz&gt;</span> this means we'll be able to push it for 12.1 RC1
+<a name="l-126"></a><span class="tm">16:10:31</span><span class="nk"> &lt;vuntz&gt;</span> 3.2.1 will be out on Oct 19
+<a name="l-127"></a><span class="tm">16:10:38</span><span class="nk"> &lt;DimStar&gt;</span> we should try to keep as close as we can to 3.2 from early on (maybe on cost of stability at the early days... but better like that)
+<a name="l-128"></a><span class="tm">16:11:03</span><span class="nk"> &lt;vuntz&gt;</span> we could possibly push 3.2.1 for RC2, but I think that might be a bit risky
+<a name="l-129"></a><span class="tm">16:11:17</span><span class="nk"> &lt;vuntz&gt;</span> so we should possibly ask if we can do an online update to 3.2.1
+<a name="l-130"></a><span class="tm">16:11:48</span><span class="nk"> &lt;DimStar&gt;</span> yes, something to discuss with coolo. I remember in the past a x.x.1 update was considered 'patch update with low risk' and he did take them in.
+<a name="l-131"></a><span class="tm">16:11:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">openSUSE 12.1 will release with GNOME 3.2 (3.2.0 for sure, 3.2.1 maybe or as online update?)</span>
+<a name="l-132"></a><span class="tm">16:12:29</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> so you think we should move to 3.1.1 next week?
+<a name="l-133"></a><span class="tm">16:13:10</span><span class="nk"> &lt;vuntz&gt;</span> I'd consider skipping 3.1.1 on our end, to make sure we fix build failures and possibly rebase patches. And then do 3.1.1 or wait for 3.1.2 (Jun 15)
+<a name="l-134"></a><span class="tm">16:13:28</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> for G:F I'd say so... there is not much reason to keep 3.0 around if we don't actually want to ship it. Moving gives us the time to fix fallouts early (maybe not next week: we really should settle 3.0.1 first)
+<a name="l-135"></a><span class="tm">16:13:42</span><span class="nk"> &lt;vuntz&gt;</span> yeah
+<a name="l-136"></a><span class="tm">16:14:06</span><span class="nk"> &lt;vuntz&gt;</span> (note that I'm at two conferences next week, so, hrm, yeah, 3.0.1 will settle without me ;-))
+<a name="l-137"></a><span class="tm">16:14:22</span><span class="nk"> &lt;DimStar&gt;</span> hehe... i'll just accept my own SRs then.
+<a name="l-138"></a><span class="tm">16:14:53</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">oh:</span> and please no more GNOME:Next... that cycle took way too long and is frustrating for the not directly involved, as we had to decline most of their SRs at one point.
+<a name="l-139"></a><span class="tm">16:14:58</span><span class="nk"> &lt;vuntz&gt;</span> okay, what about this: before Milestone 1, fix build failures. Then, we can do whatever we want
+<a name="l-140"></a><span class="tm">16:15:20</span><span class="nk"> &lt;DimStar&gt;</span> good target: 3.0.1 stable for M1. The move on
+<a name="l-141"></a><span class="tm">16:15:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> GNOME:Next won't be needed for the next two cycles. But it might be needed for 12.3
+<a name="l-142"></a><span class="tm">16:15:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> (since 12.3 will be like 11.4: we'll release openSUSE with an old GNOME, and completely skip a GNOME development cycle)
+<a name="l-143"></a><span class="tm">16:16:00</span><span class="nk"> &lt;DimStar&gt;</span> that's in two years.. we'll see :)
+<a name="l-144"></a><span class="tm">16:16:03</span><span class="nk"> &lt;vuntz&gt;</span> heh
+<a name="l-145"></a><span class="tm">16:16:06</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-146"></a><span class="tm">16:16:29</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">we focus on fixing build failures and making sure 3.0.1 rocks for M1, and then we move to 3.1.x for M2</span>
+<a name="l-147"></a><span class="tm">16:16:32</span><span class="nk"> &lt;vuntz&gt;</span> cool
+<a name="l-148"></a><span class="tm">16:16:48</span><span class="nk"> &lt;vuntz&gt;</span> next topic, I guess?
+<a name="l-149"></a><span class="tm">16:17:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">GNOME 3 News, Feedback, Q&amp;A</span>
+<a name="l-150"></a><span class="tm">16:17:23</span><span class="nk"> &lt;vuntz&gt;</span> hrm, so, we covered the news already, I guess
+<a name="l-151"></a><span class="tm">16:17:28</span><span class="nk"> &lt;vuntz&gt;</span> any feedback or Q&amp;A?
+<a name="l-152"></a><span class="tm">16:17:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">malcolmlewis:</span> anything to report from forums?
+<a name="l-153"></a><span class="tm">16:18:08</span><span class="nk"> &lt;malcolmlewis&gt;</span> It's been very quiet on GNOME 3.0 issues, all complements to you guys :)
+<a name="l-154"></a><span class="tm">16:18:27</span><span class="nk"> &lt;vuntz&gt;</span> cool
+<a name="l-155"></a><span class="tm">16:18:32</span><span class="nk"> &lt;vuntz&gt;</span> oh, one news item:
+<a name="l-156"></a><span class="tm">16:18:45</span><span class="nk"> &lt;vuntz&gt;</span> we got GNOME 3 DVDs produced
+<a name="l-157"></a><span class="tm">16:19:00</span><span class="nk"> &lt;vuntz&gt;</span> they're going to be used at events, like next week at linuxtag
+<a name="l-158"></a><span class="tm">16:19:07</span><span class="nk"> &lt;malcolmlewis&gt;</span> shell extensions seem to be the buzz for people, user-themes and notifications
+<a name="l-159"></a><span class="tm">16:20:48</span><span class="nk"> &lt;vuntz&gt;</span> okay
+<a name="l-160"></a><span class="tm">16:21:13</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">People are happy, and are starting to play with extensions/themes</span>
+<a name="l-161"></a><span class="tm">16:21:21</span><span class="nk"> &lt;vuntz&gt;</span> anything else on this topic?
+<a name="l-162"></a><span class="tm">16:21:54</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">vuntz:</span> one question - will GNOME 3 DVD's be an option alongside the typical openSUSE Promo DVD's for events and such?
+<a name="l-163"></a><span class="tm">16:22:37</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> at Linuxtag, yes
+<a name="l-164"></a><span class="tm">16:22:45</span><span class="nk"> &lt;vuntz&gt;</span> after that, it will depend on the event
+<a name="l-165"></a><span class="tm">16:22:52</span><span class="nk"> &lt;Ilmehtar&gt;</span> nifty
+<a name="l-166"></a><span class="tm">16:23:03</span><span class="nk"> &lt;vuntz&gt;</span> we don't know if we'll have DVDs after this round (for 3.2, eg)
+<a name="l-167"></a><span class="tm">16:24:28</span><span class="nk"> &lt;vuntz&gt;</span> let's move to general Q&amp;1
+<a name="l-168"></a><span class="tm">16:24:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Q &amp; 1</span>
+<a name="l-169"></a><span class="tm">16:24:35</span><span class="nk"> &lt;vuntz&gt;</span> rah
+<a name="l-170"></a><span class="tm">16:24:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Q &amp; A</span>
+<a name="l-171"></a><span class="tm">16:24:52</span><span class="nk"> &lt;vuntz&gt;</span> any question?
+<a name="l-172"></a><span class="tm">16:26:04</span><span class="nk"> &lt;malcolmlewis&gt;</span> YaST in the user menu by default?
+<a name="l-173"></a><span class="tm">16:26:19</span><span class="nk"> &lt;nmarques&gt;</span> malcolmlewis, yeah, that would be awesome
+<a name="l-174"></a><span class="tm">16:27:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">malcolmlewis:</span> below System Settings?
+<a name="l-175"></a><span class="tm">16:27:08</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I do subscribe the importance of exploring the best possibility of integrating it with the menu
+<a name="l-176"></a><span class="tm">16:27:25</span><span class="nk"> &lt;malcolmlewis&gt;</span> vuntz, yes
+<a name="l-177"></a><span class="tm">16:28:18</span><span class="nk"> &lt;vuntz&gt;</span> so we'd need to find a solution to fix the confusion that could exist between "System Settings" and "YaST" or "Administrator Settings" or "System Administration"
+<a name="l-178"></a><span class="tm">16:28:59</span><span class="nk"> &lt;malcolmlewis&gt;</span> Desktop Settings rather than System
+<a name="l-179"></a><span class="tm">16:28:59</span><span class="nk"> &lt;DimStar&gt;</span> Control Panel vs System Settings? (most things there don't really affect 'system'
+<a name="l-180"></a><span class="tm">16:29:11</span><span class="nk"> &lt;darkmatter&gt;</span> yes. and (although it's asking a lot), a new yast shell similar to that of system setting to make yast "fit". though that may be more realistic for after 12.1
+<a name="l-181"></a><span class="tm">16:29:35</span><span class="nk"> &lt;vuntz&gt;</span> malcolmlewis, DimStar: this string change would need to occur upstream
+<a name="l-182"></a><span class="tm">16:29:50</span><span class="nk"> &lt;vuntz&gt;</span> malcolmlewis, DimStar: I wouldn't want to have to fix all the docs because we change the string...
+<a name="l-183"></a><span class="tm">16:30:25</span><span class="nk"> &lt;DimStar&gt;</span> of coruse... but it might be negotiatable with upstream...
+<a name="l-184"></a><span class="tm">16:33:04</span><span class="nk"> &lt;malcolmlewis&gt;</span> so we could still patch in a System Admin or similar to activate YaST, if we want System Settings changed, we need to go upstream?
+<a name="l-185"></a><span class="tm">16:33:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">malcolmlewis:</span> yes
+<a name="l-186"></a><span class="tm">16:34:04</span><span class="nk"> &lt;prusnak&gt;</span> currently my patch uses System Settings (unchanged) and YaST Control Center (new item)
+<a name="l-187"></a><span class="tm">16:34:13</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, a code change with a switch on build time? Something like --enable-yast ?
+<a name="l-188"></a><span class="tm">16:34:59</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darkmatter:</span> I just tried the system settings shell filled with yast item and... it's ugly
+<a name="l-189"></a><span class="tm">16:35:10</span><span class="nk"> &lt;vuntz&gt;</span> there are way too many yast items, and the shell doesn't scale well
+<a name="l-190"></a><span class="tm">16:36:24</span><span class="nk"> &lt;prusnak&gt;</span> i think there are two options - a) adding yast to status menu b) adding yast icon to system settings (category System)
+<a name="l-191"></a><span class="tm">16:36:37</span><span class="nk"> &lt;badshah400&gt;</span> One could perhaps rename YaST to Administrator settings, and then put it in the system settings shell?
+<a name="l-192"></a><span class="tm">16:36:37</span><span class="nk"> &lt;prusnak&gt;</span> all others don't fit imho
+<a name="l-193"></a><span class="tm">16:37:45</span><span class="nk"> &lt;badshah400&gt;</span> the name "system settings" would also not cause any confusion then, i would think
+<a name="l-194"></a><span class="tm">16:38:55</span><span class="nk"> &lt;malcolmlewis&gt;</span> Seems to me the two most command are YaST itself and the sw_single option
+<a name="l-195"></a><span class="tm">16:39:07</span><span class="nk"> &lt;malcolmlewis&gt;</span> command =common
+<a name="l-196"></a><span class="tm">16:40:01</span><span class="nk"> &lt;vuntz&gt;</span> fwiw, adding yast to the current system settings don't work right now (ie: icon appears, but clicking on it does nothing)
+<a name="l-197"></a><span class="tm">16:40:49</span><span class="nk"> &lt;prusnak&gt;</span> isn't it the same issue that FunkyPenguin had (installing gnome-menus-branding-openSUSE helped)
+<a name="l-198"></a><span class="tm">16:40:58</span><span class="nk"> &lt;prusnak&gt;</span> ?
+<a name="l-199"></a><span class="tm">16:41:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">prusnak:</span> I doubt so
+<a name="l-200"></a><span class="tm">16:43:02</span><span class="nk"> &lt;darkmatter&gt;</span> <span class="hi">vuntz:</span> I never meant "use the system settings shell". I meant "change the layout of the existing yast shell to fit better with the system settings" basically. move the filter to the top in a toolbar, change the content layout with text under icons and a more compact grid, etc. just make it look less out of place :)
+<a name="l-201"></a><span class="tm">16:43:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darkmatter:</span> it's really simpler to just use the same code
+<a name="l-202"></a><span class="tm">16:43:59</span><span class="nk"> &lt;prusnak&gt;</span> i guess that's what will happen if we port yast-gtk from gtk2 to gtk3
+<a name="l-203"></a><span class="tm">16:44:16</span><span class="nk"> &lt;vuntz&gt;</span> anyway
+<a name="l-204"></a><span class="tm">16:44:30</span><span class="nk"> &lt;vuntz&gt;</span> the yast integration is an open topic
+<a name="l-205"></a><span class="tm">16:44:53</span><span class="nk"> &lt;vuntz&gt;</span> ideally, we'd get some people to drive it (ie, discuss with various people and propose a way forward)
+<a name="l-206"></a><span class="tm">16:45:12</span><span class="nk"> &lt;vuntz&gt;</span> any volunteer?
+<a name="l-207"></a><span class="tm">16:45:28</span><span class="nk"> &lt;vuntz&gt;</span> (it doesn't involve coding, packaging, etc. -- just talking to people)
+<a name="l-208"></a><span class="tm">16:45:49</span><span class="nk"> &lt;prusnak&gt;</span> i can try it if nmarques doesn't want to
+<a name="l-209"></a><span class="tm">16:46:54</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> i can talk to Ricardo (current yast2-gtk maintainer) and see if he is willing to do this (yast-gtk2 -&gt; yast-gtk3) and some integration issues as well
+<a name="l-210"></a><span class="tm">16:47:31</span><span class="nk"> &lt;badshah400&gt;</span> we do have a mailing list exclusively for yast2-gtk too []
+<a name="l-211"></a><span class="tm">16:47:34</span><span class="nk"> &lt;badshah400&gt;</span> http://groups.google.com/group/yast2-gtk/
+<a name="l-212"></a><span class="tm">16:47:46</span><span class="nk"> &lt;vuntz&gt;</span> ah, yast-gtk3 is something a bit different. But that needs to be done too
+<a name="l-213"></a><span class="tm">16:47:57</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">lots of discussion about how to best integrate yast in GNOME 3</span>
+<a name="l-214"></a><span class="tm">16:48:16</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">badshah400 to discuss yast-gtk2 -&gt; yast-gtk3 migration with ricardo</span>
+<a name="l-215"></a><span class="tm">16:48:44</span><span class="nk"> &lt;prusnak&gt;</span> yep, integration and yast-gtk3 are separate issues, unless we decide we want to have 100 yast icons in system settings (which we probably don't) :)
+<a name="l-216"></a><span class="tm">16:48:45</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> thanks
+<a name="l-217"></a><span class="tm">16:48:55</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">prusnak to lead discussion and propose resolution on how to integrate yast in GNOME 3</span>
+<a name="l-218"></a><span class="tm">16:49:06</span><span class="nk"> &lt;nmarques&gt;</span> prusnak, you probably should do this
+<a name="l-219"></a><span class="tm">16:49:09</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">prusnak:</span> you won it :-)
+<a name="l-220"></a><span class="tm">16:49:13 </span><span class="nka">* prusnak</span> <span class="ac">subscribes to opensuse-gnome</span>
+<a name="l-221"></a><span class="tm">16:49:19</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">nmarques:</span> okay :)
+<a name="l-222"></a><span class="tm">16:49:31</span><span class="nk"> &lt;nmarques&gt;</span> prusnak, I'm buried with 3 interviews and SONAR :/
+<a name="l-223"></a><span class="tm">16:49:37</span><span class="nk"> &lt;vuntz&gt;</span> anything other Q&amp;A?
+<a name="l-224"></a><span class="tm">16:50:10</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">nmarques:</span> i'll gladly help, i just didn't want to take the topic away from you in case you wanted to have it
+<a name="l-225"></a><span class="tm">16:50:11</span><span class="nk"> &lt;badshah400&gt;</span> sorry if it has been discussed before and I missed it, but compiz for failback session?
+<a name="l-226"></a><span class="tm">16:50:29</span><span class="nk"> &lt;vuntz&gt;</span> it wasn't discussed
+<a name="l-227"></a><span class="tm">16:50:35</span><span class="nk"> &lt;vuntz&gt;</span> DimStar, nmarques: any opinion?
+<a name="l-228"></a><span class="tm">16:50:38</span><span class="nk"> &lt;badshah400&gt;</span> s/failback/fallback/
+<a name="l-229"></a><span class="tm">16:51:08</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">badshah400:</span> wanna maintain it? :P
+<a name="l-230"></a><span class="tm">16:51:40</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">DimStar:</span> I am very interested in doing so, but how hard would that be?
+<a name="l-231"></a><span class="tm">16:52:01</span><span class="nk"> &lt;DimStar&gt;</span> not sure it's good as an automatic fallback to compiz. i'd more see something like a 'compiz' in GDM which runs a 'fallback' gnome3 / compiz.
+<a name="l-232"></a><span class="tm">16:53:18</span><span class="nk"> &lt;vuntz&gt;</span> we can do any of those
+<a name="l-233"></a><span class="tm">16:53:21</span><span class="nk"> &lt;vuntz&gt;</span> it's not really difficult
+<a name="l-234"></a><span class="tm">16:53:44</span><span class="nk"> &lt;vuntz&gt;</span> but starting with the compiz session in gdm picker is a good start, I guess :-)
+<a name="l-235"></a><span class="tm">16:53:57</span><span class="nk"> &lt;DimStar&gt;</span> I tihnk in most cases when compiz can run, gnome should be able to do so too
+<a name="l-236"></a><span class="tm">16:54:36</span><span class="nk"> &lt;DimStar&gt;</span> it would just come down to 'sync' the way they decide that the hardware is suitable to do so.
+<a name="l-237"></a><span class="tm">16:56:06 </span><span class="nka">* darkmatter</span> <span class="ac">naps. will read logs later.</span>
+<a name="l-238"></a><span class="tm">16:57:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> do you want to work on creating a compiz session for the gdm picker?
+<a name="l-239"></a><span class="tm">16:57:36</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">DimStar:</span> i guess i could do the maintenance of compiz with some help from the pros :)
+<a name="l-240"></a><span class="tm">16:57:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> it's really mostly writing a small text file :-)
+<a name="l-241"></a><span class="tm">16:57:42</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> yes,
+<a name="l-242"></a><span class="tm">16:58:00</span><span class="nk"> &lt;vuntz&gt;</span> cool
+<a name="l-243"></a><span class="tm">16:58:10</span><span class="nk"> &lt;vuntz&gt;</span> feel free to ping me about this, I can show you how this works
+<a name="l-244"></a><span class="tm">16:58:24</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> thanks, would have done so anyways :)
+<a name="l-245"></a><span class="tm">16:58:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">badshah400 to write a .session file for compiz to appear in gdm</span>
+<a name="l-246"></a><span class="tm">16:58:33</span><span class="nk"> &lt;vuntz&gt;</span> any other q&amp;a?
+<a name="l-247"></a><span class="tm">16:59:42</span><span class="nk"> &lt;vuntz&gt;</span> okay
+<a name="l-248"></a><span class="tm">16:59:44</span><span class="nk"> &lt;vuntz&gt;</span> let's call it a day
+<a name="l-249"></a><span class="tm">16:59:49</span><span class="nk"> &lt;vuntz&gt;</span> thanks all for the meeting
+<a name="l-250"></a><span class="tm">16:59:55</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

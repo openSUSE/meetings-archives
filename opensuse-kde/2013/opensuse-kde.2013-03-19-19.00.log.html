@@ -1,0 +1,478 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">19:00:21</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">19:00:22</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Tue Mar 19 19:00:21 2013 UTC.  The chair is einar77. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">19:00:22</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">19:00:46</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.</span>
+<a name="l-5"></a><span class="tm">19:01:26</span><span class="nk"> &lt;einar77&gt;</span> <span class="topic">#topic </span><span class="topicline">old action items</span>
+<a name="l-6"></a><span class="tm">19:01:36</span><span class="nk"> &lt;einar77&gt;</span> Do we have any left over from previous meetings?
+<a name="l-7"></a><span class="tm">19:02:19</span><span class="nk"> &lt;einar77&gt;</span> And for reference, this is the topic list for today (assuming people are alive ;)
+<a name="l-8"></a><span class="tm">19:02:43</span><span class="nk"> &lt;einar77&gt;</span> Planning a review of openSUSE patches
+<a name="l-9"></a><span class="tm">19:02:45</span><span class="nk"> &lt;einar77&gt;</span> Adjustment (enforcing) of patch policy
+<a name="l-10"></a><span class="tm">19:02:46</span><span class="nk"> &lt;einar77&gt;</span> Summary of the 12.3 development cycle: what was good, what wasn't, ideas for improvement
+<a name="l-11"></a><span class="tm">19:02:48</span><span class="nk"> &lt;einar77&gt;</span> Initial plans for 13.1
+<a name="l-12"></a><span class="tm">19:02:49</span><span class="nk"> &lt;einar77&gt;</span> Review of KDE Repositories, especially : (tittiatcoke)
+<a name="l-13"></a><span class="tm">19:02:55</span><span class="nk"> &lt;einar77&gt;</span> How to proceed with KUSC ? (bnc#706813 and the work done by shumski)
+<a name="l-14"></a><span class="tm">19:02:56</span><span class="nk"> &lt;einar77&gt;</span> - KDE:Unstable:Playground:Telepathy
+<a name="l-15"></a><span class="tm">19:05:04</span><span class="nk"> &lt;einar77&gt;</span> going through old stuff to see if
+<a name="l-16"></a><span class="tm">19:05:07</span><span class="nk"> &lt;einar77&gt;</span> there's something worht reporting
+<a name="l-17"></a><span class="tm">19:05:47</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">alin:</span> did you get through legal for Simon?
+<a name="l-18"></a><span class="tm">19:06:06</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> yes... I have put the srs but of course only silence came from them
+<a name="l-19"></a><span class="tm">19:06:24</span><span class="nk"> &lt;einar77&gt;</span> Do you mean, you have SRs made already?
+<a name="l-20"></a><span class="tm">19:06:30</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">alin:</span> worth perhaps poking them again?
+<a name="l-21"></a><span class="tm">19:06:33</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> sr 156732 , 734 and 735
+<a name="l-22"></a><span class="tm">19:06:56</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> I really do not like to piss off people who do not write code...
+<a name="l-23"></a><span class="tm">19:07:15</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">alin:</span> Well, but I guess some were "forgotten" due to 12.3 having priority
+<a name="l-24"></a><span class="tm">19:07:38</span><span class="nk"> &lt;einar77&gt;</span> WHat about menioning it in a generic mail to factory ML?
+<a name="l-25"></a><span class="tm">19:07:51</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> ok I will
+<a name="l-26"></a><span class="tm">19:08:07</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">alin write to factory ML regarding Simon's status</span>
+<a name="l-27"></a><span class="tm">19:08:39</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">cb400f:</span> shumski tittiatcoke was 11.4 dropped from KUA?
+<a name="l-28"></a><span class="tm">19:08:50</span><span class="nk"> &lt;cb400f&gt;</span> yep
+<a name="l-29"></a><span class="tm">19:08:59</span><span class="nk"> &lt;cb400f&gt;</span> not sure who/what did it.. but it's gone :-)
+<a name="l-30"></a><span class="tm">19:09:00</span><span class="nk"> &lt;einar77&gt;</span> Good, so that's done
+<a name="l-31"></a><span class="tm">19:09:12</span><span class="nk"> &lt;CygniX&gt;</span> Maybe someone else can guide me, I would like to file a bug but dont know if I should do it with KDe or with suse
+<a name="l-32"></a><span class="tm">19:09:26</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> ok... so we donot know whom to congratulate... such a pity
+<a name="l-33"></a><span class="tm">19:09:32</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">CygniX:</span> wait until after the meeting :-)
+<a name="l-34"></a><span class="tm">19:09:32</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">CygniX:</span> can you wait a few minutes? there's the KDE meeting going on at the moment
+<a name="l-35"></a><span class="tm">19:09:50</span><span class="nk"> &lt;CygniX&gt;</span> Oh OK, no problem guys
+<a name="l-36"></a><span class="tm">19:10:17</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">cb400f:</span> you had also "start a wiki page for apper", did you get around to it, or did you not have time?
+<a name="l-37"></a><span class="tm">19:10:26</span><span class="nk"> &lt;einar77&gt;</span> (just trying to "spring clean" the old items)
+<a name="l-38"></a><span class="tm">19:11:05</span><span class="nk"> &lt;cb400f&gt;</span> it's very near the top of my list.. I have already made the screenshots... but I had to wait until I had 12.3 installed
+<a name="l-39"></a><span class="tm">19:11:23</span><span class="nk"> &lt;einar77&gt;</span> I'll just add to the actions again then ,so that's not forgotten
+<a name="l-40"></a><span class="tm">19:11:47</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">cb400f Make a start with a wiki page for apper</span>
+<a name="l-41"></a><span class="tm">19:12:25</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> do whe have the fix for https://bugreports.qt-project.org/browse/QTBUG-18934 ?
+<a name="l-42"></a><span class="tm">19:12:36</span><span class="nk"> &lt;einar77&gt;</span> since it caused issues w/nepomukindexer
+<a name="l-43"></a><span class="tm">19:12:43</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">einar77:</span> yes, submitted it to KDE:Qt
+<a name="l-44"></a><span class="tm">19:12:51</span><span class="nk"> &lt;einar77&gt;</span> ok, so that's solved
+<a name="l-45"></a><span class="tm">19:13:17</span><span class="nk"> &lt;alin&gt;</span> tittiatcoke:
+<a name="l-46"></a><span class="tm">19:13:22</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> last one for you, what about bug 69153?
+<a name="l-47"></a><span class="tm">19:13:22</span><span class="nk"> &lt;shumski&gt;</span> i don't know did it ended up in 12.3
+<a name="l-48"></a><span class="tm">19:13:27</span><span class="nk"> &lt;NicoK&gt;</span> KDF &amp; Co probably need some silent-time (i.e. no sr's / changes until fully built) though...
+<a name="l-49"></a><span class="tm">19:13:27</span><span class="nk"> &lt;einar77&gt;</span> er
+<a name="l-50"></a><span class="tm">19:13:42</span><span class="nk"> &lt;einar77&gt;</span> bug 659153
+<a name="l-51"></a><span class="tm">19:13:42</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 659153 in openSUSE 12.2 (KDE4 Workspace) "Ejecting Optical Drives Causes Immediate Re-Close of Tray and KNotify Crash" [Critical,Reopened] https://bugzilla.novell.com/659153
+<a name="l-52"></a><span class="tm">19:14:35</span><span class="nk"> &lt;einar77&gt;</span> The old action item was "check with cartman about that bug"
+<a name="l-53"></a><span class="tm">19:14:52</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> NicoK do we have nepomuk fileindexer off by default in 12.3?
+<a name="l-54"></a><span class="tm">19:14:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> I know. Didn't do that one. But the last comment indicate that the bug is gone
+<a name="l-55"></a><span class="tm">19:15:06</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">einar77:</span> fileindexer is of
+<a name="l-56"></a><span class="tm">19:15:14</span><span class="nk"> &lt;einar77&gt;</span> ok, both done
+<a name="l-57"></a><span class="tm">19:15:33</span><span class="nk"> &lt;einar77&gt;</span> I'll defer the discussion on ksuseinstall et al to 13.1 discussion in a moment
+<a name="l-58"></a><span class="tm">19:15:59</span><span class="nk"> &lt;einar77&gt;</span> <span class="topic">#topic </span><span class="topicline">status report</span>
+<a name="l-59"></a><span class="tm">19:16:28</span><span class="nk"> &lt;einar77&gt;</span> Any special non-agenda status report?
+<a name="l-60"></a><span class="tm">19:16:36</span><span class="nk"> &lt;einar77&gt;</span> Otherwise let's just move to the next topic
+<a name="l-61"></a><span class="tm">19:16:37</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">einar77:</span> (nepomuk fileindexer) don't know :(
+<a name="l-62"></a><span class="tm">19:17:09</span><span class="nk"> &lt;shumski&gt;</span> nepomuk and akonadi feeder - ON, fileindexer OFF
+<a name="l-63"></a><span class="tm">19:17:20</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> great, as planned
+<a name="l-64"></a><span class="tm">19:17:25</span><span class="nk"> &lt;shumski&gt;</span> yes
+<a name="l-65"></a><span class="tm">19:17:28</span><span class="nk"> &lt;einar77&gt;</span> Let's move on with the meat of this meeting
+<a name="l-66"></a><span class="tm">19:17:33</span><span class="nk"> &lt;shumski&gt;</span> ok
+<a name="l-67"></a><span class="tm">19:17:37</span><span class="nk"> &lt;einar77&gt;</span> <span class="topic">#topic </span><span class="topicline">Planning a review of openSUSE patches</span>
+<a name="l-68"></a><span class="tm">19:17:55</span><span class="nk"> &lt;einar77&gt;</span> As you all know, we do ship quite a lot of patches in our KDE packages
+<a name="l-69"></a><span class="tm">19:18:07</span><span class="nk"> &lt;einar77&gt;</span> my idea would be to start a (progressive) review
+<a name="l-70"></a><span class="tm">19:18:15</span><span class="nk"> &lt;einar77&gt;</span> to check:
+<a name="l-71"></a><span class="tm">19:18:24</span><span class="nk"> &lt;einar77&gt;</span> - whether the bugs they fix are relevant or not;
+<a name="l-72"></a><span class="tm">19:18:30</span><span class="nk"> &lt;einar77&gt;</span> - whether they are openSUSE specific
+<a name="l-73"></a><span class="tm">19:18:38</span><span class="nk"> &lt;einar77&gt;</span> - whether they can be pushed upstream instead
+<a name="l-74"></a><span class="tm">19:18:46</span><span class="nk"> &lt;einar77&gt;</span> - whether they can just be dropped
+<a name="l-75"></a><span class="tm">19:19:09</span><span class="nk"> &lt;einar77&gt;</span> I don't tihnk this should fall on one person alone, I believe this needs to be done collaboratively
+<a name="l-76"></a><span class="tm">19:19:34</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> do you know how many patches for kdelibs, for example?
+<a name="l-77"></a><span class="tm">19:19:37</span><span class="nk"> &lt;shumski&gt;</span> agreed. maybe it would be a good idea to open a wiki page, and people can write what do they think about specific patches?
+<a name="l-78"></a><span class="tm">19:19:46</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">einar77:</span> one sec
+<a name="l-79"></a><span class="tm">19:19:57</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">shumski:</span> probably a good idea
+<a name="l-80"></a><span class="tm">19:19:58</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> good idea about the wiki page
+<a name="l-81"></a><span class="tm">19:20:22</span><span class="nk"> &lt;einar77&gt;</span> Probably divided by package, and I say we focus on the core ones only at the moment
+<a name="l-82"></a><span class="tm">19:20:49</span><span class="nk"> &lt;einar77&gt;</span> IOW, kdelibs, kdebase-workspace, baseapps, runtime
+<a name="l-83"></a><span class="tm">19:20:55</span><span class="nk"> &lt;shumski&gt;</span> patch list is here: http://paste.opensuse.org/55518437
+<a name="l-84"></a><span class="tm">19:20:59</span><span class="nk"> &lt;shumski&gt;</span> (for kdelibs)
+<a name="l-85"></a><span class="tm">19:21:01</span><span class="nk"> &lt;einar77&gt;</span> once these are clean, we can move to check others
+<a name="l-86"></a><span class="tm">19:21:17</span><span class="nk"> &lt;shumski&gt;</span> yeah, kdelibs and workspace have the most
+<a name="l-87"></a><span class="tm">19:21:46</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> some can probably be pushed upstream, just by reading them
+<a name="l-88"></a><span class="tm">19:22:28</span><span class="nk"> &lt;einar77&gt;</span> I can create a skeleton, but then I'll need everyone to help ;)
+<a name="l-89"></a><span class="tm">19:23:11</span><span class="nk"> &lt;shumski&gt;</span> some can, some not i guess
+<a name="l-90"></a><span class="tm">19:23:12</span><span class="nk"> &lt;einar77&gt;</span> Afterwards we should announce it to the ML
+<a name="l-91"></a><span class="tm">19:23:18</span><span class="nk"> &lt;shumski&gt;</span> agreed
+<a name="l-92"></a><span class="tm">19:24:14</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">einar77 Create a skeleton page for patch review</span>
+<a name="l-93"></a><span class="tm">19:24:24</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">einar77 Announce wiki page for patch review on ML</span>
+<a name="l-94"></a><span class="tm">19:24:50</span><span class="nk"> &lt;einar77&gt;</span> Personally (speak up if you disagree)
+<a name="l-95"></a><span class="tm">19:24:52</span><span class="nk"> &lt;shumski&gt;</span> ~80% of workspace ones are for KDM, afaik
+<a name="l-96"></a><span class="tm">19:25:09</span><span class="nk"> &lt;einar77&gt;</span> I think we should strive to keep only opensuse specific things in patches
+<a name="l-97"></a><span class="tm">19:25:16</span><span class="nk"> &lt;einar77&gt;</span> with a good deal of pragmatism
+<a name="l-98"></a><span class="tm">19:25:48</span><span class="nk"> &lt;einar77&gt;</span> any other comments on this topic?
+<a name="l-99"></a><span class="tm">19:26:15</span><span class="nk"> &lt;einar77&gt;</span> I'll take this as a no ;)
+<a name="l-100"></a><span class="tm">19:26:28</span><span class="nk"> &lt;NicoK&gt;</span> the rest of the patches fix bugs that are not fixed in the latest release, right?
+<a name="l-101"></a><span class="tm">19:26:33</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">NicoK:</span> yes
+<a name="l-102"></a><span class="tm">19:26:39</span><span class="nk"> &lt;einar77&gt;</span> the idea is
+<a name="l-103"></a><span class="tm">19:26:49</span><span class="nk"> &lt;einar77&gt;</span> keep upstream patches for stuff that's solved in the next release
+<a name="l-104"></a><span class="tm">19:27:07</span><span class="nk"> &lt;einar77&gt;</span> and for the rest, upstream what's upstreamable, and keep the openSUSE specific things
+<a name="l-105"></a><span class="tm">19:27:16</span><span class="nk"> &lt;NicoK&gt;</span> ok - just wanted to make that sure as these are not really opensuse-specific...
+<a name="l-106"></a><span class="tm">19:27:39</span><span class="nk"> &lt;NicoK&gt;</span> sounds good
+<a name="l-107"></a><span class="tm">19:27:43</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">NicoK:</span> in that case we can try (not sure if we *always can*) to put them in KDE proper
+<a name="l-108"></a><span class="tm">19:27:45</span><span class="nk"> &lt;NicoK&gt;</span> upstream as much as possible
+<a name="l-109"></a><span class="tm">19:28:15</span><span class="nk"> &lt;einar77&gt;</span> Any other comment? Otherwise we move to the next item in the agenda
+<a name="l-110"></a><span class="tm">19:28:42</span><span class="nk"> &lt;einar77&gt;</span> Next it is, then
+<a name="l-111"></a><span class="tm">19:28:52</span><span class="nk"> &lt;einar77&gt;</span> <span class="topic">#topic </span><span class="topicline">Adjustment (enforcing) of patch policy</span>
+<a name="l-112"></a><span class="tm">19:29:19</span><span class="nk"> &lt;einar77&gt;</span> The recent "incident" with the giflib patches showed that so far we were inconsistent with the patch policy
+<a name="l-113"></a><span class="tm">19:29:45</span><span class="nk"> &lt;einar77&gt;</span> I would propose to enforce the patch policy from now on
+<a name="l-114"></a><span class="tm">19:29:55</span><span class="nk"> &lt;einar77&gt;</span> to keep consistency
+<a name="l-115"></a><span class="tm">19:29:58</span><span class="nk"> &lt;shumski&gt;</span> in what way?
+<a name="l-116"></a><span class="tm">19:30:00</span><span class="nk"> &lt;einar77&gt;</span> i.e. have them annotated
+<a name="l-117"></a><span class="tm">19:30:05</span><span class="nk"> &lt;shumski&gt;</span> ok, +1
+<a name="l-118"></a><span class="tm">19:30:12</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> I like the openSUSE KDE style, to be honest
+<a name="l-119"></a><span class="tm">19:30:24</span><span class="nk"> &lt;einar77&gt;</span> it's much more informative
+<a name="l-120"></a><span class="tm">19:30:56</span><span class="nk"> &lt;NicoK&gt;</span> +1@patch annotations
+<a name="l-121"></a><span class="tm">19:30:58</span><span class="nk"> &lt;einar77&gt;</span> albeit not used often outside KDE
+<a name="l-122"></a><span class="tm">19:31:08</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">einar77:</span> what do you mean by openSUSE KDE style?
+<a name="l-123"></a><span class="tm">19:31:20</span><span class="nk"> &lt;einar77&gt;</span> sec
+<a name="l-124"></a><span class="tm">19:32:06</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">NicoK:</span> this one https://en.opensuse.org/KDE/Patch_Annotation_Policy
+<a name="l-125"></a><span class="tm">19:32:10</span><span class="nk"> &lt;mrdocs&gt;</span> do we have a github or someplace these patches are stashed outside of OBS ?
+<a name="l-126"></a><span class="tm">19:32:30</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">mrdocs:</span> not at the moment
+<a name="l-127"></a><span class="tm">19:32:49</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">mrdocs:</span> I'm not too familiar with the OBS' source control mechanism
+<a name="l-128"></a><span class="tm">19:33:29</span><span class="nk"> &lt;einar77&gt;</span> My naive question
+<a name="l-129"></a><span class="tm">19:33:38</span><span class="nk"> &lt;einar77&gt;</span> does it make sense to have patches under version control?
+<a name="l-130"></a><span class="tm">19:33:45</span><span class="nk"> &lt;mrdocs&gt;</span> possibly
+<a name="l-131"></a><span class="tm">19:33:50</span><span class="nk"> &lt;einar77&gt;</span> (my instinct says yes)
+<a name="l-132"></a><span class="tm">19:34:07</span><span class="nk"> &lt;mrdocs&gt;</span> and a place where upstream can pull from too
+<a name="l-133"></a><span class="tm">19:34:41</span><span class="nk"> &lt;einar77&gt;</span> could be possible
+<a name="l-134"></a><span class="tm">19:35:04</span><span class="nk"> &lt;NicoK&gt;</span> @KDE annotation policy: seems similar to patches created by git - and reasonable
+<a name="l-135"></a><span class="tm">19:35:21</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">mrdocs:</span> you mean storing just the diff, or the whole patched checkout? (I'm thinking the former)
+<a name="l-136"></a><span class="tm">19:35:36</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">NicoK:</span> in fact we could almost use git-format-patch ;)
+<a name="l-137"></a><span class="tm">19:35:57</span><span class="nk"> &lt;mrdocs&gt;</span> git-format patch is cool
+<a name="l-138"></a><span class="tm">19:36:08</span><span class="nk"> &lt;mrdocs&gt;</span> just the diffs imo
+<a name="l-139"></a><span class="tm">19:36:13</span><span class="nk"> &lt;einar77&gt;</span> ok, I agree
+<a name="l-140"></a><span class="tm">19:36:25</span><span class="nk"> &lt;NicoK&gt;</span> OBS uses some sort of version control
+<a name="l-141"></a><span class="tm">19:36:51</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">NicoK:</span> it's not easy to extract history though, it's often hand in hand with the checkins
+<a name="l-142"></a><span class="tm">19:37:17</span><span class="nk"> &lt;NicoK&gt;</span> yes - another VCS would increase complexity and may reduce partiticipation though
+<a name="l-143"></a><span class="tm">19:37:18</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> what do you think? Does it make sense to have a github repo with our patches?
+<a name="l-144"></a><span class="tm">19:37:42</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">NicoK:</span> fedora has a git repo for their patches (granted, they don't have OBS, though)
+<a name="l-145"></a><span class="tm">19:37:44</span><span class="nk"> &lt;NicoK&gt;</span> or maybe we could put only those patches there that we want to get upstream
+<a name="l-146"></a><span class="tm">19:37:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Might be indeed good, but then we should not only look for patches, but also tools (e.g. my scripts to update KDF, etc)
+<a name="l-147"></a><span class="tm">19:38:04</span><span class="nk"> &lt;NicoK&gt;</span> as some kind of "incubation" project
+<a name="l-148"></a><span class="tm">19:38:07</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> that's an excellent idea
+<a name="l-149"></a><span class="tm">19:38:26</span><span class="nk"> &lt;einar77&gt;</span> we should keep scripts etc all open to the public
+<a name="l-150"></a><span class="tm">19:38:33</span><span class="nk"> &lt;NicoK&gt;</span> +1
+<a name="l-151"></a><span class="tm">19:39:05</span><span class="nk"> &lt;NicoK&gt;</span> ideally OBS would expose its history in a better way though...
+<a name="l-152"></a><span class="tm">19:39:16</span><span class="nk"> &lt;NicoK&gt;</span> e.g. as a git repo
+<a name="l-153"></a><span class="tm">19:39:20</span><span class="nk"> &lt;einar77&gt;</span> Agreed, but while it doesn't
+<a name="l-154"></a><span class="tm">19:39:28</span><span class="nk"> &lt;einar77&gt;</span> most of the KDE team is familiar with git
+<a name="l-155"></a><span class="tm">19:39:38</span><span class="nk"> &lt;einar77&gt;</span> (despite it being black magic at times)
+<a name="l-156"></a><span class="tm">19:39:41</span><span class="nk"> &lt;NicoK&gt;</span> maybe it's worth adding a FATE entry (if there is none yet)
+<a name="l-157"></a><span class="tm">19:39:46</span><span class="nk"> &lt;NicoK&gt;</span> :)
+<a name="l-158"></a><span class="tm">19:39:49</span><span class="nk"> &lt;einar77&gt;</span> good idea
+<a name="l-159"></a><span class="tm">19:40:14</span><span class="nk"> &lt;einar77&gt;</span> Who can talk with whoever's in charge of teh opensuse github repo to have this "incubation" repo created?
+<a name="l-160"></a><span class="tm">19:40:28</span><span class="nk"> &lt;einar77&gt;</span> Same for the FATE entry
+<a name="l-161"></a><span class="tm">19:40:51</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">NicoK:</span> since you roposed the FATE entry, would you be able to do it? ;) *hint, hint*
+<a name="l-162"></a><span class="tm">19:41:14</span><span class="nk"> &lt;shumski&gt;</span> it is not that bad with history, just that is hard to check it if people don't commit with messages
+<a name="l-163"></a><span class="tm">19:41:20</span><span class="nk"> &lt;einar77&gt;</span> yes
+<a name="l-164"></a><span class="tm">19:41:24</span><span class="nk"> &lt;einar77&gt;</span> with git you can't
+<a name="l-165"></a><span class="tm">19:41:24</span><span class="nk"> &lt;NicoK&gt;</span> I'm pretty stuffed with work atm - but I can probably search &amp; add a simple request there, I guess
+<a name="l-166"></a><span class="tm">19:41:48</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">NicoK:</span> not wanting to push you, just to ensure that stuff gets recorded and we know who's doing what
+<a name="l-167"></a><span class="tm">19:41:58</span><span class="nk"> &lt;NicoK&gt;</span> you can omit messages (or write useless messages) in git as well, can't you?
+<a name="l-168"></a><span class="tm">19:42:07</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">NicoK:</span> yes, of course
+<a name="l-169"></a><span class="tm">19:42:32</span><span class="nk"> &lt;einar77&gt;</span> "Against stupidity the gods themselves contend in vain", so it'll always happen
+<a name="l-170"></a><span class="tm">19:43:00</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> alin tittiatcoke any of you can look for this git repo creation?
+<a name="l-171"></a><span class="tm">19:43:18</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> you can assign this one to me
+<a name="l-172"></a><span class="tm">19:43:24</span><span class="nk"> &lt;einar77&gt;</span> ok, thanks
+<a name="l-173"></a><span class="tm">19:43:48</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke investigate the creation of a github repo for patches and other KDE team tools</span>
+<a name="l-174"></a><span class="tm">19:44:20</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">all Enforce annotated patch policy for future SRs</span>
+<a name="l-175"></a><span class="tm">19:44:33</span><span class="nk"> &lt;einar77&gt;</span> Any takers for the FATE entry?
+<a name="l-176"></a><span class="tm">19:45:15</span><span class="nk"> &lt;NicoK&gt;</span> I'm not quite sure whether they'd accept it...
+<a name="l-177"></a><span class="tm">19:45:26</span><span class="nk"> &lt;NicoK&gt;</span> after all they have some sort of history tracking...
+<a name="l-178"></a><span class="tm">19:45:30</span><span class="nk"> &lt;einar77&gt;</span> OK, let this pass for now
+<a name="l-179"></a><span class="tm">19:45:40</span><span class="nk"> &lt;NicoK&gt;</span> I'll check though
+<a name="l-180"></a><span class="tm">19:45:46</span><span class="nk"> &lt;NicoK&gt;</span> so assign to me for now
+<a name="l-181"></a><span class="tm">19:45:46</span><span class="nk"> &lt;einar77&gt;</span> we'll see after the result of the github repo creation
+<a name="l-182"></a><span class="tm">19:45:48</span><span class="nk"> &lt;einar77&gt;</span> ok
+<a name="l-183"></a><span class="tm">19:46:10</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">NicoK open a FATE ticket for improved history in OBS</span>
+<a name="l-184"></a><span class="tm">19:46:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> do you have an action that somebody will communicate the new patch policy ? (ml, wiki, etc ?)
+<a name="l-185"></a><span class="tm">19:46:31</span><span class="nk"> &lt;NicoK&gt;</span> except a git repo representation, what would you improve?
+<a name="l-186"></a><span class="tm">19:46:37</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> not yet
+<a name="l-187"></a><span class="tm">19:46:41</span><span class="nk"> &lt;einar77&gt;</span> I would say ML first
+<a name="l-188"></a><span class="tm">19:46:45</span><span class="nk"> &lt;einar77&gt;</span> then wiki
+<a name="l-189"></a><span class="tm">19:46:59</span><span class="nk"> &lt;einar77&gt;</span> I can do the ML part
+<a name="l-190"></a><span class="tm">19:47:09</span><span class="nk"> &lt;einar77&gt;</span> Since I already have things to report via ML anyway
+<a name="l-191"></a><span class="tm">19:47:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Ok. :-) Also we need to inform the factory-maintainers that this is the new policy and that they are allowed to reject submissions to factory if the policy is not followed
+<a name="l-192"></a><span class="tm">19:47:43</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> specific mail address, or the factory-ml?
+<a name="l-193"></a><span class="tm">19:48:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> I am not sure, but we could communicate this through Andreas Jaeger
+<a name="l-194"></a><span class="tm">19:48:20</span><span class="nk"> &lt;einar77&gt;</span> I would go in 3 stages: 1. tell KDE ML, 2. tell AJaeger, 3. wikify
+<a name="l-195"></a><span class="tm">19:49:04</span><span class="nk"> &lt;einar77&gt;</span> likely, write to ML, if no big objections make it policy by writing to the factory-maintainers and then wikify it
+<a name="l-196"></a><span class="tm">19:49:44</span><span class="nk"> &lt;einar77&gt;</span> if you agree, I'll do the ML part first
+<a name="l-197"></a><span class="tm">19:49:50</span><span class="nk"> &lt;einar77&gt;</span> today or tomorrow I hope
+<a name="l-198"></a><span class="tm">19:49:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Ok
+<a name="l-199"></a><span class="tm">19:50:06</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">einar77 write to opensuse-kde ML for the new patch policy</span>
+<a name="l-200"></a><span class="tm">19:50:10</span><span class="nk"> &lt;shumski&gt;</span> ok, i'll try to annotate the existing ones in the next days (if agreed)
+<a name="l-201"></a><span class="tm">19:50:11</span><span class="nk"> &lt;shumski&gt;</span> ?
+<a name="l-202"></a><span class="tm">19:50:20</span><span class="nk"> &lt;einar77&gt;</span> good
+<a name="l-203"></a><span class="tm">19:50:27</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> I'll put that as action item so we know
+<a name="l-204"></a><span class="tm">19:50:33</span><span class="nk"> &lt;shumski&gt;</span> oki
+<a name="l-205"></a><span class="tm">19:50:41</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">shumski annotate existing patches if the new patch policy proceeds</span>
+<a name="l-206"></a><span class="tm">19:50:56</span><span class="nk"> &lt;einar77&gt;</span> GUys, can some of you take my place for ~10 min?
+<a name="l-207"></a><span class="tm">19:51:04</span><span class="nk"> &lt;einar77&gt;</span> I need to make a phone call
+<a name="l-208"></a><span class="tm">19:51:18</span><span class="nk"> &lt;einar77&gt;</span> but before that, any other questions?
+<a name="l-209"></a><span class="tm">19:52:12</span><span class="nk"> &lt;einar77&gt;</span> Next topic coming up, unless you have more questions
+<a name="l-210"></a><span class="tm">19:52:16</span><span class="nk"> &lt;einar77&gt;</span> (or proposals)
+<a name="l-211"></a><span class="tm">19:52:39</span><span class="nk"> &lt;einar77&gt;</span> <span class="topic">#topic </span><span class="topicline">Summary of the 12.3 development cycle: what was good, what wasn't, ideas for improvement</span>
+<a name="l-212"></a><span class="tm">19:53:10</span><span class="nk"> &lt;einar77&gt;</span> What are your thoughts overall on this?
+<a name="l-213"></a><span class="tm">19:53:37</span><span class="nk"> &lt;einar77&gt;</span> How was 12.3 cycle?
+<a name="l-214"></a><span class="tm">19:53:43</span><span class="nk"> &lt;einar77&gt;</span> what was good?
+<a name="l-215"></a><span class="tm">19:53:44</span><span class="nk"> &lt;einar77&gt;</span> what wasn't?
+<a name="l-216"></a><span class="tm">19:53:54 </span><span class="nka">* einar77</span> <span class="ac">withdraws for 10 min</span>
+<a name="l-217"></a><span class="tm">19:54:05</span><span class="nk"> &lt;einar77&gt;</span> Sorry for this, I'll be back ASAP
+<a name="l-218"></a><span class="tm">19:54:42</span><span class="nk"> &lt;krop&gt;</span> ← is finally there and scrolls
+<a name="l-219"></a><span class="tm">20:00:13</span><span class="nk"> &lt;mrdocs&gt;</span> IMO 12.3 is one of the nicest KDE's in a long time
+<a name="l-220"></a><span class="tm">20:00:37</span><span class="nk"> &lt;mrdocs&gt;</span> artwork gets special mention coz i really never bother, but its well done
+<a name="l-221"></a><span class="tm">20:00:57</span><span class="nk"> &lt;cb400f&gt;</span> we still screwed up on a few things.. e.g. no video thumbnails in a default install
+<a name="l-222"></a><span class="tm">20:01:32</span><span class="nk"> &lt;cb400f&gt;</span> also I wonder if kde-gtk-config shouldn't have replaced kcm_gtk as default?
+<a name="l-223"></a><span class="tm">20:01:39</span><span class="nk"> &lt;ryrych&gt;</span> hi
+<a name="l-224"></a><span class="tm">20:01:42</span><span class="nk"> &lt;shumski&gt;</span> didn't it?
+<a name="l-225"></a><span class="tm">20:01:45</span><span class="nk"> &lt;cb400f&gt;</span> and we didn't get rid of ksuseinstall in time
+<a name="l-226"></a><span class="tm">20:02:02</span><span class="nk"> &lt;cb400f&gt;</span> I have kcm_gtk by default on my 12.3 fresh live install
+<a name="l-227"></a><span class="tm">20:02:35</span><span class="nk"> &lt;shumski&gt;</span> ok. didn't checked that one. thought it already replaced it
+<a name="l-228"></a><span class="tm">20:02:57</span><span class="nk"> &lt;ryrych&gt;</span> when I try to open mov video file in vlc I get a black screen; also Kaffeine says this: Cannot find demux plugin for MRL; I installed vlc from pacman but it didn't help
+<a name="l-229"></a><span class="tm">20:04:06</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">cb400f:</span> also seems ffmpegthumbs disappeared from Packman?
+<a name="l-230"></a><span class="tm">20:04:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">ryrych:</span> Please see topic. Meeting is ongoing, please wait with your question till after the meeting
+<a name="l-231"></a><span class="tm">20:04:24</span><span class="nk"> &lt;ryrych&gt;</span> ok sorry :)
+<a name="l-232"></a><span class="tm">20:04:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">ryrych:</span> np :-)
+<a name="l-233"></a><span class="tm">20:04:55</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">shumski:</span> maybe.. I'm using mplayerthumbs
+<a name="l-234"></a><span class="tm">20:05:00</span><span class="nk"> &lt;einar77&gt;</span> back and srorry
+<a name="l-235"></a><span class="tm">20:05:14 </span><span class="nka">* einar77</span> <span class="ac">reads</span>
+<a name="l-236"></a><span class="tm">20:05:23</span><span class="nk"> &lt;shumski&gt;</span> ok. got a qustion today about it, and looked, didn't found it
+<a name="l-237"></a><span class="tm">20:05:53</span><span class="nk"> &lt;einar77&gt;</span> on the good things
+<a name="l-238"></a><span class="tm">20:06:00</span><span class="nk"> &lt;einar77&gt;</span> we have strengthened a lot the upstream links, IMO
+<a name="l-239"></a><span class="tm">20:06:09</span><span class="nk"> &lt;einar77&gt;</span> the aforementioned theme
+<a name="l-240"></a><span class="tm">20:06:23</span><span class="nk"> &lt;einar77&gt;</span> agreed with cb400f on the ksuseinstall
+<a name="l-241"></a><span class="tm">20:06:31</span><span class="nk"> &lt;einar77&gt;</span> IMO it should be torched, but that's just me
+<a name="l-242"></a><span class="tm">20:06:55</span><span class="nk"> &lt;cb400f&gt;</span> interesting that you should strengthen relations with upstream by ditching _their_ artwork ;-)
+<a name="l-243"></a><span class="tm">20:07:08</span><span class="nk"> &lt;cb400f&gt;</span> me too :-)
+<a name="l-244"></a><span class="tm">20:07:08</span><span class="nk"> &lt;einar77&gt;</span> well that's branding and all that jazz ;)
+<a name="l-245"></a><span class="tm">20:07:24</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">cb400f:</span> but we did a lot of our work upstream or in collaboration with upstream
+<a name="l-246"></a><span class="tm">20:07:28</span><span class="nk"> &lt;einar77&gt;</span> and even with other distros
+<a name="l-247"></a><span class="tm">20:07:40</span><span class="nk"> &lt;einar77&gt;</span> (udisks2 backend for solid - upstream / fedora / opensuse stuff)
+<a name="l-248"></a><span class="tm">20:08:22</span><span class="nk"> &lt;einar77&gt;</span> I think this should be a good marketing point, even
+<a name="l-249"></a><span class="tm">20:08:34</span><span class="nk"> &lt;einar77&gt;</span> as for stuff that could be improved...
+<a name="l-250"></a><span class="tm">20:09:04</span><span class="nk"> &lt;einar77&gt;</span> the aforementioned ksuseinstall mostly, from my POV
+<a name="l-251"></a><span class="tm">20:09:32</span><span class="nk"> &lt;einar77&gt;</span> and some defaults (kcm_gtk2 vs kcm-gtk-config)
+<a name="l-252"></a><span class="tm">20:10:18</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">alin:</span> krop anything to add on this?
+<a name="l-253"></a><span class="tm">20:10:32</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> sorry on the phone
+<a name="l-254"></a><span class="tm">20:10:53</span><span class="nk"> &lt;krop&gt;</span> no, as a factory user, I didn't test the 12.3 CD
+<a name="l-255"></a><span class="tm">20:10:58</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> aaa about 12.3 12.3 is history
+<a name="l-256"></a><span class="tm">20:11:07</span><span class="nk"> &lt;cb400f&gt;</span> kio_mtp is not in the default install either is it? ... I don't have android.. but that stuff seems to come up rather often
+<a name="l-257"></a><span class="tm">20:11:27</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">cb400f:</span> good point, these things will need to get into the default pattern
+<a name="l-258"></a><span class="tm">20:11:36</span><span class="nk"> &lt;shumski&gt;</span> should be on default pattern
+<a name="l-259"></a><span class="tm">20:11:59</span><span class="nk"> &lt;einar77&gt;</span> looks like I'm out of the loop
+<a name="l-260"></a><span class="tm">20:12:11</span><span class="nk"> &lt;NicoK&gt;</span> including android-tools (iirc it is only a soft requirement in kio_mtp)
+<a name="l-261"></a><span class="tm">20:12:22</span><span class="nk"> &lt;NicoK&gt;</span> i.e. a "suggests"
+<a name="l-262"></a><span class="tm">20:12:25</span><span class="nk"> &lt;einar77&gt;</span> To summarize, however, I think that this dev cycle is largely positive
+<a name="l-263"></a><span class="tm">20:12:38</span><span class="nk"> &lt;NicoK&gt;</span> but this is not KDE-specific :)
+<a name="l-264"></a><span class="tm">20:12:42</span><span class="nk"> &lt;einar77&gt;</span> and that we're on the good track
+<a name="l-265"></a><span class="tm">20:12:43</span><span class="nk"> &lt;cb400f&gt;</span> right.. I have it installed actually.. sorry
+<a name="l-266"></a><span class="tm">20:13:00</span><span class="nk"> &lt;einar77&gt;</span> probably we should improve more stuff like:
+<a name="l-267"></a><span class="tm">20:13:08</span><span class="nk"> &lt;einar77&gt;</span> - defaults (already good enough IMO)
+<a name="l-268"></a><span class="tm">20:13:11</span><span class="nk"> &lt;einar77&gt;</span> - default applications
+<a name="l-269"></a><span class="tm">20:13:16</span><span class="nk"> &lt;mrdocs&gt;</span> +1 mtp-tools
+<a name="l-270"></a><span class="tm">20:13:39</span><span class="nk"> &lt;einar77&gt;</span> the next topic deals with 13.1, that's why these two are close together
+<a name="l-271"></a><span class="tm">20:13:47</span><span class="nk"> &lt;krop&gt;</span> <span class="hi">note:</span> there's a thread upstream talking about kio-mtp and releasing it with 4.11
+<a name="l-272"></a><span class="tm">20:14:00</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">krop:</span> got a link?
+<a name="l-273"></a><span class="tm">20:14:20</span><span class="nk"> &lt;krop&gt;</span> a kde-devel thread from saturday
+<a name="l-274"></a><span class="tm">20:14:28</span><span class="nk"> &lt;einar77&gt;</span> ok, will check later
+<a name="l-275"></a><span class="tm">20:14:42</span><span class="nk"> &lt;einar77&gt;</span> Moving on the next topic, if you don't object
+<a name="l-276"></a><span class="tm">20:14:54</span><span class="nk"> &lt;krop&gt;</span> http://lists.kde.org/?l=kde-devel&amp;m=136347311903866&amp;w=2
+<a name="l-277"></a><span class="tm">20:15:15</span><span class="nk"> &lt;einar77&gt;</span> I'll swap topics on the agenda
+<a name="l-278"></a><span class="tm">20:15:35</span><span class="nk"> &lt;einar77&gt;</span> because since we started late, I'd rathr discuss the most definite scope first
+<a name="l-279"></a><span class="tm">20:16:13</span><span class="nk"> &lt;einar77&gt;</span> <span class="topic">#topic </span><span class="topicline">Review of KDE Repositories</span>
+<a name="l-280"></a><span class="tm">20:16:38</span><span class="nk"> &lt;einar77&gt;</span> <span class="topic">#topic </span><span class="topicline">*  How to proceed with KUSC ? (bnc#706813 and the work done by shumski)</span>
+<a name="l-281"></a><span class="tm">20:17:05</span><span class="nk"> &lt;einar77&gt;</span> As you know, shumski has been working on creating an out-of-prefix KUSC packaging
+<a name="l-282"></a><span class="tm">20:17:36</span><span class="nk"> &lt;einar77&gt;</span> I think it may be useful to evaluate whether it may good enough for KUSC
+<a name="l-283"></a><span class="tm">20:17:40</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> what's the current status?
+<a name="l-284"></a><span class="tm">20:18:08</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">einar77:</span> have some core packages there, but didn't continued until decided how to proceed
+<a name="l-285"></a><span class="tm">20:18:19</span><span class="nk"> &lt;einar77&gt;</span> rationale for this, for the others
+<a name="l-286"></a><span class="tm">20:18:38</span><span class="nk"> &lt;einar77&gt;</span> it may be worth providing non-prefix packages to ensure they don't destroy the default KDE install
+<a name="l-287"></a><span class="tm">20:18:51</span><span class="nk"> &lt;shumski&gt;</span> it is working correctly. even the branding stuff (except e.g. kdelibs)
+<a name="l-288"></a><span class="tm">20:18:53</span><span class="nk"> &lt;einar77&gt;</span> this will be useful for people who do development only on small bits of KDE; or to test
+<a name="l-289"></a><span class="tm">20:18:59</span><span class="nk"> &lt;einar77&gt;</span> without risks
+<a name="l-290"></a><span class="tm">20:19:15</span><span class="nk"> &lt;einar77&gt;</span> Now the 1 eurocent question is
+<a name="l-291"></a><span class="tm">20:19:26</span><span class="nk"> &lt;einar77&gt;</span> - is it worth pursuing?
+<a name="l-292"></a><span class="tm">20:19:28</span><span class="nk"> &lt;einar77&gt;</span> and
+<a name="l-293"></a><span class="tm">20:19:44</span><span class="nk"> &lt;einar77&gt;</span> - Do you agree that KUSC would (*potentially*) be better used like that?
+<a name="l-294"></a><span class="tm">20:20:04</span><span class="nk"> &lt;einar77&gt;</span> there's however a non small issue with repos tied to KUSC (are there any)?
+<a name="l-295"></a><span class="tm">20:20:58</span><span class="nk"> &lt;mrdocs&gt;</span> the other shoe which will drop is qt5
+<a name="l-296"></a><span class="tm">20:20:59</span><span class="nk"> &lt;shumski&gt;</span> obviously both answers from my end are - yes. but it is to others to say what they think
+<a name="l-297"></a><span class="tm">20:21:11</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">krop:</span> your opinion?
+<a name="l-298"></a><span class="tm">20:21:15</span><span class="nk"> &lt;mrdocs&gt;</span> which atm is not parallel installable
+<a name="l-299"></a><span class="tm">20:21:24</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">mrdocs:</span> yes, that's to keep in mind too
+<a name="l-300"></a><span class="tm">20:21:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> I guess that if we change the usage of KUSC to a different prefix, then the question is if we should still build KDE:EXtra and KUP for KUSC ?
+<a name="l-301"></a><span class="tm">20:21:38</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> that was my question
+<a name="l-302"></a><span class="tm">20:21:46</span><span class="nk"> &lt;einar77&gt;</span> I would be inclined to "No"
+<a name="l-303"></a><span class="tm">20:21:54</span><span class="nk"> &lt;einar77&gt;</span> KUSC is not for regular users IMO
+<a name="l-304"></a><span class="tm">20:21:54</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-) I would say the same.
+<a name="l-305"></a><span class="tm">20:21:55</span><span class="nk"> &lt;shumski&gt;</span> IMO, no
+<a name="l-306"></a><span class="tm">20:21:57</span><span class="nk"> &lt;mrdocs&gt;</span> but remerges might be ugly
+<a name="l-307"></a><span class="tm">20:22:08</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">mrdocs:</span> can you elaborate?
+<a name="l-308"></a><span class="tm">20:22:11</span><span class="nk"> &lt;mrdocs&gt;</span> i said *might*
+<a name="l-309"></a><span class="tm">20:22:39</span><span class="nk"> &lt;mrdocs&gt;</span> building kde-foo from extras against a much newer kdelibs or other core lib
+<a name="l-310"></a><span class="tm">20:23:00</span><span class="nk"> &lt;mrdocs&gt;</span> just trying to think ahead :-)
+<a name="l-311"></a><span class="tm">20:23:03</span><span class="nk"> &lt;krop&gt;</span> so,  I have technical questions: how are XDG paths handled ? specially XDG_CONFIG_HOME, XDG_DATA_HOME ?
+<a name="l-312"></a><span class="tm">20:23:17</span><span class="nk"> &lt;krop&gt;</span> how are polkit permissions files handled ?
+<a name="l-313"></a><span class="tm">20:23:18</span><span class="nk"> &lt;shumski&gt;</span> they are exported
+<a name="l-314"></a><span class="tm">20:23:21</span><span class="nk"> &lt;mrdocs&gt;</span> .kde-new ?
+<a name="l-315"></a><span class="tm">20:23:30</span><span class="nk"> &lt;shumski&gt;</span> .kde-unstable for now
+<a name="l-316"></a><span class="tm">20:24:09</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">krop:</span> everything is installed in /opt/kde-unstable
+<a name="l-317"></a><span class="tm">20:24:32</span><span class="nk"> &lt;krop&gt;</span> then polkit won't work (kdm settings, clock settings, apper...)
+<a name="l-318"></a><span class="tm">20:24:38</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> IIRC the polkit files will not work out of prefix
+<a name="l-319"></a><span class="tm">20:25:21</span><span class="nk"> &lt;shumski&gt;</span> ok, then i need to take a look at that
+<a name="l-320"></a><span class="tm">20:26:11</span><span class="nk"> &lt;krop&gt;</span> about :Extra, :Playground* I don't really see the reason to not build them anymore ?
+<a name="l-321"></a><span class="tm">20:26:45</span><span class="nk"> &lt;einar77&gt;</span> I would start small first (assuming it works)
+<a name="l-322"></a><span class="tm">20:27:07</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">krop:</span> i am not sure how would that work. i use different macros
+<a name="l-323"></a><span class="tm">20:28:15</span><span class="nk"> &lt;krop&gt;</span> as long as kde4-filesystem knows the /opt paths, we just have to review each package to make sure it uses the KDE path definitions
+<a name="l-324"></a><span class="tm">20:28:48</span><span class="nk"> &lt;shumski&gt;</span> macros are ~same only s/_kde4/_kde_unstable
+<a name="l-325"></a><span class="tm">20:30:15</span><span class="nk"> &lt;shumski&gt;</span> also, specs in extra would need a revisit, for dir ownership
+<a name="l-326"></a><span class="tm">20:30:41</span><span class="nk"> &lt;einar77&gt;</span> Folks, I just realized I need to leave, didn't expect the meeting to run this long
+<a name="l-327"></a><span class="tm">20:31:04</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> so a general review of specs would be required before any other adjustments?
+<a name="l-328"></a><span class="tm">20:31:23</span><span class="nk"> &lt;shumski&gt;</span> that is for sure :-)
+<a name="l-329"></a><span class="tm">20:31:26</span><span class="nk"> &lt;einar77&gt;</span> Can someone "take the helm" for the meeting in my stead?
+<a name="l-330"></a><span class="tm">20:31:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> I would propose that we move this discussion to the next meeting. This gives shumski the time to investigate some stuff and the rest to think about it
+<a name="l-331"></a><span class="tm">20:32:00</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">shumski further investigate out-of-prefix KUSC</span>
+<a name="l-332"></a><span class="tm">20:32:11</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> as expressed in the action above
+<a name="l-333"></a><span class="tm">20:32:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Oki :-)
+<a name="l-334"></a><span class="tm">20:32:28</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Thanks for moderating. I will take over for the last agenda item :-)
+<a name="l-335"></a><span class="tm">20:32:38</span><span class="nk"> &lt;einar77&gt;</span> thanks, sorry for this (And if I messed up tell me!)
+<a name="l-336"></a><span class="tm">20:32:40</span><span class="nk"> &lt;einar77&gt;</span> later people!
+<a name="l-337"></a><span class="tm">20:32:54</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A</span>
+<a name="l-338"></a><span class="tm">20:33:15</span><span class="nk"> &lt;krop&gt;</span> already ? didn't you want to discuss kupt ?
+<a name="l-339"></a><span class="tm">20:33:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> Ok :-)
+<a name="l-340"></a><span class="tm">20:34:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> I brought up the point with regards to the separate repo for Telepathy (KUPT). The reason for this is if we still needs this one or that we should merge it into KUP itself
+<a name="l-341"></a><span class="tm">20:35:00</span><span class="nk"> &lt;tittiatcoke&gt;</span> anybody ?
+<a name="l-342"></a><span class="tm">20:35:42</span><span class="nk"> &lt;krop&gt;</span> me ! me !
+<a name="l-343"></a><span class="tm">20:36:10</span><span class="nk"> &lt;krop&gt;</span> I see several things:
+<a name="l-344"></a><span class="tm">20:36:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-345"></a><span class="tm">20:36:47</span><span class="nk"> &lt;krop&gt;</span> - they break their repo, move their code every months and break everything very often
+<a name="l-346"></a><span class="tm">20:37:59</span><span class="nk"> &lt;krop&gt;</span> - the dependencies are also evolving quickly (do we really want to ship a recent telepathy-glib or telepathy-whatever in KUP for 12.2 ?)
+<a name="l-347"></a><span class="tm">20:38:34</span><span class="nk"> &lt;krop&gt;</span> - we have a local patch that removes the dependency on gnome-keyring (because, well, we don't care about it)
+<a name="l-348"></a><span class="tm">20:39:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. So a lot speaks for keeping it really separate :-)
+<a name="l-349"></a><span class="tm">20:39:32</span><span class="nk"> &lt;krop&gt;</span> - whatever decision, I'd rather keep them in a separate repo due to the amount of packages and provide an _aggregate instead
+<a name="l-350"></a><span class="tm">20:40:06</span><span class="nk"> &lt;krop&gt;</span> (the last point is because kup itself has quite some packages already)
+<a name="l-351"></a><span class="tm">20:40:12</span><span class="nk"> &lt;tittiatcoke&gt;</span> true
+<a name="l-352"></a><span class="tm">20:40:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> Does anybody has a different opinion ?
+<a name="l-353"></a><span class="tm">20:41:09</span><span class="nk"> &lt;krop&gt;</span> (I'm also thinking about moving the kdevelop plugins in a subproject and add an _aggregate for the same reason)
+<a name="l-354"></a><span class="tm">20:41:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> ok
+<a name="l-355"></a><span class="tm">20:43:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> Hmm, anybody still in the meeting ?
+<a name="l-356"></a><span class="tm">20:43:23</span><span class="nk"> &lt;shumski&gt;</span> yeah, sorry
+<a name="l-357"></a><span class="tm">20:43:31</span><span class="nk"> &lt;cb400f&gt;</span> guess not too many use ktp from kupt ;-)
+<a name="l-358"></a><span class="tm">20:43:44</span><span class="nk"> &lt;shumski&gt;</span> no, strong opiniion on KUPT, but seems it is better to leave it separate
+<a name="l-359"></a><span class="tm">20:44:24</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Then we leave it as it is :-)
+<a name="l-360"></a><span class="tm">20:45:05</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#chair</span><span class="cmdline"></span>
+<a name="l-361"></a><span class="tm">20:45:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A</span>
+<a name="l-362"></a><span class="tm">20:45:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> Hmm, somehow bugbot doesn't react on me :-(
+<a name="l-363"></a><span class="tm">20:45:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Last topic. Q&amp;A :-)
+<a name="l-364"></a><span class="tm">20:45:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> Any questions or comments ?
+<a name="l-365"></a><span class="tm">20:45:48</span><span class="nk"> &lt;mrdocs&gt;</span> none here
+<a name="l-366"></a><span class="tm">20:46:33</span><span class="nk"> &lt;shumski&gt;</span> have one, is it worth to add sysinfo in extra? seen some users that would want it back (i know it's a step backward)
+<a name="l-367"></a><span class="tm">20:46:45</span><span class="nk"> &lt;shumski&gt;</span> but, just asking :-)
+<a name="l-368"></a><span class="tm">20:47:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> If we have a maintainer for it :-)
+<a name="l-369"></a><span class="tm">20:47:12</span><span class="nk"> &lt;krop&gt;</span> which we didn't have for years
+<a name="l-370"></a><span class="tm">20:47:27</span><span class="nk"> &lt;shumski&gt;</span> oki
+<a name="l-371"></a><span class="tm">20:48:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> I was more talking about somebody taking care of the packaging :-)
+<a name="l-372"></a><span class="tm">20:48:20</span><span class="nk"> &lt;krop&gt;</span> ah:)
+<a name="l-373"></a><span class="tm">20:48:34</span><span class="nk"> &lt;tittiatcoke&gt;</span> a maintainer for the source would be impossible :-) I don't think that anybody cares for it
+<a name="l-374"></a><span class="tm">20:48:51</span><span class="nk"> &lt;shumski&gt;</span> i have packaged it today, just wanted to see is it worth it
+<a name="l-375"></a><span class="tm">20:49:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Ok :-) I am fine to put it in KDE:Extra :-)
+<a name="l-376"></a><span class="tm">20:50:03</span><span class="nk"> &lt;shumski&gt;</span> ok, cool. will submit it soon then.
+<a name="l-377"></a><span class="tm">20:50:06</span><span class="nk"> &lt;krop&gt;</span> speaking of abandoned things, I'd like to make the KR48 users unhappy and remove akonadi-googledata + libgcal from KDE:Extra
+<a name="l-378"></a><span class="tm">20:50:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> Maybe it would be worth to mention in the description somewhere that it is unsupported :-)
+<a name="l-379"></a><span class="tm">20:50:18</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> Go for it :-)
+<a name="l-380"></a><span class="tm">20:50:19</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> agreed
+<a name="l-381"></a><span class="tm">20:50:30</span><span class="nk"> &lt;krop&gt;</span> both were abandoned ~3 years ago and are really unusable
+<a name="l-382"></a><span class="tm">20:50:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> Drop them :-)
+<a name="l-383"></a><span class="tm">20:50:46</span><span class="nk"> &lt;shumski&gt;</span> +1
+<a name="l-384"></a><span class="tm">20:51:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">shumski submit sysinfo to KDE:Extra with the indication that it is unsupported</span>
+<a name="l-385"></a><span class="tm">20:51:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">krop drop akonadi-googledata and libgcal from KDE:Extra for KDE:Release:48</span>
+<a name="l-386"></a><span class="tm">20:51:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> anything else ?
+<a name="l-387"></a><span class="tm">20:52:00</span><span class="nk"> &lt;shumski&gt;</span> nothing from me
+<a name="l-388"></a><span class="tm">20:52:08</span><span class="nk"> &lt;NicoK&gt;</span> yes...
+<a name="l-389"></a><span class="tm">20:52:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Go ahead :)
+<a name="l-390"></a><span class="tm">20:52:26</span><span class="nk"> &lt;NicoK&gt;</span> from what I've seen in KDF &amp; Co. the repo is in constant rebuild now
+<a name="l-391"></a><span class="tm">20:52:33</span><span class="nk"> &lt;NicoK&gt;</span> we should probably let it settle first
+<a name="l-392"></a><span class="tm">20:52:39</span><span class="nk"> &lt;NicoK&gt;</span> and then continue adding patches etc
+<a name="l-393"></a><span class="tm">20:53:00</span><span class="nk"> &lt;NicoK&gt;</span> at least for the core packages
+<a name="l-394"></a><span class="tm">20:53:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> The issue is that as soon as somebody changes something at a low level (e.g. kdelibs4, soprano, etc) the full repo gets rebuild
+<a name="l-395"></a><span class="tm">20:53:33</span><span class="nk"> &lt;tittiatcoke&gt;</span> But I agree that we should let is finish building before accepting new packages
+<a name="l-396"></a><span class="tm">20:54:32</span><span class="nk"> &lt;NicoK&gt;</span> maybe we could collect sr's for core packages (like in the past) and accept them once/twice a week only...
+<a name="l-397"></a><span class="tm">20:54:43</span><span class="nk"> &lt;shumski&gt;</span> yeah, but somehow you indication that KR410 is leading didn't get 100% through, so i wonder how will this work
+<a name="l-398"></a><span class="tm">20:55:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> :-) Well, KR410 is no longer leading :-) KDF is the leading one again
+<a name="l-399"></a><span class="tm">20:55:05</span><span class="nk"> &lt;NicoK&gt;</span> ?
+<a name="l-400"></a><span class="tm">20:55:23</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> i know, but the same could be applied for this "rule"
+<a name="l-401"></a><span class="tm">20:55:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-) True. But we should have less people accepting requests than those that are submitting
+<a name="l-402"></a><span class="tm">20:56:09</span><span class="nk"> &lt;shumski&gt;</span> i mean, i agree, just not 100% convinced it will work in practice
+<a name="l-403"></a><span class="tm">20:56:19</span><span class="nk"> &lt;shumski&gt;</span> ok
+<a name="l-404"></a><span class="tm">20:56:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Well, that means that we start kicking those that are not following the rules :-)
+<a name="l-405"></a><span class="tm">20:56:43</span><span class="nk"> &lt;shumski&gt;</span> as said, i agree to accept at least core one more rarely
+<a name="l-406"></a><span class="tm">20:56:58</span><span class="nk"> &lt;shumski&gt;</span> :-)
+<a name="l-407"></a><span class="tm">20:57:09</span><span class="nk"> &lt;NicoK&gt;</span> this way we collect them and avoid unnecessary rebuilds
+<a name="l-408"></a><span class="tm">20:57:13</span><span class="nk"> &lt;krop&gt;</span> (*cough* don't forget to tell that to former maintainers as well *cough*)
+<a name="l-409"></a><span class="tm">20:57:34</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> Those are mainly the ones that are causing the issues :-)
+<a name="l-410"></a><span class="tm">20:58:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">everyone SR's to core packages in KDF will be accepted once or maximum twice a week to minimize the KDF rebuilds</span>
+<a name="l-411"></a><span class="tm">20:58:49</span><span class="nk"> &lt;NicoK&gt;</span> we should agree on specific week days :)
+<a name="l-412"></a><span class="tm">20:59:33</span><span class="nk"> &lt;NicoK&gt;</span> like Monday, Thursday or so...
+<a name="l-413"></a><span class="tm">20:59:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> Monday and Thursday sounds good to me
+<a name="l-414"></a><span class="tm">21:00:18</span><span class="nk"> &lt;shumski&gt;</span> ok, have also a related question. would it make sense to utilize local flag for KR410, at least after a point release gets fully rebuilt?
+<a name="l-415"></a><span class="tm">21:00:46</span><span class="nk"> &lt;shumski&gt;</span> that would also save some power
+<a name="l-416"></a><span class="tm">21:01:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> I guess it would make sense as that we are more pushing small bug fixes to KR410 and no big changes. As you said with a new point release we can delete that flag again
+<a name="l-417"></a><span class="tm">21:01:52</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> yes. no need for a full rebuild IMO
+<a name="l-418"></a><span class="tm">21:02:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> true
+<a name="l-419"></a><span class="tm">21:02:06</span><span class="nk"> &lt;shumski&gt;</span> with fixes in between releases
+<a name="l-420"></a><span class="tm">21:03:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> yup
+<a name="l-421"></a><span class="tm">21:05:02</span><span class="nk"> &lt;NicoK&gt;</span> +1
+<a name="l-422"></a><span class="tm">21:05:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. I will set the flags
+<a name="l-423"></a><span class="tm">21:05:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke Set the local flags for KR410 to prevent unnecessary rebuilds</span>
+<a name="l-424"></a><span class="tm">21:06:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> anything else ?
+<a name="l-425"></a><span class="tm">21:07:13</span><span class="nk"> &lt;NicoK&gt;</span> nope
+<a name="l-426"></a><span class="tm">21:07:40</span><span class="nk"> &lt;shumski&gt;</span> nothing here
+<a name="l-427"></a><span class="tm">21:08:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Now I guess we need einar77 to tell bugbot that the meeting is over :(
+<a name="l-428"></a><span class="tm">21:08:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span>
+<a name="l-429"></a><span class="tm">21:09:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-( Well, guys. Thanks for the meeting. I hope that einar77 is back soon :-)
+<a name="l-430"></a><span class="tm">21:09:51</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> sorry I vanished was on the phone
+<a name="l-431"></a><span class="tm">21:09:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> np
+<a name="l-432"></a><span class="tm">21:10:05</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> or the postmodern equivalent
+<a name="l-433"></a><span class="tm">21:10:28</span><span class="nk"> &lt;alin&gt;</span> I see nothing was given to me to do
+<a name="l-434"></a><span class="tm">21:10:32</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> which is good
+<a name="l-435"></a><span class="tm">21:11:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#chair </span><span class="cmdline">tittiatcoke</span>
+<a name="l-436"></a><span class="tm">21:12:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#listmeetings</span><span class="cmdline"></span>
+<a name="l-437"></a><span class="tm">21:19:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> !tell einar77  When you are back, please issue an #endmeeting so that we end the meeting and the logs are created. Unfortunately I can't do this
+<a name="l-438"></a><span class="tm">21:19:11</span><span class="nk"> &lt;SUSEhelp&gt;</span> <span class="hi">tittiatcoke:</span> Okay, will tell upon next speaking. (Sent to 1 person.)
+<a name="l-439"></a><span class="tm">21:22:54</span><span class="nk"> &lt;rdmitry&gt;</span> i am wrong or mariadb memory consumption is higher then myslq?
+<a name="l-440"></a><span class="tm">21:34:33</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">rdmitry:</span> krop knows about that
+<a name="l-441"></a><span class="tm">21:34:52</span><span class="nk"> &lt;krop&gt;</span> if you ask, you probably already know the answer :)
+<a name="l-442"></a><span class="tm">21:38:43</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">rdmitry:</span> krop said something on that line...
+<a name="l-443"></a><span class="tm">21:38:55</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">rdmitry:</span> he said something about a memory leak
+<a name="l-444"></a><span class="tm">21:40:17</span><span class="nk"> &lt;rdmitry&gt;</span> oh, it seems i need new computer too soon...
+<a name="l-445"></a><span class="tm">21:49:22</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">krop:</span> do you have a  suggestion in regards to polkit?
+<a name="l-446"></a><span class="tm">21:50:16</span><span class="nk"> &lt;krop&gt;</span> no, sorry, I tried many things already for my local build. everything failed
+<a name="l-447"></a><span class="tm">21:51:09</span><span class="nk"> &lt;shumski&gt;</span> ok :-)  that is due to polkit rules, or?
+<a name="l-448"></a><span class="tm">21:51:38</span><span class="nk"> &lt;krop&gt;</span> yes, it can just load files from one location
+<a name="l-449"></a><span class="tm">21:52:27</span><span class="nk"> &lt;shumski&gt;</span> hm, ok :-(
+<a name="l-450"></a><span class="tm">22:31:30</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">krop:</span> yeah, works only if there is no actions in $kde-unstable/share/polkit-1/actions (and equivalent is installed in system prefix)
+<a name="l-451"></a><span class="tm">22:40:36</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

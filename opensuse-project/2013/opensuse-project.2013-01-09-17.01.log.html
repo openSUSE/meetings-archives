@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:01:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE Project Meeting</span>
+<a name="l-2"></a><span class="tm">17:01:03</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Jan  9 17:01:03 2013 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:01:03</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:01:21</span><span class="nk"> &lt;vuntz&gt;</span> so, who's here for the meeting?
+<a name="l-5"></a><span class="tm">17:01:35</span><span class="nk"> &lt;vuntz&gt;</span> hey hendersj
+<a name="l-6"></a><span class="tm">17:01:59</span><span class="nk"> &lt;hendersj&gt;</span> Hey, vuntz
+<a name="l-7"></a><span class="tm">17:02:40 </span><span class="nka">* |miska|</span> <span class="ac">is here to watch what is going on, but no particular topic to discuss from him</span>
+<a name="l-8"></a><span class="tm">17:03:04</span><span class="nk"> &lt;robjo&gt;</span> here
+<a name="l-9"></a><span class="tm">17:03:09</span><span class="nk"> &lt;vuntz&gt;</span> looks like we're not that many here :/
+<a name="l-10"></a><span class="tm">17:03:17 </span><span class="nka">* DimStar</span> <span class="ac">is quiet observer today</span>
+<a name="l-11"></a><span class="tm">17:03:20 </span><span class="nka">* malcolmlewis</span> <span class="ac">is lurking</span>
+<a name="l-12"></a><span class="tm">17:03:40</span><span class="nk"> &lt;vuntz&gt;</span> agenda we have so far is:
+<a name="l-13"></a><span class="tm">17:03:42 </span><span class="nka">* aplanas</span> <span class="ac">is reading the channel</span>
+<a name="l-14"></a><span class="tm">17:03:44</span><span class="nk"> &lt;vuntz&gt;</span> Quick review of action items from last meeting (current chair)
+<a name="l-15"></a><span class="tm">17:03:46</span><span class="nk"> &lt;vuntz&gt;</span> Attendance of project meetings from board members (Warlordfff)
+<a name="l-16"></a><span class="tm">17:03:50</span><span class="nk"> &lt;vuntz&gt;</span> and that's about it
+<a name="l-17"></a><span class="tm">17:03:53 </span><span class="nka">* izabelvalverde</span> <span class="ac">just watching</span>
+<a name="l-18"></a><span class="tm">17:04:21</span><span class="nk"> &lt;vuntz&gt;</span> anything people would like to add to the agenda?
+<a name="l-19"></a><span class="tm">17:04:38</span><span class="nk"> &lt;manugupt1&gt;</span> I have a thing to discuss regarding gsoc preps can we add it still
+<a name="l-20"></a><span class="tm">17:04:38</span><span class="nk"> &lt;hendersj&gt;</span> Not from me at this time
+<a name="l-21"></a><span class="tm">17:04:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> sure!
+<a name="l-22"></a><span class="tm">17:04:47</span><span class="nk"> &lt;robjo&gt;</span> Well, this was also supposed to be the board transition meeting
+<a name="l-23"></a><span class="tm">17:04:56</span><span class="nk"> &lt;robjo&gt;</span> whatever that means
+<a name="l-24"></a><span class="tm">17:05:03</span><span class="nk"> &lt;manugupt1&gt;</span> Next meeting is also fine
+<a name="l-25"></a><span class="tm">17:05:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> hrm, was it? project meeting != board meeting
+<a name="l-26"></a><span class="tm">17:05:53</span><span class="nk"> &lt;robjo&gt;</span> In the last meeting we said something about Jan 9 being a board transition meeting, but maybe I am not remembering this correctly
+<a name="l-27"></a><span class="tm">17:06:13</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">tittiatcoke:</span> ping
+<a name="l-28"></a><span class="tm">17:06:19</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">FunkyPenguin:</span> ping
+<a name="l-29"></a><span class="tm">17:06:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> http://community.opensuse.org/meetings/opensuse-project/2012/opensuse-project.2012-12-12-17.00.log.html
+<a name="l-30"></a><span class="tm">17:06:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> Am here :-)
+<a name="l-31"></a><span class="tm">17:06:27</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">yaloki:</span> ping
+<a name="l-32"></a><span class="tm">17:07:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> we'll start with the other topics, if that's fine with you, and figure that out afterwards?
+<a name="l-33"></a><span class="tm">17:07:46</span><span class="nk"> &lt;robjo&gt;</span> Yes, lets go
+<a name="l-34"></a><span class="tm">17:07:47</span><span class="nk"> &lt;vuntz&gt;</span> (I guess the other topics shouldn't take an hour anyway ;-))
+<a name="l-35"></a><span class="tm">17:07:49</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-36"></a><span class="tm">17:08:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Attendance of project meetings from board members</span>
+<a name="l-37"></a><span class="tm">17:08:08</span><span class="nk"> &lt;vuntz&gt;</span> err
+<a name="l-38"></a><span class="tm">17:08:17</span><span class="nk"> &lt;vuntz&gt;</span> forgot the review of action items
+<a name="l-39"></a><span class="tm">17:08:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Quick review of action items from last meeting</span>
+<a name="l-40"></a><span class="tm">17:08:33</span><span class="nk"> &lt;vuntz&gt;</span> darix to ask henne about getting someone else to help with administrating the mailing lists
+<a name="l-41"></a><span class="tm">17:08:50</span><span class="nk"> &lt;vuntz&gt;</span> I don't think we got any news on this, I'll ping darix after the meeting
+<a name="l-42"></a><span class="tm">17:08:57</span><span class="nk"> &lt;vuntz&gt;</span> (unless he's here right now)
+<a name="l-43"></a><span class="tm">17:09:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">darix to ask henne about getting someone else to help with administrating the mailing lists</span>
+<a name="l-44"></a><span class="tm">17:09:13</span><span class="nk"> &lt;vuntz&gt;</span> cboltz to ask scott about status of wiki update
+<a name="l-45"></a><span class="tm">17:09:21</span><span class="nk"> &lt;cboltz&gt;</span> I finally found some time to ask for the wiki upgrade status (mail sent some minutes ago to -web)
+<a name="l-46"></a><span class="tm">17:09:39</span><span class="nk"> &lt;cboltz&gt;</span> so we should know more in some days
+<a name="l-47"></a><span class="tm">17:09:55</span><span class="nk"> &lt;vuntz&gt;</span> http://lists.opensuse.org/opensuse-web/2013-01/msg00000.html
+<a name="l-48"></a><span class="tm">17:10:23</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> that's cool, thanks. May I keep an action item on you to monitor progress on this?
+<a name="l-49"></a><span class="tm">17:10:27</span><span class="nk"> &lt;robjo&gt;</span> OK, thus cboltz should report in the next meeting
+<a name="l-50"></a><span class="tm">17:10:47</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">cboltz sent a query about the status of wiki upgrade: http://lists.opensuse.org/opensuse-web/2013-01/msg00000.html</span>
+<a name="l-51"></a><span class="tm">17:10:51</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">vuntz:</span> yes
+<a name="l-52"></a><span class="tm">17:10:55</span><span class="nk"> &lt;vuntz&gt;</span> sweet
+<a name="l-53"></a><span class="tm">17:11:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">cboltz to monitor status of wiki upgrade and report any news on this</span>
+<a name="l-54"></a><span class="tm">17:11:30</span><span class="nk"> &lt;vuntz&gt;</span> vuntz to talk to toscalix about a paid designer for openSUSE
+<a name="l-55"></a><span class="tm">17:11:59</span><span class="nk"> &lt;vuntz&gt;</span> I think I did it before leaving for the holidays
+<a name="l-56"></a><span class="tm">17:12:37</span><span class="nk"> &lt;vuntz&gt;</span> but that was a bad timing, I guess
+<a name="l-57"></a><span class="tm">17:12:46</span><span class="nk"> &lt;vuntz&gt;</span> I'll get an answer for the next meeting
+<a name="l-58"></a><span class="tm">17:12:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to talk to toscalix about a paid designer for openSUSE</span>
+<a name="l-59"></a><span class="tm">17:13:00</span><span class="nk"> &lt;vuntz&gt;</span> vuntz to summarize discussion to the board
+<a name="l-60"></a><span class="tm">17:13:04</span><span class="nk"> &lt;vuntz&gt;</span> that was about the summit discussion
+<a name="l-61"></a><span class="tm">17:13:19</span><span class="nk"> &lt;vuntz&gt;</span> so this was done
+<a name="l-62"></a><span class="tm">17:13:24</span><span class="nk"> &lt;vuntz&gt;</span> there was some talk inside the board
+<a name="l-63"></a><span class="tm">17:13:35</span><span class="nk"> &lt;vuntz&gt;</span> and we asked SUSE to book the venue for the week-end
+<a name="l-64"></a><span class="tm">17:13:58</span><span class="nk"> &lt;vuntz&gt;</span> we also asked if we could share some sessions with SUSECon, to make openSUSE a bit more visible
+<a name="l-65"></a><span class="tm">17:14:20</span><span class="nk"> &lt;robjo&gt;</span> So we need to send out a call for volunteers.
+<a name="l-66"></a><span class="tm">17:14:35</span><span class="nk"> &lt;vuntz&gt;</span> I pinged inside SUSE earlier this week to get an update on this, so no news yet, but I guess we'll have to start moving soon
+<a name="l-67"></a><span class="tm">17:14:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> yep
+<a name="l-68"></a><span class="tm">17:14:46</span><span class="nk"> &lt;robjo&gt;</span> I'll do that, will send something to -project today
+<a name="l-69"></a><span class="tm">17:15:34</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">board discussed the Summit topic after last meeting, and asked SUSE to book the venue for the week-end</span>
+<a name="l-70"></a><span class="tm">17:16:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">board also asked SUSE about sharing sessions with SUSECon, to make openSUSE a bit more visible</span>
+<a name="l-71"></a><span class="tm">17:16:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">robjo to send a call for volunteers for openSUSE Summit</span>
+<a name="l-72"></a><span class="tm">17:16:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> do you have a rough idea of the areas for which we need volunteers?
+<a name="l-73"></a><span class="tm">17:17:02</span><span class="nk"> &lt;robjo&gt;</span> Everything, we'll need an organization team similar to oSC team
+<a name="l-74"></a><span class="tm">17:17:21</span><span class="nk"> &lt;vuntz&gt;</span> right :-)
+<a name="l-75"></a><span class="tm">17:18:02</span><span class="nk"> &lt;vuntz&gt;</span> I guess we can discuss summit and conference afterwards too, actually
+<a name="l-76"></a><span class="tm">17:18:08</span><span class="nk"> &lt;vuntz&gt;</span> let's move to the next topic first
+<a name="l-77"></a><span class="tm">17:18:18</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Attendance of project meetings from board members</span>
+<a name="l-78"></a><span class="tm">17:18:31</span><span class="nk"> &lt;vuntz&gt;</span> so Warlordfff is not here, unfortunately
+<a name="l-79"></a><span class="tm">17:18:41</span><span class="nk"> &lt;vuntz&gt;</span> but iirc, that's a topic that was of interest to other people
+<a name="l-80"></a><span class="tm">17:19:10</span><span class="nk"> &lt;vuntz&gt;</span> anyone willing to start the discussion? :-)
+<a name="l-81"></a><span class="tm">17:19:23</span><span class="nk"> &lt;robjo&gt;</span> Well it's not really hard to figure out, only 3 of us are here and I have to agree that is not sufficient.
+<a name="l-82"></a><span class="tm">17:19:29</span><span class="nk"> &lt;hendersj&gt;</span> +1
+<a name="l-83"></a><span class="tm">17:20:10</span><span class="nk"> &lt;robjo&gt;</span> The community has every right to expect that board members are present, for the most part, at the regularly scheduled project meetings.
+<a name="l-84"></a><span class="tm">17:20:17</span><span class="nk"> &lt;vuntz&gt;</span> do you think all board members should be here? Half of them?
+<a name="l-85"></a><span class="tm">17:20:53</span><span class="nk"> &lt;robjo&gt;</span> IMHO all board members should be here most of the time.
+<a name="l-86"></a><span class="tm">17:21:00</span><span class="nk"> &lt;hendersj&gt;</span> I think that these meetings should be seen as important enough to make the effort for the board to attend - if they're not important enough for the board to attend, then why hold them?
+<a name="l-87"></a><span class="tm">17:21:11</span><span class="nk"> &lt;hendersj&gt;</span> It seems that this should be one of the primary venues for discussion with the board
+<a name="l-88"></a><span class="tm">17:21:52</span><span class="nk"> &lt;robjo&gt;</span> +1
+<a name="l-89"></a><span class="tm">17:22:02</span><span class="nk"> &lt;vuntz&gt;</span> so, assuming the meeting time is bad for board members, should we change the time to accomodate board members (even if it'd make it worse for others)?
+<a name="l-90"></a><span class="tm">17:22:22</span><span class="nk"> &lt;|miska|&gt;</span> Well, you can't make everybody happy
+<a name="l-91"></a><span class="tm">17:22:49</span><span class="nk"> &lt;|miska|&gt;</span> And the rest of attendees is changing
+<a name="l-92"></a><span class="tm">17:22:52</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">project meetings are seen as one of the primary venues for discussion with the board</span>
+<a name="l-93"></a><span class="tm">17:23:00</span><span class="nk"> &lt;hendersj&gt;</span> I think finding a time that the majority of the board can be here would be good, but I also think there needs to be some commitment on the part of the board to attend the meetings regardless of the time.
+<a name="l-94"></a><span class="tm">17:23:20</span><span class="nk"> &lt;hendersj&gt;</span> The way I see it, these meetings are a sort of "project steering" meeting, but if the board is supposed to be involved in that, they need to be here.
+<a name="l-95"></a><span class="tm">17:25:01</span><span class="nk"> &lt;manugupt1&gt;</span> Well Board has people from europe and us.. and both of them are here.. I think an hour +- is good otherwise it gets either too late or too early for South Asia regions atleast
+<a name="l-96"></a><span class="tm">17:25:03</span><span class="nk"> &lt;vuntz&gt;</span> for the record, based on past discussion with a few board members, this time was pretty bad for some of them
+<a name="l-97"></a><span class="tm">17:25:14</span><span class="nk"> &lt;robjo&gt;</span> Except for me the rest of the current board is located in Europe. I realize that the time of the meeting is potentially after work or around diner. However, moving one's schedule around every two weeks by an hour or so should not be too much to ask.
+<a name="l-98"></a><span class="tm">17:25:17</span><span class="nk"> &lt;vuntz&gt;</span> (travelling back from work, for instance)
+<a name="l-99"></a><span class="tm">17:25:34</span><span class="nk"> &lt;hendersj&gt;</span> I agree, robjo
+<a name="l-100"></a><span class="tm">17:25:36</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">manugupt1:</span> +1
+<a name="l-101"></a><span class="tm">17:25:52</span><span class="nk"> &lt;vuntz&gt;</span> I'll take this feedback to the board
+<a name="l-102"></a><span class="tm">17:26:27</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to push board members to be more present at project meetings</span>
+<a name="l-103"></a><span class="tm">17:26:42</span><span class="nk"> &lt;hendersj&gt;</span> I mean, yes, this is a volunteer effort, so a standard similar to a paid position maybe isn't 100% appropriate.  The time isn't always convenient for me (I do contract work myself), but I make the time to be here.  But it /is/ 10 AM here.
+<a name="l-104"></a><span class="tm">17:26:53 </span><span class="nka">* victorhck</span> <span class="ac">a littler later ;)</span>
+<a name="l-105"></a><span class="tm">17:26:59</span><span class="nk"> &lt;vuntz&gt;</span> if people are fine, I'll check with them if moving the meeting one hour earlier/later would work better for them
+<a name="l-106"></a><span class="tm">17:27:10</span><span class="nk"> &lt;hendersj&gt;</span> :)
+<a name="l-107"></a><span class="tm">17:27:24</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">vuntz:</span> what about some type of "penality" for board members who don't show up? ;-)
+<a name="l-108"></a><span class="tm">17:27:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to investigate if one hour earlier/later would work better for both the board and other community members</span>
+<a name="l-109"></a><span class="tm">17:27:44</span><span class="nk"> &lt;cboltz&gt;</span> maybe something like "you have to deliver coffee at the conference"? ;-)
+<a name="l-110"></a><span class="tm">17:28:03</span><span class="nk"> &lt;vuntz&gt;</span> heh
+<a name="l-111"></a><span class="tm">17:28:11</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">cboltz:</span> funny
+<a name="l-112"></a><span class="tm">17:28:20</span><span class="nk"> &lt;vuntz&gt;</span> anything else on this topic?
+<a name="l-113"></a><span class="tm">17:28:59 </span><span class="nka">* vuntz</span> <span class="ac">assumes no</span>
+<a name="l-114"></a><span class="tm">17:29:11</span><span class="nk"> &lt;robjo&gt;</span> next topic then
+<a name="l-115"></a><span class="tm">17:29:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">GSoC preparation</span>
+<a name="l-116"></a><span class="tm">17:29:20</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> ?
+<a name="l-117"></a><span class="tm">17:29:22</span><span class="nk"> &lt;manugupt1&gt;</span> Hi
+<a name="l-118"></a><span class="tm">17:29:45</span><span class="nk"> &lt;manugupt1&gt;</span> I had a discussion, I wanted to send some posters to local LUGs as soon as GSoC is announced
+<a name="l-119"></a><span class="tm">17:30:19</span><span class="nk"> &lt;manugupt1&gt;</span> And also want to do things a bit earlier so that we do not miss it like GCI. This would have us better and more students
+<a name="l-120"></a><span class="tm">17:30:21</span><span class="nk"> &lt;victorhck&gt;</span> <span class="hi">manugupt1:</span> what poster do you finally choose?
+<a name="l-121"></a><span class="tm">17:30:35</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">victorhck:</span> Both we can send 2 posters I believe
+<a name="l-122"></a><span class="tm">17:30:50</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> do we have a group of admin ready? :-)
+<a name="l-123"></a><span class="tm">17:30:54</span><span class="nk"> &lt;manugupt1&gt;</span> So this a call for volunteers those who can help
+<a name="l-124"></a><span class="tm">17:31:17</span><span class="nk"> &lt;saurabhsood91&gt;</span> manugupt1 victorhck: one of my friends has also come up with a poster. I will soon post it onto the mailing list
+<a name="l-125"></a><span class="tm">17:31:17</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> Well I mailed and asked for help for people..
+<a name="l-126"></a><span class="tm">17:31:41</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> sorry I am out this time
+<a name="l-127"></a><span class="tm">17:31:45</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> this time I can admin
+<a name="l-128"></a><span class="tm">17:31:52</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">saurabhsood91:</span> vuntz ?
+<a name="l-129"></a><span class="tm">17:32:09</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">manugupt1:</span> ?
+<a name="l-130"></a><span class="tm">17:32:28</span><span class="nk"> &lt;manugupt1&gt;</span> Be the admins.. Matt can be ready I believe
+<a name="l-131"></a><span class="tm">17:32:34</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> hrm, did you mail me? If yes, I haven't received it
+<a name="l-132"></a><span class="tm">17:32:36</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">manugupt1:</span> count me in ;)
+<a name="l-133"></a><span class="tm">17:32:46</span><span class="nk"> &lt;vuntz&gt;</span> (if no, no issue, I probably can't do it this year)
+<a name="l-134"></a><span class="tm">17:32:48</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> did you send a message to -project I do not recall seeing it
+<a name="l-135"></a><span class="tm">17:33:11</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">robjo:</span> No.. I did not as of now.. since I was just calling it off casually as of now
+<a name="l-136"></a><span class="tm">17:33:17</span><span class="nk"> &lt;manugupt1&gt;</span> and asking aroudn people
+<a name="l-137"></a><span class="tm">17:33:18</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">manugupt1 is working on getting a team of admins</span>
+<a name="l-138"></a><span class="tm">17:33:45</span><span class="nk"> &lt;robjo&gt;</span> looks like we have 3, manugupt1 saurabhsood91 and matt, is that not sufficient?
+<a name="l-139"></a><span class="tm">17:33:56</span><span class="nk"> &lt;vuntz&gt;</span> that should be good enough, yes
+<a name="l-140"></a><span class="tm">17:34:22</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">the team of admins will likely be manugupt1 saurabhsood91 and matt</span>
+<a name="l-141"></a><span class="tm">17:34:42</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> are you also starting to gather project ideas and mentors?
+<a name="l-142"></a><span class="tm">17:34:47</span><span class="nk"> &lt;robjo&gt;</span> Thus I think you should set up the project wiki page now and send out a message to -project and -factory
+<a name="l-143"></a><span class="tm">17:34:56</span><span class="nk"> &lt;robjo&gt;</span> The sooner the better
+<a name="l-144"></a><span class="tm">17:34:58</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> Will work on the wiki page this weekend already on my todo
+<a name="l-145"></a><span class="tm">17:35:13</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> great, thankyou
+<a name="l-146"></a><span class="tm">17:35:36</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">manugupt1:</span> we can add some projects that didnt make it last year to this years page
+<a name="l-147"></a><span class="tm">17:35:52</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">saurabhsood91:</span> We will have to ask the mentors but lets discuss it on -project ML
+<a name="l-148"></a><span class="tm">17:36:11</span><span class="nk"> &lt;robjo&gt;</span> Anything else for GSoC?
+<a name="l-149"></a><span class="tm">17:36:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">manugupt1 and admin team to work on wiki pages for GSoC to gather project ideas</span>
+<a name="l-150"></a><span class="tm">17:36:14</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">manugupt1:</span> ok. we will keep them tentative
+<a name="l-151"></a><span class="tm">17:36:28</span><span class="nk"> &lt;manugupt1&gt;</span> Nothing else for me now..
+<a name="l-152"></a><span class="tm">17:36:34</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> re the posters to local LUGs: do you need help for this?
+<a name="l-153"></a><span class="tm">17:36:43</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> that will be great
+<a name="l-154"></a><span class="tm">17:36:44</span><span class="nk"> &lt;vuntz&gt;</span> or is this all ready?
+<a name="l-155"></a><span class="tm">17:36:57</span><span class="nk"> &lt;manugupt1&gt;</span> I am collecting a list of LUGs, posters are ready.. sending is a problem
+<a name="l-156"></a><span class="tm">17:37:17</span><span class="nk"> &lt;vuntz&gt;</span> do you intend to send printed posters, or pdf that LUGs can print?
+<a name="l-157"></a><span class="tm">17:37:31</span><span class="nk"> &lt;manugupt1&gt;</span> I think printed is better what do you think
+<a name="l-158"></a><span class="tm">17:38:09</span><span class="nk"> &lt;vuntz&gt;</span> it's better, but that means some budget
+<a name="l-159"></a><span class="tm">17:38:13</span><span class="nk"> &lt;robjo&gt;</span> We should also make certain that all ambassadors that present openSUSE at an event have material advertising GSoC and openSUSE
+<a name="l-160"></a><span class="tm">17:38:17</span><span class="nk"> &lt;vuntz&gt;</span> we'd need to have a rought estimation of the costs
+<a name="l-161"></a><span class="tm">17:38:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> good point
+<a name="l-162"></a><span class="tm">17:38:42</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> Depends on where we send from
+<a name="l-163"></a><span class="tm">17:38:55</span><span class="nk"> &lt;robjo&gt;</span> SCALx is probably the first event coming up in February, I think
+<a name="l-164"></a><span class="tm">17:39:01</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">robjo:</span> Will post on Mailing lists (-project and -ambassadors) ;
+<a name="l-165"></a><span class="tm">17:39:14</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">robjo:</span> by that time GSoC is not announced, Google does not appreciate it
+<a name="l-166"></a><span class="tm">17:39:26</span><span class="nk"> &lt;manugupt1&gt;</span> we can off course be ready as soon as Google announces it
+<a name="l-167"></a><span class="tm">17:39:39</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> OK, lets just be ready
+<a name="l-168"></a><span class="tm">17:40:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> we send them from where someone can send them, I'd say :-)
+<a name="l-169"></a><span class="tm">17:40:29</span><span class="nk"> &lt;manugupt1&gt;</span> yeah.. vuntz can SUSE Coordinate them if I can get a list of addresses
+<a name="l-170"></a><span class="tm">17:40:30</span><span class="nk"> &lt;vuntz&gt;</span> it might make sense to delegate that task to ambassadors
+<a name="l-171"></a><span class="tm">17:40:36</span><span class="nk"> &lt;manugupt1&gt;</span> and or ambassadors too
+<a name="l-172"></a><span class="tm">17:40:57</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> not sure; I can ask the openSUSE team, but I guess they have some hot topics to deal with
+<a name="l-173"></a><span class="tm">17:40:58</span><span class="nk"> &lt;manugupt1&gt;</span> Good point.. I have not seen activity on ambasssador list for a long time
+<a name="l-174"></a><span class="tm">17:41:14</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> openSUSE team is here :)
+<a name="l-175"></a><span class="tm">17:41:26</span><span class="nk"> &lt;robjo&gt;</span> Can we not send them from the Nuermberg office and ask someone on Agustine's team to handle this?
+<a name="l-176"></a><span class="tm">17:41:28</span><span class="nk"> &lt;|miska|&gt;</span> :-D
+<a name="l-177"></a><span class="tm">17:42:08</span><span class="nk"> &lt;|miska|&gt;</span> I also think that it might make sesne to use ambasadors
+<a name="l-178"></a><span class="tm">17:42:53</span><span class="nk"> &lt;|miska|&gt;</span> As they probably already knows the LUG and what to do and stuff
+<a name="l-179"></a><span class="tm">17:42:58</span><span class="nk"> &lt;manugupt1&gt;</span> I can sponsor for Indian LUGs
+<a name="l-180"></a><span class="tm">17:43:01</span><span class="nk"> &lt;saurabhsood91&gt;</span> how about some people taking responsibility for some regions, and for the remaining regions, contact the ambassadors?
+<a name="l-181"></a><span class="tm">17:43:05</span><span class="nk"> &lt;|miska|&gt;</span> But not sure once the money is involved
+<a name="l-182"></a><span class="tm">17:43:10</span><span class="nk"> &lt;robjo&gt;</span> Another option might be to have them printed at a local printer and just handle the cost via purchase order
+<a name="l-183"></a><span class="tm">17:43:10</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-184"></a><span class="tm">17:43:10</span><span class="nk"> &lt;manugupt1&gt;</span> and send
+<a name="l-185"></a><span class="tm">17:43:35</span><span class="nk"> &lt;vuntz&gt;</span> can someone chat to ambassadors to see to which extent they could handle that?
+<a name="l-186"></a><span class="tm">17:43:45</span><span class="nk"> &lt;vuntz&gt;</span> (and how much money they would need for that)
+<a name="l-187"></a><span class="tm">17:45:01</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> Can the board help us decide with the money thing
+<a name="l-188"></a><span class="tm">17:45:02</span><span class="nk"> &lt;robjo&gt;</span> who is sending a mail to ambassadors to get the ball rolling?
+<a name="l-189"></a><span class="tm">17:45:32</span><span class="nk"> &lt;robjo&gt;</span> Lets first see whether we actually have to do shipping or if we can do local printing.
+<a name="l-190"></a><span class="tm">17:45:40</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. can we summarize the contents of the mail ( not to miss out anything so that I can send it )
+<a name="l-191"></a><span class="tm">17:45:42</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> the board  can help once there's estimation of how much it costs
+<a name="l-192"></a><span class="tm">17:45:51</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> Ok..
+<a name="l-193"></a><span class="tm">17:45:54</span><span class="nk"> &lt;robjo&gt;</span> For example, a local printer in Brazil is probably cheaper than sending posters from Germany to Brazil
+<a name="l-194"></a><span class="tm">17:46:15</span><span class="nk"> &lt;izabelvalverde&gt;</span> robjo good point
+<a name="l-195"></a><span class="tm">17:46:35</span><span class="nk"> &lt;manugupt1&gt;</span> That is why I said I will handle India :)
+<a name="l-196"></a><span class="tm">17:46:51</span><span class="nk"> &lt;izabelvalverde&gt;</span> print and mail is cheaper but in a Country like Brazil with many LUG's we usually send a pdf for them
+<a name="l-197"></a><span class="tm">17:47:09</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">izabelvalverde:</span> If I can send the posters can you handle it :)
+<a name="l-198"></a><span class="tm">17:47:12</span><span class="nk"> &lt;vuntz&gt;</span> so, who'll send the mail to ambassadors?
+<a name="l-199"></a><span class="tm">17:47:35</span><span class="nk"> &lt;|miska|&gt;</span> Maybe would be a good idea to ask amabasadors whether they actually need it printed or whether they can do it by themselves
+<a name="l-200"></a><span class="tm">17:47:36</span><span class="nk"> &lt;vuntz&gt;</span> (someone other than manugupt1 would be best, since he already has other action items)
+<a name="l-201"></a><span class="tm">17:47:41</span><span class="nk"> &lt;robjo&gt;</span> I thought manugupt1 would
+<a name="l-202"></a><span class="tm">17:47:42</span><span class="nk"> &lt;izabelvalverde&gt;</span> manugupt1 sorry, I would prefer pdf since works better here
+<a name="l-203"></a><span class="tm">17:47:45</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">saurabhsood91:</span> ?
+<a name="l-204"></a><span class="tm">17:47:53</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">izabelvalverde:</span> I will sed the pdf across to you
+<a name="l-205"></a><span class="tm">17:47:59</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">manugupt1:</span> didnt get u
+<a name="l-206"></a><span class="tm">17:48:14</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">saurabhsood91:</span> can you mail to ambassadors?
+<a name="l-207"></a><span class="tm">17:48:26</span><span class="nk"> &lt;toscalix&gt;</span> there is a bigger constrain than price or logistics......it is the administrative work and the payment process. This is why it is so difficult to solve the problem for companies
+<a name="l-208"></a><span class="tm">17:48:31</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">manugupt1:</span> sure. will send it
+<a name="l-209"></a><span class="tm">17:48:32</span><span class="nk"> &lt;saurabhsood91&gt;</span> ;)
+<a name="l-210"></a><span class="tm">17:48:50</span><span class="nk"> &lt;vuntz&gt;</span> cool
+<a name="l-211"></a><span class="tm">17:49:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">saurabhsood91 to mail ambassadors to see how to best handle sending posters for GSoC to LUGs</span>
+<a name="l-212"></a><span class="tm">17:49:08</span><span class="nk"> &lt;vuntz&gt;</span> okay, next topic
+<a name="l-213"></a><span class="tm">17:49:12</span><span class="nk"> &lt;robjo&gt;</span> Looks like we need more help. Can you just send a message to -ambassadors asking for help in handling this.
+<a name="l-214"></a><span class="tm">17:49:43</span><span class="nk"> &lt;robjo&gt;</span> I ran across something today that I'd like to discuss briefly.
+<a name="l-215"></a><span class="tm">17:49:49</span><span class="nk"> &lt;vuntz&gt;</span> sure
+<a name="l-216"></a><span class="tm">17:50:01</span><span class="nk"> &lt;vuntz&gt;</span> go ahead
+<a name="l-217"></a><span class="tm">17:50:05</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">donations</span>
+<a name="l-218"></a><span class="tm">17:50:09</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Donations</span>
+<a name="l-219"></a><span class="tm">17:50:32</span><span class="nk"> &lt;robjo&gt;</span> SUSE has a new web store, that went live earlier this week.
+<a name="l-220"></a><span class="tm">17:51:07</span><span class="nk"> &lt;robjo&gt;</span> I would like to see us have a permanent "donate to the openSUSE project" button in the store
+<a name="l-221"></a><span class="tm">17:51:25</span><span class="nk"> &lt;manugupt1&gt;</span> +1
+<a name="l-222"></a><span class="tm">17:51:27</span><span class="nk"> &lt;hendersj&gt;</span> +1, we occasionally get questions about this in the forums
+<a name="l-223"></a><span class="tm">17:51:37</span><span class="nk"> &lt;robjo&gt;</span> do people think that we need to have an openSUSE instance of the store or that we can piggy back on the SUSE store?
+<a name="l-224"></a><span class="tm">17:51:37</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> want to work on that? :-)
+<a name="l-225"></a><span class="tm">17:51:53</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">vuntz:</span> actually I am already pushing that topic
+<a name="l-226"></a><span class="tm">17:51:56</span><span class="nk"> &lt;vuntz&gt;</span> cool
+<a name="l-227"></a><span class="tm">17:52:15 </span><span class="nka">* vuntz</span> <span class="ac">doesn't think it's worth having a separate openSUSE instance</span>
+<a name="l-228"></a><span class="tm">17:52:21</span><span class="nk"> &lt;robjo&gt;</span> I am not certain that an openSUSE instance of the store is possible
+<a name="l-229"></a><span class="tm">17:52:33</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">robjo:</span> Maybe openSUSE Goodies too
+<a name="l-230"></a><span class="tm">17:52:59</span><span class="nk"> &lt;robjo&gt;</span> and I agree with vuntz, I also do not see the need for a separate instance
+<a name="l-231"></a><span class="tm">17:53:17</span><span class="nk"> &lt;|miska|&gt;</span> Is it actually worth it having it in SUSE? I'm just wondering, as a big company, how much money does SUSE have to spend to process 5EUR payment
+<a name="l-232"></a><span class="tm">17:53:37</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> THe store does not yet support "retail items" such as shirts, but will in the future, when it does, then yes we want openSUSE stuff as well
+<a name="l-233"></a><span class="tm">17:54:09</span><span class="nk"> &lt;|miska|&gt;</span> And I also see another issue that people might want to know what the money were used for when they donate...
+<a name="l-234"></a><span class="tm">17:54:31</span><span class="nk"> &lt;Sleep_Walker&gt;</span> good point
+<a name="l-235"></a><span class="tm">17:54:38</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">|miska|:</span> We do not have to worry about "worth" it. The store infrastructure is there, and we can ask if we can get what we want
+<a name="l-236"></a><span class="tm">17:54:41</span><span class="nk"> &lt;|miska|&gt;</span> But I'm actually more concern with costs of money handling on SUSE side
+<a name="l-237"></a><span class="tm">17:54:42</span><span class="nk"> &lt;izabelvalverde&gt;</span> the donate button seems great also might be easier for SUSE to forward to openSUSE when is needed
+<a name="l-238"></a><span class="tm">17:55:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">|miska|:</span> a requirement to implement this would be that the money goes to the funds that the board controls
+<a name="l-239"></a><span class="tm">17:55:18</span><span class="nk"> &lt;manugupt1&gt;</span> +!
+<a name="l-240"></a><span class="tm">17:55:20</span><span class="nk"> &lt;manugupt1&gt;</span> +1
+<a name="l-241"></a><span class="tm">17:55:44</span><span class="nk"> &lt;|miska|&gt;</span> <span class="hi">robjo:</span> Well, so far they are selling SLE that cost quite a lot so if it takes 50 Eur to process order...
+<a name="l-242"></a><span class="tm">17:55:54</span><span class="nk"> &lt;vuntz&gt;</span> and then the transparency "problem" is in the board's hands (it needs to be resolved anyway ;-))
+<a name="l-243"></a><span class="tm">17:56:28</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">new SUSE shop went live and the suggestion to have a "Donate to openSUSE" button there is back</span>
+<a name="l-244"></a><span class="tm">17:56:35</span><span class="nk"> &lt;|miska|&gt;</span> <span class="hi">vuntz:</span> Ok, if these money are going to be controled by board, I say great!
+<a name="l-245"></a><span class="tm">17:56:40</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">|miska|:</span> again that is not our concern, if SUSE is willing to have a "Donate to openSUSE" button than that should be good enough for us
+<a name="l-246"></a><span class="tm">17:57:16</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> do you agree that we should make sure the money that comes out of that (minus 5% or 10% for the shop service, I guess) should be controlled by the board?
+<a name="l-247"></a><span class="tm">17:57:28</span><span class="nk"> &lt;|miska|&gt;</span> Well, you'll see what will they tell you on that
+<a name="l-248"></a><span class="tm">17:57:37</span><span class="nk"> &lt;vuntz&gt;</span> (asking before putting that in the minutes ;-))
+<a name="l-249"></a><span class="tm">17:57:58</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">vuntz:</span> yes, but that is the "financial transperancy" discussion that is a board issue and OT for the current topic.
+<a name="l-250"></a><span class="tm">17:58:09</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> it's not the same discussion, no
+<a name="l-251"></a><span class="tm">17:58:25</span><span class="nk"> &lt;vuntz&gt;</span> I'm not talking about transparency
+<a name="l-252"></a><span class="tm">17:58:38</span><span class="nk"> &lt;vuntz&gt;</span> I'm talking about making sure that the money stays with openSUSE. Transparency comes later :-)
+<a name="l-253"></a><span class="tm">17:58:58</span><span class="nk"> &lt;vuntz&gt;</span> where "stays with openSUSE" is "comes under control of the board"
+<a name="l-254"></a><span class="tm">17:59:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">vuntz::</span> I guess that everybody agrees on that one :-)
+<a name="l-255"></a><span class="tm">17:59:23</span><span class="nk"> &lt;robjo&gt;</span> There are a number of points to consider here. A number of them are implementation details. The key point is "Do we want a buttton in the SUSE store?" yes or no
+<a name="l-256"></a><span class="tm">17:59:31</span><span class="nk"> &lt;robjo&gt;</span> Everything else is tangential
+<a name="l-257"></a><span class="tm">18:00:01</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">tittiatcoke:</span> well, given what I've seen in some other projects, I'm not 100% sure everybody agrees ;-)
+<a name="l-258"></a><span class="tm">18:00:26</span><span class="nk"> &lt;robjo&gt;</span> For now we do not need to worry about processing fees, and how we show how much money is donated and where it is used.
+<a name="l-259"></a><span class="tm">18:00:41</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> I'm sorry, but it's not tangential for me
+<a name="l-260"></a><span class="tm">18:00:56</span><span class="nk"> &lt;robjo&gt;</span> Yes, the money has to stay with openSUSE of course, it says after all "Donate to openSUSE",
+<a name="l-261"></a><span class="tm">18:01:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">robjo:</span> I guess that another question, what kind of audience does the SUSE shop attract and is the audience willing to donate money.
+<a name="l-262"></a><span class="tm">18:01:17</span><span class="nk"> &lt;izabelvalverde&gt;</span> I don't think SUSE needs to "save" % besides the transfers costs
+<a name="l-263"></a><span class="tm">18:01:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> the money could be used by SUSE to pay for an openSUSE developer, for instance
+<a name="l-264"></a><span class="tm">18:01:37</span><span class="nk"> &lt;robjo&gt;</span> Well, we can link from various openSUSE places to the SUSE shop
+<a name="l-265"></a><span class="tm">18:02:18</span><span class="nk"> &lt;|miska|&gt;</span> yes if money goes to openSUSE -  "comes under control of the board"
+<a name="l-266"></a><span class="tm">18:02:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> while it's still good for openSUSE, I'm not sure I'd agree with that way of handling the money
+<a name="l-267"></a><span class="tm">18:02:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> so knowing how the money is handled is a prerequisite for having the button
+<a name="l-268"></a><span class="tm">18:03:35</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">vuntz:</span> OK, then my question was pre-mature and this becomes a board issue and not a project meeting issue
+<a name="l-269"></a><span class="tm">18:04:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">robjo:</span> I don't think your question was pre-mature. It alerted us for an opportunity, but we need to know the conditions around it before we can take the decision whether or not to go for it
+<a name="l-270"></a><span class="tm">18:05:34</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> do you want to have this topic discussed inside the board, and come back with more details at next meeting?
+<a name="l-271"></a><span class="tm">18:05:40</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">tittiatcoke:</span> In the end I see it that we would define the parameters what happens to the money.
+<a name="l-272"></a><span class="tm">18:05:49</span><span class="nk"> &lt;robjo&gt;</span> we as in board
+<a name="l-273"></a><span class="tm">18:05:55</span><span class="nk"> &lt;vuntz&gt;</span> (if yes, I'll just give you an action item for this)
+<a name="l-274"></a><span class="tm">18:06:18</span><span class="nk"> &lt;robjo&gt;</span> but the community has to decide whether we (community) is OK with having such a button in the SUSE store
+<a name="l-275"></a><span class="tm">18:06:31</span><span class="nk"> &lt;Sleep_Walker&gt;</span> if there could be button, could that be just link to some opensuse.org site?
+<a name="l-276"></a><span class="tm">18:06:49</span><span class="nk"> &lt;Sleep_Walker&gt;</span> where the donation actually can happen?
+<a name="l-277"></a><span class="tm">18:07:17</span><span class="nk"> &lt;Sleep_Walker&gt;</span> I'm a bit concerned about mixing opensuse and suse again
+<a name="l-278"></a><span class="tm">18:07:21</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">Sleep_Walker:</span> opensuse.org would link to suse.com/store/donate or whatever the address might be.
+<a name="l-279"></a><span class="tm">18:07:30</span><span class="nk"> &lt;izabelvalverde&gt;</span> few lines ago the "mail costs" was relevant and now with an opportunity to have some different income became "discusseble" :D
+<a name="l-280"></a><span class="tm">18:07:32</span><span class="nk"> &lt;Sleep_Walker&gt;</span> why not the other way?
+<a name="l-281"></a><span class="tm">18:08:12</span><span class="nk"> &lt;izabelvalverde&gt;</span> as community member the donation button seems to me a great way to help small things happen in the project, like hardware, goods and so on
+<a name="l-282"></a><span class="tm">18:08:18</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">Sleep_Walker:</span> that would possibly require a spearate instance of the store, which I am not certain we will get.
+<a name="l-283"></a><span class="tm">18:08:37</span><span class="nk"> &lt;Sleep_Walker&gt;</span> donation means store?
+<a name="l-284"></a><span class="tm">18:08:47</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">izabelvalverde:</span> I think we all agree it's fine if we control the money :-)
+<a name="l-285"></a><span class="tm">18:08:52</span><span class="nk"> &lt;robjo&gt;</span> The store will be SUSE branded and not openSUSE branded. We can possibly ask to get an openSUSE link that changes the branding.
+<a name="l-286"></a><span class="tm">18:09:06</span><span class="nk"> &lt;izabelvalverde&gt;</span> vuntz not sure!
+<a name="l-287"></a><span class="tm">18:09:08</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> if you don't mind, I'll just give you an action item to discuss this topic further (with SUSE, the board, and on opensuse-project if you think it's okay)
+<a name="l-288"></a><span class="tm">18:09:17</span><span class="nk"> &lt;vuntz&gt;</span> since we're going out of time
+<a name="l-289"></a><span class="tm">18:09:22</span><span class="nk"> &lt;Sleep_Walker&gt;</span> +1
+<a name="l-290"></a><span class="tm">18:09:34</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">vuntz:</span> fine with me
+<a name="l-291"></a><span class="tm">18:10:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">robjo to investigate the "Donate to openSUSE" button in SUSE shop and discuss the topic with different parties</span>
+<a name="l-292"></a><span class="tm">18:10:07</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-293"></a><span class="tm">18:10:24</span><span class="nk"> &lt;vuntz&gt;</span> let's quickly see if there are quick questionhs
+<a name="l-294"></a><span class="tm">18:10:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">AOB</span>
+<a name="l-295"></a><span class="tm">18:10:55</span><span class="nk"> &lt;vuntz&gt;</span> anyone?
+<a name="l-296"></a><span class="tm">18:11:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> not from me
+<a name="l-297"></a><span class="tm">18:11:36</span><span class="nk"> &lt;hendersj&gt;</span> AOB?
+<a name="l-298"></a><span class="tm">18:11:42</span><span class="nk"> &lt;vuntz&gt;</span> any other business
+<a name="l-299"></a><span class="tm">18:11:42</span><span class="nk"> &lt;hendersj&gt;</span> Oh, got it.
+<a name="l-300"></a><span class="tm">18:11:57</span><span class="nk"> &lt;vuntz&gt;</span> sorry, I should avoid that :-)
+<a name="l-301"></a><span class="tm">18:12:00</span><span class="nk"> &lt;hendersj&gt;</span> One quick question - I've not heard back from ircops@ or admin@ about my cloak for IRC....
+<a name="l-302"></a><span class="tm">18:12:21</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">hendersj:</span> same here...i should have got that a year ago
+<a name="l-303"></a><span class="tm">18:12:43</span><span class="nk"> &lt;hendersj&gt;</span> I've asked a couple of times now - can someone nudge? :)
+<a name="l-304"></a><span class="tm">18:13:39</span><span class="nk"> &lt;vuntz&gt;</span> I'm actually wondering if it's not up to the membership officials to deal with that
+<a name="l-305"></a><span class="tm">18:13:44</span><span class="nk"> &lt;vuntz&gt;</span> see end of https://en.opensuse.org/openSUSE:Membership_officials
+<a name="l-306"></a><span class="tm">18:13:49 </span><span class="nka">* vuntz</span> <span class="ac">isn't sure</span>
+<a name="l-307"></a><span class="tm">18:13:54</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> darix handled it for me
+<a name="l-308"></a><span class="tm">18:14:11</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> We should have a less busier sysadmin
+<a name="l-309"></a><span class="tm">18:14:21</span><span class="nk"> &lt;victorhck&gt;</span> and I mail to admin and asked to yaloki about planet openSUSE-es
+<a name="l-310"></a><span class="tm">18:14:27</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> that will offload his and henne;s work too
+<a name="l-311"></a><span class="tm">18:14:34</span><span class="nk"> &lt;victorhck&gt;</span> about a petition from spanish blogger
+<a name="l-312"></a><span class="tm">18:14:47</span><span class="nk"> &lt;|miska|&gt;</span> <span class="hi">vuntz:</span> AFAIK, cloaks are set in connect and exported for admins to set up, but apart from setting it in connect I don't know what happens next...
+<a name="l-313"></a><span class="tm">18:15:02</span><span class="nk"> &lt;cboltz&gt;</span> IIRC the typical answer is "we depend on freenode staff" - maybe someone can convince freenode to give one or two openSUSE persons the permissions to create the cloaks?
+<a name="l-314"></a><span class="tm">18:15:19</span><span class="nk"> &lt;vuntz&gt;</span> anyone willing to help hendersj investigate this?
+<a name="l-315"></a><span class="tm">18:16:11</span><span class="nk"> &lt;vuntz&gt;</span> ah well, I'll chat with darix then
+<a name="l-316"></a><span class="tm">18:16:19</span><span class="nk"> &lt;hendersj&gt;</span> k, thanks, vuntz. :)
+<a name="l-317"></a><span class="tm">18:16:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to chat with darix about status of setting up irc cloaks</span>
+<a name="l-318"></a><span class="tm">18:17:03</span><span class="nk"> &lt;vuntz&gt;</span> anyone to help victorhck for planet openSUSE-es? :-)
+<a name="l-319"></a><span class="tm">18:17:28</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">victorhck:</span> when did you ping for this, btw?
+<a name="l-320"></a><span class="tm">18:17:43</span><span class="nk"> &lt;victorhck&gt;</span> you mean the mail?
+<a name="l-321"></a><span class="tm">18:17:53</span><span class="nk"> &lt;vuntz&gt;</span> yep
+<a name="l-322"></a><span class="tm">18:18:13</span><span class="nk"> &lt;victorhck&gt;</span> mail 1 one week ago (more or less)
+<a name="l-323"></a><span class="tm">18:18:30</span><span class="nk"> &lt;victorhck&gt;</span> and I ping yaloki here before chritsmas
+<a name="l-324"></a><span class="tm">18:18:44</span><span class="nk"> &lt;victorhck&gt;</span> and the user send petition in November
+<a name="l-325"></a><span class="tm">18:18:51</span><span class="nk"> &lt;vuntz&gt;</span> ah, well, I guess the holidays can explain things
+<a name="l-326"></a><span class="tm">18:19:00</span><span class="nk"> &lt;victorhck&gt;</span> maybe
+<a name="l-327"></a><span class="tm">18:19:13</span><span class="nk"> &lt;victorhck&gt;</span> well I will wait
+<a name="l-328"></a><span class="tm">18:19:14</span><span class="nk"> &lt;victorhck&gt;</span> ;)
+<a name="l-329"></a><span class="tm">18:19:31</span><span class="nk"> &lt;vuntz&gt;</span> maybe ping again at the beginning of next week, since things accumulated during the holidays will have settled
+<a name="l-330"></a><span class="tm">18:19:43</span><span class="nk"> &lt;vuntz&gt;</span> (best to ping by mail, btw)
+<a name="l-331"></a><span class="tm">18:19:44</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-332"></a><span class="tm">18:19:53</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Next meeting date &amp; chair</span>
+<a name="l-333"></a><span class="tm">18:20:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">next meeting on January 23rd</span>
+<a name="l-334"></a><span class="tm">18:20:16</span><span class="nk"> &lt;vuntz&gt;</span> I'm not 100% I'll be able to make it
+<a name="l-335"></a><span class="tm">18:20:21</span><span class="nk"> &lt;vuntz&gt;</span> as I won't be hime
+<a name="l-336"></a><span class="tm">18:20:22</span><span class="nk"> &lt;vuntz&gt;</span> home
+<a name="l-337"></a><span class="tm">18:20:34</span><span class="nk"> &lt;vuntz&gt;</span> anyone who'd be available to chair the meeting if I'm not there?
+<a name="l-338"></a><span class="tm">18:20:48 </span><span class="nka">* vuntz</span> <span class="ac">looks at robjo and hendersj ;-)</span>
+<a name="l-339"></a><span class="tm">18:21:03</span><span class="nk"> &lt;vuntz&gt;</span> for the record, there's doc on chairing at the end of https://en.opensuse.org/openSUSE:Project_meeting
+<a name="l-340"></a><span class="tm">18:21:14</span><span class="nk"> &lt;hendersj&gt;</span> :)  I'm not 100% sure at this moment either, I may be on a new gig that week and don't yet know the schedule.
+<a name="l-341"></a><span class="tm">18:21:32</span><span class="nk"> &lt;robjo&gt;</span> I can do it, not certain if I have the correct permissions
+<a name="l-342"></a><span class="tm">18:22:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> I'll give you op on that day
+<a name="l-343"></a><span class="tm">18:22:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">next chair is robjo (or vuntz if he manages to join)</span>
+<a name="l-344"></a><span class="tm">18:22:31</span><span class="nk"> &lt;vuntz&gt;</span> cool, thanks all!
+<a name="l-345"></a><span class="tm">18:22:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

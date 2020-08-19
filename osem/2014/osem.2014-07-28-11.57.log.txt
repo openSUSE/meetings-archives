@@ -1,0 +1,278 @@
+11:57:10 <KalabiYau> #startmeeting OSEM Milestone 1 planning
+11:57:10 <bugbot> Meeting started Mon Jul 28 11:57:10 2014 UTC.  The chair is KalabiYau. Information about MeetBot at http://wiki.debian.org/MeetBot.
+11:57:10 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+11:57:18 <KalabiYau> #chair KalabiYau
+11:57:18 <bugbot> Current chairs: KalabiYau
+11:57:28 <KalabiYau> #chair KalabiYau differentreality  gopesh henne
+11:57:28 <bugbot> Current chairs: KalabiYau differentreality gopesh henne
+11:57:47 <KalabiYau> #topic Decide with deadline for Milestone 1
+11:58:47 <KalabiYau> seems we need to explicitly set a deadline for first test milestone. Henne got a proper vision how to structure work, so it can be observable via waffle and GH, but we need to plan our milestone more closely.
+11:59:15 <KalabiYau> my suggestion is to make first milestone 2 weeks from today
+11:59:28 <KalabiYau> that way it is not so far away, not so close
+11:59:34 <henne> sounds reasonable
+12:00:01 <KalabiYau> then it is
+12:00:03 <KalabiYau> 2 weeks
+12:00:28 <henne> catching!
+12:00:44 <KalabiYau> 11 aug it will be a reflection meeting with next planning
+12:01:00 <KalabiYau> #info 11 aug it will be a reflection meeting with next planning and end of Milestone 1 and start of Milestone 2
+12:01:14 <henne> we need names!
+12:01:18 <henne> milestone names
+12:01:23 <henne> otherwise this isn't fun!
+12:01:28 <KalabiYau> i would go for periodic elements :)
+12:01:36 <KalabiYau> first one is Hydrogen and so on :)
+12:01:36 <henne> I would go for Freestyle
+12:01:50 <KalabiYau> no strong feelings here, let it be
+12:02:18 <KalabiYau> updated
+12:02:31 <KalabiYau> now 11 Aug, codename Freestyle
+12:02:46 <henne> he you misunderstood ;)
+12:02:52 <KalabiYau> henne ;)
+12:03:06 <henne> I would go for naming Milestones in free style
+12:03:18 <KalabiYau> for example?
+12:03:33 <henne> Quacamole
+12:04:00 <KalabiYau> it is fine with me
+12:04:02 <KalabiYau> https://github.com/openSUSE/osem/issues?milestone=1&state=open
+12:04:12 <KalabiYau> gopesh, differentreality you guys can now look at this?
+12:04:32 <KalabiYau> differentreality, do you think what is listed is deliverable by you personally until 11th?
+12:04:52 <KalabiYau> gopesh, would be great to see your tasks which you think you can deliver until 11
+12:05:18 <henne> this includes Epics and what not
+12:05:47 <KalabiYau> i think epic - as a big task should not be a part of milestone
+12:06:03 * henne neither
+12:06:14 <KalabiYau> as it is like a big holder for everything and smaller tasks which popped up from it - they are part of Milestone
+12:06:23 <differentreality> I love Quacamole as a name :D (and food too)
+12:06:56 <KalabiYau> speaking of food, tried gyros for the first time recently, was cool :)
+12:07:11 <KalabiYau> so next name i would reserve to Gyros :)
+12:07:24 <KalabiYau> anyway, differentreality what would you say about the link and tasks?
+12:07:35 <differentreality> heh, but you *have to* try it in Greece. It's different...
+12:07:39 * henne loves Gyros Pita
+12:07:57 <differentreality> yes I can do the tasks. Besides Roles/Authorization is the second part of my GSOC, it has to be done in 2 weeks anyway :)
+12:08:08 <KalabiYau> differentreality, tried in Greek restaurant here in NUE
+12:08:13 <differentreality> and I think user deletion will come into place too, in time
+12:08:22 <henne> differentreality: this is about stuff you can _FINISH_ untill the 11th of august
+12:08:51 <differentreality> henne: yeap.. 2 weeks
+12:09:02 <KalabiYau> from my side i can tell that CI Cycle will be tranformed to EPIC right away
+12:09:52 <henne> okay then we should add new issues with concrete tasks for the stuff
+12:10:10 <henne> what do you have to implement to make user deletion possible?
+12:10:39 <differentreality> henne: we need to agree on the implementation. Which I see you have positively replied to my comment for 'keep user record, delete data'
+12:10:53 <henne> yeah
+12:11:12 <henne> then what?
+12:11:45 <differentreality> then, change the destroy function in users controller, some changes for authorization in the users view page
+12:12:50 <henne> what about the migration?
+12:14:11 <henne> in #333
+12:14:19 <henne> that should be fixed too
+12:14:28 <differentreality> ah yes, the migration. The thing is that from our live instance, the users are already deleted anyway... So the 'normal' plan doesn't reallly work here.
+12:14:43 <differentreality> yes #333 is part of the whole thing for sure
+12:15:06 <KalabiYau> so, can you take 333 into Milestone?
+12:15:16 <KalabiYau> or we postpone it to the next MS ?
+12:15:19 <differentreality> uhm yes, definitely
+12:15:24 <KalabiYau> MS -> MileStone
+12:15:29 <henne> alright: https://github.com/openSUSE/osem/issues/383
+12:15:30 <differentreality> no I think it's part of the MIlestone
+12:15:44 <KalabiYau> differentreality, so 333 to MS#1
+12:16:02 <KalabiYau> #info issue#333 moved to MS#1
+12:16:29 <henne> so what concrete steps do you have to do for Roles&Authoriation?
+12:16:37 <differentreality> cool! Are we going to include this migration to osem or just run it for us (openSUSE live instance)?
+12:17:03 <KalabiYau> differentreality, i think we should include migration, as people deployed has same problem
+12:17:04 <henne> let's discuss details afterwards
+12:17:10 <differentreality> alrighty
+12:17:13 <henne> or else this meeting is going until christmas
+12:17:13 <differentreality> authorization
+12:17:27 <differentreality> I have switched to using a single Ability model
+12:17:36 <differentreality> seems to be doing pretty good now :)
+12:17:49 <henne> What do you still need to do until August 11th?
+12:17:50 <differentreality> Several tests are already in place (based on henne's tests, along with additions)
+12:18:36 <differentreality> More testing, some bugs I got, role assignment page
+12:18:50 <henne> okay
+12:19:23 <KalabiYau> then settled for differentreality
+12:19:32 <differentreality> I might have to do a couple of more changes to naming we use inside the app, so that things get set automatically by cancan
+12:19:49 <henne> okay
+12:20:00 <henne> https://github.com/openSUSE/osem/issues/372
+12:20:34 <KalabiYau> where it goes ?
+12:20:59 <henne> https://waffle.io/opensuse/osem
+12:21:16 <differentreality> are we going to make any kind of role assignment from users list?
+12:21:29 <henne> details later please
+12:21:36 <differentreality> If not, this has nothing to do with role assignment. The issue is addressing a menu thing anyway
+12:21:50 <KalabiYau> #info #383, #339, #333, #330 are commited by differentreality
+12:21:54 <KalabiYau> is that right?
+12:22:07 <KalabiYau> or #372 too?
+12:22:21 <KalabiYau> henne, are commited tasks should be moved to Ready?
+12:22:58 <differentreality> #372 is a menu thing, if we move forward with it, it is related to #304, as it mentions, which is Chris's implementation
+12:23:01 <henne> yes they should
+12:23:21 <KalabiYau> so, differentreality do you think 372 should be added to current MS ?
+12:23:23 <henne> differentreality: #372 is about the interface you're trying to build
+12:23:50 <differentreality> henne: it is actually about the position of 'Users' link in the admin menu
+12:24:10 <differentreality> which is an issue, regardless of me making it possible to assign roles from 'Users' page or not
+12:24:14 <henne> #383 is in ready, #339 and #333 are PR's
+12:24:29 <differentreality> my interface part goes into role assignment (where that assignment might happen) and is of course definitely into my tasks
+12:24:30 <henne> #330 is an EPic
+12:25:18 <henne> differentreality: the only reason to move the User list from it's current position somewhere else is role assignment
+12:25:39 <KalabiYau> ok, i want to settle differentreality list for this MS
+12:25:52 <henne> differentreality: that's why this #372 is now yours to come up with the interface :)
+12:26:14 <KalabiYau> 383 and 372 are in ready for MS, what should be added ?
+12:26:29 <KalabiYau> adding 339
+12:26:35 <henne> 339 is a PR
+12:26:47 <KalabiYau> yup
+12:27:00 <KalabiYau> do you think we should not track em"
+12:27:04 <KalabiYau> ?
+12:27:08 <henne> PR's should go to "in progress" :-)
+12:27:15 <henne> when they are related to a Milestone
+12:27:18 <KalabiYau> ok, done
+12:27:26 <henne> this happens automatically for new PR's BTW
+12:27:38 <differentreality> btw roles issue is https://github.com/openSUSE/osem/issues/23
+12:27:39 <KalabiYau> ok
+12:28:14 <henne> #23 is an Epic
+12:28:45 <henne> Epics don't go to milestones. They serve as basis for concrete tasks
+12:28:59 <differentreality> okay
+12:29:08 <KalabiYau> so, we are missing specific tasks for this epic ?
+12:29:18 <henne> the concrete task is the PR to merge your stuff (which is in progress) and the issue #372 which is about creating the interface
+12:29:43 <KalabiYau> ok
+12:29:59 <henne> alroght
+12:30:10 <henne> we can move on to gopesh I think
+12:30:20 <KalabiYau> yeah, if he would be here
+12:30:23 <henne> please give me a minute to fetch chris
+12:30:27 <KalabiYau> okay
+12:31:08 <KalabiYau> #info KalabiYau commited to finish 382, 381, 363, 353, 362 in MS Quacamole
+12:32:17 <henne> then let's continue with Chrisbr if gopesh isn't there
+12:32:24 <KalabiYau> hi, Chrisbr
+12:32:29 <Chrisbr> hi all
+12:32:43 <henne> Chrisbr: we are currently talking about what we are going to do in the upcoming milestone
+12:32:49 <Chrisbr> okay
+12:32:53 <henne> for the next two weeks
+12:33:38 <Chrisbr> Yep, I think my tasks will be the refactoring of the admin menu so far ...
+12:33:52 <henne> there is an issue for this right?
+12:34:09 <Chrisbr> https://github.com/openSUSE/osem/issues/304
+12:34:19 <Chrisbr> I think this one describes it best
+12:34:31 <Chrisbr> and I already added it to the milestone I believe
+12:34:43 <henne> Yes as this is the Epic behind it :)
+12:34:49 <henne> we need concrete tasks
+12:34:54 <henne> so we can see progress
+12:35:07 <Chrisbr> Ah okay, so we have to split it up in several small tasks?
+12:35:08 <henne> you said to me you are going to do this step by step
+12:35:27 <henne> let's create issues for every "big topic" in the menu
+12:35:28 <Chrisbr> Yes, currently I'm working on the conference basics, contact and photos
+12:35:46 <Chrisbr> okay
+12:36:04 <KalabiYau> btw, you guys can make this together later on
+12:36:12 <KalabiYau> or wanna do now?
+12:36:15 <henne> now
+12:36:17 <gopesh> hello
+12:36:20 <KalabiYau> ok, go on
+12:36:22 <KalabiYau> gopesh, hi
+12:36:25 <henne> so we all learn what's going on
+12:36:27 <gopesh> srry I am late
+12:36:29 <KalabiYau> we are planning first Milestone now
+12:36:44 <gopesh> yes what's there for me to do
+12:36:49 <KalabiYau> gopesh, what tasks which are not epic labeled you think you can deliver until 11th  of Aug?
+12:37:00 <gopesh> checking out
+12:38:03 <KalabiYau> gopesh, it is about what you are sure will be finished
+12:39:01 <henne> Chrisbr: you think you can finish everything until 11th of august?
+12:39:27 <Chrisbr> I hope so...
+12:39:33 <henne> ok
+12:41:18 <gopesh> well I think I can handle #385 #386 #387
+12:41:33 <gopesh> and #388
+12:41:48 <gopesh> as there are already there
+12:42:06 <gopesh> I just need to segregate it from conference#settings
+12:42:13 <henne> those are chris tasks
+12:42:57 <henne> and are about reworking the admin interface
+12:43:09 <gopesh> then I can take up deleting users
+12:44:18 <KalabiYau> gopesh, 385 taken by Chrisbr
+12:44:22 <KalabiYau> https://waffle.io/opensuse/osem
+12:44:23 <henne> what about your own gsoc tasks?
+12:44:58 <gopesh> well mine email notifications are over
+12:44:59 <KalabiYau> gopesh, basically everything you've mentioned is taken by Chrisbr
+12:45:15 <KalabiYau> gopesh, https://waffle.io/opensuse/osem
+12:45:19 <KalabiYau> look at left column
+12:45:20 <gopesh> KalabiYau: np I can take up deleting users
+12:45:27 <KalabiYau> gopesh, which task it is?
+12:45:35 <henne> that one is taken by differentreality
+12:45:52 <gopesh> 383
+12:46:01 <gopesh> oops
+12:46:06 <gopesh> ok wait..
+12:46:44 <henne> what about the tasks left for your GSoC project?
+12:47:03 <gopesh> the notifications thing i discusses with James
+12:47:11 <gopesh> he said no redis
+12:47:16 <KalabiYau> #info Chrisbr commited to finish tasks #389, #388, #387, #386, 385
+12:47:33 <gopesh> and without node and redis
+12:47:50 <gopesh> it would be useless to implement in-house notifications
+12:48:49 <henne> so what are you planing to do in the next two weeks?
+12:48:53 <gopesh> henne: if you want some other feature then I can take up that
+12:49:04 <KalabiYau> gopesh, you decide, what you want to do
+12:49:10 <KalabiYau> take a look at https://waffle.io/opensuse/osem
+12:49:13 <gopesh> I am left with some pending issues for splash
+12:49:21 <gopesh> like implementing keynote speakers
+12:50:05 <gopesh> and fix splash layout a bit
+12:50:32 <KalabiYau> can you do #380?
+12:50:47 <gopesh> KalabiYau: yes
+12:51:00 <gopesh> but that I guess too small for 11 august
+12:51:20 <KalabiYau> gopesh, can #377 be resolved?
+12:51:25 <KalabiYau> closed or merged until 11th?
+12:51:38 <henne> gopesh: it's about what you can do _until_ 11th of august
+12:51:44 <henne> gopesh: you could do a million small things
+12:52:01 <gopesh> henne yes right
+12:52:16 <gopesh> KalabiYau: yes this will be merged within this week I guess
+12:52:24 <henne> so can you fix #380 in this milestone?
+12:52:37 <gopesh> waiting for james
+12:52:49 <gopesh> henne: yes I can take up fix#380
+12:52:51 <gopesh> :)
+12:52:51 <henne> ok
+12:53:09 <KalabiYau> ok, i think for now it is enough?
+12:53:31 <KalabiYau> IF someone is done with his work on MS, just take something else, but be sure to finish until end of MS
+12:53:33 <KalabiYau> make sense?
+12:53:47 <henne> yes
+12:53:59 <gopesh> KalabiYau: yes
+12:54:05 <KalabiYau> henne, any commitments from you?
+12:54:29 <KalabiYau> #info gopesh commited to finish #300, 164, 380, 377
+12:54:42 <gopesh> cool
+12:55:04 <henne> I commit to do #336
+12:55:43 <henne> and I commit to do #243
+12:55:45 <KalabiYau> ok
+12:55:51 <KalabiYau> freezing?
+12:56:08 <henne> wait
+12:56:12 <KalabiYau> ok
+12:56:17 <henne> I have an issue with pull requests
+12:56:29 <henne> we all should commit to get the current open ones closed
+12:56:45 <henne> by either working in suggestions, rebasing, reviewing etc
+12:56:54 <KalabiYau> i agree
+12:57:01 <KalabiYau> any objections?
+12:57:06 <henne> we have way too many dangling
+12:57:16 <KalabiYau> meaning all PRs should be closed
+12:57:19 <gopesh> henne: yes mine are dangling I know
+12:57:22 <KalabiYau> or removed
+12:57:42 <KalabiYau> #info agreed to close all open PRs until MS#1 deadline
+12:57:59 <KalabiYau> henne, freezing your commitment?
+12:58:10 <henne> yepp
+12:58:16 <KalabiYau> #info henne commited to finish #243, 336
+12:58:58 <KalabiYau> #action KalabiYau should assign owners to open PRs and move them to 'in progress' tab at waffle
+12:59:10 <KalabiYau> then guys, we are good to go, i think
+12:59:43 <KalabiYau> please,  take first a very close look to your PR
+12:59:56 <KalabiYau> if you are not sure it is not deliverable until 11th - close it
+13:00:04 <KalabiYau> if yes, please fix and finish it
+13:00:10 <KalabiYau> questions?
+13:00:31 <KalabiYau> and please don't hesitate to start discussion on something of your concern
+13:00:37 <henne> let me explain where you can look for what now
+13:00:51 <KalabiYau> please do
+13:01:13 <henne> Goto https://waffle.io/opensuse/osem
+13:02:02 <henne> The cards in the "Ready" column are what you have committed to do until August 11th
+13:02:28 <henne> If you start to work on something, put the card into the "In Progress" column
+13:02:48 <henne> Pull requests from you will end up there automatically
+13:03:13 <henne> once you have finished something move it to the "Done" column
+13:03:19 <gopesh> henne: we could have also used trello
+13:03:30 <gopesh> just a thought
+13:03:32 <KalabiYau> gopesh, nope, as it is not connected to github
+13:03:35 <henne> merged pull-requests will appear there also automatically
+13:03:37 <KalabiYau> but waffle is
+13:03:43 <gopesh> KalabiYau: cool
+13:04:06 <gopesh> well then I think I should have used waffle to manage my gsoc progress :P
+13:04:18 <henne> alright
+13:04:23 <henne> that is how we work from now on
+13:04:56 <henne> so whenever something pops up in "In progress" that isn't related to the milestone you should blush!
+13:05:03 <KalabiYau> #info work is tracked via https://waffle.io/opensuse/osem
+13:05:22 <henne> except you have finished all the cards you have commited to do. then it's okay
+13:05:36 <henne> please obey these rules. thanks
+13:06:14 <KalabiYau> cool
+13:06:19 <gopesh> cool :)
+13:06:20 <KalabiYau> anything else, guys?
+13:06:51 <gopesh> KalabiYau: I think this trend will be followed after gsoc too
+13:07:11 <gopesh> this is a great way to track progress :)
+13:07:43 <KalabiYau> okay, then we are done
+13:07:46 <KalabiYau> happy hacking!
+13:08:04 <gopesh> KalabiYau: one thing my build for #377 is failing
+13:08:16 <KalabiYau> #endmeeting

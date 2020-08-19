@@ -1,0 +1,451 @@
+19:00:21 <einar77> #startmeeting
+19:00:22 <bugbot> Meeting started Tue Mar 19 19:00:21 2013 UTC.  The chair is einar77. Information about MeetBot at http://wiki.debian.org/MeetBot.
+19:00:22 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+19:00:46 <einar77> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+19:01:26 <einar77> #topic old action items
+19:01:36 <einar77> Do we have any left over from previous meetings?
+19:02:19 <einar77> And for reference, this is the topic list for today (assuming people are alive ;)
+19:02:43 <einar77> Planning a review of openSUSE patches
+19:02:45 <einar77> Adjustment (enforcing) of patch policy
+19:02:46 <einar77> Summary of the 12.3 development cycle: what was good, what wasn't, ideas for improvement
+19:02:48 <einar77> Initial plans for 13.1
+19:02:49 <einar77> Review of KDE Repositories, especially : (tittiatcoke)
+19:02:55 <einar77> How to proceed with KUSC ? (bnc#706813 and the work done by shumski)
+19:02:56 <einar77> - KDE:Unstable:Playground:Telepathy
+19:05:04 <einar77> going through old stuff to see if
+19:05:07 <einar77> there's something worht reporting
+19:05:47 <einar77> alin: did you get through legal for Simon?
+19:06:06 <alin> einar77: yes... I have put the srs but of course only silence came from them
+19:06:24 <einar77> Do you mean, you have SRs made already?
+19:06:30 <einar77> alin: worth perhaps poking them again?
+19:06:33 <alin> einar77: sr 156732 , 734 and 735
+19:06:56 <alin> einar77: I really do not like to piss off people who do not write code...
+19:07:15 <einar77> alin: Well, but I guess some were "forgotten" due to 12.3 having priority
+19:07:38 <einar77> WHat about menioning it in a generic mail to factory ML?
+19:07:51 <alin> einar77: ok I will
+19:08:07 <einar77> #action alin write to factory ML regarding Simon's status
+19:08:39 <einar77> cb400f: shumski tittiatcoke was 11.4 dropped from KUA?
+19:08:50 <cb400f> yep
+19:08:59 <cb400f> not sure who/what did it.. but it's gone :-)
+19:09:00 <einar77> Good, so that's done
+19:09:12 <CygniX> Maybe someone else can guide me, I would like to file a bug but dont know if I should do it with KDe or with suse
+19:09:26 <alin> cb400f: ok... so we donot know whom to congratulate... such a pity
+19:09:32 <cb400f> CygniX: wait until after the meeting :-)
+19:09:32 <einar77> CygniX: can you wait a few minutes? there's the KDE meeting going on at the moment
+19:09:50 <CygniX> Oh OK, no problem guys
+19:10:17 <einar77> cb400f: you had also "start a wiki page for apper", did you get around to it, or did you not have time?
+19:10:26 <einar77> (just trying to "spring clean" the old items)
+19:11:05 <cb400f> it's very near the top of my list.. I have already made the screenshots... but I had to wait until I had 12.3 installed
+19:11:23 <einar77> I'll just add to the actions again then ,so that's not forgotten
+19:11:47 <einar77> #action cb400f Make a start with a wiki page for apper
+19:12:25 <einar77> tittiatcoke: do whe have the fix for https://bugreports.qt-project.org/browse/QTBUG-18934 ?
+19:12:36 <einar77> since it caused issues w/nepomukindexer
+19:12:43 <shumski> einar77: yes, submitted it to KDE:Qt
+19:12:51 <einar77> ok, so that's solved
+19:13:17 <alin> tittiatcoke:
+19:13:22 <einar77> tittiatcoke: last one for you, what about bug 69153?
+19:13:22 <shumski> i don't know did it ended up in 12.3
+19:13:27 <NicoK> KDF & Co probably need some silent-time (i.e. no sr's / changes until fully built) though...
+19:13:27 <einar77> er
+19:13:42 <einar77> bug 659153
+19:13:42 <bugbot> openSUSE bug 659153 in openSUSE 12.2 (KDE4 Workspace) "Ejecting Optical Drives Causes Immediate Re-Close of Tray and KNotify Crash" [Critical,Reopened] https://bugzilla.novell.com/659153
+19:14:35 <einar77> The old action item was "check with cartman about that bug"
+19:14:52 <einar77> shumski: NicoK do we have nepomuk fileindexer off by default in 12.3?
+19:14:53 <tittiatcoke> einar77: I know. Didn't do that one. But the last comment indicate that the bug is gone
+19:15:06 <shumski> einar77: fileindexer is of
+19:15:14 <einar77> ok, both done
+19:15:33 <einar77> I'll defer the discussion on ksuseinstall et al to 13.1 discussion in a moment
+19:15:59 <einar77> #topic status report
+19:16:28 <einar77> Any special non-agenda status report?
+19:16:36 <einar77> Otherwise let's just move to the next topic
+19:16:37 <NicoK> einar77: (nepomuk fileindexer) don't know :(
+19:17:09 <shumski> nepomuk and akonadi feeder - ON, fileindexer OFF
+19:17:20 <einar77> shumski: great, as planned
+19:17:25 <shumski> yes
+19:17:28 <einar77> Let's move on with the meat of this meeting
+19:17:33 <shumski> ok
+19:17:37 <einar77> #topic Planning a review of openSUSE patches
+19:17:55 <einar77> As you all know, we do ship quite a lot of patches in our KDE packages
+19:18:07 <einar77> my idea would be to start a (progressive) review
+19:18:15 <einar77> to check:
+19:18:24 <einar77> - whether the bugs they fix are relevant or not;
+19:18:30 <einar77> - whether they are openSUSE specific
+19:18:38 <einar77> - whether they can be pushed upstream instead
+19:18:46 <einar77> - whether they can just be dropped
+19:19:09 <einar77> I don't tihnk this should fall on one person alone, I believe this needs to be done collaboratively
+19:19:34 <einar77> shumski: do you know how many patches for kdelibs, for example?
+19:19:37 <shumski> agreed. maybe it would be a good idea to open a wiki page, and people can write what do they think about specific patches?
+19:19:46 <shumski> einar77: one sec
+19:19:57 <NicoK> shumski: probably a good idea
+19:19:58 <einar77> shumski: good idea about the wiki page
+19:20:22 <einar77> Probably divided by package, and I say we focus on the core ones only at the moment
+19:20:49 <einar77> IOW, kdelibs, kdebase-workspace, baseapps, runtime
+19:20:55 <shumski> patch list is here: http://paste.opensuse.org/55518437
+19:20:59 <shumski> (for kdelibs)
+19:21:01 <einar77> once these are clean, we can move to check others
+19:21:17 <shumski> yeah, kdelibs and workspace have the most
+19:21:46 <einar77> shumski: some can probably be pushed upstream, just by reading them
+19:22:28 <einar77> I can create a skeleton, but then I'll need everyone to help ;)
+19:23:11 <shumski> some can, some not i guess
+19:23:12 <einar77> Afterwards we should announce it to the ML
+19:23:18 <shumski> agreed
+19:24:14 <einar77> #action einar77 Create a skeleton page for patch review
+19:24:24 <einar77> #action einar77 Announce wiki page for patch review on ML
+19:24:50 <einar77> Personally (speak up if you disagree)
+19:24:52 <shumski> ~80% of workspace ones are for KDM, afaik
+19:25:09 <einar77> I think we should strive to keep only opensuse specific things in patches
+19:25:16 <einar77> with a good deal of pragmatism
+19:25:48 <einar77> any other comments on this topic?
+19:26:15 <einar77> I'll take this as a no ;)
+19:26:28 <NicoK> the rest of the patches fix bugs that are not fixed in the latest release, right?
+19:26:33 <einar77> NicoK: yes
+19:26:39 <einar77> the idea is
+19:26:49 <einar77> keep upstream patches for stuff that's solved in the next release
+19:27:07 <einar77> and for the rest, upstream what's upstreamable, and keep the openSUSE specific things
+19:27:16 <NicoK> ok - just wanted to make that sure as these are not really opensuse-specific...
+19:27:39 <NicoK> sounds good
+19:27:43 <einar77> NicoK: in that case we can try (not sure if we *always can*) to put them in KDE proper
+19:27:45 <NicoK> upstream as much as possible
+19:28:15 <einar77> Any other comment? Otherwise we move to the next item in the agenda
+19:28:42 <einar77> Next it is, then
+19:28:52 <einar77> #topic Adjustment (enforcing) of patch policy
+19:29:19 <einar77> The recent "incident" with the giflib patches showed that so far we were inconsistent with the patch policy
+19:29:45 <einar77> I would propose to enforce the patch policy from now on
+19:29:55 <einar77> to keep consistency
+19:29:58 <shumski> in what way?
+19:30:00 <einar77> i.e. have them annotated
+19:30:05 <shumski> ok, +1
+19:30:12 <einar77> shumski: I like the openSUSE KDE style, to be honest
+19:30:24 <einar77> it's much more informative
+19:30:56 <NicoK> +1@patch annotations
+19:30:58 <einar77> albeit not used often outside KDE
+19:31:08 <NicoK> einar77: what do you mean by openSUSE KDE style?
+19:31:20 <einar77> sec
+19:32:06 <einar77> NicoK: this one https://en.opensuse.org/KDE/Patch_Annotation_Policy
+19:32:10 <mrdocs> do we have a github or someplace these patches are stashed outside of OBS ?
+19:32:30 <einar77> mrdocs: not at the moment
+19:32:49 <einar77> mrdocs: I'm not too familiar with the OBS' source control mechanism
+19:33:29 <einar77> My naive question
+19:33:38 <einar77> does it make sense to have patches under version control?
+19:33:45 <mrdocs> possibly
+19:33:50 <einar77> (my instinct says yes)
+19:34:07 <mrdocs> and a place where upstream can pull from too
+19:34:41 <einar77> could be possible
+19:35:04 <NicoK> @KDE annotation policy: seems similar to patches created by git - and reasonable
+19:35:21 <einar77> mrdocs: you mean storing just the diff, or the whole patched checkout? (I'm thinking the former)
+19:35:36 <einar77> NicoK: in fact we could almost use git-format-patch ;)
+19:35:57 <mrdocs> git-format patch is cool
+19:36:08 <mrdocs> just the diffs imo
+19:36:13 <einar77> ok, I agree
+19:36:25 <NicoK> OBS uses some sort of version control
+19:36:51 <einar77> NicoK: it's not easy to extract history though, it's often hand in hand with the checkins
+19:37:17 <NicoK> yes - another VCS would increase complexity and may reduce partiticipation though
+19:37:18 <einar77> tittiatcoke: what do you think? Does it make sense to have a github repo with our patches?
+19:37:42 <einar77> NicoK: fedora has a git repo for their patches (granted, they don't have OBS, though)
+19:37:44 <NicoK> or maybe we could put only those patches there that we want to get upstream
+19:37:58 <tittiatcoke> einar77: Might be indeed good, but then we should not only look for patches, but also tools (e.g. my scripts to update KDF, etc)
+19:38:04 <NicoK> as some kind of "incubation" project
+19:38:07 <einar77> tittiatcoke: that's an excellent idea
+19:38:26 <einar77> we should keep scripts etc all open to the public
+19:38:33 <NicoK> +1
+19:39:05 <NicoK> ideally OBS would expose its history in a better way though...
+19:39:16 <NicoK> e.g. as a git repo
+19:39:20 <einar77> Agreed, but while it doesn't
+19:39:28 <einar77> most of the KDE team is familiar with git
+19:39:38 <einar77> (despite it being black magic at times)
+19:39:41 <NicoK> maybe it's worth adding a FATE entry (if there is none yet)
+19:39:46 <NicoK> :)
+19:39:49 <einar77> good idea
+19:40:14 <einar77> Who can talk with whoever's in charge of teh opensuse github repo to have this "incubation" repo created?
+19:40:28 <einar77> Same for the FATE entry
+19:40:51 <einar77> NicoK: since you roposed the FATE entry, would you be able to do it? ;) *hint, hint*
+19:41:14 <shumski> it is not that bad with history, just that is hard to check it if people don't commit with messages
+19:41:20 <einar77> yes
+19:41:24 <einar77> with git you can't
+19:41:24 <NicoK> I'm pretty stuffed with work atm - but I can probably search & add a simple request there, I guess
+19:41:48 <einar77> NicoK: not wanting to push you, just to ensure that stuff gets recorded and we know who's doing what
+19:41:58 <NicoK> you can omit messages (or write useless messages) in git as well, can't you?
+19:42:07 <einar77> NicoK: yes, of course
+19:42:32 <einar77> "Against stupidity the gods themselves contend in vain", so it'll always happen
+19:43:00 <einar77> shumski: alin tittiatcoke any of you can look for this git repo creation?
+19:43:18 <tittiatcoke> einar77: you can assign this one to me
+19:43:24 <einar77> ok, thanks
+19:43:48 <einar77> #action tittiatcoke investigate the creation of a github repo for patches and other KDE team tools
+19:44:20 <einar77> #action all Enforce annotated patch policy for future SRs
+19:44:33 <einar77> Any takers for the FATE entry?
+19:45:15 <NicoK> I'm not quite sure whether they'd accept it...
+19:45:26 <NicoK> after all they have some sort of history tracking...
+19:45:30 <einar77> OK, let this pass for now
+19:45:40 <NicoK> I'll check though
+19:45:46 <NicoK> so assign to me for now
+19:45:46 <einar77> we'll see after the result of the github repo creation
+19:45:48 <einar77> ok
+19:46:10 <einar77> #action NicoK open a FATE ticket for improved history in OBS
+19:46:19 <tittiatcoke> einar77: do you have an action that somebody will communicate the new patch policy ? (ml, wiki, etc ?)
+19:46:31 <NicoK> except a git repo representation, what would you improve?
+19:46:37 <einar77> tittiatcoke: not yet
+19:46:41 <einar77> I would say ML first
+19:46:45 <einar77> then wiki
+19:46:59 <einar77> I can do the ML part
+19:47:09 <einar77> Since I already have things to report via ML anyway
+19:47:19 <tittiatcoke> einar77: Ok. :-) Also we need to inform the factory-maintainers that this is the new policy and that they are allowed to reject submissions to factory if the policy is not followed
+19:47:43 <einar77> tittiatcoke: specific mail address, or the factory-ml?
+19:48:04 <tittiatcoke> einar77: I am not sure, but we could communicate this through Andreas Jaeger
+19:48:20 <einar77> I would go in 3 stages: 1. tell KDE ML, 2. tell AJaeger, 3. wikify
+19:49:04 <einar77> likely, write to ML, if no big objections make it policy by writing to the factory-maintainers and then wikify it
+19:49:44 <einar77> if you agree, I'll do the ML part first
+19:49:50 <einar77> today or tomorrow I hope
+19:49:53 <tittiatcoke> einar77: Ok
+19:50:06 <einar77> #action einar77 write to opensuse-kde ML for the new patch policy
+19:50:10 <shumski> ok, i'll try to annotate the existing ones in the next days (if agreed)
+19:50:11 <shumski> ?
+19:50:20 <einar77> good
+19:50:27 <einar77> shumski: I'll put that as action item so we know
+19:50:33 <shumski> oki
+19:50:41 <einar77> #action shumski annotate existing patches if the new patch policy proceeds
+19:50:56 <einar77> GUys, can some of you take my place for ~10 min?
+19:51:04 <einar77> I need to make a phone call
+19:51:18 <einar77> but before that, any other questions?
+19:52:12 <einar77> Next topic coming up, unless you have more questions
+19:52:16 <einar77> (or proposals)
+19:52:39 <einar77> #topic Summary of the 12.3 development cycle: what was good, what wasn't, ideas for improvement
+19:53:10 <einar77> What are your thoughts overall on this?
+19:53:37 <einar77> How was 12.3 cycle?
+19:53:43 <einar77> what was good?
+19:53:44 <einar77> what wasn't?
+19:53:54 * einar77 withdraws for 10 min
+19:54:05 <einar77> Sorry for this, I'll be back ASAP
+19:54:42 <krop> ← is finally there and scrolls
+20:00:13 <mrdocs> IMO 12.3 is one of the nicest KDE's in a long time
+20:00:37 <mrdocs> artwork gets special mention coz i really never bother, but its well done
+20:00:57 <cb400f> we still screwed up on a few things.. e.g. no video thumbnails in a default install
+20:01:32 <cb400f> also I wonder if kde-gtk-config shouldn't have replaced kcm_gtk as default?
+20:01:39 <ryrych> hi
+20:01:42 <shumski> didn't it?
+20:01:45 <cb400f> and we didn't get rid of ksuseinstall in time
+20:02:02 <cb400f> I have kcm_gtk by default on my 12.3 fresh live install
+20:02:35 <shumski> ok. didn't checked that one. thought it already replaced it
+20:02:57 <ryrych> when I try to open mov video file in vlc I get a black screen; also Kaffeine says this: Cannot find demux plugin for MRL; I installed vlc from pacman but it didn't help
+20:04:06 <shumski> cb400f: also seems ffmpegthumbs disappeared from Packman?
+20:04:10 <tittiatcoke> ryrych: Please see topic. Meeting is ongoing, please wait with your question till after the meeting
+20:04:24 <ryrych> ok sorry :)
+20:04:36 <tittiatcoke> ryrych: np :-)
+20:04:55 <cb400f> shumski: maybe.. I'm using mplayerthumbs
+20:05:00 <einar77> back and srorry
+20:05:14 * einar77 reads
+20:05:23 <shumski> ok. got a qustion today about it, and looked, didn't found it
+20:05:53 <einar77> on the good things
+20:06:00 <einar77> we have strengthened a lot the upstream links, IMO
+20:06:09 <einar77> the aforementioned theme
+20:06:23 <einar77> agreed with cb400f on the ksuseinstall
+20:06:31 <einar77> IMO it should be torched, but that's just me
+20:06:55 <cb400f> interesting that you should strengthen relations with upstream by ditching _their_ artwork ;-)
+20:07:08 <cb400f> me too :-)
+20:07:08 <einar77> well that's branding and all that jazz ;)
+20:07:24 <einar77> cb400f: but we did a lot of our work upstream or in collaboration with upstream
+20:07:28 <einar77> and even with other distros
+20:07:40 <einar77> (udisks2 backend for solid - upstream / fedora / opensuse stuff)
+20:08:22 <einar77> I think this should be a good marketing point, even
+20:08:34 <einar77> as for stuff that could be improved...
+20:09:04 <einar77> the aforementioned ksuseinstall mostly, from my POV
+20:09:32 <einar77> and some defaults (kcm_gtk2 vs kcm-gtk-config)
+20:10:18 <einar77> alin: krop anything to add on this?
+20:10:32 <alin> einar77: sorry on the phone
+20:10:53 <krop> no, as a factory user, I didn't test the 12.3 CD
+20:10:58 <alin> einar77: aaa about 12.3 12.3 is history
+20:11:07 <cb400f> kio_mtp is not in the default install either is it? ... I don't have android.. but that stuff seems to come up rather often
+20:11:27 <einar77> cb400f: good point, these things will need to get into the default pattern
+20:11:36 <shumski> should be on default pattern
+20:11:59 <einar77> looks like I'm out of the loop
+20:12:11 <NicoK> including android-tools (iirc it is only a soft requirement in kio_mtp)
+20:12:22 <NicoK> i.e. a "suggests"
+20:12:25 <einar77> To summarize, however, I think that this dev cycle is largely positive
+20:12:38 <NicoK> but this is not KDE-specific :)
+20:12:42 <einar77> and that we're on the good track
+20:12:43 <cb400f> right.. I have it installed actually.. sorry
+20:13:00 <einar77> probably we should improve more stuff like:
+20:13:08 <einar77> - defaults (already good enough IMO)
+20:13:11 <einar77> - default applications
+20:13:16 <mrdocs> +1 mtp-tools
+20:13:39 <einar77> the next topic deals with 13.1, that's why these two are close together
+20:13:47 <krop> note: there's a thread upstream talking about kio-mtp and releasing it with 4.11
+20:14:00 <einar77> krop: got a link?
+20:14:20 <krop> a kde-devel thread from saturday
+20:14:28 <einar77> ok, will check later
+20:14:42 <einar77> Moving on the next topic, if you don't object
+20:14:54 <krop> http://lists.kde.org/?l=kde-devel&m=136347311903866&w=2
+20:15:15 <einar77> I'll swap topics on the agenda
+20:15:35 <einar77> because since we started late, I'd rathr discuss the most definite scope first
+20:16:13 <einar77> #topic Review of KDE Repositories
+20:16:38 <einar77> #topic *  How to proceed with KUSC ? (bnc#706813 and the work done by shumski)
+20:17:05 <einar77> As you know, shumski has been working on creating an out-of-prefix KUSC packaging
+20:17:36 <einar77> I think it may be useful to evaluate whether it may good enough for KUSC
+20:17:40 <einar77> shumski: what's the current status?
+20:18:08 <shumski> einar77: have some core packages there, but didn't continued until decided how to proceed
+20:18:19 <einar77> rationale for this, for the others
+20:18:38 <einar77> it may be worth providing non-prefix packages to ensure they don't destroy the default KDE install
+20:18:51 <shumski> it is working correctly. even the branding stuff (except e.g. kdelibs)
+20:18:53 <einar77> this will be useful for people who do development only on small bits of KDE; or to test
+20:18:59 <einar77> without risks
+20:19:15 <einar77> Now the 1 eurocent question is
+20:19:26 <einar77> - is it worth pursuing?
+20:19:28 <einar77> and
+20:19:44 <einar77> - Do you agree that KUSC would (*potentially*) be better used like that?
+20:20:04 <einar77> there's however a non small issue with repos tied to KUSC (are there any)?
+20:20:58 <mrdocs> the other shoe which will drop is qt5
+20:20:59 <shumski> obviously both answers from my end are - yes. but it is to others to say what they think
+20:21:11 <einar77> krop: your opinion?
+20:21:15 <mrdocs> which atm is not parallel installable
+20:21:24 <einar77> mrdocs: yes, that's to keep in mind too
+20:21:29 <tittiatcoke> einar77: I guess that if we change the usage of KUSC to a different prefix, then the question is if we should still build KDE:EXtra and KUP for KUSC ?
+20:21:38 <einar77> tittiatcoke: that was my question
+20:21:46 <einar77> I would be inclined to "No"
+20:21:54 <einar77> KUSC is not for regular users IMO
+20:21:54 <tittiatcoke> :-) I would say the same.
+20:21:55 <shumski> IMO, no
+20:21:57 <mrdocs> but remerges might be ugly
+20:22:08 <einar77> mrdocs: can you elaborate?
+20:22:11 <mrdocs> i said *might*
+20:22:39 <mrdocs> building kde-foo from extras against a much newer kdelibs or other core lib
+20:23:00 <mrdocs> just trying to think ahead :-)
+20:23:03 <krop> so,  I have technical questions: how are XDG paths handled ? specially XDG_CONFIG_HOME, XDG_DATA_HOME ?
+20:23:17 <krop> how are polkit permissions files handled ?
+20:23:18 <shumski> they are exported
+20:23:21 <mrdocs> .kde-new ?
+20:23:30 <shumski> .kde-unstable for now
+20:24:09 <shumski> krop: everything is installed in /opt/kde-unstable
+20:24:32 <krop> then polkit won't work (kdm settings, clock settings, apper...)
+20:24:38 <einar77> shumski: IIRC the polkit files will not work out of prefix
+20:25:21 <shumski> ok, then i need to take a look at that
+20:26:11 <krop> about :Extra, :Playground* I don't really see the reason to not build them anymore ?
+20:26:45 <einar77> I would start small first (assuming it works)
+20:27:07 <shumski> krop: i am not sure how would that work. i use different macros
+20:28:15 <krop> as long as kde4-filesystem knows the /opt paths, we just have to review each package to make sure it uses the KDE path definitions
+20:28:48 <shumski> macros are ~same only s/_kde4/_kde_unstable
+20:30:15 <shumski> also, specs in extra would need a revisit, for dir ownership
+20:30:41 <einar77> Folks, I just realized I need to leave, didn't expect the meeting to run this long
+20:31:04 <einar77> shumski: so a general review of specs would be required before any other adjustments?
+20:31:23 <shumski> that is for sure :-)
+20:31:26 <einar77> Can someone "take the helm" for the meeting in my stead?
+20:31:40 <tittiatcoke> einar77: I would propose that we move this discussion to the next meeting. This gives shumski the time to investigate some stuff and the rest to think about it
+20:32:00 <einar77> #action shumski further investigate out-of-prefix KUSC
+20:32:11 <einar77> tittiatcoke: as expressed in the action above
+20:32:16 <tittiatcoke> einar77: Oki :-)
+20:32:28 <tittiatcoke> einar77: Thanks for moderating. I will take over for the last agenda item :-)
+20:32:38 <einar77> thanks, sorry for this (And if I messed up tell me!)
+20:32:40 <einar77> later people!
+20:32:54 <tittiatcoke> #topic Q&A
+20:33:15 <krop> already ? didn't you want to discuss kupt ?
+20:33:35 <tittiatcoke> krop: Ok :-)
+20:34:15 <tittiatcoke> I brought up the point with regards to the separate repo for Telepathy (KUPT). The reason for this is if we still needs this one or that we should merge it into KUP itself
+20:35:00 <tittiatcoke> anybody ?
+20:35:42 <krop> me ! me !
+20:36:10 <krop> I see several things:
+20:36:29 <tittiatcoke> :-)
+20:36:47 <krop> - they break their repo, move their code every months and break everything very often
+20:37:59 <krop> - the dependencies are also evolving quickly (do we really want to ship a recent telepathy-glib or telepathy-whatever in KUP for 12.2 ?)
+20:38:34 <krop> - we have a local patch that removes the dependency on gnome-keyring (because, well, we don't care about it)
+20:39:31 <tittiatcoke> Ok. So a lot speaks for keeping it really separate :-)
+20:39:32 <krop> - whatever decision, I'd rather keep them in a separate repo due to the amount of packages and provide an _aggregate instead
+20:40:06 <krop> (the last point is because kup itself has quite some packages already)
+20:40:12 <tittiatcoke> true
+20:40:29 <tittiatcoke> Does anybody has a different opinion ?
+20:41:09 <krop> (I'm also thinking about moving the kdevelop plugins in a subproject and add an _aggregate for the same reason)
+20:41:25 <tittiatcoke> ok
+20:43:03 <tittiatcoke> Hmm, anybody still in the meeting ?
+20:43:23 <shumski> yeah, sorry
+20:43:31 <cb400f> guess not too many use ktp from kupt ;-)
+20:43:44 <shumski> no, strong opiniion on KUPT, but seems it is better to leave it separate
+20:44:24 <tittiatcoke> Ok. Then we leave it as it is :-)
+20:45:05 <tittiatcoke> #chair
+20:45:11 <tittiatcoke> #topic Q&A
+20:45:27 <tittiatcoke> Hmm, somehow bugbot doesn't react on me :-(
+20:45:36 <tittiatcoke> Ok. Last topic. Q&A :-)
+20:45:40 <tittiatcoke> Any questions or comments ?
+20:45:48 <mrdocs> none here
+20:46:33 <shumski> have one, is it worth to add sysinfo in extra? seen some users that would want it back (i know it's a step backward)
+20:46:45 <shumski> but, just asking :-)
+20:47:01 <tittiatcoke> If we have a maintainer for it :-)
+20:47:12 <krop> which we didn't have for years
+20:47:27 <shumski> oki
+20:48:09 <tittiatcoke> krop: I was more talking about somebody taking care of the packaging :-)
+20:48:20 <krop> ah:)
+20:48:34 <tittiatcoke> a maintainer for the source would be impossible :-) I don't think that anybody cares for it
+20:48:51 <shumski> i have packaged it today, just wanted to see is it worth it
+20:49:39 <tittiatcoke> shumski: Ok :-) I am fine to put it in KDE:Extra :-)
+20:50:03 <shumski> ok, cool. will submit it soon then.
+20:50:06 <krop> speaking of abandoned things, I'd like to make the KR48 users unhappy and remove akonadi-googledata + libgcal from KDE:Extra
+20:50:11 <tittiatcoke> Maybe it would be worth to mention in the description somewhere that it is unsupported :-)
+20:50:18 <tittiatcoke> krop: Go for it :-)
+20:50:19 <shumski> tittiatcoke: agreed
+20:50:30 <krop> both were abandoned ~3 years ago and are really unusable
+20:50:40 <tittiatcoke> krop: Drop them :-)
+20:50:46 <shumski> +1
+20:51:02 <tittiatcoke> #action shumski submit sysinfo to KDE:Extra with the indication that it is unsupported
+20:51:23 <tittiatcoke> #action krop drop akonadi-googledata and libgcal from KDE:Extra for KDE:Release:48
+20:51:48 <tittiatcoke> anything else ?
+20:52:00 <shumski> nothing from me
+20:52:08 <NicoK> yes...
+20:52:19 <tittiatcoke> NicoK: Go ahead :)
+20:52:26 <NicoK> from what I've seen in KDF & Co. the repo is in constant rebuild now
+20:52:33 <NicoK> we should probably let it settle first
+20:52:39 <NicoK> and then continue adding patches etc
+20:53:00 <NicoK> at least for the core packages
+20:53:19 <tittiatcoke> NicoK: The issue is that as soon as somebody changes something at a low level (e.g. kdelibs4, soprano, etc) the full repo gets rebuild
+20:53:33 <tittiatcoke> But I agree that we should let is finish building before accepting new packages
+20:54:32 <NicoK> maybe we could collect sr's for core packages (like in the past) and accept them once/twice a week only...
+20:54:43 <shumski> yeah, but somehow you indication that KR410 is leading didn't get 100% through, so i wonder how will this work
+20:55:03 <tittiatcoke> shumski: :-) Well, KR410 is no longer leading :-) KDF is the leading one again
+20:55:05 <NicoK> ?
+20:55:23 <shumski> tittiatcoke: i know, but the same could be applied for this "rule"
+20:55:48 <tittiatcoke> :-) True. But we should have less people accepting requests than those that are submitting
+20:56:09 <shumski> i mean, i agree, just not 100% convinced it will work in practice
+20:56:19 <shumski> ok
+20:56:40 <tittiatcoke> shumski: Well, that means that we start kicking those that are not following the rules :-)
+20:56:43 <shumski> as said, i agree to accept at least core one more rarely
+20:56:58 <shumski> :-)
+20:57:09 <NicoK> this way we collect them and avoid unnecessary rebuilds
+20:57:13 <krop> (*cough* don't forget to tell that to former maintainers as well *cough*)
+20:57:34 <tittiatcoke> krop: Those are mainly the ones that are causing the issues :-)
+20:58:17 <tittiatcoke> #action everyone SR's to core packages in KDF will be accepted once or maximum twice a week to minimize the KDF rebuilds
+20:58:49 <NicoK> we should agree on specific week days :)
+20:59:33 <NicoK> like Monday, Thursday or so...
+20:59:53 <tittiatcoke> Monday and Thursday sounds good to me
+21:00:18 <shumski> ok, have also a related question. would it make sense to utilize local flag for KR410, at least after a point release gets fully rebuilt?
+21:00:46 <shumski> that would also save some power
+21:01:22 <tittiatcoke> shumski: I guess it would make sense as that we are more pushing small bug fixes to KR410 and no big changes. As you said with a new point release we can delete that flag again
+21:01:52 <shumski> tittiatcoke: yes. no need for a full rebuild IMO
+21:02:03 <tittiatcoke> true
+21:02:06 <shumski> with fixes in between releases
+21:03:31 <tittiatcoke> yup
+21:05:02 <NicoK> +1
+21:05:16 <tittiatcoke> Ok. I will set the flags
+21:05:31 <tittiatcoke> #action tittiatcoke Set the local flags for KR410 to prevent unnecessary rebuilds
+21:06:15 <tittiatcoke> anything else ?
+21:07:13 <NicoK> nope
+21:07:40 <shumski> nothing here
+21:08:03 <tittiatcoke> Ok. Now I guess we need einar77 to tell bugbot that the meeting is over :(
+21:08:53 <tittiatcoke> #endmeeting
+21:09:13 <tittiatcoke> :-( Well, guys. Thanks for the meeting. I hope that einar77 is back soon :-)
+21:09:51 <alin> tittiatcoke: sorry I vanished was on the phone
+21:09:58 <tittiatcoke> alin: np
+21:10:05 <alin> tittiatcoke: or the postmodern equivalent
+21:10:28 <alin> I see nothing was given to me to do
+21:10:32 <alin> tittiatcoke: which is good
+21:11:32 <tittiatcoke> #chair tittiatcoke
+21:12:32 <tittiatcoke> #listmeetings
+21:19:11 <tittiatcoke> !tell einar77  When you are back, please issue an #endmeeting so that we end the meeting and the logs are created. Unfortunately I can't do this
+21:19:11 <SUSEhelp> tittiatcoke: Okay, will tell upon next speaking. (Sent to 1 person.)
+21:22:54 <rdmitry> i am wrong or mariadb memory consumption is higher then myslq?
+21:34:33 <alin> rdmitry: krop knows about that
+21:34:52 <krop> if you ask, you probably already know the answer :)
+21:38:43 <alin> rdmitry: krop said something on that line...
+21:38:55 <alin> rdmitry: he said something about a memory leak
+21:40:17 <rdmitry> oh, it seems i need new computer too soon...
+21:49:22 <shumski> krop: do you have a  suggestion in regards to polkit?
+21:50:16 <krop> no, sorry, I tried many things already for my local build. everything failed
+21:51:09 <shumski> ok :-)  that is due to polkit rules, or?
+21:51:38 <krop> yes, it can just load files from one location
+21:52:27 <shumski> hm, ok :-(
+22:31:30 <shumski> krop: yeah, works only if there is no actions in $kde-unstable/share/polkit-1/actions (and equivalent is installed in system prefix)
+22:40:36 <einar77> #endmeeting

@@ -1,0 +1,251 @@
+17:04:17 <bmwiedemann> #startmeeting
+17:04:17 <bugbot> Meeting started Mon Jul  2 17:04:17 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:04:17 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:04:23 <bmwiedemann> Hello everyone
+17:04:23 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:04:23 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:04:53 <bmwiedemann> #topic 12.2 testing
+17:05:43 <bmwiedemann> nb: I was just looking at bnc#767448 about a libvirt_lxc segfault which we found in our SUSE Cloud work
+17:06:47 <bmwiedemann> as for 12.2 - there is now a Beta2 and it mostly works and the yast bugs are hoped to be fixed
+17:07:29 <bmwiedemann> both yast2 --gtk  and yast2 --qt had problems from incompatibilities in C++ standards in std::list
+17:08:02 <LWFinger> Was that a problem with g++4.7?
+17:08:19 <bmwiedemann> only indirectly.
+17:09:07 <bmwiedemann> I think some of our core components (libzypp) were compiled with --std=c++0x and some yast ones were not
+17:09:35 <bmwiedemann> so when they were passing std::list data between each other, things broke
+17:10:41 <bmwiedemann> coolo will likely push out a RC1 next week
+17:11:20 <bmwiedemann> so we will have a new base to test
+17:12:31 <bmwiedemann> LWFinger: did you encounter new bugs in 12.2?
+17:12:42 <LWFinger> On my sandbox, I'm currently updating to Factory. Almost 2000 packages. It may be close to RC1.
+17:13:19 <LWFinger> No, I have not found any new bugs. I'm running two real machines and doing most work with 12.2 Beta2.
+17:13:20 <bmwiedemann> 12.2 has been split from Factory shortly after Beta2, so it will not be the same
+17:14:13 <LWFinger> Yes, I know, but neither 12.2 nor factory-snapshot had any updates.
+17:15:52 <bmwiedemann> There is http://widehat.opensuse.org/12.2/repo/oss/ for testing what comes in 12.2 - but it is not mirrored
+17:16:14 <bmwiedemann> so don't announce it too widely
+17:16:40 <LWFinger> OK, then I will use it.
+17:17:24 <bmwiedemann> it is a bit of a bad situation that after the factory split, there are no easy quick updates - at the time when it is most needed to test for bugs and their fixes.
+17:18:30 <LWFinger> I know that Coolo was cherry-picking from Factory. Do those changes go th widehat?
+17:18:37 <bmwiedemann> yes
+17:18:55 <bmwiedemann> I also rsync-mirror them to openQA
+17:19:29 <bmwiedemann> but there is still some bit missing to get the isos there
+17:20:32 <bmwiedemann> poorboywilly: good evening
+17:20:41 <poorboywilly> morning :)
+17:20:49 <bmwiedemann> did you test 12.2? found new issues?
+17:21:40 <poorboywilly> I've been swamped with work and had very little time to work with 12.2 unfortunately
+17:23:33 <bmwiedemann> happens even to the best ;)
+17:23:50 <bmwiedemann> Creatura85: did you test 12.2 during the last weeks?
+17:23:54 <Creatura85> [02 07 2012 20:06] <bmwiedemann> as for 12.2 - there is now a Beta2 and it mostly works and the yast bugs are hoped to be fixed -> hope is better than nothing i guess
+17:24:01 <Creatura85> good evening
+17:24:15 <Creatura85> bmwiedemann: yes, i had some problems with kde widgets
+17:24:27 <bmwiedemann> Creatura85: I tested both fixes for the yast bugs, so there is reason to hope :)
+17:24:47 <Creatura85> the package python-kdebase4 had some issues but according to max lin its fixed now
+17:25:08 <Creatura85> bmwiedemann: https://bugzilla.novell.com/show_bug.cgi?id=767249
+17:25:13 <bugbot> openSUSE bug 767249 in openSUSE 12.2 (KDE4 Workspace) "Widgets that need python are not running under KDE 4.8.4" [Normal,Closed: worksforme]
+17:25:20 <Creatura85> weird is that for him i working as it should
+17:25:33 <Creatura85> for me is working only after i install python-qt4-devel
+17:25:35 <Creatura85> :)
+17:26:10 <bmwiedemann> maybe that pulled in some new version of something else?
+17:26:29 <Creatura85> bmwiedemann: when the RC1 comes out the 12.2 repos are gonna get new packages as upgrades or should i use widehat too ? :)
+17:26:43 <Creatura85> bmwiedemann: yes, a package called python-kde4
+17:26:58 <Creatura85> but max said that python-kdebase4 was fixed
+17:27:19 <Creatura85> even on my 12.1 machine, without python-qt4-devel the wigets are not working :)
+17:27:26 <Creatura85> weird huh
+17:27:36 <bmwiedemann> Creatura85: on RC1, everyone will get the updates via mirrors
+17:28:13 <Creatura85> ok, i will wait for oss and non-oss that belongs to 12.2 to be synced when the time comes
+17:28:22 <bmwiedemann> Creatura85: and when you deinstall python-qt4-devel there, it breaks again?
+17:28:47 <bmwiedemann> then it might need a maintenance-update for 12.1, too
+17:28:48 <Creatura85> bmwiedemann: hmmm never tried that :)
+17:28:56 <Creatura85> let me see
+17:29:48 <bmwiedemann> that is the way to narrow down bugs
+17:30:09 <Creatura85> ok...
+17:30:34 <bmwiedemann> try things until the change you do is rather small and simple and it still triggers the bug
+17:31:02 <Creatura85> it seems that geeko is eating wires again
+17:31:17 <Creatura85> will grub 2.00 be used for the rc1? :)
+17:31:26 <Creatura85> i was released a few days back
+17:32:19 <bmwiedemann> I don't know. If someone goes through the changelog and thinks that it does more help than harm
+17:33:07 <Creatura85> bmwiedemann: i want report that the kde bug that affects the first login attempt is back...
+17:33:26 <Creatura85> second character of the password is not typed in the box at first
+17:33:30 <Creatura85> second time around it does
+17:33:43 <bmwiedemann> Creatura85: the one where you had to set "KDE plasma" ?
+17:34:14 <Creatura85> bmwiedemann: i dont think is that one, that affected the entire login process
+17:34:20 <Creatura85> this one is old
+17:34:22 <Creatura85> since 12.1
+17:34:25 <bmwiedemann> oh
+17:34:36 <Creatura85> the first login attempt always fails on kde
+17:34:42 <Creatura85> due to this bug
+17:34:53 <bmwiedemann> which bug # is that?
+17:34:58 <Creatura85> because the second character of the pass is not typed
+17:35:32 <bmwiedemann> openQA always does autologin, so does not find this... but I think it would be easy to choose no-autologin sometimes
+17:35:34 <Creatura85> hmmm... i dont rember that
+17:35:49 <Creatura85> i dont have autologin set
+17:36:11 <Creatura85> seacrh for : first login attempt always fails in buzgilla
+17:38:05 <bmwiedemann> is this after every boot?
+17:38:15 <Creatura85> yes
+17:38:33 <bmwiedemann> bnc#728554
+17:38:40 <Creatura85> bmwiedemann: retested my bug, removed python-qt4-devel and the widgets are working :)
+17:38:54 <bmwiedemann> or https://bugzilla.novell.com/show_bug.cgi?id=728554
+17:38:59 <bugbot> openSUSE bug 728554 in openSUSE 12.1 (Other) "first login attempt after boot always fails" [Major,Needinfo]
+17:39:15 <Creatura85> so i guess python-kde4 and/or python-kdebase4 where fixed as max said
+17:39:25 <bmwiedemann> yes
+17:39:43 <Creatura85> bmwiedemann: yes, this is the one
+17:40:02 <Creatura85> hans confirmed the presence of the bug under beta 2 as well
+17:40:10 <Creatura85> https://bugzilla.novell.com/show_bug.cgi?id=728554#c89
+17:40:15 <bugbot> openSUSE bug 728554 in openSUSE 12.1 (Other) "first login attempt after boot always fails" [Major,Needinfo]
+17:41:01 <bmwiedemann> getting an automated test-case to catch this, should be easy.
+17:41:30 <bmwiedemann> then we will see when this bug is fixed... or comes back
+17:42:11 <Creatura85> should i adjust the bug for 12.2 beta 2?
+17:42:41 <bmwiedemann> I don't think so
+17:42:57 <Creatura85> why not ? the bus is present under 12.2 beta 2 as well
+17:43:09 <LWFinger> I just had to reboot following a network system crash. I'm not sure if I have a 12.2 or kernel 3.5-rc4 problem.
+17:43:56 <Creatura85> wb LWFinger we missed you :)
+17:44:42 <bmwiedemann> LWFinger: didn't have any network problems with 12.2 so far
+17:44:55 <bmwiedemann> but I'm not using NetworkManager anywhere
+17:45:14 <LWFinger> This was a new one for me also, and i am using NM.
+17:46:05 <poorboywilly> I must be off
+17:46:15 <LWFinger> I don't know if anything was logged as I rebooted as soon as I saw there was a problem.
+17:46:26 <Creatura85> LWFinger: under my vbox machine with beta 2 i use ifup :)
+17:46:31 <Creatura85> i dont like NM too much
+17:47:01 <bmwiedemann> LWFinger: do you have a serial console or netconsole configured?
+17:47:17 <bmwiedemann> (I always loved netconsole for my headless remote servers)
+17:47:52 <LWFinger> I run 3 APs so as to test WEP, WPA and WPA2 without disturbing my wife's computer. NM is necessary.
+17:48:44 <LWFinger> The machine was running and it shut down normally. The only symptom was that the network dropped and I could not reconnect to my AP.
+17:49:17 <LWFinger> When I tried to unload the wireless driver, that process hung, thus the reboot.
+17:49:54 <bmwiedemann> maybe a spinlock/semaphore being held
+17:50:34 <LWFinger> It could be. As the wireless driver in question is mine, I will need to find out.
+17:50:41 <Creatura85> i have changed the status of the widgets bug to fixed since i dont experience this on both my opensuse machines: https://bugzilla.novell.com/show_bug.cgi?id=767249
+17:50:45 <bugbot> openSUSE bug 767249 in openSUSE 12.2 (KDE4 Workspace) "Widgets that need python are not running under KDE 4.8.4" [Normal,Closed: fixed]
+17:51:21 <LWFinger> Creatura85: Perhaps we are gaining.
+17:52:07 <Creatura85> on what matter LWFinger ?
+17:52:15 <Creatura85> closing bugs as fixed ?
+17:52:25 <LWFinger> Yes.
+17:52:43 <Creatura85> well that is the best way to close a bug report i suspect
+17:53:05 <Creatura85> that makes the user and the developer/tester happy :)
+17:53:12 <LWFinger> It certainly is the most useful way.
+17:54:48 <Creatura85> bmwiedemann: so much with the bugs for me :)
+17:55:13 <Creatura85> well yast software module is still unstable during the removal of a package with dependencies
+17:55:25 <bmwiedemann> then lets move to the next topic
+17:55:29 <Creatura85> but overall is a good beta
+17:55:31 <bmwiedemann> #topic next meeting
+17:55:58 <Creatura85> bmwiedemann: after the RC1 gets released ?
+17:56:36 <Creatura85> whenever that happens :)
+17:56:36 <bmwiedemann> uhm. what is then?
+17:57:29 <Creatura85> bmwiedemann: i dont know when RC1 gets out
+17:57:36 <bmwiedemann> RC1 will likely arrive arrive 2012-07-12
+17:57:58 <Creatura85> we can meet in 2 week on the 16th of july ?
+17:58:04 <Creatura85> on a monday of course
+17:58:30 <bmwiedemann> or we move to a different day of week, as Holgi is often unavailable on Mondays
+17:58:37 <Creatura85> sure :)
+17:58:38 <bmwiedemann> e.g. Thursday
+17:59:03 <Creatura85> well rc 1 gets on Thursday the 12
+17:59:04 <bmwiedemann> how about 2012-07-19 17:00 UTC ?
+17:59:14 <Creatura85> yeah in a week
+17:59:35 <Creatura85> 19 is on thursday
+17:59:41 <Creatura85> so is fine by me
+17:59:48 <LWFinger> Thursday is as good as Monday for me. The 19th is OK for me.
+18:00:10 <bmwiedemann> #agreed next meeting 2012-07-19 17:00 UTC
+18:00:12 <Creatura85> so we have like a weeko f testing before we meet
+18:00:14 <Creatura85> :)
+18:00:22 <Creatura85> so we have like a week of testing before we meet
+18:00:24 <bmwiedemann> #topic open discussion
+18:00:36 <bmwiedemann> yes. and we have some buffer in case of delays
+18:00:49 <bmwiedemann> we had needed that for milestones and the beta
+18:00:58 <bmwiedemann> but I hope, we will not need it for RCs
+18:01:08 <Creatura85> hope i can be available on that day, usually on Thursday i spent time with my girlfriend
+18:01:25 <Creatura85> bmwiedemann: i hope that too
+18:01:37 <bmwiedemann> uh. don't want you to put your relationship at risk
+18:01:53 <Creatura85> as open discussion bmwiedemann is opensuse 12.2 a base for the SUSE OS ?
+18:01:55 <LWFinger> Would Wednesday be better?
+18:02:28 <bmwiedemann> Creatura85: you mean for SUSE Linux Enterprise Server (aka SLES) ?
+18:02:38 <Creatura85> LWFinger: thursday is good :)
+18:02:45 <Creatura85> bmwiedemann: yeah
+18:02:55 <Creatura85> forgot is SLES and not SUSE
+18:03:01 <bmwiedemann> I guess, some packages will find their way into SLES-11-SP3... but SLES-12 is still far away (2014)
+18:03:05 <Creatura85> SUSE is the company i guess
+18:03:09 <bmwiedemann> yes
+18:03:33 <Creatura85> bmwiedemann: i see, asking because i`ve heard some users talking about this
+18:04:12 <Creatura85> bmwiedemann: how can i get bugbot on channel ?
+18:04:26 <Creatura85> i need him for opensuse-ro
+18:04:27 <bmwiedemann> Creatura85: I don't know. ask henne
+18:05:09 <Creatura85> ok, thanks
+18:05:44 <bmwiedemann> he is our IRC admin for such things
+18:06:26 <LWFinger> Is Coolo still planning on dropping 12.3?
+18:06:49 <bmwiedemann> uhm. I didn't read that part yet
+18:07:06 <Creatura85> i guess a lot happens on the mailing list/s
+18:07:18 <Creatura85> i find mailing lists in general a bit hard to follow
+18:07:38 <LWFinger> He mentioned the possibility when he decided to issue Beta2.
+18:07:51 <bmwiedemann> he told me, he was thinking about weekly RCs. but we will likely do biweekly to not stress mirrors as much and give testers some more time to report.
+18:08:18 <bmwiedemann> I don't often find the time to read opensuse-factory and other high-volume lists
+18:08:41 <bmwiedemann> too much noise between the interesting bits
+18:09:02 <LWFinger> If I do the calculation right, then GM should be out in mid August - about one month late.
+18:10:12 <Creatura85> mid august like 14 or 15 ? :)
+18:10:30 <Creatura85> "Thursday, 12 July 2012: openSUSE 12.2 RC 1 rescheduled "
+18:10:32 <Creatura85> ?
+18:10:41 <Creatura85> is the date wrong ? or 12 is the new date ?
+18:10:53 <bmwiedemann> LWFinger: I think, the plan was to delay GM until September because there is vacation time in Nuremberg throughout august
+18:11:17 <Creatura85> indeed, summer holidays :D
+18:11:28 <bmwiedemann> Creatura85: 2012-07-12 is already the new date for RC1
+18:11:36 <LWFinger> OK. Then 2 months late, which does consume a lot of the 12.3 time.
+18:11:49 <Creatura85> bmwiedemann: ok
+18:12:18 <bmwiedemann> yes, but then we are back at the question of "how much time does a release really need"
+18:12:34 <bmwiedemann> e.g. I would not mind to keep the old artwork
+18:12:51 <LWFinger> The quick answer is "More than you allow!"
+18:13:36 <Creatura85> more than 8 months for sure bmwiedemann
+18:13:37 <bmwiedemann> this is why you tell everybody to "be done by Monday" and then clean up until the release on Thursday :)
+18:13:55 <Creatura85> i suspect that the one year release cycle is an option
+18:13:57 <bmwiedemann> Creatura85: Fedora and Ubuntu do releases every 6 months
+18:14:11 <Creatura85> bmwiedemann: they have more members that contribute :)
+18:14:19 <bmwiedemann> though, I often found their quality sometimes lacking
+18:14:36 <LWFinger> As work will expand to fill the time, it probably does not matter what schedule you plan.
+18:14:51 <Creatura85> man power is the part that really counts
+18:15:09 <bmwiedemann> I find it important to arrive at something usable more often
+18:15:22 <bmwiedemann> e.g. monthly milestones are good
+18:16:35 <Creatura85> bmwiedemann: that sounds like "one step" at the time method :)
+18:16:58 <bmwiedemann> or only steps that don't let you fall over too much
+18:17:14 <Creatura85> well i hope that a decision is made soon
+18:17:47 <bmwiedemann> why soon?
+18:18:09 <bmwiedemann> is someone eagerly waiting for the roadmap of the future openSUSE?
+18:18:22 <Creatura85> the sooner a decision is made the better for community i say
+18:18:48 <Creatura85> you cant deny that confusion is running wild :)
+18:18:54 <Creatura85> *can`t
+18:19:10 <Creatura85> regardng the release cycle of future opensuse versions
+18:19:31 <Creatura85> if you read the comments on the news site you will see what i mean
+18:20:26 <bmwiedemann> well. the important thing for now is that there will be openSUSE after 12.2
+18:21:18 <Creatura85> indeed
+18:21:18 <bmwiedemann> if it is 12.3 or 13.1 ... is less important than how we develop it and how stable it becomes
+18:21:41 <Creatura85> well stability is somethings that need to be in the center of attention
+18:21:44 <CzP> I hope so, as even 12.2 beta2 runs better on my thinkpad, than Ubuntu 12.04 LTS
+18:21:47 <Creatura85> *something
+18:22:06 <bmwiedemann> CzP: that is good news :D
+18:22:10 <LWFinger> The big thing for that release will likely be the UEFI Secure Boot.
+18:22:35 <bmwiedemann> I wonder how many windows 8 machines will really have that
+18:22:38 <Creatura85> LWFinger: i woner how that will affect my non-uefi pc :)
+18:22:46 <Creatura85> *wonder
+18:22:56 <bmwiedemann> I thought, AMD announced that they will support coreboot on their future boards
+18:23:22 <LWFinger> Not at all. I am going to need a new laptop soon, and I am thinking of doing it before the vendors switch to Win 8.
+18:23:46 <Creatura85> LWFinger: thats good, i have dual boot with windows 7
+18:23:53 <bmwiedemann> and if you can really get signed any bootloader by MicroSoft, it should not be a problem... but will also not contribute to any security
+18:24:19 <CzP> Ubuntu is our in house standard OS, except for me, and my colleagues envy me :)
+18:24:32 <LWFinger> As I will never boot Windows directly, the security is not a problem.
+18:24:38 <CzP> I plan to install factory this evening, and become a bit more active at testing
+18:24:44 <CzP> wife is away, so I have time :-)
+18:24:55 <Creatura85> CzP: have a lot of fun with that :)
+18:24:57 <bmwiedemann> CzP: be aware that 12.2 is split off Factory
+18:25:13 <CzP> so I should stick to 12.2 beta2?
+18:25:18 <bmwiedemann> so they are evolving independently already with only coolo cherry-picking bugfixes
+18:25:39 <bmwiedemann> yes
+18:25:47 <Creatura85> CzP: ubuntu with unity desktop or kubuntu ? :)
+18:25:55 <bmwiedemann> unless you feel adventurous
+18:26:16 <bmwiedemann> and know how to unbreak your system's bootloader/kernel/initrd/whatever
+18:27:17 <CzP> Creatura85: unity and xubuntu is in use
+18:27:30 <Creatura85> CzP: i see
+18:27:43 <Creatura85> just wondering how kubuntu behaves :)
+18:28:45 <CzP> no KDE fans over here...
+18:29:46 <bmwiedemann> I heard from people that openSUSE is still the best KDE distro
+18:29:58 <Creatura85> i run kde on openSUSE since day one
+18:30:10 <Creatura85> Sysinfo for 'creation': Linux 3.4.3-1-desktop running KDE Development Platform 4.8.4 (4.8.4) "release 513", CPU: Intel(R) Core 2 CPU          4400  @ 2.00GHz at 1200 MHz (4019 bogomips), HD: 74/761GB, RAM: 1093/1996MB, 144 proc's, 9.17h up
+18:31:02 <Creatura85> well its 21:30 over here
+18:31:09 <Creatura85> so i must leave
+18:31:30 <Creatura85> see you all next time :)
+18:31:51 <bmwiedemann> OK. let's close today's meeting
+18:31:56 <LWFinger> OK
+18:32:08 <bmwiedemann> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:32:18 <bmwiedemann> #endmeeting

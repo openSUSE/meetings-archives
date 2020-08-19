@@ -1,0 +1,73 @@
+18:01:42 <bmwiedemann> #startmeeting
+18:01:42 <bugbot> Meeting started Mon Mar  7 18:01:42 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:01:42 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:01:53 <bmwiedemann> Hello everyone
+18:02:24 <bmwiedemann> we do not have a prepared agenda today, but I know of a few ugly bugs popping up recently
+18:02:35 <bmwiedemann> which could be discussed.
+18:02:59 <LWFinger> Go ahead.
+18:03:32 <bmwiedemann> https://bugzilla.novell.com/show_bug.cgi?id=677425 is bad for people doing zypper dup
+18:03:35 <bugbot> openSUSE bug 677425 in openSUSE 11.4 (libzypp) "`zypper dup` remove liblzma" [Critical,Needinfo]
+18:04:18 <bmwiedemann> there was some post-RC2 bugfix to zypper which broke this. and openqa only tests non-live dist upgrades, so did not catch it
+18:05:26 <bmwiedemann> the "zypper up rpm" workaround is really simple, but if people try zypper dup first, they end up without working rpm
+18:05:44 <LWFinger> Nasty. Will that will be in GM?
+18:06:08 <bmwiedemann> yes
+18:06:21 <bmwiedemann> maybe FTP tree can be updated
+18:06:38 <bmwiedemann> because most people will zypper dup with online sources
+18:07:55 <bmwiedemann> the other unnice GM bug is yast2-bootloader not adding other linux partitions to grub/menu.lst
+18:08:21 <LWFinger> How else would one zypper dup other than online sources?
+18:08:44 <bmwiedemann> https://bugzilla.novell.com/show_bug.cgi?id=675224
+18:08:47 <bugbot> openSUSE bug 675224 in openSUSE 11.4 (Installation) "GRUB does not put other openSUSE installations into the menu" [Normal,Resolved: fixed]
+18:09:01 <bmwiedemann> LWFinger: you can use a DVD as installation source
+18:09:07 <bmwiedemann> in a live system
+18:09:36 <LWFinger> Not a configuration I use.
+18:10:35 <bmwiedemann> http://en.opensuse.org/openSUSE:Most_annoying_bugs_11.4 was started. any other bugs that should go to it?
+18:11:45 <bmwiedemann> #topic GM bugs discussion
+18:11:57 <bmwiedemann> #link https://bugzilla.novell.com/show_bug.cgi?id=677425
+18:12:01 <bugbot> openSUSE bug 677425 in openSUSE 11.4 (libzypp) "`zypper dup` remove liblzma" [Critical,Needinfo]
+18:12:05 <bmwiedemann> #link https://bugzilla.novell.com/show_bug.cgi?id=675224
+18:12:10 <bugbot> openSUSE bug 675224 in openSUSE 11.4 (Installation) "GRUB does not put other openSUSE installations into the menu" [Normal,Resolved: fixed]
+18:15:45 <bmwiedemann> tigerfoot, a-865 any bad bugs breaking core things?
+18:17:52 <a-865> nuthin new I've noticed lately
+18:19:17 <a-865> I always strip all stanzas except primary and failsafe, and wish there was checkbox to make that happen automatically
+18:20:08 <bmwiedemann> you mean in grub/menu.lst? it should only have sections for existing kernels
+18:20:17 <bmwiedemann> ah, and other linuxes
+18:20:52 <a-865> No fresh install is ever my primary bootloader
+18:21:10 <LWFinger> When you say "strip", do you mean delete?
+18:21:16 <a-865> I install primary bootloader before installing anything else
+18:21:22 <a-865> strip=delete
+18:21:46 <bmwiedemann> but of course, openSUSE is also for the less technical people and those might not know how to get the other Linuxes booted without a proper menu.lst
+18:22:09 <a-865> that's why I just want a checkbox to make that choice
+18:22:25 <a-865> I may have already made an openfate for that
+18:22:38 <bmwiedemann> updated http://en.opensuse.org/openSUSE:Most_annoying_bugs_11.4
+18:22:39 <LWFinger> That would be the place.
+18:22:45 <bmwiedemann> great
+18:23:20 <a-865> I have one openfate with -1, one with 0, the rest 1 or 2
+18:24:20 <LWFinger> bmwiedemann: The annoying bugs update gives 677425 a prominent place. Good.
+18:25:21 <bmwiedemann> LWFinger: I was thinking to change the "zypper up" to bold font to make it even more prominent at a glance.
+18:25:58 <LWFinger> Sounds good. The workaround saves one from a really lousy sitiation.
+18:27:01 <a-865> https://bugzilla.novell.com/show_bug.cgi?id=584493 annoys me enough that I will not be replacing 11.2 with either 11.3 or 11.4
+18:27:05 <bugbot> openSUSE bug 584493 in openSUSE 11.4 (Basesystem) "setterm -background blue -foreground white -bold -blank 20 -store malfunctions in 2.6.34-9 (RC1)" [Normal,New]
+18:27:24 <a-865> I'll have to go without support when 11.2 expires
+18:27:36 <a-865> or vanilla kernel
+18:27:44 <a-865> probably the latter
+18:28:03 <a-865> never have figured out the advantage(s) of openSUSE kernel over vanilla
+18:29:01 <a-865> is zypper up rpm correct syntax?
+18:29:24 <bmwiedemann> yes. it means update only "rpm" (and the liblzma dependency)
+18:29:35 <a-865> I thought up only will do whole mess, and up to single package requires zypper in packagename
+18:30:00 <a-865> maybe that's a change since 11.2
+18:30:09 <bmwiedemann> yes, I think they worked on that
+18:30:46 <LWFinger> a-865: I almost never use an openSUSE kerne. Only disadvantage are some meaningless boot errors..
+18:31:48 <a-865> I tried to find a summary of what Novell puts in their kernels but never could
+18:31:51 <bmwiedemann> does bootchart work with vanilla kernel?
+18:31:58 <LWFinger> Yes.
+18:33:16 <LWFinger> The patches must be somewhere in OBS.
+18:33:19 <bmwiedemann> a-865: I think the patches vary over time as some are upstreamed and others dropped
+18:34:51 <bmwiedemann> https://build.opensuse.org/package/files?package=kernel-default&project=Kernel%3AopenSUSE-11.4
+18:36:06 <bmwiedemann> series.conf there could be considered a summary
+18:36:58 <a-865> seems that may be close as there is to what I was looking for
+18:37:55 <bmwiedemann> do we have any more testing-related topics to discuss or shall we declare the meeting ended?
+18:38:28 <a-865> 0 I know of
+18:40:22 <LWFinger> None for me.
+18:40:31 <ReferenceSeete> None here.
+18:40:43 <bmwiedemann> very well. I thank you for attending this short meeting.
+18:40:46 <bmwiedemann> #endmeeting

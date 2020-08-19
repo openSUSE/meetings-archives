@@ -1,0 +1,135 @@
+17:02:08 <bmwiedemann> #startmeeting
+17:02:08 <bugbot> Meeting started Mon Jun  4 17:02:08 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:02:08 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:02:20 <bmwiedemann> Hello everyone
+17:02:20 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:02:20 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:02:32 <bmwiedemann> #topic 12.2-Beta1 status
+17:03:10 <bmwiedemann> the Beta1 has been recently released and I did a fresh install on my netbook today, which worked.
+17:03:34 <bmwiedemann> have seen yast / libzypp segfaults (even with latest zypp:Head)
+17:03:55 <bmwiedemann> seen lxdm using 100% cpu here
+17:04:12 <bmwiedemann> init 3 killing X, but remaining on tty7
+17:04:39 <bmwiedemann> and zypper ref reporting some untrusted key for the update repo
+17:05:03 <bmwiedemann> I think, the libzypp issue is most serious.
+17:05:10 <LWFinger> I agree.
+17:05:11 <bmwiedemann> LWFinger: how was your experience?
+17:05:56 <LWFinger> Since Friday, I have installed Beta1 on 2 real machines - 1 desktop and 1 laptop.
+17:06:21 <LWFinger> Both working reasonably weel, and certainly usable.
+17:06:41 <LWFinger> Both with KDE
+17:07:26 <LWFinger> Desktop on rolling update from Factory. Laptop on released 12.2 Beta1.
+17:08:03 <LWFinger> Both have seen zypper error, mostly a double free on exit.
+17:09:19 <LWFinger> Not sure if zypper fault is errors in GCC 4.7, errors in new glibc, or residual errors in zypper not exposed by GCC 4.6.
+17:09:51 <LWFinger> Both machines have Nvidia hardware, neither works with nouveau.
+17:10:11 <bmwiedemann> I heard, some are actual libzypp errors and some were gcc-4.7 bugs triggered by it
+17:10:54 <LWFinger> Desktop gets correct resolution on screen, Laptop does not 1024x768 instead of correct 1280x800. Screen a little blurry
+17:11:17 <bmwiedemann> my netbook resolution was correct at 1024x600
+17:11:44 <bmwiedemann> (intel graphics that is)
+17:11:54 <LWFinger> The xorg.conf files from 12.1 do not work, and I have not yet plowed through the X11 logs to see what is needed.
+17:12:28 <LWFinger> Your screen likely reports the correct details, mine does not. 12.1 had to be manually configured.
+17:12:47 <bmwiedemann> there was something about /etc/ld.so.conf only including conf.d/*.conf files which did not catch nvidia's file
+17:13:11 <LWFinger> Thanks for that - something else to check.
+17:14:01 <LWFinger> Desktop doing video editing - lack of codecs a problem, but Packman will not be up to 12.2 for a while.
+17:14:38 <bmwiedemann> I thought, packman builds essential packages for factory
+17:14:47 <BManojlovic> packman does build for factory
+17:15:05 <LWFinger> In KDE, the GUI screen has moved from vtty7 to 8. That threw me for a bit as I couldn't get back once I switched to vtty1.
+17:15:10 <BManojlovic> and as such when it is available on OBS it can be used for building on packman
+17:15:15 * tigerfoot just report a quick note, at least full luks vg encrypted work with grub2/plymouth/kdm chain
+17:15:56 <LWFinger> Other than zypper, release not too bad, especially as there was not a real MS4.
+17:16:45 <LWFinger> At least codecs not in Packman repo.
+17:17:00 <LWFinger> Done.
+17:18:32 <LWFinger> tigerfoot: Factory ML reports some interference between Plymouth and luks, but I expect that to be corrected.
+17:18:55 <bmwiedemann> I have my home on a luks encrypted partition, but that worked for a long time.
+17:19:47 <bmwiedemann> BManojlovic: did you test Beta1, too?
+17:20:19 <BManojlovic> unfortunatelly not but tigerfoot did as he stated now
+17:20:40 <BManojlovic> encryption and lvm
+17:21:07 <bmwiedemann> good to see that covered :)
+17:21:31 <bmwiedemann> I still need to extend my openQA tests to do encrypted partitions or separate /usr
+17:21:43 <BManojlovic> hm
+17:21:45 <tigerfoot> BManojlovic: same here ... I was fighting a lot to fix any glitches on that part, and grub2 splash= will be fixed soon
+17:22:19 <LWFinger> Do installations with lwm work now?
+17:22:31 <BManojlovic> bmwiedemann: i was looking at your code a while ago, but again i should look how it is implemented
+17:22:38 <BManojlovic> i mean openqa
+17:22:53 <tigerfoot> LWFinger: from what I've seen yes, last time there's the mdadm error but you can ignore it ...
+17:23:05 <BManojlovic> that is on installation
+17:23:13 <BManojlovic> it works just fine afterward
+17:23:45 <bmwiedemann> I think, mdadm issue was fixed meanwhile
+17:24:03 <LWFinger> Should that mdadm error on install be listed in Most Annoying list?
+17:24:34 <bmwiedemann> I did not see it in my install
+17:25:36 <bmwiedemann> but if you did, it would probably be good to add as many others could stumble about it
+17:25:49 <bmwiedemann> and we could recommend pressing "ignore"
+17:26:02 <LWFinger> OK, I'll do that.
+17:26:09 <BManojlovic> bmwiedemann: this code is current? http://www3.zq1.de/bernhard/git/autoinst/
+17:26:18 <BManojlovic> or there is some repository?
+17:27:20 <bmwiedemann> BManojlovic: http://gitorious.org/os-autoinst
+17:27:27 <BManojlovic> ok
+17:27:38 <bmwiedemann> I keep all repos in sync, so either should work
+17:30:03 <BManojlovic> bmwiedemann: does vbox backend works or i must use kvm (no issues there just i mostly have running vbox all day so i have to shut it down to use kvm)
+17:30:30 <bmwiedemann> yes, vbox worked last time I tried it.
+17:30:52 <BManojlovic> ok
+17:31:05 <LWFinger> VBox works for me. There is an API change for kernel 3.5, but 3.4 OK.
+17:32:41 <bmwiedemann> BManojlovic: the openQA INSTALL file has some details on the VBox backend.
+17:33:06 <bmwiedemann> anyone has more Beta1 experience to share?
+17:34:23 <LWFinger> Networking seems OK. Kernel 3.4 has some changes in the firewall stuff.
+17:35:03 <LWFinger> An opensUSE kernel is OK, but the configuration of my home-built ones had to be adjusted
+17:35:33 <bmwiedemann> because of new / renamed config options?
+17:35:41 <LWFinger> Yes.
+17:36:26 <LWFinger> The main one is that older kernels separated IPv4 and IPv6 logging. Now there is only one parameter.
+17:37:07 <bmwiedemann> and that would break things?
+17:37:28 <LWFinger> Yes. In particular, it broke CIFS/SMB.
+17:38:33 <bmwiedemann> interesting. luckily it should not affect many people.
+17:39:25 <bmwiedemann> other Beta1 experience or can we then move to the next topic?
+17:39:38 <LWFinger> OK
+17:39:44 <BManojlovic> move
+17:40:08 <bmwiedemann> #topic schedule next meeting
+17:40:51 <bmwiedemann> RC1 will not be out before 2 weeks.
+17:42:07 <LWFinger> Is June 21 a possibility for release of RC1?
+17:42:47 <bmwiedemann> roadmap has June 14 but with the past delays, 21 is likely
+17:43:45 <LWFinger> If that is the date, then June 25 would be likely date for next meeting.
+17:44:17 <LWFinger> June 25 is clear for me.
+17:44:44 <bmwiedemann> but I feel that we as the core testers could test Factory (or snapshots thereof) as it stabilizes
+17:44:57 <bmwiedemann> to make RC1 a smoother experience for the wider public
+17:45:32 <LWFinger> I will be doing that on my desktop, and updating laptop if desk machine is OK.
+17:46:07 <bmwiedemann> so meeting a week before RC1 would be good
+17:46:41 <bmwiedemann> so that blockers could be addressed
+17:47:28 <bmwiedemann> how about 2012-06-18 then?
+17:47:35 <LWFinger> The 18th will be OK for the meeting. My testing will be limited because of my fishing trip. No NET, and NO computing!
+17:48:14 <bmwiedemann> unplugged fishing :)
+17:48:22 <LWFinger> Yes!
+17:48:43 <LWFinger> Actually, we have electricity.
+17:49:23 <LWFinger> I will have a computer there, but it will only be used to handle the expenses spreadsheet.
+17:49:45 <bmwiedemann> #info next meeting on 2012-06-18 17:00 to discuss upcoming RC1 blockers
+17:50:52 <bmwiedemann> #topic Artwork testing
+17:51:08 <bmwiedemann> I think, there was something about KDM theme on last meeting
+17:51:26 <bmwiedemann> was this tigerfoot's topic?
+17:52:34 <LWFinger> A new KDM login screen came with the latest Factory update. Looks good.
+17:53:16 <bmwiedemann> I think, openQA showed it, when the autologin of KDM was not working
+17:54:23 <bmwiedemann> http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-NET-i586-Build0406/timeout-09.png
+17:54:41 <LWFinger> The default wallpaper for KDE does not seem to have been changed, but I almost never see the background anyway.
+17:55:42 <LWFinger> The one I saw has a blue background, not green.
+17:55:56 <bmwiedemann> a consistent artwork theme would be good there.
+17:56:28 <bmwiedemann> and be it only to impress users
+17:58:46 <bmwiedemann> nothing more for this topic?
+17:59:10 <LWFinger> No
+17:59:10 <bmwiedemann> #topic Open Bugs Day
+17:59:30 <bmwiedemann> I was thinking, that we might do an Open Bugs Day for 12.2
+17:59:42 <bmwiedemann> but it is already quite late and I will not have much time
+18:01:11 <tigerfoot> sorry was away
+18:01:35 <LWFinger> You are good with the database extraction code. would it be easy to set up a line that will pull the open 12.2 bugs?
+18:01:48 <LWFinger> Perhaps we can keep an eye on them.
+18:02:00 <LWFinger> s/line/link/
+18:02:01 <tigerfoot> The artwork testing seems to goes well. I've good feedback about kdm at least
+18:02:01 <bmwiedemann> yes, that is easy
+18:03:29 <LWFinger> I have been being my usual PITA on the beta-testing forum about filing bug reports.
+18:05:37 <bmwiedemann> and best following up when status goes to NEEDINFO
+18:08:09 <bmwiedemann> do you guys feel that an Open-Bugs-Day would be worth the effort?
+18:08:41 <LWFinger> After the poor turnout of the past two we organized, I'm not sure.
+18:08:46 <bmwiedemann> or is it just a shuffling around of bugzilla bits without much effect
+18:09:52 <LWFinger> I did foster some activity with old bugs just by closing them. It was useful from that respect.
+18:10:40 <bmwiedemann> so maybe I should finally make that NEEDINFO+expiry-after-30-days bot
+18:12:57 <bmwiedemann> #action bmwiedemann will look into bugzilla bot creation
+18:13:28 <bmwiedemann> #topic open discussion
+18:14:17 <bmwiedemann> any other things you want mentioned or discussed?
+18:17:18 <LWFinger> It seems that we are done. "See" you on the 18th.
+18:17:24 <bmwiedemann> OK. Ciao
+18:17:33 <BManojlovic> bmwiedemann: was not playing arround before with os-autoinst is it work with network install iso?
+18:17:41 <bmwiedemann> #endmeeting

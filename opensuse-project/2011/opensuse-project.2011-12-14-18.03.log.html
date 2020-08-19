@@ -1,0 +1,563 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:03:47</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:03:47</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Dec 14 18:03:47 2011 UTC.  The chair is henne. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:03:47</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:03:55</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">openSUSE Project Meeting</span>
+<a name="l-5"></a><span class="tm">18:04:09</span><span class="nk"> &lt;suseROCKs&gt;</span> so is the meeting now or an hour from now?  Last meeting was confusing and most people showed up an hour from now
+<a name="l-6"></a><span class="tm">18:04:09</span><span class="nk"> &lt;henne&gt;</span> Welcome to the openSUSE Project Meeting!
+<a name="l-7"></a><span class="tm">18:04:42</span><span class="nk"> &lt;izabelvalverde&gt;</span> here ;)
+<a name="l-8"></a><span class="tm">18:04:45</span><span class="nk"> &lt;henne&gt;</span> the calendar says 18:00 UTC
+<a name="l-9"></a><span class="tm">18:05:11</span><span class="nk"> &lt;henne&gt;</span> date -d "18:00 UTC"
+<a name="l-10"></a><span class="tm">18:05:19</span><span class="nk"> &lt;henne&gt;</span> says 5 minutes ago
+<a name="l-11"></a><span class="tm">18:05:37</span><span class="nk"> &lt;suseROCKs&gt;</span> sure but people still showed up an hour late.   so I just wanted to make sure everyone is here
+<a name="l-12"></a><span class="tm">18:05:49</span><span class="nk"> &lt;suseROCKs&gt;</span> last meeting I had to stop it and restart the meeting n hour later.
+<a name="l-13"></a><span class="tm">18:05:54</span><span class="nk"> &lt;henne&gt;</span> do you have a list to cross names off? ;)
+<a name="l-14"></a><span class="tm">18:06:20</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   board members?
+<a name="l-15"></a><span class="tm">18:06:58</span><span class="nk"> &lt;henne&gt;</span> sure. that would have been the next step :)
+<a name="l-16"></a><span class="tm">18:07:34</span><span class="nk"> &lt;henne&gt;</span> board members please say aye if you're here!
+<a name="l-17"></a><span class="tm">18:07:37</span><span class="nk"> &lt;henne&gt;</span> aye
+<a name="l-18"></a><span class="tm">18:07:45</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   well if you feel we should go ahead then we'll go ahead.   I'm here  :-)   Just wanted you to know what happened last time
+<a name="l-19"></a><span class="tm">18:08:00</span><span class="nk"> &lt;henne&gt;</span> sure. thanks
+<a name="l-20"></a><span class="tm">18:08:17</span><span class="nk"> &lt;AlanClark&gt;</span> I'm here.  Just got back to my desk
+<a name="l-21"></a><span class="tm">18:08:20</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,  mrdocs  ping!
+<a name="l-22"></a><span class="tm">18:08:36</span><span class="nk"> &lt;henne&gt;</span> prusnak, mrdocs, rhorstkoetter?
+<a name="l-23"></a><span class="tm">18:09:44</span><span class="nk"> &lt;henne&gt;</span> so seems we don't have a quorum
+<a name="l-24"></a><span class="tm">18:09:57</span><span class="nk"> &lt;henne&gt;</span> lets continue
+<a name="l-25"></a><span class="tm">18:10:37</span><span class="nk"> &lt;henne&gt;</span> The topics for this meeting are:
+<a name="l-26"></a><span class="tm">18:10:44</span><span class="nk"> &lt;suseROCKs&gt;</span> just found a message from mrdocs that he'll be about 20 min late
+<a name="l-27"></a><span class="tm">18:10:53</span><span class="nk"> &lt;henne&gt;</span> 1. Status Reports (15 minutes)
+<a name="l-28"></a><span class="tm">18:11:01</span><span class="nk"> &lt;henne&gt;</span> 2. Old Action Items (30 minutes)
+<a name="l-29"></a><span class="tm">18:11:07</span><span class="nk"> &lt;henne&gt;</span> 3. permission@ requests (5 minutes)
+<a name="l-30"></a><span class="tm">18:11:17</span><span class="nk"> &lt;henne&gt;</span> 4. Where do we need to improve? (15 minutes)
+<a name="l-31"></a><span class="tm">18:11:25</span><span class="nk"> &lt;henne&gt;</span> 5. Questions &amp; Answers (30 minutes)
+<a name="l-32"></a><span class="tm">18:11:39</span><span class="nk"> &lt;henne&gt;</span> any additional topics we should discuss?
+<a name="l-33"></a><span class="tm">18:11:57</span><span class="nk"> &lt;suseROCKs&gt;</span> Our Santa Wish List?
+<a name="l-34"></a><span class="tm">18:12:19</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">henne:</span> a word about participation in election would be nice
+<a name="l-35"></a><span class="tm">18:12:20</span><span class="nk"> &lt;henne&gt;</span> I know Satan has a lot to give you suseROCKs :P
+<a name="l-36"></a><span class="tm">18:12:23</span><span class="nk"> &lt;AlanClark&gt;</span> suseROCKS in your case I wouldn't worry about it
+<a name="l-37"></a><span class="tm">18:12:45</span><span class="nk"> &lt;henne&gt;</span> ah Santa. then I have to agree with AlanClark
+<a name="l-38"></a><span class="tm">18:12:45</span><span class="nk"> &lt;suseROCKs&gt;</span> I feel the love!
+<a name="l-39"></a><span class="tm">18:13:15</span><span class="nk"> &lt;AlanClark&gt;</span> henne I was hoping you meant Santa ;-)
+<a name="l-40"></a><span class="tm">18:13:15</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">tigerfoot:</span> from whom?
+<a name="l-41"></a><span class="tm">18:14:12</span><span class="nk"> &lt;henne&gt;</span> okay lets mold the election stuff into status updates.
+<a name="l-42"></a><span class="tm">18:14:40</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Status Reports</span>
+<a name="l-43"></a><span class="tm">18:15:12</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#info </span><span class="cmdline">Teams and individuals send various status reports around. Coolo sends one for the distribution, the OBS team publishes meeting minutes, the boosters their "What are the boosters up to" blogposts for instance. Are there any questions regarding those or do we need to discuss anything in detail?</span>
+<a name="l-44"></a><span class="tm">18:15:32</span><span class="nk"> &lt;henne&gt;</span> Or does anyone wants to give a live status report of something? :)
+<a name="l-45"></a><span class="tm">18:15:52</span><span class="nk"> &lt;suseROCKs&gt;</span> Would be cool if someone wants to do an interpretive dance status report  :-)
+<a name="l-46"></a><span class="tm">18:16:05</span><span class="nk"> &lt;henne&gt;</span> for instance izabelvalverde or digitltom for the elections? :)
+<a name="l-47"></a><span class="tm">18:16:07</span><span class="nk"> &lt;warlordfff&gt;</span> I could give you a report
+<a name="l-48"></a><span class="tm">18:16:16</span><span class="nk"> &lt;warlordfff&gt;</span> but not for that
+<a name="l-49"></a><span class="tm">18:16:22</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">warlordfff:</span> sure. about?
+<a name="l-50"></a><span class="tm">18:16:32</span><span class="nk"> &lt;warlordfff&gt;</span> about oSC12
+<a name="l-51"></a><span class="tm">18:16:40</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne so far seems to work well
+<a name="l-52"></a><span class="tm">18:16:43</span><span class="nk"> &lt;warlordfff&gt;</span> I have the people you wanted
+<a name="l-53"></a><span class="tm">18:16:52</span><span class="nk"> &lt;warlordfff&gt;</span> more
+<a name="l-54"></a><span class="tm">18:17:07</span><span class="nk"> &lt;warlordfff&gt;</span> I have 15 people ready to work for it
+<a name="l-55"></a><span class="tm">18:17:29</span><span class="nk"> &lt;warlordfff&gt;</span> plus more people during the days of the conference
+<a name="l-56"></a><span class="tm">18:17:46</span><span class="nk"> &lt;warlordfff&gt;</span> we have some places available
+<a name="l-57"></a><span class="tm">18:18:02</span><span class="nk"> &lt;warlordfff&gt;</span> maybe we find a place for free
+<a name="l-58"></a><span class="tm">18:18:13</span><span class="nk"> &lt;warlordfff&gt;</span> to organize it
+<a name="l-59"></a><span class="tm">18:18:14</span><span class="nk"> &lt;AlanClark&gt;</span> warlordfff, let's give everyone some background
+<a name="l-60"></a><span class="tm">18:18:19</span><span class="nk"> &lt;warlordfff&gt;</span> ok
+<a name="l-61"></a><span class="tm">18:18:24</span><span class="nk"> &lt;warlordfff&gt;</span> can you do it AlanClark?
+<a name="l-62"></a><span class="tm">18:18:30</span><span class="nk"> &lt;AlanClark&gt;</span> usre
+<a name="l-63"></a><span class="tm">18:18:32</span><span class="nk"> &lt;AlanClark&gt;</span> sure
+<a name="l-64"></a><span class="tm">18:18:36</span><span class="nk"> &lt;izabelvalverde&gt;</span> elections
+<a name="l-65"></a><span class="tm">18:18:39</span><span class="nk"> &lt;izabelvalverde&gt;</span> :)
+<a name="l-66"></a><span class="tm">18:18:45</span><span class="nk"> &lt;izabelvalverde&gt;</span> as henne called
+<a name="l-67"></a><span class="tm">18:18:48</span><span class="nk"> &lt;izabelvalverde&gt;</span> elections 202 votes so far
+<a name="l-68"></a><span class="tm">18:19:25</span><span class="nk"> &lt;AlanClark&gt;</span> we have 2 topics going at the same time.  Let's hold osc12 for a minute while Izabelvalverde reports on elections
+<a name="l-69"></a><span class="tm">18:19:33</span><span class="nk"> &lt;izabelvalverde&gt;</span> the election period ends friday 16th - 23:00 UTC
+<a name="l-70"></a><span class="tm">18:19:54</span><span class="nk"> &lt;henne&gt;</span> okay. 202 votes out of?
+<a name="l-71"></a><span class="tm">18:20:43</span><span class="nk"> &lt;henne&gt;</span> 504 :)
+<a name="l-72"></a><span class="tm">18:20:48</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> no more members applicataions to be worked? What the total members we have approved now
+<a name="l-73"></a><span class="tm">18:21:00</span><span class="nk"> &lt;henne&gt;</span> sorry, I just realized I can look that up myself
+<a name="l-74"></a><span class="tm">18:21:38</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">CarlosRibeiro:</span> 504. See https://connect.opensuse.org/pg/groups/111/opensuse-members/
+<a name="l-75"></a><span class="tm">18:22:05</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> I mean no more people waiting to be approved or not for the membership?
+<a name="l-76"></a><span class="tm">18:22:14</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">henne:</span> great
+<a name="l-77"></a><span class="tm">18:22:20</span><span class="nk"> &lt;warlordfff&gt;</span> les than half voted?
+<a name="l-78"></a><span class="tm">18:22:40</span><span class="nk"> &lt;henne&gt;</span> we have a huge chunk of "dead" members
+<a name="l-79"></a><span class="tm">18:23:26</span><span class="nk"> &lt;suseROCKs&gt;</span> 204 is a good number of votes
+<a name="l-80"></a><span class="tm">18:23:28</span><span class="nk"> &lt;suseROCKs&gt;</span> err  202
+<a name="l-81"></a><span class="tm">18:23:34</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">CarlosRibeiro:</span> there are currently 11 applicants in the queue
+<a name="l-82"></a><span class="tm">18:23:47 </span><span class="nka">* henne</span> <span class="ac">agrees with suseROCKs</span>
+<a name="l-83"></a><span class="tm">18:23:58</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">henne:</span> fine is not too much , great
+<a name="l-84"></a><span class="tm">18:24:00</span><span class="nk"> &lt;AlanClark&gt;</span> I think the queue is in pretty good shape.  I was looking at it this morning.
+<a name="l-85"></a><span class="tm">18:24:15</span><span class="nk"> &lt;AlanClark&gt;</span> Some of those in the queue looked like new applicants
+<a name="l-86"></a><span class="tm">18:24:43</span><span class="nk"> &lt;AlanClark&gt;</span> as in new since the election period started
+<a name="l-87"></a><span class="tm">18:25:07</span><span class="nk"> &lt;henne&gt;</span> okay so everything is looking good. hooray :)
+<a name="l-88"></a><span class="tm">18:25:55</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne 504 :)
+<a name="l-89"></a><span class="tm">18:26:08</span><span class="nk"> &lt;izabelvalverde&gt;</span> thank you... phone :)
+<a name="l-90"></a><span class="tm">18:26:33</span><span class="nk"> &lt;henne&gt;</span> shall we continue with warlordfff and osc12?
+<a name="l-91"></a><span class="tm">18:27:00</span><span class="nk"> &lt;AlanClark&gt;</span> thanks for the update Izabel
+<a name="l-92"></a><span class="tm">18:27:22</span><span class="nk"> &lt;AlanClark&gt;</span> ok on to osc12
+<a name="l-93"></a><span class="tm">18:27:27</span><span class="nk"> &lt;AlanClark&gt;</span> here's some background
+<a name="l-94"></a><span class="tm">18:27:32</span><span class="nk"> &lt;izabelvalverde&gt;</span> you are welcome :)
+<a name="l-95"></a><span class="tm">18:28:22</span><span class="nk"> &lt;AlanClark&gt;</span> At the last project meetting we talked about the feasibility for holding osc12 at locations other than NUE.
+<a name="l-96"></a><span class="tm">18:28:33</span><span class="nk"> &lt;AlanClark&gt;</span> I took the action to talk to warlordfff
+<a name="l-97"></a><span class="tm">18:29:03</span><span class="nk"> &lt;AlanClark&gt;</span> As warlordfff reported above, they are enthusiastic about the idea.
+<a name="l-98"></a><span class="tm">18:29:25</span><span class="nk"> &lt;AlanClark&gt;</span> But we do need to really investigate the feasibility
+<a name="l-99"></a><span class="tm">18:29:32</span><span class="nk"> &lt;AlanClark&gt;</span> So what I would propose next
+<a name="l-100"></a><span class="tm">18:29:55</span><span class="nk"> &lt;AlanClark&gt;</span> is to send out a call for locations and place the resulting information on the wiki.
+<a name="l-101"></a><span class="tm">18:30:25</span><span class="nk"> &lt;henne&gt;</span> btw. prusnak also has "secured" the 8-12 people we talked about
+<a name="l-102"></a><span class="tm">18:30:26</span><span class="nk"> &lt;AlanClark&gt;</span> That way we can evaluate the feasibility of the proposals
+<a name="l-103"></a><span class="tm">18:30:33</span><span class="nk"> &lt;henne&gt;</span> for prague
+<a name="l-104"></a><span class="tm">18:30:50</span><span class="nk"> &lt;AlanClark&gt;</span> yes prusnak is the other person I ha ve the AI to talk to.
+<a name="l-105"></a><span class="tm">18:30:53</span><span class="nk"> &lt;henne&gt;</span> so we have 3 options....
+<a name="l-106"></a><span class="tm">18:30:54</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">AlanClark:</span> warlordfffwhich options we have for the next oSC instead of NUE and Greece, Prague. Does we have another opition to think about?
+<a name="l-107"></a><span class="tm">18:30:56</span><span class="nk"> &lt;robjo&gt;</span> location is also somewhat depending on timing
+<a name="l-108"></a><span class="tm">18:31:29</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> all are in the europe. no plans to spread out to other continent? like asia or america
+<a name="l-109"></a><span class="tm">18:31:51</span><span class="nk"> &lt;AlanClark&gt;</span> osc12 will be in Europe
+<a name="l-110"></a><span class="tm">18:32:30</span><span class="nk"> &lt;AlanClark&gt;</span> I would like to see us do osc Summits in America and other locations
+<a name="l-111"></a><span class="tm">18:32:51</span><span class="nk"> &lt;AlanClark&gt;</span> but let's save that until we get osc12 moving along a bit more
+<a name="l-112"></a><span class="tm">18:32:54</span><span class="nk"> &lt;suseROCKs&gt;</span> CarlosRibeiro,  One of the factors to think about is costs of shipping people around.   For example, a lot of attendees are from SUSE itself in NUE.   If we go another place, and we want SUSE people there, it impacts overall feasibility
+<a name="l-113"></a><span class="tm">18:33:44</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> I start to wonder about a kind of mini-brainshare in all around the world, so we may try to think about do the same for oSC, mini oSC with a kind of resume for the event
+<a name="l-114"></a><span class="tm">18:33:46</span><span class="nk"> &lt;AlanClark&gt;</span> henne what's the 3rd option? Prague, Greeceand ?
+<a name="l-115"></a><span class="tm">18:33:55</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> nürnberg? :)
+<a name="l-116"></a><span class="tm">18:34:07</span><span class="nk"> &lt;suseROCKs&gt;</span> CarlosRibeiro,  But the idea of a mini-conference or "summit" is an idea that's been flirted with lately, yes.
+<a name="l-117"></a><span class="tm">18:34:08</span><span class="nk"> &lt;AlanClark&gt;</span> henne - yes of course
+<a name="l-118"></a><span class="tm">18:34:38</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> I was thinking about to have one big and principal conference in europe and small ones around the world
+<a name="l-119"></a><span class="tm">18:35:08</span><span class="nk"> &lt;suseROCKs&gt;</span> but like AlanClark said, let's deal with that next after we figure out what we need for oSC12
+<a name="l-120"></a><span class="tm">18:35:22</span><span class="nk"> &lt;henne&gt;</span> no one will hold you back if you want to organize an event CarlosRibeiro :)
+<a name="l-121"></a><span class="tm">18:35:55</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">CarlosRibeiro:</span>  I agree.  I think our recent success in Brazil shows that it is possible
+<a name="l-122"></a><span class="tm">18:36:15</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">henne:</span> AlanClark brillahnt ;)
+<a name="l-123"></a><span class="tm">18:36:38</span><span class="nk"> &lt;tampakrap&gt;</span> how about the way KDE handles it with akademy in europe and camp KDE in the US?
+<a name="l-124"></a><span class="tm">18:37:14</span><span class="nk"> &lt;AlanClark&gt;</span> lampakrap - I was using the word Summit - but I like the word camp
+<a name="l-125"></a><span class="tm">18:37:20</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">tampakrap:</span> how do you mean?
+<a name="l-126"></a><span class="tm">18:37:32</span><span class="nk"> &lt;henne&gt;</span> or rather what do you mean by handling? :)
+<a name="l-127"></a><span class="tm">18:38:03</span><span class="nk"> &lt;tampakrap&gt;</span> i mean two big events to satisfy both sides of the atlantic
+<a name="l-128"></a><span class="tm">18:38:23</span><span class="nk"> &lt;izabelvalverde&gt;</span> well KDE has a brazilian akademy as well
+<a name="l-129"></a><span class="tm">18:38:27</span><span class="nk"> &lt;henne&gt;</span> for a community of around 200 contributors this sounds like overkill...
+<a name="l-130"></a><span class="tm">18:38:30</span><span class="nk"> &lt;izabelvalverde&gt;</span> too many well :D
+<a name="l-131"></a><span class="tm">18:38:39</span><span class="nk"> &lt;henne&gt;</span> we need one contributor conference
+<a name="l-132"></a><span class="tm">18:38:46</span><span class="nk"> &lt;henne&gt;</span> we can have tons of other events
+<a name="l-133"></a><span class="tm">18:38:51</span><span class="nk"> &lt;izabelvalverde&gt;</span> agree
+<a name="l-134"></a><span class="tm">18:38:59</span><span class="nk"> &lt;henne&gt;</span> for all I care, 20 in every country :)
+<a name="l-135"></a><span class="tm">18:39:16</span><span class="nk"> &lt;henne&gt;</span> the question now is about the contributor conference...
+<a name="l-136"></a><span class="tm">18:39:19</span><span class="nk"> &lt;tampakrap&gt;</span> KDE supports local akademies, there is akademy-fr akademy-es akademy-br maybe more
+<a name="l-137"></a><span class="tm">18:39:23</span><span class="nk"> &lt;mrdocs&gt;</span> lo im back and apologies for being late
+<a name="l-138"></a><span class="tm">18:39:27</span><span class="nk"> &lt;prusnak&gt;</span> sorry for being late
+<a name="l-139"></a><span class="tm">18:39:28</span><span class="nk"> &lt;prusnak&gt;</span> i am back
+<a name="l-140"></a><span class="tm">18:39:59</span><span class="nk"> &lt;henne&gt;</span> welcome mrdocs, prusnak :) so we have quorum now. great
+<a name="l-141"></a><span class="tm">18:40:04</span><span class="nk"> &lt;suseROCKs&gt;</span> hey hey mrdocs and prusnak
+<a name="l-142"></a><span class="tm">18:40:13</span><span class="nk"> &lt;mrdocs&gt;</span> lo suseROCKs AlanClark henne
+<a name="l-143"></a><span class="tm">18:40:37</span><span class="nk"> &lt;AlanClark&gt;</span> let's push on - To summarize I'm in the midst of creating a wiki page and an email to -project
+<a name="l-144"></a><span class="tm">18:41:30</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> please put it into Category:Conference
+<a name="l-145"></a><span class="tm">18:41:56</span><span class="nk"> &lt;AlanClark&gt;</span> will do.  I noticed that you've been cleaining up the pages. Thanks for doing that
+<a name="l-146"></a><span class="tm">18:42:01</span><span class="nk"> &lt;henne&gt;</span> okay any other status report?
+<a name="l-147"></a><span class="tm">18:42:14</span><span class="nk"> &lt;AlanClark&gt;</span> yes
+<a name="l-148"></a><span class="tm">18:42:33</span><span class="nk"> &lt;suseROCKs&gt;</span> Chicago had its first snow last week.    (End of my status report)
+<a name="l-149"></a><span class="tm">18:42:34</span><span class="nk"> &lt;henne&gt;</span> about? :)
+<a name="l-150"></a><span class="tm">18:42:54</span><span class="nk"> &lt;manugupt1&gt;</span> GCI??
+<a name="l-151"></a><span class="tm">18:42:57</span><span class="nk"> &lt;AlanClark&gt;</span> probably a good spot to update on the financial money handling that I've been working on
+<a name="l-152"></a><span class="tm">18:43:33</span><span class="nk"> &lt;AlanClark&gt;</span> manugupt1 is here Let's do his GCI first since it's the middle of the night for him
+<a name="l-153"></a><span class="tm">18:43:45</span><span class="nk"> &lt;manugupt1&gt;</span> Thanks AlanClark
+<a name="l-154"></a><span class="tm">18:44:06</span><span class="nk"> &lt;manugupt1&gt;</span> Ok... About GCI First session was really awesome but we need more tasks and that too by tomorrow
+<a name="l-155"></a><span class="tm">18:44:11</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">manugupt1:</span> henne's the moderator
+<a name="l-156"></a><span class="tm">18:44:35</span><span class="nk"> &lt;manugupt1&gt;</span> So should I wait?
+<a name="l-157"></a><span class="tm">18:44:47</span><span class="nk"> &lt;prusnak&gt;</span> wrt conference i saw that henne already mentioned i have 8-12 people from CZ office that have ack from their managers that they can spend time on conf organization if there will be one in prague, that's right
+<a name="l-158"></a><span class="tm">18:44:47</span><span class="nk"> &lt;henne&gt;</span> nah. go for it
+<a name="l-159"></a><span class="tm">18:45:10</span><span class="nk"> &lt;prusnak&gt;</span> end of offtopic from my side :)
+<a name="l-160"></a><span class="tm">18:45:20</span><span class="nk"> &lt;AlanClark&gt;</span> prusnak - awesome.  I will follow up with you
+<a name="l-161"></a><span class="tm">18:45:23</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">henne:</span> Ok.. So The most important part is we need more tasks I have couple of reminders already on my blogs and lists
+<a name="l-162"></a><span class="tm">18:46:02</span><span class="nk"> &lt;manugupt1&gt;</span> But we wont be able to add tasks after 16th Dec 0000 UTC.. So if anyone can add tasks please do that.. If I can handle it.. I will try to check up on those tasks
+<a name="l-163"></a><span class="tm">18:46:04</span><span class="nk"> &lt;manugupt1&gt;</span> Thats all for me
+<a name="l-164"></a><span class="tm">18:46:41</span><span class="nk"> &lt;warlordfff&gt;</span> video tasks were very succesful
+<a name="l-165"></a><span class="tm">18:47:00</span><span class="nk"> &lt;henne&gt;</span> most of the tasks came around nicely
+<a name="l-166"></a><span class="tm">18:47:07</span><span class="nk"> &lt;suseROCKs&gt;</span> let's emphasize that adding tasks doesnot mean you have to be a mentor too.   But it would be nice.   The important thing here is to get as many ideas and interesting stuff in place for students before the deadline
+<a name="l-167"></a><span class="tm">18:47:32</span><span class="nk"> &lt;warlordfff&gt;</span> yeap but ideas without mentors?
+<a name="l-168"></a><span class="tm">18:48:07</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">warlordfff:</span> Well I am certain we can find someone to review the tasks :)
+<a name="l-169"></a><span class="tm">18:48:09</span><span class="nk"> &lt;warlordfff&gt;</span> I took an orphan idea and became a mentor on it and I had troubles
+<a name="l-170"></a><span class="tm">18:49:03</span><span class="nk"> &lt;warlordfff&gt;</span> being a mentor is not as hard as it sounds
+<a name="l-171"></a><span class="tm">18:49:05</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">warlordfff:</span> It was solved too :)
+<a name="l-172"></a><span class="tm">18:49:16</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-173"></a><span class="tm">18:49:25</span><span class="nk"> &lt;warlordfff&gt;</span> it was solved
+<a name="l-174"></a><span class="tm">18:49:35</span><span class="nk"> &lt;warlordfff&gt;</span> but we spend too much time on it
+<a name="l-175"></a><span class="tm">18:49:40</span><span class="nk"> &lt;warlordfff&gt;</span> anyway
+<a name="l-176"></a><span class="tm">18:49:47</span><span class="nk"> &lt;warlordfff&gt;</span> just my 2 cents
+<a name="l-177"></a><span class="tm">18:50:13</span><span class="nk"> &lt;henne&gt;</span> okay. let's continue with AlanClark
+<a name="l-178"></a><span class="tm">18:50:23</span><span class="nk"> &lt;AlanClark&gt;</span> ok
+<a name="l-179"></a><span class="tm">18:51:18</span><span class="nk"> &lt;AlanClark&gt;</span> As I think I mentioned in past project meetings, I'm looking into how we can better handle community monies
+<a name="l-180"></a><span class="tm">18:51:29</span><span class="nk"> &lt;AlanClark&gt;</span> I'm trying to build a proposal
+<a name="l-181"></a><span class="tm">18:51:43</span><span class="nk"> &lt;AlanClark&gt;</span> and am finding that International can be very complicated
+<a name="l-182"></a><span class="tm">18:52:01</span><span class="nk"> &lt;henne&gt;</span> do tell ;)
+<a name="l-183"></a><span class="tm">18:52:41</span><span class="nk"> &lt;AlanClark&gt;</span> I hope to have a proposal ready the first part of January
+<a name="l-184"></a><span class="tm">18:53:04</span><span class="nk"> &lt;AlanClark&gt;</span> sorry it is taking so long
+<a name="l-185"></a><span class="tm">18:53:06</span><span class="nk"> &lt;henne&gt;</span> can you explain what you are aiming for?
+<a name="l-186"></a><span class="tm">18:53:13</span><span class="nk"> &lt;AlanClark&gt;</span> but it has been an interesting experience
+<a name="l-187"></a><span class="tm">18:53:37</span><span class="nk"> &lt;AlanClark&gt;</span> I'm aiming to improve our ability to gather, report and reimburse funds
+<a name="l-188"></a><span class="tm">18:54:02</span><span class="nk"> &lt;AlanClark&gt;</span> which includes credit card handling,
+<a name="l-189"></a><span class="tm">18:54:08</span><span class="nk"> &lt;warlordfff&gt;</span> is this has something to do with the project me izabelvalverde and Jos are working on?
+<a name="l-190"></a><span class="tm">18:54:46</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">warlordfff:</span>  are you talking about the $5000?
+<a name="l-191"></a><span class="tm">18:54:52</span><span class="nk"> &lt;warlordfff&gt;</span> sorry I was not here the previous meeting
+<a name="l-192"></a><span class="tm">18:54:55</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-193"></a><span class="tm">18:54:57</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> by doing what? :)
+<a name="l-194"></a><span class="tm">18:55:27</span><span class="nk"> &lt;manugupt1&gt;</span> Please elucidate I am not sure warlordfff
+<a name="l-195"></a><span class="tm">18:55:50</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">warlordfff:</span> somewhat in that we want the community to be able to manage those funds
+<a name="l-196"></a><span class="tm">18:56:02</span><span class="nk"> &lt;AlanClark&gt;</span> I'm trying to give you the tools to do that
+<a name="l-197"></a><span class="tm">18:56:07</span><span class="nk"> &lt;warlordfff&gt;</span> ok
+<a name="l-198"></a><span class="tm">18:56:15</span><span class="nk"> &lt;warlordfff&gt;</span> I think I get it
+<a name="l-199"></a><span class="tm">18:56:28</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">manugupt1:</span>  I did not get you though
+<a name="l-200"></a><span class="tm">18:57:07</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">warlordfff:</span> I meant I would like to know more about the project that you have been doing
+<a name="l-201"></a><span class="tm">18:57:24</span><span class="nk"> &lt;warlordfff&gt;</span> oh we are finalizing that
+<a name="l-202"></a><span class="tm">18:57:29</span><span class="nk"> &lt;robjo&gt;</span> OK, so the status is that Alan is working on a proposal to handle community funds, expected completion is mid January 2012.
+<a name="l-203"></a><span class="tm">18:57:35</span><span class="nk"> &lt;robjo&gt;</span> Can we move on then?
+<a name="l-204"></a><span class="tm">18:57:36</span><span class="nk"> &lt;warlordfff&gt;</span> we hope to have it ready in the next days
+<a name="l-205"></a><span class="tm">18:58:24</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">robjo:</span> but I want to hear dirty details :)
+<a name="l-206"></a><span class="tm">18:58:49</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok
+<a name="l-207"></a><span class="tm">18:59:05</span><span class="nk"> &lt;robjo&gt;</span> Apparently we are not getting those, and others are now drifting off into other tangents
+<a name="l-208"></a><span class="tm">19:00:15</span><span class="nk"> &lt;izabelvalverde&gt;</span> as first step we are working in a document to help people to find out how to get money from ambassadors fund
+<a name="l-209"></a><span class="tm">19:00:30</span><span class="nk"> &lt;izabelvalverde&gt;</span> Jos asked if warlordfff and me could work on it
+<a name="l-210"></a><span class="tm">19:00:40</span><span class="nk"> &lt;izabelvalverde&gt;</span> we started a document
+<a name="l-211"></a><span class="tm">19:00:48</span><span class="nk"> &lt;izabelvalverde&gt;</span> I can make it public if you want
+<a name="l-212"></a><span class="tm">19:01:01</span><span class="nk"> &lt;AlanClark&gt;</span> All I'm trying to do is create an easier way for the project to accept funds, be able to report those to the community, have the community manage those and to be able to reimburse.
+<a name="l-213"></a><span class="tm">19:01:05</span><span class="nk"> &lt;manugupt1&gt;</span> That would be better
+<a name="l-214"></a><span class="tm">19:01:44</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> sounds cool. so everybody gets a credit card? ;)
+<a name="l-215"></a><span class="tm">19:01:45</span><span class="nk"> &lt;izabelvalverde&gt;</span> AlanClark we are doing the step before... how to get the money ;)
+<a name="l-216"></a><span class="tm">19:02:28</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">henne:</span> perhaps Santa will give you a credit card
+<a name="l-217"></a><span class="tm">19:02:38</span><span class="nk"> &lt;izabelvalverde&gt;</span> please for me too :P
+<a name="l-218"></a><span class="tm">19:02:47</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">Izabel:</span> not sure I understand your question
+<a name="l-219"></a><span class="tm">19:02:55</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> the chances are higher with Satan I guess...
+<a name="l-220"></a><span class="tm">19:03:01</span><span class="nk"> &lt;AlanClark&gt;</span> haha
+<a name="l-221"></a><span class="tm">19:03:11</span><span class="nk"> &lt;izabelvalverde&gt;</span> AlanClark question?
+<a name="l-222"></a><span class="tm">19:03:28</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> no seriously. so you cant tell details yet? I'm just generally interested...
+<a name="l-223"></a><span class="tm">19:03:44</span><span class="nk"> &lt;AlanClark&gt;</span> sure
+<a name="l-224"></a><span class="tm">19:04:10</span><span class="nk"> &lt;AlanClark&gt;</span> Part of what instigated this was from osc11.
+<a name="l-225"></a><span class="tm">19:04:32</span><span class="nk"> &lt;AlanClark&gt;</span> Handling the credit cards from the professional attendees was much more difficult than it should be.
+<a name="l-226"></a><span class="tm">19:04:54</span><span class="nk"> &lt;AlanClark&gt;</span> Another example is reimbursing the mentors travel for the GSOC conference
+<a name="l-227"></a><span class="tm">19:05:09</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">AlanClark:</span> once I was thinking about to have a kind of fidelity visa card for the project, but this will be quite impossibel without foundation, so that was my though long ago, and it keep in my mind to maybe be rised in the future
+<a name="l-228"></a><span class="tm">19:05:15</span><span class="nk"> &lt;AlanClark&gt;</span> Also reimbursing Ambassadors around the world
+<a name="l-229"></a><span class="tm">19:05:44</span><span class="nk"> &lt;AlanClark&gt;</span> I've also been looking at some of the plans for 2012
+<a name="l-230"></a><span class="tm">19:06:22 </span><span class="nka">* tigerfoot</span> <span class="ac">just want to be able to choose it's own geeko design on the visa card ...</span>
+<a name="l-231"></a><span class="tm">19:06:27</span><span class="nk"> &lt;izabelvalverde&gt;</span> AlanClark I adopted here for digital inclusion project that I run before pre-paid debit cards
+<a name="l-232"></a><span class="tm">19:06:45</span><span class="nk"> &lt;izabelvalverde&gt;</span> for GSOC students might work
+<a name="l-233"></a><span class="tm">19:06:59</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AlanClark:</span> ah okay. so some SUSE internal magic :) So not much will change for people requesting it?
+<a name="l-234"></a><span class="tm">19:07:01</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">tigerfoot:</span> there are banks here that allow you to put your own PNG on your credit card
+<a name="l-235"></a><span class="tm">19:07:05</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">tigerfoot:</span> I have my own geeko stamp im my visa card ehehe It's not real but make me fell better :D
+<a name="l-236"></a><span class="tm">19:07:07</span><span class="nk"> &lt;AlanClark&gt;</span> I've gathered up those examples and have been going to all the SUSE accounting experts asking them how the openSUSE project can best handle these
+<a name="l-237"></a><span class="tm">19:07:34</span><span class="nk"> &lt;AlanClark&gt;</span> From their help I'm putting together a proposal
+<a name="l-238"></a><span class="tm">19:07:56</span><span class="nk"> &lt;izabelvalverde&gt;</span> AlanClark help needed I'm here ;)
+<a name="l-239"></a><span class="tm">19:08:09</span><span class="nk"> &lt;AlanClark&gt;</span> I don't expect much change for people requesting.  But I want the Board to have much more visibilty into the funds
+<a name="l-240"></a><span class="tm">19:08:30</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-241"></a><span class="tm">19:08:32</span><span class="nk"> &lt;AlanClark&gt;</span> ah I didn't say that quite correctly
+<a name="l-242"></a><span class="tm">19:09:02</span><span class="nk"> &lt;AlanClark&gt;</span> I want the communty to have much more visilibty into the funds, and the Board to be able to manage those community funds
+<a name="l-243"></a><span class="tm">19:10:18</span><span class="nk"> &lt;warlordfff&gt;</span> is sounds really complicated, I must say
+<a name="l-244"></a><span class="tm">19:10:40</span><span class="nk"> &lt;Ilmehtar&gt;</span> money has a habit of doing that
+<a name="l-245"></a><span class="tm">19:10:49</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">warlordfff:</span> I've definitely peeled several layers off the onion
+<a name="l-246"></a><span class="tm">19:11:12</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">AlanClark:</span> good.. i know what you are up against :)
+<a name="l-247"></a><span class="tm">19:11:38</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">AlanClark:</span> onion peeling..have you broken down in tears yet? ;-)
+<a name="l-248"></a><span class="tm">19:11:47</span><span class="nk"> &lt;AlanClark&gt;</span> haha not yet
+<a name="l-249"></a><span class="tm">19:12:00</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">spam:</span> mrdocs are you going to be on FOSDEM?
+<a name="l-250"></a><span class="tm">19:12:07</span><span class="nk"> &lt;AlanClark&gt;</span> ok shall we move on to then next topic
+<a name="l-251"></a><span class="tm">19:12:44</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-252"></a><span class="tm">19:12:55</span><span class="nk"> &lt;henne&gt;</span> next topic then
+<a name="l-253"></a><span class="tm">19:13:00</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Old Action Items</span>
+<a name="l-254"></a><span class="tm">19:13:35</span><span class="nk"> &lt;henne&gt;</span> there is one project AI open
+<a name="l-255"></a><span class="tm">19:13:51</span><span class="nk"> &lt;henne&gt;</span> Bug #682098
+<a name="l-256"></a><span class="tm">19:13:51</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 682098 in openSUSE.org (Action Items) "Decide how we go forward with contributor gifts." [Normal,Reopened] https://bugzilla.novell.com/682098
+<a name="l-257"></a><span class="tm">19:14:00</span><span class="nk"> &lt;tigerfoot&gt;</span> :D
+<a name="l-258"></a><span class="tm">19:14:17</span><span class="nk"> &lt;tigerfoot&gt;</span> just in time for Santa Klaus
+<a name="l-259"></a><span class="tm">19:14:17</span><span class="nk"> &lt;henne&gt;</span> so what progress do we have here?
+<a name="l-260"></a><span class="tm">19:14:36</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">warlordfff:</span> plan to :-
+<a name="l-261"></a><span class="tm">19:15:42</span><span class="nk"> &lt;henne&gt;</span> apparently nothing
+<a name="l-262"></a><span class="tm">19:16:02</span><span class="nk"> &lt;henne&gt;</span> there are two board AIs that are there for cosmetic *cough* reasons...
+<a name="l-263"></a><span class="tm">19:16:16</span><span class="nk"> &lt;warlordfff&gt;</span> there is a dificulty I think to decide who are and who aren't contributors
+<a name="l-264"></a><span class="tm">19:16:16</span><span class="nk"> &lt;henne&gt;</span> so no AI work. next topic? :)
+<a name="l-265"></a><span class="tm">19:16:23</span><span class="nk"> &lt;AlanClark&gt;</span> next
+<a name="l-266"></a><span class="tm">19:17:40</span><span class="nk"> &lt;AlanClark&gt;</span> next topic
+<a name="l-267"></a><span class="tm">19:17:59</span><span class="nk"> &lt;henne&gt;</span> yeah
+<a name="l-268"></a><span class="tm">19:18:09</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">permission@ requests</span>
+<a name="l-269"></a><span class="tm">19:18:09</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> +1
+<a name="l-270"></a><span class="tm">19:18:16</span><span class="nk"> &lt;henne&gt;</span> there are no requests at this time
+<a name="l-271"></a><span class="tm">19:18:18</span><span class="nk"> &lt;henne&gt;</span> right?
+<a name="l-272"></a><span class="tm">19:18:24</span><span class="nk"> &lt;suseROCKs&gt;</span> AFAICT no
+<a name="l-273"></a><span class="tm">19:18:25</span><span class="nk"> &lt;mrdocs&gt;</span> none ive seen
+<a name="l-274"></a><span class="tm">19:18:29</span><span class="nk"> &lt;AlanClark&gt;</span> There are no requests.
+<a name="l-275"></a><span class="tm">19:18:31</span><span class="nk"> &lt;henne&gt;</span> alright :)
+<a name="l-276"></a><span class="tm">19:18:32</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Where do we need to improve?</span>
+<a name="l-277"></a><span class="tm">19:18:44</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#info </span><span class="cmdline">This topic is about quick, small, actionable problems we have. Stuff we can solve between this and the next meeting.</span>
+<a name="l-278"></a><span class="tm">19:18:59</span><span class="nk"> &lt;AlanClark&gt;</span> I have one that was sent to permission.  It's not a request but a question, so I will handle that.
+<a name="l-279"></a><span class="tm">19:19:49</span><span class="nk"> &lt;henne&gt;</span> okay do we have something to improve?
+<a name="l-280"></a><span class="tm">19:20:06</span><span class="nk"> &lt;henne&gt;</span> there is nothing new in the fate queue
+<a name="l-281"></a><span class="tm">19:20:27</span><span class="nk"> &lt;henne&gt;</span> anything else?
+<a name="l-282"></a><span class="tm">19:20:36</span><span class="nk"> &lt;warlordfff&gt;</span> end the previous bug?
+<a name="l-283"></a><span class="tm">19:20:43</span><span class="nk"> &lt;warlordfff&gt;</span> finally?
+<a name="l-284"></a><span class="tm">19:20:44</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">henne:</span> didn't I put something in openFATE in the last 2 weeks?
+<a name="l-285"></a><span class="tm">19:20:57</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">warlordfff:</span> I've tried a couple of times. it's a super-zombie!
+<a name="l-286"></a><span class="tm">19:21:26</span><span class="nk"> &lt;warlordfff&gt;</span> I thing the board should finally do that in a private meeting
+<a name="l-287"></a><span class="tm">19:21:27</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Ilmehtar:</span> like?
+<a name="l-288"></a><span class="tm">19:21:37</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Ilmehtar:</span> vibe?
+<a name="l-289"></a><span class="tm">19:21:58</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">henne:</span> ah I remember, yes screenshots in installer..never mind, not relevant for here probably :)
+<a name="l-290"></a><span class="tm">19:22:05</span><span class="nk"> &lt;izabelvalverde&gt;</span> hennemaybe I'm bit lost... anything about Fosdem?
+<a name="l-291"></a><span class="tm">19:22:37</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">izabelvalverde:</span> you're coming to fosdem? you want to help out on the booth? if yes! I'm the man to speak to :)
+<a name="l-292"></a><span class="tm">19:22:58</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok man to speak to... I'm going :D
+<a name="l-293"></a><span class="tm">19:23:03</span><span class="nk"> &lt;henne&gt;</span> yeah that's a topic I want to discuss. but not in this topic
+<a name="l-294"></a><span class="tm">19:23:11</span><span class="nk"> &lt;izabelvalverde&gt;</span> ops
+<a name="l-295"></a><span class="tm">19:23:14</span><span class="nk"> &lt;izabelvalverde&gt;</span> :)
+<a name="l-296"></a><span class="tm">19:23:15</span><span class="nk"> &lt;henne&gt;</span> i forgot to add it to the agenda :-/
+<a name="l-297"></a><span class="tm">19:23:44</span><span class="nk"> &lt;henne&gt;</span> okay so do we officially want to kill the contributor gift idea?
+<a name="l-298"></a><span class="tm">19:23:51</span><span class="nk"> &lt;henne&gt;</span> board members?
+<a name="l-299"></a><span class="tm">19:23:53</span><span class="nk"> &lt;warlordfff&gt;</span> +1
+<a name="l-300"></a><span class="tm">19:23:57</span><span class="nk"> &lt;AlanClark&gt;</span> close it for now
+<a name="l-301"></a><span class="tm">19:23:58</span><span class="nk"> &lt;warlordfff&gt;</span> sorry
+<a name="l-302"></a><span class="tm">19:24:27 </span><span class="nka">* manugupt1</span> <span class="ac">would personally like something as a memoir</span>
+<a name="l-303"></a><span class="tm">19:24:31</span><span class="nk"> &lt;henne&gt;</span> suseROCKs?
+<a name="l-304"></a><span class="tm">19:24:35</span><span class="nk"> &lt;henne&gt;</span> prusnak?
+<a name="l-305"></a><span class="tm">19:24:40</span><span class="nk"> &lt;henne&gt;</span> mrdocs?
+<a name="l-306"></a><span class="tm">19:24:50</span><span class="nk"> &lt;mrdocs&gt;</span> yes +1 postpone for now
+<a name="l-307"></a><span class="tm">19:25:26</span><span class="nk"> &lt;henne&gt;</span> +1 from me too. put that idea on hold
+<a name="l-308"></a><span class="tm">19:25:28</span><span class="nk"> &lt;prusnak&gt;</span> yes +1
+<a name="l-309"></a><span class="tm">19:25:47</span><span class="nk"> &lt;suseROCKs&gt;</span> close it for now, but cboltz said he's still working on it, at whatever pace that is
+<a name="l-310"></a><span class="tm">19:25:56</span><span class="nk"> &lt;mrdocs&gt;</span> good idea, just the implementation is difficult
+<a name="l-311"></a><span class="tm">19:25:58</span><span class="nk"> &lt;suseROCKs&gt;</span> or is it cb400f?  I always get those two mixed up
+<a name="l-312"></a><span class="tm">19:26:08</span><span class="nk"> &lt;mrdocs&gt;</span> cboltz methinks
+<a name="l-313"></a><span class="tm">19:26:14</span><span class="nk"> &lt;henne&gt;</span> yes cboltz
+<a name="l-314"></a><span class="tm">19:26:20</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-315"></a><span class="tm">19:26:42</span><span class="nk"> &lt;henne&gt;</span> so you vote to putting it on hold?
+<a name="l-316"></a><span class="tm">19:27:11</span><span class="nk"> &lt;suseROCKs&gt;</span> yes
+<a name="l-317"></a><span class="tm">19:28:01</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">We put the idea about contributor gifts on hold for now. Feel free to solve all the problems the implementation has and put it back on the AI list. 5+/0-</span>
+<a name="l-318"></a><span class="tm">19:29:14</span><span class="nk"> &lt;henne&gt;</span> okay. next topic then
+<a name="l-319"></a><span class="tm">19:29:25</span><span class="nk"> &lt;henne&gt;</span> now that we have done something tangible ;)
+<a name="l-320"></a><span class="tm">19:29:32</span><span class="nk"> &lt;mrdocs&gt;</span> hehe
+<a name="l-321"></a><span class="tm">19:29:46</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#toppic </span><span class="cmdline">openSUSE @ FOSDEM 2012</span>
+<a name="l-322"></a><span class="tm">19:29:50</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE @ FOSDEM 2012</span>
+<a name="l-323"></a><span class="tm">19:30:04</span><span class="nk"> &lt;henne&gt;</span> i sneaked that in :)
+<a name="l-324"></a><span class="tm">19:30:10</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">henne:</span> good :-)
+<a name="l-325"></a><span class="tm">19:30:25</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">henne:</span>  I believe I can forgive you that
+<a name="l-326"></a><span class="tm">19:30:26</span><span class="nk"> &lt;warlordfff&gt;</span> ;-)
+<a name="l-327"></a><span class="tm">19:30:34</span><span class="nk"> &lt;henne&gt;</span> I see three things we need to work on
+<a name="l-328"></a><span class="tm">19:30:45</span><span class="nk"> &lt;mrdocs&gt;</span> what about f2f before or after FOSDEM ?
+<a name="l-329"></a><span class="tm">19:30:50</span><span class="nk"> &lt;henne&gt;</span> 1. Submit Talks
+<a name="l-330"></a><span class="tm">19:31:02</span><span class="nk"> &lt;mrdocs&gt;</span> 1. too late i think
+<a name="l-331"></a><span class="tm">19:31:05</span><span class="nk"> &lt;henne&gt;</span> 2. Organize the booth
+<a name="l-332"></a><span class="tm">19:31:17</span><span class="nk"> &lt;henne&gt;</span> 3. Organize the travel
+<a name="l-333"></a><span class="tm">19:31:44</span><span class="nk"> &lt;henne&gt;</span> you can still submit talks for the distro mini conf until december the 22nd!
+<a name="l-334"></a><span class="tm">19:31:54</span><span class="nk"> &lt;henne&gt;</span> we already missed the deadline for the lightning talks
+<a name="l-335"></a><span class="tm">19:31:58</span><span class="nk"> &lt;mrdocs&gt;</span> ahh good
+<a name="l-336"></a><span class="tm">19:32:10</span><span class="nk"> &lt;izabelvalverde&gt;</span> Lightning talks	announcement	2011-12-16 (extended)
+<a name="l-337"></a><span class="tm">19:32:15</span><span class="nk"> &lt;izabelvalverde&gt;</span> ;)
+<a name="l-338"></a><span class="tm">19:32:20</span><span class="nk"> &lt;izabelvalverde&gt;</span> 2 more days ;)
+<a name="l-339"></a><span class="tm">19:32:39</span><span class="nk"> &lt;henne&gt;</span> ah cool
+<a name="l-340"></a><span class="tm">19:32:52</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Ilmehtar:</span> have you requested the booth?
+<a name="l-341"></a><span class="tm">19:33:12</span><span class="nk"> &lt;henne&gt;</span> so people submit your talks
+<a name="l-342"></a><span class="tm">19:33:17</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">henne:</span> yes - the deadline for requesting the booth was the 12th, I got it in well before and I've already had some of the FOSDEM team get in touch asking me to bring inflatable tuxes...
+<a name="l-343"></a><span class="tm">19:34:04</span><span class="nk"> &lt;henne&gt;</span> okay cool
+<a name="l-344"></a><span class="tm">19:34:11</span><span class="nk"> &lt;warlordfff&gt;</span> what about participation?
+<a name="l-345"></a><span class="tm">19:34:17</span><span class="nk"> &lt;warlordfff&gt;</span> who will be there?
+<a name="l-346"></a><span class="tm">19:34:37 </span><span class="nka">* mrdocs</span> <span class="ac">is 75-85% sure of going</span>
+<a name="l-347"></a><span class="tm">19:34:49 </span><span class="nka">* henne</span> <span class="ac">cant go</span>
+<a name="l-348"></a><span class="tm">19:34:55</span><span class="nk"> &lt;Ilmehtar&gt;</span> I'm adding that to the list of stuff others have suggested we need and was planning on pinging AJ to help figure out what is viable, etc.. I'm going to need help with logistics actuall getting this stuff out from NUE to Brussels
+<a name="l-349"></a><span class="tm">19:35:02 </span><span class="nka">* warlordfff</span> <span class="ac">90% will be there</span>
+<a name="l-350"></a><span class="tm">19:35:19</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne really?
+<a name="l-351"></a><span class="tm">19:35:28</span><span class="nk"> &lt;izabelvalverde&gt;</span> :(
+<a name="l-352"></a><span class="tm">19:35:36</span><span class="nk"> &lt;Ilmehtar&gt;</span> and yes, volenteers to help with the booth would be great - in particular I'd like to know people willing to spend most of their time helping out..I need 1 or 2 folks willing to spend most of their time with me there so everyone else can be free to run around having fun ;-)
+<a name="l-353"></a><span class="tm">19:35:36</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Ilmehtar:</span> I'm your man :)
+<a name="l-354"></a><span class="tm">19:36:05</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> I'm would like to be there, yes, but I didn't find a way to go yet
+<a name="l-355"></a><span class="tm">19:36:06</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">henne:</span> okay, well right now the list of stuff I need is, your list + inflatable tuxes with Geeko's on them (lol)
+<a name="l-356"></a><span class="tm">19:36:08</span><span class="nk"> &lt;henne&gt;</span> you're izabelvalverdes man. i'm yuore man. it get's complicated...
+<a name="l-357"></a><span class="tm">19:36:33</span><span class="nk"> &lt;izabelvalverde&gt;</span> :D
+<a name="l-358"></a><span class="tm">19:36:41</span><span class="nk"> &lt;warlordfff&gt;</span> we need beers
+<a name="l-359"></a><span class="tm">19:36:43</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-360"></a><span class="tm">19:36:56</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Ilmehtar:</span> if you trust me I just send you "the kit"
+<a name="l-361"></a><span class="tm">19:37:11</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Ilmehtar:</span> with the guys that are going from nbg
+<a name="l-362"></a><span class="tm">19:37:12</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">henne:</span> "the kit"?
+<a name="l-363"></a><span class="tm">19:37:22</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Ilmehtar:</span> everything you need for FOSDEM
+<a name="l-364"></a><span class="tm">19:37:23</span><span class="nk"> &lt;warlordfff&gt;</span> I have 8 thirsty Greeks comming there exclusivelly to drink openSUSE beers
+<a name="l-365"></a><span class="tm">19:37:49</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">henne:</span> of course I trust you, you're the expert, i'm the noob
+<a name="l-366"></a><span class="tm">19:37:54</span><span class="nk"> &lt;izabelvalverde&gt;</span> Ilmehtar warlordfff have 8 people for the booth then :D
+<a name="l-367"></a><span class="tm">19:38:04</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Ilmehtar:</span> alright- lets sync offline
+<a name="l-368"></a><span class="tm">19:38:13</span><span class="nk"> &lt;anditosan&gt;</span> henne is THA MAN! he set us up on the artwork channel :D
+<a name="l-369"></a><span class="tm">19:38:15</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">warlordfff:</span> what about talks?
+<a name="l-370"></a><span class="tm">19:38:21</span><span class="nk"> &lt;warlordfff&gt;</span> not me
+<a name="l-371"></a><span class="tm">19:38:26</span><span class="nk"> &lt;henne&gt;</span> why not? :)
+<a name="l-372"></a><span class="tm">19:38:28</span><span class="nk"> &lt;warlordfff&gt;</span> I don't know
+<a name="l-373"></a><span class="tm">19:38:44</span><span class="nk"> &lt;Ilmehtar&gt;</span> that's never stopped you talking about stuff you dont know about before ;-)
+<a name="l-374"></a><span class="tm">19:38:48</span><span class="nk"> &lt;warlordfff&gt;</span> what should I talk about?
+<a name="l-375"></a><span class="tm">19:38:49</span><span class="nk"> &lt;henne&gt;</span> I would love to see an open discussion on ambassador programs and stuff
+<a name="l-376"></a><span class="tm">19:38:57</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> +1
+<a name="l-377"></a><span class="tm">19:38:58</span><span class="nk"> &lt;warlordfff&gt;</span> oh that
+<a name="l-378"></a><span class="tm">19:39:01</span><span class="nk"> &lt;manugupt1&gt;</span> Same here :)
+<a name="l-379"></a><span class="tm">19:39:05</span><span class="nk"> &lt;warlordfff&gt;</span> yeap we can do that
+<a name="l-380"></a><span class="tm">19:39:10</span><span class="nk"> &lt;henne&gt;</span> every distributions suffers from that stuff
+<a name="l-381"></a><span class="tm">19:39:11</span><span class="nk"> &lt;mrdocs&gt;</span> fine with me
+<a name="l-382"></a><span class="tm">19:39:30</span><span class="nk"> &lt;henne&gt;</span> find the people that drive this stuff at fedora maybe
+<a name="l-383"></a><span class="tm">19:39:33</span><span class="nk"> &lt;warlordfff&gt;</span> you mean as a lighting talk?
+<a name="l-384"></a><span class="tm">19:39:40</span><span class="nk"> &lt;henne&gt;</span> and see if you can come up with a talk about challenges
+<a name="l-385"></a><span class="tm">19:39:43</span><span class="nk"> &lt;henne&gt;</span> or something
+<a name="l-386"></a><span class="tm">19:39:52</span><span class="nk"> &lt;henne&gt;</span> no, I mean in the distro mini conf
+<a name="l-387"></a><span class="tm">19:39:59</span><span class="nk"> &lt;warlordfff&gt;</span> can you help me on that henne?
+<a name="l-388"></a><span class="tm">19:40:19</span><span class="nk"> &lt;warlordfff&gt;</span> to create a proposion?
+<a name="l-389"></a><span class="tm">19:40:40</span><span class="nk"> &lt;henne&gt;</span> I fear I don't know too much on the ambassador stuff
+<a name="l-390"></a><span class="tm">19:40:52</span><span class="nk"> &lt;henne&gt;</span> but I can certainly help you getting it to the right list and stuff
+<a name="l-391"></a><span class="tm">19:40:54</span><span class="nk"> &lt;warlordfff&gt;</span> I mean how to do that
+<a name="l-392"></a><span class="tm">19:41:00</span><span class="nk"> &lt;henne&gt;</span> sure
+<a name="l-393"></a><span class="tm">19:41:03</span><span class="nk"> &lt;warlordfff&gt;</span> not the actual theme
+<a name="l-394"></a><span class="tm">19:41:07</span><span class="nk"> &lt;henne&gt;</span> its all described in the announcement
+<a name="l-395"></a><span class="tm">19:41:09</span><span class="nk"> &lt;henne&gt;</span> https://lists.fosdem.org/pipermail/fosdem/2011-November/001340.html
+<a name="l-396"></a><span class="tm">19:41:13</span><span class="nk"> &lt;warlordfff&gt;</span> ok I will send you an email later
+<a name="l-397"></a><span class="tm">19:41:21</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">warlordfff:</span> hey c'mon you are master of presentation mate
+<a name="l-398"></a><span class="tm">19:41:29</span><span class="nk"> &lt;henne&gt;</span> but we need more talks
+<a name="l-399"></a><span class="tm">19:41:37</span><span class="nk"> &lt;henne&gt;</span> any other ideas?
+<a name="l-400"></a><span class="tm">19:41:40</span><span class="nk"> &lt;izabelvalverde&gt;</span> suggestions?
+<a name="l-401"></a><span class="tm">19:41:53</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">henne:</span> Was there a talk by Saurab on OBS plasmoids.. Just confirming
+<a name="l-402"></a><span class="tm">19:41:53</span><span class="nk"> &lt;anditosan&gt;</span> henne, talks for what specifically?
+<a name="l-403"></a><span class="tm">19:41:59</span><span class="nk"> &lt;izabelvalverde&gt;</span> local openSUSE groups?
+<a name="l-404"></a><span class="tm">19:41:59</span><span class="nk"> &lt;manugupt1&gt;</span> Any status on that
+<a name="l-405"></a><span class="tm">19:42:16</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> the distro mini conf on FOSDEM
+<a name="l-406"></a><span class="tm">19:42:18</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> maybe something related about artwork that we are starting over again
+<a name="l-407"></a><span class="tm">19:42:21</span><span class="nk"> &lt;henne&gt;</span> the theme is:
+<a name="l-408"></a><span class="tm">19:42:30</span><span class="nk"> &lt;henne&gt;</span> Sessions can be talks, round tables, BoFs, or any number of other things
+<a name="l-409"></a><span class="tm">19:42:33</span><span class="nk"> &lt;henne&gt;</span> that could generally benefit from an audience of distributions
+<a name="l-410"></a><span class="tm">19:42:35</span><span class="nk"> &lt;henne&gt;</span> developers.
+<a name="l-411"></a><span class="tm">19:42:46</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> how to contribute, and be part of the artwork team
+<a name="l-412"></a><span class="tm">19:42:51</span><span class="nk"> &lt;warlordfff&gt;</span> a question, when is the deadline for the devrooms? I am a bit lost here
+<a name="l-413"></a><span class="tm">19:42:53</span><span class="nk"> &lt;anditosan&gt;</span> henne, I was working on a paper for non technical users and their contributions to opensuse. Challenges and all. Would that help?
+<a name="l-414"></a><span class="tm">19:43:04</span><span class="nk"> &lt;suseROCKs&gt;</span> review the top most beneficial sessions of oSC and propse them for FOSDEM, if it hasn't aready yet
+<a name="l-415"></a><span class="tm">19:43:11</span><span class="nk"> &lt;izabelvalverde&gt;</span> warlordfff dev is gone
+<a name="l-416"></a><span class="tm">19:43:12</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">warlordfff:</span> the 22nd. thats in one week
+<a name="l-417"></a><span class="tm">19:43:19</span><span class="nk"> &lt;anditosan&gt;</span> CarlosRibeiro, you and I are connected buddy :D
+<a name="l-418"></a><span class="tm">19:43:27</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> oh yes sure.
+<a name="l-419"></a><span class="tm">19:43:31</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">anditosan:</span> ;)
+<a name="l-420"></a><span class="tm">19:43:49</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> if you give it a cross distro touc
+<a name="l-421"></a><span class="tm">19:43:49</span><span class="nk"> &lt;warlordfff&gt;</span> gone or 22 I am even more lost now ;-/
+<a name="l-422"></a><span class="tm">19:44:08</span><span class="nk"> &lt;anditosan&gt;</span> henne, sure, I am sure that the challenges we face are smiliar everywhere
+<a name="l-423"></a><span class="tm">19:44:11</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> like making the title general and use openSUSE as example
+<a name="l-424"></a><span class="tm">19:44:17</span><span class="nk"> &lt;anditosan&gt;</span> henne, how long does it need to be?
+<a name="l-425"></a><span class="tm">19:44:43</span><span class="nk"> &lt;izabelvalverde&gt;</span> 22 Distribution Miniconf
+<a name="l-426"></a><span class="tm">19:44:54</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> however long or short you want
+<a name="l-427"></a><span class="tm">19:44:56</span><span class="nk"> &lt;izabelvalverde&gt;</span> 16 Lightning talks
+<a name="l-428"></a><span class="tm">19:45:03</span><span class="nk"> &lt;izabelvalverde&gt;</span> http://fosdem.org/2012/
+<a name="l-429"></a><span class="tm">19:45:11</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> there are no slots or something
+<a name="l-430"></a><span class="tm">19:45:50</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> i would propose 15 minute talk. 30 minute discussion
+<a name="l-431"></a><span class="tm">19:45:56</span><span class="nk"> &lt;anditosan&gt;</span> henne, I see, that's not a problem then. I will review the paper and try to put it as a contribution to fosdem. Is there an opensuse contact that I need to work with?
+<a name="l-432"></a><span class="tm">19:46:05</span><span class="nk"> &lt;anditosan&gt;</span> henne, good!
+<a name="l-433"></a><span class="tm">19:46:26</span><span class="nk"> &lt;Ilmehtar&gt;</span> I've gotta run (getting kicked out of the building) any one want to ask/say anything FOSDEM stand related while I'm here? - I'll catch up on the rest of the meet in 20 mins or so
+<a name="l-434"></a><span class="tm">19:46:28</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> nope. just follow the instructions in this mail https://lists.fosdem.org/pipermail/fosdem/2011-November/001340.html
+<a name="l-435"></a><span class="tm">19:46:43</span><span class="nk"> &lt;anditosan&gt;</span> checking....
+<a name="l-436"></a><span class="tm">19:47:39</span><span class="nk"> &lt;anditosan&gt;</span> henne, got it. Good. How many more papers are needed?
+<a name="l-437"></a><span class="tm">19:47:46</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">izabelvalverde:</span> how about a talk that evolves around linux in latin america?
+<a name="l-438"></a><span class="tm">19:47:49</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">Ilmehtar:</span> ill sync up wth u after
+<a name="l-439"></a><span class="tm">19:47:59</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">henne:</span> good
+<a name="l-440"></a><span class="tm">19:48:03</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne pascal told me the same
+<a name="l-441"></a><span class="tm">19:48:07</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> I saw 6 proposals by now and we're talking about 2 rooms, 2 full days
+<a name="l-442"></a><span class="tm">19:48:20</span><span class="nk"> &lt;anditosan&gt;</span> henne, that's perfect!
+<a name="l-443"></a><span class="tm">19:48:22</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">izabelvalverde:</span> thats a clear indication that you should do it :)
+<a name="l-444"></a><span class="tm">19:48:23</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne do you think even with my english would be possible? :D
+<a name="l-445"></a><span class="tm">19:48:45</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">izabelvalverde:</span> sure!
+<a name="l-446"></a><span class="tm">19:48:48</span><span class="nk"> &lt;izabelvalverde&gt;</span> or I can make it in portuguese :D
+<a name="l-447"></a><span class="tm">19:48:55</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">izabelvalverde:</span> hey, I remember our speach at Scale you was great
+<a name="l-448"></a><span class="tm">19:49:01</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">izabelvalverde:</span> c'mon
+<a name="l-449"></a><span class="tm">19:49:16</span><span class="nk"> &lt;warlordfff&gt;</span> +1 to that izabelvalverde
+<a name="l-450"></a><span class="tm">19:49:20</span><span class="nk"> &lt;izabelvalverde&gt;</span> CarlosRibeiro shut up :P
+<a name="l-451"></a><span class="tm">19:49:26</span><span class="nk"> &lt;izabelvalverde&gt;</span> :D
+<a name="l-452"></a><span class="tm">19:49:34</span><span class="nk"> &lt;warlordfff&gt;</span> he is right you know :D
+<a name="l-453"></a><span class="tm">19:49:53</span><span class="nk"> &lt;izabelvalverde&gt;</span> warlordfff :P for you too
+<a name="l-454"></a><span class="tm">19:49:59</span><span class="nk"> &lt;henne&gt;</span> FOSDEM is a community conf
+<a name="l-455"></a><span class="tm">19:50:02</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok henne I will think about it
+<a name="l-456"></a><span class="tm">19:50:10</span><span class="nk"> &lt;anditosan&gt;</span> henne, do you have a talk for fosdem already?
+<a name="l-457"></a><span class="tm">19:50:13</span><span class="nk"> &lt;izabelvalverde&gt;</span> lets see ;)
+<a name="l-458"></a><span class="tm">19:50:13</span><span class="nk"> &lt;warlordfff&gt;</span> I will do it
+<a name="l-459"></a><span class="tm">19:50:20</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> I can't come :(
+<a name="l-460"></a><span class="tm">19:50:24</span><span class="nk"> &lt;warlordfff&gt;</span> what the frak
+<a name="l-461"></a><span class="tm">19:50:27</span><span class="nk"> &lt;izabelvalverde&gt;</span> :(
+<a name="l-462"></a><span class="tm">19:50:36</span><span class="nk"> &lt;anditosan&gt;</span> henne, WHAT? THAT SUCKS!
+<a name="l-463"></a><span class="tm">19:50:42</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">anditosan:</span> i have a clash with my personal schedule
+<a name="l-464"></a><span class="tm">19:50:56</span><span class="nk"> &lt;anditosan&gt;</span> henne, yeah it happens
+<a name="l-465"></a><span class="tm">19:51:21</span><span class="nk"> &lt;henne&gt;</span> anyway. please everybody. think about talks you can submit to the distro mini conf!
+<a name="l-466"></a><span class="tm">19:51:36</span><span class="nk"> &lt;henne&gt;</span> its very important. its _the_ place where distros collaborate
+<a name="l-467"></a><span class="tm">19:51:48</span><span class="nk"> &lt;warlordfff&gt;</span> ok i will go for one about the ambassador program related
+<a name="l-468"></a><span class="tm">19:51:50</span><span class="nk"> &lt;henne&gt;</span> and we're all about that right?
+<a name="l-469"></a><span class="tm">19:52:04</span><span class="nk"> &lt;izabelvalverde&gt;</span> yep
+<a name="l-470"></a><span class="tm">19:52:06</span><span class="nk"> &lt;henne&gt;</span> so if you come, submit a talk :)
+<a name="l-471"></a><span class="tm">19:52:21</span><span class="nk"> &lt;henne&gt;</span> alright. that leaves one thing to organize
+<a name="l-472"></a><span class="tm">19:52:28</span><span class="nk"> &lt;henne&gt;</span> the travel etc.
+<a name="l-473"></a><span class="tm">19:52:37</span><span class="nk"> &lt;anditosan&gt;</span> Ilmehtar, are you going to FOSDEM?
+<a name="l-474"></a><span class="tm">19:52:47</span><span class="nk"> &lt;henne&gt;</span> I guess we should collect when verybody comes
+<a name="l-475"></a><span class="tm">19:52:55</span><span class="nk"> &lt;henne&gt;</span> and where they are staying
+<a name="l-476"></a><span class="tm">19:53:55</span><span class="nk"> &lt;henne&gt;</span> I'll get http://en.opensuse.org/openSUSE:FOSDEM2012 going
+<a name="l-477"></a><span class="tm">19:54:23</span><span class="nk"> &lt;henne&gt;</span> please add your info there if youre going!
+<a name="l-478"></a><span class="tm">19:54:32</span><span class="nk"> &lt;izabelvalverde&gt;</span> good cause this also help us (latins) to cross the board :)
+<a name="l-479"></a><span class="tm">19:55:38</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">henne:</span>  there is something wrong with that link
+<a name="l-480"></a><span class="tm">19:55:53</span><span class="nk"> &lt;warlordfff&gt;</span> ok I am stupid
+<a name="l-481"></a><span class="tm">19:55:56</span><span class="nk"> &lt;warlordfff&gt;</span> sorry
+<a name="l-482"></a><span class="tm">19:56:00</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-483"></a><span class="tm">19:56:25</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">izabelvalverde:</span> pictures say more than tons of words, https://picasaweb.google.com/109140068131989370067/OpenSUSEMarketingHackFest?authkey=Gv1sRgCJvV8vqegO7g5gE#5579295009780555938 You are more than perfect to give a talk over there
+<a name="l-484"></a><span class="tm">19:58:15</span><span class="nk"> &lt;tigerfoot&gt;</span> don't forget FOSDEM is a really hackerish public most of people there know what free software is :D
+<a name="l-485"></a><span class="tm">19:58:29</span><span class="nk"> &lt;tigerfoot&gt;</span> but they forget what the best distribution is :D
+<a name="l-486"></a><span class="tm">19:58:38</span><span class="nk"> &lt;henne&gt;</span> okay anything else for fosdem?
+<a name="l-487"></a><span class="tm">19:59:17</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">CarlosRibeiro:</span> doesn't should that album be keep away from public ?
+<a name="l-488"></a><span class="tm">19:59:21</span><span class="nk"> &lt;henne&gt;</span> alright, then lets move on
+<a name="l-489"></a><span class="tm">19:59:56</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Questions &amp; Answers</span>
+<a name="l-490"></a><span class="tm">20:00:00</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">tigerfoot:</span> maybe
+<a name="l-491"></a><span class="tm">20:00:03</span><span class="nk"> &lt;henne&gt;</span> anything else we need to discuss?
+<a name="l-492"></a><span class="tm">20:00:10</span><span class="nk"> &lt;henne&gt;</span> any other topic we need to talk about?
+<a name="l-493"></a><span class="tm">20:00:31</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">henne:</span> status of maillist consolidation?
+<a name="l-494"></a><span class="tm">20:01:06</span><span class="nk"> &lt;henne&gt;</span> ah yes. pending :-/
+<a name="l-495"></a><span class="tm">20:01:29</span><span class="nk"> &lt;henne&gt;</span> too much other shit I have to finish before my xmas vacation...
+<a name="l-496"></a><span class="tm">20:02:27</span><span class="nk"> &lt;suseROCKs&gt;</span> anything else or can we wrap up?
+<a name="l-497"></a><span class="tm">20:03:08</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> but you did some stuff already, right? Don't pretend there has not been any progress :D
+<a name="l-498"></a><span class="tm">20:03:11</span><span class="nk"> &lt;prusnak&gt;</span> i guess that's a wrap :)
+<a name="l-499"></a><span class="tm">20:03:32</span><span class="nk"> &lt;AlanClark&gt;</span> We do need to thank our current Board members for their service in 2011
+<a name="l-500"></a><span class="tm">20:03:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> \o/
+<a name="l-501"></a><span class="tm">20:03:58</span><span class="nk"> &lt;AlanClark&gt;</span> A Big thank you to all for your service to the community!!!
+<a name="l-502"></a><span class="tm">20:04:00</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">jospoortvliet:</span> well I have planed and announced it but did not implement yet...
+<a name="l-503"></a><span class="tm">20:04:00</span><span class="nk"> &lt;anditosan&gt;</span> AlanClark, yes!
+<a name="l-504"></a><span class="tm">20:04:29</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">jospoortvliet:</span> your're supposed to be on holiday
+<a name="l-505"></a><span class="tm">20:04:38</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">jospoortvliet:</span> are you going to sponsor FOSDEM trips?
+<a name="l-506"></a><span class="tm">20:04:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">AlanClark:</span> I try to be, see, I missed 90% of the meeting
+<a name="l-507"></a><span class="tm">20:04:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> ask izabelvalverde and warlordfff :D
+<a name="l-508"></a><span class="tm">20:04:58</span><span class="nk"> &lt;anditosan&gt;</span> the board has been amazing at pucshing forward not only a great distro to the worl but also a great humane team that is welcoming and effective. You guys have made my time around with openSUSE the best ever!
+<a name="l-509"></a><span class="tm">20:05:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">anditosan:</span> agreed
+<a name="l-510"></a><span class="tm">20:05:19</span><span class="nk"> &lt;henne&gt;</span> izabelvalverde, warlordfff are we going to sponsor trips to FOSDEM? :)
+<a name="l-511"></a><span class="tm">20:05:34</span><span class="nk"> &lt;warlordfff&gt;</span> I think not
+<a name="l-512"></a><span class="tm">20:05:37</span><span class="nk"> &lt;anditosan&gt;</span> <span class="hi">jospoortvliet:</span> :D
+<a name="l-513"></a><span class="tm">20:05:46</span><span class="nk"> &lt;warlordfff&gt;</span> my opinion is not too
+<a name="l-514"></a><span class="tm">20:05:53</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">izabelvalverde:</span> ?
+<a name="l-515"></a><span class="tm">20:06:21</span><span class="nk"> &lt;warlordfff&gt;</span> what do you think?
+<a name="l-516"></a><span class="tm">20:07:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> warlordfff and izabelvalverd: have you had time to discuss how to use the monies?
+<a name="l-517"></a><span class="tm">20:07:13</span><span class="nk"> &lt;warlordfff&gt;</span> anyway my opinion is that a lot of people are going to be there anyway so we don't need to sponsor people to go there
+<a name="l-518"></a><span class="tm">20:07:36</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">jospoortvliet:</span>  we are in that those days
+<a name="l-519"></a><span class="tm">20:07:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">warlordfff:</span> good
+<a name="l-520"></a><span class="tm">20:07:59</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-521"></a><span class="tm">20:08:08</span><span class="nk"> &lt;henne&gt;</span> anything else we need to discuss in this meeting?
+<a name="l-522"></a><span class="tm">20:08:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> and you have a good point about FOSDEM, many ppl will go anyways.
+<a name="l-523"></a><span class="tm">20:08:11</span><span class="nk"> &lt;henne&gt;</span> or can we close it?
+<a name="l-524"></a><span class="tm">20:08:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> close so I can go and join the goodbye-party for my gf :D
+<a name="l-525"></a><span class="tm">20:08:28</span><span class="nk"> &lt;suseROCKs&gt;</span> +1 to close
+<a name="l-526"></a><span class="tm">20:08:38</span><span class="nk"> &lt;robjo&gt;</span> Thanks to those leaving the board for the time and effort you have spent during your time on the board.
+<a name="l-527"></a><span class="tm">20:08:58</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">jospoortvliet:</span>  that sounded like your gf is leaving you
+<a name="l-528"></a><span class="tm">20:09:07</span><span class="nk"> &lt;AlanClark&gt;</span> +1 close
+<a name="l-529"></a><span class="tm">20:09:09</span><span class="nk"> &lt;robjo&gt;</span> For remaining board members, thanks for your continuing effort
+<a name="l-530"></a><span class="tm">20:10:14</span><span class="nk"> &lt;henne&gt;</span> alrighty then
+<a name="l-531"></a><span class="tm">20:10:23</span><span class="nk"> &lt;mrdocs&gt;</span> +1 close
+<a name="l-532"></a><span class="tm">20:10:30</span><span class="nk"> &lt;henne&gt;</span> that's it then. If you have more, don't hesitate to bring it up on the appropriate mailinglist.
+<a name="l-533"></a><span class="tm">20:10:33</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">robjo:</span> NP its a pleasure
+<a name="l-534"></a><span class="tm">20:11:18</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#info </span><span class="cmdline">The next project meeting will be in four weeks (2012-01-11). Same channel (#opensuse-project), same time (18:00 UTC).</span>
+<a name="l-535"></a><span class="tm">20:12:04</span><span class="nk"> &lt;henne&gt;</span> Thank you all for participating. Good night and good luck!
+<a name="l-536"></a><span class="tm">20:12:07</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

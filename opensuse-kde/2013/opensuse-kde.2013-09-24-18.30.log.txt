@@ -1,0 +1,219 @@
+18:30:28 <tittiatcoke> #startmeeting
+18:30:28 <bugbot> Meeting started Tue Sep 24 18:30:28 2013 UTC.  The chair is tittiatcoke. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:30:28 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:30:35 <shumski> here also
+18:30:53 <tittiatcoke> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+18:30:59 <tittiatcoke> agenda:
+18:31:06 <JennieL> I've disabled the "Plugins" in the activities system.  No go either.
+18:31:27 <tittiatcoke> 1) KDE 4.11 in openSUSE 13.1 (What was pushed to Factory, What can or needs to be improved)
+18:31:34 <einar77> JennieL: sorry for the inconvenience, can you waitt till the meeting is over?
+18:32:00 <tittiatcoke> 2) Clean-up of disabled packages in KDE:Distro:Factory
+18:32:08 <tittiatcoke> 3) Action Items
+18:32:12 <tittiatcoke> 4) Status reports
+18:32:19 <tittiatcoke> 5) Q&A, Misc
+18:32:24 <tittiatcoke> any other topics ?
+18:32:44 <shumski> not from me
+18:32:50 <einar77> given that 13.1 is around the corner, I think not
+18:33:02 <tittiatcoke> Ok. I guess it is going to be a short one :)
+18:33:08 <tittiatcoke> #meetingtopic KDE 4.11 in openSUSE 13.1
+18:33:21 <tittiatcoke> Ok. What was pushed to Factory.
+18:34:01 <tittiatcoke> I know that we pushed libNetworkManagerQt, libModemManagerQt and plasma-nm. upstream changes seems to indicate that the current networkmanagement will be replaced by this new plasma-nm
+18:34:15 <einar77> it is going to, yes
+18:34:23 <einar77> we still ahve the issue with modemmanager though
+18:34:34 <einar77> the new branch isn't in a workable state it seems
+18:35:21 <einar77> tittiatcoke: am I still correct in saying that libmm-qt only supports MM 0.6?
+18:35:56 <tittiatcoke> I am not sure if it is workable or not, but we have a mm08 branch in libmm-qt, which should be merged soon into master. libnm-qt is adjusted for this mm08 branch, but at this moment plasma-nm is not yet adjusted to this situation
+18:36:09 <shumski> question is do we want to follow up upstream for 13.1 already, and make it default ?
+18:36:14 <einar77> hm
+18:36:26 <einar77> the APPLET per se is  quite stable
+18:36:49 <einar77> but this MM issue would hit us even with the old PNM
+18:36:53 <shumski> as the old one is already deprecated
+18:37:00 <shumski> yeah
+18:37:18 <einar77> shumski: any BRs filed against PNM will go to /dev/null upstream
+18:37:32 <einar77> so it's IMO in also our interest to avoid shipping the old applet
+18:37:34 <shumski> einar77: exactly
+18:37:46 <tittiatcoke> The current networkmanagement in 13.1 does not use libmm-qt/libnm-qt and therefore doesn't have issues with the new MM 1.0
+18:38:14 <einar77> tittiatcoke: however atm it's pretty much a given that no new bugs will be fixed there
+18:38:20 <shumski> i'm not againt shipping the old one, but maybe we should switch to new one by default
+18:38:43 <shumski> just asking/suggesting knowing that's "not supported" upstream
+18:38:53 <tittiatcoke> Ok. but we have to be aware that we are shipping a "half functioning" plasmoid
+18:39:04 <einar77> risk benefit assessment
+18:39:09 <einar77> pros:
+18:39:16 <tittiatcoke> People might complain about missing statistics for modems
+18:39:20 <einar77> - fully supported (and with a larger dev base)
+18:39:33 <einar77> - already quite stable
+18:39:51 <einar77> - less of a maintenance burden (see first point)
+18:39:55 <einar77> cons:
+18:40:01 <einar77> - half functionality wrt MM
+18:40:14 <einar77> now, a 1 eurocent question
+18:40:36 <tittiatcoke> einar77: It does function with MM, but statistics are missing. That is actually the only con
+18:41:04 <einar77> tittiatcoke: I would then say it's a minor issue when viewed in comparison of maintenance
+18:41:37 <tittiatcoke> Ok. I hope that we are still allowed to make this change
+18:41:46 <einar77> if not, we keep the old one
+18:41:46 <tittiatcoke> But should be no issue.
+18:41:49 <tittiatcoke> :-)
+18:41:50 <shumski> we can push maintenance updates for plasma-nm/libnm, etc, but not for the old one
+18:42:00 <einar77> yes, that was my quqestion
+18:42:11 <einar77> if we could push a maint update for that
+18:42:12 <tittiatcoke> Ok. So we want to have plasma-nm as default KDE networkmanager ?
+18:42:27 <einar77> tittiatcoke: I would say yes, BUT
+18:42:34 <einar77> did we actually test a transition?
+18:42:39 * shumski votes - yes. but /me doesn't uses modems...
+18:42:54 <einar77> people will have to redo their connections, or perhaps I'm totally out of reason?
+18:43:10 <einar77> (having wired 99% of the time makes it a non issue with me)
+18:43:12 <shumski> i don't think so
+18:43:35 <shumski> only issue could be with passwords, not connections themselves
+18:43:41 <tittiatcoke> correct.
+18:44:28 <tittiatcoke> I am only wondering if we should take some upstream commits to get the latest functionality (corrected widget, notifications, etc)
+18:44:59 <shumski> sure, but i'm not tracking plasma-nm development that closely
+18:45:09 <tittiatcoke> shumski: Are you using plasma-nm ?
+18:45:17 <shumski> tittiatcoke: yes
+18:45:27 <tittiatcoke> Then you should have noticed some changes today :)
+18:45:43 * shumski upgrades
+18:45:46 <tittiatcoke> since today we have notifications
+18:46:02 <tittiatcoke> that report changes in the connections (e.g. connected, disconnected, etc)
+18:46:07 <shumski> cool
+18:46:34 <tittiatcoke> #agreed Plasma-nm will be proposed to be the new default KDE NetworkManager plasmoid for 13.1
+18:46:45 <shumski> since it's sorta a leaf package, i guess we should be able to push new stuff before 13.1
+18:47:00 <einar77> emphasis on sorta ;)
+18:47:06 <tittiatcoke> #action tittiatcoke update the current plasma-nm with some upstream commits regarding notifications and widget layout
+18:47:10 <shumski> yeah :-=
+18:47:36 <tittiatcoke> #action tittiatcoke update the KDE patterns to remove networkmanagement-plasmoid and replace with plasma-nm
+18:47:51 <tittiatcoke> #action tittiatcoke check with coolo if we still are allowed to perform this change
+18:48:33 <tittiatcoke> Ok. That would conclude plasma-nm.  Next one would be KTP, but that one seems to be going into factory in the next few days. I am not sure if coolo will accept it still in 13.1
+18:49:17 <einar77> tittiatcoke: there's always that gstreamer issue
+18:49:27 <einar77> (call-ui etc)
+18:49:36 <shumski> einar77: call-ui is excluded
+18:49:42 <shumski> for now at least
+18:49:46 <tittiatcoke> einar77: True :-) But that one wasn't commit yet and also I am not sure if that one is out of playground yet
+18:49:55 <einar77> I would try to push for KTP
+18:50:04 <tittiatcoke> :-) Ok
+18:50:04 <einar77> even if it won't happen
+18:50:15 <tittiatcoke> To get it in 13.1 ?
+18:50:19 <einar77> yes
+18:50:32 <tittiatcoke> #action tittiatcoke check with coolo if we can still have KDE:Telepathy in 13.1
+18:50:52 <tittiatcoke> Ok. Next one would be Bluez 5 support.
+18:51:18 <einar77> this is a painful issue as far as I can see
+18:51:33 <einar77> I haven't seen much on that front in bluedevil
+18:51:39 <tittiatcoke> At this moment afiestas is working on getting bluedevil working with bluez5. Wizard is working now, but he is working on monolithic client and other components.
+18:51:40 <einar77> (although I don't follow closely)
+18:52:03 <einar77> tittiatcoke: the issue is more like a time frame
+18:52:06 <tittiatcoke> einar77: True. But we have to remember that Fedora is also heavily pushing for this.
+18:52:10 <einar77> if it0s relatively recent
+18:52:12 <einar77> er
+18:52:20 <einar77> if it's not too far in time
+18:52:26 <einar77> we put a note in the errata
+18:52:32 <einar77> and push a maintenance update ASAP
+18:53:16 <tittiatcoke> einar77: Correct. The agreement is to strive for bluez 5 support. Otherwise we could go for a bluez4-compat package and that bluedevil pulls the bluez4-compat package in. However that also means that the user looses bluez5 at that moment.
+18:53:49 <einar77> tittiatcoke: I would hope for the first case unless it's clearly evident that it cannot happen reasonably soon
+18:53:56 <tittiatcoke> me too :-)
+18:54:49 <shumski> should we then start pushing bluedevil bluez5 branch ?
+18:55:00 <tittiatcoke> shumski: not yet. I want to wait as long as possible with it
+18:55:05 <shumski> ok
+18:55:10 <tittiatcoke> coolo is aware of the situation
+18:55:18 <shumski> ok, good then
+18:55:37 <tittiatcoke> shumski: Do you know what happened with Qt 5.1 ?
+18:56:03 <shumski> tittiatcoke: i saw coolo's mail, and interpreted that there's still hope to get it in
+18:56:13 <tittiatcoke> :-)
+18:56:15 <shumski> but not what's the current state
+18:56:20 <tittiatcoke> Ok.
+18:56:28 <shumski> seems some packages are reviewed, some yet wait
+18:57:14 <shumski> but since we can only wait... nothing we can do on that front
+18:57:39 <tittiatcoke> Ok. I will check with legal and coolo about it
+18:58:17 <shumski> for this agenda there are also two things i'd mention. phonon and konverstaion
+18:58:33 <tittiatcoke> #action tittiatcoke check with legal and coolo if we can still get Qt 5.1 in 13.1
+18:58:43 <tittiatcoke> what about phonon and koversation ?
+18:58:47 <shumski> for phonon there's that bug, so we should decide how to proceed
+18:58:56 <tittiatcoke> Which bug ?
+18:59:09 <shumski> for konverstaion it seems 1.5 is tagged, but not yet released
+18:59:17 <shumski> tittiatcoke: the notification bug
+18:59:55 <tittiatcoke> as soon as konversation is released we can also check if we can push it to 13.1. It is definitely a leaf-package
+19:00:12 <shumski> i would like to avoid reverts, and proceed either with current kde-runtime patch, or the canberra one
+19:00:18 <shumski> ok
+19:00:21 <tittiatcoke> with regards to phonon, I would go with the current patches from KDE:Unstable:SC.
+19:00:41 <tittiatcoke> works fine on my system.
+19:00:48 <tittiatcoke> einar77 anything on this one ^^ ?
+19:00:54 <einar77> current patch
+19:01:02 <einar77> I would argue more testing w/canberra
+19:01:06 <shumski> ok, i'll check it once more, and create sr for kdf
+19:01:12 <einar77> sorry guys, I've been called
+19:01:17 <tittiatcoke> einar77: Ok. Thanks.
+19:01:20 <einar77> (I took time... but it was the wrong time ;)
+19:01:41 <tittiatcoke> #action shumski prepare phonon-patch regarding notification volume and push to KDF.
+19:01:45 <einar77> I'll be back in a few, hopefully this bouncer will record everything
+19:01:53 <tittiatcoke> einar77: Oki :)
+19:02:34 <tittiatcoke> shumski: I guess those were it wrt to KDE in 13.1 ?
+19:02:56 <shumski> tittiatcoke: i think so, nothing else what i could think of
+19:03:02 <tittiatcoke> Ok.
+19:03:06 <shumski> tittiatcoke: aha, which version would go to 13.1?
+19:03:18 <tittiatcoke> shumski: Which version of what ?
+19:03:19 <shumski> 4.11.2 allowed i guess?
+19:03:25 * krop is back
+19:03:27 <krop> scrolling
+19:04:08 <tittiatcoke> I guess it depends when it gets released. And then we can check with coolo if he is willing to accept. Otherwise we can push 4.11.3 as maintenance update :)
+19:04:43 <shumski> oki. current state is anyway good enough for final imho
+19:05:00 <tittiatcoke> Yup. Let's keep krop sometime to scroll and read :)
+19:05:43 <krop> (done)
+19:06:05 <tittiatcoke> krop: anything to add or to comment ?
+19:06:33 <krop> no, I don't use bluez nor nm, I can't comment
+19:06:40 <tittiatcoke> Ok.
+19:06:47 <tittiatcoke> Then we have the last agenda point :-)
+19:06:59 <krop> for ktp, I'm still unable to log onto kdetalk however :)
+19:07:10 <tittiatcoke> #meetingtopic Clean-up of packages in KDE:Distro:Factory
+19:07:40 <tittiatcoke> krop: :) using svn snapshot or the official packages ?
+19:08:01 <krop> using git
+19:08:15 <tittiatcoke> Ok.
+19:08:21 * SFaulken gives oxygen-icon-theme the finger
+19:09:14 <tittiatcoke> ok. the last agenda point is just to indicate that we might want to clean up some packages in KDF which are disabled anyway. This due to the cleanup of the 12.2, 12.1 repo's. I assume that there are no objections against that ?
+19:09:18 <shumski> tittiatcoke: wrt current topic, which packages? and when will 12.3 will be swapped for 13.1 ? :-)
+19:10:01 <shumski> tittiatcoke: no objections here
+19:10:43 <krop> same
+19:10:56 <krop> how many packages are concerned ?
+19:11:00 <tittiatcoke> shumski: As that the 13.1 repo has been created, I guess we should enable 13.1 for KR411 and KDF. We can kick 12.3 out of KDF as soon as 13.1 is officially released
+19:11:05 <shumski> as it really bleeds my eyes to see we need to build e.g. NM and tp-logger
+19:11:17 <shumski> ok
+19:11:41 <SFaulken> ew.  NM.
+19:11:48 <tittiatcoke> We have 37 to 40 packages in disabled state for 12.3, so I assume those we can clean up definitely.
+19:11:54 <CygniX> good news, well sort of, going to openSUSE 13.1 beta i resolved the brightness slider issue
+19:12:09 <krop> ok, killing stuff is always a good idea :)
+19:12:11 <CygniX> must be something iffy with 12.3
+19:12:29 <shumski> tittiatcoke: i've disabled NM from building, but it should be left as long as there's 12.3
+19:12:33 <tittiatcoke> krop: That was my idea too :-)
+19:12:37 <tittiatcoke> shumski: I noticed :-)
+19:12:59 <shumski> as there was a new version, so didn't want to risk potential breakage
+19:13:00 <tittiatcoke> CygniX: Meeting :-)
+19:13:10 <CygniX> oh sorry
+19:13:11 <tittiatcoke> shumski: That was a good move :)
+19:13:14 <tittiatcoke> CygniX: no problem
+19:13:40 <tittiatcoke> anybody knows for what we need this package :  python-distribute  ?
+19:13:48 <shumski> no idea
+19:13:58 <shumski> for killing it
+19:13:59 * SFaulken looks for inopportune moments in the agenda to make tittiatcoke's life more interesting.
+19:14:26 <tittiatcoke> Ok. Let's check with einar77 as he knows python the best :-)
+19:14:44 <tittiatcoke> #agreed disabled packages for both distro's in KDF will be removed
+19:14:55 <tittiatcoke> #action tittiatcoke remove disabled packages in KDF
+19:14:57 <krop> I know why I need it but that's not related to KDE :)
+19:15:06 <shumski> tittiatcoke: qt-script can also be removed
+19:15:11 <tittiatcoke> shumski: Oki.
+19:15:26 <shumski> tittiatcoke: i've added it to Qt agreggate
+19:15:33 <tittiatcoke> shumski: alrgith
+19:15:35 <tittiatcoke> alright
+19:16:10 <tittiatcoke> #meetingtopic Action Items, Status reports, Q&A, Misc
+19:16:23 <tittiatcoke> Last topic :-)   Any other things to discuss, report, etc ?
+19:17:00 <shumski> not from my end
+19:17:24 <SFaulken> not related to KDF I don't.
+19:17:27 <tittiatcoke> ok. Anybody else ?
+19:18:26 <krop> tittiatcoke: synaptics requires python-distribute
+19:18:40 <tittiatcoke> krop: Ah :-) Ok, then we still need it. :-)
+19:18:44 <krop> so does kdev-python (no idea why)
+19:19:20 <tittiatcoke> :-)
+19:19:37 <tittiatcoke> Ok, then I will leave that package alive although it is broken :)
+19:19:51 <krop> the kup package doesn't require it and everything seems to work
+19:19:57 <krop> let's check with einar77
+19:19:57 <shumski> is the package renamed? as i don't see it in factory
+19:20:39 <tittiatcoke> :-) I will also check with einar77 about it. It somehow gets some files from the devel:python repo.
+19:21:00 <tittiatcoke> Maybe it was created for an older distro version
+19:21:13 <shumski> could be
+19:21:29 <tittiatcoke> it is only enabled for 12.3
+19:22:10 <tittiatcoke> Thank you all for the meeting.
+19:22:15 <tittiatcoke> #endmeeting

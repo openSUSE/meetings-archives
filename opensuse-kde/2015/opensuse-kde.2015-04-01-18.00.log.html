@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:00:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:00:36</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Apr  1 18:00:36 2015 UTC.  The chair is tittiatcoke. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:00:36</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:00:44</span><span class="nk"> &lt;krop&gt;</span> *cough*
+<a name="l-5"></a><span class="tm">18:00:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged</span>
+<a name="l-6"></a><span class="tm">18:01:55</span><span class="nk"> &lt;plinnell&gt;</span> have to leave, bbi 20
+<a name="l-7"></a><span class="tm">18:01:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> ok. On tonights show we have a special star Plasma5 :)
+<a name="l-8"></a><span class="tm">18:02:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> Agenda for tonight is:
+<a name="l-9"></a><span class="tm">18:02:58</span><span class="nk"> &lt;shumski&gt;</span> yay
+<a name="l-10"></a><span class="tm">18:04:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> Transition plan to switch TW to Plasma5 as default. When, how, etc. Issues that were reported regarding Plasma5 from the community. Changes to the default setup: Application Menu, Desktop Theme, etc SDDM startup issue with Breeze theme. Solution, workaround, .. ? Status KDE Applications 15.04. OBS repositories that will be used for Frameworks, Plasma and Applications. Other topics.
+<a name="l-11"></a><span class="tm">18:04:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> Hmm. was expecting that to be better. Let me try again
+<a name="l-12"></a><span class="tm">18:04:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> Transition plan to switch TW to Plasma5 as default. When, how, etc.
+<a name="l-13"></a><span class="tm">18:04:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> Issues that were reported regarding Plasma5 from the community
+<a name="l-14"></a><span class="tm">18:04:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> Changes to the default setup: Application Menu, Desktop Theme, etc
+<a name="l-15"></a><span class="tm">18:05:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> SDDM startup issue with Breeze theme. Solution, workaround, .. ?
+<a name="l-16"></a><span class="tm">18:05:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> Status KDE Applications 15.04.
+<a name="l-17"></a><span class="tm">18:05:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> OBS repositories that will be used for Frameworks, Plasma and Applications.
+<a name="l-18"></a><span class="tm">18:05:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> Other topics.
+<a name="l-19"></a><span class="tm">18:05:33</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. lets move to the first point
+<a name="l-20"></a><span class="tm">18:05:54</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Transition plan to switch TW to Plasma5 as default. When, how, etc.</span>
+<a name="l-21"></a><span class="tm">18:06:33</span><span class="nk"> &lt;tittiatcoke&gt;</span> As that the target is to move with 5.3 to default, I assume the timing is still end of April ?
+<a name="l-22"></a><span class="tm">18:06:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> correct ?
+<a name="l-23"></a><span class="tm">18:06:46</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> yep, afaik
+<a name="l-24"></a><span class="tm">18:07:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. I guess that actuall all Framework and Plasma packages are already in Factory/Tumbleweed ?
+<a name="l-25"></a><span class="tm">18:07:23</span><span class="nk"> &lt;shumski&gt;</span> 14.04 beta, 28.04 final
+<a name="l-26"></a><span class="tm">18:07:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> *actually
+<a name="l-27"></a><span class="tm">18:07:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok.
+<a name="l-28"></a><span class="tm">18:07:46</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> except muon. yesterday i packaged muon release, but it just segfaults
+<a name="l-29"></a><span class="tm">18:07:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Do we want muon ?
+<a name="l-30"></a><span class="tm">18:08:09</span><span class="nk"> &lt;shumski&gt;</span> and i guess we need some sort of update applet?
+<a name="l-31"></a><span class="tm">18:08:59</span><span class="nk"> &lt;tittiatcoke&gt;</span> Good question :) I know that somebody started with porting Apper, but based on the history do we really want an update applet or do we want to fall back on just YaST and zypper ?
+<a name="l-32"></a><span class="tm">18:09:00</span><span class="nk"> &lt;shumski&gt;</span> that was at least blocker in the past. i don't mind if we miss it, but want to say we don't have anything in P5
+<a name="l-33"></a><span class="tm">18:09:42</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> But I don't think Muon would really help us here, I don't think the packagekit backend is really working
+<a name="l-34"></a><span class="tm">18:10:01</span><span class="nk"> &lt;shumski&gt;</span> true
+<a name="l-35"></a><span class="tm">18:10:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Lets park the update applet for now :)
+<a name="l-36"></a><span class="tm">18:10:40</span><span class="nk"> &lt;shumski&gt;</span> oki
+<a name="l-37"></a><span class="tm">18:10:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">What to do with an update applet. Go for Apper on P5, Muon or just nothing (yast/zypper)</span>
+<a name="l-38"></a><span class="tm">18:12:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess that we need to adjust openQA if we make the switch ?  At least openQA should be evaluating Plasma5 and no longer KDE4
+<a name="l-39"></a><span class="tm">18:12:15</span><span class="nk"> &lt;shumski&gt;</span> yeah
+<a name="l-40"></a><span class="tm">18:12:35</span><span class="nk"> &lt;shumski&gt;</span> so half of tests need to be rewritten from scratch
+<a name="l-41"></a><span class="tm">18:12:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Do we have anybody who can do that or is this a job for the QA team ?
+<a name="l-42"></a><span class="tm">18:13:23</span><span class="nk"> &lt;shumski&gt;</span> i think they accept volunteers always
+<a name="l-43"></a><span class="tm">18:13:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> I can remember that ilmehtar/sysrich offered help before with the rewrite
+<a name="l-44"></a><span class="tm">18:13:43</span><span class="nk"> &lt;shumski&gt;</span> it is more question do *we* *need* to do it, or someone else
+<a name="l-45"></a><span class="tm">18:13:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> :) Ok. Let validate this then :)
+<a name="l-46"></a><span class="tm">18:14:16 </span><span class="nka">* shumski</span> <span class="ac">poked around some needles before, but nothing big like this</span>
+<a name="l-47"></a><span class="tm">18:14:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke to check with Richard, Bernhard, DimStar who should normally write new tests for openQA</span>
+<a name="l-48"></a><span class="tm">18:15:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> Once we have the tests, I guess that we then need to change the patterns to make Plasma5 default ?
+<a name="l-49"></a><span class="tm">18:15:51</span><span class="nk"> &lt;shumski&gt;</span> yep. that shouldn't be too hard
+<a name="l-50"></a><span class="tm">18:16:28</span><span class="nk"> &lt;shumski&gt;</span> we only need to check will this fit 1.0GB for liveCD
+<a name="l-51"></a><span class="tm">18:16:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> Is that the max limit ?
+<a name="l-52"></a><span class="tm">18:16:52</span><span class="nk"> &lt;shumski&gt;</span> for the KUF iso, i needed to axe LO to go below 1.0
+<a name="l-53"></a><span class="tm">18:17:05</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> i am not sure is it official limit
+<a name="l-54"></a><span class="tm">18:17:47</span><span class="nk"> &lt;shumski&gt;</span> bit i think DVD is anyway more important
+<a name="l-55"></a><span class="tm">18:18:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Guess we have to check that. :)  And then we should define a minimum pattern :)
+<a name="l-56"></a><span class="tm">18:18:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke to check with coolo and DimStar what the limit is for the liveCD</span>
+<a name="l-57"></a><span class="tm">18:18:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Once we have the patterns, we are then ended up with what to obsolete from KDE4 :)
+<a name="l-58"></a><span class="tm">18:19:20</span><span class="nk"> &lt;tittiatcoke&gt;</span> At least I guess we are not planning in keeping KDE4 complete as a desktop solution in Factory ?
+<a name="l-59"></a><span class="tm">18:19:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> shumski einar77_work ^^
+<a name="l-60"></a><span class="tm">18:19:43</span><span class="nk"> &lt;krop&gt;</span> (and listen to people complaining)
+<a name="l-61"></a><span class="tm">18:19:50</span><span class="nk"> &lt;krop&gt;</span> well, hear, not listen :)
+<a name="l-62"></a><span class="tm">18:20:00</span><span class="nk"> &lt;shumski&gt;</span> i don't think we should have both
+<a name="l-63"></a><span class="tm">18:20:22</span><span class="nk"> &lt;shumski&gt;</span> in that case there wouldn't be an upgrade path
+<a name="l-64"></a><span class="tm">18:20:32</span><span class="nk"> &lt;shumski&gt;</span> which is something we want i'd say
+<a name="l-65"></a><span class="tm">18:20:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> if we would have listened in the past, then we would now be maintaining three desktops :)
+<a name="l-66"></a><span class="tm">18:20:37</span><span class="nk"> &lt;krop&gt;</span> but no, we don't want yet another unmaintained version
+<a name="l-67"></a><span class="tm">18:21:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> Good. So whatever is not needed from KDE4 should be obsoleted from Plasma5/Frameworks5.
+<a name="l-68"></a><span class="tm">18:21:39</span><span class="nk"> &lt;krop&gt;</span> wstephenson had a KDE 2 live CD, we could have 4 version in factory :)
+<a name="l-69"></a><span class="tm">18:22:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> The famous one that was made when KDE 4 just was out ?  The one from beineri ?
+<a name="l-70"></a><span class="tm">18:24:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Do we have a list or idea what is no longer needed from KDE4 ?  e.g. kdebase-runtime ?
+<a name="l-71"></a><span class="tm">18:24:12</span><span class="nk"> &lt;shumski&gt;</span> if people will want kde4, they have &lt;= 13.2 =)
+<a name="l-72"></a><span class="tm">18:24:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> Yup
+<a name="l-73"></a><span class="tm">18:24:29</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> kdebase4-workspace, addons and some applets
+<a name="l-74"></a><span class="tm">18:24:47</span><span class="nk"> &lt;shumski&gt;</span> i mean plasma-addons
+<a name="l-75"></a><span class="tm">18:25:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Oki :)  And kdebase-runtime is part of KDE Applications, so I guess that one will slowly disappear
+<a name="l-76"></a><span class="tm">18:25:32</span><span class="nk"> &lt;shumski&gt;</span> i think that one will be there until the end
+<a name="l-77"></a><span class="tm">18:25:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> yup :)
+<a name="l-78"></a><span class="tm">18:26:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> I guess we want to continue with the "5" prefix for certain Frameworks/Plasma stuff ?  We agreed in the past already that we will not do this for KDE Applications
+<a name="l-79"></a><span class="tm">18:26:55</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> for libs makes sense (and was my biggest mistake all of KF5 doesn't have a prefix or suffix)
+<a name="l-80"></a><span class="tm">18:27:12</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok.I guess too late to change it :)
+<a name="l-81"></a><span class="tm">18:27:17</span><span class="nk"> &lt;shumski&gt;</span> for plasma, not 100% necessary. where we have kde4 equivalents
+<a name="l-82"></a><span class="tm">18:27:31</span><span class="nk"> &lt;shumski&gt;</span> e.g. bluedevil, etc
+<a name="l-83"></a><span class="tm">18:28:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. But those packages we already have in Factory, so do we really want to submit now bluedevil instead of bluedevil5 ?
+<a name="l-84"></a><span class="tm">18:28:09</span><span class="nk"> &lt;shumski&gt;</span> https://build.opensuse.org/package/rdiff/KDE:Unstable:Frameworks/plasma5-unstable-pkglist?linkrev=base&amp;rev=3 can be removed e.g.
+<a name="l-85"></a><span class="tm">18:28:30</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> ah, i don't think we need to rename existing packages
+<a name="l-86"></a><span class="tm">18:28:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. :)
+<a name="l-87"></a><span class="tm">18:28:47</span><span class="nk"> &lt;shumski&gt;</span> i was speaking more about potential new packages
+<a name="l-88"></a><span class="tm">18:29:34</span><span class="nk"> &lt;shumski&gt;</span> for apps, yes, no need to append 5, unless we need some kpart from kde4 one
+<a name="l-89"></a><span class="tm">18:29:46</span><span class="nk"> &lt;shumski&gt;</span> e.g. with konsole, kate &amp; okteta
+<a name="l-90"></a><span class="tm">18:29:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. I guess it might be good to draft a new guideline there. How do we want to distinguish Framework Packages, Plasma packages, etc
+<a name="l-91"></a><span class="tm">18:30:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> indeed, but then I would suggest to rename the old KDE4 ones :)
+<a name="l-92"></a><span class="tm">18:30:18</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> that also worksforme
+<a name="l-93"></a><span class="tm">18:30:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> At least that would make things a little clearer :)  I did the same with libkdegames and libkmahjongg (where we need both KDE4 and KF5 versions)
+<a name="l-94"></a><span class="tm">18:31:13</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> oki
+<a name="l-95"></a><span class="tm">18:31:22</span><span class="nk"> &lt;shumski&gt;</span> no objection to that
+<a name="l-96"></a><span class="tm">18:32:54</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Lets concluded on this point.  Transition plan would exist out of:  1). Create the openQA test and then 2) adjust the default patterns so that Plasma5 is pulled in.   Open Items are the update applet and a minimum plasma5 pattern for the liveCD (if space is limited).
+<a name="l-97"></a><span class="tm">18:33:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> The timing would depend on when the openQA tests are done and available.
+<a name="l-98"></a><span class="tm">18:34:19</span><span class="nk"> &lt;shumski&gt;</span> yep. even beta can be submitted to act as default, i figure it'll take at least 2 weeks to adjust everything
+<a name="l-99"></a><span class="tm">18:34:26</span><span class="nk"> &lt;shumski&gt;</span> (then the final is out)
+<a name="l-100"></a><span class="tm">18:34:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Anything else for the transition plan ?
+<a name="l-101"></a><span class="tm">18:35:06</span><span class="nk"> &lt;shumski&gt;</span> can't think of anything else now
+<a name="l-102"></a><span class="tm">18:35:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> ok.
+<a name="l-103"></a><span class="tm">18:35:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> Lets postpone the second topic (Issues that were reported regarding Plasma5 from the community) as that einar77_work isn't there yet. And I hope that he has this particular information
+<a name="l-104"></a><span class="tm">18:36:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> so. Third topic
+<a name="l-105"></a><span class="tm">18:36:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Changes to the default setup: Application Menu, Desktop Theme, etc</span>
+<a name="l-106"></a><span class="tm">18:36:14</span><span class="nk"> &lt;shumski&gt;</span> h, you mean the poll?
+<a name="l-107"></a><span class="tm">18:36:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> yup
+<a name="l-108"></a><span class="tm">18:36:24</span><span class="nk"> &lt;shumski&gt;</span> oki.
+<a name="l-109"></a><span class="tm">18:36:58</span><span class="nk"> &lt;shumski&gt;</span> ok. we have most of stuff wrt branding adjusted, there are a few points i like to bring up.
+<a name="l-110"></a><span class="tm">18:37:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> ok. My intention here was to see how much we want to go back to the default setup of KDE itself.
+<a name="l-111"></a><span class="tm">18:37:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Ok. shoot
+<a name="l-112"></a><span class="tm">18:37:36</span><span class="nk"> &lt;shumski&gt;</span> 1) we default to kicker due to famous kickoff crash, but that one seems fixed. do we want to continue with it
+<a name="l-113"></a><span class="tm">18:37:43</span><span class="nk"> &lt;shumski&gt;</span> 2) how branding is applied
+<a name="l-114"></a><span class="tm">18:38:05</span><span class="nk"> &lt;shumski&gt;</span> due to https://bugs.kde.org/show_bug.cgi?id=340691
+<a name="l-115"></a><span class="tm">18:38:06</span><span class="nk"> &lt;bugbot&gt;</span> KDE bug 340691 in frameworks-kconfig (general) "system-wide kdeglobals "overwrite" local ones" [Critical,Reopened: ]
+<a name="l-116"></a><span class="tm">18:38:39</span><span class="nk"> &lt;shumski&gt;</span> i am pondering to change how we apply kdeglobals
+<a name="l-117"></a><span class="tm">18:40:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> Well. If we go back to the defaults then we might not need to change kdeglobals :)
+<a name="l-118"></a><span class="tm">18:42:33</span><span class="nk"> &lt;shumski&gt;</span> we usually deliver them in sysconfdir, but this bug makes it pretty bad. alternative idea is to ship separate startkde
+<a name="l-119"></a><span class="tm">18:42:41</span><span class="nk"> &lt;shumski&gt;</span> both in our and upstream branding
+<a name="l-120"></a><span class="tm">18:42:57</span><span class="nk"> &lt;shumski&gt;</span> yeah
+<a name="l-121"></a><span class="tm">18:43:05</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. And what would be the difference between the two ?
+<a name="l-122"></a><span class="tm">18:44:56</span><span class="nk"> &lt;shumski&gt;</span> we would apply oS settings directly into ~/.config/ (upstream does that with some font settings e.g.). that would workaround that bug
+<a name="l-123"></a><span class="tm">18:45:41</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> the bug comes in form that if there is something in systemwide kdeglobals, e.g. BrowserApplication=firefox, users settings constantly revert to that, instead of his own
+<a name="l-124"></a><span class="tm">18:46:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Ok. But how do we want to insert something in ~/.config ?
+<a name="l-125"></a><span class="tm">18:46:36</span><span class="nk"> &lt;shumski&gt;</span> only 2 really important settings i guess are LookAndFeelPackage and BrowserApplication
+<a name="l-126"></a><span class="tm">18:46:49</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> that is an open question =)
+<a name="l-127"></a><span class="tm">18:47:07</span><span class="nk"> &lt;krop&gt;</span> would that work for users migrating from 4 to 5 ?
+<a name="l-128"></a><span class="tm">18:47:28</span><span class="nk"> &lt;shumski&gt;</span> it would work for clean/non-existing kdeglobals in 5
+<a name="l-129"></a><span class="tm">18:48:05</span><span class="nk"> &lt;krop&gt;</span> so there's nothing that moves kdeglobals from ~/.kde4/share/config to ~/.config ?
+<a name="l-130"></a><span class="tm">18:48:14</span><span class="nk"> &lt;shumski&gt;</span> what i want to say is i think this bug is bad enough to choose between no branding, and separate startkde's
+<a name="l-131"></a><span class="tm">18:48:20</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">krop:</span> no afaik
+<a name="l-132"></a><span class="tm">18:49:00</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> What would a separate startkde do ? copy things to the user dir or viceversa ?
+<a name="l-133"></a><span class="tm">18:49:02</span><span class="nk"> &lt;shumski&gt;</span> i know there was an upgrade script on oS for 3-&gt;4, if wanted i guess we can do that one also
+<a name="l-134"></a><span class="tm">18:49:37</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> upstream one would be upstream =) with openSUSE one we would inject few wanted settings into kdeglobals
+<a name="l-135"></a><span class="tm">18:49:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> question there would be how compatible is kglobal from kde4 with KF5 ?
+<a name="l-136"></a><span class="tm">18:49:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Ok
+<a name="l-137"></a><span class="tm">18:49:56</span><span class="nk"> &lt;shumski&gt;</span> at worse settings would be ignored
+<a name="l-138"></a><span class="tm">18:50:05</span><span class="nk"> &lt;shumski&gt;</span> *some settings
+<a name="l-139"></a><span class="tm">18:50:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> true. Seems so far nobody really complained about that :)
+<a name="l-140"></a><span class="tm">18:50:58</span><span class="nk"> &lt;shumski&gt;</span> yeah. about systemwide kdeglobals issue there where complaints though
+<a name="l-141"></a><span class="tm">18:51:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ah. Ok.
+<a name="l-142"></a><span class="tm">18:51:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> Well, lets go through the points one by one :)
+<a name="l-143"></a><span class="tm">18:51:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> First item is kicker vs kickoff.  Which to take as default.
+<a name="l-144"></a><span class="tm">18:51:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess that we should have kickoff there
+<a name="l-145"></a><span class="tm">18:51:59</span><span class="nk"> &lt;shumski&gt;</span> and 3) question of artwork
+<a name="l-146"></a><span class="tm">18:52:35</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> i am not 100% sure. seems these days kicker is getting more love. will have ktp/contacts integration, et
+<a name="l-147"></a><span class="tm">18:52:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> and 4) menu categories
+<a name="l-148"></a><span class="tm">18:53:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Ok. Wasn't aware of that
+<a name="l-149"></a><span class="tm">18:53:07</span><span class="nk"> &lt;shumski&gt;</span> i am not against going back to kickoff, just saying
+<a name="l-150"></a><span class="tm">18:53:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> any opinion ?
+<a name="l-151"></a><span class="tm">18:54:00</span><span class="nk"> &lt;plinnell&gt;</span> kickoff = traditional or kicker ?
+<a name="l-152"></a><span class="tm">18:54:09</span><span class="nk"> &lt;krop&gt;</span> well, no. I'm still using KDE4 apps/workspace on the desktop
+<a name="l-153"></a><span class="tm">18:54:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> Ok :)
+<a name="l-154"></a><span class="tm">18:54:23</span><span class="nk"> &lt;plinnell&gt;</span> im kde4 i like classic menu, but that is just me
+<a name="l-155"></a><span class="tm">18:54:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">plinnell:</span> kicker would be the homerun menu (but then not fullscreen)
+<a name="l-156"></a><span class="tm">18:54:44</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> correct ?
+<a name="l-157"></a><span class="tm">18:54:48</span><span class="nk"> &lt;plinnell&gt;</span> ok
+<a name="l-158"></a><span class="tm">18:54:57</span><span class="nk"> &lt;shumski&gt;</span> yep
+<a name="l-159"></a><span class="tm">18:56:12</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. lets say that kicker is the favorite, but we are still missing einar in the voting :)
+<a name="l-160"></a><span class="tm">18:56:30</span><span class="nk"> &lt;shumski&gt;</span> http://cdn.arstechnica.net/wp-content/uploads/2014/08/screenshot12.png
+<a name="l-161"></a><span class="tm">18:56:34</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">plinnell:</span> ^
+<a name="l-162"></a><span class="tm">18:56:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> And if it is already the current Plasma5 default, then people might be used to it :)
+<a name="l-163"></a><span class="tm">18:56:53</span><span class="nk"> &lt;plinnell&gt;</span> works for me :)
+<a name="l-164"></a><span class="tm">18:57:07</span><span class="nk"> &lt;shumski&gt;</span> vs. http://i1-news.softpedia-static.com/images/news-700/Plasma-Next-Is-Preparing-to-Replace-KDE-First-Beta-Now-Available-for-Download.jpg (kickoff)
+<a name="l-165"></a><span class="tm">18:57:31</span><span class="nk"> &lt;plinnell&gt;</span> no please
+<a name="l-166"></a><span class="tm">18:57:50</span><span class="nk"> &lt;plinnell&gt;</span> im playing with the latest live DVD
+<a name="l-167"></a><span class="tm">18:57:53</span><span class="nk"> &lt;plinnell&gt;</span> seems ok
+<a name="l-168"></a><span class="tm">18:57:57</span><span class="nk"> &lt;plinnell&gt;</span> stable at least
+<a name="l-169"></a><span class="tm">18:58:05</span><span class="nk"> &lt;plinnell&gt;</span> patience does not crash
+<a name="l-170"></a><span class="tm">18:58:07</span><span class="nk"> &lt;plinnell&gt;</span> :D
+<a name="l-171"></a><span class="tm">18:58:11</span><span class="nk"> &lt;shumski&gt;</span> =)
+<a name="l-172"></a><span class="tm">18:58:55</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> so for 1) undecided? or not enough votes to rule against kicker?
+<a name="l-173"></a><span class="tm">18:59:20</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">plinnell:</span> Are you voting for kicker or kickoff ?
+<a name="l-174"></a><span class="tm">18:59:31</span><span class="nk"> &lt;plinnell&gt;</span> kicker.. strongly :)
+<a name="l-175"></a><span class="tm">18:59:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Then this makes it 3 votes in favor. So we stick with Kicker :)
+<a name="l-176"></a><span class="tm">18:59:57</span><span class="nk"> &lt;shumski&gt;</span> (the mentioned contacts integration should come in 5.3 afaik - not yet merged though)
+<a name="l-177"></a><span class="tm">18:59:58</span><span class="nk"> &lt;shumski&gt;</span> oki
+<a name="l-178"></a><span class="tm">19:00:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#info </span><span class="cmdline">The default menu in Plasma5 will be kicker</span>
+<a name="l-179"></a><span class="tm">19:00:24</span><span class="nk"> &lt;shumski&gt;</span> wrt 2) i dunno. it's between bad and worse
+<a name="l-180"></a><span class="tm">19:00:44</span><span class="nk"> &lt;tittiatcoke&gt;</span> that is the branding, right ?
+<a name="l-181"></a><span class="tm">19:01:15</span><span class="nk"> &lt;shumski&gt;</span> yes. keep kdeglobals, inject them into ~/config instead, or drop completely
+<a name="l-182"></a><span class="tm">19:01:55</span><span class="nk"> &lt;tittiatcoke&gt;</span> Let's see first what branding we go with ?   Are we going back to the default upstream Breeze or do we want to keep the opensuse KDE4 branding ?
+<a name="l-183"></a><span class="tm">19:01:56</span><span class="nk"> &lt;shumski&gt;</span> (2 most important settings we apply there are default browser, and used theme - both colorscheme, and plasmatheme)
+<a name="l-184"></a><span class="tm">19:02:43</span><span class="nk"> &lt;shumski&gt;</span> i vote to drop current artwork (at least plasma theme). whether we want to go plain vanilla, or just colorize the breeze, not sure yet
+<a name="l-185"></a><span class="tm">19:03:21</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> plinnell  Any opinion ?
+<a name="l-186"></a><span class="tm">19:03:36</span><span class="nk"> &lt;shumski&gt;</span> people seem to like (or hate) that we have some kind of artwork, but i don't have the strength, time nor motivation to keep it working properly with P5
+<a name="l-187"></a><span class="tm">19:03:43</span><span class="nk"> &lt;krop&gt;</span> +1 for vanilla (and a green icon somewhere to make everyone happy)
+<a name="l-188"></a><span class="tm">19:03:54</span><span class="nk"> &lt;plinnell&gt;</span> im with krop ^^
+<a name="l-189"></a><span class="tm">19:04:08</span><span class="nk"> &lt;plinnell&gt;</span> what ever works best
+<a name="l-190"></a><span class="tm">19:04:14</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. So we drop back to breeze as desktop theme :)
+<a name="l-191"></a><span class="tm">19:05:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> we have an offer from somebody that is willing to change the icon colors into green (as seen on the os-kde ml)
+<a name="l-192"></a><span class="tm">19:05:14 </span><span class="nka">* shumski</span> <span class="ac">finally won't have a guilty conscience for not porting the beast properly :D</span>
+<a name="l-193"></a><span class="tm">19:05:20</span><span class="nk"> &lt;shumski&gt;</span> yes
+<a name="l-194"></a><span class="tm">19:05:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> :)
+<a name="l-195"></a><span class="tm">19:06:05</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Can I ask you to contact the volunteer and to see what can be done with the icons ?  Whether just color or maybe some additional ones, etc
+<a name="l-196"></a><span class="tm">19:06:11</span><span class="nk"> &lt;shumski&gt;</span> the svg looked ok to me. only i wonder will the same colorscheme be utilized for 13.3
+<a name="l-197"></a><span class="tm">19:06:14</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> sure
+<a name="l-198"></a><span class="tm">19:06:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#info  </span><span class="cmdline">Breeze will be the default theme for Plasma5</span>
+<a name="l-199"></a><span class="tm">19:07:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">shumski to contact the volunteer to openSUSE'ify the Breeze iconset</span>
+<a name="l-200"></a><span class="tm">19:07:24</span><span class="nk"> &lt;shumski&gt;</span> i wonder what reads default browser... so we can drop kdeglobals completely
+<a name="l-201"></a><span class="tm">19:07:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> I believe that is xdg-open
+<a name="l-202"></a><span class="tm">19:07:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> No, that one has its own settings.
+<a name="l-203"></a><span class="tm">19:07:57</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> but i guess it calls something within kde
+<a name="l-204"></a><span class="tm">19:08:19</span><span class="nk"> &lt;shumski&gt;</span> will investigate that
+<a name="l-205"></a><span class="tm">19:08:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> Normally that would be the associations.  e.g. clicking on a link in a KDE program
+<a name="l-206"></a><span class="tm">19:08:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">shumski to look into the default browser settings</span>
+<a name="l-207"></a><span class="tm">19:08:58</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> 4) is upstream vs. suse menu ?
+<a name="l-208"></a><span class="tm">19:09:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> yup.
+<a name="l-209"></a><span class="tm">19:09:07</span><span class="nk"> &lt;shumski&gt;</span> (i guess 3 is done?)
+<a name="l-210"></a><span class="tm">19:09:15</span><span class="nk"> &lt;shumski&gt;</span> for now we use upstream
+<a name="l-211"></a><span class="tm">19:09:32</span><span class="nk"> &lt;krop&gt;</span> what is 'suse menu' ?
+<a name="l-212"></a><span class="tm">19:10:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> in the past SUSE created their own categories and submenus. All desktop environments had to use this, so that each one of them had an equal menu.
+<a name="l-213"></a><span class="tm">19:10:35</span><span class="nk"> &lt;krop&gt;</span> what do the other desktop do nowadays ?
+<a name="l-214"></a><span class="tm">19:10:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> Gnome already dropped it and went back to upstream
+<a name="l-215"></a><span class="tm">19:11:04</span><span class="nk"> &lt;krop&gt;</span> perfect then :)
+<a name="l-216"></a><span class="tm">19:11:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> I believe that xfce might still use it
+<a name="l-217"></a><span class="tm">19:11:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> Yeah, that is why I wanted to propose to drop it also :)
+<a name="l-218"></a><span class="tm">19:11:28</span><span class="nk"> &lt;tittiatcoke&gt;</span> ok. I guess we are aligned on using the upstream menu categories.
+<a name="l-219"></a><span class="tm">19:11:36</span><span class="nk"> &lt;shumski&gt;</span> yep
+<a name="l-220"></a><span class="tm">19:11:42</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#info </span><span class="cmdline">the upstream KDE menu structure will be used</span>
+<a name="l-221"></a><span class="tm">19:12:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> We even had some bug reports about it in the past
+<a name="l-222"></a><span class="tm">19:12:18</span><span class="nk"> &lt;tittiatcoke&gt;</span> ok. Anything else with regards to desktop stuff ?
+<a name="l-223"></a><span class="tm">19:12:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> Lets move on to the next topic.
+<a name="l-224"></a><span class="tm">19:12:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">SDDM startup issue with Breeze theme. Solution, workaround, .. ?</span>
+<a name="l-225"></a><span class="tm">19:13:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> I initially put this topic as that in the past we saw that SDDM had a big delay in showing the breeze login screen after booting. Seems however that with the latest tumbleweed this is resolved. Or does anybody still sees this ?
+<a name="l-226"></a><span class="tm">19:14:10 </span><span class="nka">* shumski</span> <span class="ac">isn't too happy with it's speed, but nothing critical</span>
+<a name="l-227"></a><span class="tm">19:14:17</span><span class="nk"> &lt;plinnell&gt;</span> its working ok for me
+<a name="l-228"></a><span class="tm">19:14:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Then lets just keep an eye on it.
+<a name="l-229"></a><span class="tm">19:15:25</span><span class="nk"> &lt;shumski&gt;</span> sounds good
+<a name="l-230"></a><span class="tm">19:15:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> I will submit a small patch for sddm in KUF to adjust the service file. It seems if you start using the real systemd service file, plymouth is not killed and causes some strange effect on sddm. einar77_work suffered from this
+<a name="l-231"></a><span class="tm">19:15:35</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> okies
+<a name="l-232"></a><span class="tm">19:15:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Status KDE Applications 15.04.</span>
+<a name="l-233"></a><span class="tm">19:17:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> I have been preparing KDE Applications 15.04 in the repository KDE:Applications and those packages will obsolete the current packages. Only thing missing is the KTP packages. Target would be to release KDE Applications 15.04 for TW only together with the switch to Plasma5.  Kdepim will remain to be KDE4 based
+<a name="l-234"></a><span class="tm">19:18:38</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> deps missing for KTP?
+<a name="l-235"></a><span class="tm">19:18:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> nope. Didn't had the time yet to create the packages :)
+<a name="l-236"></a><span class="tm">19:19:40</span><span class="nk"> &lt;shumski&gt;</span> ok =)
+<a name="l-237"></a><span class="tm">19:20:34</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">OBS repositories that will be used for Frameworks, Plasma and Applications.</span>
+<a name="l-238"></a><span class="tm">19:20:41</span><span class="nk"> &lt;shumski&gt;</span> the target has been spoken already, and at least to me it still sounds good
+<a name="l-239"></a><span class="tm">19:20:49</span><span class="nk"> &lt;shumski&gt;</span> ah, new topic =)
+<a name="l-240"></a><span class="tm">19:21:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> As we have been discussing in the past. We would end up with two main repo's:  KDE:Frameworks5 and KDE:Applications. This would follow more upstream as well. We also would have KDE:Unstable:Frameworks and I wonder if we should create a new KDE:Unstable:Applications and remove KUE.
+<a name="l-241"></a><span class="tm">19:22:28</span><span class="nk"> &lt;tittiatcoke&gt;</span> Is this still something that we want to continue with or do we want to move back to the old repositories ?
+<a name="l-242"></a><span class="tm">19:22:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> krop plinnell ??
+<a name="l-243"></a><span class="tm">19:23:04</span><span class="nk"> &lt;shumski&gt;</span> that is something that i agree with (the 'new' setup)
+<a name="l-244"></a><span class="tm">19:23:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Do we have reasons to pull Frameworks / Plasma apart ?
+<a name="l-245"></a><span class="tm">19:23:53</span><span class="nk"> &lt;shumski&gt;</span> most due to name
+<a name="l-246"></a><span class="tm">19:24:09</span><span class="nk"> &lt;shumski&gt;</span> components and files are still moving between the 2
+<a name="l-247"></a><span class="tm">19:24:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> ok. I don't see a reason for a split, but ... :)
+<a name="l-248"></a><span class="tm">19:24:31</span><span class="nk"> &lt;krop&gt;</span> mmh
+<a name="l-249"></a><span class="tm">19:24:31</span><span class="nk"> &lt;shumski&gt;</span> e.g. kglobalaccel, libmm-qt, etc
+<a name="l-250"></a><span class="tm">19:24:51</span><span class="nk"> &lt;krop&gt;</span> KDE:Applications would contain what we moved to KDE:Extra ?
+<a name="l-251"></a><span class="tm">19:25:07</span><span class="nk"> &lt;plinnell&gt;</span> im agreement with whatever is easiest
+<a name="l-252"></a><span class="tm">19:25:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> Nope. KDE:Applications would contain really the KDE Application releases
+<a name="l-253"></a><span class="tm">19:25:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> e.g. 14.12, 15.04, etc.
+<a name="l-254"></a><span class="tm">19:26:05</span><span class="nk"> &lt;shumski&gt;</span> now that krop mentioned it, i wonder if K:E content could be merged into K:App
+<a name="l-255"></a><span class="tm">19:26:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> We could
+<a name="l-256"></a><span class="tm">19:26:21</span><span class="nk"> &lt;shumski&gt;</span> (could, and should?)
+<a name="l-257"></a><span class="tm">19:26:46</span><span class="nk"> &lt;shumski&gt;</span> just a thought
+<a name="l-258"></a><span class="tm">19:27:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> :) I will go with the majotiry :)
+<a name="l-259"></a><span class="tm">19:27:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> majority :)
+<a name="l-260"></a><span class="tm">19:28:28</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. I guess we can leave this so that we can think about it :)
+<a name="l-261"></a><span class="tm">19:28:50</span><span class="nk"> &lt;plinnell&gt;</span> I think a lot of the KDE:Extra packages are pretty well maintained in a quality sense
+<a name="l-262"></a><span class="tm">19:28:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">bring up the Repositories in the next meeting and particular if KDE:Extra should be merged with KDE:Applications.</span>
+<a name="l-263"></a><span class="tm">19:29:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> true
+<a name="l-264"></a><span class="tm">19:29:23</span><span class="nk"> &lt;plinnell&gt;</span> ive been a pretty fussy reviewer
+<a name="l-265"></a><span class="tm">19:29:25</span><span class="nk"> &lt;plinnell&gt;</span> :)
+<a name="l-266"></a><span class="tm">19:29:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> and we have established good control of maintainership there as well
+<a name="l-267"></a><span class="tm">19:29:54 </span><span class="nka">* shumski</span> <span class="ac">didn't mean they aren't, just that K:E and K:A content would be quite similar - just difference by whom is released</span>
+<a name="l-268"></a><span class="tm">19:31:20</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> yup :) Another question would be what to do with the packages in KUE ? All of them have the suffix 5 now. I guess we need to recreate them after the transition to a package without 5 :)
+<a name="l-269"></a><span class="tm">19:31:24</span><span class="nk"> &lt;krop&gt;</span> I'm thinking about KUE as well, there are a couple apps that wouldn't fit KUA
+<a name="l-270"></a><span class="tm">19:31:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> to follow the packaging in KDE:Applications
+<a name="l-271"></a><span class="tm">19:31:54</span><span class="nk"> &lt;krop&gt;</span> if by KUA we mean snapshots of apps also living in KDE:Applications
+<a name="l-272"></a><span class="tm">19:32:05</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> yeah.. quite a few packages there
+<a name="l-273"></a><span class="tm">19:32:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> like ?
+<a name="l-274"></a><span class="tm">19:32:27</span><span class="nk"> &lt;krop&gt;</span> scribus, kdenlive
+<a name="l-275"></a><span class="tm">19:32:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> krop why wouldn't they fit KUA ? Given that we want to merge KE into KA :)
+<a name="l-276"></a><span class="tm">19:33:24</span><span class="nk"> &lt;krop&gt;</span> the question is reversed then, do we want all of K:E in K:A
+<a name="l-277"></a><span class="tm">19:33:47</span><span class="nk"> &lt;krop&gt;</span> :Extra is really huge nowadays
+<a name="l-278"></a><span class="tm">19:34:18</span><span class="nk"> &lt;shumski&gt;</span> yeah.. at least dropping some targets there reduced the used space =)
+<a name="l-279"></a><span class="tm">19:35:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> Yeah. I am not really convinced that we want to merge K:E into K:A
+<a name="l-280"></a><span class="tm">19:35:30</span><span class="nk"> &lt;shumski&gt;</span> hm. that would be a gigantic project
+<a name="l-281"></a><span class="tm">19:35:55</span><span class="nk"> &lt;shumski&gt;</span> so looks we can drop the idea :D
+<a name="l-282"></a><span class="tm">19:36:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Yeah. Lets stick with KDE:Frameworks, KDE:Applications and KDE:Extra. And then also the unstable repositories for those three.
+<a name="l-283"></a><span class="tm">19:36:26</span><span class="nk"> &lt;plinnell&gt;</span> thing is every update would be a maintenance request
+<a name="l-284"></a><span class="tm">19:36:32</span><span class="nk"> &lt;shumski&gt;</span> oki
+<a name="l-285"></a><span class="tm">19:36:46</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">plinnell:</span> how do you mean?
+<a name="l-286"></a><span class="tm">19:36:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">plinnell:</span> Why a maintenance request ?
+<a name="l-287"></a><span class="tm">19:37:17</span><span class="nk"> &lt;plinnell&gt;</span> sorry i was thinking of what is shipped in the next release
+<a name="l-288"></a><span class="tm">19:37:26</span><span class="nk"> &lt;plinnell&gt;</span> sorry for the noise
+<a name="l-289"></a><span class="tm">19:37:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> :)
+<a name="l-290"></a><span class="tm">19:37:56</span><span class="nk"> &lt;shumski&gt;</span> ok =) /me is still confused, but nevermind =)
+<a name="l-291"></a><span class="tm">19:38:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. So who is in favor of following the structure KDE:Frameworks, KDE:Applications and KDE:Extra.
+<a name="l-292"></a><span class="tm">19:38:35</span><span class="nk"> &lt;krop&gt;</span> these ones look fine
+<a name="l-293"></a><span class="tm">19:38:59</span><span class="nk"> &lt;plinnell&gt;</span> +1
+<a name="l-294"></a><span class="tm">19:39:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. And then we would also have an Unstable variant for those three.
+<a name="l-295"></a><span class="tm">19:39:03</span><span class="nk"> &lt;shumski&gt;</span> same from here
+<a name="l-296"></a><span class="tm">19:39:13</span><span class="nk"> &lt;shumski&gt;</span> +1
+<a name="l-297"></a><span class="tm">19:40:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#info </span><span class="cmdline">The new repositories would be KDE:Frameworks (for Frameworks and Plasma5), KDE:Applications (for the KDE Application releases) and KDE:Extra (for other KDE/Qt related community packages. For each one of these repos we would have an unstable variant.</span>
+<a name="l-298"></a><span class="tm">19:40:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. that would bring us to the last topic.
+<a name="l-299"></a><span class="tm">19:40:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Anything Else ??</span>
+<a name="l-300"></a><span class="tm">19:40:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> plinnell krop:  anything else that you would like to bring up ?
+<a name="l-301"></a><span class="tm">19:41:19</span><span class="nk"> &lt;shumski&gt;</span> can't think of anything else now
+<a name="l-302"></a><span class="tm">19:41:19</span><span class="nk"> &lt;krop&gt;</span> all the hot topics were discussed
+<a name="l-303"></a><span class="tm">19:42:11</span><span class="nk"> &lt;plinnell&gt;</span> nope, you guys have done a great job keeping KDE in shape
+<a name="l-304"></a><span class="tm">19:42:16</span><span class="nk"> &lt;plinnell&gt;</span> really awesome
+<a name="l-305"></a><span class="tm">19:42:35</span><span class="nk"> &lt;plinnell&gt;</span> there is still an effort to get KF5 on SLES12
+<a name="l-306"></a><span class="tm">19:43:09</span><span class="nk"> &lt;plinnell&gt;</span> work in progress
+<a name="l-307"></a><span class="tm">19:43:13</span><span class="nk"> &lt;shumski&gt;</span> hm, will try to unbreak plasma-nm5 for sles, only that one hasn't built
+<a name="l-308"></a><span class="tm">19:43:24</span><span class="nk"> &lt;plinnell&gt;</span> ok
+<a name="l-309"></a><span class="tm">19:43:33</span><span class="nk"> &lt;plinnell&gt;</span> cool, let me know if i can help
+<a name="l-310"></a><span class="tm">19:43:59</span><span class="nk"> &lt;shumski&gt;</span> nah, just a condition to not build with openconnect
+<a name="l-311"></a><span class="tm">19:44:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> ok. Then I close the meeting.
+<a name="l-312"></a><span class="tm">19:44:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> Thank everyone for their participation
+<a name="l-313"></a><span class="tm">19:44:41</span><span class="nk"> &lt;shumski&gt;</span> tnx for leading =)
+<a name="l-314"></a><span class="tm">19:45:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">19:12:55</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">19:12:55</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Sat Feb  8 19:12:55 2014 UTC.  The chair is einar77. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">19:12:55</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">19:13:13</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#meetingtopic  </span><span class="cmdline">Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.</span>
+<a name="l-5"></a><span class="tm">19:13:29</span><span class="nk"> &lt;einar77&gt;</span> Ok, let's start
+<a name="l-6"></a><span class="tm">19:13:37</span><span class="nk"> &lt;einar77&gt;</span> We have two topics on the agenda so far
+<a name="l-7"></a><span class="tm">19:13:43</span><span class="nk"> &lt;shumski&gt;</span> oki, shoot
+<a name="l-8"></a><span class="tm">19:13:47</span><span class="nk"> &lt;einar77&gt;</span> optimizations first
+<a name="l-9"></a><span class="tm">19:14:01</span><span class="nk"> &lt;einar77&gt;</span> and also a request by tigerfoot on the OSC packaging workshop
+<a name="l-10"></a><span class="tm">19:14:18</span><span class="nk"> &lt;einar77&gt;</span> let me alos go through the old notes
+<a name="l-11"></a><span class="tm">19:15:03</span><span class="nk"> &lt;shumski&gt;</span> ok. i missed the last one where we should have discussed kf5 status, etc. my idea is to push it asap to O:F
+<a name="l-12"></a><span class="tm">19:15:15</span><span class="nk"> &lt;einar77&gt;</span> <span class="topic">#topic </span><span class="topicline">old action items</span>
+<a name="l-13"></a><span class="tm">19:15:27</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> we're on alpha 1 for KF5
+<a name="l-14"></a><span class="tm">19:15:31</span><span class="nk"> &lt;shumski&gt;</span> yep
+<a name="l-15"></a><span class="tm">19:15:41</span><span class="nk"> &lt;einar77&gt;</span> I'm guessing you want to push it to Factoyr?
+<a name="l-16"></a><span class="tm">19:15:48</span><span class="nk"> &lt;shumski&gt;</span> yep =)
+<a name="l-17"></a><span class="tm">19:16:00</span><span class="nk"> &lt;einar77&gt;</span> It should be released soon IIRC
+<a name="l-18"></a><span class="tm">19:16:04</span><span class="nk"> &lt;einar77&gt;</span> I have to check the schedule
+<a name="l-19"></a><span class="tm">19:16:06</span><span class="nk"> &lt;shumski&gt;</span> i've created KDE:Frameworks5 project
+<a name="l-20"></a><span class="tm">19:16:09</span><span class="nk"> &lt;shumski&gt;</span> tuesday
+<a name="l-21"></a><span class="tm">19:16:32</span><span class="nk"> &lt;einar77&gt;</span> "stable" releases for KF5?
+<a name="l-22"></a><span class="tm">19:16:40</span><span class="nk"> &lt;shumski&gt;</span> the name is open for discussion, but i need a place to push the proper tars
+<a name="l-23"></a><span class="tm">19:16:41</span><span class="nk"> &lt;shumski&gt;</span> yep
+<a name="l-24"></a><span class="tm">19:16:56</span><span class="nk"> &lt;shumski&gt;</span> and opened today security revieww for kinit
+<a name="l-25"></a><span class="tm">19:16:59</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> I'm guessing you'll have to announce it also the ML
+<a name="l-26"></a><span class="tm">19:17:15</span><span class="nk"> &lt;einar77&gt;</span> I would say once alpha 1 is actually out
+<a name="l-27"></a><span class="tm">19:17:21</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">einar77:</span> yes. but i wanted to see what others think
+<a name="l-28"></a><span class="tm">19:17:34</span><span class="nk"> &lt;einar77&gt;</span> to be honest I?m not sure
+<a name="l-29"></a><span class="tm">19:17:44</span><span class="nk"> &lt;einar77&gt;</span> KDE:Unstable:Frameworks is totally distinct
+<a name="l-30"></a><span class="tm">19:17:50</span><span class="nk"> &lt;einar77&gt;</span> I would call it just frameworks though
+<a name="l-31"></a><span class="tm">19:17:54</span><span class="nk"> &lt;einar77&gt;</span> KDE:Frameworks
+<a name="l-32"></a><span class="tm">19:18:22</span><span class="nk"> &lt;shumski&gt;</span> ok. this is easily changed, as said, just needed a place to work with proper tars
+<a name="l-33"></a><span class="tm">19:18:39</span><span class="nk"> &lt;shumski&gt;</span> (and publishing is disabled anyway there)
+<a name="l-34"></a><span class="tm">19:18:50</span><span class="nk"> &lt;einar77&gt;</span> agreed that we need it
+<a name="l-35"></a><span class="tm">19:19:02</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> still uses the /opt mechanism for now?
+<a name="l-36"></a><span class="tm">19:19:12</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">einar77:</span> nope. it is now in /usr
+<a name="l-37"></a><span class="tm">19:19:21</span><span class="nk"> &lt;shumski&gt;</span> 2 files left to adjust
+<a name="l-38"></a><span class="tm">19:19:37</span><span class="nk"> &lt;shumski&gt;</span> kross manpage, and a desktop file for locale
+<a name="l-39"></a><span class="tm">19:20:01</span><span class="nk"> &lt;einar77&gt;</span> but still coinstallable I assume?
+<a name="l-40"></a><span class="tm">19:20:22</span><span class="nk"> &lt;shumski&gt;</span> everything else can co-exist. depending what will happen with kactivities and plsma-framework they'll need adjustements
+<a name="l-41"></a><span class="tm">19:20:25</span><span class="nk"> &lt;shumski&gt;</span> yeo+p
+<a name="l-42"></a><span class="tm">19:20:29</span><span class="nk"> &lt;shumski&gt;</span> *yep
+<a name="l-43"></a><span class="tm">19:20:58</span><span class="nk"> &lt;shumski&gt;</span> at least my system didn't explode =)
+<a name="l-44"></a><span class="tm">19:21:03</span><span class="nk"> &lt;einar77&gt;</span> ok, it's a start
+<a name="l-45"></a><span class="tm">19:21:15</span><span class="nk"> &lt;einar77&gt;</span> I would say, notify the rest of the team first, then the mL
+<a name="l-46"></a><span class="tm">19:21:25</span><span class="nk"> &lt;einar77&gt;</span> given it's just you and me
+<a name="l-47"></a><span class="tm">19:21:33</span><span class="nk"> &lt;shumski&gt;</span> agreed =)
+<a name="l-48"></a><span class="tm">19:22:02</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">shumski to mail the team about the stable KF5 repository</span>
+<a name="l-49"></a><span class="tm">19:22:52</span><span class="nk"> &lt;einar77&gt;</span> given that SFaulken-AFK is not here, and he was suposed to pushing cloverleaf systemsettings to KUSC, I'll put action again for the future
+<a name="l-50"></a><span class="tm">19:23:09</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action</span><span class="cmdline"></span>
+<a name="l-51"></a><span class="tm">19:23:11</span><span class="nk"> &lt;einar77&gt;</span> SFaulken to push the cloverleaf systemsettings to KUSC as a starting point
+<a name="l-52"></a><span class="tm">19:23:12</span><span class="nk"> &lt;einar77&gt;</span> for further optimizations
+<a name="l-53"></a><span class="tm">19:23:14</span><span class="nk"> &lt;einar77&gt;</span> bah
+<a name="l-54"></a><span class="tm">19:23:29</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#action </span><span class="cmdline">SFaulken to push the cloverleaf systemsettings to KUSC as a starting point  for further optimizations</span>
+<a name="l-55"></a><span class="tm">19:23:35</span><span class="nk"> &lt;shumski&gt;</span> (atm i cannot open that optimization wiiki page)
+<a name="l-56"></a><span class="tm">19:23:46</span><span class="nk"> &lt;einar77&gt;</span> I have it open
+<a name="l-57"></a><span class="tm">19:23:51</span><span class="nk"> &lt;einar77&gt;</span> in fact let's go over that now
+<a name="l-58"></a><span class="tm">19:24:11</span><span class="nk"> &lt;einar77&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE KDE packages optimization</span>
+<a name="l-59"></a><span class="tm">19:24:27</span><span class="nk"> &lt;einar77&gt;</span> Currently we have two actions open
+<a name="l-60"></a><span class="tm">19:24:33</span><span class="nk"> &lt;einar77&gt;</span> "Make social desktop optional"
+<a name="l-61"></a><span class="tm">19:25:01</span><span class="nk"> &lt;einar77&gt;</span> I'm guessing nepomuk, but I'm wondering, given that Baloo will be the default in 4.13, whether it makes sense to work on that
+<a name="l-62"></a><span class="tm">19:25:04</span><span class="nk"> &lt;shumski&gt;</span> ok. i'd like an elaboration on that one =)
+<a name="l-63"></a><span class="tm">19:25:17</span><span class="nk"> &lt;einar77&gt;</span> my guess is semantic desktop
+<a name="l-64"></a><span class="tm">19:25:19</span><span class="nk"> &lt;einar77&gt;</span> and not social
+<a name="l-65"></a><span class="tm">19:25:28</span><span class="nk"> &lt;shumski&gt;</span> nepomuk/baloo/akonadi are already optional
+<a name="l-66"></a><span class="tm">19:25:39</span><span class="nk"> &lt;einar77&gt;</span> but as I said, Baloo makes the point kind of moot
+<a name="l-67"></a><span class="tm">19:25:40</span><span class="nk"> &lt;shumski&gt;</span> so i am not sure what should be worked on
+<a name="l-68"></a><span class="tm">19:26:11</span><span class="nk"> &lt;einar77&gt;</span> The other is "simplification of KDE systemsettings"
+<a name="l-69"></a><span class="tm">19:26:35</span><span class="nk"> &lt;einar77&gt;</span> I would say we need other people to discuss on this
+<a name="l-70"></a><span class="tm">19:26:51</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">einar77:</span> wrt first item. i've splitted baloo package to components, so one can choose between them, or all, or none
+<a name="l-71"></a><span class="tm">19:26:55</span><span class="nk"> &lt;shumski&gt;</span> yep
+<a name="l-72"></a><span class="tm">19:27:06</span><span class="nk"> &lt;einar77&gt;</span> so that means we already handled it sort of
+<a name="l-73"></a><span class="tm">19:27:14</span><span class="nk"> &lt;einar77&gt;</span> also baloo is considerably lighter on resources than neopmuk
+<a name="l-74"></a><span class="tm">19:27:23</span><span class="nk"> &lt;shumski&gt;</span> (e.g. baloo-file, baloo-pim, etc) libraries cannot be ommited
+<a name="l-75"></a><span class="tm">19:27:31</span><span class="nk"> &lt;einar77&gt;</span> so I'm hoping it will get less flak
+<a name="l-76"></a><span class="tm">19:27:32</span><span class="nk"> &lt;shumski&gt;</span> also true
+<a name="l-77"></a><span class="tm">19:27:43</span><span class="nk"> &lt;einar77&gt;</span> (I'll say a bit more once we switch topics)
+<a name="l-78"></a><span class="tm">19:27:51</span><span class="nk"> &lt;einar77&gt;</span> for the rest, discussion is deferred to next meeting
+<a name="l-79"></a><span class="tm">19:27:58</span><span class="nk"> &lt;shumski&gt;</span> +
+<a name="l-80"></a><span class="tm">19:28:07</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#info </span><span class="cmdline">Discussion on optimizations deferred to next meeting, need more people present</span>
+<a name="l-81"></a><span class="tm">19:28:24</span><span class="nk"> &lt;einar77&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A, misc</span>
+<a name="l-82"></a><span class="tm">19:28:39</span><span class="nk"> &lt;shumski&gt;</span> there's already one important thng that happened meanwhile
+<a name="l-83"></a><span class="tm">19:28:45</span><span class="nk"> &lt;einar77&gt;</span> that i?
+<a name="l-84"></a><span class="tm">19:28:47</span><span class="nk"> &lt;einar77&gt;</span> is?
+<a name="l-85"></a><span class="tm">19:28:48</span><span class="nk"> &lt;shumski&gt;</span> 13.2 is in November
+<a name="l-86"></a><span class="tm">19:28:52</span><span class="nk"> &lt;einar77&gt;</span> right
+<a name="l-87"></a><span class="tm">19:29:00</span><span class="nk"> &lt;shumski&gt;</span> so, no 4.13 =) more 4.15
+<a name="l-88"></a><span class="tm">19:29:15</span><span class="nk"> &lt;einar77&gt;</span> I would say, use the latest stable version available at the time
+<a name="l-89"></a><span class="tm">19:29:24</span><span class="nk"> &lt;einar77&gt;</span> provide KF5 for the corageous
+<a name="l-90"></a><span class="tm">19:29:31</span><span class="nk"> &lt;einar77&gt;</span> KF5 + Plasma Next
+<a name="l-91"></a><span class="tm">19:29:35</span><span class="nk"> &lt;einar77&gt;</span> corageous and developers, that is
+<a name="l-92"></a><span class="tm">19:29:46</span><span class="nk"> &lt;shumski&gt;</span> if they go on schedule, we should have something like that
+<a name="l-93"></a><span class="tm">19:30:20</span><span class="nk"> &lt;shumski&gt;</span> and as said, we should be able to squeeze in 4.15. but, there's time for that now
+<a name="l-94"></a><span class="tm">19:31:10</span><span class="nk"> &lt;einar77&gt;</span> I would suggest after Plasma Next release to try and test it in parallel with traditional 4.x
+<a name="l-95"></a><span class="tm">19:31:19</span><span class="nk"> &lt;einar77&gt;</span> so we get a feel of how it is
+<a name="l-96"></a><span class="tm">19:31:29</span><span class="nk"> &lt;shumski&gt;</span> (and from my end to report - &gt; i'll submit Qt 5.2.1 today/tommorow likely)
+<a name="l-97"></a><span class="tm">19:31:31</span><span class="nk"> &lt;einar77&gt;</span> but for sure, offer it optionally
+<a name="l-98"></a><span class="tm">19:31:35</span><span class="nk"> &lt;shumski&gt;</span> yes
+<a name="l-99"></a><span class="tm">19:31:57</span><span class="nk"> &lt;einar77&gt;</span> KF5 / Plasma Next would be considered again for 13.2+1
+<a name="l-100"></a><span class="tm">19:31:59</span><span class="nk"> &lt;einar77&gt;</span> IMO
+<a name="l-101"></a><span class="tm">19:32:21</span><span class="nk"> &lt;shumski&gt;</span> considered again?
+<a name="l-102"></a><span class="tm">19:32:23</span><span class="nk"> &lt;einar77&gt;</span> we can always provide repositories if things go exceptionally well but I wouldn't want to push it on users
+<a name="l-103"></a><span class="tm">19:32:24</span><span class="nk"> &lt;shumski&gt;</span> as?
+<a name="l-104"></a><span class="tm">19:32:28</span><span class="nk"> &lt;einar77&gt;</span> well
+<a name="l-105"></a><span class="tm">19:32:35</span><span class="nk"> &lt;einar77&gt;</span> I have no idea what upstream will do
+<a name="l-106"></a><span class="tm">19:32:46</span><span class="nk"> &lt;einar77&gt;</span> workspace is LTS for 2 years
+<a name="l-107"></a><span class="tm">19:33:02</span><span class="nk"> &lt;einar77&gt;</span> we're getting close to one IIRC
+<a name="l-108"></a><span class="tm">19:33:38</span><span class="nk"> &lt;einar77&gt;</span> also once KF5 opens up for features again, we'll likely see some more movement by app developers
+<a name="l-109"></a><span class="tm">19:33:42</span><span class="nk"> &lt;einar77&gt;</span> so to sum up
+<a name="l-110"></a><span class="tm">19:34:02</span><span class="nk"> &lt;shumski&gt;</span> was Thu Aug  8 when 4.11.0 was uploaded
+<a name="l-111"></a><span class="tm">19:34:10</span><span class="nk"> &lt;einar77&gt;</span> 1. 4.x default for 13.2 + KF5/Plasma Next as option
+<a name="l-112"></a><span class="tm">19:34:25</span><span class="nk"> &lt;shumski&gt;</span> +1 from me =)
+<a name="l-113"></a><span class="tm">19:34:40</span><span class="nk"> &lt;einar77&gt;</span> 2. Re-evaluate if keep (1) or switch places for 13.2
+<a name="l-114"></a><span class="tm">19:34:47</span><span class="nk"> &lt;einar77&gt;</span> er
+<a name="l-115"></a><span class="tm">19:34:49</span><span class="nk"> &lt;einar77&gt;</span> 132.2+1
+<a name="l-116"></a><span class="tm">19:34:51</span><span class="nk"> &lt;einar77&gt;</span> 13.2+1
+<a name="l-117"></a><span class="tm">19:34:53</span><span class="nk"> &lt;shumski&gt;</span> correct
+<a name="l-118"></a><span class="tm">19:35:07</span><span class="nk"> &lt;shumski&gt;</span> ok, sorry, need to run now =(
+<a name="l-119"></a><span class="tm">19:35:45</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#info </span><span class="cmdline">For 13.2, keeping 4.x (latest version available) and KF5 / Plasma Next as option, for 13.2+1 re-evaluate which use as default</span>
+<a name="l-120"></a><span class="tm">19:35:48</span><span class="nk"> &lt;einar77&gt;</span> no problem
+<a name="l-121"></a><span class="tm">19:35:56</span><span class="nk"> &lt;einar77&gt;</span> Let's end it here
+<a name="l-122"></a><span class="tm">19:36:09</span><span class="nk"> &lt;einar77&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

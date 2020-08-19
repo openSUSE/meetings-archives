@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:00:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:00:00</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Jul 25 17:00:00 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:00:00</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:00:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">17:00:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-6"></a><span class="tm">17:00:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-7"></a><span class="tm">17:00:35</span><span class="nk"> &lt;LWFinger&gt;</span> Hi
+<a name="l-8"></a><span class="tm">17:00:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">MS3 experience</span>
+<a name="l-9"></a><span class="tm">17:01:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> finally, MS3 was released last Wednesday, so we really have something to talk about :)
+<a name="l-10"></a><span class="tm">17:01:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> do you want to start?
+<a name="l-11"></a><span class="tm">17:02:31</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-12"></a><span class="tm">17:02:54</span><span class="nk"> &lt;jradzuweit&gt;</span> Hi
+<a name="l-13"></a><span class="tm">17:03:11</span><span class="nk"> &lt;LWFinger&gt;</span> I have not been able to do much testing as I was busy last week and out of town on the weekend.
+<a name="l-14"></a><span class="tm">17:03:36</span><span class="nk"> &lt;jradzuweit&gt;</span> after zypper dup, only failsafe boot works
+<a name="l-15"></a><span class="tm">17:04:09</span><span class="nk"> &lt;LWFinger&gt;</span> I tested a patch for Bug #702461 that worked - at least part way.
+<a name="l-16"></a><span class="tm">17:04:54</span><span class="nk"> &lt;jradzuweit&gt;</span> I still try to figure out what goes wrong
+<a name="l-17"></a><span class="tm">17:05:03</span><span class="nk"> &lt;LWFinger&gt;</span> The new code recognized the network devices, but wireless on the USB passthru for my VB VM did not connect.
+<a name="l-18"></a><span class="tm">17:05:51</span><span class="nk"> &lt;LWFinger&gt;</span> I'm downloading NET build 0163 now and will try it. A zypper up this morning killed my VM.
+<a name="l-19"></a><span class="tm">17:05:58</span><span class="nk"> &lt;LWFinger&gt;</span> Done.
+<a name="l-20"></a><span class="tm">17:06:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> be careful: they restructured the KDE repos, so openQA still shows some unresolved deps
+<a name="l-21"></a><span class="tm">17:06:58 </span><span class="nka">* jradzuweit</span> <span class="ac">is updating the Bugs-day wiki page</span>
+<a name="l-22"></a><span class="tm">17:07:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">jradzuweit:</span> did you try booting with nomodeset?
+<a name="l-23"></a><span class="tm">17:07:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">jradzuweit:</span> great :)
+<a name="l-24"></a><span class="tm">17:07:24</span><span class="nk"> &lt;jradzuweit&gt;</span> not yet, after the meeting, sah the bug report
+<a name="l-25"></a><span class="tm">17:07:27</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> Good to know.
+<a name="l-26"></a><span class="tm">17:07:51</span><span class="nk"> &lt;jradzuweit&gt;</span> I already answered Andreas
+<a name="l-27"></a><span class="tm">17:08:11</span><span class="nk"> &lt;jradzuweit&gt;</span> so he can put http://en.opensuse.org/openSUSE:Bug_Day on the news page
+<a name="l-28"></a><span class="tm">17:08:36</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">jradzuweit:</span> Thanks.
+<a name="l-29"></a><span class="tm">17:09:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">jradzuweit:</span> that is the page which vuntz had made. ours was the Open-Bugs-Day one linked on the bottom there
+<a name="l-30"></a><span class="tm">17:10:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> but might make sense to merge the two to avoid confusion :D
+<a name="l-31"></a><span class="tm">17:10:38</span><span class="nk"> &lt;jradzuweit&gt;</span> yes I think so
+<a name="l-32"></a><span class="tm">17:11:05</span><span class="nk"> &lt;LWFinger&gt;</span> I agree
+<a name="l-33"></a><span class="tm">17:11:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">jradzuweit:</span> want to take that job?
+<a name="l-34"></a><span class="tm">17:11:54</span><span class="nk"> &lt;jradzuweit&gt;</span> I am just in the middle of it ;)
+<a name="l-35"></a><span class="tm">17:12:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> great. then we shall not stop you
+<a name="l-36"></a><span class="tm">17:12:20</span><span class="nk"> &lt;jradzuweit&gt;</span> :)
+<a name="l-37"></a><span class="tm">17:12:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> I upgraded one of my Laptops to MS3 and did not notice any new breakage there
+<a name="l-38"></a><span class="tm">17:13:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> openQA still shows some problems. especially with systemd
+<a name="l-39"></a><span class="tm">17:15:15</span><span class="nk"> &lt;jradzuweit&gt;</span> say @bmwiedemann did you includet this btrfs test suite yet?
+<a name="l-40"></a><span class="tm">17:15:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> not yet.
+<a name="l-41"></a><span class="tm">17:16:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> I wanted to make my script a bit more general, so that I can do a run with xfs and ext4, too
+<a name="l-42"></a><span class="tm">17:18:08</span><span class="nk"> &lt;LWFinger&gt;</span> Anyone have success with systemd?
+<a name="l-43"></a><span class="tm">17:18:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> when I tried it, it booted up really fast, but did not start /etc/init.d/xdm
+<a name="l-44"></a><span class="tm">17:19:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> not sure if there is already a bug for that
+<a name="l-45"></a><span class="tm">17:21:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> I added some other new and old issues on the most annoying bugs list, luckily nothing spectacular
+<a name="l-46"></a><span class="tm">17:22:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> I did research the liveUSB i686 breakage and found that someone replaced the isohybrid perl script with a bad C version, that mis-parsed 32-bit integers, if the topmost bit was set
+<a name="l-47"></a><span class="tm">17:23:56</span><span class="nk"> &lt;LWFinger&gt;</span> That is annoying.
+<a name="l-48"></a><span class="tm">17:25:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> upstream already has a fix, so there should soon be improvement
+<a name="l-49"></a><span class="tm">17:26:46 </span><span class="nka">* jradzuweit</span> <span class="ac">has finished updating the wiki for now</span>
+<a name="l-50"></a><span class="tm">17:29:02</span><span class="nk"> &lt;LWFinger&gt;</span> Sorry, but I don't see the changes. Which page?
+<a name="l-51"></a><span class="tm">17:29:15</span><span class="nk"> &lt;jradzuweit&gt;</span> http://en.opensuse.org/openSUSE:Open-Bugs-Day
+<a name="l-52"></a><span class="tm">17:30:39</span><span class="nk"> &lt;LWFinger&gt;</span> I still get the one from April.
+<a name="l-53"></a><span class="tm">17:30:53</span><span class="nk"> &lt;jradzuweit&gt;</span> ???
+<a name="l-54"></a><span class="tm">17:30:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> the date on top is old
+<a name="l-55"></a><span class="tm">17:31:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> "The second" is also outdated
+<a name="l-56"></a><span class="tm">17:31:43</span><span class="nk"> &lt;jradzuweit&gt;</span> try now
+<a name="l-57"></a><span class="tm">17:31:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> and I guess, we should throw in at least 5 t-shirts for reward
+<a name="l-58"></a><span class="tm">17:33:12</span><span class="nk"> &lt;LWFinger&gt;</span> It is getting better.
+<a name="l-59"></a><span class="tm">17:33:39</span><span class="nk"> &lt;jradzuweit&gt;</span> I will polish the pages during the week
+<a name="l-60"></a><span class="tm">17:33:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> IMHO we should also overhaul the HowTo
+<a name="l-61"></a><span class="tm">17:34:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> as we are looking at rather recent bugs that have a high chance of still being there
+<a name="l-62"></a><span class="tm">17:35:16</span><span class="nk"> &lt;LWFinger&gt;</span> The "Links" part at the bottom also needs updating. I have not yet posted on the Forum, and have no updated info.
+<a name="l-63"></a><span class="tm">17:35:43</span><span class="nk"> &lt;jradzuweit&gt;</span> ok, I remove this for now
+<a name="l-64"></a><span class="tm">17:36:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> do we have any more MS3 experiences to share?
+<a name="l-65"></a><span class="tm">17:37:03</span><span class="nk"> &lt;jradzuweit&gt;</span> not from me
+<a name="l-66"></a><span class="tm">17:37:39</span><span class="nk"> &lt;LWFinger&gt;</span> No. After yoour warning about the KDE repos, I'm now installing Gnome.
+<a name="l-67"></a><span class="tm">17:37:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Open-Bugs-Day #3 planning</span>
+<a name="l-68"></a><span class="tm">17:39:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> how will we spread the word about the upcoming Open-Bugs-Day? forum and news.o.o?
+<a name="l-69"></a><span class="tm">17:39:35</span><span class="nk"> &lt;jradzuweit&gt;</span> Andreas Jaeger will add it to news.o.o
+<a name="l-70"></a><span class="tm">17:40:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> great.
+<a name="l-71"></a><span class="tm">17:40:35</span><span class="nk"> &lt;LWFinger&gt;</span> It has already been sent to news.o.o and will go in the beta portion of the forum. I have sent an announcement in the Weekly News and will keep that going.
+<a name="l-72"></a><span class="tm">17:41:32</span><span class="nk"> &lt;jradzuweit&gt;</span> great :)
+<a name="l-73"></a><span class="tm">17:41:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> that should be sufficient.
+<a name="l-74"></a><span class="tm">17:42:13</span><span class="nk"> &lt;LWFinger&gt;</span> I hope so. I cannot think of any other places.
+<a name="l-75"></a><span class="tm">17:42:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> development is still ongoing, so we will need to have another bug party later
+<a name="l-76"></a><span class="tm">17:44:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> I guess in September around 12.1-Beta :)
+<a name="l-77"></a><span class="tm">17:44:59</span><span class="nk"> &lt;LWFinger&gt;</span> As I recall, that one will concentrate on open 12.1 bugs.
+<a name="l-78"></a><span class="tm">17:45:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> or even new ones. And would be nice if we could involve some developers then, to get those fixed
+<a name="l-79"></a><span class="tm">17:45:55</span><span class="nk"> &lt;jradzuweit&gt;</span> Beta should be good, so maybe we can draw a little more attention on this
+<a name="l-80"></a><span class="tm">17:46:03</span><span class="nk"> &lt;LWFinger&gt;</span> How to do that?
+<a name="l-81"></a><span class="tm">17:47:00</span><span class="nk"> &lt;jradzuweit&gt;</span> if beta sounds better than MS 6, then maybe more people will join
+<a name="l-82"></a><span class="tm">17:47:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> I heard about a Pizza Party event at SUSE, that involved developers installing the beta
+<a name="l-83"></a><span class="tm">17:48:00</span><span class="nk"> &lt;jradzuweit&gt;</span> maybe we can do a worldwide Bug-Day?
+<a name="l-84"></a><span class="tm">17:48:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> sure. but everyone looking at the same thing on the same day, can also be a big waste of resources, if they all stumble on the same bug
+<a name="l-85"></a><span class="tm">17:49:42</span><span class="nk"> &lt;jradzuweit&gt;</span> sure, but than come your tool in
+<a name="l-86"></a><span class="tm">17:50:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> that is made for old bugs
+<a name="l-87"></a><span class="tm">17:51:04</span><span class="nk"> &lt;jradzuweit&gt;</span> so we have a little time to organize it and do some preparation
+<a name="l-88"></a><span class="tm">17:51:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes
+<a name="l-89"></a><span class="tm">17:51:48</span><span class="nk"> &lt;jradzuweit&gt;</span> maybe we do it like "follow the sun support", starting in India
+<a name="l-90"></a><span class="tm">17:52:00</span><span class="nk"> &lt;jradzuweit&gt;</span> handing over to Europa
+<a name="l-91"></a><span class="tm">17:52:12</span><span class="nk"> &lt;LWFinger&gt;</span> The IRC channel should also help coordinate new bugs.
+<a name="l-92"></a><span class="tm">17:52:12</span><span class="nk"> &lt;jradzuweit&gt;</span> handing over to America
+<a name="l-93"></a><span class="tm">17:52:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes. that would work
+<a name="l-94"></a><span class="tm">17:53:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> we could also collect current issues on an etherpad
+<a name="l-95"></a><span class="tm">17:53:33</span><span class="nk"> &lt;LWFinger&gt;</span> Good idea.
+<a name="l-96"></a><span class="tm">17:53:42</span><span class="nk"> &lt;jradzuweit&gt;</span> and mailinglist
+<a name="l-97"></a><span class="tm">17:54:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> isn't ML too slow?
+<a name="l-98"></a><span class="tm">17:54:30</span><span class="nk"> &lt;jradzuweit&gt;</span> I don't think so
+<a name="l-99"></a><span class="tm">17:55:18</span><span class="nk"> &lt;jradzuweit&gt;</span> for keeping everybody in sync it's ok
+<a name="l-100"></a><span class="tm">17:55:39</span><span class="nk"> &lt;jradzuweit&gt;</span> we could give an in between status
+<a name="l-101"></a><span class="tm">17:56:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> would be OK for organisational stuff. but for discussion I fear it would be too noisy
+<a name="l-102"></a><span class="tm">17:56:07</span><span class="nk"> &lt;jradzuweit&gt;</span> not everybody has a IRC running all the time
+<a name="l-103"></a><span class="tm">17:56:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> oh. hmm...
+<a name="l-104"></a><span class="tm">17:57:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> but etherpad just works in the browser, so maybe people would just use that
+<a name="l-105"></a><span class="tm">17:57:55</span><span class="nk"> &lt;jradzuweit&gt;</span> what about twitter?
+<a name="l-106"></a><span class="tm">17:58:00</span><span class="nk"> &lt;jradzuweit&gt;</span> that's fast
+<a name="l-107"></a><span class="tm">17:58:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">AJ will write news on Open-Bugs-Day #3 and LWFinger will write on forum</span>
+<a name="l-108"></a><span class="tm">17:58:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> I hardly use twitter. but might also work :)
+<a name="l-109"></a><span class="tm">17:58:56</span><span class="nk"> &lt;LWFinger&gt;</span> I'm not a twitter user.
+<a name="l-110"></a><span class="tm">17:59:51</span><span class="nk"> &lt;jradzuweit&gt;</span> me neither, but we are still learning
+<a name="l-111"></a><span class="tm">18:01:16</span><span class="nk"> &lt;jradzuweit&gt;</span> we can probe on the next Open-Bug-Day
+<a name="l-112"></a><span class="tm">18:01:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> yep
+<a name="l-113"></a><span class="tm">18:03:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> do we need to discuss the Beta rename anymore?
+<a name="l-114"></a><span class="tm">18:04:14</span><span class="nk"> &lt;jradzuweit&gt;</span> no
+<a name="l-115"></a><span class="tm">18:04:31</span><span class="nk"> &lt;LWFinger&gt;</span> No.
+<a name="l-116"></a><span class="tm">18:06:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> good. about the September/Beta event... do you have any idea how we can make it a fun global project day?
+<a name="l-117"></a><span class="tm">18:06:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. awarding points and highscore rankings to participants :)
+<a name="l-118"></a><span class="tm">18:07:00</span><span class="nk"> &lt;jradzuweit&gt;</span> ask the boosters, maybe they have a idea
+<a name="l-119"></a><span class="tm">18:07:33</span><span class="nk"> &lt;LWFinger&gt;</span> I think we need a few more participants in this discussion.
+<a name="l-120"></a><span class="tm">18:07:50</span><span class="nk"> &lt;jradzuweit&gt;</span> whom?
+<a name="l-121"></a><span class="tm">18:08:21</span><span class="nk"> &lt;LWFinger&gt;</span> I can try the Forum. Lots of good ideas there.
+<a name="l-122"></a><span class="tm">18:15:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> bug-squashing can really be fun
+<a name="l-123"></a><span class="tm">18:15:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> like Sherlock Holmes finding the culprit
+<a name="l-124"></a><span class="tm">18:16:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> will you gather ideas from our forum?
+<a name="l-125"></a><span class="tm">18:16:51</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-126"></a><span class="tm">18:18:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> great. any more ideas? otherwise we could close today's meeting
+<a name="l-127"></a><span class="tm">18:18:35</span><span class="nk"> &lt;LWFinger&gt;</span> Nothing here.
+<a name="l-128"></a><span class="tm">18:19:11</span><span class="nk"> &lt;LWFinger&gt;</span> Next meeting?
+<a name="l-129"></a><span class="tm">18:19:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> right. should be shortly after MS4 before the OBD #3
+<a name="l-130"></a><span class="tm">18:19:50</span><span class="nk"> &lt;jradzuweit&gt;</span> bmwiedemann what about the conference, any plans
+<a name="l-131"></a><span class="tm">18:19:53</span><span class="nk"> &lt;LWFinger&gt;</span> Agreed.
+<a name="l-132"></a><span class="tm">18:20:18</span><span class="nk"> &lt;LWFinger&gt;</span> August 15?
+<a name="l-133"></a><span class="tm">18:20:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> 2011-08-15 17:00 UTC
+<a name="l-134"></a><span class="tm">18:20:32</span><span class="nk"> &lt;LWFinger&gt;</span> Good
+<a name="l-135"></a><span class="tm">18:20:37</span><span class="nk"> &lt;jradzuweit&gt;</span> agreed
+<a name="l-136"></a><span class="tm">18:20:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">jradzuweit:</span> I will be at openSUSE conference of course
+<a name="l-137"></a><span class="tm">18:20:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> submitted a Testing BoF session
+<a name="l-138"></a><span class="tm">18:21:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> and a talk on "one year of openQA"
+<a name="l-139"></a><span class="tm">18:21:34</span><span class="nk"> &lt;jradzuweit&gt;</span> maybe I will come, got ok from my wife ;)
+<a name="l-140"></a><span class="tm">18:21:57</span><span class="nk"> &lt;LWFinger&gt;</span> Wish I could.
+<a name="l-141"></a><span class="tm">18:22:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> Dan of SUSE's QA-automation team wants to join the Testing BoF, too as he managed to get approval to publish some internal test automation tool
+<a name="l-142"></a><span class="tm">18:23:02</span><span class="nk"> &lt;LWFinger&gt;</span> Sounds very interesting.
+<a name="l-143"></a><span class="tm">18:23:27</span><span class="nk"> &lt;jradzuweit&gt;</span> some video streaming would be cool
+<a name="l-144"></a><span class="tm">18:23:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe we should have a like chat or video streaming to US :)
+<a name="l-145"></a><span class="tm">18:23:50</span><span class="nk"> &lt;LWFinger&gt;</span> That would be nice.
+<a name="l-146"></a><span class="tm">18:24:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> if internet worked there, I could run skype on my netbook
+<a name="l-147"></a><span class="tm">18:24:40</span><span class="nk"> &lt;jradzuweit&gt;</span> I have to leave now, c u
+<a name="l-148"></a><span class="tm">18:24:48</span><span class="nk"> &lt;LWFinger&gt;</span> Bye
+<a name="l-149"></a><span class="tm">18:24:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> Ciao Juergen
+<a name="l-150"></a><span class="tm">18:24:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> we are pretty much done anyway
+<a name="l-151"></a><span class="tm">18:26:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> so let's close today's meeting
+<a name="l-152"></a><span class="tm">18:26:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-153"></a><span class="tm">18:27:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

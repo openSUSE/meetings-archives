@@ -1,0 +1,607 @@
+16:09:45 <llunak> #startmeeting
+16:09:45 <bugbot> Meeting started Thu Jul 22 16:09:45 2010 UTC.  The chair is llunak. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:09:45 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:09:55 <llunak> agenda:
+16:10:05 <llunak> * repositories specific for KDE SC versions (e.g. 4.5.x)
+16:10:12 <llunak> * unstable repositories reorganization
+16:10:23 <llunak> * wiki move
+16:10:31 <llunak> * add individual bugowners for packages in KDE:Extra
+16:10:38 <llunak> * procedure/time frame to dissolve KDE:KDE4:Community repository
+16:10:44 <llunak> * old action items
+16:10:49 <llunak> * status report
+16:10:52 <llunak> * Q&A, misc
+16:10:58 <llunak> #topic old action items
+16:11:14 <llunak> * llunak will post the conclusion around repository reorganization to the list
+16:11:21 <Beineri> llunak: that's from which wiki?
+16:11:39 <llunak> Beineri: http://en.opensuse.org/openSUSE:KDE_Meetings
+16:12:13 <Beineri> llunak: that one has at least one more entry (playground repositories)
+16:12:33 <llunak> as for the AI, done in practice, the repos are already in place, written down also in http://old-en.opensuse.org/KDE/RepositoryRenaming
+16:12:55 <llunak> Beineri: those happen to be unstable too; I'm not removing the item second time
+16:13:16 <llunak> * All think about correct naming for KKUD and Playground
+16:13:24 <llunak> will be discussed as one topic
+16:13:31 <llunak> * javier announce and run a bug triage
+16:13:37 <llunak> announcement done, so in progress
+16:13:52 <llunak> AI: javier run a bug triage
+16:14:00 <llunak> * wstephenson see if rpmlint warnings can be hung on a lime tree for easy plucking
+16:14:21 <llunak> wstephenson: for somewhen later, right? do you want to keep this one?
+16:14:25 <wstephenson> i'm doing that as part of the next Junior Jobs boosters team sprint.
+16:14:28 * rtyler waves to Kmetamorphosis
+16:15:05 <wstephenson> i am going to look at using KDE's krazy infrastructure to collect opensuse JJs
+16:15:31 <wstephenson> btw
+16:15:45 <dirkMobile> hmm, nice idea
+16:15:56 <wstephenson> 'krazy' is not an adjective, it's the name of a service that combines junior jobs, minor bugs, static code testing results
+16:16:05 <llunak> * llunak,wstephenson document how-to-maintain Extra
+16:16:22 <llunak> http://old-en.opensuse.org/KDE/Extra_Repository , http://old-en.opensuse.org/KDE/UpdatedApps_Repository
+16:16:31 <llunak> they haven't been moved yet
+16:16:44 <llunak> AI: llunak move wiki pages about maintaining Extra/UpdatedApps repos
+16:16:50 <wstephenson> not done here
+16:17:11 <llunak> * javier will create LiveCDs of unstable KDE
+16:17:17 <llunak> javier_: ?
+16:17:41 <javier_> yes
+16:17:55 <javier_> they are built
+16:17:55 <llunak> is that 'done' ?
+16:18:04 <javier_> well, there are some issues in the last build
+16:18:08 <llunak> ok
+16:18:15 <javier_> ie: it doesn't build
+16:18:24 <wstephenson> but small stuff?
+16:18:28 <javier_> i'm also working on a kde-four-live cd
+16:18:29 <javier_> yes
+16:18:36 <javier_> some dependencies
+16:18:54 <javier_> imho, kde-unstable-live looks good
+16:18:59 <javier_> at least the last build i tried
+16:19:01 <FL1SK> Is unstable set to 4.5 now?
+16:19:09 <FL1SK> good
+16:19:10 <wstephenson> i'm going to look at kde-unstable-live tonight, if i see any bad bits, i'll fix.
+16:19:29 <remur_030> FL1SK: unstable is 4.6
+16:19:35 <javier_> right now there's an issue on obs
+16:19:41 * mrdocs waves
+16:19:43 <remur_030> 4.5rc2 is in factory
+16:19:54 <llunak> ok, that's all for AIs
+16:19:57 <wstephenson> javier_: so kde-four-live = K:D:F, kde-unstable-live = KKUD?
+16:19:58 <mrdocs> first time in a meeting in a while
+16:20:09 <javier_> wstephenson: that's right
+16:20:21 <javier_> k-u-l is based on openSUSE Factory as well
+16:20:29 <llunak> #topic status report
+16:20:41 <FL1SK> where are the change docs for 4.6
+16:20:42 <javier_> k-f-l: openSUSE 11.3 + K:D:F
+16:20:49 <FL1SK> how do we know what's supposed to be different
+16:21:03 <wstephenson> FL1SK: too soon
+16:21:07 <cb400f> FL1SK: read the release announcement in 6 months :-)
+16:21:16 <remur_030> FL1SK: it's very much in flux now, no specific plans
+16:21:21 <wstephenson> 4.5 was just branched from trunk and not yet released, there are barely any changes in trunk yet
+16:21:30 <FL1SK> ok
+16:21:38 <wstephenson> lots of mobile UI stuff for kdepim has been merged already, for meego :)
+16:21:40 <FL1SK> where are the plan guides
+16:21:42 <wstephenson> that's your sneak preview.
+16:21:50 <FL1SK> oh good
+16:21:52 <llunak> FL1SK: can we keep this for the 'misc' topic the next time please?
+16:21:56 <FL1SK> glad to see meego using it
+16:22:09 <FL1SK> ok llunak
+16:22:18 <llunak> status: 11.3 is out, looking good so far
+16:22:29 <llunak> KDE:Distro:Factory is at 4.5rcsomething
+16:22:51 <FL1SK> just a thought: maybe it would be nice to have an updated wiki that shows differences in each unstable;factory;stable
+16:22:55 <remur_030> anybody notice the livecd starting with a broken folderview for the desktop?
+16:22:56 <javier_> 4.4.93 i believe
+16:23:13 <FL1SK> sorry for the off topic
+16:23:24 <wstephenson> remur_030: no.. broken how?
+16:23:24 <cb400f> remur_030: 11.3 livecd?
+16:23:26 <llunak> anything else worth mentioning?
+16:23:28 <remur_030> the 11.3 kde i586 livecd that is
+16:23:41 <remur_030> yeah, 'dbus crashed'
+16:23:53 <wstephenson> status: patched k3b, kipi-plugins, kdelibs, doing some akonadi fixes from trunk atm.
+16:23:58 <wstephenson> err from 1.4/4.5
+16:24:51 <wstephenson> what about froscon?
+16:24:58 <wstephenson> llunak: are you going?
+16:25:00 <llunak> ah yes, the KDE:Extra, KDE:UpdatedApps, KDE:Distro:Factory and KDE:Distro:Stable repos are up
+16:25:11 <llunak> but that's been already kind of mentioned during old AIs
+16:25:19 <wstephenson> still, big job, well done everybody
+16:25:26 <llunak> wstephenson: everybody is, as far as I understood
+16:25:56 <llunak> ok, next
+16:26:04 <llunak> ... what is 'new items' topic ?
+16:26:07 <wstephenson> so is froscon in Bonn convenient for any of the rest of the kde community to meet up with me and llunak?
+16:26:11 <wstephenson> jussasec..
+16:26:13 <llunak> http://en.opensuse.org/openSUSE:Managing_KDE_meetings mentions it
+16:27:36 <cb400f> maybe it just means "additional agenda items to the standard set"
+16:28:04 <llunak> well, I'll simply dump it, until somebody starts missing it
+16:28:35 <llunak> hmm, it was rabauke who's added it
+16:28:38 <llunak> anyway
+16:28:43 <llunak> wstephenson: just a sec for what?
+16:28:51 <wstephenson> froscon answers.
+16:29:04 <wstephenson> seeing if we can do something useful for opensuse-kde there
+16:29:16 <llunak> froscon is http://froscon.org, aug 21st-22nd
+16:29:56 <llunak> ok, think about it, it's still a month away
+16:30:16 <llunak> and I think I'll juggle the topics now, easy ones first
+16:30:21 <wstephenson> k
+16:30:31 <llunak> #topic procedure/time frame to dissolve KDE:KDE4:Community repository
+16:30:55 <llunak> every maintainer in the repo has been already notified, so I suggest we give them a week, then warn again it's going away, and good-bye
+16:30:58 <remur_030> when is tittiacoke back? he has the best overview here...
+16:31:01 <llunak> somebody seeing a problem with that?
+16:31:15 <Beineri> llunak: you really want to delete the rest?
+16:31:23 <remur_030> will you delete it or just disable?
+16:31:53 <mrdocs> first thing i would do is disable build on :Community
+16:32:05 <mrdocs> no need to waste OBS power
+16:32:12 <llunak> Beineri: what else do you want to do with it? it's just useless rubbish if nobody has been bothered to move it to KDE:Extra
+16:32:13 <Beineri> KDE:Extra only has 29 packages today, KDE:KDE4:Community 188
+16:32:35 <Beineri> llunak: why is it useless rubbish?
+16:32:45 <llunak> because nobody cares about it?
+16:32:57 <remur_030> llunak: the old opensuse releases are also moved to discontinued with barely anyone taking a peek
+16:33:00 <llunak> and it's not exported anymore in the community list in yast
+16:33:01 <Beineri> llunak: someone cared to package it?
+16:33:09 <cb400f> much of it is old stuff irrelevant for recent releases
+16:33:14 <llunak> and stopped caring afterwards
+16:33:23 <Beineri> llunak: has there been newer releases?
+16:33:25 <cb400f> like plasma theme air for 4.2.. systemloadviewer plasmoid ..
+16:33:31 <llunak> move what's interesting, the rest is not interesting by definition
+16:33:56 <cb400f> but.. all titti's packages prolly still need moving
+16:33:59 <remur_030> well then we should wait for more then one week, maybe disable in a week but not just drop it
+16:34:07 <remur_030> and at least let tittiacoke have a say
+16:34:18 <llunak> I'll wait for tittiacoke then
+16:35:05 <Beineri> It's not nice to delete someone's work whatever.
+16:35:12 <llunak> AI: llunak take care of removing KDE:KDE4:Community as appropriate
+16:35:16 <llunak> Beineri: they have been told
+16:35:30 <llunak> if it happens, it's because they don't care
+16:35:56 <cb400f> Beineri: bitshuffler e-mailed all the maintainers directly I think
+16:35:57 <Beineri> llunak: so did you ask if someone thinks a package is useful and wants to take over a package which hasn't been moved yet?
+16:36:16 <cb400f> but of course they might all be away on holiday like titti
+16:36:29 <Beineri> just because an initial maintainer left openSUSE doesn't mean that a package is not interesting (to others)
+16:36:40 <llunak> Beineri: so take over and move it
+16:36:48 <llunak> or anybody else
+16:37:03 <Beineri> llunak: I can make a loop with copypc in one command shell line ;-)
+16:37:11 <llunak> I'll wait longer, that makes sense, but there's no point in keeping old rubbish around forever just because somebody might find it useful maybe perhaps one day
+16:37:17 <wstephenson> llunak: maybe we can do a 'packages for sale' style mail
+16:37:33 <Beineri> llunak: ... if you're not seem to be interested trying to find a new maintainers.
+16:38:29 <dirkMobile> if it builds keep it
+16:38:30 <Beineri> so how about a post/blog that supposedly any now left package in KDE:KDE4:Community searches a new maintainer?
+16:38:42 <llunak> Beineri: do you want that as AI?
+16:38:53 * Beineri doesn't blog anymore ;-)
+16:39:04 <llunak> nobody reads blogs anymore anyway
+16:39:32 * rtyler weeps
+16:39:55 <rtyler> llunak: perhaps the weekly news team could mention something?
+16:39:59 <Beineri> how about a dummy maintainer account to symbolize a package searchs a maintainer?
+16:40:08 <Beineri> bugowner: kde-maintainer-wanted
+16:40:14 <Beineri> or alike
+16:40:23 <wstephenson> reminds me of someone's gitorious 'orphaned' project status suggestion...
+16:40:49 <Beineri> well, on package level. not having orphaned packages in a separate project
+16:41:22 <llunak> Beineri: I don't think that'd do anything useful in practice
+16:41:51 <Beineri> or by definitions that are all packages which have only inherited maintainers
+16:42:14 <llunak> actually that is another topic
+16:42:48 <llunak> can we just wrap up this one? I'll wait for titti to come back, post to opensuse-kde@ and eventually dump the repo
+16:43:11 <wstephenson> fine by me
+16:43:39 <cb400f> remember to say "packages for sale" in the post to opensuse-kde :-)
+16:43:44 <llunak> with 'eventually' being when there's nobody caring anymore
+16:43:58 <llunak> #topic add individual bugowners for packages in KDE:Extra
+16:44:11 <llunak> the full description is: add individual bugowners for packages in KDE:Extra (I think this would be useful to get bugs for these packages addressed. Now one has to go through the changelog of a package to guess who is usually responsible for updating it to find the right assignee.) (I will probably not be able to attend the meeting. ctrippe)
+16:44:46 <remur_030> sounds like a good rule for :Extra
+16:44:51 <llunak> which is like what was started above - having somebody directly reponsible for a package
+16:45:03 <llunak> although I think it'd be better to have a maintainer rather than bugowner
+16:45:21 <wstephenson> so explicit maintainers per pkg too?
+16:45:40 <llunak> maybe maintainer+bugowner set
+16:45:54 <dirkMobile> i think that was actually meant anyway
+16:45:59 <llunak> I think it makes sense, right now it'd save us some trouble with KDE:KDE4:Community
+16:47:08 <llunak> so I'll add a rule that a package should have an explicit maintainer and bugreport owner set, if not, it's maintainer by the KDE team as a whole, with all consequences (dropping if we feel like it, etc.)
+16:47:10 <llunak> ok?
+16:47:55 <remur_030> so if no one wants to maintain it gets dragged in anyways?
+16:48:02 <remur_030> as long as it currently builds?
+16:48:09 <remur_030> works... ;-)
+16:48:19 <dirkMobile> there man be multiple maintainers
+16:48:25 <dirkMobile> can
+16:48:29 <llunak> remur_030: that's up to the repo maintainers :)
+16:48:39 <llunak> generally, I think that's ok
+16:49:03 <remur_030> llunak: well the project gurus should decide then, as the burden will propably lay upon then if something breaks...
+16:49:07 <llunak> "maintainer(s)" then
+16:49:22 <llunak> remur_030: yes
+16:49:30 <remur_030> as in current community status =(
+16:49:56 <llunak> ok, anything else here?
+16:50:21 <llunak> AI: update KDE:Extra docs to suggest explicit package maintainers
+16:50:50 <llunak> actually, there may be a little problem if the package is maintained by somebody who's e.g. new and we don't trust them yet to get maintainership
+16:51:05 <llunak> i.e. only SRs
+16:51:23 <llunak> hmm ... they still can get a bugowner then, so no problem
+16:51:25 <llunak> ok
+16:51:28 <wstephenson> whose AI?
+16:51:40 <llunak> AI: llunak update KDE:Extra docs to suggest explicit package maintainers
+16:51:41 <wstephenson> (i can take it)
+16:51:57 <llunak> #topic wiki move
+16:52:22 <llunak> as you've probably noticed, the wiki has been replaced by a new instance, with the old one being at old-en.opensuse.org
+16:52:39 <llunak> and since it's a new one ,from scratch, many articles haven't been moved yet
+16:52:52 <llunak> so if you see something missing, feel free to move it
+16:52:53 <llunak> however
+16:53:07 <wstephenson> respect the law!
+16:53:08 <llunak> there are new rules e.g. for structure, so don't do that completely blindly
+16:53:37 <llunak> http://en.opensuse.org/Portal:Wiki has all the info and you should very preferably read all of it
+16:54:29 <llunak> the two most important changes:
+16:54:31 <llunak> 1) it is not KDE/Meetings/Managing, but it's "Managing KDE meetings', i.e. normal speech, no subpages
+16:54:57 <llunak> contributor stuff is in the openSUSE: namespace, e.g. "openSUSE:KDE meetings"
+16:55:11 <llunak> the default namespace is only for "showing off", i.e. only for users who do not contribute at all
+16:55:22 <llunak> note that whining in bugzilla is considered contributing here too
+16:55:43 <llunak> questions on this?
+16:56:07 <wstephenson> what are the big things we lack in the new wiki
+16:56:11 <wstephenson> repo structure was done
+16:56:53 <cb400f> all the meeting archives weren't moved afaik
+16:56:57 <llunak> I'm not sure, I expect these things will slowly turn up when needed
+16:57:05 <llunak> cb400f: I'll do that
+16:57:10 <wstephenson> the kde developers guide needs love, i'll do that.
+16:57:15 * Beineri mumbles Configuration Management...
+16:57:28 <llunak> oh, btw, there's http://old-en.opensuse.org/Special:Export and http://en.opensuse.org/Special:Import , which can be quite useful
+16:57:52 <llunak> Beineri: what is configuration management?
+16:58:15 <initialZero> shouldn't the kde page have bug reporting and contributing?
+16:58:21 <Beineri> ... read, don't throw away all history/documentation why/how or not something was developed. old meetings minutes, ideas pages, ...
+16:58:47 <llunak> old-en.opensuse.org is supposed to stay
+16:58:52 <Beineri> forever?
+16:59:00 <llunak> as far as I understood
+16:59:14 <llunak> or long enough, at least
+16:59:14 * Beineri hasn't seen an announcement about that
+16:59:30 <llunak> initialZero: no, bugreporting is contributing
+16:59:51 <llunak> a link to openSUSE:KDE page can be there though
+17:00:02 <initialZero> yeah
+17:00:22 <llunak> and it is there, at the bottom
+17:00:38 <tigerfoot> llunak: what's the name of reporting already reported trouble, but closed with a sentence as this bug report is a mess, please open a new one :-) ?
+17:00:43 <initialZero> ahh I expected an icon
+17:00:49 <cb400f> initialZero: /KDE == "marketing" - /Portal:KDE == the interesting stuff :-)
+17:01:10 <llunak> tigerfoot: I don't know what you mean
+17:01:14 <mad_soft> where i find packages with 4.4.5 version of kde?
+17:01:23 <llunak> mad_soft: topic
+17:01:36 <mad_soft> ok!
+17:01:39 <wstephenson> mad_soft: meeting, please wait until the end..
+17:01:42 <llunak> hmm? the bugbot doesn't keep the meeting topic??
+17:01:43 <initialZero> mad_soft you can ask after the meeting
+17:01:51 <wstephenson> llunak: it sets it to #topic
+17:02:11 <tigerfoot> see bug 624321 (after the meeting of course)
+17:02:14 <bugbot> openSUSE bug 624321 in openSUSE 11.3 (OpenOffice.org) "openoffice under kde unable to open smb:// uri files" [Major,New] https://bugzilla.novell.com/624321
+17:02:22 <llunak> that's lame
+17:02:23 <llunak> anyway
+17:02:44 <llunak> two topic remaining, 4.5 repo and unstable repos ... hmm, the dilema of which one to choose first ...
+17:03:09 <llunak> #topic unstable repositories reorganization
+17:03:24 <llunak> (naively hoping this one would be quicker and we should finish it anyway)
+17:03:43 <llunak> http://old-en.opensuse.org/KDE/RepositoryRenaming is the original page
+17:03:50 <llunak> http://old-en.opensuse.org/KDE/RepositoryRenaming2 is about today
+17:04:01 <llunak> we still need to do something about unstable software
+17:04:24 <llunak> as said in the page, there are two kinds of unstable KDE software, SC snapshots and any other KDE software
+17:04:38 <llunak> mixing them is bad (I think we agreed on this already the last time), so we need 2 repos
+17:04:51 <llunak> so for today there is deciding on the layout and on the names
+17:05:10 <llunak> the page has some options for the layout
+17:05:21 <llunak> some other options for the layout missing?
+17:05:28 <llunak> or other questions?
+17:05:30 <cb400f> I think we need 3 repos :-)
+17:05:36 <llunak> cb400f: why?
+17:05:37 <cb400f> kde:unstable:sc
+17:05:42 <cb400f> kde:unstable:apps
+17:05:45 <cb400f> kde:playground
+17:05:59 <llunak> what's the difference between the last 2?
+17:06:03 <initialZero> what's the diff
+17:06:05 <cb400f> and I wonder where an unstable user would get stable amarok or so
+17:06:26 <dirkMobile> from updatedapps
+17:06:44 <wstephenson> built vs K:U:SC
+17:06:57 <cb400f> but at certain times it might not be there, if the stable version is the latest
+17:07:01 <llunak> wstephenson: I don't think tha'ts generally needed
+17:07:14 <llunak> cb400f: it may not be where?
+17:07:17 <dirkMobile> or Kde:extra
+17:07:18 <Beineri> a stable release apps using features of a yet to be released SC?
+17:07:20 <cb400f> in UpdatedApps
+17:07:35 <wstephenson> Beineri: same as kdepim44 built vs kde sc 4.5
+17:07:52 <llunak> cb400f: UpdatedApps has always (in theory) the latest stable version, so why shouldn't it be there?
+17:07:53 <wstephenson> anyway, generally a hypothetical problem, put it out of your mind
+17:07:54 <cb400f> but I should prolly shut up.. I'd never use unstable anyway.. unstable users should speak for themselves
+17:08:16 <initialZero> I use unstable
+17:08:19 <cb400f> I just don't think alin, titti etc. want to use random snapshots of every single kde app
+17:08:25 <cb400f> (non sc app)
+17:08:30 <initialZero> and typically I never want stable
+17:08:32 <llunak> they won't
+17:08:55 <llunak> they'll just use SNAPSHOT and whatever else repo with apps they'll want
+17:09:04 <llunak> SNAPSHOT is just SC
+17:09:25 <llunak> ok, so other questions or proposals or can be just vote?
+17:09:33 <initialZero> vote
+17:10:03 <llunak> before vote, let me ask : would somebody vote for 2) or 4) ?
+17:10:42 <initialZero> can I get a link
+17:10:50 <llunak> http://old-en.opensuse.org/KDE/RepositoryRenaming2
+17:11:22 <Beineri> why this capitalization?
+17:11:27 <llunak> because if not, we're just down to "do we group unstable repos together?" and "what do we name them?"
+17:11:51 <llunak> what capitalization? the one that says "with SNAPSHOT and PLAYGROUND used as name placeholder" ?
+17:12:06 <Beineri> SNAPSHOT v Snapshot
+17:12:18 <wstephenson> caps indicate placeholder
+17:12:26 <wstephenson> we should have written $SNAPSHOT
+17:12:42 <initialZero> makes more sense
+17:12:59 <llunak> ok, then let's run it just as the two questions:
+17:13:05 <llunak> do we group unstable repos together?
+17:13:23 <llunak> vote either as "together" or "separate toplevel"
+17:13:32 <llunak> now:
+17:14:05 <llunak> (that means the vote should be done now :) )
+17:14:26 <initialZero> together
+17:14:26 <cb400f> tough choice
+17:14:28 * Beineri demands a recount
+17:14:46 <cb400f> can't we vote on the names first? ;-)
+17:15:13 <cb400f> separate
+17:15:30 <llunak> you mean, directly vote on the final result?
+17:15:58 <llunak> if grouped together, some other option then KDE:Unstable:(something) ?
+17:16:03 <llunak> s/then/than/
+17:16:05 <wstephenson> together
+17:16:39 <wstephenson> well my suggestion for 'together' would be KDE:Unstable:SC and KDE:Unstable:Extra
+17:16:43 <cb400f> my vote for separate is conditioned on SNAPSHOT being replaced with something very scary :-)
+17:16:58 <wstephenson> which motivates them being together
+17:17:16 <llunak> let's try including names then, I hope it wouldn't get too complicated
+17:17:34 <llunak> wstephenson: Extra I find strange, because it has associations with KDE:Extra
+17:17:44 <llunak> ok, so throw around some options
+17:17:52 <llunak> KDE:Unstable:SC + KDE:Unstable:Playground
+17:18:10 <llunak> KDE:Snapshot + KDE:Playground
+17:18:12 <_sc_> but -- doesn't "separate" mean someone could get a scary app by itself, where if 'together' they'd have to get a lot of scary stuff at once?
+17:18:20 <initialZero> is playground still used elsewhere?
+17:18:45 <cb400f> nope..  the other playgrounds would be removed
+17:18:48 <wstephenson> _sc_: no, 'separate' refers to the use or not of a 2nd level namespace
+17:18:49 <llunak> _sc_: that's just grouping at repo level, there are still two separate repos
+17:18:56 <wstephenson> 'Unstable' in the suggestions above
+17:19:15 <initialZero> why not just apps instead of playground
+17:19:23 <llunak> KDE:Unstable:SC + KDE:Unstable:Other
+17:19:28 <initialZero> it already says unstable
+17:19:47 <llunak> ok, but it may not be just apps
+17:19:49 <initialZero> other is good too
+17:19:55 <wstephenson> initialZero: same reasoning why we called KDE:Extra what it is
+17:20:25 <wstephenson> llunak: i used K:U:Extra above because it should have associations with KDE:Extra, why is that bad?
+17:20:51 <llunak> wstephenson: KDE:Extra does not have digikam, but K:U:Extra might - it'd also prevent saying just 'Extra'
+17:21:18 * cb400f is sold on KDE:Unstable:SC + KDE:Unstable:Playground
+17:21:19 <llunak> so no more options? are people just tired from the heat outside :) ? last time there were so many options
+17:21:46 <llunak> not that I'm complaining, I'm just surprised
+17:21:55 <llunak> ok, so let me sum the options up and number them
+17:22:11 <llunak> 1) KDE:Unstable:SC and KDE:Unstable:Extra
+17:22:21 <llunak> 2) KDE:Unstable:SC + KDE:Unstable:Playground
+17:22:28 <llunak> 3) KDE:Snapshot + KDE:Playground
+17:22:38 <llunak> 4) KDE:Unstable:SC + KDE:Unstable:Other
+17:23:12 <llunak> more? otherwise I'm starting the vote
+17:23:12 <initialZero> will unstable:extra be similar to extra
+17:23:27 <cb400f> it would be extra++
+17:23:32 <llunak> initialZero: I wouldn't say so, more like free for all
+17:23:44 <initialZero> got it
+17:23:46 <cb400f> since it could have apps which are in the distro (digikam, amarok, k3b)
+17:24:07 <initialZero> then I vote 4
+17:24:16 <cb400f> 2
+17:24:16 <llunak> ok, vote now:
+17:24:30 <dirkMobile> 1
+17:24:31 <wstephenson> 4, then
+17:24:35 <javier_> what bout KDE:Snapshot and KDE:Snapshot:Playground?
+17:24:38 * _sc_ votes #4
+17:24:53 <llunak> 4
+17:25:19 <llunak> javier_: that's what http://old-en.opensuse.org/KDE/RepositoryRenaming2 listed as one option, as a subrepo
+17:25:36 <cb400f> you're voting bad :-) .. k:u:other doesn't make much sense when not used together with k:u:SC
+17:26:24 <cb400f> people with stable, factory etc. could add "other".. and then it would look and sound weird
+17:26:27 <javier_> there's no KDE:Snapshot:Extra or KDE:Snapshot:Playground
+17:26:35 <llunak> cb400f: I think the name fits quite well - it's simply random unstable stuff
+17:27:07 <llunak> javier_: that's 2) in the page, you just swapped it around
+17:27:25 <javier_> ok
+17:27:35 * javier_ votes for 1
+17:28:01 <llunak> 1: 2 votes, 2: 1 vote, 4: 4 votes
+17:28:21 <llunak> somebody really unhappy with KDE:Unstable:SC + KDE:Unstable:Other?
+17:28:27 <_sc_> dang -- that's with 74 nicks in the channel
+17:28:31 <llunak> dirkMobile: you specifically?
+17:28:55 <javier_> llunak: Extra or Playground sounds better than Other
+17:29:16 <wstephenson> Playground is only meaningful to the insiders
+17:29:31 <Kmetamorphosis> 1
+17:29:32 <cb400f> other is only meaningful if you know that it is "other than sc"
+17:29:42 <llunak> well, you probably won't want others to play with the repo anyway :)
+17:29:43 <javier_> yepp
+17:30:03 <javier_> Other sounds like the outcasts to me
+17:30:07 <javier_> lol
+17:30:23 <cb400f> unstable:playground <- double warning, less risk of the wrong people messing with it :-)
+17:30:23 <wstephenson> there is no perfect naming
+17:30:39 <javier_> cb400f: +1
+17:31:02 <llunak> hmm, but that's actually a good point, we can name most repos on their own now, but 'Other' alone doesn't fit
+17:31:04 <javier_> but isn't unstgable a playground somehow
+17:31:20 <llunak> we have Extra, UpdatedApps, Factory, Stable, SC and Other
+17:31:42 <initialZero> then extra if other so bad
+17:31:49 <wstephenson> llunak: and the version-specific repos might introduce more
+17:32:01 <Kmetamorphosis> What is the difference between Extra and UpdatedApps?
+17:32:03 <wstephenson> i could be persuaded to support Extra again
+17:32:07 <llunak> initialZero: that's not really an improvement if Extra is already taken :)
+17:32:13 <wstephenson> Kmetamorphosis: UpdatedApps is only apps, no libs
+17:32:23 <wstephenson> just updates to things that are already on distro releases
+17:32:28 <cb400f> Kmetamorphosis: UA newer versions of stuff in the distro.. Extra, stuff that's not in the distro
+17:32:34 <javier_> llunak: if extra is taken, then playground?
+17:32:39 <initialZero> but updatedapps makes it sound like they are better
+17:33:02 <cb400f> updatedapps should be better most of the time
+17:33:07 <wstephenson> which is good because we don't want beginners attracted to other repos
+17:33:51 <javier_> unstable:snapshot:playground:testing then
+17:34:08 <javier_> ;-)
+17:34:10 <initialZero> what about NotSC
+17:34:12 <wstephenson> ;)
+17:34:48 <javier_> NotSC could be everything except SC
+17:34:49 <llunak> actually, if I try to think logically about it, then KDE:Unstable:Playground makes the most sense - Playground alone is meaninful, it's under Unstable:, so those who do not get the meaning won't play with it, and it leaves us with separate names for every repo
+17:35:06 <javier_> llunak: +1
+17:35:07 <wstephenson> llunak: its good enough for me.
+17:35:34 <cb400f> me too :-)
+17:35:37 <initialZero> I used to get beat up on the playground
+17:35:41 <initialZero> :(
+17:35:49 <cb400f> that's an argument _for_ the name
+17:35:51 <llunak> and everybody voted for KDE:Unstable:SC + KDE:Unstable:<something>
+17:36:02 <cb400f> because that's what'll happen when you use the repo :-)
+17:36:11 <javier_> lol @ cb400f
+17:36:17 <initialZero> good point
+17:36:39 <initialZero> so are we voting on <something>
+17:36:44 <llunak> ok, KDE:Unstable:SC + KDE:Unstable:Playground - "yes" or "no" ?
+17:36:50 <cb400f> yes
+17:36:53 <javier_> yes
+17:36:57 <initialZero> no
+17:37:09 <llunak> yes
+17:37:36 <Kmetamorphosis> yes
+17:37:42 * llunak hopes he hasn't confused the hell out of everybody here by now
+17:38:01 <dirkMobile> yes
+17:38:09 <elchevive1968_> yes
+17:38:13 <Kmetamorphosis> As a new openSUSE user, the word Playground scares me (as it should).
+17:38:13 <llunak> 10 ... 9 ...
+17:38:34 <initialZero> where's wstephenson
+17:38:44 <llunak> 3 ... 2 ... 1 ... 0 ... boom :)
+17:39:05 <llunak> ok, congratulations, we've survived it
+17:39:13 <initialZero> yeah!
+17:39:16 * wstephenson just wants it to be over
+17:39:20 <wstephenson> and was getting food.
+17:39:26 <llunak> KDE:Unstable:SC + KDE:Unstable:Playground
+17:39:30 <wstephenson> now the next one
+17:39:35 <llunak> AI: llunak arrange renaming of unstable repos
+17:39:46 <llunak> #topic KDE SC version-specific repositories
+17:40:12 <llunak> the story is simple - users turn up again and again and want a repo with KDE SC <this exactly version>
+17:40:20 <javier_> that sounds like having several stable repos
+17:40:35 <initialZero> so kde:playground and k:u:s will be the same?
+17:40:47 <llunak> preferably the latest stable KDE SC, even if there's no important difference to KDE:Distro:Stable
+17:41:01 <javier_> ok
+17:41:24 <cb400f> initialZero: kde:playground will dissappear and become kde:unstable:playground
+17:41:26 <wstephenson> and 50% of the time (roughly) KDE:Distro:Stable lags the latest SC by one release
+17:41:40 <llunak> this however doesn't fit the way we create repos for openSUSE
+17:41:41 <initialZero> s/k:u:s/K:U:P
+17:41:54 <dirkMobile> llunak: with suse patches?
+17:42:19 <llunak> dirkMobile: I think they don't give a damn about that ... version whores is probably a very good description here
+17:42:38 <wstephenson> KDE:VersionWhores:45, ...?
+17:42:48 <dirkMobile> llunak: but i do
+17:42:50 <initialZero> I'm offended
+17:43:14 <dirkMobile> wstephenson: but not Kdf
+17:43:16 <llunak> I mean, KDE:Distro:Stable is probably a stabler choice than <latest KDE SC>
+17:43:49 <initialZero> llunak always
+17:44:05 <llunak> initialZero: sorry, I didn't make this up, and I think it actually describes the motivation quite well
+17:44:52 <Kmetamorphosis> Is this name describing those who want access to 4.5 once it is released, or only those who nitpick between 4.4.x or 4.5.x?
+17:44:53 <llunak> anyway, technically this is not a big deal - the repo can either be created only before K:D:Factory goes to another minor version, or it can just follow it
+17:44:54 <initialZero> I'm a recovering version whore is all
+17:45:19 <wstephenson> aren't we all?
+17:45:35 <llunak> so the work is mainly doing something after K:D:Factory goes the version up
+17:45:51 <wstephenson> Kmetamorphosis: not sure what the difference is between those 2 variations.
+17:45:54 <initialZero> where do testing packages go before updates to stable
+17:46:00 <llunak> so the two questions are: 1) do we want such a repository? 2) is there somebody to do the work?
+17:46:50 <Kmetamorphosis> What I was trying to get at was, I don't care if I'm using 4.4.5 over whatever the stable is, but I would like to be able to use 4.5 once it is released without having to deal with downgrading once factory updates.
+17:46:56 <cb400f> a lot of people want it surely, prolly not many of them here
+17:47:11 <llunak> e.g. Cristian Morales Vega said he'd take care of such a repo, but only until K:D:Factory has the next version stable, which is about a month, and also only for 11.3
+17:47:18 <cb400f> Beineri and reddwarf mentioned some interest in doing some work
+17:47:25 <llunak> I probably wouldn't want such a repo under KDE:
+17:48:01 <llunak> reddwarf: there?
+17:48:30 <Beineri> cb400f: uhm, sure - i'm lacking work ;-)
+17:48:33 <wstephenson> Kmetamorphosis: it's about access to 4.5 once released
+17:48:37 <llunak> hmm ... I suggest we postpone this topic until next time, so that such people can be told more in advance to join here
+17:49:07 <llunak> and it's been going on for quite long today already
+17:49:09 <javier_> cb400f: I'm also interested in helping with that repo
+17:49:41 <wstephenson> llunak: we could also investigate the use of zypp services to reduce the work
+17:49:49 <llunak> AI: llunak lead discussion about KDE:45 repo on opensuse-kde list
+17:49:56 <llunak> wstephenson: how?
+17:49:59 <wstephenson> afair someone on the -gnome list said they are finally viable
+17:50:05 <dirkMobile> zypp services?
+17:50:23 <cb400f> maybe kde:temp:45 or so.. if it really comes to that
+17:50:34 <wstephenson> llunak,dirk: as far as I know they can be something like a symlink
+17:50:46 <cb400f> since it's a recurring problem
+17:51:04 <llunak> dirkMobile: you build all KDE SC releases somewhere anyway, don't you?
+17:51:16 <javier_> ideally, there would be a repo for kde stables releases so that repo switching is not needed
+17:51:16 <wstephenson> that we could use to point eg "KDE:SC:45" to "KDE:Distro:Factory" until it becomes 4.6pre
+17:51:39 <llunak> wstephenson: can you find out details about that?
+17:51:59 <initialZero> wouldn't it be mosre beneficial not to put 45 in factory
+17:52:19 <dirkMobile> wstephendon:
+17:52:26 <javier_> if factory has a newer release than kde45  maybe we could copy the kde part into factory
+17:52:37 <javier_> or link it
+17:52:40 <dirkMobile> does the build service support it?
+17:52:59 <wstephenson> llunak: sure, gimme an AI
+17:53:20 <javier_> initialZero: the next release isn't going to ship 4.5, i think that's why
+17:53:25 <javier_> openSUSE release
+17:53:26 <dirkMobile> the zypp services are just a list of repositories
+17:53:27 <initialZero> we should move this to -kde
+17:53:33 <llunak> AI: wstephenson investigate details about creating repository symlinks
+17:53:40 <wstephenson> dirkMobile: o-g may be in error, i'll find out
+17:53:55 <initialZero> javier_ yes that's why factory should not have it
+17:54:04 <llunak> ok, let's wrap up
+17:54:06 <dirkMobile> well zypp does supor
+17:54:09 <llunak> #topic Q&A, misc
+17:54:22 <wstephenson> item: KDE:KDE4:UNSTABLE:Desktop:kdepim45
+17:54:31 <javier_> initialZero: sorry, I understood that you understood the opposite
+17:54:34 <initialZero> I wanted to say great job on 11.3!
+17:54:48 <dirkMobile> support it however you need to create the list manually i think
+17:54:51 <wstephenson> when KKUD was 4.5pre, this repo contained kdepim 4.5 packages in kdepim4 etc
+17:54:51 * javier_ has to upgrade his laptop to 11.3
+17:55:16 <wstephenson> somehow now KKUD:kdepim45 started containing 4.6 snapshots
+17:55:29 <wstephenson> dirkMobile: is one of your update scripts touching that repo too?
+17:55:56 <dirkMobile> hmm, yes
+17:55:58 <wstephenson> i have reverted it to kdepim* 4.5 for akonadi port testing
+17:56:14 <dirkMobile> i might have uploaded the wrong version there
+17:56:17 <wstephenson> which is a bit weird since it doesn't build vs KKUD now, but vs K:D:F
+17:56:25 <dirkMobile> yeah
+17:56:31 <wstephenson> but temporary so roll with it
+17:56:36 <wstephenson> it's still unstable.
+17:56:41 <dirkMobile> we should rename it
+17:56:45 <cb400f> maybe it should move to k:u:p :-)
+17:56:56 <llunak> shouldn't this be done in K:D:Factory now? KKUD should be now just trunk, no?
+17:57:30 <wstephenson> llunak: no, putting kdepim45 in factory is like handing out grenades at a kindergarten
+17:57:37 <cb400f> lol
+17:57:53 <wstephenson> so i'd like to keep it under KKUD where angels fear to tread
+17:58:39 <cb400f> but an official beta release is coming up, or?
+17:58:40 <wstephenson> where it goes after the KKUD rename, ?
+17:58:51 <cb400f> KUP
+17:58:52 <wstephenson> cb400f: yes, keeps getting postponed
+17:58:59 <dirkMobile> something like kde:unstable:pim should make sense
+17:59:03 <wstephenson> KUP:kdepim45 subrepo?
+17:59:46 <cb400f> KUP main repo.. that's what it's for.. unreleased stuff :-)
+17:59:51 <dirkMobile> or simply unstable:extra
+18:00:13 <wstephenson> same as KUP
+18:00:23 <wstephenson> ok, i'm fine with that, if KUP can build vs KDF
+18:00:35 <llunak> it can
+18:00:52 <wstephenson> dirkMobile: can you take care of your script before the next K:U:SC update run?
+18:01:28 <wstephenson> that's a scary silence
+18:01:33 <wstephenson> i don't know if i dare to osc up
+18:02:06 <Beineri> wstephenson: dirkMobile is just a script and you triggered an unimplemented path...
+18:02:12 <wstephenson> i just got the project to build through because kdepim45 depends on new stuff in kdepimlibs from 4.5 branch
+18:02:44 <wstephenson> i'll assume that's a yes
+18:02:54 <wstephenson> I have another * any other business item
+18:02:59 <wstephenson> 11.4 features
+18:03:12 <wstephenson> i have a longish list of things we could do for 11.4
+18:03:28 <wstephenson> most of them are about hardware/platform integration
+18:03:29 <cb400f> has the Ideas wiki page been moved?
+18:03:37 <wstephenson> and feature parity with other desktops/distri
+18:03:38 <initialZero> is there a wiki for ideas
+18:04:07 <wstephenson> http://old-en.opensuse.org/KDE/Ideas/11.3
+18:04:13 <dirkMobile> wstephenson: sure
+18:04:23 <wstephenson> its the place before things go to features.o.o
+18:04:29 <wstephenson> the antechamber if you like
+18:04:33 <wstephenson> dirkMobile: thanks.
+18:04:56 <wstephenson> so i'll make a 11.4 ideas page and put them up there for discussion, contemplation
+18:05:04 <wstephenson> i may also start a series of blogs about them
+18:06:19 <wstephenson> preview: kbluetooth testing, polkit-1-kde, kpackagekit/shaman, mobile broadband, working xrandr stuff,
+18:06:31 <wstephenson> the rest is on my whiteboard, i can't recall atm
+18:07:13 <llunak> some of that sounds more like upstream, but ok
+18:07:16 <initialZero> is that it
+18:07:53 <wstephenson> llunak: well it may be integrating upstream stuff well into opensuse.
+18:07:59 <llunak> anything else to discuss?
+18:08:03 <javier_> btw, I would like to know if it's ok for the openSUSE/KDE team to have KDE:Open-PC
+18:08:08 <javier_> https://bugzilla.novell.com/show_bug.cgi?id=623979
+18:08:11 <bugbot> openSUSE bug 623979 in openSUSE.org (OBS Request) "Kiwi-enabled project for Open-PC" [Normal,Needinfo]
+18:08:45 <javier_> if you want to add your comments, please do so in the bug report
+18:08:46 <wstephenson> javier_: was the 'why is this in KDE namespace?' question answered?
+18:08:59 <javier_> yes
+18:09:15 <javier_> one of the main features of the Open-PC is KDE
+18:09:35 <initialZero> but its not only kde
+18:09:43 <javier_> right
+18:10:00 <javier_> but some people didn't like the idea of making the Open-PC namespace
+18:10:14 <javier_> so maybe it fits on KDE:
+18:10:33 <wstephenson> openSUSE:Derivative:Open-PC ?
+18:10:41 <llunak> I think it'd be better to have it as toplevel (there is other toplevel stuff, so why not)
+18:10:50 <javier_> wstephenson: that could be another option
+18:11:20 <javier_> ok
+18:11:38 <dirkMobile> respin:open-pc?
+18:11:50 <initialZero> then medical and edu should be there too
+18:11:54 <wstephenson> how does Edu-life do it?
+18:12:03 <javier_> hmm good question
+18:12:31 <wstephenson> and meego?
+18:12:36 <javier_> i think it's under education
+18:13:01 <javier_> yepp
+18:13:02 <javier_> https://build.opensuse.org/project/packages?project=Education
+18:13:22 <initialZero> they are all at root
+18:13:44 <wstephenson> ok then
+18:14:01 <wstephenson> propose Open-PC as a root namespace, saying that it is not just KDE customisation
+18:14:08 <initialZero> derivative would have been nice
+18:14:19 <wstephenson> then when we get too many root namespaces, propose openSUSE:Derivative
+18:14:33 <javier_> ok
+18:14:53 <javier_> remember the most important software part of Open-PC is KDE
+18:15:13 <javier_> but i don't mind if it's under namespace
+18:15:19 <javier_> *other
+18:15:50 <wstephenson> ok
+18:15:52 <wstephenson> i gtg
+18:16:01 <javier_> ok
+18:16:05 <wstephenson> thanks everyone for coming, and doing stuff
+18:16:07 <initialZero> you can always have open-pc:kde
+18:16:09 <llunak> if there's nothing else, the meeting is over, thanks for taking part
+18:16:12 <wstephenson> javier_: good work on the bug triage btw
+18:16:22 <javier_> thanks
+18:16:39 <javier_> i finally talked with her :)
+18:16:41 <wstephenson> and thanks everyone for facing up to the renaming, i know it's fiddly and annoying
+18:16:43 <javier_> she was very helpful
+18:16:43 <wstephenson> (at least i think so)
+18:17:06 <initialZero> I had a lot of fun!
+18:17:09 <wstephenson> thanks especially llunak :)
+18:17:14 <wstephenson> well that's the motto around here.
+18:17:26 <llunak> #endmeeting

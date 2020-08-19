@@ -1,0 +1,289 @@
+15:01:25 <sysrich> #startmeeting openSUSE Project Meeting
+15:01:25 <bugbot> Meeting started Wed Oct 29 15:01:25 2014 UTC.  The chair is sysrich. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:01:25 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:01:31 <sysrich> #char robjo
+15:01:34 <sysrich> #chair robjo
+15:01:34 <bugbot> Current chairs: robjo sysrich
+15:02:08 <sysrich> The current Agenda is at https://en.opensuse.org/openSUSE:Project_meeting - not exactly jam packed, if anyone has any last minute additions, edit the wiki :)
+15:02:19 <sysrich> #Topic Action Items Review
+15:02:46 <robjo> There were no action items from the last meeting
+15:02:48 <sysrich> I don't see any action items outstanding from the last meeting minutes, but I didn't make the meeting. Is there anything people consider 'open' from the last or recent openSUSE project meetings?
+15:03:17 <sysrich> Well that makes it simple enough then.. moving on..
+15:03:26 <sysrich> #topic Tumbleweed
+15:03:56 <sysrich> I put this in there, because I figured there might be some discussion about the recent announcement to merge the Factory and Tumbleweed rolling release - does anyone have any questions about what's going on?
+15:05:34 * mrdocs waves
+15:05:50 <sysrich> mrdocs: good morning! do you have a question, or just saying hello? :)
+15:06:00 <mrdocs> just saying hello :)
+15:08:04 <sysrich> Okay, well, I'm judging by the broad silence and the tumbleweeds floating by, no one has any questions about the decision to rejig our rolling releases... I'll give another 30 seconds or so in case someone is just being shy and not speaking up :)
+15:09:53 <henne> sysrich: I only have a couple of comments on the execution :)
+15:09:54 <sysrich> Okay then..
+15:10:00 <sysrich> henne: go ahead :)
+15:11:32 <henne> is there a reason why this wasn't really discussed on -factory?
+15:13:03 <henne> respectively I'm asking myself why this wasn't brought forward on news@
+15:13:41 <tigerfoot> henne: it was no https://news.opensuse.org/2014/10/24/tumbleweed-factory-rolling-releases-to-merge/
+15:13:51 <henne> that's the result yes
+15:13:57 <henne> no discussion
+15:14:45 <sysrich> tigerfoot: yes but henne does have a point, me and Douglas did not follow the proper procedure of actually discussing it with the news team before announcing it, and it has been kind of unconventional how this all came about in the first place
+15:14:53 <sysrich> I'm happy to explain the circumstances though
+15:14:59 <henne> you should
+15:15:01 <ancorgs> I agree with henne, everything seemed to simply happen overnight (and sure that was not really the case)
+15:15:03 <henne> :)
+15:15:54 * tigerfoot okay .. the discussing internal news team part was hidden procedural part :-)
+15:16:02 <sysrich> first, the not mailing news@ bit first - mea culpa - the decision to announce the merger was actually made some days before the post on news.o.o, but a lot of the final decisions, agreement from Greg, etc, came and clashed with my travel to openSUSE summit
+15:17:09 <henne> It's just sad that this was pushed out without thinking about anything
+15:17:16 <sysrich> so, I ended up announcing it at Summit, and then we played catch up by announcing it on news.o.o when I got back from behind the Great Firewall of China. It's not ideal, and actually I thought news@ had been involved before we pulled the trigger with the post - but I didn't double check that myself, so I'm sorry to the news team
+15:17:24 <henne> it could have had a ton more impact
+15:17:37 <henne> just by involving people
+15:18:13 <henne> well no need to be sorry for the news team. be sorry for this announcement :)
+15:18:37 <sysrich> not sorry FOR the news team, sorry to them :) they should have been more involved
+15:18:48 <gmanu> Hi
+15:18:56 <sysrich> gmanu: Hi
+15:19:04 <gmanu> I am manugupt1 by the way
+15:19:10 <henne> sysrich: next time, stick to the process
+15:19:29 <gmanu> Regarding news team, I dont know if it will matter a lot or not for making announcements or discussing with the news team
+15:19:39 <sysrich> henne: Yes, I intend to
+15:19:51 <gmanu> because WE DO NOT review articles
+15:20:06 <gmanu> We miss posting articles when someone else asks to
+15:20:08 <henne> because if we would have made a propper announcement. with propoer content, proper notification to the press
+15:20:12 <henne> propoer press-kit
+15:20:23 <henne> proper FAQ
+15:20:36 <henne> proper timing
+15:20:47 <gmanu> henne: When was such stuff discussed
+15:20:49 <gmanu> last
+15:20:56 <gmanu> Lets get realistic over here
+15:20:58 <henne> this could have easily been on of the greatest announcements we ever did
+15:21:26 <gmanu> ancorgs: had to literally go on marketing and project mailing list to ask for more help with his articles
+15:21:35 <gmanu> and then people came to help in
+15:21:39 <ancorgs> well, I see where henne wants to go and I completely agree that the timing was really non-optimal. But I'm not sure if our current "marketing" machinery is as good as he believes
+15:21:51 <gmanu> ancorgs: +1
+15:22:09 <sysrich> I'm not unhappy with how well the announcement has been received, how far it's spread, how people seem to have picked up the message, but I do agree with henne we could do better, but I also see it's going to take us a little time to get there
+15:22:25 <ancorgs> gmanu: yes, and all I got was an English proof read by plinnell (thanks a lot)
+15:22:39 <sysrich> SUSE have hired Douglas DeMaio to help us out in that area, but he's got to learn to, so I consider henne's feedback as good 'lessons learned' from this
+15:22:47 * plinnell nods
+15:22:58 <gmanu> sysrich: I am not saying people should learn
+15:23:16 <gmanu> I am pointing to the fact that there is something fundamentally flawed with the news and marketing team
+15:23:24 <ancorgs> I wrote almost every single word of the 13.2 release announcement and, taking into account that I don't consider myself part of the marketing team, that is not optimal
+15:23:25 <gmanu> We need to fix that before talking about process
+15:23:28 <henne> ancorgs, gmanu: if I would have seen a mail on news@ I would have dropped everything and worked on this
+15:23:48 <henne> yes we have not too many people
+15:23:54 <henne> yes they are not too responsive
+15:24:06 <henne> is that a reason to just ignore everyone? no
+15:24:21 <ancorgs> henne: no, I agree with your main point
+15:24:39 <gmanu> henne: if we had access to archives for news@oo
+15:24:41 <ancorgs> all I say is that maybe you was a little bit optimistic in the expectations :-)
+15:25:01 <henne> ancorgs: I'm perfect aware of how it is :)
+15:25:01 <gmanu> We can easily find out how many articles we as a news team ignore
+15:25:02 <henne> still
+15:25:03 <ancorgs> about press kit, FAQ and all that
+15:25:19 <henne> I would have worked on this immediately
+15:25:24 <henne> but I didn't have the chance
+15:25:45 <henne> I would have, if sysrich would have gone through the proper process
+15:25:51 <sysrich> I think it's fair to say we know we have improvements to make in this area, we've got a guy who's now paid to help in this area, I think we're on the right track - but people (like me) doing stupid stuff like bypassing news@ out of convenience doesn't help, I think that's henne's point, and I agree with it
+15:25:52 <henne> :-)
+15:25:53 <ancorgs> and I know henne would have done a great job, as he did when we "announced" factory as rollling
+15:26:29 <gmanu> sysrich: again.. having a paid guy does not solve the problem of getting people involved
+15:26:35 <henne> sysrich: guess who's training Douglas BTW :-Ü
+15:26:42 <henne> guess who trained Jos
+15:26:51 <henne> ...
+15:26:53 <henne> anyway
+15:27:01 <sysrich> henne: let me guess - he's started ignoring everything I'm telling him and doing what he thinks is best...so, I guess you're spending too much time with him ;)
+15:27:03 <henne> that was only one remark I had
+15:27:10 <henne> what about the discussion on -factory?
+15:27:49 <ancorgs> Having a person payed by SUSE is just a patch. The release is big enough for not needing "a payed guy" behind. And look what is happening this time :-(
+15:28:01 <henne> ancorgs: it happened every time
+15:28:19 <henne> in the end it was always me or Jos
+15:28:51 <gmanu> henne: I asked news team for press support for openSUSE Asia Summit
+15:28:52 <henne> and who cares who pays our salary. we don't :)
+15:28:56 <gmanu> Did not get a single review
+15:29:04 <gmanu> I just checked that between
+15:29:19 <ancorgs> we are mixing two discussiong (mainly my fault)
+15:29:36 <henne> gmanu: what has that to do with this discussion?
+15:29:38 <ancorgs> let's focus on the merge and let's go back to marketing status afterward
+15:30:03 <gmanu> cool..
+15:30:29 <sysrich> okay, back to the merge "Why wasn't this discussed on -factory" - I could write a really long story here, but I'm going to try my best to keep it succinct. The short version is I and others realised that the roadmap for Tumbleweed was effectively a 'dead end'
+15:30:37 <robjo> I thought he merge discussion was done, henne is right, sysrich knows better and will not go astray again ;)
+15:33:19 <sysrich> I was really worried about 5000 users, who'd find their rolling release screeching to a halt with the release of 13.2 because GregKH has already decided that he wouldn't be continuing Tumbleweed as an add-on repo ontop of our regular rolling release. So, I got chatting with the 'key' people involved, Factory maintainers, leading contributors, GregKH, to try and find a way to bring the Tumbleweed and Factory rolling releases together to
+15:33:19 <sysrich> handle the otherwise 'death of Tumbleweed' in a nice way for everyone
+15:34:10 <sysrich> If we had more time before the release of 13.2, sure, I would have, and should have, probably opened up the discussion to the whole of the -factory ML, but we were short on time, and we don't always open up every major change to the distribution to those kind of broad discussions
+15:35:04 <henne> well, I would like to disagree. We at least tell our peers before we make it so...
+15:35:35 <sysrich> and you think we didn't do that here?
+15:35:36 <ancorgs> probably the merge was out of question (and my feeling is that most people is happy about it), but I would have prefered to have a voice on the timing
+15:36:06 <sysrich> ancorgs well, you still do - whats your opinion on the timing?
+15:36:12 <henne> sysrich: where did you?
+15:37:13 <ancorgs> making it collide with the release is making everything messy. I cannot see the downsides of doing it some weeks later
+15:37:38 <ancorgs> from the communication point of view, at least
+15:37:39 <sysrich> henne: the announcement and my FAQ/opening discussion post on the -factory ML which, while late, explicitly invited people to discuss, ask questions, etc
+15:38:20 <henne> sysrich: the announcement says: with the tested, user-ready rolling release assuming the name Tumbleweed from Nov. 4
+15:38:23 <henne> done deal
+15:38:37 <sysrich> ancorgs: waiting until after the release is messy from a current-Tumbleweed user point of view, as the 13.2 Release will 'zero' their Tumbleweed repositories and never fill them again
+15:38:39 <henne> and since when does our community work over announcements?
+15:38:42 <henne> I mean really
+15:38:50 <henne> I find this disturbing
+15:39:29 <sysrich> we don't normally, true, so you think we should have drawn the thing out, discussed, acted later?
+15:39:49 <henne> even if you have these time constraints
+15:39:53 <ancorgs> but tumbleweed repositories are not filled everyday, isn't? I'm not a Tumbleweed user but in my understanding, getting "new things on top of the released version" only makes sense some time after that version is released
+15:40:07 <henne> and even if this is supported by all key stakeholders
+15:40:52 * coolo still wants nothing to do with it
+15:41:07 <ancorgs> so there is a window of time there (between the release and tumbleweed being notice as more stalled than usual)
+15:41:17 <henne> you at least write a mail to -factory saying: Hey we $people,  going to do..., because of....
+15:41:31 <ancorgs> *noticed
+15:41:32 <henne> in as much advance as you can
+15:41:41 <sysrich> henne: that's a fair point, true
+15:41:53 <henne> even if it's not fully hashed out yet
+15:42:07 <sysrich> ancorgs: the 'Tumbleweed to zero' has been a pain point for every Tumbleweed user during every openSUSE release since Tumbleweed started
+15:42:17 <sysrich> ancorgs: you can probably find quite some -factory threads on it :)
+15:42:40 <coolo> sysrich: because they are forced to switch to a different version at that time
+15:42:47 <coolo> exactly what will happen now
+15:43:01 <coolo> you don't ease their pain at all
+15:43:09 <coolo> you just add more pain for every factory user
+15:43:12 <henne> you see what will happen when you talk about your intentions?
+15:43:20 <henne> you give people the chance to chime in
+15:45:25 <henne> alright
+15:45:31 <henne> enough grilling
+15:45:38 <sysrich> coolo: technically, you're correct, but every Tumbleweed user I've spoken to is excited about this, and I think we're doing a pretty good job at keeping the pain for factory users to a minimum
+15:45:39 * henne hugs sysrich
+15:45:43 <henne> just do better next time
+15:46:44 <sysrich> henne: you know me, you know how I normally operate, I'm willing to accept my failings, but don't worry, I haven't forgotten how we normally work - just took some different routes for the sake of speed and timing this time
+15:46:57 <coolo> sysrich: so where is your wiki plan - http://en.opensuse.org/Portal:Factory will need a complete overhaul
+15:47:16 <henne> sysrich: yes. never do that again
+15:47:47 <sysrich> coolo: it'll be done if I have to do it myself or die trying
+15:48:24 <plinnell> move on ?
+15:48:40 <gmanu> yeah..
+15:48:53 <sysrich> #topic Any Other Business
+15:49:01 <sysrich> Okay then, anything else?
+15:49:06 <gmanu> sysrich: the topic which I touched earlier
+15:49:12 <gmanu> marketing and news
+15:49:44 <gmanu> One of the problems with the news team is well people do not respond to others request
+15:49:59 <gmanu> It basically means people in news team will post just what they want to
+15:50:00 <henne> there are no people, really
+15:50:09 <gmanu> henne: if there are none
+15:50:26 <sysrich> what happened to holden87?
+15:50:51 <gmanu> So if there are no people how do we fix it
+15:50:59 <sysrich> find people?
+15:51:08 <gmanu> Well news@oo is a private list
+15:51:18 <gmanu> and there are really no press discussions on it
+15:51:25 <henne> gmanu: c'mon. not this discussion again
+15:51:34 <ancorgs> is not only about "a news team". Is about almost everything beyond packaging in the project
+15:51:44 <gmanu> ancorgs: Yes
+15:52:03 <gmanu> What I am suggesting is to unify our infrastructures
+15:52:07 <henne> but we'll only fix specific parts with specific actions
+15:52:14 <henne> so let's stick to the news team
+15:52:26 <gmanu> I am talking about marketing and news here because
+15:52:36 <gmanu> news was formed by splitting marketing
+15:52:46 <gmanu> Why not merge them and see the effects
+15:52:52 <gmanu> news is a failure already
+15:52:59 <gmanu> we might just as well be other failures
+15:53:01 <sysrich> gmanu: 0+0 = 0
+15:53:04 <henne> gmanu: merge them?
+15:53:10 <henne> what do you mean?
+15:53:25 <gmanu> henne: opensuse-marketing list and news list should be one
+15:53:30 <gmanu> sysrich: it is not 0 and 0
+15:53:31 <henne> ...
+15:53:40 <gmanu> sysrich: one marketing list has more members
+15:53:54 <gmanu> and so the opportunity to contribute is more
+15:54:02 <gmanu> so we will be better off
+15:54:17 <gmanu> instead of getting new contributors
+15:54:21 <gmanu> we go to them now
+15:54:28 <gmanu> people who are already there
+15:54:39 <gmanu> it needs to be a slow continuous process but it will work I am sure
+15:54:54 <robjo> gmanu: ARe you proposing to discuss news publically before it is public?
+15:55:02 <gmanu> robjo: yes
+15:55:11 <gmanu> Because it does not really matter
+15:55:19 <gmanu> If people are not discussing news
+15:55:26 <sysrich> gmanu: didn't we discuss this 6 months ago?
+15:55:33 <robjo> Then lets not have news, as they are no longer news,
+15:55:39 <henne> http://paste.opensuse.org/view/raw/87009269
+15:55:42 <slk021> we had a openSUSE News Survey
+15:55:57 <henne> my previous answer to you previous suggestion to marge the lists
+15:55:59 <henne> merge*
+15:56:04 <robjo> sysrich: yes, this discussion is like a bad penny or dare I say the discussion about systemd ;)
+15:56:13 <gmanu> henne: well we are not
+15:56:19 <gmanu> getting support
+15:56:29 <gmanu> Well if I ask news team for press support
+15:56:31 <gmanu> I did not get it
+15:56:47 <gmanu> and then we have no one in the news team
+15:56:51 <henne> and that's a problem we should fix
+15:56:59 <gmanu> How do we do that?
+15:57:06 <henne> we're discussing your fix
+15:57:31 <gmanu> discussing.. where?
+15:57:44 <henne> Get Douglas up to speed. Have him talk to people asking him to join
+15:57:53 <henne> would be my suggestions
+15:57:54 <sysrich> Okay, hold up - I'd like to go back a bit and pick up on something ancorgs said. I have an opinion on ancors point that outside of packaging, other areas of community activity seem lacking
+15:57:54 <henne> -s
+15:58:08 <henne> gmanu: right here. right now
+15:58:37 <henne> having a plan on how to do this
+15:58:49 <henne> having rules and dokumentation about it
+15:58:50 <gmanu> henne: lets discuss this I will like to fix this area by area
+15:58:51 <henne> train people
+15:58:55 <sysrich> I think it's fair to say that in the last year or so, non-technical enthusiasm from openSUSE contributors has been lower than we're used to. We could go into lots of discussion as to why, but I dont think that's very productive, fact is, we are where we are and we have to get better from here.
+15:59:39 <henne> that would be my plan for the news team
+15:59:55 <gmanu> henne: and how to find new contributors
+16:00:02 <gmanu> that is something we should consider too
+16:00:32 <sysrich> I'd like to ask that people stop expecting things right now to be 'like they used to be' and accept how they are right now - non-technical contributors are sometimes harder to keep, motivate, energise - it's not like packaging where there's always something new to work on. Lets focus on positive ways on how we can get more people involved, and make the people we have involved more active and encouraged
+16:00:36 <henne> Douglas (as "leader") talks to specific people who have shown an interest and talent to write, asking him them join
+16:00:59 <plinnell> has the discussion of merging news and marketing finished or decided ?
+16:01:02 <henne> asking *them* to join. sorry
+16:01:28 <ancorgs> I think that it have never worked beyond jos and henne. Last two releases worked because jos was full-time writing and pushing people. Not really because we were an enthusiastic community :-/
+16:01:43 <gmanu> ancorgs: you should see it this way
+16:01:48 <henne> Jos was the enthusiastic community
+16:01:49 <gmanu> 1. Release - Henne and Jos
+16:01:51 <henne> I'm the enthusiastic community
+16:01:53 <gmanu> 2. GSoC - Me
+16:01:59 <gmanu> 3. Conference - Jos
+16:02:01 <henne> what's the problem?
+16:02:01 <sysrich> ancorgs: in the past we had marketing hackathons where we had a good number of people involved
+16:02:11 <gmanu> 4. Education - education team
+16:02:15 <henne> sysrich: resulting in nothing really
+16:02:23 <gmanu> and then you find everyone is doing what everyone is interested in
+16:02:25 <gmanu> but not as a tem
+16:02:56 <henne> and the education team should take care of the marketing of it
+16:03:07 <henne> the news team will help them making their content great
+16:03:18 <gmanu> henne: that is the ideal case
+16:03:21 <henne> teaching them how, when, where to do it
+16:03:26 <gmanu> henne: ok..
+16:03:36 <gmanu> henne and douglas I am up for a wiki page
+16:03:41 <gmanu> or anything like that
+16:03:49 <sysrich> henne: hey, I worked really hard on all those GNOME articles tyvm.. I think we need to be careful about dismissing the hard work people do - if it's not filling the gaps we need, then I think we need to do a better job of identifying those gaps.. but it really is demoralising when people here the stuff they've been working on is 'nothing really'
+16:03:52 <gmanu> or rules and doc which help us do better
+16:04:02 <plinnell> sysrich: maybe a marketing/news hackathon should be part of the mini-summit ?
+16:04:52 <henne> sysrich: fair enough
+16:05:02 <sysrich> plinnell: given it's in the West Coast of the USA and most of our marketing/news people are no where near there.. I dont think the budget will stretch that far. but a marketing/news hackathon does sound like a good idea, get people together, sort this out
+16:05:12 * plinnell nods
+16:05:21 <gmanu> mini summit?
+16:05:25 <gmanu> When is it :/
+16:05:25 <plinnell> perhaps in NUE
+16:05:29 <henne> gmanu: like I said. having a plan on how to do this. having rules and docu about it. train people
+16:05:42 <plinnell> gmanu: in LAX as a part of SCALEX
+16:05:47 <gmanu> henne: lets discuss this at news@oo.
+16:05:56 <gmanu> plinnell: I plan to attend SCALE as part of openSUSE
+16:06:01 <plinnell> https://www.socallinuxexpo.org/scale13x
+16:06:02 <gmanu> so I can help you over there
+16:06:11 <plinnell> gmanu: cool, im already booked as well
+16:06:28 <plinnell> suse will have a 'secondary' presence too
+16:06:37 <plinnell> not to take away from openSUSE
+16:06:56 <gmanu> plinnell: can you take this discussion opensuse-marketing
+16:07:00 <gmanu> and it will be great
+16:07:01 <plinnell> the local team there is excellent
+16:07:13 <plinnell> for sure, im on the list
+16:07:14 <henne> gmanu: I'm currently trying to get douglas up to speed. then take it from there
+16:07:28 <sysrich> and henne's doing a good job at that
+16:07:44 <henne> yup
+16:07:49 <gmanu> henne: cool.. thanks a lot.. but once he is upto speed, lets discuss on the news list
+16:08:03 <henne> he has all the tools in his belt. he knows writing
+16:08:15 * plinnell needs to jump
+16:08:18 <henne> he just doesn't know all the software etc. etc.
+16:08:32 <henne> gmanu: for sure :)
+16:08:48 <coolo> plinnell: the fate of the little poeple - they need to jump to be seen
+16:08:50 <gmanu> henne: cool.. bye for now everyone
+16:09:00 <plinnell> coolo: lol
+16:09:53 <ancorgs> my
+16:09:57 <sysrich> Okay, any other topics to discuss? This meeting has gone for over an hour :)
+16:10:08 <ancorgs> just one last point about it
+16:10:27 <ancorgs> I would like to call everybody to fill https://en.opensuse.org/openSUSE:Major_features
+16:10:46 <ancorgs> I still miss a lot of information (btrfs, snapper, wicked, more about the kernel, development tools),
+16:10:50 <sysrich> #info Please help fill in the Major Features wiki page for 13.2 at https://en.opensuse.org/openSUSE:Major_features
+16:10:53 <ancorgs> ven if it's already late for using that information in the release announcement or the press kit, I think that filling it is still worth it
+16:11:14 <robjo> #info Board elections are coming up, we need Election committee volunteers and candidates, see the announcement on -project
+16:11:26 <sysrich> ancorgs: okay, will do
+16:13:19 <sysrich> Anything else?
+16:15:23 <sysrich> #endmeeting

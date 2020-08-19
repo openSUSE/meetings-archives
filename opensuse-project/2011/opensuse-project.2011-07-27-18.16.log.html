@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:16:34</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE Project + Board Meeting 27-July-2011</span>
+<a name="l-2"></a><span class="tm">18:16:34</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Jul 27 18:16:34 2011 UTC.  The chair is suseROCKs. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:16:34</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:17:00</span><span class="nk"> &lt;suseROCKs&gt;</span> AlanClark,   note how the topic of the channel changed
+<a name="l-5"></a><span class="tm">18:17:44</span><span class="nk"> &lt;AlanClark&gt;</span> hmm forgot the dashes
+<a name="l-6"></a><span class="tm">18:18:38</span><span class="nk"> &lt;AlanClark&gt;</span> Who's present from the board?
+<a name="l-7"></a><span class="tm">18:18:44</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#chair </span><span class="cmdline">AlanClark suseROCKs prusnak mrdocs henne</span>
+<a name="l-8"></a><span class="tm">18:18:44</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: AlanClark henne mrdocs prusnak suseROCKs
+<a name="l-9"></a><span class="tm">18:18:59</span><span class="nk"> &lt;suseROCKs&gt;</span> Present
+<a name="l-10"></a><span class="tm">18:20:34</span><span class="nk"> &lt;AlanClark&gt;</span> so we have 3 board members? (suseROCKS, AlanClark, prusnak)
+<a name="l-11"></a><span class="tm">18:21:18</span><span class="nk"> &lt;suseROCKs&gt;</span> it would seem so, and the others didn't indicate whether they'd be absent
+<a name="l-12"></a><span class="tm">18:21:30</span><span class="nk"> &lt;warlordfff&gt;</span> other gone for Summer Vacations ;-p
+<a name="l-13"></a><span class="tm">18:21:58</span><span class="nk"> &lt;suseROCKs&gt;</span> Who needs a vacation when we have the love of the openSUSE Project community always nearby?
+<a name="l-14"></a><span class="tm">18:22:00</span><span class="nk"> &lt;AlanClark&gt;</span> We don't have quorum.  Therefore we can't vote today.  We'll have to take trademark usage request off the agenda
+<a name="l-15"></a><span class="tm">18:22:34</span><span class="nk"> &lt;AlanClark&gt;</span> Ok let's look at the agenda
+<a name="l-16"></a><span class="tm">18:22:35</span><span class="nk"> &lt;suseROCKs&gt;</span> +1 though we can discuss if there's something weird in a request  (though I don't recall any new requests coming in)
+<a name="l-17"></a><span class="tm">18:23:24 </span><span class="nka">* AlanClark</span> <span class="ac">browser just died</span>
+<a name="l-18"></a><span class="tm">18:24:03</span><span class="nk"> &lt;suseROCKs&gt;</span> Told you to stop using Internet Explorer, AlanClark
+<a name="l-19"></a><span class="tm">18:24:18</span><span class="nk"> &lt;warlordfff&gt;</span> firefox sucks those days
+<a name="l-20"></a><span class="tm">18:24:21</span><span class="nk"> &lt;AlanClark&gt;</span> is that like not inhailing?
+<a name="l-21"></a><span class="tm">18:24:23</span><span class="nk"> &lt;warlordfff&gt;</span> too
+<a name="l-22"></a><span class="tm">18:24:29</span><span class="nk"> &lt;suseROCKs&gt;</span> lol
+<a name="l-23"></a><span class="tm">18:24:45</span><span class="nk"> &lt;AlanClark&gt;</span> on the agenda we have
+<a name="l-24"></a><span class="tm">18:24:49</span><span class="nk"> &lt;AlanClark&gt;</span> 1 - action items
+<a name="l-25"></a><span class="tm">18:24:56</span><span class="nk"> &lt;AlanClark&gt;</span> 2 -status reports
+<a name="l-26"></a><span class="tm">18:25:00</span><span class="nk"> &lt;robjo&gt;</span> Is it Monday morning or Friday afternoon, getting started is dragging like tar.
+<a name="l-27"></a><span class="tm">18:25:10</span><span class="nk"> &lt;robjo&gt;</span> what part of the week did I miss?
+<a name="l-28"></a><span class="tm">18:25:16</span><span class="nk"> &lt;AlanClark&gt;</span> 3 - Board meeting at osc
+<a name="l-29"></a><span class="tm">18:25:35</span><span class="nk"> &lt;AlanClark&gt;</span> we will skip agenda item #4 since we don't have quorum
+<a name="l-30"></a><span class="tm">18:25:51</span><span class="nk"> &lt;AlanClark&gt;</span> 5 - where we can improve
+<a name="l-31"></a><span class="tm">18:25:59</span><span class="nk"> &lt;AlanClark&gt;</span> 6 - Q/A
+<a name="l-32"></a><span class="tm">18:26:12</span><span class="nk"> &lt;AlanClark&gt;</span> would anyone like to add/change the agenda?
+<a name="l-33"></a><span class="tm">18:26:24 </span><span class="nka">* suseROCKs</span> <span class="ac">seconds the agenda as proposed</span>
+<a name="l-34"></a><span class="tm">18:26:42</span><span class="nk"> &lt;AlanClark&gt;</span> ok we're off to the races
+<a name="l-35"></a><span class="tm">18:26:45</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="topic">#topic </span><span class="topicline">Previous Action Items</span>
+<a name="l-36"></a><span class="tm">18:27:48</span><span class="nk"> &lt;AlanClark&gt;</span> There are 3 project action items.  We've discussed the details in past meetings.  Do we have any updates to discuss today?
+<a name="l-37"></a><span class="tm">18:28:15</span><span class="nk"> &lt;suseROCKs&gt;</span> weren't we going to change the assignee for but 691779?
+<a name="l-38"></a><span class="tm">18:28:29</span><span class="nk"> &lt;suseROCKs&gt;</span> bug 691779
+<a name="l-39"></a><span class="tm">18:28:31</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 691779 in openSUSE.org (Action Items) "Implement "based on openSUSE" branding packages" [Normal,New] https://bugzilla.novell.com/691779
+<a name="l-40"></a><span class="tm">18:28:59</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> to what?
+<a name="l-41"></a><span class="tm">18:29:21</span><span class="nk"> &lt;tigerfoot&gt;</span> to whom
+<a name="l-42"></a><span class="tm">18:29:41</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,  in last meeting I can't remember who, was going to take it since javier is overwhelmed and unable to take care of things and respond to the topic
+<a name="l-43"></a><span class="tm">18:30:06</span><span class="nk"> &lt;suseROCKs&gt;</span> I think someone (was it henne?) was going to see about re-assigning it to rhlihm
+<a name="l-44"></a><span class="tm">18:30:11</span><span class="nk"> &lt;suseROCKs&gt;</span> rlihm
+<a name="l-45"></a><span class="tm">18:30:42</span><span class="nk"> &lt;suseROCKs&gt;</span> Also bug 682098 should be reassigned to cboltz if I recall correctly
+<a name="l-46"></a><span class="tm">18:30:44</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 682098 in openSUSE.org (Action Items) "Decide how we go forward with contributor gifts." [Normal,Reopened] https://bugzilla.novell.com/682098
+<a name="l-47"></a><span class="tm">18:30:44</span><span class="nk"> &lt;prusnak&gt;</span> please add comment to bugzilla, change to needinfo status and add henne as info provider
+<a name="l-48"></a><span class="tm">18:30:58</span><span class="nk"> &lt;AlanClark&gt;</span> looking at the log, henne was going to try to find a replacement
+<a name="l-49"></a><span class="tm">18:31:09</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> suse-beta is cboltz
+<a name="l-50"></a><span class="tm">18:31:23</span><span class="nk"> &lt;suseROCKs&gt;</span> oh... that's confusing :-)
+<a name="l-51"></a><span class="tm">18:31:24</span><span class="nk"> &lt;prusnak&gt;</span> so that's ok
+<a name="l-52"></a><span class="tm">18:31:35</span><span class="nk"> &lt;suseROCKs&gt;</span> thanks for the clarification, prusnak
+<a name="l-53"></a><span class="tm">18:31:35</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">suseROCKs:</span> the domain part counts ;-)
+<a name="l-54"></a><span class="tm">18:31:43</span><span class="nk"> &lt;AlanClark&gt;</span> in openSUSE.org (Action Items) "Decide how we go forward with contributor gifts." [Normal,Reopened] https://bugzilla.novell.com/682098
+<a name="l-55"></a><span class="tm">18:31:44</span><span class="nk"> &lt;AlanClark&gt;</span> [12:30] &lt;AlanClark&gt; looking at the
+<a name="l-56"></a><span class="tm">18:32:09</span><span class="nk"> &lt;prusnak&gt;</span> okay, so there is no progress on these items i suppose
+<a name="l-57"></a><span class="tm">18:32:17</span><span class="nk"> &lt;AlanClark&gt;</span> ok that was wierd;
+<a name="l-58"></a><span class="tm">18:33:05</span><span class="nk"> &lt;AlanClark&gt;</span> comments on the gifts last time - was to wait for a proposal from cboltz
+<a name="l-59"></a><span class="tm">18:33:57</span><span class="nk"> &lt;cboltz&gt;</span> I will probably come up with more than one option ;-)
+<a name="l-60"></a><span class="tm">18:34:41</span><span class="nk"> &lt;cboltz&gt;</span> but for today I don't have anything new, so feel free to continue with other topics
+<a name="l-61"></a><span class="tm">18:34:57</span><span class="nk"> &lt;AlanClark&gt;</span> cboltz - great!  do you have a target date, when you would like to discuss this?
+<a name="l-62"></a><span class="tm">18:35:16</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,   if you don't mind, can you look at the bug and tell me if I did it right with changing stuff around?
+<a name="l-63"></a><span class="tm">18:35:52</span><span class="nk"> &lt;cboltz&gt;</span> see the whiteboard - soft ETA is 2011-08-10 (next meeting), hard eta is (obviously) 11.2 RC1 ;-)
+<a name="l-64"></a><span class="tm">18:36:11</span><span class="nk"> &lt;suseROCKs&gt;</span> what's obvious about 11.2?  :-)
+<a name="l-65"></a><span class="tm">18:36:19</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> you did great
+<a name="l-66"></a><span class="tm">18:36:53</span><span class="nk"> &lt;suseROCKs&gt;</span> thanks
+<a name="l-67"></a><span class="tm">18:37:01</span><span class="nk"> &lt;cboltz&gt;</span> well, if we want to give something to the people who contributed to 12.1, then we should decide until the release ;-)
+<a name="l-68"></a><span class="tm">18:37:45</span><span class="nk"> &lt;suseROCKs&gt;</span> ok can we move on?
+<a name="l-69"></a><span class="tm">18:37:50</span><span class="nk"> &lt;AlanClark&gt;</span> thanks cboltz
+<a name="l-70"></a><span class="tm">18:38:07</span><span class="nk"> &lt;AlanClark&gt;</span> let's move to the board AI's
+<a name="l-71"></a><span class="tm">18:38:32</span><span class="nk"> &lt;AlanClark&gt;</span> There are 2.
+<a name="l-72"></a><span class="tm">18:38:55</span><span class="nk"> &lt;AlanClark&gt;</span> The one assigned to me is still on hold
+<a name="l-73"></a><span class="tm">18:39:06</span><span class="nk"> &lt;AlanClark&gt;</span> prusnak - anything to discuss on the one assigned to you?
+<a name="l-74"></a><span class="tm">18:39:16</span><span class="nk"> &lt;prusnak&gt;</span> no
+<a name="l-75"></a><span class="tm">18:39:44</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,   how about a bof on bug reporting issues at the conference?  :-)
+<a name="l-76"></a><span class="tm">18:40:16</span><span class="nk"> &lt;prusnak&gt;</span> hm, we might consider that
+<a name="l-77"></a><span class="tm">18:40:22</span><span class="nk"> &lt;prusnak&gt;</span> but i think that's not a big issue
+<a name="l-78"></a><span class="tm">18:40:38</span><span class="nk"> &lt;suseROCKs&gt;</span> I meant that in jest  :-)
+<a name="l-79"></a><span class="tm">18:40:50</span><span class="nk"> &lt;AlanClark&gt;</span> shall we move to the next topic
+<a name="l-80"></a><span class="tm">18:40:55</span><span class="nk"> &lt;prusnak&gt;</span> yes please
+<a name="l-81"></a><span class="tm">18:40:59 </span><span class="nka">* cboltz</span> <span class="ac">could probably fill a whole day with funny[tm] stories and discussions with the bugzilla team</span>
+<a name="l-82"></a><span class="tm">18:41:03</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="topic">#topic </span><span class="topicline">Status Reports</span>
+<a name="l-83"></a><span class="tm">18:41:44</span><span class="nk"> &lt;suseROCKs&gt;</span> Regarding Conference...I'll do sub-topic - Program Committee
+<a name="l-84"></a><span class="tm">18:41:54</span><span class="nk"> &lt;AlanClark&gt;</span> Are there any teams or individuals who would like to provide a status report?
+<a name="l-85"></a><span class="tm">18:42:31</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info  </span><span class="cmdline">openSUSE Conference Program Committee has closed its deadline for CFP submissions, though a few are still trickling in.  We have about 120 proposals already and very awesome.  We have our work cut out for us to complete all by Aug 5th at latest to announce our program</span>
+<a name="l-86"></a><span class="tm">18:42:59</span><span class="nk"> &lt;suseROCKs&gt;</span> Anybody else here want to talk about general Conference planning status?
+<a name="l-87"></a><span class="tm">18:43:36</span><span class="nk"> &lt;suseROCKs&gt;</span> If not, (and I don't have much to say on that line) I'll go on to Marketing Team status
+<a name="l-88"></a><span class="tm">18:44:07</span><span class="nk"> &lt;suseROCKs&gt;</span> going once... going twice....
+<a name="l-89"></a><span class="tm">18:44:09</span><span class="nk"> &lt;AlanClark&gt;</span> We have a great set of CFP submissions.  We are going to have some very good content at the conference
+<a name="l-90"></a><span class="tm">18:44:33</span><span class="nk"> &lt;suseROCKs&gt;</span> AlanClark,  yes indeed.  Our committee definitely has its work cut out for it
+<a name="l-91"></a><span class="tm">18:44:45</span><span class="nk"> &lt;AlanClark&gt;</span> Let's go to Marketing team status
+<a name="l-92"></a><span class="tm">18:45:20</span><span class="nk"> &lt;suseROCKs&gt;</span> okey doke....
+<a name="l-93"></a><span class="tm">18:45:59</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info </span><span class="cmdline">Marketing Team will have a joint hackfest with the Artwork team on September 15-16 in Nuremberg at the SUSE Offices to complete some tasks for openSUSE 12.1 Release</span>
+<a name="l-94"></a><span class="tm">18:46:13</span><span class="nk"> &lt;warlordfff&gt;</span> a dream come true
+<a name="l-95"></a><span class="tm">18:46:21</span><span class="nk"> &lt;warlordfff&gt;</span> sit on AJ's office
+<a name="l-96"></a><span class="tm">18:46:25</span><span class="nk"> &lt;warlordfff&gt;</span> ;-)
+<a name="l-97"></a><span class="tm">18:46:28</span><span class="nk"> &lt;suseROCKs&gt;</span> :-)
+<a name="l-98"></a><span class="tm">18:47:38</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info  </span><span class="cmdline">A formal announcement will be sent to the Marketing and Ambassador teams later today announcing the creation of a new program to sponsor Ambassador Travel costs.  The Ambassador team will self-determine and plan quarterly budgets for travel to important destinations to promote openSUSE throughout the year</span>
+<a name="l-99"></a><span class="tm">18:48:20</span><span class="nk"> &lt;suseROCKs&gt;</span> Each quarterly proposal is, of course, subject to Jos Poortvliet's final approval in each case.
+<a name="l-100"></a><span class="tm">18:48:40</span><span class="nk"> &lt;suseROCKs&gt;</span> That's about it from the Marketing side for now
+<a name="l-101"></a><span class="tm">18:49:17</span><span class="nk"> &lt;suseROCKs&gt;</span> AlanClark,   back to you...
+<a name="l-102"></a><span class="tm">18:49:32</span><span class="nk"> &lt;AlanClark&gt;</span> suseROCKS - as part of the hackfest, will that include, discussing release parties, etc?
+<a name="l-103"></a><span class="tm">18:49:51</span><span class="nk"> &lt;AlanClark&gt;</span> (aka getting people to plan release parties)
+<a name="l-104"></a><span class="tm">18:49:57</span><span class="nk"> &lt;warlordfff&gt;</span> we should start this sooner
+<a name="l-105"></a><span class="tm">18:50:10</span><span class="nk"> &lt;suseROCKs&gt;</span> AlanClark,   That is topic that ambassador team representatives at the hackfest can/should tackle.  Yes
+<a name="l-106"></a><span class="tm">18:50:14</span><span class="nk"> &lt;warlordfff&gt;</span> the planning for the party
+<a name="l-107"></a><span class="tm">18:50:56</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,   just to be clear.  The hackfest is not the start of marketing planning.   We should be doing any and all planning ASAP wherever possible.  :-)
+<a name="l-108"></a><span class="tm">18:51:09</span><span class="nk"> &lt;warlordfff&gt;</span> of course
+<a name="l-109"></a><span class="tm">18:51:17</span><span class="nk"> &lt;suseROCKs&gt;</span> And I'm going to be calling a meeting for next Tuesday to begin promotion planning discussions
+<a name="l-110"></a><span class="tm">18:51:32</span><span class="nk"> &lt;warlordfff&gt;</span> we should start thinking a second ambassador collaboration day too
+<a name="l-111"></a><span class="tm">18:51:40</span><span class="nk"> &lt;suseROCKs&gt;</span> That is, in fact, next on my to-email list  today  :-)
+<a name="l-112"></a><span class="tm">18:52:03</span><span class="nk"> &lt;AlanClark&gt;</span> +1
+<a name="l-113"></a><span class="tm">18:52:18</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,   an online event?  Like back in Dec?   Good idea.   Bring that up at the meeting on Tuesday
+<a name="l-114"></a><span class="tm">18:52:46</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">warlordfff:</span> will do that on G+ :D
+<a name="l-115"></a><span class="tm">18:53:04</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-116"></a><span class="tm">18:53:06</span><span class="nk"> &lt;suseROCKs&gt;</span> oh no!  More G+ spam from warlordfff?  :-)
+<a name="l-117"></a><span class="tm">18:53:13</span><span class="nk"> &lt;AlanClark&gt;</span> ok, any other team status to report?
+<a name="l-118"></a><span class="tm">18:53:38</span><span class="nk"> &lt;suseROCKs&gt;</span> tigerfoot,   you've been closely involved with factory.  Anything useful to report here?
+<a name="l-119"></a><span class="tm">18:54:59</span><span class="nk"> &lt;AlanClark&gt;</span> it's going so well that tigerfoot is speechless
+<a name="l-120"></a><span class="tm">18:55:32</span><span class="nk"> &lt;suseROCKs&gt;</span> heh
+<a name="l-121"></a><span class="tm">18:55:42</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,   how about boosters?
+<a name="l-122"></a><span class="tm">18:56:06</span><span class="nk"> &lt;prusnak&gt;</span> boosters post regular updates on their mailinglist
+<a name="l-123"></a><span class="tm">18:56:24</span><span class="nk"> &lt;prusnak&gt;</span> we were working on OBS download page recently
+<a name="l-124"></a><span class="tm">18:56:51</span><span class="nk"> &lt;prusnak&gt;</span> so upstream projects can include this page in iframe in their upstream project page
+<a name="l-125"></a><span class="tm">18:57:13</span><span class="nk"> &lt;prusnak&gt;</span> see e.g. http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc
+<a name="l-126"></a><span class="tm">18:57:17</span><span class="nk"> &lt;suseROCKs&gt;</span> oh that is very cool.  Should make it *much* easier for us to promote OBS
+<a name="l-127"></a><span class="tm">18:57:44</span><span class="nk"> &lt;prusnak&gt;</span> next step is to try to persuade some upstream foss projects to actually use obs and this page
+<a name="l-128"></a><span class="tm">18:59:07</span><span class="nk"> &lt;AlanClark&gt;</span> prusnak - do we have any of the persuasive arguments on why/how they would do it written down?
+<a name="l-129"></a><span class="tm">18:59:18</span><span class="nk"> &lt;prusnak&gt;</span> not yet
+<a name="l-130"></a><span class="tm">18:59:35</span><span class="nk"> &lt;prusnak&gt;</span> we'll write a news story once with documentation we declare it as finished
+<a name="l-131"></a><span class="tm">18:59:47</span><span class="nk"> &lt;tigerfoot&gt;</span> kde 4.7 will be there tomorrow
+<a name="l-132"></a><span class="tm">18:59:48</span><span class="nk"> &lt;prusnak&gt;</span> we'll write a news story with documentation once we declare it as finished
+<a name="l-133"></a><span class="tm">18:59:59</span><span class="nk"> &lt;cboltz&gt;</span> another next step: contact the big foss hosting providers (sourceforge etc) - it should be possible to place the link on the download page
+<a name="l-134"></a><span class="tm">19:00:05</span><span class="nk"> &lt;suseROCKs&gt;</span> Marketing team will be *very* interested in collaborating with you on that as the team has highly interested in promoting OBS as part of their efforts
+<a name="l-135"></a><span class="tm">19:00:16</span><span class="nk"> &lt;prusnak&gt;</span> and yes, some boosters are organizing kde 4.7 release party in nbg office right now
+<a name="l-136"></a><span class="tm">19:00:43</span><span class="nk"> &lt;suseROCKs&gt;</span> cb400f,  I believe at one point we did try to reach out to sourceforge, but no interest at that time.   Wouldn't hurt to re-double that effort again though
+<a name="l-137"></a><span class="tm">19:01:09 </span><span class="nka">* cboltz</span> <span class="ac">thinks suseROCKs shouldn't trust tab completion too much</span>
+<a name="l-138"></a><span class="tm">19:01:40</span><span class="nk"> &lt;AlanClark&gt;</span> thanks prusnak - good stuff!
+<a name="l-139"></a><span class="tm">19:01:46</span><span class="nk"> &lt;AlanClark&gt;</span> any other team status?
+<a name="l-140"></a><span class="tm">19:01:55</span><span class="nk"> &lt;AlanClark&gt;</span> Robert Schweikert - want to report on cloud?
+<a name="l-141"></a><span class="tm">19:01:56 </span><span class="nka">* suseROCKs</span> <span class="ac">trusts cboltz to inform him that his tab completion is #fail</span>
+<a name="l-142"></a><span class="tm">19:02:28 </span><span class="nka">* AlanClark</span> <span class="ac">not sure Robert is here</span>
+<a name="l-143"></a><span class="tm">19:03:19</span><span class="nk"> &lt;suseROCKs&gt;</span> I think we can move on from this topic now
+<a name="l-144"></a><span class="tm">19:03:43</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="topic">#topic </span><span class="topicline">Board meeting at osc</span>
+<a name="l-145"></a><span class="tm">19:04:08</span><span class="nk"> &lt;AlanClark&gt;</span> Perhaps we should simply move this to the mailing list
+<a name="l-146"></a><span class="tm">19:04:23</span><span class="nk"> &lt;AlanClark&gt;</span> and discuss it there
+<a name="l-147"></a><span class="tm">19:04:25</span><span class="nk"> &lt;suseROCKs&gt;</span> Agreed.  not enough people here to have a reasonable discusssion
+<a name="l-148"></a><span class="tm">19:04:42</span><span class="nk"> &lt;AlanClark&gt;</span> I will take the AI to start a mail thread
+<a name="l-149"></a><span class="tm">19:04:47</span><span class="nk"> &lt;prusnak&gt;</span> agreed, but for the record i'm ok with having it prior the conference
+<a name="l-150"></a><span class="tm">19:04:57</span><span class="nk"> &lt;suseROCKs&gt;</span> same here
+<a name="l-151"></a><span class="tm">19:05:37</span><span class="nk"> &lt;AlanClark&gt;</span> +1; we just need to work out some details soon so that everyone can book travel appropriately
+<a name="l-152"></a><span class="tm">19:06:18</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="topic">#topic </span><span class="topicline">Where do we need to improve?</span>
+<a name="l-153"></a><span class="tm">19:06:50</span><span class="nk"> &lt;suseROCKs&gt;</span> For once, i actually don't have anything to complain about here  :-)
+<a name="l-154"></a><span class="tm">19:07:13</span><span class="nk"> &lt;AlanClark&gt;</span> I don't see any new entries in openFATE
+<a name="l-155"></a><span class="tm">19:08:23</span><span class="nk"> &lt;suseROCKs&gt;</span> not even yaloki has any improvement suggestions?
+<a name="l-156"></a><span class="tm">19:08:28</span><span class="nk"> &lt;AlanClark&gt;</span> suseROCKS, Guess we've reached perfection
+<a name="l-157"></a><span class="tm">19:09:18</span><span class="nk"> &lt;warlordfff&gt;</span> we did
+<a name="l-158"></a><span class="tm">19:09:36</span><span class="nk"> &lt;warlordfff&gt;</span> ;-)
+<a name="l-159"></a><span class="tm">19:09:47</span><span class="nk"> &lt;AlanClark&gt;</span> ok, shall we move to the next topic?
+<a name="l-160"></a><span class="tm">19:10:10</span><span class="nk"> &lt;suseROCKs&gt;</span> you guys are still stuck with me, so we haven't reached perfection yet.
+<a name="l-161"></a><span class="tm">19:10:46</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="topic">#topic </span><span class="topicline">Q/A</span>
+<a name="l-162"></a><span class="tm">19:11:16</span><span class="nk"> &lt;AlanClark&gt;</span> There are no questions posted to the wiki.  Do we have any questions from the meeting participants?
+<a name="l-163"></a><span class="tm">19:11:48</span><span class="nk"> &lt;suseROCKs&gt;</span> c'mon warlordfff   You must have a million questions!
+<a name="l-164"></a><span class="tm">19:12:04</span><span class="nk"> &lt;warlordfff&gt;</span> I do
+<a name="l-165"></a><span class="tm">19:12:23</span><span class="nk"> &lt;warlordfff&gt;</span> but I have a Greek ambassadors meeting to now so...
+<a name="l-166"></a><span class="tm">19:13:35</span><span class="nk"> &lt;warlordfff&gt;</span> raincheck
+<a name="l-167"></a><span class="tm">19:14:18</span><span class="nk"> &lt;AlanClark&gt;</span> ok since we're so quiet today... going once
+<a name="l-168"></a><span class="tm">19:14:26</span><span class="nk"> &lt;AlanClark&gt;</span> twice
+<a name="l-169"></a><span class="tm">19:14:39</span><span class="nk"> &lt;AlanClark&gt;</span> thrice
+<a name="l-170"></a><span class="tm">19:14:54</span><span class="nk"> &lt;AlanClark&gt;</span> that concludes the agenda.
+<a name="l-171"></a><span class="tm">19:14:59</span><span class="nk"> &lt;AlanClark&gt;</span> Any other topics to discuss today?
+<a name="l-172"></a><span class="tm">19:15:15</span><span class="nk"> &lt;suseROCKs&gt;</span> None here
+<a name="l-173"></a><span class="tm">19:15:17</span><span class="nk"> &lt;prusnak&gt;</span> any news wrt foundation?
+<a name="l-174"></a><span class="tm">19:15:18</span><span class="nk"> &lt;tigerfoot&gt;</span> for QA
+<a name="l-175"></a><span class="tm">19:15:39</span><span class="nk"> &lt;tigerfoot&gt;</span> I've just a question about the status about member approvement process,
+<a name="l-176"></a><span class="tm">19:15:50</span><span class="nk"> &lt;AlanClark&gt;</span> prusnak, no new news wrt foundation yet
+<a name="l-177"></a><span class="tm">19:15:55</span><span class="nk"> &lt;tigerfoot&gt;</span> we didn't have report recently, did we ?
+<a name="l-178"></a><span class="tm">19:16:12</span><span class="nk"> &lt;suseROCKs&gt;</span> tigerfoot,   report from?
+<a name="l-179"></a><span class="tm">19:16:16</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">tigerfoot:</span> we (boosters) reworked interface so it is much easier now
+<a name="l-180"></a><span class="tm">19:16:31</span><span class="nk"> &lt;prusnak&gt;</span> and membership approval started to work on it again
+<a name="l-181"></a><span class="tm">19:16:39</span><span class="nk"> &lt;prusnak&gt;</span> membership approval team
+<a name="l-182"></a><span class="tm">19:16:59</span><span class="nk"> &lt;suseROCKs&gt;</span> so they're happy with the process and things are expediting?
+<a name="l-183"></a><span class="tm">19:17:08</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">prusnak:</span> ok ..
+<a name="l-184"></a><span class="tm">19:17:18</span><span class="nk"> &lt;tigerfoot&gt;</span> good to heard
+<a name="l-185"></a><span class="tm">19:17:23</span><span class="nk"> &lt;AlanClark&gt;</span> kudos to the membership approval team - I can see that they are working through the approvals!!!!
+<a name="l-186"></a><span class="tm">19:17:23</span><span class="nk"> &lt;prusnak&gt;</span> if someone is unhappy we don't know it
+<a name="l-187"></a><span class="tm">19:17:49</span><span class="nk"> &lt;suseROCKs&gt;</span> good answer, prusnak   :-)
+<a name="l-188"></a><span class="tm">19:18:17</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">prusnak:</span> it's quite normal, sometimes people think that if they make too much noise, they will be considered as (...place your word here ...) :D
+<a name="l-189"></a><span class="tm">19:18:51</span><span class="nk"> &lt;tigerfoot&gt;</span> but now if the process is ok again, then I will ask them to make noise :-)
+<a name="l-190"></a><span class="tm">19:19:45</span><span class="nk"> &lt;mrdocs&gt;</span> lo gang
+<a name="l-191"></a><span class="tm">19:19:54</span><span class="nk"> &lt;BManojlovic&gt;</span> hello
+<a name="l-192"></a><span class="tm">19:19:55</span><span class="nk"> &lt;AlanClark&gt;</span> Hey mrdocs
+<a name="l-193"></a><span class="tm">19:20:04</span><span class="nk"> &lt;mrdocs&gt;</span> sorry i was not here earlier.. internet turbulence here
+<a name="l-194"></a><span class="tm">19:20:07</span><span class="nk"> &lt;AlanClark&gt;</span> We're at the Q/A topic in the agenda
+<a name="l-195"></a><span class="tm">19:20:11</span><span class="nk"> &lt;mrdocs&gt;</span> ok
+<a name="l-196"></a><span class="tm">19:20:16</span><span class="nk"> &lt;mrdocs&gt;</span> anything needing votes ?
+<a name="l-197"></a><span class="tm">19:20:26</span><span class="nk"> &lt;AlanClark&gt;</span> Actually yes
+<a name="l-198"></a><span class="tm">19:20:37</span><span class="nk"> &lt;AlanClark&gt;</span> with 4 we can go back to agenda item #3
+<a name="l-199"></a><span class="tm">19:20:57</span><span class="nk"> &lt;AlanClark&gt;</span> Any other Q/A questions?
+<a name="l-200"></a><span class="tm">19:21:24</span><span class="nk"> &lt;AlanClark&gt;</span> er agenda item #4
+<a name="l-201"></a><span class="tm">19:21:47</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="topic">#topic </span><span class="topicline">permission@ requests</span>
+<a name="l-202"></a><span class="tm">19:22:20</span><span class="nk"> &lt;AlanClark&gt;</span> We have one request for trademark usage from media-moritz
+<a name="l-203"></a><span class="tm">19:22:20 </span><span class="nka">* suseROCKs</span> <span class="ac">wrings mrdocs   I thought I was able to walk away  :-)</span>
+<a name="l-204"></a><span class="tm">19:22:53</span><span class="nk"> &lt;suseROCKs&gt;</span> AlanClark,   what's the subject line, if you don't mind?
+<a name="l-205"></a><span class="tm">19:23:32</span><span class="nk"> &lt;AlanClark&gt;</span> the latest email subject line: "Re: Fwd: OpenSUSE logo in my online-shop"
+<a name="l-206"></a><span class="tm">19:23:40</span><span class="nk"> &lt;suseROCKs&gt;</span> ahh that one
+<a name="l-207"></a><span class="tm">19:23:48</span><span class="nk"> &lt;BManojlovic&gt;</span> "Requests for use of the trademarks have been received through permission@. The board has needs to vote on the following: "
+<a name="l-208"></a><span class="tm">19:25:11</span><span class="nk"> &lt;AlanClark&gt;</span> Looking at his proposed website, it looks to me like he is simply distributing openSUSE.
+<a name="l-209"></a><span class="tm">19:25:34</span><span class="nk"> &lt;mrdocs&gt;</span> looks ok to me as well
+<a name="l-210"></a><span class="tm">19:26:11</span><span class="nk"> &lt;prusnak&gt;</span> ok from me as well
+<a name="l-211"></a><span class="tm">19:26:13</span><span class="nk"> &lt;AlanClark&gt;</span> In which case I don't think that the board needs to give approval - His use case is already covered and granted in the trademark guidelines
+<a name="l-212"></a><span class="tm">19:26:33</span><span class="nk"> &lt;suseROCKs&gt;</span> I can't fairly comment on the usage in the site itself as it is in German, but if it is simply a re-distribution, its okay by me.
+<a name="l-213"></a><span class="tm">19:26:37</span><span class="nk"> &lt;suseROCKs&gt;</span> Is he charging a fee?
+<a name="l-214"></a><span class="tm">19:26:50</span><span class="nk"> &lt;AlanClark&gt;</span> yes
+<a name="l-215"></a><span class="tm">19:27:14</span><span class="nk"> &lt;suseROCKs&gt;</span> what kind of fee?
+<a name="l-216"></a><span class="tm">19:27:15</span><span class="nk"> &lt;AlanClark&gt;</span> er - at least the site is setup to where he can charge a fee
+<a name="l-217"></a><span class="tm">19:27:52</span><span class="nk"> &lt;suseROCKs&gt;</span> if its a "handling fee"  I won't object.  If its a "selling fee" I'm not sure where we stand on that.
+<a name="l-218"></a><span class="tm">19:30:22</span><span class="nk"> &lt;AlanClark&gt;</span> The site has a shopping cart - he doesn't  state how much of a fee or if it's for shipping/handling
+<a name="l-219"></a><span class="tm">19:31:30</span><span class="nk"> &lt;suseROCKs&gt;</span> are we concerned about that?   If not, I'll vote yes.
+<a name="l-220"></a><span class="tm">19:31:50</span><span class="nk"> &lt;AlanClark&gt;</span> prusnak - translate this "Dieses Angebot beinhaltet keinen kommerziellen Support."
+<a name="l-221"></a><span class="tm">19:32:02</span><span class="nk"> &lt;suseROCKs&gt;</span> if I'm not mistaken, as long as you keep it intact, its not a violation to sell.   Am I wrong?   prusnak mrdocs   thoughts?
+<a name="l-222"></a><span class="tm">19:32:15 </span><span class="nka">* prusnak</span> <span class="ac">copies that into google translate</span>
+<a name="l-223"></a><span class="tm">19:32:27</span><span class="nk"> &lt;suseROCKs&gt;</span> LOL
+<a name="l-224"></a><span class="tm">19:32:29</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">AlanClark:</span> it means "This offer does not contain commercial support"
+<a name="l-225"></a><span class="tm">19:32:34</span><span class="nk"> &lt;prusnak&gt;</span> This offer does not include commercial support.
+<a name="l-226"></a><span class="tm">19:32:46</span><span class="nk"> &lt;AlanClark&gt;</span> lol
+<a name="l-227"></a><span class="tm">19:33:00</span><span class="nk"> &lt;AlanClark&gt;</span> prusnak - is the turing machine!
+<a name="l-228"></a><span class="tm">19:33:12</span><span class="nk"> &lt;prusnak&gt;</span> he takes 1 eur as a compensation for burning and media price
+<a name="l-229"></a><span class="tm">19:33:19</span><span class="nk"> &lt;prusnak&gt;</span> i assume
+<a name="l-230"></a><span class="tm">19:33:45</span><span class="nk"> &lt;suseROCKs&gt;</span> pffth  if that's the case, there's hardly anything to question here.   I say +1
+<a name="l-231"></a><span class="tm">19:34:18</span><span class="nk"> &lt;suseROCKs&gt;</span> its not like we're selling warlordfff,, for which we would demand a lot more money.
+<a name="l-232"></a><span class="tm">19:34:36 </span><span class="nka">* warlordfff</span> <span class="ac">not for sale</span>
+<a name="l-233"></a><span class="tm">19:34:44</span><span class="nk"> &lt;suseROCKs&gt;</span> how about rent?
+<a name="l-234"></a><span class="tm">19:34:46 </span><span class="nka">* warlordfff</span> <span class="ac">present to humanity</span>
+<a name="l-235"></a><span class="tm">19:34:47</span><span class="nk"> &lt;AlanClark&gt;</span> The 1 eur may just be a placeholder while he develops the site.
+<a name="l-236"></a><span class="tm">19:35:02</span><span class="nk"> &lt;AlanClark&gt;</span> So we can't assume what his price will be
+<a name="l-237"></a><span class="tm">19:35:26</span><span class="nk"> &lt;AlanClark&gt;</span> I will clarify with him that the fees are for burning and media.
+<a name="l-238"></a><span class="tm">19:35:34</span><span class="nk"> &lt;suseROCKs&gt;</span> alright, let's clear up the general question.  Do we have issues/violations if someone *sells* openSUSE?
+<a name="l-239"></a><span class="tm">19:36:01</span><span class="nk"> &lt;suseROCKs&gt;</span> if the question is yes, then we need to look further into this.  If the answer is no, then nothing to discuss I guess.
+<a name="l-240"></a><span class="tm">19:37:31</span><span class="nk"> &lt;AlanClark&gt;</span> Where he is referring to material that makes it clear that openSUSE is an open source project, I don't have a problem with it.  From that it should be obvious that they could get it from the openSUSE project.
+<a name="l-241"></a><span class="tm">19:37:53</span><span class="nk"> &lt;AlanClark&gt;</span> That should keep his prices to a media price level
+<a name="l-242"></a><span class="tm">19:38:21</span><span class="nk"> &lt;suseROCKs&gt;</span> ok then let's just +1 it and move on.
+<a name="l-243"></a><span class="tm">19:38:45</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,   mrdocs    concerns?  vote?   State now so we can close the meeting and have a life
+<a name="l-244"></a><span class="tm">19:38:58</span><span class="nk"> &lt;prusnak&gt;</span> i already said i'm ok with that
+<a name="l-245"></a><span class="tm">19:39:15</span><span class="nk"> &lt;suseROCKs&gt;</span> ok  mrdocs  for the quorum-requiring vote...
+<a name="l-246"></a><span class="tm">19:39:21 </span><span class="nka">* AlanClark</span> <span class="ac">is ok</span>
+<a name="l-247"></a><span class="tm">19:39:39</span><span class="nk"> &lt;AlanClark&gt;</span> suseROCKS, mrdocs also already voted
+<a name="l-248"></a><span class="tm">19:39:44</span><span class="nk"> &lt;suseROCKs&gt;</span> oh  ok
+<a name="l-249"></a><span class="tm">19:39:48</span><span class="nk"> &lt;suseROCKs&gt;</span> then we're ready to go and close
+<a name="l-250"></a><span class="tm">19:40:07</span><span class="nk"> &lt;AlanClark&gt;</span> With that, we are at the end of our agenda.
+<a name="l-251"></a><span class="tm">19:40:08</span><span class="nk"> &lt;yaloki&gt;</span> what?????
+<a name="l-252"></a><span class="tm">19:40:30</span><span class="nk"> &lt;yaloki&gt;</span> :D
+<a name="l-253"></a><span class="tm">19:40:33</span><span class="nk"> &lt;yaloki&gt;</span> jk
+<a name="l-254"></a><span class="tm">19:40:41</span><span class="nk"> &lt;suseROCKs&gt;</span> ahh yaloki  yaloki  yaloki    This is so unlike you  :-D
+<a name="l-255"></a><span class="tm">19:41:10</span><span class="nk"> &lt;AlanClark&gt;</span> Any last items from the group? else we are closing the meeting
+<a name="l-256"></a><span class="tm">19:41:26</span><span class="nk"> &lt;suseROCKs&gt;</span> Close Close Close!   :-D
+<a name="l-257"></a><span class="tm">19:41:57 </span><span class="nka">* yaloki</span> <span class="ac">goes on to pay 200€ for opensu.se</span>
+<a name="l-258"></a><span class="tm">19:42:07</span><span class="nk"> &lt;AlanClark&gt;</span> thanks everyone for participating
+<a name="l-259"></a><span class="tm">19:42:11</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

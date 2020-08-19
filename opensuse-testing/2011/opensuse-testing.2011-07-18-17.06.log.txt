@@ -1,0 +1,99 @@
+17:06:01 <bmwiedemann> #startmeeting
+17:06:01 <bugbot> Meeting started Mon Jul 18 17:06:01 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:06:01 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:06:10 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:06:10 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:07:07 <bmwiedemann> #topic MS3 experience
+17:07:46 <bmwiedemann> the final MS3 is still not out, but I upgraded one of my laptops to factory and it still worked
+17:08:27 <LWFinger> What kernel on factory? Is it 3.0?
+17:08:30 <bmwiedemann> openQA is still showing smaller problems (e.g. amarok segfaulting on KDE-Live)
+17:08:41 <bmwiedemann> 3.0-rc6 right now and MS3 should have rc7
+17:09:16 <jradzuweit> I still run MS2
+17:10:18 <bmwiedemann> should we meet next monday to talk about MS3 then?
+17:11:04 <LWFinger> Yes.
+17:11:50 <jradzuweit> +1
+17:12:06 <bmwiedemann> OK. let's move to the next topic then
+17:12:38 <bmwiedemann> #info will discuss MS3 on 2011-07-25
+17:12:52 <bmwiedemann> #topic Request to rename MS6 to Beta
+17:13:39 <bmwiedemann> LWFinger: what is the state of the discussion on that topic?
+17:14:20 <LWFinger> Most people have been supportive.
+17:15:09 <LWFinger> I hope you have followed the d=iscussion on the mailing lists - postings have been on project, factory and testoing.
+17:15:56 <LWFinger> Coolo was skeptical that it would make a difference, but has agreed. He will want metrics on the value.
+17:16:46 <LWFinger> We have an offer of help for publicity.
+17:17:06 <LWFinger> That covers the highlights.
+17:17:39 <LWFinger> Any questions?
+17:18:50 <bmwiedemann> I had only read the summary on testing ML and proposed two crude metrics there
+17:19:21 <LWFinger> Your ideas are good, but we likely need more.
+17:21:50 <bmwiedemann> maybe we could have some way to count users? e.g. via the downloads that always happen after install (such as flash-player)
+17:22:15 <jradzuweit> page hits?
+17:22:59 <jradzuweit> can we have the number of downloads?
+17:23:33 <bmwiedemann> I think, coolo can get logs from download.o.o
+17:24:03 <jradzuweit> for the product they publish how many downloads happend
+17:24:19 <bmwiedemann> while this excludes mirrors, it is still a meaningful number
+17:24:29 <jradzuweit> so maybe collo can give us this number per MS
+17:25:37 <bmwiedemann> yes. that would be helpful.
+17:25:54 <LWFinger> The bug reports may be more significant as they reflect actual testing.
+17:26:13 <jradzuweit> we can combine this
+17:26:27 <bmwiedemann> but they also reflect the buggyness of the software
+17:27:02 <LWFinger> Of course, but will 12.1-beta be any buggier than 11.4-MS6?
+17:27:29 <jradzuweit> I already have a bugzilla report about this
+17:27:40 <jradzuweit> not on MS level , but per release
+17:28:36 <bmwiedemann> LWFinger: yes, bugs can be added after MS5/6 (e.g. because people want to get their features in last minute)
+17:29:13 <LWFinger> The number of bugs found in GM after 6 months will be the really critical number.
+17:29:50 <LWFinger> Are we not feature frozen after MS4?
+17:29:51 <jradzuweit> critical for what?
+17:30:37 <LWFinger> Critical as to the value of the name change. Did we find bugs early enough to fix them before GM?
+17:31:37 <jradzuweit> I wouldn't put too much into this name change
+17:31:55 <jradzuweit> maybe it makes more sense to have some statistics
+17:32:28 <jradzuweit> I had two nice reports showing whats going on
+17:32:53 <LWFinger> What reports?
+17:33:06 <jradzuweit> comparing releases
+17:33:16 <jradzuweit> comparing reales per component
+17:33:42 <jradzuweit> was interesting to see where bugs appeared most
+17:34:16 <LWFinger> Are these reports available?
+17:34:45 <jradzuweit> I have to recreate them
+17:35:02 <bmwiedemann> bugzilla has a report.cgi to do those stats - I also linked it in my email
+17:35:21 <jradzuweit> but as with every statistics I will not distribute them
+17:35:27 <jradzuweit> to the public
+17:37:17 <jradzuweit> the conclusion is, most bugs are found in the final
+17:37:24 <LWFinger> bmwiedemann: Thanks. I just created the table.
+17:37:58 <bmwiedemann> likely because final has a) most users and b) most usage time
+17:40:43 <jradzuweit> yupp, so you can' heardly compare this with the milestoones
+17:42:17 <jradzuweit> s/can'/can't/
+17:43:01 <bmwiedemann> "can hardly compare" sounds better ;)
+17:43:21 <LWFinger> We can hope that the trend of decreasing numbers in final between 11.3 and 11.4 continues.
+17:43:23 <jradzuweit> right
+17:44:20 <jradzuweit> we should try to do this bug day more continously
+17:45:40 <LWFinger> I added 11.2 to the table and there were fewer bugs in 11.3 final than in 11.2. The trend is good.
+17:46:13 <bmwiedemann> we want to do at least one big bug-squashing party around MS6. but could do one or two smaller bug events before
+17:47:36 <bmwiedemann> jradzuweit: what should be the main focus? re-testing older 11.4 or 12.1-MS bugs?
+17:48:25 <jradzuweit> main focus 12.1, but if you are testing in certain areas
+17:48:38 <jradzuweit> why not checking if old bugs are still there
+17:49:02 <LWFinger> I think we need to do both.
+17:50:12 <LWFinger> Perhaps we could have a party after MS4 that concentrates of 11.4 bugs still in 12.1.
+17:50:41 <LWFinger> Then after Beta, check for the new ones in 12.1.
+17:51:26 <jradzuweit> we could put some on a wiki page
+17:51:46 <jradzuweit> and request the community for retests
+17:52:54 <jradzuweit> doing a whole day testing, my wife will kill me ;)
+17:53:19 <bmwiedemann> jradzuweit: I would re-activate my openbugs.zq1.de tool for that occasion. it is so much faster than wiki or bugzilla
+17:53:33 <jradzuweit> sure
+17:57:15 <bmwiedemann> #info rename of MS6 to Beta is likely
+17:57:33 <bmwiedemann> #topic open bugs day planning
+17:59:07 <bmwiedemann> MS4 is not very far away, so we would have to start planning an open bugs day soon
+17:59:40 <bmwiedemann> Roadmap says MS4 comes on 2011-08-11
+18:00:49 <LWFinger> Would a Sunday work? If so, perhaps 08-21.
+18:01:57 <bmwiedemann> that would allow for a delayed release, too
+18:02:46 <bmwiedemann> so would be good
+18:03:27 <jradzuweit> agree, but I can't attend all the day
+18:03:40 <jradzuweit> ok, I have to leave now
+18:03:51 <bmwiedemann> few people will be awake 24h that day ;)
+18:03:56 <bmwiedemann> so it is alright
+18:04:08 <jradzuweit> bye
+18:04:12 <bmwiedemann> Ciao
+18:04:24 <LWFinger> The main thing is to attract others besides the TCT.
+18:04:56 <LWFinger> As soon as we set a date, I'll start the publicity.
+18:05:19 <bmwiedemann> be sure to email news@o.o
+18:05:33 <LWFinger> Yes.
+18:07:26 <bmwiedemann> OK. anything else to discuss?
+18:09:11 <bmwiedemann> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:09:32 <bmwiedemann> #endmeeting

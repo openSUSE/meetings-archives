@@ -1,0 +1,257 @@
+18:00:27 <bmwiedemann> #startmeeting
+18:00:27 <bugbot> Meeting started Mon Feb 13 18:00:27 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:00:27 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:00:37 <bmwiedemann> Hello everyone
+18:00:37 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+18:00:37 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+18:01:13 <bmwiedemann> #topic 12.2 testing planning
+18:02:19 <bmwiedemann> I think, we left it in from last time
+18:02:35 <LWFinger> Is there anything new to add?
+18:03:10 <bmwiedemann> not from my side. I'll continue to have an eye on the openQA tests, so that the core OS remains stable.
+18:04:17 <LWFinger> I downloaded both the x86_64 NET install and the KDE Live CD. Both installed on VB VMs and looked pretty good.
+18:04:44 <Creatura85> good evening
+18:04:52 <bmwiedemann> Creatura85: jradzuweit: welcome and good evening
+18:04:55 <jradzuweit> hi
+18:05:14 <bmwiedemann> I started the most-annoying-bugs-12.2 list today
+18:05:16 <LWFinger> The repos are screwy, but that is easily fixed. Hi jradzuweit.
+18:05:38 <Creatura85> i have download build 151, and had some issues with the live iso`s but the net install iso worked for me
+18:05:38 <bmwiedemann> yep. fix is on the way to factory for MS2
+18:06:06 <bmwiedemann> Creatura85: what were those issues?
+18:07:01 <Creatura85> well the gnome iso failed to load the desktop , i got the screen saying sorry gnome has crashed
+18:07:13 <Creatura85> the kde iso is even weird
+18:07:28 <bmwiedemann> #link http://en.opensuse.org/openSUSE:Most_annoying_bugs_12.2_dev
+18:07:36 <Creatura85> the boot process goes well until its starting to load kde
+18:07:37 <LWFinger> How so? KDE seemed to work for me.
+18:08:07 <Creatura85> after the icons showing kde components being loaded and untill i see the full kde desktop
+18:08:19 <Creatura85> i had  to wait 10 minutes
+18:08:24 <Creatura85> BUT
+18:08:43 <bmwiedemann> how much RAM does your machine have?
+18:08:44 <Creatura85> i was happy tha the net install iso worked, even if an checksum error poped up
+18:08:49 <Creatura85> bmwiedemann: 512
+18:08:55 <bmwiedemann> too little for LiveCDs
+18:09:17 <LWFinger> I use 1 GB - that was OK.
+18:09:25 <bmwiedemann> mysql alone wastes ~150MB (for akonadi)
+18:09:27 <Creatura85> i have posted more feedback here http://forums.opensuse.org/english/get-technical-help-here/pre-release-beta/472247-re-opensuse-12-2-milestone-1-a.html
+18:09:39 <Creatura85> i have 2gb of ram
+18:10:02 <Creatura85> so the maximum value that i can use would be 768 mb of ram
+18:10:35 <bmwiedemann> does the host use so much?
+18:11:02 <bmwiedemann> but even 768MB should be an improvement
+18:11:34 <Creatura85> well as far as i notice from widgets i tend to use 600mb with firefox, pidgin, skype and clementine
+18:11:48 <Creatura85> and of course other desktop components
+18:11:55 <LWFinger> I have 3 GB, but have had two VMs running with 1 GB each.
+18:11:59 <Creatura85> akonadi and nepomuk are disabled :D
+18:12:07 <Creatura85> LWFinger: lucky you
+18:12:13 <Creatura85> Sysinfo for 'creation': Linux 3.2.4-1-desktop running KDE Development Platform 4.7.2 (4.7.2) "release 5", CPU: Intel(R) Core 2 CPU          4400  @ 2.00GHz at 2000 MHz (4019 bogomips), HD: 243/761GB, RAM: 1330/1992MB, 153 proc's, 7.44h up
+18:13:12 <bmwiedemann> is a good machine. you could try writing the LiveCD.iso to a USB-stick and boot it on the physical machine (no need to install)
+18:13:38 <Creatura85> my feedback about build 152 both live and net install starts from here http://forums.opensuse.org/english/get-technical-help-here/pre-release-beta/472247-opensuse-12-2-milestone-1-a-2.html#post2439420
+18:13:49 <Creatura85> i do just that bmwiedemann
+18:13:55 <bmwiedemann> ah. good :)
+18:14:13 <Creatura85> or i just boot the iso inside vbox without installing it :)
+18:14:29 <Creatura85> just like i do with a normal cd image, well dvd actually
+18:14:40 <bmwiedemann> jradzuweit: do you have any proposal on how to better structure our testing?
+18:15:17 <jradzuweit> not idea
+18:15:41 <jradzuweit> testopia is a dead horse I think
+18:15:56 <jradzuweit> didn't helped much in past
+18:15:57 <bmwiedemann> yes. it would need a lot of love to keep alive
+18:16:10 <LWFinger> I could never figure out how to use testopia.
+18:16:29 <jradzuweit> the only way I can think of is to extend openQA
+18:16:38 <Creatura85> well maybe the developer who created it has an idea
+18:17:54 <LWFinger> The beta forum has been quite active since Friday - there is a lot of testing of MS1.
+18:18:10 <bmwiedemann> jradzuweit: I'm doing it sometimes and maybe some other people will contribute test modules in the future.
+18:18:57 <bmwiedemann> LWFinger: that is good to have people test it before RCs (when it is too late)
+18:19:05 <LWFinger> For the good news: wireless networking works very well with build 151: WEP, WPA and WPA2
+18:20:17 <Creatura85> i got no connection issues to internet from vbox either after installing M1 using build 152
+18:21:14 <Creatura85> bmwiedemann: removed the opensuse 12.1 repo`s from M1 and runned a dup just to be on the "pure" factory snapshot
+18:22:04 <LWFinger> NET install connected to the wired network in VBox with no problems. I did not try wireless with it.
+18:22:29 <bmwiedemann> Creatura85: would be nice to add some zypper lines to do that as workaround to the most-annoying-bugs list
+18:22:30 <jradzuweit> so what is the plan for 12.2, has anybody a idea?
+18:23:21 <bmwiedemann> test plan? or overall? It will have OpenStack cloud software at least
+18:23:51 <jradzuweit> I guess overall
+18:24:26 <jradzuweit> do we focus on cloud software, or something else?
+18:24:48 <bmwiedemann> apart from that, it depends what people push. will have newer software all-around
+18:25:08 <LWFinger> Does anyone here use the cloud in a meaningful way?
+18:25:59 <bmwiedemann> I did a few times.
+18:26:29 <LWFinger> My uplink is only 512 Kbps, but down is 10 Mbps. Needless to say, I don't do much uploading.
+18:26:35 <Creatura85> bmwiedemann: yes that would be nice
+18:26:41 <bmwiedemann> we have our internal cloud, which is very useful, because you can get a running VM with ssh from it within a minute
+18:27:16 <Creatura85> LWFinger: i dont use cloud at all :)
+18:27:33 <Creatura85> not even dropbox or spider oak even if i had accounts there
+18:27:46 <LWFinger> Me either.
+18:28:04 <Creatura85> i`m an old fashioned user, that has a 500gb extern hdd for files :)
+18:28:46 <LWFinger> Off-site backup has some appeal, but DVDs in the fire-proof safe suffice for now. In addition, I have lots of external drives.
+18:28:50 <bmwiedemann> there is a surprising number of sites that don't have their own datacenter, but just run off the cloud.
+18:29:59 <Creatura85> bmwiedemann: does opensuse has such sites ?
+18:30:18 <bmwiedemann> no. just openSUSE images on amazon EC2
+18:31:10 <Creatura85> ok
+18:31:30 <Creatura85> has anyone installed gnome 3 from net install iso? does it work ?
+18:32:22 <bmwiedemann> http://openqa.opensuse.org/viewimg/opensuse/testresults/openSUSE-NET-x86_64-Build0152-gnome/xterm-2.png fallback mode worked
+18:32:47 <bmwiedemann> which is the expected thing on non-3D hardware
+18:34:39 <Creatura85> well i was thinking to install g3 and after that to add guest additions
+18:35:14 <bmwiedemann> sure
+18:35:47 <bmwiedemann> shall we move to the second topic then - Testing Core Team wiki page ?
+18:35:50 <LWFinger> If the host has 3D acceleeration, is that enough for g3 in VBox?
+18:36:27 <bmwiedemann> LWFinger: I think, you need hardware-virt and guest additions to have 3D for g3
+18:37:05 <LWFinger> Thanks.
+18:37:43 <bmwiedemann> #topic Testing Core Team wiki page
+18:38:09 <Creatura85> yes
+18:38:17 <Creatura85> this is the subject proposed by me
+18:38:18 <jradzuweit> topic #1 finished?
+18:38:33 <Creatura85> regarding http://en.opensuse.org/openSUSE:Testing_Core_team
+18:38:53 <Creatura85> jradzuweit: for me yes
+18:39:29 <jradzuweit> so we have no plan, right?
+18:39:57 <bmwiedemann> everyone testing to his liking
+18:40:24 <Creatura85> jradzuweit: well i guess we each can test in his own way according to his skills
+18:40:38 <bmwiedemann> we could email sometimes about what we tested, so others interested in the same area can contact you.
+18:40:38 <LWFinger> And needs.
+18:40:57 <Creatura85> LWFinger: yes and needs
+18:41:33 <jradzuweit> ok, freestyle testing
+18:41:37 <Creatura85> i think i just spotted a bug right now.; never seen apper sentinel untill i did ps -aux but the darn thing has hanged :)
+18:41:54 <bmwiedemann> jradzuweit: but some coordination would be nice. what would you like to test?
+18:42:21 <bmwiedemann> Creatura85: apper only starts after the system was up for some minutes
+18:42:49 <Creatura85> tries to load something but he never can actually do that... and if i open yast and start software manager there is no message saying that packagekit/apper is bloking him
+18:43:35 <bmwiedemann> so they silently wait for the lock to be released?
+18:43:57 <Creatura85> since tomorow is val`s day i will start some testing on my own: install gnome 3, guest additons and report on that topic from the opensuse forum is that ok with you guys ?
+18:44:06 <jradzuweit> bmwiedemann: I think not of what I like, rather what is good for the distro
+18:44:12 <Creatura85> bmwiedemann: i dont know but i can cancel that activity that apper starts without any problems
+18:44:27 <Creatura85> *the activity
+18:45:15 <LWFinger> Creatura85: whatever testing you want to do is fine with me.
+18:45:42 <bmwiedemann> jradzuweit: think of any programs that you could not live without... and maybe write openQA tests for them (or just list them, so that I can have a go)
+18:46:06 <Creatura85> i was saying in reply to bmwiedemann way of coordinating what we do and of course feedback
+18:46:25 <LWFinger> I will probably stay with VMs until MS4. Till then, the testing is minimal.
+18:46:25 <bmwiedemann> chances are that the things you need are needed by many openSUSE users.
+18:47:00 <Creatura85> i`ve registered with mozilla`s bugzilla to and started to post feedback using the nightly version
+18:47:23 <bmwiedemann> nice
+18:47:34 <Creatura85> its weird... the nightly version seems to work better than the stable version bmwiedemann
+18:47:56 <LWFinger> Progress?
+18:47:57 <bmwiedemann> because this is what developers use - and they fix it
+18:48:02 <Creatura85> i noticed this at loading time and pages with flash
+18:48:58 <Creatura85> LWFinger: if you ask me they try to copy chrome
+18:49:21 <Creatura85> they even want to implement an apps market
+18:49:23 <Creatura85> :)
+18:49:31 <LWFinger> I see that I just got a new Firefox and Thunderbird installed. Any problems I should expect?
+18:49:33 <Creatura85> now where di we see that before :P
+18:49:50 <Creatura85> LWFinger: nightly is version 13 alpha 1
+18:50:15 <Creatura85> the new version you got must be 10 a.k.a stable version
+18:50:48 <LWFinger> Yes, 10.0.
+18:50:49 <Creatura85> LWFinger: http://www.mozilla.org/en-US/firefox/10.0/releasenotes/
+18:51:08 <Creatura85> "Most add-ons are now compatible with new versions of Firefox by default" :)
+18:51:17 <Creatura85> i dont use much add-ons
+18:51:21 <Creatura85> :P
+18:51:32 <Creatura85> "The forward button is now hidden until you navigate back"
+18:51:39 <Creatura85> was this really necesary ?
+18:51:47 <bmwiedemann> Creatura85: could we come back to the TCT wiki page?
+18:52:03 <Creatura85> just saying the new feature of version 10 :)
+18:52:07 <Creatura85> excuse my offtopic
+18:52:16 <Creatura85> bmwiedemann: yes we can
+18:52:47 <Creatura85> unless there is something more to say at #1
+18:54:12 <Creatura85> well ? :)
+18:55:12 <bmwiedemann> seems not
+18:55:32 <LWFinger> Creatura85: #2 is yours, IIRC
+18:55:40 <Creatura85> ok
+18:56:03 <Creatura85> as some of you know the wiki page from here http://en.opensuse.org/openSUSE:Testing_Core_team was modified
+18:56:43 <Creatura85> the main change is the list of contributors, that was reduced to 3 coordinating members
+18:56:59 <Creatura85> plus informations for future contributors
+18:57:11 <Creatura85> do you think that we need to add or remove something from the page ?
+18:58:07 <bmwiedemann> I was wondering about the "stable version" part - isn't that were all users are testers and could file bugs?
+18:58:22 <bmwiedemann> s/were/where/
+18:59:10 <Creatura85> "Test and report bugs found on the stable version of openSUSE again using Bugzilla"
+18:59:11 <Creatura85> you mean that ?
+18:59:16 <bmwiedemann> yes
+18:59:35 <bmwiedemann> of course, we also do that, but more than every other user?
+18:59:58 <Creatura85> well personally when i`ve created that i had mind the fact that some users may fell scared of factory
+19:00:16 <Creatura85> so i have try to underline that they could use a stable version of opensuse to help with testing
+19:00:19 <bmwiedemann> there is a Beta and 2 RCs for them
+19:00:36 <Creatura85> so what do you suggest bmwiedemann ?
+19:01:43 <bmwiedemann> Creatura85: problem is that once the stable release is out (actually even around RC2) only big+important bugs will be fixed, as otherwise the risk to break things would be too big.
+19:01:59 <Creatura85> i see
+19:02:14 <Creatura85> then i can remove that and leave just the first sentence
+19:02:31 <Creatura85> "Test and report bugs on Factory, Milestones and Release Candidates using Bugzilla"
+19:02:32 <bmwiedemann> so testing on the stable release is a lot less useful than testing on the Beta
+19:02:54 <Creatura85> ok, i will remove that
+19:03:41 <LWFinger> Even though stable bugs might not be fixed, reporting them is still important for the next release.
+19:03:45 <Creatura85> btw, does anyone has something againts the fact that the list is reduced just to coordinating members ?
+19:03:52 <bmwiedemann> especially, when you describe, what we as the more advanced testers do... I always want to find the bad bugs before they hit less technical users.
+19:05:01 <Creatura85> bmwiedemann: its a long way for be to be an advanced tester
+19:05:10 <LWFinger> The reason for just the coordinating members is that the 3 of us are here nearly all the time. Others that were on the list contribute, and some had never participated.
+19:05:41 <Creatura85> so everyone agress that the respective line "Test and report bugs found on the stable version of openSUSE again using Bugzilla" should be removed ?
+19:05:50 <LWFinger> Holgi did not want to make an arbitrary cut based on subtle shades of participation, thus the choice of 3.
+19:06:21 <Creatura85> LWFinger: just doing my duty to ask since i was the one that edited the page :)
+19:07:14 <LWFinger> Creatura85: The line can stay. Some bugs will be fixed.
+19:08:26 <Creatura85> ok
+19:09:51 <bmwiedemann> any other wiki page questions/issues/ideas?
+19:10:26 <LWFinger> None for me.
+19:10:39 <Creatura85> same here
+19:11:16 <bmwiedemann> so we close this topic
+19:11:35 <Creatura85> i guess so
+19:11:37 <bmwiedemann> #topic Next Meeting
+19:11:49 <bmwiedemann> when shall we meet again?
+19:11:53 <Creatura85> just wanted to get fedback from you about the modifications i made to that page, thank you
+19:12:14 <bmwiedemann> MS2 is planned in 4 weeks
+19:12:28 <LWFinger> As MS2 is scheduled for March 8, is the following Monday appropriate?
+19:12:38 <bmwiedemann> yes
+19:12:47 <Creatura85> is not 3 march anymore ? :)
+19:12:48 <LWFinger> That would be March 12.
+19:12:59 <bmwiedemann> 2012-03-12 18:00 UTC
+19:13:08 <LWFinger> Good.
+19:13:28 <Creatura85> sounds good to me too
+19:13:37 <bmwiedemann> OK then
+19:13:46 <bmwiedemann> #agreed next meeting 2012-03-12 18:00 UTC
+19:14:07 <bmwiedemann> #topic open discussion
+19:14:30 <bmwiedemann> now we can discuss anything else that needs discussion
+19:14:49 <Creatura85> i have a question: is 12.2 gona have the usr/ usr/bin and so on merge ?
+19:15:05 <Creatura85> like fedora is trying
+19:15:41 <LWFinger> From what I read on the Factory ML, people are working in that direction, but it is unlikely for 12.2
+19:15:46 <bmwiedemann> Creatura85: I know that one guy is changing some packages towards it, but it already broke our installer twice... so I hope he is not over-hasting it
+19:16:19 <LWFinger> Plymouth is the other new possibility.
+19:16:22 <Creatura85> so at leats 12.2 is gonna be in the "usual" mode
+19:16:32 <Creatura85> plymouth ?
+19:16:50 <bmwiedemann> for graphical boot with splashscreen
+19:17:16 <Creatura85> what is wrong with the one that open suse has already ?
+19:17:32 <LWFinger> My hope is that systemd gets stabilized before anything else in boot changes.
+19:18:23 <LWFinger> Anyone here have systems that fail with systemd?
+19:18:58 <Creatura85> my systems are working fine here
+19:19:04 <LWFinger> My main laptop failed with systemd until the 2nd update after GM.
+19:19:14 <Creatura85> both the real one and the virtual ones
+19:19:14 <LWFinger> All are OK now.
+19:19:26 <bmwiedemann> Creatura85: it needs extra kernel patches, that take effort to maintain (and only we use them)
+19:19:55 <Creatura85> well i can only hope for the best regarding plymouth
+19:20:29 <LWFinger> What part of the kernel needs patching? I don't use those.
+19:20:35 <bmwiedemann> LWFinger: I had some trouble at the beginning (ntp, postfix, apparmor, firewall) - but things improved with the updates
+19:21:46 <bmwiedemann> LWFinger: I think, there is a bootsplash kernel patch. without it, you just get the framebuffer console with the "done" messages
+19:22:28 <LWFinger> Thanks. As I always want to see console messages, I don't miss anything.
+19:22:56 <Creatura85> i like the messages from the console bmwiedemann they give the feel of a transparent OS
+19:23:17 <Creatura85> that show`s how it starts
+19:23:29 <LWFinger> My last problem was with NFS mounts with wireless - those were fixed by switching to automount.
+19:25:52 <LWFinger> I need to leave now. Bye all - I'll leave IRC running and will see what is written.
+19:26:08 <Creatura85> ok LWFinger see ya around
+19:26:48 <bmwiedemann> have phun
+19:26:53 <tigerfoot> I've one topic to add, yesterday I've successfully glue some key people around plymouth,
+19:27:17 <bmwiedemann> so they are pushing it for openSUSE?
+19:27:18 <tigerfoot> and so that's old openfate should be arrived in factory soon, and then get it done for 12.2
+19:27:53 <tigerfoot> bmwiedemann: I've tittiatcoke doing the package, vuntz stabilizing gdm, fcrozat for systemd
+19:28:01 <tigerfoot> and ilmethar for the branding ...
+19:28:19 <tigerfoot> I've added information on the openfate, and we created already the meta-bugs,
+19:28:37 <tigerfoot> bmwiedemann: could you add the target in fate ? I didn't success
+19:29:36 <tigerfoot> meta bug is https://bugzilla.novell.com/show_bug.cgi?id=746615
+19:29:45 <bugbot> openSUSE bug 746615 in openSUSE 12.2 (Basesystem) "Meta bug report to track the bugs to prevent Plymouth from entering Factory" [Normal,Assigned]
+19:29:51 <tigerfoot> and fate is https://features.opensuse.org/305493
+19:30:54 * bmwiedemann looking at fate
+19:31:11 <Creatura85> tigerfoot: you got my vote :)
+19:31:29 <Creatura85> make it look good or i will talk with Geeko to get his moob after you :P
+19:32:09 <tigerfoot> It's not yet done, but I've hope that we can get it. I will watch at it closely, to "manage" and be sure things happen this time.
+19:32:40 <Creatura85> when you push it in to factory for testing you will get my feedback
+19:32:49 <tigerfoot> I've just got an ssd today to put on old lappy, to be the guinea pig for factory, testing plymouth in all kind of setup
+19:33:30 <Creatura85> i use vbox plus space from my external hdd :)
+19:33:36 <tigerfoot> Creatura85: it should happen around M2 in the next two weeks, if they get some bugs fixed first : the most annoying actually is a jumping between xorg and tty1
+19:34:03 <Creatura85> i`m glad to see it comming in M3 :)
+19:34:12 <tigerfoot> Creatura85: we need test on real hardware to check how fallback mode for non kms drivers works .. like fglrx & nvidia
+19:34:45 <bmwiedemann> tigerfoot: it wants a developer assigned, to change it to "Implementation" status...
+19:35:45 <Creatura85> personally it would nice to see mate desktop coming to opensuse
+19:35:47 <Creatura85> :)
+19:35:54 <Creatura85> *would be
+19:36:15 <tigerfoot> bmwiedemann: okay, I understand, I will ask tittiatcoke if he can take it, or it will be me as non-developper/manager :D
+19:36:53 <Creatura85> https://features.opensuse.org/312946
+19:37:07 <Creatura85> 29 votes so far
+19:38:48 <bmwiedemann> we should close the official testing meeting
+19:39:29 <bmwiedemann> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+19:39:33 <bmwiedemann> #endmeeting

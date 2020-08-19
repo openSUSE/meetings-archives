@@ -1,0 +1,112 @@
+16:12:01 <llunak> #startmeeting
+16:12:01 <bugbot> Meeting started Thu Sep  2 16:12:01 2010 UTC.  The chair is llunak. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:12:01 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:12:11 <llunak> agenda:
+16:12:29 <llunak> * replacing more openSUSE:Factory KDE3 packages with KDE4 versions (kmymoney,...)
+16:12:37 <llunak> old action items
+16:12:45 <llunak> * status report
+16:12:48 <llunak> * misc, Q&A
+16:12:53 <llunak> some more agenda items?
+16:13:39 <llunak> ok
+16:13:57 <llunak> #topic old action items
+16:14:15 <llunak> * llunak update meeting howto (meetbot, etc.)
+16:14:28 <llunak> after the meeting is over, honest :)
+16:14:45 <llunak> * wstephenson start KDE:45 project implementation discussion on list
+16:15:11 <llunak> that was done, but I'm not sure what the outcome is
+16:15:23 <llunak> * kde-four-reloaded-team polish while waiting for KDE:45 to come on tap
+16:15:34 <llunak> hmm ... this is vague enough to be considered done I guess
+16:15:39 <rtyler> _wstephenson: noted the NetSecL
+16:15:52 <llunak> javier_: what is the status?
+16:17:02 <llunak> oh well
+16:17:12 <wstephenson> sorry folks, i've been exemplary the last few meetings...
+16:17:28 <caf4926> does anyone have a heads up on the 4.5 stable repo being discussed in the ML
+16:17:29 <wstephenson> llunak: i haven't got around to showing adrian the setlinkrev bug yet
+16:17:30 <llunak> wstephenson: mind to scroll up a few lines?
+16:17:59 <caf4926> wstephenson: I think you are involved?
+16:18:01 <wstephenson> llunak: dirk mentioned that he thinks setlinkrev is too much work
+16:18:10 <llunak> caf4926: topic
+16:18:14 <wstephenson> caf4926: see topic, and we are discussing it right now.
+16:18:36 <llunak> wstephenson: which solution is less work to have :45 based on KDF ?
+16:18:41 <javier_> llunak: one sec
+16:18:45 <caf4926> wstephenson: sorry
+16:18:49 <wstephenson> but dirk wasn't specific in how, whether it can be eased with scripting, or What Would Dirk Mueller Do?
+16:18:54 <Taolin> llunak: when meeting over, pls consider dev request re kmymoney - or advise me on how to submit
+16:19:44 <caf4926> 4.6 and 11.4 is some time off and users are asking in the forum, I was just wondering?
+16:19:56 <wstephenson> llunak: that (what is the least work, less error prone solution to base :45 on KDF) is what i'm trying to establish
+16:20:09 <wstephenson> caf4926: this week or next
+16:20:19 <wstephenson> caf4926: javier_'s project depends on it
+16:20:26 <caf4926> wstephenson: is that a cert?
+16:20:39 <wstephenson> caf4926: 85% chance i'd say
+16:21:05 <caf4926> wstephenson: wow, this will be good, thanks to those involved!
+16:21:18 <wstephenson> caf4926: save thanks for when it's published
+16:21:31 <caf4926> :-)
+16:21:37 <llunak> well, ok, next item
+16:21:47 <llunak> * wstephenson put package list in gitorious
+16:21:54 <wstephenson> doing it during the meeting
+16:22:23 <llunak> * javier_ bugreport for yast to use oxygen icons in installer
+16:22:57 <llunak> javier_: ^ say whenever that one sec is over
+16:23:12 <llunak> #topic replacing more openSUSE:Factory KDE3 packages with KDE4 versions (kmymoney,...)
+16:23:42 <llunak> this one is mine - there is actually still a number of packages from KDE:KDE3 that are also in openSUSE:Factory
+16:24:06 <llunak> e.g. kmymoney has kde4 version now AFAIK, so it should be replaced
+16:24:11 <wstephenson> +1
+16:24:23 <javier_> llunak: sorry. it needs a bit more testing. we would like to have kde-reloded with the kde45 repo not with kdf
+16:24:23 <Taolin> +1
+16:24:24 <llunak> and there's also some stuff like kdbus, which is just pointless for o:F
+16:24:25 <anaumov> yep
+16:24:41 <llunak> Taolin: what did you want to say with kmymoney before?
+16:24:48 <wstephenson> are there any special reasons not to replace kde3 packages, besides missing ports?
+16:25:10 <wstephenson> if not we should just replace it all and notify KDE:KDE3 of each package
+16:25:17 <javier_> llunak: i opened a bug report regarding the oxygen icons in yast, no reply yet
+16:25:24 <llunak> javier_: ok
+16:25:31 <javier_> sorry for the delay
+16:25:34 <tittiatcoke> wstephenson: Can not think of any other reason.
+16:25:55 <llunak> IMO we still need to keep some, there's the kde3 runtime, which we will decide around M6 as said last time
+16:26:00 <Taolin> re check writing (and plugins in general) need two things : (1) write on check forms and (2) print the whole thing, MICR, background, & all
+16:26:20 <wstephenson> llunak: would you keep eg quanta, or just farm it out to OBS?
+16:26:42 <llunak> there's no replacement for quanta now AFAIK, so I'd keep it, it's quite popular I'd say
+16:26:49 <Taolin> existing plugins only work on old versions and are problematic to install anyway, personally, main need is to print checsk on plain paer
+16:27:30 <llunak> there's also e.g. Scribus
+16:27:46 <llunak> Taolin: I don't get what you're saying - is kde4 version of kmymoney not usable yet?
+16:27:51 <wstephenson> and mrdocs is on the train again.
+16:28:44 <llunak> anyway, the plan is: I create a wiki with a list of all these packages, people can add info to it (whether kde4 version exists, whether to keep the kde3 version if not, etc)
+16:28:54 <llunak> I'll mail the list and next meeting we sum up and proceed
+16:29:08 <anaumov> llunak, +1
+16:29:28 <Taolin> llunak: it is useable for base function of budgeting and book-keeping (and does well, thank you) but check writing, either on forms or on plain paper is not useable in kmy$ and only 1/2 in gnucash
+16:29:52 <llunak> Taolin: are you on opensuse-kde list?
+16:30:09 <wstephenson> Taolin: and this is a regression in kmy$4 compared to kmy$3?
+16:30:42 <Taolin> llunak: I don't think so - my email input is minimal
+16:31:49 <Taolin> wstephenson: to the extent that there is at least one plugin that exists for 3
+16:31:53 <tigerfoot> llunak: is it kde3 if scribus need qt4.6 ?
+16:32:13 <Taolin> wstephenson: even it comes with a caveat about install problems
+16:32:40 <llunak> tigerfoot: no, that means we can probably replace the qt3 version
+16:33:17 <wstephenson> Taolin: perhaps you could try new versions as they become available and mail the list with an update about remaining regressions? that way we can decide later (m6 say) whether to include kmy£3 still
+16:33:25 <tigerfoot> at least their newer version 1.3.8 but they said it's not the official stable ... later when they release the 1.4
+16:34:21 <Taolin> I will be glad to - (pls advise more on "list")
+16:35:03 <llunak> Taolin: http://en.opensuse.org/Portal:KDE - search for 'openSUSE KDE Mailing List'
+16:35:10 <wstephenson> Taolin: or send email (empty body/subject) to opensuse-kde+help@opensuse.org
+16:35:28 <Taolin> excellent -
+16:35:34 <llunak> #action llunak prepare a list of openSUSE:Factory packages that comes from KDE:KDE3 and send to the list
+16:35:52 <llunak> #topic status report
+16:35:55 <llunak> 4.5.1 is out
+16:35:59 * Taolin , over-the-hill, retired mainframer & COBOL guru leaps at chance to do something useful
+16:36:25 <tittiatcoke> KDE:Qt updated to Qt 4.7 rc1
+16:36:34 <llunak> there's a KDE3-specific mailing list opensuse-kde3@opensuse.org, for those who are interested
+16:37:00 <wstephenson> Taolin: that would be great. we have a lot of accumulated experience on the lists which enjoys its retirement by blowing smoke at everything new we do ;).
+16:37:18 <Taolin> lol!
+16:37:21 <llunak> something else worth mentioning?
+16:37:39 <tittiatcoke> llunak: You saw the KDE:Qt update ?
+16:38:01 <llunak> tittiatcoke: what you said a minute ago? of course yes :)
+16:38:08 <tittiatcoke> :-)
+16:38:23 <llunak> KDE:KDE4:Community and KDE:Community have finally been nuked, but I guess those who still cared have already found out the hard way >:)
+16:38:47 <llunak> ok, that's it
+16:38:52 <llunak> #topic Q&A, misc
+16:38:53 * wstephenson has been doing bugs, updating his todo list, on holiday, at froscon doing php, learning git (again, why won't it stick) and fixing KDF when Qt47 came out.
+16:38:55 <tigerfoot> will the factory updated with the 4.5.1 during the next two weeks ? So I can demo it at frOsCamp the 17 & 18 September ?
+16:39:10 <wstephenson> tigerfoot: it will be in soon now M1 is out
+16:39:23 <wstephenson> but the next milestone is M2 on 30 sept
+16:39:42 <Taolin> wstephenson: lol again - git is one thing I have come to and enjoy
+16:40:05 <tigerfoot> wstephenson: so I will demo it in the middle of :-) Hope the mirror will be good the 16th ...
+16:40:12 * Taolin shuts up and ceases off-topic interference
+16:40:18 <wstephenson> tigerfoot: otherwise take KDF on 11.3
+16:40:43 <llunak> ok, the meeting is over, thanks for contributing
+16:40:46 <llunak> #endmeeting

@@ -1,0 +1,417 @@
+14:10:05 <cartman> #startmeeting
+14:10:05 <bugbot> Meeting started Tue Mar 20 14:10:05 2012 UTC.  The chair is cartman. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:10:05 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+14:10:12 <cartman> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+14:10:26 <cartman> Lets start with the current agenda
+14:10:44 <cartman> - Rebooting the team
+14:10:48 <cartman> - 12.2 Focus and features
+14:10:56 <cartman> - KDF & KR48 update latency
+14:11:03 <cartman> - Renaming KDE3 trinity repository
+14:11:20 <cartman> Since the last meeting was in 2011 I assume we don't have any old agenda items?
+14:11:24 <cartman> Agree?
+14:11:31 <rabauke> yes
+14:11:34 <Linuxsusefan> +1
+14:11:37 <krop> that's all after 6 months ? :)
+14:11:54 <cartman> Lets try to gather more ideas for tomorrow's meeting too :)
+14:11:59 <cartman> but first
+14:12:03 <cartman> #topic status report
+14:12:17 <cartman> We delivered KDE 4.8.1 in KDF & KR48
+14:12:22 <cartman> it was rather smooth
+14:12:34 <cartman> I think we are in a rather good shape release wise.
+14:12:46 <cartman> What do you think about the current status, any problems?
+14:13:00 <krop> kusc lacks updates
+14:13:07 <krop> we're faar behind
+14:13:14 <rabauke> repos were not disabled before the tarballs were updated. that should not happen . neither for extra etc.
+14:13:27 <cartman> for KUSC agreed, we need more manpower for that
+14:13:33 <cartman> titti seems to be rather busy
+14:13:52 <cartman> about the repo screw-up it was due to kde4-filesystem not being linked correctly
+14:13:56 <cartman> shouldn't happen again
+14:14:03 <cartman> what can we do about KUSC?
+14:14:11 <cartman> Maybe automate the whole process via scripts?
+14:14:12 <rabauke> cartman: how can that make a repo publish 4.8.1 packages before release date?
+14:14:41 <cartman> rabauke: some were forced-to-publish before, also fixed now :)
+14:15:11 <cartman> shall we discuss KUSC first?
+14:15:56 <cartman> rabauke, krop, Linuxsusefan ?
+14:16:09 <Linuxsusefan> yes
+14:16:28 <rabauke> I think that KUSC's priority is lowest, so as long as there are "better" things to be done regarding KDE, e.g. kdepim fixing etc. it has to stay the way it is.
+14:16:53 <Linuxsusefan> rabauke: +1
+14:17:04 <cartman> OK thats a valid argument, kdepim should be in a little bit better shape now
+14:17:10 <cartman> with the latest indexing fixes
+14:17:28 <cartman> focusing on user experience is indeed the first priority
+14:17:30 <krop> no no, it's *a lot* better
+14:17:39 <cartman> thats good news :-)
+14:17:49 <cartman> We should make sure this is also in KR48
+14:17:57 <cartman> I will check that.
+14:18:10 <rabauke> did all post 4.8.1 fixes get included in the opensuse repos?
+14:18:17 <cartman> #action cartman make sure kdepim fixes are in KR48 repo.
+14:18:24 <krop> there's a critical fix in kdebase-runtime that must be in kr48/kdf
+14:18:34 <cartman> krop: what was that?
+14:18:38 <krop> s/kdebase-runtime/kdelibs
+14:18:59 <krop> the one that fixes the threading issue
+14:19:07 <cartman> Ok I will assign it to myself generally
+14:19:18 <cartman> #action cartman Cherry pick fixes from KDF into KR48 again.
+14:19:28 <krop> I'll give you the commit in a minute
+14:19:32 <cartman> thanks!
+14:19:52 <cartman> Lets start with the first item in the agenda
+14:19:58 <cartman> #topic Rebooting the team
+14:20:11 <cartman> We had our last meeting in 2011.09 which is not quite good
+14:20:25 <cartman> Although we did nice packaging work and did the releases in time
+14:20:45 <cartman> But I think we are missing some more community involvement in the whole process
+14:20:59 <cartman> I wonder what are the obvious ways to improve the current situation
+14:22:07 <cartman> Linuxsusefan, krop , rabauke speak up guys! :)
+14:22:17 <Linuxsusefan> Bessere kommunitkation des Teams with community
+14:22:29 <tittiatcoke> cartman: Sorry for being late, but a patch in my repo caused a PNM issue
+14:22:32 <cartman> Linuxsusefan: explain little bit more.
+14:22:37 <Linuxsusefan> better communication
+14:22:38 <cartman> tittiatcoke: ah welcome!
+14:22:55 <cartman> I think
+14:22:59 <cartman> we should first of all
+14:23:05 <cartman> notify before we update the whole repo.
+14:23:10 <cartman> give progress reports to mailing lists.
+14:23:17 <cartman> like I did when _wstephenson was gone.
+14:23:19 <Linuxsusefan> monthly meetings for the user to see the beginning of the the team lives
+14:23:43 <cartman> So, more email communication first of all.
+14:23:52 <cartman> tittiatcoke, rabauke, krop, Linuxsusefan agree?
+14:24:03 <Linuxsusefan> share more of what the team does
+14:24:07 <tittiatcoke> cartman: +1
+14:24:12 <cartman> ok, more inside news :)
+14:24:20 <krop> yes
+14:24:21 <rabauke> irc meetings stopped because people had no time
+14:24:39 <cartman> can we at least do once in a month?
+14:24:43 <cartman> would that work out?
+14:24:44 <Linuxsusefan> the last time you had the suspicion was the team dead
+14:24:48 <rabauke> hence putting bi-weekly "meetings" on the mailinglist might work, i.e. status report tc
+14:24:50 <rabauke> etc
+14:25:09 <cartman> Linuxsusefan: The team is not dead but does its work silently
+14:25:15 <Linuxsusefan> hehe
+14:25:17 <cartman> we did 4.8.1 update very fast :)
+14:25:22 <cartman> but we failed to communicate
+14:25:24 <cartman> again
+14:25:35 <Linuxsusefan> now understand
+14:25:36 <cartman> Thats worrying
+14:25:58 <cartman> I will personally note to send more status reports to the mailing list.
+14:26:23 <rabauke> I read that maxlin did  wor k reports on some opensuse mailinglist, so the kde team could do that as well
+14:26:31 <cartman> tittiatcoke: anything you want to add?
+14:26:40 <cartman> rabauke: indeed
+14:26:41 <tittiatcoke> cartman: not really :-)
+14:26:45 <cartman> ok
+14:26:46 <Linuxsusefan> can perhaps see more information about the current actions was reported to be posted to user, blogger, etc on the mailing list, wiki, etc., can what is happening
+14:27:02 <cartman> Linuxsusefan: we can do mails and then copy it to the wiki
+14:27:05 <cartman> makes sense
+14:27:10 <rabauke> http://lists.opensuse.org/archive/opensuse-boosters/2011-08/msg00007.html something like that
+14:27:29 <cartman> rabauke: thats the Boosters report format, yes.
+14:27:34 <cartman> ok next time
+14:27:34 <tittiatcoke> rabauke: You want that per team member ?
+14:27:37 <cartman> item*
+14:27:48 <cartman> tittiatcoke: we decided in a summary for the whole team.
+14:27:54 <maxlin> rabauke: err..that because I was not join the boosters standup meeting that time ;p
+14:27:55 <tittiatcoke> Ok
+14:28:02 <cartman> welcome maxlin :)
+14:28:10 <rabauke> tittiatcoke: if that makes it easier, i.e. if coordinating all that into one email hinders the process
+14:28:15 <maxlin> cartman: sorry for late :)
+14:28:18 <cartman> maxlin: np
+14:28:36 <cartman> I will try to coordinate status reports, by checking commits
+14:28:41 <cartman> should help.
+14:28:43 <tittiatcoke> rabauke: I would keep it just for the whole team
+14:28:53 <cartman> I don't want to bug each of you :)
+14:29:08 <rabauke> it shows what people are working on and is easier to respond than on IRC, because you can do any time you want to. forums might be an alternative.
+14:29:32 <cartman> I think mailing lists + wiki should be good for now.
+14:30:11 <cartman> If we are done we can skip to the next topic.
+14:30:31 <cartman> #topic 12.2 Release Focus
+14:30:37 <cartman> now thats a hot topic ;)
+14:31:20 <cartman> The most important problem was kdepim's slowness with indexing, _wstephenson with the help of PIM team managed to fix those and krop confirmed.
+14:31:21 <rabauke> kdepim, kdepim, kdepim
+14:31:24 <cartman> Thats good news :)
+14:31:33 <Linuxsusefan> rabauke: +1
+14:31:56 <cartman> rabauke: you reported some mail losses afaik
+14:32:01 <cartman> any update on those?
+14:32:13 <rabauke> no, none fixed.
+14:32:20 <tittiatcoke> cartman: We have another area that needs to be fix. KDE integration with systemd
+14:32:39 <cartman> rabauke: can you please give us some bug # , so _wstephenson can bug the people directly or better yet fix it :)
+14:32:50 <cartman> tittiatcoke: Do we have any concrete problems with that?
+14:32:58 <cartman> Overall my daily system looks OK with systemd
+14:33:13 <rabauke> for kdepim providing a working migration tool is unfortunatley out of scope. so we should at least provide a howto, e.g. as part of the greeter
+14:33:16 <tittiatcoke> cartman: Yes, You cannot initiate a reboot, shutdown or a new session from with KDE
+14:33:31 <cartman> tittiatcoke: thats why it just logs me out? :)
+14:33:32 <rabauke> and mention it in the release notes
+14:33:39 <tittiatcoke> cartman: Yup.
+14:33:57 <cartman> rabauke: would you write a small howto to get us started? We could expand it.
+14:34:08 <cartman> tittiatcoke: I see.
+14:34:12 <rabauke> http://kdeatopensuse.wordpress.com/2012/03/08/help-on-kde-pim-data-loss-bugs/ includes all I know of.
+14:34:16 <cartman> Anyone wants to debug systemd with kdm ?
+14:34:26 <tittiatcoke> cartman: I already have patches for it and am testing them in my repo. They are coming from Fedora, but somehow this bans out the usage of ConsoleKit
+14:34:42 <cartman> #action wstephenson Have a look at mail loss bugs in http://kdeatopensuse.wordpress.com/2012/03/08/help-on-kde-pim-data-loss-bugs/ and let PIM team know/fix.
+14:34:48 <tittiatcoke> e.g. plasmoid-networkmanagement doesn't see NetworkManager anymore
+14:34:55 <cartman> tittiatcoke: oh
+14:35:13 <cartman> tittiatcoke: Let me assign an action item to you but I'll give a hand too, ok?
+14:35:13 <tittiatcoke> cartman: :-)
+14:35:17 <tittiatcoke> ok
+14:35:31 <cartman> #action tittiatcoke debug kdm & systemd integration problems with cartman.
+14:35:41 <cartman> We can bug ossi (kdm's author/maintainer)
+14:36:28 <cartman> We also have bko# 295810, bko# 287317 for Policykit-GUI problems
+14:36:46 <cartman> in essence modifying policykit files doesn't work.
+14:37:09 * cartman is looking for a brave soul
+14:38:00 <rabauke> a working policykit gui would have avoided all that trouble about networkmanager profiles, linus daughter's printer administration in school etc. :p
+14:38:38 <rabauke> wstephenson already worked witht the gui author, i.e. it's the same as for apper
+14:39:01 <tittiatcoke> rabauke: The issue with PNM is that in the new situation it ignores ConsoleKit, so PolicyKit is not giving access to the DBUS
+14:39:06 <Linuxsusefan> rabauke: wow, what a word can cause the heads of all ;-)
+14:39:25 <tigerfoot> Linus'daughter isn't subscribe to GOSC2012? :-)
+14:39:31 <tittiatcoke> Strangely enough Fedora seems to have dumped ConsoleKit support from KDE (at least workspace is no longer build with ConsoleKit-devel)
+14:40:01 <cartman> maybe we can drop CK support too
+14:40:14 <cartman> might me that systemd seat support obsoletes it.
+14:40:16 <cartman> not sure.
+14:40:20 <cartman> multi-seat*
+14:40:29 <rabauke> tittiatcoke: I think rdieter on #kde-devel might know. AFAIK he is the KDE maintainer for fedora
+14:40:34 <cartman> yeah he is.
+14:40:46 <tittiatcoke> cartman: :-) Could be. I guess I will find out as soon as I resolved the PNM issue :-)
+14:40:53 <cartman> anyone want to debug PolicyKit-GUI problems? :)
+14:41:12 <cartman> ok I'll take that one.
+14:41:17 <tittiatcoke> :-)
+14:41:23 <cartman> #action cartman Have a look at bko# 295810 and bko# 287317
+14:41:33 <cartman> any other 12.2 blockers?
+14:41:47 * tigerfoot not related to kde
+14:41:55 <cartman> tittiatcoke: we need KDE ones ;)
+14:42:13 <tittiatcoke> cartman: What about ksecretsservice ?
+14:42:24 <krop> not a blocker
+14:42:24 <cartman> Well, I packaged it but thats it
+14:42:29 <cartman> integration is MIA
+14:42:36 <cartman> and I can't really think its useful or tested.
+14:42:37 <cartman> at all.
+14:43:15 <cartman> shouldn't be a blocker for 12.1
+14:43:17 <cartman> 12.2*
+14:43:50 <cartman> any more blocker ideas?
+14:43:57 <rabauke> none I know of.
+14:44:03 <cartman> ok, next topic then.
+14:44:08 <krop> wait
+14:44:08 <cartman> #topic Ensure that patches to KDF, KR48 are delivered to the user within 24 hours, i.e. get higher build priority for those repos on patch-commit-days
+14:44:12 <cartman> whooops
+14:44:15 <cartman> krop: please do tell
+14:44:27 <rabauke> I added that.
+14:44:31 <krop> nm, It can fit in the misc section
+14:44:37 <cartman> ok
+14:44:44 <cartman> update latency for KDF & KR48
+14:44:59 <rabauke> the kmail crash fix was submitted on thursday and packages for 12.1 were published on monday.
+14:45:04 <cartman> we can make KR48 update fast because its only done on release days.
+14:45:10 <cartman> KDF is much harder.
+14:45:20 <cartman> We couldn't agree on a common commit date
+14:45:30 <cartman> dirk didn't agree on such fixed dates.
+14:45:32 <rabauke> there is already, isn't there?
+14:45:45 <cartman> There is but dirk said he didn't want to work like that
+14:45:49 <rabauke> tuesday and friday
+14:46:12 <cartman> What we can do is.
+14:46:13 <rabauke> well, then he has to make sure that build priority is increased if he commits
+14:46:27 <cartman> When there is a critical fix we can ask adrianS to increase the priority.
+14:46:34 <rabauke> it cannot be that he disrupts the building of crtical patches
+14:46:56 <cartman> So this is more about someone tracking important fixes
+14:47:00 <cartman> and letting OBS team know
+14:47:17 <cartman> I can do this since I monitor KDF & KR48 commits.
+14:47:22 <rabauke> the person commiting the patch can also request a higher build priority.
+14:47:32 <tittiatcoke> cartman: But shouldn't the common commit dates be a team decision and not based on the feedback of one man ?
+14:47:36 <cartman> True but depending on everyone to do it might fail.
+14:48:01 <cartman> tittiatcoke: true but at least KDE:Qt is maintained by dirk only.
+14:48:08 <cartman> and it in turn affects us.
+14:48:46 <cartman> one idea is to disable qt _aggregate until there is an important fix
+14:48:50 <cartman> so changes there don't affect us.
+14:48:59 <rabauke> whatever he does, as long as he makes sure that repos are published within 24 hours after a commit, I'm fine with it.
+14:49:27 <cartman> except the release times, yes :)
+14:49:31 <rabauke> if he does not care about disrupting the kde repos the aggregate should be disabled
+14:49:41 <cartman> thats the idea
+14:49:45 <cartman> we enable it when we want.
+14:50:06 <rabauke> only opssible solution given the experiecnes from the past I guess
+14:50:14 <tittiatcoke> yup
+14:50:20 <cartman> ok, not much of a technical problem :-)
+14:51:28 <rabauke> is it possible to get a higher build priority e.g. every tuesday automatically. if there are no commits this does not harm others. if there are we need it.
+14:51:49 <cartman> rabauke: I don't think so but I'll talk to adrianS
+14:51:58 <cartman> otherwise I'll setup a reminder for those days
+14:52:04 <cartman> and check if important commits happened
+14:52:13 <rabauke> that way they could even manage the big repos like kde, gnome, openoffice tc.
+14:52:31 <rabauke> etc
+14:52:31 <rabauke> one each day
+14:52:38 <cartman> #action cartman Talk to OBS team about automatically adjusting repo priority based on the day
+14:52:41 <cartman> there we go
+14:53:02 <cartman> so in summary
+14:53:09 <cartman> Tuesday-Friday checkins are go.
+14:53:25 <cartman> we might disable qt aggregates if we found them to trigger rebuilds too much
+14:53:51 <cartman> good enough? :)
+14:53:56 <rabauke> yes
+14:54:12 <cartman> next topic unless someone has something to say about this
+14:54:37 <cartman> #topic Rename Repo KDE 3 in trinity (projects more clearly delineate)? --Linuxsusefan 05:15, 20 March 2012 (MDT)
+14:54:43 <cartman> Linuxsusefan: please explain this one :)
+14:54:55 <Linuxsusefan> Will KDE 3 is still supported by the KDE team? I think not, because that was replaced by KDE 4. But it is in many minds the user has not firmly anchored to the KDE 3 can be revived. Is also encouraged because the repos are settled at the KDE project will continue with KDE third It would certainly be better the repos in the project name "Trinity" to rename. This would make a better separation of the "KDE team" to the "Team
+14:54:55 <Linuxsusefan> Trinity" visible and makes it clear that the two independent projects. The same was done with the project and Evergreen. Maybe you can orient it?
+14:55:19 <cartman> so there is some confusion with the KDE3 packages being supported "officially"
+14:55:29 <Linuxsusefan> sorry, everything belongs together
+14:55:33 <cartman> I remember wstephenson saying something similar
+14:55:35 <rabauke> the problem is, opensuse's kde3 is not trinity
+14:55:43 <cartman> yeah indeed
+14:55:54 <cartman> but the KDE team has no interest in KDE3 or Trinity
+14:56:01 <cartman> openSUSE's KDE team that is
+14:56:09 <Linuxsusefan> this is exactly the problem that no one is different
+14:56:28 <Linuxsusefan> trinity → kde3 ? or others?
+14:56:30 <rabauke> opensuse's is the last kde3 release + some patches. trinity is a lot more
+14:56:46 <cartman> Linuxsusefan: what shall we do? as an action item?
+14:57:20 <rabauke> the name kde3 is accurate, so it will be hard to argue to rename it to something it is not, i.e. trinity.
+14:57:31 <cartman> indeed
+14:57:31 <rabauke> you could move it out of KDE:
+14:57:39 <Linuxsusefan> better define
+14:57:39 <cartman> ok thats an idea
+14:57:48 <cartman> since its not officialy maintained by us.
+14:57:52 <Linuxsusefan> rabauke: +1
+14:57:57 <rabauke> it was officially part of 12.1
+14:58:09 <cartman> but not maintained by the KDE team
+14:58:19 <Linuxsusefan> cartman: +1
+14:58:21 <krop> not maintained by anyone
+14:58:28 <Linuxsusefan> hehe
+14:58:34 <cartman> its there and it manages to build
+14:58:39 <cartman> maybe gcc 4.7 will fix that ;)
+14:58:46 <rabauke> ilya would disagree on the maintaining bit.
+14:58:46 <krop> the packages are maintained, the code is not
+14:58:58 <cartman> #action cartman KDE3 should be out of KDE: to avoid confusion
+14:59:05 <Linuxsusefan> cartman: thanks
+14:59:10 <cartman> ok I understand the problem :)
+14:59:19 <Linuxsusefan> my english is not so good
+14:59:26 <cartman> Linuxsusefan: better than my German
+14:59:31 <Linuxsusefan> ja
+14:59:32 <cartman> keine ahnung forever
+14:59:41 <Linuxsusefan> hehe
+14:59:45 <Linuxsusefan> dane
+14:59:49 <Linuxsusefan> danke
+15:00:14 <cartman> Since we have a meeting for tomorrow too, I suggest we skip to Q&A and then misc?
+15:00:48 <rabauke> if everybody who would have a question is also present tommorrow
+15:00:59 <Linuxsusefan> ok, skipped
+15:01:08 <cartman> we'll see how big we'll be tomorrow :)
+15:01:20 <cartman> #topic Q&A
+15:01:37 <cartman> any questions before we go to the misc. topics?
+15:02:02 <rabauke> no
+15:02:04 <Linuxsusefan> no
+15:02:38 <krop> well, yes
+15:02:45 <krop> Q&A and misc are the same to me
+15:02:54 <krop> :)
+15:02:56 <cartman> sure then, go ahead :)
+15:03:14 <krop> I have two concerns
+15:03:36 <wstephenson> hi
+15:03:37 <krop> Calligra is not in O:F yet since noone (including me) submitted it
+15:03:41 <cartman> wstephenson: welcome.
+15:03:46 <Linuxsusefan> wstephenson: hi
+15:03:51 <wstephenson> sorry for being late.
+15:03:54 <cartman> krop: I am dying to drop koffice2 any second.
+15:03:58 <wstephenson> +1
+15:04:06 <krop> So, do we want it for 12.2 ? and can we drop koffice ?
+15:04:07 <cartman> I didn't fix its build failures on purpose.
+15:04:23 <cartman> We surely want Calligra in 12.2 and drop Koffice imho
+15:04:54 <rabauke> make sure to make the calligra rpms replace koffice2.
+15:04:54 <wstephenson> krop: yes
+15:05:23 <krop> ok, then I'll look at the rpmlint warnings and submit
+15:05:27 <cartman> awesome
+15:05:39 <cartman> #action krop Check Calligra rpmlint logs and submit to O:F
+15:05:54 <krop> (good luck to the legal team)
+15:06:09 <cartman> hahah ;)
+15:06:26 <krop> I have another concern about kup.
+15:06:35 * tittiatcoke hides
+15:06:35 <wstephenson> where are we at in the agenda btw?
+15:06:44 <tittiatcoke> wstephenson: Misc/Q&A
+15:06:44 <rabauke> wstephenson: misc
+15:07:03 <wstephenson> thought so
+15:07:22 <krop> telepathy is moving faster than opensuse and starts to require some glib versions that are not in opensuse < 12.2
+15:07:29 <cartman> uh :/
+15:07:48 <krop> I'd like to create subprojects in KUP for the telepathy-kde stuff
+15:08:16 <krop> and link the missing packages for 11.4/12.1
+15:08:17 <wstephenson> that add the newer glib, for those brave enough to test it with 12.1?
+15:08:18 <tittiatcoke> krop: Shouldn't we bring version 0.3 to KDF ? That version can compete with kopete
+15:08:46 <wstephenson> the tp team say that 0.4 will be out by april
+15:08:56 <wstephenson> so i'd just put the git 0.3.60 we have in KUP into KDF now
+15:09:00 <tittiatcoke> Ok. They are definitely working hard on it :-)
+15:09:13 <krop> my main concern is this commit: http://cgit.freedesktop.org/telepathy/telepathy-qt4/commit/?id=1276ee717742ffba3e13b2750c5c4b05d0e12e4b
+15:09:14 <wstephenson> it could really use wider testing though
+15:09:23 <tittiatcoke> I am using it on a daily basis and everything seems fine
+15:09:29 * cartman has no idea about Telepathy stuff
+15:09:36 <wstephenson> we have a lot of little polish issues that make it not able to replace kopete yet
+15:09:50 <wstephenson> things like the appname of the text ui being "Telepathy Text Ui" in the UI itself
+15:10:02 <wstephenson> things that our broader circle of users can help spot
+15:10:23 <wstephenson> also the groupwise haze plugin doesn't work yet </internal>
+15:10:46 <wstephenson> so i would urge all of us to use it, it's moved past the early adopter case now (alin)
+15:11:04 <wstephenson> i should also write a kopete log converter
+15:11:05 <krop> tittiatcoke: bringing 0.3 to kdf means adding ~10 new packages
+15:11:13 <wstephenson> seeing as i am the Link To The Past in this context
+15:11:17 <cartman> I can test jabber/msn
+15:11:58 <tittiatcoke> krop: Ok. As wstephenson already indicated lets bring 0.3.60 to KDF
+15:12:17 <wstephenson> fyi there are pkg dependency problems atm
+15:12:41 <wstephenson> eg the auth handler and the kcm are not required by the contactlist and the text chat UI
+15:12:56 <wstephenson> and they don't fail informatively if those are missing.
+15:13:15 <wstephenson> brb
+15:13:31 <cartman> We can discuss details after the meeting :)
+15:14:07 <cartman> any other Q&A/misc ?
+15:14:20 <krop> I didn't get an answer I think
+15:14:22 <krop> :)
+15:14:25 <cartman> heheh
+15:14:32 <cartman> we submit Calligra. that was item #1
+15:14:44 <cartman> we submit new Telepathy to KUP
+15:14:47 <krop> [16:07] <krop> I'd like to create subprojects in KUP for the telepathy-kde stuff
+15:14:48 <cartman> that was item #2
+15:15:08 <cartman> I think we agree its the way to go, but even KDF might be an option I guess.
+15:15:13 <krop> telepathy is in kup but I'm starting to get stuck with some dependencies
+15:15:21 <rabauke> are there tasks people looking for "contributions" can do? e.g. things realted to bringing KDS to the official update channels
+15:15:39 <krop> rabauke: yes, provide updates to KUA
+15:15:50 <cartman> rabauke: we miss such a list of taks :(
+15:15:55 <wstephenson> back
+15:16:14 <rabauke> krop: so we are looking for people maintaining apps in kua?
+15:16:15 <wstephenson> oh btw, are we agreed that tP should not replace a dropped kopete for 12.2?
+15:16:26 <wstephenson> i don't think we can force another kataclysm on our users
+15:16:39 <cartman> is it really as stable as kopete?
+15:16:49 <wstephenson> i doubt it
+15:17:03 <krop> from an ui pov, I find telepathy-kde way too unpleasant
+15:17:14 <wstephenson> krop: that's details :)
+15:17:24 <krop> that's what users see
+15:17:31 <wstephenson> plus, you can write your own interchangeable component now! ;)
+15:17:37 <cartman> ha :)
+15:17:43 <einar77_work> cartman: for being stable, it is stable, not as featureful yet as kopete, though
+15:18:04 <cartman> einar77_work: because as ugly as it is, kopete is stable & works.
+15:18:20 <wstephenson> howdy llunak
+15:18:33 <llunak> lo
+15:18:42 <cartman> ok we need a decision on where we put Telepathy stuff
+15:18:45 <wstephenson> look, we're having a meeting again!
+15:18:52 <cartman> heheh :)
+15:19:00 <tittiatcoke> To come back to systemd support. Does anybody has issues with reboot/shutdown/new session on the new Factory M2 ?
+15:19:10 * wstephenson hasn't tried yet
+15:19:17 <cartman> tittiatcoke: Factory just logs me out
+15:19:27 <cartman> that was ~2 days ago or so
+15:19:36 <maxlin> tittiatcoke, cartman: me too
+15:20:04 <cartman> krop, wstephenson do we agree KUP is the place for TP for now?
+15:20:34 <maxlin> tittiatcoke: and it log me out when I close konsole ;/
+15:20:49 <wstephenson> cartman: TP subproject with newer glib for released distros, KDF for Factory
+15:21:01 <cartman> ok that answers krop's question :)
+15:21:11 <cartman> any other Q&A?
+15:21:14 <krop> ok :)
+15:21:29 <tittiatcoke> Ok. as indicated Fedora has been working on getting systemd support into KDE. The patches resolves those issues, however it causes a different issue as that ConsoleKit support is dropped. This requires a NetworkManager that has systemd support.
+15:21:43 <tittiatcoke> However that can not be build until we can drop sysvinit support in 12.2
+15:21:52 <wstephenson> ah great
+15:22:00 <cartman> tittiatcoke: we just enable it for 12.2 then?
+15:22:43 <wstephenson> tittiatcoke: AFAIR the consolekit support in kdm is fairly trivial, and should be easy to readd to the fedora patched versions
+15:22:47 <wstephenson> right, llunak? ^
+15:23:19 * wstephenson is like a clingy ex-girlfriend to llunak who won't let the past go
+15:23:31 <tittiatcoke> wstephenson: The downside that I quickly noticed is that PNM is no longer able to connect to the NM dbus
+15:23:38 <cartman> wstephenson: LOL
+15:23:48 <tittiatcoke> wstephenson: Changes by Fedora are not done in KDM. They are attacking kde-workspace itself.
+15:24:21 <tittiatcoke> wstephenson: https://build.opensuse.org/package/view_file?file=workspace_systemd_initial_support.patch&package=kdebase4-workspace&project=home%3Arwooninck%3AUNSTABLE_KDE4&rev=6b215bb957965967d1e36708839af18d
+15:24:29 <wstephenson> tittiatcoke: got a reference to what they do? (fedora wiki) or do i have to read the pat...
+15:24:36 <wstephenson> :)
+15:24:45 <llunak> wstephenson: I think the consolekit patch was quite small, but I don't quite remember
+15:25:50 <tittiatcoke> wstephenson: There is a bug report on which the patch is based. The patch is to have workspace talking to the systemd-logind service directly.
+15:26:09 <wstephenson> ok
+15:27:09 <tittiatcoke> wstephenson: I can resolve the reboot/shutdown stuff easily without hurting consolekit. But the initiate new session will not work with that
+15:27:38 <wstephenson> tittiatcoke: we can probably sacrifice that for the ck-only users
+15:28:03 <tittiatcoke> wstephenson: Ok. will submit that patch to KDF
+15:28:20 <cartman> #action tittiatcoke submit kdeworkspace-systemd patch to KDF
+15:28:42 <tittiatcoke> cartman: Please make that into kdm-systemd.patch :-)
+15:29:04 <cartman> I am not sure I can edit actions ;)
+15:29:25 <wstephenson> make the revision another action
+15:29:42 <cartman> #action tittiatcoke Instead, submit kdm-systemd.patch to KDF
+15:29:44 <tittiatcoke> wstephenson: this is the related bugreport: https://bugzilla.redhat.com/show_bug.cgi?id=788171
+15:29:49 <bugbot> bugzilla.redhat.com bug 788171 in Fedora (kde-workspace) "Port shutdown/restart code from ConsoleKit to systemd" [Low,On_qa]
+15:30:11 <wstephenson> ok gotta watch anna
+15:30:27 <cartman> ok, so
+15:30:33 <cartman> any more Q&A or we are concluding :)
+15:31:53 <cartman> Thanks a lot for taking your time and attending, see you tomorrow for more team action! :)
+15:31:59 <cartman> The meeting is over.
+15:32:01 <Linuxsusefan> closed
+15:32:02 <cartman> #endmeeting

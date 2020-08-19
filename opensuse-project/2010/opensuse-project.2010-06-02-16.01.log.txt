@@ -1,0 +1,277 @@
+16:01:02 <henne> #startmeeting
+16:01:02 <bugbot> Meeting started Wed Jun  2 16:01:02 2010 UTC.  The chair is henne. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:01:02 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:01:07 <henne> #meetingtopic Welcome to the openSUSE Project Meeting!
+16:01:10 <henne> Welcome to the openSUSE Project Meeting!
+16:01:14 <henne> This meeting is meant to discuss the latest developments in and around openSUSE.
+16:01:19 <henne> The topics for this meeting are:
+16:01:36 <henne> 1.  Old Action Items
+16:01:36 <henne> 2. Status Reports
+16:01:36 <henne> 1. Board
+16:01:36 <henne> 2. Distribution
+16:01:36 <henne> 3. Communication / Events
+16:01:38 <henne> 4. Build Service
+16:01:41 <henne> 3. Wiki Migration
+16:01:43 <henne> 4. Questions & Answers
+16:01:46 <henne> 1. From Wiki
+16:01:49 <henne> 2. From Channel
+16:02:18 <henne> lets go
+16:03:12 <henne> #topic Old Action Items
+16:03:31 <henne> you can find them in bugzilla with this url: http://bit.ly/opensuse_action_items
+16:03:40 <henne> any progress?
+16:04:18 <henne> is this still the right tool to track our action items?
+16:04:52 <prusnak> we might consider retrospectiva as other subprojects are using it, but i don't think it is a tool issue :-/
+16:04:53 <AJaeger> henne: The question is also whether it does not make sense to remind people personally before the meeting - or discuss with them whether we should close something.
+16:05:25 <henne> AJaeger: i thought thats what meetings are for :)
+16:05:39 <dragotin> yes, lets have a pre-meeting ;-)
+16:05:50 <digitltom> henne: i think there are updated kde and gnome appliances
+16:05:52 <henne> we track them with #action now
+16:06:06 <AJaeger> I meant a personal email: Please take care of your ai and report back next meeting
+16:06:15 <vuntz> I'm unsure how up-to-date is the gnome appliance, though
+16:06:16 <digitltom> henne: so #456622 is no more valid
+16:06:37 <AJaeger> vuntz: Could you mark the bug as done, please?
+16:07:09 <vuntz> AJaeger: if someone can give me a link to an upstream gnome appliance, yes :-)
+16:07:09 <digitltom> vuntz: http://susestudio.com/a/zpzr67/gnome-reloaded--2
+16:07:14 <henne> AJaeger: from who?
+16:07:38 <vuntz> digitltom: cool
+16:07:39 <AJaeger> henne: from you, me or whoever volunteers ;)
+16:08:06 <digitltom> vuntz: you can get in contact with andre, so he can give you write permissions for it
+16:08:06 <henne> i barely find time to run these meetings :-/
+16:08:07 <vuntz> digitltom: not exactly what the AI is about, though (it's about an appliance with upstream branding, as far as I remember it)
+16:09:12 <henne> what i can do is put the things we mark with #action to bugzilla at the ned of the meeting
+16:09:19 <digitltom> vuntz: if the branding upstream package exists that should be no problem, we can clone andre's appliance for that
+16:09:27 <vuntz> but to be fair, that's an AI for the gnome team, so I'm not sure why it appears in the list here :-)
+16:09:52 <henne> vuntz: bcause he used the "Action Items" component
+16:10:00 <vuntz> digitltom: yeah. Someone just need to do it -- never had time to play with that myself
+16:10:21 <AJaeger> vuntz:We should mark it as [AI GNOME] then...
+16:10:43 <vuntz> nod
+16:10:47 <henne> if you track your AI's there
+16:10:56 <henne> do you?
+16:11:27 <vuntz> henne: we did in the past, I think
+16:11:36 <henne> otherwise magnus is using this component as his personal todo list and we should sponsor him an RTM account ;)
+16:11:38 * vuntz updated the bug
+16:11:57 <henne> okioki
+16:12:25 <henne> the other two are not here
+16:12:31 <vuntz> digitltom: (thanks for the link to this appliance)
+16:12:36 <henne> two assignees
+16:13:00 <henne> #action henne put everything we mark with #action to bugzilla after the meetings
+16:13:15 <henne> next topic?
+16:13:31 <AJaeger> yes, sir!
+16:14:07 <henne> #topic Status Reports
+16:14:19 <henne> teams and people send various status reports
+16:14:25 <AJaeger> coolo, do we have a distribution status report?
+16:14:35 <henne> coolo does for the distribution, the boosters for their milestones etc.
+16:15:01 <henne> is there anything regarding those to talk about ?
+16:15:16 <AJaeger> henne: Did Coolo send one?  I might have missed it...
+16:16:10 <AJaeger> last one I find is from May 19th...
+16:16:13 <prusnak> henne: i don't remember who had AI to send report from board meeting in NBG
+16:16:52 <henne> prusnak: michl took note so i assumed he
+16:17:05 <henne> prusnak: but we can also give it live :)
+16:17:18 <henne> should i or do you want to?
+16:17:29 <prusnak> henne: me and michl won't be attending today's meeting
+16:17:36 <prusnak> and bryen is also puzzled
+16:17:42 <henne> i mean now
+16:17:45 <henne> not later :
+16:18:01 <henne> AJaeger: i don't think so. cant find any either
+16:18:45 <henne> so the board meet in person last friday and had a board face to face meeting in nuremberg
+16:19:12 <henne> we discussed our "normal" agenda that we also go through in our IRC meetings
+16:19:54 <henne> in great detail we talked about what the board wants to do the next months
+16:20:52 <henne> we came to the conclusion that we also want to look at roadblocks for contributors
+16:21:07 <henne> mostly in the spirit and communication areas
+16:21:39 <henne> so for instance we talked a great length about giving people real power
+16:22:03 <henne> which also means living with the fact that they can fail
+16:22:48 <henne> not always provide this savety net that we all like so much
+16:23:10 <vuntz> henne: may I ask a definition of "real power"?
+16:23:26 <henne> but also simple things like looking at failures of communication like response time of people responsible for something
+16:23:50 <henne> the example was mirror requests i think
+16:24:24 <henne> vuntz:if someone is responsible for something it means that he is responsible for success and for failure
+16:24:40 <henne> what we like to do often is to provide a safety net
+16:24:47 <henne> for instance the milestone announcements
+16:25:36 <vuntz> :W 34
+16:25:38 <vuntz> (sorry)
+16:25:46 <henne> we ask james to write those, but keep pinging him about it, write them half for him and so on
+16:26:18 <AJaeger> henne: For me it was not clear that he signed up forever to do these - and seeing his feedback it was not clear to him either.
+16:26:41 <henne> AJaeger: i don't want to discuss details
+16:26:47 <henne> this was just an example
+16:27:06 <henne> if we put people in charge we should make clear to them (and to everyone else) that they are responsible for this
+16:27:30 <AJaeger> henne: and write it at a well-known place in the wiki
+16:27:52 <AJaeger> we might have both a place with open jobs - and with responsibilities...
+16:28:12 <vuntz> henne: makes sense (although I thought it was already like that -- the safety net is not because we want a safety net but because we all care)
+16:28:17 <AJaeger> for most teams teams this can be part of the team page
+16:28:29 <henne> vuntz: yep but for starters this is blocking us we think
+16:28:35 <dragotin> AJaeger: A place with open jobs is nice but not what henne says
+16:28:49 <dragotin> I guess...
+16:28:59 <AJaeger> dragotin: If you want to empower people, you need to tell them also what they can do ;)
+16:29:00 <henne> vuntz: because then people don't really dive in
+16:29:13 <vuntz> henne: sure, I agree
+16:29:28 <dragotin> AJaeger: thats correct, and that works only if you, in the first time, take them by the hand and show him/her
+16:29:48 <henne> this made also something very clear to us
+16:29:50 <AJaeger> henne: We might need both - for those that want a tutor/coach that helps them with the first steps - and later let them run on their own and just help when they ask for help!
+16:30:01 <dragotin> and help a second time maybe and than LET GO!
+16:30:17 <AJaeger> dragotin: Seems we agree ;)
+16:30:28 <dragotin> AJaeger: sure we agree
+16:30:37 <henne> AJaeger: we didnt talk implementation. come to the board meetings. implementation is a topic there :)
+16:30:47 <dragotin> what we have to learn is feeling comfortable with that actually
+16:30:47 <henne> so this made also something very clear to us
+16:30:54 <henne> we are, with communication and behaviour, way behind all the technical changes
+16:31:00 <henne> that allow responsibility
+16:31:08 <AJaeger> henne: Do you have a board meeting today?
+16:31:19 <henne> and thats what the board wants to try to change in the next couple of months
+16:31:43 <AJaeger> henne: Sounds great!  Go, board, go!
+16:31:44 <henne> AJaeger: yes. at 18:00 UTC
+16:32:09 <henne> prusnak: did i forget anything?
+16:32:14 <henne> probably
+16:32:24 <henne> AJaeger: good :)
+16:32:38 <AJaeger> henne: 18:00 UTC is a no-go for me in general, I doubt I can make it :-( but will try
+16:33:03 <henne> AJaeger: you can also leave your ideas on our meeting page Meetings/Board :)
+16:33:33 <henne> okay thats it from the board status update then
+16:33:39 <henne> anything else we need to discuss?
+16:33:41 <AJaeger> henne: It's getting off-topic now: But why not paste the current agenda later in the meeting to invite everybody?
+16:34:19 <henne> everybody goto http://en.opensuse.org/Meetings/Board :)
+16:34:31 <henne> that should be enough
+16:34:35 <henne> okay next topic?
+16:35:27 <henne> #topic Wiki Migration
+16:35:58 <henne> as you probably have noticed we have the second of june and wiki.o.o and en.o.o are not switched
+16:36:25 <henne> thats because the wiki team feels very strongly that the new wiki is not ready yet
+16:37:05 <henne> we think that if we switch now we will not be able to handle all the cleanups afterwards
+16:37:39 <henne> the reason is pretty simple: wiki.o.o has still a lof of gaping holes content wise
+16:37:51 <AJaeger> henne: What is the plan to fill the holes?
+16:37:55 <henne> so we are talking about slipping the date
+16:38:15 <henne> (even more then we already have ;)
+16:38:36 <henne> AJaeger: take more time and approach the "owners" of those holes
+16:39:38 <henne> so we can bring them up to speed with the new structure and things
+16:39:48 <henne> and they then do the migration theirself
+16:40:14 <henne> we did so already for a couple of them (Weekly news, STUDIO, etc)
+16:40:16 <AJaeger> henne: What about an IRC classroom session where everybody gets invitied?
+16:40:33 <henne> AJaeger: we rather want to approach people individually
+16:40:44 <AJaeger> I know I can always ask on opensuse-wiki (correct?) but making it a special effort might get some more people in
+16:40:55 <henne> instead of a broad shot
+16:41:09 <dragotin> AJaeger: I like the idea. Are you picking the AI ?
+16:41:23 <henne> AJaeger: that we plan to do once we go live and the "general openSUSE public" starts to use it
+16:42:26 <henne> its easier to go to Sascha for and teach him how to do Weekly News then to hope that he swings by in an irc session
+16:42:38 <henne> we have a big list of stuff that we need to do
+16:42:39 <henne> http://wiki.opensuse.org/Help:Todo
+16:43:03 <AJaeger> dragotin: I know too little to do that and thing the wiki team can handle this on their own. But if they need help for a classroom sesion setup, I'm willing to help and I hope you help as well ;)
+16:44:01 <henne> anyway
+16:44:07 <AJaeger> henne: Should each user migrate his own user page?
+16:44:12 <henne> like i said. we don't plan classrooms (yet)
+16:44:19 * dragotin helps whereever possible
+16:44:27 <digitltom> AJaeger: yes
+16:44:43 <henne> AJaeger: yes. everybody is welcome and invited to help as much as possible
+16:44:58 <henne> everything is documented on http://wiki.opensuse.org/Portal:Wiki
+16:45:03 <AJaeger> ok, then I'll do mine soon ;)
+16:45:30 <henne> so the date we're aiming at is the 12th of July
+16:45:37 <henne> the week of the 11.3 release
+16:45:51 <dragotin> well, but for example the user page migration is something which needs a broader announcement
+16:46:06 <dragotin> if we want that everybody does it, we must _tell_ people
+16:46:19 <henne> guys. the user pages are the least of our worries
+16:46:22 <dragotin> along with a howto possibly
+16:46:34 <dragotin> sure
+16:46:43 <dragotin> ok
+16:46:44 <henne> we have no 11.3 stuff and very little project stuff  in the wiki
+16:46:59 <henne> so userpages are really not what this migration hangs on ;)
+16:47:06 <AJaeger> user pages migration might get some people upto speed with the migration and help with others later on
+16:47:24 <henne> might be
+16:47:33 <henne> we said what we want to do
+16:47:40 <digitltom> distribution + 11.3 product presentation is nearly completely missing
+16:47:44 <AJaeger> henne: So, the Help:Todo is not prioritized - where is your secret priority list?
+16:47:57 <henne> AJaeger: all of this is A priority
+16:48:09 <henne> AJaeger: without that we can't go live
+16:48:40 <AJaeger> henne: Sorry for beeing dense but you just said that Users is not important - and then you say all is A priority.  Now I'm confused...
+16:49:40 <robjo> I think everything on http://wiki.opensuse.org/Help:Todo is a priority
+16:49:52 <digitltom> AJaeger: users is not on that list
+16:50:34 <AJaeger> digitltom: I saw members and read users - you're right.  Sorry henne, I was confused indeed ;)
+16:51:10 <henne> so we are thinking about doing the switch at the 12th of July
+16:51:23 <henne> to take the traction the 11.3 release (same week) brings into the wiki
+16:51:35 <henne> this would give us another month to do stuff
+16:51:47 <henne> and would still bring the new wiki in time for 11.3
+16:52:01 <henne> which was our original goal
+16:52:20 <henne> i already talked to darix and he said technicall the 12th would be no problem
+16:52:39 <henne> is there anything else you guys can think of that speaks against this date?
+16:53:05 <dragotin> only that its still challenging
+16:53:32 <henne> true
+16:53:54 <henne> but lately we're gaining some tracktion
+16:54:05 <henne> so i think we can make that date
+16:54:15 <digitltom> i think we have 2 new boosters on it, so it can work
+16:54:36 <AJaeger> henne, digitltom: Cool!
+16:54:40 <robjo> trying to get critical work done while the world cup is in progress looks like a big challenge to me :)
+16:54:41 <henne> yeah and i need to push michl more for the B1 sponsoring...
+16:55:03 <AJaeger> dragotin: it needs to be challenging ;)
+16:55:17 <dragotin> AJaeger: it needs people who work
+16:55:36 <henne> robjo: yeah tell me about it...
+16:55:39 <AJaeger> dragotin: Yes for sure!
+16:55:55 <AJaeger> robjo: We can't wish that all teams lose in the first round ;)
+16:55:59 <henne> so no objections to the 12th?
+16:56:35 <vuntz> AJaeger: sure, but we can wish that Germany loses in the first round. Just one team, it's okay ;-)
+16:57:00 <vuntz> henne: big +1. I think we want it for 11.3 anyway, so...
+16:57:14 * henne smacks vuntz with a large vuvuzela
+16:57:14 <AJaeger> vuntz: Bring your armor with you next week to Germany :-)
+16:57:31 <robjo> vuntz: 54, 74, 90, 2010
+16:57:39 <dragotin> is france in actually ? ;-)
+16:57:57 <vuntz> heh. We made it. We just cheated for that.
+16:57:59 <henne> okay then we will most likely go for that date
+16:58:05 <AJaeger> henne: Go for it and keep us updated - I might even help ;)
+16:58:08 <henne> sure
+16:58:10 <henne> will do
+16:58:13 <henne> next topic then?
+16:58:18 <henne> we have 2 minutes left
+16:58:22 <dragotin> yes, hurry
+16:58:29 <henne> #topic Questions & Answers
+16:58:34 <dragotin> otherwise I get the nudelholz at home
+16:58:39 <henne> there are no questions on the wiki
+16:58:50 <henne> are there any other topics we need to discuss now?
+16:58:56 <vuntz> I have one question: will the strategy team continue to exist once we have decided on the strategy?
+16:58:56 <henne> or are there any general questions?
+16:59:22 <henne> AJaeger?
+16:59:38 <dragotin> vuntz: what reason are you thinking of?
+17:00:46 <AJaeger> vuntz: The strategy needs to be implemented.
+17:00:53 <vuntz> well, I'm just wondering and I have no opinion -- is it actually useful or not to keep the strategy team in the long term?
+17:01:07 <AJaeger> We have not discussed how to implement it and help with the implementation.
+17:01:14 <vuntz> nod, makes sense
+17:01:14 <dragotin> well, a strategy has to keep alive as everything
+17:01:24 <AJaeger> it might be that the team continues to do it - or the board takes over, or some extra team...
+17:01:30 <dragotin> so a kind of strat team needs to exist I guess
+17:01:35 <vuntz> dragotin: sure, I just don't expect our strategy to change every month
+17:01:40 <dragotin> right
+17:01:49 <AJaeger> We need to find a way to drive the strategy implementation...
+17:01:50 <henne> well
+17:02:00 <henne> this team then should consist of the people in charge now
+17:02:01 <dragotin> I wonder if need an explicit team for that
+17:02:05 <henne> who CAN implement it
+17:02:09 <AJaeger> vuntz: Yes, the goal of that team would be different than it is now
+17:02:13 <robjo> IMHO a strategy is in need of adjustment from time to time and smaller adjustments are better than large adjustments, thus a strategy team should exist, albeit meet probably infrequently.
+17:02:22 <henne> it should probably be more than a forum/meeting/list whatever
+17:02:45 <dragotin> robjo: often this kind of strategy work is done by a bunch of core contributors
+17:02:46 <henne> but the current team can drive that
+17:02:56 <dragotin> without a official assignment I guess
+17:03:02 * vuntz thinks the current team can help bootstrap things, indeed
+17:03:43 <dragotin> yes, there is no need to stop the current team from doing things that go beyond defining and proposing the strategy
+17:03:45 <henne> AJaeger: are you still meeting?
+17:03:49 <AJaeger> the strategy will only be successfull if all of us support it and enough contribute
+17:03:58 <AJaeger> henne: face to face?  Not anymore
+17:04:10 <henne> no i mean in general
+17:04:15 <henne> irc or whatever
+17:04:15 <AJaeger> But we continue to meet for the next couple of weeks.
+17:04:31 <henne> can you take that question to the meeting?
+17:04:52 <AJaeger> Next milestone is writing up the strategy proposals - and then it's defining the voting process
+17:04:54 <robjo> dragotin: yes, and this might work well after the initial push is completed
+17:04:58 <AJaeger> henne: Give me that action item
+17:04:59 <henne> it might be that they don't want to continue so we don't have to talk in the bubble were in right now :)
+17:05:28 <AJaeger> henne: The team will make a proposal ...
+17:05:31 <henne> #action AJaeger ask the strategy team about their plans for after the initial proposals
+17:06:04 * AJaeger needs to leave now - there's a smelly diaper in front of me :-(
+17:06:12 <henne> mmmmhhhh yummy
+17:06:29 <henne> so any other question/topic?
+17:06:44 <dragotin> when does summer start?
+17:06:50 <dragotin> sorry
+17:07:06 <henne> saturday in the weißenoher kloster biergarten
+17:08:01 <prusnak> is ß again allowed in hochdeutsch?
+17:08:09 <bitshuffler> yes
+17:08:18 <dragotin> prusnak: it was never forbidden
+17:08:38 <digitltom> and weißenohe is not hochdeutsch
+17:08:38 <dragotin> prusnak: only some usecases were taken away
+17:08:48 <dragotin> digitltom: thats also true
+17:09:17 <henne> Okay that's it then. If you have more, don't hesitate to bring it up on the appropriate mailinglist.
+17:09:20 <henne> #info The next project meeting will be in two weeks. Same channel but this time at 12:00 UTC.
+17:09:23 <henne> Thank you all for participating. Good night and good luck!
+17:09:27 <henne> #endmeeting

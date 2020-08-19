@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:00:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:00:44</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Dec 17 18:00:44 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:00:44</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:00:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#chair </span><span class="cmdline">Holgi</span>
+<a name="l-5"></a><span class="tm">18:00:50</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: Holgi bmwiedemann
+<a name="l-6"></a><span class="tm">18:00:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-7"></a><span class="tm">18:00:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-8"></a><span class="tm">18:01:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">MS2 testing</span>
+<a name="l-9"></a><span class="tm">18:01:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> I kept an eye on openQA results and some look rather good now, but LVM is broken and gnome has graphics issues
+<a name="l-10"></a><span class="tm">18:02:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> and non-oss-update repo is missing, which breaks zypper and yast tests
+<a name="l-11"></a><span class="tm">18:02:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe I should just workaround it with a zypper rr line
+<a name="l-12"></a><span class="tm">18:03:12</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> in case you do it, you may not forget to disable it again
+<a name="l-13"></a><span class="tm">18:03:18</span><span class="nk"> &lt;LWFinger&gt;</span> Should update repos be present during MS sequences?
+<a name="l-14"></a><span class="tm">18:03:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> at least the normal update repo should
+<a name="l-15"></a><span class="tm">18:04:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> for testing of zypper's patch working
+<a name="l-16"></a><span class="tm">18:04:20</span><span class="nk"> &lt;LWFinger&gt;</span> As I recall, it is usually empty.
+<a name="l-17"></a><span class="tm">18:05:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> we sometimes had an "update-test" package in there, though
+<a name="l-18"></a><span class="tm">18:05:35</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-19"></a><span class="tm">18:05:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> it is manual work and that tends to be forgotten
+<a name="l-20"></a><span class="tm">18:06:40</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> did you talk to coolo about this already or created a bug report?
+<a name="l-21"></a><span class="tm">18:07:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> only filed the LVM one
+<a name="l-22"></a><span class="tm">18:07:45</span><span class="nk"> &lt;Holgi&gt;</span> ok might be worth filing one
+<a name="l-23"></a><span class="tm">18:07:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> you can see the http://openqa.opensuse.org/ sidebar for non-linked issues
+<a name="l-24"></a><span class="tm">18:08:01</span><span class="nk"> &lt;Holgi&gt;</span> to prevent to get lost of it
+<a name="l-25"></a><span class="tm">18:08:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> some of it got solved without me filing
+<a name="l-26"></a><span class="tm">18:08:29</span><span class="nk"> &lt;Holgi&gt;</span> ok
+<a name="l-27"></a><span class="tm">18:09:09</span><span class="nk"> &lt;LWFinger&gt;</span> On the beta forum, there was a report that there was no place for a 12.3 M3 entry. Is that still true?
+<a name="l-28"></a><span class="tm">18:09:30</span><span class="nk"> &lt;LWFinger&gt;</span> That was in Bugzilla.
+<a name="l-29"></a><span class="tm">18:09:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> M2 or M3?
+<a name="l-30"></a><span class="tm">18:09:48</span><span class="nk"> &lt;LWFinger&gt;</span> M2, of course.
+<a name="l-31"></a><span class="tm">18:10:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> right.
+<a name="l-32"></a><span class="tm">18:11:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> pinged coolo for it :)
+<a name="l-33"></a><span class="tm">18:11:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> it is on my checklist for new milestones for ages
+<a name="l-34"></a><span class="tm">18:11:42</span><span class="nk"> &lt;LWFinger&gt;</span> Ah, coolo is the one to set those things up.
+<a name="l-35"></a><span class="tm">18:12:11</span><span class="nk"> &lt;Holgi&gt;</span> I think it is confusing that there is not 12.3 as a product
+<a name="l-36"></a><span class="tm">18:12:21</span><span class="nk"> &lt;Holgi&gt;</span> and you need to select "Factory"
+<a name="l-37"></a><span class="tm">18:12:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> at least he did in the past. maybe cartman / ismail could do it as well now that he is part of the release team
+<a name="l-38"></a><span class="tm">18:13:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> for reference, my checklist is at http://openqa.opensuse.org/openqa/doc/release-checklist.html
+<a name="l-39"></a><span class="tm">18:15:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> did you test MS2?
+<a name="l-40"></a><span class="tm">18:15:10</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-41"></a><span class="tm">18:15:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> how did it go?
+<a name="l-42"></a><span class="tm">18:16:03</span><span class="nk"> &lt;LWFinger&gt;</span> I initially downloaded the Gnome Live CD and installed from it on a VB VM.
+<a name="l-43"></a><span class="tm">18:17:02</span><span class="nk"> &lt;LWFinger&gt;</span> The installation went OK except that the screen describing the keyboard, etc. does not fit in window and has no scroll bars.
+<a name="l-44"></a><span class="tm">18:17:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> the bootloader keyboard selection?
+<a name="l-45"></a><span class="tm">18:18:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> or the installation summary/overview?
+<a name="l-46"></a><span class="tm">18:18:46</span><span class="nk"> &lt;LWFinger&gt;</span> The first screen in installation - I think that is the summary. The "Yes" or "Nex"t button was not visible. Only by using Tabs and Returns could I proceed.
+<a name="l-47"></a><span class="tm">18:19:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> ah, that is the Welcome screen then
+<a name="l-48"></a><span class="tm">18:19:34</span><span class="nk"> &lt;LWFinger&gt;</span> Ohterwise installation was normal. As I never use Gnome, I did not test it further.
+<a name="l-49"></a><span class="tm">18:20:24</span><span class="nk"> &lt;LWFinger&gt;</span> I then used the NET install disk on a VB VM. That went fine and resulting installation seemed OK.
+<a name="l-50"></a><span class="tm">18:20:54</span><span class="nk"> &lt;LWFinger&gt;</span> Next, I used the KDE Live CD to install on a real machine.
+<a name="l-51"></a><span class="tm">18:21:38</span><span class="nk"> &lt;LWFinger&gt;</span> The installation worked without any problems, but I do see some problems with the running system.
+<a name="l-52"></a><span class="tm">18:22:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> what kind of problems?
+<a name="l-53"></a><span class="tm">18:22:44</span><span class="nk"> &lt;LWFinger&gt;</span> In the KDE wireless applet, the check marks for "Enable Networking" and "Enable Wireless" are present, but so faint that they are difficult to see.
+<a name="l-54"></a><span class="tm">18:23:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> ah, could be a problem with themes, which changes with new KDE version
+<a name="l-55"></a><span class="tm">18:23:53</span><span class="nk"> &lt;LWFinger&gt;</span> The System Setting panel seems not to be able to enable screen savers without also enabling locking.
+<a name="l-56"></a><span class="tm">18:24:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">btw:</span> http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-GNOME-LiveCD-i686-Build0260/welcome-1.png has Next button visible, but it has pretty high res
+<a name="l-57"></a><span class="tm">18:24:31</span><span class="nk"> &lt;LWFinger&gt;</span> My res was probably 800x600.
+<a name="l-58"></a><span class="tm">18:25:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> one collegue had the problem of a screensaver that would not lock, but just vanish when moving the mouse
+<a name="l-59"></a><span class="tm">18:25:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> in KDE
+<a name="l-60"></a><span class="tm">18:26:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> that is certainly an area that will need more love
+<a name="l-61"></a><span class="tm">18:26:15</span><span class="nk"> &lt;LWFinger&gt;</span> More things I noticed: Grub2 uses the text progress screen, not the converging dots. That usually means that it does not get the screen res. Desktop is OK at 1024x768.
+<a name="l-62"></a><span class="tm">18:26:35</span><span class="nk"> &lt;LWFinger&gt;</span> This system uses nouveau.
+<a name="l-63"></a><span class="tm">18:27:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> when you file this, you want to add details on your graphics chip/card
+<a name="l-64"></a><span class="tm">18:27:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> (same for ATI) because not all chips are supported equally well
+<a name="l-65"></a><span class="tm">18:28:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> but grub2... does it even use linux drivers?
+<a name="l-66"></a><span class="tm">18:28:40</span><span class="nk"> &lt;LWFinger&gt;</span> In the Manage Connection Screen of the KDE NM applet, Pressing the "Edit" button, a freshly rebooted system brings up an error screen that says"Did not receive a reply...."
+<a name="l-67"></a><span class="tm">18:29:24</span><span class="nk"> &lt;LWFinger&gt;</span> Other things in the applet also fail; however, once the system has been up for ~2000 sec, then things work.
+<a name="l-68"></a><span class="tm">18:30:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> possibly systemd taking its time to start services? I noticed sshd taking a minute to start after xdm start
+<a name="l-69"></a><span class="tm">18:30:07</span><span class="nk"> &lt;LWFinger&gt;</span> It seems that something is taking a long time to get started in systemd. I need to explore what the component is.
+<a name="l-70"></a><span class="tm">18:30:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> bootchart could help
+<a name="l-71"></a><span class="tm">18:30:53</span><span class="nk"> &lt;LWFinger&gt;</span> Finally, there is no logging console on VT10. Is that normal for systemd?
+<a name="l-72"></a><span class="tm">18:31:22</span><span class="nk"> &lt;LWFinger&gt;</span> I'll run bootchart.
+<a name="l-73"></a><span class="tm">18:32:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> vt10 was done by rsyslogd in the past and this was likely replaced by systemd-journal
+<a name="l-74"></a><span class="tm">18:33:49</span><span class="nk"> &lt;LWFinger&gt;</span> I use VT10 to capture events that crash the system. Those usually fail to be saved in the logs. How does one do that now?
+<a name="l-75"></a><span class="tm">18:34:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> we could still open a bug for fcrozat
+<a name="l-76"></a><span class="tm">18:34:40</span><span class="nk"> &lt;LWFinger&gt;</span> It sounds like a question for the factory ML.
+<a name="l-77"></a><span class="tm">18:35:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> Would still be nice to have it configured by default.
+<a name="l-78"></a><span class="tm">18:36:01</span><span class="nk"> &lt;LWFinger&gt;</span> Yes - it is essential, and there will be no fallback to SystemV.
+<a name="l-79"></a><span class="tm">18:37:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> I would hope to someone keep that fallback alive in an OBS repo
+<a name="l-80"></a><span class="tm">18:38:18</span><span class="nk"> &lt;LWFinger&gt;</span> I have no further report for 12.3 M2.
+<a name="l-81"></a><span class="tm">18:38:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> anyway, back on topic... jradzuweit: did you test MS2?
+<a name="l-82"></a><span class="tm">18:39:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> or anyone else who is not idling?
+<a name="l-83"></a><span class="tm">18:40:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. then let's move to the next topic
+<a name="l-84"></a><span class="tm">18:40:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Next Meeting</span>
+<a name="l-85"></a><span class="tm">18:41:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> Roadmap has Beta1 for 2013-01-17
+<a name="l-86"></a><span class="tm">18:42:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> usually, that is one of the most important ones in the cycle
+<a name="l-87"></a><span class="tm">18:42:50</span><span class="nk"> &lt;LWFinger&gt;</span> Is it likely to be on time?
+<a name="l-88"></a><span class="tm">18:42:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> as it is pretty hard to get fixes in after it
+<a name="l-89"></a><span class="tm">18:42:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes
+<a name="l-90"></a><span class="tm">18:43:48</span><span class="nk"> &lt;LWFinger&gt;</span> Our usual timing would have a meeting on Jan 21.
+<a name="l-91"></a><span class="tm">18:44:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> but maybe we should have one before, so that we could get important fixes in?
+<a name="l-92"></a><span class="tm">18:45:00</span><span class="nk"> &lt;LWFinger&gt;</span> How long before Beta?
+<a name="l-93"></a><span class="tm">18:45:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> at least a week. compiling &amp; publishing takes some time
+<a name="l-94"></a><span class="tm">18:45:53</span><span class="nk"> &lt;LWFinger&gt;</span> Would Thursday Jan. 3 work? That would be 2 weeks.
+<a name="l-95"></a><span class="tm">18:46:13</span><span class="nk"> &lt;Holgi&gt;</span> I don't think that it's worth to meet on Jan 3rd already
+<a name="l-96"></a><span class="tm">18:46:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> or 7th?
+<a name="l-97"></a><span class="tm">18:46:23</span><span class="nk"> &lt;Holgi&gt;</span> there will not happen much between today and then
+<a name="l-98"></a><span class="tm">18:46:42</span><span class="nk"> &lt;Holgi&gt;</span> most people are on vacation
+<a name="l-99"></a><span class="tm">18:46:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> some people get amazingly active after xmas
+<a name="l-100"></a><span class="tm">18:47:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> or we just discuss possible blockers on ML then
+<a name="l-101"></a><span class="tm">18:47:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> asynchronous communication might be more useful
+<a name="l-102"></a><span class="tm">18:47:54</span><span class="nk"> &lt;Holgi&gt;</span> agreed
+<a name="l-103"></a><span class="tm">18:48:00</span><span class="nk"> &lt;LWFinger&gt;</span> OK here.
+<a name="l-104"></a><span class="tm">18:48:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> and will also involve more people than the IRC-knowing ones
+<a name="l-105"></a><span class="tm">18:49:04</span><span class="nk"> &lt;Holgi&gt;</span> so next meeting, jan 21st?
+<a name="l-106"></a><span class="tm">18:49:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> so next meeting 2013-01-21 18:00 UTC then
+<a name="l-107"></a><span class="tm">18:49:09</span><span class="nk"> &lt;Holgi&gt;</span> ok
+<a name="l-108"></a><span class="tm">18:49:19</span><span class="nk"> &lt;LWFinger&gt;</span> OK
+<a name="l-109"></a><span class="tm">18:49:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">next meeting is 2013-01-21 18:00 UTC</span>
+<a name="l-110"></a><span class="tm">18:49:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-111"></a><span class="tm">18:50:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> on the openQA side there is some coding going on to support testing physical hardware, which would avoid trouble from virtualization and cirrus graphics of KVM
+<a name="l-112"></a><span class="tm">18:51:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> could still be some time, before we set it up for Factory testing, though
+<a name="l-113"></a><span class="tm">18:52:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> (this is using a kvm2usb device)
+<a name="l-114"></a><span class="tm">18:53:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> any other things you want to discuss?
+<a name="l-115"></a><span class="tm">18:53:38</span><span class="nk"> &lt;LWFinger&gt;</span> Nothing here.
+<a name="l-116"></a><span class="tm">18:53:40</span><span class="nk"> &lt;Holgi&gt;</span> I don't
+<a name="l-117"></a><span class="tm">18:54:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-118"></a><span class="tm">18:54:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

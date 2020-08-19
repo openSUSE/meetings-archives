@@ -1,0 +1,232 @@
+18:01:44 <bmwiedemann> #startmeeting
+18:01:44 <bugbot> Meeting started Mon Jan 21 18:01:44 2013 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:01:44 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:01:58 <Ilmehtar> Hi all!
+18:02:35 <bmwiedemann> our first meeting topic would be...
+18:02:38 <bmwiedemann> #topic Beta1
+18:04:02 <bmwiedemann> openQA results look rather poor currently with breakages happening during install and 2nd stage
+18:05:30 <bmwiedemann> then various gtk applications have display problems with cirrus' 24 bpp graphics. And there was some problem with VirtualBox kernel drivers, so that graphics was completely broken there
+18:05:48 <Ilmehtar> yup, I've spotted that too, do we have a bug ID for it so I can add myself to the CC?
+18:06:15 <LWFinger> I had noticed the openQA problems, and had low expectations. I also found the VB problem. Bug #799492.
+18:06:17 <bmwiedemann> Ilmehtar: http://openqa.opensuse.org/ lists some on the left
+18:07:01 <Ilmehtar> bmwiedemann: I see the mention of the cirrus issue, just not a bug ID..I'll search around and make one if it needs it :)
+18:07:54 <bmwiedemann> Ilmehtar: the top one is a link
+18:08:01 <bmwiedemann> to bugzilla
+18:08:25 <bmwiedemann> bnc#799216
+18:08:31 <Ilmehtar> bmwiedemann: found it, got it, thank you :)
+18:10:06 <bmwiedemann> upgrading from 12.1 seems to work, while it has some problems from 11.4
+18:10:27 <bmwiedemann> (e.g. firefox not starting)
+18:10:27 <LWFinger> Is that supposed to work?
+18:10:51 <bmwiedemann> there was some hope with 11.4 getting updates from Evergreen
+18:11:16 <LWFinger> On the Forums, we always recommend only 1 step at a time.
+18:11:25 <bmwiedemann> but I guess there will be cases, where the effort is not worth it
+18:11:38 <Ilmehtar> I did lots of Beta1 installs during the Hackathon. the issues with LVM are really worrying for me - not only does it fail on fresh installs (of a blank hdd), but it fails if you are trying to delete the LVM partitions and create a non-LVM installation in its place
+18:11:57 <cboltz> is the upgrade failure caused by something in $HOME or something system-wide?
+18:12:09 <cboltz> (if $HOME, the step by step upgrade won't help much ;-)
+18:12:21 <bmwiedemann> cboltz: could be some $HOME issue. did not look closer.
+18:12:55 <LWFinger> A new test user should answer that question.
+18:13:35 <LWFinger> My upgrade from 12.2 was OK.
+18:13:46 <cboltz> I would be surprised if it's something system-wide because all system-wide files come with rpm
+18:13:53 <cboltz> and I expect rpm to cleanup ;-)
+18:14:51 <bmwiedemann> http://openqa.opensuse.org/results/openSUSE-DVD-x86_64-Build0348-11.4kde64zdup look good apart from the missing firefox
+18:14:52 <bmwiedemann> http://openqa.opensuse.org/results/openSUSE-NET-i586-Build0348-11.4gnome32zdup has some error there
+18:15:23 <bmwiedemann> I will have to do another run and look closer
+18:15:40 <bmwiedemann> The LVM issues should be solved by now
+18:16:16 <Ilmehtar> in beta1? or in more recent builds?
+18:16:21 <bmwiedemann> after beta1
+18:16:53 <bmwiedemann> someone did cleanup a part in linuxrc that was supposed to be unused
+18:17:03 <bmwiedemann> (and yet was still used)
+18:17:25 <Ilmehtar> nifty, I'll have a play with that. I've been looking into a polish issue with systemd/luks/plymouth - when you get prompted to unlock an encrypted partition/device, if you dont respond in 90 seconds, systemd decides to keep on booting anyway
+18:17:58 <bmwiedemann> which can be the right thing, when it is /home
+18:18:05 <bmwiedemann> and you want unattended boots
+18:18:39 <bmwiedemann> I had some trouble with systemd on my remote headless server already
+18:18:43 <Ilmehtar> yeah..but it's not possible logging in with GNOME if your /home/username is missing..
+18:18:55 <bmwiedemann> right
+18:19:07 <Ilmehtar> and systemd does it regardless of the partition.. even /  :)
+18:19:21 <bmwiedemann> but locally, you could ctrl-alt-f1 and login as root to mount the missing partition
+18:19:53 <cboltz> the timeout is a bad idea if for example your /var is encrypted ;-)
+18:19:56 <Ilmehtar> yeah, it's managable, would just be nice to tune it if we can ;)
+18:20:05 <bmwiedemann> yes
+18:20:21 <cboltz> you'll basically have to restart _everything_, and a reboot is usually faster than typing 20 restart commands ;-)
+18:20:42 <bmwiedemann> (except if your BIOS needs 3 minutes)
+18:20:53 <cboltz> so I agree with Ilmehtar that the timeout should be tuneable (10000 seconds for me, please ;-)
+18:22:16 <bmwiedemann> who opens a bnc for it?
+18:22:25 <bmwiedemann> or is there one already?
+18:22:57 <Ilmehtar> it's open, let me find it, gah I guess I forgot to CC myself on it
+18:23:26 <Ilmehtar> bug 749706
+18:25:19 <bmwiedemann> thanks.
+18:26:08 <bmwiedemann> I will reinstall my netbook's spare partition with 12.3-Beta1 to see how it fares on intel graphics
+18:26:57 <bmwiedemann> is there anything else we could do to make 12.3 better?
+18:27:18 <cboltz> can you unlock the KDE screensaver without using the mouse?
+18:27:24 <bmwiedemann> I was thinking to look deeper into bnc#799216
+18:27:28 <LWFinger> Any possibility of doing VB installation tests on openQA?
+18:27:47 <cboltz> (I can't - it needs at least a mouse click somewhere)
+18:27:49 <CzP> I'm using now beta1 as my primary machine, and until now I ran only into problems caused by myself :)
+18:27:49 <bmwiedemann> LWFinger: not on the same machine, as only one can grab the hardware virt
+18:28:03 <CzP> so it looks pretty promising
+18:28:17 <LWFinger> Too bad.
+18:28:49 <bmwiedemann> but maybe I will find a spare machine to do it...
+18:28:54 <LWFinger> I too am using Beta1 on primary box for 2 days. No real problems.
+18:29:05 <CzP> ThinkPad T410 with Intel graphics, encrypted LVM (which did not work a week before...)
+18:29:37 <LWFinger> Mine is HP dv2815 with nVidia.
+18:30:21 <LWFinger> Anyone install from Live CD?
+18:30:22 <bmwiedemann> that sounds promising
+18:30:35 <LWFinger> KDE Live CD.
+18:30:42 <CzP> I used the net installer
+18:31:01 <bmwiedemann> http://openqa.opensuse.org/results/openSUSE-KDE-LiveCD-i686-Build0348 looked good
+18:31:16 <LWFinger> My attempt with the KDE Live CD froze on installation.
+18:31:26 <LWFinger> I have not investigates further.
+18:31:42 <LWFinger> The media passed checks.
+18:32:04 <bmwiedemann> http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-KDE-LiveCD-x86_64-Build0348/yast2_i-1.png but sometimes there is this "green console" bug
+18:32:48 <LWFinger> I didn't see that.
+18:32:58 <LWFinger> My install was NET upgrade from 12.2.
+18:33:48 <LWFinger> For the first time ever, the default desktop settings had some things that were poorly visible.
+18:33:56 <bmwiedemann> seems to only hit 64bit LiveCDs
+18:34:09 <LWFinger> I'm gradually getting the settings improved.
+18:34:20 <LWFinger> Mine was 64-bit.
+18:34:42 <bmwiedemann> but not liveCd
+18:34:44 <poorboywilly> LWFinger: KDE?  I've also seen a few rough areas
+18:34:56 <LWFinger> Yes, KDE.
+18:35:28 <poorboywilly> but only visual...everything else has been real smooth
+18:35:52 <LWFinger> Yes. The worst was the Connection Manager in the NM applet.
+18:35:54 <bmwiedemann> so KDE theming issues?
+18:36:05 <LWFinger> Yes.
+18:36:13 <poorboywilly> yes the new plasma theme has exposed a few problems since it is light text on dark background
+18:36:47 <poorboywilly> one thing that is still very puzzling to me is the check boxes in knetworkmanager
+18:36:55 <poorboywilly> I can't figure where it is getting those colors
+18:37:13 <bmwiedemann> you could try asking alin or tittiacoke for help
+18:37:16 <LWFinger> They are bad. I've now got them visible.
+18:37:28 <poorboywilly> what did you change?
+18:37:55 <LWFinger> I was afraid you would ask. Let me look.
+18:37:59 <poorboywilly> :)
+18:38:20 <poorboywilly> there is an issue with combo boxes in plasmoids too...thankfully only a couple plasmoids actually have combo boxes
+18:38:38 <LWFinger> I added the "Blue Sora" desktop theme. That helped.
+18:38:39 <poorboywilly> I added to upstream KDE bug about the problem
+18:39:22 <LWFinger> Still, the dark background is a problem.
+18:39:36 <poorboywilly> the checkbox might be KDE bug too, but we also might not be supplying a proper background in the new theme
+18:41:03 <poorboywilly> that's a new one, I just booted my laptop with the live CD and my mouse doesn't work...
+18:42:36 <LWFinger> What sort of mouse?
+18:44:25 <poorboywilly> thinkpad t60 trackpad + knobby thing
+18:44:59 <poorboywilly> synpactics, that's what I couldn't think of
+18:45:26 <LWFinger> My synaptics touchpad on HP has been OK.
+18:45:53 <LWFinger> I also have not seen that complaint on the Beta forum.
+18:45:57 <poorboywilly> I've done KDE and gnome several times and first I've had this
+18:46:15 <LWFinger> Ah, wonderful intermittents.
+18:46:33 <poorboywilly> dmesg has several messages and then one that says "psmouse seriol: Failed to enable mouse on isa0060/seriol"
+18:47:29 <LWFinger> Is the touchpad supposed to use psmouse?
+18:48:01 <poorboywilly> no idea, I haven't delved into mouse or touchpad issues at all before
+18:48:18 <LWFinger> I've never had to look at the details for my touchpads other than to turn off tapping.
+18:51:04 <bmwiedemann> I think, normally the synaptics driver is used and psmouse is only a poor fallback that does not know about tapping or scrolling
+18:52:49 <poorboywilly> the first message I see about it is "psmouse seriol: synaptics: Touchpad model: 1..."
+18:54:42 <LWFinger> Actually, my touchpad is an Alps Glidepoint.
+18:55:18 <LWFinger> It comes in as an i8042 serial device.
+18:56:12 <bmwiedemann> maybe we should move on then...
+18:56:38 <bmwiedemann> #topic Next meeting
+18:57:19 <bmwiedemann> RC1 is scheduled for 2013-02-07
+18:57:33 <bmwiedemann> which is not far
+18:58:12 <bmwiedemann> deep freeze is starting in February
+18:58:54 <LWFinger> Is 02-11 too soon after RC1?
+18:58:54 <bmwiedemann> so shall we have another meeting before RC1?
+18:59:36 <bmwiedemann> after RC1 only the most critical issues will be fixed
+18:59:50 <bmwiedemann> (or unimportant leaf packages)
+19:00:09 <LWFinger> If we keep filing bugs, is another meeting useful?
+19:00:44 <bmwiedemann> hm. maybe not... if the important bugs get to the right people
+19:01:14 <LWFinger> Is there a list of the "right" people?
+19:02:01 <cboltz> LWFinger: ask   osc maintainer   ;-)
+19:02:10 <bmwiedemann> there is maintainer information in OBS. I use http://aw.zq1.de/cgi-bin/public/opensusemaintainer/linuxrc
+19:02:29 <bmwiedemann> (just replace the last part with the source package name of your choice)
+19:03:36 <LWFinger> Thanks for both suggestions.
+19:05:14 <bmwiedemann> so 2013-02-11 18:00 UTC for next meeting. OK?
+19:05:23 <Holgi> would be fine with me
+19:05:43 <LWFinger> OK here.
+19:06:13 <poorboywilly> no objection
+19:06:16 <bmwiedemann> #agreed next meeting 2013-02-11 18:00 UTC
+19:06:25 <bmwiedemann> #topic open discussion
+19:07:20 <bmwiedemann> I'm still wondering if there is not a way to develop openSUSE without this kind of breakage in core components
+19:08:28 <bmwiedemann> e.g. projects like OpenStack require unit-tests and smoketests to succeed before any git commit is accepted
+19:10:20 <LWFinger> The kernel changes require the approval of Linus and several senior devs, but is this possible with oS?
+19:11:18 <cboltz> there's an easy trick, but it sounds funny ;-)
+19:11:22 <poorboywilly> yeah I don't know that the project has the developer resources to have every change tested prior to inclusion
+19:11:25 <bmwiedemann> Linus admitted that he rarely reads code
+19:11:38 <cboltz> usually the breakage is around beta1 because everybody submits the latest version before feature freeze
+19:12:06 <cboltz> so just don't announce feature freeze in advance ;-)
+19:12:06 <bmwiedemann> yes. and bugfixes for issues that have been open for over a month
+19:12:20 <cboltz> and reject late version updates more strictly
+19:12:47 <LWFinger> Try to modify a key kernel component, and you soon learn that Linus does read code! Linus does not code much anymore.
+19:13:16 <bmwiedemann> so people should submit new versions prior to the first milestone... but wouldnt we then get all breakage there?
+19:13:46 <poorboywilly> this is a common problem in many large projects, I think a solution is to break the development into several iterations
+19:13:49 <bmwiedemann> well. plenty of time to fix it then
+19:13:53 <poorboywilly> instead of one big freeze
+19:13:59 <poorboywilly> freeze 3, 4 times per release
+19:14:28 <bmwiedemann> we have tiny 3-day freezes prior of each milestone
+19:14:31 <LWFinger> In the kernel, the feature freeze corresponds to the MS1 release - only bug fixes after that.
+19:14:35 <bmwiedemann> hardly enough to build
+19:16:13 <bmwiedemann> but if we freeze (core) openSUSE code before MS1, there needs to be a staging area where it is prepared...
+19:16:16 <poorboywilly> two issues there, I don't think that's enough frozen (read: stabilization) time and perhaps there is still no incentive for people to put in features early
+19:17:23 <poorboywilly> yes staging is a must,there is no way to stabalize something unless you control the changes coming in
+19:18:22 <bmwiedemann> of course we would get some breakage in the staging area then
+19:18:38 <poorboywilly> what do you mean exactly?
+19:19:09 <bmwiedemann> just as happens today in Factory, there can be incompatible versions etc
+19:19:44 <cboltz> I'm not sure if staging would help that much - basically we rename Factory to staging with that ;-)
+19:20:10 <cboltz> (in other words: there will always be some breakage)
+19:20:39 <bmwiedemann> cboltz: but what about the more stable Factory repo after the staging area
+19:20:43 <poorboywilly> yes there will but it is nearly impossible to get stable software if you are trying to implement features and fix bugs at the same time
+19:20:55 <bmwiedemann> we dont have that today. and it might be useful
+19:21:51 <cboltz> well, I'm not against trying it - it might catch some things before they hit factory
+19:22:06 <cboltz> but it also adds some additional paperwork
+19:22:49 <cboltz> (and we already have/had staging projects for some "big" changes)
+19:23:29 <poorboywilly> well then, we need to evaluate those staging projects and determine if they helped or not
+19:23:30 <bmwiedemann> ... if there was a way to make it automated.
+19:23:58 <cboltz> and, well, IMHO factory is even allowed to be broken sometimes - except in the time after beta1 ;-)
+19:24:01 <poorboywilly> if they did, then create processes based on them for more
+19:24:15 <poorboywilly> if not, find out why and figure out different ways to solve the problem
+19:24:29 <bmwiedemann> cboltz: depends on the level of brokenness. e.g. zypper should never break
+19:25:30 <poorboywilly> when is zypper allowed to be updated...any time?
+19:25:41 <cboltz> if "break" just means "fails to build" without breaking something else, it doesn't hurt too much IMHO
+19:25:43 <poorboywilly> and other stuff like the kernel, gcc, etc
+19:26:04 <cboltz> gcc is a better example for something that shouldn't break ;-)
+19:26:20 <cboltz> (and IIRC we already had staging projects for gcc updates)
+19:26:24 <bmwiedemann> cboltz: no, I mean building but malfunctioning.
+19:26:51 <cboltz> which brings us to the next question: who tests the packages in the staging project?
+19:26:59 <cboltz> and with testing, I mean more than "it builds"
+19:27:21 <bmwiedemann> something like the openQA automatisms could
+19:28:20 <bmwiedemann> there is only a limited number of core packages (a lot of them in Base:System)
+19:28:26 <poorboywilly> and then humans where that's not possible
+19:28:55 <bmwiedemann> and it could be worthwile to throw updates into a test area one-by-one
+19:29:33 <cboltz> poorboywilly: openQA will work, but I doubt many humans will test staging
+19:29:45 <poorboywilly> yes...and I think at least the core packages should only be updated in waves...gather a series of updates, perform them, then work on high-level packages
+19:30:14 <bmwiedemann> cboltz: that is OK. as long as the test results say, it is good, it does not need humand
+19:30:36 <poorboywilly> well, my point is that openQA can't do everything.  Not yet at least :)
+19:30:57 <bmwiedemann> what things it can not do?
+19:31:11 <bmwiedemann> apart from ATI/NVidia driver testing...
+19:31:33 <cboltz> bmwiedemann: it can't do things users do "accidently"
+19:31:50 <cboltz> well, it could, but nobody would ever come up with the idea to write such crazy testcases
+19:32:07 <bmwiedemann> I could insert random keystrokes ;-)
+19:32:21 <poorboywilly> can it test mouse interaction?
+19:32:29 <cboltz> bmwiedemann: sounds like a good start ;-)
+19:32:35 <bmwiedemann> mouse is not so easy
+19:32:50 <bmwiedemann> but in principle, it could
+19:34:25 <bmwiedemann> the point of openQA is not, that it gives proof of bugfreeness. That is very hard in computer science. The point is to show that it can work.
+19:34:46 <bmwiedemann> so there is at least one non-broken path though the maze
+19:35:08 <poorboywilly> right, which is the perfect place to start when testing new integrations of components
+19:35:43 <bmwiedemann> if Factory received less breakage, chances are, that more humans looked at it
+19:36:05 <poorboywilly> and more humans is good right?
+19:36:13 <bmwiedemann> yes :-)
+19:36:20 <bmwiedemann> more users = more testers
+19:36:28 <poorboywilly> so there is definitely motive for less breakage in Factory
+19:37:27 <poorboywilly> we need 1) processes to get less breakage 2) analysis of the results 3) refining the process with data from 2
+19:37:55 <poorboywilly> I think staging changes for basic go/no go type testing is certainly one likely way to help it
+19:38:02 <bmwiedemann> currently we have mandatory reviews and factory-auto checks from coolo
+19:38:22 <bmwiedemann> which tests that packages build
+19:39:03 <poorboywilly> obviously a good thing!  we also agree that simple "it builds" doesn't necessarily mean it is not broken
+19:39:25 <poorboywilly> so the missing link seems to be we must determine if it is reasonable to imagine this isn't broken
+19:40:27 <bmwiedemann> some core parts of openSUSE just can not be unit-tested. it needs system/integration-tests like openQA which is slower
+19:41:58 <poorboywilly> so how can we do that with the resources we have?
+19:44:21 <bmwiedemann> not sure. maybe I'll have a chat with coolo about it and/or try to sum up the idea on the factory ML.
+19:44:53 <poorboywilly> I don't think we can do it continuously, but in batches certainly seems reasonable
+19:47:22 <bmwiedemann> our current openQA machine can run approx 3 tests in parallel and one test typically takes an hour (because it is a full graphical install with extra tests)
+19:48:16 <bmwiedemann> so it could be possible to test updates to core packages, which should be less than 40/day
+19:50:27 <bmwiedemann> anyway... it is getting late
+19:50:38 <bmwiedemann> so let's close today's meeting
+19:51:04 <bmwiedemann> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+19:51:11 <bmwiedemann> #endmeeting

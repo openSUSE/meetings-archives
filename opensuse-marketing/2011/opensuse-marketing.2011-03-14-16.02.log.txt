@@ -1,0 +1,891 @@
+16:02:04 <suseROCKs> #startmeeting openSUSE 11.4 Release Marketing Post-Mortem Review
+16:02:04 <bugbot> Meeting started Mon Mar 14 16:02:04 2011 UTC.  The chair is suseROCKs. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:02:04 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:02:45 <suseROCKs> Moin Moin world!   And welcome to the first post-11.4 Meeting
+16:03:09 * jospoortvliet is surprised we survived
+16:03:12 <suseROCKs> I want to congratulate ALLL of you for your hard work on 11.4 release
+16:03:16 <jospoortvliet> +1
+16:03:29 * AJaeger claps as well ;)
+16:03:34 * jospoortvliet hopes everyone catched up to sleep
+16:03:57 <manugupt1> +1000
+16:03:57 <suseROCKs> and a shoutout to the developers and packagers too because I'm seeing less than usual traffic to the support channel and people there are reporting little issues with their 11.4's
+16:04:33 <suseROCKs> but despite any postives we have, there's always time to review and see room for improvements
+16:04:37 * lupinstein is better
+16:04:52 <manugupt1> suseROCKs, maybe change the -project channel topic that can be the best shout out :)
+16:05:00 <yaloki> it's a mixed bag, as usual
+16:05:00 <suseROCKs> particularly I'd like to find a way that we don't lose so much sleep next time  :-D
+16:05:06 <yaloki> apparently wifi support is disatrous
+16:05:16 <yaloki> and lots of issues with GPU drivers
+16:05:19 <yaloki> "disastrous" even
+16:05:47 <suseROCKs> here's what we will do today
+16:06:06 <suseROCKs> it's primarily a gabfest with focus on the questions listed at http://piratepad.net/oS-Marketing-11-4-Post-mortem
+16:06:09 <yaloki> but faster zypper has been noticed widely
+16:06:25 <tony_> from what I've seen in Tech Support forums GPU issues spotty and mainly 32-bit, otherwise good. Wifi mostly good but surprisingly some Broadcom issues
+16:06:31 <suseROCKs> and as we disucss we'll fill in our notes and then bring it up for further discussion on the ML   and eventually create a solid roadmap for the next release marketing strategy
+16:06:43 <yaloki> although there were some weird issues with 32bit packages installed on 64bit systems, saw two people leave on #opensuse-fr because of that
+16:07:11 <yaloki> and not having sax, as usual …
+16:07:27 <yaloki> suseROCKs: no, I meant "sax"
+16:07:30 <yaloki> ^^
+16:07:39 <tigerfoot> sax3 is for gosc
+16:07:43 <suseROCKs> well I think we overspoke on our claim of broadcom support.  It did not work out of the box with linux kernel support  and according to GregKH, there's still a lot of broadcoms that aren't supported yet on openSUSE
+16:08:01 <yaloki> packman has the evil broadcom-wl
+16:08:12 <suseROCKs> yes that's where I ended up going
+16:08:13 <yaloki> bbl
+16:08:39 <suseROCKs> so I guess that's one area we had problems with... claims of things that weren't quite all that true
+16:09:13 <suseROCKs> oh goody  someone is working on the pirate pad already.   Thank you.    the pad is hard for me to read on this laptop
+16:09:20 <AJaeger> suseROCKs: AS usual, the release will find much more usage than any RC - and therefore more bugs are found ;-(
+16:09:24 <AJaeger> We could use more testers
+16:09:40 <AJaeger> And the one thing we failed was sending out timely announcements of our releases.
+16:09:46 <AJaeger> RC1 was not send out at all.
+16:09:59 <tigerfoot> and don't forget there's not really a RC1 due to the too big iso ...
+16:10:07 <suseROCKs> ok   so   good pre-release campaigning was a factor...
+16:10:18 <AJaeger> On the other hand, even if those bugs had been found, we need more people fixing bugs.
+16:10:19 <tigerfoot> lot's of people out there don't want to test before rc1 (which is bad)
+16:10:20 <jospoortvliet> suseROCKs: it seems so...
+16:10:21 <suseROCKs> - RC announcements
+16:10:24 <suseROCKs> - Call for testers
+16:10:32 <AJaeger> - call for bugfixing
+16:10:48 <tony_> @yaloki SAX was deprecated long ago, not even a part of 11.3
+16:10:51 <tigerfoot> start the campaign at M4 or M5 ...
+16:11:18 <tigerfoot> tony_: but people are missing that tool and asking for it, check it's score on openFATE
+16:11:18 <suseROCKs> tigerfoot,   there's good and bad reasons why people don't want to test.   Perhaps we should create a strategy of easing people's concerns about testing?
+16:11:32 <suseROCKs> "You too can be a tester.  it's easy!"
+16:11:46 * tigerfoot already is :-)
+16:11:56 <suseROCKs> already is what?
+16:12:09 * tigerfoot run actually 11.5 RC1 :-)
+16:12:20 <suseROCKs> I heard about that flub  LOL
+16:12:33 * amonthoth is a beta tester now
+16:12:46 <AJaeger> We have to motivate both - more testers and more bugfixes. I would right now (in the next 3 months or so) concentrate on the bugfixing part.
+16:12:49 <tony_> @AJaeger Amen. I think more than other releases I've seen there are more bugs which should have been caught
+16:13:29 <suseROCKs> AJaeger,   ok  so let's look at bugfixers for a moment...    What kind of people do we need for that?   How do we increase the pool of people with good skillset to participate?
+16:13:39 <suseROCKs> Education of how to fix bugs even if you're a newbie?
+16:13:48 <suseROCKs> (newbie meaning new to bugfixing, not to Linux)
+16:13:57 <amonthoth> how to make a tutorial to bugfixes
+16:14:16 <tony_> @tigerfoot SAX was deprecated for good reason, I've followed its progress in Tech Forums. Most people will miss, but new Display Manager performs better
+16:14:21 <AJaeger> suseROCKs: First you need to screen the bugs - somehow junior task. Then fix them - might need debugging/development skills
+16:15:02 <manugupt1> suseROCKs, Thats a booster milestone too
+16:15:02 <manugupt1> getting more people involved in -factory
+16:15:03 <tigerfoot> tony_: I know that, manual config ( which is one line edition now) is pretty cool, all the rest work out of the box ...
+16:15:06 <manugupt1> maybe we should ask them
+16:15:10 <suseROCKs> AJaeger,   okay.    There's two camps here.  One camp is those on the tech side who should focus on creating the documentation etc.  And then there's our camp where we take the information from them and market that need hard to the world.
+16:15:26 <suseROCKs> we can't market what we don't know  :-)
+16:16:08 <tigerfoot> suseROCKs: I disappointed now :-) I always believe you can do that
+16:16:14 <suseROCKs> ok so I see a lot of talk so far about pre-release campaigning.  All good thoughts.
+16:16:23 <suseROCKs> Now what about the actual release.   What was good/bad about it?
+16:16:42 <suseROCKs> tigerfoot,   sure   I know everything....   :-D
+16:16:43 <manugupt1> suseROCKs, The release was awesome
+16:16:59 <suseROCKs> manugupt1,   sure it was, but many of us nearly died from lack of sleep  LOL
+16:17:03 <AJaeger> + The Product_highlights
+16:17:07 <suseROCKs> I'm shocked jospoortvliet is alive!
+16:17:13 <AJaeger> + working as a team - you all rocked!!!!!!!!!!!!!!!!!1
+16:17:34 <manugupt1> I have a but
+16:17:43 <suseROCKs> but or butt?
+16:17:56 <manugupt1> too lets continue it for a week too lets not break the writing brigade
+16:18:27 <tigerfoot> AJaeger: I agree on that the team work was spectacular, be prepare for two weeks next time :-) so jospoortvliet would not be alone to Finish in hurry the Product whatever ...
+16:18:28 <suseROCKs> why a week?  We should be writing forever    its constantly good noise
+16:18:38 <suseROCKs> and as I always say,  our relese campaign lasts for 8 months, not a few days
+16:18:52 <jospoortvliet> sure
+16:18:58 <jospoortvliet> but we all need to catch our breath :D
+16:19:11 <tigerfoot> suseROCKs: in the future, (next week) kde 4.6.1 is available everywhere, next month gnome3
+16:19:12 <jospoortvliet> I am trying to force myself to do an xfce 4.8 review
+16:19:15 <suseROCKs> Could we have been able to start the skeleton of the Product Highlights like a month or so earlier?   so we were not cramming at the last minute?
+16:19:19 <jospoortvliet> and there are other ideas for articles
+16:19:22 <jospoortvliet> suseROCKs: yes
+16:19:26 <jospoortvliet> that is what we should've done
+16:19:40 <jospoortvliet> but it's extremely hard, esp in openSUSE - it is big and often hard to know what version exactly we will ship
+16:19:52 <jospoortvliet> so we could've done more but - not everything.
+16:19:59 <tigerfoot> yeap there's some surprises
+16:20:00 <suseROCKs> so let's put that in our roadmap....   What's the earliest that a PH can begin?   after M5?  RC1?
+16:20:20 <jospoortvliet> BTW all who worked on the product highlights - they have been awesomely useful. We should now go through them and use them again and again for articles about openSUSE :D
+16:20:25 <tigerfoot> M6 is normally pretty fixed
+16:20:43 <jospoortvliet> for example, zypper improvements and kernel improvements haven't been put in an article yet
+16:20:45 <suseROCKs> jospoortvliet,   yes.. that PH is now my central source of information to refer to
+16:20:46 <tigerfoot> suseROCKs: but check that with coolo and his plan for 11.5
+16:20:55 <tony_> Maybe organizing efforts, Enforce common collaboration tools, division of labor, a Project Management app
+16:20:55 <jospoortvliet> so why not just copy-paste that part and turn it into an article for the release?
+16:21:18 <jospoortvliet> tony_: the more you organize the more you spend on overhead. Its something to be very carful with
+16:21:18 <tigerfoot> jospoortvliet: you need a 32cores to see real big differences for the kernel :-)
+16:21:23 <manugupt1> jospoortvliet, no because the product highlights are everywhere
+16:21:31 <manugupt1> The links atleast
+16:21:38 <jospoortvliet> manugupt1: yup that is true
+16:21:46 <jospoortvliet> still worth turning into articles, not all ppl read the whole thing
+16:21:55 <jospoortvliet> what I find unfortunate is that we didn't manage to get a video in there
+16:22:02 <jospoortvliet> jdd was working on something
+16:22:03 <tony_> @jos Yes, organizing overhead is a tough nut. It would mean that whoever manages has to step back and <not> do content
+16:22:04 <suseROCKs> tony_,  +1 to what jospoortvliet  ssaid, and remember in FOSS,  its all volunteer, so no matter how much you organize, people will only work on what they are interested and motivated in.  No one can "order" someone to do something
+16:22:15 <suseROCKs> except jospoortvliet   he orders me around....    :-D
+16:22:16 <jospoortvliet> but apparently didn't finish in time. A video would've given some stats on how many ppl read it :D
+16:22:19 <manugupt1> yes.. but not copy paste people might just say they have an habit pf copying
+16:22:43 <jospoortvliet> tony_: yes that is happening to some extend, suseROCKs does a lot of that. But part of how a FOSS team works is also to lead by example...
+16:23:00 <tony_> @suserocks Agreed. That's why project management has to account for what's on time and not. If something's not happening it has to be addressed but NO BLAME EVER
+16:23:03 <jospoortvliet> manugupt1: of course
+16:23:14 <jospoortvliet> tony_: indeed, we can try to do that more
+16:23:19 <jospoortvliet> it's why we have action items and such
+16:23:29 <suseROCKs> we do have some project management tools here but I've not been too happy with them so far...   its something I'll have to re-review
+16:23:57 <suseROCKs> and tony_   fyi  if you type the first few letters of a nick and hit <tab>  it will autocomplete the nick for you and then the person is properly notified that you talked to them
+16:24:07 <suseROCKs> no need for "@suserocks" :-)
+16:24:49 <suseROCKs> so we agree that PH should begin development after M6?
+16:25:13 <jospoortvliet> suseROCKs: yes
+16:25:20 <jospoortvliet> so put that in the release plan
+16:25:20 <manugupt1> Ok.. I have an idea in mind too
+16:25:22 <jospoortvliet> ;-)
+16:25:38 <suseROCKs> #info Product Highlights should begin creation upon the release of M6 version of next release
+16:25:51 <manugupt1> Can I share the idea?
+16:25:53 <jospoortvliet> btw before we finish, can I get 5 min on the agenda to talk about what articles to do and who does it, over the coming week(s)?
+16:26:00 <suseROCKs> manugupt1,   as long as its in context  :-)
+16:26:16 <manugupt1> yes it is wrt next release
+16:26:19 <suseROCKs> jospoortvliet,   I guess we can give you that...  (groan)
+16:26:27 * AJaeger is going to update the Launch_checklist
+16:26:31 <suseROCKs> go
+16:26:38 <manugupt1> Who goes me / jospoortvliet
+16:26:43 <suseROCKs> you manugupt1
+16:26:59 <manugupt1> Ok.. lets call the next release as the release of innovation
+16:27:04 <manugupt1> Because
+16:27:29 <manugupt1> Most probably we will have appstream, SaX3, systemd and a whole lot of new features maybe grub2
+16:27:33 <suseROCKs> umm   no offense but that's not within the context here  :-)
+16:27:49 <manugupt1> and loads of exciting stuff
+16:28:03 <suseROCKs> manugupt1,  we should have a discussion about the campaign message strategy  sure.  But what we're talking about now is looking at our nuts and bolts of the marketing process itself
+16:28:34 <manugupt1> Ok.. suseROCKs
+16:28:53 <suseROCKs> i.e., we should be looking at what worked and what didn't work this time  so we learn from our experience here
+16:29:20 <suseROCKs> lupinstein,    any thoughts on the social media/marketing front?   what was good/bad?
+16:29:21 <tony_> jospoortvliet: Jos, if you want help evaluating collaboration tools, I will set aside time for that with you
+16:29:23 <manugupt1> yes.. suseROCKs
+16:29:49 <suseROCKs> over here tony_    :-)
+16:30:35 <AJaeger> I think lupinstein got the job assigned to late ;)
+16:30:41 <suseROCKs> not trying to assert my title here, but I'm the team lead and such things can be reviewed with me.   Putting too much on Jos's lap will overwhelm him once again as he works beyond just the marketing team.
+16:30:58 <jospoortvliet> tony_: see what suseROCKs says - he has a darn good point ;-)
+16:31:00 <AJaeger> We should have created events on facebook etc. and invited folks to it- building up some hype much earlier
+16:31:06 <jospoortvliet> I love to help but time is not exactly something I have in abundance
+16:31:22 <jospoortvliet> lupinstein: love to hear your thoughts on social media stuff, you did great there imho
+16:31:29 <jospoortvliet> but I bet there is room for improve ment
+16:31:34 <tony_> suseROCKs:  I will work with any and all including you Bryen on Collaboration Tools...
+16:31:42 <suseROCKs> I think lupinstein  did an amazing job in such a short period of time
+16:31:57 <manugupt1> lupinstein, terrorpup HATS OFFFFFFF
+16:32:19 <suseROCKs> I was churning out lots of tweets cuz I had limited time on Thursday and hope many of them were creative/cool enough to get retweeted throughout the day
+16:32:40 <lupinstein> well the one thing that I notice that a lot people posted but didn't use the correct hash tag
+16:32:41 <AJaeger> suseROCKs: I agree - and doing better means starting earlier and not having only one person on the task ;)
+16:32:42 * suseROCKs finally replaced his Panama hat with a brand new one last night if anyone was interested  :-D
+16:32:55 <manugupt1> I did a lot of tweets from any source I got
+16:33:04 <jospoortvliet> lupinstein: ok so we should have decided on the hashtag earlier and communicated it better
+16:33:14 <jospoortvliet> should be in the release plan: decide on hashtag and communicate it EVERYWHERE
+16:33:17 <suseROCKs> AJaeger,   yes but I also like that there is a central coordinator, and for that I continue to rely on lupinstein for that.  But we should definitely make sure there are no points of failure anywhere
+16:33:20 <jospoortvliet> #openSUSE it was, we need to get that out
+16:33:30 <lupinstein> manugupt1, was great to find stuff  from outside the group which was a big help
+16:33:55 <manugupt1> but people who knew it also did not use the #tag
+16:34:06 <manugupt1> Thanks luizmachado
+16:34:09 <manugupt1> thanks lupinstein
+16:34:09 <jospoortvliet> manugupt1: sometimes ppl forget :D
+16:34:14 <suseROCKs> #action   lupinstein to create a longer-term strategy for social networking
+16:34:15 <tony_> I suspect re social networking it would be useful to setup the infrastructure ahead of time so that a single tweet goes everywhere
+16:34:43 <jospoortvliet> tony_: afaik we have that pretty much set up, yes?
+16:34:43 <lupinstein> on Facebook we really made a difference, I send status on it
+16:34:46 <AJaeger> tony_: What do you mean with that?
+16:34:58 <suseROCKs> tony_,   we have that   but its more than just about getting single tweets to multiple places.  its about getting others to generate buzz and noise.    its a combined effort
+16:35:46 <manugupt1> We missed on reddit and digg
+16:36:00 <suseROCKs> lupinstein,   please note, in the action item above,  I assign you to the strategy lead for SocNet, but you shouldn't feel like you're the only person to work on it.   Involve others to give feedback/input on the strategy design
+16:36:26 <lupinstein> not problem, I welcome all to help :-)
+16:36:39 <suseROCKs> and we should look for ways to keep the noise going for weeks and months, not just after release days
+16:36:47 <lupinstein> and welcome all input
+16:36:50 <AJaeger> lupinstein: next time ask for help - break out jobs and ask for volunteers ;)
+16:36:57 <suseROCKs> we want people to watch the #opensuse hashtag daily, not once every 8 months  :-)
+16:37:15 <lupinstein> AJaeger, will do
+16:37:19 * rtyler wakes up
+16:37:42 <suseROCKs> now   I should probably clarify a distinction here.    We have "social media" and "social networking"   both are very different animals
+16:37:49 <tony_> jospoortvliet: Since I usually do social networking myself, I don't know how we did it but for starters tying in Twitter, Facebook, posted RSS feed to embed in personal websites/blogs on other Web2.0 platforms
+16:37:49 <tony_> My correction to my post, I usually <don't> do social neworking, I usually spend all my time in "Technical" not extending my online life
+16:38:01 <suseROCKs> and the context I speak to lupinstein about is "social networking"...   now let's look at "social media"     Did we do well there?
+16:38:11 <suseROCKs> This reflects on news.opensuse.org btw
+16:38:36 <jospoortvliet> suseROCKs: and about the mistakes we made, being too positive about certain features, let me tell an evil secret. It is true that exaggeration and over-enthusiasm somethimes leads to problems. But those hit only a few ppl and the benefits of more attention are often worth it. See the effects of advertising LibreOffice - we're of course not REALLY the first but it was mentioned and echoed EVERYWHERE.
+16:38:41 <jospoortvliet> Ubuntu uses this trick ALL THE TIME
+16:38:49 <jospoortvliet> and it's why THEY are on top in GOOGLE Trends
+16:38:54 <jospoortvliet> and NOT their number of users...
+16:39:17 <jospoortvliet> tony_: well you did fine, that's a great start :D
+16:39:25 <jospoortvliet> tony_: but you mean having one platform to get it all out
+16:39:27 <lupinstein> well I want to really sit down see what worked and want didn't and then go from there
+16:39:32 <jospoortvliet> tony_: that is not a bad idea for sure...
+16:39:37 <suseROCKs> jospoortvliet,   in general, I'm not concerned with some of the faux pax's we made there.   My concern is we probably didn't get enough content generated in the first place
+16:39:38 <jospoortvliet> lupinstein: that's what this is supposed to be :D
+16:39:48 <jospoortvliet> suseROCKs: that is true to some extend at least...
+16:39:51 <suseROCKs> a lot of work rested on manugupt1  and he tried repeatedly to get others on board, and with lack of real success
+16:40:06 <suseROCKs> he really saved us.  Bravo manugupt1
+16:41:10 <jospoortvliet> yes manugupt1 deserves a special treat
+16:41:13 <suseROCKs> imo,  we needed two things...  a)  more writers to be available.  I see a need to recruit mroe writers.  and b)  Product Highlights avaialable earlier thus inspiring more potential storylines
+16:41:23 <jospoortvliet> pretty much all the big articles that came out in the days before the release came from him...
+16:41:32 <jospoortvliet> suseROCKs:  yup
+16:42:01 <suseROCKs> and we should wecome writers even if they're not openSUSE users.    Writers are always looking for places where they can show off their writing abilities
+16:42:32 <jospoortvliet> and for info of all: those articles don't need to be perfect. Manu's got a lot of changes - I copied in large parts of our feature guide to make them bigger. And his english isn't perfect. BUT still without him we would not have had them. The start of an article is often the hardest part, editing is quite easy even if it ends up adding or changing a lot!
+16:42:52 <lupinstein> I know I wanted to help more with writing, but been tied down at work :(
+16:43:37 <suseROCKs> +1 jospoortvliet
+16:43:46 <jospoortvliet> lupinstein: well it's not about blaming anyone, we need to get new ppl all the time.
+16:44:00 <jospoortvliet> And we do, so we shouldn't complain. It didn't work out perfect but it went great
+16:44:14 <suseROCKs> and in that context... the fact that we did SOOO much with so few people, is ROCK AWESOME
+16:44:14 <jospoortvliet> we DID do almost twice as good as last release, remember ;-)
+16:44:24 <jospoortvliet> and it's not like that release was so horrible...
+16:44:29 <jospoortvliet> suseROCKs: yup
+16:44:57 <AJaeger> jospoortvliet: The release went very good - compared to others
+16:45:08 <suseROCKs> so jospoortvliet    since this is relevant to your "5 minute addition"  how else do you feel we can improve on outputting more material?
+16:45:27 <jospoortvliet> suseROCKs: the timing you mentioned is the biggest thing
+16:45:39 <jospoortvliet> its why I wanted to have a marketing meeting around beginning of feb...
+16:45:42 <jospoortvliet> not end :D
+16:45:53 * tigerfoot too :-)
+16:45:59 <suseROCKs> well  yes and no
+16:46:01 <manugupt1> Thanks all I was out to get some water
+16:46:25 <jospoortvliet> suseROCKs: not saying that doing it at scale wasn't the right choice
+16:46:27 <jospoortvliet> it was
+16:46:29 <rtyler> manugupt1: you missed some really good praise :)
+16:46:33 <jospoortvliet> lol
+16:46:34 <suseROCKs> not to sound like I am slamming anyone, but it was mentioned a number of times that we are not supposed to wait until hackfest to start working.  But people didn't do much before (and even after)  hackfest.
+16:46:41 <jospoortvliet> suseROCKs: sure
+16:46:48 <suseROCKs> we need people to roll up their sleeves on their own.  How do we motivate this?
+16:46:48 <jospoortvliet> but a meeting (or a few meetings) can really help start up
+16:46:54 <jospoortvliet> moreover many didn't really know how this thing worked
+16:47:01 <suseROCKs> yes
+16:47:03 <jospoortvliet> I started the feature guide much earlier but it only got traction AT the meeting
+16:47:10 <jospoortvliet> it needed face to face explanation of how that thing works
+16:47:12 <jospoortvliet> it still does
+16:47:13 <lupinstein> one thing not to take a way for talk about writers, I was very happy to see the number of Geeko on Facebook for the two days of the release.
+16:47:15 <jospoortvliet> ;-)
+16:47:19 <manugupt1> The best of irc rtyler you dont miss praises :)
+16:47:28 <jospoortvliet> now ppl have seen it, next time you can all help writing it much better, right? ;-)
+16:47:47 <jospoortvliet> so for next time, I think we'd do a lot better already if we have that feature guide a bit earlier we'll rock.
+16:47:57 <suseROCKs> jospoortvliet,   but at the same time, can we say we're going to have a marketing hackfest before each release?   We can't depend on that, although I hope the money-powers that be will now see that such hackfests have positive results and need to be a regular thing
+16:48:03 <jospoortvliet> I think, as I can't affort such a marketing meeting next time, that we should have smaller meetings in other places
+16:48:24 <jospoortvliet> eg one in europe one in usa one brazil or so, or virtual ones, collaboration days, things like that
+16:48:46 <suseROCKs> we did  pretty well with our Collaboration Days and I do intend to have more of those
+16:48:51 <suseROCKs> like once every 2-3 months
+16:49:04 <rtyler> jospoortvliet: I think scheduling some hack-days virtually for weekends prior to the release would help
+16:49:11 <amonthoth> should we do a public survey post intalling and publishing it to get usabilitiy metrics and to know why ppl will keep using oS 114 or not
+16:49:12 <jospoortvliet> suseROCKs: the meeting was a big success (but where is that report to prove it you promised? :D ) but doing it more than once every few years simply won't happen
+16:49:17 <rtyler> I simply can't afford to spend a lot of time on openSUSE during the week :/
+16:49:17 <jospoortvliet> $10.000 is a lot of money
+16:49:38 <suseROCKs> jospoortvliet,   you'll be getting that report   no worries  :-D
+16:49:44 <manugupt1> rtyler, +1
+16:49:45 <jospoortvliet> suseROCKs: goooood :D
+16:49:52 <lupinstein> next time hackfest at my house
+16:49:59 <lupinstein> save a lot of money
+16:50:16 <suseROCKs> rtyler,    nothing to stop you from saying  "You know what guys?  We need to collaborate on <item>  Let's meet on Saturday and talk about it together."
+16:50:16 <jospoortvliet> rtyler: yeah, I know. What lupinstein suggests is actually a good idea. Having smaller meetings with more local ppl at somebody's place...
+16:50:23 <jospoortvliet> that's quite doable
+16:50:28 <tigerfoot> lupinstein: I am
+16:50:29 <manugupt1> Ok.. once again all I have a few ideas in my mind need your opinions regarding it even though it may / may not fall directly under marketing
+16:50:47 <jospoortvliet> manugupt1: wait a bit pls
+16:50:54 <manugupt1> Ok.. jospoortvliet
+16:50:55 * suseROCKs hides the fact that he has 4 bedrooms in his house and only one is used.  shhhh
+16:50:59 <jospoortvliet> amonthoth: good idea, but can you bring it up a bit later too
+16:51:01 <rtyler> suseROCKs: I agree, I hadn't really participated in 11.3, so *now* I know this :P
+16:51:07 <jospoortvliet> suseROCKs: now THAT is interesting :D
+16:51:15 <rtyler> jospoortvliet: the other rooms are where the bodies are stashed
+16:51:22 <jospoortvliet> rtyler: oh....
+16:51:24 <jospoortvliet> but back on topic
+16:51:31 <jospoortvliet> the question was how can we do better next time
+16:51:33 <jospoortvliet> so a few things
+16:51:35 <jospoortvliet> - start earlier
+16:51:37 <jospoortvliet> - do more meetings
+16:51:53 <suseROCKs> well   jospoortvliet   I'd rephrase that to "do more focused meetings"
+16:51:54 <jospoortvliet> - I think we agree the product highlights are central to our efforts
+16:51:55 <AJaeger> suseROCKs: I have a survey monkey account if you want to do a proper survey
+16:52:04 <AJaeger> brb
+16:52:25 <lupinstein> jospoortvliet, start early, get one person to manager task, but get more to help with the task.
+16:52:25 <jospoortvliet> AJaeger: suseROCKs  it was amonthoth's idea, let him lead it :D but let's first focus on doing better next time, communicaton wise
+16:52:41 <jospoortvliet> lupinstein: we always need more ppl. The question is not IF but HOW.
+16:52:42 <suseROCKs> yeah  I missed something about a survey??
+16:52:52 <jospoortvliet> suseROCKs: I asked amonthoth to bring it up again
+16:52:58 <jospoortvliet> focus pls focus
+16:53:08 <tony2> Recommend for next time creating Doc templates based on existing Docs, intention to try to "fill in the blanks" as much as possible
+16:53:09 <jospoortvliet> lupinstein: so how could we do the social media better
+16:53:10 <rtyler> jospoortvliet: I think another point is that we should all be running the RCs that we're writing articles about and checking things out :P
+16:53:13 * suseROCKs refocuses
+16:53:14 <jospoortvliet> how can we coordinate better?
+16:53:23 <jospoortvliet> rtyler: good point
+16:53:30 <lupinstein> jospoortvliet,  that a good question because I know I when to the #suse asking for help to do digg, and didn't get a lot of people.
+16:53:35 <jospoortvliet> rtyler: and it would help if earlier rc's would have artwork for us
+16:53:39 <rtyler> I think as soon as RC1 comes out, we should start preparing materials
+16:53:57 <rtyler> jospoortvliet: screenshots are one thing, I'm referring more to some of the versionconfusion with the KDE/GNOME articles
+16:54:01 <tigerfoot> rtyler: M5 is good ...
+16:54:01 <jospoortvliet> rtyler: the earlier idea was to start the feature guide full-steam when M6 is out
+16:54:02 <suseROCKs> and with virtualbox,  no excuse anymore to not be running RC's
+16:54:11 <rtyler> ah
+16:54:14 <rtyler> I like that idea too :P
+16:54:14 <jospoortvliet> suseROCKs: good point
+16:54:32 <lupinstein> +1 M5, then we can make it more focus when get close to release
+16:54:33 <suseROCKs> m6 to start the feature guide,  RC to be the last point of excuse to not be running in VM.  :-)
+16:54:40 <rtyler> too bad we can't get M5/6 in SUSE Studio for test driving the release ;)
+16:54:40 <tigerfoot> there's one week between M5 -> M6 -> one week RC1, one Week RC2
+16:54:46 <jospoortvliet> suseROCKs: we started the feature guide earlier actually
+16:55:00 <jospoortvliet> see tigerfoot's comment
+16:55:15 <rtyler> hate to ask the stupid question, but how does this whole release process change our marketing plans with the advent of Tumbleweed?
+16:55:19 <suseROCKs> jospoortvliet,   ok.  But when is the actual freeze when we cannot add more to the release?
+16:55:31 <manugupt1> suseROCKs, after rc2
+16:55:31 <jospoortvliet> look I can do the skeleton on the feature guide. But I noticed that a big barrier to contribution was the question of HOW to contribute
+16:55:38 <jospoortvliet> I bet this is relevant for more things
+16:55:42 * rtyler apologizes for being late, if this was already covered
+16:55:48 <jospoortvliet> suseROCKs: that happens only when the GM is made :D
+16:55:57 <jospoortvliet> suseROCKs: seriously, they can change big things until release day...
+16:56:02 <jospoortvliet> so we can't rely on that :(
+16:56:03 <suseROCKs> rtyler,   well..  if we continue to finetune our message and build up sustained noise, it won't really matter.    People should be interested in and trying out openSUSE no matter whether it was just released yestereday or 3 months ago
+16:56:20 <suseROCKs> jospoortvliet,   no  there's a freeze point.
+16:56:23 <tony2> rtyler: My current impression of Tumbleweed is that bugs are still being worked out. Mostly works but not completely so it'll be awhile before we know future major releases will end
+16:56:37 <jospoortvliet> rtyler: ignore tumbleweed for that, we focus on the release. That's how NEW users get openSUSE.
+16:56:38 <suseROCKs> though you can convince coolo to go past the freeze point, you have to really convince him
+16:56:46 <jospoortvliet> tumbleweed is simply an awesome feature
+16:56:48 <jospoortvliet> suseROCKs: true, true
+16:56:56 <lupinstein> well that's why you start early then at the time of the release go thru and pick what important, believe or not that how a lot of magazine do it
+16:56:57 <rtyler> tony2: good to know, i'll drop you an email later with more questions I have regarding tumbleweed for omgsuse :)
+16:57:05 <jospoortvliet> but for minor bugfix releases - well, it's hard to lock things :(
+16:57:17 <suseROCKs> brb guys
+16:57:26 <lupinstein> they might have about 50 stories but at the time of release pick only the top 15 that matter
+16:57:27 <jospoortvliet> sigh and suseROCKs runs away?
+16:58:23 <Dominian> in the middle of a meeting?
+16:58:24 <Dominian> shame!
+16:59:27 * tigerfoot think suseROCKs goes to return the meat to dry in unoccupied rooms :-)
+16:59:35 <suseROCKs> im back
+16:59:53 <jospoortvliet> ok let's try to re-focus again
+17:00:01 <tony2> jospoortvliet: Re how people contribute should probably be addressed when we can find sufficient collab tools
+17:00:18 <jospoortvliet> we were talking about getting more writing finished earlier
+17:00:29 <Dominian> hrm.. looking at the digg post for the release announcement.. only 17 people dugg it? wtf
+17:00:35 <suseROCKs> tony2,  do you feel that it is unclear to people that come to the marketing team how they can contribute?   Should we provide more solid guidance?
+17:00:40 <jospoortvliet> and about the digg and other social media stuff
+17:00:42 <rtyler> Dominian: in all fairness, digg only has 35 users now :P
+17:00:48 <jospoortvliet> suseROCKs: I think he has a point
+17:00:55 <Dominian> rtyler: do what!?
+17:00:55 <jospoortvliet> we need to document things more clearly
+17:01:05 <jospoortvliet> eg I know ppl make video's like jdd but they weren't used in the end
+17:01:06 <jospoortvliet> too bad
+17:01:12 <jospoortvliet> we need to have clear what we require for the feature guide
+17:01:13 <suseROCKs> its a good point.     We have the jobs page but we rreally didn't put much energy on that
+17:01:18 <jospoortvliet> and I can write up something for that :D
+17:01:22 <rtyler> jospoortvliet: tacking on to tony2's point, for this release I basically just hung out and waited for somebody to tell me to do something :P
+17:01:23 <jospoortvliet> so give me that action item
+17:01:33 <jospoortvliet> rtyler: that was quite OK
+17:01:41 <Dominian> Yeah I hung out.. didn' thave to do anything
+17:01:44 <tony2> suseROCKs: When people know which tools to use and how, then people should be able to contribute on their own time and in a disconnected way, less pressure sync with others
+17:01:46 <Dominian> I upgraded, that's about it :)
+17:01:51 <Dominian> oh and dugg the article on digg.com
+17:01:57 <suseROCKs> #action jospoortvliet to create guidelines for creating a solid and awesome Product Highlights
+17:02:24 <manugupt1> suseROCKs, jospoortvliet why not use retro
+17:02:28 <suseROCKs> tony2,   excellent point.  I will take that into consideration
+17:02:31 <jospoortvliet> manugupt1: what is that?
+17:02:38 <manugupt1> jospoortvliet, one sec
+17:02:41 <manugupt1> http://retro.opensuse.org/
+17:02:53 <suseROCKs> retro sucks in my opinion and you can't just use it,  you have to authorize people to use it
+17:03:43 <suseROCKs> its a tool with big administrative overhead and the landing page can only point to the booster project which misleads people and makes it hard to navigate
+17:04:11 <suseROCKs> I'm all for hearing ideas from tony2 for better project management tools that fit well in our team
+17:04:28 <jospoortvliet> manugupt1: and even the boosters don't use it...
+17:04:33 <manugupt1> suseROCKs, I am saying let us have ours
+17:04:35 <suseROCKs> provided we can integrate it into our infrastructure.
+17:04:49 <manugupt1> jospoortvliet, I think they do atleast they all mark what has been done and not
+17:05:12 <manugupt1> That is how it looks from outside any way
+17:05:14 <suseROCKs> boosters use it extensively   but other teams don't because it just is too unweildy
+17:05:21 <jospoortvliet> suseROCKs: problem with project management: it is overhead. Someone should take on a task, feel responsible, and get others to help. That is all the managmeent you need - a person who is responsible for something. That was me for the feature guide and chuck for the social media etc
+17:05:30 <tony2> suseROCKs: :) Just don't ask me today. Yesterday I started d/l more project management from OSS, I will need to know if I find a 3rd party how difficult to get mounted on a Novell or openSUSE Server
+17:05:53 <suseROCKs> tony2,   sure  we have a bit of time to figure out a good sane approach.
+17:05:56 <manugupt1> tony2, anything with ror, php mysql and no java is fine I think
+17:05:58 <suseROCKs> ok back to riting
+17:06:36 <suseROCKs> jospoortvliet,   more to say on writing?
+17:06:59 <jospoortvliet> suseROCKs: nope, will write that page
+17:07:11 <suseROCKs> jospoortvliet,   to be honest, I feel the news team needs to have a meeting to review a lot of things.  Not just related to release, but the overall process.   Is it working well?  not working well?  etc.
+17:07:24 <jospoortvliet> suseROCKs: agreed
+17:07:30 <jospoortvliet> it's rather quiet right now anyway
+17:07:36 <jospoortvliet> and it shouldn't be, around release :D
+17:07:37 <suseROCKs> yes
+17:07:45 <jospoortvliet> but part of it is that I don't even keep up with news@o.o mail :(
+17:07:50 <suseROCKs> who wants to call that meeting?
+17:07:51 <Dominian> suseROCKs: Have you guys thought about using something like redmine or dotProject.net software for project management?
+17:08:49 <suseROCKs> Dominian,   no  and tbh  right now if we ask for a new tool to be added, we'll get pushback  "We already have retro and it worksforme"   we need to clearly elaborate why something new would be better
+17:09:02 <tony2> Dominian: If anyone has a recommendation, private offline to me and I'll be sure to take a look at it and then discuss with Bryen
+17:09:27 <lupinstein> call
+17:09:33 <AJaeger2> Let's first figure out what are our requirements. I hate evening too many different tools but we need to get our job done.
+17:09:46 <suseROCKs> right
+17:09:56 <suseROCKs> as stated, we need to ensure a sane approach
+17:09:57 * rtyler agrees
+17:10:14 <suseROCKs> don't implement a need for the sake of need.   One week's need is another week's option  :-D
+17:10:17 <tony2> AJaeger2: I hope I'm experienced enough evaluating Collab to recommend something both Usable and User Friendly
+17:10:42 <AJaeger2> tony2: First we need to know what problems we have ;)
+17:10:44 <suseROCKs> ok so what other areas can we talk about today?
+17:10:57 <manugupt1> I have a lot to talk about
+17:11:00 <suseROCKs> I don't think we did a good enough job rallying up the ambassadors.   What do you guys think?
+17:11:38 * AJaeger2 agrees
+17:11:40 <manugupt1> suseROCKs, again the question is how
+17:11:44 <manugupt1> to rally them up
+17:11:57 <suseROCKs> manugupt1,    #1 solution in my mind is consolidation.;
+17:12:07 <manugupt1> suseROCKs, need to do it asap
+17:12:11 <Dominian> tony2: WEll I'll have to read up on retro..
+17:12:21 <Dominian> suseROCKs: I mean what is wrong with retro that you don't like? Watch features are you guys looking for?
+17:12:24 <suseROCKs> we have too many things spread out and we're starting to talk about getting it all back together.   Ambassador, marketing, artwork lists   all are too spread apart and one hand doesn't know what the other is doing
+17:12:34 <tony2> AJaeger2: Off the top of my head common "Must Have" Centralized bulletin board for all, Doc Management supporting revisioning, proper Auth/Auth/Admin levels, optional SSO discussion tools, more
+17:12:41 <manugupt1> Lets have a single ML
+17:13:03 <manugupt1> for artwork marketing multimedia and ambassadors
+17:13:07 <suseROCKs> manugupt1,   and that's on my todo to send out a discussion on that on all 3 ml's to get everyone to agree to consolidation
+17:13:17 <amonthoth> suseROCKs: +1
+17:13:29 <suseROCKs> yeah see  I didn't even know a multimedia ml existed until very recently  :-)
+17:13:34 <tony2> suseROCKs:  That's why on my "Must Have" list is a Centralized bulletin board so common info can be posted for all
+17:13:52 <manugupt1> tony2, suseROCKs why not use connect better
+17:14:00 <manugupt1> Whats the use otherwise
+17:14:04 <suseROCKs> tony2,    yup   its a issue that's getting raised repeatedly lately and a solution must come soon
+17:14:11 <tony2> manugupt1: Anything can be considered
+17:14:13 <amonthoth> there is shattered info and resources
+17:14:16 <AJaeger2> tony2: Let's continue this discussion another time. I'd like to understand what exactly you mean and where it hinders us today.
+17:14:27 * tigerfoot ask tony2 manugupt1 Dominian to postpone any comment on tools to after meeting ...
+17:14:42 <tony2> AJaeger2: Agreed
+17:14:51 <manugupt1> tigerfoot, ok
+17:15:08 <suseROCKs> regardless of the fact that we didn't make enough noise with ambassadors, its not over yet.  We can continue to make noise NOW because we need more launch parties
+17:15:26 <suseROCKs> launch parties do not have to be around the date of a release.   I believe lupinstein  has his scheduled for april
+17:15:37 <lupinstein> may
+17:15:43 <suseROCKs> ok may
+17:15:44 <suseROCKs> :-D
+17:15:55 <lupinstein> May 14th, at the ITT Linux Install Fest
+17:16:02 <suseROCKs> I have not seen a single rally call to ambassadors on that ml.    manugupt1 warlordfff or carlos?
+17:16:29 <Dominian> Yeah there hasn't been much traffic on the ambassador's list that I've seen as of late
+17:16:30 <manugupt1> suseROCKs, There was by lupinstein I believe for Launch parties
+17:16:35 <manugupt1> no one responded
+17:17:04 <lupinstein> yea, think that's why henne didn't use the page we worked on, waste of time
+17:17:30 <suseROCKs> lupinstein,  manugupt1   so what do you think is the reason for lack of interest?
+17:18:23 <manugupt1> suseROCKs, Cannot say... people who started off as ambassadors are actually and contributing awesome
+17:18:25 <lupinstein> To be honest, I don't think are following the ambassador list
+17:18:42 <manugupt1> we just have 2 extremes who work and who do not
+17:18:48 <jospoortvliet> sorry for being away for a while
+17:18:55 <suseROCKs> ok
+17:18:55 <lupinstein> only traffic I seen jos, the welcome team and my e-mail
+17:18:58 <jospoortvliet> I disagree in bringing ambassadors too close to international marketing
+17:19:12 <manugupt1> being an ambassador is something like you can do once in an year
+17:19:12 <jospoortvliet> actually I'd advocate for ambassadors to get a ML per country AND an easy way to reach them all by internationals
+17:19:27 <jospoortvliet> if you're an ambassador in Brazil or Greece, chances are about 0.1% that you want to be on an english ML
+17:19:30 <jospoortvliet> ANY english ML
+17:19:35 <suseROCKs> manugupt1,   not necessarily.  There's plenty of ways to be an ambassador more than once a year
+17:19:43 <manugupt1> jospoortvliet, does not work that way except for a few countries
+17:19:44 <jospoortvliet> as long as we demand you to understand english we limit ourselves a lot
+17:19:50 <lupinstein> jos, then how we will know if they are doing anything
+17:19:52 <jospoortvliet> the locals need to be able to have their own thing
+17:20:11 <AJaeger2> Regarding ambassadors, tell me once I can speak a few minutes about openSUSE 11.4 PromoDVDs...
+17:20:17 <suseROCKs> jospoortvliet,    fair enough re: language barriers.   But how do we convey to those in different languages what they need/should be doing and get them up to speed?
+17:20:21 <jospoortvliet> and by having a way to address them all at once (the ambassador ML should send mails to each of those ML's for example?!? and be moderated more strongly? something like that) we have our connection with international project
+17:20:30 <jospoortvliet> many ppl who could be ambassador right now are not
+17:20:48 <jospoortvliet> that was my rant :D
+17:21:10 * tigerfoot agree with locals & jospoortvliet
+17:21:22 <suseROCKs> jospoortvliet,   I'm also of the inclination that "ambassador" is just a title  and in reality it means a title plus the added buraruacy of writing reports
+17:21:48 <manugupt1> manugupt1, does not see any point probably because he is in India where computers run in English
+17:22:14 <jospoortvliet> suseROCKs: yes and no
+17:22:15 <suseROCKs> for example, when I mentioned that Tony is our ambassador to San Diego, someone pointed out he's not officially an ambassador.  But to me, it makes no difference that he didn't register.  he still represented and did a good job, and I'm sure he doesn't want the obligation of writing a report every time he ambassades  (yes I just invented a verb)
+17:22:38 <jospoortvliet> true true
+17:22:44 <suseROCKs> I'm not a registered ambassador and I still represent the project
+17:22:54 <jospoortvliet> but we should make it easier to make those event reports (a web form maybe) and give incentives to do so
+17:22:58 <jospoortvliet> as we discussed in the marketing meeting!
+17:23:10 <manugupt1> jospoortvliet, everything we could has been done
+17:23:17 <jospoortvliet> manugupt1: hell no
+17:23:19 <lupinstein> I thought the point of the ambassador was to get the word out and to get reports on what they doing, having a center mailing issue is great, but before we go to local group we need to use the tools that are in place. That a big problem, that no one uses what is in place.
+17:23:22 <suseROCKs> heh
+17:23:23 <manugupt1> look at Stathis He does it so much
+17:23:25 <jospoortvliet> it is still a lot of work to make an event report
+17:23:40 <jospoortvliet> filling in a form on a site is 10000x easier than making a wiki page
+17:23:48 <Dominian> and some ambassadors, like myself, promote in other ways.. not just at events et al.
+17:23:49 <suseROCKs> jospoortvliet,   sure ambassadors get the word out.  But plenty of people in the project get the word out without being an ambassador  (and do a good job of it too)
+17:23:51 <jospoortvliet> that is a barier much bigger than what most ppl are iwlling to do
+17:23:53 <lupinstein> Agree jospoortvliet I hate the wiki
+17:23:54 <jospoortvliet> Dominian: that too :D
+17:23:55 <manugupt1> jospoortvliet, the more you will add to it, less is will be the over head
+17:24:01 <jospoortvliet> suseROCKs: sure
+17:24:05 <lupinstein> it a f'in pain to file reports
+17:24:05 <manugupt1> jospoortvliet, then I propose a google form
+17:24:14 <jospoortvliet> manugupt1: that would be fine if it was open source ;-)
+17:24:20 <jospoortvliet> you know how some ppl would respond...
+17:24:25 <jospoortvliet> but I'd be fine with that
+17:24:30 <Dominian> I havfe no time to get to events.. so me creating reports of what I'm doing would be like "Interjected openSUSE and its features into a conversation that involved Ubuntu, Fedora, and CentOS... life is good"
+17:24:35 <manugupt1> jospoortvliet, then I will have to make a PHP Script when I have time
+17:24:47 <lupinstein> hell I could write an nice php form that could post reports
+17:24:48 <manugupt1> Basically mail to the marketing ML
+17:24:57 <manugupt1> lupinstein, you got me :)
+17:24:59 <jospoortvliet> the thing we need is that those reports once filled in get send to the marketing ML, are aggregated on an RSS feed, go to planet openSUSE, are visibe on news.opensuse.org in a box somewhere, stuff like that
+17:25:04 <jospoortvliet> now writing a report is quite useless
+17:25:29 <jospoortvliet> something needs to be done with the reports
+17:25:31 <Dominian> wait.. what is IN the report?
+17:25:32 <suseROCKs> ok so we have a lot of thoughts about how to improve and solidify the ambassador program,  but the immediate need right now is to figure out how to get the ambassadors to make the noise we need right now...
+17:25:35 <diamond_gr> trying to follow the wiki.
+17:25:37 <jospoortvliet> they should be aggregated in the ambassador's profile in the wiki
+17:25:40 <diamond_gr> wiki is fine
+17:25:40 <lupinstein> jospoortvliet, to do that I recomment not using the wiki, because as you stated it need to be simple. Remember KISS
+17:25:41 <jospoortvliet> so they buidl a trackrecord
+17:25:43 <Dominian> I would think as ambassadors you'd want their personal views/experiences from their findings?
+17:25:48 <manugupt1> jospoortvliet, lupinstein I propose this Lets have a php form that mails to the Marketing ML
+17:25:50 <jospoortvliet> lupinstein: I don't care what tech we use
+17:25:56 <jospoortvliet> as long as we make the proces automated and easy
+17:26:12 <manugupt1> lupinstein, what do you say??
+17:26:13 <jospoortvliet> manugupt1: mail is not enough, it should end up in an ambassadors profile if he/she was there
+17:26:16 <jospoortvliet> so they get bragging rights
+17:26:17 <suseROCKs> yes  less bureaucracy
+17:26:34 <jospoortvliet> and it should be visible somewhere so we can go over them say once per 3 monts, and write a nice article aobut the events
+17:26:36 <jospoortvliet> and we can track statistics
+17:26:44 <manugupt1> jospoortvliet, we can have a database about it just that
+17:26:46 <jospoortvliet> and we can have a feed on our homepage showing the events suse has been at
+17:26:47 <Dominian> What other promotional materials are provided to ambassadors, if any?  Just curious.
+17:27:00 <jospoortvliet> Dominian: look at teh marketing materials page in the wiki
+17:27:04 <suseROCKs> jospoortvliet,   you mean openSUSE,  right?
+17:27:05 <Dominian> thanks
+17:27:05 <lupinstein> manugupt1, you don't know KISS -- Keep it Simple St****.  The wiki is not Simple
+17:27:09 <tony2> Cool. I'll add all the recent observations to my "Collab Tools Feature List"
+17:27:11 <jospoortvliet> suseROCKs: sure don't complain dude
+17:27:17 <manugupt1> jospoortvliet, thats something big you are thinking now
+17:27:22 <jospoortvliet> lupinstein: again I don't care where it ends up as long as it is easy
+17:27:23 <suseROCKs> jospoortvliet,   I was just doing what AJaeger2  does  :-D
+17:27:24 <jospoortvliet> manugupt1: yes I know
+17:27:25 <jospoortvliet> it is big
+17:27:44 <suseROCKs> ok back to the pressing question...  not the format...   What can we do to boost ambassador noise RIGHT NOW?
+17:27:48 <jospoortvliet> manugupt1: this is something we might be able to do in connect, yes?
+17:28:00 <jospoortvliet> suseROCKs: can we have one more minute for this idea?
+17:28:02 <manugupt1> jospoortvliet, exactly we need to identify connect
+17:28:03 <suseROCKs> How can we communicate to them and inspire them to run out and do a launch party soon?
+17:28:10 <jospoortvliet> I think we have an opportunity of making the ambassadorship more meaningful
+17:28:10 <suseROCKs> jospoortvliet,   ok
+17:28:12 <jospoortvliet> and visible
+17:28:18 <lupinstein> jospoortvliet, right now if you asked me to do something on the wiki, I rather cut my wrist and watch myself bleed
+17:28:34 <manugupt1> We as a team are failing the boosters hardwork I am sorry but I feel this way connect is being ignored
+17:28:37 <lupinstein> the pain of cutting my wrist is less painful than to use the wiki
+17:28:45 <jospoortvliet> manugupt1: ok. I guess you understand what I am thinking about...
+17:28:55 <lupinstein> don't believe ask tigerfoot, he will back me
+17:28:59 <jospoortvliet> so how about I send a mail to the boosters about connect, asking if this is something they can do with it
+17:29:01 <jospoortvliet> ?
+17:29:05 <jospoortvliet> I'm sure they will see a nail :D
+17:29:07 <jospoortvliet> hehe
+17:29:11 <manugupt1> jospoortvliet, yes :)
+17:29:14 <suseROCKs> manugupt1,   the problem with Connect or any other tool is that it is just one more thing someone has to go to and be aware of its existence.   The fewer places people have to go to, the better
+17:29:29 <Dominian> ya know.. I'm starting to see a common theme...
+17:29:32 <Dominian> too many tools
+17:29:40 <suseROCKs> exactly
+17:29:44 <Dominian> iirc the meeting last week in #opensuse-project was smililary focused
+17:29:51 <Dominian> wow.. bad spelling
+17:29:54 <suseROCKs> welcome to ambassadors.   Please go to wiki, connect, retro, ml....
+17:29:54 <jospoortvliet> manugupt1: lupinstein you two would you be willing to help the boosters with this, either suggesting things or doing your PHP fu?
+17:29:57 <manugupt1> suseROCKs, when we are thinking of multiple tools here why nt then integrate everything with connect
+17:30:04 <jospoortvliet> in that case I add you in CC when mailing
+17:30:32 <jospoortvliet> suseROCKs: I want it integrated in wiki etc, connect - that's what the boosters want to use for identity management in all of openSUSE. it will be everywhere anyway
+17:30:32 <lupinstein> I am game for anything that would make life easier and do like you said
+17:30:36 <jospoortvliet> so let's reinforce that pls
+17:30:40 <suseROCKs> manugupt1,  welll  if there's a better way to integrate, then great.   But right now, integration isn't very good, is it?
+17:30:41 <jospoortvliet> lupinstein: ok
+17:30:58 <jospoortvliet> manugupt1: suseROCKs: see what I just said :D
+17:31:11 <jospoortvliet> suseROCKs: right now it's not there
+17:31:12 <tigerfoot> just check that post http://michal.hrusecky.net/2011/03/virtual-opensuse-11-4-release-party/
+17:31:13 <suseROCKs> yes
+17:31:18 <jospoortvliet> but they work on that...
+17:31:19 * AJaeger2 likes to interrupt for a second, since I have to leave now
+17:31:19 <Dominian> question: what do other projects provide to their 'ambassassors' as tools?
+17:31:25 <tigerfoot> Michal made it with a google doc :-)
+17:31:34 <suseROCKs> AJaeger2,   go for it
+17:31:40 <tigerfoot> don't know how he will get the result ...
+17:31:57 <AJaeger2> I'm currently buried with sending out of openSUSE DVDs and thus we have restored an old page:
+17:31:58 <AJaeger2> http://software.opensuse.org/order/new
+17:32:12 <jospoortvliet> Dominian: I don't really know, would be good to know... Feel free to spend a bit time on analyzing that and mail the marketing ML with it, would be very interesting and you can do that in an hour or so...
+17:32:19 <jospoortvliet> AJaeger2:  +1
+17:32:21 <AJaeger2> Please review the page and send me your comments on how to change the text to make it friendly (me = aj at opensuse dot org)
+17:32:33 <AJaeger2> The page is not functional yet, so don't order anything
+17:32:36 <Dominian> jospoortvliet: Well, I'm just going over the marketing materials site...
+17:32:39 <Dominian> I see one big issue
+17:32:40 <Dominian> its not finished.
+17:32:44 <Dominian> lots of gaps
+17:32:53 <suseROCKs> AJaeger2,    we have 11.4's to ship already?
+17:32:54 <AJaeger2> But I want to use that page as only way to advertize openSUSE 11.4 media
+17:33:15 <AJaeger2> openSUSE 11.4 PromoDVDs will not be ready before next weeks, as soon as I know more details, I tell you.
+17:33:29 <suseROCKs> #action  team to review text of http://software.opensuse.org/order/new and send comments to AJaeger
+17:33:33 <jospoortvliet> Dominian: yup you are right we need a lot more work on those
+17:33:36 <lupinstein> :( I got Texas Linux Fest on April 2nd
+17:33:39 <manugupt1> AJaeger2, will it be ready by the time vuntz comes to India
+17:33:44 <Dominian> jospoortvliet: quite a bit of work
+17:33:51 <suseROCKs> AJaeger2,   ok  for now I'm telling people don't expect until early April.  Is that a fair estimate?
+17:33:58 <jospoortvliet> any help is appreciated, and more importantly, we need someone to 'adopt' one of those things, have it as his/her baby and push others to get it done until it is done
+17:33:58 <AJaeger2> manugupt1: AS soon as I know details, I tell you ;)
+17:34:01 <jospoortvliet> then move on to the next :D
+17:34:04 <Dominian> jospoortvliet: I think a lot of my issue with contributing.. I think I have a form of ADD.. because I try to pay attention to too much at one time!
+17:34:06 <jospoortvliet> so if you're looking for a baby, pick one :D
+17:34:08 <manugupt1> thanks AJaeger2
+17:34:12 <jospoortvliet> Dominian: same for me :D
+17:34:15 <AJaeger2> suseROCKs: Yes but I hope earlier
+17:34:20 <tony2> brb everybody. Will post next when I have something to say
+17:34:24 <jospoortvliet> Dominian: so pick a few babies there and push them :D
+17:34:28 <Dominian> jospoortvliet: hehe
+17:34:35 <AJaeger2> But therefore I need to have the above page live to make everything much smoother and easier on my part.
+17:34:40 <suseROCKs> AJaeger2,   anything else?
+17:34:55 <AJaeger2> That's it from me for now - need to take care of some issues here...
+17:34:59 <lupinstein> I wish I has access to the DVD copier then I could burn my own for TLF.
+17:35:05 <AJaeger2> thanks and sorry for the interruption
+17:35:07 <suseROCKs> ok thanks AJaeger2
+17:35:48 <suseROCKs> lupinstein,   bribe AJaeger2 and he'll maybe give you first priority.    You just might be able to get it in time
+17:36:04 <Dominian> Is there a list of al the tools out there? a la news.o.o, forums.o.o, connect.o.o etc?
+17:36:32 <lupinstein> AJaeger2, need a babysitter, wink wink, cut your grass, wash your car.
+17:36:59 <manugupt1> What else do we have to cover
+17:37:28 <suseROCKs> we were talking about improving the overall ambassador program and its tools....
+17:37:38 <suseROCKs> did we come to conclusions or does it require more debate?
+17:37:55 <manugupt1> We need conclusions
+17:38:03 <suseROCKs> jospoortvliet?
+17:38:25 <jospoortvliet> lupinstein: we still need to get clear what we can do better in the social media area
+17:38:48 <lupinstein> ok, I will on that
+17:38:50 <jospoortvliet> in the ambassadors area as well - we have one thing (make event reports more visible and maybe create local ML's)
+17:38:57 <suseROCKs> jospoortvliet,   social media or social networking?   Let's make sure we always make that distinction  :-)
+17:38:57 <tony2> Dominian: Usually periodically I check out the CRM demo sites. One place, try out everything, anything
+17:39:03 <tigerfoot> did we notice the action about the merging of ML ?
+17:39:04 <lupinstein> if you want to tag it for item of action
+17:39:05 <Dominian> eh
+17:39:06 <jospoortvliet> eg ask kostas how he works - the local team has their own infrastructure.
+17:39:09 <suseROCKs> two very different beasts
+17:39:09 <jospoortvliet> we should make that easier
+17:39:19 <manugupt1> jospoortvliet, I have only one issue with more MLs
+17:39:21 <Dominian> tony2: my point being I don't know where all these sites are :)
+17:39:24 <jospoortvliet> tigerfoot: merging artwork and marketing - good. merging ambassadors - will just chase them away
+17:39:45 <suseROCKs> and merging multimedia?
+17:39:46 <jospoortvliet> manugupt1: if you don't speak english having a greek ambassador list is quite crucial you know...
+17:40:00 <Dominian> hrm..
+17:40:04 <jospoortvliet> suseROCKs: fine too. I want to do something about language barriers, that's what we have to break...
+17:40:08 <manugupt1> we have around 120 ambassador then it does not help
+17:40:22 <jospoortvliet> suseROCKs: social media incl social networks
+17:40:25 <Dominian> here's something intereseting I'm seeing on the Fedora ambassadors.. they provide an ambassador's polo shirt and/or a button up shirt
+17:40:26 <tony2> Dominian: email me offline. I'll recommend places you can try without installing anything
+17:40:34 <suseROCKs> jospoortvliet,   and that's a toughie.    How do we break the language barrier if there's just one ambassador in a particular region
+17:40:42 <manugupt1> jospoortvliet, we have an opensuse google group for India that is a support forum and ambassador forum too
+17:40:45 <jospoortvliet> suseROCKs: sure in that case it isn't needed
+17:40:54 <suseROCKs> I guess we need "language ambassadors" in addition to geogrpahical ambassadors
+17:41:00 <diamond_gr> Agree on Polo shirt. Ambassadors outfit
+17:41:00 <Dominian> tony2: Well, I'm not talking about other software.. just the current stuff that opensuse is utilizing to interact with its user base, ambassadors, marketing etc
+17:41:16 <Dominian> http://fedoraproject.org/wiki/Ambassadors/PoloShirt
+17:41:31 <tony2> jospoortvliet: automatic online translators not sufficient?
+17:41:37 <Dominian> ahh
+17:41:37 <jospoortvliet> suseROCKs: eg the brazil team, the greek team, the german team, the dutch team I try to build - the MUST have a ML. THe dutch team now mails with each other in CC but nobody can join that ML and sometimes ppl fall off
+17:41:39 <suseROCKs> hey  tshirts and stuff are good to talk about,  but let's focus on the organizational stuff for now
+17:41:42 <Dominian> they charge 25Euro for the shirt
+17:41:44 <jospoortvliet> tony2: hell no of course not...
+17:41:50 <Dominian> suseROCKs: yeah sorry just reading :)
+17:42:12 <tony2> Dominian: Agreed. In particular I'm not familiar with Connect, Will follow up on that
+17:42:18 <Dominian> same
+17:42:21 <jospoortvliet> suseROCKs: we need an easy way to set up a local ambassador team. opensuse-ambassadors-nl@opensuse.org is what I would love to have. Would make my team building 100x easier
+17:42:26 <suseROCKs> jospoortvliet,    ok  so the 'Main" ambassador list is for the top-level ambassador of a region who then has the responsibility of conveying to smaller groups?
+17:42:32 <jospoortvliet> I can point ppl to that, subscribe there and join the conversation
+17:42:40 <jospoortvliet> in KDE and GNOME this works often over the translation lists...
+17:42:41 <suseROCKs> or rather to regional groups that are language specific?
+17:42:42 <Dominian> tony2: I have an account on there, just not sure what use connect is :)
+17:42:52 <jospoortvliet> suseROCKs: something like that, yes
+17:43:15 <jospoortvliet> suseROCKs: I think language specific but eg portugal and brazil want something unique I bet
+17:43:19 <diamond_gr> dissagree with opensuse-ambassadors-el mailing list.
+17:43:31 <suseROCKs> jospoortvliet,   ok so there's two things then.... a)  ensure there's at least one person who can speak English and b)  how do we know the conveying occurred?    It's silent for us on our end when we don't know activity happens on the other end
+17:43:47 <jospoortvliet> suseROCKs: true, issue
+17:43:52 <manugupt1> suseROCKs, exactly
+17:43:55 <jospoortvliet> diamond_gr: so you would not want to have a greek ml?
+17:44:03 <manugupt1> thats what I am trying to say
+17:44:17 <manugupt1> How many of you know that we have an openSUSE India google group
+17:44:31 <diamond_gr> we have the simple local mailing list that can we all use. the ambassadors can use the international.
+17:44:33 <jospoortvliet> suseROCKs: manugupt1: make no illusions this IS what happens already. it is why many ambassadors are so quiet - they simply use other channels
+17:44:42 <suseROCKs> and if we have one person responsible for conveying between the master and language ML's... we create a potential point of failure too.   But then again, it seems we've got a huge point of failure now to begin with.
+17:44:50 <diamond_gr> if they cannot understand english, they can write to theri language.
+17:44:53 <jospoortvliet> as the openSUSE infrastructure (a global, english-only ambassador ML is useless for them tot talk to their local team)
+17:45:12 <suseROCKs> jospoortvliet,   I don't disagree with you.  You're making valid points.    But I'm trying to figure out how we can have better cohesion here.
+17:45:15 <jospoortvliet> diamond_gr: so you HAVE a local ml already
+17:45:28 <diamond_gr> for some maybe will be just spam.
+17:45:29 <manugupt1> jospoortvliet, then if we break it down it will more a pita
+17:45:31 <suseROCKs> Did lupinstein's rally call get conveyed to the language ml's?
+17:45:34 <jospoortvliet> suseROCKs: well let's just start with building up local teams THEN worry about coordination. We start with 0 remember
+17:45:37 <suseROCKs> we dunno
+17:45:38 <jospoortvliet> it's a step forward already
+17:45:46 <diamond_gr> jospoortvliet, yes, we have.
+17:45:49 <manugupt1> We will again have problem's reading MLs
+17:45:57 <amonthoth> who is going to monitor every language and region ?
+17:45:59 <jospoortvliet> manugupt1: well now we simply lost the ppl
+17:46:07 <jospoortvliet> amonthoth: nobody as that is impossible.
+17:46:14 <lupinstein> ? I think a local ok, but we need first to get everyone to use the tools we have, ppl aren't even doing that
+17:46:29 <jospoortvliet> look it is a choice between having good coordination and barely any ambassadors or having strong local communities and ALWAYS having to fight to keep in contact
+17:46:32 <jospoortvliet> I rather have the second
+17:46:38 <jospoortvliet> so I think we should set up local ML's :D
+17:46:44 <amonthoth> that's because ambassador regional mailing list is not practical at all
+17:46:52 <lupinstein> you can make all the list you want, but to be honest the ambassador won't use them
+17:46:55 <suseROCKs> diamond_gr,  manugupt1  amonthoth    I think jospoortvliet's point is very relevant because our marketing message is shifting from a "we're a great distro" to "we're not just a distro" and if that message isn't consistent, we're wasting our time here strategizing.
+17:46:56 <manugupt1> jospoortvliet, Ok.. then we will think we have no event reports
+17:47:09 <jospoortvliet> lupinstein: I want the ambassadors to set up their own if they need it
+17:47:29 <jospoortvliet> manugupt1: they can be in other languages, they'll have to be anyway.
+17:47:30 <tony2> jospoortvliet: I agree decentralization is way to go but there has to be a way for centralized info to be distributed officially
+17:47:38 <jospoortvliet> manugupt1: you don't realize that most ambassadors don't speak english
+17:47:39 <jospoortvliet> seriously
+17:47:43 <jospoortvliet> MOST SPEAK NO ENGLISH
+17:48:05 <Dominian> Well, why not keep the opensuse-ambassador list for centralizd communication.. then have opensuse-marketing-<lang> for the per language list?
+17:48:13 <tigerfoot> vraiment la majorité n'y comprenne rien :-)
+17:48:16 <manugupt1> jospoortvliet, ok.. maybe its because of the region
+17:48:20 <suseROCKs> Dominian,   that's what jospoortvliet  is saying.
+17:48:21 <jospoortvliet> manugupt1: yes
+17:48:24 <Dominian> suseROCKs: ah
+17:48:34 <Dominian> see I'm trying to pay attention to too much again
+17:48:38 <jospoortvliet> brazil, NL, germany, greece, actually most of europe works better locla
+17:48:39 <lupinstein> jos my point is those that do, don't even use the list
+17:48:42 <manugupt1> tigerfoot, lols
+17:48:49 <suseROCKs> Dominian,   but I want to ensure that information in a regional ml comes back to the main ml too so we all know about what's going on
+17:48:50 <jospoortvliet> I can NOT build a local NL team if I have to tell them to join the international ambassador list
+17:48:57 <suseROCKs> cohesion of message is important right now
+17:48:57 <Dominian> suseROCKs: ah
+17:48:57 <jospoortvliet> so I will need a local ML
+17:49:04 <jospoortvliet> and so will everyone for who english is not a normal language
+17:49:06 <jospoortvliet> spanish
+17:49:07 <jospoortvliet> french
+17:49:10 <jospoortvliet> portugese
+17:49:11 <jospoortvliet> german
+17:49:13 <jospoortvliet> greece
+17:49:15 <jospoortvliet> etc
+17:49:17 <suseROCKs> jospoortvliet,   now here's another question
+17:49:25 <lupinstein> ok, but then how we know they are doing things
+17:49:28 <manugupt1> jospoortvliet, just create it let it be in hands of whoever wants to create
+17:49:32 <manugupt1> it
+17:49:37 <Dominian> suseROCKs: You could assign a main ambassador to facilitate management over that regional list and push information to the central mailing list that is important for everyone to know.
+17:49:57 <jospoortvliet> lupinstein: we'll loose information and we have to live with that. Of course we should strive to have ppl who coordinate. Eg like Kostas and diamond_gr do for the greece community/tema
+17:49:57 <Dominian> or a couple of ambassadors etc
+17:49:59 <suseROCKs> we have langauage ml's now, right?  for support and other stuff.    Should we be having -amasasador <lang> list too or just all in one ML?   Keep the noise up on all of them?
+17:50:02 <manugupt1> jospoortvliet, thats what other communitites hv done specially portuguese and spanish
+17:50:04 <jospoortvliet> and carlos and izabel for the brazilians
+17:50:07 <tony2> suseROCKs: I disagree. Centralized info should be a single main one way channel to regionals. Info in other direction should be through different individual channels. Thats my IMO
+17:50:31 <manugupt1> Ok.. Let me propose something
+17:50:34 <jospoortvliet> suseROCKs: one big ML is a mess
+17:50:38 <manugupt1> Lets have a centralised list
+17:50:44 <suseROCKs> because even here in marketing, I keep telling people to pay attention to -project and -factory ml's to really kinow the project.    There *has* to be a way to make sure folks understand the overall project and its goings-on
+17:50:52 <jospoortvliet> +1
+17:51:05 <suseROCKs> those in other languages surely miss out on so much  :-(
+17:51:19 <manugupt1> Any language which needs a list can be requested by the admin
+17:52:16 <suseROCKs> to the admin  :-)
+17:52:21 * bear454 mumbles about how much there is to read on this channel
+17:52:35 <manugupt1> suseROCKs, roght
+17:52:37 <manugupt1> roght
+17:52:39 <manugupt1> right
+17:52:46 <diamond_gr> suseROCKs, +1
+17:53:44 <tony2> How difficult would it be to request Novell/openSUSE to develop a localization translation package for mailing lists if we don't already do this?
+17:53:52 <jospoortvliet> suseROCKs: ok and if you're an admin for a local language list you MUST be on the ambassador mailinglist
+17:54:08 <lupinstein> I can agree with that jos
+17:54:15 <suseROCKs> acceptable rule
+17:54:17 <manugupt1> jospoortvliet, we do not have that HR
+17:54:20 <jospoortvliet> tony2: sorry but how interested are you in the discussions around planning of local events around the world? count on 200+ mails per day dude... seriously
+17:54:22 <jospoortvliet> you don't want that
+17:54:31 <jospoortvliet> manugupt1: HR?
+17:54:38 <manugupt1> human resources
+17:54:52 <suseROCKs> jospoortvliet,   I live for the 200+ worldwide plannign mails per day   :-D
+17:55:16 <tony2> jospoortvliet: That is why I posted earlier to Bryen that the Centralized Channel should be one way, and upstream info should be separate
+17:55:31 <jospoortvliet> tony2: yes, that is not a bad idea
+17:56:16 <suseROCKs> tony2,   but at the same time we need the return info so we know things are actually going on.  Especially as Jos and I start to put special focus on regions that are underrepresented
+17:56:51 <suseROCKs> we gave special focus to US, Brazil and Greece in the last 6 months and that is returning bountifuls.    Next year, we need to focus on new regions that aren't getting attention
+17:57:04 <suseROCKs> how do we know this if there's a language barrier?
+17:57:21 <tony2> suseROCKs: I envision proper Collab Tools to do this. So, for instance on typical web based CRMs each Dept/Region/entity would be a child web CRM that can automatically feed to a Parent CRM site
+17:57:31 <tigerfoot> :-)
+17:57:35 <manugupt1> I suggest we go jos's way and try it out we can always check the aftermath
+17:57:48 <suseROCKs> that's a possibility  sure
+17:57:57 * tigerfoot predict a fail ... ambassadors will never spend a minute or two to learn how a crm work ...
+17:58:00 <manugupt1> I love tony2 now for his wonderful ideas
+17:58:04 <suseROCKs> let's give it a shot, tony2    I'd like to see if that helps our long-term planning.  For sure!
+17:58:30 * tigerfoot employee do that, but they are paid for doing that, of fired to not do that ....
+17:59:04 * manugupt1 thought tigerfoot was self-employed
+17:59:12 <tony2> tigerfoot: I have excellent historical experience using DNN on the Microsoft platform, it's very simple for Users who edit site directly. If we need similar I need to find similar running on Linux
+17:59:27 <suseROCKs> ok so do we  need to proceed further on this area?   or can we have a focused collaboration on it?   We're already 2 hours into our meeting
+17:59:32 <suseROCKs> which is a good thing cuz we clearly had a lot to say
+17:59:54 <lupinstein> tigerfoot, I agree on the crm, we can't get 90% to send in a simple report
+17:59:58 <suseROCKs> any objections to wrapping up so I can summarize today's discussions and put it on the ML for further feedback?
+18:00:16 <manugupt1> I have a few ideas I wanted to discuss
+18:00:33 <suseROCKs> manugupt1,    ideas pertaining to our post-mortem?
+18:00:43 <manugupt1> No but for the future
+18:00:47 <suseROCKs> if not, then it should be part of our regular general meeting
+18:00:50 <jospoortvliet> srry lost connection
+18:00:52 <jospoortvliet> somehow
+18:01:01 <amonthoth> have you tried www.opentaps.org or something similar for crm
+18:01:01 <jospoortvliet> what was said after this:
+18:01:03 <jospoortvliet> to have a one-way communication to everyone is another way of doing it. So OR you have a moderated ambassador list (only approved messages, one way, to not over-flood the ambassadors) OR you require each local ML to have at least one (or two?) ppl to also be on the international list so they can coordinate
+18:01:14 <jospoortvliet> did suseROCKs kick me?
+18:01:30 <manugupt1> Ok.. Still I have a thing to say
+18:01:32 <tigerfoot> jospoortvliet: yeap wrong button :-)
+18:01:35 <jospoortvliet> hehe
+18:01:36 <suseROCKs> jospoortvliet,   I would never kick you...
+18:01:39 * suseROCKs lies
+18:01:44 <diamond_gr> how easy is for the admins to create a tool for us like a blog thing, using <lang>.opensusecommunities.org?
+18:01:54 <tony2> amonthoth: Am open to all suggestions. Email me offline and I will eval for Bryen (unless he wants the extra work)
+18:02:11 <suseROCKs> diamond_gr,   simply send an email to admin@ and they will respond with what they can do
+18:02:15 <suseROCKs> admin@ is your friend
+18:02:39 <amonthoth> tony2, oki doki
+18:02:53 <manugupt1> And this one is kinda urgent
+18:03:10 <suseROCKs> jospoortvliet,    as you were offline I was saying we've run 2 hours into this meeting and asking if we wanted to wrap up and I'd summarize the discussion and send it to the ML for further feedback
+18:03:26 <suseROCKs> and then manugupt1  said  "wait wait, I have a ton of ideas!"  :-)
+18:03:30 <jospoortvliet> ok so back to this. Can we tell the ambassadors they can ask admin@ for local ML's in the form of opensuse-ambassador-XX@opensuse.org as long as they have one person on the ambassador ML; or do we go with the other schedule, have a locked ambassador ML which sends mail to all those subteams?
+18:03:37 <jospoortvliet> suseROCKs: aah ok
+18:04:33 <manugupt1> anything you guys pick up :)
+18:04:34 <suseROCKs> i'm not against continuing the meeting, though I have other things I need to do.    If the feel is hot, go for it and continue talking
+18:04:51 <suseROCKs> still waiting for manugupt1  to spill out his ideas
+18:04:56 <manugupt1> Ok.. yes
+18:04:58 <toratoraman> hi
+18:04:58 <manugupt1> I am saying now
+18:05:15 <suseROCKs> hello toratoraman   are you the gentleman nmarques just told me about?
+18:05:20 <manugupt1> we need a couple of write ups for GSoC within the next 2 days
+18:05:34 <manugupt1> That is before 18th
+18:05:46 <suseROCKs> define "write ups"
+18:06:11 <toratoraman> ok. thank you
+18:06:16 <manugupt1> suseROCKs, just that saying we are too excited about it and hope to have a better management / stuff to impress google authorities
+18:06:21 <toratoraman> i want send my idea..
+18:06:28 <toratoraman> pls.. e-mail adres..?
+18:07:01 <manugupt1> What do you guys say about this?
+18:07:09 <suseROCKs> manugupt1,   no I'm asking what you mean by "write up"   an article?  an email? what?
+18:07:16 <manugupt1> An article
+18:07:19 <suseROCKs> toratoraman,   are you the one from Turkey?
+18:07:21 <manugupt1> on news.opensuse.org
+18:07:37 <toratoraman> yes. i m from Turkey
+18:08:00 <jospoortvliet> manugupt1: if you make a quick draft we'll make it sexy and push it
+18:08:02 <jospoortvliet> ok?
+18:08:15 <suseROCKs> jospoortvliet,   no you cannot add my picture to every article!
+18:08:27 <manugupt1> jospoortvliet, I will try it
+18:08:28 <toratoraman> and i had suse-tr.com web site
+18:08:40 <toratoraman> but.. Novell not support for Turkey..
+18:08:53 <manugupt1> also I wish to have sometime later an open week
+18:08:57 <suseROCKs> guys,  a brief moment please.    nmarques just referred toratoraman to us.  He is a gentleman from Turkey who wishes to represent openSUSE in his country.  Let's welcome him!
+18:09:10 <manugupt1> just like the one UBUNTU has
+18:09:24 <manugupt1> Hya toratoraman
+18:09:34 <amonthoth> wellcome toratoraman !
+18:09:52 <toratoraman> thanks..
+18:10:12 <tony2> toratoraman: Welcome! Are you saying the Turkish language (localization) or support or Novell/not openSUSE products is missing?
+18:10:20 <suseROCKs> toratoraman,  is looking for information on how he can communicate with us and get involved.  Let's give him some information now.
+18:10:20 <manugupt1> what do you say?
+18:10:55 <suseROCKs> manugupt1,    like the Community Week we used to have  or even the Collaboration Days we have?
+18:11:03 <jospoortvliet> manugupt1: just write :D
+18:11:46 <suseROCKs> manugupt1,   I mean we do have them periodically around here,  but you always say  "like Ubuntu has"  when we have them too.    I'm looking forward to the day when you say "like openSUSE has"  :-D
+18:12:14 <toratoraman> Novell does not give support to Turkey. i now using debain. and my team using debian and pardus
+18:12:47 <manugupt1> No open week is something where we teach people to use desktop and other noobish stuff
+18:12:56 <suseROCKs> toratoraman,   well  Forget about Novell.  We are openSUSE and we have our own support.   If we can help with better support, let us know.  But tell us what specific support you need.
+18:13:12 <suseROCKs> manugupt1,   again... what we have here from time to time   :-D
+18:13:30 <manugupt1> suseROCKs, when did we have it last
+18:13:35 <suseROCKs> we haven't had one in about a year I guess, but we have had  yes
+18:13:43 <tony2> toratoraman: OK I assume you mean you mean "localization" which means that all components and docs in the Turkish language. Someone should look into that
+18:13:51 <manugupt1> I want to revive it
+18:14:01 <manugupt1> Who all can help?
+18:14:07 <suseROCKs> manugupt1,   the biggest trick to arranging that is that most of the people participating are from Novell and thus Novell has to figure out which week to allow people to spend more time on a weeklong event than on their Novell tasks
+18:14:36 <suseROCKs> arrrgh  manugupt1   quit saying things like that  :-P    "revive" made it sound like it died.  It never died.  it just happens when there is time availability
+18:14:37 <manugupt1> suseROCKs, no It is one hour irc session
+18:14:42 <suseROCKs> time to be more positive
+18:14:56 <suseROCKs> yes manugupt1   one hour sessions spread out during the week.  That's what we did  :-D
+18:15:12 <manugupt1> But we need to forget Novell suseROCKs :)
+18:15:15 <suseROCKs> hence why its called "open week"  right?   cuz we have multiple one hour sessions
+18:15:47 <suseROCKs> no we don't in this context.  Novell employees have a lot of brainpower that they can help transfer to the community.
+18:16:08 <rtyler> AJaeger2: are you going to post something on lizards.o.o about the torrent numbers?
+18:16:16 <tony2> toratoraman: Re Turkish language support - You may be right, but if you want me to verify contact me offlist "tonysu@su-networking.com"
+18:16:33 <manugupt1> suseROCKs, do not agree we have tony2 tigerfoot the great brains
+18:16:42 <manugupt1> yaloki,
+18:16:47 <suseROCKs> tony2,     toratoraman  is asking to become an ambassador to help his community get more support within the community
+18:17:17 <lupinstein> :-)
+18:17:22 <suseROCKs> manugupt1,   and all of them can commit time?    you can't guarantee that.   Coordinating times is a hard thing.  Trust me.
+18:17:27 <suseROCKs> been there, done that several times
+18:17:30 <lupinstein> we have a few ppl that should answer that
+18:17:42 <manugupt1> suseROCKs, hmm ok..
+18:17:45 <suseROCKs> and oh yeah lupinstein  knows something about Turkey!
+18:18:02 <suseROCKs> manugupt1,   regardless  its still a good idea what you want to do.  But not in the context of this meeting
+18:18:20 <manugupt1> toratoraman, bhaskar12del might just be visiting turkey during summer
+18:18:21 <suseROCKs> and its a "just do it" thing.   If you think it should be done,  start writing up the outline for it and asking people to sign up for it.
+18:18:30 <manugupt1> suseROCKs, ok
+18:18:49 <suseROCKs> ok guys  anything else?
+18:19:04 <tigerfoot> no :-)
+18:19:13 <suseROCKs> oh come on tigerfoot
+18:19:22 <lupinstein> +1 tigerfoot
+18:19:36 <suseROCKs> surely you have a report about SL?
+18:19:41 * tigerfoot has a swiss cheese fondue to prepare & is really hungry
+18:19:58 <tigerfoot> suseROCKs: rtyler michal carloas, kostas are my writers :-)
+18:20:02 <suseROCKs> a fondue with holes in it?
+18:20:24 <tigerfoot> and a special report is ongoing ... jospoortvliet will have it tomorrow,
+18:20:25 <suseROCKs> ok then I'm going to wrap up if no one says anyting more in the next 30 seconds...
+18:20:36 <tigerfoot> then we will tell more about that ..
+18:20:39 * manugupt1 blabbers
+18:20:40 <tony2> Thx all guys. Good to hear from all of you.
+18:20:45 <tigerfoot> 20 sec
+18:20:46 <suseROCKs> 15 second warning
+18:20:52 <tigerfoot> 10 sec
+18:20:57 * lupinstein prays that no talks
+18:21:03 <suseROCKs> Thank you all!
+18:21:06 <suseROCKs> #endmeeting

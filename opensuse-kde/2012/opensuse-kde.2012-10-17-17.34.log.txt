@@ -1,0 +1,460 @@
+17:34:41 <tittiatcoke> #startmeeting
+17:34:41 <bugbot> Meeting started Wed Oct 17 17:34:41 2012 UTC.  The chair is tittiatcoke. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:34:41 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:35:11 <tittiatcoke> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+17:35:32 <tittiatcoke> Meeting topics for tonight are:
+17:35:45 <tittiatcoke> old action items
+17:35:50 <tittiatcoke> status report
+17:36:13 <tittiatcoke> KDE Improvements
+17:36:23 <tittiatcoke> Do we prefer now inlne patch-tags vs the old KDE patch annotaion policy
+17:36:28 <tittiatcoke> Bug Handling
+17:36:37 <tittiatcoke> Bug squashing session
+17:36:46 <tittiatcoke> Q&A, misc
+17:37:00 <tittiatcoke> anything else ?
+17:37:42 <tittiatcoke> #topic old action items
+17:38:07 <tittiatcoke> Action for all:   Check/Validate the Team tasklist
+17:38:17 <tittiatcoke> Have to admit that I didn't do anything on this one.
+17:38:49 <tittiatcoke> ctrippe, alin, einar77_work, tigerfoot ?
+17:38:55 <tittiatcoke> cb400f: ?
+17:39:19 <cb400f> hm, nope.. I added some ideas to the idea page
+17:39:32 <tittiatcoke> Ok. That is the third agenda point :-)
+17:39:52 <ctrippe> I've added a few things to the page, but there is more work to be done
+17:39:57 <tittiatcoke> Ok.
+17:40:00 <tigerfoot> tittiatcoke: not that  much to add, except we will miss you at Praha :-)
+17:40:08 <tittiatcoke> :-)
+17:40:09 <ctrippe> Quite a few things are alo outdated
+17:40:29 <tittiatcoke> ok. Let's keep it on the action list for the next meeting. Have to look at it properly
+17:40:47 <tittiatcoke> #action all Check/Validate the Team tasklist
+17:41:07 <tittiatcoke> Action 3:  NicoK send a list of packages in KR49 to tittiatcoke that needs working on.
+17:41:42 <tittiatcoke> Part of this was resolved with the update to 4.9.2. At least all the KDE packages are now properly linked to the packages in KDF and KDF is the main development repo again :-)
+17:42:01 <cb400f> does someone have a link to the task list?
+17:42:11 <tittiatcoke> cb400f: http://en.opensuse.org/openSUSE:KDE_Meeting_20120926
+17:42:26 <tittiatcoke> Action 4: tittiatcoke contact the maintenance team to discuss the possiblity to provide KDE point releases throught the maintenance workflow
+17:43:50 <tittiatcoke> I have good news here. The response from the maintenance team was very positive and they are fine with providing minor KDE updates through the maintenance channel. This means that for 12.3, we could ship it with 4.10.0 and then have updates to 4.10.1, etc through the standard maintenance channel. So KRxy would be fully replacing KDS.
+17:44:03 <alin> tittiatcoke: here I am
+17:45:12 <tittiatcoke> This is then for the main KDE packages. I would propose that bugfixes for KDE related packages (e.g. amarok, etc) are done in the same way. Starting from KRxy. Having updates from KUA could mean a major update instead of just bugfixes.
+17:45:54 <cb400f> won't KRxy have major updates of non-SC apps too?
+17:46:25 <ctrippe> I agree, however this means no major updated in KRxy IMHO
+17:46:37 <tittiatcoke> cb400f: If that would happen, then it means that with a bugfix the package has to be branched seperately then.
+17:46:52 <cb400f> ok
+17:47:06 <tittiatcoke> cb400f: But wouldn't we utilize KUA for major updates for non-SC apps ?
+17:47:45 <cb400f> I certainly think that's the best approach
+17:49:10 <tittiatcoke> Ok. So we provide minor KDE updates in KRxy and moving this forward through the maintenance channel for the respective distro. Major updates for non-SC apps are provided through KUA.  bugfixes for non-sc apps are provided in KRxy and then send through the maintenance channel.
+17:49:27 <Solaris444> Hi all, I'm here for the meeting.
+17:49:45 <Solaris444> Has it started yet?
+17:49:56 <tittiatcoke> Solaris444: Yes, we are in the old action items.
+17:50:02 <Solaris444> Ah ok.
+17:50:07 <Solaris444> Old action items including?
+17:50:20 <tittiatcoke> everybody aligned on the maintenance update procedure ?
+17:50:34 <alin> tittiatcoke: yap
+17:50:39 <cb400f> Solaris444: summary of last meeting: http://en.opensuse.org/openSUSE:KDE_Meeting_20120926
+17:50:50 <Solaris444> Thankyou.
+17:51:07 <Solaris444> OK, up to date.
+17:51:33 <ctrippe> tittiatcoke: yes
+17:52:28 <tittiatcoke> #decision minor KDE:SC release updates and bugfixes for non-SC packages will be done in KRxy repo and then forwarded to the maintenance channel for distro updates. Major updates for non-SC packages are provided through KUA.
+17:52:45 <tittiatcoke> action: tittiatcoke check with coolo the release calendar for 12.3 and when the freeze would be
+17:53:20 <tittiatcoke> I noticed that there was some discussion around the release calendar, but didn't had the time to follow up on this one. Will come back on this on the next meeting
+17:53:29 <tittiatcoke> #info postponed for the next meeting
+17:53:42 <tittiatcoke> action: tittiatcoke create a wiki page to list the items we need to do and create metabugs to used to list/tracke the ship-block bugs and nice-to-have bugs.
+17:53:42 <cb400f> no decision yet afaik.. will be discussed at the conf
+17:53:48 <tittiatcoke> cb400f: Ok :-)
+17:54:05 <cb400f> but I don't think the conf will even make the final decision.. there'll prolly be another discussion on -factory after that
+17:54:15 * cb400f wants to stick with 8 months
+17:54:16 <tittiatcoke> Most likely :-)
+17:54:37 <tittiatcoke> This action point is part of the agenda. Wiki page was created
+17:54:43 <cb400f> lots of tumbleweed conspirators are arguing for 12 months
+17:54:55 <tittiatcoke> :-) To make live easier for them
+17:55:17 <tittiatcoke> The action item regarding calligra was already resolved during the meeting.
+17:55:35 <tittiatcoke> That were the old action items. so lets move to the status reports
+17:55:41 <tittiatcoke> #topic Status reports
+17:55:55 <cb400f> and up-to-date calligra is now in KUA :-)
+17:56:03 <tittiatcoke> :-)
+17:56:07 <cb400f> yet to check if krita will run now
+17:56:15 <Solaris444> Status reports is only for existing work in progress right?
+17:56:20 <tittiatcoke> From my side, I can report that KR49, KDF and Factory are now having KDE 4.9.2
+17:56:21 <Solaris444> Apologies, this is my first meeting.
+17:56:40 <tittiatcoke> Solaris444: Status reports are related to whatever was done since the last meeting.
+17:56:53 <Solaris444> OK, thankyou.
+17:57:20 <tittiatcoke> Also I have pushed a new update into KUSC, which was published for 12.2 but for factory it is not building that fast :-(
+17:57:37 <tittiatcoke> Any other status reports ?
+17:57:38 <ctrippe> I have pushed a few online updates for 12.2
+17:58:37 <tittiatcoke> Ok
+17:59:18 <tittiatcoke> anything else ?
+17:59:48 <tittiatcoke> Ok. Lets move then to the next agenda item
+17:59:55 <tittiatcoke> #topic KDE Improvements
+18:00:06 <Solaris444> I have two issues to mention.
+18:00:09 <tittiatcoke> The list is on http://en.opensuse.org/KDE/KDE_improvements
+18:00:26 <tittiatcoke> Solaris444: go ahead
+18:01:02 <Solaris444> Thank you. In both 12.1 and 12.2, there are two glaring issues. Firstly, when KDE users try to log in, their first attempt almost always fails.
+18:01:40 <Solaris444> This really isn't good considering it is the first thing a user is going to do.
+18:01:41 <Solaris444> https://bugzilla.novell.com/show_bug.cgi?id=728554
+18:01:48 <bugbot> openSUSE bug 728554 in openSUSE 12.2 (Other) "first login attempt after boot always fails" [Critical,New]
+18:02:07 <cb400f> the meetings are not for discussing individual bugs
+18:02:20 <cb400f> aren't those issues specific to the nouveau driver?
+18:02:24 <Solaris444> No.
+18:02:37 <cb400f> .. never happened to me, but I've heard it a lot
+18:02:48 <Solaris444> I get the same with the radeonHD driver.
+18:02:51 <cb400f> (I'm on intel gfx)
+18:02:59 <cb400f> radeonhd is looooong dead
+18:03:06 <Solaris444> ok, well the radeon drivers.
+18:03:14 <Solaris444> Whichever the current open source drivers are.
+18:03:21 <Solaris444> Included in the distro.
+18:04:03 <Solaris444> In any case, my point was that the two first things the user tries to do 1) eject the install disc and 2) log in, do not work properly.
+18:04:07 <Solaris444> And have not for some time.
+18:04:37 <tittiatcoke> Solaris444: cb400f is correct. Discussing of bugreports should happen in the Q&A session at the end of the meeting
+18:04:47 <Solaris444> OK, I will wait until then.
+18:04:53 <tittiatcoke> Solaris444: Thanks :-)
+18:05:04 <tittiatcoke> Ok. Back the KDE Improvement lists.
+18:05:31 <tittiatcoke> Seems to be nicely growing with some good things there.
+18:05:58 <tittiatcoke> Who asked for the SFLPhone stuff ?
+18:07:27 <cb400f> me
+18:08:05 <cb400f> it seems like a decent skype alternative.. although they don't seem to have versions for OSX and MS Windows :-/
+18:08:20 <cb400f> not sure how good telepathy works as a sip client
+18:09:13 <tittiatcoke> cb400f: it seems that the KDE client of sflphone is seeing some developments and is hosted now on kde git. Which is good. Unfortunately I don't have any experience with either Skype nor Sflphone nor telepathy as SIP client.
+18:09:27 <tittiatcoke> At this moment I wouldn't put too much hope on telepathy as sip client :-)
+18:09:37 <cb400f> that's what I thought ;-)
+18:09:55 <Solaris444> It would be helpful not to have to use pidgin
+18:09:58 <cb400f> and since a commercial company is developing stuff in kde git I thought it'd be nice to support them a little bit
+18:10:04 <Solaris444> It doesn't get much attention from the dev these days.
+18:10:22 <Solaris444> Plus of course it's GTK and not QT
+18:10:27 <tittiatcoke> Ok. I will try to contact the maintainer of the common sflphone package to see if he/she is willing to push it to Factory. Then we can package the kde client
+18:10:36 <Solaris444> So Telepathy would make a nice replacement for it if it is functional.
+18:10:52 <Solaris444> Comments on stability of Telepathy?
+18:11:36 <tittiatcoke> Solaris444: I am running latest git of Telepathy and for normal chats it is quite stable and functional. Bad thing is that it still depends on gstreamer-0_10
+18:12:16 <Solaris444> Ah. Is there a move to change that?
+18:12:45 <tittiatcoke> Solaris444: Not at the moment.
+18:12:48 <tittiatcoke> alin: any news on that ?
+18:13:27 <cb400f> didn't todd decide to drop the component needing gstreamer?
+18:13:58 <cb400f> iirc only some non-critical component needed the nasty gstreamer stuff
+18:14:11 <tittiatcoke> cb400f: Yeah. That was the ktp-call-ui
+18:14:46 <Solaris444> Presumably this won't be removed in time for 12.3 though?
+18:15:13 <cb400f> yay, krita from kua starts
+18:15:52 <tittiatcoke> cb400f: Good :-)
+18:16:08 <cb400f> so at least we have a workaround for 12.2 users who need krita
+18:16:22 <tittiatcoke> Solaris444: KDE-Telepathy is not yet part of the distro at the moment
+18:17:05 <tittiatcoke> Ok. For the next meeting I would like to ask volunteers for each item on this Improvement list :-)
+18:17:20 <Solaris444> cb400f: I have a professional illustrator of children's books using Krita. I assume I can't update her to 12.2 for the time being?
+18:17:52 <adra> cb400f: actually it wasn't a krita bug but an opengtl one
+18:18:08 <cb400f> krita 2.4.x from the official distro segfaults on start... but she'd prolly want nice krita 2.5.2 from KUA anyway ;-)
+18:18:35 <Solaris444> Thanks.
+18:19:17 <ctrippe> cb400f: no see https://bugzilla.novell.com/show_bug.cgi?id=778260 which was fixed by adra, otherwise please reopen the bug
+18:19:19 <einar77> crap!
+18:19:21 <bugbot> openSUSE bug 778260 in openSUSE 12.2 (KDE4 Applications) "Krita crashes during start" [Major,Resolved: fixed]
+18:19:25 <einar77> I forgot about the meeting!
+18:19:33 <tittiatcoke> einar77: :-)
+18:19:34 <ctrippe> but I think we should go on with the meeting
+18:19:38 <cb400f> oh, was the patch shipped?
+18:19:39 <tittiatcoke> More people forgot about it
+18:19:50 <tittiatcoke> ctrippe: Yup :-)
+18:19:57 <adra> There is now an updated opengtl package for 12.2
+18:20:19 <einar77> We're stil on KDE improvements?
+18:20:23 <cb400f> awesome, hadn't noticed
+18:21:04 <tittiatcoke> #action all Assign yourself to the items on the Improvement list that you will take care off.
+18:21:21 <tittiatcoke> Ok. Lets move to the next agenda item.
+18:21:43 <tittiatcoke> #topic  inlne patch-tags vs the old KDE patch annotaion policy
+18:21:50 <tittiatcoke> ctrippe: This is your point :-)
+18:21:53 <ctrippe> That's from me.
+18:22:05 <einar77> WHat's the main difference between the two policies? Got some examples?
+18:22:24 <alin> tittiatcoke: yes... sorry I was away... atthe moment things are not ported to the new gstreamer...
+18:22:30 <tittiatcoke> alin: Ok
+18:22:36 <ctrippe> Will once told me that KDE would use the KDE patch annotation policy from http://en.opensuse.org/openSUSE:KDE_Patch_Annotation_Policy
+18:22:58 <ctrippe> However the in spec tags now seem to be the opensuse standard
+18:23:03 <alin> tittiatcoke: as the two 0_10 and 1.0 supposed to run in parallel shall be no problem once we fix the farstream issues...
+18:23:07 <cb400f> but 12.3 will have both gstreamer versions, right?
+18:23:14 <tittiatcoke> yes
+18:23:18 <cb400f> since afaik phonon isn't ported either
+18:23:24 <alin> cb400f: which will create a mess
+18:23:27 <tittiatcoke> cb400f: This might come sooner
+18:23:40 <cb400f> gstreamer = mess... 2x gstreamer = 2x mess
+18:23:44 <einar77> ctrippe: do you have a link to an openSUSE package with the spec tags?
+18:23:59 * einar77 used the KDE annotation policy atm
+18:24:39 <alin> cb400f: unfortunately in streamer case a and b != a+b but a+b+(a,b)
+18:24:52 <tittiatcoke> alin: Please take that one offline :-) We are on a new agenda item
+18:25:53 <tittiatcoke> ctrippe: I believe that the KDE annotation policy is moving all the documentation to the patch-file itself, while the openSUSE policy brings it back into the spec-file. Am I correct ?
+18:26:05 <ctrippe> tittiatcoke: yes
+18:26:29 <ctrippe> ANd to be honest I havened seen many patches really using this policy lately
+18:26:38 <tittiatcoke> Unfortunately Will isn't in the meeting. Guess he also forgot :-)
+18:26:44 <tittiatcoke> ctrippe: Which policy ?
+18:27:13 <ctrippe> tittiatcoke: To use tags in the patch
+18:27:25 <einar77> tittiatcoke: speak of the devil
+18:27:43 <ctrippe> One of the reasons I guess is that they are easily removed when using quilt
+18:27:44 <tittiatcoke> wstephenson: ping
+18:27:59 <wstephenson> pong
+18:28:01 <einar77> I think I've seen one made like that, but
+18:28:05 <tittiatcoke> wstephenson: Welcome to the meeting :-)
+18:28:08 <wstephenson> sorry, couldn't make it earlier
+18:28:12 <einar77> ctrippe: how are those generated?
+18:28:39 <tittiatcoke> wstephenson: We are just talking about the policy for annotation of patches. If we follow the KDE one or the openSUSE one
+18:29:30 <tittiatcoke> wstephenson: What would be your preference ?
+18:29:47 <wstephenson> tittiatcoke: personally i prefer the kde one. it's technically better
+18:30:09 <wstephenson> otoh the other one has established itself as a de facto 'standard' within the project
+18:30:31 <wstephenson> even if it was just because prusnak called it a standard
+18:30:44 <tittiatcoke> :-) Well at lot of people are now using it
+18:31:04 <wstephenson> we can call the kde one kernel standard if you want to feel better about it
+18:31:05 <wstephenson> yes
+18:31:12 <wstephenson> and there is tooling for it
+18:32:07 <tittiatcoke> wstephenson: But what stops us to combine both policies ? the openSUSE one indicates the usage of certain terminology in the spec-file, while the KDE one puts a lot of information in the patch file itself
+18:32:31 <tittiatcoke> Question is only if tools like quilt are used, is that information kept with the new patch or not ?
+18:33:13 <einar77> wstephenson: what kind of tools?
+18:34:44 <wstephenson> einar77: spec-file-cleaner
+18:34:52 <einar77> oh, right, now I remember
+18:35:09 <wstephenson> tittiatcoke: nothing! :)
+18:36:21 <tittiatcoke> Then let's combine it and provide as much info as possible. Maybe it would be good to make a kind of empty patchfile with the tags in the right place ?
+18:36:29 <einar77> +1
+18:37:04 <tittiatcoke> Everyone agrees ?
+18:37:22 <terietor> +1
+18:37:27 <ctrippe> +1
+18:37:53 <terietor> tittiatcoke there is no "-1", so everyone agrees :)
+18:38:01 <tittiatcoke> #decision KDE packages will combine the openSUSE and KDE patch annotation policies to provide optimal information.
+18:38:13 <wstephenson> it would be easy to script a patch-formatter to add the kde standard headers when we add a patch
+18:38:27 <tittiatcoke> wstephenson: Interested to create one ?
+18:38:39 <wstephenson> i have a python app somewhere that does it
+18:39:06 <tittiatcoke> wstephenson: :-) That sounds like you just volunteerd :-)
+18:39:14 <einar77> wstephenson: if you don't have time, send it my way and I can help
+18:39:39 <tittiatcoke> #action wstephenson einar77 create a patch-formatter to add the kde standard headers.
+18:39:48 <wstephenson> it does a bunch of other now useless stuff too (graphically cherrypicking commits from svn branches)
+18:40:20 <tittiatcoke> wstephenson: I leave it up to you what you want to keep in that formatter :-)
+18:40:51 <tittiatcoke> Ok. next agenda item.
+18:41:04 <tittiatcoke> #topic Bug handling
+18:41:11 <tittiatcoke> ctrippe: Again your item :-)
+18:42:06 <ctrippe> At the moment not too many people are looking at bnc for KDE bugs and most of the packages in KDF have kdemaintainer@suse as bugowner
+18:42:44 <Solaris444> What is the net result of that ctrippe?
+18:42:45 <ctrippe> I think it ould be useful if we would create a list of the KDF packages with one or two people feeling resopnsible for it
+18:43:15 <ctrippe> Maybe that would make it a bit less of a black hole
+18:43:30 <tittiatcoke> +1
+18:44:03 <tittiatcoke> wstephenson: is there anybody behind kdemaintainer@suse.com ?
+18:44:24 <ctrippe> To summarize the idea would be, that not everyone has to follow all KDE bug reports, but the people doing this, e.g. myself can assign or take the hopefully knowledgable person into CC
+18:44:38 <wstephenson> tittiatcoke: yes, it's manually maintained alias on our mailserver
+18:44:45 <wstephenson> basically all the old suse kde team
+18:44:52 <einar77> ctrippe: +1
+18:45:30 <wstephenson> ctrippe: that's a job that is a recipe for burnout, mind.
+18:46:18 <ctrippe> wstephenson: I know
+18:46:27 <wstephenson> seen it happen to a bunch of upstream bko guys
+18:47:02 <einar77> ctrippe: would it make sense to make the people "responsible" bugowners, or would it be too much?
+18:47:17 <tittiatcoke> wstephenson: any suggestion ?
+18:47:46 <cb400f> at least it might be good to have someone to point out the important bugs and the easily fixable suse specific ones
+18:47:55 <cb400f> like e.g. the krita crash
+18:48:06 <cb400f> so those don't get lost
+18:48:06 <tittiatcoke> somehow I feel more for keeping the alias, but to extend the alias with the full community team
+18:48:24 <einar77> tittiatcoke: a possibility
+18:48:33 <wstephenson> tittiatcoke: the problem with having too many people on a big job is nobody feels responsible
+18:48:41 <tittiatcoke> wstephenson: true
+18:49:05 <ctrippe> tittiatcoke: that can easily be achieved by everyone via following kdemaintainers in bugzilla
+18:49:06 <einar77> wstephenson: can more than one bugowner be set for a specific package?
+18:49:31 <tittiatcoke> An alternative could be is to discuss the new bug reports during the team meeting and then to assign a person to it.
+18:49:45 <ctrippe> tittiatcoke: That are too many
+18:50:07 <wstephenson> einar77: not sure
+18:50:13 <ctrippe> Especially at the bnc-screenign team assignes every bug which mentions KDE to us :(
+18:50:29 <ctrippe> Even for gnome apps
+18:50:51 <wstephenson> tittiatcoke: that would take forever during meetings and limit it to people who come to meetings...
+18:51:17 <wstephenson> we went through a few models with this in the kde team, when we still tried to care about all the bugs
+18:51:27 <wstephenson> eg having a rotating 'bug tsar' every week
+18:51:40 <tittiatcoke> Ok
+18:51:52 <wstephenson> or having queries that partition incoming bugs
+18:52:08 <wstephenson> eg "will takes all the bug numbers ending in 1,2,3" etc
+18:53:10 <wstephenson> i think a solution which could work is one which doesn't try to be perfect
+18:53:16 <tittiatcoke> :-)
+18:53:56 <wstephenson> but try to give all bugs a quick look at least
+18:54:17 <ctrippe> wstephenson: +1
+18:54:38 <wstephenson> i don't have a solution for this though :(
+18:54:38 <tittiatcoke> Ok. I would suggest that we take this as an action item for the next meeting. So that everybody can think about a good solution that works :-)
+18:55:08 <wstephenson> another thing we need to do is participate in the project bugzilla redesign process
+18:55:24 <wstephenson> so that delivers a system that meets this team's needs
+18:55:32 <tittiatcoke> wstephenson: Can you enlighten us on that one ?
+18:55:54 <wstephenson> discussions are underway to get a separate suse+opensuse bugzilla instance that we administer
+18:56:20 <wstephenson> with fine-grained product/components
+18:56:24 <tittiatcoke> I see.
+18:56:34 <wstephenson> i started a thread about it on -project
+18:57:12 <tittiatcoke> That would make our current discusion even more important. As that we would need to give the right input
+18:57:27 <wstephenson> exactly
+18:57:58 <tittiatcoke> Any deadlines known for that new instance ?
+18:58:08 <wstephenson> not afaik
+18:58:15 <tittiatcoke> Ok
+18:58:56 <wstephenson> i'm not sure what the state of the discussion is atm, there might be a BoF at osc12
+18:59:03 <tittiatcoke> Then let's think about this topic and discuss this further in the next meeting. I don't think that we are coming up with the right input this evening.
+18:59:10 <tittiatcoke> wstephenson: Ok.
+18:59:13 <wstephenson> ok
+18:59:23 <tittiatcoke> tigerfoot: As you will be at osc12, can you keep an eye on that ?
+19:00:05 <tittiatcoke> #action all Think about the current bug reporting/solving process and how it could be improved
+19:00:06 <wstephenson> who else is going?
+19:01:03 <tittiatcoke> I know maxlin will be there to present the new maintenance process for KDE, but he couldn't participate in tonights meeting
+19:01:06 <kokeroulis> me
+19:02:30 <tittiatcoke> kokeroulis: Maybe you can see if there is such a BoF and check out the discussion ? If you have the time for it of course
+19:02:53 * terietor will also be in osc2012
+19:03:17 <kokeroulis> ok. i will
+19:03:49 <tittiatcoke> kokeroulis: You might want to check with tigerfoot and terietor about their schedules. Just in case you are not able to participate.
+19:04:14 <tittiatcoke> at least with three people there we stand a good change that at least one could participate
+19:04:34 <kokeroulis> ok
+19:04:38 <tittiatcoke> Thanks
+19:05:24 <tittiatcoke> #action kokeroulis, terietor, tigerfoot  Validate if there is BoF session at osc12 regarding a new bugzilla instance for openSUSE and if possible participate.
+19:05:30 <tittiatcoke> Next topic. :-)
+19:05:47 <tittiatcoke> #topic bug squashing session for closure of 11.4 bugs.
+19:05:49 <ctrippe> That's me again :)
+19:05:57 <tittiatcoke> ctrippe: You are popular :-)
+19:06:09 <tittiatcoke> ctrippe: Wouldn't it be much easier just to close those bugs ?
+19:06:11 <tittiatcoke> :-)
+19:06:35 <Solaris444> How much longer is 11.4 supported for?
+19:06:46 <tittiatcoke> Solaris444: Supports ends on November 5
+19:06:47 <ctrippe> tittiatcoke: If we think this should be done. That would be fine for me
+19:07:16 <einar77> I would support the closure IMO
+19:07:21 <Solaris444> Question then. Why bother squashing bugs for a distro that's out of support in what... 3 weeks?
+19:07:33 <tittiatcoke> ctrippe: Just a quick thought :-) But please explain your thinking here
+19:07:36 <wstephenson> so anything valid doesn't get lost
+19:08:33 <ctrippe> Actually: There might very well be suse spefic bugs which might get lost
+19:08:42 <einar77> what about organizing a bug day or something to close stuff that's already fixed, or won't be fixed because things in 12.1+ changed, and keep the ones still valid?
+19:08:51 <ctrippe> For 11.3 I at least found 20-3ß bgs stillv alid for 12.1 when I cleaned them up
+19:09:13 <Solaris444> Fair enough.
+19:09:35 <ctrippe> einar77: yes, that was actually my intention. I only thought the end of 11.4 would be good timing for this
+19:09:36 <tittiatcoke> A bug day sounds good.  einar77 Interested in organizing it ?
+19:10:11 <ctrippe> We have some wiki packages already explaining the todos
+19:10:43 <einar77> tittiatcoke: I fear I might not be able to be around to actually help, as weekends are mostly off-limits for most stuff
+19:11:02 <einar77> I could help with collateral such as announcements, blog posts etc, though
+19:11:04 <wstephenson> actually cwh was supposed to be organising one before we got stuck with 12.2 release publicity
+19:11:23 <wstephenson> so i should be able to get some opensuse team time on it, during the week
+19:11:24 <tittiatcoke> einar77: That would be more than sufficient already :-)
+19:11:30 <ctrippe> I am also mostly available in the evening during the week
+19:11:58 <tittiatcoke> I guess we don't have to necessarily do it during one day. We could also agree on a longer period
+19:12:04 <ctrippe> I would prepare the wiki pages which were used for the last KDE specific bug sessions
+19:12:51 <tittiatcoke> ok. May I then assign the action of organizing the bug squashing period to ctrippe and einar77 ?
+19:13:16 <einar77> tittiatcoke: let's say yes for now, I hope I can keep up
+19:13:18 <ctrippe> Fine for me.
+19:13:50 <tittiatcoke> #action einar77, ctrippe  Organize a bug squashing for the KDE bugs in 11.4.
+19:14:25 <tittiatcoke> As that there were no more agenda items, I would like to move to the Q&A, Misc part.
+19:14:34 <tittiatcoke> #topic Q&A, Misc
+19:14:49 <tittiatcoke> Solaris444: You had to wait so long for it, so I would say go ahead with your two bug reports :-)
+19:14:54 <Solaris444> THankyou
+19:14:55 <Solaris444> :)
+19:15:20 <Solaris444> OK well, there are two issues that have been in the last two releases that I don't think should have ever made it into final in either version.
+19:15:45 <tittiatcoke> Which two issues ?
+19:15:50 <Solaris444> Firstly, users are unable to eject optical discs via the GUI without the tray automatically reclosing.
+19:16:02 <Solaris444> https://bugzilla.novell.com/show_bug.cgi?id=659153
+19:16:04 <cb400f> I think the login issue is related to typing too fast
+19:16:07 <bugbot> openSUSE bug 659153 in openSUSE 12.2 (KDE4 Workspace) "Ejecting Optical Drives Causes Immediate Re-Close of Tray and KNotify Crash" [Critical,Reopened]
+19:16:33 <Solaris444> KNotify no longer crashes, and the issue was briefly fixed in one of the 12.2 milestones, but then reappeared in the release candidate I think.
+19:16:46 <cb400f> I have been logging into kde succesfully from kdm a million times on 12.1 and 12.2.. but if I type to fast initially for some strange reason keypresses get lost
+19:16:49 <Solaris444> It's been in for nearly 2 years.
+19:17:04 <Solaris444> I'll get to that one cb400f
+19:17:30 <Solaris444> It seems to me that it is a basic point of functionality that ejecting optical drives should work.
+19:18:01 <Solaris444> That's the first one.
+19:18:16 <einar77> Solaris444: to be honest I can't see this in current master
+19:18:26 <Solaris444> einar77: It is there. I assure you.
+19:18:37 <Solaris444> On every system I have tested.
+19:18:42 <Solaris444> Intel, AMD...
+19:18:46 <tittiatcoke> Solaris444: Which KDE version ?
+19:18:53 <einar77> Solaris444: I'm not using released code
+19:18:58 <Solaris444> The one that ships with release.
+19:19:09 <cb400f> wasn't the cd issue isolated to udisks?
+19:19:10 <Solaris444> So 4.8.5 at the current time.
+19:19:40 <cb400f> maybe it'll be fixed with udisks2
+19:19:42 <Solaris444> sysctl dev.cdrom.autoclose
+19:19:47 <einar77> 12.3 will use udisks2 indeed
+19:19:58 <Solaris444> But it was dependent on another bug as well.
+19:20:09 <einar77> fedora did it and tittiatcoke made it build
+19:20:23 <Solaris444> Surely it can be fixed in the current release though? Considering it was fixed for a period of time and then reappeared?
+19:20:36 <Solaris444> Perhaps somebody accidentally reverted something?
+19:21:27 <tittiatcoke> Solaris444: I will check with cartman to see what the issue is with it and why it got back in again during the final 12.2. Let's prevent it from popping up again for 12.3
+19:21:36 <Solaris444> Indeed.
+19:21:40 <Solaris444> OK, second bug.
+19:21:42 <Solaris444> The login issue.
+19:21:51 <einar77> login issues being?
+19:22:03 <cb400f> https://bugzilla.novell.com/show_bug.cgi?id=728554
+19:22:08 <Solaris444> The first login attempt almost always fails when using KDE einar77.
+19:22:08 <bugbot> openSUSE bug 728554 in openSUSE 12.2 (Other) "first login attempt after boot always fails" [Critical,New]
+19:22:16 <cb400f> I get that too.. I have to type sloooow at kdm
+19:22:30 <tittiatcoke> #action tittiatcoke check with cartman with regards to bug #659153
+19:22:30 <bugbot> openSUSE bug 659153 in openSUSE 12.2 (KDE4 Workspace) "Ejecting Optical Drives Causes Immediate Re-Close of Tray and KNotify Crash" [Critical,Reopened] https://bugzilla.novell.com/659153
+19:22:32 <cb400f> but it's become a habit.. so I don't even think about it anymore
+19:22:40 <Solaris444> Right. It may not be specifically related to typing speed though.
+19:23:21 * tigerfoot sorry feeding bags with stuff for osc ... but will keep an eyes on the bof about bugzilla
+19:23:23 <cb400f> something is clearly fscked up... but if I wait about 2-3 seconds between char 1 and char 2, there's no problem
+19:23:24 <Solaris444> Henryk mentions that the keypresses are being read.
+19:23:36 <Solaris444> And looked up.
+19:23:40 <Solaris444> But then dropped somewhere after that.
+19:23:53 <Solaris444> And that the problem doesn't occur with the default them.
+19:23:55 <Solaris444> *theme
+19:24:02 <Solaris444> Only with the SUSE theme.
+19:24:14 <cb400f> ah, well that's useful info
+19:24:27 <Solaris444> Assuming my understanding is correct anyway.
+19:24:59 <cb400f> what's the status of lightdm and qml kdm themes and whatnot?
+19:25:11 <einar77> cb400f: kdm is unmaintained, period
+19:25:38 <einar77> my bets would be to evaluate lightdm and its kde greeter
+19:25:44 <cb400f> any chance lightdm will be ready for 12.3?
+19:25:45 <cb400f> ah
+19:25:55 <einar77> cb400f: I use  it daily currently
+19:26:04 <einar77> but I don't use any fancy auth method
+19:26:12 <Solaris444> einar, does it display a clickable user list?
+19:26:25 <tittiatcoke> cb400f: There is a kde theme for lightdm available. einar77, alin and myself are using lightdm with good results. It seems that it can work also without consolekit, but at the moment the KDE theme requires a higher version of lightdm
+19:26:26 <einar77> Solaris444: one of the themes, yes
+19:26:46 <einar77> there's a bug being worked on for icons
+19:27:07 <cb400f> tittiatcoke: do you know if it has all the fancy "enterprise" features like ActiveDirectory login and all that nasty crapola
+19:27:20 <einar77> cb400f: it should be handled either by plugisn or by something underneath
+19:27:29 <einar77> it needs a patch to work with systemd without consolekit
+19:27:36 <einar77> we'll see once the new systemd hits factory
+19:27:42 <einar77> ok folks, time for me to go off
+19:27:48 <einar77> I'll check the rest of the meeting notes in the ML
+19:27:50 <einar77> see you!
+19:27:58 <Solaris444> Thanks
+19:28:40 <tigerfoot> thx einar77 ..
+19:28:49 <tittiatcoke> cb400f: Don't know. Have to check that one. But this is more for lightdm then the greeter
+19:28:54 <Solaris444> It's about time for me to go too, but I would like to point out that for a desktop distro, these kinds of bugs that affect the experience of every user really should take highest priority.
+19:29:33 <Solaris444> Not being able to login or eject cds are pretty big oopses for a PC.
+19:29:50 <Solaris444> Not so crucial for a headless server running SSH.
+19:30:00 <Solaris444> But definitely for a desktop distro.
+19:30:34 <cb400f> no one is unable to do those things.. there are just some minor annoyances
+19:30:52 <cb400f> like typing slower... and pressing the hardware eject button instead of clicking the mouse
+19:31:47 <Solaris444> cb400f: You can't explain that to somebody who isn't at least a power user.
+19:32:03 <Solaris444> You can repeat your instructions to type slower until you a blue in the face and it will make no difference.
+19:32:18 <cb400f> noobs would use autologin.. and they would have a laptop without a retractable cd tray :-)
+19:32:18 <Solaris444> They aren't going to understand.
+19:32:23 <wstephenson> I've never been able to reproduce it
+19:32:32 <Solaris444> Yes but they won't use autologin on a laptop.
+19:32:37 <wstephenson> if I did have a reliable way to do so , we could start actually fixing it
+19:32:49 <Solaris444> will, have you tried on actual hardware?
+19:33:00 * kokeroulis was either able to reproduce the issue with the typing
+19:33:01 <cb400f> wstephenson: which one can't you reproduce.. the cd or the login?
+19:33:07 <wstephenson> the login
+19:33:35 <cb400f> hm.. maybe it's specific to some gfx drivers or sumfink.. I have had it with intel 945 gfx on 12.1 and 12.2
+19:33:46 <wstephenson> Solaris444: yes, 3 machines
+19:33:53 <cb400f> using default kdm theme and official kde versions
+19:33:54 <Solaris444> Plus cb400f, using autologin doesn't help where the computer is the family PC and the kids have different logins to stop them fighting.
+19:33:59 <kokeroulis> *me too. i had never that issue with the login
+19:34:03 <wstephenson> i could resurrect my 945 x60...
+19:34:30 <Solaris444> Will, what about USB keyboards vs PS2?
+19:34:54 <cb400f> usb kb here
+19:35:20 <Solaris444> Surely somebody there must have a machine they can show you will.
+19:35:28 <cb400f> pretty sure it's the same with the built-in laptop kb... dunno if that's technically connected via usb
+19:35:46 <wstephenson> Solaris444: 2x laptop, i suspect they are on the ps2 bus still..
+19:35:56 <Solaris444> *nods*
+19:36:01 <wstephenson> and usb on the desktop
+19:36:48 <Solaris444> Well, I can't offer much more. Perhaps check with Henryk in the bug report? He seems to have looked into it fairly extensively.
+19:37:50 <Solaris444> its very late here, I'm sorry but I have to go. Thanks for your time chaps. I'll try to check in on the next meeting.
+19:38:17 <kokeroulis> moving to next bug?
+19:38:32 <tittiatcoke> kokeroulis: Is there another one ?
+19:38:50 <kokeroulis> yes
+19:38:55 <tittiatcoke> kokeroulis: Then shoot :-)
+19:39:00 * kokeroulis is searching for the bnc number
+19:39:25 <kokeroulis> the bug is the 780763
+19:39:40 <kokeroulis> http://bugzilla.novell.com/780763
+19:40:04 <kokeroulis> wstephenson has told me that on Qt 4.8.3 the issue was going to be fixed. but it didn't..
+19:40:30 <kokeroulis> i have found an upstream bug on the jira of qt-project and i have package it.
+19:40:49 <kokeroulis> here is the link https://build.opensuse.org/package/show?package=libqt4-devel-doc&project=home%3Akokeroulis%3Abranches%3AKDE%3AQt
+19:41:16 <wstephenson> did you submitrequest the change?
+19:42:03 <kokeroulis> wstephenson: no. because i wanted to ask you first. because you said that it will be fixed on Qt 4.8.3..
+19:42:58 <kokeroulis> ok. so i will create a submit request..:)
+19:43:13 <tittiatcoke> kokeroulis: I guess you should rebase your patch on Qt 4.8.3 and submit it to KDE:Qt. I saw in your repo that the build for Factrory/x86_64 failed
+19:43:19 <wstephenson> kokeroulis: is it fixed for you? assistant works for me with 4.8.3 now
+19:43:30 <wstephenson> but i can't remember if it worked for me with older versions
+19:44:24 <kokeroulis> wstephenson: on the first run of the assistant there is no crash but on the second there is a crash
+19:44:35 <wstephenson> kokeroulis: ok, reproduced
+19:44:52 <wstephenson> looks like the fix did not get merged into 4.8.3 then
+19:45:25 <kokeroulis> tittiatcoke: yes but why... i don't what could cause the package from failing to build...
+19:45:36 <kokeroulis> *i don't know what
+19:45:54 <tittiatcoke> :-) Maybe a retrigger of the build could resolve it. Sometimes things are failing for mysterious reasons
+19:46:23 <kokeroulis> ok. so i will retrigger the build and i will submit the request tomorrow morning.
+19:46:24 <kokeroulis> ok?
+19:46:41 <tittiatcoke> Ok
+19:46:57 <tittiatcoke> wstephenson: Is Dirk still taking care of the KDE:Qt repos ?
+19:47:48 <tittiatcoke> Ok. Anything else for the meeting ?
+19:48:25 <tittiatcoke> Then lets end the meeting for today :-)
+19:49:12 <tittiatcoke> Thank you all for participating and I will plan the next meeting for 31 October (in 2 weeks)
+19:49:26 <tittiatcoke> #endmeeting

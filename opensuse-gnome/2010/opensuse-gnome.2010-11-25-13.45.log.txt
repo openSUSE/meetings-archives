@@ -1,0 +1,320 @@
+13:45:43 <metalgod> #startmeeting openSUSE GNOME Team Meeting
+13:45:43 <bugbot> Meeting started Thu Nov 25 13:45:43 2010 UTC.  The chair is metalgod. Information about MeetBot at http://wiki.debian.org/MeetBot.
+13:45:43 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+13:45:59 <metalgod> welcome to the GNOME team meeting
+13:46:02 <bittin> thanks
+13:46:03 <metalgod> first topic
+13:46:17 <metalgod> #topic Feature/Future plans for openSUSE 11.4 (vuntz)
+13:46:59 <metalgod> ok so let's discuss Feature/Future plans for 11.4
+13:47:10 <metalgod> vuntz: what we have done right now ?
+13:47:38 <vuntz> soo
+13:48:01 <vuntz> this is tracked at http://en.opensuse.org/openSUSE:GNOME_features
+13:48:34 <vuntz> since last meeting, I'm not sure we got a lot of changes
+13:48:39 <vuntz> we got rid of hal by default
+13:49:09 <vuntz> and we kept updating a few components for gnome-shell, to make it easier to do the gnome 3 spin later on
+13:49:11 <metalgod> you are working on suseconfig too afaik
+13:49:28 <vuntz> not much progress there
+13:49:39 <vuntz> I need to fix the rpmlint checks I introduced and the rpm macros
+13:50:09 <vuntz> but if you look at the suseconfig things that are left in openSUSE for GNOME, it's only desktop-file-utils and glib2
+13:50:16 <vuntz> we got rid of gdm and gtk
+13:50:18 <metalgod> ok... i think this is really an important feature so we can maintain some compatibility with fedora/mandriva rpm's
+13:50:35 <vuntz> so yeah, it's moving a bit slowly
+13:50:40 <metalgod> ok
+13:50:47 <metalgod> so what about GNOME 3.0 repository ?
+13:51:10 <metalgod> afaik it's going to G:Unstable
+13:51:12 <vuntz> I think it's worth mentioning that for this cycle, our two big focus are new packages and cleanup of old packages. Since we'll have an old gnome for the release, new features are not necessarily something easy to do
+13:51:24 <vuntz> metalgod: we don't have a repo yet
+13:51:32 <vuntz> I think we can start putting stuff in G:U, indeed
+13:51:45 <vuntz> so if anybody wants to update packages to 3.0, they're welcome to submit them to G:U
+13:51:53 <fcrozat> (and I need to restart my GNOME shell GIT stuff)
+13:52:03 <vuntz> now that we got 2.32.1 in, we should have no big updates anymore, so we can have time to work on this
+13:52:04 <peter_xos> x ready
+13:52:06 <peter_xos> er
+13:52:15 <vuntz> DimStar: am I missing anything?
+13:52:19 <metalgod> fcrozat: can you submit some of your gnome-shell work to G:U ?
+13:52:21 * peter_xos has gimp 2.7.x ready in home:mrdocs
+13:52:24 <DimStar> I think that's summing it up.
+13:52:25 <psankar> vuntz, new packages list is available at http://en.opensuse.org/openSUSE:GNOME_new_packages ?
+13:52:44 <fcrozat> metalgod: I need to resync with with git. And I'll push needed one to G:U
+13:52:57 <metalgod> fcrozat: awesome... thanks
+13:53:34 <bittin> Replace gnomesu by something more modern: me votes for gksu-polkit
+13:53:35 <metalgod> ok
+13:53:38 <vuntz> psankar: yes
+13:53:52 <vuntz> bittin: yeah, that's the plan, but we need to chat with the security team
+13:54:02 <vuntz> bittin: I started this but didn't get much answer from them
+13:54:06 <metalgod> /me just updated the http://en.opensuse.org/openSUSE:GNOME_features page wrt HAL removal
+13:54:11 <bittin> ah ok
+13:54:11 <vuntz> bittin: or, actually
+13:54:20 <vuntz> bittin: the plan is to move to pkexec
+13:54:26 <vuntz> (gksu-polkit was the old plan :-))
+13:54:27 <bittin> ah
+13:54:39 <vuntz> if anybody wants to help with that, I have a list of things to fix
+13:54:41 <bittin> i guess thats fine to :)
+13:54:46 <psankar> metalgod, you may note that discussion with security team as an AI ?
+13:55:10 <metalgod> psankar: why not ? you and vuntz ?
+13:55:19 <psankar> metalgod, sure
+13:55:49 <metalgod> #action psankar Talk with the security team about gnomesu replacement for Yast
+13:56:04 <metalgod> #action vuntz Talk with the security team about gnomesu replacement for Yast
+13:56:17 <metalgod> soooo let's move to the next topic
+13:56:25 <psankar> vuntz, I wikk take that and relieve you for the rest :-)
+13:56:30 <psankar> *will
+13:56:39 <metalgod> #topic openSUSE Conference and Project Update (vuntz, Captain Magnus, Dimstar)
+13:57:02 <vuntz> psankar: heh
+13:57:06 <metalgod> so this is the first meeting after the conference
+13:57:36 <psankar> I saw not many pictures of our openSUSE GNOME team from the conference. So any pictures ? and also anything to convey from the conference ?
+13:57:54 <metalgod> vuntz: captain_magnus and DimStar or anyone i'm missing (sorry) that were at the conference can you please summarize what happened at the conference ?
+13:58:09 <psankar> from a GNOME perspective that is.
+13:58:15 <metalgod> happy moments, coding momentsm anything you like to add
+13:58:31 <vuntz> unfortunately, captain_magnus couldn't make it :/
+13:58:37 <bittin> i was not there as its expansive to go from Sweden, might go some other time tough
+13:58:37 <vuntz> so, what happened...
+13:58:38 <vuntz> hrm
+13:58:43 <psankar> :(
+13:58:46 * vuntz looks at DimStar ;-)
+13:58:56 <psankar> no icecream deathmatch ?
+13:59:05 <DimStar> vuntz: hmm... I think the most note-worthy was the discussion with 'legal' for the codec installer / search
+13:59:27 <vuntz> right
+13:59:36 <vuntz> want to summarize it? Or want me to do it?
+13:59:47 <DimStar> you have the niceer accent :)
+13:59:49 <metalgod> vuntz: summarize please
+14:00:28 <vuntz> we had a long  chat with the legal team during the party
+14:00:47 <vuntz> we explained what we can do (from a technical pov) and they explained what we can't do (from a legal pov)
+14:01:09 <vuntz> we kind of found a middle-ground that would make installation of codecs easier
+14:01:42 <vuntz> that need some work in gnome-packagekit, as well as a search engine for packages that can answer queries like "whatprovides"
+14:02:46 <vuntz> don't really want to enter in all the details here
+14:02:57 <vuntz> I guess I should really just write the summary of the discussion to the mailing list
+14:03:04 <psankar> okay
+14:03:09 <metalgod> fine
+14:03:09 <vuntz> I don't think we can implement all this for 11.4, though
+14:03:20 <psankar> anything came from the KDE folks ?
+14:03:22 <vuntz> looks like we're a bit short in time
+14:03:34 <vuntz> they weren't able to join the discussion, iirc
+14:03:38 <psankar> okay
+14:04:08 <vuntz> but since it's really gstreamer-centric, I'm not sure it would work well for kde
+14:04:15 <psankar> okay okay
+14:04:28 <metalgod> vuntz: there was a big GNOME representation at the conference ?
+14:04:56 <vuntz> it was okay
+14:05:16 <psankar> did anyone from SLED team came ?
+14:05:44 <metalgod> psankar: sreeves_out i think
+14:05:58 <psankar> ah yes. saw a talk by him on pulseaudio iirc
+14:06:00 <metalgod> he talked about PA
+14:06:00 <DimStar> yes, sreeves was there.
+14:06:10 <metalgod> ok
+14:06:12 <psankar> i think we cna move to next.
+14:06:13 <vuntz> (sorry, keyboard break :-))
+14:06:22 <metalgod> next topic
+14:06:34 <metalgod> #topic Bugday plans or Updates (Should call Alexander ? Vuntz)
+14:06:49 <metalgod> psankar: i'm going to remove the topic about meeting minutes
+14:06:55 <metalgod> we'll talk later
+14:06:57 <vuntz> bug day plans
+14:06:59 <psankar> metalgod, ah okay
+14:06:59 <vuntz> easy
+14:07:06 <vuntz> on saturday, we do a bug day about old bugs
+14:07:13 <vuntz> from 10.2 to 11.0
+14:07:21 <vuntz> if people want to help, please join #opensuse-bugs
+14:07:31 <psankar> neat
+14:07:33 <vuntz> I know we have tons of old GNOME Bugs, so help welcome
+14:07:42 <metalgod> vuntz: mostly closing market /obsolete/fixed/needinfo
+14:07:44 <metalgod> ?
+14:07:50 <psankar> and upstream ?
+14:08:10 <vuntz> yes
+14:08:17 <vuntz> it's mostly obsolete/fixed
+14:08:24 <psankar> okay
+14:08:26 <vuntz> or if bug is still valid, forward upstream and close as upstream
+14:08:37 <metalgod> perfect
+14:08:53 <metalgod> i wonder if someone can write a guideline for new contributors to help
+14:08:55 <metalgod> would be nice
+14:09:02 <vuntz> that's something I want to do tomorrow
+14:09:06 <vuntz> we need doc for the bug day
+14:09:49 <metalgod> ok
+14:09:50 <metalgod> next topic
+14:09:56 <bittin> :) i can translate doc to swedish
+14:09:59 <bittin> if needed
+14:10:08 <metalgod> #topic Any updates or call-for-help from Meego camp ? (FunkyPenguin, fcrozat)
+14:10:09 <bittin> next
+14:10:42 <metalgod> FunkyPenguin: fcrozat soooo how goes meego ?
+14:11:12 <fcrozat> I can't comment on smeegol, sorry
+14:11:29 <fcrozat> (ie I don't follow it)
+14:11:36 <psankar> I think we can skip it.
+14:12:01 <metalgod> FunkyPenguin: around ?
+14:12:12 <FunkyPenguin> ooh is it meeting time already
+14:12:14 <bittin> smeegol seems cool but i haven't touched it yet
+14:12:14 <FunkyPenguin> sorry
+14:12:22 <bittin> FunkyPenguin it seems so :p
+14:12:23 <FunkyPenguin> metalgod, yes ive got an update
+14:12:29 <psankar> ah good
+14:12:37 <FunkyPenguin> ok i've started to get things updated to 1.1
+14:12:47 <FunkyPenguin> almost there
+14:13:25 <FunkyPenguin> i need to redo the icon theme as intel re-licensed it from CCBYSA to proprietary :(
+14:13:38 <FunkyPenguin> thankfully hbons has given me what i need to do so
+14:13:42 <DimStar> can't you take the set as before it was relicnesed :)
+14:14:06 <FunkyPenguin> well as it happens i thought i had for 1.0, but have been corrected ;)
+14:14:25 <psankar> FunkyPenguin, we cant make noise about it ? and make them reopen it ?
+14:14:36 <FunkyPenguin> DimStar, basically that is what im going to do, but i want to add the yast specific icons to the source properly
+14:14:40 <fcrozat> psankar: I wouldn't expect a change from them
+14:14:47 <psankar> fcrozat, oh okay.
+14:14:55 <fcrozat> intel wants to protect MeeGo brand
+14:15:02 <psankar> hrmmm.
+14:15:09 <fcrozat> and usage of the icon theme is limited to MeeGo compliannce
+14:15:19 * psankar jopes meego doesnt follow the footsteps of iFolder
+14:15:22 <psankar> *hopes
+14:15:34 <FunkyPenguin> as far as packaging goes 32bit builds almost fine, 64bit needs some patches
+14:15:38 <metalgod> psankar: at least ifolder got open sourced again
+14:15:47 <psankar> metalgod, no comments.
+14:15:54 <metalgod> eheh
+14:15:56 <metalgod> ok
+14:16:04 <metalgod> FunkyPenguin: any call for help »?
+14:16:42 <FunkyPenguin> err yeah - if folk can help fix the packaging of the handful of packages that would be great - about 6 in total
+14:17:03 <FunkyPenguin> my next issue is how to go about reorganising the repos
+14:17:22 * metalgod tries to get a netbook to help FunkyPenguin
+14:17:39 <FunkyPenguin> im not convinced that smeegol/meego will make it into the core distro as it depends heavily on chromium
+14:18:06 <FunkyPenguin> but if i can get someone to help get firefox supported in the same way then we have a chance
+14:18:18 <metalgod> FunkyPenguin: can you explain better ?
+14:18:28 <FunkyPenguin> i spoke to wolfiR about it at the conference, and he doesnt have any time etc
+14:19:06 <FunkyPenguin> metalgod, basically chromium is the default browser, and it integrates with the web panel app
+14:19:09 <fcrozat> hmm, only the internet tab on meego is depending on chromium IIRC
+14:19:13 <psankar> i believe there may be someone in SLED for firefox (/me once applied for that post). so pinging sshaw or sreeves_out may give some help
+14:19:39 <FunkyPenguin> fcrozat, correct but that is part of the experience
+14:19:55 <metalgod> FunkyPenguin: so what's wrong in putting chromium in core ?
+14:19:57 <FunkyPenguin> psankar, i think bgmerril is the man youre thinking of
+14:20:03 <wolfiR> hrosik (Petr Cerny) is more or less responsible for internal stuff
+14:20:09 <psankar> FunkyPenguin, okay.
+14:20:20 <FunkyPenguin> chromium is too fast a moving target
+14:20:24 <wolfiR> bgmerrel has left Novell months ago
+14:20:34 <FunkyPenguin> oh really?
+14:21:02 <FunkyPenguin> i wonder if jpr can advise then
+14:21:15 <metalgod> FunkyPenguin: but can't someone select a chromium release from 8.0 (beta) to add to the core ?
+14:21:19 <metalgod> i don't see any problem
+14:21:38 <FunkyPenguin> maybe, will need to speak to prusnak & tittiatcoke
+14:21:45 <FunkyPenguin> they look after it in contrib
+14:21:47 <wolfiR> FunkyPenguin: would be nice if you could write up some kind of specification
+14:21:53 * prusnak here
+14:22:06 <FunkyPenguin> wolfiR, ok i'll try
+14:22:27 <FunkyPenguin> wolfiR, i didnt meant to make it sound like you were dismissing me
+14:22:31 <FunkyPenguin> i know you're busy
+14:22:46 <FunkyPenguin> so basically to sum up the smeegol update...
+14:22:55 <wolfiR> it actually doesn't sound like a very easy task, and that's where the time constraints come in
+14:23:10 <FunkyPenguin> ... im hoping to release 1.1 by the end of the year
+14:23:46 <metalgod> FunkyPenguin: anything you want to add more to this topic ?
+14:23:49 <FunkyPenguin> vuntz, would it be possible to rename smeegol to gnome netbook?
+14:23:57 <vuntz> FunkyPenguin: hrm
+14:24:02 <FunkyPenguin> or NetbookGNOME ?
+14:24:02 <metalgod> FunkyPenguin: gnome-netbook ?
+14:24:04 <vuntz> FunkyPenguin: don't know
+14:24:10 <fcrozat> why GNOME ?
+14:24:20 <metalgod> i'm not sure if meego as anything to do with GNOME
+14:24:34 <metalgod> even more with them porting apps to Qt
+14:24:49 <bittin> i think smeegol is a great name
+14:24:52 <prusnak> FunkyPenguin: if you are forced to change Smeegol name I would go back to Goblin
+14:24:55 <psankar> +1
+14:25:00 <bittin> +1
+14:25:01 <prusnak> but otherwise i would stick to Smeegol
+14:25:04 <FunkyPenguin> yeah ok
+14:25:11 <FunkyPenguin> i was just thinking out loud
+14:25:35 <metalgod> goblin is nice
+14:25:42 <FunkyPenguin> well im still waiting on the LinuxFoundation, Intel & Nokia to respond to my questions
+14:25:44 <metalgod> or openSUSEgo
+14:26:17 <psankar> metalgod, '$ME'go ;-) ? (bad joke) I think we can move to next.
+14:26:45 <metalgod> psankar: ouch it reminded me perl
+14:26:47 <metalgod> ok
+14:26:49 <metalgod> people
+14:26:50 <metalgod> next topic
+14:27:12 <metalgod> #topic Packaging needs for 11.4 (everyone)
+14:27:29 <psankar> i think vuntz covered it in the previous url. so we can skip it.
+14:27:34 <metalgod> so for 11.4 we have a focus that is adding more GNOME/Gtk applications
+14:27:36 <metalgod> to this topic
+14:27:41 <metalgod> errr
+14:27:51 <psankar> please contribute packages in  : http://en.opensuse.org/openSUSE:GNOME_new_packages
+14:27:59 <metalgod> so if someone have a application request please add it to this page ^
+14:28:04 <metalgod> thanks psankar
+14:28:13 <vuntz> hrm
+14:28:20 <vuntz> please don't add application request to the page
+14:28:28 <vuntz> send a mail to opensuse-gnome or tell it here
+14:28:38 <metalgod> hmm yes actually sound better
+14:28:38 <psankar> okay
+14:28:43 <metalgod> so we don't get the page spammed
+14:28:51 <vuntz> I've a huge list of application requests, and I'm slowly updating the wiki page to make sure we don't have too many at once
+14:29:15 <bittin> gnome-mplayer ?
+14:29:19 <metalgod> i think a nice step we can do it to integrate gtk bindings
+14:29:30 <metalgod> like ruby that DimStar did
+14:29:32 <bittin> also a +1 for smuxi
+14:29:43 <metalgod> bittin: smuxi is on Mono repo
+14:30:00 <bittin> ah was on that site so i thinked but
+14:30:30 <psankar> metalgod, do you think we can ask someone from mono team to submit it under GNOME  ?
+14:30:31 <metalgod> gnome-mplayer should stay on packmann
+14:30:44 <metalgod> psankar: i don't see a problem
+14:31:03 <psankar> okay.
+14:31:14 <metalgod> asking ajorg if he can SR smuxi to G:A
+14:31:36 <metalgod> #action psankar ask ajorg (mono team) if someone can SR smuxi to G:Apps
+14:31:38 <bittin> i don't know all application rules and can zypper install so maybe i should just keep silent
+14:31:46 <psankar> neat
+14:32:17 <metalgod> bittin: no please say... we are happy to hear your opinions
+14:32:21 <vuntz> note that it's fine if smuxi stays in M:C, as long as it's maintained :-)
+14:32:59 <metalgod> ok
+14:33:00 <psankar> okay. but not many people may have M:C in the lsit of default repositories which is why I thought so.
+14:33:00 <metalgod> next topic
+14:33:19 <metalgod> #action Feedback/Issues with 11.4 milestone builds
+14:33:28 <metalgod> i think we can skip this topic
+14:33:32 <vuntz> well
+14:33:46 <vuntz> I'd love to hear about the big issues people have with GNOME in the milestones
+14:34:07 <vuntz> since this indicates what we should fix :-)
+14:34:10 <psankar> I had one issue. but not sure if it is still happening. empathy was crashing when somoen nearby pinged me
+14:34:17 * metalgod have migrated to Factory yet
+14:34:20 <psankar> i will check with the latest build and will update
+14:35:47 <psankar> metalgod, i think we can move on.
+14:35:50 <metalgod> ok
+14:35:52 <metalgod> next topic
+14:35:59 <metalgod> #action Q & A
+14:36:01 <metalgod> errr
+14:36:04 <psankar> i have one question
+14:36:05 <metalgod> #topic Q & A
+14:36:09 <metalgod> shoot psankar
+14:36:34 <psankar> It isn't GNOME specific. What happened to the new booster position ? will it be filled ?
+14:37:08 <vuntz> yeah
+14:37:15 <metalgod> psankar: maybe you should ask Klaas about it
+14:37:33 <psankar> okay :-)
+14:37:52 <metalgod> ok this isn't really a question is more a topic
+14:37:59 <metalgod> it's about 11.3 updates
+14:38:09 <metalgod> i've been dealing with a few
+14:38:29 <metalgod> and i would like if anyone feels that their 11.3 system breaks with anyhting
+14:38:38 <metalgod> a msn protocol or a gtalk change
+14:38:44 <metalgod> please open a bug and ping me
+14:38:55 <psankar> I had icq breakage but that was bcos of the server
+14:38:57 <metalgod> i think it's really important for us to have a functional stable release
+14:39:13 <psankar> and tehn  onwards we need to use icq without ssl :(
+14:39:15 <metalgod> same for gwibber and twitter (in my TODO)
+14:39:23 <metalgod> psankar: please open a bug
+14:39:34 <metalgod> i guess we can try to get pidgin 2.6.7 in 11.3
+14:39:35 <psankar> metalgod, there is a bug already open by _Marcus_
+14:39:41 <metalgod> fixes most of those issues
+14:40:02 <psankar> we may need to check if the kopete guys have found  a way for icq to work with ssl
+14:40:07 <bittin> can this be to any help?: http://developer.pidgin.im/wiki/MSNCertIssue
+14:40:15 <psankar> and if it there is a way we need to fix pidgin as well
+14:40:17 <vuntz> metalgod: want to take care of the pidgin bugs?
+14:40:28 <metalgod> bittin: according to pidgin upstream it's fixed on 2.6.7
+14:40:42 <metalgod> vuntz: yes i'm talking a few bugs that got things broken on 11.3
+14:41:01 <metalgod> s/talking/taking
+14:41:01 <vuntz> metalgod: bug 655477 and bug 655675
+14:41:07 <bugbot> openSUSE bug 655477 in openSUSE 11.4 (GNOME) "pidgin: unable to validate MSN certificate" [Normal,New] https://bugzilla.novell.com/655477
+14:41:09 <bugbot> openSUSE bug 655675 in openSUSE 11.2 (GNOME) "pidgin 2.6.6 ICQ broken" [Major,Needinfo] https://bugzilla.novell.com/655675
+14:41:21 <metalgod> vuntz: yes i'll try to get 2.6.7 in updates for 11.3
+14:41:26 <vuntz> metalgod: feel free to go ahead there
+14:41:32 <metalgod> it's best than backport the fixes
+14:41:41 <DimStar> Pidgin 2.7.7 completely fixes the MSN certificate issue, enables multiple MSN logins, and fixes the AIM SSL Handshake Failure error.
+14:41:46 <DimStar> (from the pidgin.im website)
+14:41:54 <metalgod> DimStar: i'm following the bug upstream
+14:42:13 <metalgod> ok
+14:42:16 <metalgod> any question ?
+14:42:19 <vuntz> metalgod: please comment on the bugs asap if you're taking care of them, so the maintenance team can know it's you
+14:42:26 <metalgod> vuntz: ok
+14:42:33 <metalgod> doing it right now
+14:42:42 <vuntz> thanks a lot for doing those updates, btw. It's most useful!
+14:42:48 <metalgod> vuntz: no problem ;)
+14:42:51 <psankar> +1 thanks
+14:43:01 <metalgod> people any questions ?
+14:43:04 <metalgod> bittin: ?
+14:43:11 <bittin> no i don't have any
+14:43:17 <metalgod> ok
+14:43:32 <metalgod> so thanks everyone for participating on the openSUSE-GNOME meeting
+14:43:36 <metalgod> see you soon
+14:43:45 <metalgod> #endmeeting

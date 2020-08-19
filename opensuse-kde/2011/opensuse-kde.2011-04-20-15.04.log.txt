@@ -1,0 +1,220 @@
+15:04:27 <mrdocs> #startmeeting
+15:04:27 <bugbot> Meeting started Wed Apr 20 15:04:27 2011 UTC.  The chair is mrdocs. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:04:27 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:04:57 <mrdocs> http://en.opensuse.org/openSUSE:KDE_meeting << discussion topics
+15:05:20 <mrdocs> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+15:05:47 <mrdocs> #topic old action items
+15:06:24 <mrdocs> wstephenson - to contact i18n team with regards to openSUSE guides
+15:06:28 <mrdocs> any updates ?
+15:06:35 <wstephenson> uh, no
+15:06:41 <wstephenson> must do that finally
+15:06:45 <mrdocs> ok
+15:07:01 <mrdocs> anaumov - study packagekit-zypp - updates ?
+15:07:17 <wstephenson> mrdocs: no longer relevant
+15:07:21 <mrdocs> next
+15:07:30 <wstephenson> that was a 11.4 item
+15:07:32 <mrdocs> cb400f - patch in icons from kupdateapplet - updates ?
+15:08:25 <mrdocs> brb
+15:12:10 <mrdocs> back
+15:12:13 <mrdocs> ok next
+15:14:00 <wstephenson> any more old action items?
+15:14:27 <mrdocs> all - test phonon-gstreamer + pulseaudio combo
+15:14:39 <mrdocs> i do remember how that was resolved
+15:14:43 <mrdocs> +not
+15:15:09 <mrdocs> #topic status reports
+15:15:19 <krop> you missed the real action items
+15:15:23 <krop> at the bottom
+15:15:44 <mrdocs> wstephenson ask maintenance team how to replace knm with pnm
+15:15:56 <mrdocs> krop: thanks for the pointer
+15:16:04 <mrdocs> #topic old action items
+15:16:11 <mrdocs> wstephenson ask maintenance team how to replace knm with pnm
+15:16:13 <wstephenson> not done...
+15:16:25 <mrdocs> wstephenson talk to dirk about KUSC updating scripts
+15:16:29 <wstephenson> i need to spend a week on this and 4.6.2 for 11.4
+15:16:36 <mrdocs> ok
+15:16:44 <wstephenson> done, we are using titti's snapshots as feed for KUSC
+15:16:46 <mrdocs> wstephenson: i have a test machine
+15:16:53 <mrdocs> for pnm
+15:17:12 <mrdocs> wstephenson: you can even have an account on it if you want
+15:17:32 <mrdocs> wstephenson talk to dirk about KUSC scripts
+15:17:54 <wstephenson> mrdocs: thats kind but it needs ppl actively using it in a dynamic envt - 3g, different wifi, hidden etc
+15:17:59 <wstephenson> mrdocs: dupe
+15:18:10 <terietor> hello
+15:18:16 <terietor> the meeting is in 12 hours?
+15:18:23 <ankso> terietor: no, know
+15:18:27 <krop> it's now
+15:18:33 <terietor> thanks
+15:19:04 <wstephenson> terietor: the link here should always be helpful http://en.opensuse.org/openSUSE:KDE_meeting
+15:19:34 <mrdocs> ok  next
+15:20:35 <terietor> wstephenson: thanks
+15:20:47 <mrdocs> #topic Remove SLE11, 11.2 and 11.3 from KDE:Unstable:Playground (krop)
+15:20:59 <krop> you missed the status report now :)
+15:21:03 <mrdocs> doh
+15:21:08 <mrdocs> going too fast
+15:21:25 <mrdocs> #topic status reports
+15:21:50 <mrdocs> who wants to go first ?
+15:22:07 * wstephenson has been clearing the enterprise stuff that built up during 11.4
+15:22:26 * wstephenson helping cartman by testing the KDE promo DVD
+15:22:36 * wstephenson has been getting Plasma Active bootstrapped in the OBS
+15:22:36 <mrdocs> i can report, we are close to scribus 1.4
+15:23:11 <wstephenson> krop: pim status?
+15:23:23 <mrdocs> was it decided to move knemo from Contrib > Extras ?
+15:23:40 <krop> nothing to declare. some 4.6 blocking bugs have been closed already
+15:23:56 <mrdocs> brb.. sorry ive got people doing work on the house
+15:25:09 <mrdocs> back
+15:25:18 <mrdocs> krop: did i read rc5 is out ?
+15:25:31 <krop> you misread, only beta5
+15:25:36 <mrdocs> ah
+15:25:45 <mrdocs> too many things going in my life nwo :)
+15:25:53 <mrdocs> anything else ?
+15:26:05 <wstephenson> there will be a pim 4.4.11 imminently
+15:26:24 <wstephenson> that will be an online update too
+15:26:29 <mrdocs> wstephenson: any large fixes ? like the ones I have BT's for ?
+15:27:06 <wstephenson> mrdocs: several small fixes for wallet failures, kontact problems
+15:27:13 <mrdocs> ok
+15:27:17 <wstephenson> not sure about any crashers but they all improve the experiences
+15:27:31 <wstephenson> and a crash in kcalcore that crashed plasma has been fixed.
+15:27:34 <mrdocs> noted.. im sure my crashes are related to timing and my crappy DSL speed here
+15:27:36 <siddvicious> wstephenson: any thing where you want me to work on ?
+15:27:47 <mrdocs> never had crashes at work with the same IMAP
+15:28:08 <wstephenson> siddvicious: wait till we get through the agenda
+15:28:23 <siddvicious> ok
+15:28:27 <wstephenson> plasma active is in KDE:Active in OBS
+15:28:34 * mrdocs welcoms siddvicious from our fedora friends
+15:28:39 <wstephenson> anyone with a tablet or who likes tablet UIs on laptops is welcome to try it
+15:28:51 <wstephenson> it is based on KUSC
+15:28:58 <mrdocs> wstephenson: usable without touch ?
+15:29:03 <wstephenson> mrdocs: sure
+15:29:16 <mrdocs> cool i can play with it this weekend on my netbook
+15:29:45 <mrdocs> too bad titti is not here
+15:29:52 <wstephenson> he'll be here any minute
+15:29:53 <mrdocs> any other status reports ?
+15:29:57 <mrdocs> ahh good
+15:30:05 <mrdocs> then i will stand by a min
+15:30:06 <wstephenson> well NM 0.9 is going to give us a headache
+15:30:17 <wstephenson> in factory and on 11.4 where gnome3 mandates it
+15:30:19 <mrdocs> wstephenson: yes, i ve seen its going to land soon
+15:30:29 <wstephenson> titti is working on testing patches to fix KNM for it
+15:30:47 <mrdocs> wstephenson: where are the problems generally and what can people do to help ?
+15:30:59 <siddvicious> mrdocs: thnx :)
+15:31:00 <wstephenson> mrdocs: it changes the API and we need to adapt KNM
+15:31:13 <wstephenson> other status: i've been teaching myself QML so i have a clue about maintaining/supporting plasmoids that use it
+15:31:15 <wstephenson> it's a mind bender
+15:31:25 <mrdocs> heh
+15:31:39 <mrdocs> wstephenson: at least you are now getting normal sleep :P
+15:32:38 <wstephenson> mrdocs: let's get on with it
+15:33:24 * tittiatcoke is reporting for the meeting. Apologies for being late
+15:34:46 <tittiatcoke> wstephenson: You there ?
+15:35:15 <wstephenson> yes
+15:35:32 <tittiatcoke> Ok. It is very silent for a meeting :-)
+15:35:33 <wstephenson> tittiatcoke: any status from you?
+15:35:47 <wstephenson> tittiatcoke: got baby on knee. mrdocs chairing
+15:36:22 <tittiatcoke> Ok. Nothing special. Have been working on PNM for NM 0.9
+15:36:25 <mrdocs> tittiatcoke: waiting for you to arrive ^^   $topic
+15:36:53 <mrdocs> next ?
+15:37:10 <wstephenson> mrdocs: regular agenda items
+15:37:14 <wstephenson> krop's sle11 topic
+15:37:16 <mrdocs> #topic Remove SLE11, 11.2 and 11.3 from KDE:Unstable:Playground (krop)
+15:37:54 <wstephenson> no objection re: SLE
+15:37:56 <krop> topic says all, the kup builds are currently disabled for SLE11, 11.2, 11.3 and the KR45 repos
+15:37:57 <wstephenson> 11.2 and 11.3 too?
+15:38:10 <krop> mostly due to kdelibs being too old
+15:38:20 <wstephenson> ah vanilla 11.2 and 11.3
+15:38:25 <wstephenson> fine by me
+15:38:28 <krop> yes
+15:38:31 <mrdocs> same
+15:38:32 <wstephenson> any objections?
+15:38:36 <tittiatcoke> I disabled those build already since the last team meeting :-)
+15:38:57 <alin> +1
+15:39:02 <mrdocs> aha son consider done ?
+15:39:03 <wstephenson> ok, removing the repos now
+15:39:26 <mrdocs> #topic Status Plasmoid-networkmanagement (PNM) with regards to NetworkManager 0.9 (which will be knocking on Factory's door soon). (tittiatcoke)
+15:40:05 <tittiatcoke> This is purely to update everybody on the status of PNM regarding compatibility of NM 0.9
+15:41:03 <cartman> Does it work? :)
+15:41:04 <tittiatcoke> Up to this morning it was quite hopeless, but after talking to jkrimes of Fedora, things got a lot better :-)  It seems that there is a hidden compatibility mode that let us run PNM with only some small changes
+15:41:21 <mrdocs> sweet
+15:41:40 <tittiatcoke> Now it works fine. I still have to test a couple of things, but it seems that it functions normally. So moving NM 0.9 to Factory wouldn't be an issue.
+15:41:48 <mrdocs> lovely
+15:41:54 <tittiatcoke> wstephenson: Any update from your side regarding the plans to fully support NM 0.9 ?
+15:42:33 <wstephenson> tittiatcoke: nope
+15:43:01 <wstephenson> tittiatcoke: how is the compat mode enabled?
+15:44:07 <tittiatcoke> There is a patch for NM 0.9, which the Gnome team already has enabled. From that point we have a patch for kdebase4-workspace and a patch for PNM. It seems just to talk to a specific DBus Compat function
+15:44:43 <tittiatcoke> wstephenson: You can check both patches out in home:rwooninck:special
+15:44:49 <wstephenson> tittiatcoke: ok
+15:45:23 <tittiatcoke> I understood from vuntz that NM 0.9 will first go to GNOME:Factory and from there it will be submitted to Factory. This might still take 1 or 2 weeks
+15:45:42 <wstephenson> godo
+15:45:44 <wstephenson> good
+15:46:12 <mrdocs> tittiatcoke: anything else to add ?
+15:46:22 <tittiatcoke> Nope.
+15:46:40 <mrdocs> ok
+15:46:41 <mrdocs> next
+15:46:55 <mrdocs> #topic Time of the meeting. (tittiatcoke)
+15:47:53 <tittiatcoke> I just raised this one as that with the Summertime, the meeting is now at 5pm CET. Which might not be the real best time for the meeting. Initially it was set for 4pm. Question is if we should leave it at this time or push it back one hour to 4pm or maybe push it to 6pm ?
+15:48:11 <wstephenson> tittiatcoke: a no brainer
+15:48:22 <tittiatcoke> :-) Tell me :-)
+15:48:24 <wstephenson> 4pm suits me
+15:48:30 <wstephenson> just do the DST adjustment
+15:48:31 <mrdocs> same mostly
+15:48:42 <wstephenson> 6pm is really bad for me with the little one
+15:48:46 <tittiatcoke> Sounds good for me.
+15:48:48 <mrdocs> same
+15:49:00 <tittiatcoke> Can imagine. 5pm is normally the time that I leave the office :-)
+15:49:02 <mrdocs> any one else objecting ?
+15:50:01 <mrdocs> #info next meeting will be pushed back to 16:00 CET owing to DST
+15:50:42 <mrdocs> next
+15:50:54 <mrdocs> #topic Q+A/ misc
+15:51:12 <wstephenson> anyone got any graphics jobs for siddvicious?
+15:51:25 <mrdocs> what kind ?
+15:51:38 <wstephenson> he did a great job doing the dvd sleeve and media ring for the upstream dvd (including the prepress work)
+15:51:49 <coming> gr
+15:51:50 <wstephenson> and is apparently keen to help more
+15:52:09 <mrdocs> siddvicious: coming to LGM ?
+15:52:10 <wstephenson> siddvicious: mrdocs is one of the guys behind scribus
+15:52:14 <siddvicious> wstephenson: any packing included :)
+15:52:34 <siddvicious> mrdocs: oh gr8 :)
+15:52:51 <siddvicious> wstephenson: i havent got hands on suse packaging
+15:53:06 <siddvicious> and yeah graphics is also good :)
+15:53:13 <siddvicious> LGM ?
+15:53:27 <mrdocs> siddvicious: im not much of a coder, but i help start scribus and i herd the kittens :)
+15:54:40 <siddvicious> mrdocs: thats what community needs initially >> The Initiative
+15:54:49 <wstephenson> siddvicious: have you seen anything that needs fixing in our skrooge packages?
+15:55:09 <siddvicious> oh yeah
+15:55:19 <siddvicious> webkit not needed
+15:55:54 <siddvicious> skrooge requires are qca2-devel libofx-devel qt-devel kde4-devel
+15:56:49 <wstephenson> siddvicious: wanna make a submitrequest? learn our tools?
+15:57:02 <siddvicious> yeah sure
+15:57:07 <wstephenson> ok
+15:57:11 <wstephenson> any more Q&A?
+15:57:27 <wstephenson> krop: it turns out your branches in home: block removal...
+15:57:48 <krop> deleting
+15:57:57 <siddvicious> mrdocs: and i am developer behind plasma dashboard for skrooge
+15:58:03 <alin> krop: you a big supporter and a stopper in the same time
+15:58:08 <siddvicious> soon i get in stable release :)
+15:58:10 <krop> wstephenson: retry
+15:58:13 <alin> krop: quantum nature of things
+15:59:07 <tittiatcoke> wstephenson: If you see dirk by any change, maybe you can ask him how we move on with KUSC ?
+15:59:45 <wstephenson> tittiatcoke: will do
+15:59:50 <tittiatcoke> thanks.
+16:00:12 <wstephenson> unfortunately my new office location is no longer between dirk and the bathroom so i don't get free chances to interrupt him...
+16:01:10 <wstephenson> hm
+16:01:20 <wstephenson> chair failure.
+16:01:39 <wstephenson> anything else?
+16:01:55 <tittiatcoke> wstephenson: No problem :-) No hurry
+16:01:58 <wstephenson> mrdocs_: please wind it up
+16:02:02 <tittiatcoke> Nothing else from me
+16:03:03 <mrdocs_> Thanks everyone for coming.. next meeting in 2 weeks
+16:03:08 <mrdocs_> #endmeeting
+16:03:16 <mrdocs_> gah i lost op
+16:03:25 <krop> change your nick ?
+16:03:29 <alin> wstephenson: stole them
+16:03:40 <mrdocs_> net disconnect
+16:03:55 <tittiatcoke> #endmeeting
+16:04:02 <mrdocs> thanks
+16:04:05 <alin> tittiatcoke: i think i know why the plasmoid fails
+16:04:11 <mrdocs> bbiab
+16:04:14 <alin> tittiatcoke: is the curl command that fails...
+16:04:16 <tittiatcoke> mrdocs: Doesn't work
+16:04:24 <tittiatcoke> I guess you have to end it
+16:04:26 <mrdocs> wait 1
+16:04:45 <tittiatcoke> alin: The plasmoid doesn't use curl to send the file
+16:04:53 <mrdocs> #endmeeting

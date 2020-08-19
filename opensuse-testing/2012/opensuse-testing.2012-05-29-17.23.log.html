@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:23:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:23:59</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Tue May 29 17:23:59 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:23:59</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:24:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">17:24:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-6"></a><span class="tm">17:24:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-7"></a><span class="tm">17:24:20</span><span class="nk"> &lt;Creatura85&gt;</span> hello bmwiedemann
+<a name="l-8"></a><span class="tm">17:24:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> hello Creatura85
+<a name="l-9"></a><span class="tm">17:24:38</span><span class="nk"> &lt;Creatura85&gt;</span> i have missed several meetings due to personal issues :(
+<a name="l-10"></a><span class="tm">17:24:40</span><span class="nk"> &lt;Creatura85&gt;</span> sorry about that
+<a name="l-11"></a><span class="tm">17:24:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">12.2 testing</span>
+<a name="l-12"></a><span class="tm">17:25:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> yesterday was holiday in Germany, so I had time to file 5 new bugs for Factory
+<a name="l-13"></a><span class="tm">17:25:35</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> i have opensuse 12.2 M4 with kde 4, as far as i can spot, only zypper has issues
+<a name="l-14"></a><span class="tm">17:25:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> there was no real M4
+<a name="l-15"></a><span class="tm">17:25:57</span><span class="nk"> &lt;Creatura85&gt;</span> keeps crashing when removing packages with dependencies
+<a name="l-16"></a><span class="tm">17:26:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> libzypp is still crashing yast -i as well
+<a name="l-17"></a><span class="tm">17:26:16</span><span class="nk"> &lt;Creatura85&gt;</span> well that what cat /etc/SuSE-release show`s up :)
+<a name="l-18"></a><span class="tm">17:26:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> then you have some factory state, which could be different from others that also have M4 there
+<a name="l-19"></a><span class="tm">17:27:17</span><span class="nk"> &lt;LWFinger&gt;</span> Yes, libzypp is a problem. I have only seen the problem with osc builds.
+<a name="l-20"></a><span class="tm">17:27:19</span><span class="nk"> &lt;Creatura85&gt;</span> one thing is funny, latest flash with firefox have no issues unde vbox :)
+<a name="l-21"></a><span class="tm">17:27:28</span><span class="nk"> &lt;Creatura85&gt;</span> *under
+<a name="l-22"></a><span class="tm">17:27:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> Flash is crashing in my 12.1 firefox12 a lot recently
+<a name="l-23"></a><span class="tm">17:28:04</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> disable hardware acceleration from within the browser
+<a name="l-24"></a><span class="tm">17:28:16</span><span class="nk"> &lt;Creatura85&gt;</span> and it fixes the problem for the moment
+<a name="l-25"></a><span class="tm">17:28:25</span><span class="nk"> &lt;Creatura85&gt;</span> or downgrade to 11.1 :)
+<a name="l-26"></a><span class="tm">17:28:36</span><span class="nk"> &lt;LWFinger&gt;</span> On the libzypper problem, Coolo suggests "
+<a name="l-27"></a><span class="tm">17:28:37</span><span class="nk"> &lt;LWFinger&gt;</span> I suggest to run the same zypper command under valgrind with debuginfos
+<a name="l-28"></a><span class="tm">17:28:38</span><span class="nk"> &lt;LWFinger&gt;</span> installed and then file it into bugzilla. I already told Michael about
+<a name="l-29"></a><span class="tm">17:28:40</span><span class="nk"> &lt;LWFinger&gt;</span> these crashes, but it seems not to affect all commands - at least on my
+<a name="l-30"></a><span class="tm">17:28:41</span><span class="nk"> &lt;LWFinger&gt;</span> machine it never crashed.
+<a name="l-31"></a><span class="tm">17:29:28</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> that sounds good i guess, but the bug must be solved in the end
+<a name="l-32"></a><span class="tm">17:30:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> got http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-NET-x86_64-Build0386-11.4kde64zdup/yast2_i-1.png
+<a name="l-33"></a><span class="tm">17:30:42</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> i get that using yast too
+<a name="l-34"></a><span class="tm">17:30:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> I heard, libzypp also triggered compiler-bugs in gcc-4.7
+<a name="l-35"></a><span class="tm">17:31:17</span><span class="nk"> &lt;LWFinger&gt;</span> AFAIK, the zypper problems are all gcc 4.7 related.
+<a name="l-36"></a><span class="tm">17:32:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> I also always got a message box about mdadm not installing properly
+<a name="l-37"></a><span class="tm">17:33:52</span><span class="nk"> &lt;Creatura85&gt;</span> here is the bug report about yast crashing https://bugzilla.novell.com/show_bug.cgi?id=759433
+<a name="l-38"></a><span class="tm">17:34:01</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 759433 in openSUSE 12.2 (YaST2) "Yast crashes when doing a search or installing software" [Major,Reopened]
+<a name="l-39"></a><span class="tm">17:34:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> which is bad, because it hinders most openQA tests
+<a name="l-40"></a><span class="tm">17:34:50 </span><span class="nka">* Creatura85</span> <span class="ac">login.novell.com is working so slow...</span>
+<a name="l-41"></a><span class="tm">17:35:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> there was also bnc#764397 with a yast segfault happening on dist-upgrade from DVD
+<a name="l-42"></a><span class="tm">17:36:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> and I'm sure there are more issues waiting, once the big blocks are out of the way
+<a name="l-43"></a><span class="tm">17:37:26</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> since gcc 4.7 is the main problem why dont they use an olderv revision of 4.7 ? or even gcc 4.6 ?
+<a name="l-44"></a><span class="tm">17:39:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, they would rather get 4.7 stable
+<a name="l-45"></a><span class="tm">17:39:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> to not always stay with old versions
+<a name="l-46"></a><span class="tm">17:40:14</span><span class="nk"> &lt;Creatura85&gt;</span> ok, i understand
+<a name="l-47"></a><span class="tm">17:40:18</span><span class="nk"> &lt;Creatura85&gt;</span> hello bmwiedemann
+<a name="l-48"></a><span class="tm">17:40:22</span><span class="nk"> &lt;Creatura85&gt;</span> hello BManojlovic
+<a name="l-49"></a><span class="tm">17:40:25</span><span class="nk"> &lt;Creatura85&gt;</span> :)
+<a name="l-50"></a><span class="tm">17:40:26</span><span class="nk"> &lt;BManojlovic&gt;</span> hello Creatura85
+<a name="l-51"></a><span class="tm">17:41:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> any more big bugs in current Factory?
+<a name="l-52"></a><span class="tm">17:42:23</span><span class="nk"> &lt;BManojlovic&gt;</span> is blocxx fixed ?
+<a name="l-53"></a><span class="tm">17:42:24</span><span class="nk"> &lt;Creatura85&gt;</span> we have one solved at point 3 of this meeting by tigerfoot https://bugzilla.novell.com/show_bug.cgi?id=763262
+<a name="l-54"></a><span class="tm">17:42:28</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 763262 in openSUSE 12.2 (Basesystem) "KDM openSUSE branding theme ratio used are not correct" [Normal,Resolved: fixed]
+<a name="l-55"></a><span class="tm">17:42:51</span><span class="nk"> &lt;LWFinger&gt;</span> The live CDs still have the 64-bit problem with expr when running under qemu-kvm, but a fix is available.
+<a name="l-56"></a><span class="tm">17:42:53</span><span class="nk"> &lt;BManojlovic&gt;</span> blocxx was broken on 4.7 - as yast then too
+<a name="l-57"></a><span class="tm">17:43:36</span><span class="nk"> &lt;BManojlovic&gt;</span> meaning it has to be built with gcc 4.6
+<a name="l-58"></a><span class="tm">17:43:40</span><span class="nk"> &lt;BManojlovic&gt;</span> so is that bug fixed
+<a name="l-59"></a><span class="tm">17:43:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> is gcc4.6 available for 12.2?
+<a name="l-60"></a><span class="tm">17:43:58</span><span class="nk"> &lt;BManojlovic&gt;</span> i really did not follow up on it as i had not have enough time
+<a name="l-61"></a><span class="tm">17:44:09</span><span class="nk"> &lt;BManojlovic&gt;</span> yes it should be
+<a name="l-62"></a><span class="tm">17:45:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> so we could build it with gcc4.6 until upstream or mt@suse or dimstar (hope they are CCed in the bug) find some better solution
+<a name="l-63"></a><span class="tm">17:45:51</span><span class="nk"> &lt;BManojlovic&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=759310
+<a name="l-64"></a><span class="tm">17:45:55</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 759310 in openSUSE 12.2 (YaST2) "libblocxx fails with gcc 4.7" [Major,New]
+<a name="l-65"></a><span class="tm">17:46:10</span><span class="nk"> &lt;BManojlovic&gt;</span> sorry really no time :\
+<a name="l-66"></a><span class="tm">17:46:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes, looks good
+<a name="l-67"></a><span class="tm">17:47:32</span><span class="nk"> &lt;BManojlovic&gt;</span> trust me that bug is not good :]
+<a name="l-68"></a><span class="tm">17:49:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> next topic?
+<a name="l-69"></a><span class="tm">17:49:55</span><span class="nk"> &lt;Creatura85&gt;</span> i dont want to be a pesimist here but if the bugs are not fixed opensuse 12.2 could be delayed imho
+<a name="l-70"></a><span class="tm">17:50:17</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> i guess so
+<a name="l-71"></a><span class="tm">17:50:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> better delayed than over-buggy
+<a name="l-72"></a><span class="tm">17:50:30</span><span class="nk"> &lt;Creatura85&gt;</span> indeed
+<a name="l-73"></a><span class="tm">17:50:34</span><span class="nk"> &lt;BManojlovic&gt;</span> i agree
+<a name="l-74"></a><span class="tm">17:50:51</span><span class="nk"> &lt;BManojlovic&gt;</span> one kde 4.0 is enough...
+<a name="l-75"></a><span class="tm">17:51:01</span><span class="nk"> &lt;Creatura85&gt;</span> :)
+<a name="l-76"></a><span class="tm">17:51:35</span><span class="nk"> &lt;LWFinger&gt;</span> without releases, no testing. :)
+<a name="l-77"></a><span class="tm">17:51:49</span><span class="nk"> &lt;BManojlovic&gt;</span> that is true too :)
+<a name="l-78"></a><span class="tm">17:51:58</span><span class="nk"> &lt;Creatura85&gt;</span> i`m waiting for the beta :)
+<a name="l-79"></a><span class="tm">17:52:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> it really needs someone to file bugs and kick developers for a release to become good
+<a name="l-80"></a><span class="tm">17:52:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> Beta is getting nearer, though
+<a name="l-81"></a><span class="tm">17:52:55</span><span class="nk"> &lt;LWFinger&gt;</span> I have one real machine that has been running from factory since Build 0318 with updates from the Factory repo. It works OK.
+<a name="l-82"></a><span class="tm">17:53:14</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> do you if are problems with login.novell.com, i`m getting connection timed out...
+<a name="l-83"></a><span class="tm">17:53:29</span><span class="nk"> &lt;Creatura85&gt;</span> *do you know
+<a name="l-84"></a><span class="tm">17:53:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> I also updated my Laptop with MS3 and beyond. so it sort of works
+<a name="l-85"></a><span class="tm">17:53:59</span><span class="nk"> &lt;BManojlovic&gt;</span> i  have tested in vbox lvm on top of crypted volume works fine
+<a name="l-86"></a><span class="tm">17:54:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> login.novell.com works here atm. but I would not be surprised, if it was slow/failing sometimes/somewhere
+<a name="l-87"></a><span class="tm">17:54:14</span><span class="nk"> &lt;BManojlovic&gt;</span> so i presume it would work with my laptop too
+<a name="l-88"></a><span class="tm">17:54:36</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">BManojlovic:</span> try and see :)
+<a name="l-89"></a><span class="tm">17:54:40</span><span class="nk"> &lt;LWFinger&gt;</span> I run regular tests with VB VMs, but I don't do much testing there.
+<a name="l-90"></a><span class="tm">17:54:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> there had been some trouble with this and systemd in the past
+<a name="l-91"></a><span class="tm">17:54:54</span><span class="nk"> &lt;BManojlovic&gt;</span> <span class="hi">Creatura85:</span> work laptop :] so nope :)
+<a name="l-92"></a><span class="tm">17:55:05</span><span class="nk"> &lt;BManojlovic&gt;</span> now it works just fine
+<a name="l-93"></a><span class="tm">17:55:09</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">BManojlovic:</span> i have belived that you have a second one
+<a name="l-94"></a><span class="tm">17:55:17</span><span class="nk"> &lt;BManojlovic&gt;</span> tigerfoot was complaining but it was tested and works
+<a name="l-95"></a><span class="tm">17:55:28</span><span class="nk"> &lt;BManojlovic&gt;</span> with /boot on sda1 of course
+<a name="l-96"></a><span class="tm">17:55:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> anyone installed a system with separate /usr recently?
+<a name="l-97"></a><span class="tm">17:55:51</span><span class="nk"> &lt;BManojlovic&gt;</span> <span class="hi">Creatura85:</span> yes but ssshhh not important
+<a name="l-98"></a><span class="tm">17:56:05</span><span class="nk"> &lt;Creatura85&gt;</span> oky doky
+<a name="l-99"></a><span class="tm">17:56:29</span><span class="nk"> &lt;BManojlovic&gt;</span> i think this was already with /usr
+<a name="l-100"></a><span class="tm">17:56:33</span><span class="nk"> &lt;BManojlovic&gt;</span> just a sec to boot it up
+<a name="l-101"></a><span class="tm">17:56:51</span><span class="nk"> &lt;LWFinger&gt;</span> Systemd is working for me. I mainly use legacy grub as the boot structures are complicated, and I don't have time to learn grub2.
+<a name="l-102"></a><span class="tm">17:57:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> it is not too hard
+<a name="l-103"></a><span class="tm">17:58:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> even Debian has it as default for a year now
+<a name="l-104"></a><span class="tm">17:58:42</span><span class="nk"> &lt;LWFinger&gt;</span> Do the scripts now add the new kernel using only 'sudo make install'? I don't have time to create a deb and install it.
+<a name="l-105"></a><span class="tm">17:58:44</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> systemd is working fine for my 12.2 as well, using grub2
+<a name="l-106"></a><span class="tm">17:59:47</span><span class="nk"> &lt;Creatura85&gt;</span> hope that the interface to it from yast gets completed
+<a name="l-107"></a><span class="tm">18:00:03</span><span class="nk"> &lt;Creatura85&gt;</span> if not i will use grub legacy
+<a name="l-108"></a><span class="tm">18:00:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> it better be, as grub2 is now default
+<a name="l-109"></a><span class="tm">18:00:46</span><span class="nk"> &lt;BManojlovic&gt;</span> my virt machine with crypted disk is old /bin and /usr/bin so relatively old
+<a name="l-110"></a><span class="tm">18:00:57</span><span class="nk"> &lt;BManojlovic&gt;</span> m4
+<a name="l-111"></a><span class="tm">18:01:26</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> yeah, but still one can adjust it using a terminal and logged as root
+<a name="l-112"></a><span class="tm">18:01:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> as you can with most things in Linux
+<a name="l-113"></a><span class="tm">18:02:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> let's move on
+<a name="l-114"></a><span class="tm">18:02:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">next meeting</span>
+<a name="l-115"></a><span class="tm">18:02:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> when shall we meet again?
+<a name="l-116"></a><span class="tm">18:03:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> with development now getting more interesting and important. in 2 weeks?
+<a name="l-117"></a><span class="tm">18:03:16</span><span class="nk"> &lt;BManojlovic&gt;</span> when is beta + 1.5 week?
+<a name="l-118"></a><span class="tm">18:03:23</span><span class="nk"> &lt;BManojlovic&gt;</span> maybe?
+<a name="l-119"></a><span class="tm">18:03:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> I'd guess Thursday... either this week or next one
+<a name="l-120"></a><span class="tm">18:04:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> so we should have a Beta in 2 weeks
+<a name="l-121"></a><span class="tm">18:04:11</span><span class="nk"> &lt;LWFinger&gt;</span> I expect Beta this week given the improvements of the past 4 days.
+<a name="l-122"></a><span class="tm">18:04:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> and some days to test it
+<a name="l-123"></a><span class="tm">18:04:38</span><span class="nk"> &lt;Creatura85&gt;</span> so in 2 weeks sounds good to me :)
+<a name="l-124"></a><span class="tm">18:04:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> if it comes this week, we could meet next week already
+<a name="l-125"></a><span class="tm">18:05:18</span><span class="nk"> &lt;BManojlovic&gt;</span> yes but need more people this is too small quorum really...
+<a name="l-126"></a><span class="tm">18:05:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> 2012-06-04 17:00 UTC (Monday again)
+<a name="l-127"></a><span class="tm">18:05:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> there are more people doing testing
+<a name="l-128"></a><span class="tm">18:05:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> which is the important part
+<a name="l-129"></a><span class="tm">18:06:01</span><span class="nk"> &lt;LWFinger&gt;</span> That works for me, but June 11 does not. I'm going fishing!
+<a name="l-130"></a><span class="tm">18:06:09</span><span class="nk"> &lt;BManojlovic&gt;</span> ok
+<a name="l-131"></a><span class="tm">18:06:46</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> good hunting :D
+<a name="l-132"></a><span class="tm">18:06:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> how about June 12?
+<a name="l-133"></a><span class="tm">18:07:14</span><span class="nk"> &lt;LWFinger&gt;</span> I'm not back until the 15th.
+<a name="l-134"></a><span class="tm">18:07:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK.
+<a name="l-135"></a><span class="tm">18:08:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> so I say, we schedule next meeting for 2012-06-04 17:00 UTC but postpone it by 1 week, if no Beta appears this week
+<a name="l-136"></a><span class="tm">18:08:08</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> dont forget to adjust the topic with the new date after this meeting
+<a name="l-137"></a><span class="tm">18:08:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> ah, OK
+<a name="l-138"></a><span class="tm">18:08:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> any objections to this?
+<a name="l-139"></a><span class="tm">18:08:51</span><span class="nk"> &lt;LWFinger&gt;</span> I am OK with June 4..
+<a name="l-140"></a><span class="tm">18:09:19</span><span class="nk"> &lt;BManojlovic&gt;</span> no rights for vote not regular :) ... (work....)
+<a name="l-141"></a><span class="tm">18:09:49</span><span class="nk"> &lt;Creatura85&gt;</span> june 4, me too
+<a name="l-142"></a><span class="tm">18:09:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">next meeting for 2012-06-04 17:00 UTC but postpone it by 1 week, if no Beta appears this week</span>
+<a name="l-143"></a><span class="tm">18:10:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-144"></a><span class="tm">18:10:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> I was wondering, if we should do an Open Bugs Day again for 12.2
+<a name="l-145"></a><span class="tm">18:10:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> at this stage, it would make most sense to find&amp;fix bugs
+<a name="l-146"></a><span class="tm">18:11:07</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> i have seen that tigerfoot wrote his report on the wiki, can i paste it for the logs and delete it after? or i just delete it ?
+<a name="l-147"></a><span class="tm">18:11:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> re-testing open 12.1 bugs on 12.2 could also help
+<a name="l-148"></a><span class="tm">18:11:23</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> good ideas
+<a name="l-149"></a><span class="tm">18:11:53</span><span class="nk"> &lt;LWFinger&gt;</span> I agree that we need to find any long-term bugs and make them active again.
+<a name="l-150"></a><span class="tm">18:12:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> please paste
+<a name="l-151"></a><span class="tm">18:12:50</span><span class="nk"> &lt;LWFinger&gt;</span> I want to work on the libzypper problem. What specific zypper command causes it to crash?
+<a name="l-152"></a><span class="tm">18:13:15</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> OK, the report goes like this
+<a name="l-153"></a><span class="tm">18:13:20</span><span class="nk"> &lt;Creatura85&gt;</span> tigerfoot's report (in case I can't attempt) Artwork final 12.2 with new kdm theme is pending https://build.opensuse.org/request/show/116505 KDM theme should now restore all bells &amp; whistles we had previously (11.3/11.4). Most of the boxes are now % of screen, so testing in all kind of resolution would be greatly appreciate, report/screenshots can be reported to -factory, -testing, -artwork ml (I follow all of them).
+<a name="l-154"></a><span class="tm">18:13:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> I only saw it in yast -i (with searching for gvim) - it uses libzypp , but zypper itself worked for me
+<a name="l-155"></a><span class="tm">18:13:39</span><span class="nk"> &lt;Creatura85&gt;</span> I'm in contact with Michael Chang about grub2 branding, he finish last week the Yast2 Grub2 part, and grub2 could choose a background. I've now to build the new branding package about it. But having factory not installable from the last 10 days start to be really painful for testing.
+<a name="l-156"></a><span class="tm">18:14:01</span><span class="nk"> &lt;Creatura85&gt;</span> One of my factory crash due to btrfs error (full /) even if 1.5Gb is free, and unable to remove snapper snapshots (bad inode etc..) The other one full / encrypted is stuck now with a bad initrd ( vol_id output and missing part in /lib )
+<a name="l-157"></a><span class="tm">18:14:03</span><span class="nk"> &lt;Creatura85&gt;</span> That's all for me.
+<a name="l-158"></a><span class="tm">18:14:29</span><span class="nk"> &lt;Creatura85&gt;</span> this is tigerfoot`s raport for this meeting
+<a name="l-159"></a><span class="tm">18:14:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> the magic saviour for btrfs full trouble is: for s in /.snapshots/*/snapshot ; do btrfs subvolume delete $s ; done
+<a name="l-160"></a><span class="tm">18:15:11</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> i guess you will have to tell him that when you see him around :)
+<a name="l-161"></a><span class="tm">18:15:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe he reads the log ;)
+<a name="l-162"></a><span class="tm">18:15:37</span><span class="nk"> &lt;Creatura85&gt;</span> hmmm, maybe
+<a name="l-163"></a><span class="tm">18:15:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> or others who run into this btrfs/snapper trouble like I did
+<a name="l-164"></a><span class="tm">18:16:02</span><span class="nk"> &lt;LWFinger&gt;</span> On a VB VM installed today from KDE Live CD Build 0391, YaST does not run from the GUI. Starting it with kdesu fails silently.
+<a name="l-165"></a><span class="tm">18:16:38</span><span class="nk"> &lt;Creatura85&gt;</span> since this is open discussion i have a question
+<a name="l-166"></a><span class="tm">18:16:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Creatura85:</span> sure. ask
+<a name="l-167"></a><span class="tm">18:17:00</span><span class="nk"> &lt;Creatura85&gt;</span> what do you think about fedora 17? and most important about the usr merge think ?
+<a name="l-168"></a><span class="tm">18:17:07</span><span class="nk"> &lt;Creatura85&gt;</span> *thing
+<a name="l-169"></a><span class="tm">18:17:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> did they do the usrmerge ?
+<a name="l-170"></a><span class="tm">18:18:00</span><span class="nk"> &lt;Creatura85&gt;</span> http://www.h-online.com/open/news/item/Fedora-17-Beefy-Miracle-released-1585486.html
+<a name="l-171"></a><span class="tm">18:18:09</span><span class="nk"> &lt;LWFinger&gt;</span> The last Fedora I installed was 15, and that was only to debug a specific kernel issue that they had.
+<a name="l-172"></a><span class="tm">18:18:19</span><span class="nk"> &lt;Creatura85&gt;</span> -&gt; ... "The latest version of the Linux distribution also implements much-discussed changes to the filesystem structure involving the removal of the /bin/, /sbin/, /lib/ and /lib64/ directories "
+<a name="l-173"></a><span class="tm">18:18:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> I myself don't have time to look for many other distris. Just openSUSE and Debian for my servers and armv5 devices
+<a name="l-174"></a><span class="tm">18:19:01</span><span class="nk"> &lt;Creatura85&gt;</span> more details here http://www.h-online.com/open/features/What-s-new-in-Fedora-17-1585254.html
+<a name="l-175"></a><span class="tm">18:19:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> in my feeling, usrmerge caused half of the bugs we had with 12.2
+<a name="l-176"></a><span class="tm">18:19:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> because mkinitrd and kiwi would then only grab symlinks from /bin/
+<a name="l-177"></a><span class="tm">18:19:38</span><span class="nk"> &lt;Creatura85&gt;</span> imho i dont undertand why do opensuse follows fedora in some ways ?
+<a name="l-178"></a><span class="tm">18:19:55</span><span class="nk"> &lt;Creatura85&gt;</span> *understand
+<a name="l-179"></a><span class="tm">18:19:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> because some people think, it is the future
+<a name="l-180"></a><span class="tm">18:20:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> more modern.
+<a name="l-181"></a><span class="tm">18:20:25</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> and what do you think about it? is really the future ?
+<a name="l-182"></a><span class="tm">18:20:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> usrmerge does not really matter.
+<a name="l-183"></a><span class="tm">18:20:46</span><span class="nk"> &lt;LWFinger&gt;</span> In addition, openSUSE does not have the manpower to support a major system on its own.
+<a name="l-184"></a><span class="tm">18:20:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> systemd is a different beast
+<a name="l-185"></a><span class="tm">18:20:47</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> in general
+<a name="l-186"></a><span class="tm">18:21:29</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> sorry to hear that :)
+<a name="l-187"></a><span class="tm">18:21:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> well. we do OBS, LibreOffice, KDE
+<a name="l-188"></a><span class="tm">18:22:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> well... the last two have a big upstream of course
+<a name="l-189"></a><span class="tm">18:22:49</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> talking about KDE, the but with event sounds from the desktop seemed to be working again in 12.2 M4
+<a name="l-190"></a><span class="tm">18:22:57</span><span class="nk"> &lt;Creatura85&gt;</span> i guess the bug was fixed
+<a name="l-191"></a><span class="tm">18:23:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> good
+<a name="l-192"></a><span class="tm">18:23:45</span><span class="nk"> &lt;Creatura85&gt;</span> before that users had to put in manually the full path to the file that had the event associated
+<a name="l-193"></a><span class="tm">18:23:47</span><span class="nk"> &lt;LWFinger&gt;</span> I was about to mention upstream. Yes, we have the support to brand things, but not to support SystemV, for example.
+<a name="l-194"></a><span class="tm">18:24:11</span><span class="nk"> &lt;Creatura85&gt;</span> so in the end, sort of, opensuse is somewhere in the middle
+<a name="l-195"></a><span class="tm">18:24:30</span><span class="nk"> &lt;Creatura85&gt;</span> it has thing from fedora, since is the future, but it has his own things too
+<a name="l-196"></a><span class="tm">18:24:40</span><span class="nk"> &lt;Creatura85&gt;</span> and boy do i like yast for that matter :D
+<a name="l-197"></a><span class="tm">18:24:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> I would not want SystemV dropped soon
+<a name="l-198"></a><span class="tm">18:24:54</span><span class="nk"> &lt;LWFinger&gt;</span> We still have the best KDE-based distro.
+<a name="l-199"></a><span class="tm">18:24:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> and don't think, the effort is really so big
+<a name="l-200"></a><span class="tm">18:25:41</span><span class="nk"> &lt;LWFinger&gt;</span> Probably not at the moment, but I think SystemV will be gone by openSUSE 14.1, if not before.
+<a name="l-201"></a><span class="tm">18:26:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> in 3 years... could be.
+<a name="l-202"></a><span class="tm">18:26:43</span><span class="nk"> &lt;LWFinger&gt;</span> Of course, by then, systemd will be nearly flawless. :)
+<a name="l-203"></a><span class="tm">18:26:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> systemd in 12.1 really had a lot of problems
+<a name="l-204"></a><span class="tm">18:26:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> and it is getting smoother now
+<a name="l-205"></a><span class="tm">18:27:11</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> i hope that systemd is as you said
+<a name="l-206"></a><span class="tm">18:27:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> so in 1 or 2 years, it should be pretty mature
+<a name="l-207"></a><span class="tm">18:27:21</span><span class="nk"> &lt;Creatura85&gt;</span> and yeah i think that opensuse is the best kde distro
+<a name="l-208"></a><span class="tm">18:27:55</span><span class="nk"> &lt;LWFinger&gt;</span> If you look at the improvement is systemd in 8 months, it really is remarkable.
+<a name="l-209"></a><span class="tm">18:27:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> but I still do not like systemd for coding into C what was in /etc/init.d/boot* before
+<a name="l-210"></a><span class="tm">18:28:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> so you can not easily tinker with your system
+<a name="l-211"></a><span class="tm">18:28:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> and I do not expect this to change over time
+<a name="l-212"></a><span class="tm">18:29:10</span><span class="nk"> &lt;LWFinger&gt;</span> No, that seems to be a permanent change.
+<a name="l-213"></a><span class="tm">18:30:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> the other problem I see is that they are integrating functions of formerly separate projects. like xinetd and xdm
+<a name="l-214"></a><span class="tm">18:30:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> so it could create some unmaintainable monster-software no-one wants to touch
+<a name="l-215"></a><span class="tm">18:31:57</span><span class="nk"> &lt;LWFinger&gt;</span> I expect that will be self regulating. Too far along that line and "systeme" will rule.
+<a name="l-216"></a><span class="tm">18:33:30</span><span class="nk"> &lt;Creatura85&gt;</span> in the same array wi th open discussion i would like to add that this is my 3rd week without windows, only opensuse on my pc
+<a name="l-217"></a><span class="tm">18:33:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> congrats :)
+<a name="l-218"></a><span class="tm">18:34:06</span><span class="nk"> &lt;Creatura85&gt;</span> i dont understand why some users complain is not hard/impossible to live without windows
+<a name="l-219"></a><span class="tm">18:34:14</span><span class="nk"> &lt;Creatura85&gt;</span> *that is
+<a name="l-220"></a><span class="tm">18:34:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://www.linuxrsp.ru/win-lin-soft/table-eng.html helps
+<a name="l-221"></a><span class="tm">18:34:20</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> thanks
+<a name="l-222"></a><span class="tm">18:34:35</span><span class="nk"> &lt;LWFinger&gt;</span> Yes, congrats. For the past 3 years, Windows has only existed on my machine as XP in a VM. I still have 1 app that needs it.
+<a name="l-223"></a><span class="tm">18:35:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> one that does not work with wine?
+<a name="l-224"></a><span class="tm">18:35:09</span><span class="nk"> &lt;Creatura85&gt;</span> i have discovered that linux games like torcs make my gpu even hotter that windows games do :)
+<a name="l-225"></a><span class="tm">18:35:27</span><span class="nk"> &lt;Creatura85&gt;</span> thanks LWFinger
+<a name="l-226"></a><span class="tm">18:35:27</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> Not yet.
+<a name="l-227"></a><span class="tm">18:35:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Creatura85:</span> try tuxracer and supertux and smc and asc and... widelands
+<a name="l-228"></a><span class="tm">18:36:06</span><span class="nk"> &lt;LWFinger&gt;</span> I wish I had time for games. :(
+<a name="l-229"></a><span class="tm">18:36:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> (from opensuse's games project/repo)
+<a name="l-230"></a><span class="tm">18:36:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> oh and frozen-bubble is very small, simple and addictive
+<a name="l-231"></a><span class="tm">18:37:21</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> i have completed supertux in the past :D
+<a name="l-232"></a><span class="tm">18:37:28</span><span class="nk"> &lt;Creatura85&gt;</span> tuxkart is funny too
+<a name="l-233"></a><span class="tm">18:37:44</span><span class="nk"> &lt;Creatura85&gt;</span> torcs got my gpu at 101 degrees celsius
+<a name="l-234"></a><span class="tm">18:38:02</span><span class="nk"> &lt;Creatura85&gt;</span> but still runned at 80-90 fps :)
+<a name="l-235"></a><span class="tm">18:38:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> I once got a chip to 110
+<a name="l-236"></a><span class="tm">18:38:15</span><span class="nk"> &lt;Creatura85&gt;</span> for nvidia gpu 110 is the limit
+<a name="l-237"></a><span class="tm">18:38:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> which is close to what silicium can survive
+<a name="l-238"></a><span class="tm">18:38:24</span><span class="nk"> &lt;LWFinger&gt;</span> Are you guys trying to boil water?
+<a name="l-239"></a><span class="tm">18:38:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> someone mis-placed the cooler on mine
+<a name="l-240"></a><span class="tm">18:38:55</span><span class="nk"> &lt;Creatura85&gt;</span> here is my pc: http://creatura.dlinkddns.com/~creatura/sysinfo/
+<a name="l-241"></a><span class="tm">18:39:35</span><span class="nk"> &lt;LWFinger&gt;</span> At 110, I would think that the dopants would be quite mobile. The silicon itself would still be OK, but the active parts might get disrupted.
+<a name="l-242"></a><span class="tm">18:39:42</span><span class="nk"> &lt;Creatura85&gt;</span> mine uses a radiot not a coller...
+<a name="l-243"></a><span class="tm">18:39:54</span><span class="nk"> &lt;Creatura85&gt;</span> *radiator
+<a name="l-244"></a><span class="tm">18:40:16 </span><span class="nka">* Creatura85</span> <span class="ac">my keyboard is gone wild :)</span>
+<a name="l-245"></a><span class="tm">18:40:53</span><span class="nk"> &lt;Creatura85&gt;</span> current temperature is 73 degrees celsius
+<a name="l-246"></a><span class="tm">18:40:56</span><span class="nk"> &lt;LWFinger&gt;</span> I always blame the keyboard, too. :)
+<a name="l-247"></a><span class="tm">18:41:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> when the problem exists between keyboard and chair :P
+<a name="l-248"></a><span class="tm">18:41:21</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> i guess Geeko is having a party :D
+<a name="l-249"></a><span class="tm">18:41:45</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> Yes, the weak link.
+<a name="l-250"></a><span class="tm">18:41:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> got to leave soon. anything important left to tell?
+<a name="l-251"></a><span class="tm">18:42:01</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> yeah, trying to be good at english even if is not my native language
+<a name="l-252"></a><span class="tm">18:42:17</span><span class="nk"> &lt;LWFinger&gt;</span> You are doing quite well.
+<a name="l-253"></a><span class="tm">18:42:29</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> if you say so :)
+<a name="l-254"></a><span class="tm">18:42:42</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> nothing from me
+<a name="l-255"></a><span class="tm">18:43:07</span><span class="nk"> &lt;LWFinger&gt;</span> Nothing more from me either. See you next week, I hope.
+<a name="l-256"></a><span class="tm">18:43:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-257"></a><span class="tm">18:43:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

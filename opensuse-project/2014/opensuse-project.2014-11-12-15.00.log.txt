@@ -1,0 +1,157 @@
+15:00:35 <sysrich> #startmeeting openSUSE Project Meeting
+15:00:35 <bugbot> Meeting started Wed Nov 12 15:00:35 2014 UTC.  The chair is sysrich. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:00:35 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:01:10 <sysrich> Hi Everyone! It's time for the openSUSE Project Meeting. awafaa plinnell warlordfff tigerfoot any of you here?
+15:02:49 <sysrich> I guess not. Okay, who else is here for the project meeting?
+15:02:57 <ddemaio_> I
+15:03:19 <ancor> I'm lurking, as usual :-)
+15:03:26 <gmanu> hi
+15:03:59 <sysrich> Hi douglas, ancor, manu..okay, I'm not all alone, I feel that we can start then, hopefully some other lurkers among the 92 in the channel also :)
+15:04:10 <sysrich> #topic Action Item Review
+15:04:18 <sysrich> #info No action items from last meeting
+15:04:26 <sysrich> Moving swiftly on :)
+15:04:40 <sysrich> #Topic Non-publically accessible Bug Reports
+15:05:53 <sysrich> #info PJessen wrote the following into the openSUSE Project Meeting Agenda - Proposed change in Bugzilla policy wrt duplicates of non-publicly accessible reports. See my posting to opensuse-project from 13 October which went unanswered. I may not be able to attend the meeting tomorrow, hence the following: it is a little annoying when one's report is marked duplicate of something one cannot see. I totally appreciate having two reports
+15:05:53 <sysrich> is a hassle for whoever is working the bug too, but given two reports A and B, could we perhaps disallow marking A a duplicate of B unless B is visible to the reporter of A?
+15:06:12 <sysrich> Does anyone have any thoughts, comments, suggestions, things to say about that?
+15:08:59 <sysrich> No one? please? I of course could say what I think and throw stuff in the minutes for PJessen but these meetings are a chance for everyone to discuss topics like this. What do you all think about those bugreports which are marked 'private', normally becuase they are also in SUSE's Enterprise Products?
+15:09:01 * tigerfoot will look but from a far eyes mostly due to the fact that I'm work
+15:09:19 <tigerfoot> sysrich: if A depend on hidden B B as to be opened ...
+15:09:54 <tigerfoot> if B really can't be cause it contains a full dump of NSA report, then create C and make A duplicate of C
+15:11:33 <sysrich> the 'problem' at the moment, in simplest terms, is that all SUSE Linux Enterprise bugs are 'private', where as all openSUSE bugs are public. However, we share code. So if SUSE find a bug in SLE stuff first, our openSUSE bugs are marked as a duplicate, which then hides any progress
+15:13:37 <awafaa> could we not have the oS bug not marked as duplicate, but a note that it is being worked on in SLE bug foo
+15:13:41 <tigerfoot> sysrich: couldn't triage able to see, if the bug is really private or not ??? Damn it seems centuries working on that "trouble" now we have new infra with splitted bugzilla and still no way to do thing easily and correctly
+15:14:32 <tigerfoot> awafaa: but then in changelog you still we see fixed as #123456 => no access to the resolution which is a no go for an open source community.
+15:15:05 <tigerfoot> it seems also completely stupid to ask triage to reopen a open copy of the initial bug.
+15:15:07 <sysrich> There's lots of issues, most of them internal to SUSE, that need to be addressed. Not wanting to leak private customer data is an important point for SUSE, but keeping that customer data in Bugzilla is essential for them to reproduce bugs efficientl
+15:16:05 <ddemaio_> I second that. I think there are some legal consideration we as a community must accept
+15:16:21 * tigerfoot understand that, but once a resolution is found. if the bug has to be kept closed an open copy is made with no private data,
+15:16:40 <tigerfoot> the private is duplicate the open one, and changelog contains only pointer to the open copy ...
+15:17:45 <gmanu> What I understand here is even if we commit on open source code, we will not divulge the customer's data. So, cant the developer leave a note as awafaa suggested and when it is fixed, point to the patch and close the bug
+15:17:47 * tigerfoot think it the best way  ... so SLE will also have an open pointer , and only the related customer could see his private bug and fixes ...
+15:18:19 <gmanu> the commit log will have technical explanation, not customer details
+15:19:34 <sysrich> I have a somewhat petty observation to make - this would be less of an issue if openSUSE found more of the bugs first. It only happens when SLE finds them first, and therefore 'ours' are the duplicates.
+15:20:48 <tigerfoot> :-) but are really most of them containing private data ?
+15:21:19 <gmanu> tigerfoot: Even if not, Entreprise customers would not want to talk about it
+15:21:21 <sysrich> After a SLE product is released (ie. every bug that is 'new' in SLE 12 since the beginning of November), yes, pretty much
+15:21:54 <sysrich> During Alpha/Beta, it's more complicated, as you have less customers finding bugs and more SUSE engineers finding bugs
+15:22:27 <ddemaio_> perhaps the details of the bug could expose some sensitive information
+15:22:42 <tigerfoot> so I don't see an easy solution, especially without a high charge of work on SUSE side to create an open copy and reference that one once a fix is done ...
+15:23:14 <gmanu> What about the suggestion that I suggested earlier, is it not ok?
+15:23:37 <ddemaio_> i'm good with it
+15:24:02 <tigerfoot> gmanu: it's not about the commit log, its about having fix bug bnc#88567 in rpm changelog ...
+15:24:13 <sysrich> gmanu: tying two bugs together like that..how would you actually do it in Bugzilla? You have to consider stuff like the following - SUSE found and fixed 4700 bugs during the development of SLE 12.. only some of those overlap with openSUSE, you cant expect a developer to be able to remember which :)
+15:24:26 <tigerfoot> if I saw a bug fixed, I'm going to carefully check it ... damn no I can't its private ...
+15:24:59 <gmanu> tigerfoot: Ok.. Lets say it is like this
+15:25:08 <gmanu> We have 2 bugzillas, single rpm
+15:25:18 <gmanu> 1 BZ is private where all the work goes on
+15:25:24 <sysrich> we have 1 bugzilla
+15:25:25 <sysrich> 2 frontends
+15:25:37 <sysrich> but it's really a single bugzilla, one database
+15:25:42 <tigerfoot> sysrich: me too :-)
+15:25:43 <gmanu> sysrich: sorry 2 bugs
+15:26:06 <gmanu> In BZ1 all the work goes on
+15:26:32 <gmanu> In BZ2 a developer comments I am working on it, and once he has fixed it, he posts his patch over the BZ
+15:26:43 <gmanu> and the RPM Changelog will contain BZ1 and BZ2
+15:27:23 <sysrich> how would you know that BZ1 and BZ2 are linked, related? how would you track that?
+15:27:41 <sysrich> how would you systematically process it - remember, thousands of bugs..
+15:27:58 <gmanu> sysrich: When you close the BZ2, you just duplicate it to BZ1
+15:28:06 <gmanu> on the BZ
+15:28:27 <gmanu> And they are all linked on BZ
+15:28:34 <gmanu> But duplicate after fixing it.
+15:28:47 <sysrich> gmanu: I don't see how that is beneficial at all, that seems like a duplication of work, and something that's impossibel to track
+15:28:49 <gmanu> Also you can relate to bugs in BZ
+15:28:51 <ddemaio_> so duplicate is the identifier
+15:28:57 <gmanu> ddemaio_: exactly
+15:28:59 <sysrich> gmanu: so you'd end up with a whole bunch of orphaned 'BZ2's' that people forget to close
+15:29:37 <gmanu> sysrich: We used to do this when we were at work.
+15:29:45 <sysrich> and, you need to explain the benefit this is to anyone - if all the work is happening in BZ1, then no one is seeing anything, no one has anything to contribute, no one can help.. it's the same as we have now, just that you have BZ2 where people can complain about the lack of progress in public
+15:29:53 <gmanu> sysrich: Remember a developer can never work more than 10 works whatever it is
+15:30:48 <gmanu> sysrich: If you duplicate it earlier, people think they have been shunned off, if you tell them we are working on it, they try to be patient and wait for a solution, the developer can post a patch once it is ready
+15:31:13 <sysrich> gmanu: fundementally, if you're making a bug a duplicate, then it means 'there's another bug that someone is already working on that's the same'
+15:31:22 <gmanu> I am assuming that if it is an enterprise bug SUSE will have to fix it anyways or give a technical expl why it cannot be done
+15:32:08 <ddemaio_> Are there not enough bugs out there in the world
+15:32:14 <gmanu> sysrich: yes.. But you can duplicate it with Changes made on BZ
+15:32:47 <sysrich> gmanu: define those changes - and then you need to give me all the ammunition so I can persuade SUSE to change how they work and to change the tool :)
+15:34:19 <gmanu> sysrich: give me a second let me check
+15:35:25 <gmanu> sysrich: Well bugzilla has these things
+15:35:32 <gmanu> Status and Resolution
+15:35:50 <gmanu> You can easily use them
+15:35:56 <gmanu> Status - In Progress
+15:36:03 <gmanu> When it is Resolved you duplicate it
+15:36:32 <gmanu> But it is a workable solution
+15:37:33 <sysrich> gmanu: it isn't, but I can see how from your perspective it might be. I will take this up with people internal at SUSE though
+15:39:18 <sysrich> of course, tehre is also another answer - you can just ask the SUSE engineer who made your openSUSE bug a duplicate, of the status of the SLE bug
+15:39:23 <sysrich> I've done that plenty of times..
+15:39:27 <sysrich> and I've never not been given an answer...
+15:40:43 <gmanu> Well we can see
+15:43:47 <sysrich> #info Good discussion about the topic, some suggestions, but at the core, this requires SUSE to change how they work internally, so Richard to discuss inside SUSE
+15:43:58 <sysrich> #action Richard to discuss options for making SLE bugs more publically visible within SUSE
+15:44:09 <sysrich> Next topic
+15:44:12 <sysrich> #topic Tumbleweed
+15:44:34 <sysrich> I left this on the Agenda on purpose, because I figured some people might want to discuss the current status of Tumbleweed, it's OBS build targets, and such. Is there anyone who wants to talk about stuff?
+15:47:47 <sysrich> No one has any feedback, questions, topics to discuss about Tumbleweed?
+15:49:18 <sysrich> Okay then, any other topics?
+15:49:23 <sysrich> #topic Any other Business?
+15:50:59 <sysrich> Last call.. anynone have any other topics for this Project meeting?
+15:51:16 <plinnell> SCALE
+15:51:55 <plinnell> We can confirm openSUSE will have a mini summit at SCALE in Los Angeles Feb 2015
+15:52:31 <CygniX> wait, there was a meeting, and are none suse members invited to contribute?
+15:52:38 <sysrich> #info openSUSE are planning to have a summit co-located with SCALE in Los Angeles in Feb 2015
+15:53:06 <CygniX> I do have some complaints about tumbleweed naming scheme
+15:53:07 <sysrich> CygniX: there is a meeting at 1500 UTC every 2nd Wednesday in this channel - https://en.opensuse.org/openSUSE:Project_meeting
+15:53:25 <CygniX> sysrich: thanks, for that. I was unaware
+15:53:31 <sysrich> CygniX: and I dont know what yuo mean by 'non SUSE members' - openSUSE is a public open source project, everyone is allowed to contribute
+15:53:33 <plinnell> CygniX: this has been long in the works... thanks to Drew Adams
+15:53:45 <sysrich> CygniX: we'd been doing these Project meetings for..oh, about 10 years now :)
+15:53:58 <sysrich> CygniX: I post the minutes to opensuse-project@ mailing list every fortnight even ;)
+15:54:09 <sysrich> CygniX: okay, let me reset the meeting topic back to tumbleweed
+15:54:13 <sysrich> #topic Tumbleweed - Take 2
+15:54:19 <sysrich> CygniX: what are you issues?
+15:55:05 <CygniX> I understood that tumbleweed itself is a full distro, but there are some repositories that have both factory and tumbleweed directories.
+15:55:13 <CygniX> This causes confusion
+15:55:36 <CygniX> and then there are some with no tumbleweed directories, but only factory
+15:55:43 <sysrich> CygniX: when you say 'some repositories', what do you mean? the Tumbleweed distribution repositories are in http://download.opensuse.org/tumbleweed
+15:55:44 <CygniX> example, games repository
+15:56:10 <sysrich> CygniX: if you're talking about OBS repositories - it's the resposibility of the maintainers of those projects to setup the repositories for their projects the way they want them
+15:56:36 <CygniX> there needs to be consistency
+15:58:01 <sysrich> there does, but OBS repositories are not centerally managaged. We have distributed maintainers. They have to set things up the way that works for them
+15:59:36 <CygniX> You can see how it may be confusing for someone just moving to suse and wants to use the rolling release
+16:00:38 <sysrich> Yes and no - first, we're openSUSE (the free and open source project that produces the openSUSE and Tumbleweed distributions), not SUSE (the corporation that produces SUSE Linux Enterprise and other paid-for products)
+16:01:11 <CygniX> i am using suse and openSUSE here in this case
+16:01:31 <CygniX> I mean, i am using suse to mean openSUSE
+16:01:33 <sysrich> and while I'd love to be able to say that 'every OBS Project is currently setup and working right for use with Tumbleweed' - it's not, but the OBS Projects are setup by anyone and everyone who uses OBS. We dont centrally manage them, we don't centrally control them, we need our maintainers to do their job and set up their projects in the right way for the people they want to provide their packages for
+16:02:29 <CygniX> While I understand that sentiment, there needs to be a little more structure
+16:03:39 <sysrich> and how would you propose we impliment that? if you're willing to step up and help maintain some of these OBS Projects which you feel are configured 'wrong' right now, I'm sure the maintainers would appreciate the help
+16:04:16 <tigerfoot> sysrich: actually the mess is around the repository ... only d.o.o know what tumbleweed is, the other mirror are pointing to factory
+16:04:38 <CygniX> hahaha, you don't want me to restructure openSUSE repos, there will be a lot of resistance and unhappy maintainers
+16:04:43 <tigerfoot> if you setup d.o.o/tumbleweed the mirror will answer 404
+16:05:08 <sysrich> tigerfoot: d.o.o is how everyone should be getting their opensuse packages - thats why we have mirrorbrain
+16:05:22 <sysrich> tigerfoot: so please, don't complicate the issue, Cygnix's point is about OBS repos and nothign to do with mirrors
+16:05:28 <tigerfoot> also even
+16:06:15 <tigerfoot> sorry even after read the whole thread I still be totally confused about who's who and which repo are for between factory of obs factory dev and tumbleweed target
+16:06:55 <sysrich> CygniX: and your reaction to that suggestion kind of proves my point - we didn't want to make maintainers unhappy. So we've told them what they need to do. If the information is unclear I can help clarify it. But I dont think it's right for me, or anyone else to trample over maintainers - they need to make changes, and if you think they're not ,I suggest you contact them, or help them
+16:07:12 <sysrich> tigerfoot: Bruno, please be very clear. Are you now talking about the OBS repositories, or download.o.o?
+16:07:19 <CygniX> sysrich: the point here is, rather the a user guessing whether factory means tumbleweed or vice versa, if we say factory is now actually tumbleweed, then let's ask each maintainer to rename the repo. it will help lessen confusion.
+16:07:31 * tigerfoot will just sat down until the trouble wind has pasted and we as packager and sometime repo maintainer have a clear vision about what we have to do, and setup it once for years.
+16:08:00 <sysrich> CygniX: the point is, we've done that, the guidance for what maintainers should be doing is in the opensuse-factory mailinglist, and they need to do it.
+16:08:33 <sysrich> http://lists.opensuse.org/opensuse-factory/2014-11/msg00120.html
+16:10:53 <CygniX> sysrich: thanks for that, "Please do not build for both openSUSE:Factory snapshot and openSUE:Tumbleweed" this is essence was what I was asking.
+16:11:22 <sysrich> CygniX: the mail has been there for a week now. Clearly titled for OBS Project Maintainers, in the mailing list where they should all be reading
+16:11:42 <CygniX> I am not subscribed to all mailing list.
+16:12:51 <sysrich> I understand that, but opensuse-factory is really the one mailinglist probably every opensuse developer/contributor/maintainer should be subscribed to :)
+16:13:08 <CygniX> sysrich: that being said, I also curious if many of the maintainers are not aware of that email.
+16:13:39 <sysrich> maybe they're not, in which case, hopefully discussions like this help people notice it :)
+16:14:31 <sysrich> but I do know the message got out to lots of maintainers - packman for example got their setup spot on in very quick time
+16:14:37 <CygniX> hopefully within the next couple months it will all be worked out
+16:14:48 <sysrich> in fact, they mostly figured out what to do before I'd figured out how to tell them what to do
+16:15:26 <sysrich> #info If you're an OBS Project Maintainer, please make sure you've read http://lists.opensuse.org/opensuse-factory/2014-11/msg00120.html and setup your OBS Project accordingly
+16:16:08 <sysrich> Any other questions?
+16:16:41 <CygniX> I am sure I have many others, but many for the next meeting.
+16:16:58 <CygniX> maybe for the next meeting that is.
+16:17:13 <sysrich> This meeting has already run long, so, yeah, I dont like to end discussions, but I only want to give time for one more question if there is one out there. Any takers?
+16:18:09 <sysrich> Okay..I guess not
+16:18:13 <sysrich> #topic Next Meeting
+16:18:35 <sysrich> #info Next meeting will be on 26th November at 1500 UTC, See you think
+16:18:41 <sysrich> That's all who took part in the meeting
+16:18:43 <sysrich> #endmeeting

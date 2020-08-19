@@ -1,0 +1,116 @@
+18:01:20 <bmwiedemann> #startmeeting
+18:01:20 <bugbot> Meeting started Mon Mar 19 18:01:20 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:01:20 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:01:39 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+18:01:39 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+18:01:49 <bmwiedemann> # topic 12.2 testing
+18:01:53 <bmwiedemann> #topic 12.2 testing
+18:03:00 <bmwiedemann> MS2 was delayed for a week with openQA test-results showing poor quality until coolo fixed some bug
+18:03:18 <bmwiedemann> so now only the LiveCDs had problems installing
+18:03:43 <bmwiedemann> and for some reason, the consoletests ran in text mode instead of framebuffer
+18:04:29 <bmwiedemann> I did not do manual testing so far.
+18:04:49 <bmwiedemann> LWFinger: how was your experience so far?
+18:05:48 <LWFinger> I have installed both the NET Install (with an LXDE desktop) and the KDE Live CD, both on a VB VM.
+18:06:48 <LWFinger> The NET Install seemed to go OK, but I have not yet done much testing. I was mainly checking to see that the DHCP problem was still fixed.
+18:08:06 <LWFinger> The KDE Live CD had the GRUB2 problem with 2 missing files. I added the Bug # and the workaround to the most annoying bugs list.
+18:09:01 <bmwiedemann> great.
+18:09:04 <LWFinger> One other problem with KDE. No matter whether you select "Logg Off", "Restart", or "Shut Down", the effect is "Log Off".
+18:09:22 <bmwiedemann> yes, I also saw that one on openQA.
+18:09:47 <LWFinger> That is a minor annoyance as you still have to shut down or reboot from the Login screen.
+18:10:02 <LWFinger> Otherwise, no problems.
+18:11:23 <LWFinger> Done.
+18:12:08 <bmwiedemann> tigerfoot, mrdocs, Ilmehtar: do you have any testing experience to share?
+18:12:27 <LWFinger> One thing about the GRUB2 problem. Coolo was added to the Cc list for the bug report. It should be fixed soon.
+18:12:58 <mrdocs> bmwiedemann: not recently.. just following along for the moment.. been trying to fix gcc4.7 fails
+18:13:38 <bmwiedemann> mrdocs: also a good thing :)
+18:13:38 <LWFinger> Have you tried a kernel build with 4.7?
+18:18:40 <bmwiedemann> hmm... anything else to add to the 12.2 MS2 testing topic?
+18:20:02 <bmwiedemann> #topic Next Meeting
+18:20:09 <LWFinger> I just looked at the Beta forum to see what was reported there. One problem with "popping" in sound, but better than MS1.
+18:20:40 <LWFinger> One other user reported Video driver (Intel) problems.
+18:20:53 <bmwiedemann> could be pulseaudio or kernel probs
+18:21:23 <bmwiedemann> on factory ML there was also one report about Nvidia driver, which did not compile on MS2 (needed a patch)
+18:22:31 <LWFinger> That is always a problem - The patch I saw was not enough for my system with kernel 3.3. Nvidia is slow to react to new kernel API changes.
+18:22:55 <bmwiedemann> How about 2012-04-16 for the next meeting (would be 11 days after scheduled MS3 date)?
+18:23:31 <LWFinger> OK here. That would be income tax day in the US, but mine are already done.
+18:24:16 <LWFinger> Will Europe be on Summer Time by that date?
+18:24:19 <bmwiedemann> yes
+18:24:35 <bmwiedemann> so should we say 17:00 UTC then?
+18:25:31 <LWFinger> I think that is right.
+18:26:08 <bmwiedemann> good. I'll update it in the wiki after our meeting
+18:26:13 <bmwiedemann> #topic open discussion
+18:26:20 <tigerfoot> sorry was in late ...
+18:26:54 <LWFinger> tigerfoot: Any MS2 experiences?
+18:27:01 <tigerfoot> about factory, tittiatcoke made really nice progress with grub2/plymouth/systemd
+18:27:46 <tigerfoot> we just have a pb with the boot luks.sh script but that should be solved in the next 10 days. (I need to unlock now my crypted lvm/btrfs)
+18:27:48 <bmwiedemann> was thinking: what are you guys thinking about how we do testing / QA for Factory. Is the overall quality sufficient?
+18:28:25 <tigerfoot> bmwiedemann: absolutely not we miss lot's of case
+18:28:41 <mrdocs> it is definitely better with the automated things.. unfortunately you still need real people to find/fix things
+18:28:50 <LWFinger> I think so. I used the summary to tell when to start testing post-MS1 builds.
+18:28:56 <tigerfoot> and I think real cases, but writing scenarios then convert them in automated tests is time consuming
+18:29:11 * mrdocs noda
+18:29:12 <tigerfoot> this time is not paid, then it didn't exist ...
+18:29:15 <mrdocs> nods even
+18:29:48 <tigerfoot> but in the overall things to test and fixes, openQA is a wonderfull tools ...
+18:30:21 <tigerfoot> we just need 10000 more tests, and find a way to run them quite easily on bare machine (ala Yast autoinstall)
+18:30:21 <LWFinger> Should oversize Live CD's be added to most-annoying bugs list?
+18:30:26 <bmwiedemann> the goal of openQA was not to ensure 100% bug-freeness, but to have something testable
+18:30:49 <mrdocs> any thoughts to auto-testing upgrades ?
+18:30:50 <mrdocs> eg
+18:31:04 <mrdocs> going from 12.1 > 12.2 ?
+18:31:26 <bmwiedemann> openQA is testing dist-upgrades both with zypper dup and from .iso
+18:31:34 <mrdocs> cool
+18:31:34 <bmwiedemann> just need to add 12.1 as a base-image
+18:31:49 <bmwiedemann> so for now it is only 11.3->12.2 and 11.4->12.2
+18:32:23 <LWFinger> Do those 11.X to 12.1 upgrades work?
+18:32:36 <bmwiedemann> this testing had caught a serious bug one day before 12.1 GM
+18:32:59 <mrdocs> wow
+18:33:13 * tigerfoot remember ...
+18:33:38 <bmwiedemann> http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-NET-i586-Build0263-11.4gnome32zdup/zdup-3.png looks like a bug from USRmerge
+18:33:59 <bmwiedemann> or something else?
+18:34:36 <bmwiedemann> but another zypper dup from 11.4kde worked
+18:35:29 <tigerfoot> bmwiedemann: perhaps for the /usr merge, having a script that at least try to open each bash script and check shebang or dig inside them path about tools mis-using /bin /sbin
+18:36:02 <tigerfoot> and another one finding all rpm who put binaries in /bin /sbin in place of symlink ?
+18:36:08 <bmwiedemann> IMHO, shell scripts should keep using /bin/sh
+18:36:20 * tigerfoot doesn't speak perl that much ...
+18:36:23 <bmwiedemann> otherwise, you are loosing portability
+18:36:34 <LWFinger> How is that development coming? will /usr change be ready for 12.2?
+18:36:42 <tigerfoot> bmwiedemann: shell script should use #!/usr/bin/env sh
+18:36:55 <bmwiedemann> really? no!
+18:37:28 <tigerfoot> bmwiedemann: then your scripts normally are fully portable (even bsd etc .. with ksh, dash, bash etc )
+18:37:55 <tigerfoot> python or ruby should use also the env way,
+18:37:55 <bmwiedemann> you mean, those do not have /bin/sh ?
+18:38:17 <bmwiedemann> I found, that using env does make a slight difference
+18:38:30 <bmwiedemann> that is: you can not use killall NAMEOFYOURSCRIPT
+18:39:26 <bmwiedemann> because $0 of the process is set differently
+18:41:13 <tigerfoot> bmwiedemann: oh really, was not aware of that ...
+18:41:36 <bmwiedemann> as for automated testing, I would like to start with those programs, that would impact most users if they failed
+18:42:16 <bmwiedemann> inkscape and gimp are already included ;)
+18:42:42 <bmwiedemann> maybe postfix & thunderbird could be worthwile
+18:42:52 <LWFinger> Firefox?
+18:42:56 <bmwiedemann> long done
+18:43:21 <bmwiedemann> firefox was about the first thing to test after xterm
+18:44:21 <bmwiedemann> (though, the firefox test is one of the hardest to maintain with the fast version updates / design changes and different theming for every of our 4 desktop environments)
+18:47:18 <LWFinger> The only other program I use very much is LibreOffice.
+18:47:23 <bmwiedemann> I think, I'll do auto-test of postfix+courier-imap+thunderbird next. covers a good part of the TCP/IP stack in the kernel, too
+18:48:15 <bmwiedemann> LWFinger: testing oowriter and oomath for now. are calc and impress important?
+18:48:27 <tigerfoot> bmwiedemann: calc is
+18:48:38 <tigerfoot> think about financial, etc ...
+18:48:53 <tigerfoot> budget for openSUSE fundation :D
+18:48:54 <LWFinger> For me, calc is important.
+18:49:08 <bmwiedemann> OK, so I'll also do that soon
+18:50:14 <bmwiedemann> do we have any example tables with complicated macros?
+18:52:57 <LWFinger> A quick Google search did not show anything, but I found a thread that references their automated testing. Perhaps I can find something there.
+18:53:04 <bmwiedemann> I'll surely find or make me one
+18:53:39 <bmwiedemann> how about instant messaging programs? aren't they important, too?
+18:53:55 <mrdocs> bmwiedemann: poke mmeeks.. he might know how they do testing
+18:54:34 <LWFinger> I never do IM.
+18:55:02 <LWFinger> I also only do IRC for these meetings.
+18:55:09 <bmwiedemann> mrdocs: on last year's FOSDEM, I spoke to Mechtilde of openOffice QA, who told be about their testsuite, that can run core-tests in hours or extensive tests in days :)
+18:56:17 <bmwiedemann> OK. testing IM would be hard anyway, as we don't seem to have any IRC or Jabber servers that could be setup in the VM
+18:56:54 <bmwiedemann> ah, we have in OBS
+19:00:16 <bmwiedemann> any other ideas on what to improve how?
+19:03:13 <bmwiedemann> then we should conclude today's meeting
+19:03:34 <bmwiedemann> thank you all for attending and making this more than a chat between me and Larry :)
+19:03:59 <LWFinger> :)
+19:04:08 <bmwiedemann> #endmeeting

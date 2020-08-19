@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:03:30</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE project meeting</span>
+<a name="l-2"></a><span class="tm">15:03:30</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Mar  5 15:03:30 2014 UTC.  The chair is robjo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:03:30</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:03:46</span><span class="nk"> &lt;robjo&gt;</span> Hi all and welcome to the openSUSE project meeting.
+<a name="l-5"></a><span class="tm">15:03:53</span><span class="nk"> &lt;enola&gt;</span> hi, all
+<a name="l-6"></a><span class="tm">15:04:19</span><span class="nk"> &lt;manugupt1&gt;</span> Hi
+<a name="l-7"></a><span class="tm">15:04:24</span><span class="nk"> &lt;robjo&gt;</span> The agenda can be found here: http://en.opensuse.org/openSUSE:Project_meeting
+<a name="l-8"></a><span class="tm">15:04:39</span><span class="nk"> &lt;robjo&gt;</span> and it looks empty :(
+<a name="l-9"></a><span class="tm">15:05:06</span><span class="nk"> &lt;enola&gt;</span> i guess i'm too late for the osc meeting, the mail said it's at 16:00, but no time zone, sorry
+<a name="l-10"></a><span class="tm">15:05:31</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">enola:</span> the oSC eeting starts after the project meeting, you are too early
+<a name="l-11"></a><span class="tm">15:05:50</span><span class="nk"> &lt;enola&gt;</span> ok, see you then
+<a name="l-12"></a><span class="tm">15:05:53</span><span class="nk"> &lt;manugupt1&gt;</span> We did not update soc
+<a name="l-13"></a><span class="tm">15:05:59</span><span class="nk"> &lt;robjo&gt;</span> although the bickering about oSC started before this meeting already
+<a name="l-14"></a><span class="tm">15:06:01</span><span class="nk"> &lt;manugupt1&gt;</span> Sorry about it
+<a name="l-15"></a><span class="tm">15:06:54</span><span class="nk"> &lt;victorhck&gt;</span> I would like to add a problem with planet-openSUSE...
+<a name="l-16"></a><span class="tm">15:07:26</span><span class="nk"> &lt;victorhck&gt;</span> since this year doesn't work ok...
+<a name="l-17"></a><span class="tm">15:07:56</span><span class="nk"> &lt;victorhck&gt;</span> I talked with darix but he's very busy...
+<a name="l-18"></a><span class="tm">15:08:04</span><span class="nk"> &lt;manugupt1&gt;</span> I am going home can we wait for 5 mins
+<a name="l-19"></a><span class="tm">15:08:26</span><span class="nk"> &lt;victorhck&gt;</span> I don't know if someone else can try to fix it,,,
+<a name="l-20"></a><span class="tm">15:08:35</span><span class="nk"> &lt;ilmehtar&gt;</span> <span class="hi">victorhck:</span> have you opened a ticket with admin@opensuse.org?
+<a name="l-21"></a><span class="tm">15:08:49</span><span class="nk"> &lt;victorhck&gt;</span> yep
+<a name="l-22"></a><span class="tm">15:09:01</span><span class="nk"> &lt;henne&gt;</span> planet is basically unmaintained
+<a name="l-23"></a><span class="tm">15:09:15</span><span class="nk"> &lt;henne&gt;</span> like all our other infrastructure, except OBS
+<a name="l-24"></a><span class="tm">15:09:34</span><span class="nk"> &lt;victorhck&gt;</span> ticket 1256
+<a name="l-25"></a><span class="tm">15:09:49</span><span class="nk"> &lt;victorhck&gt;</span> ah!
+<a name="l-26"></a><span class="tm">15:10:02</span><span class="nk"> &lt;robjo&gt;</span> got to love the general statements
+<a name="l-27"></a><span class="tm">15:10:36</span><span class="nk"> &lt;henne&gt;</span> well it's the truth...
+<a name="l-28"></a><span class="tm">15:10:37</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">victorhck:</span> I would love to give a try... only on weekends though
+<a name="l-29"></a><span class="tm">15:10:44</span><span class="nk"> &lt;manugupt1&gt;</span> If that is ok
+<a name="l-30"></a><span class="tm">15:10:54</span><span class="nk"> &lt;victorhck&gt;</span> yep of course
+<a name="l-31"></a><span class="tm">15:11:01</span><span class="nk"> &lt;robjo&gt;</span> anyway, we have found a potential maintainer for planet, discussions of what it means to maintain planet are on going we'll see if the person sticks
+<a name="l-32"></a><span class="tm">15:11:34</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">robjo:</span> who is it?
+<a name="l-33"></a><span class="tm">15:11:41</span><span class="nk"> &lt;victorhck&gt;</span> <span class="hi">manugupt1:</span> If I can help you just ping me...
+<a name="l-34"></a><span class="tm">15:11:46</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> ??
+<a name="l-35"></a><span class="tm">15:11:48</span><span class="nk"> &lt;victorhck&gt;</span> but I'm not a devel
+<a name="l-36"></a><span class="tm">15:11:52</span><span class="nk"> &lt;victorhck&gt;</span> :(
+<a name="l-37"></a><span class="tm">15:11:52</span><span class="nk"> &lt;henne&gt;</span> and where has this been discussed?
+<a name="l-38"></a><span class="tm">15:12:03</span><span class="nk"> &lt;henne&gt;</span> and why is that person not on admin@
+<a name="l-39"></a><span class="tm">15:12:12</span><span class="nk"> &lt;henne&gt;</span> and why not in the ticket system? :)
+<a name="l-40"></a><span class="tm">15:12:15</span><span class="nk"> &lt;robjo&gt;</span> That part is the board meeting minutes from the face to face
+<a name="l-41"></a><span class="tm">15:12:26</span><span class="nk"> &lt;manugupt1&gt;</span> I am no expert so I will need some help
+<a name="l-42"></a><span class="tm">15:12:41</span><span class="nk"> &lt;robjo&gt;</span> sorry that we cannot e-mail everyone personally to provide information, you guys have to read.
+<a name="l-43"></a><span class="tm">15:12:42</span><span class="nk"> &lt;warlordfff&gt;</span> sorry
+<a name="l-44"></a><span class="tm">15:13:08</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> can you answer jospoortvliet questions, who is the potential maintainer for planet?
+<a name="l-45"></a><span class="tm">15:13:09</span><span class="nk"> &lt;warlordfff&gt;</span> Dimitris is on it, I sent a mail to lars dimitris and ilmehtar
+<a name="l-46"></a><span class="tm">15:13:45</span><span class="nk"> &lt;warlordfff&gt;</span> I guess those guys are up to something by now
+<a name="l-47"></a><span class="tm">15:13:55</span><span class="nk"> &lt;warlordfff&gt;</span> but definatelly not sure
+<a name="l-48"></a><span class="tm">15:14:05</span><span class="nk"> &lt;henne&gt;</span> can you please stop sending mails in closed circles
+<a name="l-49"></a><span class="tm">15:14:11</span><span class="nk"> &lt;ilmehtar&gt;</span> <span class="hi">warlordfff:</span> I didn't understand the email you sent...
+<a name="l-50"></a><span class="tm">15:14:20</span><span class="nk"> &lt;warlordfff&gt;</span> ok
+<a name="l-51"></a><span class="tm">15:14:23</span><span class="nk"> &lt;ilmehtar&gt;</span> <span class="hi">henne:</span> okay henne, what would you recommend, how would you coordinate this?
+<a name="l-52"></a><span class="tm">15:14:42</span><span class="nk"> &lt;manugupt1&gt;</span> An email to opensuse-web
+<a name="l-53"></a><span class="tm">15:14:51</span><span class="nk"> &lt;warlordfff&gt;</span> I did not send it on closed circles exactly, ilmehtar I just introdused you to each other
+<a name="l-54"></a><span class="tm">15:14:56</span><span class="nk"> &lt;manugupt1&gt;</span> The board can certainly redirect the person there
+<a name="l-55"></a><span class="tm">15:15:09</span><span class="nk"> &lt;manugupt1&gt;</span> No criticism just s suggestion
+<a name="l-56"></a><span class="tm">15:15:11</span><span class="nk"> &lt;henne&gt;</span> admins are on admin@opensuse.org
+<a name="l-57"></a><span class="tm">15:15:26</span><span class="nk"> &lt;ilmehtar&gt;</span> <span class="hi">henne:</span> and do you know how many tickets are sitting there about planet right now?
+<a name="l-58"></a><span class="tm">15:15:41</span><span class="nk"> &lt;henne&gt;</span> no, but this isn't what this is about right? :)
+<a name="l-59"></a><span class="tm">15:15:56</span><span class="nk"> &lt;henne&gt;</span> its about Dimitry telling the admins that he wants to be an admin
+<a name="l-60"></a><span class="tm">15:15:57</span><span class="nk"> &lt;ilmehtar&gt;</span> <span class="hi">henne:</span> for some issues, admin@ is a place where problems go to die, which is what we're trying to fix, by trying to find people to help fix the issues
+<a name="l-61"></a><span class="tm">15:16:17</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">henne:</span>  definatelly not the point here
+<a name="l-62"></a><span class="tm">15:16:30</span><span class="nk"> &lt;henne&gt;</span> Dimitry should send a mail to admin@opensuse.org, telling people he wants to maintain planet
+<a name="l-63"></a><span class="tm">15:16:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok, guys, let's move on. Dimitry wants to help, he contacted the board, now he can join on admin@ - I suggest we move on.
+<a name="l-64"></a><span class="tm">15:16:39</span><span class="nk"> &lt;warlordfff&gt;</span> Dimitri jumped to help, nothing else
+<a name="l-65"></a><span class="tm">15:16:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> all kiss and make up
+<a name="l-66"></a><span class="tm">15:16:54</span><span class="nk"> &lt;jospoortvliet&gt;</span> :D
+<a name="l-67"></a><span class="tm">15:16:57</span><span class="nk"> &lt;warlordfff&gt;</span> lol
+<a name="l-68"></a><span class="tm">15:17:05</span><span class="nk"> &lt;warlordfff&gt;</span> the jos way :D
+<a name="l-69"></a><span class="tm">15:17:16</span><span class="nk"> &lt;jospoortvliet&gt;</span> I'm happy he stepped up, hope he doesn't run away when he sees the tickets ilmehtar spoke off :D
+<a name="l-70"></a><span class="tm">15:17:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">warlordfff:</span> to make everybody happy how about you email admin@ with him in CC, present him and ask to have him subscribed and have an admin explain him the lay of the land?
+<a name="l-71"></a><span class="tm">15:18:39</span><span class="nk"> &lt;warlordfff&gt;</span> Cool I could do that but no sooner than 2 days after
+<a name="l-72"></a><span class="tm">15:18:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> I'm sure planet will survive 2 more days
+<a name="l-73"></a><span class="tm">15:18:53</span><span class="nk"> &lt;warlordfff&gt;</span> cool
+<a name="l-74"></a><span class="tm">15:19:00</span><span class="nk"> &lt;manugupt1_&gt;</span> :)
+<a name="l-75"></a><span class="tm">15:19:02</span><span class="nk"> &lt;victorhck&gt;</span> ;)
+<a name="l-76"></a><span class="tm">15:19:10</span><span class="nk"> &lt;henne&gt;</span> if it would live...
+<a name="l-77"></a><span class="tm">15:19:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> it would've beaten itself to death years ago :D
+<a name="l-78"></a><span class="tm">15:19:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> I know
+<a name="l-79"></a><span class="tm">15:19:31</span><span class="nk"> &lt;robjo&gt;</span> should Dimitry not get a chance to fully understand what he is igning up for before we make him the maintainer of panet here in this meeting?
+<a name="l-80"></a><span class="tm">15:19:37</span><span class="nk"> &lt;robjo&gt;</span> maybe I am just old fashined
+<a name="l-81"></a><span class="tm">15:19:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">robjo:</span> aren't we just going to introduce him to admin and ask them to explain him what's what and how?
+<a name="l-82"></a><span class="tm">15:20:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> he can take it from there, I'm sure. Either in or out ;-)
+<a name="l-83"></a><span class="tm">15:20:10</span><span class="nk"> &lt;henne&gt;</span> yes we are
+<a name="l-84"></a><span class="tm">15:20:18</span><span class="nk"> &lt;henne&gt;</span> but we rahter send around mails to Lars...
+<a name="l-85"></a><span class="tm">15:20:28</span><span class="nk"> &lt;jospoortvliet&gt;</span> ssssht
+<a name="l-86"></a><span class="tm">15:20:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> next subject, if any :D
+<a name="l-87"></a><span class="tm">15:20:40</span><span class="nk"> &lt;henne&gt;</span> please
+<a name="l-88"></a><span class="tm">15:20:47</span><span class="nk"> &lt;robjo&gt;</span> whatever, I am not in the mood for this today
+<a name="l-89"></a><span class="tm">15:22:02</span><span class="nk"> &lt;manugupt1_&gt;</span> Next topic
+<a name="l-90"></a><span class="tm">15:22:10</span><span class="nk"> &lt;manugupt1_&gt;</span> ?
+<a name="l-91"></a><span class="tm">15:22:15</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">GSOC</span>
+<a name="l-92"></a><span class="tm">15:22:23</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> go ;)
+<a name="l-93"></a><span class="tm">15:22:39</span><span class="nk"> &lt;manugupt1_&gt;</span> We currently think that this is the best and the easiest go for us during gsoc
+<a name="l-94"></a><span class="tm">15:23:07</span><span class="nk"> &lt;manugupt1_&gt;</span> We worked very less as compared to previous years for gathering up ideas, thank you mentors :)
+<a name="l-95"></a><span class="tm">15:23:17</span><span class="nk"> &lt;manugupt1_&gt;</span> We will have MATE, ownCloud and zorp with us this year
+<a name="l-96"></a><span class="tm">15:23:29</span><span class="nk"> &lt;manugupt1_&gt;</span> Hopefully we get a lot more slots this year :)
+<a name="l-97"></a><span class="tm">15:23:42</span><span class="nk"> &lt;jospoortvliet&gt;</span> aaaawesome
+<a name="l-98"></a><span class="tm">15:23:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> ;-)
+<a name="l-99"></a><span class="tm">15:24:23</span><span class="nk"> &lt;manugupt1_&gt;</span> That is it from our side, for now
+<a name="l-100"></a><span class="tm">15:25:07</span><span class="nk"> &lt;henne&gt;</span> I think we should come up with a nice proposal template
+<a name="l-101"></a><span class="tm">15:25:17</span><span class="nk"> &lt;henne&gt;</span> I have tons of students asking me for one
+<a name="l-102"></a><span class="tm">15:26:03</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">henne:</span> Hmm,
+<a name="l-103"></a><span class="tm">15:26:07</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">manugupt1:</span> do you have time for this?
+<a name="l-104"></a><span class="tm">15:26:15</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">henne:</span>  yes if you collaborate with me :)
+<a name="l-105"></a><span class="tm">15:26:35</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">henne:</span> if you tell me what you miss and I can also look up at other orgs
+<a name="l-106"></a><span class="tm">15:26:43</span><span class="nk"> &lt;manugupt1_&gt;</span> and suggest them
+<a name="l-107"></a><span class="tm">15:26:55</span><span class="nk"> &lt;henne&gt;</span> https://duckduckgo.com/?q=gsoc+proposal+template&amp;t=opensuse
+<a name="l-108"></a><span class="tm">15:26:57</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">henne:</span> http://en.opensuse.org/openSUSE:GSOC#Writing_a_good_proposal
+<a name="l-109"></a><span class="tm">15:27:33</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">henne:</span> We do have guidelines and we keep it on our application every year, but students still ask because they trust their mentors more
+<a name="l-110"></a><span class="tm">15:27:41</span><span class="nk"> &lt;manugupt1_&gt;</span> However, I am open to expanding it
+<a name="l-111"></a><span class="tm">15:28:22</span><span class="nk"> &lt;manugupt1_&gt;</span> SoI will read the links that you have given and maybe have a separate wiki page?
+<a name="l-112"></a><span class="tm">15:28:28</span><span class="nk"> &lt;manugupt1_&gt;</span> Does that sound good to you?
+<a name="l-113"></a><span class="tm">15:28:38</span><span class="nk"> &lt;henne&gt;</span> yeah a wiki template sounds good
+<a name="l-114"></a><span class="tm">15:29:15</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">henne:</span> If there are things you feel that we are missing feel free to let us know :)
+<a name="l-115"></a><span class="tm">15:30:01</span><span class="nk"> &lt;manugupt1_&gt;</span> Is there anything else?
+<a name="l-116"></a><span class="tm">15:31:07</span><span class="nk"> &lt;robjo&gt;</span> Thanks manugupt1 for keeping us involved with GSoC and the effort you put in
+<a name="l-117"></a><span class="tm">15:31:20</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">other stuff</span>
+<a name="l-118"></a><span class="tm">15:31:37</span><span class="nk"> &lt;robjo&gt;</span> OK, any other topics we need to discuss today?
+<a name="l-119"></a><span class="tm">15:31:40</span><span class="nk"> &lt;manugupt1_&gt;</span> I have a question about F2F meeting, I am sorry I could not post it earlier
+<a name="l-120"></a><span class="tm">15:32:03</span><span class="nk"> &lt;robjo&gt;</span> Remember the oSC meeting starts at the top of the hour so lets not discuss oSC
+<a name="l-121"></a><span class="tm">15:32:15</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> np, go
+<a name="l-122"></a><span class="tm">15:32:20</span><span class="nk"> &lt;manugupt1_&gt;</span> "Although the board generally focuses on non technical areas it is within the boards charter to be the instance of last resource and decision making. We accept this role also for technical areas. "
+<a name="l-123"></a><span class="tm">15:32:47</span><span class="nk"> &lt;manugupt1_&gt;</span> This quote seems wrong to me, people who are not technically inclined may not be willing to participate in elections
+<a name="l-124"></a><span class="tm">15:32:59</span><span class="nk"> &lt;manugupt1_&gt;</span> It is very presumptuous
+<a name="l-125"></a><span class="tm">15:33:28</span><span class="nk"> &lt;manugupt1_&gt;</span> For example, I may not know about systemd, but I am a great ambassador and will be willing to contribute to openSUSE as a board member
+<a name="l-126"></a><span class="tm">15:33:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1_:</span> do note that often, when a 'technical decision' can't be taken, the real reasons are, well - not so technical. More policy-like. I think that that will be true in the vast majority of cases the board would have to get involved.
+<a name="l-127"></a><span class="tm">15:33:55</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">manugupt1_:</span>  I am not technically inclined at all dude
+<a name="l-128"></a><span class="tm">15:34:01</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-129"></a><span class="tm">15:34:09</span><span class="nk"> &lt;robjo&gt;</span> Hmm, sorry it came across that way, but there was certainly no intention to discourage non technical contributors for standing for the board elections
+<a name="l-130"></a><span class="tm">15:34:17</span><span class="nk"> &lt;jospoortvliet&gt;</span> take for example the debian decision for systemd vs its contenders... technical, in theory. More social in practice :D
+<a name="l-131"></a><span class="tm">15:34:34</span><span class="nk"> &lt;warlordfff&gt;</span> +1 jospoortvliet
+<a name="l-132"></a><span class="tm">15:34:42</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">robjo:</span> jospoortvliet I think this should be thought upon
+<a name="l-133"></a><span class="tm">15:34:51</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">jospoortvliet:</span> but the arguments were vastly technical
+<a name="l-134"></a><span class="tm">15:35:10</span><span class="nk"> &lt;manugupt1_&gt;</span> A marketing guy may not even care
+<a name="l-135"></a><span class="tm">15:35:35</span><span class="nk"> &lt;warlordfff&gt;</span> what about a community guy?
+<a name="l-136"></a><span class="tm">15:35:53</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> How could we have framed the context better in the meeting minutes to make this less presumptuous?
+<a name="l-137"></a><span class="tm">15:35:54</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1_:</span> more policy related, I would argue. But in any case, I think that less technically inclined people DO have a place on the board. Also, the board is to act as a team and I do find it extremely unlikely that in the future, a board will be elected with NO technical knowledge at all.
+<a name="l-138"></a><span class="tm">15:36:25</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">warlordfff:</span> and he may not understand it well enough to make a conscious decision, I understand less than half of the stuff on -factory
+<a name="l-139"></a><span class="tm">15:36:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> in short, I think this is a theoretical discussion that, while not crazy, is simply unlikely to have any real world implications.
+<a name="l-140"></a><span class="tm">15:36:49</span><span class="nk"> &lt;warlordfff&gt;</span> then it goes to what jospoortvliet said, the board as a Team
+<a name="l-141"></a><span class="tm">15:37:02</span><span class="nk"> &lt;ilmehtar&gt;</span> <span class="hi">jospoortvliet:</span> +1
+<a name="l-142"></a><span class="tm">15:37:03</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> that's OK, board decisions do not have to be unanimous
+<a name="l-143"></a><span class="tm">15:37:06</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">jospoortvliet:</span> yes, but reading this someone mihgt not stand up for elections
+<a name="l-144"></a><span class="tm">15:37:22</span><span class="nk"> &lt;manugupt1_&gt;</span> because of the fear to take technical decisions
+<a name="l-145"></a><span class="tm">15:37:32</span><span class="nk"> &lt;manugupt1_&gt;</span> You guys are thinking once he is on the board
+<a name="l-146"></a><span class="tm">15:37:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1_:</span> that's a different and rather valid matter.
+<a name="l-147"></a><span class="tm">15:37:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> In that regard, it might make sense to make all this more explicit.
+<a name="l-148"></a><span class="tm">15:37:41</span><span class="nk"> &lt;manugupt1_&gt;</span> I am thinking about the phase before he is on the board
+<a name="l-149"></a><span class="tm">15:37:49</span><span class="nk"> &lt;jospoortvliet&gt;</span> like - in the documents about the board elections
+<a name="l-150"></a><span class="tm">15:38:13</span><span class="nk"> &lt;warlordfff&gt;</span> well  people who run are around for a while so they know how things are around the Project manugupt1_
+<a name="l-151"></a><span class="tm">15:38:23</span><span class="nk"> &lt;ilmehtar&gt;</span> <span class="hi">jospoortvliet:</span> agreed
+<a name="l-152"></a><span class="tm">15:39:13</span><span class="nk"> &lt;manugupt1_&gt;</span> What I am trying to say is  it should be thought again, maybe reworded to explain jos's view (it is more about policy than about technicality) explicitly
+<a name="l-153"></a><span class="tm">15:39:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1_:</span> ... and in case a real technical decision has to be made, the board is to act as a team - the technical members can pick up where less technical ones falter.
+<a name="l-154"></a><span class="tm">15:40:23</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">jospoortvliet:</span> but then even without a board intervention we did well, this time and the board is already thinking of a technical committee
+<a name="l-155"></a><span class="tm">15:40:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1_:</span> I am sure that based on the above discussion you can propose a short paragraph with wording that fits in the wiki about elections. Send it to the project ML and we can edit/discuss and add it. How about that?
+<a name="l-156"></a><span class="tm">15:41:17</span><span class="nk"> &lt;manugupt1_&gt;</span> I will send one
+<a name="l-157"></a><span class="tm">15:41:31</span><span class="nk"> &lt;manugupt1_&gt;</span> By next week then if it is ok to everyone
+<a name="l-158"></a><span class="tm">15:41:50</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> the point was that we want to try and avoid a technical committee, as we think it might lead us down the Fedora road and limit freedom of contribution
+<a name="l-159"></a><span class="tm">15:42:11</span><span class="nk"> &lt;robjo&gt;</span> in this context someone/something needs to be the instance of last resort
+<a name="l-160"></a><span class="tm">15:42:37</span><span class="nk"> &lt;robjo&gt;</span> thus plugging the statement out of that context construes the facts
+<a name="l-161"></a><span class="tm">15:43:06</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">robjo:</span> Ok..  I get you I confused by technical review board and technical committee
+<a name="l-162"></a><span class="tm">15:43:29</span><span class="nk"> &lt;manugupt1_&gt;</span> I was looking at the point above the point I mentioned
+<a name="l-163"></a><span class="tm">15:43:35</span><span class="nk"> &lt;manugupt1_&gt;</span> So it is my mistake
+<a name="l-164"></a><span class="tm">15:45:06</span><span class="nk"> &lt;manugupt1_&gt;</span> Ok. If everyone agrees we can try to rewrite it?
+<a name="l-165"></a><span class="tm">15:45:37</span><span class="nk"> &lt;robjo&gt;</span> Nope, we should not rewrite meeting minutes
+<a name="l-166"></a><span class="tm">15:45:47</span><span class="nk"> &lt;robjo&gt;</span> don't change the past ;)
+<a name="l-167"></a><span class="tm">15:46:22</span><span class="nk"> &lt;manugupt1_&gt;</span> Not in the meetings maybe ammendments :P
+<a name="l-168"></a><span class="tm">15:46:34</span><span class="nk"> &lt;ilmehtar&gt;</span> we wrote what we agreed, we can take your comments into consideration when writing the impact of that decision, such as in the documentation that will go with the next election, and our work revamping our pages on the wiki/progress.o.o
+<a name="l-169"></a><span class="tm">15:47:06</span><span class="nk"> &lt;manugupt1_&gt;</span> So I do not need to write up anything, less work for me
+<a name="l-170"></a><span class="tm">15:47:08</span><span class="nk"> &lt;manugupt1_&gt;</span> I guess
+<a name="l-171"></a><span class="tm">15:48:15</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">manugupt1:</span> I think it would still be good for you to send a message to the board ML with your concerns and suggestion on how to better frame the context to avoid being discouraging
+<a name="l-172"></a><span class="tm">15:48:52</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">robjo:</span> I will do that then
+<a name="l-173"></a><span class="tm">15:48:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> guys, I was proposing we add this as a bit of a clarification to the election wiki page
+<a name="l-174"></a><span class="tm">15:49:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> as manugupt1_ DID note correctly that it could be confusing a bit
+<a name="l-175"></a><span class="tm">15:49:11</span><span class="nk"> &lt;jospoortvliet&gt;</span> and it's always good to clarify the role of the board
+<a name="l-176"></a><span class="tm">15:49:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> and make clear that non-technical people have as much of a place on it as the technical folks, even though the latter will probably always be in the majority
+<a name="l-177"></a><span class="tm">15:49:35</span><span class="nk"> &lt;robjo&gt;</span> But I also think that one sentence in meeting minutes posted to the wiki keeps people from standing for the board election the person doesn't have a thick enough skin ;)
+<a name="l-178"></a><span class="tm">15:49:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> (which fits our project)
+<a name="l-179"></a><span class="tm">15:50:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">robjo:</span> oh I'm not saying there was something wrong with the meeting notes - they were fine.
+<a name="l-180"></a><span class="tm">15:50:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> it's just that it lead to a possible clarification for the election wiki... Nothing else.
+<a name="l-181"></a><span class="tm">15:50:34</span><span class="nk"> &lt;manugupt1_&gt;</span> <span class="hi">robjo:</span> Even I am not saying it was wrong, and I really commend the board for all the hard work and time they give
+<a name="l-182"></a><span class="tm">15:50:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> so again: time to kiss and make up.
+<a name="l-183"></a><span class="tm">15:51:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> manu will send that mail for an improvement to the election wiki and all is well??!?
+<a name="l-184"></a><span class="tm">15:51:14 </span><span class="nka">* manugupt1_</span> <span class="ac">thinks jospoortvliet is getting creepier from hugs to kisses :P</span>
+<a name="l-185"></a><span class="tm">15:51:16</span><span class="nk"> &lt;anditosan_tablet&gt;</span> hugs are better in this case... no kisses
+<a name="l-186"></a><span class="tm">15:51:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> lol
+<a name="l-187"></a><span class="tm">15:51:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok hug and make up then...
+<a name="l-188"></a><span class="tm">15:51:35</span><span class="nk"> &lt;anditosan_tablet&gt;</span> ;)
+<a name="l-189"></a><span class="tm">15:51:54</span><span class="nk"> &lt;manugupt1_&gt;</span> Ok.. that is it from my end..  thank you everyone
+<a name="l-190"></a><span class="tm">15:52:09 </span><span class="nka">* manugupt1_</span> <span class="ac">goes to have lunch now</span>
+<a name="l-191"></a><span class="tm">15:52:20</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">manugupt1 send message to board about F2F minutes impression/concern regarding technical issues</span>
+<a name="l-192"></a><span class="tm">15:53:02</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">board discuss and take under consideration how to clarify, maybe addendum to charter?</span>
+<a name="l-193"></a><span class="tm">15:53:31</span><span class="nk"> &lt;robjo&gt;</span> OK, 7 minutes to the oSC meeting, anything else?
+<a name="l-194"></a><span class="tm">15:54:45</span><span class="nk"> &lt;robjo&gt;</span> Alright, thanks everyone for participating.
+<a name="l-195"></a><span class="tm">15:54:50</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

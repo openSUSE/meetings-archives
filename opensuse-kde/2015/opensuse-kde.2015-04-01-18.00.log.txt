@@ -1,0 +1,314 @@
+18:00:36 <tittiatcoke> #startmeeting
+18:00:36 <bugbot> Meeting started Wed Apr  1 18:00:36 2015 UTC.  The chair is tittiatcoke. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:00:36 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:00:44 <krop> *cough*
+18:00:49 <tittiatcoke> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged
+18:01:55 <plinnell> have to leave, bbi 20
+18:01:57 <tittiatcoke> ok. On tonights show we have a special star Plasma5 :)
+18:02:58 <tittiatcoke> Agenda for tonight is:
+18:02:58 <shumski> yay
+18:04:01 <tittiatcoke> Transition plan to switch TW to Plasma5 as default. When, how, etc. Issues that were reported regarding Plasma5 from the community. Changes to the default setup: Application Menu, Desktop Theme, etc SDDM startup issue with Breeze theme. Solution, workaround, .. ? Status KDE Applications 15.04. OBS repositories that will be used for Frameworks, Plasma and Applications. Other topics.
+18:04:19 <tittiatcoke> Hmm. was expecting that to be better. Let me try again
+18:04:31 <tittiatcoke> Transition plan to switch TW to Plasma5 as default. When, how, etc.
+18:04:41 <tittiatcoke> Issues that were reported regarding Plasma5 from the community
+18:04:51 <tittiatcoke> Changes to the default setup: Application Menu, Desktop Theme, etc
+18:05:01 <tittiatcoke> SDDM startup issue with Breeze theme. Solution, workaround, .. ?
+18:05:08 <tittiatcoke> Status KDE Applications 15.04.
+18:05:16 <tittiatcoke> OBS repositories that will be used for Frameworks, Plasma and Applications.
+18:05:26 <tittiatcoke> Other topics.
+18:05:33 <tittiatcoke> Ok. lets move to the first point
+18:05:54 <tittiatcoke> #topic Transition plan to switch TW to Plasma5 as default. When, how, etc.
+18:06:33 <tittiatcoke> As that the target is to move with 5.3 to default, I assume the timing is still end of April ?
+18:06:38 <tittiatcoke> shumski: correct ?
+18:06:46 <shumski> tittiatcoke: yep, afaik
+18:07:17 <tittiatcoke> Ok. I guess that actuall all Framework and Plasma packages are already in Factory/Tumbleweed ?
+18:07:23 <shumski> 14.04 beta, 28.04 final
+18:07:23 <tittiatcoke> *actually
+18:07:31 <tittiatcoke> Ok.
+18:07:46 <shumski> tittiatcoke: except muon. yesterday i packaged muon release, but it just segfaults
+18:07:56 <tittiatcoke> shumski: Do we want muon ?
+18:08:09 <shumski> and i guess we need some sort of update applet?
+18:08:59 <tittiatcoke> Good question :) I know that somebody started with porting Apper, but based on the history do we really want an update applet or do we want to fall back on just YaST and zypper ?
+18:09:00 <shumski> that was at least blocker in the past. i don't mind if we miss it, but want to say we don't have anything in P5
+18:09:42 <tittiatcoke> shumski: But I don't think Muon would really help us here, I don't think the packagekit backend is really working
+18:10:01 <shumski> true
+18:10:32 <tittiatcoke> Ok. Lets park the update applet for now :)
+18:10:40 <shumski> oki
+18:10:58 <tittiatcoke> #action What to do with an update applet. Go for Apper on P5, Muon or just nothing (yast/zypper)
+18:12:06 <tittiatcoke> I guess that we need to adjust openQA if we make the switch ?  At least openQA should be evaluating Plasma5 and no longer KDE4
+18:12:15 <shumski> yeah
+18:12:35 <shumski> so half of tests need to be rewritten from scratch
+18:12:56 <tittiatcoke> Ok. Do we have anybody who can do that or is this a job for the QA team ?
+18:13:23 <shumski> i think they accept volunteers always
+18:13:25 <tittiatcoke> I can remember that ilmehtar/sysrich offered help before with the rewrite
+18:13:43 <shumski> it is more question do *we* *need* to do it, or someone else
+18:13:57 <tittiatcoke> :) Ok. Let validate this then :)
+18:14:16 * shumski poked around some needles before, but nothing big like this
+18:14:30 <tittiatcoke> #action tittiatcoke to check with Richard, Bernhard, DimStar who should normally write new tests for openQA
+18:15:23 <tittiatcoke> Once we have the tests, I guess that we then need to change the patterns to make Plasma5 default ?
+18:15:51 <shumski> yep. that shouldn't be too hard
+18:16:28 <shumski> we only need to check will this fit 1.0GB for liveCD
+18:16:51 <tittiatcoke> Is that the max limit ?
+18:16:52 <shumski> for the KUF iso, i needed to axe LO to go below 1.0
+18:17:05 <shumski> tittiatcoke: i am not sure is it official limit
+18:17:47 <shumski> bit i think DVD is anyway more important
+18:18:09 <tittiatcoke> Ok. Guess we have to check that. :)  And then we should define a minimum pattern :)
+18:18:27 <tittiatcoke> #action tittiatcoke to check with coolo and DimStar what the limit is for the liveCD
+18:18:57 <tittiatcoke> Ok. Once we have the patterns, we are then ended up with what to obsolete from KDE4 :)
+18:19:20 <tittiatcoke> At least I guess we are not planning in keeping KDE4 complete as a desktop solution in Factory ?
+18:19:30 <tittiatcoke> krop: shumski einar77_work ^^
+18:19:43 <krop> (and listen to people complaining)
+18:19:50 <krop> well, hear, not listen :)
+18:20:00 <shumski> i don't think we should have both
+18:20:22 <shumski> in that case there wouldn't be an upgrade path
+18:20:32 <shumski> which is something we want i'd say
+18:20:37 <tittiatcoke> krop: if we would have listened in the past, then we would now be maintaining three desktops :)
+18:20:37 <krop> but no, we don't want yet another unmaintained version
+18:21:09 <tittiatcoke> Good. So whatever is not needed from KDE4 should be obsoleted from Plasma5/Frameworks5.
+18:21:39 <krop> wstephenson had a KDE 2 live CD, we could have 4 version in factory :)
+18:22:15 <tittiatcoke> krop: The famous one that was made when KDE 4 just was out ?  The one from beineri ?
+18:24:04 <tittiatcoke> shumski: Do we have a list or idea what is no longer needed from KDE4 ?  e.g. kdebase-runtime ?
+18:24:12 <shumski> if people will want kde4, they have <= 13.2 =)
+18:24:25 <tittiatcoke> Yup
+18:24:29 <shumski> tittiatcoke: kdebase4-workspace, addons and some applets
+18:24:47 <shumski> i mean plasma-addons
+18:25:15 <tittiatcoke> shumski: Oki :)  And kdebase-runtime is part of KDE Applications, so I guess that one will slowly disappear
+18:25:32 <shumski> i think that one will be there until the end
+18:25:37 <tittiatcoke> yup :)
+18:26:15 <tittiatcoke> shumski: I guess we want to continue with the "5" prefix for certain Frameworks/Plasma stuff ?  We agreed in the past already that we will not do this for KDE Applications
+18:26:55 <shumski> tittiatcoke: for libs makes sense (and was my biggest mistake all of KF5 doesn't have a prefix or suffix)
+18:27:12 <tittiatcoke> Ok.I guess too late to change it :)
+18:27:17 <shumski> for plasma, not 100% necessary. where we have kde4 equivalents
+18:27:31 <shumski> e.g. bluedevil, etc
+18:28:07 <tittiatcoke> Ok. But those packages we already have in Factory, so do we really want to submit now bluedevil instead of bluedevil5 ?
+18:28:09 <shumski> https://build.opensuse.org/package/rdiff/KDE:Unstable:Frameworks/plasma5-unstable-pkglist?linkrev=base&rev=3 can be removed e.g.
+18:28:30 <shumski> tittiatcoke: ah, i don't think we need to rename existing packages
+18:28:41 <tittiatcoke> Ok. :)
+18:28:47 <shumski> i was speaking more about potential new packages
+18:29:34 <shumski> for apps, yes, no need to append 5, unless we need some kpart from kde4 one
+18:29:46 <shumski> e.g. with konsole, kate & okteta
+18:29:47 <tittiatcoke> Ok. I guess it might be good to draft a new guideline there. How do we want to distinguish Framework Packages, Plasma packages, etc
+18:30:03 <tittiatcoke> shumski: indeed, but then I would suggest to rename the old KDE4 ones :)
+18:30:18 <shumski> tittiatcoke: that also worksforme
+18:30:56 <tittiatcoke> shumski: At least that would make things a little clearer :)  I did the same with libkdegames and libkmahjongg (where we need both KDE4 and KF5 versions)
+18:31:13 <shumski> tittiatcoke: oki
+18:31:22 <shumski> no objection to that
+18:32:54 <tittiatcoke> Ok. Lets concluded on this point.  Transition plan would exist out of:  1). Create the openQA test and then 2) adjust the default patterns so that Plasma5 is pulled in.   Open Items are the update applet and a minimum plasma5 pattern for the liveCD (if space is limited).
+18:33:30 <tittiatcoke> The timing would depend on when the openQA tests are done and available.
+18:34:19 <shumski> yep. even beta can be submitted to act as default, i figure it'll take at least 2 weeks to adjust everything
+18:34:26 <shumski> (then the final is out)
+18:34:47 <tittiatcoke> Ok. Anything else for the transition plan ?
+18:35:06 <shumski> can't think of anything else now
+18:35:16 <tittiatcoke> ok.
+18:35:53 <tittiatcoke> Lets postpone the second topic (Issues that were reported regarding Plasma5 from the community) as that einar77_work isn't there yet. And I hope that he has this particular information
+18:36:08 <tittiatcoke> so. Third topic
+18:36:13 <tittiatcoke> #topic Changes to the default setup: Application Menu, Desktop Theme, etc
+18:36:14 <shumski> h, you mean the poll?
+18:36:17 <tittiatcoke> yup
+18:36:24 <shumski> oki.
+18:36:58 <shumski> ok. we have most of stuff wrt branding adjusted, there are a few points i like to bring up.
+18:37:09 <tittiatcoke> ok. My intention here was to see how much we want to go back to the default setup of KDE itself.
+18:37:13 <tittiatcoke> shumski: Ok. shoot
+18:37:36 <shumski> 1) we default to kicker due to famous kickoff crash, but that one seems fixed. do we want to continue with it
+18:37:43 <shumski> 2) how branding is applied
+18:38:05 <shumski> due to https://bugs.kde.org/show_bug.cgi?id=340691
+18:38:06 <bugbot> KDE bug 340691 in frameworks-kconfig (general) "system-wide kdeglobals "overwrite" local ones" [Critical,Reopened: ]
+18:38:39 <shumski> i am pondering to change how we apply kdeglobals
+18:40:17 <tittiatcoke> Well. If we go back to the defaults then we might not need to change kdeglobals :)
+18:42:33 <shumski> we usually deliver them in sysconfdir, but this bug makes it pretty bad. alternative idea is to ship separate startkde
+18:42:41 <shumski> both in our and upstream branding
+18:42:57 <shumski> yeah
+18:43:05 <tittiatcoke> Ok. And what would be the difference between the two ?
+18:44:56 <shumski> we would apply oS settings directly into ~/.config/ (upstream does that with some font settings e.g.). that would workaround that bug
+18:45:41 <shumski> tittiatcoke: the bug comes in form that if there is something in systemwide kdeglobals, e.g. BrowserApplication=firefox, users settings constantly revert to that, instead of his own
+18:46:16 <tittiatcoke> shumski: Ok. But how do we want to insert something in ~/.config ?
+18:46:36 <shumski> only 2 really important settings i guess are LookAndFeelPackage and BrowserApplication
+18:46:49 <shumski> tittiatcoke: that is an open question =)
+18:47:07 <krop> would that work for users migrating from 4 to 5 ?
+18:47:28 <shumski> it would work for clean/non-existing kdeglobals in 5
+18:48:05 <krop> so there's nothing that moves kdeglobals from ~/.kde4/share/config to ~/.config ?
+18:48:14 <shumski> what i want to say is i think this bug is bad enough to choose between no branding, and separate startkde's
+18:48:20 <shumski> krop: no afaik
+18:49:00 <tittiatcoke> shumski: What would a separate startkde do ? copy things to the user dir or viceversa ?
+18:49:02 <shumski> i know there was an upgrade script on oS for 3->4, if wanted i guess we can do that one also
+18:49:37 <shumski> tittiatcoke: upstream one would be upstream =) with openSUSE one we would inject few wanted settings into kdeglobals
+18:49:39 <tittiatcoke> question there would be how compatible is kglobal from kde4 with KF5 ?
+18:49:52 <tittiatcoke> shumski: Ok
+18:49:56 <shumski> at worse settings would be ignored
+18:50:05 <shumski> *some settings
+18:50:19 <tittiatcoke> true. Seems so far nobody really complained about that :)
+18:50:58 <shumski> yeah. about systemwide kdeglobals issue there where complaints though
+18:51:13 <tittiatcoke> Ah. Ok.
+18:51:25 <tittiatcoke> Well, lets go through the points one by one :)
+18:51:40 <tittiatcoke> First item is kicker vs kickoff.  Which to take as default.
+18:51:50 <tittiatcoke> I guess that we should have kickoff there
+18:51:59 <shumski> and 3) question of artwork
+18:52:35 <shumski> tittiatcoke: i am not 100% sure. seems these days kicker is getting more love. will have ktp/contacts integration, et
+18:52:35 <tittiatcoke> and 4) menu categories
+18:53:02 <tittiatcoke> shumski: Ok. Wasn't aware of that
+18:53:07 <shumski> i am not against going back to kickoff, just saying
+18:53:29 <tittiatcoke> krop: any opinion ?
+18:54:00 <plinnell> kickoff = traditional or kicker ?
+18:54:09 <krop> well, no. I'm still using KDE4 apps/workspace on the desktop
+18:54:16 <tittiatcoke> krop: Ok :)
+18:54:23 <plinnell> im kde4 i like classic menu, but that is just me
+18:54:37 <tittiatcoke> plinnell: kicker would be the homerun menu (but then not fullscreen)
+18:54:44 <tittiatcoke> shumski: correct ?
+18:54:48 <plinnell> ok
+18:54:57 <shumski> yep
+18:56:12 <tittiatcoke> Ok. lets say that kicker is the favorite, but we are still missing einar in the voting :)
+18:56:30 <shumski> http://cdn.arstechnica.net/wp-content/uploads/2014/08/screenshot12.png
+18:56:34 <shumski> plinnell: ^
+18:56:37 <tittiatcoke> And if it is already the current Plasma5 default, then people might be used to it :)
+18:56:53 <plinnell> works for me :)
+18:57:07 <shumski> vs. http://i1-news.softpedia-static.com/images/news-700/Plasma-Next-Is-Preparing-to-Replace-KDE-First-Beta-Now-Available-for-Download.jpg (kickoff)
+18:57:31 <plinnell> no please
+18:57:50 <plinnell> im playing with the latest live DVD
+18:57:53 <plinnell> seems ok
+18:57:57 <plinnell> stable at least
+18:58:05 <plinnell> patience does not crash
+18:58:07 <plinnell> :D
+18:58:11 <shumski> =)
+18:58:55 <shumski> tittiatcoke: so for 1) undecided? or not enough votes to rule against kicker?
+18:59:20 <tittiatcoke> plinnell: Are you voting for kicker or kickoff ?
+18:59:31 <plinnell> kicker.. strongly :)
+18:59:47 <tittiatcoke> Ok. Then this makes it 3 votes in favor. So we stick with Kicker :)
+18:59:57 <shumski> (the mentioned contacts integration should come in 5.3 afaik - not yet merged though)
+18:59:58 <shumski> oki
+19:00:02 <tittiatcoke> #info The default menu in Plasma5 will be kicker
+19:00:24 <shumski> wrt 2) i dunno. it's between bad and worse
+19:00:44 <tittiatcoke> that is the branding, right ?
+19:01:15 <shumski> yes. keep kdeglobals, inject them into ~/config instead, or drop completely
+19:01:55 <tittiatcoke> Let's see first what branding we go with ?   Are we going back to the default upstream Breeze or do we want to keep the opensuse KDE4 branding ?
+19:01:56 <shumski> (2 most important settings we apply there are default browser, and used theme - both colorscheme, and plasmatheme)
+19:02:43 <shumski> i vote to drop current artwork (at least plasma theme). whether we want to go plain vanilla, or just colorize the breeze, not sure yet
+19:03:21 <tittiatcoke> krop: plinnell  Any opinion ?
+19:03:36 <shumski> people seem to like (or hate) that we have some kind of artwork, but i don't have the strength, time nor motivation to keep it working properly with P5
+19:03:43 <krop> +1 for vanilla (and a green icon somewhere to make everyone happy)
+19:03:54 <plinnell> im with krop ^^
+19:04:08 <plinnell> what ever works best
+19:04:14 <tittiatcoke> Ok. So we drop back to breeze as desktop theme :)
+19:05:11 <tittiatcoke> we have an offer from somebody that is willing to change the icon colors into green (as seen on the os-kde ml)
+19:05:14 * shumski finally won't have a guilty conscience for not porting the beast properly :D
+19:05:20 <shumski> yes
+19:05:22 <tittiatcoke> shumski: :)
+19:06:05 <tittiatcoke> shumski: Can I ask you to contact the volunteer and to see what can be done with the icons ?  Whether just color or maybe some additional ones, etc
+19:06:11 <shumski> the svg looked ok to me. only i wonder will the same colorscheme be utilized for 13.3
+19:06:14 <shumski> tittiatcoke: sure
+19:06:30 <tittiatcoke> #info  Breeze will be the default theme for Plasma5
+19:07:06 <tittiatcoke> #action shumski to contact the volunteer to openSUSE'ify the Breeze iconset
+19:07:24 <shumski> i wonder what reads default browser... so we can drop kdeglobals completely
+19:07:39 <tittiatcoke> shumski: I believe that is xdg-open
+19:07:50 <tittiatcoke> No, that one has its own settings.
+19:07:57 <shumski> tittiatcoke: but i guess it calls something within kde
+19:08:19 <shumski> will investigate that
+19:08:25 <tittiatcoke> Normally that would be the associations.  e.g. clicking on a link in a KDE program
+19:08:40 <tittiatcoke> #action shumski to look into the default browser settings
+19:08:58 <shumski> tittiatcoke: 4) is upstream vs. suse menu ?
+19:09:04 <tittiatcoke> yup.
+19:09:07 <shumski> (i guess 3 is done?)
+19:09:15 <shumski> for now we use upstream
+19:09:32 <krop> what is 'suse menu' ?
+19:10:04 <tittiatcoke> krop: in the past SUSE created their own categories and submenus. All desktop environments had to use this, so that each one of them had an equal menu.
+19:10:35 <krop> what do the other desktop do nowadays ?
+19:10:49 <tittiatcoke> Gnome already dropped it and went back to upstream
+19:11:04 <krop> perfect then :)
+19:11:04 <tittiatcoke> I believe that xfce might still use it
+19:11:15 <tittiatcoke> Yeah, that is why I wanted to propose to drop it also :)
+19:11:28 <tittiatcoke> ok. I guess we are aligned on using the upstream menu categories.
+19:11:36 <shumski> yep
+19:11:42 <tittiatcoke> #info the upstream KDE menu structure will be used
+19:12:03 <tittiatcoke> krop: We even had some bug reports about it in the past
+19:12:18 <tittiatcoke> ok. Anything else with regards to desktop stuff ?
+19:12:47 <tittiatcoke> Lets move on to the next topic.
+19:12:58 <tittiatcoke> #topic SDDM startup issue with Breeze theme. Solution, workaround, .. ?
+19:13:47 <tittiatcoke> I initially put this topic as that in the past we saw that SDDM had a big delay in showing the breeze login screen after booting. Seems however that with the latest tumbleweed this is resolved. Or does anybody still sees this ?
+19:14:10 * shumski isn't too happy with it's speed, but nothing critical
+19:14:17 <plinnell> its working ok for me
+19:14:37 <tittiatcoke> Ok. Then lets just keep an eye on it.
+19:15:25 <shumski> sounds good
+19:15:26 <tittiatcoke> shumski: I will submit a small patch for sddm in KUF to adjust the service file. It seems if you start using the real systemd service file, plymouth is not killed and causes some strange effect on sddm. einar77_work suffered from this
+19:15:35 <shumski> tittiatcoke: okies
+19:15:48 <tittiatcoke> #topic Status KDE Applications 15.04.
+19:17:47 <tittiatcoke> I have been preparing KDE Applications 15.04 in the repository KDE:Applications and those packages will obsolete the current packages. Only thing missing is the KTP packages. Target would be to release KDE Applications 15.04 for TW only together with the switch to Plasma5.  Kdepim will remain to be KDE4 based
+19:18:38 <shumski> tittiatcoke: deps missing for KTP?
+19:18:53 <tittiatcoke> shumski: nope. Didn't had the time yet to create the packages :)
+19:19:40 <shumski> ok =)
+19:20:34 <tittiatcoke> #topic OBS repositories that will be used for Frameworks, Plasma and Applications.
+19:20:41 <shumski> the target has been spoken already, and at least to me it still sounds good
+19:20:49 <shumski> ah, new topic =)
+19:21:57 <tittiatcoke> As we have been discussing in the past. We would end up with two main repo's:  KDE:Frameworks5 and KDE:Applications. This would follow more upstream as well. We also would have KDE:Unstable:Frameworks and I wonder if we should create a new KDE:Unstable:Applications and remove KUE.
+19:22:28 <tittiatcoke> Is this still something that we want to continue with or do we want to move back to the old repositories ?
+19:22:58 <tittiatcoke> shumski: krop plinnell ??
+19:23:04 <shumski> that is something that i agree with (the 'new' setup)
+19:23:36 <tittiatcoke> Ok. Do we have reasons to pull Frameworks / Plasma apart ?
+19:23:53 <shumski> most due to name
+19:24:09 <shumski> components and files are still moving between the 2
+19:24:31 <tittiatcoke> ok. I don't see a reason for a split, but ... :)
+19:24:31 <krop> mmh
+19:24:31 <shumski> e.g. kglobalaccel, libmm-qt, etc
+19:24:51 <krop> KDE:Applications would contain what we moved to KDE:Extra ?
+19:25:07 <plinnell> im agreement with whatever is easiest
+19:25:10 <tittiatcoke> krop: Nope. KDE:Applications would contain really the KDE Application releases
+19:25:25 <tittiatcoke> e.g. 14.12, 15.04, etc.
+19:26:05 <shumski> now that krop mentioned it, i wonder if K:E content could be merged into K:App
+19:26:15 <tittiatcoke> We could
+19:26:21 <shumski> (could, and should?)
+19:26:46 <shumski> just a thought
+19:27:06 <tittiatcoke> :) I will go with the majotiry :)
+19:27:10 <tittiatcoke> majority :)
+19:28:28 <tittiatcoke> Ok. I guess we can leave this so that we can think about it :)
+19:28:50 <plinnell> I think a lot of the KDE:Extra packages are pretty well maintained in a quality sense
+19:28:52 <tittiatcoke> #action bring up the Repositories in the next meeting and particular if KDE:Extra should be merged with KDE:Applications.
+19:29:07 <tittiatcoke> true
+19:29:23 <plinnell> ive been a pretty fussy reviewer
+19:29:25 <plinnell> :)
+19:29:25 <tittiatcoke> and we have established good control of maintainership there as well
+19:29:54 * shumski didn't mean they aren't, just that K:E and K:A content would be quite similar - just difference by whom is released
+19:31:20 <tittiatcoke> shumski: yup :) Another question would be what to do with the packages in KUE ? All of them have the suffix 5 now. I guess we need to recreate them after the transition to a package without 5 :)
+19:31:24 <krop> I'm thinking about KUE as well, there are a couple apps that wouldn't fit KUA
+19:31:48 <tittiatcoke> to follow the packaging in KDE:Applications
+19:31:54 <krop> if by KUA we mean snapshots of apps also living in KDE:Applications
+19:32:05 <shumski> tittiatcoke: yeah.. quite a few packages there
+19:32:11 <tittiatcoke> krop: like ?
+19:32:27 <krop> scribus, kdenlive
+19:32:53 <tittiatcoke> krop why wouldn't they fit KUA ? Given that we want to merge KE into KA :)
+19:33:24 <krop> the question is reversed then, do we want all of K:E in K:A
+19:33:47 <krop> :Extra is really huge nowadays
+19:34:18 <shumski> yeah.. at least dropping some targets there reduced the used space =)
+19:35:07 <tittiatcoke> krop: Yeah. I am not really convinced that we want to merge K:E into K:A
+19:35:30 <shumski> hm. that would be a gigantic project
+19:35:55 <shumski> so looks we can drop the idea :D
+19:36:25 <tittiatcoke> shumski: Yeah. Lets stick with KDE:Frameworks, KDE:Applications and KDE:Extra. And then also the unstable repositories for those three.
+19:36:26 <plinnell> thing is every update would be a maintenance request
+19:36:32 <shumski> oki
+19:36:46 <shumski> plinnell: how do you mean?
+19:36:49 <tittiatcoke> plinnell: Why a maintenance request ?
+19:37:17 <plinnell> sorry i was thinking of what is shipped in the next release
+19:37:26 <plinnell> sorry for the noise
+19:37:40 <tittiatcoke> :)
+19:37:56 <shumski> ok =) /me is still confused, but nevermind =)
+19:38:13 <tittiatcoke> Ok. So who is in favor of following the structure KDE:Frameworks, KDE:Applications and KDE:Extra.
+19:38:35 <krop> these ones look fine
+19:38:59 <plinnell> +1
+19:39:03 <tittiatcoke> Ok. And then we would also have an Unstable variant for those three.
+19:39:03 <shumski> same from here
+19:39:13 <shumski> +1
+19:40:11 <tittiatcoke> #info The new repositories would be KDE:Frameworks (for Frameworks and Plasma5), KDE:Applications (for the KDE Application releases) and KDE:Extra (for other KDE/Qt related community packages. For each one of these repos we would have an unstable variant.
+19:40:29 <tittiatcoke> Ok. that would bring us to the last topic.
+19:40:35 <tittiatcoke> #topic Anything Else ??
+19:40:52 <tittiatcoke> shumski: plinnell krop:  anything else that you would like to bring up ?
+19:41:19 <shumski> can't think of anything else now
+19:41:19 <krop> all the hot topics were discussed
+19:42:11 <plinnell> nope, you guys have done a great job keeping KDE in shape
+19:42:16 <plinnell> really awesome
+19:42:35 <plinnell> there is still an effort to get KF5 on SLES12
+19:43:09 <plinnell> work in progress
+19:43:13 <shumski> hm, will try to unbreak plasma-nm5 for sles, only that one hasn't built
+19:43:24 <plinnell> ok
+19:43:33 <plinnell> cool, let me know if i can help
+19:43:59 <shumski> nah, just a condition to not build with openconnect
+19:44:25 <tittiatcoke> ok. Then I close the meeting.
+19:44:32 <tittiatcoke> Thank everyone for their participation
+19:44:41 <shumski> tnx for leading =)
+19:45:17 <tittiatcoke> #endmeeting

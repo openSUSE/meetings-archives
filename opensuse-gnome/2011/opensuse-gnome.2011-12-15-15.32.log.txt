@@ -1,0 +1,163 @@
+15:32:03 <vuntz> #startmeeting openSUSE GNOME Meeting
+15:32:03 <bugbot> Meeting started Thu Dec 15 15:32:03 2011 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:32:03 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:32:26 <vuntz> agenda for today;
+15:32:27 <vuntz> 12.1 Feedback
+15:32:31 <vuntz> Project updates
+15:32:34 <vuntz> Q&A
+15:32:40 <vuntz> anything else people want to see discussed?
+15:33:34 <psankar> probably not.
+15:33:49 <vuntz> so let's go to the first topic
+15:34:03 <vuntz> #topic 12.1 Feedback
+15:34:27 <vuntz> how do people feel about the release?
+15:34:37 <vuntz> and the development cycle we had?
+15:35:29 <psankar> I convinced my manager to move to 12.1 GNOME 3 and he was a KDE user. He was upset on the first day. but seem to be enjoying now. he felt network management works a lot better than it used to be.
+15:35:39 <psankar> s/felt/told
+15:35:49 <malcolmlewis> working fine here on the netbook :)
+15:36:12 <malcolmlewis> There are a few grumbles in the forum about gnucash
+15:36:42 <psankar> I am running 12.1 on my machine and it feels good. so nothing to worry about the release. regarding development cycle, i think we are overloading vuntz and DimStar with a lot of work. again, that is just my personal perception.
+15:36:43 <vuntz> ah, yeah, gnucash
+15:37:08 <vuntz> this gnucash issue is annoying :/
+15:37:29 <malcolmlewis> psankar, yes they were busy gophers!!
+15:37:37 <vuntz> #info gnucash issue is bad
+15:37:51 <vuntz> #info but general feeling is good :-)
+15:38:12 <vuntz> psankar: oh, we're mostly overloading DimStar :-) I'm rather fine in general
+15:38:26 <psankar> malcolmlewis, ideally we should be helping them more often but most often we dont :( even though vuntz mentions about easy picks in m-l
+15:38:45 <vuntz> it's worth mentioning that we got several people doing maintenance updates for 12.1
+15:38:57 <psankar> we cant solve that problem in a single meeting :-) but we should probably identify a way to get mroe active contributors
+15:38:58 <psankar> yes
+15:38:58 <vuntz> malcolmlewis and Ilmehtar did some
+15:39:02 <psankar> yeah
+15:39:12 <Ilmehtar> from a marketing/review point of view, every article i've read has been glowing in praise about our GNOME3 polish
+15:39:42 <malcolmlewis> and Ilmehtar's power off button ;)
+15:39:58 <Ilmehtar> lol
+15:39:59 <psankar> +1
+15:40:25 <vuntz> psankar: we probably want to try again to find small tasks for people
+15:40:25 * psankar had one issue with laptop not suspending if power is disconnected after the lid is clsoed
+15:40:49 <psankar> vuntz, yes. we should have a todo list maintained if possible
+15:41:00 <psankar> but then, maintaining it may burden you more :(
+15:41:08 * Ilmehtar couldn't reproduce psankar's problem, and tried, a lot
+15:41:23 <psankar> Ilmehtar, actually it is simple. close the laptop lid and then remove the power cable
+15:41:27 <psankar> Ilmehtar, machine wont suspend
+15:41:30 <Ilmehtar> psankar: mine does
+15:41:37 <vuntz> psankar: more burden is fine if it helps more people do things
+15:41:39 <fcrozat> I think we should continue to empathize "this is a new environment, try it for a week to get used to it"
+15:41:44 <malcolmlewis> psankar, my netbook does too...
+15:41:48 <psankar> hmm
+15:41:50 <Ilmehtar> fcrozat: +1 - worked on my boss
+15:41:53 * psankar is genuinely confused
+15:42:03 <psankar> Ilmehtar, fcrozat : on my boss too :)
+15:42:03 <fcrozat> psankar: I think federico is working on this
+15:42:12 <psankar> fcrozat, ah okay
+15:42:16 <fcrozat> psankar: worked with some people in Paris office too :)
+15:42:24 <psankar> :-)
+15:42:48 <fcrozat> but we need to teach people they'll lose their "balance" if they expect to get the exact same experience as before
+15:43:06 <fcrozat> and we should help them, maybe with some documentation for first start
+15:43:18 <fcrozat> (it is on upstream wiki but I don't expect people to go there and read it)
+15:43:34 <Ilmehtar> fcrozat: me and a GCI student started on this..we took information from upstream and added our own as part of the polish up of Portal:GNOME
+15:43:51 <psankar> Ilmehtar, fcrozat malcolmlewis https://bugzilla.novell.com/show_bug.cgi?id=731294
+15:43:51 <fcrozat> Ilmehtar: excellent
+15:43:55 <bugbot> openSUSE bug 731294 in openSUSE 12.1 (GNOME) "Laptop fails to suspend if power is removed after the lid is closed" [Major,New]
+15:43:56 <psankar> Ilmehtar, nice
+15:44:47 <psankar> i am surprised how it works for Ilmehtar and malcolmlewis :-) as the comment from glin seem to indicate nothign happens
+15:46:11 <psankar> vuntz, i think we can safely move to the project updates :-)
+15:46:11 <glin> ya, it's the default setting
+15:46:48 <vuntz> just want to add a word that I feel we made progress in getting more people involved in doing changes in factory in this cycle
+15:47:06 <psankar> okay
+15:47:21 <vuntz> and I'm hoping we keep going in that direction
+15:47:28 <Ilmehtar> ditto
+15:47:38 <vuntz> even one change a week (or a month) is helping a lot
+15:48:28 <vuntz> not just from a technical perspective: the mere fact that it's not all done by one or two persons is important for the team feeling
+15:48:52 <vuntz> (and obviously, some people have more time than others, so we can't expect everyone to contribute all the time anyway ;-))
+15:49:28 <vuntz> #info more people contributed this cycle, and we want to keep that direction!
+15:49:34 <vuntz> ok, next topic :-)
+15:49:38 <vuntz> #topic Project updates
+15:49:51 <vuntz> most of the recent work was done by DimStar
+15:50:05 <malcolmlewis> Is it possible to create a list of changes required for spec files, new macros to use spdx.org changes etc to Factory?
+15:50:07 <vuntz> so DimStar, do you want to talk quickly about the recent changes?
+15:50:33 <DimStar> vuntz: sure... I can give it a try
+15:50:34 <vuntz> malcolmlewis: "osc commit" should fix the license for you
+15:50:53 <DimStar> we updated G:F to gnome 3.3.2 (fully updated, except empathy)
+15:51:11 <DimStar> there is a change on the packaging guideline for shared libs / *.typelib files:
+15:51:36 <DimStar> *.typelib are now to be split into their own subpackage, named typelib-1_0-<typelibname>-<tlversion>
+15:52:06 <DimStar> We created dependency scanner for those files, and as a result any typelib package will drag in other typelib packages as needed and also the shared library
+15:52:22 <vuntz> s/we/DimStar/
+15:52:47 <DimStar> there are a few packages 'failing' to provide proper dependencies, mostly when the .gir file was hand written
+15:53:11 <vuntz> #info GNOME 3.3.2 in G:F (except for empathy)
+15:53:14 <DimStar> a bunch of upstreams reference the library as 'libname' instead of 'libname.so.X', which gives requires: libname (which does not work)
+15:53:30 <DimStar> some of them I patched, some I might have missed
+15:53:39 <vuntz> #info New packaging guideline for typelib files (see discussion on opensuse-packaging)
+15:54:08 <DimStar> another bigger change is/was glib 2.31, which got stricter on including headers: only glib.h is allowed now (as a rule of dumb.. there are about 3 exceptions to it)
+15:54:18 <DimStar> so a bunch of packages fail for this as well.
+15:54:32 <DimStar> I fixed most of them in G:A by now.. .probably about a dozen left
+15:56:10 <vuntz> #info glib 2.31 had some changes leading to build failures in tons of packages; mostly fixed now
+15:56:10 <DimStar> oh, one more addon on the .typelib front (sorry): shared libs that do not have the typelib split generally fail rpmlint checks for having excessive dependenices.. so we're now forced to split them :P
+15:56:41 <vuntz> another thing to mention is the deprecation of %suse_update_desktop_file (as discussed on opensuse-packaging)
+15:57:01 <vuntz> for packages that we target for factory only, we shouldn't use this macro anymore
+15:57:11 <vuntz> either just drop it if it was called with no option
+15:57:41 <vuntz> or replace it with desktop-file-edit (new in desktop-file-utils, will enter factory soon)
+15:58:03 <vuntz> however, I'm unclear if we can do that right now
+15:58:21 <vuntz> for instance, G:A packages build against 11.4 (where we need the macros)
+15:58:34 <vuntz> and we might want to use the G:F packages to create a G:S:3.4 project for 12.1 later on
+15:59:33 <vuntz> (although for this latter case, we can simply add the new desktop-file-utils in G:S:3.4)
+16:00:06 <vuntz> if anyone has an opinion on how to best deal with this, it's not too late: all options are open :-)
+16:00:49 <psankar> vuntz,  #info %suse_update_desktop_file is going away. alternative not clear yet. share comments on oS-packaging list ?
+16:01:32 <vuntz> #info %suse_update_desktop_file is being deprecated; should be removed (if used without options) or replaced with desktop-file-edit for Factory; unclear how to deal with this on old distros
+16:01:47 <vuntz> last thing: GNOME 3.3.3 is due next week
+16:02:17 <vuntz> so we'll likely have it in G:F before everything goes quiet with the end-of-year holidays
+16:02:36 <DimStar> vuntz: why? Are you planning on packaging it? :P
+16:02:50 <vuntz> of course!
+16:03:07 <vuntz> DimStar: btw, I'm thinking of waiting for January before pushing G:F
+16:03:25 <DimStar> no x-mas gift?
+16:03:26 <vuntz> I hate waiting, but I'm not sure we can fix things we'll break if we push in the next few days
+16:04:23 <vuntz> maybe I'm being too extreme, though
+16:04:50 <DimStar> I had the feeling G:F became rather solid again.. so it might be worthy pushing before we break it again
+16:05:03 <DimStar> but then, we'd also need to be sure that it enters Factory all togetther.
+16:05:21 <vuntz> well, G:F itself is fine. But I'm afraid of glib breaking other packages in other projects
+16:05:32 <vuntz> on the other hand... it's factory ;-)
+16:05:42 <DimStar> it is.. and we DID warn about this.
+16:06:37 <vuntz> true
+16:06:40 <vuntz> ok, we'll push
+16:06:50 <vuntz> I guess that's all for the project update
+16:07:06 <vuntz> #topic Q & A
+16:07:06 <Guest41496> hi...how can i to set default window size for an application?
+16:07:17 <Ilmehtar> and you might have a geek or two with the time over the holidays to test their broken factory machines
+16:07:34 <vuntz> Guest41496: https://live.gnome.org/DevilsPie
+16:08:07 <psankar> I have a question for sshaw  sreeves and federico1 to see what we can do to make meetings more easier for them to attend.
+16:08:08 <vuntz> Ilmehtar: is there a timeline for the 12.2 background? :-)
+16:08:19 <psankar> but they seem to be afk now. so i will contact them offline
+16:08:32 <Ilmehtar> vuntz: the team is working on submissions already, no formal timeline yet but I think 'sooner' rather than 'zomg 12.2 is nearly out panic' later
+16:08:48 <vuntz> good!
+16:09:51 <malcolmlewis> what happened to the sonar them/icons development for GNOME3?
+16:09:59 <psankar> vuntz, i think we can add one #action item to everyone to go and vote in the board elections ;-)
+16:10:01 <malcolmlewis> s/them/theme/
+16:10:08 <Ilmehtar> and I've got some ideas and works-in-progress for tweaking 12.2's GDM with some kind of logo/branding
+16:10:40 <vuntz> malcolmlewis: I haven't tracked the theme recently
+16:10:51 <Ilmehtar> and if you haven't voted on the board elections, remember, you can vote for me! ;-)
+16:11:16 <vuntz> malcolmlewis: there's a new version at http://half-left.deviantart.com/art/Sonar-GTK3-254801661
+16:11:29 <vuntz> malcolmlewis: want to update gtk3-metatheme-sonar with the new tarball? :-)
+16:11:44 <vuntz> Ilmehtar: oh, yeah, maybe share your gdm logo screenshot
+16:11:44 <malcolmlewis> vuntz, ahh ok :)
+16:13:00 <malcolmlewis> vuntz, will give it a shot :)
+16:13:04 <Ilmehtar> here's my starting point assuming we have a 12.2 wallpaper with a visible openSUSE logo http://www.sysrich.co.uk/wp-content/uploads/2011/12/Screenshot-at-2011-12-05-225852.png
+16:13:24 <Ilmehtar> um..without a visible openSUSE logo even
+16:13:44 <Ilmehtar> and here's my plan B http://www.sysrich.co.uk/wp-content/uploads/2011/12/Brand.png - it's all going to depend on how the 12.2 wallpaper turns out
+16:15:11 <Guest41496> vuntz: thanks..
+16:15:30 <vuntz> Ilmehtar: I'd really love the wallpaper to not have a logo :-)
+16:15:45 <Ilmehtar> vuntz: for you, I'll make sure my submission doesn't :)
+16:15:51 <vuntz> oh, question for everyone: who's coming to FOSDEM?
+16:16:11 * psankar wishes he could :(
+16:16:16 <Ilmehtar> Me! and according to the wiki I'm organising everything..especially the booth
+16:16:47 <malcolmlewis> s/booth/beer/
+16:16:57 <vuntz> Ilmehtar: :-)
+16:17:08 <Ilmehtar> malcolmlewis: henne's sending 'the kit'..so we should have at least 1000 bottles..
+16:18:16 <Ilmehtar> if you have a session for the distro miniconf..you have until the 22nd to get your request in
+16:18:52 <vuntz> yes
+16:18:56 <vuntz> I'll mail project about that
+16:19:05 <vuntz> since I'm sure many people don't know about the deadline
+16:19:17 <DimStar> I'm planning to be there... as it's weekend time it should be doable again
+16:20:10 <Ilmehtar> oh cool, so I can give you work face 2 face rather than over IRC, nice
+16:20:52 <psankar> we may have to #endmeeting i believe :)
+16:21:51 <vuntz> sorry, writing the fosdem mail :-)
+16:21:53 <vuntz> yes, thanks to all!
+16:21:56 <vuntz> #endmeeting

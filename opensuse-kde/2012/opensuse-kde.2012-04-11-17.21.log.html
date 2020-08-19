@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:21:55</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:21:55</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Apr 11 17:21:55 2012 UTC.  The chair is ctrippe. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:21:55</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:22:09</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.</span>
+<a name="l-5"></a><span class="tm">17:23:27</span><span class="nk"> &lt;ctrippe&gt;</span> let's start with old action items
+<a name="l-6"></a><span class="tm">17:23:43</span><span class="nk"> &lt;ctrippe&gt;</span> 1.) wstephenson blog about last meeting's decisions
+<a name="l-7"></a><span class="tm">17:23:45</span><span class="nk"> &lt;Bille&gt;</span> eek
+<a name="l-8"></a><span class="tm">17:23:53</span><span class="nk"> &lt;Bille&gt;</span> half done
+<a name="l-9"></a><span class="tm">17:24:09</span><span class="nk"> &lt;ctrippe&gt;</span> 2.) tittiatcoke to update apper to the latest version
+<a name="l-10"></a><span class="tm">17:24:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> Not done. Will do that tomorrow. the kross-stuff and KUSC got in the way
+<a name="l-11"></a><span class="tm">17:25:16</span><span class="nk"> &lt;ctrippe&gt;</span> 3.) is without responsible person: add greeter to 12.2 features
+<a name="l-12"></a><span class="tm">17:26:40</span><span class="nk"> &lt;ctrippe&gt;</span> 4.) wstephenson evaluate beclock
+<a name="l-13"></a><span class="tm">17:27:06</span><span class="nk"> &lt;wstephenson_home&gt;</span> done
+<a name="l-14"></a><span class="tm">17:27:13</span><span class="nk"> &lt;wstephenson_home&gt;</span> works, doesn't crash kwin
+<a name="l-15"></a><span class="tm">17:27:36</span><span class="nk"> &lt;wstephenson_home&gt;</span> not sure if it's useful enough on its own to be part of the default effects
+<a name="l-16"></a><span class="tm">17:29:00</span><span class="nk"> &lt;ctrippe&gt;</span> 5.) rabauke evaluate akonadi-google (not -googledata) for default install
+<a name="l-17"></a><span class="tm">17:29:01</span><span class="nk"> &lt;pvdm_&gt;</span> BeClock is nice. (sorry don't mean to interfere in your meeting :D )
+<a name="l-18"></a><span class="tm">17:29:02</span><span class="nk"> &lt;wstephenson_home&gt;</span> i found it a bit distracting too
+<a name="l-19"></a><span class="tm">17:29:41</span><span class="nk"> &lt;cb400f&gt;</span> we need less distractions, not more :-)
+<a name="l-20"></a><span class="tm">17:30:28</span><span class="nk"> &lt;pvdm_&gt;</span> <span class="hi">wstephenson_home:</span> it disappears when you hover over it. And the placement on your desktop (postition) is crucial.
+<a name="l-21"></a><span class="tm">17:31:48</span><span class="nk"> &lt;wstephenson_home&gt;</span> since rabauke is not here, i guess we punt until next week's daytime meeting
+<a name="l-22"></a><span class="tm">17:32:03</span><span class="nk"> &lt;ctrippe&gt;</span> ok
+<a name="l-23"></a><span class="tm">17:32:29</span><span class="nk"> &lt;wstephenson_home&gt;</span> <span class="hi">pvdm_:</span> i wonder what 'uses mousepolling' means
+<a name="l-24"></a><span class="tm">17:32:31</span><span class="nk"> &lt;ctrippe&gt;</span> These were the old action items
+<a name="l-25"></a><span class="tm">17:32:35</span><span class="nk"> &lt;wstephenson_home&gt;</span> that's a lubos question
+<a name="l-26"></a><span class="tm">17:33:03</span><span class="nk"> &lt;wstephenson_home&gt;</span> however i wish the panel tooltips would hide on hover too.
+<a name="l-27"></a><span class="tm">17:33:17 </span><span class="nka">* wstephenson_home</span> <span class="ac">used ubuntu unity and windows phone this weekend for refreshment</span>
+<a name="l-28"></a><span class="tm">17:33:32 </span><span class="nka">* tigerfoot</span> <span class="ac">(sorry need to go) have only one point to mention : I've prepared a ksplash-qml version for 12.2 (factory) you can play with at http://dl.dropbox.com/u/13333867/openSUSE/openSUSE-12.1-ksplash-qml.tar.bz2</span>
+<a name="l-29"></a><span class="tm">17:33:44</span><span class="nk"> &lt;wstephenson_home&gt;</span> <span class="hi">tigerfoot:</span> please mail the list too
+<a name="l-30"></a><span class="tm">17:34:07</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">wstephenson_home:</span> I think I've already done it ... now waiting it-s final design ...
+<a name="l-31"></a><span class="tm">17:34:43</span><span class="nk"> &lt;wstephenson_home&gt;</span> <span class="hi">tigerfoot:</span> oh, that mail. didn't notice it was the same thing
+<a name="l-32"></a><span class="tm">17:35:03</span><span class="nk"> &lt;wstephenson_home&gt;</span> <span class="hi">ctrippe:</span> status reports?
+<a name="l-33"></a><span class="tm">17:35:07</span><span class="nk"> &lt;ctrippe&gt;</span> If there isn't anything more to e.g. beclock I would move on to status reports
+<a name="l-34"></a><span class="tm">17:35:21</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="topic">#topic </span><span class="topicline">status reports</span>
+<a name="l-35"></a><span class="tm">17:36:19</span><span class="nk"> &lt;ctrippe&gt;</span> someone wants to start? tittiatcoke, wstephenson_home?
+<a name="l-36"></a><span class="tm">17:36:29 </span><span class="nka">* wstephenson_home</span> <span class="ac">did not get much done since last weekend. updated calligra to 2.4.0, read mail, easter weekend, looked at kubuntu's lowfat settings package for klyde</span>
+<a name="l-37"></a><span class="tm">17:36:42</span><span class="nk"> &lt;wstephenson_home&gt;</span> was rather underwhelmed by Unity
+<a name="l-38"></a><span class="tm">17:37:05 </span><span class="nka">* tittiatcoke</span> <span class="ac">did an full update of KUSC and published the first snapshot of KDE 4.9. Also created the missing package kross-interpreters</span>
+<a name="l-39"></a><span class="tm">17:37:21</span><span class="nk"> &lt;wstephenson_home&gt;</span> it's not awful, it's more conservative than eg gnome-shell, but it still feels unfinished and patchy in 12.04beta
+<a name="l-40"></a><span class="tm">17:38:12</span><span class="nk"> &lt;wstephenson_home&gt;</span> err, *since last week's meeting ^
+<a name="l-41"></a><span class="tm">17:38:26</span><span class="nk"> &lt;ctrippe&gt;</span> I fixed some small packaging bugs and changed some visible strings in kde packages (more on that later) Continued with cleaing up old 11.3 bugs. Made tittiatcoke package kross-interpreters :-)
+<a name="l-42"></a><span class="tm">17:38:30</span><span class="nk"> &lt;wstephenson_home&gt;</span> hud is a joke. basically we could emulate the whole thing with a plasma layout
+<a name="l-43"></a><span class="tm">17:38:42 </span><span class="nka">* tigerfoot</span> <span class="ac">found that kmix crash I got, happen only when hdmi is plugged to the laptop ... will need to find a dev that have hdmi (cartman) perhaps</span>
+<a name="l-44"></a><span class="tm">17:38:51</span><span class="nk"> &lt;ctrippe&gt;</span> since the last *late* meeting
+<a name="l-45"></a><span class="tm">17:38:55 </span><span class="nka">* tigerfoot</span> <span class="ac">off will read the report.</span>
+<a name="l-46"></a><span class="tm">17:39:43</span><span class="nk"> &lt;ctrippe&gt;</span> anyone else?
+<a name="l-47"></a><span class="tm">17:40:48</span><span class="nk"> &lt;ctrippe&gt;</span> Otherwise I would move on to the topics from the wiki
+<a name="l-48"></a><span class="tm">17:41:19</span><span class="nk"> &lt;wstephenson_home&gt;</span> javier fixed the livecd for 4.8.2
+<a name="l-49"></a><span class="tm">17:41:37</span><span class="nk"> &lt;wstephenson_home&gt;</span> ok, move on
+<a name="l-50"></a><span class="tm">17:41:41</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="topic">#topic </span><span class="topicline">kdelive</span>
+<a name="l-51"></a><span class="tm">17:41:47</span><span class="nk"> &lt;ctrippe&gt;</span> Care and revision of this kde page: http://home.kde.org/~kdelive/ --Linuxsusefan
+<a name="l-52"></a><span class="tm">17:41:48</span><span class="nk"> &lt;javier&gt;</span> well, the live cd needs to do some exercise
+<a name="l-53"></a><span class="tm">17:42:27</span><span class="nk"> &lt;javier&gt;</span> some time ago I submitted a un update to the perl scripts used to update it
+<a name="l-54"></a><span class="tm">17:42:36</span><span class="nk"> &lt;javier&gt;</span> *an
+<a name="l-55"></a><span class="tm">17:42:55</span><span class="nk"> &lt;javier&gt;</span> I could re send it
+<a name="l-56"></a><span class="tm">17:43:09</span><span class="nk"> &lt;javier&gt;</span> but the structure of the page needs some work I think
+<a name="l-57"></a><span class="tm">17:43:20</span><span class="nk"> &lt;wstephenson_home&gt;</span> yep
+<a name="l-58"></a><span class="tm">17:43:20</span><span class="nk"> &lt;javier&gt;</span> to make it look fresh
+<a name="l-59"></a><span class="tm">17:43:25</span><span class="nk"> &lt;ctrippe&gt;</span> agrees
+<a name="l-60"></a><span class="tm">17:43:45</span><span class="nk"> &lt;wstephenson_home&gt;</span> i'm *not* the man for that job
+<a name="l-61"></a><span class="tm">17:44:01</span><span class="nk"> &lt;javier&gt;</span> perhaps a screenshot with a nice download button is enough
+<a name="l-62"></a><span class="tm">17:44:15</span><span class="nk"> &lt;javier&gt;</span> saying "includes KDE 4.8.x"
+<a name="l-63"></a><span class="tm">17:44:34</span><span class="nk"> &lt;javier&gt;</span> or do we want  to have the list of packages?
+<a name="l-64"></a><span class="tm">17:45:01</span><span class="nk"> &lt;cb400f&gt;</span> should prolly do something simple, requiring minimum maintenance
+<a name="l-65"></a><span class="tm">17:45:04</span><span class="nk"> &lt;wstephenson_home&gt;</span> +1
+<a name="l-66"></a><span class="tm">17:45:14</span><span class="nk"> &lt;ctrippe&gt;</span> +1
+<a name="l-67"></a><span class="tm">17:45:48</span><span class="nk"> &lt;wstephenson_home&gt;</span> but a modern design would be great
+<a name="l-68"></a><span class="tm">17:45:57</span><span class="nk"> &lt;wstephenson_home&gt;</span> i'll ask eugeine
+<a name="l-69"></a><span class="tm">17:45:58</span><span class="nk"> &lt;wstephenson_home&gt;</span> -i
+<a name="l-70"></a><span class="tm">17:46:11</span><span class="nk"> &lt;wstephenson_home&gt;</span> <span class="hi">ctrippe:</span> action that to me
+<a name="l-71"></a><span class="tm">17:47:00</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson_home ask eugene about a modern but simple design for kdelive webpage</span>
+<a name="l-72"></a><span class="tm">17:47:28</span><span class="nk"> &lt;ctrippe&gt;</span> then I'll continue with the next item
+<a name="l-73"></a><span class="tm">17:47:48</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE specific KDE translations</span>
+<a name="l-74"></a><span class="tm">17:48:03</span><span class="nk"> &lt;ctrippe&gt;</span> Do we as KDE Team have to take care to get pot files for KDE specfic files (update-desktop-files-kde-services.pot, kde4-openSUSE.pot) updated for translators, as I recently changed two strings there. (Even if I don't know how to generate them.) -- ctrippe
+<a name="l-75"></a><span class="tm">17:48:12</span><span class="nk"> &lt;ctrippe&gt;</span> so that's from me.
+<a name="l-76"></a><span class="tm">17:48:35</span><span class="nk"> &lt;wstephenson_home&gt;</span> <span class="hi">ctrippe:</span> yes we do, and i get reminder mails from karl eichwalder about updating them
+<a name="l-77"></a><span class="tm">17:48:48</span><span class="nk"> &lt;wstephenson_home&gt;</span> and mostly i ignore it because i haven't generated them in the past
+<a name="l-78"></a><span class="tm">17:49:02</span><span class="nk"> &lt;wstephenson_home&gt;</span> although somewhere i have a howto written for my by lubos when he left the team
+<a name="l-79"></a><span class="tm">17:49:07</span><span class="nk"> &lt;wstephenson_home&gt;</span> so i could dig that out
+<a name="l-80"></a><span class="tm">17:49:39</span><span class="nk"> &lt;ctrippe&gt;</span> I would say this is the next action for you
+<a name="l-81"></a><span class="tm">17:50:05</span><span class="nk"> &lt;wstephenson_home&gt;</span> yeah me too :/
+<a name="l-82"></a><span class="tm">17:50:10</span><span class="nk"> &lt;ctrippe&gt;</span> but maybe we should put this in the wiki that it has not always to be your job if possible
+<a name="l-83"></a><span class="tm">17:50:11</span><span class="nk"> &lt;wstephenson_home&gt;</span> i might have to do some actions this week
+<a name="l-84"></a><span class="tm">17:50:26</span><span class="nk"> &lt;wstephenson_home&gt;</span> i will dig out the howto, do it once, document it and then look for a i18n coordinator
+<a name="l-85"></a><span class="tm">17:50:34</span><span class="nk"> &lt;wstephenson_home&gt;</span> it should be a case of running a script
+<a name="l-86"></a><span class="tm">17:51:05</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson_home find out how to generate the pot files for openSUSE specific KDE translations</span>
+<a name="l-87"></a><span class="tm">17:52:11</span><span class="nk"> &lt;ctrippe&gt;</span> that was it from the wiki
+<a name="l-88"></a><span class="tm">17:52:43</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A, Misc</span>
+<a name="l-89"></a><span class="tm">17:53:51</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">wstephenson_home:</span> do you expect klyde to be available as an option on the dvd installer under "desktop selection"?
+<a name="l-90"></a><span class="tm">17:54:13</span><span class="nk"> &lt;cb400f&gt;</span> or as an unofficial livecd?
+<a name="l-91"></a><span class="tm">17:54:55</span><span class="nk"> &lt;einar77&gt;</span> Speaking of misc topics, the cause of startkde LD_BIND_NOw crash still not found (nor a reliable reproducible way to trigger it) - yes, came in late
+<a name="l-92"></a><span class="tm">17:54:56</span><span class="nk"> &lt;wstephenson_home&gt;</span> <span class="hi">cb400f:</span> not sure, it would be nice to have it under *other* but then everyone else will want to have it too
+<a name="l-93"></a><span class="tm">17:55:07</span><span class="nk"> &lt;wstephenson_home&gt;</span> (is there an 'everyone else'?)
+<a name="l-94"></a><span class="tm">17:55:21</span><span class="nk"> &lt;wstephenson_home&gt;</span> now that nelson ragequit again, not sure i see anyone pushing Cinnamon
+<a name="l-95"></a><span class="tm">17:55:21</span><span class="nk"> &lt;cb400f&gt;</span> yeah.. unity, cinnamon, mate
+<a name="l-96"></a><span class="tm">17:55:29</span><span class="nk"> &lt;cb400f&gt;</span> .. and all the other gnome workspaces :-)
+<a name="l-97"></a><span class="tm">17:55:36</span><span class="nk"> &lt;wstephenson_home&gt;</span> KDE 3?
+<a name="l-98"></a><span class="tm">17:55:44</span><span class="nk"> &lt;cb400f&gt;</span> eew.. that too
+<a name="l-99"></a><span class="tm">17:55:44</span><span class="nk"> &lt;wstephenson_home&gt;</span> *NOOO*
+<a name="l-100"></a><span class="tm">17:55:53</span><span class="nk"> &lt;alin&gt;</span> stop that...
+<a name="l-101"></a><span class="tm">17:56:07</span><span class="nk"> &lt;alin&gt;</span> no bad words in the channel
+<a name="l-102"></a><span class="tm">17:56:14</span><span class="nk"> &lt;einar77&gt;</span> Once the meeting is over I have one mention wrt that, as a "community heads up"
+<a name="l-103"></a><span class="tm">17:57:06</span><span class="nk"> &lt;wstephenson_home&gt;</span> <span class="hi">cb400f:</span> i will do a livecd first though
+<a name="l-104"></a><span class="tm">17:57:26</span><span class="nk"> &lt;cb400f&gt;</span> maybe it would be better to just clean and lean the official kde a bit :-)
+<a name="l-105"></a><span class="tm">17:57:47</span><span class="nk"> &lt;wstephenson_home&gt;</span> basically i just want to do that and a branding rpm that configures all the services to klyde levels and then sit back and see what ppl do with it, and fix our mainstream desktop
+<a name="l-106"></a><span class="tm">17:59:11</span><span class="nk"> &lt;wstephenson_home&gt;</span> any more Q&amp;A?
+<a name="l-107"></a><span class="tm">17:59:34</span><span class="nk"> &lt;ctrippe&gt;</span> I'll start a countdown
+<a name="l-108"></a><span class="tm">17:59:59</span><span class="nk"> &lt;ctrippe&gt;</span> 3
+<a name="l-109"></a><span class="tm">18:00:07</span><span class="nk"> &lt;cb400f&gt;</span> is calligra 2.4.0 ready to be linked to kua? :-)
+<a name="l-110"></a><span class="tm">18:00:07</span><span class="nk"> &lt;ctrippe&gt;</span> 2
+<a name="l-111"></a><span class="tm">18:00:33</span><span class="nk"> &lt;wstephenson_home&gt;</span> <span class="hi">ctrippe:</span> or use this one: http://www.youtube.com/watch?v=9RzCB3VRruE
+<a name="l-112"></a><span class="tm">18:00:42</span><span class="nk"> &lt;cb400f&gt;</span> oh, seems already published in kdf
+<a name="l-113"></a><span class="tm">18:00:49 </span><span class="nka">* cb400f</span> <span class="ac">setlinkrevs</span>
+<a name="l-114"></a><span class="tm">18:01:25</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">cb400f:</span> but you must create also a link for calligra docs which was missing in KDF when I last looked, see 751106
+<a name="l-115"></a><span class="tm">18:01:41</span><span class="nk"> &lt;ctrippe&gt;</span> bug 751106 that is
+<a name="l-116"></a><span class="tm">18:01:41</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 751106 in openSUSE 12.2 (KDE4 Applications) "After installation of calligra-kexi from KDE Factory for openSUSE Factory the English documentation is missing" [Normal,New] https://bugzilla.novell.com/751106
+<a name="l-117"></a><span class="tm">18:02:29</span><span class="nk"> &lt;ctrippe&gt;</span> ok I think that was it.
+<a name="l-118"></a><span class="tm">18:02:45</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

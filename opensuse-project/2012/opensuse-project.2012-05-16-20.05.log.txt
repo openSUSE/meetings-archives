@@ -1,0 +1,227 @@
+20:05:15 <yaloki> #startmeeting
+20:05:15 <bugbot> Meeting started Wed May 16 20:05:15 2012 UTC.  The chair is yaloki. Information about MeetBot at http://wiki.debian.org/MeetBot.
+20:05:15 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+20:05:38 <yaloki> #chair mrdocs AlanClark FunkyPenguin _wstephenson
+20:05:38 <bugbot> Current chairs: AlanClark FunkyPenguin _wstephenson mrdocs yaloki
+20:05:51 <AlanClark> Howdy
+20:06:00 <BManojlovic> hello
+20:06:08 <yaloki> so, the agenda is here, as usual: http://en.opensuse.org/openSUSE:Project_meeting
+20:06:21 <yaloki> #topic Forum infrastructure stability
+20:06:50 <yaloki> jim in here?
+20:06:57 <yaloki> apparently not
+20:07:05 <yaloki> not sure why it's on the agenda tbh
+20:07:12 <yaloki> we talked about it at the last meeting
+20:07:23 <yaloki> not much to do at the moment, we're waiting to see how the situation evolves
+20:07:31 <tigerfoot> yaloki: seems the agenda seems not up to date.
+20:07:33 <yaloki> haven't heard nor been informed of anything since then
+20:07:43 <yaloki> yeah I guess that one is a leftover
+20:07:52 * tigerfoot would just add a notice about susehelp which start to have a lot of trouble
+20:08:02 <tigerfoot> plugin sql / mysql
+20:08:02 <victorhck> morning Yaloki?
+20:08:12 <victorhck> it's time to dinner! :D
+20:08:16 <yaloki> indeed
+20:08:24 <yaloki> tigerfoot: only benJIman can fix that
+20:08:41 <yaloki> #topic Documenting the New Branding and design guidelines. Wiki, or similar setup. (by art team)
+20:08:49 <yaloki> "art team", the stage is yours
+20:08:50 * tigerfoot would love benJIman open next years a google summer of code to support also other db
+20:09:19 <yaloki> anyone?
+20:09:22 <tigerfoot> with upstream choob ..
+20:09:43 <yaloki> um, folks
+20:09:55 <yaloki> for the record: don't put items on the agenda if you're not there to talk about it, please
+20:10:00 <tigerfoot> yaloki: I don't know who put those on the meeting ... but 21st April seems long time ago
+20:10:06 <benJIman> It's on my list to move it to opensu.se. It's server problem. Ironically was better when running fedora packaged mysql
+20:10:11 <tigerfoot> suseROCKs: anditosan ^^^^
+20:10:33 <tigerfoot> benJIman: you should try to move to mariadb then ...
+20:10:43 <tigerfoot> should be the default next 12.2 anyway ...
+20:10:47 <yaloki> tigerfoot: the agenda change is between last meeting and now
+20:10:59 <yaloki> benJIman: ok let's get in touch about that :)
+20:11:06 <yaloki> now, on topic please
+20:11:07 <tigerfoot> yaloki: oki ...
+20:11:10 <benJIman> openSUSE Mariadb is actually part of the problem. It keeps crashing.
+20:11:17 <yaloki> 3
+20:11:17 <yaloki> 2
+20:11:19 <yaloki> 1
+20:11:20 <AlanClark> doesn't look like we have the art team
+20:11:28 <yaloki> #topic Revising and managing the artwork pages (by art team)
+20:11:36 <yaloki> 3
+20:11:37 <yaloki> 2
+20:11:37 <yaloki> 1
+20:11:41 <yaloki> #topic Brief mention of the possible new widget style for opensuse  (by art team)
+20:11:42 <tigerfoot> just me, but have no idea about what they'v3 put
+20:11:53 <yaloki> 3
+20:11:53 <yaloki> 2
+20:11:54 <yaloki> 1
+20:11:56 <yaloki> #topic handling of SLE12 bugs (make them public?)
+20:12:05 <tigerfoot> +1
+20:12:23 <cboltz> I already proposed it on the mailinglist
+20:12:24 <tigerfoot> until they content private data
+20:12:32 <mrdocs> we definitely need a looser set of rules
+20:12:35 <jospoortvliet> anditosan: did you put those artwork things on the agenda?
+20:12:38 <cboltz> but only got some +1 from people who probably can't decide on it ;-)
+20:12:52 <yaloki> no, it was "Etrounev" (on the wiki)
+20:13:05 * mrdocs wonders who actually can say yes or no to bugzilla policy
+20:13:09 <mrdocs> brb
+20:13:10 <tigerfoot> it-s: you miss your agenda then
+20:13:36 <yaloki> cboltz: um okay
+20:13:41 <cboltz> mrdocs: I'd say someone with a @suse.de/.com address would be a good start ;-)
+20:13:45 * tigerfoot knows it-s was sick last days ...
+20:13:54 <yaloki> cboltz: so the hard part is finding out who to poke in the eye in the first place to get anything moving on that
+20:14:08 <yaloki> jospoortvliet: do you have an idea?
+20:14:13 <yaloki> gerald?
+20:14:15 <AlanClark> cboltz:  what mailing list did you post on?
+20:14:27 <cboltz> on project IIRC
+20:14:34 <cboltz> under the "freight train" subject
+20:14:43 <AlanClark> ok.
+20:14:44 <it-s> huh
+20:14:45 <it-s> why?
+20:15:05 <it-s> tigerfoot: why do I miss it?
+20:15:14 <tigerfoot> the 2 first topics of the meeting
+20:15:22 <jospoortvliet> I never have ideas but this is something - I can try to ask around. henne might have a better idea on where to start, however, I have no clue :D
+20:15:30 <yaloki> it-s: I'll pick them up right after this topic
+20:15:31 <it-s> oh wait
+20:15:39 <it-s> I got preoccupied :D
+20:15:49 <yaloki> jospoortvliet: okay
+20:15:50 <it-s> can I still go back and unmiss them?
+20:15:58 <yaloki> I guess we need to poke someone who's.. in charge of SLE... lol
+20:16:00 <jospoortvliet> it-s: if you have a time machine :D
+20:16:13 <yaloki> it-s: yes, they're next
+20:16:15 <jospoortvliet> yaloki: actually, AJ might have an idea
+20:16:19 <jospoortvliet> let me ping him on this, OK?
+20:16:38 <AlanClark> let's assign this to Jos and have him report back next meeting
+20:16:44 <it-s> OK
+20:16:44 * tigerfoot serve another p-max glass to yaloki, hope to undo the 3.2.1 on 2 first topics
+20:16:51 <it-s> let me know when to start shouting
+20:16:52 <yaloki> #action jospoortvliet prod AJ about some sort of statement/opinion/decision about changing the policy for SLE12 bugs, to make them public
+20:17:03 <yaloki> #topic Documenting the New Branding and design guidelines. Wiki, or similar setup. (by art team)
+20:17:07 <yaloki> it-s: nao please
+20:17:16 <it-s> aha alright then
+20:17:19 <it-s> hi everyone
+20:17:26 <jospoortvliet> yaloki: I do have to know exactly what I'm asking for
+20:17:30 <jospoortvliet> yaloki: and I have no idea atm
+20:17:36 <yaloki> ah, a second
+20:17:38 <it-s> you may know (or not know) but the art team has decided to become very active
+20:17:46 <it-s> and even productive (sometimes)
+20:17:53 <jospoortvliet> it-s: yes it's scary
+20:18:02 <it-s> and so the forst thing we need to talk about is: Documenting the New Branding and design guidelines. Wiki, or similar setup. (by art team)
+20:18:04 <jospoortvliet> yaloki: let's revisit that sle12 thing after it-s is done
+20:18:10 <yaloki> jospoortvliet: about changing the default policy for SLE 12 related bugs in bugzilla, and make them public by default, rather than private by default (and having to jump through hoops to get them public)
+20:18:32 <it-s> the thing is that we have a lot planned and wouldnm't want to miss anything
+20:18:43 <yaloki> it-s: sounds very useful indeed
+20:18:47 <it-s> so we are asking for a special place somehwere on the wiki to put all the stuff into
+20:19:03 <it-s> without overwriting what is already there
+20:19:15 <it-s> so to make it clear
+20:19:19 <cboltz> it-s: what's your definition of "special place"?
+20:19:34 <tigerfoot> it-s: we have already one portal for that http://en.opensuse.org/Portal:Artwork
+20:19:46 <yaloki> cboltz: a happy place :D
+20:20:40 <it-s> aha
+20:20:44 <it-s> ok this is fine
+20:20:47 <tigerfoot> I think the place is good, now I wouldn't say perfect for its organization, or content ...
+20:21:00 <tigerfoot> feel free to give love (a lot) to it
+20:21:00 <it-s> so it's OK if we start changing/addig/removing things
+20:21:02 <yaloki> anyone who's active on the wiki who could help out it-s ?
+20:21:12 <it-s> I have an account
+20:21:36 <tigerfoot> manu can help with wiki structure if needed ...
+20:21:37 <it-s> so I technically could start using that section as long as everyone os alright with that
+20:21:39 <yaloki> to answer any questions, how to organize the content ..
+20:21:48 <it-s> that would be great
+20:21:50 <tigerfoot> it-s: go go green do,
+20:21:52 * it-s writes down
+20:21:52 <yaloki> it-s: sure. you're in the artwork team, it's the artwork portal, just go ahead :)
+20:22:00 <yaloki> oh sorry, to quote henne: "just do it" ;)
+20:22:15 <it-s> right so then the next questio/topic is "Revising and managing the artwork pages (by art team)"
+20:22:17 <tigerfoot> yaloki: the quote wasn't kick ass ?
+20:22:21 <tigerfoot> :-)
+20:22:30 <it-s> and this is just basically a request to start modifying the existing stuff
+20:22:42 <it-s> may we have everyones permission?
+20:22:44 <tigerfoot> it-s: go don't ask
+20:23:00 <it-s> well that makes it easier
+20:23:10 <AlanClark> The wiki has history - so go for it
+20:23:11 <it-s> fine and finally a teh big one
+20:23:17 <it-s> "Brief mention of the possible new widget style for opensuse (by art team)"
+20:23:31 <tigerfoot> it-s: you can ask review for publishing if unsure at the beginning ...
+20:23:40 <it-s> so me and Andy are looking inot creating a special "suse" widget style
+20:23:55 <it-s> to make sure we have a stron brand out there
+20:23:59 <it-s> strong
+20:24:05 <jospoortvliet> it-s: basically, most of the stuff on those pages was either done by those still involved (and I bet they support improvements) or people who left (but they have no say anymore...) so I'd say just do what you think is right...
+20:24:16 <jospoortvliet> it-s: and there's history so we can change things back :D
+20:24:28 <jospoortvliet> it-s: +1 cool on the widget style :D
+20:24:31 <jospoortvliet> but lots of work...
+20:24:43 <it-s> so we are looking for any help we can get as neither of us is a dev
+20:24:51 <tigerfoot> it-s: the idea is get it done for 12.3 ? right not before ?
+20:24:55 <it-s> we know so we thought of taking an existing one
+20:25:14 <it-s> tigerfoot: the idea is to get it done "Some day" ;P
+20:25:36 <tigerfoot> better when it's done, than never :-)
+20:26:02 <it-s> Andy has so far got in touch with the guy who did ""/me forgot the name
+20:26:08 * it-s does facepalm
+20:26:21 <it-s> anyway, it was a KDE3 style and quite a nice one
+20:26:31 <it-s> we thought a few mods and it could do well for us
+20:26:45 <it-s> but he says he's unsure if he is interested
+20:27:07 <it-s> so - if you know anyone who could help - please ket us/him know
+20:27:58 <tigerfoot> it-s: you talk about the domino style ?
+20:28:30 <it-s> yes!
+20:28:33 <it-s> tigerfoot: thanksw
+20:28:35 <it-s> tigerfoot: thanks
+20:28:47 <it-s> it was a nice style
+20:29:05 <it-s> add a little gloss and it'll alright for starters
+20:29:55 <tigerfoot> #info http://kde-look.org/content/show.php/Domino?content=42804
+20:30:13 <tigerfoot> it-s: this one right ?
+20:31:51 <it-s> exactly
+20:32:15 <it-s> the way it is there however it's a little pail
+20:32:32 <it-s> so more contrast ++creative theming and we have a winner
+20:32:46 <it-s> but if no one wants to take on it we will have to think of somethign else
+20:33:31 <it-s> that is all I had to say
+20:33:41 <it-s> carry on as usual :)
+20:35:03 <tigerfoot> it-s: can I propose you setup an action list, what has to be done by Art team, what/where others can helps you, and report back next meeting
+20:35:30 <tigerfoot> if everybody agree on the fact that getting a more sus'ish own style could be a good idea.
+20:36:41 <tigerfoot> for me it's a big +1 especially if we integrate the oxygen-gtk and then get also gtk apps included and branded
+20:37:07 <yaloki> shall we move on?
+20:37:16 <AlanClark> I like the style idea.
+20:37:27 <yaloki> oh it's the last item on the agenda so... ^^
+20:37:48 <yaloki> there's a last item sorry
+20:37:53 <yaloki> #topic Incomplete upgrade of mediawiki instance and problems related to it
+20:38:03 <yaloki> I believe manu added it
+20:38:08 <yaloki> but he isn't here
+20:38:14 <yaloki> anyone knows anything about that?
+20:38:26 <AlanClark> nope
+20:38:57 <cboltz> the best way for wiki problems is to mail the opensuse-web mailinglist and CC matthew
+20:39:06 <cboltz> (assuming that -web and -wiki finally get merged...)
+20:39:25 <tigerfoot> I think he want to discuss about the problem of leading / like trying to go to wiki.opensuse.org/ redirect to en.opensuse.org//
+20:40:09 <cboltz> tigerfoot: the only thing we need to "discuss" about that is
+20:40:13 <cboltz> who can and will fix it
+20:40:14 <cboltz> ;-)
+20:40:22 <tigerfoot> cboltz: agree .
+20:41:27 <tigerfoot> yaloki can we add one topic (more a comment/call) ?
+20:41:32 <yaloki> sure
+20:41:49 <tigerfoot> #topic Artwork in 12.2
+20:42:07 <yaloki> #topic Artwork in 12.2
+20:42:09 <yaloki> a chair has to do it
+20:42:24 <tigerfoot> Finally the artwork has been merged in factory, except grub2 which will follow very soon.
+20:42:38 <tigerfoot> yaloki: thx
+20:43:07 <tigerfoot> but with the M4 delayed and now skipped, pretty much nothing has been deeply tested ...
+20:43:47 <tigerfoot> so getting more test and bug to resolve is important during the Beta time starting next week .
+20:43:54 <tigerfoot> end
+20:47:08 <AlanClark> thanks for the heads up tigerfoot
+20:51:34 <anditosan> are we on the artwork subject still?
+20:52:21 <AlanClark> did we lose yaloki?
+20:52:28 <anditosan> yalok, AlanClark ?
+20:52:30 <anditosan> maybe
+20:52:52 <tigerfoot> anditosan: it's not yet closed ,, so if you have something to shout it's now
+20:53:03 <anditosan> ok, I don't have a lot of time so I will try to be quick
+20:53:08 <anditosan> first artwork point
+20:53:20 <anditosan> documenting the new branding and design guidelines
+20:53:30 <anditosan> since there are some changes to artwork coming up
+20:53:56 <anditosan> we would like to revise the wiki we have about artwork and possibly take down some of them for not applying to new upcoming guidelines
+20:54:10 <AlanClark> anditosan:  I think it-s covered this
+20:54:14 <anditosan> who do we talk to about taking down wikis that relate to artwork that might become obsolete?
+20:54:17 <anditosan> oh ok
+20:54:27 <anditosan> then I am really late lol, I thought he had not
+20:54:36 <anditosan> :D
+20:54:57 <anditosan> did he also mention the work for a new widget style for openSUSE?
+20:55:03 <AlanClark> yes
+20:55:06 <anditosan> sorry I am backtracking :D
+20:55:12 <tigerfoot> anditosan: read the backlog ...
+20:55:14 <tigerfoot> :d
+20:55:17 <anditosan> ok, then no more to be said, thanks friends :D
+20:55:33 <tigerfoot> yaloki: time to close ...
+20:55:38 <AlanClark> anditosan: thanks for joining - check with it-s
+20:55:40 <yaloki> #endmeeting

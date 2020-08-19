@@ -1,0 +1,114 @@
+17:03:06 <bmwiedemann> #startmeeting
+17:03:06 <bugbot> Meeting started Mon Sep 12 17:03:06 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:03:06 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:03:35 <bmwiedemann> Hello everyone
+17:03:35 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:03:35 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:04:29 <bmwiedemann> #topic MS5 experience
+17:04:55 <bmwiedemann> I installed it on both my laptops and except for the KDE-NM bug, it worked well.
+17:05:04 <Holgi> I ask "our" trainee to do some M5 testing
+17:05:15 <Holgi> he found some issues using gnome
+17:05:33 <bmwiedemann> openQA is showing some new post-MS5 failures
+17:05:44 <Holgi> and found out installation using a nfs repository does not work
+17:07:42 <LWFinger> bmwidermann: I have seen that empty resolv.conf, but only when using systemd.
+17:08:10 <bmwiedemann> I think, LiveCDs have systemd already default enabled
+17:08:59 <LWFinger> I have run MS5 of 3 different real machines and one VM for about 10 days. Problems with systemd and the KDE NM applet.
+17:10:06 <LWFinger> With systemd, no mount of /home on one machine. Others are OK there, but empty resolv.conf.
+17:10:14 <jradzuweit> Hi
+17:10:25 <LWFinger> Hi.
+17:10:49 <bmwiedemann> I heard that coolo+fcrozat plan to make systemd the default. or maybe they even did for current Factory.
+17:11:45 <LWFinger> I still need to check bugzilla and update existing reports or file new ones as appropriate.
+17:12:08 <LWFinger> At least, GRUB lets you change it if necessary.
+17:12:12 <bmwiedemann> LWFinger: was the /home mount something special? crypto or so?
+17:12:41 <LWFinger> No. Plain simple ext4 partition.
+17:13:32 <LWFinger> I need to check /etc/fstab on this one against the ones that work to see if any diffs.
+17:14:44 <jradzuweit> still are 11 bug new for systemd
+17:15:05 <jradzuweit> s/bug/bugs/
+17:17:26 <LWFinger> I'm in the process of doing an update on the system with the most systemd problems. That involved 1751 packages. Perhaps it will be better.
+17:18:45 <bmwiedemann> will be good to stress systemd as much as we can before our one and only Beta (in 10 days)
+17:18:58 <LWFinger> Yes.
+17:21:37 <jradzuweit> I will put focus on systemd as well,
+17:22:40 <jradzuweit> me is getting a beer
+17:22:59 <LWFinger> Have one for me.
+17:24:20 <bmwiedemann> let's move to the next topic
+17:24:32 <bmwiedemann> #topic oSC 2011
+17:25:09 <bmwiedemann> aparrently it started yesterday
+17:25:22 <bmwiedemann> and I found many nice topics and interesting people to talk to there.
+17:25:24 <Holgi> ;-)
+17:26:01 <bmwiedemann> tomorrow there will be testing BoF by me at 09:30 and another testing BoF by Jiri Slaby afterwards at 10:30
+17:26:33 <bmwiedemann> and Wednesday afternoon will have my talk on "one year of openqa.o.o"
+17:27:32 * Holgi will join
+17:27:52 <LWFinger> Are the contents of talks like yours normally posted on the Internet?
+17:28:04 <jradzuweit> and afterwards some testing experience by SEIDEL, Conny (AMD Advanced Micro Devices)
+17:28:19 <bmwiedemann> not sure. I can publish my slides anyway
+17:28:30 <LWFinger> Please do.
+17:29:39 <jradzuweit> yesterday there was atalk about automated kernel testing
+17:30:16 <bmwiedemann> http://openqa.opensuse.org/opensuse/doc/openqa-osc2011.odp
+17:30:16 <jradzuweit> by MARSIK, Vilem
+17:30:48 <LWFinger> I have seen discussion about kernel testing on the Linux Kernel Mailing List.
+17:32:27 <LWFinger> bmwiedermann: Thanks for the link. Downloaded already.
+17:33:09 <jradzuweit> maybe we could put them on the wiki?
+17:34:31 <bmwiedemann> to be useful standalone (without talk), the slides could use some additions.
+17:35:26 <bmwiedemann> however, I think, that automated testing (kernel and otherwise) will improve soon
+17:36:19 <LWFinger> It is a necessary step - systems are too complex for only manual testing.
+17:37:10 <bmwiedemann> it's the only way to ensure that systems become better instead of replacing old bugs with new ones.
+17:37:37 <LWFinger> Or keep the old ones as well. :)
+17:38:56 <bmwiedemann> yep
+17:40:16 <bmwiedemann> let's move to next topic
+17:40:24 <bmwiedemann> #topic OpenBugsDay #3
+17:40:39 <bmwiedemann> participation was rather low this time
+17:40:49 <jradzuweit> yes
+17:40:55 <bmwiedemann> maybe because the task was not so interesting or useful?
+17:41:32 <jradzuweit> in germany it was one of the sunny days
+17:41:44 <jradzuweit> so a lot of poeple are went swimming
+17:41:45 <LWFinger> I really have no idea why, but very disappointing.
+17:42:01 <jradzuweit> I think we need some more marketing
+17:42:09 <LWFinger> I guess sunny days are too few to waste.
+17:42:24 <bmwiedemann> there was already a news.o.o article about our next great event... the Beta Pizza Party
+17:42:55 <jradzuweit> I think we need more often some reports on testing
+17:43:04 <LWFinger> I missed that. I wonder how good virtual pizza is.
+17:44:24 <bmwiedemann> you could have your own pizza, but I admit that it might not be the same
+17:44:26 <LWFinger> I write a contribution every week to the Weekly News. What more?
+17:44:54 <jradzuweit> some more on the mailing list
+17:45:05 <jradzuweit> it is rarely used
+17:45:06 <Holgi> LWFinger: I really like this :-)
+17:46:16 <LWFinger> My stuff is always sent to the ML, as well. Holgi: Thanks.
+17:46:59 <bmwiedemann> I could write more updates on openQA results to the ML
+17:47:46 <LWFinger> That would be usefil. I don't always check openqa.o.o as often as I should.
+17:48:08 <jradzuweit> the time between posts are quite large, sometimes are weeks between posts
+17:48:21 <jradzuweit> I think people loose interest
+17:54:10 <bmwiedemann> we should communicate more of our testing work over the testing ML
+17:54:27 <bmwiedemann> e.g. the systemd focus
+17:54:43 <LWFinger> Please send me any thoughts on additional publicity on OBD #4 and on getting testers for the Beta.
+17:56:40 <bmwiedemann> OK
+17:56:54 <LWFinger> I fear the systemd will be a big problem with 12.1 GM unless there is a real push on testing.
+17:57:44 <LWFinger> With Fedora using it, I'm a little surprised that it not better, but ...
+17:57:55 <bmwiedemann> btw: the Pizza Party is still pretty on top of http://news.opensuse.org/
+17:58:08 <jradzuweit> UBuntu is not better either, but it looks smarter
+17:58:41 <bmwiedemann> there is also still trouble with nouveau and KMS
+17:59:44 <bmwiedemann> #topic open discussion
+17:59:52 <LWFinger> Those are old, continuing problems. None of my nVidia adapters work with nouveau, but the workarounds are well-known.
+18:00:21 <bmwiedemann> having nvidia fail out-of-the-box is still bad
+18:00:26 <bmwiedemann> for GM
+18:01:49 <LWFinger> I'm running kernel 3.1 already - there will not be much help there.
+18:02:21 <bmwiedemann> any way that we could make "nomodeset" the default for nvidia adapters?
+18:03:16 <LWFinger> I don't think that would be too much trouble when GRUB is installed. Good idea.
+18:05:09 <LWFinger> I only use the framebuffer driver with 2D acceleration, and the people that want 3D alreay use the proprietary driver. Forcing nomodeset would not cause a problem.
+18:05:48 <LWFinger> Where should the suggestion be placed?
+18:05:55 <bmwiedemann> opensuse-factory?
+18:06:12 <LWFinger> OK, I'll start the ball rollinng.
+18:06:35 <bmwiedemann> great.
+18:07:22 <bmwiedemann> jradzuweit proposed to have openQA regularly provide preinstalled VM images for download. would be easy to add on my side
+18:08:06 <bmwiedemann> this way, people could just pull it and have their kvm or virtualbox start it for testing.
+18:08:18 <LWFinger> Those were handy on OBD. I like the idea.
+18:09:51 <bmwiedemann> OK. will probably enough to update daily or weekly as zypper up is easy.
+18:10:34 <jradzuweit> I think weekly is sufficent
+18:11:53 <LWFinger> Weekly should be enough.
+18:18:29 <bmwiedemann> jradzuweit wants to write an example report for testing ML
+18:19:36 <LWFinger> Good.
+18:20:54 <jradzuweit> ok I will post it to the ML
+18:21:36 <bmwiedemann> Then let's close today's meeting.
+18:21:53 <jradzuweit> and getting more beer :)
+18:21:55 <bmwiedemann> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:22:01 <Holgi> enjoy!
+18:22:05 <bmwiedemann> #endmeeting

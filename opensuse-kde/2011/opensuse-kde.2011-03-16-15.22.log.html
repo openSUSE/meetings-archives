@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:22:46</span><span class="nk"> &lt;Bille&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:22:46</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Mar 16 15:22:46 2011 UTC.  The chair is Bille. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:22:46</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:23:10</span><span class="nk"> &lt;Bille&gt;</span> so
+<a name="l-5"></a><span class="tm">15:23:15</span><span class="nk"> &lt;Bille&gt;</span> Welcome everybody :D
+<a name="l-6"></a><span class="tm">15:23:29</span><span class="nk"> &lt;Bille&gt;</span> For discussion this week:
+<a name="l-7"></a><span class="tm">15:23:30 </span><span class="nka">* mrdocs</span> <span class="ac">waves</span>
+<a name="l-8"></a><span class="tm">15:23:31</span><span class="nk"> &lt;krop&gt;</span> op bugbot ?
+<a name="l-9"></a><span class="tm">15:23:40</span><span class="nk"> &lt;mrdocs&gt;</span> and it glad to be back on CET
+<a name="l-10"></a><span class="tm">15:23:50</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">krop:</span> i'll leave it, its topic changes are useless
+<a name="l-11"></a><span class="tm">15:23:54</span><span class="nk"> &lt;Bille&gt;</span> * old action items
+<a name="l-12"></a><span class="tm">15:23:58</span><span class="nk"> &lt;Bille&gt;</span> * status report
+<a name="l-13"></a><span class="tm">15:24:03</span><span class="nk"> &lt;Bille&gt;</span> * announcement and marketing rally for 11.4 (remur_030)
+<a name="l-14"></a><span class="tm">15:24:14</span><span class="nk"> &lt;Bille&gt;</span> * Going forward with KDE:Unstable:SC (tittiatcoke)
+<a name="l-15"></a><span class="tm">15:24:26 </span><span class="nka">* sebas</span> <span class="ac">is there now, got coffee :)</span>
+<a name="l-16"></a><span class="tm">15:24:30</span><span class="nk"> &lt;Bille&gt;</span> * when to start 11.5 stuff (wstephenson,sebas)
+<a name="l-17"></a><span class="tm">15:24:34</span><span class="nk"> &lt;Bille&gt;</span> * Q&amp;A, misc
+<a name="l-18"></a><span class="tm">15:24:48</span><span class="nk"> &lt;Bille&gt;</span> anything last minute?
+<a name="l-19"></a><span class="tm">15:25:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> not from me
+<a name="l-20"></a><span class="tm">15:25:16</span><span class="nk"> &lt;Bille&gt;</span> ok
+<a name="l-21"></a><span class="tm">15:25:22</span><span class="nk"> &lt;Bille&gt;</span> <span class="topic">#topic </span><span class="topicline">old action items</span>
+<a name="l-22"></a><span class="tm">15:25:44</span><span class="nk"> &lt;Bille&gt;</span> wstephenson - to contact i18n team with regards to openSUSE guides -  not done
+<a name="l-23"></a><span class="tm">15:25:53</span><span class="nk"> &lt;Bille&gt;</span> wstephenson, duncanmv fix packagekit-zypp some more - done
+<a name="l-24"></a><span class="tm">15:26:03</span><span class="nk"> &lt;Bille&gt;</span> anaumov - study packagekit-zypp
+<a name="l-25"></a><span class="tm">15:26:11</span><span class="nk"> &lt;Bille&gt;</span> cb400f - patch in icons from kupdateapplet
+<a name="l-26"></a><span class="tm">15:26:16 </span><span class="nka">* Bille</span> <span class="ac">is multithreading :)</span>
+<a name="l-27"></a><span class="tm">15:26:22</span><span class="nk"> &lt;Bille&gt;</span> all test phonon-gstreamer + pulseaudio combo
+<a name="l-28"></a><span class="tm">15:26:31</span><span class="nk"> &lt;Bille&gt;</span> remur_030 - bring up triage strategy on list - done
+<a name="l-29"></a><span class="tm">15:26:34</span><span class="nk"> &lt;remur_030&gt;</span> could have turned out better I guess
+<a name="l-30"></a><span class="tm">15:26:38</span><span class="nk"> &lt;Bille&gt;</span> discussion - on repo naming etc to deferred to next meeting
+<a name="l-31"></a><span class="tm">15:26:43</span><span class="nk"> &lt;remur_030&gt;</span> (phonon-gstreamer stuff)
+<a name="l-32"></a><span class="tm">15:26:53</span><span class="nk"> &lt;Bille&gt;</span> if you see your name mentioned, please report
+<a name="l-33"></a><span class="tm">15:26:55</span><span class="nk"> &lt;remur_030&gt;</span> or rather pulseaudio
+<a name="l-34"></a><span class="tm">15:27:23</span><span class="nk"> &lt;cb400f&gt;</span> I started a thread on the ML regarding kpk icons.. I think the decision is we stick with upstream icons ;-) .. so done
+<a name="l-35"></a><span class="tm">15:27:30</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">cb400f:</span> thanks
+<a name="l-36"></a><span class="tm">15:27:48</span><span class="nk"> &lt;remur_030&gt;</span> I talked with bwiedemann about using 'themed' queries for next bug hunts, he likes the idea
+<a name="l-37"></a><span class="tm">15:28:02</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">remur_030:</span> define 'themed'
+<a name="l-38"></a><span class="tm">15:28:43</span><span class="nk"> &lt;remur_030&gt;</span> instead of searching for open 11.4 bugs like last time search for kde or gnome I guess, the granularity isn't clear yet
+<a name="l-39"></a><span class="tm">15:29:00</span><span class="nk"> &lt;remur_030&gt;</span> problem is to cover all bug still =/
+<a name="l-40"></a><span class="tm">15:29:51</span><span class="nk"> &lt;remur_030&gt;</span> for our own bug team, well we are getting more reports after the release as usual and are not very fast in handling them
+<a name="l-41"></a><span class="tm">15:30:08</span><span class="nk"> &lt;remur_030&gt;</span> nothing major though
+<a name="l-42"></a><span class="tm">15:31:06</span><span class="nk"> &lt;Bille&gt;</span> ok
+<a name="l-43"></a><span class="tm">15:31:14</span><span class="nk"> &lt;Bille&gt;</span> i haven't been tracking the bugs yet i admit
+<a name="l-44"></a><span class="tm">15:31:38</span><span class="nk"> &lt;Bille&gt;</span> the connections in india were poor to awful
+<a name="l-45"></a><span class="tm">15:31:38</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">Bille:</span> talking of bugs, I think kdebase4-openSUSE comes with the same background twice but doesn't use the one in the tarball but rather the one that Source points at
+<a name="l-46"></a><span class="tm">15:31:44</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">javier:</span> it's reported?
+<a name="l-47"></a><span class="tm">15:32:03</span><span class="nk"> &lt;javier&gt;</span> so kdebase4-openSUSE ships on 11.4 with the background for 11.3
+<a name="l-48"></a><span class="tm">15:32:23</span><span class="nk"> &lt;javier&gt;</span> it'll be fixed on an update (almost done)
+<a name="l-49"></a><span class="tm">15:32:24</span><span class="nk"> &lt;remur_030&gt;</span> hm yeah I am also lacking time besides commenting on the ones where I have an awnser right out of the head
+<a name="l-50"></a><span class="tm">15:32:38</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">Bille:</span> I think it isn't
+<a name="l-51"></a><span class="tm">15:32:59</span><span class="nk"> &lt;javier&gt;</span> I suppose it should use the one in the tarball, to avoid confusion
+<a name="l-52"></a><span class="tm">15:33:06</span><span class="nk"> &lt;Bille&gt;</span> yes
+<a name="l-53"></a><span class="tm">15:33:20</span><span class="nk"> &lt;Bille&gt;</span> but if it's the same background it's not worth discussing here
+<a name="l-54"></a><span class="tm">15:33:39</span><span class="nk"> &lt;Bille&gt;</span> i'll be back in the office tomorrow
+<a name="l-55"></a><span class="tm">15:33:46</span><span class="nk"> &lt;Bille&gt;</span> and will start doing triage
+<a name="l-56"></a><span class="tm">15:33:52</span><span class="nk"> &lt;Bille&gt;</span> are any trends apparent?
+<a name="l-57"></a><span class="tm">15:34:26</span><span class="nk"> &lt;javier&gt;</span> sure. I just wanted to point out that there's going to be an update fixing it
+<a name="l-58"></a><span class="tm">15:34:52</span><span class="nk"> &lt;remur_030&gt;</span> pulseaudio with kmix doesn't seem to well off, I don't know if we lack anything here, it seems to work with kubuntu and kde4.5
+<a name="l-59"></a><span class="tm">15:35:09</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">javier:</span> update? maintenance update? i don't think i understand the problem.
+<a name="l-60"></a><span class="tm">15:35:30</span><span class="nk"> &lt;Bille&gt;</span> if it's the same bg, it doesn't matter whether it comes out of the Sources: or out of the tarball.
+<a name="l-61"></a><span class="tm">15:36:03</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">remur_030:</span> i saw one bug where people missed the kmix-pulse backport
+<a name="l-62"></a><span class="tm">15:36:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> I guess that javier tries to indicate that we are shipping the 11.3 background in kdebase-openSUSE-11.4
+<a name="l-63"></a><span class="tm">15:36:29</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">Bille:</span> yes, maintenance update
+<a name="l-64"></a><span class="tm">15:36:56</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">tittiatcoke:</span> right. and besides that, there's something to be fixed in kdebase4-openSUSE
+<a name="l-65"></a><span class="tm">15:37:23</span><span class="nk"> &lt;javier&gt;</span> background from Source vs background from tarball
+<a name="l-66"></a><span class="tm">15:37:41</span><span class="nk"> &lt;javier&gt;</span> we have it twice
+<a name="l-67"></a><span class="tm">15:37:55</span><span class="nk"> &lt;javier&gt;</span> and if you don't update the Source one, you get the old background
+<a name="l-68"></a><span class="tm">15:38:14</span><span class="nk"> &lt;Bille&gt;</span> i see. bad packaging
+<a name="l-69"></a><span class="tm">15:38:21</span><span class="nk"> &lt;javier&gt;</span> whatever background is in Source I mean
+<a name="l-70"></a><span class="tm">15:38:22</span><span class="nk"> &lt;javier&gt;</span> ok
+<a name="l-71"></a><span class="tm">15:38:27</span><span class="nk"> &lt;Bille&gt;</span> yeah i see how it works now
+<a name="l-72"></a><span class="tm">15:38:36</span><span class="nk"> &lt;Bille&gt;</span> the tarball has distro specific branding too
+<a name="l-73"></a><span class="tm">15:38:44</span><span class="nk"> &lt;Bille&gt;</span> please report as a bug and cc me
+<a name="l-74"></a><span class="tm">15:38:53</span><span class="nk"> &lt;javier&gt;</span> will do
+<a name="l-75"></a><span class="tm">15:38:59</span><span class="nk"> &lt;Bille&gt;</span> ok, so we started status report too
+<a name="l-76"></a><span class="tm">15:39:21</span><span class="nk"> &lt;Bille&gt;</span> i'd like to personally congratulate everyone for his/her hard work
+<a name="l-77"></a><span class="tm">15:39:33</span><span class="nk"> &lt;Bille&gt;</span> the feedback on 11.4 in the press is almost all good
+<a name="l-78"></a><span class="tm">15:39:42</span><span class="nk"> &lt;javier&gt;</span> +1
+<a name="l-79"></a><span class="tm">15:39:46</span><span class="nk"> &lt;javier&gt;</span> me too
+<a name="l-80"></a><span class="tm">15:39:47</span><span class="nk"> &lt;dragotin&gt;</span> +1
+<a name="l-81"></a><span class="tm">15:39:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> +1
+<a name="l-82"></a><span class="tm">15:40:00</span><span class="nk"> &lt;remur_030&gt;</span> +1, pretty impressive release over all
+<a name="l-83"></a><span class="tm">15:40:10</span><span class="nk"> &lt;Bille&gt;</span> so even if we as the team are aware of all the ugly spots, nobody else noticed - we can feel good :)
+<a name="l-84"></a><span class="tm">15:40:22</span><span class="nk"> &lt;cb400f&gt;</span> :-)
+<a name="l-85"></a><span class="tm">15:40:32 </span><span class="nka">* tittiatcoke</span> <span class="ac">seems to be good at covering things up :-)</span>
+<a name="l-86"></a><span class="tm">15:40:33</span><span class="nk"> &lt;dragotin&gt;</span> Bille adopted too much to german engineering ;-)
+<a name="l-87"></a><span class="tm">15:40:52</span><span class="nk"> &lt;remur_030&gt;</span> how did the nvidia bug turn out btw, nobody replying or is it really fixed?
+<a name="l-88"></a><span class="tm">15:40:58</span><span class="nk"> &lt;remur_030&gt;</span> or fixed for some?
+<a name="l-89"></a><span class="tm">15:41:13</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">dragotin:</span> well the british engineering way would be to fire the guy who knew about the ugly spots as soon as the work was done
+<a name="l-90"></a><span class="tm">15:41:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess the same goes for the ugly Intel driver
+<a name="l-91"></a><span class="tm">15:41:24</span><span class="nk"> &lt;Bille&gt;</span> afaics fixed by the newer driver only
+<a name="l-92"></a><span class="tm">15:41:26</span><span class="nk"> &lt;cb400f&gt;</span> plasma and amarok in default config didn't crash for me.. some report amarok still crashing... it's very muddy
+<a name="l-93"></a><span class="tm">15:41:39</span><span class="nk"> &lt;Bille&gt;</span> yeah, amarok is not good
+<a name="l-94"></a><span class="tm">15:41:40</span><span class="nk"> &lt;cb400f&gt;</span> but it seems fixed for everyone with &gt;=270.29
+<a name="l-95"></a><span class="tm">15:41:52</span><span class="nk"> &lt;Bille&gt;</span> i've heard of amarok indexer problems too
+<a name="l-96"></a><span class="tm">15:41:59</span><span class="nk"> &lt;cb400f&gt;</span> so we just have to hope it'll be out soon.. and that sndirsch will package it
+<a name="l-97"></a><span class="tm">15:42:10</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">Bille:</span> report? you mean that it crashes while indexing?
+<a name="l-98"></a><span class="tm">15:42:30</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">remur_030:</span> no, just that it doesn't see any files while indexing
+<a name="l-99"></a><span class="tm">15:42:31</span><span class="nk"> &lt;remur_030&gt;</span> and starts all over again all the time?
+<a name="l-100"></a><span class="tm">15:42:33</span><span class="nk"> &lt;Bille&gt;</span> was some irc chatter
+<a name="l-101"></a><span class="tm">15:43:01</span><span class="nk"> &lt;Bille&gt;</span> anyway that's not status either
+<a name="l-102"></a><span class="tm">15:43:04</span><span class="nk"> &lt;remur_030&gt;</span> hmm ok, because I remember strigi crashing on some mp3 file, maybe amarok uses libstrigi these days too
+<a name="l-103"></a><span class="tm">15:43:19</span><span class="nk"> &lt;Bille&gt;</span> there is a nice fix to strigi in the most recent commit digest
+<a name="l-104"></a><span class="tm">15:43:29</span><span class="nk"> &lt;remur_030&gt;</span> the dolphin fix by peter?
+<a name="l-105"></a><span class="tm">15:43:31</span><span class="nk"> &lt;Bille&gt;</span> out of process indexing so it can't crash dolphin etc
+<a name="l-106"></a><span class="tm">15:43:33</span><span class="nk"> &lt;Bille&gt;</span> yes
+<a name="l-107"></a><span class="tm">15:43:43</span><span class="nk"> &lt;Bille&gt;</span> 4.7 stuff
+<a name="l-108"></a><span class="tm">15:43:53</span><span class="nk"> &lt;Bille&gt;</span> what else
+<a name="l-109"></a><span class="tm">15:43:58</span><span class="nk"> &lt;remur_030&gt;</span> yeah we had that discussion because I wanted something like this for strigi too, tracker has it for quite some time
+<a name="l-110"></a><span class="tm">15:44:08</span><span class="nk"> &lt;Bille&gt;</span> so does amarok, even ;)
+<a name="l-111"></a><span class="tm">15:44:18</span><span class="nk"> &lt;Bille&gt;</span> it just still manages to crash, apparently
+<a name="l-112"></a><span class="tm">15:44:19</span><span class="nk"> &lt;cb400f&gt;</span> do we have an ETA on pnm update?
+<a name="l-113"></a><span class="tm">15:44:22</span><span class="nk"> &lt;remur_030&gt;</span> jos said it takes too much work and peter just fixed it quickly in dolphin =/
+<a name="l-114"></a><span class="tm">15:44:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> to resolve which issue ?
+<a name="l-115"></a><span class="tm">15:44:43</span><span class="nk"> &lt;remur_030&gt;</span> 3g connectivity
+<a name="l-116"></a><span class="tm">15:44:54</span><span class="nk"> &lt;cb400f&gt;</span> I understood the shipped version is outdated
+<a name="l-117"></a><span class="tm">15:45:02</span><span class="nk"> &lt;cb400f&gt;</span> also apparently dvd installs get knm.. not pnm
+<a name="l-118"></a><span class="tm">15:45:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> The pnm in playground fixed that issue.
+<a name="l-119"></a><span class="tm">15:45:12</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">cb400f:</span> yes, not sure how to fix that in an update
+<a name="l-120"></a><span class="tm">15:45:19</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">tittiatcoke:</span> that's why we were asking for an update
+<a name="l-121"></a><span class="tm">15:45:26</span><span class="nk"> &lt;cb400f&gt;</span> yep, but playground is used by ~1-2%
+<a name="l-122"></a><span class="tm">15:45:32</span><span class="nk"> &lt;Bille&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson ask maintenance team how to replace knm with pnm</span>
+<a name="l-123"></a><span class="tm">15:45:44</span><span class="nk"> &lt;remur_030&gt;</span> just push it into kdf at least to get some test coverage
+<a name="l-124"></a><span class="tm">15:45:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">remur_030:</span> I asked Bille if I should move it to KDF, but he wanted to double check if certain bugs were resolved
+<a name="l-125"></a><span class="tm">15:45:55</span><span class="nk"> &lt;cb400f&gt;</span> and kua
+<a name="l-126"></a><span class="tm">15:46:00</span><span class="nk"> &lt;remur_030&gt;</span> it's one of the bigger reports on bnc
+<a name="l-127"></a><span class="tm">15:46:11</span><span class="nk"> &lt;Bille&gt;</span> actually push to KDF now
+<a name="l-128"></a><span class="tm">15:46:20</span><span class="nk"> &lt;Bille&gt;</span> and i'll do the diligence before i pull to KDS
+<a name="l-129"></a><span class="tm">15:46:28</span><span class="nk"> &lt;remur_030&gt;</span> well kdf is our testbed, do we really want people to use kup?
+<a name="l-130"></a><span class="tm">15:46:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-131"></a><span class="tm">15:46:30</span><span class="nk"> &lt;remur_030&gt;</span> ah
+<a name="l-132"></a><span class="tm">15:46:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> thanks
+<a name="l-133"></a><span class="tm">15:46:48</span><span class="nk"> &lt;Bille&gt;</span> * Bille moved 4.6.0 to KDS, tittiatcoke helped clean up the resulting mess
+<a name="l-134"></a><span class="tm">15:47:09 </span><span class="nka">* tittiatcoke</span> <span class="ac">was glad he could help out in times of need :-)</span>
+<a name="l-135"></a><span class="tm">15:47:34</span><span class="nk"> &lt;remur_030&gt;</span> i still have that annoying list open and 2 bug reports with known patches I wanted to submit
+<a name="l-136"></a><span class="tm">15:47:43</span><span class="nk"> &lt;remur_030&gt;</span> but not until the weekend I guess =/
+<a name="l-137"></a><span class="tm">15:47:55</span><span class="nk"> &lt;krop&gt;</span> * The akonadi-facebook resource is available in K:U:P
+<a name="l-138"></a><span class="tm">15:48:07</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">krop:</span> 4.6 dependent?
+<a name="l-139"></a><span class="tm">15:48:40 </span><span class="nka">* tittiatcoke</span> <span class="ac">updated kdepim46 to the latest status</span>
+<a name="l-140"></a><span class="tm">15:48:52</span><span class="nk"> &lt;krop&gt;</span> <span class="hi">Bille:</span> yes
+<a name="l-141"></a><span class="tm">15:49:08</span><span class="nk"> &lt;Bille&gt;</span> so is it in KUSC:kdepim46 or vanilla KUSC?
+<a name="l-142"></a><span class="tm">15:49:23</span><span class="nk"> &lt;krop&gt;</span> so, KDF and KR46 users can test it
+<a name="l-143"></a><span class="tm">15:49:40</span><span class="nk"> &lt;krop&gt;</span> (even the KDS ones)
+<a name="l-144"></a><span class="tm">15:49:43</span><span class="nk"> &lt;remur_030&gt;</span> does upstream have any plans for a kdepim release?
+<a name="l-145"></a><span class="tm">15:49:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> the akonadi-facebook resource is in KUP
+<a name="l-146"></a><span class="tm">15:50:24</span><span class="nk"> &lt;Bille&gt;</span> sorry, konvi emoticons butchered krop's line
+<a name="l-147"></a><span class="tm">15:50:25</span><span class="nk"> &lt;Bille&gt;</span> ok
+<a name="l-148"></a><span class="tm">15:50:36</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">remur_030:</span> see dot today, apparently there will be a 4.6 kdepim
+<a name="l-149"></a><span class="tm">15:51:58</span><span class="nk"> &lt;sebas&gt;</span> I've heard rumours from the last meeting that 4.6.2 is the idea
+<a name="l-150"></a><span class="tm">15:52:08</span><span class="nk"> &lt;Bille&gt;</span> that's very close
+<a name="l-151"></a><span class="tm">15:52:08</span><span class="nk"> &lt;sebas&gt;</span> the dot story is more vague though, so not quite sure
+<a name="l-152"></a><span class="tm">15:52:15</span><span class="nk"> &lt;sebas&gt;</span> indeed
+<a name="l-153"></a><span class="tm">15:52:19</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">krop:</span> your take?
+<a name="l-154"></a><span class="tm">15:52:28</span><span class="nk"> &lt;krop&gt;</span> take what ?
+<a name="l-155"></a><span class="tm">15:52:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> kdepim 4.6 release with KDE 4.6.2 ?
+<a name="l-156"></a><span class="tm">15:52:39</span><span class="nk"> &lt;sebas&gt;</span> on the pim-akonadi release
+<a name="l-157"></a><span class="tm">15:52:46</span><span class="nk"> &lt;krop&gt;</span> ah no, I don't take
+<a name="l-158"></a><span class="tm">15:52:57</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">krop:</span> take == opinion, on when pim will be released?
+<a name="l-159"></a><span class="tm">15:52:59</span><span class="nk"> &lt;cb400f&gt;</span> btw, is it possible to build kdepim46 for plain 11.4?
+<a name="l-160"></a><span class="tm">15:53:09</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">cb400f:</span> should be, yes
+<a name="l-161"></a><span class="tm">15:53:16</span><span class="nk"> &lt;krop&gt;</span> <span class="hi">Bille:</span> not many bugfixes lately
+<a name="l-162"></a><span class="tm">15:53:21</span><span class="nk"> &lt;sebas&gt;</span> they both use up to date kdepimlibs
+<a name="l-163"></a><span class="tm">15:53:37</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">krop:</span> so no bugs left? ;-)
+<a name="l-164"></a><span class="tm">15:53:38</span><span class="nk"> &lt;Bille&gt;</span> ok
+<a name="l-165"></a><span class="tm">15:53:41</span><span class="nk"> &lt;krop&gt;</span> if something gets released with 4.6.2, it will most likely be a rc
+<a name="l-166"></a><span class="tm">15:53:51</span><span class="nk"> &lt;krop&gt;</span> <span class="hi">sebas:</span> if only..
+<a name="l-167"></a><span class="tm">15:53:53</span><span class="nk"> &lt;cb400f&gt;</span> then we should prolly do it.. so people can play with pim46 without having to use KDF
+<a name="l-168"></a><span class="tm">15:53:53</span><span class="nk"> &lt;sebas&gt;</span> good call I guess
+<a name="l-169"></a><span class="tm">15:54:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> Should I active kdepim46 to build against plain 11.4 ?
+<a name="l-170"></a><span class="tm">15:54:15</span><span class="nk"> &lt;Bille&gt;</span> volker told me they found and fixed a lot of performance problems in the indexing
+<a name="l-171"></a><span class="tm">15:54:35</span><span class="nk"> &lt;krop&gt;</span> and migration bugs are almost all solved now
+<a name="l-172"></a><span class="tm">15:54:40</span><span class="nk"> &lt;sebas&gt;</span> why not, it's already quite usable and as long as we don't push it into stable automatically and only people who know what they're doing update ... ;)
+<a name="l-173"></a><span class="tm">15:55:19</span><span class="nk"> &lt;remur_030&gt;</span> please warn before putting it into kdf though
+<a name="l-174"></a><span class="tm">15:55:32</span><span class="nk"> &lt;Bille&gt;</span> yeah
+<a name="l-175"></a><span class="tm">15:55:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> slightly related - are there or will be there KDE and (once it is stable) KDE PIM packages in Tumbleweed?
+<a name="l-176"></a><span class="tm">15:55:59</span><span class="nk"> &lt;remur_030&gt;</span> unless both versions can live happily on the same system, doubt it though
+<a name="l-177"></a><span class="tm">15:56:18 </span><span class="nka">* tittiatcoke</span> <span class="ac">just activated kdepim46 build for plain 11.4 including an update to latest kdepim and kdepim-runtime</span>
+<a name="l-178"></a><span class="tm">15:56:27</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">jospoortvliet:</span> not yet, greg wanted to have the process settle first before tackling such big pulls
+<a name="l-179"></a><span class="tm">15:56:29</span><span class="nk"> &lt;cb400f&gt;</span> sweetness
+<a name="l-180"></a><span class="tm">15:56:36</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">remur_030:</span> kmail2 migrates kmail1's config once, and then doesn't touch it anymore, so setting-wise they can
+<a name="l-181"></a><span class="tm">15:56:42</span><span class="nk"> &lt;sebas&gt;</span> just replace packages, done
+<a name="l-182"></a><span class="tm">15:56:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">remur_030:</span> tnx!
+<a name="l-183"></a><span class="tm">15:57:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">remur_030:</span> yes, kdepim 4.4 and 4.6 live together on the system just fine, tested that
+<a name="l-184"></a><span class="tm">15:57:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> including going back to 4.4
+<a name="l-185"></a><span class="tm">15:57:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> no issues
+<a name="l-186"></a><span class="tm">15:57:35</span><span class="nk"> &lt;sebas&gt;</span> I'm building kdelibs and kde-runtime packages right now, btw. They're from titti's master packages and have the plasma declarative stuff merged
+<a name="l-187"></a><span class="tm">15:57:51</span><span class="nk"> &lt;jospoortvliet&gt;</span> other than a huge folder with 4.6 database stuff, painful on my 30GB drive  :D
+<a name="l-188"></a><span class="tm">15:57:53</span><span class="nk"> &lt;sebas&gt;</span> i.e. more QML fun, as base for the plasma team to work off
+<a name="l-189"></a><span class="tm">15:58:04</span><span class="nk"> &lt;remur_030&gt;</span> that's nice, so it wouldn't be worst case if kdepim2 fails at some important point for people
+<a name="l-190"></a><span class="tm">15:58:14</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">remur_030:</span> that's the idea
+<a name="l-191"></a><span class="tm">15:58:20</span><span class="nk"> &lt;sebas&gt;</span> being able to try it, and rollback
+<a name="l-192"></a><span class="tm">15:58:25</span><span class="nk"> &lt;krop&gt;</span> mmh we're still on the status reports ? :)
+<a name="l-193"></a><span class="tm">15:59:10</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">krop:</span> yes
+<a name="l-194"></a><span class="tm">15:59:24</span><span class="nk"> &lt;Bille&gt;</span> any more status?
+<a name="l-195"></a><span class="tm">15:59:32</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">remur_030:</span> you're on:
+<a name="l-196"></a><span class="tm">15:59:55</span><span class="nk"> &lt;Bille&gt;</span> <span class="topic">#topic </span><span class="topicline">11.4 marketing rally and announcement</span>
+<a name="l-197"></a><span class="tm">16:00:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Bille:</span> I would love to know who the clown was that set paste.ubuntu.com as default instead of paste.opensuse.org - seeing some comments about that here and there :d
+<a name="l-198"></a><span class="tm">16:00:18</span><span class="nk"> &lt;krop&gt;</span> * small cleanup in the KUP packages. Some were abandoned since ages. I'll update kdevelop, add the new plugins and also massif-visualizer this week end
+<a name="l-199"></a><span class="tm">16:01:01</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">Bille:</span> it's a bit too late now =)
+<a name="l-200"></a><span class="tm">16:01:08</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Bille:</span> counts as a easter egg I guess
+<a name="l-201"></a><span class="tm">16:01:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">jospoortvliet:</span> I believe that this was done upstream
+<a name="l-202"></a><span class="tm">16:01:17</span><span class="nk"> &lt;remur_030&gt;</span> but jos took care of that
+<a name="l-203"></a><span class="tm">16:01:17</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">jospoortvliet:</span> git blame?
+<a name="l-204"></a><span class="tm">16:01:29</span><span class="nk"> &lt;Bille&gt;</span> ok
+<a name="l-205"></a><span class="tm">16:01:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">remur_030:</span> Bille you want to work on marketing for the 11.4 release now? ;-)
+<a name="l-206"></a><span class="tm">16:01:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Bille:</span> tittiatcoke ok... fun...
+<a name="l-207"></a><span class="tm">16:01:46</span><span class="nk"> &lt;Bille&gt;</span> <span class="topic">#topic </span><span class="topicline">Going forward with KDE:Unstable:SC (tittiatcoke)</span>
+<a name="l-208"></a><span class="tm">16:01:48</span><span class="nk"> &lt;cb400f&gt;</span> we missed a couple of meetings.. so.. ;-)
+<a name="l-209"></a><span class="tm">16:01:54</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">jospoortvliet:</span> we skipped quite some meetings so the items weren't updated
+<a name="l-210"></a><span class="tm">16:02:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">remur_030:</span> ok ;-)
+<a name="l-211"></a><span class="tm">16:02:13</span><span class="nk"> &lt;Bille&gt;</span> i wonder if we can use the OBS status page to warn about outdated stuff in KUP?
+<a name="l-212"></a><span class="tm">16:02:24</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">remur_030:</span> ah, i see where it came from.
+<a name="l-213"></a><span class="tm">16:03:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. My favorite topic: KDE:Unstable
+<a name="l-214"></a><span class="tm">16:03:42</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">Bille:</span> I'd be also interested in outdated stuff in kdf, maybe a red light if the stuff is older then 1 month
+<a name="l-215"></a><span class="tm">16:04:33</span><span class="nk"> &lt;remur_030&gt;</span> so we would have cought pnm not beeing updated for example
+<a name="l-216"></a><span class="tm">16:05:00</span><span class="nk"> &lt;remur_030&gt;</span> in archlinux users can 'flag' packets as outdated, but that makes most sense because of their rolling release way
+<a name="l-217"></a><span class="tm">16:05:19</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">remur_030:</span> sounds useful for TW
+<a name="l-218"></a><span class="tm">16:06:00</span><span class="nk"> &lt;tittiatcoke&gt;</span> The main item with Unstable is that lately we haven't seen any weekly update there. afaik Unstable:SC was created by dirk to test his weekly tarballs, but we have noticed that a lot more people are using Unstable for testing purposes, etc. The question is now if we want to continue providing a weekly update there or that we leave this up to dirk to decide when to update.
+<a name="l-219"></a><span class="tm">16:06:31</span><span class="nk"> &lt;Bille&gt;</span> is that because dirk's scripts are stale since the git move?
+<a name="l-220"></a><span class="tm">16:06:32</span><span class="nk"> &lt;remur_030&gt;</span> would be helping if dirk were here I guess
+<a name="l-221"></a><span class="tm">16:07:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> I don't know. After my changes he indicated that he would adjust the scripts, but that is already 1 month ago.
+<a name="l-222"></a><span class="tm">16:08:04</span><span class="nk"> &lt;sebas&gt;</span> well, he built 4.6.1 packages, which were done from git
+<a name="l-223"></a><span class="tm">16:08:20</span><span class="nk"> &lt;Bille&gt;</span> i'll try to talk to him about it tomorrow
+<a name="l-224"></a><span class="tm">16:08:21</span><span class="nk"> &lt;sebas&gt;</span> so the scripts have to be at least "kind of uptodate"
+<a name="l-225"></a><span class="tm">16:08:24</span><span class="nk"> &lt;sebas&gt;</span> cool
+<a name="l-226"></a><span class="tm">16:08:34</span><span class="nk"> &lt;Bille&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson talk to dirk about KUSC updating scripts</span>
+<a name="l-227"></a><span class="tm">16:08:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> the move to git introduced two issues. The first one is that some modules are being split out in separate packages. Question here would be if the KDE release team will follow that strategy or that they will follow the approach of 4.6.1 (creating new tarballs )
+<a name="l-228"></a><span class="tm">16:08:41</span><span class="nk"> &lt;Bille&gt;</span> unless he did it manually this time
+<a name="l-229"></a><span class="tm">16:08:50</span><span class="nk"> &lt;sebas&gt;</span> I'm building test packages for plasma-tablet, and for that we need regularly updated unstable packages as well
+<a name="l-230"></a><span class="tm">16:08:59</span><span class="nk"> &lt;tittiatcoke&gt;</span> I know with 4.6.1 he had a lot of issues to recreate the tarballs equal to the 4.6.0 (svn) ones
+<a name="l-231"></a><span class="tm">16:09:17</span><span class="nk"> &lt;cb400f&gt;</span> it's also cool to be able to say "we have a repo with weekly trunk builds"
+<a name="l-232"></a><span class="tm">16:09:19</span><span class="nk"> &lt;sebas&gt;</span> yeah, 4.6.1 was the disruptive kde release wrt tarball creation
+<a name="l-233"></a><span class="tm">16:09:24</span><span class="nk"> &lt;sebas&gt;</span> from here on, it's downhill ;)
+<a name="l-234"></a><span class="tm">16:09:33</span><span class="nk"> &lt;Bille&gt;</span> so Rohan from ubuntu talked to me about Project Neon
+<a name="l-235"></a><span class="tm">16:09:38</span><span class="nk"> &lt;Bille&gt;</span> they would like to move it to OBS
+<a name="l-236"></a><span class="tm">16:09:38</span><span class="nk"> &lt;sebas&gt;</span> ah
+<a name="l-237"></a><span class="tm">16:09:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> As that I am building KDE trunk on a daily basis, I have scripts that can be used easily to keep Unstable:SC up-to-date, but I guess this depends on what strategy the release team will follow
+<a name="l-238"></a><span class="tm">16:10:18</span><span class="nk"> &lt;Bille&gt;</span> (Project Neon makes ubuntu packages from daily git snapshots)
+<a name="l-239"></a><span class="tm">16:10:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> I guess we also have this :-)
+<a name="l-240"></a><span class="tm">16:10:40</span><span class="nk"> &lt;Bille&gt;</span> afaics the project keeps running out of gas so they reannounce it every few months
+<a name="l-241"></a><span class="tm">16:10:46</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">tittiatcoke:</span> in your home?
+<a name="l-242"></a><span class="tm">16:10:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> Yup.
+<a name="l-243"></a><span class="tm">16:11:21</span><span class="nk"> &lt;Bille&gt;</span> it would be interesting technically
+<a name="l-244"></a><span class="tm">16:11:28</span><span class="nk"> &lt;Bille&gt;</span> to build snapshots for all distributions
+<a name="l-245"></a><span class="tm">16:11:39</span><span class="nk"> &lt;remur_030&gt;</span> ubuntu wants to move it to obs??
+<a name="l-246"></a><span class="tm">16:11:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> I can easily push that to Unstable:SC and we have daily updated packages. The only question would be if we have enough buildpower :-)
+<a name="l-247"></a><span class="tm">16:11:50</span><span class="nk"> &lt;cb400f&gt;</span> is it just amarok? .. or entire SC?
+<a name="l-248"></a><span class="tm">16:12:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> In my home ?
+<a name="l-249"></a><span class="tm">16:12:05</span><span class="nk"> &lt;Bille&gt;</span> but i think that adrianS might come and beat me to death with a 1U rackmount if i started building daily KDE git for 10 distributions, for the load it would cause
+<a name="l-250"></a><span class="tm">16:12:08</span><span class="nk"> &lt;cb400f&gt;</span> neon
+<a name="l-251"></a><span class="tm">16:12:14</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">tittiatcoke:</span> entirely depends on how often you push
+<a name="l-252"></a><span class="tm">16:12:26</span><span class="nk"> &lt;remur_030&gt;</span> ah, so they are also interested in building the ubuntu packages
+<a name="l-253"></a><span class="tm">16:12:30</span><span class="nk"> &lt;adrianS&gt;</span> <span class="hi">Bille:</span> we would be able to handle that via prios ...
+<a name="l-254"></a><span class="tm">16:12:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">sebas:</span> That is why I want to keep Unstable:SC on a weekly basis :-)
+<a name="l-255"></a><span class="tm">16:12:38</span><span class="nk"> &lt;sebas&gt;</span> weekly should be fine IMO
+<a name="l-256"></a><span class="tm">16:12:45</span><span class="nk"> &lt;adrianS&gt;</span> as long the diskspace would not exceed our limits
+<a name="l-257"></a><span class="tm">16:13:00</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">cb400f:</span> everything now
+<a name="l-258"></a><span class="tm">16:13:16</span><span class="nk"> &lt;remur_030&gt;</span> maybe stuff like that would make sense on a seperate obs instance?
+<a name="l-259"></a><span class="tm">16:13:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> We could have a look on expanding Unstable:SC and building it also for other distro's
+<a name="l-260"></a><span class="tm">16:13:40</span><span class="nk"> &lt;remur_030&gt;</span> could be sponsored/hosted by kde e.v.?
+<a name="l-261"></a><span class="tm">16:13:42</span><span class="nk"> &lt;Bille&gt;</span> they already do the separate prefix stuff lubos wanted to do for 11.4
+<a name="l-262"></a><span class="tm">16:13:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> I see.
+<a name="l-263"></a><span class="tm">16:13:56</span><span class="nk"> &lt;cb400f&gt;</span> sounds a bit crazy imo :-) .. do developers really need this? or is it just for super-enthusiastic users?
+<a name="l-264"></a><span class="tm">16:14:21</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">jospoortvliet:</span> asked aaron, the default dataengine chosen is mostly random
+<a name="l-265"></a><span class="tm">16:15:07</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">cb400f:</span> it's for your worst nightmare kind of version whores
+<a name="l-266"></a><span class="tm">16:15:18</span><span class="nk"> &lt;cb400f&gt;</span> ah, thought so :-)
+<a name="l-267"></a><span class="tm">16:15:28</span><span class="nk"> &lt;Bille&gt;</span> the other thing that gives me cause for concern is that they don't want any patches
+<a name="l-268"></a><span class="tm">16:15:44</span><span class="nk"> &lt;Bille&gt;</span> which would remove the 'get our patches tested early' role of KUSC
+<a name="l-269"></a><span class="tm">16:16:24</span><span class="nk"> &lt;Bille&gt;</span> so i don't know about it yet
+<a name="l-270"></a><span class="tm">16:16:46</span><span class="nk"> &lt;Bille&gt;</span> i gave the OBS + studio (but studio's bandwidth requirements make it work very badly in india) talk
+<a name="l-271"></a><span class="tm">16:16:52</span><span class="nk"> &lt;Bille&gt;</span> and they were extremely enthusiastic
+<a name="l-272"></a><span class="tm">16:17:24</span><span class="nk"> &lt;Bille&gt;</span> i also gave Riddell a personal tutorial, he's packaging ubuntu-disk-creator or something for other distros in OBS
+<a name="l-273"></a><span class="tm">16:17:44</span><span class="nk"> &lt;Bille&gt;</span> so we can say that the future adoption of ubuntu is dependent on the OBS now :P
+<a name="l-274"></a><span class="tm">16:18:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> lol
+<a name="l-275"></a><span class="tm">16:18:38</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">tittiatcoke:</span> so. the issues are frequency and package layout
+<a name="l-276"></a><span class="tm">16:19:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Bille:</span> if you think it would be good for PR if we build KDE GIT for 10 distro's, talk to me about resources - marketing has $$ too you know ;-)
+<a name="l-277"></a><span class="tm">16:19:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> if we can counter project neon that way - awesome...
+<a name="l-278"></a><span class="tm">16:19:42</span><span class="nk"> &lt;jospoortvliet&gt;</span> I might be able to convince my boss it is worth buying additional hardware for :D
+<a name="l-279"></a><span class="tm">16:19:50</span><span class="nk"> &lt;alin&gt;</span> I am in
+<a name="l-280"></a><span class="tm">16:19:51</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">jospoortvliet:</span> i don't think you have the $$ to give KDE a dedicated build server and the bandwidth it would require, do you?
+<a name="l-281"></a><span class="tm">16:20:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Bille:</span> depends, how expensive is that?
+<a name="l-282"></a><span class="tm">16:20:13</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">adrianS:</span> ballpark figure?
+<a name="l-283"></a><span class="tm">16:20:21</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">Bille:</span> isn't OBS powerful enough for that though? /me wonders
+<a name="l-284"></a><span class="tm">16:20:49</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">cartman:</span> so a complete set of packages in KUSC is what, 150 packages?
+<a name="l-285"></a><span class="tm">16:21:03</span><span class="nk"> &lt;cartman&gt;</span> times 10
+<a name="l-286"></a><span class="tm">16:21:06</span><span class="nk"> &lt;Bille&gt;</span> so 10 distros x 2 arches is 3000 extra builds, every day
+<a name="l-287"></a><span class="tm">16:21:13</span><span class="nk"> &lt;cartman&gt;</span> right
+<a name="l-288"></a><span class="tm">16:21:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">adrianS:</span> can you give me a rough guestimate? that'd be really interesting...
+<a name="l-289"></a><span class="tm">16:21:49</span><span class="nk"> &lt;Bille&gt;</span> build.opensuse.org does have the power for it, but it would make itself noticed
+<a name="l-290"></a><span class="tm">16:21:54</span><span class="nk"> &lt;cartman&gt;</span> I see 250 active works atm. :) OBS is flooded!
+<a name="l-291"></a><span class="tm">16:22:19</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">jospoortvliet:</span> we could share it with the gnomies, after all gcc compiles C really fast, and JS doesn't need compiling, it would just eat IO bandwidth :)
+<a name="l-292"></a><span class="tm">16:22:44</span><span class="nk"> &lt;remur_030&gt;</span> build.opensuse.org does have more marketing value then build.kde.org though I guess ;-)
+<a name="l-293"></a><span class="tm">16:23:37</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">cartman:</span> yeah, we have 265 workers max atm
+<a name="l-294"></a><span class="tm">16:23:51</span><span class="nk"> &lt;Bille&gt;</span> anyway, this is titti's topic
+<a name="l-295"></a><span class="tm">16:23:53</span><span class="nk"> &lt;cb400f&gt;</span> and the neon dudes would maintain the packages for all those distros?
+<a name="l-296"></a><span class="tm">16:23:56 </span><span class="nka">* Bille</span> <span class="ac">feels bad for stealing it</span>
+<a name="l-297"></a><span class="tm">16:24:15</span><span class="nk"> &lt;cb400f&gt;</span> so what happens when they lose interest again next month
+<a name="l-298"></a><span class="tm">16:24:50</span><span class="nk"> &lt;Bille&gt;</span> i guess it would attract a lot of other upstream packagers
+<a name="l-299"></a><span class="tm">16:25:07</span><span class="nk"> &lt;krop&gt;</span> better promote KUSC than building ubuntu based packages which do the same thing imo
+<a name="l-300"></a><span class="tm">16:25:50</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">krop:</span> agree
+<a name="l-301"></a><span class="tm">16:25:51</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Bille:</span> interesting
+<a name="l-302"></a><span class="tm">16:26:09</span><span class="nk"> &lt;Bille&gt;</span> well, KUSC is kinda different
+<a name="l-303"></a><span class="tm">16:26:13</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">tittiatcoke:</span> still there?
+<a name="l-304"></a><span class="tm">16:26:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> Yup. I am here.
+<a name="l-305"></a><span class="tm">16:26:33</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> You got it correctly.
+<a name="l-306"></a><span class="tm">16:26:39</span><span class="nk"> &lt;krop&gt;</span> the target users are the same as the neon ones
+<a name="l-307"></a><span class="tm">16:26:53</span><span class="nk"> &lt;krop&gt;</span> bleeding edge stuff for developers and crazy users
+<a name="l-308"></a><span class="tm">16:27:04</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">tittiatcoke:</span> re frequency i'll talk to dirk and see how the scripts are at now
+<a name="l-309"></a><span class="tm">16:27:19</span><span class="nk"> &lt;Bille&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson talk to dirk about KUSC scripts</span>
+<a name="l-310"></a><span class="tm">16:27:24</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> Ok. I guess that dirk can also answer the tarball layout for 4.7
+<a name="l-311"></a><span class="tm">16:27:47</span><span class="nk"> &lt;Bille&gt;</span> i doubt he knows
+<a name="l-312"></a><span class="tm">16:27:58</span><span class="nk"> &lt;Bille&gt;</span> kde release team and the git transition team might have an idea
+<a name="l-313"></a><span class="tm">16:29:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> isn't dirk part of the kde release team ?
+<a name="l-314"></a><span class="tm">16:30:10</span><span class="nk"> &lt;sebas&gt;</span> he is
+<a name="l-315"></a><span class="tm">16:30:46</span><span class="nk"> &lt;Bille&gt;</span> he is, but he's doing the work, not really discussing it
+<a name="l-316"></a><span class="tm">16:30:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> I see.
+<a name="l-317"></a><span class="tm">16:30:55</span><span class="nk"> &lt;siddharths&gt;</span> is here anyone who compiles kde trunk and runs manually
+<a name="l-318"></a><span class="tm">16:30:57</span><span class="nk"> &lt;siddharths&gt;</span> ?
+<a name="l-319"></a><span class="tm">16:31:15</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">siddharths:</span> meeting.. ask later...
+<a name="l-320"></a><span class="tm">16:31:15</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">siddharths:</span> yes, but we're in the middle of an irc meeting
+<a name="l-321"></a><span class="tm">16:31:27 </span><span class="nka">* sebas</span> <span class="ac">high-fives alin :)</span>
+<a name="l-322"></a><span class="tm">16:31:28</span><span class="nk"> &lt;siddharths&gt;</span> oh after :)
+<a name="l-323"></a><span class="tm">16:31:50 </span><span class="nka">* Bille</span> <span class="ac">met siddharths in india, he is an artist and an experienced rpm packager :)</span>
+<a name="l-324"></a><span class="tm">16:32:12</span><span class="nk"> &lt;remur_030&gt;</span> and has a fedora cloak! *cough*
+<a name="l-325"></a><span class="tm">16:32:17</span><span class="nk"> &lt;remur_030&gt;</span> ;-)
+<a name="l-326"></a><span class="tm">16:32:19</span><span class="nk"> &lt;alin&gt;</span> Bille stop showing off...
+<a name="l-327"></a><span class="tm">16:32:30</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">remur_030:</span> ssh, don't let it get out i'm poaching contributors
+<a name="l-328"></a><span class="tm">16:32:53</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">sebas:</span> you want to ask r-t about future tarball layouts?
+<a name="l-329"></a><span class="tm">16:32:57</span><span class="nk"> &lt;siddharths&gt;</span> <span class="hi">Bille:</span> i do little artist stuff but mainly do Plasma C++  contibutor
+<a name="l-330"></a><span class="tm">16:32:58</span><span class="nk"> &lt;siddharths&gt;</span> :)
+<a name="l-331"></a><span class="tm">16:32:58</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">sebas:</span> tittiatcoke can brief you
+<a name="l-332"></a><span class="tm">16:33:22</span><span class="nk"> &lt;Bille&gt;</span> * when to start 11.5 stuff (wstephenson,sebas)
+<a name="l-333"></a><span class="tm">16:33:26</span><span class="nk"> &lt;Bille&gt;</span> <span class="topic">#topic </span><span class="topicline">when to start 11.5 stuff (wstephenson,sebas)</span>
+<a name="l-334"></a><span class="tm">16:33:38 </span><span class="nka">* siddharths</span> <span class="ac">met Bille and its was nice to meet him :) very kind of you</span>
+<a name="l-335"></a><span class="tm">16:33:40</span><span class="nk"> &lt;Bille&gt;</span> IMO the right time was 2 weeks ago
+<a name="l-336"></a><span class="tm">16:33:41</span><span class="nk"> &lt;alin&gt;</span> thought it started already...
+<a name="l-337"></a><span class="tm">16:33:41</span><span class="nk"> &lt;remur_030&gt;</span> so, gotta run, see you later
+<a name="l-338"></a><span class="tm">16:33:44</span><span class="nk"> &lt;Bille&gt;</span> so we should start right now
+<a name="l-339"></a><span class="tm">16:33:58</span><span class="nk"> &lt;Bille&gt;</span> i want to organise another meeting for this
+<a name="l-340"></a><span class="tm">16:34:00</span><span class="nk"> &lt;tittiatcoke&gt;</span> Do we know what we want for 11.5 ?
+<a name="l-341"></a><span class="tm">16:34:02</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">Bille:</span> yeah, we can do that
+<a name="l-342"></a><span class="tm">16:34:03</span><span class="nk"> &lt;Bille&gt;</span> no
+<a name="l-343"></a><span class="tm">16:34:09</span><span class="nk"> &lt;Bille&gt;</span> this week good for everyone?
+<a name="l-344"></a><span class="tm">16:34:12</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-345"></a><span class="tm">16:34:28</span><span class="nk"> &lt;Bille&gt;</span> the old meeting time, Thu 1700UTC?
+<a name="l-346"></a><span class="tm">16:34:38</span><span class="nk"> &lt;sebas&gt;</span> that's tomorrow
+<a name="l-347"></a><span class="tm">16:34:41</span><span class="nk"> &lt;sebas&gt;</span> :)
+<a name="l-348"></a><span class="tm">16:34:43</span><span class="nk"> &lt;Bille&gt;</span> too soon?
+<a name="l-349"></a><span class="tm">16:34:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> I might not be able to make it.
+<a name="l-350"></a><span class="tm">16:34:58</span><span class="nk"> &lt;Bille&gt;</span> i'm aware of that, do you really want to make it?
+<a name="l-351"></a><span class="tm">16:35:01</span><span class="nk"> &lt;sebas&gt;</span> I'm quite stuffed right now, and in high-production mode
+<a name="l-352"></a><span class="tm">16:35:16</span><span class="nk"> &lt;sebas&gt;</span> I'd prefer to delay it for two weeks actually
+<a name="l-353"></a><span class="tm">16:35:40</span><span class="nk"> &lt;sebas&gt;</span> or maybe ... won't make much difference
+<a name="l-354"></a><span class="tm">16:35:43</span><span class="nk"> &lt;sebas&gt;</span> don't listen to me :D
+<a name="l-355"></a><span class="tm">16:35:45</span><span class="nk"> &lt;siddharths&gt;</span> <span class="hi">Bille:</span> thnx man :) you opensuse usb worked fine for me thnx for the help
+<a name="l-356"></a><span class="tm">16:35:46</span><span class="nk"> &lt;Bille&gt;</span> i was about to say that
+<a name="l-357"></a><span class="tm">16:36:02</span><span class="nk"> &lt;sebas&gt;</span> :&gt;
+<a name="l-358"></a><span class="tm">16:36:16</span><span class="nk"> &lt;Bille&gt;</span> so how about we do 30 minutes tomorrow at 17UTC and see what we come up with?
+<a name="l-359"></a><span class="tm">16:36:25</span><span class="nk"> &lt;sebas&gt;</span> sure
+<a name="l-360"></a><span class="tm">16:36:31</span><span class="nk"> &lt;Bille&gt;</span> i'll announce
+<a name="l-361"></a><span class="tm">16:36:38</span><span class="nk"> &lt;sebas&gt;</span> can you ping me? I tend to forget irc meetings
+<a name="l-362"></a><span class="tm">16:37:04 </span><span class="nka">* krop</span> <span class="ac">installs korganizer on sebas' machine</span>
+<a name="l-363"></a><span class="tm">16:37:29</span><span class="nk"> &lt;sebas&gt;</span> hehe, I could indeed just put it in my agenda :)
+<a name="l-364"></a><span class="tm">16:38:02</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">Bille:</span> earlier would suit me better, Kim usually comes back between 17:30 and 1800
+<a name="l-365"></a><span class="tm">16:38:11</span><span class="nk"> &lt;sebas&gt;</span> 1700 CET would be fine
+<a name="l-366"></a><span class="tm">16:38:39</span><span class="nk"> &lt;Bille&gt;</span> i just sent the mail
+<a name="l-367"></a><span class="tm">16:38:51</span><span class="nk"> &lt;sebas&gt;</span> heh, okay. No problem
+<a name="l-368"></a><span class="tm">16:38:55</span><span class="nk"> &lt;Bille&gt;</span> we can start talking earlier
+<a name="l-369"></a><span class="tm">16:39:01</span><span class="nk"> &lt;Bille&gt;</span> it will warm things up nicely
+<a name="l-370"></a><span class="tm">16:39:05</span><span class="nk"> &lt;Bille&gt;</span> if you have to shoot, fine
+<a name="l-371"></a><span class="tm">16:39:16</span><span class="nk"> &lt;Bille&gt;</span> /endtopic
+<a name="l-372"></a><span class="tm">16:39:26</span><span class="nk"> &lt;Bille&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A, Misc</span>
+<a name="l-373"></a><span class="tm">16:39:35</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">siddharths:</span> your turn
+<a name="l-374"></a><span class="tm">16:40:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> Have to run guys. Thanks for the meeting
+<a name="l-375"></a><span class="tm">16:40:17</span><span class="nk"> &lt;javier&gt;</span> ciao tittiatcoke
+<a name="l-376"></a><span class="tm">16:40:18</span><span class="nk"> &lt;sebas&gt;</span> cheers tittiatcoke
+<a name="l-377"></a><span class="tm">16:40:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">sebas:</span> I will drop you an email regarding the unstable packaging issue :-)
+<a name="l-378"></a><span class="tm">16:40:51 </span><span class="nka">* krop</span> <span class="ac">vanishes for 15 mn</span>
+<a name="l-379"></a><span class="tm">16:41:00</span><span class="nk"> &lt;siddharths&gt;</span> okay let me introduce myself here first
+<a name="l-380"></a><span class="tm">16:41:29</span><span class="nk"> &lt;siddharths&gt;</span> i am Siddharth Sharma from India, I met Bille in Bangalore at KDE Conf In
+<a name="l-381"></a><span class="tm">16:41:35</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">siddharths:</span> http://en.opensuse.org/openSUSE:KDE_developers_guide for a start
+<a name="l-382"></a><span class="tm">16:42:12</span><span class="nk"> &lt;siddharths&gt;</span> I am Plasma KDE C++ Contributor , ido some art for fun and i know rpm packaging :)
+<a name="l-383"></a><span class="tm">16:42:31</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">siddharths:</span> also zypper source-install -d kdebase4-workspace will install every dependency needed for building that package, and hence for plasma c++ work
+<a name="l-384"></a><span class="tm">16:42:32</span><span class="nk"> &lt;siddharths&gt;</span> thats it anything else some one wants to know about me
+<a name="l-385"></a><span class="tm">16:42:38</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">siddharths:</span> shoe size?
+<a name="l-386"></a><span class="tm">16:42:40</span><span class="nk"> &lt;Bille&gt;</span> :P
+<a name="l-387"></a><span class="tm">16:42:52</span><span class="nk"> &lt;siddharths&gt;</span> i know anaumov also :) he is my very good friend
+<a name="l-388"></a><span class="tm">16:42:56</span><span class="nk"> &lt;siddharths&gt;</span> <span class="hi">Bille:</span> 8 :P
+<a name="l-389"></a><span class="tm">16:43:36</span><span class="nk"> &lt;Bille&gt;</span> and siddharths offered to help us out
+<a name="l-390"></a><span class="tm">16:44:16 </span><span class="nka">* Bille</span> <span class="ac">has to leave</span>
+<a name="l-391"></a><span class="tm">16:44:21</span><span class="nk"> &lt;Bille&gt;</span> so i'm going to #endmeeting now
+<a name="l-392"></a><span class="tm">16:44:23</span><span class="nk"> &lt;Bille&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

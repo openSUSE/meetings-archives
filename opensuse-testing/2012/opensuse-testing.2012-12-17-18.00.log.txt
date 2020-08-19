@@ -1,0 +1,118 @@
+18:00:44 <bmwiedemann> #startmeeting
+18:00:44 <bugbot> Meeting started Mon Dec 17 18:00:44 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:00:44 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:00:50 <bmwiedemann> #chair Holgi
+18:00:50 <bugbot> Current chairs: Holgi bmwiedemann
+18:00:56 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+18:00:56 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+18:01:07 <bmwiedemann> #topic MS2 testing
+18:01:52 <bmwiedemann> I kept an eye on openQA results and some look rather good now, but LVM is broken and gnome has graphics issues
+18:02:09 <bmwiedemann> and non-oss-update repo is missing, which breaks zypper and yast tests
+18:02:22 <bmwiedemann> maybe I should just workaround it with a zypper rr line
+18:03:12 <Holgi> bmwiedemann: in case you do it, you may not forget to disable it again
+18:03:18 <LWFinger> Should update repos be present during MS sequences?
+18:03:55 <bmwiedemann> at least the normal update repo should
+18:04:15 <bmwiedemann> for testing of zypper's patch working
+18:04:20 <LWFinger> As I recall, it is usually empty.
+18:05:23 <bmwiedemann> we sometimes had an "update-test" package in there, though
+18:05:35 <LWFinger> OK.
+18:05:41 <bmwiedemann> it is manual work and that tends to be forgotten
+18:06:40 <Holgi> bmwiedemann: did you talk to coolo about this already or created a bug report?
+18:07:29 <bmwiedemann> only filed the LVM one
+18:07:45 <Holgi> ok might be worth filing one
+18:07:56 <bmwiedemann> you can see the http://openqa.opensuse.org/ sidebar for non-linked issues
+18:08:01 <Holgi> to prevent to get lost of it
+18:08:25 <bmwiedemann> some of it got solved without me filing
+18:08:29 <Holgi> ok
+18:09:09 <LWFinger> On the beta forum, there was a report that there was no place for a 12.3 M3 entry. Is that still true?
+18:09:30 <LWFinger> That was in Bugzilla.
+18:09:38 <bmwiedemann> M2 or M3?
+18:09:48 <LWFinger> M2, of course.
+18:10:35 <bmwiedemann> right.
+18:11:06 <bmwiedemann> pinged coolo for it :)
+18:11:27 <bmwiedemann> it is on my checklist for new milestones for ages
+18:11:42 <LWFinger> Ah, coolo is the one to set those things up.
+18:12:11 <Holgi> I think it is confusing that there is not 12.3 as a product
+18:12:21 <Holgi> and you need to select "Factory"
+18:12:26 <bmwiedemann> at least he did in the past. maybe cartman / ismail could do it as well now that he is part of the release team
+18:13:45 <bmwiedemann> for reference, my checklist is at http://openqa.opensuse.org/openqa/doc/release-checklist.html
+18:15:00 <bmwiedemann> LWFinger: did you test MS2?
+18:15:10 <LWFinger> Yes.
+18:15:33 <bmwiedemann> how did it go?
+18:16:03 <LWFinger> I initially downloaded the Gnome Live CD and installed from it on a VB VM.
+18:17:02 <LWFinger> The installation went OK except that the screen describing the keyboard, etc. does not fit in window and has no scroll bars.
+18:17:43 <bmwiedemann> the bootloader keyboard selection?
+18:18:11 <bmwiedemann> or the installation summary/overview?
+18:18:46 <LWFinger> The first screen in installation - I think that is the summary. The "Yes" or "Nex"t button was not visible. Only by using Tabs and Returns could I proceed.
+18:19:06 <bmwiedemann> ah, that is the Welcome screen then
+18:19:34 <LWFinger> Ohterwise installation was normal. As I never use Gnome, I did not test it further.
+18:20:24 <LWFinger> I then used the NET install disk on a VB VM. That went fine and resulting installation seemed OK.
+18:20:54 <LWFinger> Next, I used the KDE Live CD to install on a real machine.
+18:21:38 <LWFinger> The installation worked without any problems, but I do see some problems with the running system.
+18:22:04 <bmwiedemann> what kind of problems?
+18:22:44 <LWFinger> In the KDE wireless applet, the check marks for "Enable Networking" and "Enable Wireless" are present, but so faint that they are difficult to see.
+18:23:22 <bmwiedemann> ah, could be a problem with themes, which changes with new KDE version
+18:23:53 <LWFinger> The System Setting panel seems not to be able to enable screen savers without also enabling locking.
+18:24:03 <bmwiedemann> btw: http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-GNOME-LiveCD-i686-Build0260/welcome-1.png has Next button visible, but it has pretty high res
+18:24:31 <LWFinger> My res was probably 800x600.
+18:25:03 <bmwiedemann> one collegue had the problem of a screensaver that would not lock, but just vanish when moving the mouse
+18:25:08 <bmwiedemann> in KDE
+18:26:01 <bmwiedemann> that is certainly an area that will need more love
+18:26:15 <LWFinger> More things I noticed: Grub2 uses the text progress screen, not the converging dots. That usually means that it does not get the screen res. Desktop is OK at 1024x768.
+18:26:35 <LWFinger> This system uses nouveau.
+18:27:26 <bmwiedemann> when you file this, you want to add details on your graphics chip/card
+18:27:44 <bmwiedemann> (same for ATI) because not all chips are supported equally well
+18:28:15 <bmwiedemann> but grub2... does it even use linux drivers?
+18:28:40 <LWFinger> In the Manage Connection Screen of the KDE NM applet, Pressing the "Edit" button, a freshly rebooted system brings up an error screen that says"Did not receive a reply...."
+18:29:24 <LWFinger> Other things in the applet also fail; however, once the system has been up for ~2000 sec, then things work.
+18:30:05 <bmwiedemann> possibly systemd taking its time to start services? I noticed sshd taking a minute to start after xdm start
+18:30:07 <LWFinger> It seems that something is taking a long time to get started in systemd. I need to explore what the component is.
+18:30:33 <bmwiedemann> bootchart could help
+18:30:53 <LWFinger> Finally, there is no logging console on VT10. Is that normal for systemd?
+18:31:22 <LWFinger> I'll run bootchart.
+18:32:27 <bmwiedemann> vt10 was done by rsyslogd in the past and this was likely replaced by systemd-journal
+18:33:49 <LWFinger> I use VT10 to capture events that crash the system. Those usually fail to be saved in the logs. How does one do that now?
+18:34:04 <bmwiedemann> we could still open a bug for fcrozat
+18:34:40 <LWFinger> It sounds like a question for the factory ML.
+18:35:29 <bmwiedemann> Would still be nice to have it configured by default.
+18:36:01 <LWFinger> Yes - it is essential, and there will be no fallback to SystemV.
+18:37:29 <bmwiedemann> I would hope to someone keep that fallback alive in an OBS repo
+18:38:18 <LWFinger> I have no further report for 12.3 M2.
+18:38:29 <bmwiedemann> anyway, back on topic... jradzuweit: did you test MS2?
+18:39:44 <bmwiedemann> or anyone else who is not idling?
+18:40:39 <bmwiedemann> OK. then let's move to the next topic
+18:40:45 <bmwiedemann> #topic Next Meeting
+18:41:26 <bmwiedemann> Roadmap has Beta1 for 2013-01-17
+18:42:24 <bmwiedemann> usually, that is one of the most important ones in the cycle
+18:42:50 <LWFinger> Is it likely to be on time?
+18:42:51 <bmwiedemann> as it is pretty hard to get fixes in after it
+18:42:53 <bmwiedemann> yes
+18:43:48 <LWFinger> Our usual timing would have a meeting on Jan 21.
+18:44:13 <bmwiedemann> but maybe we should have one before, so that we could get important fixes in?
+18:45:00 <LWFinger> How long before Beta?
+18:45:24 <bmwiedemann> at least a week. compiling & publishing takes some time
+18:45:53 <LWFinger> Would Thursday Jan. 3 work? That would be 2 weeks.
+18:46:13 <Holgi> I don't think that it's worth to meet on Jan 3rd already
+18:46:20 <bmwiedemann> or 7th?
+18:46:23 <Holgi> there will not happen much between today and then
+18:46:42 <Holgi> most people are on vacation
+18:46:51 <bmwiedemann> some people get amazingly active after xmas
+18:47:31 <bmwiedemann> or we just discuss possible blockers on ML then
+18:47:46 <bmwiedemann> asynchronous communication might be more useful
+18:47:54 <Holgi> agreed
+18:48:00 <LWFinger> OK here.
+18:48:14 <bmwiedemann> and will also involve more people than the IRC-knowing ones
+18:49:04 <Holgi> so next meeting, jan 21st?
+18:49:05 <bmwiedemann> so next meeting 2013-01-21 18:00 UTC then
+18:49:09 <Holgi> ok
+18:49:19 <LWFinger> OK
+18:49:26 <bmwiedemann> #agreed next meeting is 2013-01-21 18:00 UTC
+18:49:39 <bmwiedemann> #topic open discussion
+18:50:55 <bmwiedemann> on the openQA side there is some coding going on to support testing physical hardware, which would avoid trouble from virtualization and cirrus graphics of KVM
+18:51:29 <bmwiedemann> could still be some time, before we set it up for Factory testing, though
+18:52:53 <bmwiedemann> (this is using a kvm2usb device)
+18:53:15 <bmwiedemann> any other things you want to discuss?
+18:53:38 <LWFinger> Nothing here.
+18:53:40 <Holgi> I don't
+18:54:02 <bmwiedemann> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:54:08 <bmwiedemann> #endmeeting

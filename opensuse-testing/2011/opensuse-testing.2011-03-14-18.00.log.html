@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:00:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:00:41</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Mar 14 18:00:41 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:00:41</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:00:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">18:00:50</span><span class="nk"> &lt;LWFinger&gt;</span> Hi everyone - I got the time right. :)
+<a name="l-6"></a><span class="tm">18:00:51 </span><span class="nka">* tigerfoot</span> <span class="ac">sorry was in marketing during two hours, and need food now.</span>
+<a name="l-7"></a><span class="tm">18:01:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-8"></a><span class="tm">18:01:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-9"></a><span class="tm">18:01:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Experience with 11.4 GM</span>
+<a name="l-10"></a><span class="tm">18:02:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> do you want to start?
+<a name="l-11"></a><span class="tm">18:02:16</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-12"></a><span class="tm">18:02:40</span><span class="nk"> &lt;GNAM&gt;</span> .
+<a name="l-13"></a><span class="tm">18:02:41</span><span class="nk"> &lt;LWFinger&gt;</span> So far, I have no serious killers with 11.4 GM.
+<a name="l-14"></a><span class="tm">18:03:36</span><span class="nk"> &lt;LWFinger&gt;</span> Occasionly (3 times so far), the NetworkManager has had wireless disabled for no known reason. The rfkill switches are OK.
+<a name="l-15"></a><span class="tm">18:03:49</span><span class="nk"> &lt;tigerfoot&gt;</span> Found just annoying ulogd2 not working at all, see http://bugzilla.netfilter.org/show_bug.cgi?id=665
+<a name="l-16"></a><span class="tm">18:03:53</span><span class="nk"> &lt;bugbot&gt;</span> bugzilla.netfilter.org bug 665 in ulogd (ulogd) "Can't start error opening /var/log/ ..." [Major,Reopened]
+<a name="l-17"></a><span class="tm">18:04:22</span><span class="nk"> &lt;LWFinger&gt;</span> I have discussed this on the NM mailing list and have some things to try. In any case, it is an upstream problem.
+<a name="l-18"></a><span class="tm">18:04:27</span><span class="nk"> &lt;LWFinger&gt;</span> Done.
+<a name="l-19"></a><span class="tm">18:04:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> I dropped the zypper dup entry from http://en.opensuse.org/openSUSE:Most_annoying_bugs_11.4  as the FTP repos were updated (so this would only affect DVD where other ways to upgrade are possible)
+<a name="l-20"></a><span class="tm">18:05:15</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Smooth sailing here - all settings carried over cleanly.  It's like I didn't upgrade.
+<a name="l-21"></a><span class="tm">18:05:29</span><span class="nk"> &lt;tigerfoot&gt;</span> I've done yesterday a 11.2 to 11.4 32bits zypper dup (~ 2900 rpm ) without big difficulties even with ipv6
+<a name="l-22"></a><span class="tm">18:05:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> and I found https://bugzilla.novell.com/show_bug.cgi?id=679459 preventing syslinux on FAT32 - but only tested on factory, so not sure if it is in plain 11.4
+<a name="l-23"></a><span class="tm">18:05:48</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 679459 in openSUSE 11.4 (Other) "mtools/mcopy (FAT32) access invalid memory" [Major,New]
+<a name="l-24"></a><span class="tm">18:06:29</span><span class="nk"> &lt;LWFinger&gt;</span> IPv6 seems to be OK if your DNS is programmed right. I have it enabled with no problems.
+<a name="l-25"></a><span class="tm">18:06:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">apropos:</span> there are plans to have openSUSE servers join world IPv6 day in june
+<a name="l-26"></a><span class="tm">18:07:50</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> my unffocial repo for fglrx is accessible from Saturday in ipv6 too
+<a name="l-27"></a><span class="tm">18:08:27</span><span class="nk"> &lt;tigerfoot&gt;</span> it's an old 11.2 server, but I postpone the upgrade to let user getting their stuff updated before ...
+<a name="l-28"></a><span class="tm">18:08:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">tigerfoot:</span> of course, there are some copyright gray areas with such a repo
+<a name="l-29"></a><span class="tm">18:08:42</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> in fact not so much ...
+<a name="l-30"></a><span class="tm">18:09:08</span><span class="nk"> &lt;tigerfoot&gt;</span> licence clearly authorize the diffusion of the rpm made by the installer .
+<a name="l-31"></a><span class="tm">18:09:22</span><span class="nk"> &lt;tigerfoot&gt;</span> the kernel ko is made by the final client ..
+<a name="l-32"></a><span class="tm">18:09:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> oh. OK.
+<a name="l-33"></a><span class="tm">18:09:37</span><span class="nk"> &lt;javier&gt;</span> one person reported that he got no bootsplash after a KDE install from NET iso
+<a name="l-34"></a><span class="tm">18:09:44</span><span class="nk"> &lt;tigerfoot&gt;</span> but yeap it's krap anyway :-)
+<a name="l-35"></a><span class="tm">18:10:14</span><span class="nk"> &lt;javier&gt;</span> so I was wonderinf if it would make sense to add mkinitrd to bootsplash-branding-openSUSE's %post section
+<a name="l-36"></a><span class="tm">18:10:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">javier:</span> would that cause mkinitrd run several times on zypper dup?
+<a name="l-37"></a><span class="tm">18:11:02</span><span class="nk"> &lt;javier&gt;</span> good question
+<a name="l-38"></a><span class="tm">18:11:08</span><span class="nk"> &lt;javier&gt;</span> at least twice I think
+<a name="l-39"></a><span class="tm">18:11:27</span><span class="nk"> &lt;javier&gt;</span> one for kernel installation, and another one for bootsplash
+<a name="l-40"></a><span class="tm">18:11:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> somehow I remember seeing some deferred scripts somewhere
+<a name="l-41"></a><span class="tm">18:11:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> mdadm might also cause mkinitrd
+<a name="l-42"></a><span class="tm">18:11:57</span><span class="nk"> &lt;javier&gt;</span> hmm
+<a name="l-43"></a><span class="tm">18:12:10</span><span class="nk"> &lt;javier&gt;</span> some it could be more than twice
+<a name="l-44"></a><span class="tm">18:12:34</span><span class="nk"> &lt;javier&gt;</span> it would slow down the zypper dup
+<a name="l-45"></a><span class="tm">18:12:42</span><span class="nk"> &lt;LWFinger&gt;</span> Mkinitrd should be deferred anyway. I usually have 5 or 6 different kernels around and it takes forever.
+<a name="l-46"></a><span class="tm">18:12:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> that would be a question for opensuse-packaging ML
+<a name="l-47"></a><span class="tm">18:12:56</span><span class="nk"> &lt;javier&gt;</span> ok
+<a name="l-48"></a><span class="tm">18:13:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> or maybe factory ML
+<a name="l-49"></a><span class="tm">18:14:24</span><span class="nk"> &lt;LWFinger&gt;</span> Factory ML has been full of discussion of Gnome menus. Van someone explain the issue?
+<a name="l-50"></a><span class="tm">18:14:41</span><span class="nk"> &lt;LWFinger&gt;</span> s/Van/Can/
+<a name="l-51"></a><span class="tm">18:14:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> I know that some icons have been missing. e.g thunderbird.
+<a name="l-52"></a><span class="tm">18:14:57</span><span class="nk"> &lt;javier&gt;</span> plus the one level depth
+<a name="l-53"></a><span class="tm">18:14:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> but there was something different, too.
+<a name="l-54"></a><span class="tm">18:15:20</span><span class="nk"> &lt;LWFinger&gt;</span> I think it was the one level depth.
+<a name="l-55"></a><span class="tm">18:15:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> on a collegues PC who installed 11.4 gnome, there was no menu at all. compiz crashing or so
+<a name="l-56"></a><span class="tm">18:16:56 </span><span class="nka">* bmwiedemann</span> <span class="ac">does not know more</span>
+<a name="l-57"></a><span class="tm">18:17:34</span><span class="nk"> &lt;javier&gt;</span> me neither
+<a name="l-58"></a><span class="tm">18:18:53</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-59"></a><span class="tm">18:19:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> shall we move on to the second topic?
+<a name="l-60"></a><span class="tm">18:19:09</span><span class="nk"> &lt;LWFinger&gt;</span> Yes
+<a name="l-61"></a><span class="tm">18:19:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">next open-bugs bugzilla cleanup day</span>
+<a name="l-62"></a><span class="tm">18:20:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> did we decide on focus for next open bugs day yet?
+<a name="l-63"></a><span class="tm">18:20:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. we could re-test old 10.x bugs on 11.4
+<a name="l-64"></a><span class="tm">18:20:47</span><span class="nk"> &lt;LWFinger&gt;</span> I missed the deadline for the Mar. 5 News, but the next open bugs day was announced on Mar 12, and is in the calender.
+<a name="l-65"></a><span class="tm">18:21:21</span><span class="nk"> &lt;LWFinger&gt;</span> My inclination is to look at all open bugs.
+<a name="l-66"></a><span class="tm">18:21:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> there are just many of those
+<a name="l-67"></a><span class="tm">18:21:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> and especially the recent ones will not have seen much changes
+<a name="l-68"></a><span class="tm">18:22:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> I also noticed, that the last event was mis-reported as bug-squashing
+<a name="l-69"></a><span class="tm">18:22:33</span><span class="nk"> &lt;LWFinger&gt;</span> Obviously, 11.[34] should have priority.
+<a name="l-70"></a><span class="tm">18:22:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe because such would be nice/expected
+<a name="l-71"></a><span class="tm">18:24:27</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Testing 10.x bugs against 11.4 sounds interesting.
+<a name="l-72"></a><span class="tm">18:24:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> I was thinking that there should be some bug-squashing party some day - maybe not soon, but after next MS5/6 or so
+<a name="l-73"></a><span class="tm">18:25:07</span><span class="nk"> &lt;LWFinger&gt;</span> The mere fact that we update the Bugzilla entry, even if only to say "this bug still exists.", seemed to have the effect of getting it liiked at.
+<a name="l-74"></a><span class="tm">18:25:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> of course. it means a new possibility to get logs to get at the cause of a problem
+<a name="l-75"></a><span class="tm">18:27:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> I will probably setup my openbugs coordination tool again
+<a name="l-76"></a><span class="tm">18:27:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> anything else we need to prepare here?
+<a name="l-77"></a><span class="tm">18:27:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> arrange for another set of geeko-gear?
+<a name="l-78"></a><span class="tm">18:28:12</span><span class="nk"> &lt;ReferenceSeete&gt;</span> That reminds me, I should send for that stuff.
+<a name="l-79"></a><span class="tm">18:28:53</span><span class="nk"> &lt;ReferenceSeete&gt;</span> More relevant, do we need to arrange for it everytime?
+<a name="l-80"></a><span class="tm">18:29:09</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Perhaps we could do it over a duration - total over 3 events or so.
+<a name="l-81"></a><span class="tm">18:29:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> immediate rewards are nicer
+<a name="l-82"></a><span class="tm">18:30:27</span><span class="nk"> &lt;ReferenceSeete&gt;</span> I agree, I just didn't know if there was some sort of limit to these goodies and the international shipping cost.
+<a name="l-83"></a><span class="tm">18:31:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> some limits there. we could say "top 3"
+<a name="l-84"></a><span class="tm">18:32:51</span><span class="nk"> &lt;LWFinger&gt;</span> That sound s good. We got quite far down the list last time.
+<a name="l-85"></a><span class="tm">18:33:21</span><span class="nk"> &lt;javier&gt;</span> yes, a 11.4 bug squashing party would be good
+<a name="l-86"></a><span class="tm">18:33:45</span><span class="nk"> &lt;javier&gt;</span> Karl is already preparing a translation update
+<a name="l-87"></a><span class="tm">18:34:16</span><span class="nk"> &lt;javier&gt;</span> so if you see something wrong in the translation, it's the right moment to tell him so
+<a name="l-88"></a><span class="tm">18:34:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">javier:</span> when do you think would be best time for bug-squashing? before freeze time around RC6?
+<a name="l-89"></a><span class="tm">18:34:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> err MS6
+<a name="l-90"></a><span class="tm">18:35:19</span><span class="nk"> &lt;javier&gt;</span> hmm
+<a name="l-91"></a><span class="tm">18:35:28</span><span class="nk"> &lt;javier&gt;</span> at least one week before RC1
+<a name="l-92"></a><span class="tm">18:36:12</span><span class="nk"> &lt;LWFinger&gt;</span> Perhaps M5 would be better. The new release is generally usable by then and there would be more time for testing fixes.
+<a name="l-93"></a><span class="tm">18:36:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> better two, because re-building and testing together can take a week alone
+<a name="l-94"></a><span class="tm">18:36:45</span><span class="nk"> &lt;javier&gt;</span> right
+<a name="l-95"></a><span class="tm">18:37:02</span><span class="nk"> &lt;javier&gt;</span> so perhaps after m5?
+<a name="l-96"></a><span class="tm">18:37:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">plan bug-squashing party after next MS5</span>
+<a name="l-97"></a><span class="tm">18:39:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">bmwiedemann will setup openbugs.zq1.de tool again</span>
+<a name="l-98"></a><span class="tm">18:40:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> "bmwiedemann will ask on #opensuse-gnome and #opensuse-kde for Open-Bugs-Day participation" is still on TODO from before
+<a name="l-99"></a><span class="tm">18:40:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> any other action items for this topic?
+<a name="l-100"></a><span class="tm">18:40:28</span><span class="nk"> &lt;LWFinger&gt;</span> In the announcement, is this for all open bugs, 11.* bugs, or what?
+<a name="l-101"></a><span class="tm">18:41:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> I would like to focus on older bugs as there would be quite many to look at otherwise
+<a name="l-102"></a><span class="tm">18:41:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> or we sort by category next time
+<a name="l-103"></a><span class="tm">18:42:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> so that people will not have to switch between translation bugs and bootloader bugs etc
+<a name="l-104"></a><span class="tm">18:42:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> (as proposed by remur_030)
+<a name="l-105"></a><span class="tm">18:43:05</span><span class="nk"> &lt;LWFinger&gt;</span> Sorting sounds good. In the news, it will state that we will focus on the older ones.
+<a name="l-106"></a><span class="tm">18:43:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe &lt;=11.2 makes sense?
+<a name="l-107"></a><span class="tm">18:44:13</span><span class="nk"> &lt;LWFinger&gt;</span> That is OK with me.
+<a name="l-108"></a><span class="tm">18:44:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> fine.
+<a name="l-109"></a><span class="tm">18:44:43</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Sounds good.  11.2 should be out of (or leaving) support by MS5
+<a name="l-110"></a><span class="tm">18:48:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">next Open Bugs Day will be about old bugs on releases &lt;=11.2</span>
+<a name="l-111"></a><span class="tm">18:48:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-112"></a><span class="tm">18:49:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> did I yet mention the great idea to have some LiveCD (that can be made LiveUSB easily) to auto-test hardware compat on as many PCs as possible?
+<a name="l-113"></a><span class="tm">18:50:17</span><span class="nk"> &lt;javier&gt;</span> nope
+<a name="l-114"></a><span class="tm">18:50:22</span><span class="nk"> &lt;LWFinger&gt;</span> No, that sounds good.
+<a name="l-115"></a><span class="tm">18:51:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> the idea is to e.g. plug in USB-stick, boot from it and have either fully automated test+upload or a one-liner or an icon on desktop to do it
+<a name="l-116"></a><span class="tm">18:51:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> could use smolt DB or something own
+<a name="l-117"></a><span class="tm">18:52:01</span><span class="nk"> &lt;javier&gt;</span> could the auto-testing be used for checking if some apps/menus are translated?
+<a name="l-118"></a><span class="tm">18:52:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">javier:</span> no, this would be about hardware-compat testing
+<a name="l-119"></a><span class="tm">18:52:16</span><span class="nk"> &lt;LWFinger&gt;</span> Would making the USB image be like http://en.opensuse.org/SDB:Live_USB_stick?
+<a name="l-120"></a><span class="tm">18:52:35</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">bmwiedemann:</span> sorry, I meant openqa.o.o
+<a name="l-121"></a><span class="tm">18:52:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> yes
+<a name="l-122"></a><span class="tm">18:53:14</span><span class="nk"> &lt;javier&gt;</span> it would be also good to see if the release notes are translated
+<a name="l-123"></a><span class="tm">18:53:33</span><span class="nk"> &lt;javier&gt;</span> for some reason 11.4 doesn't ship the translations of the release notes into Spanish
+<a name="l-124"></a><span class="tm">18:53:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> for now, it is just an idea, but isohybrid is used to build Factory isos since ~8 months now
+<a name="l-125"></a><span class="tm">18:54:11</span><span class="nk"> &lt;javier&gt;</span> so I thought that perhaps it could also check if some files exist
+<a name="l-126"></a><span class="tm">18:54:25</span><span class="nk"> &lt;LWFinger&gt;</span> If you get the project started and want testers, count me in.
+<a name="l-127"></a><span class="tm">18:55:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">javier:</span> yes, it could... of course, installing in another language is hard, because it influences keyboard layout and shortcuts.
+<a name="l-128"></a><span class="tm">18:56:25</span><span class="nk"> &lt;javier&gt;</span> I see
+<a name="l-129"></a><span class="tm">18:56:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> I guess we should make a FATE entry for it
+<a name="l-130"></a><span class="tm">18:57:23</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-131"></a><span class="tm">18:57:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. I will.
+<a name="l-132"></a><span class="tm">18:59:31</span><span class="nk"> &lt;LWFinger&gt;</span> Does a standard Live CD have smolt on it?
+<a name="l-133"></a><span class="tm">19:03:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> this would be a special .iso from OBS anyway
+<a name="l-134"></a><span class="tm">19:03:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> for the easy integration + uploading
+<a name="l-135"></a><span class="tm">19:04:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> though... integrating this into standard GNOME/KDE LiveCDs might be smart, too
+<a name="l-136"></a><span class="tm">19:05:17</span><span class="nk"> &lt;LWFinger&gt;</span> The only question "Is there room?"
+<a name="l-137"></a><span class="tm">19:05:37</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Hehe, well it may be of such value that we should make room.
+<a name="l-138"></a><span class="tm">19:05:57</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Or maybe I'm the only one who doesn't use LiveCDs to play card games.
+<a name="l-139"></a><span class="tm">19:06:30</span><span class="nk"> &lt;LWFinger&gt;</span> I certainly do not.
+<a name="l-140"></a><span class="tm">19:07:16</span><span class="nk"> &lt;ReferenceSeete&gt;</span> I understand that they are part of demonstrating "feature parity" with Win/OSX, I'm just using them as an example of "cuttable content".
+<a name="l-141"></a><span class="tm">19:08:04</span><span class="nk"> &lt;ReferenceSeete&gt;</span> I know that the KDE CD had somethings added to it when we moved to lzma compression.
+<a name="l-142"></a><span class="tm">19:08:15</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Perhaps we could 'undo' those additions if need be.
+<a name="l-143"></a><span class="tm">19:09:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> there is 2GB of content on the CDs so probably some things that could be omitted
+<a name="l-144"></a><span class="tm">19:09:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> https://features.opensuse.org/311661
+<a name="l-145"></a><span class="tm">19:10:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, the actual testing+uploading code would be so small that it would not matter
+<a name="l-146"></a><span class="tm">19:10:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. the "hwinfo" package is 2MB and already there.
+<a name="l-147"></a><span class="tm">19:12:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> you are invited to vote/comment on the feature description
+<a name="l-148"></a><span class="tm">19:13:25</span><span class="nk"> &lt;ReferenceSeete&gt;</span> + Voted
+<a name="l-149"></a><span class="tm">19:13:48</span><span class="nk"> &lt;LWFinger&gt;</span> I will. There seems to be something wrong with Novel login from here.
+<a name="l-150"></a><span class="tm">19:14:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> then we need to schedule our next meeting
+<a name="l-151"></a><span class="tm">19:14:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> in two weeks before open bugs day might be good?
+<a name="l-152"></a><span class="tm">19:15:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> or is there no more to coordinate?
+<a name="l-153"></a><span class="tm">19:16:10</span><span class="nk"> &lt;LWFinger&gt;</span> Having a look at the new bugs tool might be appropriate.
+<a name="l-154"></a><span class="tm">19:16:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> mine?
+<a name="l-155"></a><span class="tm">19:16:35</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-156"></a><span class="tm">19:16:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> right. with the category thing and such
+<a name="l-157"></a><span class="tm">19:16:53</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-158"></a><span class="tm">19:17:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> there will be summer time in two weeks here.
+<a name="l-159"></a><span class="tm">19:17:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> so 2011-03-28 17:00 UTC
+<a name="l-160"></a><span class="tm">19:17:47</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-161"></a><span class="tm">19:18:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> Then I will close today's meeting. Thanks everyone for attending.
+<a name="l-162"></a><span class="tm">19:18:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

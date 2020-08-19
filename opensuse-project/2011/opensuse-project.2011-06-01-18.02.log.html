@@ -1,0 +1,350 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:02:26</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE Project + Board Meeting -- 01-June-2011</span>
+<a name="l-2"></a><span class="tm">18:02:26</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Jun  1 18:02:26 2011 UTC.  The chair is suseROCKs. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:02:26</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:02:27</span><span class="nk"> &lt;prusnak&gt;</span> i am here
+<a name="l-5"></a><span class="tm">18:02:38</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#chair </span><span class="cmdline">prusnak mrdocs</span>
+<a name="l-6"></a><span class="tm">18:02:38</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: mrdocs prusnak suseROCKs
+<a name="l-7"></a><span class="tm">18:02:52</span><span class="nk"> &lt;k-d-l&gt;</span> i�m here too
+<a name="l-8"></a><span class="tm">18:03:00</span><span class="nk"> &lt;suseROCKs&gt;</span> Alrighty, board members present are prusnak mrdocs and suseROCKs
+<a name="l-9"></a><span class="tm">18:03:13</span><span class="nk"> &lt;suseROCKs&gt;</span> Not present are AlanClark, Henne and Rupert (all on travel and send their regrets)
+<a name="l-10"></a><span class="tm">18:03:44</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,  opinion?   Do we meet a quorum for the board meeting portion of this meeting with just 3 members?  Or do we skip board and focus only on Project (which includes any Conference discussions)?
+<a name="l-11"></a><span class="tm">18:04:19</span><span class="nk"> &lt;prusnak&gt;</span> we don't have a quorum do we?
+<a name="l-12"></a><span class="tm">18:05:06</span><span class="nk"> &lt;prusnak&gt;</span> (that was a rhetorical question :)
+<a name="l-13"></a><span class="tm">18:05:07</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,   I'm not sure   We don't have clear rules on defining a quorum in openSUSE
+<a name="l-14"></a><span class="tm">18:05:21</span><span class="nk"> &lt;prusnak&gt;</span> we do, quorum is simple majority
+<a name="l-15"></a><span class="tm">18:05:22</span><span class="nk"> &lt;suseROCKs&gt;</span> I tend to think we don't meet a quorum and should just focus on project stuff
+<a name="l-16"></a><span class="tm">18:05:31</span><span class="nk"> &lt;mrdocs&gt;</span> +1
+<a name="l-17"></a><span class="tm">18:05:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> k
+<a name="l-18"></a><span class="tm">18:05:51</span><span class="nk"> &lt;suseROCKs&gt;</span> ok then we have agreement to only focus on Project stuff today
+<a name="l-19"></a><span class="tm">18:05:56</span><span class="nk"> &lt;mrdocs&gt;</span> perhaps reschedule bpard stuff for next week ?
+<a name="l-20"></a><span class="tm">18:06:19 </span><span class="nka">* Abhish</span> <span class="ac">imagines there is much to discuss iin project anyway.</span>
+<a name="l-21"></a><span class="tm">18:06:34</span><span class="nk"> &lt;suseROCKs&gt;</span> mrdocs,   Nah, we'll just reconvene at the next regularly scheduled time
+<a name="l-22"></a><span class="tm">18:06:47</span><span class="nk"> &lt;suseROCKs&gt;</span> Today;s Agenda:
+<a name="l-23"></a><span class="tm">18:06:50</span><span class="nk"> &lt;mrdocs&gt;</span> okidoki
+<a name="l-24"></a><span class="tm">18:06:52</span><span class="nk"> &lt;suseROCKs&gt;</span> 1.  Status Reports
+<a name="l-25"></a><span class="tm">18:06:58</span><span class="nk"> &lt;suseROCKs&gt;</span> 2.  Action Items
+<a name="l-26"></a><span class="tm">18:07:01</span><span class="nk"> &lt;suseROCKs&gt;</span> 3.  Conference
+<a name="l-27"></a><span class="tm">18:07:06</span><span class="nk"> &lt;suseROCKs&gt;</span> Any objections?
+<a name="l-28"></a><span class="tm">18:07:15</span><span class="nk"> &lt;mrdocs&gt;</span> rock and roll
+<a name="l-29"></a><span class="tm">18:07:57</span><span class="nk"> &lt;suseROCKs&gt;</span> very well,  let's truly begin now...
+<a name="l-30"></a><span class="tm">18:08:10</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE Project Meeting | Topic:  Status Reports</span>
+<a name="l-31"></a><span class="tm">18:08:32</span><span class="nk"> &lt;suseROCKs&gt;</span> I'll assume there's not many people here to talk about the status of their teams.   But anyone who is here, please speak up
+<a name="l-32"></a><span class="tm">18:09:00</span><span class="nk"> &lt;Abhish&gt;</span> Does So Cal Ambassadors count?
+<a name="l-33"></a><span class="tm">18:09:12</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">Abhish:</span> if you are nice ;)
+<a name="l-34"></a><span class="tm">18:09:28</span><span class="nk"> &lt;suseROCKs&gt;</span> Abhish,   specific individual stuff, not really.  Status reports are about overall team reports
+<a name="l-35"></a><span class="tm">18:09:31</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">Abhish:</span> are there any No Cal Ambassadors ?
+<a name="l-36"></a><span class="tm">18:09:41</span><span class="nk"> &lt;suseROCKs&gt;</span> but nevertheless, I'd love to hear about what's going on in SoCal
+<a name="l-37"></a><span class="tm">18:09:45</span><span class="nk"> &lt;Abhish&gt;</span> <span class="hi">mrdocs:</span> I don't believe so.
+<a name="l-38"></a><span class="tm">18:09:49</span><span class="nk"> &lt;suseROCKs&gt;</span> mrdocs,   the proper term is "NorCal"
+<a name="l-39"></a><span class="tm">18:09:51</span><span class="nk"> &lt;suseROCKs&gt;</span> and yes
+<a name="l-40"></a><span class="tm">18:09:55</span><span class="nk"> &lt;mrdocs&gt;</span> that's a FIXME
+<a name="l-41"></a><span class="tm">18:10:16</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">Abhish:</span> im moving there this summer
+<a name="l-42"></a><span class="tm">18:10:19</span><span class="nk"> &lt;suseROCKs&gt;</span> mrdocs,   take some time to get to know rtyler when you get a chance
+<a name="l-43"></a><span class="tm">18:10:22</span><span class="nk"> &lt;mrdocs&gt;</span> back on topic
+<a name="l-44"></a><span class="tm">18:10:33</span><span class="nk"> &lt;Abhish&gt;</span> <span class="hi">mrdocs:</span> O very good, we just started a LUG in our area.
+<a name="l-45"></a><span class="tm">18:10:44</span><span class="nk"> &lt;manugupt1&gt;</span> Congrats Abhish
+<a name="l-46"></a><span class="tm">18:10:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> nice :D
+<a name="l-47"></a><span class="tm">18:11:02</span><span class="nk"> &lt;suseROCKs&gt;</span> Wonderful to see our attention to SoCal paying off.   Thanks Abhish
+<a name="l-48"></a><span class="tm">18:11:09 </span><span class="nka">* Abhish</span> <span class="ac">bows.</span>
+<a name="l-49"></a><span class="tm">18:11:34</span><span class="nk"> &lt;suseROCKs&gt;</span> Some other status reports that I can mention but not of any authority to discuss in any detail...
+<a name="l-50"></a><span class="tm">18:11:44</span><span class="nk"> &lt;mrdocs&gt;</span> FYI from the KDe meeting i lurked: KDE 4.7b1 going in to Factory next week
+<a name="l-51"></a><span class="tm">18:11:51</span><span class="nk"> &lt;suseROCKs&gt;</span> openSUSE 12.1 Milestone 1 is released and you can see the news about it on news.o.o if you aren't aware of it
+<a name="l-52"></a><span class="tm">18:12:19</span><span class="nk"> &lt;suseROCKs&gt;</span> Artwork team is mobilizing now for 12.1 artwork as well....
+<a name="l-53"></a><span class="tm">18:12:34</span><span class="nk"> &lt;Abhish&gt;</span> I believe the roadmap for the KDE team is up after this mornings meeting. Looks excellent. http://en.opensuse.org/openSUSE:KDE_ideas
+<a name="l-54"></a><span class="tm">18:12:44</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info  </span><span class="cmdline">Status:  openSUSE 12.1 Milestone 1 is released</span>
+<a name="l-55"></a><span class="tm">18:12:57</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info </span><span class="cmdline">Status:  Kde 4.7b1 will be going into Factory next week</span>
+<a name="l-56"></a><span class="tm">18:13:14</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info </span><span class="cmdline">Status:  Artwork Team is mobilizing to create artwork for 12.1</span>
+<a name="l-57"></a><span class="tm">18:13:33</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info </span><span class="cmdline">Status:  Abhish has worked to form a LUG for openSUSE in Southern California</span>
+<a name="l-58"></a><span class="tm">18:13:53</span><span class="nk"> &lt;suseROCKs&gt;</span> Any other statuses I'm missing here?
+<a name="l-59"></a><span class="tm">18:14:21</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   Surely with all you do, there's some interesting statuses out there we'd love to hear about
+<a name="l-60"></a><span class="tm">18:14:22</span><span class="nk"> &lt;mrdocs&gt;</span> Gnome 3 live ISO now works with Vbox latest
+<a name="l-61"></a><span class="tm">18:14:36</span><span class="nk"> &lt;mrdocs&gt;</span> thanks to fcrozat and the Gnome team
+<a name="l-62"></a><span class="tm">18:14:51</span><span class="nk"> &lt;suseROCKs&gt;</span> mrdocs,   Feel free to use #info as a co-chair  :-D
+<a name="l-63"></a><span class="tm">18:14:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> I don't really have anything, actually. 's been quiet lately...
+<a name="l-64"></a><span class="tm">18:15:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">mrdocs:</span> yes, that's a cool thing!
+<a name="l-65"></a><span class="tm">18:15:14</span><span class="nk"> &lt;sshaw&gt;</span> OBS rename?
+<a name="l-66"></a><span class="tm">18:15:27</span><span class="nk"> &lt;suseROCKs&gt;</span> oh yes!  /me smacks head at forgetting that
+<a name="l-67"></a><span class="tm">18:15:28</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="cmd">#info </span><span class="cmdline">Satus Gnome 3 live ISO now works with Vbox latest 4.08  thanks to fcrozat and the Gnome team</span>
+<a name="l-68"></a><span class="tm">18:15:48</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info </span><span class="cmdline">Status:  openSUSE Build Service is officially renamed as Open Build Service</span>
+<a name="l-69"></a><span class="tm">18:16:04</span><span class="nk"> &lt;suseROCKs&gt;</span> ok I think we covered quite a bit for such a quite period  :-)
+<a name="l-70"></a><span class="tm">18:16:06</span><span class="nk"> &lt;k-d-l&gt;</span> starting of the GSoC coding period?
+<a name="l-71"></a><span class="tm">18:16:09</span><span class="nk"> &lt;sshaw&gt;</span> ipv6 day?
+<a name="l-72"></a><span class="tm">18:16:25</span><span class="nk"> &lt;suseROCKs&gt;</span> LOL  jospoortvliet   You're right, we're really quiet after all  ;-D
+<a name="l-73"></a><span class="tm">18:16:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> lol
+<a name="l-74"></a><span class="tm">18:16:49</span><span class="nk"> &lt;jospoortvliet&gt;</span> yes, actually, plenty going on...
+<a name="l-75"></a><span class="tm">18:16:58</span><span class="nk"> &lt;suseROCKs&gt;</span> sshaw,   is everyone squared away to get there "openSUSE &lt;3 IPv6" Tattoos?
+<a name="l-76"></a><span class="tm">18:17:01</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="cmd">#info  </span><span class="cmdline">Status IPV6 day  June 8</span>
+<a name="l-77"></a><span class="tm">18:17:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="cmd">#info </span><span class="cmdline">Status: GSOC coding started</span>
+<a name="l-78"></a><span class="tm">18:17:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> :D
+<a name="l-79"></a><span class="tm">18:17:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">k-d-l:</span> tnx hehe
+<a name="l-80"></a><span class="tm">18:17:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> you can 'status' too, btw
+<a name="l-81"></a><span class="tm">18:17:24 </span><span class="nka">* Abhish</span> <span class="ac">plans to get a geeko trampstamp.</span>
+<a name="l-82"></a><span class="tm">18:17:26</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info </span><span class="cmdline">Status GS0C Coding started</span>
+<a name="l-83"></a><span class="tm">18:17:27</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">suseROCKs:</span> I got an ipv6 address for my linode server ;)
+<a name="l-84"></a><span class="tm">18:17:27</span><span class="nk"> &lt;mrdocs&gt;</span> IPV6 is enabled by default in all recent *SUSE releases
+<a name="l-85"></a><span class="tm">18:17:31</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#chair </span><span class="cmdline">jospoortvliet</span>
+<a name="l-86"></a><span class="tm">18:17:31</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: jospoortvliet mrdocs prusnak suseROCKs
+<a name="l-87"></a><span class="tm">18:17:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> trampstamp?!?
+<a name="l-88"></a><span class="tm">18:17:38</span><span class="nk"> &lt;suseROCKs&gt;</span> now jospoortvliet can do #&lt;crap&gt;
+<a name="l-89"></a><span class="tm">18:17:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="cmd">#crap</span><span class="cmdline"></span>
+<a name="l-90"></a><span class="tm">18:17:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> nah don't think it works...
+<a name="l-91"></a><span class="tm">18:18:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> no shit coming out of my computer...
+<a name="l-92"></a><span class="tm">18:18:07</span><span class="nk"> &lt;suseROCKs&gt;</span> ok we can move on to next topic now, I think
+<a name="l-93"></a><span class="tm">18:18:16 </span><span class="nka">* jospoortvliet</span> <span class="ac">thinks all crap ends up at suseROCKs place</span>
+<a name="l-94"></a><span class="tm">18:18:19</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   I thought in your case it was an input, not an output
+<a name="l-95"></a><span class="tm">18:18:28</span><span class="nk"> &lt;mrdocs&gt;</span> we were hoping...
+<a name="l-96"></a><span class="tm">18:18:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> oh... :D
+<a name="l-97"></a><span class="tm">18:18:44</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE Project + Board meeting | Action Items</span>
+<a name="l-98"></a><span class="tm">18:18:54</span><span class="nk"> &lt;suseROCKs&gt;</span> Ok we're now on next topic and let me get the URL.. hang on a sec
+<a name="l-99"></a><span class="tm">18:19:14</span><span class="nk"> &lt;suseROCKs&gt;</span> see our current list of Project Action items  http://bit.ly/opensuse_action_items
+<a name="l-100"></a><span class="tm">18:19:52</span><span class="nk"> &lt;suseROCKs&gt;</span> We have three items, two belonging to Henne, so we'll skip those
+<a name="l-101"></a><span class="tm">18:20:16</span><span class="nk"> &lt;suseROCKs&gt;</span> and for javier's item, he ain't here neither
+<a name="l-102"></a><span class="tm">18:20:22</span><span class="nk"> &lt;suseROCKs&gt;</span> so we get to close this topic and move on!   W00T!
+<a name="l-103"></a><span class="tm">18:20:44 </span><span class="nka">* suseROCKs</span> <span class="ac">notes new record.   First time we completed first two topics in 19 minutes....</span>
+<a name="l-104"></a><span class="tm">18:21:06</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE Project + Board Meeting | Topic:  Conference Status</span>
+<a name="l-105"></a><span class="tm">18:21:20</span><span class="nk"> &lt;suseROCKs&gt;</span> Ok calling all Conference participants...
+<a name="l-106"></a><span class="tm">18:21:34</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet, yaloki  vuntz suseROCKs
+<a name="l-107"></a><span class="tm">18:21:38</span><span class="nk"> &lt;suseROCKs&gt;</span> who else am I missing?
+<a name="l-108"></a><span class="tm">18:22:01</span><span class="nk"> &lt;suseROCKs&gt;</span> Any of you have anything to mention about the Conference planning, speak up now for your turn....
+<a name="l-109"></a><span class="tm">18:22:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> as izabel is not here
+<a name="l-110"></a><span class="tm">18:22:42</span><span class="nk"> &lt;manugupt1&gt;</span> yes live streaming or recording for those who miss it
+<a name="l-111"></a><span class="tm">18:22:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> I can say we're getting closer with the sponsorship stuff
+<a name="l-112"></a><span class="tm">18:22:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> we now have a list of potential sponsors and contact people
+<a name="l-113"></a><span class="tm">18:23:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> and our brochure is in design phase, tigerfoot is helping with that.
+<a name="l-114"></a><span class="tm">18:23:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> (design phase =&gt; content is done)
+<a name="l-115"></a><span class="tm">18:23:35</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   are you guys soliciting suggestions from the community at large for possible sponsors to contact?
+<a name="l-116"></a><span class="tm">18:23:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> we'll hopefully get an article out on news.o.o as soon as the brochure is ready to ask for input. And we'll start contacting sponsors at that point, too.
+<a name="l-117"></a><span class="tm">18:24:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> hopefully next week, I understood that tigerfoot is very busy... but I hope we can get it done by Tuesday or so and publish the article &amp; get going.
+<a name="l-118"></a><span class="tm">18:24:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> so yes to your question :D
+<a name="l-119"></a><span class="tm">18:25:05</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   yes you have or yes you will?
+<a name="l-120"></a><span class="tm">18:25:31</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> as I said, we're readying an article on the sponsorship stuff, and in that we'll ask for help.
+<a name="l-121"></a><span class="tm">18:25:52</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info </span><span class="cmdline">Conference:  Sponsorship Team intends to release brochure and begin contacting potential sponsors by next week</span>
+<a name="l-122"></a><span class="tm">18:26:02</span><span class="nk"> &lt;Abhish&gt;</span> If there were any plans to hold conferences in Southern California, I could probably solicit a couple large local sponsors.
+<a name="l-123"></a><span class="tm">18:26:41</span><span class="nk"> &lt;suseROCKs&gt;</span> Abhish,   That sounds like a good idea, and something Jos and I have talked about lately about finding ways to set up regional mini conferences.
+<a name="l-124"></a><span class="tm">18:26:46</span><span class="nk"> &lt;suseROCKs&gt;</span> Let's discuss that outside of this meeting
+<a name="l-125"></a><span class="tm">18:27:05</span><span class="nk"> &lt;suseROCKs&gt;</span> this particular topic is specifically about the upcoming Conerence in Nuremberg
+<a name="l-126"></a><span class="tm">18:27:38</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   your question about video...   Live streaming will have to depend on internet capabilities on site.
+<a name="l-127"></a><span class="tm">18:28:08</span><span class="nk"> &lt;suseROCKs&gt;</span> As for recording,  we need to ensure we have enough cameras to do that.   That's always been a challenge every year, and we should probably ask community that will attend if they can bring their cameras as well for us to borrow for the week
+<a name="l-128"></a><span class="tm">18:28:17</span><span class="nk"> &lt;suseROCKs&gt;</span> We'll need something like 5 or 6 cameras to use for the week.
+<a name="l-129"></a><span class="tm">18:28:40</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">suseROCKs:</span> jospoortvliet Cant we have media sponsors who will cover the event just a suggestion
+<a name="l-130"></a><span class="tm">18:28:43 </span><span class="nka">* mrdocs</span> <span class="ac">steps away to tuck in the little one</span>
+<a name="l-131"></a><span class="tm">18:28:49</span><span class="nk"> &lt;manugupt1&gt;</span> and other conference members
+<a name="l-132"></a><span class="tm">18:28:59</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   that's a separate thing
+<a name="l-133"></a><span class="tm">18:29:14</span><span class="nk"> &lt;suseROCKs&gt;</span> covering the conference and recording the conference for our own media content are two different things
+<a name="l-134"></a><span class="tm">18:29:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> well, we'll have radio tux (or is it tuxradio?) cover it, as well as press.
+<a name="l-135"></a><span class="tm">18:29:24</span><span class="nk"> &lt;suseROCKs&gt;</span> we *want* to record and save all sessions like we did in the past
+<a name="l-136"></a><span class="tm">18:29:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> yes, but that's gonna be hard...
+<a name="l-137"></a><span class="tm">18:29:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> I wouldn't know how to organize that
+<a name="l-138"></a><span class="tm">18:29:56</span><span class="nk"> &lt;Abhish&gt;</span> ou may be able to wor something out with the German equivalent of NPR or PBS.
+<a name="l-139"></a><span class="tm">18:29:56</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   It was done at first conference.   Second conference we flubbed for some reason
+<a name="l-140"></a><span class="tm">18:30:02</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">suseROCKs:</span> yes cannot some local channel do that
+<a name="l-141"></a><span class="tm">18:30:08</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> I tried to organize it last year but it was too expensive
+<a name="l-142"></a><span class="tm">18:30:22</span><span class="nk"> &lt;cboltz&gt;</span> is there something like a "Offener Kanal" in N�g? If yes, you can borrow cameras there
+<a name="l-143"></a><span class="tm">18:30:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> think $5000 or so
+<a name="l-144"></a><span class="tm">18:30:26</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   then it was misplanned cuz it didn't cost us anything 2 years ago  :-)
+<a name="l-145"></a><span class="tm">18:30:33</span><span class="nk"> &lt;suseROCKs&gt;</span> We just borrowed each other's cameras and did it.
+<a name="l-146"></a><span class="tm">18:30:39</span><span class="nk"> &lt;manugupt1&gt;</span> Like TV channel or something like that
+<a name="l-147"></a><span class="tm">18:30:42</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> well if you know how it was done, it'd be awesome to do it that way again
+<a name="l-148"></a><span class="tm">18:30:51</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   we want our own recordings so taht we own that content, not the media's copy
+<a name="l-149"></a><span class="tm">18:30:58</span><span class="nk"> &lt;cboltz&gt;</span> (they usually expect that you give them a video to broadcast later - but that would even be good advertisement)
+<a name="l-150"></a><span class="tm">18:31:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> esp considering we won't have many rooms that really need recording (only few talks, if things go according to plan)
+<a name="l-151"></a><span class="tm">18:31:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">cboltz:</span> so what is that 'offener Kanal'?
+<a name="l-152"></a><span class="tm">18:31:23</span><span class="nk"> &lt;Siju&gt;</span> <span class="hi">cboltz:</span> yap, exists -&gt; http://www.radio-z.net/de.html
+<a name="l-153"></a><span class="tm">18:31:24</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">cboltz:</span> its not an issue that they broadcast it later
+<a name="l-154"></a><span class="tm">18:31:32</span><span class="nk"> &lt;manugupt1&gt;</span> till we have on blip
+<a name="l-155"></a><span class="tm">18:31:38</span><span class="nk"> &lt;manugupt1&gt;</span> I think that way atleast
+<a name="l-156"></a><span class="tm">18:31:47</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,  well I have a nice HD camera.  I'll bring it, though i wanted to use it for romaing purposes.  But that's at least one we have now.  We just need 3 or 4 more I guess
+<a name="l-157"></a><span class="tm">18:31:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> well the point is - if anyone here wants to help us by organizing this part, it can be done.
+<a name="l-158"></a><span class="tm">18:32:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> we do have a marketing budget so we can even, if needed, trow a few bucks at it.
+<a name="l-159"></a><span class="tm">18:32:07</span><span class="nk"> &lt;jospoortvliet&gt;</span> but not too much...
+<a name="l-160"></a><span class="tm">18:32:17</span><span class="nk"> &lt;suseROCKs&gt;</span> cboltz,   yup and we should give it to Jupiter Networks too and any other online media companies
+<a name="l-161"></a><span class="tm">18:32:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> unless you want to record the bof's we might have enough with 1 or 2 camera's
+<a name="l-162"></a><span class="tm">18:32:42</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   how many rooms will we have for regular sessions?
+<a name="l-163"></a><span class="tm">18:32:54</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">jospoortvliet:</span> it's a local tv channel where everybody can bring/make a video and they'll broadcast it
+<a name="l-164"></a><span class="tm">18:33:06</span><span class="nk"> &lt;suseROCKs&gt;</span> I believe we did 4 in first year.    Only thing that took so long was the encoding afterwards
+<a name="l-165"></a><span class="tm">18:33:08</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> well rooms big enough for a serious number of people - 2, 3 with some stretching of the term 'serious number of people' :D
+<a name="l-166"></a><span class="tm">18:33:17</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">cboltz:</span> aaah ok
+<a name="l-167"></a><span class="tm">18:33:29</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   ok  so each formal session room should have its own camera.
+<a name="l-168"></a><span class="tm">18:33:42</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> so with 2 camera's we cover most talks...
+<a name="l-169"></a><span class="tm">18:33:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> bof rooms don't really need that, and we have quite a few possible BOF rooms.
+<a name="l-170"></a><span class="tm">18:33:54</span><span class="nk"> &lt;suseROCKs&gt;</span> and possibly I might suggest we create an encoding station so we can quickly tend to it (as a team) instead of waiting for someone to do it many months later after the Conference
+<a name="l-171"></a><span class="tm">18:34:14</span><span class="nk"> &lt;manugupt1&gt;</span> I agree with cboltz for having a local tv channel broadcast it i think it is a nice idea
+<a name="l-172"></a><span class="tm">18:34:17</span><span class="nk"> &lt;suseROCKs&gt;</span> well these are nitty gritty details.  We can cover that as time comes along
+<a name="l-173"></a><span class="tm">18:34:36</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> well yes - but we do need someone who is willing to take care of it
+<a name="l-174"></a><span class="tm">18:34:37</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   having multiple cameras is all good.  Sure.  But we still want OUR own recording that belongs to US
+<a name="l-175"></a><span class="tm">18:34:50</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   I'll take it up on my plate.
+<a name="l-176"></a><span class="tm">18:35:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> sure? it might be easier for someone in germany at least...
+<a name="l-177"></a><span class="tm">18:35:47</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   and then we get the videos transcribed (at some point) and have our translation teams translate the scripts and thus we now have the conference accessible to everyone in different languages
+<a name="l-178"></a><span class="tm">18:35:59</span><span class="nk"> &lt;manugupt1&gt;</span> Hmm..
+<a name="l-179"></a><span class="tm">18:36:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> sure, +1 for the ambition...
+<a name="l-180"></a><span class="tm">18:36:10</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   I'll be the poker,  and we'll figure out the actual bodies as we get closer
+<a name="l-181"></a><span class="tm">18:36:16</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok...
+<a name="l-182"></a><span class="tm">18:37:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> give me a minute to talk about the rooms you asked about :D
+<a name="l-183"></a><span class="tm">18:37:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> if you're interested
+<a name="l-184"></a><span class="tm">18:37:22</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#action  </span><span class="cmdline">Conference:   suseROCKs to poke and get video recordings of Conference sessions organized</span>
+<a name="l-185"></a><span class="tm">18:37:31</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   you have the floor
+<a name="l-186"></a><span class="tm">18:37:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> we have one huge hall which we can split up a bit. it'll be for the big talks/keynotes and as hacking space.
+<a name="l-187"></a><span class="tm">18:38:16</span><span class="nk"> &lt;suseROCKs&gt;</span> would there be actual room dividers?
+<a name="l-188"></a><span class="tm">18:38:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> probably
+<a name="l-189"></a><span class="tm">18:38:34</span><span class="nk"> &lt;jospoortvliet&gt;</span> not sure yet
+<a name="l-190"></a><span class="tm">18:38:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> then the other rooms:
+<a name="l-191"></a><span class="tm">18:38:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> one big 320 m2
+<a name="l-192"></a><span class="tm">18:38:58</span><span class="nk"> &lt;suseROCKs&gt;</span> what does 320 m2 mean?
+<a name="l-193"></a><span class="tm">18:39:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> 2 medium, 60 and 80 square metres
+<a name="l-194"></a><span class="tm">18:39:09</span><span class="nk"> &lt;jospoortvliet&gt;</span> m2 is square metres...
+<a name="l-195"></a><span class="tm">18:39:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> :D
+<a name="l-196"></a><span class="tm">18:39:34</span><span class="nk"> &lt;suseROCKs&gt;</span> you people with your voodoo measurement units.  Can't you be normal and use foot and inch like real people?!?
+<a name="l-197"></a><span class="tm">18:39:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> then 4 smaller rooms of 15-50 m2
+<a name="l-198"></a><span class="tm">18:39:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> foot and inch?!?!?
+<a name="l-199"></a><span class="tm">18:39:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> sorry but that doesn't make sense
+<a name="l-200"></a><span class="tm">18:40:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> it blew up a space shuttle, you know...
+<a name="l-201"></a><span class="tm">18:40:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> foot - come on, it's 2011, not 1532 :D
+<a name="l-202"></a><span class="tm">18:40:20</span><span class="nk"> &lt;suseROCKs&gt;</span> LOL
+<a name="l-203"></a><span class="tm">18:40:37</span><span class="nk"> &lt;suseROCKs&gt;</span> ok  back to jospoortvliet's Guided Tour
+<a name="l-204"></a><span class="tm">18:40:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> well that was it
+<a name="l-205"></a><span class="tm">18:40:48</span><span class="nk"> &lt;suseROCKs&gt;</span> sounds great!
+<a name="l-206"></a><span class="tm">18:40:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> so one hall, one big room, 2 medium rooms and 4 smaller ones
+<a name="l-207"></a><span class="tm">18:41:04</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   I would probably highly recommend that we ensure there's some dividers for hackrooms
+<a name="l-208"></a><span class="tm">18:41:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> and there are room dividers but they aren't exactly sound proof.
+<a name="l-209"></a><span class="tm">18:41:19</span><span class="nk"> &lt;suseROCKs&gt;</span> Maybe I'm wrong but 5 hack teams all in one giant room might not get much done after all
+<a name="l-210"></a><span class="tm">18:41:31</span><span class="nk"> &lt;jospoortvliet&gt;</span> and let me make 2 things very clear too:
+<a name="l-211"></a><span class="tm">18:41:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> - we'll have lots of flexibility
+<a name="l-212"></a><span class="tm">18:41:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> - but we'll have to do things ourselves
+<a name="l-213"></a><span class="tm">18:41:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> which also means it won't be as perfect as last year
+<a name="l-214"></a><span class="tm">18:41:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> BUT more fun :D
+<a name="l-215"></a><span class="tm">18:42:06</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   so I'm reading from this that we need "manpower" on the floor at all times
+<a name="l-216"></a><span class="tm">18:42:14</span><span class="nk"> &lt;suseROCKs&gt;</span> and we should appoint a team to be responsible for that during the event
+<a name="l-217"></a><span class="tm">18:42:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> if you want to work together closely, get one of the small rooms :D
+<a name="l-218"></a><span class="tm">18:42:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> yeah, probably
+<a name="l-219"></a><span class="tm">18:42:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> note that I'm not that much into the local stuff, I'm talking from what I've heard from Klaas and AJ
+<a name="l-220"></a><span class="tm">18:43:04</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   we will do complete build and teardown of the conference?   No reliance on the site itself,  right?
+<a name="l-221"></a><span class="tm">18:43:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> exactly
+<a name="l-222"></a><span class="tm">18:43:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> that is my understanding at least...
+<a name="l-223"></a><span class="tm">18:43:26</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm fine with that.
+<a name="l-224"></a><span class="tm">18:43:43</span><span class="nk"> &lt;suseROCKs&gt;</span> I just want to be sure that just because there are some "local" benefits, we don't create a situation where all the work is done by locals
+<a name="l-225"></a><span class="tm">18:43:59</span><span class="nk"> &lt;suseROCKs&gt;</span> I want to see a situation where even those that arrive from elsewhere can feel they can pitch in once they get on site
+<a name="l-226"></a><span class="tm">18:44:03</span><span class="nk"> &lt;suseROCKs&gt;</span> It's EVERYONE's conference
+<a name="l-227"></a><span class="tm">18:44:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> sure
+<a name="l-228"></a><span class="tm">18:44:20</span><span class="nk"> &lt;jospoortvliet&gt;</span> we'll probably frequently need ppl to move around chairs and such
+<a name="l-229"></a><span class="tm">18:44:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> more than on previous conferences
+<a name="l-230"></a><span class="tm">18:44:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> and cleaning up we'll have to do ourselves too
+<a name="l-231"></a><span class="tm">18:44:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> stuff like that
+<a name="l-232"></a><span class="tm">18:44:36</span><span class="nk"> &lt;suseROCKs&gt;</span> fortunately I'm too lazy to do any manual labor
+<a name="l-233"></a><span class="tm">18:44:49</span><span class="nk"> &lt;jospoortvliet&gt;</span> and maybe we need to organize a "get drinks from a supermarket" party once in a while too :D
+<a name="l-234"></a><span class="tm">18:45:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> ok so we'll give you a whip and you can commandeer ppl around
+<a name="l-235"></a><span class="tm">18:45:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> will suit you just fine ;-)
+<a name="l-236"></a><span class="tm">18:45:19 </span><span class="nka">* jospoortvliet</span> <span class="ac">votes "next topic"</span>
+<a name="l-237"></a><span class="tm">18:45:52</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,    I  can use my cane instead  :-)
+<a name="l-238"></a><span class="tm">18:46:11</span><span class="nk"> &lt;suseROCKs&gt;</span> well I think we covered quite a bit on the conference itself.
+<a name="l-239"></a><span class="tm">18:46:34</span><span class="nk"> &lt;suseROCKs&gt;</span> Folks, please do look at how you can get involved in participation.  There's many ways to do it and we'll be speaking about that more and more as we get closer
+<a name="l-240"></a><span class="tm">18:46:43</span><span class="nk"> &lt;suseROCKs&gt;</span> Teamwork... that's what we're alllll about!
+<a name="l-241"></a><span class="tm">18:46:57 </span><span class="nka">* suseROCKs</span> <span class="ac">does a bodyslam with jospoortvliet and manugupt1</span>
+<a name="l-242"></a><span class="tm">18:47:09</span><span class="nk"> &lt;suseROCKs&gt;</span> ok let's move to next topic
+<a name="l-243"></a><span class="tm">18:47:23 </span><span class="nka">* jospoortvliet</span> <span class="ac">hides</span>
+<a name="l-244"></a><span class="tm">18:47:31</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE Project + Board Meeting | Topic:  New items + Q&amp;A</span>
+<a name="l-245"></a><span class="tm">18:47:55</span><span class="nk"> &lt;suseROCKs&gt;</span> This is our freeflow section of the meeting where people can suggest, bring up, bitch, ask, or just plain old hug jospoortvliet
+<a name="l-246"></a><span class="tm">18:48:06</span><span class="nk"> &lt;Abhish&gt;</span> Groovy.
+<a name="l-247"></a><span class="tm">18:48:20 </span><span class="nka">* suseROCKs</span> <span class="ac">suspects Abhish has something to say  :-)</span>
+<a name="l-248"></a><span class="tm">18:48:25</span><span class="nk"> &lt;Abhish&gt;</span> Indeed.
+<a name="l-249"></a><span class="tm">18:48:43</span><span class="nk"> &lt;Abhish&gt;</span> Unfortunatley I missed the KDE meeting, so I will have to interject here.
+<a name="l-250"></a><span class="tm">18:48:45 </span><span class="nka">* suseROCKs</span> <span class="ac">slides the floor over to Abhish</span>
+<a name="l-251"></a><span class="tm">18:48:49</span><span class="nk"> &lt;Abhish&gt;</span> http://en.opensuse.org/openSUSE:KDE_ideas
+<a name="l-252"></a><span class="tm">18:48:56</span><span class="nk"> &lt;Abhish&gt;</span> That is bloody exciting.
+<a name="l-253"></a><span class="tm">18:49:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> sounds like it is worth a blog then :D
+<a name="l-254"></a><span class="tm">18:49:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> because exciting stuff is what needs to be visible on at least planet.opensuse.org
+<a name="l-255"></a><span class="tm">18:49:39</span><span class="nk"> &lt;jospoortvliet&gt;</span> as that is what gets us new contributors
+<a name="l-256"></a><span class="tm">18:49:46</span><span class="nk"> &lt;Abhish&gt;</span> As an ambassador, and a relatively new user I am acutely aware of the new users impressions.
+<a name="l-257"></a><span class="tm">18:49:55 </span><span class="nka">* jospoortvliet</span> <span class="ac">just wrote a column about that subject</span>
+<a name="l-258"></a><span class="tm">18:49:55</span><span class="nk"> &lt;Abhish&gt;</span> <span class="hi">jospoortvliet:</span> I'll write something up.
+<a name="l-259"></a><span class="tm">18:50:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> you are a hero!
+<a name="l-260"></a><span class="tm">18:50:11</span><span class="nk"> &lt;suseROCKs&gt;</span> Abhish,   You have a blog?  Are you aggregated yet?
+<a name="l-261"></a><span class="tm">18:50:21</span><span class="nk"> &lt;Abhish&gt;</span> Not yet. Been painfully busy.
+<a name="l-262"></a><span class="tm">18:50:36</span><span class="nk"> &lt;Abhish&gt;</span> I also havea  wiki tutorial to write.
+<a name="l-263"></a><span class="tm">18:50:54</span><span class="nk"> &lt;suseROCKs&gt;</span> I think this kind of storyline is worthy of a news.o.o article.   How about you write the article and we'll post it for you on our news blog?
+<a name="l-264"></a><span class="tm">18:51:09</span><span class="nk"> &lt;Abhish&gt;</span> I wanted to propose that the KDE install use QtCurve as default theme.
+<a name="l-265"></a><span class="tm">18:51:20</span><span class="nk"> &lt;Abhish&gt;</span> <span class="hi">suseROCKs:</span> Sure, I should be able to do that.
+<a name="l-266"></a><span class="tm">18:51:36</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> but oxygen is so pretty ;-)
+<a name="l-267"></a><span class="tm">18:51:37</span><span class="nk"> &lt;Abhish&gt;</span> <span class="hi">suseROCKs:</span> PM me with your e-mail or whatever is needed to streamline that.
+<a name="l-268"></a><span class="tm">18:51:42</span><span class="nk"> &lt;suseROCKs&gt;</span> Abhish,   that kind of specific proposal should be directed to KDE team, not here.   We're not empowered to re-direct teams.  They are their own steam engine  :-)
+<a name="l-269"></a><span class="tm">18:51:52</span><span class="nk"> &lt;Abhish&gt;</span> <span class="hi">jospoortvliet:</span> Oxygen is pretty until you use a GTK app.
+<a name="l-270"></a><span class="tm">18:52:12</span><span class="nk"> &lt;suseROCKs&gt;</span> Abhish,   article submissions should be sent to news@o.o
+<a name="l-271"></a><span class="tm">18:52:22</span><span class="nk"> &lt;Abhish&gt;</span> Oxygen does not apply the background gradient to GTK.
+<a name="l-272"></a><span class="tm">18:52:28</span><span class="nk"> &lt;Abhish&gt;</span> <span class="hi">suseROCKs:</span> Ah, very well.
+<a name="l-273"></a><span class="tm">18:52:36</span><span class="nk"> &lt;manugupt1&gt;</span> I would suggest this goes on marketing ML
+<a name="l-274"></a><span class="tm">18:52:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> no, that's why you have the oxygen-gtk style
+<a name="l-275"></a><span class="tm">18:52:41</span><span class="nk"> &lt;manugupt1&gt;</span> so that more people know
+<a name="l-276"></a><span class="tm">18:52:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> which works just fine
+<a name="l-277"></a><span class="tm">18:52:51</span><span class="nk"> &lt;jospoortvliet&gt;</span> and makes gtk apps look almost pixel-perfect...
+<a name="l-278"></a><span class="tm">18:52:52</span><span class="nk"> &lt;Abhish&gt;</span> Which if you are also using the oxygen window decor looks all that much uglier.
+<a name="l-279"></a><span class="tm">18:52:55</span><span class="nk"> &lt;manugupt1&gt;</span> the articles and then on news also
+<a name="l-280"></a><span class="tm">18:53:11</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> so no problem there, really, install oxygen-gtk and enjoy good looking gtk apps :D
+<a name="l-281"></a><span class="tm">18:53:24</span><span class="nk"> &lt;Abhish&gt;</span> <span class="hi">jospoortvliet:</span> I have oxygen-gtk installed and enabled and still see this problem.
+<a name="l-282"></a><span class="tm">18:53:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> I would almost advocate that style on GNOME too, I used it for a while (until gnome3) as it just looks good...
+<a name="l-283"></a><span class="tm">18:53:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> then something must be wrong...
+<a name="l-284"></a><span class="tm">18:53:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> it is perfect here
+<a name="l-285"></a><span class="tm">18:53:56</span><span class="nk"> &lt;prusnak&gt;</span> please take that to the respective meetings - opensuse-kde meeting in this case
+<a name="l-286"></a><span class="tm">18:53:58</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">Abhish:</span> do you have 1.0.5?
+<a name="l-287"></a><span class="tm">18:54:03</span><span class="nk"> &lt;cb400f&gt;</span> sorry
+<a name="l-288"></a><span class="tm">18:54:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> http://wstaw.org/m/2011/06/01/plasma-desktopG18878.jpg
+<a name="l-289"></a><span class="tm">18:54:09</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> ^
+<a name="l-290"></a><span class="tm">18:54:22</span><span class="nk"> &lt;Abhish&gt;</span> <span class="hi">jospoortvliet:</span> Odd, I guess I'll have to look further into that as it has always been my experience with any KDE distro.
+<a name="l-291"></a><span class="tm">18:54:37</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">Abhish:</span> go to gtk styles using alt+f2 and you will find an option.. dont remember what so you will have to look
+<a name="l-292"></a><span class="tm">18:55:21</span><span class="nk"> &lt;Abhish&gt;</span> Thus I thought it was always a problem with Oxygen.
+<a name="l-293"></a><span class="tm">18:55:38</span><span class="nk"> &lt;suseROCKs&gt;</span> Abhish,    Tip.   You should submit screenshots of your comparisons when discussing with whomever
+<a name="l-294"></a><span class="tm">18:55:48</span><span class="nk"> &lt;suseROCKs&gt;</span> that way they can see what you mean, or point out what you're doing wrong (if at all)
+<a name="l-295"></a><span class="tm">18:56:11</span><span class="nk"> &lt;Abhish&gt;</span> I had brought the issue to the KDE mailing list, and the general consensus I got was that this was the general experience.
+<a name="l-296"></a><span class="tm">18:56:29</span><span class="nk"> &lt;Abhish&gt;</span> But I shall do it again with a screencap.
+<a name="l-297"></a><span class="tm">18:56:45</span><span class="nk"> &lt;suseROCKs&gt;</span> yeah,  there's not much we can do about it here  :-/
+<a name="l-298"></a><span class="tm">18:56:53</span><span class="nk"> &lt;suseROCKs&gt;</span> here = this meeting
+<a name="l-299"></a><span class="tm">18:56:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> http://wstaw.org/m/2011/06/01/plasma-desktopA23042.jpg
+<a name="l-300"></a><span class="tm">18:57:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> ^
+<a name="l-301"></a><span class="tm">18:57:12</span><span class="nk"> &lt;suseROCKs&gt;</span> ok  are there other areas of interest, question, or criticism anyone has to bring up?
+<a name="l-302"></a><span class="tm">18:57:19</span><span class="nk"> &lt;Abhish&gt;</span> Regardless, I think a move to QtCurve with a Agua2 based light green theme would make a stronger impression on new users, and a logo can be applied to the background with qtcurve.
+<a name="l-303"></a><span class="tm">18:57:34</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Abhish:</span> to share a screenshot quickly, just use ksnapshot and drag the screenshot to the pastebin widget (put it on your panel)
+<a name="l-304"></a><span class="tm">18:57:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> it will return a url to your clipboard - then just paste :D
+<a name="l-305"></a><span class="tm">18:57:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> works with text and images.
+<a name="l-306"></a><span class="tm">18:57:52</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">Abhish:</span> i wished you were at the KDE meeting earlier... perfect place to discuss that
+<a name="l-307"></a><span class="tm">18:57:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> can't be easier
+<a name="l-308"></a><span class="tm">18:58:04</span><span class="nk"> &lt;Abhish&gt;</span> Me too, but insomnia won.
+<a name="l-309"></a><span class="tm">18:58:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> lol
+<a name="l-310"></a><span class="tm">18:58:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok let's move on
+<a name="l-311"></a><span class="tm">18:58:17</span><span class="nk"> &lt;Abhish&gt;</span> <span class="hi">jospoortvliet:</span> I had wondered how that worked.
+<a name="l-312"></a><span class="tm">18:58:18</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   sure it can.... just blink your eyes and it gets instantly transported
+<a name="l-313"></a><span class="tm">18:58:19</span><span class="nk"> &lt;mrdocs&gt;</span> +1
+<a name="l-314"></a><span class="tm">18:58:28</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> hehe
+<a name="l-315"></a><span class="tm">18:58:46</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so anything else or will we close this meeting in a record 59 minutes?
+<a name="l-316"></a><span class="tm">18:58:51</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> do it!!!!
+<a name="l-317"></a><span class="tm">18:58:54</span><span class="nk"> &lt;jospoortvliet&gt;</span> before the hour is over!
+<a name="l-318"></a><span class="tm">18:58:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> :D
+<a name="l-319"></a><span class="tm">18:59:00</span><span class="nk"> &lt;mrdocs&gt;</span> +1
+<a name="l-320"></a><span class="tm">18:59:04</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,   mrdocs   objections?
+<a name="l-321"></a><span class="tm">18:59:07</span><span class="nk"> &lt;prusnak&gt;</span> no
+<a name="l-322"></a><span class="tm">18:59:07</span><span class="nk"> &lt;mrdocs&gt;</span> no
+<a name="l-323"></a><span class="tm">18:59:13</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

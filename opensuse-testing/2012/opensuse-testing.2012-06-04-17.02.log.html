@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:02:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:02:08</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Jun  4 17:02:08 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:02:08</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:02:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">17:02:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-6"></a><span class="tm">17:02:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-7"></a><span class="tm">17:02:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">12.2-Beta1 status</span>
+<a name="l-8"></a><span class="tm">17:03:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> the Beta1 has been recently released and I did a fresh install on my netbook today, which worked.
+<a name="l-9"></a><span class="tm">17:03:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> have seen yast / libzypp segfaults (even with latest zypp:Head)
+<a name="l-10"></a><span class="tm">17:03:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> seen lxdm using 100% cpu here
+<a name="l-11"></a><span class="tm">17:04:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> init 3 killing X, but remaining on tty7
+<a name="l-12"></a><span class="tm">17:04:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> and zypper ref reporting some untrusted key for the update repo
+<a name="l-13"></a><span class="tm">17:05:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, the libzypp issue is most serious.
+<a name="l-14"></a><span class="tm">17:05:10</span><span class="nk"> &lt;LWFinger&gt;</span> I agree.
+<a name="l-15"></a><span class="tm">17:05:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> how was your experience?
+<a name="l-16"></a><span class="tm">17:05:56</span><span class="nk"> &lt;LWFinger&gt;</span> Since Friday, I have installed Beta1 on 2 real machines - 1 desktop and 1 laptop.
+<a name="l-17"></a><span class="tm">17:06:21</span><span class="nk"> &lt;LWFinger&gt;</span> Both working reasonably weel, and certainly usable.
+<a name="l-18"></a><span class="tm">17:06:41</span><span class="nk"> &lt;LWFinger&gt;</span> Both with KDE
+<a name="l-19"></a><span class="tm">17:07:26</span><span class="nk"> &lt;LWFinger&gt;</span> Desktop on rolling update from Factory. Laptop on released 12.2 Beta1.
+<a name="l-20"></a><span class="tm">17:08:03</span><span class="nk"> &lt;LWFinger&gt;</span> Both have seen zypper error, mostly a double free on exit.
+<a name="l-21"></a><span class="tm">17:09:19</span><span class="nk"> &lt;LWFinger&gt;</span> Not sure if zypper fault is errors in GCC 4.7, errors in new glibc, or residual errors in zypper not exposed by GCC 4.6.
+<a name="l-22"></a><span class="tm">17:09:51</span><span class="nk"> &lt;LWFinger&gt;</span> Both machines have Nvidia hardware, neither works with nouveau.
+<a name="l-23"></a><span class="tm">17:10:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> I heard, some are actual libzypp errors and some were gcc-4.7 bugs triggered by it
+<a name="l-24"></a><span class="tm">17:10:54</span><span class="nk"> &lt;LWFinger&gt;</span> Desktop gets correct resolution on screen, Laptop does not 1024x768 instead of correct 1280x800. Screen a little blurry
+<a name="l-25"></a><span class="tm">17:11:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> my netbook resolution was correct at 1024x600
+<a name="l-26"></a><span class="tm">17:11:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> (intel graphics that is)
+<a name="l-27"></a><span class="tm">17:11:54</span><span class="nk"> &lt;LWFinger&gt;</span> The xorg.conf files from 12.1 do not work, and I have not yet plowed through the X11 logs to see what is needed.
+<a name="l-28"></a><span class="tm">17:12:28</span><span class="nk"> &lt;LWFinger&gt;</span> Your screen likely reports the correct details, mine does not. 12.1 had to be manually configured.
+<a name="l-29"></a><span class="tm">17:12:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> there was something about /etc/ld.so.conf only including conf.d/*.conf files which did not catch nvidia's file
+<a name="l-30"></a><span class="tm">17:13:11</span><span class="nk"> &lt;LWFinger&gt;</span> Thanks for that - something else to check.
+<a name="l-31"></a><span class="tm">17:14:01</span><span class="nk"> &lt;LWFinger&gt;</span> Desktop doing video editing - lack of codecs a problem, but Packman will not be up to 12.2 for a while.
+<a name="l-32"></a><span class="tm">17:14:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> I thought, packman builds essential packages for factory
+<a name="l-33"></a><span class="tm">17:14:47</span><span class="nk"> &lt;BManojlovic&gt;</span> packman does build for factory
+<a name="l-34"></a><span class="tm">17:15:05</span><span class="nk"> &lt;LWFinger&gt;</span> In KDE, the GUI screen has moved from vtty7 to 8. That threw me for a bit as I couldn't get back once I switched to vtty1.
+<a name="l-35"></a><span class="tm">17:15:10</span><span class="nk"> &lt;BManojlovic&gt;</span> and as such when it is available on OBS it can be used for building on packman
+<a name="l-36"></a><span class="tm">17:15:15 </span><span class="nka">* tigerfoot</span> <span class="ac">just report a quick note, at least full luks vg encrypted work with grub2/plymouth/kdm chain</span>
+<a name="l-37"></a><span class="tm">17:15:56</span><span class="nk"> &lt;LWFinger&gt;</span> Other than zypper, release not too bad, especially as there was not a real MS4.
+<a name="l-38"></a><span class="tm">17:16:45</span><span class="nk"> &lt;LWFinger&gt;</span> At least codecs not in Packman repo.
+<a name="l-39"></a><span class="tm">17:17:00</span><span class="nk"> &lt;LWFinger&gt;</span> Done.
+<a name="l-40"></a><span class="tm">17:18:32</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">tigerfoot:</span> Factory ML reports some interference between Plymouth and luks, but I expect that to be corrected.
+<a name="l-41"></a><span class="tm">17:18:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> I have my home on a luks encrypted partition, but that worked for a long time.
+<a name="l-42"></a><span class="tm">17:19:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">BManojlovic:</span> did you test Beta1, too?
+<a name="l-43"></a><span class="tm">17:20:19</span><span class="nk"> &lt;BManojlovic&gt;</span> unfortunatelly not but tigerfoot did as he stated now
+<a name="l-44"></a><span class="tm">17:20:40</span><span class="nk"> &lt;BManojlovic&gt;</span> encryption and lvm
+<a name="l-45"></a><span class="tm">17:21:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> good to see that covered :)
+<a name="l-46"></a><span class="tm">17:21:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> I still need to extend my openQA tests to do encrypted partitions or separate /usr
+<a name="l-47"></a><span class="tm">17:21:43</span><span class="nk"> &lt;BManojlovic&gt;</span> hm
+<a name="l-48"></a><span class="tm">17:21:45</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">BManojlovic:</span> same here ... I was fighting a lot to fix any glitches on that part, and grub2 splash= will be fixed soon
+<a name="l-49"></a><span class="tm">17:22:19</span><span class="nk"> &lt;LWFinger&gt;</span> Do installations with lwm work now?
+<a name="l-50"></a><span class="tm">17:22:31</span><span class="nk"> &lt;BManojlovic&gt;</span> <span class="hi">bmwiedemann:</span> i was looking at your code a while ago, but again i should look how it is implemented
+<a name="l-51"></a><span class="tm">17:22:38</span><span class="nk"> &lt;BManojlovic&gt;</span> i mean openqa
+<a name="l-52"></a><span class="tm">17:22:53</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">LWFinger:</span> from what I've seen yes, last time there's the mdadm error but you can ignore it ...
+<a name="l-53"></a><span class="tm">17:23:05</span><span class="nk"> &lt;BManojlovic&gt;</span> that is on installation
+<a name="l-54"></a><span class="tm">17:23:13</span><span class="nk"> &lt;BManojlovic&gt;</span> it works just fine afterward
+<a name="l-55"></a><span class="tm">17:23:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, mdadm issue was fixed meanwhile
+<a name="l-56"></a><span class="tm">17:24:03</span><span class="nk"> &lt;LWFinger&gt;</span> Should that mdadm error on install be listed in Most Annoying list?
+<a name="l-57"></a><span class="tm">17:24:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> I did not see it in my install
+<a name="l-58"></a><span class="tm">17:25:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> but if you did, it would probably be good to add as many others could stumble about it
+<a name="l-59"></a><span class="tm">17:25:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> and we could recommend pressing "ignore"
+<a name="l-60"></a><span class="tm">17:26:02</span><span class="nk"> &lt;LWFinger&gt;</span> OK, I'll do that.
+<a name="l-61"></a><span class="tm">17:26:09</span><span class="nk"> &lt;BManojlovic&gt;</span> <span class="hi">bmwiedemann:</span> this code is current? http://www3.zq1.de/bernhard/git/autoinst/
+<a name="l-62"></a><span class="tm">17:26:18</span><span class="nk"> &lt;BManojlovic&gt;</span> or there is some repository?
+<a name="l-63"></a><span class="tm">17:27:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">BManojlovic:</span> http://gitorious.org/os-autoinst
+<a name="l-64"></a><span class="tm">17:27:27</span><span class="nk"> &lt;BManojlovic&gt;</span> ok
+<a name="l-65"></a><span class="tm">17:27:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> I keep all repos in sync, so either should work
+<a name="l-66"></a><span class="tm">17:30:03</span><span class="nk"> &lt;BManojlovic&gt;</span> <span class="hi">bmwiedemann:</span> does vbox backend works or i must use kvm (no issues there just i mostly have running vbox all day so i have to shut it down to use kvm)
+<a name="l-67"></a><span class="tm">17:30:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes, vbox worked last time I tried it.
+<a name="l-68"></a><span class="tm">17:30:52</span><span class="nk"> &lt;BManojlovic&gt;</span> ok
+<a name="l-69"></a><span class="tm">17:31:05</span><span class="nk"> &lt;LWFinger&gt;</span> VBox works for me. There is an API change for kernel 3.5, but 3.4 OK.
+<a name="l-70"></a><span class="tm">17:32:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">BManojlovic:</span> the openQA INSTALL file has some details on the VBox backend.
+<a name="l-71"></a><span class="tm">17:33:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> anyone has more Beta1 experience to share?
+<a name="l-72"></a><span class="tm">17:34:23</span><span class="nk"> &lt;LWFinger&gt;</span> Networking seems OK. Kernel 3.4 has some changes in the firewall stuff.
+<a name="l-73"></a><span class="tm">17:35:03</span><span class="nk"> &lt;LWFinger&gt;</span> An opensUSE kernel is OK, but the configuration of my home-built ones had to be adjusted
+<a name="l-74"></a><span class="tm">17:35:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> because of new / renamed config options?
+<a name="l-75"></a><span class="tm">17:35:41</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-76"></a><span class="tm">17:36:26</span><span class="nk"> &lt;LWFinger&gt;</span> The main one is that older kernels separated IPv4 and IPv6 logging. Now there is only one parameter.
+<a name="l-77"></a><span class="tm">17:37:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> and that would break things?
+<a name="l-78"></a><span class="tm">17:37:28</span><span class="nk"> &lt;LWFinger&gt;</span> Yes. In particular, it broke CIFS/SMB.
+<a name="l-79"></a><span class="tm">17:38:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> interesting. luckily it should not affect many people.
+<a name="l-80"></a><span class="tm">17:39:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> other Beta1 experience or can we then move to the next topic?
+<a name="l-81"></a><span class="tm">17:39:38</span><span class="nk"> &lt;LWFinger&gt;</span> OK
+<a name="l-82"></a><span class="tm">17:39:44</span><span class="nk"> &lt;BManojlovic&gt;</span> move
+<a name="l-83"></a><span class="tm">17:40:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">schedule next meeting</span>
+<a name="l-84"></a><span class="tm">17:40:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> RC1 will not be out before 2 weeks.
+<a name="l-85"></a><span class="tm">17:42:07</span><span class="nk"> &lt;LWFinger&gt;</span> Is June 21 a possibility for release of RC1?
+<a name="l-86"></a><span class="tm">17:42:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> roadmap has June 14 but with the past delays, 21 is likely
+<a name="l-87"></a><span class="tm">17:43:45</span><span class="nk"> &lt;LWFinger&gt;</span> If that is the date, then June 25 would be likely date for next meeting.
+<a name="l-88"></a><span class="tm">17:44:17</span><span class="nk"> &lt;LWFinger&gt;</span> June 25 is clear for me.
+<a name="l-89"></a><span class="tm">17:44:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> but I feel that we as the core testers could test Factory (or snapshots thereof) as it stabilizes
+<a name="l-90"></a><span class="tm">17:44:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> to make RC1 a smoother experience for the wider public
+<a name="l-91"></a><span class="tm">17:45:32</span><span class="nk"> &lt;LWFinger&gt;</span> I will be doing that on my desktop, and updating laptop if desk machine is OK.
+<a name="l-92"></a><span class="tm">17:46:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> so meeting a week before RC1 would be good
+<a name="l-93"></a><span class="tm">17:46:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> so that blockers could be addressed
+<a name="l-94"></a><span class="tm">17:47:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> how about 2012-06-18 then?
+<a name="l-95"></a><span class="tm">17:47:35</span><span class="nk"> &lt;LWFinger&gt;</span> The 18th will be OK for the meeting. My testing will be limited because of my fishing trip. No NET, and NO computing!
+<a name="l-96"></a><span class="tm">17:48:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> unplugged fishing :)
+<a name="l-97"></a><span class="tm">17:48:22</span><span class="nk"> &lt;LWFinger&gt;</span> Yes!
+<a name="l-98"></a><span class="tm">17:48:43</span><span class="nk"> &lt;LWFinger&gt;</span> Actually, we have electricity.
+<a name="l-99"></a><span class="tm">17:49:23</span><span class="nk"> &lt;LWFinger&gt;</span> I will have a computer there, but it will only be used to handle the expenses spreadsheet.
+<a name="l-100"></a><span class="tm">17:49:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">next meeting on 2012-06-18 17:00 to discuss upcoming RC1 blockers</span>
+<a name="l-101"></a><span class="tm">17:50:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Artwork testing</span>
+<a name="l-102"></a><span class="tm">17:51:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, there was something about KDM theme on last meeting
+<a name="l-103"></a><span class="tm">17:51:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> was this tigerfoot's topic?
+<a name="l-104"></a><span class="tm">17:52:34</span><span class="nk"> &lt;LWFinger&gt;</span> A new KDM login screen came with the latest Factory update. Looks good.
+<a name="l-105"></a><span class="tm">17:53:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, openQA showed it, when the autologin of KDM was not working
+<a name="l-106"></a><span class="tm">17:54:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-NET-i586-Build0406/timeout-09.png
+<a name="l-107"></a><span class="tm">17:54:41</span><span class="nk"> &lt;LWFinger&gt;</span> The default wallpaper for KDE does not seem to have been changed, but I almost never see the background anyway.
+<a name="l-108"></a><span class="tm">17:55:42</span><span class="nk"> &lt;LWFinger&gt;</span> The one I saw has a blue background, not green.
+<a name="l-109"></a><span class="tm">17:55:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> a consistent artwork theme would be good there.
+<a name="l-110"></a><span class="tm">17:56:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> and be it only to impress users
+<a name="l-111"></a><span class="tm">17:58:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> nothing more for this topic?
+<a name="l-112"></a><span class="tm">17:59:10</span><span class="nk"> &lt;LWFinger&gt;</span> No
+<a name="l-113"></a><span class="tm">17:59:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Open Bugs Day</span>
+<a name="l-114"></a><span class="tm">17:59:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> I was thinking, that we might do an Open Bugs Day for 12.2
+<a name="l-115"></a><span class="tm">17:59:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> but it is already quite late and I will not have much time
+<a name="l-116"></a><span class="tm">18:01:11</span><span class="nk"> &lt;tigerfoot&gt;</span> sorry was away
+<a name="l-117"></a><span class="tm">18:01:35</span><span class="nk"> &lt;LWFinger&gt;</span> You are good with the database extraction code. would it be easy to set up a line that will pull the open 12.2 bugs?
+<a name="l-118"></a><span class="tm">18:01:48</span><span class="nk"> &lt;LWFinger&gt;</span> Perhaps we can keep an eye on them.
+<a name="l-119"></a><span class="tm">18:02:00</span><span class="nk"> &lt;LWFinger&gt;</span> s/line/link/
+<a name="l-120"></a><span class="tm">18:02:01</span><span class="nk"> &lt;tigerfoot&gt;</span> The artwork testing seems to goes well. I've good feedback about kdm at least
+<a name="l-121"></a><span class="tm">18:02:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes, that is easy
+<a name="l-122"></a><span class="tm">18:03:29</span><span class="nk"> &lt;LWFinger&gt;</span> I have been being my usual PITA on the beta-testing forum about filing bug reports.
+<a name="l-123"></a><span class="tm">18:05:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> and best following up when status goes to NEEDINFO
+<a name="l-124"></a><span class="tm">18:08:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> do you guys feel that an Open-Bugs-Day would be worth the effort?
+<a name="l-125"></a><span class="tm">18:08:41</span><span class="nk"> &lt;LWFinger&gt;</span> After the poor turnout of the past two we organized, I'm not sure.
+<a name="l-126"></a><span class="tm">18:08:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> or is it just a shuffling around of bugzilla bits without much effect
+<a name="l-127"></a><span class="tm">18:09:52</span><span class="nk"> &lt;LWFinger&gt;</span> I did foster some activity with old bugs just by closing them. It was useful from that respect.
+<a name="l-128"></a><span class="tm">18:10:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> so maybe I should finally make that NEEDINFO+expiry-after-30-days bot
+<a name="l-129"></a><span class="tm">18:12:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">bmwiedemann will look into bugzilla bot creation</span>
+<a name="l-130"></a><span class="tm">18:13:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-131"></a><span class="tm">18:14:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> any other things you want mentioned or discussed?
+<a name="l-132"></a><span class="tm">18:17:18</span><span class="nk"> &lt;LWFinger&gt;</span> It seems that we are done. "See" you on the 18th.
+<a name="l-133"></a><span class="tm">18:17:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. Ciao
+<a name="l-134"></a><span class="tm">18:17:33</span><span class="nk"> &lt;BManojlovic&gt;</span> <span class="hi">bmwiedemann:</span> was not playing arround before with os-autoinst is it work with network install iso?
+<a name="l-135"></a><span class="tm">18:17:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

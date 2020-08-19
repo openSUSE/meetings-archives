@@ -1,0 +1,222 @@
+15:39:08 <metalgod> #startmeeting openSUSE GNOME Team meeting
+15:39:08 <bugbot> Meeting started Thu Mar 17 15:39:08 2011 UTC.  The chair is metalgod. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:39:08 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:39:14 <metalgod> hi everyone
+15:39:24 <metalgod> welcome to our team meeting
+15:39:34 <metalgod> so let's take the first topic
+15:40:02 <metalgod> #topic openSUSE 11.4 Release - what we did good/bad (vuntz / Dimstar / rest of the team)
+15:40:07 <badshah400> vuntz: thanks, whenever do I hesitate before asking for help? :)
+15:40:08 <metalgod> so
+15:40:16 <metalgod> first of all thanks everyone for your work
+15:40:17 * psankar waits to hear the french song that vuntz wrote in appreciation of the release
+15:40:30 * psankar claps
+15:40:38 <metalgod> let's do a reflection of our work for 11.4
+15:40:47 <metalgod> vuntz,  DimStar want to share your feelings ?
+15:40:51 <vuntz> psankar: you don't want to hear me sing. Really. :-)
+15:40:57 <psankar> :-)
+15:40:57 <metalgod> the rest of the team of course...
+15:41:30 <vuntz> my feeling is that in general, the release went fine
+15:41:46 <vuntz> the fact that we were releasing with a GNOME that went out months before the release helped :-)
+15:42:20 <vuntz> we kind of lost our focus on adding cool new apps at some point
+15:42:25 <metalgod> vuntz, which lead to general improvements for future releases and general bug fixing ?
+15:42:30 <vuntz> (but we still managed to add many great apps)
+15:43:23 <psankar> I looked at lwn comments section for 11.4 release and there were some apps. that users wanted and was availalble in ubuntu but not in others. we need to update our list with those apps.
+15:43:27 <vuntz> yeah, using an "old" gnome meant that we were able to do some deeper cleanup that was much needed, which will help in the long term. And we were able to fix a few bugs here and there that were long-standing
+15:43:37 <psankar> s/others/oSuse
+15:43:59 <vuntz> psankar: please file those in openfate
+15:44:03 <vuntz> with a gnome tag
+15:44:15 <psankar> vuntz, yeah. sure thing. metalgod make it an action item on me
+15:44:23 <vuntz> (in the package wishlist product)
+15:44:36 <psankar> yeah. sure.
+15:44:42 <Fisiu> just tried firefox from mozilla:beta and it looks really neat with recent lcd patch :)
+15:44:48 * vuntz wonders if he can use #info to help produce good minutes
+15:44:59 <metalgod> #action psankar create a new wishlist for GTK applications
+15:45:17 <metalgod> psankar, please give a focus on developer tools also
+15:45:22 <psankar> metalgod, sure.
+15:45:25 <metalgod> i.e. i'm packaging gedit vala toys
+15:45:35 <psankar> oh neat.
+15:45:58 <psankar> vuntz, I guess you can use the #info whenever you feel it deserves to be noted.
+15:46:02 <psankar> metalgod, ^ ?
+15:46:05 <vuntz> yeah, but will it work :-)
+15:46:09 <metalgod> the rest of the team want to share some feelings about openSUSE 11.4 release ?
+15:46:51 <psankar> I believe the artwork discussions went a little longer than it should've been.
+15:47:07 <metalgod> badshah400, captain_magnus fcrozat psankar ?
+15:47:13 <psankar> we should've spent relatively lesser time on it. but not a major complaint from me ;-) just a feeling :-)
+15:47:29 <sreeves> psankar: but are you happy with the end result ?
+15:47:37 <metalgod> damn i forgot about sreeves
+15:47:41 <metalgod> ehhe
+15:47:51 <metalgod> ok
+15:48:03 <metalgod> if no one complains let's move to the next topic
+15:48:20 <sreeves> I think 11.4 is a really nice release - I look forward to demoing it tonight at our release party
+15:48:24 <psankar> sreeves, Yes. But I somehow believe that we should've arrived at a conclusion much earlier. I think we were discussing it even in the last meeting before the release. but it rocked in thje end :-)
+15:48:45 <psankar> thankfully for our next release, we will stick to gnome-shell default wallpaper and so we are fine :-)
+15:49:00 <vuntz> #info generally, 11.4 went smooth for GNOME
+15:49:05 <metalgod> #topic GNOME 3 release plans - What we could do via openSUSE (vuntz / fcrozat)
+15:49:27 <vuntz> metalgod: we should add all #info to summarize the discussion before switching to a new topic :-)
+15:49:36 <metalgod> ok
+15:50:06 <vuntz> #info (previous topic) we've added cool new apps, but lost our focus on this at some point; we should keep working on that
+15:50:21 <psankar> I have a question regarding this. How earlier can we get an .iso image that will be very-very-closer to the final gnome3 release image. I am asking this because,
+15:50:25 <federico1> are there plans to do "switch me to gnome 3.0 now" a single-step operation once 3.0 comes out?
+15:50:39 <vuntz> #info (previous topic) artwork discussion took too long, we should avoid this in the future
+15:50:50 <psankar> There is a GNOME.Asia conference coming up and I would like to ship some GNOME 3.0 DVDs based on openSUSE (not just a live-cd)
+15:50:53 <vuntz> federico1: yes
+15:51:35 <vuntz> psankar: you can install the gnome3 images fcrozat has been working on; so it's not "just a livecd"
+15:51:47 <vuntz> psankar: are there missing apps for you?
+15:51:51 <federico1> vuntz: great!
+15:52:10 <federico1> vuntz: are there instructions for that?  (sorry if I should just RTFwiki or something - I'm kind of disconnected)
+15:52:18 <psankar> vuntz, okay. But I thought I will ask for a timeline for zeroing-on a particular version . which will be the latest at the release time.
+15:53:06 <vuntz> federico1: not yet
+15:53:18 <vuntz> federico1: we first need to integrate the work done by fcrozat
+15:53:54 <vuntz> psankar: for GNOME.Asia: I'm nearly sure there'll be an image available with GNOME 3 RC
+15:54:14 <psankar> vuntz, okay. awesome. thanks. I will now try to find a sponsor for the dvd preparation.
+15:54:46 <vuntz> psankar: for when would you need the image?
+15:55:08 <psankar> vuntz, i believe next weekend will be perfect time
+15:55:22 <vuntz> psankar: next week-end as in 2 days or 9 days?
+15:55:28 <psankar> vuntz, 9 days
+15:55:32 <psankar> 25th or so
+15:56:17 <vuntz> ok
+15:56:47 <vuntz> I'll let fcrozat tell you if it's doable or not, when he'll come back
+15:56:52 <vuntz> so
+15:56:58 <vuntz> our GNOME 3 plans
+15:56:58 <psankar> okay thanks.
+15:57:07 <vuntz> here's the current plan:
+15:57:18 <vuntz> 1) finish review of fcrozat's packages
+15:57:26 <vuntz> ETA: next week
+15:57:35 <vuntz> 2) push that to G:F, and build against Factory and 11.4
+15:57:38 <vuntz> ETA: next week too
+15:57:59 <vuntz> 3) start creating a GNOME:STABLE:3.0 repo that people will be able to test
+15:58:28 <vuntz> ETA: hoping for end of next week
+15:58:42 <fcrozat> sorry back (giving blood is long)
+15:59:19 <vuntz> if we get all this ready, this means we'll "only" have simple updates to do between this and 3.0
+16:00:18 <vuntz> and we'll be able to provide 3.0 packages the week of the GNOME 3 release, as well as a 11.4 re-spin (hopefully)
+16:01:07 <vuntz> #info current plan is to have GNOME 3 RC packaged and available in G:F (11.4 & Factory) next week
+16:01:27 <vuntz> #info we'll also create GNOME:STABLE:3.0 so people can start testing things
+16:01:28 <psankar> vuntz, by when will that re-spin be available ? (date) approximately
+16:01:41 <vuntz> #info goal is to have 3.0 packages available the week of the 3.0 release (April 6th)
+16:02:08 <vuntz> psankar: I'd guess April 11th, but we might be able to do that earlier if we're fast
+16:02:20 <psankar> vuntz, okay.
+16:02:35 * psankar wishes gnome.asia was happening two weeks later
+16:03:06 <vuntz> fcrozat: I was wondering; did you try to take the official 11.4 kiwi stuff to create an openSUSE-branded livecd with GNOME 3?
+16:03:32 <vuntz> s/stuff/file/
+16:05:20 <vuntz> if people want to help, a few things that can be done:
+16:05:40 <vuntz> 1) create a wiki page explaining how to use the GNOME:STABLE:3.0 repository, with a FAQ
+16:06:08 <vuntz> hopefully, the instructions will be extremely simple (add repo, zypper dup), but there might be a few work-arounds to document
+16:06:37 <vuntz> 2) write some text for the announcement of the livecd respin
+16:06:40 * psankar volunteers for the faq creation (ai on me)
+16:07:12 <vuntz> 3) check if we want to update other apps on the livecd or not (from G:A)
+16:07:27 <vuntz> I'm unsure about 3 -- that might make maintenance harder
+16:08:03 <vuntz> #action psankar to write doc & faq about GNOME:STABLE:3.0
+16:08:17 <vuntz> I guess that's mostly it on this topic
+16:08:23 <metalgod> ok
+16:08:24 <psankar> okay.
+16:08:25 <metalgod> ext topic
+16:08:40 <fcrozat> vuntz: I didn't, but I'm trying to "sync" my own kiwi work with the ofifcial 11.4 kiwi file
+16:09:03 <vuntz> psankar: btw, we'll likely need a "where/how to report bugs" section in the faq
+16:09:09 <fcrozat> but for our "own" 11.4 respin, I should probably rebase 11.4 kiwi file and adapt it to GNOME3
+16:09:15 <metalgod> #topic Maintenance Updates for 11.4 (Dimstar)
+16:09:21 <psankar> vuntz, okay. sure. I will consult you later on the requirements.
+16:09:39 <fcrozat> vuntz: 4) create a 1click install action for gnome3
+16:09:50 <fcrozat> so it could be added to gnome3.org
+16:10:17 <vuntz> fcrozat: yeah, that'd be great; I'm unsure if this will update everything correctly, though. We have to test this
+16:10:25 <fcrozat> vuntz: yep
+16:10:44 <sshaw> It would be nice if our 1 click was completely redone so that it was at least 5 or so clicks instead of 12
+16:10:57 <fcrozat> sshaw: this is another issue
+16:11:07 <vuntz> sshaw: there's a feature with a design, for that. Just need a coder ;-)
+16:11:11 <psankar> sshaw, +1
+16:11:23 <psankar> vuntz, url ?
+16:11:24 <vuntz> DimStar: not here?
+16:11:29 <metalgod> sshaw, i think it's much more easier to do something like ubuntu does to add ppa than to use 1 click install
+16:11:33 <psankar> vuntz, for that design stuff
+16:11:39 <vuntz> psankar: https://features.opensuse.org/310022
+16:11:41 * mathw is happy and eager to test gnome 3 packages and has little fear of breaking his system
+16:11:47 <psankar> thanks
+16:12:16 * sshaw is willing to give it a try soon
+16:12:29 <vuntz> ah, actually https://features.opensuse.org/309503 is better. First one should be closed
+16:12:44 <fcrozat> for everybody : I'm going to kill my gnome3 11.3 repo
+16:12:50 <fcrozat> so if you are using it => upgrade to 11.4
+16:13:25 <metalgod> guys
+16:13:26 <psankar> #info gnome3 repo. for 11.3 will no longer be active. Upgrade to 11.4
+16:13:34 <DimStar> vuntz: here... sort of
+16:13:35 <vuntz> so, maintenance updates
+16:13:38 <vuntz> ah
+16:13:40 <metalgod> yeah
+16:13:44 <vuntz> DimStar: want to talk about maintenance updates? :-)
+16:14:01 <vuntz> DimStar: (I can do it if you're short in time)
+16:14:15 <DimStar> vuntz: i'm rather short (fighting with products from your company)
+16:14:32 <vuntz> :-)
+16:14:36 * psankar hopes it is not ncl
+16:14:55 <vuntz> malcolmlewis has been rocking by working on two updates
+16:15:03 <vuntz> https://bugzilla.novell.com/show_bug.cgi?id=679874
+16:15:07 <bugbot> openSUSE bug 679874 in openSUSE 11.4 (GNOME) "Gnome-nettools ping test fails" [Major,New]
+16:15:29 <vuntz> and https://bugzilla.novell.com/show_bug.cgi?id=678934
+16:15:38 <bugbot> openSUSE bug 678934 in openSUSE 11.4 (Evolution) "[UPSTREAM PATCH] Check NNTP server capabilities before using OVER command" [Critical,New]
+16:16:36 <fcrozat> https://bugzilla.novell.com/show_bug.cgi?id=557678 ?
+16:16:40 <bugbot> openSUSE bug 557678 in openSUSE 11.3 (GNOME) "Bluetooth: unable to send files via OBEX" [Critical,Needinfo]
+16:16:43 <fcrozat> (for 11.4)
+16:17:11 <vuntz> fcrozat: is it just for 11.4, or also 11.3?
+16:17:43 <vuntz> #info malcolmlewis rocks and dealt with two updates already
+16:18:17 <vuntz> https://bugzilla.novell.com/show_bug.cgi?id=679039 and https://bugzilla.novell.com/show_bug.cgi?id=680533 are the next two updates that are planned (so far)
+16:18:20 <bugbot> openSUSE bug 679039 in openSUSE 11.4 (GNOME) "[maintenance] The oxygen-gtk theme has a white rectangle after installing nvidia proprietary driver" [Major,New]
+16:18:26 <fcrozat> vuntz: my "fix" is for 11.4 only
+16:18:32 <fcrozat> I'd need to retest 11.3
+16:18:42 <vuntz> the second one is important for apps that appear with no icon in the app menu
+16:18:55 <vuntz> fcrozat: you can certainly push that as an update
+16:19:17 <vuntz> fcrozat: maybe clone the bug for 11.4 so we can easily track it
+16:19:28 <fcrozat> vuntz: ok, add me an action item, please
+16:19:42 <vuntz> #action fcrozat to handle bluetooth issue (https://bugzilla.novell.com/show_bug.cgi?id=557678)
+16:19:46 <bugbot> openSUSE bug 557678 in openSUSE 11.3 (GNOME) "Bluetooth: unable to send files via OBEX" [Critical,Needinfo]
+16:20:25 <vuntz> #info already two other updates planned (rendering issues on nvidia drivers, icon theme cache issues), that badshah400 will likely handle
+16:20:55 <psankar> Also, I would like to tell about one more issue.
+16:21:14 <vuntz> please do so
+16:21:19 <psankar> today lakhil from evolution asked me how to go about disabling tracker plugin in evolution by default
+16:21:30 <vuntz> (if anybody else has bugs that you think should be fixed as updates, speak up)
+16:21:34 <psankar> we enable it by default now and it is causing some unnecessary disk-grinds, crashes etc.
+16:21:54 <cyberorg> vuntz, bug 679730
+16:21:54 <bugbot> openSUSE bug 679730 in openSUSE 11.4 (GNOME) "solid borders around icons when running application over ssh -X" [Normal,New] https://bugzilla.novell.com/679730
+16:21:54 <psankar> I asked him to file a bug and do a sr disabling the tracker plugin
+16:22:06 <vuntz> psankar: yeah, that's https://bugzilla.novell.com/show_bug.cgi?id=680377
+16:22:09 <bugbot> openSUSE bug 680377 in openSUSE 11.4 (GNOME) "Tracker plugin makes Evolution unstable" [Normal,New]
+16:22:19 <vuntz> cyberorg: ah, right. We need a fix for this one, though...
+16:22:28 <psankar> vuntz, ah neat. same thing.
+16:22:37 <vuntz> psankar: that's the bug he filed ;-)
+16:22:39 <cyberorg> may be it is related to nvidia fix?
+16:22:56 <vuntz> cyberorg: I was wondering, could you try the package that has a fix for the nvidia issue to see if it helps?
+16:23:05 <cyberorg> trying
+16:25:22 <psankar> metalgod, so next item ?
+16:26:19 <metalgod> ok
+16:26:22 <metalgod> next item
+16:26:32 <metalgod> #topic old action items - (metalgod, sreeves)
+16:26:41 <metalgod> so old action items
+16:27:01 * vuntz didn't do any work on action items; he doesn't even remember what AI he had :/
+16:27:07 <psankar> afaik none
+16:27:10 <metalgod> psankar, no news about gtk3 sonar theme right ?
+16:27:38 <psankar> metalgod, Nope. I just blogged about it and spread some news about it. but none turned up I believe
+16:27:41 <sreeves> the PackageKit AI was completed - Duncan kindly pushed his fix to 11.4 before the release
+16:27:48 <metalgod> yeah
+16:27:51 <metalgod> PK is fixed
+16:28:08 <metalgod> the approach is what we talked on the meeting
+16:28:19 <metalgod> any action item missing ?
+16:28:27 <cyberorg> vuntz, nopes, does not work :(
+16:28:33 <metalgod> #action Project Update
+16:28:36 <psankar> metalgod, nothing more I suppose
+16:28:42 <metalgod> errr
+16:28:47 <metalgod> #topic Project update
+16:29:05 <metalgod> i think we already talked a lot about this topic
+16:29:08 <psankar> metalgod, I think we can ignore this
+16:29:09 <psankar> yes
+16:29:11 <metalgod> so moving forward ?
+16:29:17 <metalgod> #topic Q & A
+16:29:25 <metalgod> ok feel free to ask questions
+16:29:51 <psankar> Anyone except vuntz coming for GNOME.Asia ?
+16:30:22 <psankar> so no one elseI believe
+16:31:48 <metalgod> i'm saving some for desktop summit
+16:32:04 * psankar will miss desktop summit :(
+16:32:08 * vuntz is excited to go to india
+16:32:23 <psankar> vuntz, equally excited to see you here
+16:32:58 * malcolmlewis vuntz don't get Delhi belly
+16:33:28 <metalgod> any questions left ?
+16:33:35 <psankar> nope
+16:33:37 <metalgod> ok
+16:33:46 <metalgod> so thanks everyone
+16:33:51 <metalgod> see you soon
+16:33:53 <metalgod> #endmeeting

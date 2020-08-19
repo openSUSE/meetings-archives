@@ -1,0 +1,147 @@
+16:10:31 <remur_030> #startmeeting
+16:10:31 <bugbot> Meeting started Thu Sep 16 16:10:31 2010 UTC.  The chair is remur_030. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:10:31 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:10:50 <remur_030> Todays rather short agenda:
+16:10:57 <remur_030> For discussion this week:
+16:10:58 <remur_030> * replacing more openSUSE:Factory KDE3 packages with KDE4 versions (kmymoney,...)
+16:11:00 <remur_030> Generic all-time topics:
+16:11:01 <remur_030> * old action items
+16:11:03 <remur_030> * status report
+16:11:04 <remur_030> * Q&A, misc
+16:11:17 <remur_030> #topic Old action items
+16:11:35 <remur_030> wstephenson put package list in gitorious
+16:11:52 <remur_030> Bille: ^
+16:12:03 <llunak> javier_: ^
+16:12:16 <javier_> hmm, I don't know
+16:12:38 <remur_030> let's postpone then
+16:12:44 <llunak> remur_030: set it as AI again (#action wstephenson ...)
+16:12:44 <javier_> ok
+16:12:57 <remur_030> #action wstephenson put package list in gitorious
+16:13:22 <remur_030> *
+16:13:23 <remur_030> *  everybody add information to the
+16:13:25 <remur_030> http://en.opensuse.org/openSUSE:Factory_KDE3_packages list as appropriate
+16:13:39 <llunak> some info has been added, rest is for the agenda item
+16:14:01 <remur_030> so alot happend, but mainly llunak and ansus
+16:14:08 <remur_030> keep as ai?
+16:14:33 <llunak> no, we'll discuss it as the agenda item, if more hasn' tbeen added until now, it won't happen later
+16:14:34 <remur_030> ah we can see the outcome of the discussion
+16:14:54 <remur_030> right, then let's proceed to
+16:14:59 <remur_030> #topc Status report
+16:15:06 <remur_030> #topic Status report
+16:15:58 <remur_030> Nothing noteworthy? thrice` you managed that koffice 2.3 beta?
+16:16:52 <remur_030> ah well then let's get to the real point of the meeting
+16:17:00 <remur_030> #topc New Items
+16:17:04 <remur_030> #topic New Items
+16:17:13 <thrice`> no, I tried and failed :>  actually, it compiles and links nicely - gotta try locally to see why the file list creation dies
+16:17:40 <remur_030> thrice`: keep it up =)
+16:17:56 <remur_030> * replacing more openSUSE:Factory KDE3 packages with KDE4 versions (kmymoney,...)
+16:18:02 <llunak> remur_030: hmm, I didn't notice 'new items' was still there, I have no idea what that is :) - I'll dump it from the howto
+16:18:20 <remur_030> llunak: I thought it'd be the topics, let's make a real one then
+16:18:29 <remur_030> #topic replacing more openSUSE:Factory KDE3 packages with KDE4 versions (kmymoney,...)
+16:18:52 <remur_030> #info qt3/kde3 packages still in Factory: http://en.opensuse.org/openSUSE:Factory_KDE3_packages
+16:19:43 * remur_030 quickly glances over the page
+16:19:54 <llunak> there are some recommendations such as going to kde4 version of kmymoney, so those will be done
+16:20:40 <llunak> and I suggest the rest is done as somebody feels like doing that
+16:20:43 <remur_030> so i guess we can all agree to switch to kde4 application if one exists?
+16:21:06 <remur_030> #info switch to kde4 port where possible
+16:21:13 <remur_030> how about removing the ones with no port?
+16:21:37 <EagleScreen_> dont forget soundkonverter KDE4
+16:21:46 <llunak> looks like nobody cares to mention keeping them, so unless it's something really important, yes
+16:22:04 <EagleScreen_> what happened to kgamailnotifier package? I don't see it in any repository
+16:22:11 <remur_030> EagleScreen_: please add to the page what you find lacking
+16:22:12 <EagleScreen_> *kgmailnotifier
+16:22:25 <llunak> e.g. kwebdev3 (Quanta) should be IMHO kept
+16:22:46 <remur_030> could we agree on dropping from factory unless somebody objects?
+16:23:08 <EagleScreen_> remur_030: what page?
+16:23:14 <remur_030> there still is the kde3 repository
+16:23:20 <herby> I have read somewhere that quantas functionality will become part of kdevelop
+16:23:24 <remur_030> EagleScreen_: http://en.opensuse.org/openSUSE:Factory_KDE3_packages
+16:24:15 <remur_030> about kgmailnotifier I don't know, but I bet there is a kde4 replacement already (in a form of a plasmoid most possibly)
+16:24:49 <remur_030> I don't think there are enough people awake to really conclude something here...
+16:25:03 <thrice`> set(SHOULD_BUILD_KCHART FALSE)
+16:25:08 <thrice`> no wonder it didn't build? :p
+16:25:12 <llunak> remur_030: they had two weeks
+16:25:45 <remur_030> llunak: write a mail pointing to the list, suggest speaking out for applications or they will be dropped from factory?
+16:25:52 <llunak> remur_030: and they can still complain if they at least read the meeting minutes - otherwise they don't care, so it doesn't matter
+16:26:04 <remur_030> maybe with like another 2 weeks then start dropping
+16:26:12 <Bille> RE
+16:26:16 <Bille> errr, re
+16:26:21 <llunak> remur_030: fine with me
+16:26:28 <llunak> remur_030: you run the meeting :)
+16:26:52 <EagleScreen_> remur_030: am I be abla to edit that page?
+16:26:52 <remur_030> you want to write the mail?
+16:26:59 <remur_030> EagleScreen_: absolutely
+16:27:09 <wstephenson> thrice`: told you so :)
+16:27:17 <cb400f> wstephenson: [18:11] <remur_030> wstephenson put package list in gitorious
+16:27:23 <cb400f> done?
+16:27:24 <wstephenson> thrice`: more satisfying when you find it yourself
+16:27:27 <wstephenson> not done :(
+16:27:33 <llunak> remur_030: I myself consider mentioning that in the minutes to be enough
+16:28:12 <thrice`> wstephenson, just browsing the cmakelists to bump deps, and noticed it :>  perhaps it's not ready yet
+16:28:36 <remur_030> #action remur_030 write last call mail for the kde3 applications list http://en.opensuse.org/openSUSE:Factory_KDE3_packages
+16:28:39 <cb400f> are you talking about dropping kde3 apps where no kde4 replacement exists?
+16:28:44 <remur_030> cb400f: yes
+16:29:11 <remur_030> at least that's how I understand the whole idea of the page to get rid of unmaintained old applications
+16:29:21 <llunak> yes
+16:29:36 <remur_030> it even mentions the kde3 core so it sounds severe to me ;-)
+16:30:35 <EagleScreen_> remur_030: is this page to request keeping KDE3 packages?
+16:30:59 <llunak> EagleScreen_: if you think one should be kept, add comments saying so, the top of the page explains that
+16:31:07 <remur_030> EagleScreen_: basicly, if there is no reason to keep why not drop them...
+16:31:21 <remur_030> sure they still build, but they also do that in the seperate repository without beeing a burden on factory
+16:32:39 <EagleScreen_> you should package soundkonverter 1.0.0beta3, it is KDE4 and it is usable at this point, now that there is a KDE4 version, no reason to keep the KDE3 version
+16:32:44 <remur_030> so anything to contribute to the point?
+16:33:06 <remur_030> EagleScreen_: please add this to the wiki page, it's not feasible to track stuff like this out of some irc logs
+16:33:23 <llunak> EagleScreen_: there's no soundkonverter in the page, where did you get it from?
+16:33:27 <remur_030> it's done in like 2 minutes
+16:34:16 <cb400f> but it's not in factory.. only in kde:kde3
+16:34:29 <remur_030> EagleScreen_: ah it's not even in factory anymore, then please file a request to package soundkonverter4
+16:34:35 <remur_030> 1.0.0beta3
+16:35:01 <EagleScreen_> remur_030: via novell bugzilla?
+16:35:08 <remur_030> llunak: I take it the list is really all remaining users of kdebase3?
+16:35:46 <remur_030> EagleScreen_: better do on opensuse-kde list, I don't think tittiacoke and other packaging heroes track bnc for requests
+16:35:48 <llunak> remur_030: you mean of qt3/kdelibs3? there may be other apps in other repos, this is only what is in KDE:KDE3 (i.e. the KDE team responsibily)
+16:36:12 <remur_030> llunak: so in kdf there is nothing depending on kdebase3?
+16:36:54 <cb400f> EagleScreen_: en.opensuse.org/KDE_ideas
+16:37:13 <llunak> remur_030: no, kdf is strictly kde4 now
+16:37:27 <cb400f> but if soundkonverter needs any of the "exciting" multimedia stuff there's no point
+16:37:39 <remur_030> llunak: ok, then no adding applications to the list but only commenting
+16:38:35 <cb400f> EagleScreen_: sorry.. http://en.opensuse.org/openSUSE:KDE_ideas
+16:39:03 <EagleScreen_> firefox usually resolv well en.opensuse.org/KDE_ideas
+16:39:08 <remur_030> so are we done with the topic?
+16:39:14 <remur_030> anything else to add?
+16:39:44 <llunak> not from me
+16:39:49 <cb400f> so what's the conclusion? .. quanta is kept.. everything else will be dropped.. kde4 replacement will be added when/if people care?
+16:40:22 <remur_030> cb400f: conclusion is i write a last call mail to the list so people will make their voice heard
+16:40:28 <EagleScreen_> bad URL, I see
+16:40:43 <cb400f> ok
+16:40:45 <remur_030> anything uncommented is up for anything unpleasent
+16:41:47 <remur_030> so next:
+16:42:00 <remur_030> #topic 'Q&A, misc
+16:42:19 <remur_030> Make your questions heard now or just ask outside of the meeting ;-)
+16:42:39 <javier_> this kde3 discussion reminds me of kde4-l10n... why does it have kde4-?
+16:42:42 <remur_030> after the meeting that is
+16:42:44 <llunak> remur_030: please do not do #endmeeting, I want to try something after the meeting is over
+16:42:56 <remur_030> llunak: ok
+16:43:04 <llunak> javier_: because just l10n-cs is not a good name for it
+16:43:29 <javier_> llunak: i mean kde-l10 instead of kde4-l10n
+16:43:37 <EagleScreen_> the only KDE3 application I'd care is kdbg
+16:43:40 <javier_> *kde-l10n
+16:43:42 <llunak> javier_: kdelibs is also kdelibs4
+16:43:50 <javier_> right
+16:44:09 <jobermayr> kdbg has also been ported
+16:44:11 <javier_> sometime I ago there was a mass renaming and I was just wondering about it
+16:44:17 <llunak> jobermayr: not here, the wiki page
+16:44:26 <remur_030> jobermayr: please add it! also with a link if possible
+16:44:27 <javier_> ok
+16:44:53 <llunak> javier_: it doesn't make sense to version the primary version of the app, but for packages like this it makes sense, since you are much more likely to have two versions
+16:45:29 <javier_> ok
+16:46:09 <llunak> remur_030: I guess that's all for the meeting, so we can finish and please don't forget to wait before #endmeeting now :)
+16:46:33 <remur_030> So thanks everybody for attending and hope to see you in two weeks
+16:46:44 <remur_030> just pull my bugbot status =)
+16:47:00 <llunak> remur_030: please do #chair llunak
+16:47:06 <remur_030> #chair llunak
+16:47:06 <bugbot> Current chairs: llunak remur_030
+16:47:13 <llunak> #meetingtopic meeting topic
+16:47:22 <llunak> #topic test topic 2
+16:47:36 <llunak> remur_030: ok, you can #endmeeting now, thanks
+16:47:43 <remur_030> #endmeeting

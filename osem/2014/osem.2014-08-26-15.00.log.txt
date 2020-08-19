@@ -1,0 +1,305 @@
+15:00:26 <KalabiYau> #startmeeting
+15:00:26 <bugbot> Meeting started Tue Aug 26 15:00:26 2014 UTC.  The chair is KalabiYau. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:00:26 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:00:54 <KalabiYau> #topic Curreant status and retrospective of Борщ milestone
+15:01:04 <KalabiYau> So, guys. Hello
+15:01:09 <gopesh> hello
+15:01:10 <KalabiYau> Who is online?
+15:01:20 <gopesh> gopesh: is
+15:01:26 <Chrisbr> Chrisbr: is
+15:01:46 * bear454 is
+15:02:03 <KalabiYau> Let me first congratulate you with progress, quality and passion you did delivered while worked on osem while in GSOC
+15:02:04 * henne is too
+15:02:17 <gopesh> KalabiYau: thanks
+15:02:18 <KalabiYau> that was awesome time for all us, we had a lot of fun and achieved a lot
+15:02:26 <KalabiYau> congrats, you guys rock!
+15:02:36 * differentreality here
+15:02:50 <KalabiYau> wish we could meet and shake each other's hands, but seems later on
+15:03:05 <KalabiYau> okay, let's start status round
+15:03:24 <KalabiYau> please provide your current status on current Milestone(MS) and I will populate info
+15:04:09 <Chrisbr> who wants to start?
+15:04:12 <KalabiYau> #info KalabiYau did not done so much this sprint as was buried under an office problems. Nevertheless, light is ahead for him :)
+15:04:40 <KalabiYau> that should happen simultaneously
+15:04:44 <KalabiYau> :)
+15:04:46 <gopesh> well I completed delete users
+15:05:01 <gopesh> and keynote speakers is yet to implemented
+15:05:09 <gopesh> for this sprint
+15:05:18 <gopesh> that's my part
+15:05:37 <gopesh> delete users still pending to me merged
+15:05:55 <differentreality> if I may, I would like to add that I think we are not quire ready to say that user deletion is done
+15:06:06 <Chrisbr> I continued with the refactoring and finished so far the registration period. From my commited issues there are still #418 and #419 open which are almost done (some failing tests and waiting for review).
+15:06:19 <KalabiYau> #info gopesh delivered delete users task (some concerns here) - still should be merged, keynote speakers - WIP
+15:06:24 <KalabiYau> differentreality, please elaborate
+15:06:39 <KalabiYau> #info continued with the refactoring and finished so far the registration period. From my commited issues there are still #418 and #419 open which are almost done (some failing tests and waiting for review).
+15:06:45 <gopesh> differentreality: what is left
+15:06:56 <Chrisbr> So for the next milestone I would like to work on the user interface (#385 - #389) but I'm not sure that can deliver all in the next milestone because I'm on vacation from 30.08 - 21.09!
+15:07:08 <KalabiYau> Chrisbr, planning on next a bit later
+15:07:10 <bear454> KalabiYau: you didn't attribute that to Chrisbr
+15:07:16 <differentreality> regarding user deletion I saw a couple of comments today from henne and there is a comment that I made which isn't taken care of either
+15:07:23 <KalabiYau> bear454, thanks for pointing, my bad
+15:07:27 <KalabiYau> #info Chrisbr continued with the refactoring and finished so far the registration period. From my commited issues there are still #418 and #419 open which are almost done (some failing tests and waiting for review).
+15:07:47 <gopesh> well I saw henne's comment
+15:07:55 <KalabiYau> differentreality, typing?
+15:08:24 <differentreality> as far as my work is concerned, I regard authorization as done (pending some rewriting as we discussed with KalabiYau, but that's gonna be a different thing on its own later on).
+15:08:57 <KalabiYau> #info differentreality reported authorization is done (pending some rewriting as we discussed with KalabiYau, but that's gonna be a different thing on its own later on).
+15:08:57 <differentreality> We had some issues with the deleted users of events and their migrations. Henne has now resolved everything I believe
+15:09:05 <henne> yeah manually
+15:09:10 <gopesh> differentreality: your comments are with ability.rb and not related to delete users If I am not wrong
+15:09:25 <bear454> KalabiYau: I've got a working app.json for automated deployment to heroku, using cleardb (mysql) addon; working on rake tasks to automate setup - esp. heroku's secret generator.
+15:09:47 <differentreality> henne: but you still consider this done with the 2 migrations we did?
+15:09:53 <KalabiYau> #info  bear454  reported: I've got a working app.json for automated deployment to heroku, using cleardb (mysql) addon; working on rake tasks to automate setup - esp. heroku's secret generator.
+15:09:56 <KalabiYau> bear454, thanks
+15:10:13 <KalabiYau> so when we can call that user deletion is done
+15:10:25 <KalabiYau> what is the definition of done, differentreality ?
+15:10:27 <differentreality> and I have a pending PR for styling (seems a couple of things shouldn't be there after the rebase, but are). I am slowly finishing that, as I am on vacation
+15:10:47 <differentreality> KalabiYau: ready to be merged: we have all the functionality we want and the tests pass
+15:10:49 <henne> differentreality: yeah the delta is something we can't address
+15:10:50 <KalabiYau> differentreality, nice to know, hope you have sea around to swim :)
+15:11:03 <differentreality> KalabiYau: as a matter of fact I do, thanks :)
+15:11:04 <gopesh> KalabiYau: i have overload the destroy function as said by henne then I guess I am done
+15:11:20 <differentreality> I have a big concern for user deletion when it comes to voters...
+15:11:45 <KalabiYau> #info overall user deletion is not yet done, as some loose ends are present. Still some work to be done
+15:11:58 <differentreality> voting on events is supposed to determine which proposal is accepted and which one is rejected, I don't want us to harm this process due to user deletion (and their votes being deleted consequently)
+15:12:16 <gopesh> differentreality: maybe your comment might have gone to history that's why I didn't see ;)
+15:12:22 <KalabiYau> let's catch on that matter
+15:12:29 <gopesh> differentreality: okay I will address the voting issue
+15:12:32 <KalabiYau> seems complex, undone and we are not all aligned
+15:12:35 <KalabiYau> ok?
+15:12:37 <differentreality> ok
+15:12:40 <KalabiYau> super
+15:13:07 <KalabiYau> henne, any report from you?
+15:13:20 <KalabiYau> henne, I saw you done a lot this spring
+15:13:25 <KalabiYau> *sprint
+15:13:30 <KalabiYau> and probably spring as well )
+15:14:08 <henne> huh?
+15:14:21 <henne> I just took care of events.opensuse.org
+15:14:31 <henne> nothing really in the code
+15:14:41 <KalabiYau> #info henne took care of events.o.o
+15:14:49 <KalabiYau> on the current flow situation. We still have tons of stuff in in progress and in Ready
+15:15:06 <KalabiYau> generally Борщ из over and we will move on
+15:15:38 <KalabiYau> what we wanted to do with mentors under the closed doors is to get post mortem discussion on what is done by us, what to improve
+15:16:00 <KalabiYau> in the same time, we assume we need to clean waffle as much as possible to move on
+15:16:26 <KalabiYau> that time my proposal is to not to take over undone stuff from Борщ
+15:16:27 * differentreality brb 2 min
+15:17:01 <KalabiYau> leave them as they are - done/undone, and with every owner of the task to decide personally what to do with his cards
+15:17:22 <KalabiYau> why? project is moving, but we don't need to leave your work unmerged
+15:17:32 <KalabiYau> hope explained clear
+15:17:59 <bear454> KalabiYau: I don't understand
+15:18:10 * henne neither
+15:18:19 * KalabiYau stupid
+15:18:40 <KalabiYau> bear454, current milestone cards will not be moved to new sprint, until clarified
+15:18:56 <KalabiYau> last sprint planning we just took everything on next sprint
+15:19:14 <KalabiYau> if we will do that again - the whole point of agile/waffle is missing
+15:19:40 <KalabiYau> My idea is to clean our board again.
+15:19:52 <gopesh> but KalabiYau then
+15:19:57 <henne> play
+15:19:59 <KalabiYau> henne, will work with Chrisbr, I with differentreality , bear454 with gopesh
+15:19:59 <henne> okay
+15:20:00 <gopesh> work will remain undone
+15:20:13 <KalabiYau> gopesh, it will be done at some point
+15:20:19 <gopesh> and we will loose track of things
+15:20:34 <KalabiYau> i am not saying - delete all the stuff
+15:20:43 <KalabiYau> just don't take blindly cards to new sprint
+15:20:53 <henne> Well, let's move the issues away
+15:20:54 <KalabiYau> re-evaluate first
+15:21:00 <henne> and then let's see whats left
+15:21:12 <KalabiYau> that we can do
+15:22:10 <KalabiYau> what shall we do with stuff in ~In Progress~ ?
+15:22:40 <gopesh> i guess shift everything
+15:22:50 <KalabiYau> gopesh, you mean on next sprint?
+15:22:54 <gopesh> yep
+15:23:10 <KalabiYau> what if we would proclaim next sprint as stabilization sprint
+15:23:17 <henne> Chrisbr: I guess you're out for the next sprint. So will I be
+15:23:17 <gopesh> atleast we will know where we are heading
+15:23:26 <gopesh> KalabiYau: nice idea
+15:23:33 <henne> Chrisbr: so I would move 417 and 421 to the backlog again
+15:23:39 <gopesh> complete your own work ;)
+15:23:41 <bear454> KalabiYau: I can see the value in not assigning all the TODOs, for example, but WIP?
+15:24:01 <Chrisbr> henne: agree
+15:24:34 <KalabiYau> bear454, sure, but we have tons of stuff in In progress which we should take care now or never :)
+15:25:00 <KalabiYau> let's try next sprint to focus on cleaning WIP column?
+15:25:04 <henne> In progress are mostly PRs
+15:25:10 <KalabiYau> but still
+15:25:13 <KalabiYau> pr is work
+15:25:20 <KalabiYau> for reviewer, for submitter
+15:25:24 <KalabiYau> time/resources
+15:25:29 <henne> true
+15:25:31 <henne> just saying
+15:25:38 <KalabiYau> sure thing
+15:26:10 <KalabiYau> generally, I presume, we will get lower pace soonish
+15:26:40 <KalabiYau> as students are more or less done, mentors are busy and stuff, so let's aim in the middle. Not to high, not to low.
+15:26:51 <KalabiYau> clean the stuff, move on with next plans
+15:26:59 <henne> I like the idea of stabilization
+15:27:07 <henne> I think we should also think about a first 'release'
+15:27:20 <KalabiYau> that would be awesome
+15:27:36 <henne> how about we define some exit criteria for that
+15:27:43 <KalabiYau> for release?
+15:27:44 <henne> and then see what still needs to be done
+15:27:50 <henne> yes
+15:27:51 <bear454> LinuxFest Northwest is considering adoption of osem for LFNW2015
+15:27:55 <henne> for OSEM 0.1
+15:28:04 <KalabiYau> bear454, awesome news
+15:28:15 <differentreality> yeap, great news!
+15:28:17 <henne> bear454: so are many others. but I wouldn't want them to be on master all the time
+15:28:18 <KalabiYau> henne, we should have rails engine, instead of rails app
+15:28:19 <KalabiYau> first
+15:28:26 <henne> sorry?
+15:28:31 <bear454> They have supplied a list of features they require, and would-like-to-have; I'll open issues for those items.
+15:28:45 <henne> bear454: great
+15:28:53 <KalabiYau> henne, we should change osem to be mountable engine
+15:29:07 <henne> KalabiYau: nice to heave IMHO
+15:29:07 <KalabiYau> henne, which will allow users to inject osem into living app
+15:29:10 <bear454> When we have requests from a specific conf, should we tag it for reference?
+15:29:18 <KalabiYau> just a thought ;)
+15:29:27 <KalabiYau> as we  are brainstorming, I believe
+15:29:30 <KalabiYau> 80% test coverage
+15:29:31 <henne> KalabiYau: most of our users don't even know what Rails is
+15:29:56 <KalabiYau> osem is deployable via heroku button - bear454 is on that
+15:30:05 <henne> They are event organizers. Not hackers. They just seek for something they can install for their conf
+15:30:11 <KalabiYau> henne, agreed
+15:30:22 <gopesh> but heroku is slow
+15:30:31 <KalabiYau> gopesh, for the start it is ok
+15:30:40 <gopesh> the dynamo goes to "sleep"
+15:30:44 <henne> So I would like to define some features from the users view
+15:30:51 <henne> and bugs
+15:30:54 <gopesh> if not accessed for long time
+15:31:23 <KalabiYau> henne, what about to storm definition of release offline or off meeting ? As I am afraid we will not make it in timely manner
+15:31:25 <henne> number #1 for me would be #215
+15:32:00 <henne> number #2 would be easier installation
+15:32:19 <bear454> henne: I'm building generic setup tasks in rake
+15:32:21 <KalabiYau> henne, coverage?
+15:32:26 <bear454> my aim is rake:setup
+15:32:33 <henne> KalabiYau: Users don't care for coverage...
+15:32:37 <KalabiYau> we do
+15:32:38 <bear454> and for heroku in particular, rake setup:heroku
+15:32:42 <KalabiYau> indirectly they are affected
+15:32:51 <KalabiYau> the lower is coverage the lower the quality
+15:32:57 <bear454> henne: Our test coverage is a big plus
+15:32:59 <henne> number #3 easer admin interface
+15:33:04 <henne> easier
+15:33:07 <bear454> esp. for conferences using systems that break a lot
+15:33:27 <henne> I'm not against test coverage at all guys :)
+15:33:56 <KalabiYau> but three points you brought they are already enough for small definition, I think
+15:33:57 <henne> If we could reach those 3 goals, we could make a 0.1
+15:33:59 <henne> IMHO
+15:34:03 <KalabiYau> i agree
+15:34:31 <KalabiYau> #topic release 0.1 planning
+15:34:58 <gopesh> KalabiYau: can we have a milestone for ver 0.1
+15:35:06 <KalabiYau> #agreed that  #1 for me would be #215,  #2 would be easier installation,  #3 easer admin interface would be our definition of 0.1
+15:35:10 <KalabiYau> I think so
+15:35:18 <KalabiYau> 3 items in the milestone
+15:35:22 <KalabiYau> those defined
+15:35:24 <KalabiYau> nothing else
+15:35:33 <gopesh> and the current WIP list
+15:35:42 <gopesh> actually the PR's
+15:35:43 <henne> has to be 0
+15:35:51 <KalabiYau> henne, 0 what?
+15:35:55 <henne> empty
+15:35:59 <henne> zip
+15:36:00 <henne> nada
+15:36:03 <henne> nuffn
+15:36:07 <henne> NULL
+15:36:26 <KalabiYau> henne, no item?
+15:36:29 <henne> yes
+15:36:37 <henne> So I actually think this is 3 sprints
+15:36:44 <henne> or 4
+15:36:54 <KalabiYau> depends on pace
+15:37:09 <differentreality> +1
+15:37:12 <KalabiYau> but we all expect pace at low profile since gsoc if over
+15:37:12 <Chrisbr> henne: keep in mind that we will miss the next (two) sprints
+15:37:23 <KalabiYau> why two?
+15:37:37 <henne> 1. Stabilization, 2. Admin Interface, 3. Onboarding, 4. Installation + Release
+15:37:42 <KalabiYau> I see
+15:37:44 <Chrisbr> I come back on 22. and henne in october
+15:37:46 <KalabiYau> yeah
+15:37:56 <henne> KalabiYau: because I will vacation my ass off :)
+15:38:16 <KalabiYau> show will go on :)
+15:38:20 <henne> true
+15:38:23 <KalabiYau> you will leave me as a lemming :)
+15:38:35 <Chrisbr> KalabiYau: furthermore I will start to write my bachelor thesis, so I have to do some additional research ...
+15:38:41 <KalabiYau> okay
+15:38:42 <henne> still, pace will slow down
+15:38:56 <KalabiYau> then indeed we have several sprints to make it happen
+15:39:11 <KalabiYau> so first things first
+15:39:13 <gopesh> sprints will take of the pace I guess
+15:39:51 <KalabiYau> #agreed to have  several sprints before release 1. Stabilization, 2. Admin Interface, 3. Onboarding, 4. Installation + Release
+15:40:02 <KalabiYau> that would be something two months at best
+15:40:10 <KalabiYau> say end of Oct, start of Nov
+15:40:48 <KalabiYau> so, I would call that roughly 0.1 is planned
+15:41:02 <KalabiYau> just a sketch, anyway
+15:41:30 <KalabiYau> gopesh, sprints are for common flow framework, not about pace itself. Capacity is all about pace
+15:41:47 <KalabiYau> so any other topics?
+15:42:02 <KalabiYau> #topic sprint name
+15:42:16 <henne> Carina
+15:42:18 <KalabiYau> please provide a suggestion based on food as a name for stabilization sprint
+15:42:25 <KalabiYau> it is a food?
+15:42:42 <henne> food names? we are in freestylers dude!
+15:42:43 <bear454> Squash
+15:42:44 <KalabiYau> google shows me not food
+15:43:03 <KalabiYau> I Like Squash
+15:43:03 <bear454> its high fiber... really good for stabilizing your digestion
+15:43:08 <bear454> :)
+15:43:12 <KalabiYau> sounds good to me
+15:43:35 <KalabiYau> who is for Carina?
+15:43:39 <KalabiYau> who is for Squash?
+15:43:44 <henne> Carina == Keel
+15:43:44 * KalabiYau for Squash
+15:43:55 <bear454> KalabiYau: so... would you agree the work I'm doing right now is more suited to the install sprint?
+15:43:59 <henne> the part of a ship that is responsible for stabilization
+15:44:07 <KalabiYau> bear454, looks so
+15:44:13 <KalabiYau> henne, aaaaah
+15:44:20 <KalabiYau> henne, google showed me some girl
+15:44:24 <bear454> lol
+15:44:24 <differentreality> haha
+15:44:34 <henne> google always shows you some girl ;)
+15:44:41 <KalabiYau> nope :)
+15:45:10 <KalabiYau> when I am on heat I search for refrigerator :)
+15:45:12 <KalabiYau> anyway
+15:45:14 <henne> but let's go with Squash
+15:45:20 <KalabiYau> objections?
+15:45:24 <KalabiYau> 5
+15:45:25 <KalabiYau> 4
+15:45:27 <KalabiYau> 3
+15:45:27 <KalabiYau> 2
+15:45:29 <KalabiYau> 1
+15:45:30 <KalabiYau> sold!
+15:45:43 <KalabiYau> #agreed on stabilization sprint name - Squash
+15:46:00 <KalabiYau> the goal of the sprint it to stabilize current waffle board
+15:46:17 <henne> and code base
+15:46:18 <KalabiYau> finalize what is undone, fix what is not fixed, no new cards!
+15:46:22 <KalabiYau> henne, sure
+15:46:43 <henne> fine with me
+15:46:44 <henne> :)
+15:47:03 <KalabiYau> deadline is 8th of Sep?
+15:47:19 <henne> yep
+15:47:26 <differentreality> I am not sure I will be able to deliver as much as I did the previous time, until then
+15:47:39 <KalabiYau> #agreed 8th is a deadline  for Squash
+15:47:41 <henne> you can only deliver what you can deliver :)
+15:47:49 <KalabiYau> differentreality, no worries, take your rest
+15:48:01 <KalabiYau> sure, we all here under own will
+15:48:12 <bear454> agreed
+15:48:27 * KalabiYau hides a whip
+15:48:30 * henne isn't
+15:48:32 * henne has a wife
+15:48:40 <KalabiYau> :)
+15:48:50 <KalabiYau> henne, she is forcing you to work?
+15:49:03 <henne> she's the boss of course!
+15:49:05 <KalabiYau> okay, anything for the meeting?
+15:49:13 <KalabiYau> henne, ;)
+15:49:31 <henne> what's the date we aim for for 0.1?
+15:49:42 <KalabiYau> again, differentreality, Chrisbr, gopesh - congrats on passing and thanks a ton for the hard work
+15:49:45 <KalabiYau> Nov 15 ?
+15:49:52 <differentreality> thank you KalabiYau
+15:49:54 <KalabiYau> 8 weeks
+15:50:07 <henne> make it Nov 30. and I'm in
+15:50:10 <differentreality> and I have a couple of things to bring up, since we are all here, perhaps it's a good time ?
+15:50:14 <KalabiYau> 30 sold
+15:50:27 <henne> differentreality: sure!
+15:50:34 <KalabiYau> #agreed 0.1 should be released on or before Nov30, no excuses
+15:50:37 <KalabiYau> so
+15:50:41 <KalabiYau> are we done?
+15:51:08 <differentreality> cool
+15:51:09 <KalabiYau> ok, we are
+15:51:12 <gopesh> KalabiYau: thank you
+15:51:12 <henne> no we are not
+15:51:14 <KalabiYau> #endmeeting

@@ -1,0 +1,296 @@
+15:00:38 <vuntz> #startmeeting
+15:00:38 <bugbot> Meeting started Wed Mar 20 15:00:38 2013 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:00:38 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:00:54 <suseROCKs> did vuntz  just call me a scaredy-cat?
+15:01:05 <vuntz> welcome to the latest openSUSE project meeting :-)
+15:01:08 <vuntz> so who's here?
+15:01:13 <anditosan> me me me :D
+15:01:20 <robjo> present
+15:01:22 <Ilmehtar> vuntz: I'm half here - technically in a presentation at Novell UK
+15:01:32 <vuntz> Ilmehtar: hopefully it's the best half of you?
+15:01:36 <vuntz> FunkyPenguin: here?
+15:01:38 <vuntz> wstephenson_: here?
+15:01:42 <Ilmehtar> vuntz: there's a better half?
+15:01:58 * saurabhsood91 is here
+15:02:03 <suseROCKs> this so-called better half needs to be documented or it doesn't exist.
+15:02:27 <anditosan> better half needs a man page
+15:02:30 <anditosan> ;)
+15:02:39 <saurabhsood91> anditosan: :D
+15:02:47 <suseROCKs> yeah,  man up, Ilmehtar!!!
+15:02:47 <vuntz> so we only have one real topic so far
+15:02:58 <vuntz> don't be afraid to suggest topics!
+15:03:08 <vuntz> but let's start with the review of past action items
+15:03:13 <Ilmehtar> I have a topic - LinuxTag
+15:03:19 <vuntz> Ilmehtar: cool :-)
+15:03:25 <vuntz> #topic Review of past AIs
+15:03:39 <vuntz> first AI is "Ilmehtar and darix work out the cloaking thingy"
+15:03:43 <vuntz> Ilmehtar: any update?
+15:04:17 <Ilmehtar> sigh, sorry, no. if darix is here, can he suggest a time/date when he could go through it with me, I'll do my best to shift heaven and earth to be there to learn from him
+15:04:43 <darix> Ilmehtar: tomorrow 1900 UTC?
+15:04:55 <Ilmehtar> darix: deal, I'll be here
+15:05:07 <vuntz> #info Ilmehtar and darix will discuss the cloaking topic tomorrow
+15:05:07 <FunkyPenguin> vuntz: sorry I am indeed here
+15:05:18 <vuntz> I'll leave the AI intact, then
+15:05:23 <vuntz> #action Ilmehtar and darix work out the cloaking thingy
+15:05:28 <vuntz> hey FunkyPenguin :-)
+15:05:40 <vuntz> the other AI we have is "vuntz continue to work on access for planet.o.o"
+15:05:44 <suseROCKs> why say you're here... we can sense Funkyness a mile away
+15:06:00 <vuntz> so several people mailed me to volunteer to help maintain planet.o.o
+15:06:06 <vuntz> so it's all good from that perspective
+15:06:13 <darix> vuntz: needs ticket system before we can continue with that AI
+15:06:49 <vuntz> darix: oh, do we?
+15:07:11 <vuntz> I know that henne got access to the server and was suggesting to move this website somewhere else
+15:07:25 <darix> i am glad he talks to me about that. -.-
+15:07:26 <vuntz> (and I miserably failed to talked to him this week about this topic)
+15:07:35 <vuntz> darix: I told him to go to you :-)
+15:08:04 <vuntz> #info for planet.o.o, we got volunteers to help maintain (thanks!)
+15:08:38 <darix> vuntz: ticket system so i can sort out all the planet requests into a queue that is interesting for those volunteers
+15:09:03 <vuntz> #info darix points out we need a ticket system to handle planet-related requests
+15:09:21 <darix> once we have the ticket system we can also involve more people into other parts
+15:09:31 <suseROCKs> does that mean we have to continue to ignore p.o.o requests until a ticket system is in place?
+15:09:37 <vuntz> #info still need to find the right solution to let volunteers be able to maintain planet.o.o
+15:10:14 <darix> vuntz: there is no trouble
+15:10:18 <darix> commit to git
+15:10:24 <darix> let cronjob pull changes
+15:10:24 <darix> done
+15:10:47 <darix> this kinda works for conference.o.o atm
+15:10:57 <vuntz> ah, I can buy that waiy
+15:11:03 <Ilmehtar> darix: if planet.o.o is on git..do you mean github? could we therefore use githubs issue ticket system? job done?
+15:11:26 <darix> dastergon: i found the issue with the cronjob
+15:11:46 <darix> Ilmehtar: it might be still on gitorious but in general yes
+15:12:10 <darix> Ilmehtar: though i would like to keep all the requests for opensuse admin stuff on admin@o.o
+15:13:14 <zimba12> i am new to opensuse-projects meetings. i am here to discuss about gsoc (representetive from owncloud). am i in the right place?
+15:13:20 <vuntz> ok, so let's keep the AI until this is fixed
+15:13:25 <vuntz> zimba12: yep, gsoc is the next topic :-)
+15:13:41 <zimba12> vuntz: great. thanks
+15:13:47 <vuntz> #action vuntz to help sort the planet.o.o maintenance
+15:13:48 <wstephenson_> here, sorry
+15:14:01 <Roguehorse> here.....had to step away
+15:14:21 <darix> zimba12: q: cant owncloud apply themself to gsoc?
+15:14:23 <suseROCKs> wstephenson_,   Why are you sorry for being here.  We like you.
+15:14:23 <vuntz> #info for reference, planet.o.o is maintained at https://gitorious.org/opensuse/planet-opensuse
+15:14:31 <vuntz> okay, let's move to gsoc
+15:14:38 <vuntz> #topic GSoC status
+15:14:56 <vuntz> saurabhsood91: here's the microphone :-)
+15:15:02 <zimba12> darix: no, that's why I am here :)
+15:15:03 * saurabhsood91 steps up
+15:15:29 <saurabhsood91> loads of projects added on the ideas page. decent week. now, we have about 14 projects added with mentors :)
+15:15:39 <manugupt1> zimba12: Are you allesandro :)
+15:15:42 <zimba12> darix: first, it's too late. second, we don't have enough mentors/projects to apply by ourself yet
+15:15:46 <zimba12> manugupt1: yes
+15:16:05 <saurabhsood91> hey zimba12
+15:16:09 <darix> zimba12: a working owncloud 5 with sharing would be gold.
+15:16:47 <zimba12> darix: :)
+15:16:50 <zimba12> saurabhsood91: hi
+15:17:13 <zimba12> darix: in the future we will probably apply as independent organization
+15:17:59 <saurabhsood91> we also have many orgs coparticipating with us such as owncloud, supertuxcart, syslog
+15:18:29 <vuntz> #info many projects added to the ideas page
+15:18:40 <zimba12> can i still add projects to the ideas page
+15:18:40 <zimba12> ?
+15:18:43 <manugupt1> zimba12: yes
+15:18:45 <vuntz> #info including 14 projects that have mentors
+15:18:46 <saurabhsood91> zimba12: sure ;)
+15:18:50 * suseROCKs wants to see ownCloud GSoC application "ownCloud Mission:  To annihate Google's cloud serices.  Please sponsor us!"
+15:19:01 <manugupt1> :)
+15:19:05 <saurabhsood91> suseROCKs: LOL!!! :D
+15:19:08 <vuntz> #info working with other orgs that will possibly co-participate with us (owncloud, supertuxcart, syslog)
+15:19:45 <manugupt1> Hey zimba12 do you have any questions ?
+15:19:47 <zimba12> suseROCKs: that's why it's better to hide under: "we promote synchronization among distributions...."
+15:19:49 <zimba12> :)
+15:20:03 <suseROCKs> hehe
+15:20:07 <zimba12> manugupt1: yes. does everyone have access to the wiki page?
+15:20:12 <manugupt1> zimba12: yes..
+15:20:18 <manugupt1> Anyone with an account at openSUSE
+15:20:30 <suseROCKs> or even without an account
+15:20:31 <zimba12> a student modified the idea page by putting his name as a student
+15:20:45 <zimba12> thing that I found very annoying
+15:21:19 <saurabhsood91> zimba12: they should prefix it by 'interested' if they edit it
+15:21:21 * manugupt1 checks
+15:22:02 <saurabhsood91> i still see Student Needed on the ownCloud project
+15:22:06 <manugupt1> That is the idea
+15:22:23 <zimba12> saurabhsood91: that's because I re-edited it
+15:22:31 <saurabhsood91> zimba12: oh...
+15:22:39 * manugupt1 has a watch on the page
+15:22:42 <zimba12> saurabhsood91: he did prefix it by 'interested', but I don't like that either
+15:22:50 <zimba12> manugupt1: ok, great
+15:23:07 <suseROCKs> zimba12,    how about using the ownCloud newsletter to promote the spot?
+15:23:09 <manugupt1> zimba12: I missed it somehow and I will make try it does not happen next time
+15:23:29 <zimba12> suseROCKs: I am using our ml already
+15:23:46 <suseROCKs> oh  ok
+15:23:57 <saurabhsood91> zimba12: could you add a line on the wiki, saying that we have a student interested?
+15:24:01 <suseROCKs> didn't notice, but then again, I haven't looked at the latest newsletter  (haven't seen it yet)
+15:25:42 <vuntz> anything else on gsoc?
+15:25:51 <vuntz> did we already apply?
+15:26:03 <manugupt1> Yes
+15:26:09 <manugupt1> No vuntz we will apply this weekend
+15:26:15 <manugupt1> We have a few questions
+15:26:20 <zimba12> when is the deadline for adding project on the wiki page?
+15:26:25 <vuntz> #info we will apply next week-end
+15:26:35 <manugupt1> zimba12: preferably this friday
+15:26:41 <zimba12> manugupt1: ok
+15:26:53 <suseROCKs> vuntz,   I believe he said this weekend, not next weekend  :-)
+15:26:57 <saurabhsood91> manugupt1: i dont think there is a deadline. we can keep on adding projects
+15:27:13 <saurabhsood91> i dont think we freeze the ideas page when we apply
+15:27:16 <manugupt1> saurabhsood91: preferably because we are also vouching for stk and syslog :)
+15:27:27 <darix> manugupt1: which syslog exactly?
+15:27:27 <zimba12> saurabhsood91: well, having a lot of projects in the ideas page matters only during the application time
+15:27:29 <manugupt1> We wont freeze it anyways but we will clean them up this weekend
+15:27:31 <saurabhsood91> manugupt1: ok...
+15:27:33 <manugupt1> syslog-ng
+15:27:37 <darix> rsyslog? syslog-ng, old classic syslog
+15:27:39 <saurabhsood91> manugupt1: yeah. remove the mentorless ones
+15:27:46 <saurabhsood91> syslog-ng
+15:27:57 <darix> saurabhsood91: i would add osc2 with me as mentor please
+15:28:16 <saurabhsood91> darix: cool...
+15:28:26 <darix> UI work this year
+15:29:02 <saurabhsood91> darix: will add it, but will need a description of what is expected
+15:29:25 <manugupt1> I have a few questions
+15:29:34 <manugupt1> sorry few questions without the "a"
+15:29:54 <vuntz> sure, fire :-)
+15:30:30 <saurabhsood91> darix: could you send a short description? i will add it to the wiki
+15:30:40 <manugupt1> First one is regarding ideas, as I was discussing with saurabhsood91 that if we allot atleast one idea to a project (say ownCloud, etc) might not be feasible as openSUSE in general had last year 7 projects
+15:30:56 <manugupt1> If mentors decide that would be great
+15:31:30 <manugupt1> that can also mean, a project (not from openSUSE) can also get ignored
+15:32:05 <manugupt1> But that would be mentors deciding amongst themselves and no role of us
+15:32:09 <manugupt1> How does that sound
+15:32:26 <zimba12> manugupt1: oh, will be have a limited number of projects in total?
+15:32:32 <manugupt1> zimba12: No
+15:32:46 <manugupt1> the idea was atleast 1 so that no one is annoyed
+15:33:04 <vuntz> manugupt1: in the end, I think it's up to the admins to decide how to handle that. If you want to delegate that to mentors, then it works (at least, for me :-))
+15:33:20 <manugupt1> zimba12: but then mentors decide on other slot together
+15:33:40 <vuntz> (it kind of makes sense to see if mentors can come to an agreement, and only step in if needed)
+15:33:51 <manugupt1> I think vuntz is right
+15:33:57 <manugupt1> zimba12:  can I have your opinion on it
+15:34:04 <saurabhsood91> vuntz: i agree. seems a decent way
+15:35:05 <vuntz> zimba12: opinion?
+15:35:21 <zimba12> not sure I understand the issue
+15:35:41 <zimba12> google doesn't give a bound on the number of projects, does it?
+15:35:51 * zimba12 forgets the rules every year
+15:35:53 <saurabhsood91> zimba12: we will have a limited number of slots for opensuse, and would have to decide how many slots each rach colocating project gets
+15:35:55 <manugupt1> zimba12: Google gave us 7 slots last year
+15:36:01 <saurabhsood91> manugupt1: 12
+15:36:13 * manugupt1 is forgetful as well :(
+15:36:15 <zimba12> <zimba12> manugupt1: oh, will be have a limited number of projects in total?
+15:36:15 <zimba12> <manugupt1> zimba12: No
+15:36:36 <zimba12> ^ misunderstanding?
+15:37:11 <manugupt1> zimba12: Question was this If we have 12 projects, and say openSUSE is coparticipating with supertuxkart and ownCloud
+15:37:31 <manugupt1> then should all the projects (12) be decided by mentors itself
+15:37:43 <manugupt1> or give atleast 1 project to ownCloud and supertuxkart
+15:37:57 <manugupt1> and then the remaining 10 is decided amount openSUSE, ownCLould and STK
+15:38:15 <manugupt1> But I feel all the 12 projects should be decided by mentors itself
+15:38:50 <zimba12> yes. most important thing is giving it to students who deserve it
+15:39:27 <zimba12> that's why it shouldn't be forced to one project or another
+15:39:28 <manugupt1> That is good that you agree with us
+15:39:37 <saurabhsood91> zimba12: +1
+15:39:48 <manugupt1> I have a 2nd question
+15:39:58 <zimba12> on the other hand
+15:40:05 * manugupt1 waits
+15:40:41 <zimba12> this means that all mentors will have to evaluate all the proposals, which is not feasible
+15:40:45 * vuntz points out that we another topic to discuss after gsoc :-)
+15:41:26 <manugupt1> zimba12: mentors will have to choose the best ideas
+15:41:50 <manugupt1> because proposals will come in after the ideas are finalized
+15:41:52 <saurabhsood91> and also ones which have the best proposals
+15:41:56 <robjo> I am not certain that we have to discuss all the nitty gritty details in the project meetings
+15:42:08 <zimba12> robjo: #agreed
+15:42:18 <zimba12> we can move on
+15:42:19 <manugupt1> zimba12: You can discuss on #lugmanipal with me and saurabhsood91
+15:42:20 <robjo> some of this appears to me should be discussed when the time comes and we actually have slots and students
+15:42:28 <vuntz> ok
+15:42:42 <vuntz> manugupt1: any other major gsoc-related topics?
+15:42:42 <saurabhsood91> agree
+15:43:25 <manugupt1> vuntz: STK asked us a question if openSUSE gets in then how do we handle the money that comes to openSUSE
+15:43:40 <manugupt1> As they want to buy a tablet for their use
+15:44:12 <vuntz> so, for money
+15:44:26 <vuntz> this will likely work like for last year
+15:44:37 <vuntz> money will go inside SUSE, but marked for use for openSUSE
+15:45:00 <vuntz> I'll ask if we can use the money like that
+15:45:03 <vuntz> but sounds doable to me
+15:45:08 <manugupt1> so since STK requested us for money, we can earmark it from openSUSE for them right?
+15:45:21 <robjo> AFAIK by the time we get paid by Google openSUSE will have it's own account
+15:45:32 <vuntz> #action vuntz to figure out if GSoC money can be used to buy a tablet for the project (or a co-participating project)
+15:46:00 <vuntz> manugupt1: should work, but I'll check to be sure
+15:46:09 <manugupt1> vuntz: Sure thanks
+15:46:20 <vuntz> anything else for gsoc?
+15:46:23 <manugupt1> I think thats all from my side :)
+15:46:37 <vuntz> saurabhsood91: also good for you?
+15:46:42 <saurabhsood91> vuntz: yes
+15:46:59 <vuntz> let's move on the,
+15:47:15 <vuntz> #topic LinuxTag
+15:47:34 <vuntz> Ilmehtar had to go
+15:47:43 <vuntz> but he left me this:
+15:48:32 <vuntz> We're looking for volenteers for LinuxTag, we have had 2 community members step up and 2 SUSE employees offering to help when they can. More will help, please contact RBrownCCB@opensuse.org - I dont know the situation as to whether TSP will be able to help, but I'm following that up
+15:49:20 <Ilmehtar> Thanks!
+15:49:33 * Ilmehtar is running for a train
+15:50:05 <robjo> Ilmehtar: go faster, don't miss it ;)
+15:50:12 <suseROCKs> Ilmehtar,   the train can't run by itself?
+15:51:08 * manugupt1 has had one more topic if people would allow 2 minutes
+15:52:03 <vuntz> no question on linuxtag?
+15:52:09 <vuntz> (sorry had to run for two minutes ;-))
+15:52:30 <vuntz> #info we have 4 people offering to help, more help is welcome
+15:52:42 <vuntz> #info please contact Ilmehtar if you want to help
+15:52:49 <vuntz> okay, no question on this
+15:53:05 <vuntz> #topic AOB
+15:53:08 <vuntz> so any other thing?
+15:53:13 <manugupt1> yeah..
+15:53:15 <vuntz> manugupt1: you mentioned you had another topic?
+15:53:19 <suseROCKs> AOB?
+15:53:26 <vuntz> any other business
+15:53:59 <manugupt1> One thing this November we will have FOSS.in, openSUSE's traditional prescence on Asia's largest conference has been very low, also FOSS.in promotes highly technical talks
+15:54:36 <manugupt1> So I guess if anyone can come and give a talk representing openSUSE would be very good
+15:55:29 <vuntz> #info FOSS.in (conference in India) will be in November; openSUSE-related talks are welcome! :-)
+15:55:42 <manugupt1> We may apply for a booth, along with that the same may give us a chance for a hakathon or a get together
+15:55:54 <saurabhsood91> manugupt1: +1
+15:56:04 <manugupt1> in India
+15:56:07 <vuntz> manugupt1: if there's a good topic for a hackathon, that could make sense
+15:56:35 <manugupt1> vuntz: yes.. off course :)
+15:57:05 <suseROCKs> while it is good to import people to "seed" a major event in a particular country (like we did at SCaLE two years ago and now it is very self-sufficient locally) the primary goal has to be to infuse local community
+15:57:27 <suseROCKs> In other words, it should be viewed as an investment with the ROI being increased local commitment in subjequent years.
+15:57:44 <suseROCKs> To that aspect, what can we do to shore up local community commitment to openSUSE in the region?
+15:58:00 <manugupt1> suseROCKs: The booth will be handled by Locals right :)
+15:58:28 <suseROCKs> And can the locals also give talks?    We generally consider the booth staffers also the presenters.
+15:58:28 <robjo> manugupt1: locals should give the talks as well
+15:58:49 <manugupt1> robjo: Talks off course, We will apply
+15:59:07 <saurabhsood91> robjo: that would be preferable, but it is an open suggestion to the community
+15:59:25 <manugupt1> But as far as I know FOSS.in has taken prominent speakers in the past
+15:59:40 <manugupt1> I will contact srinidhi and atri for talks
+15:59:49 <suseROCKs> the possible problem is that the local community may not be educated eough on the primary benefits and technical expertise.  That's where a first year import-infusion can be beneficial.
+16:00:25 <suseROCKs> So, probably a good idea would be to first identify where the knowledge gap exists locally, figure out if they can be taught beforehand, and if not, send people there  with the idea that we don't keep sending people every year from faraway places.
+16:00:52 <robjo> saurabhsood91: sounded more like "wee need someone to come and talk", sorry for the misunderstanding, I do not appear to be alone on this though ;)
+16:01:04 <suseROCKs> If we have to keep sending people annually, then well..> I consider that a failed investment
+16:01:32 <vuntz> #info suseROCKs points out that we should use this as an opportunity to help grow the local community that will be able to do more and more for such local events in the future
+16:02:18 <vuntz> manugupt1: might be worth discussing your plans for foss.in on the opensuse-ambassadors or opensuse-marketing lists
+16:02:24 <saurabhsood91> robjo: it is not as if we 'need' sometone to come and give a talk. it is just that it would be good. we would try and get more indian speakers to apply on opensuse, and that will be very desirable if we have a sizeable number
+16:02:42 <manugupt1> vuntz: Sure..
+16:02:56 <saurabhsood91> it would do well to rev up the indian community ;)
+16:03:16 <manugupt1> saurabhsood91: +1
+16:03:31 <vuntz> ok, any other topic / question?
+16:03:31 <suseROCKs> saurabhsood91, +1  even if India is a very small country with only 1 Billion people or so.
+16:03:40 <vuntz> (and we can keep discussing foss.in after the meeting, obviously)
+16:04:31 <suseROCKs> I have a brief one,
+16:04:41 <vuntz> go ahead
+16:04:50 <suseROCKs> I'd like to recommend you add an "Initiatives" secton to the agenda permanently... Let me explain...
+16:05:23 <suseROCKs> In the olden Project Meeting days, these meetings were fertile ground for creating new ideas during meetings.     For example, Community week was a byproduct of an in-meeting discussion.
+16:05:46 <vuntz> suseROCKs: just add it to the agenda? :-)
+16:05:48 <suseROCKs> so if you have an "initiatives" section, dedicating the last 10 min or so of a meeting, you might encourage people to come up with great ideas during meetings.
+16:06:19 <suseROCKs> vuntz,   yes, as a permanent part of your agenda
+16:06:24 <Roguehorse> That sounds cool +1
+16:06:33 <vuntz> #info suseROCKs suggests to have a permanent "Initiatives" topic to the agenda so that new ideas can be discussed during the meetings
+16:07:03 <vuntz> suseROCKs: you misunderstood me: I was meaning that you should simply go ahead and add it to the agenda ;-)
+16:07:49 <suseROCKs> vuntz,   I kind of understood that, even if you're French!  :-)   I meant to say, it shouldn't be something to be remembered and added each time but something that is a fixed part.  That's all  :-)
+16:08:03 <vuntz> heh
+16:08:06 <anditosan> :D
+16:08:07 <vuntz> okay, anything else?
+16:08:30 <anditosan> yes yes
+16:08:37 <vuntz> very quickly, then
+16:08:57 <anditosan> we are working some things out for summit 2013, is the ml for the summit still working?
+16:09:04 <robjo> note: 5 board members present today
+16:09:06 <anditosan> or can it be enabled agan
+16:09:22 <robjo> anditosan: I sent a message to mladmin
+16:09:31 <anditosan> robjo: thanks :D
+16:09:35 <anditosan> that's it for me :D
+16:10:19 <vuntz> #info summit mailing list is getting revived (mailed sent to mladmin)
+16:10:20 <vuntz> ok
+16:10:26 <vuntz> we're done!
+16:10:33 <vuntz> thanks for joining!
+16:10:35 <manugupt1> bye.. :)
+16:10:43 <vuntz> #endmeeting

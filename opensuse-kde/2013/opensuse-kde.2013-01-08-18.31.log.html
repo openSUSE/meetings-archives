@@ -1,0 +1,617 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:31:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:31:06</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Tue Jan  8 18:31:06 2013 UTC.  The chair is tittiatcoke. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:31:06</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:31:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.</span>
+<a name="l-5"></a><span class="tm">18:31:34</span><span class="nk"> &lt;tittiatcoke&gt;</span> The agenda for tonight is:
+<a name="l-6"></a><span class="tm">18:31:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> 1. Should we remove things which were maintained by SUSE before and are basically unmaintained now, e.g. kio_sysinfo (ctrippe)
+<a name="l-7"></a><span class="tm">18:31:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> 2. Status KDE 4.10 release
+<a name="l-8"></a><span class="tm">18:32:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> 3. Status KDE 4.9.x releases
+<a name="l-9"></a><span class="tm">18:32:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> 4. Artwork (openSUSE KDE Desktop theme, lightdm-kde-greeter, etc)
+<a name="l-10"></a><span class="tm">18:32:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> 5. Include KDE Telepathy in openSUSE 12.3
+<a name="l-11"></a><span class="tm">18:32:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> 6. Validation/Status of the items on our KDE Improvement page.
+<a name="l-12"></a><span class="tm">18:32:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> 7. Remove old repositories (krop) concerned: KR46, KR47(?), K:U:P/(KR47,KR48,KR49_12.1)
+<a name="l-13"></a><span class="tm">18:33:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> Any other topics ?
+<a name="l-14"></a><span class="tm">18:33:39</span><span class="nk"> &lt;alin&gt;</span> 8. Other issues
+<a name="l-15"></a><span class="tm">18:33:45</span><span class="nk"> &lt;rabauke&gt;</span> 8. Misc :p
+<a name="l-16"></a><span class="tm">18:33:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-17"></a><span class="tm">18:33:46</span><span class="nk"> &lt;alin&gt;</span> simon...  there
+<a name="l-18"></a><span class="tm">18:34:00</span><span class="nk"> &lt;tittiatcoke&gt;</span> I didn't want to list the standard topics :-)
+<a name="l-19"></a><span class="tm">18:34:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Let's start with the old action items
+<a name="l-20"></a><span class="tm">18:34:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Action Items</span>
+<a name="l-21"></a><span class="tm">18:34:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> items from the last meeting:
+<a name="l-22"></a><span class="tm">18:34:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> tittiatcoke shumski update the kdebase4-openSUSE github repo with the new plasma-theme and submit to factory
+<a name="l-23"></a><span class="tm">18:34:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> This one is done
+<a name="l-24"></a><span class="tm">18:35:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> tittiatcoke keep the discussion apper/kupdateapplet on the actionlist until we know what happens with the PackageKit zypp backend.
+<a name="l-25"></a><span class="tm">18:36:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> Status here is that the zypp backend is not adjusted so far, but it seems we found a new volunteer that is willing to port the zypp backend to the new PackageKit version. Dantti has offered his help here as that he is interested in getting the new apper version released/shipped
+<a name="l-26"></a><span class="tm">18:36:36</span><span class="nk"> &lt;rabauke&gt;</span> what a shame for the zypp maintainers
+<a name="l-27"></a><span class="tm">18:36:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> next action tittiatcoke set out an actionplan to decouple KR49 from KDF and then to update KDF with the 4.10 packages
+<a name="l-28"></a><span class="tm">18:37:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> I know. I send out an email to the ML to get feedback on what they wanted to do, but almost no feedback. It seems that they lost interest in the new PackageKit (or they do not have the time)
+<a name="l-29"></a><span class="tm">18:38:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> The decoupling of KR49 from KDF has been done. And KDF contains 4.10 RC2 atm. (see also separate agenda point)
+<a name="l-30"></a><span class="tm">18:38:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> adra push kde-gtk-config to KDF for inclusion in Factory.
+<a name="l-31"></a><span class="tm">18:38:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">adra:</span> afaik, this is done, right ?
+<a name="l-32"></a><span class="tm">18:38:53</span><span class="nk"> &lt;adra&gt;</span> yes
+<a name="l-33"></a><span class="tm">18:39:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> wstephenson &amp; einar77 create a patch-formatter to add the kde standard headers.
+<a name="l-34"></a><span class="tm">18:39:20</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Any status on this one ?
+<a name="l-35"></a><span class="tm">18:39:40</span><span class="nk"> &lt;wstephenson&gt;</span> no, sorry
+<a name="l-36"></a><span class="tm">18:39:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> No problem :-)
+<a name="l-37"></a><span class="tm">18:39:59</span><span class="nk"> &lt;tittiatcoke&gt;</span> einar77, ctrippe Organize a bug squashing for the KDE bugs in 11.4.
+<a name="l-38"></a><span class="tm">18:40:24</span><span class="nk"> &lt;tittiatcoke&gt;</span> I believe this was done. At least there was a week of cleaning up bugs, etc :-)
+<a name="l-39"></a><span class="tm">18:40:42</span><span class="nk"> &lt;shumski&gt;</span> yup, few moths ago :-)
+<a name="l-40"></a><span class="tm">18:40:44</span><span class="nk"> &lt;wstephenson&gt;</span> we discovered that having 2 kids is more work than 1...
+<a name="l-41"></a><span class="tm">18:41:08</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> can't you return the second?
+<a name="l-42"></a><span class="tm">18:41:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-) I know. But believe me it will get better eventually :)
+<a name="l-43"></a><span class="tm">18:41:16</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> customer rights...
+<a name="l-44"></a><span class="tm">18:41:52</span><span class="nk"> &lt;wstephenson&gt;</span> i could ask my wife but i wont be able to code if she knocks me out
+<a name="l-45"></a><span class="tm">18:42:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> Let's not do that :-) We don't want anybody getting hurt :p
+<a name="l-46"></a><span class="tm">18:42:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">ctrippe_:</span> Are you there ?
+<a name="l-47"></a><span class="tm">18:42:58</span><span class="nk"> &lt;krop&gt;</span> have to leave, sorry.
+<a name="l-48"></a><span class="tm">18:43:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> Ok.
+<a name="l-49"></a><span class="tm">18:43:32</span><span class="nk"> &lt;ctrippe_&gt;</span> <span class="hi">tittiatcoke:</span> yep, sorry.
+<a name="l-50"></a><span class="tm">18:43:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Should we remove things which were maintained by SUSE before and are basically unmaintained now, e.g. kio_sysinfo</span>
+<a name="l-51"></a><span class="tm">18:43:41</span><span class="nk"> &lt;ctrippe_&gt;</span> The bug squashing happend
+<a name="l-52"></a><span class="tm">18:43:59</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">ctrippe_:</span> Ok :-) But you raised also the indicated topic about kio_sysinfo.
+<a name="l-53"></a><span class="tm">18:44:05 </span><span class="nka">* plinnell</span> <span class="ac">waves</span>
+<a name="l-54"></a><span class="tm">18:44:28</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">ctrippe_:</span> Could you explain ?
+<a name="l-55"></a><span class="tm">18:45:25</span><span class="nk"> &lt;ctrippe_&gt;</span> We have severel things packaged which were maintained by suse before and are to my knoledge no unmaintained, e.g. sysinfo
+<a name="l-56"></a><span class="tm">18:45:46</span><span class="nk"> &lt;ctrippe_&gt;</span> You will find several bugs about it which nobody cares to fix
+<a name="l-57"></a><span class="tm">18:46:20</span><span class="nk"> &lt;rabauke&gt;</span> what about moving them upstream into their unmaintained folder?
+<a name="l-58"></a><span class="tm">18:46:26</span><span class="nk"> &lt;cb400f&gt;</span> I also tend to think sysinfo is doing more harm than good these days
+<a name="l-59"></a><span class="tm">18:46:45</span><span class="nk"> &lt;cb400f&gt;</span> dunno if there are any other examples though
+<a name="l-60"></a><span class="tm">18:46:53</span><span class="nk"> &lt;rabauke&gt;</span> their = KDE
+<a name="l-61"></a><span class="tm">18:46:59</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> I believe that sysinfo is already somewhere on KDE git
+<a name="l-62"></a><span class="tm">18:47:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> do you know what happened with sysinfo ?
+<a name="l-63"></a><span class="tm">18:47:37</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">tittiatcoke:</span> then it can be removed IMHO if it causes trouble.
+<a name="l-64"></a><span class="tm">18:47:40</span><span class="nk"> &lt;ctrippe_&gt;</span> <span class="hi">cb400f:</span> We have other patches like ksuseinstall..
+<a name="l-65"></a><span class="tm">18:47:55</span><span class="nk"> &lt;wstephenson&gt;</span> it is upstreamed, but there are distro specific backends
+<a name="l-66"></a><span class="tm">18:47:57</span><span class="nk"> &lt;cb400f&gt;</span> true.. that one prolly does more harm than good too
+<a name="l-67"></a><span class="tm">18:48:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Ok.
+<a name="l-68"></a><span class="tm">18:48:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">ctrippe_:</span> But do we have bugs reported for ksuseinstall ?
+<a name="l-69"></a><span class="tm">18:48:48</span><span class="nk"> &lt;cb400f&gt;</span> I have at least one
+<a name="l-70"></a><span class="tm">18:48:49</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> details?
+<a name="l-71"></a><span class="tm">18:49:09</span><span class="nk"> &lt;cb400f&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=671578
+<a name="l-72"></a><span class="tm">18:49:13</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 671578 in openSUSE 12.2 (KDE4 Workspace) "ksuseinstall does not respect "don't ask again"" [Normal,New]
+<a name="l-73"></a><span class="tm">18:50:22</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">wstephenson:</span> it'll install weird gnome apps for handling things cuz of issues with .desktop files/mimetypes I guess.. and prompt people about missing stuff which is not available in their repos anyway
+<a name="l-74"></a><span class="tm">18:50:22</span><span class="nk"> &lt;wstephenson&gt;</span> trivial to fix
+<a name="l-75"></a><span class="tm">18:50:29</span><span class="nk"> &lt;cb400f&gt;</span> yet noone has done it in years
+<a name="l-76"></a><span class="tm">18:50:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> You will take that one ?
+<a name="l-77"></a><span class="tm">18:51:21</span><span class="nk"> &lt;wstephenson&gt;</span> bigger problem that we dont wontfix bugs we wont fix..
+<a name="l-78"></a><span class="tm">18:51:25</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> sure
+<a name="l-79"></a><span class="tm">18:51:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok :-)
+<a name="l-80"></a><span class="tm">18:52:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson will work on ksuseinstall (bug#671578)</span>
+<a name="l-81"></a><span class="tm">18:52:34</span><span class="nk"> &lt;ctrippe_&gt;</span> <span class="hi">cb400f:</span> about installin mimetypes. It searches for apps supporting the mimetype and installs the fist one. ANd 'g' comes before 'k'
+<a name="l-82"></a><span class="tm">18:52:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> But the wontfix bugs, I guess is a global issue and not just for KDE bugs ?
+<a name="l-83"></a><span class="tm">18:53:30</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> yes
+<a name="l-84"></a><span class="tm">18:53:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok :-)
+<a name="l-85"></a><span class="tm">18:53:52</span><span class="nk"> &lt;einar77&gt;</span> ok sorry
+<a name="l-86"></a><span class="tm">18:53:58</span><span class="nk"> &lt;einar77&gt;</span> I managed to arrive at last
+<a name="l-87"></a><span class="tm">18:54:21</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> hi. We are at the first agenda item with regards to suse specific tools.
+<a name="l-88"></a><span class="tm">18:54:40</span><span class="nk"> &lt;einar77&gt;</span> quikcly checking the backscroll
+<a name="l-89"></a><span class="tm">18:55:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> What would be the opinion for kio_sysinfo ?   Drop it or try to fix it ?
+<a name="l-90"></a><span class="tm">18:55:36</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> point 1. does it work?
+<a name="l-91"></a><span class="tm">18:55:44</span><span class="nk"> &lt;einar77&gt;</span> point 2. does it have outstanding issues?
+<a name="l-92"></a><span class="tm">18:56:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> both points is yes. I am not sure what outstanding issues we have
+<a name="l-93"></a><span class="tm">18:56:52</span><span class="nk"> &lt;einar77&gt;</span> I would argue for dropping then
+<a name="l-94"></a><span class="tm">18:56:53</span><span class="nk"> &lt;cb400f&gt;</span> people always click on internal filesystems and expect them to be mounted/accessed... and it doesn't happen
+<a name="l-95"></a><span class="tm">18:58:18</span><span class="nk"> &lt;einar77&gt;</span> My rationale for not dropping "custom" tools is: a. be self-maintaining (i.e. trivial stuff, stable for years etc) b. have someone (from the community?) maintain it
+<a name="l-96"></a><span class="tm">18:58:33</span><span class="nk"> &lt;einar77&gt;</span> but I'd rather go for a.
+<a name="l-97"></a><span class="tm">19:00:13</span><span class="nk"> &lt;wstephenson&gt;</span> me too
+<a name="l-98"></a><span class="tm">19:00:40</span><span class="nk"> &lt;einar77&gt;</span> and then the follow-up question is, do we have tools which fulfill the "a" requirement?
+<a name="l-99"></a><span class="tm">19:00:47</span><span class="nk"> &lt;einar77&gt;</span> kio_sysinfo does not look like one
+<a name="l-100"></a><span class="tm">19:00:53</span><span class="nk"> &lt;cb400f&gt;</span> it's dead weight.. with little added value over what kde provides.. and bugs and no maintenance
+<a name="l-101"></a><span class="tm">19:01:03</span><span class="nk"> &lt;einar77&gt;</span> my vote goes for axing
+<a name="l-102"></a><span class="tm">19:01:06</span><span class="nk"> &lt;cb400f&gt;</span> I'd vote to drop the greeter too now that we're at it
+<a name="l-103"></a><span class="tm">19:01:09</span><span class="nk"> &lt;wstephenson&gt;</span> +1
+<a name="l-104"></a><span class="tm">19:01:13</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">cb400f:</span> which greeter?
+<a name="l-105"></a><span class="tm">19:01:26</span><span class="nk"> &lt;cb400f&gt;</span> the one with all the outdated information on first login
+<a name="l-106"></a><span class="tm">19:01:26</span><span class="nk"> &lt;wstephenson&gt;</span> SUSEgreeter
+<a name="l-107"></a><span class="tm">19:01:28</span><span class="nk"> &lt;shumski&gt;</span> SUSEgreeter
+<a name="l-108"></a><span class="tm">19:01:28</span><span class="nk"> &lt;einar77&gt;</span> the stuff that appears at startup?
+<a name="l-109"></a><span class="tm">19:01:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Why that one ?
+<a name="l-110"></a><span class="tm">19:01:36</span><span class="nk"> &lt;einar77&gt;</span> hmmm
+<a name="l-111"></a><span class="tm">19:01:43</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">cb400f:</span> how can that be updated?
+<a name="l-112"></a><span class="tm">19:01:56</span><span class="nk"> &lt;cb400f&gt;</span> I think it's a html file in git somewhere
+<a name="l-113"></a><span class="tm">19:02:11</span><span class="nk"> &lt;shumski&gt;</span> afaik ctrippe_ fixed that link ?
+<a name="l-114"></a><span class="tm">19:02:30</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">cb400f:</span> if it's just HTML, it should be just fixed
+<a name="l-115"></a><span class="tm">19:02:50</span><span class="nk"> &lt;cb400f&gt;</span> nah, cuz next release it won't be updated again.. and users don't read it anywho
+<a name="l-116"></a><span class="tm">19:02:56</span><span class="nk"> &lt;ctrippe_&gt;</span> It's html + a bit of code
+<a name="l-117"></a><span class="tm">19:03:19</span><span class="nk"> &lt;rabauke&gt;</span> pull it out of git and put it into the package so everybody with access to obs' webgui or more can update it
+<a name="l-118"></a><span class="tm">19:03:57</span><span class="nk"> &lt;einar77&gt;</span> hmmm perhaps
+<a name="l-119"></a><span class="tm">19:05:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> At this moment it is in the kdebase-opensuse github repo, where we also have the other KDE defaults (plasma, etc). We have access to that one and we are building the package (kdebase4-openSUSE)
+<a name="l-120"></a><span class="tm">19:05:35</span><span class="nk"> &lt;shumski&gt;</span> and the link now points to userbase.kde.org
+<a name="l-121"></a><span class="tm">19:05:40</span><span class="nk"> &lt;rabauke&gt;</span> but apparently it is too hidden for "casual" contributors
+<a name="l-122"></a><span class="tm">19:05:52</span><span class="nk"> &lt;einar77&gt;</span> userbase.kde.org is quite active wrt end-user docs
+<a name="l-123"></a><span class="tm">19:05:54</span><span class="nk"> &lt;einar77&gt;</span> so it's ideal
+<a name="l-124"></a><span class="tm">19:06:20</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> Then we can agree that the package kdebase4-openSUSE can be maintained on OBS and on regular basis we are updating the git repo.
+<a name="l-125"></a><span class="tm">19:06:53</span><span class="nk"> &lt;rabauke&gt;</span> whatever helps to give easy access to the text that needs to be updated.
+<a name="l-126"></a><span class="tm">19:06:53</span><span class="nk"> &lt;einar77&gt;</span> I would rather do the other way, proper source control is ++
+<a name="l-127"></a><span class="tm">19:07:05</span><span class="nk"> &lt;einar77&gt;</span> (no, OBS isn't a proper VCS)
+<a name="l-128"></a><span class="tm">19:07:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> true
+<a name="l-129"></a><span class="tm">19:08:03</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> perhaps better connections between obs and the repo
+<a name="l-130"></a><span class="tm">19:08:15</span><span class="nk"> &lt;einar77&gt;</span> I have no idea how it is built from there (source service?)
+<a name="l-131"></a><span class="tm">19:08:31</span><span class="nk"> &lt;einar77&gt;</span> in any case, before drifting too far from the topic, I'd say the greeter should not be drpped
+<a name="l-132"></a><span class="tm">19:08:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Nope. somebody has to download the git-repo and make the tarball :-)
+<a name="l-133"></a><span class="tm">19:08:38</span><span class="nk"> &lt;einar77&gt;</span> ugh
+<a name="l-134"></a><span class="tm">19:08:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> :-)
+<a name="l-135"></a><span class="tm">19:09:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> I guess some optimization can happen there :-)
+<a name="l-136"></a><span class="tm">19:09:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> And no source services allowed in Factory :-) So we need a tarball
+<a name="l-137"></a><span class="tm">19:09:35</span><span class="nk"> &lt;einar77&gt;</span> bleh, yes, requires some thought
+<a name="l-138"></a><span class="tm">19:09:41</span><span class="nk"> &lt;rabauke&gt;</span> what sources should be lost? they are outdated and close to being dropped because of that.
+<a name="l-139"></a><span class="tm">19:09:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess that we reached an alignment to drop kio_sysinfo ?
+<a name="l-140"></a><span class="tm">19:09:49</span><span class="nk"> &lt;einar77&gt;</span> yes
+<a name="l-141"></a><span class="tm">19:09:51</span><span class="nk"> &lt;einar77&gt;</span> I think
+<a name="l-142"></a><span class="tm">19:10:09</span><span class="nk"> &lt;einar77&gt;</span> not sure instead on susegreeter (personally -1 on dropping)
+<a name="l-143"></a><span class="tm">19:10:20</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">Drop kio_sysinfo from the KDF/Factory repo's.</span>
+<a name="l-144"></a><span class="tm">19:10:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> Who is in favor to drop the SUSEgreeter ?
+<a name="l-145"></a><span class="tm">19:10:43</span><span class="nk"> &lt;cb400f&gt;</span> o/
+<a name="l-146"></a><span class="tm">19:11:03</span><span class="nk"> &lt;ctrippe_&gt;</span> If we drop sysinfo now, we have to modify a few patches
+<a name="l-147"></a><span class="tm">19:11:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">ctrippe_:</span> Let's see indeed where we have to make adjustments. Maybe we can do this together with RC3.
+<a name="l-148"></a><span class="tm">19:11:44</span><span class="nk"> &lt;plinnell&gt;</span> +1 dropping suse greeter
+<a name="l-149"></a><span class="tm">19:11:54</span><span class="nk"> &lt;plinnell&gt;</span> sysinfo is ok for now
+<a name="l-150"></a><span class="tm">19:12:19</span><span class="nk"> &lt;ctrippe_&gt;</span> I would say: keep the greeterfor now
+<a name="l-151"></a><span class="tm">19:12:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> alin rabauke any preference ?
+<a name="l-152"></a><span class="tm">19:12:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> ^^
+<a name="l-153"></a><span class="tm">19:13:09</span><span class="nk"> &lt;shumski&gt;</span> i would drop it, but no strong opinion about it
+<a name="l-154"></a><span class="tm">19:13:09</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> keepit
+<a name="l-155"></a><span class="tm">19:13:09</span><span class="nk"> &lt;rabauke&gt;</span> keep the greeter and make its content easily available, i.e. without git. sysinfo, drop it, if there are major issues.
+<a name="l-156"></a><span class="tm">19:13:15</span><span class="nk"> &lt;rabauke&gt;</span> I do not use it so I cannot tell.
+<a name="l-157"></a><span class="tm">19:13:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-158"></a><span class="tm">19:13:42</span><span class="nk"> &lt;alin&gt;</span> the greeter is nice... tohave if not too much trouble I can maintain
+<a name="l-159"></a><span class="tm">19:13:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">Keep the SUSEgreeter, but make the content easily available for updates.</span>
+<a name="l-160"></a><span class="tm">19:13:58</span><span class="nk"> &lt;alin&gt;</span> at the end there is jsut some text with two links
+<a name="l-161"></a><span class="tm">19:14:03</span><span class="nk"> &lt;ctrippe_&gt;</span> <span class="hi">rabauke:</span> There is the tarball in kdebase4-opensuse which also contains the greeter
+<a name="l-162"></a><span class="tm">19:14:21</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> Yup :-)
+<a name="l-163"></a><span class="tm">19:14:26</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">ctrippe_:</span> no need to access any git repo?
+<a name="l-164"></a><span class="tm">19:14:59</span><span class="nk"> &lt;ctrippe_&gt;</span> <span class="hi">rabauke:</span> Sure you can patch kdebase4-opensuse like any other package
+<a name="l-165"></a><span class="tm">19:15:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> That is what I initially indicated. You can update the tarball and then we have to update the git repo from the tarball
+<a name="l-166"></a><span class="tm">19:15:19</span><span class="nk"> &lt;ctrippe_&gt;</span> The question is if tittiatcokeaccepts such submissions or sents you to git :-)
+<a name="l-167"></a><span class="tm">19:15:51</span><span class="nk"> &lt;rabauke&gt;</span> ok, I will write that down somewhere in the wiki so we can point people to it next time somebody asks how to jhelp
+<a name="l-168"></a><span class="tm">19:15:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> I might easier and faster accept SR's then git pull requests :-)
+<a name="l-169"></a><span class="tm">19:16:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> Ok.
+<a name="l-170"></a><span class="tm">19:16:24</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. I guess the last one in this area is the ksuseinstall. Dtop it or keep it ?
+<a name="l-171"></a><span class="tm">19:16:38</span><span class="nk"> &lt;cb400f&gt;</span> drop
+<a name="l-172"></a><span class="tm">19:17:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> anybody else ?
+<a name="l-173"></a><span class="tm">19:17:32</span><span class="nk"> &lt;einar77&gt;</span> drop
+<a name="l-174"></a><span class="tm">19:17:43</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> what is that for?
+<a name="l-175"></a><span class="tm">19:17:45</span><span class="nk"> &lt;ctrippe_&gt;</span> drop it because of the mimetype stuff and keep because of working kaffeine + libxine-codecs -&gt; no vote from me
+<a name="l-176"></a><span class="tm">19:18:25</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">alin:</span> it hooks into a few mimetypes to grab codecs when they are not available
+<a name="l-177"></a><span class="tm">19:18:37</span><span class="nk"> &lt;rabauke&gt;</span> ping llunak whether he wants to take care of his baby. if not drop it
+<a name="l-178"></a><span class="tm">19:18:54</span><span class="nk"> &lt;cb400f&gt;</span> also if you click on a .php it
+<a name="l-179"></a><span class="tm">19:18:54</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">rabauke:</span> I was rhetoric...
+<a name="l-180"></a><span class="tm">19:18:54</span><span class="nk"> &lt;ctrippe_&gt;</span> <span class="hi">alin:</span> http://help.opensuse.org/ksuseinstall/
+<a name="l-181"></a><span class="tm">19:19:03</span><span class="nk"> &lt;wstephenson&gt;</span> in theory packagekit should offer the same functionality
+<a name="l-182"></a><span class="tm">19:19:04</span><span class="nk"> &lt;cb400f&gt;</span> 'll suggest to install gedit or something like that
+<a name="l-183"></a><span class="tm">19:19:13</span><span class="nk"> &lt;alin&gt;</span> from me drop it...
+<a name="l-184"></a><span class="tm">19:19:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> There is a big difference between theory and practice when it comes to packagekit :-)
+<a name="l-185"></a><span class="tm">19:19:35</span><span class="nk"> &lt;alin&gt;</span> just let us hope gnome does not have something like that that takes over the computer
+<a name="l-186"></a><span class="tm">19:19:50</span><span class="nk"> &lt;wstephenson&gt;</span> the value add ksuseinstall offers should be doing a better job, eg letting you add community repos
+<a name="l-187"></a><span class="tm">19:20:24</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> this value drops like 1/n for n-&gt; inf, if it does not work
+<a name="l-188"></a><span class="tm">19:20:28</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> that happens because gedit pollutes the mimetype database with excessive capabilities
+<a name="l-189"></a><span class="tm">19:21:09</span><span class="nk"> &lt;cb400f&gt;</span> I can imagine :-) .. but I guess there's no feasible fix for that
+<a name="l-190"></a><span class="tm">19:22:24</span><span class="nk"> &lt;tittiatcoke&gt;</span> So far we have a majority for dropping ksuseinstall.
+<a name="l-191"></a><span class="tm">19:22:55</span><span class="nk"> &lt;shumski&gt;</span> drop it, from me also
+<a name="l-192"></a><span class="tm">19:23:09</span><span class="nk"> &lt;remur_030&gt;</span> I agree with rabauke, maybe llunak has time to maintain it? it's the best opensuse can offer legalwise for 'newcomers'
+<a name="l-193"></a><span class="tm">19:24:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Then lets agree that I will ask llunak if he has time/willingness to maintain ksuseinstall. If not, then we drop it. Decision should be made latest by the end of the month (due to 12.3)
+<a name="l-194"></a><span class="tm">19:24:25</span><span class="nk"> &lt;cb400f&gt;</span> he clearly doesn't.. maybe he could be bullied into fixing one or two bugs, and then leave it to bitrot again
+<a name="l-195"></a><span class="tm">19:24:58</span><span class="nk"> &lt;wstephenson&gt;</span> i don't know how interested llunak is in kde at all these days
+<a name="l-196"></a><span class="tm">19:25:20</span><span class="nk"> &lt;wstephenson&gt;</span> he still joins the channel, but i suspect he's just using kor and hacking on libreoffice
+<a name="l-197"></a><span class="tm">19:25:55</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Let's see. I think that we owe it to ask him if he is interested to support ksuseinstall or not.
+<a name="l-198"></a><span class="tm">19:26:00</span><span class="nk"> &lt;wstephenson&gt;</span> agreed
+<a name="l-199"></a><span class="tm">19:26:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke ask llunak if he is willing/interested to support ksuseinstall. If not then ksuseinstall will be dropped</span>
+<a name="l-200"></a><span class="tm">19:26:39</span><span class="nk"> &lt;wstephenson&gt;</span> i am looking at that code and the 'don't show again' checkbox should work, the config key is set
+<a name="l-201"></a><span class="tm">19:26:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">ctrippe_:</span> Any other suse specific programs ?
+<a name="l-202"></a><span class="tm">19:26:58</span><span class="nk"> &lt;einar77&gt;</span> do we have others?
+<a name="l-203"></a><span class="tm">19:27:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> I don't know :-)
+<a name="l-204"></a><span class="tm">19:27:10</span><span class="nk"> &lt;ctrippe_&gt;</span> <span class="hi">einar77:</span> sure
+<a name="l-205"></a><span class="tm">19:27:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess not.
+<a name="l-206"></a><span class="tm">19:27:28</span><span class="nk"> &lt;ctrippe_&gt;</span> reduced menu depth in kickoff
+<a name="l-207"></a><span class="tm">19:27:30</span><span class="nk"> &lt;wstephenson&gt;</span> well there was a discussion to use a native updater applet again ;)
+<a name="l-208"></a><span class="tm">19:27:44</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> that's as bad as the "remaining battery time in plasma"
+<a name="l-209"></a><span class="tm">19:27:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> You mean the YOU ?
+<a name="l-210"></a><span class="tm">19:27:59</span><span class="nk"> &lt;ctrippe_&gt;</span> Has one long standing bug but otherwise works, so I amfro keeping it
+<a name="l-211"></a><span class="tm">19:28:20</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> to be honest, I'd prefer that the zypp backend for pk would get some interest, but it's clearly not a priority
+<a name="l-212"></a><span class="tm">19:28:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">ctrippe_:</span> Maybe we should discuss it with the upstream maintainer of kickoff if he/she is willing to take this upstream ?
+<a name="l-213"></a><span class="tm">19:28:48</span><span class="nk"> &lt;cb400f&gt;</span> that guy working on that appstore thingy for gsoc must be really pleased
+<a name="l-214"></a><span class="tm">19:28:57</span><span class="nk"> &lt;rabauke&gt;</span> I thought dantii would take over
+<a name="l-215"></a><span class="tm">19:29:03</span><span class="nk"> &lt;cb400f&gt;</span> but I guess he should have seen it coming
+<a name="l-216"></a><span class="tm">19:29:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Dantti offered to help with porting the zypp backend to the new pk
+<a name="l-217"></a><span class="tm">19:29:12</span><span class="nk"> &lt;ctrippe_&gt;</span> <span class="hi">tittiatcoke:</span> Sounds good
+<a name="l-218"></a><span class="tm">19:29:36</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> it mostly depends on how big of an endeavor is
+<a name="l-219"></a><span class="tm">19:29:45</span><span class="nk"> &lt;cb400f&gt;</span> with some sed scripts
+<a name="l-220"></a><span class="tm">19:29:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> Let's hope that it is as easy as that it sounds :-) But then we get the question if coolo is going to accept a new PackageKit or not for 12.3
+<a name="l-221"></a><span class="tm">19:29:49</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> there's no "maintainer" for kickoff
+<a name="l-222"></a><span class="tm">19:30:02</span><span class="nk"> &lt;einar77&gt;</span> also upstream will switch it to a c++/qml hybrid for 4.11
+<a name="l-223"></a><span class="tm">19:30:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Ok.
+<a name="l-224"></a><span class="tm">19:30:41</span><span class="nk"> &lt;einar77&gt;</span> (at least, that's the intention)
+<a name="l-225"></a><span class="tm">19:31:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess that all are in favor of keeping the kickoff patch for the reduced menu depth ?
+<a name="l-226"></a><span class="tm">19:31:25</span><span class="nk"> &lt;wstephenson&gt;</span> yes, if it works
+<a name="l-227"></a><span class="tm">19:31:26</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> until upstream will diverge (in ~6 months after 4.10)
+<a name="l-228"></a><span class="tm">19:31:29</span><span class="nk"> &lt;rabauke&gt;</span> I have no issues with it
+<a name="l-229"></a><span class="tm">19:31:31</span><span class="nk"> &lt;remur_030&gt;</span> sure, keep it till its broke
+<a name="l-230"></a><span class="tm">19:31:40</span><span class="nk"> &lt;remur_030&gt;</span> erm broken ;-)
+<a name="l-231"></a><span class="tm">19:31:42</span><span class="nk"> &lt;wstephenson&gt;</span> i thought it was broken for a long time? was it fixed?
+<a name="l-232"></a><span class="tm">19:31:47</span><span class="nk"> &lt;cb400f&gt;</span> I prefer the submenus over the upstream model too
+<a name="l-233"></a><span class="tm">19:32:20</span><span class="nk"> &lt;ctrippe_&gt;</span> <span class="hi">wstephenson:</span> Yes but only if you start to move thigs in a "bad" way
+<a name="l-234"></a><span class="tm">19:33:05</span><span class="nk"> &lt;ctrippe_&gt;</span> For refernce https://bugzilla.novell.com/show_bug.cgi?id=356553
+<a name="l-235"></a><span class="tm">19:33:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> alternatively we could drop kickoff and switch to homerun :-)
+<a name="l-236"></a><span class="tm">19:33:09</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 356553 in openSUSE 12.2 (KDE4 Workspace) "Creating New KMenu Submenu Makes Single Sub-Menu Items Invisible in K-Menu and Kickoff" [Normal,New]
+<a name="l-237"></a><span class="tm">19:33:34</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> weshould consider it for 12.3+1 by starting early and switchign perhaps
+<a name="l-238"></a><span class="tm">19:33:37</span><span class="nk"> &lt;einar77&gt;</span> IF it's viable
+<a name="l-239"></a><span class="tm">19:34:08</span><span class="nk"> &lt;wstephenson&gt;</span> i'm a bit disappointed by homerun tbh. can't seem to keyboard navigate it
+<a name="l-240"></a><span class="tm">19:34:24</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> haven't tested yet (I use only krunner)
+<a name="l-241"></a><span class="tm">19:35:23</span><span class="nk"> &lt;einar77&gt;</span> but I agree on keeping the patch
+<a name="l-242"></a><span class="tm">19:35:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Correct. The menu's can not be chosen by the keyboard.
+<a name="l-243"></a><span class="tm">19:35:29</span><span class="nk"> &lt;einar77&gt;</span> till it breaks, why not?
+<a name="l-244"></a><span class="tm">19:35:35</span><span class="nk"> &lt;wstephenson&gt;</span> the places category is cluttered
+<a name="l-245"></a><span class="tm">19:35:59</span><span class="nk"> &lt;cb400f&gt;</span> the keyboard thing alone sounds like a shipstopper to me
+<a name="l-246"></a><span class="tm">19:36:10</span><span class="nk"> &lt;ctrippe_&gt;</span> <span class="hi">cb400f:</span> +1
+<a name="l-247"></a><span class="tm">19:36:22</span><span class="nk"> &lt;cb400f&gt;</span> none of the 15 fulltime developers bluesystems have on it like to use their kb?
+<a name="l-248"></a><span class="tm">19:36:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">keep the kickoff patch for reduced menudepth</span>
+<a name="l-249"></a><span class="tm">19:36:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">ctrippe_:</span> Any other that you want to bring up ?
+<a name="l-250"></a><span class="tm">19:36:44</span><span class="nk"> &lt;ctrippe_&gt;</span> no
+<a name="l-251"></a><span class="tm">19:36:46</span><span class="nk"> &lt;cb400f&gt;</span> or maybe it's just intended for touch screens
+<a name="l-252"></a><span class="tm">19:36:49</span><span class="nk"> &lt;einar77&gt;</span> no
+<a name="l-253"></a><span class="tm">19:36:56</span><span class="nk"> &lt;rabauke&gt;</span> no
+<a name="l-254"></a><span class="tm">19:37:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Status KDE 4.10 release</span>
+<a name="l-255"></a><span class="tm">19:37:27</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> what in particular about 4.10?
+<a name="l-256"></a><span class="tm">19:37:43</span><span class="nk"> &lt;wstephenson&gt;</span> cartman approved it for 12.3
+<a name="l-257"></a><span class="tm">19:37:59</span><span class="nk"> &lt;tittiatcoke&gt;</span> I just wanted to give a quick update :-)
+<a name="l-258"></a><span class="tm">19:38:05</span><span class="nk"> &lt;einar77&gt;</span> good, so nightmares about having to rediff my patches are over
+<a name="l-259"></a><span class="tm">19:38:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> I am not sure if everybody knows that we have a 2 week delay in the official release of KDE 4.10 and that this goes over the pre-release freeze for 12.3.
+<a name="l-260"></a><span class="tm">19:38:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Question is if coolo is fine with it :-)
+<a name="l-261"></a><span class="tm">19:39:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> Based on the delay, I have asked the Release managers if we could have an exception and push 4.10 Final just before the pre-release freeze (4 - 5 February). So far we have a green light from cartman with support from wstephenson.
+<a name="l-262"></a><span class="tm">19:39:58</span><span class="nk"> &lt;rabauke&gt;</span> didn't coolo leave for suse? or was that somebody else?
+<a name="l-263"></a><span class="tm">19:40:04</span><span class="nk"> &lt;cb400f&gt;</span> coolo wrote something about updates on -factory ml today :-)
+<a name="l-264"></a><span class="tm">19:40:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Yup
+<a name="l-265"></a><span class="tm">19:40:13</span><span class="nk"> &lt;wstephenson&gt;</span> especially as we talked about generally enforcing version freeze more strictly this release
+<a name="l-266"></a><span class="tm">19:40:26</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">coolo:</span> are you ok with it?
+<a name="l-267"></a><span class="tm">19:41:34</span><span class="nk"> &lt;cb400f&gt;</span> http://lists.opensuse.org/opensuse-factory/2013-01/msg00083.html
+<a name="l-268"></a><span class="tm">19:41:46</span><span class="nk"> &lt;rabauke&gt;</span> while we are waiting. when will kr410 be created?
+<a name="l-269"></a><span class="tm">19:41:48</span><span class="nk"> &lt;cb400f&gt;</span> he says packages with little risk are allowed.. I guess that includes kde sc ;-)
+<a name="l-270"></a><span class="tm">19:42:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> I am planning to create KR410 when RC3 is released.
+<a name="l-271"></a><span class="tm">19:42:53</span><span class="nk"> &lt;rabauke&gt;</span> ok
+<a name="l-272"></a><span class="tm">19:43:10</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> tittiatcoke but kde 4.10 would be  out before at least the tar balls
+<a name="l-273"></a><span class="tm">19:43:24</span><span class="nk"> &lt;alin&gt;</span> so technically at the moment we are still before the freeze
+<a name="l-274"></a><span class="tm">19:43:34</span><span class="nk"> &lt;einar77&gt;</span> the tarballs are out 1 week before
+<a name="l-275"></a><span class="tm">19:43:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> I know, but we can not publish the packages officially
+<a name="l-276"></a><span class="tm">19:43:37</span><span class="nk"> &lt;alin&gt;</span> we will simply not publish them on 5
+<a name="l-277"></a><span class="tm">19:43:51</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">alin:</span> it's a bit sophistic, I'd say
+<a name="l-278"></a><span class="tm">19:44:24</span><span class="nk"> &lt;einar77&gt;</span> I mean since we will not publish before the release day
+<a name="l-279"></a><span class="tm">19:44:38</span><span class="nk"> &lt;einar77&gt;</span> (as upstream I'd kill you all if you did ;)
+<a name="l-280"></a><span class="tm">19:44:59</span><span class="nk"> &lt;tittiatcoke&gt;</span> I am sure that we can work things out. :-) Have faith. In the worst case we ship 12.3 with KDE 4.10 RC3 and have a maintenance update ready  when 12.3 is released :-)
+<a name="l-281"></a><span class="tm">19:45:03</span><span class="nk"> &lt;einar77&gt;</span> yes
+<a name="l-282"></a><span class="tm">19:45:24</span><span class="nk"> &lt;rabauke&gt;</span> indeed
+<a name="l-283"></a><span class="tm">19:45:40</span><span class="nk"> &lt;einar77&gt;</span> upstream has also started the testing initiative
+<a name="l-284"></a><span class="tm">19:45:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> So whatever happens the user will get 4,10 final :-) Either with 12.3 or directly as maintenance release.
+<a name="l-285"></a><span class="tm">19:46:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. I will keep all of you posted on the progress and status of getting 4.10 final into 12.3
+<a name="l-286"></a><span class="tm">19:46:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> With this I would like to switch to the next topic
+<a name="l-287"></a><span class="tm">19:46:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Status KDE 4.9.x releases</span>
+<a name="l-288"></a><span class="tm">19:47:10</span><span class="nk"> &lt;einar77&gt;</span> I think upstream wants to do one more release
+<a name="l-289"></a><span class="tm">19:47:18</span><span class="nk"> &lt;einar77&gt;</span> but I'm not that up to date
+<a name="l-290"></a><span class="tm">19:47:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> They do  ?  I thought that 4.9.5 would be the last one.
+<a name="l-291"></a><span class="tm">19:47:30</span><span class="nk"> &lt;einar77&gt;</span> ok
+<a name="l-292"></a><span class="tm">19:47:34</span><span class="nk"> &lt;cb400f&gt;</span> I think so too
+<a name="l-293"></a><span class="tm">19:47:36</span><span class="nk"> &lt;einar77&gt;</span> then we're already at 4.9.5 ;)
+<a name="l-294"></a><span class="tm">19:47:42</span><span class="nk"> &lt;einar77&gt;</span> that was what I was missing
+<a name="l-295"></a><span class="tm">19:48:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> Yup. KR49 got 4.9.5
+<a name="l-296"></a><span class="tm">19:49:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> any questions on KDE 4.9.x ?  Most of the repo's are now disabled from building. And I am wondering if we should keep on providing rebuilds purely based on changes with libqt4
+<a name="l-297"></a><span class="tm">19:50:22</span><span class="nk"> &lt;cb400f&gt;</span> would there be any significant fixes in libqt4 at this point?
+<a name="l-298"></a><span class="tm">19:50:43</span><span class="nk"> &lt;cb400f&gt;</span> sounds like a waste of buildpower and bandwidth to me.. rebuilding that stuff
+<a name="l-299"></a><span class="tm">19:51:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> KR49 has already got Qt 4.8.4, so I guess we can keep it that way and not to rebuild it
+<a name="l-300"></a><span class="tm">19:51:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> So for now let's keep them disabled
+<a name="l-301"></a><span class="tm">19:51:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> Next topic :-)
+<a name="l-302"></a><span class="tm">19:51:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Artwork (openSUSE KDE Desktop theme, lightdm-kde-greeter, etc)</span>
+<a name="l-303"></a><span class="tm">19:52:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> can you give an update on your work ?
+<a name="l-304"></a><span class="tm">19:53:00</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">shumski:</span> well, i guess we should wait for Beta to get a broader feedback, so far i'm left in a dark wether is this any good :-)
+<a name="l-305"></a><span class="tm">19:53:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> Did everybody saw the new plasma theme ?
+<a name="l-306"></a><span class="tm">19:53:31</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">shumski:</span> more blogging needed? ;)
+<a name="l-307"></a><span class="tm">19:53:50</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">einar77:</span> nope, more testers :-)
+<a name="l-308"></a><span class="tm">19:54:03</span><span class="nk"> &lt;cb400f&gt;</span> I saw screenies.. is it intended as the default?
+<a name="l-309"></a><span class="tm">19:54:14</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Yup
+<a name="l-310"></a><span class="tm">19:54:40</span><span class="nk"> &lt;marcus&gt;</span> i am currently working on KDM and Ksplash
+<a name="l-311"></a><span class="tm">19:54:43</span><span class="nk"> &lt;shumski&gt;</span> well, my current plan is to fix some icons, and polish the dark colorscheme
+<a name="l-312"></a><span class="tm">19:54:47</span><span class="nk"> &lt;cb400f&gt;</span> just for the record I'm very much against any dark theme as default
+<a name="l-313"></a><span class="tm">19:55:09</span><span class="nk"> &lt;marcus&gt;</span> i think we are not going to stick with a dark color scheme as default cb400f
+<a name="l-314"></a><span class="tm">19:55:33</span><span class="nk"> &lt;cb400f&gt;</span> does the plasma theme follow kde color scheme?
+<a name="l-315"></a><span class="tm">19:55:56</span><span class="nk"> &lt;marcus&gt;</span> it is quite transparent
+<a name="l-316"></a><span class="tm">19:56:01</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">cb400f:</span> we have 3 colorshemes, 2 lighter ones, and one darker which uses the plasma colors
+<a name="l-317"></a><span class="tm">19:56:03</span><span class="nk"> &lt;marcus&gt;</span> but has some noice overlays
+<a name="l-318"></a><span class="tm">19:56:26</span><span class="nk"> &lt;marcus&gt;</span> but i guess we could remove the noice from the plasma theme, as it's now on the wallpaper
+<a name="l-319"></a><span class="tm">19:56:46</span><span class="nk"> &lt;marcus&gt;</span> and yes cb400f the wallpaper will be a mix of dark gray and green.
+<a name="l-320"></a><span class="tm">19:59:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Maybe we can make the colorscheme and the plasmatheme seperately available as tarballs ?
+<a name="l-321"></a><span class="tm">20:00:03</span><span class="nk"> &lt;einar77&gt;</span> do we want a lightdm theme? I'm not sure as lightdm is still not suitable for normal usage with systemd
+<a name="l-322"></a><span class="tm">20:00:06</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> as in separate packages? sure
+<a name="l-323"></a><span class="tm">20:00:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> then more people can try out at least the colorschemes and maybe also the plasma-theme
+<a name="l-324"></a><span class="tm">20:00:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> At this moment lightdm can not be used without consolekit
+<a name="l-325"></a><span class="tm">20:00:54</span><span class="nk"> &lt;tittiatcoke&gt;</span> at least not reliable for end-users
+<a name="l-326"></a><span class="tm">20:01:21</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> i can make the packages, it's just the question where?
+<a name="l-327"></a><span class="tm">20:01:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Maybe when shumski publish the schems, you can have a look at them, try them out and provide feedback ?
+<a name="l-328"></a><span class="tm">20:01:36</span><span class="nk"> &lt;marcus&gt;</span> tittiatcoke, the plasma theme requires at least a current kde setup and won't fully work on 12.2 but i guess everyone here is up2date ;)
+<a name="l-329"></a><span class="tm">20:02:09</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">marcus:</span> well, will work, just maybe not in a way as with 4.10
+<a name="l-330"></a><span class="tm">20:02:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">marcus:</span> Don't bet on that :-)  I am sure the majority is using 4.9.x :-[)
+<a name="l-331"></a><span class="tm">20:02:20</span><span class="nk"> &lt;cb400f&gt;</span> and I'm on 4.8 even
+<a name="l-332"></a><span class="tm">20:02:22</span><span class="nk"> &lt;marcus&gt;</span> hehe,, ok
+<a name="l-333"></a><span class="tm">20:02:45</span><span class="nk"> &lt;cb400f&gt;</span> but I should get my act together and set up a virtual machine for KDF
+<a name="l-334"></a><span class="tm">20:02:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-335"></a><span class="tm">20:03:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> do we build your theme also for 12.2 in KDF ?
+<a name="l-336"></a><span class="tm">20:03:20</span><span class="nk"> &lt;cb400f&gt;</span> also I'll install 12.3 beta on my testpartition
+<a name="l-337"></a><span class="tm">20:03:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> great
+<a name="l-338"></a><span class="tm">20:03:35</span><span class="nk"> &lt;cb400f&gt;</span> (unless I hear rumours about grub2 messing things up)
+<a name="l-339"></a><span class="tm">20:03:39</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> nope, just for Factory
+<a name="l-340"></a><span class="tm">20:03:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">shumski:</span> Maybe we should also make the changes for 12.2 :-)
+<a name="l-341"></a><span class="tm">20:04:05</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> good idea :-)
+<a name="l-342"></a><span class="tm">20:04:24</span><span class="nk"> &lt;shumski&gt;</span> it is KDF after all
+<a name="l-343"></a><span class="tm">20:04:24</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> grub2 works :-)
+<a name="l-344"></a><span class="tm">20:04:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. anything else about the KDE artwork ?
+<a name="l-345"></a><span class="tm">20:04:38</span><span class="nk"> &lt;marcus&gt;</span> it just does not look good ;)
+<a name="l-346"></a><span class="tm">20:04:53</span><span class="nk"> &lt;cb400f&gt;</span> I'm sure grub2 works decently.. it's actually more the yast bootloader setup that worries me a little bit
+<a name="l-347"></a><span class="tm">20:05:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> ;-)
+<a name="l-348"></a><span class="tm">20:05:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Have faith :p
+<a name="l-349"></a><span class="tm">20:05:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. next topic :-)
+<a name="l-350"></a><span class="tm">20:05:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">KDE Telepathy</span>
+<a name="l-351"></a><span class="tm">20:05:56</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> aside the issues with haze, I think it's mature enough to replace kopete
+<a name="l-352"></a><span class="tm">20:06:07</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> what issue with haze?
+<a name="l-353"></a><span class="tm">20:06:15</span><span class="nk"> &lt;einar77&gt;</span> er
+<a name="l-354"></a><span class="tm">20:06:17</span><span class="nk"> &lt;einar77&gt;</span> not haze
+<a name="l-355"></a><span class="tm">20:06:19</span><span class="nk"> &lt;einar77&gt;</span> farstream
+<a name="l-356"></a><span class="tm">20:06:23</span><span class="nk"> &lt;einar77&gt;</span> too many things
+<a name="l-357"></a><span class="tm">20:06:24</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> but that is solved...
+<a name="l-358"></a><span class="tm">20:06:29</span><span class="nk"> &lt;einar77&gt;</span> already?
+<a name="l-359"></a><span class="tm">20:06:39</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> there is a compat package
+<a name="l-360"></a><span class="tm">20:06:44</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">alin:</span> we still don't have call-ui working
+<a name="l-361"></a><span class="tm">20:06:54</span><span class="nk"> &lt;shumski&gt;</span> it's just that it built
+<a name="l-362"></a><span class="tm">20:06:55</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">shumski:</span> what do you mean?
+<a name="l-363"></a><span class="tm">20:07:04</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">shumski:</span> I can see myself...
+<a name="l-364"></a><span class="tm">20:07:28</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">alin:</span> ok, i tried with a few people, didn't work
+<a name="l-365"></a><span class="tm">20:07:33</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">shumski:</span> plus I think that is on top of kopete's capabilities...
+<a name="l-366"></a><span class="tm">20:07:36</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">shumski:</span> what did not work?
+<a name="l-367"></a><span class="tm">20:07:46</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">alin:</span> video didn't work
+<a name="l-368"></a><span class="tm">20:07:59</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">shumski:</span> strange...
+<a name="l-369"></a><span class="tm">20:08:32</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">shumski:</span> does kopete provide video?
+<a name="l-370"></a><span class="tm">20:08:37</span><span class="nk"> &lt;einar77&gt;</span> yes, for some
+<a name="l-371"></a><span class="tm">20:08:39</span><span class="nk"> &lt;einar77&gt;</span> protocols
+<a name="l-372"></a><span class="tm">20:08:42</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">alin:</span> for gtalk afaik
+<a name="l-373"></a><span class="tm">20:08:44</span><span class="nk"> &lt;einar77&gt;</span> not sure if it *works* now
+<a name="l-374"></a><span class="tm">20:08:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Despite if things are working or not, I really wonder if we should push it to KDF/Factory now as that it is a new feature. And we have past the 12.3 Feature freeze.
+<a name="l-375"></a><span class="tm">20:08:58</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> a little late
+<a name="l-376"></a><span class="tm">20:09:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> Yup
+<a name="l-377"></a><span class="tm">20:09:07</span><span class="nk"> &lt;einar77&gt;</span> offer it in outside repos
+<a name="l-378"></a><span class="tm">20:09:14</span><span class="nk"> &lt;einar77&gt;</span> but more widely advertised
+<a name="l-379"></a><span class="tm">20:09:17</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> i think we shall have it not install
+<a name="l-380"></a><span class="tm">20:09:20</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">tittiatcoke:</span>  sflphone wasn't packageable?
+<a name="l-381"></a><span class="tm">20:09:27</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> as default...
+<a name="l-382"></a><span class="tm">20:10:00</span><span class="nk"> &lt;tittiatcoke&gt;</span> We have KTP in KDE:Extra, so it is available for people and after 12.3 we should move it to KDF so that we can move it to Factory.
+<a name="l-383"></a><span class="tm">20:10:26</span><span class="nk"> &lt;einar77&gt;</span> +1
+<a name="l-384"></a><span class="tm">20:10:32</span><span class="nk"> &lt;shumski&gt;</span> +1
+<a name="l-385"></a><span class="tm">20:10:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> sflphone is packaged somewhere in network:telephony
+<a name="l-386"></a><span class="tm">20:11:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> Seems to be an old version however.
+<a name="l-387"></a><span class="tm">20:12:42</span><span class="nk"> &lt;cb400f&gt;</span> yeah, and no kde frontend, right?
+<a name="l-388"></a><span class="tm">20:13:05</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> There is sflphone-client-kde package there (as well as a gnome client)
+<a name="l-389"></a><span class="tm">20:13:34</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> You have the common package and then a package for the kde client and a package for the gnome client
+<a name="l-390"></a><span class="tm">20:13:38</span><span class="nk"> &lt;cb400f&gt;</span> oh, nice.. wonder why it didn't  appear in my webpinstant search
+<a name="l-391"></a><span class="tm">20:14:00</span><span class="nk"> &lt;tittiatcoke&gt;</span> but it seems somehow unmaintained at the moment :-(
+<a name="l-392"></a><span class="tm">20:14:24</span><span class="nk"> &lt;tittiatcoke&gt;</span> I will create an update to the latest version and submit. Let's see if we can take over maintainership there :-)
+<a name="l-393"></a><span class="tm">20:14:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> Anything else on KDE Telepathy ?
+<a name="l-394"></a><span class="tm">20:15:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Validation/status of the items on the KDE improvement page.  https://en.opensuse.org/openSUSE:KDE_improvements</span>
+<a name="l-395"></a><span class="tm">20:15:25</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> I am for including it... we may get more people to test
+<a name="l-396"></a><span class="tm">20:15:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> noted. Let's see.
+<a name="l-397"></a><span class="tm">20:16:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> Looking at our improvement pages, I see the following items without a real status:
+<a name="l-398"></a><span class="tm">20:16:55</span><span class="nk"> &lt;cb400f&gt;</span> ktp should definitely be included if possible, but maybe not default.. don't the kubuntu familia already use it as default?
+<a name="l-399"></a><span class="tm">20:17:06</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> yes
+<a name="l-400"></a><span class="tm">20:17:12</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> and fedora too
+<a name="l-401"></a><span class="tm">20:17:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> I will talk to coolo to see if we still can get KTP in there :-)
+<a name="l-402"></a><span class="tm">20:17:49</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> knights was ont he list
+<a name="l-403"></a><span class="tm">20:18:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> yup. But nobody picked that one up.
+<a name="l-404"></a><span class="tm">20:18:10</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">tittiatcoke:</span> and check wiith DimStar will he accept compat package. or don't ship call.ui
+<a name="l-405"></a><span class="tm">20:18:14</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> it is in extra... all it needs is a sr
+<a name="l-406"></a><span class="tm">20:18:16</span><span class="nk"> &lt;cb400f&gt;</span> game of kings needs to be in the distro for kings ;-)
+<a name="l-407"></a><span class="tm">20:18:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> Same goes for Kamoso :)
+<a name="l-408"></a><span class="tm">20:18:25</span><span class="nk"> &lt;cb400f&gt;</span> :-|
+<a name="l-409"></a><span class="tm">20:19:04</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> I discovered vlc is better to take pictures witht he camera
+<a name="l-410"></a><span class="tm">20:19:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-411"></a><span class="tm">20:19:36</span><span class="nk"> &lt;cb400f&gt;</span> initially kamoso used vlc as a backend ;-) .. until it went with always fun gstreamer
+<a name="l-412"></a><span class="tm">20:19:48</span><span class="nk"> &lt;shumski&gt;</span> it has this bug currently https://bugs.kde.org/show_bug.cgi?id=307147
+<a name="l-413"></a><span class="tm">20:19:49</span><span class="nk"> &lt;bugbot&gt;</span> KDE bug 307147 in kamoso (general) "Build failed against libkipi 2.0.0" [Normal,Resolved: fixed]
+<a name="l-414"></a><span class="tm">20:19:58</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> cb400f https://build.opensuse.org/package/show?package=knights&amp;project=KDE%3AExtra
+<a name="l-415"></a><span class="tm">20:20:02</span><span class="nk"> &lt;alin&gt;</span> say it and I will sr it
+<a name="l-416"></a><span class="tm">20:20:17</span><span class="nk"> &lt;shumski&gt;</span> (it's fixed, but seems kipi plugins don't work)
+<a name="l-417"></a><span class="tm">20:20:19</span><span class="nk"> &lt;alin&gt;</span> I think is already at the last version
+<a name="l-418"></a><span class="tm">20:20:35</span><span class="nk"> &lt;coolo&gt;</span> moin
+<a name="l-419"></a><span class="tm">20:20:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">coolo:</span> Hi :-)
+<a name="l-420"></a><span class="tm">20:21:02</span><span class="nk"> &lt;einar77&gt;</span> evening
+<a name="l-421"></a><span class="tm">20:21:13</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> time is relative.. and persona
+<a name="l-422"></a><span class="tm">20:21:14</span><span class="nk"> &lt;alin&gt;</span> l
+<a name="l-423"></a><span class="tm">20:21:15</span><span class="nk"> &lt;coolo&gt;</span> how are the ladies?
+<a name="l-424"></a><span class="tm">20:22:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">coolo:</span> we have two questions. First one is regarding my email to be able to update KDE 4.10 to Final just before the pre-releaes freeze (packages would be submitted somewhere around 3-4 February. (That is the email that I send to you).
+<a name="l-425"></a><span class="tm">20:23:47</span><span class="nk"> &lt;coolo&gt;</span> yep, ismail already ACKed
+<a name="l-426"></a><span class="tm">20:24:05</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">coolo:</span> second one is if you still would accept some side packages into 12.3 coming from KDE. We are then talking about KDE Telepathy and Knights (Chess frontend)
+<a name="l-427"></a><span class="tm">20:24:18</span><span class="nk"> &lt;cb400f&gt;</span> kamoso! :-)
+<a name="l-428"></a><span class="tm">20:24:24</span><span class="nk"> &lt;coolo&gt;</span> <span class="hi">tittiatcoke:</span> as soon as the apper situation is green I'm open to talk about updates
+<a name="l-429"></a><span class="tm">20:24:34</span><span class="nk"> &lt;coolo&gt;</span> I don't want to talk about chess games if we have no working update applet
+<a name="l-430"></a><span class="tm">20:24:45</span><span class="nk"> &lt;rabauke&gt;</span> or zypper backend
+<a name="l-431"></a><span class="tm">20:24:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">coolo:</span> understood.
+<a name="l-432"></a><span class="tm">20:26:48</span><span class="nk"> &lt;rabauke&gt;</span> nice, kde being bound to the faith of zypp people caring.
+<a name="l-433"></a><span class="tm">20:27:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> let's hope that dantti can do some miracle work
+<a name="l-434"></a><span class="tm">20:27:15</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">rabauke:</span> if dantti manages to fix it, it's a non issue
+<a name="l-435"></a><span class="tm">20:27:20</span><span class="nk"> &lt;einar77&gt;</span> we need to wait at the moment
+<a name="l-436"></a><span class="tm">20:27:38</span><span class="nk"> &lt;cb400f&gt;</span> is there a problem sticking with the old packagekit? .. it has been working better than ever lately
+<a name="l-437"></a><span class="tm">20:27:45</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> are you using vlc?
+<a name="l-438"></a><span class="tm">20:28:01</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> no need of kamoso...
+<a name="l-439"></a><span class="tm">20:28:01</span><span class="nk"> &lt;rabauke&gt;</span> if he does the job it will be even more embarrasing for the opensuse zypp devs
+<a name="l-440"></a><span class="tm">20:28:10</span><span class="nk"> &lt;cb400f&gt;</span> sometimes.. I'll need to try the webcam feature.. it's new to me that it exists
+<a name="l-441"></a><span class="tm">20:28:12</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Actually I have been using apper and don't really have issues
+<a name="l-442"></a><span class="tm">20:28:23</span><span class="nk"> &lt;rabauke&gt;</span> me neither
+<a name="l-443"></a><span class="tm">20:28:23</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">rabauke:</span> but that's not our interest at the moment, we're interested in a working update applet
+<a name="l-444"></a><span class="tm">20:28:26</span><span class="nk"> &lt;cb400f&gt;</span> people often ask about such stuff.. and install cheese on kde systems
+<a name="l-445"></a><span class="tm">20:28:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> Also vlc is not offered by openSUSE repositories
+<a name="l-446"></a><span class="tm">20:28:53</span><span class="nk"> &lt;wstephenson&gt;</span> i am not too optimistic dantti will be able to get a production quality zypp backend done. he is too distant from opensuse
+<a name="l-447"></a><span class="tm">20:28:59</span><span class="nk"> &lt;coolo&gt;</span> <span class="hi">rabauke:</span> "the opensuse zypp devs" is about one guy from what I gather on the zypp-devel list
+<a name="l-448"></a><span class="tm">20:29:11</span><span class="nk"> &lt;coolo&gt;</span> <span class="hi">rabauke:</span> and that guy is paid from suse to do maintenance work
+<a name="l-449"></a><span class="tm">20:29:33</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> the png is broken.. for the one in packman but the idea is like this cvlc -I dummy v4l2:// --video-filter scene -V dummy --scene-ratio 5 --scene-format jpg --scene-prefix img --scene-path $HOME --no-scene-replace --run-time 10 vlc://quit
+<a name="l-450"></a><span class="tm">20:29:43</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">coolo:</span> and opensuse is the test rabbit for suse, which makes it only fair to pay at least some of its contributors
+<a name="l-451"></a><span class="tm">20:29:57</span><span class="nk"> &lt;rabauke&gt;</span> and its still a shame
+<a name="l-452"></a><span class="tm">20:30:04</span><span class="nk"> &lt;shumski&gt;</span> <span class="hi">alin:</span> will that be in guide ;-)
+<a name="l-453"></a><span class="tm">20:30:25</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">shumski:</span> I know more tricks...
+<a name="l-454"></a><span class="tm">20:30:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> I wonder which update applet Gnome is using
+<a name="l-455"></a><span class="tm">20:30:39</span><span class="nk"> &lt;rabauke&gt;</span> something integrated into gnome afaikl
+<a name="l-456"></a><span class="tm">20:30:50</span><span class="nk"> &lt;plinnell&gt;</span> FYI, I need to leave, but scribus 1.4.2 is very very soon :-)
+<a name="l-457"></a><span class="tm">20:30:52</span><span class="nk"> &lt;cb400f&gt;</span> packagekit based surely?
+<a name="l-458"></a><span class="tm">20:30:55</span><span class="nk"> &lt;rabauke&gt;</span> but it should rely on packagekit as well
+<a name="l-459"></a><span class="tm">20:30:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">plinnell:</span> Ok. Thanks
+<a name="l-460"></a><span class="tm">20:31:00</span><span class="nk"> &lt;plinnell&gt;</span> out before freeze methinks
+<a name="l-461"></a><span class="tm">20:31:21</span><span class="nk"> &lt;cb400f&gt;</span> and knowing gnome.. that means it prolly requires pk 0.8 too
+<a name="l-462"></a><span class="tm">20:31:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-463"></a><span class="tm">20:31:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> but I guess that their client currently works ok with the current pk
+<a name="l-464"></a><span class="tm">20:31:55 </span><span class="nka">* plinnell</span> <span class="ac">wishes we could have kde for SLES 12</span>
+<a name="l-465"></a><span class="tm">20:33:06</span><span class="nk"> &lt;plinnell&gt;</span> o/
+<a name="l-466"></a><span class="tm">20:33:14</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Let's agree the following. I will check with Gnome what their plans are and if they have any issues. I will also check the bug reports on what we have open for Apper to see if this is still valid or not.
+<a name="l-467"></a><span class="tm">20:33:42</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> ok... ifyou want me I can test...
+<a name="l-468"></a><span class="tm">20:33:44</span><span class="nk"> &lt;cb400f&gt;</span> don't take their word for it if they say "no issues"
+<a name="l-469"></a><span class="tm">20:33:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> :-)
+<a name="l-470"></a><span class="tm">20:34:00</span><span class="nk"> &lt;einar77&gt;</span> ok guys, I need to sign off
+<a name="l-471"></a><span class="tm">20:34:01</span><span class="nk"> &lt;cb400f&gt;</span> they always claim it works... no matter how many bugs are in the zypp backend
+<a name="l-472"></a><span class="tm">20:34:07</span><span class="nk"> &lt;einar77&gt;</span> I'll check later the rest of the meeting
+<a name="l-473"></a><span class="tm">20:34:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Ok. Thanks
+<a name="l-474"></a><span class="tm">20:34:44</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke check the updater/packagekit situation in Gnome and validate open bugreports for Apper.</span>
+<a name="l-475"></a><span class="tm">20:34:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> Are you there ?
+<a name="l-476"></a><span class="tm">20:35:11</span><span class="nk"> &lt;krop&gt;</span> partially yes
+<a name="l-477"></a><span class="tm">20:35:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. It's your topic :-)
+<a name="l-478"></a><span class="tm">20:35:20</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Remove old repositories (krop) concerned: KR46, KR47(?), K:U:P/(KR47,KR48,KR49_12.1)</span>
+<a name="l-479"></a><span class="tm">20:35:53</span><span class="nk"> &lt;cb400f&gt;</span> I would like to add a discussion about KUA for 11.4 for this topic
+<a name="l-480"></a><span class="tm">20:35:54</span><span class="nk"> &lt;rabauke&gt;</span> +1
+<a name="l-481"></a><span class="tm">20:35:55</span><span class="nk"> &lt;krop&gt;</span> So, we have 1/many obsolete repositories, 2/ many rebuilds when updating any package in KUP
+<a name="l-482"></a><span class="tm">20:36:19</span><span class="nk"> &lt;rabauke&gt;</span> +1 for dropping the repos that is
+<a name="l-483"></a><span class="tm">20:36:26</span><span class="nk"> &lt;remur_030&gt;</span> are there any download stats available? sounds like a niche market honestly
+<a name="l-484"></a><span class="tm">20:36:28</span><span class="nk"> &lt;krop&gt;</span> that takes a lot of space and a lot of build power
+<a name="l-485"></a><span class="tm">20:37:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> I can understand KR46 and KR47, but why would you drop KUP for KR49/12.1 ?
+<a name="l-486"></a><span class="tm">20:37:36</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">remur_030:</span> niche market for whom? I donot think one would like to consider niche the part that never updates
+<a name="l-487"></a><span class="tm">20:37:43</span><span class="nk"> &lt;krop&gt;</span> KR46 is built for 11.4, KR47 is built for 11.4 &amp; 12.1, and KUP builds for many repos
+<a name="l-488"></a><span class="tm">20:37:49</span><span class="nk"> &lt;rabauke&gt;</span> one issue I could see though is that those still using these repos will not get any updates not even officials anymore because apper does not skip on error but stops to check. so people will have to know that they have to remove a repo.
+<a name="l-489"></a><span class="tm">20:38:25</span><span class="nk"> &lt;krop&gt;</span> was a typo, we have KR47/12.1, KR48/12.1, I'm not sure people using these KDE flavours are interested in unstable packages
+<a name="l-490"></a><span class="tm">20:38:27</span><span class="nk"> &lt;cb400f&gt;</span> if they use KUP they are no longer civilians
+<a name="l-491"></a><span class="tm">20:38:36</span><span class="nk"> &lt;shumski&gt;</span> i would axe all 11.4 repos
+<a name="l-492"></a><span class="tm">20:38:40</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">alin:</span> I was more thinking about KUP, who uses this with outdated opensuse?
+<a name="l-493"></a><span class="tm">20:38:43</span><span class="nk"> &lt;cb400f&gt;</span> kr46 does not make sense on any supported distro (except possibly evergreen)
+<a name="l-494"></a><span class="tm">20:38:45</span><span class="nk"> &lt;rabauke&gt;</span> Playground should certainly go. KR46 as well. the others somebody might call for evergreen, but then they should have taken them over a long time ago.
+<a name="l-495"></a><span class="tm">20:38:56</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">alin:</span> the other ones shouldn't rebuilt that often no?
+<a name="l-496"></a><span class="tm">20:39:49</span><span class="nk"> &lt;remur_030&gt;</span> can we maybe split that up into KR and KUP? Because I think KUP might be way more expensive for the OBS infrastructure
+<a name="l-497"></a><span class="tm">20:39:53</span><span class="nk"> &lt;alin&gt;</span> it is 2y old software... why should we bother?
+<a name="l-498"></a><span class="tm">20:40:14</span><span class="nk"> &lt;remur_030&gt;</span> KR doesn't really need any rebuilds no? so it's just hosting old stuff
+<a name="l-499"></a><span class="tm">20:40:17</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">krop:</span>  thougght kup is build only for stable + factory...
+<a name="l-500"></a><span class="tm">20:40:57</span><span class="nk"> &lt;alin&gt;</span> we had this discussion some time ago... somebody wants crazy things on stable -1 one... then it is his problem
+<a name="l-501"></a><span class="tm">20:41:26</span><span class="nk"> &lt;krop&gt;</span> for KUP, in order to limit the used space and power, I'd like to limit the build to O:F+ current opensuse version
+<a name="l-502"></a><span class="tm">20:41:47</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">krop:</span> +whatever it needs to go on
+<a name="l-503"></a><span class="tm">20:41:52</span><span class="nk"> &lt;cb400f&gt;</span> including relevant KR4x for current opensuse version?
+<a name="l-504"></a><span class="tm">20:42:07</span><span class="nk"> &lt;krop&gt;</span> yes
+<a name="l-505"></a><span class="tm">20:42:14</span><span class="nk"> &lt;cb400f&gt;</span> and KDF+current opensuse
+<a name="l-506"></a><span class="tm">20:42:17</span><span class="nk"> &lt;remur_030&gt;</span> why not KDF?
+<a name="l-507"></a><span class="tm">20:42:32</span><span class="nk"> &lt;remur_030&gt;</span> actually I guess somebody running KUP will be using kdf not kr?
+<a name="l-508"></a><span class="tm">20:42:34</span><span class="nk"> &lt;krop&gt;</span> https://build.opensuse.org/project/repositories?project=KDE%3AUnstable%3APlayground that's the current repos
+<a name="l-509"></a><span class="tm">20:43:02</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">remur_030:</span> you might have some guy who just wants the amarok beta or calligra beta on an otherwise fairly stable system
+<a name="l-510"></a><span class="tm">20:43:24</span><span class="nk"> &lt;cb400f&gt;</span> or testing kscreen .. or sumfink
+<a name="l-511"></a><span class="tm">20:43:37</span><span class="nk"> &lt;krop&gt;</span> the KR47,48 and 12.1 repos should be wiped imo
+<a name="l-512"></a><span class="tm">20:43:52</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">cb400f:</span> might as well have sombody who wants to do this on his opensuse - 1 release :-/
+<a name="l-513"></a><span class="tm">20:44:35</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">krop:</span> we keep the first 5? and the supported kde?
+<a name="l-514"></a><span class="tm">20:44:45</span><span class="nk"> &lt;cb400f&gt;</span> sure.. but if we need to limit build power wastage I think krop's suggestion is fair
+<a name="l-515"></a><span class="tm">20:45:17</span><span class="nk"> &lt;cb400f&gt;</span> also it matches the KDF policy more or less
+<a name="l-516"></a><span class="tm">20:45:36</span><span class="nk"> &lt;cb400f&gt;</span> which also isn't built for stable -1 anymore
+<a name="l-517"></a><span class="tm">20:45:42</span><span class="nk"> &lt;remur_030&gt;</span> hmm, right
+<a name="l-518"></a><span class="tm">20:46:24</span><span class="nk"> &lt;alin&gt;</span> ok.. so we shall vote on this? kup remains with factory plus stable
+<a name="l-519"></a><span class="tm">20:46:29</span><span class="nk"> &lt;alin&gt;</span> ?
+<a name="l-520"></a><span class="tm">20:46:53</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> wake up
+<a name="l-521"></a><span class="tm">20:46:54</span><span class="nk"> &lt;rabauke&gt;</span> stable = current release?
+<a name="l-522"></a><span class="tm">20:46:55</span><span class="nk"> &lt;remur_030&gt;</span> stable as in current opensuse plus current stable kr?
+<a name="l-523"></a><span class="tm">20:47:00</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">remur_030:</span> yes
+<a name="l-524"></a><span class="tm">20:47:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> I am here :-)
+<a name="l-525"></a><span class="tm">20:47:11</span><span class="nk"> &lt;rabauke&gt;</span> then +1
+<a name="l-526"></a><span class="tm">20:47:23</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> so we give to krop the knife to prune the kup?
+<a name="l-527"></a><span class="tm">20:47:24</span><span class="nk"> &lt;krop&gt;</span> so, as a more generic rule:  (Factory + current opensuse version)*KDE flavors (KRxy, KDF, KUSC)
+<a name="l-528"></a><span class="tm">20:47:33</span><span class="nk"> &lt;shumski&gt;</span> yup
+<a name="l-529"></a><span class="tm">20:47:40</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">krop:</span> +1
+<a name="l-530"></a><span class="tm">20:47:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">KUP to be build for  (Factory + current opensuse version)*KDE flavors (KRxy, KDF, KUSC)</span>
+<a name="l-531"></a><span class="tm">20:48:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">to delete KR46 and KR47</span>
+<a name="l-532"></a><span class="tm">20:48:19</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> and 48
+<a name="l-533"></a><span class="tm">20:48:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">to delete KR48</span>
+<a name="l-534"></a><span class="tm">20:48:37</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> as  4.8 would come via 12.2
+<a name="l-535"></a><span class="tm">20:48:40</span><span class="nk"> &lt;alin&gt;</span> perfect
+<a name="l-536"></a><span class="tm">20:48:56</span><span class="nk"> &lt;remur_030&gt;</span> hm, what about 12.1 users still running 4.8? 12.1 is still supported
+<a name="l-537"></a><span class="tm">20:49:08</span><span class="nk"> &lt;remur_030&gt;</span> and again, not much build power required for non touched kr
+<a name="l-538"></a><span class="tm">20:49:13</span><span class="nk"> &lt;cb400f&gt;</span> yeah, better keep kr48 for 12.1 only
+<a name="l-539"></a><span class="tm">20:49:23</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">remur_030:</span> is supported but not in kup
+<a name="l-540"></a><span class="tm">20:49:27</span><span class="nk"> &lt;krop&gt;</span> one may wonder why we still have KDE:Qt45/46/47 but we're missing Dirk for this topic
+<a name="l-541"></a><span class="tm">20:49:54</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">alin:</span> err I thought this was about KR repos in general, not the KUP ones
+<a name="l-542"></a><span class="tm">20:49:54</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-) KDE:Qtxx is dirk's territory
+<a name="l-543"></a><span class="tm">20:49:55</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">krop:</span> let us add that for next time..
+<a name="l-544"></a><span class="tm">20:50:04</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> or send him an email
+<a name="l-545"></a><span class="tm">20:50:15</span><span class="nk"> &lt;alin&gt;</span> as I do not remember seeing him lately
+<a name="l-546"></a><span class="tm">20:50:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> indeed.
+<a name="l-547"></a><span class="tm">20:50:33</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">dantti_laptop:</span> was here...
+<a name="l-548"></a><span class="tm">20:50:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> guys, can we finish this. I really have to run :-)
+<a name="l-549"></a><span class="tm">20:50:56</span><span class="nk"> &lt;dantti_laptop&gt;</span> ?
+<a name="l-550"></a><span class="tm">20:50:57</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> yes
+<a name="l-551"></a><span class="tm">20:51:03</span><span class="nk"> &lt;alin&gt;</span> next point...
+<a name="l-552"></a><span class="tm">20:51:14</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Misc, Q&amp;A</span>
+<a name="l-553"></a><span class="tm">20:51:21</span><span class="nk"> &lt;tittiatcoke&gt;</span> Any other topics or questions ?
+<a name="l-554"></a><span class="tm">20:51:22</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">dantti_laptop:</span> something related about apper
+<a name="l-555"></a><span class="tm">20:51:31</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> I want to add simon
+<a name="l-556"></a><span class="tm">20:51:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> I am fine to add simon in KDF, but you heard coolo :-)
+<a name="l-557"></a><span class="tm">20:51:56</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> anyone interested in? http://simon-listens.blogspot.co.at/2012/12/simon-040.html
+<a name="l-558"></a><span class="tm">20:52:05</span><span class="nk"> &lt;dantti_laptop&gt;</span> <span class="hi">alin:</span> ok, I can't find anything usefull on backlog, am I still useful?
+<a name="l-559"></a><span class="tm">20:52:25</span><span class="nk"> &lt;cb400f&gt;</span> danish team put in a huge effort over christmas to translate the thing :-)
+<a name="l-560"></a><span class="tm">20:52:37</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> cool...
+<a name="l-561"></a><span class="tm">20:52:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">dantti_laptop:</span> Not for the meeting :-)
+<a name="l-562"></a><span class="tm">20:52:52</span><span class="nk"> &lt;cb400f&gt;</span> and people tend to complain about kde accessibility.. so it'd be cool to have it I think
+<a name="l-563"></a><span class="tm">20:52:53</span><span class="nk"> &lt;dantti_laptop&gt;</span> ok :)
+<a name="l-564"></a><span class="tm">20:52:54</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> I would say push it to KDF and then we will see :-)
+<a name="l-565"></a><span class="tm">20:53:29</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> I will push it to extra and then from there we see next week
+<a name="l-566"></a><span class="tm">20:53:44</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">alin to push simon to KDE:Extra</span>
+<a name="l-567"></a><span class="tm">20:53:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> anything else ?
+<a name="l-568"></a><span class="tm">20:54:19</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> no
+<a name="l-569"></a><span class="tm">20:54:21</span><span class="nk"> &lt;wstephenson&gt;</span> not from me
+<a name="l-570"></a><span class="tm">20:54:29</span><span class="nk"> &lt;ctrippe_&gt;</span> not from me
+<a name="l-571"></a><span class="tm">20:54:35</span><span class="nk"> &lt;rabauke&gt;</span> no
+<a name="l-572"></a><span class="tm">20:54:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> Oki :-) Apologies for rushing the ending :-)
+<a name="l-573"></a><span class="tm">20:54:50</span><span class="nk"> &lt;rabauke&gt;</span> thanks for hosting!
+<a name="l-574"></a><span class="tm">20:54:51</span><span class="nk"> &lt;cb400f&gt;</span> I have a bit
+<a name="l-575"></a><span class="tm">20:54:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> go :-)
+<a name="l-576"></a><span class="tm">20:55:06 </span><span class="nka">* wstephenson</span> <span class="ac">blames jospoortvliet for turning on the work tractor beam</span>
+<a name="l-577"></a><span class="tm">20:55:08</span><span class="nk"> &lt;cb400f&gt;</span> any opinions if kua/11.4 should be dropped?
+<a name="l-578"></a><span class="tm">20:55:18</span><span class="nk"> &lt;wstephenson&gt;</span> but we now have a nice article about chromebooks published: https://news.opensuse.org/2013/01/08/opening-the-can-initial-support-for-opensuse-on-the-arm-chromebook/#comments
+<a name="l-579"></a><span class="tm">20:55:21</span><span class="nk"> &lt;rabauke&gt;</span> drop
+<a name="l-580"></a><span class="tm">20:55:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> +1 wstephenson
+<a name="l-581"></a><span class="tm">20:55:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> I would drop it
+<a name="l-582"></a><span class="tm">20:55:34</span><span class="nk"> &lt;cb400f&gt;</span> I tend to think it should go.. but I feel a bit bad for the evergreeners
+<a name="l-583"></a><span class="tm">20:55:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> just tuned it a bit and gave it the spotlight on the front page as well as on G+, facebook and twitter :D
+<a name="l-584"></a><span class="tm">20:55:59</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> then ask them whether they are going to maintain it. if not, drop
+<a name="l-585"></a><span class="tm">20:56:34 </span><span class="nka">* jospoortvliet</span> <span class="ac">goes again, sorry to interrupt the meeting. Hugs for all :D</span>
+<a name="l-586"></a><span class="tm">20:56:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">cb400f Check with the evergreen maintainers if they are willing to maintain KUA for 11.4. If not, then drop the repo</span>
+<a name="l-587"></a><span class="tm">20:56:43</span><span class="nk"> &lt;cb400f&gt;</span> ok, I think I'll just clean it.. :-) think I know the answer to the question
+<a name="l-588"></a><span class="tm">20:56:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-589"></a><span class="tm">20:57:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. guys. Next meeting in two weeks. (22 January same time, same channel) :-)
+<a name="l-590"></a><span class="tm">20:57:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

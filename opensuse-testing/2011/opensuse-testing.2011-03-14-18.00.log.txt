@@ -1,0 +1,162 @@
+18:00:41 <bmwiedemann> #startmeeting
+18:00:41 <bugbot> Meeting started Mon Mar 14 18:00:41 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:00:41 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:00:50 <bmwiedemann> Hello everyone
+18:00:50 <LWFinger> Hi everyone - I got the time right. :)
+18:00:51 * tigerfoot sorry was in marketing during two hours, and need food now.
+18:01:14 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+18:01:14 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+18:01:49 <bmwiedemann> #topic Experience with 11.4 GM
+18:02:08 <bmwiedemann> LWFinger: do you want to start?
+18:02:16 <LWFinger> OK.
+18:02:40 <GNAM> .
+18:02:41 <LWFinger> So far, I have no serious killers with 11.4 GM.
+18:03:36 <LWFinger> Occasionly (3 times so far), the NetworkManager has had wireless disabled for no known reason. The rfkill switches are OK.
+18:03:49 <tigerfoot> Found just annoying ulogd2 not working at all, see http://bugzilla.netfilter.org/show_bug.cgi?id=665
+18:03:53 <bugbot> bugzilla.netfilter.org bug 665 in ulogd (ulogd) "Can't start error opening /var/log/ ..." [Major,Reopened]
+18:04:22 <LWFinger> I have discussed this on the NM mailing list and have some things to try. In any case, it is an upstream problem.
+18:04:27 <LWFinger> Done.
+18:04:31 <bmwiedemann> I dropped the zypper dup entry from http://en.opensuse.org/openSUSE:Most_annoying_bugs_11.4  as the FTP repos were updated (so this would only affect DVD where other ways to upgrade are possible)
+18:05:15 <ReferenceSeete> Smooth sailing here - all settings carried over cleanly.  It's like I didn't upgrade.
+18:05:29 <tigerfoot> I've done yesterday a 11.2 to 11.4 32bits zypper dup (~ 2900 rpm ) without big difficulties even with ipv6
+18:05:44 <bmwiedemann> and I found https://bugzilla.novell.com/show_bug.cgi?id=679459 preventing syslinux on FAT32 - but only tested on factory, so not sure if it is in plain 11.4
+18:05:48 <bugbot> openSUSE bug 679459 in openSUSE 11.4 (Other) "mtools/mcopy (FAT32) access invalid memory" [Major,New]
+18:06:29 <LWFinger> IPv6 seems to be OK if your DNS is programmed right. I have it enabled with no problems.
+18:06:59 <bmwiedemann> apropos: there are plans to have openSUSE servers join world IPv6 day in june
+18:07:50 <tigerfoot> bmwiedemann: my unffocial repo for fglrx is accessible from Saturday in ipv6 too
+18:08:27 <tigerfoot> it's an old 11.2 server, but I postpone the upgrade to let user getting their stuff updated before ...
+18:08:31 <bmwiedemann> tigerfoot: of course, there are some copyright gray areas with such a repo
+18:08:42 <tigerfoot> bmwiedemann: in fact not so much ...
+18:09:08 <tigerfoot> licence clearly authorize the diffusion of the rpm made by the installer .
+18:09:22 <tigerfoot> the kernel ko is made by the final client ..
+18:09:33 <bmwiedemann> oh. OK.
+18:09:37 <javier> one person reported that he got no bootsplash after a KDE install from NET iso
+18:09:44 <tigerfoot> but yeap it's krap anyway :-)
+18:10:14 <javier> so I was wonderinf if it would make sense to add mkinitrd to bootsplash-branding-openSUSE's %post section
+18:10:49 <bmwiedemann> javier: would that cause mkinitrd run several times on zypper dup?
+18:11:02 <javier> good question
+18:11:08 <javier> at least twice I think
+18:11:27 <javier> one for kernel installation, and another one for bootsplash
+18:11:28 <bmwiedemann> somehow I remember seeing some deferred scripts somewhere
+18:11:46 <bmwiedemann> mdadm might also cause mkinitrd
+18:11:57 <javier> hmm
+18:12:10 <javier> some it could be more than twice
+18:12:34 <javier> it would slow down the zypper dup
+18:12:42 <LWFinger> Mkinitrd should be deferred anyway. I usually have 5 or 6 different kernels around and it takes forever.
+18:12:43 <bmwiedemann> that would be a question for opensuse-packaging ML
+18:12:56 <javier> ok
+18:13:32 <bmwiedemann> or maybe factory ML
+18:14:24 <LWFinger> Factory ML has been full of discussion of Gnome menus. Van someone explain the issue?
+18:14:41 <LWFinger> s/Van/Can/
+18:14:49 <bmwiedemann> I know that some icons have been missing. e.g thunderbird.
+18:14:57 <javier> plus the one level depth
+18:14:58 <bmwiedemann> but there was something different, too.
+18:15:20 <LWFinger> I think it was the one level depth.
+18:15:32 <bmwiedemann> on a collegues PC who installed 11.4 gnome, there was no menu at all. compiz crashing or so
+18:16:56 * bmwiedemann does not know more
+18:17:34 <javier> me neither
+18:18:53 <LWFinger> OK.
+18:19:02 <bmwiedemann> shall we move on to the second topic?
+18:19:09 <LWFinger> Yes
+18:19:22 <bmwiedemann> #topic next open-bugs bugzilla cleanup day
+18:20:13 <bmwiedemann> did we decide on focus for next open bugs day yet?
+18:20:30 <bmwiedemann> e.g. we could re-test old 10.x bugs on 11.4
+18:20:47 <LWFinger> I missed the deadline for the Mar. 5 News, but the next open bugs day was announced on Mar 12, and is in the calender.
+18:21:21 <LWFinger> My inclination is to look at all open bugs.
+18:21:39 <bmwiedemann> there are just many of those
+18:21:54 <bmwiedemann> and especially the recent ones will not have seen much changes
+18:22:23 <bmwiedemann> I also noticed, that the last event was mis-reported as bug-squashing
+18:22:33 <LWFinger> Obviously, 11.[34] should have priority.
+18:22:44 <bmwiedemann> maybe because such would be nice/expected
+18:24:27 <ReferenceSeete> Testing 10.x bugs against 11.4 sounds interesting.
+18:24:43 <bmwiedemann> I was thinking that there should be some bug-squashing party some day - maybe not soon, but after next MS5/6 or so
+18:25:07 <LWFinger> The mere fact that we update the Bugzilla entry, even if only to say "this bug still exists.", seemed to have the effect of getting it liiked at.
+18:25:52 <bmwiedemann> of course. it means a new possibility to get logs to get at the cause of a problem
+18:27:10 <bmwiedemann> I will probably setup my openbugs coordination tool again
+18:27:36 <bmwiedemann> anything else we need to prepare here?
+18:27:48 <bmwiedemann> arrange for another set of geeko-gear?
+18:28:12 <ReferenceSeete> That reminds me, I should send for that stuff.
+18:28:53 <ReferenceSeete> More relevant, do we need to arrange for it everytime?
+18:29:09 <ReferenceSeete> Perhaps we could do it over a duration - total over 3 events or so.
+18:29:36 <bmwiedemann> immediate rewards are nicer
+18:30:27 <ReferenceSeete> I agree, I just didn't know if there was some sort of limit to these goodies and the international shipping cost.
+18:31:40 <bmwiedemann> some limits there. we could say "top 3"
+18:32:51 <LWFinger> That sound s good. We got quite far down the list last time.
+18:33:21 <javier> yes, a 11.4 bug squashing party would be good
+18:33:45 <javier> Karl is already preparing a translation update
+18:34:16 <javier> so if you see something wrong in the translation, it's the right moment to tell him so
+18:34:26 <bmwiedemann> javier: when do you think would be best time for bug-squashing? before freeze time around RC6?
+18:34:30 <bmwiedemann> err MS6
+18:35:19 <javier> hmm
+18:35:28 <javier> at least one week before RC1
+18:36:12 <LWFinger> Perhaps M5 would be better. The new release is generally usable by then and there would be more time for testing fixes.
+18:36:12 <bmwiedemann> better two, because re-building and testing together can take a week alone
+18:36:45 <javier> right
+18:37:02 <javier> so perhaps after m5?
+18:37:07 <bmwiedemann> #agreed plan bug-squashing party after next MS5
+18:39:29 <bmwiedemann> #action bmwiedemann will setup openbugs.zq1.de tool again
+18:40:09 <bmwiedemann> "bmwiedemann will ask on #opensuse-gnome and #opensuse-kde for Open-Bugs-Day participation" is still on TODO from before
+18:40:24 <bmwiedemann> any other action items for this topic?
+18:40:28 <LWFinger> In the announcement, is this for all open bugs, 11.* bugs, or what?
+18:41:25 <bmwiedemann> I would like to focus on older bugs as there would be quite many to look at otherwise
+18:41:41 <bmwiedemann> or we sort by category next time
+18:42:12 <bmwiedemann> so that people will not have to switch between translation bugs and bootloader bugs etc
+18:42:25 <bmwiedemann> (as proposed by remur_030)
+18:43:05 <LWFinger> Sorting sounds good. In the news, it will state that we will focus on the older ones.
+18:43:25 <bmwiedemann> maybe <=11.2 makes sense?
+18:44:13 <LWFinger> That is OK with me.
+18:44:35 <bmwiedemann> fine.
+18:44:43 <ReferenceSeete> Sounds good.  11.2 should be out of (or leaving) support by MS5
+18:48:32 <bmwiedemann> #agreed next Open Bugs Day will be about old bugs on releases <=11.2
+18:48:32 <bmwiedemann> #topic open discussion
+18:49:56 <bmwiedemann> did I yet mention the great idea to have some LiveCD (that can be made LiveUSB easily) to auto-test hardware compat on as many PCs as possible?
+18:50:17 <javier> nope
+18:50:22 <LWFinger> No, that sounds good.
+18:51:06 <bmwiedemann> the idea is to e.g. plug in USB-stick, boot from it and have either fully automated test+upload or a one-liner or an icon on desktop to do it
+18:51:21 <bmwiedemann> could use smolt DB or something own
+18:52:01 <javier> could the auto-testing be used for checking if some apps/menus are translated?
+18:52:11 <bmwiedemann> javier: no, this would be about hardware-compat testing
+18:52:16 <LWFinger> Would making the USB image be like http://en.opensuse.org/SDB:Live_USB_stick?
+18:52:35 <javier> bmwiedemann: sorry, I meant openqa.o.o
+18:52:46 <bmwiedemann> LWFinger: yes
+18:53:14 <javier> it would be also good to see if the release notes are translated
+18:53:33 <javier> for some reason 11.4 doesn't ship the translations of the release notes into Spanish
+18:53:35 <bmwiedemann> for now, it is just an idea, but isohybrid is used to build Factory isos since ~8 months now
+18:54:11 <javier> so I thought that perhaps it could also check if some files exist
+18:54:25 <LWFinger> If you get the project started and want testers, count me in.
+18:55:19 <bmwiedemann> javier: yes, it could... of course, installing in another language is hard, because it influences keyboard layout and shortcuts.
+18:56:25 <javier> I see
+18:56:26 <bmwiedemann> LWFinger: I guess we should make a FATE entry for it
+18:57:23 <LWFinger> Yes.
+18:57:45 <bmwiedemann> OK. I will.
+18:59:31 <LWFinger> Does a standard Live CD have smolt on it?
+19:03:49 <bmwiedemann> this would be a special .iso from OBS anyway
+19:03:59 <bmwiedemann> for the easy integration + uploading
+19:04:48 <bmwiedemann> though... integrating this into standard GNOME/KDE LiveCDs might be smart, too
+19:05:17 <LWFinger> The only question "Is there room?"
+19:05:37 <ReferenceSeete> Hehe, well it may be of such value that we should make room.
+19:05:57 <ReferenceSeete> Or maybe I'm the only one who doesn't use LiveCDs to play card games.
+19:06:30 <LWFinger> I certainly do not.
+19:07:16 <ReferenceSeete> I understand that they are part of demonstrating "feature parity" with Win/OSX, I'm just using them as an example of "cuttable content".
+19:08:04 <ReferenceSeete> I know that the KDE CD had somethings added to it when we moved to lzma compression.
+19:08:15 <ReferenceSeete> Perhaps we could 'undo' those additions if need be.
+19:09:35 <bmwiedemann> there is 2GB of content on the CDs so probably some things that could be omitted
+19:09:45 <bmwiedemann> https://features.opensuse.org/311661
+19:10:26 <bmwiedemann> I think, the actual testing+uploading code would be so small that it would not matter
+19:10:48 <bmwiedemann> e.g. the "hwinfo" package is 2MB and already there.
+19:12:20 <bmwiedemann> you are invited to vote/comment on the feature description
+19:13:25 <ReferenceSeete> + Voted
+19:13:48 <LWFinger> I will. There seems to be something wrong with Novel login from here.
+19:14:18 <bmwiedemann> then we need to schedule our next meeting
+19:14:49 <bmwiedemann> in two weeks before open bugs day might be good?
+19:15:17 <bmwiedemann> or is there no more to coordinate?
+19:16:10 <LWFinger> Having a look at the new bugs tool might be appropriate.
+19:16:25 <bmwiedemann> mine?
+19:16:35 <LWFinger> Yes.
+19:16:49 <bmwiedemann> right. with the category thing and such
+19:16:53 <LWFinger> Yes.
+19:17:30 <bmwiedemann> there will be summer time in two weeks here.
+19:17:36 <bmwiedemann> so 2011-03-28 17:00 UTC
+19:17:47 <LWFinger> OK.
+19:18:30 <bmwiedemann> Then I will close today's meeting. Thanks everyone for attending.
+19:18:38 <bmwiedemann> #endmeeting

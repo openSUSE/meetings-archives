@@ -1,0 +1,393 @@
+15:32:35 <sreeves> #startmeeting
+15:32:35 <bugbot> Meeting started Thu Jun 16 15:32:35 2011 UTC.  The chair is sreeves. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:32:35 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:32:37 * nmarques ready
+15:32:50 <vuntz> ah, cool
+15:32:53 <vuntz> sreeves is magic
+15:33:03 <sreeves> welcome everyone to the June edition of our meeting
+15:33:18 <cbosdonnat> vuntz: I was about to leave... and not sure if I'ld be helpful there
+15:33:26 <vuntz> sreeves: can you #chair me? I'll do some #action/#agreed/#info every now and then
+15:33:29 <vuntz> cbosdonnat: no problem
+15:33:36 <sreeves> #chair vuntz
+15:33:36 <bugbot> Current chairs: sreeves vuntz
+15:33:48 <sreeves> lets get started...
+15:33:54 <sreeves> #topic Project Update
+15:34:24 <sreeves> who wants this one - no one is listed on the agenda to run it ?
+15:34:32 <vuntz> DimStar: want to say a few words? :-)
+15:34:41 * metalgod back from the dead
+15:34:42 <DimStar> thanks... i can try.
+15:35:08 <DimStar> well, we (me a bit more than vuntz... but still) were busy preparing gnome 3.1.2 in factory, which looks to get in good shape as it seems
+15:35:14 * vuntz wonders why the topic didn't change
+15:35:33 <vuntz> #topic Project Update
+15:35:38 <metalgod> vuntz, the bot needs to be oped
+15:35:40 <vuntz> oh
+15:36:09 <nmarques> -ChanServ- You are not authorized to perform this operation.
+15:36:22 <metalgod> done
+15:36:43 <sreeves> #topic Project Update
+15:37:06 <sreeves> ok - bot is working now. DimStar take continue
+15:37:09 <DimStar> another interesting thing, which hopefully will help having less broken installs, is our new typelib()-style Provides/Requires logic (based on gobject-introspection)
+15:37:58 <vuntz> #info GNOME 3.1.2 is in G:F (for the most parts)
+15:38:35 <vuntz> #info New automatic typelib()-style Provides/Requires logic is available in gobject-introspection
+15:38:51 <sreeves> DimStar: update us on the requires part of that logic - has that part been rolled into factory ?
+15:38:51 <DimStar> for the parts of 3.1.2 not in G:F, you can blame vuntz for being so slow
+15:39:13 <DimStar> the requires part is not yet pushed to Factory, it is only enabled in G:F for now.
+15:39:20 <vuntz> I think we can push it now
+15:39:27 <vuntz> it looks to work good enough
+15:39:31 <DimStar> I'm actually waiting for a proper rebuild of some packages in oS:F to show that it works (polkit for example laks a rebuild)
+15:39:54 <DimStar> currently, gnome-shll Requires typelib(Polkit) which is not provided by anything
+15:40:45 <DimStar> (which causes a problem on G:F, that it is not properly installable at this moment)
+15:42:40 <DimStar> what else can I say about G:* prj..
+15:43:00 <DimStar> oh right: we also have libproxy 0.4.7, which uses gsettings as the backend to get the info to the apps. so finally this should be working again too
+15:43:18 <DimStar> (apps linking to libproxy get proper settings again)
+15:43:45 <vuntz> #info New libproxy, which now correctly works in GNOME 3
+15:43:57 <sreeves> cool
+15:44:54 <DimStar> and the latest: glib2 libs moved back from /lib to /usr/lib
+15:45:03 <vuntz> #info glib2 libs moved back from /lib to /usr/lib
+15:45:25 <DimStar> vuntz: did I miss something of importance?
+15:45:50 <vuntz> there's agreement that we don't care about /lib vs /usr/lib (except in early boot), that's why we did that change
+15:45:56 <vuntz> I have some interesting bits too
+15:46:14 <DimStar> vuntz: oh.. you did some work too? :P
+15:46:28 <vuntz> in the last 3 weeks, we removed 21 packages from our projects
+15:47:13 <vuntz> those were all old things that are dead upstream
+15:47:24 <vuntz> I sent a mail for most of them
+15:47:33 <vuntz> I'm considering dropping a few more
+15:47:39 <vuntz> (gnome-pilot, for instance)
+15:47:47 <FunkyPenguin> oh yes please!
+15:48:10 <vuntz> and regarding new packages...
+15:48:27 <vuntz> we have frogr
+15:48:40 <vuntz> the new gnome-contacts
+15:48:47 <vuntz> and some other boring bits
+15:49:03 <FunkyPenguin> pinpoint?
+15:49:20 <vuntz> indeed
+15:49:32 <vuntz> but apparently hermes didn't send me a mail for it, so it's not in my list :-)
+15:50:02 <vuntz> well, going back in older mails, I also see gpick, smuxi, mangler
+15:50:36 <vuntz> last thing
+15:50:47 <nmarques> vuntz, gpick is being ported to GTK3, hopefully will be before freeze/release
+15:50:56 <vuntz> we need to make sure that M2 has a nice working GNOME livecd
+15:51:11 <vuntz> right now, I'm unsure that the GNOME livecd has all the required packages
+15:51:23 <vuntz> did anyone try a recent build?
+15:51:44 <vuntz> #info We dropped 21 packages (usually because they were dead upstream, or deprecated)
+15:52:08 <vuntz> #info We added a few interesting packages (frogr, pinpoint, gpick, smuxi, mangler and gnome-contacts)
+15:52:29 <coolo> you're lucky - just yesterday a factory livecd dropped out
+15:53:12 <vuntz> :-)
+15:53:16 <vuntz> anyone willing to take a look at that?
+15:54:40 <FunkyPenguin> yeah ok i'll have a look
+15:54:45 <nmarques> vuntz, I will take look into it
+15:55:12 <sreeves> #action FunkyPenguin and nmarques will look at the M2 live cd
+15:55:20 <vuntz> cool, thanks
+15:55:21 <sreeves> thanks
+15:55:40 <sreeves> vuntz: DimStar - anything else on the project update ?
+15:55:53 <nmarques> I do have a question
+15:55:54 <vuntz> check for issues like "gnome-shell is not on the cd" or "this obviously required package is missing" (for theming, for instance)
+15:56:01 <nmarques> nvm
+15:56:05 <nmarques> it's on another topic
+15:56:06 <FunkyPenguin> coolo: have you got a link for the iso please?
+15:56:14 <vuntz> sreeves: that's all for me
+15:56:22 <fcrozat> (you can check kiwi image from gnome3 live cd for a good reference)
+15:56:27 <vuntz> http://download.opensuse.org/factory/iso/
+15:56:29 <fcrozat> in GNOME:Medias
+15:56:43 <coolo> FunkyPenguin: http://download.opensuse.org/factory/iso/
+15:57:23 <nmarques> downloading build49
+15:57:24 <FunkyPenguin> thanks
+15:57:32 <sreeves> I have a generic install question - if someone wanted to do a new stable (non factory) G3 install which method do we recommend ?
+15:57:43 <sreeves> grab the live-dvd from gnome website and install it, or install 11.4 and then one-click/zypper dup it ?
+15:58:28 <FunkyPenguin> personally i would say the latter
+15:58:29 <vuntz> sreeves: I'd recommend installing 11.4 and then following instructions on http://en.opensuse.org/openSUSE:GNOME_3.0
+15:58:55 <sreeves> vuntz: do we end up with different branding in the result ?
+15:59:11 <vuntz> but I never tried installing fcrozat's live images, and maybe it's better that way
+15:59:50 <fcrozat> well, it is almost equivalent
+16:00:04 <fcrozat> except live image has its own bootsplash
+16:00:44 <fcrozat> and adding "liveinstall" to boot cmdline isn't that obvious (it is not a problem for the promo DVD where there is a entry in syslinux)
+16:02:12 <sreeves> fcrozat: ah I forgot about the "liveinstall" cmdline - I installed from yast
+16:02:40 <fcrozat> sreeves: yes, unfortunately, the "liveinstall" syslinux tricks can't be automated in kiwi yet
+16:04:09 <sreeves> ok - anything else on project update ?
+16:04:26 <vuntz> sreeves: I think we can move on :-)
+16:04:27 <sreeves> #topic Yast 3 -Gnome 3 plans
+16:04:49 <sreeves> btw - http://en.opensuse.org/openSUSE:GNOME_meeting to follow the agenda
+16:05:10 <sreeves> prusnak: this topic is listed as yours
+16:06:32 <sreeves> no prusnak :-(
+16:07:02 <sreeves> #topic Replacing F-spot by Shotwell
+16:07:11 <sreeves> vuntz: is this your topic ?
+16:07:48 <vuntz> yes
+16:07:56 <nmarques> is it shotwell or spotwell ? :)
+16:08:02 <vuntz> so we had some interesting discussion on the mailing list
+16:08:33 <vuntz> there were obviously no clear result
+16:09:17 <vuntz> it's a bit mixed
+16:09:42 <vuntz> but from the reactions, it looks to me that we can switch to shotwell for now, and get feedback during the milestones on that
+16:10:01 <prusnak> sorry, i was afk, back now
+16:10:05 <vuntz> (knowing that people who will simply upgrade will keep f-spot, and f-spot will still be installable anyway)
+16:10:12 <iznogood> If we change default - will that be yet an other nail in f-spots coffin? Are we the last distro with it as default?
+16:10:27 <sreeves> prusnak: I'll switch back to you after this topic ends
+16:10:32 <prusnak> ok
+16:10:54 <vuntz> iznogood: hrm, I don't think it matters much from an upstream perspective
+16:11:57 <vuntz> any opinion?
+16:12:20 <sreeves> vuntz: I'm not sure I saw an overwhelming reason to switch in the thread  - what would you say is the main reason to switch the default ?
+16:12:58 <vuntz> sreeves: for me, it's the activity upstream
+16:13:12 <vuntz> as of today, if there's an important issue in f-spot, I'm not optimistic we can get it fixed
+16:13:17 <vuntz> while for shotwell, it will get fixed
+16:13:52 <sreeves> yeah
+16:14:28 <metalgod> also f-spot is using outdate libraries
+16:14:28 * sreeves is not a big fan of the move but I have only used f-spot so I can't really compare
+16:14:46 <metalgod> shotwell tends to use newer stuff (gtk3)
+16:14:56 * nmarques I don't use either, so I have really no position towards this
+16:15:19 <vuntz> sreeves: so you'll have an opportunity to try it :-)
+16:15:29 <FunkyPenguin> personally i found f-spot to outperform shotwell, but let's see how things go
+16:15:39 <vuntz> and really, we can easily decide to switch back before the betas
+16:15:53 <iznogood> sreeves: as long as f-spot is still there and wont be changed for upgraders - I tend wote for the "fresh and happing" software as default
+16:16:16 <vuntz> btw, if you have any annoyance when trying shotwell, compared to f-spot, please share them
+16:16:34 <vuntz> shotwell people will love such feedback
+16:16:50 <vuntz> #info Discussion on default photo manager on the list, with no real conclusion
+16:17:10 <vuntz> #info One good reason to switch to shotwell is the upstream activity
+16:17:24 <vuntz> #agreed Try shotwell as default during milestones, and see how it goes
+16:17:40 <vuntz> #action vuntz to make shotwell default (instead of f-spot)
+16:17:59 <vuntz> #action all to send feedback on / issues with shotwell
+16:18:06 <vuntz> I think that summarizes things
+16:18:14 <vuntz> we can move to next topic, I guess :-)
+16:18:24 <sreeves> vuntz: you will send an update to the thread with this decision ?
+16:18:50 <vuntz> yes
+16:19:02 <sreeves> #topic Yast 3 - Gnome 3 plans
+16:19:08 <sreeves> prusnak: take it away
+16:19:20 <prusnak> these are actually two topics
+16:19:28 <prusnak> a) how to integrate yast 2 into gnome 3
+16:20:00 <prusnak> b) rewrite yast-gtk from gtk2 to gtk3 preferably inspire by system settings look
+16:20:19 <prusnak> b) is an effort of yast-gtk maintainer
+16:20:32 <prusnak> unfortunately, i have no info about that
+16:20:50 <prusnak> about a) i started a discussion on -gnome ML, there were not a lot of responses, though
+16:21:14 <vuntz> true :-)
+16:21:38 <metalgod> maybe because nobody knows how gnome 3.2 will look :)
+16:21:44 <prusnak> what I saw was that people tend to like 3 options: 1) have yast menuitem in status menu, 2) have yast icon is system settings, 3) have yast tab on activities dashboard
+16:22:13 <prusnak> combination of these 3 is also possible
+16:22:28 * nmarques when I can get a few seconds to expose my case about this, let me know
+16:22:31 <metalgod> my opinion is that you should wait for what gnome-shell 3.2 will bring to us
+16:22:32 <vuntz> prusnak: option 3 is likely a bad one in the long term, as gnome-shell might move away from "tabs" there
+16:22:55 <prusnak> to wrap it up, there's no consensus yet, but I created a proof of concept gnome-extension for 1)
+16:23:24 <metalgod> that's the best option now
+16:23:56 <fcrozat> option 2 is already there
+16:24:09 <fcrozat> not convinced by option 1..
+16:24:14 <prusnak> fcrozat: really? it is?
+16:24:15 <metalgod> prusnak, this is why you shouldn't take option 3 http://jimmac.musichall.cz/log/?p=1181
+16:24:31 <fcrozat> prusnak: did you try typing yast in g3 ?
+16:24:40 <fcrozat> it should appear in the icon list
+16:24:44 <vuntz> fcrozat: it's not in the system settings :-)
+16:25:03 <fcrozat> vuntz: it is, here
+16:25:13 <malcolmlewis> option 1 interferes with other extensions
+16:25:18 <fcrozat> vuntz: you didn't merge changes for gnome-menus-branding-openSUSE ?
+16:25:25 <prusnak> fcrozat: i have older version of gnome i suppose (3.0.1)
+16:25:51 <vuntz> fcrozat: s/system settings/control center/ to clarify
+16:26:20 <fcrozat> ohh, you mean in gnome-control-center ?
+16:26:26 <nmarques> I think this is a dead end and there's no easy solution
+16:26:33 <nickfennell> Is it expected behaviour for the G:S:3 activities pane to simply bring up an instance of an application rather than open a new one
+16:26:41 <fcrozat> I though you mean in "applications / system" in gnome-shell
+16:27:11 <nickfennell> eg, I have terminator running. I press SUPERKEY and type out 'terminator' rather than starting a new instance (which is what I want (GNOME-DO behaviour) ) it simply focuses one I already have open
+16:28:52 <vuntz> prusnak: so, for now, the option that looks the "less wrong" to me is 2
+16:29:34 <vuntz> but I must admit I'm not extremely convinced either...
+16:29:41 <nmarques> vuntz, prusnak : it's the cleanest one, but will require a nem panel and someone has to do it
+16:30:07 <nmarques> the problem with yast is that it's too bloated, 40+ modules
+16:30:17 <prusnak> no no no
+16:30:20 <prusnak> just to have 1 icon
+16:30:21 <vuntz> nmarques: oh, it should not be a panel inside the control center
+16:30:22 <nmarques> that kills any concept for clean integration
+16:30:24 <prusnak> saying yast
+16:30:28 <vuntz> nmarques: just an icon to start the yast center
+16:30:40 <nmarques> prusnak, yeah I know, 1 icon on the syspanel that will open a new instance with the modules
+16:30:53 <malcolmlewis> and put uner the 'System' heading
+16:31:01 <prusnak> malcolmlewis: exactly
+16:31:13 <nmarques> so you will dump 40+ modules on system ?
+16:31:24 <prusnak> no, just 1 icon under system YaST
+16:31:35 <nmarques> what happens when you click it ?
+16:31:45 <malcolmlewis> YaST opens
+16:31:48 <prusnak> it launches yast window
+16:31:51 <nmarques> ok
+16:32:23 <prusnak> i personally like the option 1, but i agree that having "system settings" and "yast control center" is confusing
+16:32:33 <prusnak> especially when the first one launches gnome-control-center :)
+16:32:48 <fcrozat> and yast isn't really helpful as a name for newbies
+16:32:48 <nmarques> prusnak, for new users maybe, for loyal users, everyone knows what YaST is
+16:33:06 <nmarques> prusnak, we shouldn't ignore that YaST is one of the most known factors about *SUSE
+16:33:19 <prusnak> pro: yast is (or at least it used to be) one of the unique selling points of suse
+16:33:28 <prusnak> con: it would diverge from upstream gnome
+16:33:57 <nmarques> what concerns about 1
+16:34:11 <nmarques> is what malcolm mentioned before, it might trigger problems with other extensions
+16:34:26 <sreeves> I think option 1 diverges less than option 2
+16:34:34 <nmarques> and people will try to customize using every single package available... for what I've seen in forums and users
+16:34:56 <prusnak> nmarques: it does not trigger if it's directly in gnome-shell package :)
+16:35:00 <sreeves> option 2 does not fit into the flow - ie you can't return from yast back to the control-center
+16:35:03 * vuntz sees that DimStar is not following the meeting and working on packages instead ;-)
+16:35:24 <nmarques> prusnak, ok :)
+16:35:33 <DimStar> vuntz: I'm following :)
+16:35:54 <prusnak> fwiw, i don't really care, i usually launch yast from cmdline, i was just asked to start a discussion and create an extension :)
+16:36:12 <nmarques> I barelly use YaST either :)
+16:36:20 <prusnak> so i'd happy with dropping out of this process at this point
+16:36:21 <nmarques> vi does the job for most things in /etc/sysconfig :)
+16:36:26 <prusnak> and let someone else to pickup
+16:37:15 <nmarques> I think that a good starting point would be for the yast2 panel maintainer to say 'hi' and see if he's up to migrate it
+16:37:29 <nmarques> and pick up from there
+16:37:53 <nmarques> I can't really help on that one, goes far beyond my knowledge :/
+16:38:22 * nmarques - which reminds me to stfu about it
+16:38:39 <malcolmlewis> or is the focus on Web YaST so maybe not keen on looking at gtk3?
+16:39:11 <vuntz> ok
+16:39:28 <sreeves> ok - sounds like we won't reach an agreement today
+16:39:40 <vuntz> it sounds like either option 1 or 2
+16:39:49 <vuntz> and we won't reach a decision with 100% agreement anyway
+16:40:01 <vuntz> so someone has to take a decision
+16:40:15 <nmarques> we have one decision, we stroke out option 3
+16:40:21 <nmarques> which is already a good starting point :)
+16:40:50 <vuntz> I'll try to make the change for option 2, so people can try it
+16:41:00 <vuntz> and then we can decide between extension and control center
+16:41:24 <nmarques> just one thing
+16:41:33 <vuntz> #info Still no real decision. Two main options are adding yast item to status menu, and adding an icon in the control center
+16:41:54 <vuntz> #info There is a gnome-shell extension for first option: http://stick.gk2.sk/blog/2011/06/gnome-shell-extension-yast-status-menu/
+16:42:03 <nmarques> control center option has one pro, users will find it where it has always been, which is a very strong pro
+16:42:09 <vuntz> #action vuntz to make change for option 2, so people can play with it too
+16:42:50 <vuntz> I suggest to move on now :-)
+16:42:58 <nickfennell> Personally I find having multiple 'control panels' convoluted and confusing. Surely your focus should remain around YaST and 'plug in' to that?
+16:43:02 <vuntz> maybe skip the next topic as it'll be slow
+16:43:09 <vuntz> and go straight to nmarques' topics
+16:43:22 <nmarques> extensions packaging ?
+16:43:38 <vuntz> will be a long topic, so we keep it for next meeting or mailing list
+16:43:59 <nmarques> ok
+16:44:14 <sreeves> #topic GNOME branding font
+16:44:26 <nmarques> for reference: https://bugzilla.novell.com/show_bug.cgi?id=699959
+16:44:27 <sreeves> nmarques: you're up
+16:44:35 <bugbot> openSUSE bug 699959 in openSUSE 12.1 (GNOME) "Fifth Leg font doesn't provide Cyrillic glyphs" [Enhancement,New]
+16:44:42 <nmarques> while it's problem for GNOME2 which won't be happening on 12.1
+16:44:48 <nmarques> I'm not sure if it's a problem for G3
+16:44:54 <nmarques> my default install uses Cantarell fonts
+16:45:10 <vuntz> I guess it's mostly a question of which font we use for the default
+16:45:26 <nmarques> russian speaking users are a very important segment of our community and active
+16:45:42 <nmarques> so in case our default font doesn't support russian cyrillian glyphs
+16:45:46 <nmarques> we should consider one that does
+16:45:51 <nmarques> and that's pretty much it
+16:45:55 <nmarques> suggestions ? :)
+16:46:20 * vuntz is fine with Cantarell as default
+16:46:31 <nmarques> me too
+16:46:42 <nmarques> anyone knows if it supports russian glyphs?
+16:47:00 <nmarques> guess not ;)
+16:47:38 <nmarques> I'll find it out
+16:47:43 * nickfennell thinks 'lmgtfy.com'
+16:48:00 <vuntz> nmarques: I can see cyrillic in my window titles if I have cyrillic text there
+16:48:08 <vuntz> nmarques: it might not be cantarell, though; could be another font
+16:48:27 <nmarques> I will find out that and test it, then we'll if we need changes
+16:48:30 <nmarques> move to next ?
+16:48:32 <nmarques> :)
+16:48:38 * nmarques knows everyone's tired :)
+16:48:49 <vuntz> #action nmarques to make sure that Cantarell is used as default font for window frames
+16:49:10 <sreeves> #topic Potential gnome2 spin
+16:49:21 <federico1> cantarell needs http://jeff.ecchi.ca/blog/2011/04/13/on-cantarell/ to be fixed - the irregular spacings
+16:50:02 <nickfennell> You see scaling issues with Cantarell also, not sure if that's even remotely relevant
+16:50:36 <sreeves> nmarques: this topic is yours also
+16:50:51 <nmarques> ok
+16:50:52 <vuntz> federico1, nickfennell: I'd argue that fifth-leg is likely worse in every regard, especially as jimmac won't work on it anymore
+16:51:08 <fcrozat> federico1: I think irregular spacings has been fixed
+16:51:10 <vuntz> (we were just talking about the font for window titles)
+16:51:18 <nmarques> I've made a small poll on the forums about the possibility of having a GNOME2 spin (not to be included on factory)
+16:51:29 <nmarques> and discussed a bit about potential issues with vincent
+16:51:40 <federico1> vuntz: don't know about fifth-leg
+16:51:50 <federico1> fcrozat: oh, that's good news
+16:52:03 <nmarques> the pool is 51% pro, 49% against (considering KDE users usually vote for no)
+16:52:05 <federico1> it has pretty letterforms, but those spacings make it really hard read
+16:52:26 <nmarques> so my question is, if I'm to make (and I mean make and not trying) such option available
+16:52:54 <nmarques> does it bring any additional value to openSUSE, or does it conflict with anything on-going ?
+16:53:42 <nmarques> would we be interesting in having an optional G2 spin ?
+16:53:51 <vuntz> it would have to be made in such a way as to not conflict with the default install :-)
+16:54:01 <vuntz> so I don't see a potential conflict
+16:54:09 <nmarques> the /opt install as suggested previously
+16:54:30 <vuntz> so the question is: is the additional value important enough to invest efforts in there?
+16:54:36 * vuntz has no strong opinion
+16:54:58 <nmarques> my only concern comes in a way of users going KDE and not GNOME3
+16:55:20 <nmarques> if we're going to loose people who haven't made their minds to G3 to other platforms, it does justify the efforts
+16:55:45 <nmarques> and on a personal level, tackling potential migrations to KDE is reason enough for me :)
+16:56:42 <nickfennell> As vuntz will know, going from G2 to G3 is quite a change in overall concept, perhaps drafting a more G2 like interface will keep people away from the likes of KDE
+16:57:34 <nickfennell> Initially G3 is quite off putting
+16:57:43 <vuntz> nmarques: any opinion about building a GNOME session that looks like GNOME 2, but with the GNOME 3 fallback mode?
+16:57:56 <vuntz> nmarques: sounds easier to me
+16:58:25 <nickfennell> Introduce G2 configurable panels into G3 shell?
+16:58:37 <nmarques> vuntz, we can try that, I'm not familiar with it, but if you believe it can be done, then we for sure try it, I have time to put into it
+16:58:40 * nickfennell has no idea if that's even possible.
+16:59:00 <vuntz> nickfennell: did you try the fallback mode?
+16:59:18 <nickfennell> vuntz, yes. Quite liked it but I'm more impressed by gnome-shell
+16:59:34 <nickfennell> fallback mode was very good but felt unpolished
+16:59:41 <nickfennell> "safe mode" if you will.
+16:59:59 <nmarques> nickfennell, but that polishment has to be done at code level, not really something I can help much
+17:00:20 <vuntz> nickfennell: how is it more unpolished that GNOME 2?
+17:00:26 <nmarques> the main concern that I see around G3 is the lack of customization
+17:00:48 <nickfennell> nickfennell, because from GNOME3 you expect more. GNOME2 we know what we can get and put up with it
+17:00:55 <nickfennell> lol, vuntz
+17:01:00 <nickfennell> .
+17:01:29 <nmarques> the problem with fallback mode starts with the name ;)
+17:01:38 <nickfennell> Certainly.
+17:01:39 <nmarques> it sounds like a cut-down version of GNOME :)
+17:01:45 <nickfennell> It sounds like a fall back mode
+17:01:51 <nmarques> and not really like a feature of GNOME2
+17:01:56 <vuntz> you never see it's called fallback if you log in there directly
+17:01:57 <nmarques> s/GNOME2/G3
+17:02:08 <Ilmehtar> nmarques: I prefer the idea of calling it "Less Scary Mode"
+17:02:12 <vuntz> so just call the session "GNOME 2 Look and Feel"
+17:02:18 <nmarques> vuntz, wrong approach :)
+17:02:20 <nickfennell> GNOME3 and GNOME3+
+17:02:21 <nmarques> vuntz, look what the press is calling it :)
+17:02:36 <nmarques> vuntz, fallback mode is already the name recognized by everyone for it :)
+17:02:43 <nmarques> vuntz, but thats a marketing issue :)
+17:02:49 <vuntz> but the point is that you'd configure this session in a different anyway
+17:02:52 <nmarques> but we have a decision :)
+17:02:53 <vuntz> so it wouldn't be the upstream fallback
+17:02:57 <nmarques> no GNOME2
+17:03:01 <vuntz> it'd be the openSUSE GNOME 2 Look and Feel
+17:03:09 <nickfennell> Polish fallback mode into being something much nicer
+17:03:10 <nmarques> and try to improve the 'fallback mode' to something more desirable for users
+17:03:14 <nickfennell> ^^
+17:03:27 <vuntz> nickfennell: again, what is unpolished compared to gnome 2?
+17:03:42 <nickfennell> vuntz, default theme, colours, panel sizes,
+17:03:42 <vuntz> nickfennell: that's a real question, to know what work would need to be done
+17:03:53 <vuntz> so theming
+17:03:53 <nickfennell> vuntz, aa fonts
+17:03:56 <nickfennell> entirely.
+17:03:56 <nmarques> vuntz, lack of customization is the main problem :)
+17:04:06 <metalgod> one thing i miss is the ability to put icons on the panel
+17:04:13 <vuntz> metalgod: you can do that...
+17:04:16 <nickfennell> I miss the panels as a whole
+17:04:20 <vuntz> nmarques: which lack of customization?
+17:04:23 <metalgod> vuntz, right click on the menu and add it ?
+17:04:25 <nickfennell> having one top panel is a real ballache
+17:04:27 <vuntz> nickfennell: and they're here, in fallback mode. Same code.
+17:04:28 * malcolmlewis has icons on the panel
+17:04:46 <nmarques> vuntz, panel sizes, remove that crappy glass look from the shell
+17:04:56 <vuntz> wait wait wait
+17:05:00 <vuntz> we're not talking about the shell here
+17:05:10 <vuntz> so
+17:05:14 <nmarques> vuntz, response times seem somewhat worse than G2 with a proper GTK engine (like pixmap)
+17:05:23 <nickfennell> vuntz, can you theme fallback to look like gnome-shell?
+17:06:04 <vuntz> I'd ask everyone to look at the fallback mode, forget it's called fallback, and read http://www.vuntz.net/journal/archive/2011/04/13
+17:06:30 <nmarques> vuntz, for starters, can we change the session name and strike off any ideas of 'fallback' ?
+17:06:38 <vuntz> nmarques: ignore that for now
+17:06:44 <vuntz> just try it
+17:06:53 <vuntz> and see if it can be a good basis for what you want to do
+17:07:05 <nmarques> vuntz, will with with M2
+17:07:23 <sreeves> nmarques: so are you okay with an action item of looking into a customized fallback mode and then we move to the next topic ?
+17:07:25 <nmarques> *will do
+17:07:26 <vuntz> if it's a good basis, we'll create a special session, not named fallback, with different settings, etc.
+17:07:35 <nmarques> sreeves, yeah
+17:07:43 <vuntz> if it's not, then staying with GNOME 2 in /opt would be the way
+17:08:05 <sreeves> #action nmarques to look into feasibility of a customized version of fallback mode
+17:08:09 <nmarques> vuntz, the idea can be marketized with our users :)
+17:08:24 <nmarques> vuntz, I think we can do something productive here
+17:08:30 <sreeves> #info look at http://www.vuntz.net/journal/archive/2011/04/13
+17:08:41 <sreeves> #topic Q/A
+17:09:19 <vuntz> first one: any opinion about building the broadway backend in gtk+ by default?
+17:09:45 <vuntz> (see http://blogs.gnome.org/alexl/2010/11/23/gtk3-vs-html5/)
+17:11:48 * vuntz looks at fcrozat who will have an opinion on this for sure
+17:12:10 <fcrozat> vuntz: none :)
+17:12:10 <sreeves> vuntz: there is no performance hit by having an additional backend available, correct ?
+17:12:15 <malcolmlewis> (and http://blogs.gnome.org/alexl/2011/03/15/gtk-html-backend-update/)?
+17:12:23 <fcrozat> does it have additional dependencies ?
+17:12:37 <fcrozat> the issue with gtk+ backends is they aren't pluggable..
+17:13:52 <vuntz> I don't see a new dep
+17:13:56 <vuntz> I don't expect performance hit
+17:14:07 <vuntz> but it's just something people can play with
+17:14:25 <malcolmlewis> looks interesting
+17:14:55 <sreeves> I say build it then
+17:15:07 <malcolmlewis> ^^ +1
+17:15:50 <sreeves> #action vuntz to enable build of broadway backend in gtk+
+17:16:23 <sreeves> other questions ?
+17:16:34 * sreeves realizes meeting has gone quite long
+17:17:22 <sreeves> okay let's end now. thanks everyone for the good discussions
+17:17:25 <sreeves> #endmeeting

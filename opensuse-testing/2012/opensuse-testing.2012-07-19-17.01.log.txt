@@ -1,0 +1,131 @@
+17:01:40 <bmwiedemann> #startmeeting
+17:01:41 <bugbot> Meeting started Thu Jul 19 17:01:40 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:01:41 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:01:49 <bmwiedemann> Hello everyone
+17:01:49 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:01:49 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:01:59 <bmwiedemann> #topic 12.2 testing
+17:02:06 <bmwiedemann> #chair Holgi
+17:02:06 <bugbot> Current chairs: Holgi bmwiedemann
+17:02:57 <bmwiedemann> I'm running 12.2-RC1 on several machines now and still Beta2 on others. Only small issues so far
+17:03:10 <bmwiedemann> got the lxdm problem patched and SRed now :)
+17:03:34 <Holgi> I'm running beta 2 on my workstation
+17:03:40 <Holgi> still
+17:04:19 <Holgi> hope to have some time next week for rc a
+17:04:22 <Holgi> 1
+17:04:35 <LWFinger> I have RC1 on 2 machines.
+17:05:11 <bmwiedemann> I had display problems with kdm on nouveau
+17:05:26 <bmwiedemann> needed rcxdm restart , so I switched to lxdm for now
+17:06:04 <LWFinger> Nouveau fails on both of mine. Someday I need to file a proper bug report.
+17:06:58 <LWFinger> One of my displays is at 1024x768 and is OK with the frame buffer driver.
+17:07:04 <bmwiedemann> best file it upstream
+17:08:19 <LWFinger> Yes on the upstream. The other is 1280x800, which the fb cannot handle and nv crashes. Bug # 770560.
+17:08:52 <LWFinger> I hope to get that last one fixed before GM.
+17:09:53 <LWFinger> No other problems.
+17:13:41 <bmwiedemann> bgerber, a-865, yaloki - any 12.2 testing?
+17:14:18 <bmwiedemann> BManojlovic, Creatura85, Ilmehtar, m4z: ping
+17:15:29 <bmwiedemann> then we could move to the next topic
+17:15:38 <bmwiedemann> #topic next meeting
+17:15:39 <LWFinger> OK
+17:16:11 <LWFinger> What is current release date for RC2?
+17:16:20 <bmwiedemann> I guess next week
+17:17:04 <bmwiedemann> coolo got all 12.2 packages building now
+17:17:18 <LWFinger> Good.
+17:18:15 <Holgi> Larry: I ask about openSUSE conference in Orlando - I will take part- you a well?
+17:18:29 <Holgi> you as well?
+17:19:10 <LWFinger> I saw the question, but my KDE session crashed before I sent my answer. No, I will not.
+17:19:55 <Holgi> would be good chance to meet face to fac. where are you located?
+17:20:40 <LWFinger> As a retired person, travel like that is difficult. I'm in Kansas City, MO, about 1/2 the country away.
+17:20:54 <Holgi> I See
+17:21:12 <Holgi> to bad
+17:21:12 <LWFinger> This is a big country.
+17:21:26 <LWFinger> Yes, it is too bad.
+17:21:50 <bmwiedemann> I'll be in Prague in October
+17:22:38 * Holgi not
+17:22:46 <LWFinger> That is a nice city. I hope you don't have to work too hard.
+17:23:23 <bmwiedemann> openSUSE conference there will be some work and some fun
+17:23:35 <LWFinger> Good!
+17:24:53 <bmwiedemann> I might be on vacation in 14d from now
+17:25:25 <bmwiedemann> so what about 2012-08-09 for next meeting?
+17:25:54 <LWFinger> I will not be available from July 26 till August 7. The 9th would be good.
+17:26:15 <Holgi> I will be on vacation after you
+17:27:14 <bmwiedemann> If I understood roadmap planning correctly, august is supposed to be a quiet months with all those vacations
+17:27:52 <Holgi> so meet in sept then?
+17:28:20 <bmwiedemann> we can have the meeting on 2012-08-09 and then meet 2-3 weeks after it
+17:28:29 <bmwiedemann> it still is an important time for testing
+17:28:51 <LWFinger> That is OK with me, and we certainly need the testing.
+17:29:13 <Holgi> ok. I'm just not sure if I will join on the 9the
+17:30:07 <LWFinger> We can hope that meeting will be as uneventful as today.
+17:30:17 <bmwiedemann> yep. likely will
+17:30:46 <bmwiedemann> #agreed next meeting 2012-08-09 17:00 UTC
+17:30:52 <bmwiedemann> #topic open discussion
+17:31:00 <LWFinger> Holgi: You can do as tigerfoot has done and post anything you want us to see on the wiki.
+17:31:26 <Holgi> yes
+17:31:55 <bmwiedemann> I submitted a session to the openSUSE conference about how to improve development of openSUSE-Factory
+17:32:05 <bmwiedemann> as BoF/discussion
+17:32:36 <LWFinger> What ideas do you have?
+17:34:58 <bmwiedemann> having a staging area, where automated tests are run on submissions
+17:35:33 <bmwiedemann> if tests pass, packages can move to the more stable Factory area
+17:35:44 <bmwiedemann> and if tests fail, things have to be fixed first
+17:35:53 <bmwiedemann> (either the packages or the tests)
+17:36:19 <LWFinger> I see how that would get feedback to the dev earlier. Would it save build time as well?
+17:36:30 <bmwiedemann> it might
+17:36:49 <bmwiedemann> but it could also need extra build power
+17:37:00 <bmwiedemann> to build dependent packages in the staging area
+17:37:16 <bmwiedemann> so that a new gcc would show its effects
+17:37:26 <LWFinger> Am I correct that build capacity is rate-limiting?
+17:37:55 * Creatura85 says good evening
+17:38:03 <bmwiedemann> there is some way to prioritize in OBS. e.g. armv5 gets less builds than armv7 for that reason
+17:38:17 <bmwiedemann> and there is a cap on the number of workers
+17:38:29 <bmwiedemann> from the hardware
+17:38:31 <Creatura85> bmwiedemann: pong
+17:38:49 <bmwiedemann> Creatura85: good evening. did you test 12.2-RC1 ?
+17:39:01 <Creatura85> bmwiedemann: yes
+17:39:14 <Creatura85> managed to upgrade from beta to rc1 without any problems
+17:39:33 <Creatura85> 1500 + packages got upgraded
+17:39:56 <bmwiedemann> which is probably everything
+17:40:21 <LWFinger> Was that with zypper dup, or with booting NET or DVD?
+17:41:09 <Creatura85> bmwiedemann: yes all :)
+17:41:12 <bmwiedemann> zypper up ?
+17:41:32 <Creatura85> LWFinger: zypper dup with the oss, non-oss repos enabled
+17:41:43 <bmwiedemann> zypper dup can be a bit more dangerous
+17:41:56 <Creatura85> someone said something about non-oss having a separate repo ?
+17:42:01 <Creatura85> bmwiedemann: not this time
+17:42:10 <bmwiedemann> good
+17:42:30 <Creatura85> oss and non-oss are the main repos
+17:42:48 <bmwiedemann> you could get away without non-oss
+17:42:54 <LWFinger> Good that you tested that route. I used NET to upgrade. As I had been following factory-snapshot, only ~50 packages.
+17:43:16 <Creatura85> LWFinger: factory and 12.2 are separate now as far as i know
+17:43:47 <bmwiedemann> but factory-snapshot might contain 12.2-RC1
+17:43:50 <bmwiedemann> atm
+17:43:58 <Creatura85> bootloader looks ok, the issue with the first login attempt still is around at kde login prompt
+17:44:07 <Creatura85> bmwiedemann: could be
+17:44:18 <Creatura85> the software module does not crash now
+17:44:20 <Creatura85> its fixed
+17:44:45 <LWFinger> That first login problem is fixed for me. Curious.
+17:46:04 <bmwiedemann> if that is our worst bug, we will be fine :D
+17:47:06 <LWFinger> At least networking looks solid. With that, updates are OK.
+17:47:54 <bmwiedemann> I already saw several bigger things rejected for 12.2 - they might still come later as updates, but it should make for a solid 12.2-GM
+17:48:11 <Creatura85> bmwiedemann: that sounds good to me
+17:48:23 <Creatura85> stability is the most import part now
+17:48:48 <Creatura85> *important
+17:49:32 <bmwiedemann> there is usability, security... they compete sometimes
+17:51:04 <a-865> no installs in weeks, just updating to RC1 on most machines bmwiedemann
+17:51:23 <bmwiedemann> so updates apparently work well now
+17:51:55 <a-865> except none of RC1 is available on mirrors except to zypper and YaST
+17:52:09 <a-865> can't look to see what's new
+17:52:33 <a-865> filed bnc 772151 some hours ago
+17:52:42 <a-865> and OF 313803
+17:54:09 <bmwiedemann> a-865: http://ftp5.gwdg.de/pub/linux/suse/opensuse/factory-snapshot/repo/oss/ should contain a mirror of RC1
+17:55:09 <a-865> My repos are set to distribution/12.2, and work fine with zypper and YaST NAICT
+17:56:04 <a-865> plus updates/12.2
+17:57:09 <bmwiedemann> a-865: yes, because /distribution/12.2/repo/oss/ redirects to factory-snapshot/repo/oss/ (until 12.2 is finished)
+17:58:11 <bmwiedemann> you can see that with curl -I http://download.opensuse.org/distribution/12.2/repo/oss/
+18:01:38 <bmwiedemann> a-865: for the fontconfig problem. did you try placing changes in /etc/font/local.conf ? it seems to be there for user changes
+18:03:41 <bmwiedemann> do we have other proposals on how to make Factory better?
+18:04:10 <bmwiedemann> (or at least the Milestones and other releases, which is what matters for most users)
+18:07:16 <Creatura85> no i have no idea at the moment
+18:07:20 <bmwiedemann> then we should close today's meeting
+18:07:34 <bmwiedemann> unless you have other things to discuss
+18:07:48 <Creatura85> waiting for RC2 bmwiedemann :)
+18:08:37 <bmwiedemann> #endmeeting

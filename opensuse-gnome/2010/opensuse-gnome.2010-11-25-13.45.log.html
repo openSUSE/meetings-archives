@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-gnome log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">13:45:43</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE GNOME Team Meeting</span>
+<a name="l-2"></a><span class="tm">13:45:43</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Nov 25 13:45:43 2010 UTC.  The chair is metalgod. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">13:45:43</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">13:45:59</span><span class="nk"> &lt;metalgod&gt;</span> welcome to the GNOME team meeting
+<a name="l-5"></a><span class="tm">13:46:02</span><span class="nk"> &lt;bittin&gt;</span> thanks
+<a name="l-6"></a><span class="tm">13:46:03</span><span class="nk"> &lt;metalgod&gt;</span> first topic
+<a name="l-7"></a><span class="tm">13:46:17</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">Feature/Future plans for openSUSE 11.4 (vuntz)</span>
+<a name="l-8"></a><span class="tm">13:46:59</span><span class="nk"> &lt;metalgod&gt;</span> ok so let's discuss Feature/Future plans for 11.4
+<a name="l-9"></a><span class="tm">13:47:10</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> what we have done right now ?
+<a name="l-10"></a><span class="tm">13:47:38</span><span class="nk"> &lt;vuntz&gt;</span> soo
+<a name="l-11"></a><span class="tm">13:48:01</span><span class="nk"> &lt;vuntz&gt;</span> this is tracked at http://en.opensuse.org/openSUSE:GNOME_features
+<a name="l-12"></a><span class="tm">13:48:34</span><span class="nk"> &lt;vuntz&gt;</span> since last meeting, I'm not sure we got a lot of changes
+<a name="l-13"></a><span class="tm">13:48:39</span><span class="nk"> &lt;vuntz&gt;</span> we got rid of hal by default
+<a name="l-14"></a><span class="tm">13:49:09</span><span class="nk"> &lt;vuntz&gt;</span> and we kept updating a few components for gnome-shell, to make it easier to do the gnome 3 spin later on
+<a name="l-15"></a><span class="tm">13:49:11</span><span class="nk"> &lt;metalgod&gt;</span> you are working on suseconfig too afaik
+<a name="l-16"></a><span class="tm">13:49:28</span><span class="nk"> &lt;vuntz&gt;</span> not much progress there
+<a name="l-17"></a><span class="tm">13:49:39</span><span class="nk"> &lt;vuntz&gt;</span> I need to fix the rpmlint checks I introduced and the rpm macros
+<a name="l-18"></a><span class="tm">13:50:09</span><span class="nk"> &lt;vuntz&gt;</span> but if you look at the suseconfig things that are left in openSUSE for GNOME, it's only desktop-file-utils and glib2
+<a name="l-19"></a><span class="tm">13:50:16</span><span class="nk"> &lt;vuntz&gt;</span> we got rid of gdm and gtk
+<a name="l-20"></a><span class="tm">13:50:18</span><span class="nk"> &lt;metalgod&gt;</span> ok... i think this is really an important feature so we can maintain some compatibility with fedora/mandriva rpm's
+<a name="l-21"></a><span class="tm">13:50:35</span><span class="nk"> &lt;vuntz&gt;</span> so yeah, it's moving a bit slowly
+<a name="l-22"></a><span class="tm">13:50:40</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-23"></a><span class="tm">13:50:47</span><span class="nk"> &lt;metalgod&gt;</span> so what about GNOME 3.0 repository ?
+<a name="l-24"></a><span class="tm">13:51:10</span><span class="nk"> &lt;metalgod&gt;</span> afaik it's going to G:Unstable
+<a name="l-25"></a><span class="tm">13:51:12</span><span class="nk"> &lt;vuntz&gt;</span> I think it's worth mentioning that for this cycle, our two big focus are new packages and cleanup of old packages. Since we'll have an old gnome for the release, new features are not necessarily something easy to do
+<a name="l-26"></a><span class="tm">13:51:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> we don't have a repo yet
+<a name="l-27"></a><span class="tm">13:51:32</span><span class="nk"> &lt;vuntz&gt;</span> I think we can start putting stuff in G:U, indeed
+<a name="l-28"></a><span class="tm">13:51:45</span><span class="nk"> &lt;vuntz&gt;</span> so if anybody wants to update packages to 3.0, they're welcome to submit them to G:U
+<a name="l-29"></a><span class="tm">13:51:53</span><span class="nk"> &lt;fcrozat&gt;</span> (and I need to restart my GNOME shell GIT stuff)
+<a name="l-30"></a><span class="tm">13:52:03</span><span class="nk"> &lt;vuntz&gt;</span> now that we got 2.32.1 in, we should have no big updates anymore, so we can have time to work on this
+<a name="l-31"></a><span class="tm">13:52:04</span><span class="nk"> &lt;peter_xos&gt;</span> x ready
+<a name="l-32"></a><span class="tm">13:52:06</span><span class="nk"> &lt;peter_xos&gt;</span> er
+<a name="l-33"></a><span class="tm">13:52:15</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> am I missing anything?
+<a name="l-34"></a><span class="tm">13:52:19</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">fcrozat:</span> can you submit some of your gnome-shell work to G:U ?
+<a name="l-35"></a><span class="tm">13:52:21 </span><span class="nka">* peter_xos</span> <span class="ac">has gimp 2.7.x ready in home:mrdocs</span>
+<a name="l-36"></a><span class="tm">13:52:24</span><span class="nk"> &lt;DimStar&gt;</span> I think that's summing it up.
+<a name="l-37"></a><span class="tm">13:52:25</span><span class="nk"> &lt;psankar&gt;</span> vuntz, new packages list is available at http://en.opensuse.org/openSUSE:GNOME_new_packages ?
+<a name="l-38"></a><span class="tm">13:52:44</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">metalgod:</span> I need to resync with with git. And I'll push needed one to G:U
+<a name="l-39"></a><span class="tm">13:52:57</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">fcrozat:</span> awesome... thanks
+<a name="l-40"></a><span class="tm">13:53:34</span><span class="nk"> &lt;bittin&gt;</span> Replace gnomesu by something more modern: me votes for gksu-polkit
+<a name="l-41"></a><span class="tm">13:53:35</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-42"></a><span class="tm">13:53:38</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> yes
+<a name="l-43"></a><span class="tm">13:53:52</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">bittin:</span> yeah, that's the plan, but we need to chat with the security team
+<a name="l-44"></a><span class="tm">13:54:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">bittin:</span> I started this but didn't get much answer from them
+<a name="l-45"></a><span class="tm">13:54:06</span><span class="nk"> &lt;metalgod&gt;</span> /me just updated the http://en.opensuse.org/openSUSE:GNOME_features page wrt HAL removal
+<a name="l-46"></a><span class="tm">13:54:11</span><span class="nk"> &lt;bittin&gt;</span> ah ok
+<a name="l-47"></a><span class="tm">13:54:11</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">bittin:</span> or, actually
+<a name="l-48"></a><span class="tm">13:54:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">bittin:</span> the plan is to move to pkexec
+<a name="l-49"></a><span class="tm">13:54:26</span><span class="nk"> &lt;vuntz&gt;</span> (gksu-polkit was the old plan :-))
+<a name="l-50"></a><span class="tm">13:54:27</span><span class="nk"> &lt;bittin&gt;</span> ah
+<a name="l-51"></a><span class="tm">13:54:39</span><span class="nk"> &lt;vuntz&gt;</span> if anybody wants to help with that, I have a list of things to fix
+<a name="l-52"></a><span class="tm">13:54:41</span><span class="nk"> &lt;bittin&gt;</span> i guess thats fine to :)
+<a name="l-53"></a><span class="tm">13:54:46</span><span class="nk"> &lt;psankar&gt;</span> metalgod, you may note that discussion with security team as an AI ?
+<a name="l-54"></a><span class="tm">13:55:10</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> why not ? you and vuntz ?
+<a name="l-55"></a><span class="tm">13:55:19</span><span class="nk"> &lt;psankar&gt;</span> metalgod, sure
+<a name="l-56"></a><span class="tm">13:55:49</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">psankar Talk with the security team about gnomesu replacement for Yast</span>
+<a name="l-57"></a><span class="tm">13:56:04</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz Talk with the security team about gnomesu replacement for Yast</span>
+<a name="l-58"></a><span class="tm">13:56:17</span><span class="nk"> &lt;metalgod&gt;</span> soooo let's move to the next topic
+<a name="l-59"></a><span class="tm">13:56:25</span><span class="nk"> &lt;psankar&gt;</span> vuntz, I wikk take that and relieve you for the rest :-)
+<a name="l-60"></a><span class="tm">13:56:30</span><span class="nk"> &lt;psankar&gt;</span> *will
+<a name="l-61"></a><span class="tm">13:56:39</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE Conference and Project Update (vuntz, Captain Magnus, Dimstar)</span>
+<a name="l-62"></a><span class="tm">13:57:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> heh
+<a name="l-63"></a><span class="tm">13:57:06</span><span class="nk"> &lt;metalgod&gt;</span> so this is the first meeting after the conference
+<a name="l-64"></a><span class="tm">13:57:36</span><span class="nk"> &lt;psankar&gt;</span> I saw not many pictures of our openSUSE GNOME team from the conference. So any pictures ? and also anything to convey from the conference ?
+<a name="l-65"></a><span class="tm">13:57:54</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> captain_magnus and DimStar or anyone i'm missing (sorry) that were at the conference can you please summarize what happened at the conference ?
+<a name="l-66"></a><span class="tm">13:58:09</span><span class="nk"> &lt;psankar&gt;</span> from a GNOME perspective that is.
+<a name="l-67"></a><span class="tm">13:58:15</span><span class="nk"> &lt;metalgod&gt;</span> happy moments, coding momentsm anything you like to add
+<a name="l-68"></a><span class="tm">13:58:31</span><span class="nk"> &lt;vuntz&gt;</span> unfortunately, captain_magnus couldn't make it :/
+<a name="l-69"></a><span class="tm">13:58:37</span><span class="nk"> &lt;bittin&gt;</span> i was not there as its expansive to go from Sweden, might go some other time tough
+<a name="l-70"></a><span class="tm">13:58:37</span><span class="nk"> &lt;vuntz&gt;</span> so, what happened...
+<a name="l-71"></a><span class="tm">13:58:38</span><span class="nk"> &lt;vuntz&gt;</span> hrm
+<a name="l-72"></a><span class="tm">13:58:43</span><span class="nk"> &lt;psankar&gt;</span> :(
+<a name="l-73"></a><span class="tm">13:58:46 </span><span class="nka">* vuntz</span> <span class="ac">looks at DimStar ;-)</span>
+<a name="l-74"></a><span class="tm">13:58:56</span><span class="nk"> &lt;psankar&gt;</span> no icecream deathmatch ?
+<a name="l-75"></a><span class="tm">13:59:05</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> hmm... I think the most note-worthy was the discussion with 'legal' for the codec installer / search
+<a name="l-76"></a><span class="tm">13:59:27</span><span class="nk"> &lt;vuntz&gt;</span> right
+<a name="l-77"></a><span class="tm">13:59:36</span><span class="nk"> &lt;vuntz&gt;</span> want to summarize it? Or want me to do it?
+<a name="l-78"></a><span class="tm">13:59:47</span><span class="nk"> &lt;DimStar&gt;</span> you have the niceer accent :)
+<a name="l-79"></a><span class="tm">13:59:49</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> summarize please
+<a name="l-80"></a><span class="tm">14:00:28</span><span class="nk"> &lt;vuntz&gt;</span> we had a long  chat with the legal team during the party
+<a name="l-81"></a><span class="tm">14:00:47</span><span class="nk"> &lt;vuntz&gt;</span> we explained what we can do (from a technical pov) and they explained what we can't do (from a legal pov)
+<a name="l-82"></a><span class="tm">14:01:09</span><span class="nk"> &lt;vuntz&gt;</span> we kind of found a middle-ground that would make installation of codecs easier
+<a name="l-83"></a><span class="tm">14:01:42</span><span class="nk"> &lt;vuntz&gt;</span> that need some work in gnome-packagekit, as well as a search engine for packages that can answer queries like "whatprovides"
+<a name="l-84"></a><span class="tm">14:02:46</span><span class="nk"> &lt;vuntz&gt;</span> don't really want to enter in all the details here
+<a name="l-85"></a><span class="tm">14:02:57</span><span class="nk"> &lt;vuntz&gt;</span> I guess I should really just write the summary of the discussion to the mailing list
+<a name="l-86"></a><span class="tm">14:03:04</span><span class="nk"> &lt;psankar&gt;</span> okay
+<a name="l-87"></a><span class="tm">14:03:09</span><span class="nk"> &lt;metalgod&gt;</span> fine
+<a name="l-88"></a><span class="tm">14:03:09</span><span class="nk"> &lt;vuntz&gt;</span> I don't think we can implement all this for 11.4, though
+<a name="l-89"></a><span class="tm">14:03:20</span><span class="nk"> &lt;psankar&gt;</span> anything came from the KDE folks ?
+<a name="l-90"></a><span class="tm">14:03:22</span><span class="nk"> &lt;vuntz&gt;</span> looks like we're a bit short in time
+<a name="l-91"></a><span class="tm">14:03:34</span><span class="nk"> &lt;vuntz&gt;</span> they weren't able to join the discussion, iirc
+<a name="l-92"></a><span class="tm">14:03:38</span><span class="nk"> &lt;psankar&gt;</span> okay
+<a name="l-93"></a><span class="tm">14:04:08</span><span class="nk"> &lt;vuntz&gt;</span> but since it's really gstreamer-centric, I'm not sure it would work well for kde
+<a name="l-94"></a><span class="tm">14:04:15</span><span class="nk"> &lt;psankar&gt;</span> okay okay
+<a name="l-95"></a><span class="tm">14:04:28</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> there was a big GNOME representation at the conference ?
+<a name="l-96"></a><span class="tm">14:04:56</span><span class="nk"> &lt;vuntz&gt;</span> it was okay
+<a name="l-97"></a><span class="tm">14:05:16</span><span class="nk"> &lt;psankar&gt;</span> did anyone from SLED team came ?
+<a name="l-98"></a><span class="tm">14:05:44</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> sreeves_out i think
+<a name="l-99"></a><span class="tm">14:05:58</span><span class="nk"> &lt;psankar&gt;</span> ah yes. saw a talk by him on pulseaudio iirc
+<a name="l-100"></a><span class="tm">14:06:00</span><span class="nk"> &lt;metalgod&gt;</span> he talked about PA
+<a name="l-101"></a><span class="tm">14:06:00</span><span class="nk"> &lt;DimStar&gt;</span> yes, sreeves was there.
+<a name="l-102"></a><span class="tm">14:06:10</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-103"></a><span class="tm">14:06:12</span><span class="nk"> &lt;psankar&gt;</span> i think we cna move to next.
+<a name="l-104"></a><span class="tm">14:06:13</span><span class="nk"> &lt;vuntz&gt;</span> (sorry, keyboard break :-))
+<a name="l-105"></a><span class="tm">14:06:22</span><span class="nk"> &lt;metalgod&gt;</span> next topic
+<a name="l-106"></a><span class="tm">14:06:34</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">Bugday plans or Updates (Should call Alexander ? Vuntz)</span>
+<a name="l-107"></a><span class="tm">14:06:49</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> i'm going to remove the topic about meeting minutes
+<a name="l-108"></a><span class="tm">14:06:55</span><span class="nk"> &lt;metalgod&gt;</span> we'll talk later
+<a name="l-109"></a><span class="tm">14:06:57</span><span class="nk"> &lt;vuntz&gt;</span> bug day plans
+<a name="l-110"></a><span class="tm">14:06:59</span><span class="nk"> &lt;psankar&gt;</span> metalgod, ah okay
+<a name="l-111"></a><span class="tm">14:06:59</span><span class="nk"> &lt;vuntz&gt;</span> easy
+<a name="l-112"></a><span class="tm">14:07:06</span><span class="nk"> &lt;vuntz&gt;</span> on saturday, we do a bug day about old bugs
+<a name="l-113"></a><span class="tm">14:07:13</span><span class="nk"> &lt;vuntz&gt;</span> from 10.2 to 11.0
+<a name="l-114"></a><span class="tm">14:07:21</span><span class="nk"> &lt;vuntz&gt;</span> if people want to help, please join #opensuse-bugs
+<a name="l-115"></a><span class="tm">14:07:31</span><span class="nk"> &lt;psankar&gt;</span> neat
+<a name="l-116"></a><span class="tm">14:07:33</span><span class="nk"> &lt;vuntz&gt;</span> I know we have tons of old GNOME Bugs, so help welcome
+<a name="l-117"></a><span class="tm">14:07:42</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> mostly closing market /obsolete/fixed/needinfo
+<a name="l-118"></a><span class="tm">14:07:44</span><span class="nk"> &lt;metalgod&gt;</span> ?
+<a name="l-119"></a><span class="tm">14:07:50</span><span class="nk"> &lt;psankar&gt;</span> and upstream ?
+<a name="l-120"></a><span class="tm">14:08:10</span><span class="nk"> &lt;vuntz&gt;</span> yes
+<a name="l-121"></a><span class="tm">14:08:17</span><span class="nk"> &lt;vuntz&gt;</span> it's mostly obsolete/fixed
+<a name="l-122"></a><span class="tm">14:08:24</span><span class="nk"> &lt;psankar&gt;</span> okay
+<a name="l-123"></a><span class="tm">14:08:26</span><span class="nk"> &lt;vuntz&gt;</span> or if bug is still valid, forward upstream and close as upstream
+<a name="l-124"></a><span class="tm">14:08:37</span><span class="nk"> &lt;metalgod&gt;</span> perfect
+<a name="l-125"></a><span class="tm">14:08:53</span><span class="nk"> &lt;metalgod&gt;</span> i wonder if someone can write a guideline for new contributors to help
+<a name="l-126"></a><span class="tm">14:08:55</span><span class="nk"> &lt;metalgod&gt;</span> would be nice
+<a name="l-127"></a><span class="tm">14:09:02</span><span class="nk"> &lt;vuntz&gt;</span> that's something I want to do tomorrow
+<a name="l-128"></a><span class="tm">14:09:06</span><span class="nk"> &lt;vuntz&gt;</span> we need doc for the bug day
+<a name="l-129"></a><span class="tm">14:09:49</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-130"></a><span class="tm">14:09:50</span><span class="nk"> &lt;metalgod&gt;</span> next topic
+<a name="l-131"></a><span class="tm">14:09:56</span><span class="nk"> &lt;bittin&gt;</span> :) i can translate doc to swedish
+<a name="l-132"></a><span class="tm">14:09:59</span><span class="nk"> &lt;bittin&gt;</span> if needed
+<a name="l-133"></a><span class="tm">14:10:08</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">Any updates or call-for-help from Meego camp ? (FunkyPenguin, fcrozat)</span>
+<a name="l-134"></a><span class="tm">14:10:09</span><span class="nk"> &lt;bittin&gt;</span> next
+<a name="l-135"></a><span class="tm">14:10:42</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">FunkyPenguin:</span> fcrozat soooo how goes meego ?
+<a name="l-136"></a><span class="tm">14:11:12</span><span class="nk"> &lt;fcrozat&gt;</span> I can't comment on smeegol, sorry
+<a name="l-137"></a><span class="tm">14:11:29</span><span class="nk"> &lt;fcrozat&gt;</span> (ie I don't follow it)
+<a name="l-138"></a><span class="tm">14:11:36</span><span class="nk"> &lt;psankar&gt;</span> I think we can skip it.
+<a name="l-139"></a><span class="tm">14:12:01</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">FunkyPenguin:</span> around ?
+<a name="l-140"></a><span class="tm">14:12:12</span><span class="nk"> &lt;FunkyPenguin&gt;</span> ooh is it meeting time already
+<a name="l-141"></a><span class="tm">14:12:14</span><span class="nk"> &lt;bittin&gt;</span> smeegol seems cool but i haven't touched it yet
+<a name="l-142"></a><span class="tm">14:12:14</span><span class="nk"> &lt;FunkyPenguin&gt;</span> sorry
+<a name="l-143"></a><span class="tm">14:12:22</span><span class="nk"> &lt;bittin&gt;</span> FunkyPenguin it seems so :p
+<a name="l-144"></a><span class="tm">14:12:23</span><span class="nk"> &lt;FunkyPenguin&gt;</span> metalgod, yes ive got an update
+<a name="l-145"></a><span class="tm">14:12:29</span><span class="nk"> &lt;psankar&gt;</span> ah good
+<a name="l-146"></a><span class="tm">14:12:37</span><span class="nk"> &lt;FunkyPenguin&gt;</span> ok i've started to get things updated to 1.1
+<a name="l-147"></a><span class="tm">14:12:47</span><span class="nk"> &lt;FunkyPenguin&gt;</span> almost there
+<a name="l-148"></a><span class="tm">14:13:25</span><span class="nk"> &lt;FunkyPenguin&gt;</span> i need to redo the icon theme as intel re-licensed it from CCBYSA to proprietary :(
+<a name="l-149"></a><span class="tm">14:13:38</span><span class="nk"> &lt;FunkyPenguin&gt;</span> thankfully hbons has given me what i need to do so
+<a name="l-150"></a><span class="tm">14:13:42</span><span class="nk"> &lt;DimStar&gt;</span> can't you take the set as before it was relicnesed :)
+<a name="l-151"></a><span class="tm">14:14:06</span><span class="nk"> &lt;FunkyPenguin&gt;</span> well as it happens i thought i had for 1.0, but have been corrected ;)
+<a name="l-152"></a><span class="tm">14:14:25</span><span class="nk"> &lt;psankar&gt;</span> FunkyPenguin, we cant make noise about it ? and make them reopen it ?
+<a name="l-153"></a><span class="tm">14:14:36</span><span class="nk"> &lt;FunkyPenguin&gt;</span> DimStar, basically that is what im going to do, but i want to add the yast specific icons to the source properly
+<a name="l-154"></a><span class="tm">14:14:40</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">psankar:</span> I wouldn't expect a change from them
+<a name="l-155"></a><span class="tm">14:14:47</span><span class="nk"> &lt;psankar&gt;</span> fcrozat, oh okay.
+<a name="l-156"></a><span class="tm">14:14:55</span><span class="nk"> &lt;fcrozat&gt;</span> intel wants to protect MeeGo brand
+<a name="l-157"></a><span class="tm">14:15:02</span><span class="nk"> &lt;psankar&gt;</span> hrmmm.
+<a name="l-158"></a><span class="tm">14:15:09</span><span class="nk"> &lt;fcrozat&gt;</span> and usage of the icon theme is limited to MeeGo compliannce
+<a name="l-159"></a><span class="tm">14:15:19 </span><span class="nka">* psankar</span> <span class="ac">jopes meego doesnt follow the footsteps of iFolder</span>
+<a name="l-160"></a><span class="tm">14:15:22</span><span class="nk"> &lt;psankar&gt;</span> *hopes
+<a name="l-161"></a><span class="tm">14:15:34</span><span class="nk"> &lt;FunkyPenguin&gt;</span> as far as packaging goes 32bit builds almost fine, 64bit needs some patches
+<a name="l-162"></a><span class="tm">14:15:38</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> at least ifolder got open sourced again
+<a name="l-163"></a><span class="tm">14:15:47</span><span class="nk"> &lt;psankar&gt;</span> metalgod, no comments.
+<a name="l-164"></a><span class="tm">14:15:54</span><span class="nk"> &lt;metalgod&gt;</span> eheh
+<a name="l-165"></a><span class="tm">14:15:56</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-166"></a><span class="tm">14:16:04</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">FunkyPenguin:</span> any call for help »?
+<a name="l-167"></a><span class="tm">14:16:42</span><span class="nk"> &lt;FunkyPenguin&gt;</span> err yeah - if folk can help fix the packaging of the handful of packages that would be great - about 6 in total
+<a name="l-168"></a><span class="tm">14:17:03</span><span class="nk"> &lt;FunkyPenguin&gt;</span> my next issue is how to go about reorganising the repos
+<a name="l-169"></a><span class="tm">14:17:22 </span><span class="nka">* metalgod</span> <span class="ac">tries to get a netbook to help FunkyPenguin</span>
+<a name="l-170"></a><span class="tm">14:17:39</span><span class="nk"> &lt;FunkyPenguin&gt;</span> im not convinced that smeegol/meego will make it into the core distro as it depends heavily on chromium
+<a name="l-171"></a><span class="tm">14:18:06</span><span class="nk"> &lt;FunkyPenguin&gt;</span> but if i can get someone to help get firefox supported in the same way then we have a chance
+<a name="l-172"></a><span class="tm">14:18:18</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">FunkyPenguin:</span> can you explain better ?
+<a name="l-173"></a><span class="tm">14:18:28</span><span class="nk"> &lt;FunkyPenguin&gt;</span> i spoke to wolfiR about it at the conference, and he doesnt have any time etc
+<a name="l-174"></a><span class="tm">14:19:06</span><span class="nk"> &lt;FunkyPenguin&gt;</span> metalgod, basically chromium is the default browser, and it integrates with the web panel app
+<a name="l-175"></a><span class="tm">14:19:09</span><span class="nk"> &lt;fcrozat&gt;</span> hmm, only the internet tab on meego is depending on chromium IIRC
+<a name="l-176"></a><span class="tm">14:19:13</span><span class="nk"> &lt;psankar&gt;</span> i believe there may be someone in SLED for firefox (/me once applied for that post). so pinging sshaw or sreeves_out may give some help
+<a name="l-177"></a><span class="tm">14:19:39</span><span class="nk"> &lt;FunkyPenguin&gt;</span> fcrozat, correct but that is part of the experience
+<a name="l-178"></a><span class="tm">14:19:55</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">FunkyPenguin:</span> so what's wrong in putting chromium in core ?
+<a name="l-179"></a><span class="tm">14:19:57</span><span class="nk"> &lt;FunkyPenguin&gt;</span> psankar, i think bgmerril is the man youre thinking of
+<a name="l-180"></a><span class="tm">14:20:03</span><span class="nk"> &lt;wolfiR&gt;</span> hrosik (Petr Cerny) is more or less responsible for internal stuff
+<a name="l-181"></a><span class="tm">14:20:09</span><span class="nk"> &lt;psankar&gt;</span> FunkyPenguin, okay.
+<a name="l-182"></a><span class="tm">14:20:20</span><span class="nk"> &lt;FunkyPenguin&gt;</span> chromium is too fast a moving target
+<a name="l-183"></a><span class="tm">14:20:24</span><span class="nk"> &lt;wolfiR&gt;</span> bgmerrel has left Novell months ago
+<a name="l-184"></a><span class="tm">14:20:34</span><span class="nk"> &lt;FunkyPenguin&gt;</span> oh really?
+<a name="l-185"></a><span class="tm">14:21:02</span><span class="nk"> &lt;FunkyPenguin&gt;</span> i wonder if jpr can advise then
+<a name="l-186"></a><span class="tm">14:21:15</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">FunkyPenguin:</span> but can't someone select a chromium release from 8.0 (beta) to add to the core ?
+<a name="l-187"></a><span class="tm">14:21:19</span><span class="nk"> &lt;metalgod&gt;</span> i don't see any problem
+<a name="l-188"></a><span class="tm">14:21:38</span><span class="nk"> &lt;FunkyPenguin&gt;</span> maybe, will need to speak to prusnak &amp; tittiatcoke
+<a name="l-189"></a><span class="tm">14:21:45</span><span class="nk"> &lt;FunkyPenguin&gt;</span> they look after it in contrib
+<a name="l-190"></a><span class="tm">14:21:47</span><span class="nk"> &lt;wolfiR&gt;</span> <span class="hi">FunkyPenguin:</span> would be nice if you could write up some kind of specification
+<a name="l-191"></a><span class="tm">14:21:53 </span><span class="nka">* prusnak</span> <span class="ac">here</span>
+<a name="l-192"></a><span class="tm">14:22:06</span><span class="nk"> &lt;FunkyPenguin&gt;</span> wolfiR, ok i'll try
+<a name="l-193"></a><span class="tm">14:22:27</span><span class="nk"> &lt;FunkyPenguin&gt;</span> wolfiR, i didnt meant to make it sound like you were dismissing me
+<a name="l-194"></a><span class="tm">14:22:31</span><span class="nk"> &lt;FunkyPenguin&gt;</span> i know you're busy
+<a name="l-195"></a><span class="tm">14:22:46</span><span class="nk"> &lt;FunkyPenguin&gt;</span> so basically to sum up the smeegol update...
+<a name="l-196"></a><span class="tm">14:22:55</span><span class="nk"> &lt;wolfiR&gt;</span> it actually doesn't sound like a very easy task, and that's where the time constraints come in
+<a name="l-197"></a><span class="tm">14:23:10</span><span class="nk"> &lt;FunkyPenguin&gt;</span> ... im hoping to release 1.1 by the end of the year
+<a name="l-198"></a><span class="tm">14:23:46</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">FunkyPenguin:</span> anything you want to add more to this topic ?
+<a name="l-199"></a><span class="tm">14:23:49</span><span class="nk"> &lt;FunkyPenguin&gt;</span> vuntz, would it be possible to rename smeegol to gnome netbook?
+<a name="l-200"></a><span class="tm">14:23:57</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">FunkyPenguin:</span> hrm
+<a name="l-201"></a><span class="tm">14:24:02</span><span class="nk"> &lt;FunkyPenguin&gt;</span> or NetbookGNOME ?
+<a name="l-202"></a><span class="tm">14:24:02</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">FunkyPenguin:</span> gnome-netbook ?
+<a name="l-203"></a><span class="tm">14:24:04</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">FunkyPenguin:</span> don't know
+<a name="l-204"></a><span class="tm">14:24:10</span><span class="nk"> &lt;fcrozat&gt;</span> why GNOME ?
+<a name="l-205"></a><span class="tm">14:24:20</span><span class="nk"> &lt;metalgod&gt;</span> i'm not sure if meego as anything to do with GNOME
+<a name="l-206"></a><span class="tm">14:24:34</span><span class="nk"> &lt;metalgod&gt;</span> even more with them porting apps to Qt
+<a name="l-207"></a><span class="tm">14:24:49</span><span class="nk"> &lt;bittin&gt;</span> i think smeegol is a great name
+<a name="l-208"></a><span class="tm">14:24:52</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">FunkyPenguin:</span> if you are forced to change Smeegol name I would go back to Goblin
+<a name="l-209"></a><span class="tm">14:24:55</span><span class="nk"> &lt;psankar&gt;</span> +1
+<a name="l-210"></a><span class="tm">14:25:00</span><span class="nk"> &lt;bittin&gt;</span> +1
+<a name="l-211"></a><span class="tm">14:25:01</span><span class="nk"> &lt;prusnak&gt;</span> but otherwise i would stick to Smeegol
+<a name="l-212"></a><span class="tm">14:25:04</span><span class="nk"> &lt;FunkyPenguin&gt;</span> yeah ok
+<a name="l-213"></a><span class="tm">14:25:11</span><span class="nk"> &lt;FunkyPenguin&gt;</span> i was just thinking out loud
+<a name="l-214"></a><span class="tm">14:25:35</span><span class="nk"> &lt;metalgod&gt;</span> goblin is nice
+<a name="l-215"></a><span class="tm">14:25:42</span><span class="nk"> &lt;FunkyPenguin&gt;</span> well im still waiting on the LinuxFoundation, Intel &amp; Nokia to respond to my questions
+<a name="l-216"></a><span class="tm">14:25:44</span><span class="nk"> &lt;metalgod&gt;</span> or openSUSEgo
+<a name="l-217"></a><span class="tm">14:26:17</span><span class="nk"> &lt;psankar&gt;</span> metalgod, '$ME'go ;-) ? (bad joke) I think we can move to next.
+<a name="l-218"></a><span class="tm">14:26:45</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> ouch it reminded me perl
+<a name="l-219"></a><span class="tm">14:26:47</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-220"></a><span class="tm">14:26:49</span><span class="nk"> &lt;metalgod&gt;</span> people
+<a name="l-221"></a><span class="tm">14:26:50</span><span class="nk"> &lt;metalgod&gt;</span> next topic
+<a name="l-222"></a><span class="tm">14:27:12</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">Packaging needs for 11.4 (everyone)</span>
+<a name="l-223"></a><span class="tm">14:27:29</span><span class="nk"> &lt;psankar&gt;</span> i think vuntz covered it in the previous url. so we can skip it.
+<a name="l-224"></a><span class="tm">14:27:34</span><span class="nk"> &lt;metalgod&gt;</span> so for 11.4 we have a focus that is adding more GNOME/Gtk applications
+<a name="l-225"></a><span class="tm">14:27:36</span><span class="nk"> &lt;metalgod&gt;</span> to this topic
+<a name="l-226"></a><span class="tm">14:27:41</span><span class="nk"> &lt;metalgod&gt;</span> errr
+<a name="l-227"></a><span class="tm">14:27:51</span><span class="nk"> &lt;psankar&gt;</span> please contribute packages in  : http://en.opensuse.org/openSUSE:GNOME_new_packages
+<a name="l-228"></a><span class="tm">14:27:59</span><span class="nk"> &lt;metalgod&gt;</span> so if someone have a application request please add it to this page ^
+<a name="l-229"></a><span class="tm">14:28:04</span><span class="nk"> &lt;metalgod&gt;</span> thanks psankar
+<a name="l-230"></a><span class="tm">14:28:13</span><span class="nk"> &lt;vuntz&gt;</span> hrm
+<a name="l-231"></a><span class="tm">14:28:20</span><span class="nk"> &lt;vuntz&gt;</span> please don't add application request to the page
+<a name="l-232"></a><span class="tm">14:28:28</span><span class="nk"> &lt;vuntz&gt;</span> send a mail to opensuse-gnome or tell it here
+<a name="l-233"></a><span class="tm">14:28:38</span><span class="nk"> &lt;metalgod&gt;</span> hmm yes actually sound better
+<a name="l-234"></a><span class="tm">14:28:38</span><span class="nk"> &lt;psankar&gt;</span> okay
+<a name="l-235"></a><span class="tm">14:28:43</span><span class="nk"> &lt;metalgod&gt;</span> so we don't get the page spammed
+<a name="l-236"></a><span class="tm">14:28:51</span><span class="nk"> &lt;vuntz&gt;</span> I've a huge list of application requests, and I'm slowly updating the wiki page to make sure we don't have too many at once
+<a name="l-237"></a><span class="tm">14:29:15</span><span class="nk"> &lt;bittin&gt;</span> gnome-mplayer ?
+<a name="l-238"></a><span class="tm">14:29:19</span><span class="nk"> &lt;metalgod&gt;</span> i think a nice step we can do it to integrate gtk bindings
+<a name="l-239"></a><span class="tm">14:29:30</span><span class="nk"> &lt;metalgod&gt;</span> like ruby that DimStar did
+<a name="l-240"></a><span class="tm">14:29:32</span><span class="nk"> &lt;bittin&gt;</span> also a +1 for smuxi
+<a name="l-241"></a><span class="tm">14:29:43</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">bittin:</span> smuxi is on Mono repo
+<a name="l-242"></a><span class="tm">14:30:00</span><span class="nk"> &lt;bittin&gt;</span> ah was on that site so i thinked but
+<a name="l-243"></a><span class="tm">14:30:30</span><span class="nk"> &lt;psankar&gt;</span> metalgod, do you think we can ask someone from mono team to submit it under GNOME  ?
+<a name="l-244"></a><span class="tm">14:30:31</span><span class="nk"> &lt;metalgod&gt;</span> gnome-mplayer should stay on packmann
+<a name="l-245"></a><span class="tm">14:30:44</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> i don't see a problem
+<a name="l-246"></a><span class="tm">14:31:03</span><span class="nk"> &lt;psankar&gt;</span> okay.
+<a name="l-247"></a><span class="tm">14:31:14</span><span class="nk"> &lt;metalgod&gt;</span> asking ajorg if he can SR smuxi to G:A
+<a name="l-248"></a><span class="tm">14:31:36</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">psankar ask ajorg (mono team) if someone can SR smuxi to G:Apps</span>
+<a name="l-249"></a><span class="tm">14:31:38</span><span class="nk"> &lt;bittin&gt;</span> i don't know all application rules and can zypper install so maybe i should just keep silent
+<a name="l-250"></a><span class="tm">14:31:46</span><span class="nk"> &lt;psankar&gt;</span> neat
+<a name="l-251"></a><span class="tm">14:32:17</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">bittin:</span> no please say... we are happy to hear your opinions
+<a name="l-252"></a><span class="tm">14:32:21</span><span class="nk"> &lt;vuntz&gt;</span> note that it's fine if smuxi stays in M:C, as long as it's maintained :-)
+<a name="l-253"></a><span class="tm">14:32:59</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-254"></a><span class="tm">14:33:00</span><span class="nk"> &lt;psankar&gt;</span> okay. but not many people may have M:C in the lsit of default repositories which is why I thought so.
+<a name="l-255"></a><span class="tm">14:33:00</span><span class="nk"> &lt;metalgod&gt;</span> next topic
+<a name="l-256"></a><span class="tm">14:33:19</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">Feedback/Issues with 11.4 milestone builds</span>
+<a name="l-257"></a><span class="tm">14:33:28</span><span class="nk"> &lt;metalgod&gt;</span> i think we can skip this topic
+<a name="l-258"></a><span class="tm">14:33:32</span><span class="nk"> &lt;vuntz&gt;</span> well
+<a name="l-259"></a><span class="tm">14:33:46</span><span class="nk"> &lt;vuntz&gt;</span> I'd love to hear about the big issues people have with GNOME in the milestones
+<a name="l-260"></a><span class="tm">14:34:07</span><span class="nk"> &lt;vuntz&gt;</span> since this indicates what we should fix :-)
+<a name="l-261"></a><span class="tm">14:34:10</span><span class="nk"> &lt;psankar&gt;</span> I had one issue. but not sure if it is still happening. empathy was crashing when somoen nearby pinged me
+<a name="l-262"></a><span class="tm">14:34:17 </span><span class="nka">* metalgod</span> <span class="ac">have migrated to Factory yet</span>
+<a name="l-263"></a><span class="tm">14:34:20</span><span class="nk"> &lt;psankar&gt;</span> i will check with the latest build and will update
+<a name="l-264"></a><span class="tm">14:35:47</span><span class="nk"> &lt;psankar&gt;</span> metalgod, i think we can move on.
+<a name="l-265"></a><span class="tm">14:35:50</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-266"></a><span class="tm">14:35:52</span><span class="nk"> &lt;metalgod&gt;</span> next topic
+<a name="l-267"></a><span class="tm">14:35:59</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">Q &amp; A</span>
+<a name="l-268"></a><span class="tm">14:36:01</span><span class="nk"> &lt;metalgod&gt;</span> errr
+<a name="l-269"></a><span class="tm">14:36:04</span><span class="nk"> &lt;psankar&gt;</span> i have one question
+<a name="l-270"></a><span class="tm">14:36:05</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">Q &amp; A</span>
+<a name="l-271"></a><span class="tm">14:36:09</span><span class="nk"> &lt;metalgod&gt;</span> shoot psankar
+<a name="l-272"></a><span class="tm">14:36:34</span><span class="nk"> &lt;psankar&gt;</span> It isn't GNOME specific. What happened to the new booster position ? will it be filled ?
+<a name="l-273"></a><span class="tm">14:37:08</span><span class="nk"> &lt;vuntz&gt;</span> yeah
+<a name="l-274"></a><span class="tm">14:37:15</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> maybe you should ask Klaas about it
+<a name="l-275"></a><span class="tm">14:37:33</span><span class="nk"> &lt;psankar&gt;</span> okay :-)
+<a name="l-276"></a><span class="tm">14:37:52</span><span class="nk"> &lt;metalgod&gt;</span> ok this isn't really a question is more a topic
+<a name="l-277"></a><span class="tm">14:37:59</span><span class="nk"> &lt;metalgod&gt;</span> it's about 11.3 updates
+<a name="l-278"></a><span class="tm">14:38:09</span><span class="nk"> &lt;metalgod&gt;</span> i've been dealing with a few
+<a name="l-279"></a><span class="tm">14:38:29</span><span class="nk"> &lt;metalgod&gt;</span> and i would like if anyone feels that their 11.3 system breaks with anyhting
+<a name="l-280"></a><span class="tm">14:38:38</span><span class="nk"> &lt;metalgod&gt;</span> a msn protocol or a gtalk change
+<a name="l-281"></a><span class="tm">14:38:44</span><span class="nk"> &lt;metalgod&gt;</span> please open a bug and ping me
+<a name="l-282"></a><span class="tm">14:38:55</span><span class="nk"> &lt;psankar&gt;</span> I had icq breakage but that was bcos of the server
+<a name="l-283"></a><span class="tm">14:38:57</span><span class="nk"> &lt;metalgod&gt;</span> i think it's really important for us to have a functional stable release
+<a name="l-284"></a><span class="tm">14:39:13</span><span class="nk"> &lt;psankar&gt;</span> and tehn  onwards we need to use icq without ssl :(
+<a name="l-285"></a><span class="tm">14:39:15</span><span class="nk"> &lt;metalgod&gt;</span> same for gwibber and twitter (in my TODO)
+<a name="l-286"></a><span class="tm">14:39:23</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> please open a bug
+<a name="l-287"></a><span class="tm">14:39:34</span><span class="nk"> &lt;metalgod&gt;</span> i guess we can try to get pidgin 2.6.7 in 11.3
+<a name="l-288"></a><span class="tm">14:39:35</span><span class="nk"> &lt;psankar&gt;</span> metalgod, there is a bug already open by _Marcus_
+<a name="l-289"></a><span class="tm">14:39:41</span><span class="nk"> &lt;metalgod&gt;</span> fixes most of those issues
+<a name="l-290"></a><span class="tm">14:40:02</span><span class="nk"> &lt;psankar&gt;</span> we may need to check if the kopete guys have found  a way for icq to work with ssl
+<a name="l-291"></a><span class="tm">14:40:07</span><span class="nk"> &lt;bittin&gt;</span> can this be to any help?: http://developer.pidgin.im/wiki/MSNCertIssue
+<a name="l-292"></a><span class="tm">14:40:15</span><span class="nk"> &lt;psankar&gt;</span> and if it there is a way we need to fix pidgin as well
+<a name="l-293"></a><span class="tm">14:40:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> want to take care of the pidgin bugs?
+<a name="l-294"></a><span class="tm">14:40:28</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">bittin:</span> according to pidgin upstream it's fixed on 2.6.7
+<a name="l-295"></a><span class="tm">14:40:42</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> yes i'm talking a few bugs that got things broken on 11.3
+<a name="l-296"></a><span class="tm">14:41:01</span><span class="nk"> &lt;metalgod&gt;</span> s/talking/taking
+<a name="l-297"></a><span class="tm">14:41:01</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> bug 655477 and bug 655675
+<a name="l-298"></a><span class="tm">14:41:07</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 655477 in openSUSE 11.4 (GNOME) "pidgin: unable to validate MSN certificate" [Normal,New] https://bugzilla.novell.com/655477
+<a name="l-299"></a><span class="tm">14:41:09</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 655675 in openSUSE 11.2 (GNOME) "pidgin 2.6.6 ICQ broken" [Major,Needinfo] https://bugzilla.novell.com/655675
+<a name="l-300"></a><span class="tm">14:41:21</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> yes i'll try to get 2.6.7 in updates for 11.3
+<a name="l-301"></a><span class="tm">14:41:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> feel free to go ahead there
+<a name="l-302"></a><span class="tm">14:41:32</span><span class="nk"> &lt;metalgod&gt;</span> it's best than backport the fixes
+<a name="l-303"></a><span class="tm">14:41:41</span><span class="nk"> &lt;DimStar&gt;</span> Pidgin 2.7.7 completely fixes the MSN certificate issue, enables multiple MSN logins, and fixes the AIM SSL Handshake Failure error.
+<a name="l-304"></a><span class="tm">14:41:46</span><span class="nk"> &lt;DimStar&gt;</span> (from the pidgin.im website)
+<a name="l-305"></a><span class="tm">14:41:54</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">DimStar:</span> i'm following the bug upstream
+<a name="l-306"></a><span class="tm">14:42:13</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-307"></a><span class="tm">14:42:16</span><span class="nk"> &lt;metalgod&gt;</span> any question ?
+<a name="l-308"></a><span class="tm">14:42:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> please comment on the bugs asap if you're taking care of them, so the maintenance team can know it's you
+<a name="l-309"></a><span class="tm">14:42:26</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> ok
+<a name="l-310"></a><span class="tm">14:42:33</span><span class="nk"> &lt;metalgod&gt;</span> doing it right now
+<a name="l-311"></a><span class="tm">14:42:42</span><span class="nk"> &lt;vuntz&gt;</span> thanks a lot for doing those updates, btw. It's most useful!
+<a name="l-312"></a><span class="tm">14:42:48</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> no problem ;)
+<a name="l-313"></a><span class="tm">14:42:51</span><span class="nk"> &lt;psankar&gt;</span> +1 thanks
+<a name="l-314"></a><span class="tm">14:43:01</span><span class="nk"> &lt;metalgod&gt;</span> people any questions ?
+<a name="l-315"></a><span class="tm">14:43:04</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">bittin:</span> ?
+<a name="l-316"></a><span class="tm">14:43:11</span><span class="nk"> &lt;bittin&gt;</span> no i don't have any
+<a name="l-317"></a><span class="tm">14:43:17</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-318"></a><span class="tm">14:43:32</span><span class="nk"> &lt;metalgod&gt;</span> so thanks everyone for participating on the openSUSE-GNOME meeting
+<a name="l-319"></a><span class="tm">14:43:36</span><span class="nk"> &lt;metalgod&gt;</span> see you soon
+<a name="l-320"></a><span class="tm">14:43:45</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

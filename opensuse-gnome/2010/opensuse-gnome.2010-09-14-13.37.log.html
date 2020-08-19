@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-gnome log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">13:37:56</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE GNOME Meeting</span>
+<a name="l-2"></a><span class="tm">13:37:56</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Tue Sep 14 13:37:56 2010 UTC.  The chair is metalgod_. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">13:37:56</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">13:38:13</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="cmd">#chair </span><span class="cmdline">vuntz</span>
+<a name="l-5"></a><span class="tm">13:38:13</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: metalgod_ vuntz
+<a name="l-6"></a><span class="tm">13:38:38</span><span class="nk"> &lt;metalgod_&gt;</span> welcome to the openSUSE GNOME team meeting
+<a name="l-7"></a><span class="tm">13:38:53</span><span class="nk"> &lt;metalgod_&gt;</span> let's move on for the first item
+<a name="l-8"></a><span class="tm">13:39:34</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="topic">#topic </span><span class="topicline">Repositories Status G:S:2.30, G:F, G:B (vuntz, DimStar)</span>
+<a name="l-9"></a><span class="tm">13:40:11</span><span class="nk"> &lt;metalgod_&gt;</span> any of you wants to report hows the status of GNOME:Factory ?
+<a name="l-10"></a><span class="tm">13:41:28</span><span class="nk"> &lt;vuntz&gt;</span> sorry, just got a gnome-keyring bug that locked my whole session ;-)
+<a name="l-11"></a><span class="tm">13:41:49</span><span class="nk"> &lt;vuntz&gt;</span> the current status of GNOME:Factory is that we're pushing GNOME 2.31.92 to it right now
+<a name="l-12"></a><span class="tm">13:42:09</span><span class="nk"> &lt;vuntz&gt;</span> we had 2.31.91 (which is now in the standard Factory)
+<a name="l-13"></a><span class="tm">13:42:28</span><span class="nk"> &lt;vuntz&gt;</span> and so far, it's working rather well
+<a name="l-14"></a><span class="tm">13:42:28</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> do we have any good reports of G:F on 11.3 ?
+<a name="l-15"></a><span class="tm">13:42:53</span><span class="nk"> &lt;vuntz&gt;</span> I don't -- I'm mostly focused on Factory
+<a name="l-16"></a><span class="tm">13:43:10</span><span class="nk"> &lt;vuntz&gt;</span> but some people tried it, iirc
+<a name="l-17"></a><span class="tm">13:43:43</span><span class="nk"> &lt;vuntz&gt;</span> we certainly need a few people to help test it, so we can release a GNOME:STABLE:2.32 project for 11.3 in a few weeks
+<a name="l-18"></a><span class="tm">13:44:47</span><span class="nk"> &lt;badshah400&gt;</span> this is about GNOME:Factory+GNOME:Apps on openSUSE 11.3?
+<a name="l-19"></a><span class="tm">13:45:06</span><span class="nk"> &lt;metalgod_&gt;</span> yes
+<a name="l-20"></a><span class="tm">13:45:26</span><span class="nk"> &lt;badshah400&gt;</span> ok, I can get to testing it
+<a name="l-21"></a><span class="tm">13:45:27</span><span class="nk"> &lt;metalgod_&gt;</span> maybe we need to add some packages to G:B:2.30
+<a name="l-22"></a><span class="tm">13:46:09</span><span class="nk"> &lt;vuntz&gt;</span> possibly
+<a name="l-23"></a><span class="tm">13:46:21</span><span class="nk"> &lt;vuntz&gt;</span> the first task is to get G:F to completely build on 11.3
+<a name="l-24"></a><span class="tm">13:46:28</span><span class="nk"> &lt;vuntz&gt;</span> I didn't even look at that
+<a name="l-25"></a><span class="tm">13:46:35</span><span class="nk"> &lt;vuntz&gt;</span> but I can help
+<a name="l-26"></a><span class="tm">13:46:58</span><span class="nk"> &lt;metalgod_&gt;</span> ok
+<a name="l-27"></a><span class="tm">13:47:18</span><span class="nk"> &lt;metalgod_&gt;</span> do we have a volunteer to make G:F build on 11.3 ?
+<a name="l-28"></a><span class="tm">13:47:51</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> seems a good task ? :)
+<a name="l-29"></a><span class="tm">13:48:26</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> I am still very poor at building stuff
+<a name="l-30"></a><span class="tm">13:48:31</span><span class="nk"> &lt;metalgod_&gt;</span> ok
+<a name="l-31"></a><span class="tm">13:48:41</span><span class="nk"> &lt;metalgod_&gt;</span> i'll probably don't have much time
+<a name="l-32"></a><span class="tm">13:48:48</span><span class="nk"> &lt;metalgod_&gt;</span> but i'll made the action for me
+<a name="l-33"></a><span class="tm">13:48:51</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> specifically what needs to be done?
+<a name="l-34"></a><span class="tm">13:49:10</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="cmd">#action </span><span class="cmdline">metalgod_ make GNOME:Factory build on 11.3</span>
+<a name="l-35"></a><span class="tm">13:49:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> I can help. But it's mostly about looking at what doesn't build on G:F/11.3, and generally, the fixes are easy
+<a name="l-36"></a><span class="tm">13:49:29</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz make GNOME:Factory build on 11.3</span>
+<a name="l-37"></a><span class="tm">13:49:31</span><span class="nk"> &lt;metalgod_&gt;</span> :)
+<a name="l-38"></a><span class="tm">13:49:47</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> DimStar anything more to add to this topic ?
+<a name="l-39"></a><span class="tm">13:49:56</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> ok, add me in too
+<a name="l-40"></a><span class="tm">13:50:04</span><span class="nk"> &lt;metalgod_&gt;</span> i guess G:S:2.30 is good atm (gdm bug is fixed)
+<a name="l-41"></a><span class="tm">13:50:11</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="cmd">#action </span><span class="cmdline">badshah400 make GNOME:Factory build on 11.3</span>
+<a name="l-42"></a><span class="tm">13:50:18</span><span class="nk"> &lt;metalgod_&gt;</span> ok
+<a name="l-43"></a><span class="tm">13:50:40</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="topic">#topic  </span><span class="topicline">Should we simplify our repositories structure to make it user-friendlier ? (Captain Magnus)</span>
+<a name="l-44"></a><span class="tm">13:50:52</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">captain_magnus:</span> you're in the spotlight :)
+<a name="l-45"></a><span class="tm">13:51:53</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">captain_magnus:</span> don't hide!
+<a name="l-46"></a><span class="tm">13:51:55</span><span class="nk"> &lt;captain_magnus&gt;</span> <span class="hi">metalgod_:</span> thanks :-)   Didn't have time to look at the repo's though...
+<a name="l-47"></a><span class="tm">13:52:32</span><span class="nk"> &lt;captain_magnus&gt;</span> We should have a look at what the KDE folks are doing (reports have it that they are making it easy for people with backports etc)
+<a name="l-48"></a><span class="tm">13:52:59</span><span class="nk"> &lt;captain_magnus&gt;</span> We also have new capabilities with OBS, where we can link repo's together, but again, have not had time to put in any effort to that :-/
+<a name="l-49"></a><span class="tm">13:53:17</span><span class="nk"> &lt;captain_magnus&gt;</span> <span class="hi">vuntz:</span> You mentioned one-click... Not sure how that would work?
+<a name="l-50"></a><span class="tm">13:53:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">captain_magnus:</span> I think DimStar had some magic knowledge on how to combine multiple repo in one file
+<a name="l-51"></a><span class="tm">13:53:50</span><span class="nk"> &lt;vuntz&gt;</span> I'm not sure it was the same thing as one-click
+<a name="l-52"></a><span class="tm">13:53:52</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">captain_magnus:</span> you mean like: "having one link and that link adds G:B, G:S:2.32 etc.. ?
+<a name="l-53"></a><span class="tm">13:53:55</span><span class="nk"> &lt;captain_magnus&gt;</span> Sure sounds interesting...
+<a name="l-54"></a><span class="tm">13:54:00</span><span class="nk"> &lt;vuntz&gt;</span> but that's what we should do
+<a name="l-55"></a><span class="tm">13:54:06</span><span class="nk"> &lt;vuntz&gt;</span> I don't think our structure is wrong
+<a name="l-56"></a><span class="tm">13:54:13</span><span class="nk"> &lt;vuntz&gt;</span> it's just hard to get if you don't know the details
+<a name="l-57"></a><span class="tm">13:54:19</span><span class="nk"> &lt;vuntz&gt;</span> and users shouldn't hav to know the details
+<a name="l-58"></a><span class="tm">13:54:46</span><span class="nk"> &lt;captain_magnus&gt;</span> Agree
+<a name="l-59"></a><span class="tm">13:54:47</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> yast repos show G:A and G:S
+<a name="l-60"></a><span class="tm">13:55:05</span><span class="nk"> &lt;metalgod_&gt;</span> but if there is a G:B i don't know how easy is for users to understand what it does
+<a name="l-61"></a><span class="tm">13:55:31</span><span class="nk"> &lt;captain_magnus&gt;</span> <span class="hi">metalgod_:</span> That is the point... They shouldn't have to know
+<a name="l-62"></a><span class="tm">13:56:02</span><span class="nk"> &lt;captain_magnus&gt;</span> They should only have to know that they want the latest GNOME on 11.3 for instance....
+<a name="l-63"></a><span class="tm">13:56:09</span><span class="nk"> &lt;metalgod_&gt;</span> we talked for a long time that we should have a "one-click"
+<a name="l-64"></a><span class="tm">13:56:15</span><span class="nk"> &lt;metalgod_&gt;</span> but none of us did it yet
+<a name="l-65"></a><span class="tm">13:56:15</span><span class="nk"> &lt;vuntz&gt;</span> the yast ui is broken here. It works per-repo. Which is not what we want
+<a name="l-66"></a><span class="tm">13:56:47</span><span class="nk"> &lt;metalgod_&gt;</span> one-click can solve that problem since it adds more than 1 repo
+<a name="l-67"></a><span class="tm">13:56:55</span><span class="nk"> &lt;badshah400&gt;</span> One-click installs do allow combining repos though, afaik
+<a name="l-68"></a><span class="tm">13:57:59</span><span class="nk"> &lt;captain_magnus&gt;</span> Well, guess we need to talk to DimStar about the magic
+<a name="l-69"></a><span class="tm">13:58:05</span><span class="nk"> &lt;vuntz&gt;</span> but what dimstar proposed was different, iirc
+<a name="l-70"></a><span class="tm">13:58:21</span><span class="nk"> &lt;vuntz&gt;</span> I think it might be something that we can update and it will reach users
+<a name="l-71"></a><span class="tm">13:58:32</span><span class="nk"> &lt;vuntz&gt;</span> (while a one-click file won't get pushed to users who used it in the past)
+<a name="l-72"></a><span class="tm">13:59:32</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> what about the users who don't want to update ?
+<a name="l-73"></a><span class="tm">13:59:57</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> not automatically, but if they leave the repos subscribed they can upgrade all packages from the necessary repos
+<a name="l-74"></a><span class="tm">14:00:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> what do you mean?
+<a name="l-75"></a><span class="tm">14:00:45</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> that's not what I mean. If we add a new repo to this file, then users will get this new repo too
+<a name="l-76"></a><span class="tm">14:00:51</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> from what i understand DimStar proposes a automatic updates from version to version
+<a name="l-77"></a><span class="tm">14:00:58</span><span class="nk"> &lt;vuntz&gt;</span> at least, that's what I understood
+<a name="l-78"></a><span class="tm">14:01:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> I don't think he did
+<a name="l-79"></a><span class="tm">14:01:04</span><span class="nk"> &lt;badshah400&gt;</span> I see
+<a name="l-80"></a><span class="tm">14:01:19</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> maybe we should leave this topic and wait for him
+<a name="l-81"></a><span class="tm">14:01:25</span><span class="nk"> &lt;metalgod_&gt;</span> (or probably next meeting)
+<a name="l-82"></a><span class="tm">14:01:32</span><span class="nk"> &lt;vuntz&gt;</span> maybe
+<a name="l-83"></a><span class="tm">14:01:42</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="topic">#topic </span><span class="topicline">- Feature/Future plans for openSUSE 11.4 (Vuntz)</span>
+<a name="l-84"></a><span class="tm">14:01:46</span><span class="nk"> &lt;vuntz&gt;</span> can someone send a mail to opensuse-gnome to ask him about this,
+<a name="l-85"></a><span class="tm">14:01:47</span><span class="nk"> &lt;vuntz&gt;</span> ?
+<a name="l-86"></a><span class="tm">14:02:06</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> ok, I will
+<a name="l-87"></a><span class="tm">14:02:10</span><span class="nk"> &lt;metalgod_&gt;</span> i think i can talk about this too
+<a name="l-88"></a><span class="tm">14:02:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> go ahead :-)
+<a name="l-89"></a><span class="tm">14:02:49</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="cmd">#action </span><span class="cmdline">badshah400 send a mail to opensuse-gnome ML ask dimstar about update repositories</span>
+<a name="l-90"></a><span class="tm">14:02:51</span><span class="nk"> &lt;metalgod_&gt;</span> well
+<a name="l-91"></a><span class="tm">14:03:05</span><span class="nk"> &lt;metalgod_&gt;</span> DimStar finished an important feature
+<a name="l-92"></a><span class="tm">14:03:17</span><span class="nk"> &lt;metalgod_&gt;</span> it just needs testing
+<a name="l-93"></a><span class="tm">14:03:32</span><span class="nk"> &lt;metalgod_&gt;</span> for those interesting
+<a name="l-94"></a><span class="tm">14:03:52</span><span class="nk"> &lt;metalgod_&gt;</span> it's https://features.opensuse.org/310472
+<a name="l-95"></a><span class="tm">14:04:38</span><span class="nk"> &lt;metalgod_&gt;</span> and we have also Develop and add a GTK smolt client to openSUSE (https://features.opensuse.org/310490)
+<a name="l-96"></a><span class="tm">14:04:54</span><span class="nk"> &lt;metalgod_&gt;</span> i volunteered myself to work on this and vuntz helping
+<a name="l-97"></a><span class="tm">14:05:02</span><span class="nk"> &lt;metalgod_&gt;</span> i think it's a pretty good feature for 11.4
+<a name="l-98"></a><span class="tm">14:05:23</span><span class="nk"> &lt;metalgod_&gt;</span> i think fcrozat also volunteered to bring plymouth to opensuse 11.4
+<a name="l-99"></a><span class="tm">14:05:26</span><span class="nk"> &lt;metalgod_&gt;</span> ;)
+<a name="l-100"></a><span class="tm">14:05:42</span><span class="nk"> &lt;metalgod_&gt;</span> plus we have lot's of new applications on G:A
+<a name="l-101"></a><span class="tm">14:05:50</span><span class="nk"> &lt;metalgod_&gt;</span> any feature i'm missing for 11.4 ?
+<a name="l-102"></a><span class="tm">14:05:59</span><span class="nk"> &lt;vuntz&gt;</span> yeah, we have something like 15 or 20 new apps since 11.3
+<a name="l-103"></a><span class="tm">14:06:10</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> you're missing webm support!
+<a name="l-104"></a><span class="tm">14:06:14</span><span class="nk"> &lt;metalgod_&gt;</span> oh
+<a name="l-105"></a><span class="tm">14:06:16</span><span class="nk"> &lt;metalgod_&gt;</span> yes
+<a name="l-106"></a><span class="tm">14:06:23</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> it's ready right ?
+<a name="l-107"></a><span class="tm">14:06:30</span><span class="nk"> &lt;vuntz&gt;</span> it's all in factory, yes
+<a name="l-108"></a><span class="tm">14:06:32</span><span class="nk"> &lt;metalgod_&gt;</span> https://features.opensuse.org/309589
+<a name="l-109"></a><span class="tm">14:06:33</span><span class="nk"> &lt;metalgod_&gt;</span> :)
+<a name="l-110"></a><span class="tm">14:06:38</span><span class="nk"> &lt;vuntz&gt;</span> and if you're using G:F, you can already watch youtube with webm
+<a name="l-111"></a><span class="tm">14:06:51</span><span class="nk"> &lt;metalgod_&gt;</span> right using gst and firefox
+<a name="l-112"></a><span class="tm">14:07:03</span><span class="nk"> &lt;metalgod_&gt;</span> anyone have ideas for more features ?
+<a name="l-113"></a><span class="tm">14:07:14</span><span class="nk"> &lt;badshah400&gt;</span> Do we want to get symbolic-icon-theme integration in GNOME too? I believe this might involve quite a bit of work
+<a name="l-114"></a><span class="tm">14:07:22</span><span class="nk"> &lt;metalgod_&gt;</span> we already discussed new applications and badshah400 did a wonderful job putting on the wiki
+<a name="l-115"></a><span class="tm">14:07:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> no, we need the new firefox for this. It'll go in soon, I guess
+<a name="l-116"></a><span class="tm">14:08:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> this should be done upstream, I think. We'll get it wrong if we do it in openSUSE.
+<a name="l-117"></a><span class="tm">14:08:44</span><span class="nk"> &lt;metalgod_&gt;</span> what about notify-osd
+<a name="l-118"></a><span class="tm">14:08:53</span><span class="nk"> &lt;metalgod_&gt;</span> i've seen a blog post about it on planet opensuse
+<a name="l-119"></a><span class="tm">14:09:03</span><span class="nk"> &lt;metalgod_&gt;</span> looks like there's people interested on it
+<a name="l-120"></a><span class="tm">14:09:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> that being said, we can possibly backport patches from upstream
+<a name="l-121"></a><span class="tm">14:09:07</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> it's in G:A
+<a name="l-122"></a><span class="tm">14:09:20</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> ouch /me runs
+<a name="l-123"></a><span class="tm">14:09:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> but the new notification-daemon has a nice theme, so... :-)
+<a name="l-124"></a><span class="tm">14:09:37</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> right, that may be a good idea, seeing as we will have a lot of time after the release of 2.32
+<a name="l-125"></a><span class="tm">14:10:34</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> my experience with using notify-osd is pretty bad, I feel we better stick to upstream notification-daemon
+<a name="l-126"></a><span class="tm">14:11:23</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> well if applications call notifications via dbus you should get a good notify-osd experience
+<a name="l-127"></a><span class="tm">14:11:36</span><span class="nk"> &lt;metalgod_&gt;</span> but i doubt most of them do it
+<a name="l-128"></a><span class="tm">14:12:11</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> what about a big one... replacing gnomesu by something more modern ?
+<a name="l-129"></a><span class="tm">14:12:21</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> maybe that applies for the yast team
+<a name="l-130"></a><span class="tm">14:12:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> that shouldn't change anything. If people use libnotify, it should be compatible
+<a name="l-131"></a><span class="tm">14:12:30</span><span class="nk"> &lt;badshah400&gt;</span> hmm... well with ubuntu 10.04 those notify-osd balloons kept popping up at unusual places
+<a name="l-132"></a><span class="tm">14:12:42</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> I've investigated various alternatives
+<a name="l-133"></a><span class="tm">14:12:49</span><span class="nk"> &lt;vuntz&gt;</span> gksu-polkit and pkexec
+<a name="l-134"></a><span class="tm">14:12:55</span><span class="nk"> &lt;vuntz&gt;</span> played with them
+<a name="l-135"></a><span class="tm">14:12:56</span><span class="nk"> &lt;metalgod_&gt;</span> pkexec doesn't work
+<a name="l-136"></a><span class="tm">14:13:03</span><span class="nk"> &lt;metalgod_&gt;</span> the same way
+<a name="l-137"></a><span class="tm">14:13:06</span><span class="nk"> &lt;metalgod_&gt;</span> i've tried myself too
+<a name="l-138"></a><span class="tm">14:13:07</span><span class="nk"> &lt;vuntz&gt;</span> and I'm waiting for feedback from the security team
+<a name="l-139"></a><span class="tm">14:13:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> it just needs a patch to work for graphical apps
+<a name="l-140"></a><span class="tm">14:13:26</span><span class="nk"> &lt;metalgod_&gt;</span> fedora still uses consolehelper is some places
+<a name="l-141"></a><span class="tm">14:13:40</span><span class="nk"> &lt;metalgod_&gt;</span> which is much better than gnomesu
+<a name="l-142"></a><span class="tm">14:14:52</span><span class="nk"> &lt;metalgod_&gt;</span> ok
+<a name="l-143"></a><span class="tm">14:15:12</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> what do you think about we have a new feature page for 11.4 ?
+<a name="l-144"></a><span class="tm">14:15:18</span><span class="nk"> &lt;metalgod_&gt;</span> based on the old one ?
+<a name="l-145"></a><span class="tm">14:15:35</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> we have this http://en.opensuse.org/openSUSE:GNOME_features
+<a name="l-146"></a><span class="tm">14:15:58</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> can you update to match the latest features ?
+<a name="l-147"></a><span class="tm">14:16:05</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> I can add the items discussed now to this page
+<a name="l-148"></a><span class="tm">14:16:09</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> yes
+<a name="l-149"></a><span class="tm">14:16:13</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> thanks!!!
+<a name="l-150"></a><span class="tm">14:16:21</span><span class="nk"> &lt;vuntz&gt;</span> I'm sure we forgot some features. We'd need to query openfate for that.
+<a name="l-151"></a><span class="tm">14:16:34</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="cmd">#action </span><span class="cmdline">badshah400 add new features to GNOME Features page</span>
+<a name="l-152"></a><span class="tm">14:16:40</span><span class="nk"> &lt;metalgod_&gt;</span> yeah
+<a name="l-153"></a><span class="tm">14:17:04</span><span class="nk"> &lt;metalgod_&gt;</span> i think next week i can have something for the smolt feature
+<a name="l-154"></a><span class="tm">14:17:13</span><span class="nk"> &lt;vuntz&gt;</span> https://features.opensuse.org/308457
+<a name="l-155"></a><span class="tm">14:17:20</span><span class="nk"> &lt;vuntz&gt;</span> (new notification theme)
+<a name="l-156"></a><span class="tm">14:17:43</span><span class="nk"> &lt;metalgod_&gt;</span> we need an artist for that
+<a name="l-157"></a><span class="tm">14:17:47</span><span class="nk"> &lt;metalgod_&gt;</span> artist and a coder
+<a name="l-158"></a><span class="tm">14:18:14</span><span class="nk"> &lt;vuntz&gt;</span> no, it's done
+<a name="l-159"></a><span class="tm">14:18:21</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> to my understanding a new theme is already in
+<a name="l-160"></a><span class="tm">14:18:23</span><span class="nk"> &lt;vuntz&gt;</span> just pointing it out
+<a name="l-161"></a><span class="tm">14:18:38</span><span class="nk"> &lt;metalgod_&gt;</span> yes it's a new theme from upstream
+<a name="l-162"></a><span class="tm">14:18:50</span><span class="nk"> &lt;metalgod_&gt;</span> the black one (same as fedora)
+<a name="l-163"></a><span class="tm">14:18:53</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> but we can do minor modifications to the notification-theme to make it sort of fit in more?
+<a name="l-164"></a><span class="tm">14:19:13</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> paint it green probably :P
+<a name="l-165"></a><span class="tm">14:19:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> it fits nicely, imho
+<a name="l-166"></a><span class="tm">14:19:54</span><span class="nk"> &lt;metalgod_&gt;</span> ok
+<a name="l-167"></a><span class="tm">14:20:00</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> it does fit with the sonar theme, but the rounded edges are a bother
+<a name="l-168"></a><span class="tm">14:20:07</span><span class="nk"> &lt;metalgod_&gt;</span> can we move to the next topic ? vuntz and badshah400 anything to add ?
+<a name="l-169"></a><span class="tm">14:20:20</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> we can add the rounded tooltips patch to GTK also
+<a name="l-170"></a><span class="tm">14:20:30</span><span class="nk"> &lt;metalgod_&gt;</span> (but still needs minor tweaks on sonar)
+<a name="l-171"></a><span class="tm">14:20:46</span><span class="nk"> &lt;badshah400&gt;</span> and if someone changes the theme to say "gilouche", the balloons do not inherit the theme colour in anyway, that makes it look odd
+<a name="l-172"></a><span class="tm">14:21:32</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> that is a topic for pet peeves though :), and I doubt we would want to inherit patches that upstream don't like too much
+<a name="l-173"></a><span class="tm">14:22:35</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> ok we can move to pet peeves
+<a name="l-174"></a><span class="tm">14:22:47 </span><span class="nka">* vuntz</span> <span class="ac">is nearly sure the theme takes its color background from the gnome theme</span>
+<a name="l-175"></a><span class="tm">14:22:55</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> right
+<a name="l-176"></a><span class="tm">14:22:56</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="topic">#topic </span><span class="topicline">- GNOME Pet peeves progress update (Atri)</span>
+<a name="l-177"></a><span class="tm">14:23:05</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> you have the spotlight
+<a name="l-178"></a><span class="tm">14:23:09</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> then I might be doing something wrong here, have to re-check
+<a name="l-179"></a><span class="tm">14:23:12</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> ok
+<a name="l-180"></a><span class="tm">14:23:44</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> you know if GTK+ git master (3.0) have that patch for rounded tooltips ?
+<a name="l-181"></a><span class="tm">14:23:57</span><span class="nk"> &lt;metalgod_&gt;</span> brb (2 min)
+<a name="l-182"></a><span class="tm">14:24:01</span><span class="nk"> &lt;badshah400&gt;</span> status of pet peeves project is reflected in the wiki http://en.opensuse.org/openSUSE:GNOME_Pet_Peeves_Project
+<a name="l-183"></a><span class="tm">14:24:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> there's a link to the gtk bug in the wiki page :-)
+<a name="l-184"></a><span class="tm">14:25:00</span><span class="nk"> &lt;badshah400&gt;</span> In short, a couple of reported issues have been fixed namely: nautilus window size (upstream) and the menu structuring (suse specific)
+<a name="l-185"></a><span class="tm">14:25:36</span><span class="nk"> &lt;badshah400&gt;</span> I opened a few bugs upstream too: bgo # 628132
+<a name="l-186"></a><span class="tm">14:25:53</span><span class="nk"> &lt;badshah400&gt;</span> and bgo #628835
+<a name="l-187"></a><span class="tm">14:26:54</span><span class="nk"> &lt;badshah400&gt;</span> but for the meetings, I specifically wanted to discuss the points about tootltip patches from fedora, new items in app-browser and update of the murrine theme engine to version 0.91
+<a name="l-188"></a><span class="tm">14:27:19</span><span class="nk"> &lt;vuntz&gt;</span> there's a new tarball for murrine?
+<a name="l-189"></a><span class="tm">14:28:02</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> not released as i see at the gnome ftp source, but a new version is tagged in the git tree
+<a name="l-190"></a><span class="tm">14:28:33</span><span class="nk"> &lt;badshah400&gt;</span> and provides several improvements. I am not sure why a new tarball is not released though
+<a name="l-191"></a><span class="tm">14:28:55</span><span class="nk"> &lt;badshah400&gt;</span> it is a while back that 0.91.0 was tagged (in fact ubuntu 10.04 uses it)
+<a name="l-192"></a><span class="tm">14:29:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> where's the tag? http://git.gnome.org/browse/murrine/
+<a name="l-193"></a><span class="tm">14:30:58</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> I am sorry, have to search it down again. I can let you the link in a while
+<a name="l-194"></a><span class="tm">14:31:41</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> see the NEWS file http://git.gnome.org/browse/murrine/tree/NEWS
+<a name="l-195"></a><span class="tm">14:31:52</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> ubuntu just updates to the git code
+<a name="l-196"></a><span class="tm">14:31:58</span><span class="nk"> &lt;vuntz&gt;</span> see http://packages.ubuntu.com/search?keywords=murrine&amp;searchon=names&amp;suite=all&amp;section=all
+<a name="l-197"></a><span class="tm">14:33:07</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> ok, it is not good to do that?
+<a name="l-198"></a><span class="tm">14:34:11</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> the NEWS file does talk about a version 0.91, and I thought we could use the git version which is at 0.91 currently
+<a name="l-199"></a><span class="tm">14:34:34</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> the maintainer just updates NEWS when he adds features, that's why it mentions 0.91 already
+<a name="l-200"></a><span class="tm">14:34:41</span><span class="nk"> &lt;vuntz&gt;</span> I mailed him to see what we should do
+<a name="l-201"></a><span class="tm">14:35:24</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> ok, thanks for that. I created a package out of git sources and tried it to see how good/bad those improvements were
+<a name="l-202"></a><span class="tm">14:36:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> for new items in app-browser...
+<a name="l-203"></a><span class="tm">14:36:27</span><span class="nk"> &lt;vuntz&gt;</span> didn't someone volunteer to fix that at some point?
+<a name="l-204"></a><span class="tm">14:36:33</span><span class="nk"> &lt;vuntz&gt;</span> maybe psankar?
+<a name="l-205"></a><span class="tm">14:36:46</span><span class="nk"> &lt;metalgod_&gt;</span> he is not here
+<a name="l-206"></a><span class="tm">14:37:03</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> yes, not that I see in the bug report so I am not sure? u mean he said it in the meeting last?
+<a name="l-207"></a><span class="tm">14:37:18</span><span class="nk"> &lt;vuntz&gt;</span> not last time
+<a name="l-208"></a><span class="tm">14:37:21</span><span class="nk"> &lt;vuntz&gt;</span> but before 11.3
+<a name="l-209"></a><span class="tm">14:38:08</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> then I definitely do not remember, I will poke him thought because this one is definitely on my nerves :)
+<a name="l-210"></a><span class="tm">14:38:59</span><span class="nk"> &lt;badshah400&gt;</span> a few questions: what do we think about the gtk patches from Fedora for better positioning and appearance?
+<a name="l-211"></a><span class="tm">14:39:27</span><span class="nk"> &lt;metalgod_&gt;</span> i think it's great looking but i'm not sure how good is it
+<a name="l-212"></a><span class="tm">14:39:33</span><span class="nk"> &lt;vuntz&gt;</span> my position is: if they're not upstream, there's probably a good reason
+<a name="l-213"></a><span class="tm">14:39:38</span><span class="nk"> &lt;metalgod_&gt;</span> because i know the theme needs tweaks
+<a name="l-214"></a><span class="tm">14:40:14</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> murrine release planned for next week
+<a name="l-215"></a><span class="tm">14:40:20</span><span class="nk"> &lt;metalgod_&gt;</span> i did a gnome team a few months ago based on nodoka
+<a name="l-216"></a><span class="tm">14:40:34</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> yes, there is a minor tweak to sonar theme needed
+<a name="l-217"></a><span class="tm">14:40:36</span><span class="nk"> &lt;metalgod_&gt;</span> and gtk had that patch
+<a name="l-218"></a><span class="tm">14:40:42</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> that's good news then
+<a name="l-219"></a><span class="tm">14:40:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> so if all themes need a tweak, that's just not going to work well :/
+<a name="l-220"></a><span class="tm">14:41:36</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> theme needs to specify if it wants to use the new tooltips, otherwise it just uses the usual ones
+<a name="l-221"></a><span class="tm">14:41:47</span><span class="nk"> &lt;metalgod_&gt;</span> right
+<a name="l-222"></a><span class="tm">14:41:57</span><span class="nk"> &lt;metalgod_&gt;</span> i'm 100% sure about that
+<a name="l-223"></a><span class="tm">14:42:07</span><span class="nk"> &lt;badshah400&gt;</span> I have applied the patches to a branch project and modified the sonar theme slightly so it works
+<a name="l-224"></a><span class="tm">14:42:56</span><span class="nk"> &lt;badshah400&gt;</span> but of course if upstream does something in this regard (such as come up with a better way to do this) for GNOME 3.0, I hope we can backport that
+<a name="l-225"></a><span class="tm">14:43:29</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> we won't be able to backport that
+<a name="l-226"></a><span class="tm">14:43:33</span><span class="nk"> &lt;vuntz&gt;</span> it'll be in gtk+3
+<a name="l-227"></a><span class="tm">14:43:41</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> okay, I see
+<a name="l-228"></a><span class="tm">14:43:59</span><span class="nk"> &lt;badshah400&gt;</span> I guess then we can leave tooltips the way they are right now
+<a name="l-229"></a><span class="tm">14:45:15</span><span class="nk"> &lt;badshah400&gt;</span> but then, the notification balloons look odd with their large edge-radius. It is quite easy to reduce this too and I think this we can do, what do you think?
+<a name="l-230"></a><span class="tm">14:46:55</span><span class="nk"> &lt;vuntz&gt;</span> don't know, it feels ok to me, but if people feel strong, I don't care much. It should probably be done upstream, if possible :-)
+<a name="l-231"></a><span class="tm">14:47:59</span><span class="nk"> &lt;badshah400&gt;</span> next question: evince has a useful patch that goes into 3.0 as far as i see, can this be backported?
+<a name="l-232"></a><span class="tm">14:48:11</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> patch for what ?
+<a name="l-233"></a><span class="tm">14:48:44</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> toolbar button that shows the folder containing the opened document
+<a name="l-234"></a><span class="tm">14:49:14</span><span class="nk"> &lt;metalgod_&gt;</span> well it's interesting
+<a name="l-235"></a><span class="tm">14:49:23</span><span class="nk"> &lt;metalgod_&gt;</span> but carry that patch can be painful
+<a name="l-236"></a><span class="tm">14:49:42</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> already pushed to master acc. to bug report
+<a name="l-237"></a><span class="tm">14:51:05</span><span class="nk"> &lt;badshah400&gt;</span> so that's it from my side on the pet peeves, nothing more that you don't see on the wiki page :)
+<a name="l-238"></a><span class="tm">14:52:35</span><span class="nk"> &lt;metalgod_&gt;</span> oh it's federico patch
+<a name="l-239"></a><span class="tm">14:53:23</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> yes, he blogged abt that one some time back
+<a name="l-240"></a><span class="tm">14:53:28</span><span class="nk"> &lt;metalgod_&gt;</span> well the code shouldn't change much on 2.32.x
+<a name="l-241"></a><span class="tm">14:53:40</span><span class="nk"> &lt;metalgod_&gt;</span> and it's not a huge patch
+<a name="l-242"></a><span class="tm">14:53:58</span><span class="nk"> &lt;vuntz&gt;</span> submit it, and we'll see
+<a name="l-243"></a><span class="tm">14:54:15</span><span class="nk"> &lt;vuntz&gt;</span> or send a mail to opensuse-gnome with the link to the commit for wider discussion :-)
+<a name="l-244"></a><span class="tm">14:54:19</span><span class="nk"> &lt;vuntz&gt;</span> but I'm not opposed to it
+<a name="l-245"></a><span class="tm">14:54:31</span><span class="nk"> &lt;metalgod_&gt;</span> anything mode badshah400 ?
+<a name="l-246"></a><span class="tm">14:54:34</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> ok, good then
+<a name="l-247"></a><span class="tm">14:54:38</span><span class="nk"> &lt;metalgod_&gt;</span> s/mode/more
+<a name="l-248"></a><span class="tm">14:54:59</span><span class="nk"> &lt;badshah400&gt;</span> o just the last thing:
+<a name="l-249"></a><span class="tm">14:55:37</span><span class="nk"> &lt;badshah400&gt;</span> is it useful to separate the maximise button from the close button by a spacer? (I find it useful, but in general?)
+<a name="l-250"></a><span class="tm">14:56:15</span><span class="nk"> &lt;badshah400&gt;</span> this is easily done by gconf branding, so I guess there's not much of a problem if we do this?
+<a name="l-251"></a><span class="tm">14:56:38 </span><span class="nka">* vuntz</span> <span class="ac">doesn't find it useful, but it's just his opinion</span>
+<a name="l-252"></a><span class="tm">14:58:18</span><span class="nk"> &lt;badshah400&gt;</span> I think it might be for the best if I send out a mail in the m-l asking for general feedback about several of these topics. I learn here that the gtk patches for tooltips are definitely out, but others we can consider
+<a name="l-253"></a><span class="tm">14:58:32</span><span class="nk"> &lt;metalgod_&gt;</span> well badshah400 you're the usuability expert... :)
+<a name="l-254"></a><span class="tm">14:58:46</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> sure, send a mail
+<a name="l-255"></a><span class="tm">14:58:50</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> why not send a screenshot with both to see what people think ?
+<a name="l-256"></a><span class="tm">14:59:09</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> yes, I will do that
+<a name="l-257"></a><span class="tm">14:59:18</span><span class="nk"> &lt;metalgod_&gt;</span> ok
+<a name="l-258"></a><span class="tm">14:59:20</span><span class="nk"> &lt;metalgod_&gt;</span> next topic ?
+<a name="l-259"></a><span class="tm">14:59:22</span><span class="nk"> &lt;badshah400&gt;</span> you can set me some action item for that then
+<a name="l-260"></a><span class="tm">14:59:33</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">vuntz:</span> anyone from meego to replace funkypinguin ?
+<a name="l-261"></a><span class="tm">15:00:16</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="cmd">#action </span><span class="cmdline">badshah400 take a screenshot of window bar and send to opensuse-gnome ml to discuss (pet peeves project)</span>
+<a name="l-262"></a><span class="tm">15:00:48</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod_:</span> not really, I guess
+<a name="l-263"></a><span class="tm">15:00:54</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> ok, thanks
+<a name="l-264"></a><span class="tm">15:01:57</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="topic">#topic </span><span class="topicline">Q &amp; A (everyone)</span>
+<a name="l-265"></a><span class="tm">15:02:08</span><span class="nk"> &lt;metalgod_&gt;</span> ok people it's your turn :)
+<a name="l-266"></a><span class="tm">15:04:04</span><span class="nk"> &lt;badshah400&gt;</span> What is the deadline for getting new packages into factory for 11.4?
+<a name="l-267"></a><span class="tm">15:07:37</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="hi">badshah400:</span> before freeze (see roadmap)
+<a name="l-268"></a><span class="tm">15:08:06</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod_:</span> so that is Milestone 5, right
+<a name="l-269"></a><span class="tm">15:08:12</span><span class="nk"> &lt;metalgod_&gt;</span> i guess so
+<a name="l-270"></a><span class="tm">15:10:05</span><span class="nk"> &lt;metalgod_&gt;</span> ok
+<a name="l-271"></a><span class="tm">15:10:18</span><span class="nk"> &lt;metalgod_&gt;</span> thanks everyone
+<a name="l-272"></a><span class="tm">15:10:23</span><span class="nk"> &lt;metalgod_&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

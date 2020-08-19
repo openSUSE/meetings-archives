@@ -1,0 +1,427 @@
+00:01:54 < suseROCKs> wait a minute... Darix takes vacations???   No way!
+00:04:47 < darix> sure do
+00:05:50 < suseROCKs> darix,   well... take the night off.  (What's left of your night)
+00:11:07 < darix> apokryphos: i will work on it tomorrow
+00:11:17 < darix> apokryphos: as preparation
+00:11:26 < darix> please mail me your ssh pub key to darix@suse.de
+00:14:49 < apokryphos> darix: thanks, sent.
+00:24:27  * suseROCKs sends fake ssh under an apokryphos alias email
+00:24:36 < suseROCKs> *fake ssh pub key
+00:29:46 < apokryphos> uhoes :o. Network Security 101
+00:29:59 < apokryphos> maybe I should've used my private key to encrypt it ;)
+00:30:44 < suseROCKs> hehe
+00:32:26 < yaloki> apokryphos: (no need to, it's _signed_ with your private key ;P)
+00:34:40 < apokryphos> yaloki: not my GPG key though...
+00:35:16 < yaloki> apokryphos: of course it is :)
+00:35:19 < apokryphos> anyone could theoretically have generated the ssh key to send
+00:35:36 < yaloki> your gpg key is signed
+00:35:40 < yaloki> the problem is the initial trust
+00:36:16 < apokryphos> exactly -- anyone could send their pub key to darix
+00:36:31 < yaloki> yes, as he doesn't have a trusted source to verify it from
+00:37:28 < yaloki> (which is why we should really have SSH pubkeys and GPG keys in something like users.o.o)
+00:37:39 < apokryphos> yup +1
+00:37:52 < apokryphos> linked to build.o.o and the like
+00:40:56 < darix> well if apokryphos didnt sign it
+00:41:02 < darix> i would just reject the mail and bother him tomorrow
+00:41:05 < darix> *shrug*
+00:41:10 < yaloki> :)
+00:42:05  * apokryphos misses Bob, Alice and Trudy examples ;)
+00:42:16 < apokryphos> and Eve of course
+00:42:41 < apokryphos> hah, several I didn't know about, like Gordon: http://en.wikipedia.org/wiki/Alice_and_Bob
+00:49:49  * yaloki hands apokryphos a mallory
+11:35:51 < wstephenson> something up with software.opensuse.org?
+11:44:44 < FunkyPenguin> looks like it has fallen over :(
+12:57:11 < darix> wstephenson: still broken for me?
+12:58:08 < wstephenson> darix: working here
+12:58:14 < darix> ok
+12:58:16 < wstephenson> tom and coolo kicked it a few times
+12:59:10 < darix> ok
+13:07:04 < wstephenson> darix: mirror question: the opensuse kde community noticed that KDE:KDE4:Factory:Desktop was not being synced to mirrors as often as other repos
+13:07:45 < wstephenson> do you know if any mirrors have some *Factory* rule to exclude or delay mirroring of openSUSE:Factory stuff that is biting eg KKFD packages for 11.2?
+13:08:01 < darix> will have to ask adrian
+14:04:13 < AJaeger> Hi
+14:04:19 < AJaeger> Henne, don't we have project meeting now?
+14:04:58 < henne> not according to news.o.o :)
+14:05:00 < egbert> AJaeger: oddly we do :p at least that's what groupwise tells me.
+14:05:11 < egbert> ok, no sync
+14:05:14 < henne> but it looks like the entry just ran out
+14:05:16 < henne> hehe
+14:07:33 -!- mode/#opensuse-project [+o henne] by ChanServ
+14:07:38 -!- mode/#opensuse-project [+o bugbot] by henne
+14:07:40 <@henne> #startmeeting
+14:07:40 <@bugbot> Meeting started Wed Jun 16 12:07:39 2010 UTC.  The chair is henne. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:07:40 <@bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+14:07:45 <@henne> #meetingtopic Welcome to the openSUSE Project Meeting!
+14:07:45 -!- bugbot changed the topic of #opensuse-project to:  (Meeting topic: Welcome to the openSUSE Project Meeting!)
+14:07:48 <@henne> Welcome to the openSUSE Project Meeting!
+14:07:53 <@henne> This meeting is meant to discuss the latest developments in and around openSUSE.
+14:08:25 <@henne>    1. Old Action Items
+14:08:25 <@henne>    2. Status Reports
+14:08:25 <@henne>    3. Question & Answers
+14:08:39 <@henne> these are the topics for this meeting
+14:09:08 <@henne> lets go. you can find old action items with this link: http://bit.ly/opensuse_action_items
+14:09:14 <@henne> #topic Old Action Items
+14:09:14 -!- bugbot changed the topic of #opensuse-project to: Old Action Items (Meeting topic: Welcome to the openSUSE Project Meeting!)
+14:09:19 <@henne> #info you can find old action items with this link: http://bit.ly/opensuse_action_items
+14:09:53 <@henne> there is no progress because all of those pending right?
+14:10:44 <@henne> oh there was one i was supposed to add to bugzilla
+14:10:47 <@henne> AJaeger ask the strategy team about their plans for after the initial proposals
+14:11:20 < AJaeger> henne: Still WIP
+14:11:24 <@henne> okay
+14:11:37 <@henne> let me put it into bugzilla
+14:12:30 < AJaeger> henne: Thanks!
+14:12:54 <@henne> it is now
+14:13:12 <@henne> okay as we have no other progress
+14:13:20 <@henne> #topic Status Reports
+14:13:20 -!- bugbot changed the topic of #opensuse-project to: Status Reports (Meeting topic: Welcome to the openSUSE Project Meeting!)
+14:13:42 <@henne> people and teams send around various workreports/status updates
+14:13:55 <@henne> is there anything we need to discuss?
+14:14:05 <@henne> or does anyone want to give a status report now?
+14:15:57 <@henne> nothing?
+14:16:00 <@henne> no one?
+14:16:11 < wstephenson> 11.3 status?
+14:16:34 < michl> wstephenson: 11.what?
+14:16:45 < wstephenson> coolo's mail to -factory last night indicated it was all fine...
+14:16:58 <@henne> well then its all fine right?
+14:17:05 < wstephenson> seems too good to be true
+14:18:40 <@henne> why?
+14:18:45 <@henne> if he says so :)
+14:18:50 <@henne> don't you trust coolo?
+14:19:41 < wstephenson> of course
+14:19:42 < michl> you shouldn't trust anyone over 30
+14:20:06 < wstephenson> but maybe he's reporting with a narrower focus than in earlier releases
+14:21:29 <@henne> anyway. as there are no other questions or reports lets continue
+14:21:44 <@henne> #topic Question & Answers
+14:21:44 -!- bugbot changed the topic of #opensuse-project to: Question & Answers (Meeting topic: Welcome to the openSUSE Project Meeting!)
+14:22:09 <@henne> are there any other general things we need to discuss?
+14:23:42 <@henne> any general questions?
+14:24:28 <@henne> Okay that's it then. If you have more, don't hesitate to bring it up on the appropriate mailinglist.
+14:24:31 <@henne> #info The next project meeting will be in two weeks. Same channel but this time at 16:00 UTC.
+14:24:34 <@henne> Thank you all for participating. Good night and good luck!
+14:24:38 <@henne> #endmeeting
+14:24:38 -!- bugbot changed the topic of #opensuse-project to: Welcome to the openSUSE Project channel. For support /join #opensuse
+14:24:38 <@bugbot> Meeting ended Wed Jun 16 12:24:38 2010 UTC.  Information about MeetBot at http://wiki.debian.org/MeetBot . (v 0.1.4)
+14:24:38 <@bugbot> Minutes:        opensuse-project/2010/opensuse-project.2010-06-16-12.07.html
+14:24:38 <@bugbot> Minutes (text): opensuse-project/2010/opensuse-project.2010-06-16-12.07.txt
+14:24:38 <@bugbot> Log:            opensuse-project/2010/opensuse-project.2010-06-16-12.07.log.html
+14:35:33 < suseROCKs> damn I'm ate....
+15:29:44 < darix> apokryphos: ping
+15:31:32 < apokryphos> darix: hi
+15:32:00 < darix> apokryphos: what did i say about signed mails?
+15:32:55 < apokryphos> darix: I use gmail unfortunately
+15:33:06 < apokryphos> darix: if you want I can PM it to you in IRC =)
+15:37:51 < darix> apokryphos: see query please
+15:37:59 < darix> i want to get this done ASAP
+15:44:28 < apokryphos> darix: cool!
+15:52:56 < _Marcus_> wolfiR: will there be PowerPC support for mozilla/ipc/chromium/src/base/atomicops.h
+15:53:01 < _Marcus_> wolfiR: or shpould i try a patch myself=?
+16:07:01 < wolfiR> _Marcus_: I don't think that people are currently working on it and it would take some time until someone with interest for PPC comes around
+16:07:08 < wolfiR> _Marcus_: ... if you don't do it ;-)
+16:09:37 < _Marcus_> ok, one nice side project more.
+16:10:30 -!- Irssi: #opensuse-project: Total of 75 nicks [1 ops, 0 halfops, 0 voices, 74 normal]
+16:15:29 -!- Irssi: #opensuse-project: Total of 76 nicks [1 ops, 0 halfops, 0 voices, 75 normal]
+16:15:42 -!- Irssi: #opensuse-project: Total of 75 nicks [1 ops, 0 halfops, 0 voices, 74 normal]
+17:57:36 < suseROCKs> Where is the main page on openSUSE-Community that lists all the team meeting minutes?
+17:58:58 < apokryphos> http://opensuse-community.org/logs/
+17:59:35 < suseROCKs> gracias apokryphos
+19:59:21  * suseROCKs flexes and gets ready to play with henne 
+20:06:26 < suseROCKs> henne, yaloki prusnak michl suseROCKs  Ready?
+20:06:45 < prusnak> sure
+20:06:48 < michl> ready to rumble
+20:07:22 < suseROCKs> don't say rumble.  You know henne is a kitty cat and doesn't like to fight.  :-)
+20:08:52 < suseROCKs> guess someone should phone henne
+20:10:08 < michl> suseROCKs: I'll do
+20:10:57 < suseROCKs> welcome CarlosRibeiro   Glad you are here to observe us.
+20:11:23 < CarlosRibeiro> That's my pleasure Lord ;-)
+20:11:53 < suseROCKs> careful, you'll make prusnak jealous cuz no one calls him Lord.
+20:12:32 < CarlosRibeiro> don't worry we can have as many Lords as we need it ;-)
+20:13:07 < suseROCKs> Welcome AJaeger!   We're tracking down other board members, so it will be a momentary time before we start.
+20:13:42 <@henne> here
+20:13:48 -!- mode/#opensuse-project [+o bugbot] by henne
+20:13:50 < AJaeger> Hi suseROCKs!  I'm back later, just wanted to say hi!
+20:13:55 <@henne> #startmeeting
+20:13:55 <@bugbot> Meeting started Wed Jun 16 18:13:55 2010 UTC.  The chair is henne. Information about MeetBot at http://wiki.debian.org/MeetBot.
+20:13:55 <@bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+20:14:09 <@henne> #meetingtopic openSUSE Board Meeting
+20:14:09 -!- bugbot changed the topic of #opensuse-project to:  (Meeting topic: openSUSE Board Meeting)
+20:14:19 <@henne> Welcome to the openSUSE Board Meeting
+20:14:26 <@henne> The topics for this meeting are:
+20:15:43 <@henne> #  openSUSE Foundation
+20:15:43 <@henne> # Where do we fail?
+20:15:44 <@henne> # Questions & Answers
+20:16:01 < suseROCKs> Wow, we're narrowed down  :-)
+20:16:06 <@henne> we did
+20:16:14 <@henne> which is a good thing right? :)
+20:16:24 < suseROCKs> I feel so naked with so few topics, but I guess I can't really complain
+20:16:26 < yaloki> aye
+20:16:32 < prusnak> hi pascal!
+20:16:36 < suseROCKs> YEAH!  Yaloki's here!
+20:16:43 < prusnak> hi pascal!
+20:16:53 < yaloki> hi *
+20:16:54 < yaloki> :)
+20:16:54 < prusnak> sorry for repost :)
+20:17:28 < prusnak> do we know what happened to rupert ?
+20:17:36 < michl> prusnak: good question
+20:17:46 < prusnak> i haven't heard from him since his moving
+20:18:05 < suseROCKs> he has a new girlfriend.  Need any more explanation?  :-)
+20:18:07 <@henne> i think he's also busy with their DVD mastering etc.
+20:18:14 <@henne> and testing
+20:18:23 < suseROCKs> *their*?
+20:18:35 <@henne> open-slx
+20:18:42 < suseROCKs> ah
+20:19:37 <@henne> okay lets get going should we? :)
+20:19:46 <@henne> #topic openSUSE Foundation
+20:19:46 -!- bugbot changed the topic of #opensuse-project to: openSUSE Foundation (Meeting topic: openSUSE Board Meeting)
+20:20:31 <@henne> were are we at with this?
+20:20:45 <@henne> are we only waiting for the end-of-june deadline to pass by?
+20:21:00 < suseROCKs> Presumably its still floating around with Novell ELC
+20:21:14 <@henne> is it? michl?
+20:21:45 < michl> suseROCKs: not that wrong :-(
+20:21:54 < michl> I'm just in conversation with Alan
+20:22:09 < michl> there no appointment yet for this Executive meeting
+20:22:32 < michl> I'll push this forward
+20:22:41 < suseROCKs> there has to be a meeting called about it?   I thought it would just be a pass-around via email or something with the ELC
+20:23:51 < yaloki> mm.. ok.. so.. nothing happened yet, so: postpone to next meeting
+20:23:55 < michl> suseROCKs: no, there will be meeting where I'll present it to a number of Executives
+20:24:07 < suseROCKs> ok
+20:24:07 < yaloki> hah! michl in suit mode :D
+20:24:42  * suseROCKs wonders if US Dept of Homeland Security will allow michl to fly to Waltham
+20:25:04 < michl> suseROCKs: modern times, no flight to Waltam necessary
+20:25:25 < michl> phone or video conference is enough
+20:26:02 < suseROCKs> so he will wear a suit and tie above where visible by camera and summer shorts below.
+20:26:06 <@henne> wow. phone! the wonders of the new age
+20:26:31 < michl> suseROCKs: exactely
+20:26:50 < suseROCKs> ok so I guess we have no real news on this topic for today.
+20:26:58 < yaloki> video conference == suit + shorts
+20:27:16 <@henne> okay so next topic then?
+20:27:35 < michl> yep
+20:28:06 <@henne> #topic Where do we fail?
+20:28:06 -!- bugbot changed the topic of #opensuse-project to: Where do we fail? (Meeting topic: openSUSE Board Meeting)
+20:28:18 <@henne> we had some action items around that
+20:28:24  * henne eyes yaloki 
+20:28:46 < suseROCKs> can you remind us what the AI's were?
+20:29:25 <@henne> yaloki wanted to announce it :)
+20:29:28 < yaloki> hah, dammit
+20:29:32 <@henne> so we get more input on this section
+20:29:41 < suseROCKs> oh thaaaat
+20:29:42 < gnokii> +1
+20:30:16 < yaloki> anyone remembers when that meeting was? 2 weeks ago, right ?
+20:30:18 <@henne> so this is for next time
+20:30:25 < yaloki> yes please, sorry
+20:30:32 <@henne> can we talk about something where we fail today? :)
+20:30:39 < suseROCKs> I have one....
+20:30:45 <@henne> shoot!
+20:30:59 < suseROCKs> I meant to bring this up at project meeting today but didn't wake up in time...
+20:31:25 < suseROCKs> yesterday apokryphos and I discovered that meetbot wasn't transferring logs to the site since early May.   Thankfully he remedied that
+20:32:10 < suseROCKs> but in the course of our discussion, and trying to figure out where to put a home permanently for the meetbot, the question I started thinkinga bout is  what can we do to look at things like bots and other community-supported services so that we can effectively respond quickkly when something isn't working
+20:32:23 < suseROCKs> where can we start (and when can we start) putting a permanent home to these services
+20:32:39 <@henne> right now
+20:32:48 < yaloki> meetbot is being put on a proper host by darix
+20:32:57 < yaloki> a server @NUE I believe
+20:33:03 < darix> huh?
+20:33:15 < suseROCKs> oh darnit.  You awoke darix   :-)
+20:33:16 < yaloki> no? I don't know, I wasn't involved :)
+20:33:18 < darix> the webhosting stuff will be sorted tomorrow
+20:33:29 <@henne> webhosting stuff?
+20:33:30 < darix> he will get a vhost on the machine where the bot runs now
+20:33:34 < darix> henne: for the logs
+20:33:37 < yaloki> mmm
+20:33:38 <@henne> k
+20:33:42 < yaloki> wait
+20:33:47 < darix> and yes it runs in nuremberg now
+20:33:58 < yaloki> there is a vserver/vhost/server @NUE where the bot is running right now ?
+20:34:01 < darix> nicely made to come back if it crashes
+20:34:06 < darix> yaloki: yes
+20:34:10 < yaloki> excellent
+20:34:28  * yaloki hands some karma kookies to darix :)
+20:34:31 < suseROCKs> do we need to get community to donate spaces on their servers collectively or should we have one central place for all this (opensuse-community.org?)
+20:34:48 <@henne> we need someone that cares
+20:34:53 <@henne> no matter where it is
+20:34:56 < darix> suseROCKs: all i need to do
+20:35:03 < darix> is modifying the apache config on that host
+20:35:19 < darix> but coolo was bothering me with debugging an obs issue (where i am still debugging)
+20:35:30 < yaloki> we should have a public list of people to poke when something goes wrong with the bot
+20:35:41 < yaloki> (= people who can log in to that server and check the bot's state/restart/...)
+20:35:44 < darix> yaloki: apokryphos <-
+20:35:51 < yaloki> admin@opensuse.org is certainly one location where I also have my eyes on
+20:35:52 < darix> i can help out
+20:35:56 < yaloki> okay
+20:36:02 < darix> but he is the main resposinble person
+20:36:08 < suseROCKs> agreed, yaloki.    Especially with time differences too.   By the time I realized something was wrong, I wasn't sure if anyone in EU was awake
+20:36:21 < yaloki> yeah, we might need more spread there
+20:36:33 < yaloki> but let's wait and see how stable it is and whether we need to have more admins around the clock
+20:36:39 < darix> if the bot crashes
+20:36:40 < yaloki> let's fail first :)
+20:36:44 < darix> it will come back
+20:36:52 < darix> or atleast thats how it is set up
+20:36:58 < yaloki> (I wasn't really impressed by the supybot framework so.. stability might be an issue ;))
+20:37:05 < suseROCKs> well stability wasn't my main concern in the question.  It was location.  And I think we have that comfortably resolved for now?
+20:37:07 < darix> yaloki: you can check ps yourself
+20:37:11 < darix> and see how it is set up :p
+20:37:20 < yaloki> as a son of init? :)
+20:37:25 <@henne> so apokryphos and darix can restart it now?
+20:37:27 < darix> yaloki: something like that
+20:37:40 < prusnak> we're getting into too much details, not related to board stuff, really
+20:37:55 < darix> prusnak: we fail at staying on topic ;p
+20:38:04 < darix> or staying focused
+20:38:16 <@henne> no no this is perfect hands-on stuff guys :)
+20:38:32 < yaloki> let's take the opportunity to spread the information ;)
+20:38:35 <@henne> darix: so only you and apokryphos can fix issues now?
+20:38:37 < suseROCKs> prusnak,  is right,  I wasn't delving into the technical details but rather the overall infrastructure issue of location.   And like I said, I believe that's now comfortably resolved.
+20:38:55 < yaloki> henne: I can log in and check, but I guess I can't sudo to restart it or anything like that
+20:38:56 < darix> henne: in theory everyone in my office can aswell. i just havent shown them how to do it yet
+20:39:11 < darix> and given i couldnt talk much about it yet either
+20:39:13 <@henne> okay. so admin@opensuse.org
+20:39:18 < darix> i couldnt ask who else is interested
+20:39:21 < darix> but
+20:39:22 < yaloki> ok, good to know
+20:39:33 < darix> if pascal wants access e.g. 
+20:39:36 < darix> he could get it easily
+20:40:02 < suseROCKs> Give him access?  Are you nuts?   :-)
+20:40:13 < yaloki> sure, I'm always on IRC in the evening, though that's usually the same times as you ^^
+20:40:14 < darix> suseROCKs: he already has an account on the machine
+20:40:17 <@henne> i have added this to FAIL
+20:40:23 <@henne> where else do we fail?
+20:40:27 < yaloki> henne: ah, good, I was about to :)
+20:40:33 < suseROCKs> was only kidding about yaloki.  We love him!
+20:40:56 < prusnak> we fail at attracting more people to these boards meetings
+20:40:56 < suseROCKs> henne,   I notice movement now on the mirrors requests to admin@  so seems like we have resolved that fail
+20:41:09 <@henne> suseROCKs: jupp i think so too :)
+20:41:36 < prusnak> but that's not probably board fail but community fail
+20:41:48 <@henne> prusnak: we fail at all this shit because we do it manually :-(
+20:41:58 < yaloki> prusnak: true
+20:42:09 < suseROCKs> prusnak,   I re-iterate my proposal that I made at our F2F board meeting.  I believe every board member should submit a monthly Board article.  If each of us does that, then we only have to do two articles a year each.
+20:42:44 < suseROCKs> people will not come to our meetings (or even Project meetings) if they don't feel engaged.  It is up to us to engage our community
+20:42:54 <@henne> i mean the announcing part, the reminder part etc.
+20:43:06 < prusnak> we'll see if the strategy discussion will engage community
+20:43:18 < suseROCKs> ahh that.  Admittedly, those reminders feel like a chore at times.  Wish we could automate that.
+20:43:48 < yaloki> henne: that too
+20:43:57 <@henne> yeah we had that task outsourced to SJ
+20:44:03 <@henne> he's still on it
+20:44:11 < suseROCKs> henne,   is there something we could do on the server side where we can pre-load meeting dates ahead of time (say 4 months worth) and the server sends out an email reminder for those specific dates?
+20:44:41 < suseROCKs> we're pretty consistent with our times across the board.
+20:45:19 <@henne> suseROCKs: yes. thats what SJ is looking into with 'remind' -> http://www.linux.com/archive/feed/55928
+20:45:31 < suseROCKs> oh that.   ok
+20:45:40 <@henne> which is a nice commandline tool which i could run on lists.o.o to send out reminders
+20:45:55 < suseROCKs> well SJ has had some time gummy lately so we'll let him pass a bit. :-)
+20:46:31 <@henne> i'm sure someone else can take over
+20:46:46 < suseROCKs> don't look at me.  I got waaaay enough on my plate now!  :-)
+20:47:25 <@henne> anyone else? :)
+20:47:26 < suseROCKs> ok any other fails to address?
+20:47:58 < suseROCKs> I think that's enough really for today.  We can't solve all our failures in one day.  That would just be too efficient and *that* would be a failure
+20:48:01 < SJ> oh ! :-) .
+20:48:17 < SJ> Is there a deadline , I am kinda running slow these days ? :\
+20:48:43 < suseROCKs> SJ,   as long as you complete by end of business tomorrow, there is no deadline.
+20:48:49 <@henne> of course not. but each week without this means slow meetings
+20:49:13 < SJ> I will try my best and let you know :-) .
+20:49:26 <@henne> i know that :)
+20:49:37 <@henne> we were just looking for someone to take this off you
+20:49:40 <@henne> but we failed ;)
+20:50:00 < SJ> okay !
+20:50:02 <@henne> okay enough fail of today?
+20:50:06 < suseROCKs> yes
+20:50:23 < suseROCKs> and then I have a proposal to insert a new topic for upcoming meetings
+20:50:30 < yaloki> in the mean time, a paste of last meeting's log http://pastie.org/1007331
+20:50:58 <@henne> #topic Questions & Answers
+20:50:58 -!- bugbot changed the topic of #opensuse-project to: Questions & Answers (Meeting topic: openSUSE Board Meeting)
+20:51:09 <@henne> any other topics we need to discuss?
+20:51:12 < suseROCKs> yes
+20:51:16 <@henne> shoot
+20:51:32 < suseROCKs> As everyone knows, we are about to release the strategy proposals tomorrow (I believe)
+20:51:44 < prusnak> we are
+20:52:04 < suseROCKs> I just thought of this now, but what I think we should do, in order to foster communication is to ensure a dedicated portion of our board meeting time is set aside for people to discuss strategy
+20:52:26 < suseROCKs> and we should make sure people know this in our announcement.
+20:52:32 < yaloki> here are the AIs of last meeting: http://pastie.org/1007334
+20:53:27 < yaloki> suseROCKs: maybe.. though... that's even more channels
+20:53:28 <@henne> suseROCKs: hm. wouldnt that be another meeting?
+20:53:40 < yaloki> suseROCKs: we already have the ML, and the forums, and then add IRC as well?
+20:53:43 <@henne> and wouldnt that be another thing to keep track of?
+20:53:46 < yaloki> I think I'd rather -1
+20:53:56 <@henne> ah.
+20:53:57 < yaloki> that's more stuff to swallow and merge
+20:53:57  * henne lags
+20:54:20 < prusnak> -1 for IRC
+20:54:32 < suseROCKs> ok
+20:54:48 < suseROCKs> -1 too just to be a part of the clique  :-)
+20:54:49 < darix> not more channels :p
+20:54:59 < prusnak> ML and forums are OK
+20:55:00 < yaloki> suseROCKs: an interactive discussion on IRC can indeed be very useful, but as said, yet another channel with content to merge and spread :\
+20:55:10 < suseROCKs> darix,  ignore the "channel" thing.  That was someone not paying attention  :-)
+20:55:26 < yaloki> "channel" as in "communication channel", not "IRC channel" :)
+20:56:02 < suseROCKs> yaloki,  at the same time however, getting people here to the discussion will get them to realize the existence of our board meetings and once the strategy discussions are over, hopefully they stick around
+20:56:13 < suseROCKs> kind of a dual-pronged goal  (I'm devious that way)
+20:56:40 < suseROCKs> but the drawback would be that such discussions would possibly run longer than the standard time alloted for a board meeting  :-(
+20:57:08 <@henne> goal!
+20:57:13 <@henne> ups ;)
+20:57:42 < yaloki> yes, but no :)
+20:57:51 <@henne> but yes but no
+20:57:51 < suseROCKs> heh
+20:58:03 < suseROCKs> but that's ok.  we can drop this motion.  I won't hold it against you all  :-)
+20:58:45 < suseROCKs> ok anything else guys?
+20:59:17 < yaloki> seems not
+20:59:30 < yaloki> anyone else with topics to bring up? or just alive? :)
+20:59:36  * yaloki vuvuzelas henne 
+20:59:47 < suseROCKs> yeah,  how's the euro these days?
+20:59:57  * darix kicks yaloki somewhere, where it really hurts
+21:00:00 < michl> 1.23 or so
+21:00:20  * suseROCKs wished he was in Europe at 1.18
+21:00:37 < suseROCKs> that 5.90 for a can of coke really kicked ass in Paris!  Sheesh!
+21:00:48 < michl> suseROCKs: ts, ts different view, different interest
+21:00:50  * cboltz wonders if a vuvunzela filter live CD (to filter the TV sound) would attract new users
+21:01:01 < gnokii> michl 1.21
+21:01:03 < darix> cboltz: +1
+21:01:10 < yaloki> cboltz: lol
+21:01:22 < michl> gnokii: which is pretty close to 1.23 ;-)
+21:01:30 < yaloki> ok, meeting done ?
+21:01:34 < gnokii> yes
+21:01:34 < michl> gnokii: you nit picker, you
+21:01:37 < darix> cboltz: http://twitpic.com/1vwlun
+21:01:45 < cboltz> darix, yaloki: the technical side is quite easy: you just have to filter out some frequencies
+21:02:21 <@henne> okay
+21:02:32 <@henne> thats it then. thanks everybody for participating
+21:02:39 <@henne> #endmeeting
+21:02:39 -!- bugbot changed the topic of #opensuse-project to: Welcome to the openSUSE Project channel. For support /join #opensuse
+21:02:41 < suseROCKs> you're welcome henne
+21:03:06 < suseROCKs> hmm   why isn't bugbot listing the URLs for the logs now?
+21:03:37 <@henne> i dont know
+21:03:42 <@henne> i also don't see a raw log
+21:03:49  * darix bets "it hit some apparmor rule"
+21:04:10  * suseROCKs knows not to bet against darix.  suseROCKs would lose!
+21:04:30 <@henne> darix: can you fix that?
+21:04:38 < darix> "no"
+21:05:41 < darix> can it wait until tomorrow?
+21:05:46 < cboltz> darix: if you need help with apparmor, just ask
+21:06:08 < darix> cboltz: it is just that i couldnt test the meetbot feature when we set it up earlier
+21:06:17 <@henne> darix: sure
+21:06:26 < darix> so it might be it just ran into "cant execute rsync" and then the plugin code died
+21:06:30 < darix> and forgot to announce the url
+21:06:39 <@henne> darix: i don't always mean NOW ;)
+21:06:47 < yaloki> henne: you mean NAO
+21:06:58 < cboltz> or "yesterday" *eg*
+21:52:14 < darix> ok supybots config is stupid
+21:52:18 < darix> apokryphos: ping
+21:52:23 < yaloki> yesitis
+21:52:36 < darix> yaloki: it uses relative paths for everything
+21:52:41 < yaloki> yup
+21:52:42 < darix> and it couldnt write into the CWD
+21:52:48 < yaloki> I know, I tried to use it for a bot once
+21:52:54 < darix> so i can just make a log from my irssi later
+21:53:50  * yaloki also needs an irssi-to-bugbot.pl
+21:54:08 <@henne> hehe
+21:54:24 < yaloki> might actually even write that
+21:55:39 < darix> ell
+21:55:57 < darix> i need apokryphos help with that.
+22:44:09 < cenuij> did the IRC world somehow turn against Eggdrop?
+23:20:51 < suseROCKs> cenuij,   Did you drop an egg?
+23:21:11  * cenuij gently sniffs the air
+23:21:33 < cenuij> I smell roses, so it was not me
+23:21:43 < suseROCKs> :-)
+23:25:17 < cenuij> I equate IRC bots to Weblogs, everyone writes the app at some point but eventually when their initial fervour runs out they end up using the oldest/most popular bot/blog app
+23:26:04 < cenuij> I have personnaly written 2 IRC bots and 3 blogging apps, none of which i use today :)
+23:27:53 < cenuij> That's not to say that i would not use them in future, but if the boxes are ticked already (the code is solid, the license is good, the code is maintained)
+23:30:16 < Siju> right, my last eggdrop-compile is Apr2009
+23:30:31 < cenuij> and it's still up I would imagine?
+23:30:34 < Siju> solid as a rock
+23:30:38 < cenuij> exactly
+23:31:33 < Siju> yeah still up, kernelupdates killed my uptimes
+23:31:52 < Siju> and nice tcl-interfaces

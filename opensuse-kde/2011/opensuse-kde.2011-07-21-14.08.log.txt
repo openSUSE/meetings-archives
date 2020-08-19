@@ -1,0 +1,457 @@
+14:08:08 <mrdocs> #startmeeting
+14:08:08 <bugbot> Meeting started Thu Jul 21 14:08:08 2011 UTC.  The chair is mrdocs. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:08:08 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+14:08:08 <alin> tittiatcoke: is you synaptiks working?
+14:08:17 <tittiatcoke> alin: Nope.
+14:08:28 <alin> tittiatcoke: great makes too... just in time for the meeting
+14:08:34 <mrdocs> Linuxsusefan: can you repost that link ?
+14:08:42 <cartman> http://en.opensuse.org/openSUSE:KDE_meeting#Next_Meeting:_2011-07-21_Time:_1400_UTC
+14:09:48 <mrdocs> #topic old action items
+14:09:48 <cartman> Shall we start?
+14:09:53 <Linuxsusefan> mrdocs: cartman has been link?
+14:09:54 <cartman> good :)
+14:10:12 <mrdocs> sorry brb phone
+14:10:15 <cartman> now for old action items
+14:10:25 <cartman> there was two issues that are relatively more important
+14:10:32 <cartman> merging KDF fixes back into KUSC
+14:10:35 <cartman> which I did
+14:10:40 <cartman> the other is
+14:10:47 <cartman> the future of phonon-backend-xin e
+14:11:00 <cartman> Now we know that we don't want xine
+14:11:12 <cartman> We can provide gstreamer and/or vlc backends
+14:11:24 <cartman> vlc is more feature complete and stable
+14:11:34 <tittiatcoke> cartman: VLC backend at this moment would be difficult as that VLC is not shipped by openSUSE.
+14:11:39 <cartman> indeed
+14:11:47 <mrdocs> back
+14:11:47 <cartman> My proposal is something like this:
+14:11:57 <cartman> provide phonon-backend-gstreamer as usual
+14:12:00 <cartman> _and_
+14:12:08 <Linuxsusefan> gstreamer +1
+14:12:12 <cartman> package phonon-backend-vlc with crippled vlc
+14:12:24 <cartman> now I discussed this with VLC developersd
+14:12:45 <cartman> and DimStar who is from openSUSE Gnome team maintains a full featured VLC repo for openSUSE 11.3 and up
+14:12:49 <cartman> so
+14:12:53 <tittiatcoke> cartman: That is already happening in KDE:Unstable:Playground.
+14:13:00 <cartman> good!
+14:13:06 <cartman> so we'll provide a dummy backend
+14:13:21 <cartman> which will be updated by either a) VLC repo or b) Packman
+14:13:33 <cartman> I like a) more but its users' choice
+14:13:36 <cartman> both will work
+14:13:41 <tittiatcoke> cartman: But we would need the crippled VLC being reviewed by the legal team.
+14:13:51 <toothpik> most ppl already have a packman repo
+14:13:55 <tittiatcoke> cartman: Correct. I have been working like that for at least 1 year
+14:13:57 <mrdocs> has it not been already ?
+14:14:00 <cartman> actually we just need headers
+14:14:06 <cartman> we can even provide empty *.so files
+14:14:07 <tigerfoot> cartman having VLC repo & Packman lead usually to crash ...
+14:14:15 <cartman> tigerfoot: users will select one
+14:14:24 <cartman> I'll myself use VLC repo and suggest that
+14:14:29 <cartman> because Packman is huge
+14:14:35 <tittiatcoke> cartman: Not if you want to compile the vlc backend. What I understood from the vlc developers is that we need the core vlc library
+14:14:39 <cartman> and I get VLC fixes fast :)
+14:14:54 <cartman> tittiatcoke: yes core VLC lib. doesn't have any codec etc.
+14:14:56 <cartman> so its good to go
+14:15:12 <TheBlackCat> Could the crippled VLC be put in multimedia:libs and linked from there?
+14:15:20 <cartman> it would be nice
+14:15:36 <Linuxsusefan> cartman: If VLC, then all the packages from packman to avoid crashs
+14:15:38 <tittiatcoke> cartman: The next step would be is to submit the crippled VLC to one of the multimedia repo's and have the novell legal team do a review
+14:15:52 <cartman> Linuxsusefan: Packman usually does conflict with lots of stuff :(
+14:16:03 <cartman> tittiatcoke: alright, do you care for it or shall I do?
+14:16:11 <TheBlackCat> packman is working on improving that
+14:16:21 <tittiatcoke> cartman: I can submit
+14:16:27 <cartman> tittiatcoke: cool
+14:16:48 <cartman> I am testing VLC packages for over a week now and its quite goodf
+14:17:08 <cartman> if we can even integrate this into ksuseinstall it would be even better
+14:17:35 <cartman> any ideas about this?
+14:17:54 <tittiatcoke> ksuseinstall has been created by llunak :-)
+14:18:18 <cartman> well one could write a QML app using packagekit to add VLC or packman repo
+14:18:21 <cartman> and do an update
+14:18:22 <cartman> oh well
+14:18:25 <mrdocs> sounds like a plan
+14:18:26 <cartman> I'll look into that
+14:18:33 <tittiatcoke> Ok
+14:18:47 <cartman> anyhow good news is phonon-backend-VLC is quite good
+14:18:57 <cartman> thats all from me for old action items
+14:19:08 <mrdocs> yes vlc is working nicely for me
+14:19:12 <TheBlackCat> it would probably be good to keep the packman mainainers in the loop as well to minimize conflicts
+14:19:20 <mrdocs> i finally now have a VM with factory
+14:19:23 <TheBlackCat> they seem to be trying to improve the conflicts
+14:19:35 <cartman> TheBlackCat: agreed, I'll bridge them with the VLC upstream, we need versions synced
+14:19:40 <cartman> mrdocs: cool
+14:19:59 <cartman> the cool thing with VLC upstream is it has much less stuff
+14:20:02 <cartman> easier to maintain
+14:20:07 <cartman> only multimedia focus
+14:20:13 <mrdocs> any other old topics ?
+14:20:19 <tittiatcoke> cartman: Have a look at multimedia:xine.  That one is linked with packman.
+14:20:24 <mrdocs> plus vlc folks are reactive to security stuff too
+14:20:25 <cartman> none from me
+14:20:41 <cartman> tittiatcoke: yep, crippled xine, same idea
+14:20:58 <tittiatcoke> cartman: That is where I got the idea to build a crippled vlc from :-)
+14:21:04 <cartman> :)
+14:21:08 <tittiatcoke> but packman is using the same repo to build the full version of xine
+14:21:29 <cartman> yep we need to bridge VLC <-> Packman
+14:21:32 <tittiatcoke> mrdocs: let move on to the next topic :-)
+14:21:40 <mrdocs> #topic status reports
+14:22:15 <cartman> Status of KDE 4.7 rc2 is KDF merge is in progress
+14:22:25 <cartman> will finish tomorrow evening probably
+14:22:33 <cartman> build will take whole weekend I assume
+14:22:35 <tittiatcoke> cartman: for Factory you can expect that kdegames4 will fail to build.
+14:22:36 <Linuxsusefan> cartman: cool
+14:22:36 <llunak> cartman: legal will not let you ship an app that adds vlc or packman repos - don't you think I've done that if I could?
+14:22:48 <llunak> s/I've/I would have/
+14:23:00 <cartman> llunak: ah, but the yast does it somehow
+14:23:08 <cartman> llunak: gets an XML from some site
+14:23:11 <cartman> let you add the repo
+14:23:25 <llunak> cartman: yes, but there the user does it, not the app, as such
+14:23:37 <TheBlackCat> Isn't that what we are suggesting, though?
+14:23:42 <cartman> well we can put some buttons and make them click? :)
+14:23:59 <cartman> The problem is users have no idea what Packman is
+14:24:02 <cartman> nor VLC
+14:24:32 <llunak> cartman: I'm afraid I don't remember all the details anymore, but this is again exactly the same problem that ksuseinstall was trying to fix in the first place
+14:24:42 <cartman> llunak: yup I know
+14:24:45 <llunak> cartman: IIRC the problem is that you cannot have 'add-this-repo' app
+14:24:52 <llunak> no matter how many buttons
+14:24:59 <llunak> the user has to willingly chose it
+14:25:10 <TheBlackCat> can you have an "add one of these repos" app?
+14:25:27 <cartman> I guess we can try to workaround that
+14:25:49 <cartman> not fun but well :/
+14:26:04 <llunak> cartman: you're not located in Nbg, are you?
+14:26:09 <cartman> llunak: I am
+14:26:16 <cartman> lawyers don't talk to me ;)
+14:26:25 <llunak> cartman: then you need to talk to them
+14:26:39 <llunak> this is not a technical problem and so it cannot be solved using technical means
+14:26:56 <llunak> talk to juergen
+14:26:58 <cartman> ok
+14:27:13 <cartman> can we document the current procedure then?
+14:27:21 <cartman> or is it supposed to be hidden too?
+14:27:42 <llunak> cartman: I think that already is documented, the ksuseinstall dialog links to some 3rd party wiki
+14:28:11 <cartman> ok in the worst case we can blog about it, make people notice it easier etc.
+14:28:23 <tittiathome> sorry. lost connection
+14:28:24 * mrdocs nods
+14:28:37 <mrdocs> any other status reports ?
+14:28:43 <llunak> cartman: first please talk to layers, this is not something where common sense works well, unfortunately
+14:28:53 <cartman> llunak: I mailed them for freetype subpixel
+14:28:54 * mrdocs nods knowingly
+14:28:56 <cartman> still waiting
+14:28:57 <cartman> :|
+14:29:07 <cartman> and that has patents expired
+14:29:13 <krop> mrdocs: yes
+14:29:24 <tittiathome> cartman: Did you got my message regarding kdegames4 failing for Factory ?
+14:29:32 <cartman> tittiathome: yeah but why will it fail? :)
+14:29:49 <llunak> cartman: you can just walk over to them, they will not bite you (well, at least I didn't get bitten)
+14:29:59 <cartman> llunak: alright :)
+14:30:03 <llunak> cartman: juergen should hopefully still remember the issue from talking to me
+14:30:07 <cartman> they'll just say no instead ;)
+14:30:14 <tittiathome> cartman: It will fail to detect PyKDE4. The reason for it is that with Factory the python stuff around the DLFCN module is gone (or placed somewhere else)
+14:30:42 <cartman> tittiathome: ok, at least Python bug, can debug it.
+14:30:42 <tittiathome> So the application Kajongg will not be build
+14:30:50 <cartman> thanks!
+14:31:01 <TheBlackCat> I am currently doing some cleaning on KDE:Unstable:SC packages (rpmlint and buildrequires and such), should that be done in KDF now?
+14:31:05 <cartman> llunak: nice to see you around btw, :)
+14:31:16 <cartman> TheBlackCat: yes but please pass this week
+14:31:23 <cartman> nice work btw!
+14:31:40 <cartman> need to get KDF ready for next week's release
+14:31:46 <TheBlackCat> sure thing.  Can you email when it is safe again?
+14:31:50 <cartman> TheBlackCat: sure
+14:31:58 <cartman> krop: you want to give a status report?
+14:32:13 <krop> * libmygpo-qt is submitted to O:F (amarok will use it)
+14:32:33 * cartman OK'd it
+14:32:35 <mrdocs> krop: what does it do ?
+14:32:35 <krop> *libprison submitted to O:F (kaddressbook and klipper will be able to show barcodes in 4.7)
+14:32:54 <krop> libmygpo gives access to the gpodder.net api
+14:33:25 <krop> (there are tons of podcasts referenced there)
+14:34:19 <krop> and for kaddressbook, you'll be able to scan barcodes for every contact
+14:34:25 <mrdocs> nice
+14:34:44 <maxlin> cool!
+14:35:16 <krop> 2 of the 4 concerned packages are currently being reviewed, one was accepted in O:F
+14:35:30 <mrdocs> anything we can do to speed things up ?
+14:35:34 <mrdocs> or hepl ?
+14:35:38 <mrdocs> help even ?
+14:35:43 <krop> no
+14:35:55 <cartman> its in the legal queue afaik
+14:36:35 <krop> libdmtx is waiting for the final review, qrencode is now in OF
+14:37:04 <mrdocs> ok anything else ?
+14:37:36 <Linuxsusefan> cartman: please release of information about 47 in to post kdf on the mailing list. to get the user with what is found in what repos. it's a good wiki authors for us to know what information about the repositories need to be changed.
+14:37:48 <krop> ah yes,
+14:38:08 <cartman> Linuxsusefan: I will, don't worry.
+14:38:09 <krop> I've pushed the alternate akonadi-google resource to KUP, please test
+14:38:18 <TheBlackCat> Are herqq and cagibi also planned?
+14:38:34 <mrdocs> krop: i will test that
+14:38:35 <Linuxsusefan> cartman: thanks
+14:38:40 <cartman> TheBlackCat: you submitted herqq now, what is HUPNP?
+14:38:45 <mrdocs> krop: will it work with 4.4.11 also ?
+14:38:51 <krop> no
+14:39:08 <krop> it depends on kdelibs >= 4.7
+14:39:09 <mrdocs> ok i can test elsewhere
+14:39:09 <TheBlackCat> herqq was already in the repo, I just added as a buildrequires
+14:39:25 <TheBlackCat> it is for the UPnP solid system
+14:39:37 <cartman> TheBlackCat: ok we can think about it.
+14:40:25 <tittiathome> cartman: I created that package in the past to use it for the UPnP framework, however it caused compiliation errors, so I removed the buildrequire again. Unfortunately I never got to it to test it again :-0
+14:40:48 <tittiathome> the solid code is quite messy (before 4.6) and I am not sure how far that it is working/building/etc
+14:41:11 <cartman> solid is well not so solid
+14:41:21 <tittiathome> :-)
+14:41:36 <TheBlackCat> I just built it myself, no compilation errors that I saw
+14:42:02 <tittiathome> cartman: I would say that we can activate the UPnP first in KUSC as soon as you are finished with the synchronization to KDF
+14:42:28 <tittiathome> TheBlackCat: herqq is building fine, but the solid backend back then caused compilation errors.
+14:42:40 <cartman> tittiathome: okies
+14:42:54 <TheBlackCat> I know, I mean I compiled kdelibs with hupnp support and it compiled fine
+14:43:02 <tittiathome> cartman: cagibi should be brought along with the KDE packages. it is a runtime requirement
+14:43:32 <cartman> alright
+14:43:46 <cartman> done
+14:44:15 <mrdocs> any other status reports ?
+14:45:41 <mrdocs> #topic  discussion http://cakirerk.org/index.php/2011/06/quickformat-an-exciting-removable-disk-formatter-for-pardus/
+14:45:59 <mrdocs> Include Quickformat in default installation? This seems very handy for people that buy an external hard disk etc
+14:46:11 <tittiathome> Do we have already an openSUSE package ?
+14:46:14 <mrdocs> im not sure who proposed this
+14:46:34 <cartman> apart from the dude calling KDE "inhuman" its OK
+14:47:19 <mrdocs> looks like a good idea
+14:47:22 <cartman> indeed
+14:47:36 <mrdocs> maybe i can take a stab at packaging it in the next few days
+14:47:38 <TheBlackCat> It looks like the only opensuse package for it is mine
+14:47:45 <cartman> lol :)
+14:47:47 <TheBlackCat> but I never got around to getting it to work
+14:47:53 <mrdocs> TheBlackCat: obs link ?
+14:48:02 <nettezzaumana> hahah. who charges KDE by *inhuman ??? :D
+14:48:17 <TheBlackCat> https://build.opensuse.org/package/show?package=quickformat&project=home%3ATheBlackCat%3Akde
+14:49:00 <TheBlackCat> Ah, I remember now, there were some python issues with the repo I was compiling against, at i was waiting until they were resolved
+14:49:06 <TheBlackCat> still hasn't happened, apparently
+14:49:07 <cartman> TheBlackCat, mrdocs : its a very good idea. We should include it.
+14:49:26 <tittiathome> Let's see first if we can fix the issues and have the package tested before we include it
+14:49:40 <mrdocs> TheBlackCat: tonight later on if i can get some time i will branch it and see if i can make it work
+14:49:45 <mrdocs> tittiathome: yup
+14:49:54 <cartman> tittiathome: we can fix anything unless its legal
+14:49:56 <cartman> :D
+14:50:13 <tittiathome> :-) Legal can never be fixed.
+14:50:15 <mrdocs> #action TheBlackCat and mrdocs to work on packaging
+14:50:28 <TheBlackCat> It may work if you just build it against KUSC or something, it is currently being build against KDF
+14:51:00 <mrdocs> TheBlackCat: what about plain factory or 11.4 ?
+14:51:27 <TheBlackCat> I'll try, it was being built in my own repo which is normally compiled agains the version of KDE I use
+14:51:34 <mrdocs> oic
+14:51:34 <TheBlackCat> not hard to add, though, I am doing it now
+14:52:02 <mrdocs> anything else on this ?
+14:52:35 <cartman> unrelated: KDF starting to build 4.7 rc2 now
+14:52:41 <cartman> will fix fallout today & tomorrow
+14:52:47 <mrdocs> #link http://cakirerk.org/index.php/2011/06/quickformat-an-exciting-removable-disk-formatter-for-pardus/
+14:52:52 <cartman> one important thing
+14:53:12 <cartman> #topic Changing the desktop theme for the next release
+14:53:17 <cartman> mrdocs: please? :)
+14:53:35 <mrdocs> #topic Changing the Desktop
+14:53:39 <mrdocs> #topic Changing the Desktop Theme
+14:53:47 <mrdocs> gah
+14:53:48 <cartman> I find Aya desktop theme much better than Air one
+14:53:55 <mrdocs> #topic Changing the Desktop Theme for Next Release
+14:54:01 <cartman> I think it would be a nice refreshment for the 12.1 release
+14:54:04 <cartman> did you guys use it?
+14:54:09 <mrdocs> I have
+14:54:15 <mrdocs> its not bad at all
+14:54:22 <cartman> it looks kind of nifty
+14:54:27 <toothpik> can't use qtcurve?
+14:54:37 <mrdocs> cartman: got some screenies so people can see ?
+14:54:43 <cartman> toothpik: I didn't test qtcurve recently
+14:54:55 <cartman> well the best screenie is sliders, one sec.
+14:55:00 <mrdocs> k
+14:55:34 <cartman> ks
+14:55:49 <tittiathome> but isn't Aya the old desktoptheme from the first KDE 4.x releases ?
+14:56:15 <cartman> http://susepaste.org/images/44773020.png
+14:56:16 <toothpik> if you have time, give qtcurve another look -- it has lots of options and looks good
+14:56:19 <cartman> this is _pretty_
+14:56:24 <cartman> toothpik: noted down, thanks!
+14:57:02 <toothpik> thank you!
+14:58:28 <cartman> So please give Aya a try and also see if qtcurve is good enough :)
+14:58:37 <cartman> A visual refreshment would be nice
+14:58:42 * mrdocs nods
+14:59:04 <TheBlackCat> QtCurve is really flexible, so we might want to pick a particular style for it
+14:59:21 <TheBlackCat> Seems to be quite a few on kde-look.org
+14:59:27 <cartman> ok
+14:59:32 <TheBlackCat> Or even make our own
+14:59:43 <cartman> that needs extra manpower :/
+14:59:44 <cartman> too late now
+15:00:26 <tittiathome> Ok. Next topic ?
+15:00:46 <msvec__> I have one: network management
+15:00:48 <tigerfoot> qtcurve doesnt work well with non qt app here
+15:01:07 <tigerfoot> new crytal windows are nice otherwise ..
+15:01:28 <tigerfoot> msvec__: I've several againt nm/pnm :D
+15:01:50 <tittiathome> Guys, I have to leave in about 10 minutes :-)
+15:01:57 <cartman> yep
+15:02:01 <cartman> anything else?
+15:02:12 <TheBlackCat> I have a few things I would like to discuss, if possible
+15:02:28 <mrdocs> one more topic
+15:02:30 <mrdocs> 1
+15:02:32 <msvec__> I wonder if there is any plan to update nm/pnm any time soon
+15:02:44 <cartman> msvec__: we'll update it to 0.9 branch for Factory
+15:02:54 <msvec__> good
+15:02:55 <cartman> 11.4 and lower stays as is
+15:03:04 <cartman> its already updated in KUSC
+15:03:05 <mrdocs> issue online update of pnm? According to [1] the version shipped with 11.4 lacks basic features like clicking on a ssid to create a connection for it.
+15:03:09 <msvec__> and K:R:46?
+15:03:18 <msvec__> that one is at May 3 state
+15:03:28 <mrdocs> http://lamarque-lvs.blogspot.com/2011/07/some-clarifications-about-plasma-nm.html
+15:03:53 <cartman> ok we can do an update but
+15:03:57 <tittiathome> cartman: I would propose to update pnm to the latest status. For Factory we need to use the NM09 branch, but also the master branch contains quite some fixes
+15:04:01 <cartman> Maintainance team will be pissed if it breaks anything
+15:04:14 <mrdocs> cartman: yeah
+15:04:16 <tittiathome> cartman: Which maintenance team ?
+15:04:19 <cartman> ok so you all want an update
+15:04:26 <mrdocs> but if its doable lets at least try
+15:04:31 <cartman> tittiathome: openSUSE maintainance update team? Unless you mean KR46 only
+15:04:34 <msvec__> I would say updating K:R:46 would give us at least some testing
+15:04:36 <cartman> then we can do it alone :D
+15:04:44 <tittiathome> cartman: I would do it in KR46 and KDF
+15:04:49 <TheBlackCat> KDE:updateapps can get it as well, right?
+15:04:52 <cartman> alright
+15:04:56 <cartman> noted and will be done
+15:05:05 <TheBlackCat> Hopefully shortest, I noticed a lot of new optional KDE dependencies on ffmpeg, apparently dealing with things like thumbnails, media indexing, and other features.  Is there any way to get a stripped-down version of it as well?
+15:05:10 <tittiathome> Forget about updateing the official 11.3/11.4 repo's :-)
+15:05:18 <cartman> tittiathome: alright :)
+15:05:23 <mrdocs> #action cartman to work on updating pnm for KR46/KDF
+15:05:37 <mrdocs> #topic misc Q&A
+15:05:45 <cartman> TheBlackCat: would be awesome if you can cripple it
+15:05:49 <cartman> Debian has one afaik
+15:05:51 <cartman> such a tarball
+15:06:01 <TheBlackCat> Would it need to be crippled, or would the headers be enough?
+15:06:10 <tittiathome> cartman: I can help you on that one :-) I have a nice trick that we can use the same source for all the distro versions and still use the NM09 branch for Factory
+15:06:21 <cartman> TheBlackCat: well if the dependency is on headers only yes but I don't think so
+15:06:27 <TheBlackCat> Alright
+15:06:30 <cartman> tittiathome: ah I'll bug you, cool!
+15:06:46 <TheBlackCat> QZietgiest is also apparently now being used in a few places
+15:06:54 <tittiathome> TheBlackCat: I don't think you can cripple ffmpeg. openSUSE already has a crippled version that delivers some headers only, but I guess we can forget that KDE will accept it
+15:07:20 <cartman> I'm ok if we can legally work it out
+15:07:21 <TheBlackCat> Do you have an OBS link, I can give it a try at least :)
+15:07:23 <tittiathome> just the headers I mean
+15:09:03 <cartman> well the thing is basically ffmpeg skeleton should be enough for KDE
+15:09:27 <tittiathome> Well ffmpeg is one big legal issue :-)
+15:09:47 <cartman> heheh
+15:10:01 <cartman> any other questions?
+15:10:12 <TheBlackCat> Do you have a link to the opensuse version?
+15:10:28 <cartman> I don't, I'd recommend looking for Debian one
+15:10:58 <TheBlackCat> Would QZietgiest be accepted if I packaged that?
+15:11:21 <cartman> I don't really have an opinion, I met with the Zeitgeist developer, nice guy
+15:11:27 <cartman> dunnow how useful it is
+15:11:27 <TheBlackCat> There are several packages that can use that now, including phonon.
+15:11:49 <cartman> but since its an optional KDE dependency
+15:11:52 <cartman> OK with me
+15:11:57 <mrdocs> TheBlackCat: push it to Extras and we can test it
+15:11:58 <TheBlackCat> I think it is intended to integrate it more heavily with nepomuk down the road, so it will likely need to be included eventually
+15:12:25 <TheBlackCat> Okay,  so the last thing I want to talk about is personal settings vs system settings
+15:12:36 <mrdocs> TheBlackCat: even when busy i am very attentive to SR's
+15:12:45 <TheBlackCat> I am a manager on the KDE forums, and I can tell you this causes a huge amount of confusion
+15:13:08 <cartman> TheBlackCat: how so?
+15:13:12 <TheBlackCat> I understand the logic, but breaking with upstream on the naming of such a fundamental program really makes it complicated to give people advice
+15:13:42 <cartman> I don't understand the problem ?
+15:13:50 <TheBlackCat> Because every other distribution besides openSUSE goes with the upstream name, system settings.  When you are trying to tell a user how to configure something, they are not going to be able to find it on openSUSE
+15:14:15 <tittiathome> cartman: In the SUSE menu's it is called Personal Settings instead of System Settings
+15:14:18 <tigerfoot> TheBlackCat: I don't understand I always launch systemsetting
+15:14:45 <tittiathome> It is just the naming of the Menu entry :-)
+15:14:55 <toothpik> if you use alt-f2 it is systemsettings -- in the menu it's personal
+15:14:56 <tigerfoot> tittiathome: ah ah in french it's translated configuration du système = system settings :-)
+15:15:02 <TheBlackCat> The binary name is the same, but the name used by the application search (krunner) and application launcher menu is personal settings
+15:15:06 <cartman> sounds like a good confusio
+15:15:08 <cartman> +n
+15:15:28 <tittiathome> cartman: You might want to check with wstephenson what the reasoning behind this was.
+15:15:41 <tittiathome> I know that we had several discussions in the past also around this same topic
+15:15:44 <cartman> our naming is much more logical so I can see the reasoning :D
+15:15:49 <TheBlackCat> I think the reasoning was that they are not system settings, they are personal settings
+15:15:53 <cartman> indeed
+15:16:02 <toothpik> you don't need root to use it
+15:16:08 <tigerfoot> but you will find also system setting like kdm settings :-)
+15:16:24 <tigerfoot> policykit etc all of them need root :D
+15:16:26 <TheBlackCat> There are a lot more system-related settings there now than there were a few releases ago
+15:16:59 <tittiathome> Have to leave now. Bye
+15:17:10 <msvec__> can't just call it Settings? :)
+15:17:15 <toothpik> i would think it should require a Really Good Reason to break with upstream
+15:17:41 <msvec__> either way, System Settings sounds fine to me, it can cover "personal system system settings" too
+15:19:26 <toothpik> good point -- system doesn't exclude personal
+15:19:57 <TheBlackCat> The patch is called systemsettings-desktop.diff and it is in kdebase4-workspace
+15:20:29 <cartman> I'll talk to Will but
+15:20:38 <cartman> we need to maintain our backward compat. somehow :(
+15:21:13 <TheBlackCat> With the switch to KDE 4.7 and a new openSUSE release, this seems like the best time to change the name
+15:22:12 <TheBlackCat> You could always have a second .desktop file pointing to the same application, right?
+15:22:18 <cartman> alright noted
+15:22:22 <cartman> TheBlackCat: yes
+15:22:52 <TheBlackCat> Use System Settings as the default one, and bury personal settings in a sub-sub-menu somewhere maybe (or don't put it in the menu at all, if that is possible)
+15:23:43 <cartman> I'll see that, maybe possible via OnlyShowIn
+15:25:11 <TheBlackCat> Final question: how are we going to integrate with the new KDE:Apps namespace?  Or are we going to integrate at all?
+15:25:26 <cartman> 0 idea there
+15:25:39 <cartman> Didn't have any time due to 4.7 work
+15:27:00 <TheBlackCat> Alright, at most it would probably go into updateapps or something, which won't be an issue until later anyway
+15:27:36 <cartman> Time to conclude our meeting then?
+15:28:31 <cartman> anything else?
+15:28:37 <javier> are we going to get rid of susegreeter for 12.1?
+15:29:06 <TheBlackCat> oh yeah, good point
+15:29:07 <cartman> javier: why? besides the fact that default font rendering makes it look very bad.
+15:29:46 <javier> some people have suggested to replace with something easier to update
+15:29:51 <TheBlackCat> Doesn't it conflict with the system settings KDM configuration, or is that somethign else?
+15:29:59 <javier> ie: a special homepage
+15:30:17 <TheBlackCat> Completely different topic, NM
+15:30:18 <cartman> we are talking about the welcome greeter right?
+15:30:26 <javier> yes
+15:30:42 <cartman> I've no strong opinion about it
+15:31:01 <javier> but this KDM thingy reminds me of a long standing bug (was it about customising KDM?)
+15:31:24 <javier> one sec
+15:31:52 <javier> bug 267903
+15:31:56 <bugbot> openSUSE bug 267903 in openSUSE 11.4 (KDE4 Workspace) "KDM kcm module conflicts with /etc/sysconfig/displaymanager settings" [Major,Needinfo] https://bugzilla.novell.com/267903
+15:32:35 <cartman> nice
+15:32:43 <javier> indeed :)
+15:33:24 <cartman> javier: noted down, lets debug a little tomorrow
+15:33:26 <TheBlackCat> That is what I thought we were talking about
+15:33:29 <cartman> while waiting for KDF to build
+15:33:31 <javier> ok
+15:33:33 <javier> thanks
+15:33:56 <mrdocs> javier: thanks for raising this... its an annoyance, pisses people off bug
+15:34:06 <javier> yepp
+15:34:13 <cartman> 4 year old too
+15:34:15 <cartman> neat.
+15:34:16 <mrdocs> and looks like its not a major rework  to fix
+15:34:17 <javier> there's also another one of less relevance...
+15:34:27 <javier> the window style of yast
+15:34:42 <javier> it doesn't use oxygen
+15:34:42 <TheBlackCat> you mean widget style, right?
+15:34:48 <javier> yes
+15:34:54 <cartman> it uses some weird shit
+15:34:58 <mrdocs> part of the issue is yast is Qt
+15:35:16 <mrdocs> it may not have the bits to inherit the KDE style
+15:35:22 <mrdocs> like Scribus does :-)
+15:35:26 <cartman> heheh
+15:35:31 <javier> I see
+15:35:44 <mrdocs> so even tho Scribus is pure Qt, it looks and feels like a kde app
+15:35:54 <mrdocs> except for our custom file dialogs
+15:36:00 <mrdocs> which are custom for a reason
+15:36:04 <TheBlackCat> Eric works fine as well
+15:36:09 <javier> what happened this bug related to "Plasma workspace"? You had to manually choose it on KDM, otherwise KDE wouldn't start
+15:36:20 <TheBlackCat> Mathematica does not
+15:36:27 <cartman> javier: fixed.
+15:36:28 <mrdocs> javier: i wonder if it is an upgrade issue
+15:36:35 <cartman> before M2
+15:36:46 <javier> ok, great
+15:36:46 <coolo> mrdocs: the real issue is: yast is root
+15:36:50 <javier> I lost track of that bug
+15:37:09 <mrdocs> coolo: yeah i remember that now
+15:37:12 <cartman> javier: openSUSE has a nice testing team, they tracked down the bug to a commit
+15:37:28 <javier> cool :)
+15:37:29 <cartman> bmwiedemann++
+15:37:48 <mrdocs> qa.o.o is awesome
+15:38:05 <cartman> sooo only NetworkManager update is left for KDF, will do that tomorrow
+15:38:12 <cartman> and hopefully a nice 4.7 release
+15:38:14 * javier hasn't tested anything since months ;(
+15:38:17 <cartman> + thunderbird ;-P
+15:39:20 <cartman> End of meeting then, thanks to everyone attending!
+15:39:41 <javier> do we have to change the links in bookmarks ourselves from novell to suse?
+15:40:01 <cartman> yes we should
+15:40:09 <javier> ok
+15:40:25 <javier> who's going to the desktop summit btw?
+15:40:59 <mrdocs> i wanted to but work interferes
+15:41:06 * cartman does
+15:41:25 <javier> ok, see you there then
+15:41:42 <javier> I'll be there till wednesday
+15:41:43 <cartman> cool :)
+15:41:45 <mrdocs> ok anything else ?
+15:41:51 <mrdocs> can we wrap this up ?
+15:41:55 <mrdocs> once...
+15:41:59 <mrdocs> twice..
+15:42:00 <javier> yes
+15:42:01 <cartman> heheh please
+15:42:02 <Linuxsusefan> the next meeting?
+15:42:04 <TheBlackCat> Do we have to?
+15:42:06 <mrdocs> three..
+15:42:10 <javier> boom
+15:42:11 <mrdocs> #endmeeting

@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#osem log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:00:26</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:00:26</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Tue Aug 26 15:00:26 2014 UTC.  The chair is KalabiYau. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:00:26</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:00:54</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">Curreant status and retrospective of Борщ milestone</span>
+<a name="l-5"></a><span class="tm">15:01:04</span><span class="nk"> &lt;KalabiYau&gt;</span> So, guys. Hello
+<a name="l-6"></a><span class="tm">15:01:09</span><span class="nk"> &lt;gopesh&gt;</span> hello
+<a name="l-7"></a><span class="tm">15:01:10</span><span class="nk"> &lt;KalabiYau&gt;</span> Who is online?
+<a name="l-8"></a><span class="tm">15:01:20</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">gopesh:</span> is
+<a name="l-9"></a><span class="tm">15:01:26</span><span class="nk"> &lt;Chrisbr&gt;</span> <span class="hi">Chrisbr:</span> is
+<a name="l-10"></a><span class="tm">15:01:46 </span><span class="nka">* bear454</span> <span class="ac">is</span>
+<a name="l-11"></a><span class="tm">15:02:03</span><span class="nk"> &lt;KalabiYau&gt;</span> Let me first congratulate you with progress, quality and passion you did delivered while worked on osem while in GSOC
+<a name="l-12"></a><span class="tm">15:02:04 </span><span class="nka">* henne</span> <span class="ac">is too</span>
+<a name="l-13"></a><span class="tm">15:02:17</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">KalabiYau:</span> thanks
+<a name="l-14"></a><span class="tm">15:02:18</span><span class="nk"> &lt;KalabiYau&gt;</span> that was awesome time for all us, we had a lot of fun and achieved a lot
+<a name="l-15"></a><span class="tm">15:02:26</span><span class="nk"> &lt;KalabiYau&gt;</span> congrats, you guys rock!
+<a name="l-16"></a><span class="tm">15:02:36 </span><span class="nka">* differentreality</span> <span class="ac">here</span>
+<a name="l-17"></a><span class="tm">15:02:50</span><span class="nk"> &lt;KalabiYau&gt;</span> wish we could meet and shake each other's hands, but seems later on
+<a name="l-18"></a><span class="tm">15:03:05</span><span class="nk"> &lt;KalabiYau&gt;</span> okay, let's start status round
+<a name="l-19"></a><span class="tm">15:03:24</span><span class="nk"> &lt;KalabiYau&gt;</span> please provide your current status on current Milestone(MS) and I will populate info
+<a name="l-20"></a><span class="tm">15:04:09</span><span class="nk"> &lt;Chrisbr&gt;</span> who wants to start?
+<a name="l-21"></a><span class="tm">15:04:12</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#info </span><span class="cmdline">KalabiYau did not done so much this sprint as was buried under an office problems. Nevertheless, light is ahead for him :)</span>
+<a name="l-22"></a><span class="tm">15:04:40</span><span class="nk"> &lt;KalabiYau&gt;</span> that should happen simultaneously
+<a name="l-23"></a><span class="tm">15:04:44</span><span class="nk"> &lt;KalabiYau&gt;</span> :)
+<a name="l-24"></a><span class="tm">15:04:46</span><span class="nk"> &lt;gopesh&gt;</span> well I completed delete users
+<a name="l-25"></a><span class="tm">15:05:01</span><span class="nk"> &lt;gopesh&gt;</span> and keynote speakers is yet to implemented
+<a name="l-26"></a><span class="tm">15:05:09</span><span class="nk"> &lt;gopesh&gt;</span> for this sprint
+<a name="l-27"></a><span class="tm">15:05:18</span><span class="nk"> &lt;gopesh&gt;</span> that's my part
+<a name="l-28"></a><span class="tm">15:05:37</span><span class="nk"> &lt;gopesh&gt;</span> delete users still pending to me merged
+<a name="l-29"></a><span class="tm">15:05:55</span><span class="nk"> &lt;differentreality&gt;</span> if I may, I would like to add that I think we are not quire ready to say that user deletion is done
+<a name="l-30"></a><span class="tm">15:06:06</span><span class="nk"> &lt;Chrisbr&gt;</span> I continued with the refactoring and finished so far the registration period. From my commited issues there are still #418 and #419 open which are almost done (some failing tests and waiting for review).
+<a name="l-31"></a><span class="tm">15:06:19</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#info </span><span class="cmdline">gopesh delivered delete users task (some concerns here) - still should be merged, keynote speakers - WIP</span>
+<a name="l-32"></a><span class="tm">15:06:24</span><span class="nk"> &lt;KalabiYau&gt;</span> differentreality, please elaborate
+<a name="l-33"></a><span class="tm">15:06:39</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#info </span><span class="cmdline">continued with the refactoring and finished so far the registration period. From my commited issues there are still #418 and #419 open which are almost done (some failing tests and waiting for review).</span>
+<a name="l-34"></a><span class="tm">15:06:45</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">differentreality:</span> what is left
+<a name="l-35"></a><span class="tm">15:06:56</span><span class="nk"> &lt;Chrisbr&gt;</span> So for the next milestone I would like to work on the user interface (#385 - #389) but I'm not sure that can deliver all in the next milestone because I'm on vacation from 30.08 - 21.09!
+<a name="l-36"></a><span class="tm">15:07:08</span><span class="nk"> &lt;KalabiYau&gt;</span> Chrisbr, planning on next a bit later
+<a name="l-37"></a><span class="tm">15:07:10</span><span class="nk"> &lt;bear454&gt;</span> <span class="hi">KalabiYau:</span> you didn't attribute that to Chrisbr
+<a name="l-38"></a><span class="tm">15:07:16</span><span class="nk"> &lt;differentreality&gt;</span> regarding user deletion I saw a couple of comments today from henne and there is a comment that I made which isn't taken care of either
+<a name="l-39"></a><span class="tm">15:07:23</span><span class="nk"> &lt;KalabiYau&gt;</span> bear454, thanks for pointing, my bad
+<a name="l-40"></a><span class="tm">15:07:27</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#info </span><span class="cmdline">Chrisbr continued with the refactoring and finished so far the registration period. From my commited issues there are still #418 and #419 open which are almost done (some failing tests and waiting for review).</span>
+<a name="l-41"></a><span class="tm">15:07:47</span><span class="nk"> &lt;gopesh&gt;</span> well I saw henne's comment
+<a name="l-42"></a><span class="tm">15:07:55</span><span class="nk"> &lt;KalabiYau&gt;</span> differentreality, typing?
+<a name="l-43"></a><span class="tm">15:08:24</span><span class="nk"> &lt;differentreality&gt;</span> as far as my work is concerned, I regard authorization as done (pending some rewriting as we discussed with KalabiYau, but that's gonna be a different thing on its own later on).
+<a name="l-44"></a><span class="tm">15:08:57</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#info </span><span class="cmdline">differentreality reported authorization is done (pending some rewriting as we discussed with KalabiYau, but that's gonna be a different thing on its own later on).</span>
+<a name="l-45"></a><span class="tm">15:08:57</span><span class="nk"> &lt;differentreality&gt;</span> We had some issues with the deleted users of events and their migrations. Henne has now resolved everything I believe
+<a name="l-46"></a><span class="tm">15:09:05</span><span class="nk"> &lt;henne&gt;</span> yeah manually
+<a name="l-47"></a><span class="tm">15:09:10</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">differentreality:</span> your comments are with ability.rb and not related to delete users If I am not wrong
+<a name="l-48"></a><span class="tm">15:09:25</span><span class="nk"> &lt;bear454&gt;</span> <span class="hi">KalabiYau:</span> I've got a working app.json for automated deployment to heroku, using cleardb (mysql) addon; working on rake tasks to automate setup - esp. heroku's secret generator.
+<a name="l-49"></a><span class="tm">15:09:47</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">henne:</span> but you still consider this done with the 2 migrations we did?
+<a name="l-50"></a><span class="tm">15:09:53</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#info  </span><span class="cmdline">bear454  reported: I've got a working app.json for automated deployment to heroku, using cleardb (mysql) addon; working on rake tasks to automate setup - esp. heroku's secret generator.</span>
+<a name="l-51"></a><span class="tm">15:09:56</span><span class="nk"> &lt;KalabiYau&gt;</span> bear454, thanks
+<a name="l-52"></a><span class="tm">15:10:13</span><span class="nk"> &lt;KalabiYau&gt;</span> so when we can call that user deletion is done
+<a name="l-53"></a><span class="tm">15:10:25</span><span class="nk"> &lt;KalabiYau&gt;</span> what is the definition of done, differentreality ?
+<a name="l-54"></a><span class="tm">15:10:27</span><span class="nk"> &lt;differentreality&gt;</span> and I have a pending PR for styling (seems a couple of things shouldn't be there after the rebase, but are). I am slowly finishing that, as I am on vacation
+<a name="l-55"></a><span class="tm">15:10:47</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">KalabiYau:</span> ready to be merged: we have all the functionality we want and the tests pass
+<a name="l-56"></a><span class="tm">15:10:49</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">differentreality:</span> yeah the delta is something we can't address
+<a name="l-57"></a><span class="tm">15:10:50</span><span class="nk"> &lt;KalabiYau&gt;</span> differentreality, nice to know, hope you have sea around to swim :)
+<a name="l-58"></a><span class="tm">15:11:03</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">KalabiYau:</span> as a matter of fact I do, thanks :)
+<a name="l-59"></a><span class="tm">15:11:04</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">KalabiYau:</span> i have overload the destroy function as said by henne then I guess I am done
+<a name="l-60"></a><span class="tm">15:11:20</span><span class="nk"> &lt;differentreality&gt;</span> I have a big concern for user deletion when it comes to voters...
+<a name="l-61"></a><span class="tm">15:11:45</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#info </span><span class="cmdline">overall user deletion is not yet done, as some loose ends are present. Still some work to be done</span>
+<a name="l-62"></a><span class="tm">15:11:58</span><span class="nk"> &lt;differentreality&gt;</span> voting on events is supposed to determine which proposal is accepted and which one is rejected, I don't want us to harm this process due to user deletion (and their votes being deleted consequently)
+<a name="l-63"></a><span class="tm">15:12:16</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">differentreality:</span> maybe your comment might have gone to history that's why I didn't see ;)
+<a name="l-64"></a><span class="tm">15:12:22</span><span class="nk"> &lt;KalabiYau&gt;</span> let's catch on that matter
+<a name="l-65"></a><span class="tm">15:12:29</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">differentreality:</span> okay I will address the voting issue
+<a name="l-66"></a><span class="tm">15:12:32</span><span class="nk"> &lt;KalabiYau&gt;</span> seems complex, undone and we are not all aligned
+<a name="l-67"></a><span class="tm">15:12:35</span><span class="nk"> &lt;KalabiYau&gt;</span> ok?
+<a name="l-68"></a><span class="tm">15:12:37</span><span class="nk"> &lt;differentreality&gt;</span> ok
+<a name="l-69"></a><span class="tm">15:12:40</span><span class="nk"> &lt;KalabiYau&gt;</span> super
+<a name="l-70"></a><span class="tm">15:13:07</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, any report from you?
+<a name="l-71"></a><span class="tm">15:13:20</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, I saw you done a lot this spring
+<a name="l-72"></a><span class="tm">15:13:25</span><span class="nk"> &lt;KalabiYau&gt;</span> *sprint
+<a name="l-73"></a><span class="tm">15:13:30</span><span class="nk"> &lt;KalabiYau&gt;</span> and probably spring as well )
+<a name="l-74"></a><span class="tm">15:14:08</span><span class="nk"> &lt;henne&gt;</span> huh?
+<a name="l-75"></a><span class="tm">15:14:21</span><span class="nk"> &lt;henne&gt;</span> I just took care of events.opensuse.org
+<a name="l-76"></a><span class="tm">15:14:31</span><span class="nk"> &lt;henne&gt;</span> nothing really in the code
+<a name="l-77"></a><span class="tm">15:14:41</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#info </span><span class="cmdline">henne took care of events.o.o</span>
+<a name="l-78"></a><span class="tm">15:14:49</span><span class="nk"> &lt;KalabiYau&gt;</span> on the current flow situation. We still have tons of stuff in in progress and in Ready
+<a name="l-79"></a><span class="tm">15:15:06</span><span class="nk"> &lt;KalabiYau&gt;</span> generally Борщ из over and we will move on
+<a name="l-80"></a><span class="tm">15:15:38</span><span class="nk"> &lt;KalabiYau&gt;</span> what we wanted to do with mentors under the closed doors is to get post mortem discussion on what is done by us, what to improve
+<a name="l-81"></a><span class="tm">15:16:00</span><span class="nk"> &lt;KalabiYau&gt;</span> in the same time, we assume we need to clean waffle as much as possible to move on
+<a name="l-82"></a><span class="tm">15:16:26</span><span class="nk"> &lt;KalabiYau&gt;</span> that time my proposal is to not to take over undone stuff from Борщ
+<a name="l-83"></a><span class="tm">15:16:27 </span><span class="nka">* differentreality</span> <span class="ac">brb 2 min</span>
+<a name="l-84"></a><span class="tm">15:17:01</span><span class="nk"> &lt;KalabiYau&gt;</span> leave them as they are - done/undone, and with every owner of the task to decide personally what to do with his cards
+<a name="l-85"></a><span class="tm">15:17:22</span><span class="nk"> &lt;KalabiYau&gt;</span> why? project is moving, but we don't need to leave your work unmerged
+<a name="l-86"></a><span class="tm">15:17:32</span><span class="nk"> &lt;KalabiYau&gt;</span> hope explained clear
+<a name="l-87"></a><span class="tm">15:17:59</span><span class="nk"> &lt;bear454&gt;</span> <span class="hi">KalabiYau:</span> I don't understand
+<a name="l-88"></a><span class="tm">15:18:10 </span><span class="nka">* henne</span> <span class="ac">neither</span>
+<a name="l-89"></a><span class="tm">15:18:19 </span><span class="nka">* KalabiYau</span> <span class="ac">stupid</span>
+<a name="l-90"></a><span class="tm">15:18:40</span><span class="nk"> &lt;KalabiYau&gt;</span> bear454, current milestone cards will not be moved to new sprint, until clarified
+<a name="l-91"></a><span class="tm">15:18:56</span><span class="nk"> &lt;KalabiYau&gt;</span> last sprint planning we just took everything on next sprint
+<a name="l-92"></a><span class="tm">15:19:14</span><span class="nk"> &lt;KalabiYau&gt;</span> if we will do that again - the whole point of agile/waffle is missing
+<a name="l-93"></a><span class="tm">15:19:40</span><span class="nk"> &lt;KalabiYau&gt;</span> My idea is to clean our board again.
+<a name="l-94"></a><span class="tm">15:19:52</span><span class="nk"> &lt;gopesh&gt;</span> but KalabiYau then
+<a name="l-95"></a><span class="tm">15:19:57</span><span class="nk"> &lt;henne&gt;</span> play
+<a name="l-96"></a><span class="tm">15:19:59</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, will work with Chrisbr, I with differentreality , bear454 with gopesh
+<a name="l-97"></a><span class="tm">15:19:59</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-98"></a><span class="tm">15:20:00</span><span class="nk"> &lt;gopesh&gt;</span> work will remain undone
+<a name="l-99"></a><span class="tm">15:20:13</span><span class="nk"> &lt;KalabiYau&gt;</span> gopesh, it will be done at some point
+<a name="l-100"></a><span class="tm">15:20:19</span><span class="nk"> &lt;gopesh&gt;</span> and we will loose track of things
+<a name="l-101"></a><span class="tm">15:20:34</span><span class="nk"> &lt;KalabiYau&gt;</span> i am not saying - delete all the stuff
+<a name="l-102"></a><span class="tm">15:20:43</span><span class="nk"> &lt;KalabiYau&gt;</span> just don't take blindly cards to new sprint
+<a name="l-103"></a><span class="tm">15:20:53</span><span class="nk"> &lt;henne&gt;</span> Well, let's move the issues away
+<a name="l-104"></a><span class="tm">15:20:54</span><span class="nk"> &lt;KalabiYau&gt;</span> re-evaluate first
+<a name="l-105"></a><span class="tm">15:21:00</span><span class="nk"> &lt;henne&gt;</span> and then let's see whats left
+<a name="l-106"></a><span class="tm">15:21:12</span><span class="nk"> &lt;KalabiYau&gt;</span> that we can do
+<a name="l-107"></a><span class="tm">15:22:10</span><span class="nk"> &lt;KalabiYau&gt;</span> what shall we do with stuff in ~In Progress~ ?
+<a name="l-108"></a><span class="tm">15:22:40</span><span class="nk"> &lt;gopesh&gt;</span> i guess shift everything
+<a name="l-109"></a><span class="tm">15:22:50</span><span class="nk"> &lt;KalabiYau&gt;</span> gopesh, you mean on next sprint?
+<a name="l-110"></a><span class="tm">15:22:54</span><span class="nk"> &lt;gopesh&gt;</span> yep
+<a name="l-111"></a><span class="tm">15:23:10</span><span class="nk"> &lt;KalabiYau&gt;</span> what if we would proclaim next sprint as stabilization sprint
+<a name="l-112"></a><span class="tm">15:23:17</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Chrisbr:</span> I guess you're out for the next sprint. So will I be
+<a name="l-113"></a><span class="tm">15:23:17</span><span class="nk"> &lt;gopesh&gt;</span> atleast we will know where we are heading
+<a name="l-114"></a><span class="tm">15:23:26</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">KalabiYau:</span> nice idea
+<a name="l-115"></a><span class="tm">15:23:33</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">Chrisbr:</span> so I would move 417 and 421 to the backlog again
+<a name="l-116"></a><span class="tm">15:23:39</span><span class="nk"> &lt;gopesh&gt;</span> complete your own work ;)
+<a name="l-117"></a><span class="tm">15:23:41</span><span class="nk"> &lt;bear454&gt;</span> <span class="hi">KalabiYau:</span> I can see the value in not assigning all the TODOs, for example, but WIP?
+<a name="l-118"></a><span class="tm">15:24:01</span><span class="nk"> &lt;Chrisbr&gt;</span> <span class="hi">henne:</span> agree
+<a name="l-119"></a><span class="tm">15:24:34</span><span class="nk"> &lt;KalabiYau&gt;</span> bear454, sure, but we have tons of stuff in In progress which we should take care now or never :)
+<a name="l-120"></a><span class="tm">15:25:00</span><span class="nk"> &lt;KalabiYau&gt;</span> let's try next sprint to focus on cleaning WIP column?
+<a name="l-121"></a><span class="tm">15:25:04</span><span class="nk"> &lt;henne&gt;</span> In progress are mostly PRs
+<a name="l-122"></a><span class="tm">15:25:10</span><span class="nk"> &lt;KalabiYau&gt;</span> but still
+<a name="l-123"></a><span class="tm">15:25:13</span><span class="nk"> &lt;KalabiYau&gt;</span> pr is work
+<a name="l-124"></a><span class="tm">15:25:20</span><span class="nk"> &lt;KalabiYau&gt;</span> for reviewer, for submitter
+<a name="l-125"></a><span class="tm">15:25:24</span><span class="nk"> &lt;KalabiYau&gt;</span> time/resources
+<a name="l-126"></a><span class="tm">15:25:29</span><span class="nk"> &lt;henne&gt;</span> true
+<a name="l-127"></a><span class="tm">15:25:31</span><span class="nk"> &lt;henne&gt;</span> just saying
+<a name="l-128"></a><span class="tm">15:25:38</span><span class="nk"> &lt;KalabiYau&gt;</span> sure thing
+<a name="l-129"></a><span class="tm">15:26:10</span><span class="nk"> &lt;KalabiYau&gt;</span> generally, I presume, we will get lower pace soonish
+<a name="l-130"></a><span class="tm">15:26:40</span><span class="nk"> &lt;KalabiYau&gt;</span> as students are more or less done, mentors are busy and stuff, so let's aim in the middle. Not to high, not to low.
+<a name="l-131"></a><span class="tm">15:26:51</span><span class="nk"> &lt;KalabiYau&gt;</span> clean the stuff, move on with next plans
+<a name="l-132"></a><span class="tm">15:26:59</span><span class="nk"> &lt;henne&gt;</span> I like the idea of stabilization
+<a name="l-133"></a><span class="tm">15:27:07</span><span class="nk"> &lt;henne&gt;</span> I think we should also think about a first 'release'
+<a name="l-134"></a><span class="tm">15:27:20</span><span class="nk"> &lt;KalabiYau&gt;</span> that would be awesome
+<a name="l-135"></a><span class="tm">15:27:36</span><span class="nk"> &lt;henne&gt;</span> how about we define some exit criteria for that
+<a name="l-136"></a><span class="tm">15:27:43</span><span class="nk"> &lt;KalabiYau&gt;</span> for release?
+<a name="l-137"></a><span class="tm">15:27:44</span><span class="nk"> &lt;henne&gt;</span> and then see what still needs to be done
+<a name="l-138"></a><span class="tm">15:27:50</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-139"></a><span class="tm">15:27:51</span><span class="nk"> &lt;bear454&gt;</span> LinuxFest Northwest is considering adoption of osem for LFNW2015
+<a name="l-140"></a><span class="tm">15:27:55</span><span class="nk"> &lt;henne&gt;</span> for OSEM 0.1
+<a name="l-141"></a><span class="tm">15:28:04</span><span class="nk"> &lt;KalabiYau&gt;</span> bear454, awesome news
+<a name="l-142"></a><span class="tm">15:28:15</span><span class="nk"> &lt;differentreality&gt;</span> yeap, great news!
+<a name="l-143"></a><span class="tm">15:28:17</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">bear454:</span> so are many others. but I wouldn't want them to be on master all the time
+<a name="l-144"></a><span class="tm">15:28:18</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, we should have rails engine, instead of rails app
+<a name="l-145"></a><span class="tm">15:28:19</span><span class="nk"> &lt;KalabiYau&gt;</span> first
+<a name="l-146"></a><span class="tm">15:28:26</span><span class="nk"> &lt;henne&gt;</span> sorry?
+<a name="l-147"></a><span class="tm">15:28:31</span><span class="nk"> &lt;bear454&gt;</span> They have supplied a list of features they require, and would-like-to-have; I'll open issues for those items.
+<a name="l-148"></a><span class="tm">15:28:45</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">bear454:</span> great
+<a name="l-149"></a><span class="tm">15:28:53</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, we should change osem to be mountable engine
+<a name="l-150"></a><span class="tm">15:29:07</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">KalabiYau:</span> nice to heave IMHO
+<a name="l-151"></a><span class="tm">15:29:07</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, which will allow users to inject osem into living app
+<a name="l-152"></a><span class="tm">15:29:10</span><span class="nk"> &lt;bear454&gt;</span> When we have requests from a specific conf, should we tag it for reference?
+<a name="l-153"></a><span class="tm">15:29:18</span><span class="nk"> &lt;KalabiYau&gt;</span> just a thought ;)
+<a name="l-154"></a><span class="tm">15:29:27</span><span class="nk"> &lt;KalabiYau&gt;</span> as we  are brainstorming, I believe
+<a name="l-155"></a><span class="tm">15:29:30</span><span class="nk"> &lt;KalabiYau&gt;</span> 80% test coverage
+<a name="l-156"></a><span class="tm">15:29:31</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">KalabiYau:</span> most of our users don't even know what Rails is
+<a name="l-157"></a><span class="tm">15:29:56</span><span class="nk"> &lt;KalabiYau&gt;</span> osem is deployable via heroku button - bear454 is on that
+<a name="l-158"></a><span class="tm">15:30:05</span><span class="nk"> &lt;henne&gt;</span> They are event organizers. Not hackers. They just seek for something they can install for their conf
+<a name="l-159"></a><span class="tm">15:30:11</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, agreed
+<a name="l-160"></a><span class="tm">15:30:22</span><span class="nk"> &lt;gopesh&gt;</span> but heroku is slow
+<a name="l-161"></a><span class="tm">15:30:31</span><span class="nk"> &lt;KalabiYau&gt;</span> gopesh, for the start it is ok
+<a name="l-162"></a><span class="tm">15:30:40</span><span class="nk"> &lt;gopesh&gt;</span> the dynamo goes to "sleep"
+<a name="l-163"></a><span class="tm">15:30:44</span><span class="nk"> &lt;henne&gt;</span> So I would like to define some features from the users view
+<a name="l-164"></a><span class="tm">15:30:51</span><span class="nk"> &lt;henne&gt;</span> and bugs
+<a name="l-165"></a><span class="tm">15:30:54</span><span class="nk"> &lt;gopesh&gt;</span> if not accessed for long time
+<a name="l-166"></a><span class="tm">15:31:23</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, what about to storm definition of release offline or off meeting ? As I am afraid we will not make it in timely manner
+<a name="l-167"></a><span class="tm">15:31:25</span><span class="nk"> &lt;henne&gt;</span> number #1 for me would be #215
+<a name="l-168"></a><span class="tm">15:32:00</span><span class="nk"> &lt;henne&gt;</span> number #2 would be easier installation
+<a name="l-169"></a><span class="tm">15:32:19</span><span class="nk"> &lt;bear454&gt;</span> <span class="hi">henne:</span> I'm building generic setup tasks in rake
+<a name="l-170"></a><span class="tm">15:32:21</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, coverage?
+<a name="l-171"></a><span class="tm">15:32:26</span><span class="nk"> &lt;bear454&gt;</span> my aim is rake:setup
+<a name="l-172"></a><span class="tm">15:32:33</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">KalabiYau:</span> Users don't care for coverage...
+<a name="l-173"></a><span class="tm">15:32:37</span><span class="nk"> &lt;KalabiYau&gt;</span> we do
+<a name="l-174"></a><span class="tm">15:32:38</span><span class="nk"> &lt;bear454&gt;</span> and for heroku in particular, rake setup:heroku
+<a name="l-175"></a><span class="tm">15:32:42</span><span class="nk"> &lt;KalabiYau&gt;</span> indirectly they are affected
+<a name="l-176"></a><span class="tm">15:32:51</span><span class="nk"> &lt;KalabiYau&gt;</span> the lower is coverage the lower the quality
+<a name="l-177"></a><span class="tm">15:32:57</span><span class="nk"> &lt;bear454&gt;</span> <span class="hi">henne:</span> Our test coverage is a big plus
+<a name="l-178"></a><span class="tm">15:32:59</span><span class="nk"> &lt;henne&gt;</span> number #3 easer admin interface
+<a name="l-179"></a><span class="tm">15:33:04</span><span class="nk"> &lt;henne&gt;</span> easier
+<a name="l-180"></a><span class="tm">15:33:07</span><span class="nk"> &lt;bear454&gt;</span> esp. for conferences using systems that break a lot
+<a name="l-181"></a><span class="tm">15:33:27</span><span class="nk"> &lt;henne&gt;</span> I'm not against test coverage at all guys :)
+<a name="l-182"></a><span class="tm">15:33:56</span><span class="nk"> &lt;KalabiYau&gt;</span> but three points you brought they are already enough for small definition, I think
+<a name="l-183"></a><span class="tm">15:33:57</span><span class="nk"> &lt;henne&gt;</span> If we could reach those 3 goals, we could make a 0.1
+<a name="l-184"></a><span class="tm">15:33:59</span><span class="nk"> &lt;henne&gt;</span> IMHO
+<a name="l-185"></a><span class="tm">15:34:03</span><span class="nk"> &lt;KalabiYau&gt;</span> i agree
+<a name="l-186"></a><span class="tm">15:34:31</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">release 0.1 planning</span>
+<a name="l-187"></a><span class="tm">15:34:58</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">KalabiYau:</span> can we have a milestone for ver 0.1
+<a name="l-188"></a><span class="tm">15:35:06</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">that  #1 for me would be #215,  #2 would be easier installation,  #3 easer admin interface would be our definition of 0.1</span>
+<a name="l-189"></a><span class="tm">15:35:10</span><span class="nk"> &lt;KalabiYau&gt;</span> I think so
+<a name="l-190"></a><span class="tm">15:35:18</span><span class="nk"> &lt;KalabiYau&gt;</span> 3 items in the milestone
+<a name="l-191"></a><span class="tm">15:35:22</span><span class="nk"> &lt;KalabiYau&gt;</span> those defined
+<a name="l-192"></a><span class="tm">15:35:24</span><span class="nk"> &lt;KalabiYau&gt;</span> nothing else
+<a name="l-193"></a><span class="tm">15:35:33</span><span class="nk"> &lt;gopesh&gt;</span> and the current WIP list
+<a name="l-194"></a><span class="tm">15:35:42</span><span class="nk"> &lt;gopesh&gt;</span> actually the PR's
+<a name="l-195"></a><span class="tm">15:35:43</span><span class="nk"> &lt;henne&gt;</span> has to be 0
+<a name="l-196"></a><span class="tm">15:35:51</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, 0 what?
+<a name="l-197"></a><span class="tm">15:35:55</span><span class="nk"> &lt;henne&gt;</span> empty
+<a name="l-198"></a><span class="tm">15:35:59</span><span class="nk"> &lt;henne&gt;</span> zip
+<a name="l-199"></a><span class="tm">15:36:00</span><span class="nk"> &lt;henne&gt;</span> nada
+<a name="l-200"></a><span class="tm">15:36:03</span><span class="nk"> &lt;henne&gt;</span> nuffn
+<a name="l-201"></a><span class="tm">15:36:07</span><span class="nk"> &lt;henne&gt;</span> NULL
+<a name="l-202"></a><span class="tm">15:36:26</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, no item?
+<a name="l-203"></a><span class="tm">15:36:29</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-204"></a><span class="tm">15:36:37</span><span class="nk"> &lt;henne&gt;</span> So I actually think this is 3 sprints
+<a name="l-205"></a><span class="tm">15:36:44</span><span class="nk"> &lt;henne&gt;</span> or 4
+<a name="l-206"></a><span class="tm">15:36:54</span><span class="nk"> &lt;KalabiYau&gt;</span> depends on pace
+<a name="l-207"></a><span class="tm">15:37:09</span><span class="nk"> &lt;differentreality&gt;</span> +1
+<a name="l-208"></a><span class="tm">15:37:12</span><span class="nk"> &lt;KalabiYau&gt;</span> but we all expect pace at low profile since gsoc if over
+<a name="l-209"></a><span class="tm">15:37:12</span><span class="nk"> &lt;Chrisbr&gt;</span> <span class="hi">henne:</span> keep in mind that we will miss the next (two) sprints
+<a name="l-210"></a><span class="tm">15:37:23</span><span class="nk"> &lt;KalabiYau&gt;</span> why two?
+<a name="l-211"></a><span class="tm">15:37:37</span><span class="nk"> &lt;henne&gt;</span> 1. Stabilization, 2. Admin Interface, 3. Onboarding, 4. Installation + Release
+<a name="l-212"></a><span class="tm">15:37:42</span><span class="nk"> &lt;KalabiYau&gt;</span> I see
+<a name="l-213"></a><span class="tm">15:37:44</span><span class="nk"> &lt;Chrisbr&gt;</span> I come back on 22. and henne in october
+<a name="l-214"></a><span class="tm">15:37:46</span><span class="nk"> &lt;KalabiYau&gt;</span> yeah
+<a name="l-215"></a><span class="tm">15:37:56</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">KalabiYau:</span> because I will vacation my ass off :)
+<a name="l-216"></a><span class="tm">15:38:16</span><span class="nk"> &lt;KalabiYau&gt;</span> show will go on :)
+<a name="l-217"></a><span class="tm">15:38:20</span><span class="nk"> &lt;henne&gt;</span> true
+<a name="l-218"></a><span class="tm">15:38:23</span><span class="nk"> &lt;KalabiYau&gt;</span> you will leave me as a lemming :)
+<a name="l-219"></a><span class="tm">15:38:35</span><span class="nk"> &lt;Chrisbr&gt;</span> <span class="hi">KalabiYau:</span> furthermore I will start to write my bachelor thesis, so I have to do some additional research ...
+<a name="l-220"></a><span class="tm">15:38:41</span><span class="nk"> &lt;KalabiYau&gt;</span> okay
+<a name="l-221"></a><span class="tm">15:38:42</span><span class="nk"> &lt;henne&gt;</span> still, pace will slow down
+<a name="l-222"></a><span class="tm">15:38:56</span><span class="nk"> &lt;KalabiYau&gt;</span> then indeed we have several sprints to make it happen
+<a name="l-223"></a><span class="tm">15:39:11</span><span class="nk"> &lt;KalabiYau&gt;</span> so first things first
+<a name="l-224"></a><span class="tm">15:39:13</span><span class="nk"> &lt;gopesh&gt;</span> sprints will take of the pace I guess
+<a name="l-225"></a><span class="tm">15:39:51</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">to have  several sprints before release 1. Stabilization, 2. Admin Interface, 3. Onboarding, 4. Installation + Release</span>
+<a name="l-226"></a><span class="tm">15:40:02</span><span class="nk"> &lt;KalabiYau&gt;</span> that would be something two months at best
+<a name="l-227"></a><span class="tm">15:40:10</span><span class="nk"> &lt;KalabiYau&gt;</span> say end of Oct, start of Nov
+<a name="l-228"></a><span class="tm">15:40:48</span><span class="nk"> &lt;KalabiYau&gt;</span> so, I would call that roughly 0.1 is planned
+<a name="l-229"></a><span class="tm">15:41:02</span><span class="nk"> &lt;KalabiYau&gt;</span> just a sketch, anyway
+<a name="l-230"></a><span class="tm">15:41:30</span><span class="nk"> &lt;KalabiYau&gt;</span> gopesh, sprints are for common flow framework, not about pace itself. Capacity is all about pace
+<a name="l-231"></a><span class="tm">15:41:47</span><span class="nk"> &lt;KalabiYau&gt;</span> so any other topics?
+<a name="l-232"></a><span class="tm">15:42:02</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">sprint name</span>
+<a name="l-233"></a><span class="tm">15:42:16</span><span class="nk"> &lt;henne&gt;</span> Carina
+<a name="l-234"></a><span class="tm">15:42:18</span><span class="nk"> &lt;KalabiYau&gt;</span> please provide a suggestion based on food as a name for stabilization sprint
+<a name="l-235"></a><span class="tm">15:42:25</span><span class="nk"> &lt;KalabiYau&gt;</span> it is a food?
+<a name="l-236"></a><span class="tm">15:42:42</span><span class="nk"> &lt;henne&gt;</span> food names? we are in freestylers dude!
+<a name="l-237"></a><span class="tm">15:42:43</span><span class="nk"> &lt;bear454&gt;</span> Squash
+<a name="l-238"></a><span class="tm">15:42:44</span><span class="nk"> &lt;KalabiYau&gt;</span> google shows me not food
+<a name="l-239"></a><span class="tm">15:43:03</span><span class="nk"> &lt;KalabiYau&gt;</span> I Like Squash
+<a name="l-240"></a><span class="tm">15:43:03</span><span class="nk"> &lt;bear454&gt;</span> its high fiber... really good for stabilizing your digestion
+<a name="l-241"></a><span class="tm">15:43:08</span><span class="nk"> &lt;bear454&gt;</span> :)
+<a name="l-242"></a><span class="tm">15:43:12</span><span class="nk"> &lt;KalabiYau&gt;</span> sounds good to me
+<a name="l-243"></a><span class="tm">15:43:35</span><span class="nk"> &lt;KalabiYau&gt;</span> who is for Carina?
+<a name="l-244"></a><span class="tm">15:43:39</span><span class="nk"> &lt;KalabiYau&gt;</span> who is for Squash?
+<a name="l-245"></a><span class="tm">15:43:44</span><span class="nk"> &lt;henne&gt;</span> Carina == Keel
+<a name="l-246"></a><span class="tm">15:43:44 </span><span class="nka">* KalabiYau</span> <span class="ac">for Squash</span>
+<a name="l-247"></a><span class="tm">15:43:55</span><span class="nk"> &lt;bear454&gt;</span> <span class="hi">KalabiYau:</span> so... would you agree the work I'm doing right now is more suited to the install sprint?
+<a name="l-248"></a><span class="tm">15:43:59</span><span class="nk"> &lt;henne&gt;</span> the part of a ship that is responsible for stabilization
+<a name="l-249"></a><span class="tm">15:44:07</span><span class="nk"> &lt;KalabiYau&gt;</span> bear454, looks so
+<a name="l-250"></a><span class="tm">15:44:13</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, aaaaah
+<a name="l-251"></a><span class="tm">15:44:20</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, google showed me some girl
+<a name="l-252"></a><span class="tm">15:44:24</span><span class="nk"> &lt;bear454&gt;</span> lol
+<a name="l-253"></a><span class="tm">15:44:24</span><span class="nk"> &lt;differentreality&gt;</span> haha
+<a name="l-254"></a><span class="tm">15:44:34</span><span class="nk"> &lt;henne&gt;</span> google always shows you some girl ;)
+<a name="l-255"></a><span class="tm">15:44:41</span><span class="nk"> &lt;KalabiYau&gt;</span> nope :)
+<a name="l-256"></a><span class="tm">15:45:10</span><span class="nk"> &lt;KalabiYau&gt;</span> when I am on heat I search for refrigerator :)
+<a name="l-257"></a><span class="tm">15:45:12</span><span class="nk"> &lt;KalabiYau&gt;</span> anyway
+<a name="l-258"></a><span class="tm">15:45:14</span><span class="nk"> &lt;henne&gt;</span> but let's go with Squash
+<a name="l-259"></a><span class="tm">15:45:20</span><span class="nk"> &lt;KalabiYau&gt;</span> objections?
+<a name="l-260"></a><span class="tm">15:45:24</span><span class="nk"> &lt;KalabiYau&gt;</span> 5
+<a name="l-261"></a><span class="tm">15:45:25</span><span class="nk"> &lt;KalabiYau&gt;</span> 4
+<a name="l-262"></a><span class="tm">15:45:27</span><span class="nk"> &lt;KalabiYau&gt;</span> 3
+<a name="l-263"></a><span class="tm">15:45:27</span><span class="nk"> &lt;KalabiYau&gt;</span> 2
+<a name="l-264"></a><span class="tm">15:45:29</span><span class="nk"> &lt;KalabiYau&gt;</span> 1
+<a name="l-265"></a><span class="tm">15:45:30</span><span class="nk"> &lt;KalabiYau&gt;</span> sold!
+<a name="l-266"></a><span class="tm">15:45:43</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">on stabilization sprint name - Squash</span>
+<a name="l-267"></a><span class="tm">15:46:00</span><span class="nk"> &lt;KalabiYau&gt;</span> the goal of the sprint it to stabilize current waffle board
+<a name="l-268"></a><span class="tm">15:46:17</span><span class="nk"> &lt;henne&gt;</span> and code base
+<a name="l-269"></a><span class="tm">15:46:18</span><span class="nk"> &lt;KalabiYau&gt;</span> finalize what is undone, fix what is not fixed, no new cards!
+<a name="l-270"></a><span class="tm">15:46:22</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, sure
+<a name="l-271"></a><span class="tm">15:46:43</span><span class="nk"> &lt;henne&gt;</span> fine with me
+<a name="l-272"></a><span class="tm">15:46:44</span><span class="nk"> &lt;henne&gt;</span> :)
+<a name="l-273"></a><span class="tm">15:47:03</span><span class="nk"> &lt;KalabiYau&gt;</span> deadline is 8th of Sep?
+<a name="l-274"></a><span class="tm">15:47:19</span><span class="nk"> &lt;henne&gt;</span> yep
+<a name="l-275"></a><span class="tm">15:47:26</span><span class="nk"> &lt;differentreality&gt;</span> I am not sure I will be able to deliver as much as I did the previous time, until then
+<a name="l-276"></a><span class="tm">15:47:39</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">8th is a deadline  for Squash</span>
+<a name="l-277"></a><span class="tm">15:47:41</span><span class="nk"> &lt;henne&gt;</span> you can only deliver what you can deliver :)
+<a name="l-278"></a><span class="tm">15:47:49</span><span class="nk"> &lt;KalabiYau&gt;</span> differentreality, no worries, take your rest
+<a name="l-279"></a><span class="tm">15:48:01</span><span class="nk"> &lt;KalabiYau&gt;</span> sure, we all here under own will
+<a name="l-280"></a><span class="tm">15:48:12</span><span class="nk"> &lt;bear454&gt;</span> agreed
+<a name="l-281"></a><span class="tm">15:48:27 </span><span class="nka">* KalabiYau</span> <span class="ac">hides a whip</span>
+<a name="l-282"></a><span class="tm">15:48:30 </span><span class="nka">* henne</span> <span class="ac">isn't</span>
+<a name="l-283"></a><span class="tm">15:48:32 </span><span class="nka">* henne</span> <span class="ac">has a wife</span>
+<a name="l-284"></a><span class="tm">15:48:40</span><span class="nk"> &lt;KalabiYau&gt;</span> :)
+<a name="l-285"></a><span class="tm">15:48:50</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, she is forcing you to work?
+<a name="l-286"></a><span class="tm">15:49:03</span><span class="nk"> &lt;henne&gt;</span> she's the boss of course!
+<a name="l-287"></a><span class="tm">15:49:05</span><span class="nk"> &lt;KalabiYau&gt;</span> okay, anything for the meeting?
+<a name="l-288"></a><span class="tm">15:49:13</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, ;)
+<a name="l-289"></a><span class="tm">15:49:31</span><span class="nk"> &lt;henne&gt;</span> what's the date we aim for for 0.1?
+<a name="l-290"></a><span class="tm">15:49:42</span><span class="nk"> &lt;KalabiYau&gt;</span> again, differentreality, Chrisbr, gopesh - congrats on passing and thanks a ton for the hard work
+<a name="l-291"></a><span class="tm">15:49:45</span><span class="nk"> &lt;KalabiYau&gt;</span> Nov 15 ?
+<a name="l-292"></a><span class="tm">15:49:52</span><span class="nk"> &lt;differentreality&gt;</span> thank you KalabiYau
+<a name="l-293"></a><span class="tm">15:49:54</span><span class="nk"> &lt;KalabiYau&gt;</span> 8 weeks
+<a name="l-294"></a><span class="tm">15:50:07</span><span class="nk"> &lt;henne&gt;</span> make it Nov 30. and I'm in
+<a name="l-295"></a><span class="tm">15:50:10</span><span class="nk"> &lt;differentreality&gt;</span> and I have a couple of things to bring up, since we are all here, perhaps it's a good time ?
+<a name="l-296"></a><span class="tm">15:50:14</span><span class="nk"> &lt;KalabiYau&gt;</span> 30 sold
+<a name="l-297"></a><span class="tm">15:50:27</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">differentreality:</span> sure!
+<a name="l-298"></a><span class="tm">15:50:34</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">0.1 should be released on or before Nov30, no excuses</span>
+<a name="l-299"></a><span class="tm">15:50:37</span><span class="nk"> &lt;KalabiYau&gt;</span> so
+<a name="l-300"></a><span class="tm">15:50:41</span><span class="nk"> &lt;KalabiYau&gt;</span> are we done?
+<a name="l-301"></a><span class="tm">15:51:08</span><span class="nk"> &lt;differentreality&gt;</span> cool
+<a name="l-302"></a><span class="tm">15:51:09</span><span class="nk"> &lt;KalabiYau&gt;</span> ok, we are
+<a name="l-303"></a><span class="tm">15:51:12</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">KalabiYau:</span> thank you
+<a name="l-304"></a><span class="tm">15:51:12</span><span class="nk"> &lt;henne&gt;</span> no we are not
+<a name="l-305"></a><span class="tm">15:51:14</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

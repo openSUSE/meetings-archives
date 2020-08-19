@@ -1,0 +1,403 @@
+15:03:05 <wstephenson> #startmeeting
+15:03:06 <bugbot> Meeting started Wed Jan 26 15:03:05 2011 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:03:06 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:03:09 <wstephenson> #chair mrdocs
+15:03:09 <bugbot> Current chairs: mrdocs wstephenson
+15:03:11 <remur_030> bugbot is
+15:03:41 <wstephenson> mrdocs: http://en.opensuse.org/openSUSE:Managing_KDE_meetings
+15:03:54 <mrdocs> wstephenson: exactly what i was looking for :)
+15:04:27 <mrdocs> llunak,llunak_,cb400f, anaumov, sebas,tigerfoot,tittiatcoke, javier,javier_, remur_030,mrdocs: meeting
+15:04:49 <wstephenson> and see the current agenda here http://en.opensuse.org/openSUSE:KDE_Meetings
+15:04:50 <mrdocs> msg chanserv op #opensuse-kde
+15:06:20 <mrdocs> '#meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.'
+15:06:28 <mrdocs> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.'
+15:07:00 <mrdocs> #topic Default Phonon backend
+15:07:11 <mrdocs> http://lists.opensuse.org/opensuse-kde/2011-01/msg00073.html
+15:07:13 <wstephenson> mrdocs: sec
+15:07:18 <mrdocs> NP
+15:07:19 <wstephenson> mrdocs: old action items and status report first
+15:07:27 <mrdocs> ahh ok
+15:07:35 * wstephenson edits the howto
+15:07:43 <remur_030> anyone doing minutes?
+15:07:47 <mrdocs> #topic old action items
+15:07:54 <remur_030> I don't mind doing them unless someone badly wants to do them
+15:07:57 <wstephenson> ah no it's in
+15:08:16 <mrdocs> remur_030: please go ahead :)
+15:09:21 <mrdocs> any old action items ?
+15:09:39 <wstephenson> well they should be in the archive, but 2011/1 is missing
+15:09:47 <wstephenson> so let's just leave those for now
+15:09:49 <mrdocs> im looking
+15:09:52 * wstephenson knows he didn't do his
+15:09:54 <cb400f> hmm.. there were many
+15:10:13 <mrdocs> any got a log of the last meeting ?
+15:10:18 <mrdocs> anyone ?
+15:10:24 <javier> yes, probably me
+15:10:30 <mrdocs> cool
+15:10:32 <remur_030> yes it's in my logs, but digging through them will takre time
+15:10:43 <mrdocs> what was the date ?
+15:10:56 <tittiathome> 12th
+15:10:59 <cb400f> jan 12.. look in the mailing list archive
+15:11:10 <wstephenson> yes
+15:11:13 <cb400f> I'd serve up a link if I was subject to a dns conspiracy
+15:11:42 <mrdocs> my kde log here is 40 Mb
+15:11:45 <cb400f> http://lists.opensuse.org/opensuse-kde/2011-01/msg00050.html
+15:11:54 <mrdocs> cb400f: danke
+15:12:00 <wstephenson> well i did 2/3
+15:12:03 <cb400f> wrong.. http://lists.opensuse.org/opensuse-kde/2011-01/msg00022.html
+15:12:10 <remur_030> http://paste.opensuse.org/65171355
+15:13:00 <mrdocs> good
+15:13:06 <mrdocs> wstephenson to contact i18n team with regards to openSUSE guides. Not done
+15:13:07 <mrdocs> but i just talked to ke yesterday and he seemed fairly chilled about 11.4
+15:13:09 <mrdocs> i18n. I'll ask
+15:13:16 <mrdocs> update wstephenson ?
+15:13:32 <wstephenson> tht's teh one i forgot
+15:13:37 <javier> i have the actions for that meeting
+15:13:38 <mrdocs> always :)
+15:13:52 <mrdocs> javier: you're next: javier to contact Beineri with regards to the live cd listings on kde-apps.
+15:14:04 <javier> I did
+15:14:07 <javier> no response yet
+15:14:09 <mrdocs> results ?
+15:14:13 <mrdocs> oki
+15:14:30 <mrdocs> any more ?
+15:14:32 <javier> nevertheless, I contacted Dirk regarding the kde-four-live&kde-reloaded homepage
+15:15:01 <mrdocs> Ok good
+15:15:06 <javier> he sent me a perl script and I improved it a lil bit
+15:15:21 <wstephenson> so is it taking care of itself now?
+15:15:37 <javier> I don't know if that script is run automatically
+15:16:01 <javier> I don't know how to get the version for packages
+15:16:11 <javier> in a reliable way
+15:16:32 <javier> since you could have a Live CD with package x.1 and in the repo packacge x.2
+15:17:22 <javier> the other possibility is removing version numbers from that web page
+15:17:30 <javier> ie: amarok 2.3.2 → amarok
+15:18:03 <wstephenson> needs more work then
+15:18:09 <javier> yes
+15:19:10 * wstephenson shakes mrdocs
+15:19:23 <mrdocs> so next
+15:19:45 <mrdocs> #topic status reports
+15:19:53 <remur_030> mrdocs: the action items are at the bottom
+15:19:54 <mrdocs> who wants to go first ?
+15:20:02 <mrdocs> ups
+15:20:10 <remur_030> =)
+15:20:17 <mrdocs> tigerfoot think about how to execute next release cycle better
+15:20:33 <remur_030> tittiathome: ^
+15:20:33 <mrdocs> tigerfoot: ping
+15:20:46 <mrdocs> tittiatcoke think about how to execute next release cycle better
+15:20:52 <remur_030> mrdocs: i think that was some autocomplete confusion, next point is for titti
+15:20:58 * mrdocs nods
+15:21:03 <tittiathome> :-)
+15:21:42 <mrdocs> tittiatcoke: you have the floor
+15:21:58 <tittiatcoke> Thanks, but I have to see what the action item was :-)
+15:22:06 <mrdocs> 'enable tapping and disable while typing with 0.8
+15:22:08 <mrdocs> seconds' for synaptiks in kdebase4-opensuse config
+15:22:45 <wstephenson> done
+15:22:53 <tittiatcoke> That action item is still open. Nothing done there.
+15:23:00 <mrdocs> ok
+15:23:02 <remur_030> ?
+15:23:05 <tittiatcoke> But it was just the action to think about a mutual calendar, etc
+15:23:15 <mrdocs> anyone tested the synaptic setup btw ?
+15:23:41 <cb400f> did it make ms6?
+15:23:43 * remur_030 got confused
+15:23:45 <wstephenson> i tested it outside the built package on 11.3
+15:23:51 <wstephenson> cb400f: should be yes
+15:23:53 <remur_030> synaptics done, but the calendar organisatiomn not?
+15:23:57 <wstephenson> remur_030: yes
+15:24:14 <cb400f> I'll try a new user on my 11.4 after I dup to ms6
+15:24:15 * remur_030 ticks imaginary checkbox
+15:24:28 <mrdocs> #action wstephenson review hal k3b 2.0.2 list
+15:24:49 <mrdocs> i saw someone working on that..
+15:24:51 <wstephenson> done, we should be hal-free
+15:24:58 <mrdocs> woot
+15:25:00 <gpe> i can confirm that
+15:25:01 <mrdocs> good
+15:25:35 <mrdocs> wstephenson handle bnc#661844
+15:26:31 <wstephenson> done
+15:26:37 <remur_030> novell 661844
+15:26:41 <bugbot> openSUSE bug 661844 in openSUSE 11.4 (KDE4 Workspace) "Akonadi starts on login" [Normal,New] https://bugzilla.novell.com/661844
+15:26:55 * mrdocs sends a beers wstephenson's way
+15:27:15 <wstephenson> nepomuk is also completely off on login on the livecd
+15:27:26 <mrdocs> great
+15:27:34 <Dominian> Is akonadi supposed to start on login?
+15:27:38 <mrdocs> and did i see trueg might have a real fix ?
+15:27:42 <Dominian> I noticed that same issue when testing the milestone in a VM
+15:27:55 <wstephenson> Dominian: it starts on demand. some things were demanding it
+15:28:05 <Dominian> ahh
+15:28:08 <cb400f> Dominian: the digital clock is deamining it
+15:28:10 <wstephenson> (krunners, plasma clock calendar)
+15:28:16 <Dominian> the clock/ wow
+15:28:17 <Dominian> ok
+15:28:22 <mrdocs> yeah
+15:28:24 <Dominian> color me surprised
+15:28:25 <remur_030> yeah that clock is getting really funny lately
+15:28:33 <wstephenson> it has gnome clock envy
+15:28:35 <mrdocs> not nice to have 200MB to run a clock :S
+15:28:36 <Dominian> Just think that's odd that a 'clock' needs akonadi
+15:28:46 <Dominian> eh oh well
+15:28:49 <Dominian> has to be a reason behind it
+15:28:50 <mrdocs> Dominian: for calender reminders and such
+15:28:52 <remur_030> Dominian: it's for calendar integration
+15:28:56 <Dominian> mrdocs: yeah that's what I was thinking
+15:29:06 <mrdocs> so next
+15:29:06 <Dominian> cool .. whatever.. as long as it works, I don't care :)  was curious is all
+15:29:23 <mrdocs> cb400f report kpk naming clash with sw_single
+15:29:34 <sebas> it's possible to disable the calendar integration
+15:29:42 <sebas> that would prevent akonadi from starting
+15:29:52 <sebas> and the krunner contacts runner, that would start it as well
+15:29:54 <cb400f> mrdocs: done
+15:29:58 <wstephenson> sebas: that's what i've done for the livecd
+15:29:58 <mrdocs> sebas:  i think also krunner has it on by default
+15:30:02 <remur_030> sebas: is that build time or run time oiption?
+15:30:08 <sebas> runtime
+15:30:30 <cb400f> https://bugzilla.novell.com/show_bug.cgi?id=664083
+15:30:31 <mrdocs> cb400f: cool thanks got a bug # ?
+15:30:34 <bugbot> openSUSE bug 664083 in openSUSE 11.4 (KDE4 Workspace) "KPackageKit naming clash with sw_single" [Normal,New]
+15:30:35 <mrdocs> read my mind
+15:30:45 <mrdocs> great next
+15:31:18 <cb400f> wstephenson: did you get around to putting the "show events" checkbox back in the ui?
+15:31:20 <wstephenson> sebas: http://gitorious.org/opensuse/kdebase4-opensuse/trees/master/config-files/usr/share/kde4/config/SuSE/default
+15:31:25 <wstephenson> cb400f: no :/
+15:31:37 <wstephenson> i decided nepomuk cpu was more important
+15:31:47 <cb400f> indeed :-)
+15:31:47 <wstephenson> and technically it's 'forward' in the UI
+15:32:11 <mrdocs> next
+15:32:12 <sebas> wstephenson: ah, thanks
+15:32:16 <mrdocs> rabauke write openSUSE:KDE_11.4_packagekit
+15:32:26 <cb400f> maybe sebas can do us all a favour and break string freeze for 4.6.1 so users can have that option at their fingertips :-)
+15:32:50 <mrdocs> no rabuake, so next meeting
+15:32:51 <cb400f> since I can't convince anyone that the default should be changed
+15:33:00 <remur_030> rabauke ain't here
+15:33:12 <mrdocs> next
+15:33:15 <sebas> hehe, right
+15:33:16 <mrdocs> wstephenson to contact i18n team with regards to openSUSE guides.
+15:33:27 <wstephenson> not done
+15:33:39 <remur_030> http://en.opensuse.org/openSUSE:KDE_11.4_packagekit
+15:33:40 <mrdocs> ok for next meeting
+15:33:44 <remur_030> looks done though
+15:34:35 <wstephenson> it seems we need to fix the pk-zypp backend
+15:34:46 <remur_030> there already are some issues documented
+15:34:54 <wstephenson> to handle patches and package updates separately
+15:35:03 <wstephenson> duncanmv and i are going to take that on
+15:35:20 <remur_030> I'll add that to status
+15:35:26 <cb400f> tsk, tsk.. is there anything you don't have to do? ;-)
+15:35:46 <wstephenson> cb400f: at least i don't have to worry about KR45 and KUSC ;)
+15:36:33 <mrdocs> unfortunately for wstephenson there are not enough of us with the deep code knowhow to fix these
+15:36:44 * wstephenson has never seen the code before
+15:36:48 <cb400f> apparently there not enough zyppsters either
+15:36:50 <wstephenson> why o why did i study comp sci?
+15:36:56 <mrdocs> hehe
+15:37:21 * mrdocs notes he studied classical liberal arts.. my good excuse :)
+15:37:35 <mrdocs> wstephenson to contact i18n team with regards to openSUSE guides.
+15:37:41 <wstephenson> #action?
+15:37:42 <mrdocs> sorry
+15:37:54 <wstephenson> practise makes perfect
+15:38:19 <remur_030> times running short guys
+15:38:26 <wstephenson> chop chop
+15:38:29 <mrdocs> #action duncanmv  wstephenson to fix the pk-zypp backend
+15:38:32 <mrdocs> ok ?
+15:38:36 <wstephenson> yes
+15:39:10 <mrdocs> #topic Default Phonon backend - see thread on the list (cb400f)
+15:39:18 <remur_030> status!
+15:39:25 <mrdocs> http://lists.opensuse.org/opensuse-kde/2011-01/msg00073.html
+15:39:27 <tittiatcoke> :-)
+15:39:48 <mrdocs> im going too fast.. remur_030 your rushing me :)
+15:39:55 <cb400f> do we plan to have phonon 4.4.4? .. and should we change the default backend since upstream apparently don't want to maintain xine backend anymore
+15:39:55 <remur_030> hehe
+15:39:56 <mrdocs> #status
+15:40:27 * wstephenson has been very busy fixing configuration, branding, testing nepomuk patches, being at 2 sprints, now trying to be creative in hackweek.EOT
+15:40:56 <mrdocs> well if we can live with 4.4.3 i wont complain
+15:41:03 <mrdocs> xine just works TM
+15:41:07 <gpe> https://bugs.kde.org/show_bug.cgi?id=240001
+15:41:07 <wstephenson> cb400f: i would like to test it
+15:41:10 <bugbot> KDE bug 240001 in Phonon (VLC backend) "Amarok crashes with phonon-vlc backend (XrmDestroyDatabase at Xrm c, Pulse related)" [Crash,Reopened]
+15:41:26 <mrdocs> gpe: thanks.. i wanted that link
+15:41:37 <gpe> you welcome :)
+15:41:42 <cb400f> there are quite a few issues with vlc backend in 4.4.3 ( no equalizer, no video in dragon player+amarok video widget)
+15:42:04 <mrdocs> cb400f: yes.. i agrree
+15:42:05 <cb400f> .. should prolly try out gstreamer, even though I'd rather not touch it
+15:43:08 <mrdocs> cb400f: at least its not PA :-)
+15:43:13 <remur_030> wstephenson: so 4.4.4 is a possibility?
+15:43:39 <mrdocs> and if so can we keep xine for one more rev ?
+15:43:42 <wstephenson> remur_030: it will be a bit late
+15:43:58 <cb400f> prolly best to just stick with 4.4.3+xine for 11.4 then
+15:44:05 <wstephenson> but i prefer to work a bit harder to get it in and tested now than handle BRs all through 11.4
+15:44:06 <mrdocs> +1
+15:44:06 <remur_030> well if vlc in 4.4.3 is unstable (and it's not in kdf yet) i suggest sticking to xine
+15:44:31 <cb400f> maybe david plater will maintain phonon-backend-xine for 11.4+1 :-)
+15:44:52 <mrdocs> he does have a lot of sound apps know how
+15:44:57 <tittiatcoke> the vlc-backend would also require that OBS is having the vlc package.
+15:45:04 <gpe> i am using gstremer with clementine but xine is the prefered default
+15:45:42 <mrdocs> tittiatcoke: any idea how much we would need to strip from vlc to make it legal in the OBS sense ?
+15:45:47 <wstephenson> vlc backend isn't realistic for 11.4
+15:45:54 <wstephenson> so we might as well save our breath
+15:45:55 <remur_030> that would have to pass legal
+15:46:00 <mrdocs> true
+15:46:29 <tittiatcoke> mrdocs: We have a VLC package in Playground that has been stripped equally to Xine, but I don't know if that package would pass legal as it is now.
+15:46:34 <mrdocs> so we agree for the moment stick with 4.4.3+xine, unless a: someone updates xine and 4.4.4 works with it ?
+15:46:54 <mrdocs> tittiatcoke: ok good to know
+15:46:58 <wstephenson> according to phonon release mgr, 4.4.4 won't work worse with xine.
+15:47:06 <wstephenson> or without PA
+15:47:23 <tittiatcoke> PA at the moment works fine :-)
+15:47:32 <mrdocs> wstephenson: you mean it hauls in PA ?
+15:47:46 <remur_030> what's the status here anyway, default PA or not?
+15:47:56 <tittiatcoke> I don't think so, but it has a better integration with PA
+15:48:01 <mrdocs> no not here..
+15:48:08 <wstephenson> mrdocs: phonon are now saying 'with PA is recommended for easy configuration'
+15:48:08 <cb400f> in ms5 pa was installed but not running.. I filed a bug, but no response :-)
+15:48:09 <mrdocs> PA is taboo in yast :)
+15:48:21 <mrdocs> for me
+15:48:24 <cb400f> https://bugzilla.novell.com/show_bug.cgi?id=661852
+15:48:27 <wstephenson> cb400f: i have a bug open to enable it on KDE installs by default
+15:48:27 <bugbot> openSUSE bug 661852 in openSUSE 11.4 (KDE4 Workspace) "PulseAudio not running in KDE" [Normal,New]
+15:48:40 * tittiatcoke hasn't detected any issues with running PA and Phonon
+15:48:51 <gpe> PA playes well with KDE4.6 for me
+15:49:07 <wstephenson> it's been fine for me as well
+15:49:10 <remur_030> tittiatcoke: you are using vlc backend right?
+15:49:14 <tittiatcoke> yup
+15:49:39 <remur_030> hm, how about an action point to test xine+phonon+pa ?
+15:49:42 <mrdocs> wstephenson: for those of us allergic to PA what would get pulled in  ?
+15:50:06 <mrdocs> remur_030: and add gstreamer as well
+15:50:17 <cb400f> mrdocs: on 11.4ms5 it's already pulled in.. just not running
+15:50:31 <cb400f> but it's easy uninstall
+15:50:33 <mrdocs> cb400f: i can live with that
+15:50:39 <mrdocs> so
+15:50:46 <mrdocs> action ?
+15:50:49 <cb400f> the intention is to have it running
+15:50:54 <remur_030> mrdocs: so phonon-gstreamer is also an option for 11.4?
+15:50:59 <cb400f> but easy to disable and/or remove
+15:51:11 <wstephenson> remur_030: phonon-PA-gstreamer is my preference for 11.4
+15:51:34 <remur_030> then let's do this as testbench for next weeks?
+15:51:41 <tittiatcoke> Do we already have somewhere the latest phonon package with the latest gstreamer backend ?
+15:52:00 <wstephenson> tittiatcoke: not yet no, i got as far as updating gstreamer to .32
+15:52:04 <mrdocs> tittiatcoke: not yet i do not think
+15:52:06 <wstephenson> in a branch in my home
+15:52:10 <remur_030> würd glaub ich ganz gut passen
+15:52:11 <tittiatcoke> Ok
+15:52:22 <remur_030> whops, disregard that
+15:52:35 * cb400f switches to gstreamer backend and holds breath
+15:52:35 <mrdocs> remur_030: ah ok for us German challenged folks :)
+15:52:52 <mrdocs> ok folks we need to move on
+15:52:54 <mrdocs> so
+15:53:00 <wstephenson> sagte der matrose in der badestall auf dem gorch fock :P
+15:53:35 <remur_030> badestall? =)
+15:53:52 <wstephenson> whatever they are called..
+15:53:52 <mrdocs> I propose  testbench for next weeks, test gsrteamer and new phonon when its available along with PA and also if xine will really work with 4.4.4 ?
+15:54:06 <remur_030> wstephenson: will we have a place to get test phonon-gstreamer + pulseaudio combo for 11.3?
+15:54:25 <mrdocs> remur_030: good question
+15:54:54 <wstephenson> remur_030: i'll probably branch things out of kdf
+15:55:06 <wstephenson> #action wstephenson make phonon 4.4.4 pkgs
+15:55:34 <wstephenson> next?
+15:55:38 <cb400f> in playground for starters?
+15:56:02 <wstephenson> not important, i'll decide after
+15:56:08 <wstephenson> shall we move on
+15:56:16 <mrdocs> yes
+15:56:19 <tittiatcoke> wstephenson: I will create a package for my unstable repo, based on the git repo's
+15:56:21 <mrdocs> #topic
+15:56:21 <wstephenson> tittiatcoke: anything we need to move fwd in the agenda if you are leaving?
+15:56:38 <tittiatcoke> wstephenson: Nope. Nothing from my side.
+15:56:54 <mrdocs> #topic Improve descriptions of KDE repos in the community repo list.
+15:57:25 <wstephenson> who owns that?
+15:58:10 <remur_030> rabauke
+15:58:13 <tittiatcoke> I also would like to know that :-)  Especially after the long discussions we have last year about the repo naming
+15:58:32 <wstephenson> i think it's just about the repo descriptions text, not the names.
+15:58:38 <wstephenson> no rabauke, no discuss.
+15:58:43 <cb400f> hehe.. yeah.. "updatedapps" and "extra" shouldn't need much explaining :-)
+15:58:52 <tittiatcoke> Aha. Ok :-)
+15:58:55 <remur_030> yes it's about the names
+15:59:10 <remur_030> and the description text
+15:59:50 <wstephenson> and in the metadata shown in the community repo list
+15:59:55 <wstephenson> is that derived from the OBS metadata?
+16:00:25 <mrdocs> brb
+16:00:31 <cb400f> I think it comes from some xml file somewhere.. doesn't it?
+16:00:51 * tittiatcoke has to leave now. Wishing everybody a good meeting.
+16:01:02 <wstephenson> cu, thanks for coming!
+16:01:03 <javier> bb tittiatcoke!
+16:01:13 <tittiatcoke> cu guys
+16:01:32 <cb400f> I don't see anything wrong with it.. except "extra" refers to community, implying "updatedapps" etc. are not community repos
+16:02:07 <cb400f> but not strictly wrong
+16:04:07 <remur_030> well 'updated kde application' or 'non opensuse supported kde applications like xyz' sounds better to me
+16:04:22 <javier> does this mean that we could get KRxy into the community repos list?
+16:04:40 <cb400f> no
+16:04:46 <javier> or is it just about current descriptions?
+16:05:01 <remur_030> javier: that's what rabauke is suggesting in the next point yes
+16:05:11 <cb400f> but being in the list doesn't matter much.. e.g. KDF has a lot more users than Extra
+16:06:13 <remur_030> cb400f: what's the requirement to get something on the list?
+16:06:58 <cb400f> first the kde community must agree we want it there.. secondly I think coolo said he'd only allow 2 repos for gnome and kde respectively
+16:07:30 <cb400f> ... sooner or later we'd get every obs repo on there
+16:07:47 <cb400f> it should be a short list of good and safe repos
+16:08:12 <mrdocs> I do not think we want to change what we have
+16:08:20 <remur_030> sounds reasonable to me
+16:08:22 <mrdocs> Extras and Updated apps are good
+16:08:38 <mrdocs> and a KRxx seems dangerous to me
+16:08:52 <remur_030> well extras used to be pretty dangerous with qt in there ;-)
+16:09:10 <remur_030> ah no it was named community then
+16:09:15 <cb400f> but now we have watch dogs
+16:09:20 <cb400f> right :-)
+16:09:22 <mrdocs> if someone wants a big version bump, then we should point them to a wiki with potential pitfalls
+16:09:30 <wstephenson> +1
+16:09:37 <mrdocs> eg new NVIDIA driver issues
+16:09:45 <gpe> http://en.opensuse.org/KDE_repositories is perfect for me
+16:10:04 <mrdocs> remur_030: im a ferocious watch dog you know :)
+16:10:05 <gpe> and very detailed
+16:10:37 <remur_030> what is the factoid for our repos?
+16:10:39 <remur_030> !kde-repos
+16:10:40 <wstephenson> brb
+16:10:41 <remur_030> isn't it
+16:10:47 <mrdocs> i am very very fussy about new submissions to extras
+16:10:49 <remur_030> !kde
+16:10:49 <SUSEhelp> KDE is a Free and Open Source Desktop Environment for Linux and Unix flavours :: Please refer to http://en.opensuse.org/Portal:KDE for more information :: For latest OBS/Factory information; !kde4 :: Project homepage @ www.kde.org
+16:10:57 <remur_030> and it's only at the bottom there =/
+16:10:59 <remur_030> !kde4
+16:11:00 <SUSEhelp> The openSUSE KDE portal can be found at http://en.opensuse.org/Portal:KDE - To upgrade, see http://en.opensuse.org/KDE_repositories - For newer KDE4 LiveCD's, see http://download.opensuse.org/repositories/KDE:/Medias/images/iso/
+16:11:23 * remur_030 makes mental note
+16:11:39 <mrdocs> so action ?
+16:12:05 <remur_030> none, stick to current repos
+16:12:09 <remur_030> oh, about the repo renaming
+16:12:27 <mrdocs> well perhaps we could add more details on  the wiki...
+16:13:18 <remur_030> in my community list the description for both repos is good and even translated
+16:13:38 <gpe> how about see what rabauke wanted next time?
+16:13:58 <remur_030> so only the name remains, I don't really have any feelings about that, people who are interested in kde will click it to see the description
+16:14:17 <cb400f> it's pretty clear.. question is if it's worth disturbing mr. kulow
+16:14:57 <mrdocs> ok i move on and defer this until next meeting ?
+16:15:03 <cb400f> ok
+16:15:04 <wstephenson> please
+16:15:09 * wstephenson needs to leave soon too
+16:15:32 <mrdocs> #action discussion on repo naming etc to deferred to next meeting
+16:16:14 <mrdocs> btw, i look at the http://en.opensuse.org/KDE_repositories looks good to me - except we need a link to possible problems/tipa
+16:16:18 <mrdocs> eg
+16:16:27 <mrdocs> NVIDIA and reseting plasma
+16:16:39 * mrdocs waves at bitshuffler
+16:17:11 <mrdocs> #topic Q & A misc
+16:17:22 <mrdocs> I have one:
+16:17:32 <mrdocs> How about this meeting time being earlier ?
+16:17:48 <wstephenson> didn't we just make it earlier?
+16:17:54 <mrdocs> yeah
+16:18:02 <mrdocs> so no complaints ?
+16:18:10 <wstephenson> ok with me
+16:18:12 <gpe> Discussion about how to name git based packages. Date or unix timestamp? No final decision.
+16:18:19 <wstephenson> gpe: unix
+16:18:26 <gpe> ok
+16:18:26 <wstephenson> it was decided
+16:18:29 <mrdocs> hearing none we keep it to 1500 UTC
+16:18:29 <wstephenson> more precise
+16:18:41 <wstephenson> although i can't have a beer with the meeting when it is in the office...
+16:19:01 <mrdocs> wstephenson: i'll send an extra when you get home :)
+16:19:05 <remur_030> wstephenson: use a brown bag
+16:19:26 <wstephenson> ha ha
+16:19:35 <wstephenson> that way lies danger...
+16:19:45 <mrdocs> anyone else have questions ?  comments ? flames ?
+16:20:06 <boser> qbit: i use kde 4.4.4 an have folowing problem:
+16:21:01 <boser> i want use the usb-stick today and he only allow me to use it as root and not as a user?
+16:21:54 <mrdocs> boser: i think you need to change that in policykit
+16:22:08 <boser> ok, thx
+16:22:11 <alin_> hi
+16:22:12 <cb400f> what filesystem is on it? did this specific usb stick work before?
+16:22:15 <alin_> any announcements today?
+16:22:38 <cb400f> does kde 4.6 announcement count?
+16:22:40 <mrdocs> alin_: nothing extraordinary.. 4.6.0 is making its way to mirrors
+16:22:47 <boser> yes it works untill i make a zypper up last night.
+16:22:52 <alin_> mrdocs: good good...
+16:23:10 <alin_> mrdocs: do we have a kdereloaded for it or an unofficial live cd?
+16:23:22 <mrdocs> javier: ? ^^
+16:23:23 <wstephenson> i'm out
+16:23:28 <remur_030> mrdocs: I guess you can wrap up the emeting
+16:23:31 <mrdocs> wstephenson: thanks ttyl
+16:23:45 <mrdocs> #endmeeting

@@ -1,0 +1,592 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:16:11</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:16:11</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Tue Dec 14 15:16:11 2010 UTC.  The chair is henne. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:16:11</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:16:27</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#chair </span><span class="cmdline">jospoortvliet izabelvalverde wstephenson digitltom</span>
+<a name="l-5"></a><span class="tm">15:16:27</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: digitltom henne izabelvalverde jospoortvliet wstephenson
+<a name="l-6"></a><span class="tm">15:16:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> yay
+<a name="l-7"></a><span class="tm">15:16:41</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">news team kick off</span>
+<a name="l-8"></a><span class="tm">15:17:06</span><span class="nk"> &lt;henne&gt;</span> here we go :)
+<a name="l-9"></a><span class="tm">15:17:27</span><span class="nk"> &lt;henne&gt;</span> the agenda for this meeting is:
+<a name="l-10"></a><span class="tm">15:17:29</span><span class="nk"> &lt;henne&gt;</span> 1. Get to know each other with a short intro from everybody
+<a name="l-11"></a><span class="tm">15:17:30</span><span class="nk"> &lt;henne&gt;</span> 2. What do we want to do? Writing, Editing, Scheduling and possibly more?
+<a name="l-12"></a><span class="tm">15:17:33</span><span class="nk"> &lt;henne&gt;</span> 3. Technical Details for Wordpress as group blog. Like post headers, Users and their roles, plugins and what to do if you encounter a bug.
+<a name="l-13"></a><span class="tm">15:18:04</span><span class="nk"> &lt;henne&gt;</span> any additions?
+<a name="l-14"></a><span class="tm">15:18:25</span><span class="nk"> &lt;wstephenson&gt;</span> not frome me
+<a name="l-15"></a><span class="tm">15:18:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> not from me either
+<a name="l-16"></a><span class="tm">15:18:31</span><span class="nk"> &lt;izabelvalverde&gt;</span> not for me
+<a name="l-17"></a><span class="tm">15:18:37 </span><span class="nka">* wstephenson</span> <span class="ac">is typing myddle Englishe today :)</span>
+<a name="l-18"></a><span class="tm">15:18:45</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">henne:</span> maybe later on Q&amp;A section
+<a name="l-19"></a><span class="tm">15:18:56</span><span class="nk"> &lt;henne&gt;</span> maybe ;)
+<a name="l-20"></a><span class="tm">15:19:11</span><span class="nk"> &lt;henne&gt;</span> okay lets go then
+<a name="l-21"></a><span class="tm">15:19:21</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Get to know each other</span>
+<a name="l-22"></a><span class="tm">15:19:42 </span><span class="nka">* henne</span> <span class="ac">is henne</span>
+<a name="l-23"></a><span class="tm">15:19:57</span><span class="nk"> &lt;henne&gt;</span> booster, board member, flea circus tamer :)
+<a name="l-24"></a><span class="tm">15:20:04 </span><span class="nka">* gnokii</span> <span class="ac">henne is mother of openSUSE</span>
+<a name="l-25"></a><span class="tm">15:20:12</span><span class="nk"> &lt;Twilo&gt;</span> hello, where can i find an opensuse 10.2 i386 dvd image?
+<a name="l-26"></a><span class="tm">15:20:16</span><span class="nk"> &lt;henne&gt;</span> ive got involved with news.o.o after Beineri left
+<a name="l-27"></a><span class="tm">15:20:33</span><span class="nk"> &lt;gnokii&gt;</span> Twilo plz go to #suse
+<a name="l-28"></a><span class="tm">15:20:44</span><span class="nk"> &lt;henne&gt;</span> and slipped from administering it to writing articles
+<a name="l-29"></a><span class="tm">15:21:01</span><span class="nk"> &lt;stpierrc&gt;</span> Hi, I have just install opensuse 11.3, I would prefer to have grub2 inplace of grub legacy. When I installed grub2 it was added to the grub legacy menu, but the osprober command seems to be missing. Has anyone installed grub2 on opensuse successfully?
+<a name="l-30"></a><span class="tm">15:21:13</span><span class="nk"> &lt;henne&gt;</span> !support @ stpierrc
+<a name="l-31"></a><span class="tm">15:21:15</span><span class="nk"> &lt;Twilo&gt;</span> <span class="hi">gnokii:</span> ok
+<a name="l-32"></a><span class="tm">15:21:21</span><span class="nk"> &lt;henne&gt;</span> we're in the middle of a meeting
+<a name="l-33"></a><span class="tm">15:21:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">stpierrc:</span> pls ask on #suse sorry we have a meeting here
+<a name="l-34"></a><span class="tm">15:21:35 </span><span class="nka">* wstephenson</span> <span class="ac">is Bille</span>
+<a name="l-35"></a><span class="tm">15:21:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> henne u done or do we want to know more about you
+<a name="l-36"></a><span class="tm">15:21:42</span><span class="nk"> &lt;jospoortvliet&gt;</span> ?
+<a name="l-37"></a><span class="tm">15:21:47</span><span class="nk"> &lt;henne&gt;</span> so by now I'm doing everything on news.o.o including the redesign with robert etc.
+<a name="l-38"></a><span class="tm">15:21:47</span><span class="nk"> &lt;izabelvalverde&gt;</span> more?
+<a name="l-39"></a><span class="tm">15:21:49</span><span class="nk"> &lt;izabelvalverde&gt;</span> :D
+<a name="l-40"></a><span class="tm">15:21:57</span><span class="nk"> &lt;henne&gt;</span> thats it :)
+<a name="l-41"></a><span class="tm">15:21:57</span><span class="nk"> &lt;stpierrc&gt;</span> Ok thank you sorry to interfere with the meeting.
+<a name="l-42"></a><span class="tm">15:21:58 </span><span class="nka">* wstephenson</span> <span class="ac">is henne's favourite tommy</span>
+<a name="l-43"></a><span class="tm">15:22:17 </span><span class="nka">* jospoortvliet</span> <span class="ac">volunteers izabelvalverde to be next</span>
+<a name="l-44"></a><span class="tm">15:22:23</span><span class="nk"> &lt;izabelvalverde&gt;</span> :P
+<a name="l-45"></a><span class="tm">15:22:24</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok
+<a name="l-46"></a><span class="tm">15:22:40</span><span class="nk"> &lt;izabelvalverde&gt;</span> I'm part of opensUSE team since last July
+<a name="l-47"></a><span class="tm">15:22:50</span><span class="nk"> &lt;izabelvalverde&gt;</span> I'm GNOME member since 2003
+<a name="l-48"></a><span class="tm">15:23:05</span><span class="nk"> &lt;izabelvalverde&gt;</span> before SUSE addicted now openSUSE
+<a name="l-49"></a><span class="tm">15:23:40</span><span class="nk"> &lt;izabelvalverde&gt;</span> MY major is in IT but in FOSS community I used to work in brazilian marketing
+<a name="l-50"></a><span class="tm">15:24:17</span><span class="nk"> &lt;izabelvalverde&gt;</span> any doubts? :)
+<a name="l-51"></a><span class="tm">15:24:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> hehe I wouldn't dream of doubting you
+<a name="l-52"></a><span class="tm">15:24:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> so tell us what you've been doing for openSUSE...
+<a name="l-53"></a><span class="tm">15:24:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> and GNOME before that
+<a name="l-54"></a><span class="tm">15:25:15</span><span class="nk"> &lt;izabelvalverde&gt;</span> for GNOME I was responsable to organize Forum in Brazil
+<a name="l-55"></a><span class="tm">15:25:30</span><span class="nk"> &lt;izabelvalverde&gt;</span> I've co-organized in 2004
+<a name="l-56"></a><span class="tm">15:25:58</span><span class="nk"> &lt;izabelvalverde&gt;</span> responsable for it in 2005, 2006, 2007, 2008, 2009
+<a name="l-57"></a><span class="tm">15:26:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> how big is it?
+<a name="l-58"></a><span class="tm">15:26:35 </span><span class="nka">* jospoortvliet</span> <span class="ac">is curious, sorry</span>
+<a name="l-59"></a><span class="tm">15:26:49</span><span class="nk"> &lt;izabelvalverde&gt;</span> Attended and speaker in conferences in Brazil and twice in Guadec
+<a name="l-60"></a><span class="tm">15:26:54</span><span class="nk"> &lt;izabelvalverde&gt;</span> about numbers
+<a name="l-61"></a><span class="tm">15:27:13</span><span class="nk"> &lt;izabelvalverde&gt;</span> to save money I always chose tho be host by another bigger event
+<a name="l-62"></a><span class="tm">15:27:37</span><span class="nk"> &lt;izabelvalverde&gt;</span> so I just can consider the number of people attending our GNOME rooms
+<a name="l-63"></a><span class="tm">15:27:55</span><span class="nk"> &lt;izabelvalverde&gt;</span> so would be around 200-400 per event
+<a name="l-64"></a><span class="tm">15:28:00</span><span class="nk"> &lt;henne&gt;</span> cool
+<a name="l-65"></a><span class="tm">15:28:30</span><span class="nk"> &lt;henne&gt;</span> next?
+<a name="l-66"></a><span class="tm">15:28:50</span><span class="nk"> &lt;gnokii&gt;</span> u mean next person?
+<a name="l-67"></a><span class="tm">15:29:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok let me go then
+<a name="l-68"></a><span class="tm">15:29:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> ex KDE marketing dude, part of KDE Dot editor team and longtime writer for dot and other places
+<a name="l-69"></a><span class="tm">15:29:42</span><span class="nk"> &lt;gnokii&gt;</span> ex?
+<a name="l-70"></a><span class="tm">15:29:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> well not really involved anymore
+<a name="l-71"></a><span class="tm">15:29:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> no time...
+<a name="l-72"></a><span class="tm">15:29:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> now openSUSE com mgr and involved with marketing
+<a name="l-73"></a><span class="tm">15:30:02</span><span class="nk"> &lt;jospoortvliet&gt;</span> as much as I can :D
+<a name="l-74"></a><span class="tm">15:30:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> and interested in turning news.o.o into a good source of news like dot is - get sites like LWN to link to it almost by default etc
+<a name="l-75"></a><span class="tm">15:30:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> it's our public face after all
+<a name="l-76"></a><span class="tm">15:31:17</span><span class="nk"> &lt;jospoortvliet&gt;</span> that's it
+<a name="l-77"></a><span class="tm">15:31:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> unless there are questions :D
+<a name="l-78"></a><span class="tm">15:31:30</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">jospoortvliet:</span> and about Ambassadors?
+<a name="l-79"></a><span class="tm">15:31:34</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> some words?
+<a name="l-80"></a><span class="tm">15:31:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> well like with marketing - try to be involved and help with things
+<a name="l-81"></a><span class="tm">15:31:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> close relationship between the two after all :D
+<a name="l-82"></a><span class="tm">15:32:02</span><span class="nk"> &lt;jospoortvliet&gt;</span> and the ambassadors rock :P
+<a name="l-83"></a><span class="tm">15:32:10 </span><span class="nka">* jospoortvliet</span> <span class="ac">nominates wstephenson to be next</span>
+<a name="l-84"></a><span class="tm">15:32:38 </span><span class="nka">* wstephenson</span> <span class="ac">grabs the stick and runs away</span>
+<a name="l-85"></a><span class="tm">15:32:51 </span><span class="nka">* jospoortvliet</span> <span class="ac">sends digitltom to kick him down</span>
+<a name="l-86"></a><span class="tm">15:33:02 </span><span class="nka">* gnokii</span> <span class="ac">plays scotland the brave for wstephenson</span>
+<a name="l-87"></a><span class="tm">15:33:24</span><span class="nk"> &lt;wstephenson&gt;</span> booster, general kde dogsbody at suse and guardian of the english tongue
+<a name="l-88"></a><span class="tm">15:33:45</span><span class="nk"> &lt;wstephenson&gt;</span> i've done a few things for kde over the years
+<a name="l-89"></a><span class="tm">15:34:08</span><span class="nk"> &lt;wstephenson&gt;</span> in the news arena, mostly proofreading, that turned into writing release announcements
+<a name="l-90"></a><span class="tm">15:34:32</span><span class="nk"> &lt;wstephenson&gt;</span> i started writing opensuse annoucements because i couldn't stand mangled language any more
+<a name="l-91"></a><span class="tm">15:34:54</span><span class="nk"> &lt;wstephenson&gt;</span> have been involved in organising akademy/GCDS and dev sprints
+<a name="l-92"></a><span class="tm">15:34:55</span><span class="nk"> &lt;henne&gt;</span> eheh
+<a name="l-93"></a><span class="tm">15:35:31</span><span class="nk"> &lt;wstephenson&gt;</span> i want to get us looking good and have a good relationship between our marketing and our engineering
+<a name="l-94"></a><span class="tm">15:35:46</span><span class="nk"> &lt;wstephenson&gt;</span> just in case our news ppl decide they want to decide the direction of the project again
+<a name="l-95"></a><span class="tm">15:35:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> well don't we look good on average? Mostly due to pretty boys like henne of course but still... ;-)
+<a name="l-96"></a><span class="tm">15:36:11</span><span class="nk"> &lt;wstephenson&gt;</span> in the flesh yes, not really on paper
+<a name="l-97"></a><span class="tm">15:36:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> oh.... ;-)
+<a name="l-98"></a><span class="tm">15:37:08</span><span class="nk"> &lt;wstephenson&gt;</span> i'm done
+<a name="l-99"></a><span class="tm">15:37:17</span><span class="nk"> &lt;gnokii&gt;</span> mmh me then?
+<a name="l-100"></a><span class="tm">15:37:35</span><span class="nk"> &lt;henne&gt;</span> gnokii?
+<a name="l-101"></a><span class="tm">15:37:39</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">gnokii:</span>  you  writer on news team?
+<a name="l-102"></a><span class="tm">15:38:19</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">jospoortvliet:</span> AJ asked me that often and I ever rejected because I feeled not to good with english grammar but over last weeks I made a decision
+<a name="l-103"></a><span class="tm">15:38:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok
+<a name="l-104"></a><span class="tm">15:38:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> join ML ;-)
+<a name="l-105"></a><span class="tm">15:38:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> and talk
+<a name="l-106"></a><span class="tm">15:38:48</span><span class="nk"> &lt;gnokii&gt;</span> ok, say who I am and what I have in mind
+<a name="l-107"></a><span class="tm">15:39:17</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-108"></a><span class="tm">15:40:06</span><span class="nk"> &lt;gnokii&gt;</span> ok, as I said my english sucks but I worked as journalist before my media was more radio, some know that. I worked 4 years for radio tux as master of the schedule
+<a name="l-109"></a><span class="tm">15:41:07</span><span class="nk"> &lt;gnokii&gt;</span> I learned that job long time ago and teh german government paid for it :D Since then I published a lot of postings in mostly german speaking platforms
+<a name="l-110"></a><span class="tm">15:42:35</span><span class="nk"> &lt;henne&gt;</span> cool
+<a name="l-111"></a><span class="tm">15:42:50</span><span class="nk"> &lt;gnokii&gt;</span> most of u know, that what I really like to do is artwork, but most know also I think really about a thing before I do it and then I do it really. and what I would like to do for news is make people of openSUSE happen again, so far as I know plans CarlosRibeiro such a thing for the ambassadors and I would like to do it with him together
+<a name="l-112"></a><span class="tm">15:43:40</span><span class="nk"> &lt;gnokii&gt;</span> so I would try with him to do 2 interviews in a months via skype, and make them ready for publishing, that allows my time so far as I calculated
+<a name="l-113"></a><span class="tm">15:44:16</span><span class="nk"> &lt;jospoortvliet&gt;</span> cool
+<a name="l-114"></a><span class="tm">15:44:28</span><span class="nk"> &lt;jospoortvliet&gt;</span> know that for WRITING articles you don't have to be a news editor
+<a name="l-115"></a><span class="tm">15:44:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> that's for mostly editing :D
+<a name="l-116"></a><span class="tm">15:44:48</span><span class="nk"> &lt;gnokii&gt;</span> I know, its easier for me to hear and write down what they said ;)
+<a name="l-117"></a><span class="tm">15:45:05</span><span class="nk"> &lt;jospoortvliet&gt;</span> ?
+<a name="l-118"></a><span class="tm">15:45:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> was that response to me?
+<a name="l-119"></a><span class="tm">15:45:24</span><span class="nk"> &lt;gnokii&gt;</span> yeah
+<a name="l-120"></a><span class="tm">15:45:36</span><span class="nk"> &lt;izabelvalverde&gt;</span> guys sorry I reserved 1 hour for this meeting
+<a name="l-121"></a><span class="tm">15:45:47</span><span class="nk"> &lt;izabelvalverde&gt;</span> can we move forward?
+<a name="l-122"></a><span class="tm">15:45:53</span><span class="nk"> &lt;henne&gt;</span> yes please
+<a name="l-123"></a><span class="tm">15:46:18</span><span class="nk"> &lt;henne&gt;</span> lets figure out what we want to do
+<a name="l-124"></a><span class="tm">15:46:22</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">What do we want to do? Writing, Editing, Scheduling and possibly</span>
+<a name="l-125"></a><span class="tm">15:46:27</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-126"></a><span class="tm">15:46:27</span><span class="nk"> &lt;bugbot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Topic object at 0x1343d50&gt;
+<a name="l-127"></a><span class="tm">15:46:29</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">What do we want to do? Writing, Editing, Scheduling and possibly more?</span>
+<a name="l-128"></a><span class="tm">15:46:47</span><span class="nk"> &lt;henne&gt;</span> do we really want to make writing so seperate?
+<a name="l-129"></a><span class="tm">15:47:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">digitltom:</span> no chance for you to introduce yourself?!?
+<a name="l-130"></a><span class="tm">15:47:24</span><span class="nk"> &lt;wstephenson&gt;</span> still afk
+<a name="l-131"></a><span class="tm">15:47:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> k
+<a name="l-132"></a><span class="tm">15:47:36</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> well yes and no
+<a name="l-133"></a><span class="tm">15:47:41</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">jospoortvliet:</span> he said he just wants to help with technical problems ...
+<a name="l-134"></a><span class="tm">15:47:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> writing - anyone can and should be able to send in articles
+<a name="l-135"></a><span class="tm">15:47:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> of course we want to help with getting articles out
+<a name="l-136"></a><span class="tm">15:48:01</span><span class="nk"> &lt;henne&gt;</span> yes sure
+<a name="l-137"></a><span class="tm">15:48:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> and editing ranges from just fixing a few spelling mistakes to almost co-writing too
+<a name="l-138"></a><span class="tm">15:48:28</span><span class="nk"> &lt;jospoortvliet&gt;</span> but if the team of 5-6 has to write majority of articles; or if anyone who writes an article would have to be part of team - both don't work
+<a name="l-139"></a><span class="tm">15:48:39</span><span class="nk"> &lt;izabelvalverde&gt;</span> I can help editing
+<a name="l-140"></a><span class="tm">15:48:47</span><span class="nk"> &lt;jospoortvliet&gt;</span> so main goal is editing (quality) then pulling in articles (quantity)
+<a name="l-141"></a><span class="tm">15:48:49</span><span class="nk"> &lt;izabelvalverde&gt;</span> I'm not good writer
+<a name="l-142"></a><span class="tm">15:48:51</span><span class="nk"> &lt;jospoortvliet&gt;</span> that would be my idea
+<a name="l-143"></a><span class="tm">15:48:57</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> not big issue ;-)
+<a name="l-144"></a><span class="tm">15:49:02</span><span class="nk"> &lt;jospoortvliet&gt;</span> you'll learn
+<a name="l-145"></a><span class="tm">15:49:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> ...
+<a name="l-146"></a><span class="tm">15:49:10</span><span class="nk"> &lt;izabelvalverde&gt;</span> I hope ;D
+<a name="l-147"></a><span class="tm">15:49:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> don't worry
+<a name="l-148"></a><span class="tm">15:49:24</span><span class="nk"> &lt;henne&gt;</span> does everybody agree?
+<a name="l-149"></a><span class="tm">15:49:33</span><span class="nk"> &lt;gnokii&gt;</span> henne yes and no
+<a name="l-150"></a><span class="tm">15:49:40</span><span class="nk"> &lt;henne&gt;</span> this would mean pure writers are not part of the news team
+<a name="l-151"></a><span class="tm">15:49:53</span><span class="nk"> &lt;wstephenson&gt;</span> do we have a pool of pure writers?
+<a name="l-152"></a><span class="tm">15:50:09</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">wstephenson:</span> we have ppl the write very good like helen_au
+<a name="l-153"></a><span class="tm">15:50:18</span><span class="nk"> &lt;henne&gt;</span> we have some
+<a name="l-154"></a><span class="tm">15:50:23</span><span class="nk"> &lt;wstephenson&gt;</span> but does she want to write news or other mkting stuff?
+<a name="l-155"></a><span class="tm">15:50:31</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">wstephenson:</span> in my opinion writers fit in just right in marketing team
+<a name="l-156"></a><span class="tm">15:50:49</span><span class="nk"> &lt;jospoortvliet&gt;</span> of course if good, regular writers become part of news team that's good
+<a name="l-157"></a><span class="tm">15:50:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> there is much overlap
+<a name="l-158"></a><span class="tm">15:51:11</span><span class="nk"> &lt;jospoortvliet&gt;</span> but it depends much on if someone wants to do it etc ;-)
+<a name="l-159"></a><span class="tm">15:51:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">wstephenson:</span> so that's the question
+<a name="l-160"></a><span class="tm">15:51:39</span><span class="nk"> &lt;jospoortvliet&gt;</span> news.o.o has both articles and news items, different things
+<a name="l-161"></a><span class="tm">15:51:57</span><span class="nk"> &lt;jospoortvliet&gt;</span> often news editors do news items, articles come (hopefully) more from outside
+<a name="l-162"></a><span class="tm">15:51:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> I guess
+<a name="l-163"></a><span class="tm">15:52:05</span><span class="nk"> &lt;jospoortvliet&gt;</span> still, I don't want to make any rules there
+<a name="l-164"></a><span class="tm">15:52:06</span><span class="nk"> &lt;henne&gt;</span> whats the difference between an article and a news item?
+<a name="l-165"></a><span class="tm">15:52:08</span><span class="nk"> &lt;jospoortvliet&gt;</span> we do what needs to be done
+<a name="l-166"></a><span class="tm">15:52:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> news item I meant like announcement and such
+<a name="l-167"></a><span class="tm">15:52:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> srry for confusion :D
+<a name="l-168"></a><span class="tm">15:52:40</span><span class="nk"> &lt;izabelvalverde&gt;</span> I thought news would be the central point for everything about openSUSE
+<a name="l-169"></a><span class="tm">15:52:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> yup they all belong on news
+<a name="l-170"></a><span class="tm">15:53:02</span><span class="nk"> &lt;jospoortvliet&gt;</span> well not blogs or tweets ;-)
+<a name="l-171"></a><span class="tm">15:53:11</span><span class="nk"> &lt;jospoortvliet&gt;</span> announcements, articles and anything in between...
+<a name="l-172"></a><span class="tm">15:53:15</span><span class="nk"> &lt;izabelvalverde&gt;</span> projects, marketing and so on
+<a name="l-173"></a><span class="tm">15:53:28</span><span class="nk"> &lt;jospoortvliet&gt;</span> true
+<a name="l-174"></a><span class="tm">15:54:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> so they can all provide content... news editors edit and schedule. Try to get articles from ppl and often get a mail like "hey there is a new version of XXX with these and these features can you write announcement"
+<a name="l-175"></a><span class="tm">15:54:04</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">izabelvalverde:</span> for that to work we'd need contact ppl in each team
+<a name="l-176"></a><span class="tm">15:54:43</span><span class="nk"> &lt;izabelvalverde&gt;</span> wstephenson I agree and I believe we can do it
+<a name="l-177"></a><span class="tm">15:54:55</span><span class="nk"> &lt;izabelvalverde&gt;</span> lot of work but a good work
+<a name="l-178"></a><span class="tm">15:55:13</span><span class="nk"> &lt;izabelvalverde&gt;</span> besides will show everyone they are in fact part of opensUSE ;)
+<a name="l-179"></a><span class="tm">15:55:18</span><span class="nk"> &lt;henne&gt;</span> contact people in all teams?
+<a name="l-180"></a><span class="tm">15:55:59</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne how many teams do we have?
+<a name="l-181"></a><span class="tm">15:56:06</span><span class="nk"> &lt;henne&gt;</span> a lot
+<a name="l-182"></a><span class="tm">15:56:13</span><span class="nk"> &lt;izabelvalverde&gt;</span> give me a better perspective
+<a name="l-183"></a><span class="tm">15:56:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> we can announce that if ppl have news and announcements they should contact news team, we can help write. We could also pro-actively, if something seems up in a team, contact the team
+<a name="l-184"></a><span class="tm">15:56:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> 20-30 approx?
+<a name="l-185"></a><span class="tm">15:56:42</span><span class="nk"> &lt;izabelvalverde&gt;</span> thanks
+<a name="l-186"></a><span class="tm">15:56:49</span><span class="nk"> &lt;henne&gt;</span> i don't think that we can avoid the work by appointing people
+<a name="l-187"></a><span class="tm">15:57:06</span><span class="nk"> &lt;henne&gt;</span> i would like the news.o.o team to be a real editoral office of the opensuse projectr
+<a name="l-188"></a><span class="tm">15:57:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> don't need to appoint ppl, I usually mail ML and a few ppl in each team individually, works reasonably well
+<a name="l-189"></a><span class="tm">15:57:21</span><span class="nk"> &lt;henne&gt;</span> which means we would actively seek for stories
+<a name="l-190"></a><span class="tm">15:57:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> agreed
+<a name="l-191"></a><span class="tm">15:57:24</span><span class="nk"> &lt;wstephenson&gt;</span> but teams need stimulating to know they can send news items
+<a name="l-192"></a><span class="tm">15:57:30</span><span class="nk"> &lt;wstephenson&gt;</span> or else they just do their thing
+<a name="l-193"></a><span class="tm">15:57:34</span><span class="nk"> &lt;henne&gt;</span> sure
+<a name="l-194"></a><span class="tm">15:57:57</span><span class="nk"> &lt;jospoortvliet&gt;</span> yes many teams/ppl ahve a tendency to blog news.o.o worty things or even just mail it to their ML
+<a name="l-195"></a><span class="tm">15:58:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> or -project
+<a name="l-196"></a><span class="tm">15:58:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> we need to pick that up
+<a name="l-197"></a><span class="tm">15:58:09</span><span class="nk"> &lt;henne&gt;</span> but thats a matter of being accessible and not about appointing contact persons...
+<a name="l-198"></a><span class="tm">15:58:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> tell them to try and send it to us (too) next time
+<a name="l-199"></a><span class="tm">15:58:15</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-200"></a><span class="tm">15:58:35</span><span class="nk"> &lt;henne&gt;</span> this is work we need to do. we need to seek stuff instead of waiting for people to come to us
+<a name="l-201"></a><span class="tm">15:58:46</span><span class="nk"> &lt;henne&gt;</span> at least thats what i think is missing currently
+<a name="l-202"></a><span class="tm">15:59:10</span><span class="nk"> &lt;saigkill_&gt;</span> sorry for being late...
+<a name="l-203"></a><span class="tm">15:59:17</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">saigkill_:</span> welcome :D
+<a name="l-204"></a><span class="tm">15:59:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> better late than never
+<a name="l-205"></a><span class="tm">15:59:24</span><span class="nk"> &lt;saigkill_&gt;</span> thanks :-)
+<a name="l-206"></a><span class="tm">15:59:25</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> could I give some cents about this topic
+<a name="l-207"></a><span class="tm">15:59:31</span><span class="nk"> &lt;izabelvalverde&gt;</span> I can help getting in touch with teams
+<a name="l-208"></a><span class="tm">15:59:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> agreed. so how about we write an announcement/encouragement for -project and ask /tell ppl
+<a name="l-209"></a><span class="tm">15:59:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> how would you do that? (just wondering)
+<a name="l-210"></a><span class="tm">15:59:58</span><span class="nk"> &lt;henne&gt;</span> sure. thats a todo then
+<a name="l-211"></a><span class="tm">15:59:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">CarlosRibeiro:</span> talk, don't ask if you can talk :D
+<a name="l-212"></a><span class="tm">16:00:01</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> so I believe we need to have a kind of reference, for example, we have about 30 teamns
+<a name="l-213"></a><span class="tm">16:00:15</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> one of this team is Ambassadors
+<a name="l-214"></a><span class="tm">16:00:33</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> but I don't like to be responsible to wirite on news about ambassadors
+<a name="l-215"></a><span class="tm">16:00:50</span><span class="nk"> &lt;izabelvalverde&gt;</span> I'll need a map about the teams and after make as an agenda to get in touch with them once a week or every 15 days
+<a name="l-216"></a><span class="tm">16:01:16</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> but if I send to all ambassadors a reference for news, like, Hey all ambassadors from now we have Izabel as our reference for articles on news
+<a name="l-217"></a><span class="tm">16:01:22</span><span class="nk"> &lt;izabelvalverde&gt;</span> having news we can set up a way to interview/write about it
+<a name="l-218"></a><span class="tm">16:01:33</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> so everyweek each ambassador that wishes to publish something
+<a name="l-219"></a><span class="tm">16:01:41</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> contact izabel to make this happen
+<a name="l-220"></a><span class="tm">16:02:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">CarlosRibeiro:</span> they can contact news@opensuse.org
+<a name="l-221"></a><span class="tm">16:02:34</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">izabelvalverde:</span> http://en.opensuse.org/Portal:Teams
+<a name="l-222"></a><span class="tm">16:02:38</span><span class="nk"> &lt;izabelvalverde&gt;</span> jospoortvliet what about it... too waya?
+<a name="l-223"></a><span class="tm">16:02:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> no need for a person, that's why we have teams
+<a name="l-224"></a><span class="tm">16:02:44</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> same for OBS, Studio, .... if we have some reference for some teams, maybe our missions to keep in touch with the all treams could be easier
+<a name="l-225"></a><span class="tm">16:02:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> ;-)
+<a name="l-226"></a><span class="tm">16:02:53</span><span class="nk"> &lt;izabelvalverde&gt;</span> thanks henne
+<a name="l-227"></a><span class="tm">16:03:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> btw
+<a name="l-228"></a><span class="tm">16:03:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> at some point, CarlosRibeiro, henne we discussed this: agreed. so how about we write an announcement/encouragement for -project
+<a name="l-229"></a><span class="tm">16:03:39</span><span class="nk"> &lt;jospoortvliet&gt;</span> whoops wrong paste
+<a name="l-230"></a><span class="tm">16:03:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> http://en.opensuse.org/openSUSE:Marketing_liaison
+<a name="l-231"></a><span class="tm">16:04:23</span><span class="nk"> &lt;amonthoth&gt;</span> sorry, i am late and confused hour and channel
+<a name="l-232"></a><span class="tm">16:04:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> the idea was to have a marketing/promo person interested in a certain topic join the team and help that team write
+<a name="l-233"></a><span class="tm">16:04:39</span><span class="nk"> &lt;henne&gt;</span> yeah look where it got ;)
+<a name="l-234"></a><span class="tm">16:04:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> yeah, I know
+<a name="l-235"></a><span class="tm">16:04:54</span><span class="nk"> &lt;henne&gt;</span> in my experience this type of thing never works...
+<a name="l-236"></a><span class="tm">16:04:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> so we can put that for long term, it's something possible but hard to find ppl for
+<a name="l-237"></a><span class="tm">16:05:10</span><span class="nk"> &lt;gnokii&gt;</span> henne if u mean liason +1
+<a name="l-238"></a><span class="tm">16:05:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> happened a few times in KDE promo team, some ppl kept it up for a while but it ain't a long term thing imho
+<a name="l-239"></a><span class="tm">16:05:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok so the team does this, if ppl have news the contact news@opensuse.org
+<a name="l-240"></a><span class="tm">16:05:37</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-241"></a><span class="tm">16:05:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> sounds like the best way
+<a name="l-242"></a><span class="tm">16:05:52</span><span class="nk"> &lt;gnokii&gt;</span> can I make a proposal for a solution?
+<a name="l-243"></a><span class="tm">16:05:59</span><span class="nk"> &lt;henne&gt;</span> sure
+<a name="l-244"></a><span class="tm">16:06:49</span><span class="nk"> &lt;gnokii&gt;</span> as there was here the ambassadors in the talk, we made already for them that they publish a report after events, we always searched for a way how to publish it
+<a name="l-245"></a><span class="tm">16:07:26</span><span class="nk"> &lt;henne&gt;</span> event reports are definately things that belong to news.o.o imho
+<a name="l-246"></a><span class="tm">16:07:27</span><span class="nk"> &lt;gnokii&gt;</span> not for every event, it makes sense but put them montly together and publish all what they have done and the upcoming dates would be the best thing todo
+<a name="l-247"></a><span class="tm">16:07:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> monthly is long but yeah it makes sense
+<a name="l-248"></a><span class="tm">16:08:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> someone once picked it up but I couldn't push it consistently
+<a name="l-249"></a><span class="tm">16:08:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> also there is overlap in a sense with the OWN it's in there too
+<a name="l-250"></a><span class="tm">16:08:25</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">jospoortvliet:</span> u can be lucky when u have montly something to write ;)
+<a name="l-251"></a><span class="tm">16:08:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> so I support this
+<a name="l-252"></a><span class="tm">16:08:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> and think we can find someone to help us do it
+<a name="l-253"></a><span class="tm">16:08:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">gnokii:</span> don't be cynical
+<a name="l-254"></a><span class="tm">16:08:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> we have 3-5 articles a week right now
+<a name="l-255"></a><span class="tm">16:08:49</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">jospoortvliet:</span> I am realistic
+<a name="l-256"></a><span class="tm">16:08:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">gnokii:</span> it isn't
+<a name="l-257"></a><span class="tm">16:08:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> plenty of news
+<a name="l-258"></a><span class="tm">16:09:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> eg I could ask who wants to write about Tumbleweed and openSUSE LTS on news.o.o
+<a name="l-259"></a><span class="tm">16:09:17</span><span class="nk"> &lt;jospoortvliet&gt;</span> and I'll find someone I promise you that
+<a name="l-260"></a><span class="tm">16:09:19</span><span class="nk"> &lt;izabelvalverde&gt;</span> we just need to collect and organize them
+<a name="l-261"></a><span class="tm">16:09:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> even if that someone would have to be me :D
+<a name="l-262"></a><span class="tm">16:09:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> exactly
+<a name="l-263"></a><span class="tm">16:09:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> and make an article out of it
+<a name="l-264"></a><span class="tm">16:09:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> I did it once with someone
+<a name="l-265"></a><span class="tm">16:09:38</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">jospoortvliet:</span> LTS is called evergreen
+<a name="l-266"></a><span class="tm">16:09:45</span><span class="nk"> &lt;henne&gt;</span> okay i would like to throw in another question
+<a name="l-267"></a><span class="tm">16:10:00</span><span class="nk"> &lt;henne&gt;</span> do we also want to be responsible for the other news outlets we have?
+<a name="l-268"></a><span class="tm">16:10:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">gnokii:</span> now that is a very insightful comment (not)
+<a name="l-269"></a><span class="tm">16:10:01</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">gnokii:</span>  I like this idea, and I think is not so difficult to do for Ambassadors program
+<a name="l-270"></a><span class="tm">16:10:18</span><span class="nk"> &lt;henne&gt;</span> i'm talking about the social network stuff and the announce mailinglist/forum
+<a name="l-271"></a><span class="tm">16:10:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> like planet and so on?
+<a name="l-272"></a><span class="tm">16:10:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> announcements yes, social network stuff no
+<a name="l-273"></a><span class="tm">16:10:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> marketing does social networking. of course connect to news.o.o
+<a name="l-274"></a><span class="tm">16:10:42</span><span class="nk"> &lt;henne&gt;</span> i think so too
+<a name="l-275"></a><span class="tm">16:10:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> announcements - yes, news.o.o team should know about announcements in advance so it makes sense
+<a name="l-276"></a><span class="tm">16:10:56</span><span class="nk"> &lt;henne&gt;</span> but the other two i would like tio seize
+<a name="l-277"></a><span class="tm">16:11:10</span><span class="nk"> &lt;gnokii&gt;</span> henne is there a way to overview th ml traffic a thread without subscribe them all?
+<a name="l-278"></a><span class="tm">16:11:32</span><span class="nk"> &lt;henne&gt;</span> i dont understand. try in german
+<a name="l-279"></a><span class="tm">16:12:10</span><span class="nk"> &lt;gnokii&gt;</span> ist da eine Möglichkeit zu sehen, welche Mailingliste für welchen Thread viel Traffic hat ohne, dass man sie alle abonnieren muss eine Art Zusammenfassung
+<a name="l-280"></a><span class="tm">16:12:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> btw FYI - earlier ambassador article http://news.opensuse.org/2010/09/29/opensuse-ambassadors-rocking-around-the-world/
+<a name="l-281"></a><span class="tm">16:12:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> that could be a monthly or (as this was just one week) weekly thing
+<a name="l-282"></a><span class="tm">16:13:01</span><span class="nk"> &lt;gnokii&gt;</span> jos weekly is really hard believe me
+<a name="l-283"></a><span class="tm">16:13:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">gnokii:</span> montly just so, it's long...
+<a name="l-284"></a><span class="tm">16:13:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> much content
+<a name="l-285"></a><span class="tm">16:13:36</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gnokii:</span> nope
+<a name="l-286"></a><span class="tm">16:13:36</span><span class="nk"> &lt;jospoortvliet&gt;</span> but yeah
+<a name="l-287"></a><span class="tm">16:13:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> depends if Isaac Amaru Zelaya Orellana wants to help out
+<a name="l-288"></a><span class="tm">16:13:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> I can ask him
+<a name="l-289"></a><span class="tm">16:13:56</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gnokii:</span> there is no such feature on the ml's
+<a name="l-290"></a><span class="tm">16:13:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> he might
+<a name="l-291"></a><span class="tm">16:14:02</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">henne:</span> and all others why I ask that is the following
+<a name="l-292"></a><span class="tm">16:14:39</span><span class="nk"> &lt;gnokii&gt;</span> the threads who make the traffic like the discussion on LTS and tumbleweed, that are the things they are interests the ppl
+<a name="l-293"></a><span class="tm">16:15:08</span><span class="nk"> &lt;henne&gt;</span> yeah but i don't need to have some machine tell me that this is importanz
+<a name="l-294"></a><span class="tm">16:15:15</span><span class="nk"> &lt;gnokii&gt;</span> no one outside heard about the things outside when they dont participate on ml or read the planet because there was some stories about that
+<a name="l-295"></a><span class="tm">16:15:18</span><span class="nk"> &lt;henne&gt;</span> i know it is because i read all the lists :)
+<a name="l-296"></a><span class="tm">16:15:32</span><span class="nk"> &lt;gnokii&gt;</span> all?
+<a name="l-297"></a><span class="tm">16:15:33</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">gnokii:</span> agreed
+<a name="l-298"></a><span class="tm">16:15:38</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gnokii:</span> exactly this is the job of this team
+<a name="l-299"></a><span class="tm">16:15:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> yes so that's why we need to write about that
+<a name="l-300"></a><span class="tm">16:15:41</span><span class="nk"> &lt;henne&gt;</span> i think
+<a name="l-301"></a><span class="tm">16:15:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> and yes, as henne said, we need to be pro-active in this
+<a name="l-302"></a><span class="tm">16:15:52</span><span class="nk"> &lt;gnokii&gt;</span> ok, then we have the same opinion on that
+<a name="l-303"></a><span class="tm">16:16:03</span><span class="nk"> &lt;henne&gt;</span> i think so too yes
+<a name="l-304"></a><span class="tm">16:16:05</span><span class="nk"> &lt;jospoortvliet&gt;</span> go after this and find someone to write or do it in our team
+<a name="l-305"></a><span class="tm">16:16:57</span><span class="nk"> &lt;gnokii&gt;</span> right jospoortvliet thats it and thats it how it worksm schedule editor meetings, selecting the intersting stuff and get it done
+<a name="l-306"></a><span class="tm">16:16:58</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-307"></a><span class="tm">16:17:01</span><span class="nk"> &lt;henne&gt;</span> next topic then?
+<a name="l-308"></a><span class="tm">16:17:25</span><span class="nk"> &lt;henne&gt;</span> i think we agree by now what we want to do :)
+<a name="l-309"></a><span class="tm">16:17:46</span><span class="nk"> &lt;izabelvalverde&gt;</span> we just didn't talk about wich part
+<a name="l-310"></a><span class="tm">16:18:01</span><span class="nk"> &lt;izabelvalverde&gt;</span> so for now everybody will do all? :D
+<a name="l-311"></a><span class="tm">16:18:16</span><span class="nk"> &lt;henne&gt;</span> everybody will do what he can do right?
+<a name="l-312"></a><span class="tm">16:18:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> let me try and find someone to write about Tumbleweed and Evergreen. If nobody steps up I will. Maybe helen is interested.
+<a name="l-313"></a><span class="tm">16:18:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> already made a post in drafts of news.o.o :D
+<a name="l-314"></a><span class="tm">16:18:54</span><span class="nk"> &lt;henne&gt;</span> lets figure out responsibilities on the way
+<a name="l-315"></a><span class="tm">16:19:03</span><span class="nk"> &lt;henne&gt;</span> imho
+<a name="l-316"></a><span class="tm">16:19:03</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok
+<a name="l-317"></a><span class="tm">16:19:28</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">izabelvalverde:</span> or do you think it works better if everybody knows what he/she i supposed to do? :)
+<a name="l-318"></a><span class="tm">16:19:45</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">jospoortvliet:</span> plz go not to helen with it let her do what she  have begun
+<a name="l-319"></a><span class="tm">16:20:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">gnokii:</span>  don't worry I am helping her with things already
+<a name="l-320"></a><span class="tm">16:20:16</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne I believe in dogs with much owners get thirsty
+<a name="l-321"></a><span class="tm">16:20:16</span><span class="nk"> &lt;gnokii&gt;</span> I saw but yesterday she was angry!
+<a name="l-322"></a><span class="tm">16:20:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> btw if you want you can also write this article with me
+<a name="l-323"></a><span class="tm">16:20:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> how about that?
+<a name="l-324"></a><span class="tm">16:20:42</span><span class="nk"> &lt;jospoortvliet&gt;</span> go to news.o.o I already pasted some things to get started for us :D
+<a name="l-325"></a><span class="tm">16:20:43</span><span class="nk"> &lt;izabelvalverde&gt;</span> works perfect to me
+<a name="l-326"></a><span class="tm">16:20:50</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok
+<a name="l-327"></a><span class="tm">16:20:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> once we finish this we can get this promoted, it might be picked up by LWN and other sites if we are fast enough
+<a name="l-328"></a><span class="tm">16:21:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok finish this before end of week
+<a name="l-329"></a><span class="tm">16:21:25</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok
+<a name="l-330"></a><span class="tm">16:21:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> you try and do something, then ping me to take over, deal? Then I give it back to you etc etc
+<a name="l-331"></a><span class="tm">16:21:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> (can't work in wordpress at the same time)
+<a name="l-332"></a><span class="tm">16:21:45</span><span class="nk"> &lt;izabelvalverde&gt;</span> might be a good way for me to know how about the steps
+<a name="l-333"></a><span class="tm">16:21:49</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> yup
+<a name="l-334"></a><span class="tm">16:21:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> cool
+<a name="l-335"></a><span class="tm">16:21:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> so one TODO
+<a name="l-336"></a><span class="tm">16:22:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> now maybe next agenda item or do we have more on this?
+<a name="l-337"></a><span class="tm">16:23:03</span><span class="nk"> &lt;henne&gt;</span> well
+<a name="l-338"></a><span class="tm">16:23:18</span><span class="nk"> &lt;henne&gt;</span> do we want to split responsibilities now or not? :)
+<a name="l-339"></a><span class="tm">16:23:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> I don't think it's needed much but if others disagree I obviously will follow...
+<a name="l-340"></a><span class="tm">16:24:32</span><span class="nk"> &lt;izabelvalverde&gt;</span> I'm new at team so I'll agree with you guys
+<a name="l-341"></a><span class="tm">16:24:35</span><span class="nk"> &lt;gnokii&gt;</span> henne u only to have sure for some of us that htere is someone like will how read what we have written
+<a name="l-342"></a><span class="tm">16:24:36</span><span class="nk"> &lt;izabelvalverde&gt;</span> just for now :D
+<a name="l-343"></a><span class="tm">16:25:14</span><span class="nk"> &lt;henne&gt;</span> well everybody is new in the team
+<a name="l-344"></a><span class="tm">16:25:23</span><span class="nk"> &lt;henne&gt;</span> this is a new team remember? ;)
+<a name="l-345"></a><span class="tm">16:25:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> indeed :D
+<a name="l-346"></a><span class="tm">16:25:42</span><span class="nk"> &lt;jospoortvliet&gt;</span> of course everyone will take on responsibility on a case to case basis
+<a name="l-347"></a><span class="tm">16:25:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> eg if you put an article online, you should make sure it gets published
+<a name="l-348"></a><span class="tm">16:25:55</span><span class="nk"> &lt;henne&gt;</span> okay then next topic
+<a name="l-349"></a><span class="tm">16:26:03</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Technical Details for Wordpress as group blog</span>
+<a name="l-350"></a><span class="tm">16:26:04 </span><span class="nka">* jospoortvliet</span> <span class="ac">blushes thinking about the article about openSUSE Edu which is still unpublished</span>
+<a name="l-351"></a><span class="tm">16:27:00</span><span class="nk"> &lt;henne&gt;</span> so the last topic was about the what
+<a name="l-352"></a><span class="tm">16:27:03</span><span class="nk"> &lt;henne&gt;</span> this is about the how
+<a name="l-353"></a><span class="tm">16:27:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> log in all to news.o.o!!!
+<a name="l-354"></a><span class="tm">16:28:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> go to posts
+<a name="l-355"></a><span class="tm">16:28:51</span><span class="nk"> &lt;jospoortvliet&gt;</span> then drafts
+<a name="l-356"></a><span class="tm">16:28:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> that's where we'll spend lots of time :D
+<a name="l-357"></a><span class="tm">16:29:00</span><span class="nk"> &lt;henne&gt;</span> okay i think the only thing we have agreed upon are the post headers
+<a name="l-358"></a><span class="tm">16:29:14</span><span class="nk"> &lt;henne&gt;</span> so we keep meta information about the post on top of it
+<a name="l-359"></a><span class="tm">16:29:16</span><span class="nk"> &lt;izabelvalverde&gt;</span> done
+<a name="l-360"></a><span class="tm">16:29:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> and don't talk publicly here about some of the announcements there :D
+<a name="l-361"></a><span class="tm">16:29:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> ;-)
+<a name="l-362"></a><span class="tm">16:29:41</span><span class="nk"> &lt;izabelvalverde&gt;</span> I've been trying to change the word announcement size :D
+<a name="l-363"></a><span class="tm">16:30:35</span><span class="nk"> &lt;henne&gt;</span> i have installed a plugin for public previews
+<a name="l-364"></a><span class="tm">16:30:52</span><span class="nk"> &lt;henne&gt;</span> you have to check the box below the editor
+<a name="l-365"></a><span class="tm">16:30:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> nice henne very good!
+<a name="l-366"></a><span class="tm">16:31:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok so all open first post
+<a name="l-367"></a><span class="tm">16:31:05</span><span class="nk"> &lt;henne&gt;</span> and then people without a news.o.o login can preview the post
+<a name="l-368"></a><span class="tm">16:31:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> you will see henne is editing it so you can't change things
+<a name="l-369"></a><span class="tm">16:31:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> this post misses the header of when to be published and what the todo is
+<a name="l-370"></a><span class="tm">16:31:37</span><span class="nk"> &lt;izabelvalverde&gt;</span> who's supposed to aprove the comments?
+<a name="l-371"></a><span class="tm">16:31:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> usually they get auto-approved I think, henne you know more?
+<a name="l-372"></a><span class="tm">16:32:00</span><span class="nk"> &lt;javier&gt;</span> that reminds me of kde.news
+<a name="l-373"></a><span class="tm">16:32:02</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-374"></a><span class="tm">16:32:07</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">javier:</span> :D
+<a name="l-375"></a><span class="tm">16:32:11</span><span class="nk"> &lt;henne&gt;</span> comments get auto approved
+<a name="l-376"></a><span class="tm">16:32:12</span><span class="nk"> &lt;javier&gt;</span> ;)
+<a name="l-377"></a><span class="tm">16:32:18</span><span class="nk"> &lt;henne&gt;</span> if they are not spam
+<a name="l-378"></a><span class="tm">16:32:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok
+<a name="l-379"></a><span class="tm">16:33:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> so we all in the post?
+<a name="l-380"></a><span class="tm">16:33:04</span><span class="nk"> &lt;gnokii&gt;</span> henne track/pingbacks?
+<a name="l-381"></a><span class="tm">16:33:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> a few important things
+<a name="l-382"></a><span class="tm">16:33:19</span><span class="nk"> &lt;izabelvalverde&gt;</span> yep
+<a name="l-383"></a><span class="tm">16:33:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> to the right: categories. You must always choose a category or a few
+<a name="l-384"></a><span class="tm">16:33:36</span><span class="nk"> &lt;javier&gt;</span> do lizards and news share some kind of infrastructure?
+<a name="l-385"></a><span class="tm">16:33:55</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">javier:</span> no
+<a name="l-386"></a><span class="tm">16:34:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> second author. you can't put anyone as author unfortunately so if you post something written by someone else I propose to put the author on top of the article in italics: "contributed by XXXXX"
+<a name="l-387"></a><span class="tm">16:34:05</span><span class="nk"> &lt;javier&gt;</span> ok
+<a name="l-388"></a><span class="tm">16:34:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> third if someone else has send you an article to be edited and published, use the public preview to let that person review it before publishing
+<a name="l-389"></a><span class="tm">16:35:19</span><span class="nk"> &lt;henne&gt;</span> i can take care of the author thingee to make this free text
+<a name="l-390"></a><span class="tm">16:35:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> I am usually quite liberal in editing (I mean that I change quite a lot sometimes to fix wording, structure, gramar etc, not just spelling) so that review can be really needed to make sure it all still is right
+<a name="l-391"></a><span class="tm">16:35:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> if that would be possible that would be very good
+<a name="l-392"></a><span class="tm">16:35:39</span><span class="nk"> &lt;izabelvalverde&gt;</span> can we do this as an action or something like this to be remind later?
+<a name="l-393"></a><span class="tm">16:35:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> not crucial however
+<a name="l-394"></a><span class="tm">16:35:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> what exactly?
+<a name="l-395"></a><span class="tm">16:36:04</span><span class="nk"> &lt;izabelvalverde&gt;</span> first, second and third :D
+<a name="l-396"></a><span class="tm">16:36:36</span><span class="nk"> &lt;izabelvalverde&gt;</span> I must to say that I'll be really concerned to start everything perfectly
+<a name="l-397"></a><span class="tm">16:36:45</span><span class="nk"> &lt;izabelvalverde&gt;</span> don't want to make a mess
+<a name="l-398"></a><span class="tm">16:36:59</span><span class="nk"> &lt;henne&gt;</span> no need to be concerned
+<a name="l-399"></a><span class="tm">16:37:07</span><span class="nk"> &lt;jospoortvliet&gt;</span> indeed
+<a name="l-400"></a><span class="tm">16:37:09</span><span class="nk"> &lt;henne&gt;</span> you cant make a permanent error here :)
+<a name="l-401"></a><span class="tm">16:37:17</span><span class="nk"> &lt;izabelvalverde&gt;</span> both nice ;)
+<a name="l-402"></a><span class="tm">16:37:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> hehe
+<a name="l-403"></a><span class="tm">16:37:38</span><span class="nk"> &lt;henne&gt;</span> making mistakes is okay
+<a name="l-404"></a><span class="tm">16:37:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> indeed
+<a name="l-405"></a><span class="tm">16:37:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> anyway
+<a name="l-406"></a><span class="tm">16:37:47</span><span class="nk"> &lt;henne&gt;</span> how else would you learn? :)
+<a name="l-407"></a><span class="tm">16:37:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> so be sure that if you put an article there, you:
+<a name="l-408"></a><span class="tm">16:37:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> - notify the team on news@opensuse.org
+<a name="l-409"></a><span class="tm">16:38:10</span><span class="nk"> &lt;henne&gt;</span> why?
+<a name="l-410"></a><span class="tm">16:38:17</span><span class="nk"> &lt;jospoortvliet&gt;</span> - put the schedule and what still needs to be done (eg let original author review it; needs native language review etc)
+<a name="l-411"></a><span class="tm">16:38:20</span><span class="nk"> &lt;jospoortvliet&gt;</span> on top
+<a name="l-412"></a><span class="tm">16:38:24</span><span class="nk"> &lt;saigkill_&gt;</span> Can i ask a question?
+<a name="l-413"></a><span class="tm">16:38:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> scheduling
+<a name="l-414"></a><span class="tm">16:38:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">saigkill_:</span> yes ask
+<a name="l-415"></a><span class="tm">16:38:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> in case there is an urgent thing for that day or a conflict or someone was working on something like that already etc
+<a name="l-416"></a><span class="tm">16:38:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> as early as possible!
+<a name="l-417"></a><span class="tm">16:38:58</span><span class="nk"> &lt;saigkill_&gt;</span> How we handdlre the Weekly News? Before i put it in news.o.o they are already proofreaded
+<a name="l-418"></a><span class="tm">16:39:07</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">saigkill_:</span> so if it's proofreaded it's fine
+<a name="l-419"></a><span class="tm">16:39:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> and as you publish same day every week (right?) we reserve that day
+<a name="l-420"></a><span class="tm">16:39:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> no other announcements...
+<a name="l-421"></a><span class="tm">16:39:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> or articles
+<a name="l-422"></a><span class="tm">16:39:26</span><span class="nk"> &lt;javier&gt;</span> is news.o.o going to be multilingual?
+<a name="l-423"></a><span class="tm">16:39:27</span><span class="nk"> &lt;saigkill_&gt;</span> Shoud we proofrad a second one?
+<a name="l-424"></a><span class="tm">16:39:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">saigkill_:</span> not more than is needed, it has always been OK so let's keep it that way
+<a name="l-425"></a><span class="tm">16:39:48</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">javier:</span> not as of yet
+<a name="l-426"></a><span class="tm">16:39:50</span><span class="nk"> &lt;saigkill_&gt;</span> ok,
+<a name="l-427"></a><span class="tm">16:39:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">javier:</span> let's do that for future
+<a name="l-428"></a><span class="tm">16:39:58</span><span class="nk"> &lt;javier&gt;</span> ok
+<a name="l-429"></a><span class="tm">16:40:08</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok again, with all I say I want to stress that if anyone disagrees, let me know, we discuss it OK?
+<a name="l-430"></a><span class="tm">16:40:09</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">jospoortvliet:</span> i would like to skip the notifcation step
+<a name="l-431"></a><span class="tm">16:40:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> I'm modeling this thing to dot way of working - we can do it differently
+<a name="l-432"></a><span class="tm">16:40:22</span><span class="nk"> &lt;henne&gt;</span> its manual so it puts a real burden on the process
+<a name="l-433"></a><span class="tm">16:40:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> ok, so how else would you make sure there is no double work and proper scheduling?
+<a name="l-434"></a><span class="tm">16:40:36</span><span class="nk"> &lt;javier&gt;</span> lizards.o.o isn't at the moment, and sometimes it makes sense to write the blogpost in another language
+<a name="l-435"></a><span class="tm">16:40:49</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">jospoortvliet:</span> looking at the articles
+<a name="l-436"></a><span class="tm">16:40:57</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> sure we have a decent que
+<a name="l-437"></a><span class="tm">16:40:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> queue
+<a name="l-438"></a><span class="tm">16:41:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok
+<a name="l-439"></a><span class="tm">16:41:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> others agree?
+<a name="l-440"></a><span class="tm">16:41:14</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> +1
+<a name="l-441"></a><span class="tm">16:41:18</span><span class="nk"> &lt;saigkill_&gt;</span> +1
+<a name="l-442"></a><span class="tm">16:41:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> in that case we just work from the queue and only use news ML to discuss things
+<a name="l-443"></a><span class="tm">16:41:30</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-444"></a><span class="tm">16:41:31</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> sounds good
+<a name="l-445"></a><span class="tm">16:41:32</span><span class="nk"> &lt;saigkill_&gt;</span> sound good
+<a name="l-446"></a><span class="tm">16:41:33</span><span class="nk"> &lt;izabelvalverde&gt;</span> perfect
+<a name="l-447"></a><span class="tm">16:41:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok deal
+<a name="l-448"></a><span class="tm">16:41:38</span><span class="nk"> &lt;izabelvalverde&gt;</span> perfect
+<a name="l-449"></a><span class="tm">16:41:40</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">jospoortvliet:</span> agree to what?
+<a name="l-450"></a><span class="tm">16:41:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">gnokii:</span> keep up ps question was announce articles on news.o.o ML or not
+<a name="l-451"></a><span class="tm">16:42:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> so we don't
+<a name="l-452"></a><span class="tm">16:42:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> unless there is something special
+<a name="l-453"></a><span class="tm">16:42:24</span><span class="nk"> &lt;gnokii&gt;</span> wait have to understand what u formulated
+<a name="l-454"></a><span class="tm">16:42:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> this means we have to be very careful. You can't just publish someting - you must check the articles in draft right now to see what the queue is
+<a name="l-455"></a><span class="tm">16:42:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> and when what needs to go out
+<a name="l-456"></a><span class="tm">16:42:42</span><span class="nk"> &lt;jospoortvliet&gt;</span> and discuss on ML if there are conflicts
+<a name="l-457"></a><span class="tm">16:42:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> !
+<a name="l-458"></a><span class="tm">16:42:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> eg we have something for today
+<a name="l-459"></a><span class="tm">16:43:02</span><span class="nk"> &lt;jospoortvliet&gt;</span> so if there would be something else for today we have a conflict and must discuss it
+<a name="l-460"></a><span class="tm">16:43:39</span><span class="nk"> &lt;jospoortvliet&gt;</span> there is another article which isn't ready yet and would have had to be published last monday...
+<a name="l-461"></a><span class="tm">16:43:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> so we have to decide what to do with it
+<a name="l-462"></a><span class="tm">16:43:51</span><span class="nk"> &lt;jospoortvliet&gt;</span> did anyone notice that yet?
+<a name="l-463"></a><span class="tm">16:43:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> ;-)
+<a name="l-464"></a><span class="tm">16:44:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> and there is also a FOSDEM article that needs work and go live 2 weeks from now
+<a name="l-465"></a><span class="tm">16:44:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> anyone looked at that yet?
+<a name="l-466"></a><span class="tm">16:44:50</span><span class="nk"> &lt;henne&gt;</span> i can go
+<a name="l-467"></a><span class="tm">16:45:02</span><span class="nk"> &lt;henne&gt;</span> because its already handled in the post from yesterday
+<a name="l-468"></a><span class="tm">16:45:03</span><span class="nk"> &lt;izabelvalverde&gt;</span> jospoortvliet what Highlight means there?
+<a name="l-469"></a><span class="tm">16:45:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> hene please both be more specific :D
+<a name="l-470"></a><span class="tm">16:45:59</span><span class="nk"> &lt;henne&gt;</span> hm?
+<a name="l-471"></a><span class="tm">16:46:16</span><span class="nk"> &lt;henne&gt;</span> the draft about the board meeting can be deleted
+<a name="l-472"></a><span class="tm">16:46:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> you responded to the one about the board meeting? in that case, yes, I agree that it can probably go
+<a name="l-473"></a><span class="tm">16:46:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok
+<a name="l-474"></a><span class="tm">16:46:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> you delete it :D
+<a name="l-475"></a><span class="tm">16:46:28</span><span class="nk"> &lt;henne&gt;</span> because of http://news.opensuse.org/2010/12/13/holiday-wishes-from-the-opensuse-board/
+<a name="l-476"></a><span class="tm">16:46:34</span><span class="nk"> &lt;izabelvalverde&gt;</span> :D ok... in Post you have Title  	Author  	Categories  	Tags  	 Comments 	Date 	Highlight
+<a name="l-477"></a><span class="tm">16:46:46</span><span class="nk"> &lt;henne&gt;</span> and the announcement that will go out today too
+<a name="l-478"></a><span class="tm">16:47:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> I bet henne can explain it - I never used it...
+<a name="l-479"></a><span class="tm">16:47:39</span><span class="nk"> &lt;henne&gt;</span> yes i can
+<a name="l-480"></a><span class="tm">16:47:53</span><span class="nk"> &lt;henne&gt;</span> highlight is about the highlight box on top of news.opensuse.org
+<a name="l-481"></a><span class="tm">16:47:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> aah
+<a name="l-482"></a><span class="tm">16:48:02</span><span class="nk"> &lt;henne&gt;</span> the cycling picture with the text
+<a name="l-483"></a><span class="tm">16:48:21</span><span class="nk"> &lt;henne&gt;</span> you can enable it, choose a picture from the post or add one by URL
+<a name="l-484"></a><span class="tm">16:48:34</span><span class="nk"> &lt;izabelvalverde&gt;</span> thank you henne
+<a name="l-485"></a><span class="tm">16:48:35</span><span class="nk"> &lt;henne&gt;</span> by default it will show the excerpt but you can also overwrite that
+<a name="l-486"></a><span class="tm">16:49:46</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-487"></a><span class="tm">16:50:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> ok so you delete that post. Then there is the announcement that has to go out today. Can you publish it? Be sure to remove the "to be published tuesday" ;-)
+<a name="l-488"></a><span class="tm">16:50:07</span><span class="nk"> &lt;jospoortvliet&gt;</span> I already put you as author
+<a name="l-489"></a><span class="tm">16:50:09</span><span class="nk"> &lt;jospoortvliet&gt;</span> ;-)
+<a name="l-490"></a><span class="tm">16:50:22</span><span class="nk"> &lt;henne&gt;</span> stop
+<a name="l-491"></a><span class="tm">16:50:34</span><span class="nk"> &lt;jospoortvliet&gt;</span> aah
+<a name="l-492"></a><span class="tm">16:50:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> stop!
+<a name="l-493"></a><span class="tm">16:50:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> ;-)
+<a name="l-494"></a><span class="tm">16:50:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> wait sec
+<a name="l-495"></a><span class="tm">16:50:51</span><span class="nk"> &lt;henne&gt;</span> the article uses "we" a lot and refers to the board
+<a name="l-496"></a><span class="tm">16:50:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> yes so it is from the board
+<a name="l-497"></a><span class="tm">16:51:02</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-498"></a><span class="tm">16:51:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> but news editor can publish it for the board
+<a name="l-499"></a><span class="tm">16:51:11</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok
+<a name="l-500"></a><span class="tm">16:51:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> author = editor right now
+<a name="l-501"></a><span class="tm">16:51:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> not person who wrote it per-se
+<a name="l-502"></a><span class="tm">16:51:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> so it should be OK
+<a name="l-503"></a><span class="tm">16:51:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> it had my name on it, just as inaccurate...
+<a name="l-504"></a><span class="tm">16:51:44</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> i agree
+<a name="l-505"></a><span class="tm">16:52:08</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> ok or did you have other issue?
+<a name="l-506"></a><span class="tm">16:52:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> and it has a few spelling errors
+<a name="l-507"></a><span class="tm">16:52:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> I tried to correct them a few times
+<a name="l-508"></a><span class="tm">16:52:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> but didn't work damnit
+<a name="l-509"></a><span class="tm">16:52:55</span><span class="nk"> &lt;henne&gt;</span> we need to be carefull with this
+<a name="l-510"></a><span class="tm">16:53:02</span><span class="nk"> &lt;henne&gt;</span> journalists use the author tag as reality
+<a name="l-511"></a><span class="tm">16:53:08</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok
+<a name="l-512"></a><span class="tm">16:53:10</span><span class="nk"> &lt;henne&gt;</span> no matter what we use internally
+<a name="l-513"></a><span class="tm">16:53:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> then don't use my name either...
+<a name="l-514"></a><span class="tm">16:53:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> yours or yaloki or bryen
+<a name="l-515"></a><span class="tm">16:53:34</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> and: can you go out of it I fix the errors then go out then izabel publishes it, she can get some experience with that this way
+<a name="l-516"></a><span class="tm">16:53:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> I will put you as author henne
+<a name="l-517"></a><span class="tm">16:54:13</span><span class="nk"> &lt;henne&gt;</span> i have put the board account as author
+<a name="l-518"></a><span class="tm">16:54:16</span><span class="nk"> &lt;jospoortvliet&gt;</span> aah ok
+<a name="l-519"></a><span class="tm">16:54:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> fine too
+<a name="l-520"></a><span class="tm">16:55:11</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> can you leave it for a sec or fix the spelling issues: independend &gt; independent and organisations &gt; organizations
+<a name="l-521"></a><span class="tm">16:56:02</span><span class="nk"> &lt;henne&gt;</span> both are fine
+<a name="l-522"></a><span class="tm">16:56:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> hmmm
+<a name="l-523"></a><span class="tm">16:56:38</span><span class="nk"> &lt;henne&gt;</span> now i mean
+<a name="l-524"></a><span class="tm">16:56:42</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok
+<a name="l-525"></a><span class="tm">16:56:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> so it's ready?
+<a name="l-526"></a><span class="tm">16:57:17</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-527"></a><span class="tm">16:59:54</span><span class="nk"> &lt;henne&gt;</span> so what now? :)
+<a name="l-528"></a><span class="tm">17:01:39</span><span class="nk"> &lt;henne&gt;</span> hello?
+<a name="l-529"></a><span class="tm">17:01:52</span><span class="nk"> &lt;saigkill_&gt;</span> yes, we're here :-)
+<a name="l-530"></a><span class="tm">17:02:19</span><span class="nk"> &lt;izabelvalverde&gt;</span> here
+<a name="l-531"></a><span class="tm">17:02:30</span><span class="nk"> &lt;izabelvalverde&gt;</span> reading articles :D
+<a name="l-532"></a><span class="tm">17:03:11</span><span class="nk"> &lt;henne&gt;</span> can you publish the announcement? :)
+<a name="l-533"></a><span class="tm">17:03:39</span><span class="nk"> &lt;izabelvalverde&gt;</span> yes
+<a name="l-534"></a><span class="tm">17:03:51</span><span class="nk"> &lt;henne&gt;</span> please do so
+<a name="l-535"></a><span class="tm">17:03:51</span><span class="nk"> &lt;izabelvalverde&gt;</span> did you correct?
+<a name="l-536"></a><span class="tm">17:04:32</span><span class="nk"> &lt;henne&gt;</span> i did yes. you can review it :)
+<a name="l-537"></a><span class="tm">17:05:49</span><span class="nk"> &lt;henne&gt;</span> i need to go soonish
+<a name="l-538"></a><span class="tm">17:05:57</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> nice, you deleted the not-longer-needed article. Now publish the other one and our Queue is down by two :D
+<a name="l-539"></a><span class="tm">17:05:58</span><span class="nk"> &lt;henne&gt;</span> can we wrap up this meeting now?
+<a name="l-540"></a><span class="tm">17:06:00</span><span class="nk"> &lt;izabelvalverde&gt;</span> henne I just thinking the text is to close to the picture
+<a name="l-541"></a><span class="tm">17:06:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">henne:</span> I'd say we're done pretty much
+<a name="l-542"></a><span class="tm">17:06:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">izabelvalverde:</span> be sure to decide that with 'preview', as the look in the editor is different
+<a name="l-543"></a><span class="tm">17:06:35</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok
+<a name="l-544"></a><span class="tm">17:08:10</span><span class="nk"> &lt;izabelvalverde&gt;</span> can I make public?
+<a name="l-545"></a><span class="tm">17:08:16</span><span class="nk"> &lt;izabelvalverde&gt;</span> now? D
+<a name="l-546"></a><span class="tm">17:08:21</span><span class="nk"> &lt;izabelvalverde&gt;</span> just to be sure!
+<a name="l-547"></a><span class="tm">17:08:42</span><span class="nk"> &lt;henne&gt;</span> of course!
+<a name="l-548"></a><span class="tm">17:09:43</span><span class="nk"> &lt;izabelvalverde&gt;</span> done
+<a name="l-549"></a><span class="tm">17:09:56</span><span class="nk"> &lt;henne&gt;</span> hooray :)
+<a name="l-550"></a><span class="tm">17:10:21</span><span class="nk"> &lt;izabelvalverde&gt;</span> :)
+<a name="l-551"></a><span class="tm">17:10:33</span><span class="nk"> &lt;gnokii&gt;</span> wow cool
+<a name="l-552"></a><span class="tm">17:10:35</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">izabelvalverde:</span> congats
+<a name="l-553"></a><span class="tm">17:10:39</span><span class="nk"> &lt;gnokii&gt;</span> nice to read
+<a name="l-554"></a><span class="tm">17:11:13</span><span class="nk"> &lt;izabelvalverde&gt;</span> we finish?
+<a name="l-555"></a><span class="tm">17:11:40</span><span class="nk"> &lt;henne&gt;</span> yes i think so
+<a name="l-556"></a><span class="tm">17:11:56</span><span class="nk"> &lt;henne&gt;</span> lets continue to push articles daily and learn on the way
+<a name="l-557"></a><span class="tm">17:12:02</span><span class="nk"> &lt;izabelvalverde&gt;</span> ok
+<a name="l-558"></a><span class="tm">17:12:02</span><span class="nk"> &lt;gnokii&gt;</span> henne can I mention a thing?
+<a name="l-559"></a><span class="tm">17:12:31</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">gnokii:</span> don't ask to ask just ask :)
+<a name="l-560"></a><span class="tm">17:12:56</span><span class="nk"> &lt;gnokii&gt;</span> no no quesiont only a thing to say because saw it very often from jospoortvliet or AJ
+<a name="l-561"></a><span class="tm">17:13:36</span><span class="nk"> &lt;jospoortvliet&gt;</span> btw let's finish the meeting I have another one :D
+<a name="l-562"></a><span class="tm">17:13:36</span><span class="nk"> &lt;henne&gt;</span> spit it out :)
+<a name="l-563"></a><span class="tm">17:13:39</span><span class="nk"> &lt;jospoortvliet&gt;</span> ttyl
+<a name="l-564"></a><span class="tm">17:14:16</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-565"></a><span class="tm">17:14:17</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:01:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:01:42</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Mar  7 18:01:42 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:01:42</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:01:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">18:02:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> we do not have a prepared agenda today, but I know of a few ugly bugs popping up recently
+<a name="l-6"></a><span class="tm">18:02:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> which could be discussed.
+<a name="l-7"></a><span class="tm">18:02:59</span><span class="nk"> &lt;LWFinger&gt;</span> Go ahead.
+<a name="l-8"></a><span class="tm">18:03:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=677425 is bad for people doing zypper dup
+<a name="l-9"></a><span class="tm">18:03:35</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 677425 in openSUSE 11.4 (libzypp) "`zypper dup` remove liblzma" [Critical,Needinfo]
+<a name="l-10"></a><span class="tm">18:04:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> there was some post-RC2 bugfix to zypper which broke this. and openqa only tests non-live dist upgrades, so did not catch it
+<a name="l-11"></a><span class="tm">18:05:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> the "zypper up rpm" workaround is really simple, but if people try zypper dup first, they end up without working rpm
+<a name="l-12"></a><span class="tm">18:05:44</span><span class="nk"> &lt;LWFinger&gt;</span> Nasty. Will that will be in GM?
+<a name="l-13"></a><span class="tm">18:06:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes
+<a name="l-14"></a><span class="tm">18:06:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe FTP tree can be updated
+<a name="l-15"></a><span class="tm">18:06:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> because most people will zypper dup with online sources
+<a name="l-16"></a><span class="tm">18:07:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> the other unnice GM bug is yast2-bootloader not adding other linux partitions to grub/menu.lst
+<a name="l-17"></a><span class="tm">18:08:21</span><span class="nk"> &lt;LWFinger&gt;</span> How else would one zypper dup other than online sources?
+<a name="l-18"></a><span class="tm">18:08:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=675224
+<a name="l-19"></a><span class="tm">18:08:47</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 675224 in openSUSE 11.4 (Installation) "GRUB does not put other openSUSE installations into the menu" [Normal,Resolved: fixed]
+<a name="l-20"></a><span class="tm">18:09:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> you can use a DVD as installation source
+<a name="l-21"></a><span class="tm">18:09:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> in a live system
+<a name="l-22"></a><span class="tm">18:09:36</span><span class="nk"> &lt;LWFinger&gt;</span> Not a configuration I use.
+<a name="l-23"></a><span class="tm">18:10:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://en.opensuse.org/openSUSE:Most_annoying_bugs_11.4 was started. any other bugs that should go to it?
+<a name="l-24"></a><span class="tm">18:11:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">GM bugs discussion</span>
+<a name="l-25"></a><span class="tm">18:11:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#link </span><span class="cmdline">https://bugzilla.novell.com/show_bug.cgi?id=677425</span>
+<a name="l-26"></a><span class="tm">18:12:01</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 677425 in openSUSE 11.4 (libzypp) "`zypper dup` remove liblzma" [Critical,Needinfo]
+<a name="l-27"></a><span class="tm">18:12:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#link </span><span class="cmdline">https://bugzilla.novell.com/show_bug.cgi?id=675224</span>
+<a name="l-28"></a><span class="tm">18:12:10</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 675224 in openSUSE 11.4 (Installation) "GRUB does not put other openSUSE installations into the menu" [Normal,Resolved: fixed]
+<a name="l-29"></a><span class="tm">18:15:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> tigerfoot, a-865 any bad bugs breaking core things?
+<a name="l-30"></a><span class="tm">18:17:52</span><span class="nk"> &lt;a-865&gt;</span> nuthin new I've noticed lately
+<a name="l-31"></a><span class="tm">18:19:17</span><span class="nk"> &lt;a-865&gt;</span> I always strip all stanzas except primary and failsafe, and wish there was checkbox to make that happen automatically
+<a name="l-32"></a><span class="tm">18:20:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> you mean in grub/menu.lst? it should only have sections for existing kernels
+<a name="l-33"></a><span class="tm">18:20:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> ah, and other linuxes
+<a name="l-34"></a><span class="tm">18:20:52</span><span class="nk"> &lt;a-865&gt;</span> No fresh install is ever my primary bootloader
+<a name="l-35"></a><span class="tm">18:21:10</span><span class="nk"> &lt;LWFinger&gt;</span> When you say "strip", do you mean delete?
+<a name="l-36"></a><span class="tm">18:21:16</span><span class="nk"> &lt;a-865&gt;</span> I install primary bootloader before installing anything else
+<a name="l-37"></a><span class="tm">18:21:22</span><span class="nk"> &lt;a-865&gt;</span> strip=delete
+<a name="l-38"></a><span class="tm">18:21:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> but of course, openSUSE is also for the less technical people and those might not know how to get the other Linuxes booted without a proper menu.lst
+<a name="l-39"></a><span class="tm">18:22:09</span><span class="nk"> &lt;a-865&gt;</span> that's why I just want a checkbox to make that choice
+<a name="l-40"></a><span class="tm">18:22:25</span><span class="nk"> &lt;a-865&gt;</span> I may have already made an openfate for that
+<a name="l-41"></a><span class="tm">18:22:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> updated http://en.opensuse.org/openSUSE:Most_annoying_bugs_11.4
+<a name="l-42"></a><span class="tm">18:22:39</span><span class="nk"> &lt;LWFinger&gt;</span> That would be the place.
+<a name="l-43"></a><span class="tm">18:22:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> great
+<a name="l-44"></a><span class="tm">18:23:20</span><span class="nk"> &lt;a-865&gt;</span> I have one openfate with -1, one with 0, the rest 1 or 2
+<a name="l-45"></a><span class="tm">18:24:20</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> The annoying bugs update gives 677425 a prominent place. Good.
+<a name="l-46"></a><span class="tm">18:25:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> I was thinking to change the "zypper up" to bold font to make it even more prominent at a glance.
+<a name="l-47"></a><span class="tm">18:25:58</span><span class="nk"> &lt;LWFinger&gt;</span> Sounds good. The workaround saves one from a really lousy sitiation.
+<a name="l-48"></a><span class="tm">18:27:01</span><span class="nk"> &lt;a-865&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=584493 annoys me enough that I will not be replacing 11.2 with either 11.3 or 11.4
+<a name="l-49"></a><span class="tm">18:27:05</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 584493 in openSUSE 11.4 (Basesystem) "setterm -background blue -foreground white -bold -blank 20 -store malfunctions in 2.6.34-9 (RC1)" [Normal,New]
+<a name="l-50"></a><span class="tm">18:27:24</span><span class="nk"> &lt;a-865&gt;</span> I'll have to go without support when 11.2 expires
+<a name="l-51"></a><span class="tm">18:27:36</span><span class="nk"> &lt;a-865&gt;</span> or vanilla kernel
+<a name="l-52"></a><span class="tm">18:27:44</span><span class="nk"> &lt;a-865&gt;</span> probably the latter
+<a name="l-53"></a><span class="tm">18:28:03</span><span class="nk"> &lt;a-865&gt;</span> never have figured out the advantage(s) of openSUSE kernel over vanilla
+<a name="l-54"></a><span class="tm">18:29:01</span><span class="nk"> &lt;a-865&gt;</span> is zypper up rpm correct syntax?
+<a name="l-55"></a><span class="tm">18:29:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes. it means update only "rpm" (and the liblzma dependency)
+<a name="l-56"></a><span class="tm">18:29:35</span><span class="nk"> &lt;a-865&gt;</span> I thought up only will do whole mess, and up to single package requires zypper in packagename
+<a name="l-57"></a><span class="tm">18:30:00</span><span class="nk"> &lt;a-865&gt;</span> maybe that's a change since 11.2
+<a name="l-58"></a><span class="tm">18:30:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes, I think they worked on that
+<a name="l-59"></a><span class="tm">18:30:46</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">a-865:</span> I almost never use an openSUSE kerne. Only disadvantage are some meaningless boot errors..
+<a name="l-60"></a><span class="tm">18:31:48</span><span class="nk"> &lt;a-865&gt;</span> I tried to find a summary of what Novell puts in their kernels but never could
+<a name="l-61"></a><span class="tm">18:31:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> does bootchart work with vanilla kernel?
+<a name="l-62"></a><span class="tm">18:31:58</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-63"></a><span class="tm">18:33:16</span><span class="nk"> &lt;LWFinger&gt;</span> The patches must be somewhere in OBS.
+<a name="l-64"></a><span class="tm">18:33:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">a-865:</span> I think the patches vary over time as some are upstreamed and others dropped
+<a name="l-65"></a><span class="tm">18:34:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> https://build.opensuse.org/package/files?package=kernel-default&amp;project=Kernel%3AopenSUSE-11.4
+<a name="l-66"></a><span class="tm">18:36:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> series.conf there could be considered a summary
+<a name="l-67"></a><span class="tm">18:36:58</span><span class="nk"> &lt;a-865&gt;</span> seems that may be close as there is to what I was looking for
+<a name="l-68"></a><span class="tm">18:37:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> do we have any more testing-related topics to discuss or shall we declare the meeting ended?
+<a name="l-69"></a><span class="tm">18:38:28</span><span class="nk"> &lt;a-865&gt;</span> 0 I know of
+<a name="l-70"></a><span class="tm">18:40:22</span><span class="nk"> &lt;LWFinger&gt;</span> None for me.
+<a name="l-71"></a><span class="tm">18:40:31</span><span class="nk"> &lt;ReferenceSeete&gt;</span> None here.
+<a name="l-72"></a><span class="tm">18:40:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> very well. I thank you for attending this short meeting.
+<a name="l-73"></a><span class="tm">18:40:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:00:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:00:22</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Aug  9 17:00:22 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:00:22</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:00:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">17:00:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-6"></a><span class="tm">17:00:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">12.2 testing</span>
+<a name="l-7"></a><span class="tm">17:00:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> I have upgraded several of my physical machines from RC1 to RC2 now
+<a name="l-8"></a><span class="tm">17:01:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> and they have a nicer graphical boot screen now (though the gray on green is sometimes a bit low contrast)
+<a name="l-9"></a><span class="tm">17:02:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> I have seen the gdm uglyness on nouveau, too. but rcxdm restart seemed to help there
+<a name="l-10"></a><span class="tm">17:02:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> openqa had found an install hangup that was only introduced after RC2 and is already fixed, so it should not have affected anyone
+<a name="l-11"></a><span class="tm">17:03:09</span><span class="nk"> &lt;LWFinger&gt;</span> Is the new boot screen with grub2?
+<a name="l-12"></a><span class="tm">17:03:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes
+<a name="l-13"></a><span class="tm">17:03:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> before it just had white text on black bg
+<a name="l-14"></a><span class="tm">17:03:58</span><span class="nk"> &lt;LWFinger&gt;</span> I switched to grub2 after upgrading, and I still get the text screen.
+<a name="l-15"></a><span class="tm">17:04:14</span><span class="nk"> &lt;LWFinger&gt;</span> I must have missed something.
+<a name="l-16"></a><span class="tm">17:04:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> running yast2 bootloader again, could help
+<a name="l-17"></a><span class="tm">17:05:05</span><span class="nk"> &lt;LWFinger&gt;</span> OK, I'll try that.
+<a name="l-18"></a><span class="tm">17:06:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> and I have one PC with 5Ghz USB-Wifi that regularly disconnects from my FritzBox
+<a name="l-19"></a><span class="tm">17:06:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> but I had that problem with the Fritzbox earlier on other machines, too
+<a name="l-20"></a><span class="tm">17:07:03</span><span class="nk"> &lt;LWFinger&gt;</span> What wireless device? Fritzbox apparently does some things differently.
+<a name="l-21"></a><span class="tm">17:08:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> would have to check the details when I come home. it is a USB-device from AVM
+<a name="l-22"></a><span class="tm">17:08:35</span><span class="nk"> &lt;LWFinger&gt;</span> OK. Let me know by E-mail.
+<a name="l-23"></a><span class="tm">17:10:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> overall, quality is quite good
+<a name="l-24"></a><span class="tm">17:10:58</span><span class="nk"> &lt;LWFinger&gt;</span> I agree.
+<a name="l-25"></a><span class="tm">17:11:02</span><span class="nk"> &lt;poorboywilly&gt;</span> I was quite impressed with how smooth RC2 is running
+<a name="l-26"></a><span class="tm">17:11:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> otherwise it would not be a release candidate ;)
+<a name="l-27"></a><span class="tm">17:12:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> Gold Master is scheduled for 2012-08-30
+<a name="l-28"></a><span class="tm">17:12:38</span><span class="nk"> &lt;poorboywilly&gt;</span> plenty of time to fix the last remaining issues.  Is KDE going to get the bug fix update they released to 4.8?
+<a name="l-29"></a><span class="tm">17:13:11</span><span class="nk"> &lt;poorboywilly&gt;</span> 4.8.5 I suppose it is
+<a name="l-30"></a><span class="tm">17:13:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> don't know. if the fixes are important enough. and tested and working
+<a name="l-31"></a><span class="tm">17:13:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> people are afraid to break stuff at this stage
+<a name="l-32"></a><span class="tm">17:14:00</span><span class="nk"> &lt;poorboywilly&gt;</span> kgpg, konsole and kthml seem to have some important fixes
+<a name="l-33"></a><span class="tm">17:14:03</span><span class="nk"> &lt;poorboywilly&gt;</span> indeed
+<a name="l-34"></a><span class="tm">17:14:17</span><span class="nk"> &lt;poorboywilly&gt;</span> this is the changelog
+<a name="l-35"></a><span class="tm">17:14:18</span><span class="nk"> &lt;poorboywilly&gt;</span> http://www.kde.org/announcements/changelogs/changelog4_8_4to4_8_5.php
+<a name="l-36"></a><span class="tm">17:14:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> often the answer is: if it can be fixed later with an update, we can do that later
+<a name="l-37"></a><span class="tm">17:14:59</span><span class="nk"> &lt;LWFinger&gt;</span> I still have the issue from bug 770560. It has not even been assigned yet.
+<a name="l-38"></a><span class="tm">17:15:04</span><span class="nk"> &lt;poorboywilly&gt;</span> has anyone else tried to set the meta key with RC2?  I was not able to get that to work
+<a name="l-39"></a><span class="tm">17:16:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> maybe test/file it upstream?
+<a name="l-40"></a><span class="tm">17:17:52</span><span class="nk"> &lt;LWFinger&gt;</span> I'm not sure which part of upstream to send. Is it nv or libpthread?
+<a name="l-41"></a><span class="tm">17:18:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> I would expect libpthread to be OK, as it gets plenty testing elsewhere
+<a name="l-42"></a><span class="tm">17:20:20</span><span class="nk"> &lt;LWFinger&gt;</span> OK, nv is likely the problem.
+<a name="l-43"></a><span class="tm">17:21:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> in your second backtrace, pthread does not even appear.
+<a name="l-44"></a><span class="tm">17:21:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> just some NULL-pointer dereference
+<a name="l-45"></a><span class="tm">17:23:08</span><span class="nk"> &lt;LWFinger&gt;</span> That was under gdb, and I'm not sure I did it right. Obviously, I need to do more debugging.
+<a name="l-46"></a><span class="tm">17:25:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> you learn a lot about software when debugging it :)
+<a name="l-47"></a><span class="tm">17:25:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">poorboywilly:</span> do you have any other 12.2 testing experience?
+<a name="l-48"></a><span class="tm">17:26:33</span><span class="nk"> &lt;poorboywilly&gt;</span> amarok is crashing, I think it is bug 769540
+<a name="l-49"></a><span class="tm">17:27:30</span><span class="nk"> &lt;poorboywilly&gt;</span> I had a kernel panic, but I think that was when the live-usb system tried to suspend...I don't think that is a possibility, correct me if I'm wrong
+<a name="l-50"></a><span class="tm">17:27:56</span><span class="nk"> &lt;poorboywilly&gt;</span> I left the system for a few and came back to the panic, so it is hard to say I need more testing for that one
+<a name="l-51"></a><span class="tm">17:29:15</span><span class="nk"> &lt;poorboywilly&gt;</span> other than those things (and the meta key) I've had very smooth sailing, it has been enjoyable
+<a name="l-52"></a><span class="tm">17:30:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">poorboywilly:</span> suspend-to-ram might work (but does not on all machines). suspend-to-disk can not work with live-usb
+<a name="l-53"></a><span class="tm">17:31:03</span><span class="nk"> &lt;poorboywilly&gt;</span> I suspected something like that.  I will have to test that more thoroughly
+<a name="l-54"></a><span class="tm">17:31:06</span><span class="nk"> &lt;LWFinger&gt;</span> There might not be enough ram with the Live system - I would be surprised that it tried to suspend.
+<a name="l-55"></a><span class="tm">17:32:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> at least with live-liveusb it does not use RAM for the written files
+<a name="l-56"></a><span class="tm">17:32:30</span><span class="nk"> &lt;poorboywilly&gt;</span> <span class="hi">bmwiedemann:</span> what do you mean by written files?
+<a name="l-57"></a><span class="tm">17:32:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> (though I did not recently test if it creates the hybrid overlay properly)
+<a name="l-58"></a><span class="tm">17:33:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">poorboywilly:</span> on liveCD, everything that is written must be kept in RAM
+<a name="l-59"></a><span class="tm">17:33:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> because there is no way to write to a read-only medium
+<a name="l-60"></a><span class="tm">17:33:33</span><span class="nk"> &lt;poorboywilly&gt;</span> oh I see what you mean
+<a name="l-61"></a><span class="tm">17:33:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. KDE's akonadi launches mysql that occupies ~160MB alone
+<a name="l-62"></a><span class="tm">17:34:04</span><span class="nk"> &lt;LWFinger&gt;</span> In general, have you found kernel 3.4.6 to be stable?
+<a name="l-63"></a><span class="tm">17:34:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes
+<a name="l-64"></a><span class="tm">17:34:42</span><span class="nk"> &lt;LWFinger&gt;</span> Good. I have not run 3.4 for quite a while.
+<a name="l-65"></a><span class="tm">17:34:51</span><span class="nk"> &lt;poorboywilly&gt;</span> the directions I'm using imply that you have to set the option in grub (http://en.opensuse.org/SDB:Live_USB_stick#Live_USB_stick_with_persistent_file_system)
+<a name="l-66"></a><span class="tm">17:34:56</span><span class="nk"> &lt;poorboywilly&gt;</span> is this still true?
+<a name="l-67"></a><span class="tm">17:35:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> only my desktop machine hung this morning from extreme slowness - likely firefox using 5GB RAM again... had to power it off after 30 minutes of trying
+<a name="l-68"></a><span class="tm">17:36:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">poorboywilly:</span> I remember a time, when this was the default. either the wiki is outdated or the default was changed back
+<a name="l-69"></a><span class="tm">17:36:53</span><span class="nk"> &lt;poorboywilly&gt;</span> or maybe I'm confusing it...maybe it still writes to the usb drive but the writes don't presist?
+<a name="l-70"></a><span class="tm">17:37:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> that could also be
+<a name="l-71"></a><span class="tm">17:38:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> throwing away the overlay
+<a name="l-72"></a><span class="tm">17:38:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> you can see it, if you do fdisk -l on such an USB-stick
+<a name="l-73"></a><span class="tm">17:38:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> if it has two partitions, the second one is for keeping the runtime data
+<a name="l-74"></a><span class="tm">17:39:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> while the first one contains the read-only compressed data
+<a name="l-75"></a><span class="tm">17:39:28</span><span class="nk"> &lt;poorboywilly&gt;</span> ok, going to switch computers so I can test this out, brb
+<a name="l-76"></a><span class="tm">17:42:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> I will try to reproduce the nv bug at home tomorrow.
+<a name="l-77"></a><span class="tm">17:43:19</span><span class="nk"> &lt;Creatura85&gt;</span> good evening
+<a name="l-78"></a><span class="tm">17:43:41</span><span class="nk"> &lt;LWFinger&gt;</span> I have a second machine to try. That one has 1024x768 resolution, so little benefit for nv.
+<a name="l-79"></a><span class="tm">17:44:06</span><span class="nk"> &lt;poorboywilly&gt;</span> I have an nvidia on one computer I can test it too
+<a name="l-80"></a><span class="tm">17:44:07</span><span class="nk"> &lt;Creatura85&gt;</span> a thunderstorm is comming so i will resume my exploration of 12.2 rc2
+<a name="l-81"></a><span class="tm">17:44:31</span><span class="nk"> &lt;poorboywilly&gt;</span> although I'm very impressed by the responsiveness of noveau, even 1920x1200 desktop
+<a name="l-82"></a><span class="tm">17:44:37</span><span class="nk"> &lt;Creatura85&gt;</span> yast - software module is working as it should
+<a name="l-83"></a><span class="tm">17:44:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> great :)
+<a name="l-84"></a><span class="tm">17:44:56</span><span class="nk"> &lt;poorboywilly&gt;</span> 12.1 it didn't quite feel fully up to snuff, but for any regular desktop needs it is feeling fit in 12.2
+<a name="l-85"></a><span class="tm">17:44:57</span><span class="nk"> &lt;Creatura85&gt;</span> grub2 is still a pain, i had to reinstall it after upgrading from rc1 to rc2
+<a name="l-86"></a><span class="tm">17:45:25</span><span class="nk"> &lt;Creatura85&gt;</span> because after the message welcome to grub2 the bootloader menu did not appeared
+<a name="l-87"></a><span class="tm">17:45:36</span><span class="nk"> &lt;Creatura85&gt;</span> the login but for kde is still present
+<a name="l-88"></a><span class="tm">17:45:40</span><span class="nk"> &lt;Creatura85&gt;</span> *bug
+<a name="l-89"></a><span class="tm">17:45:43</span><span class="nk"> &lt;LWFinger&gt;</span> Did the update switch to grub, or was grub2 broken?
+<a name="l-90"></a><span class="tm">17:45:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> the "first login fails" bug?
+<a name="l-91"></a><span class="tm">17:46:02</span><span class="nk"> &lt;Creatura85&gt;</span> even if i type my user/pass right the login fails
+<a name="l-92"></a><span class="tm">17:46:07</span><span class="nk"> &lt;Creatura85&gt;</span> yeah that one bmwiedemann
+<a name="l-93"></a><span class="tm">17:46:17</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> did rc1 had grub2 ?
+<a name="l-94"></a><span class="tm">17:46:23</span><span class="nk"> &lt;Creatura85&gt;</span> if i remember right it did
+<a name="l-95"></a><span class="tm">17:46:25</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-96"></a><span class="tm">17:46:36</span><span class="nk"> &lt;Creatura85&gt;</span> so rc2 has the final version 2.00 of the bootloader
+<a name="l-97"></a><span class="tm">17:46:46</span><span class="nk"> &lt;Creatura85&gt;</span> under rc1 the grub2 bootloader worked fine
+<a name="l-98"></a><span class="tm">17:47:32</span><span class="nk"> &lt;poorboywilly&gt;</span> does diagonal window resizing only work on the bottom two corners in gnome?  I use KDE usually
+<a name="l-99"></a><span class="tm">17:47:53</span><span class="nk"> &lt;LWFinger&gt;</span> Grub2 works for me under RC2, but I only switched after RC2 was installed.
+<a name="l-100"></a><span class="tm">17:48:07</span><span class="nk"> &lt;Creatura85&gt;</span> storm is comming.. sorry i cant stay logged in
+<a name="l-101"></a><span class="tm">17:48:45</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> i had 1.99 version of grub
+<a name="l-102"></a><span class="tm">17:48:55</span><span class="nk"> &lt;Creatura85&gt;</span> rc2 upgraded to 2.00
+<a name="l-103"></a><span class="tm">17:49:11</span><span class="nk"> &lt;Creatura85&gt;</span> good bye now... sorry again...
+<a name="l-104"></a><span class="tm">17:49:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> grub2 worked for me even when upgrading from RC1
+<a name="l-105"></a><span class="tm">17:49:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> have fun Creatura85
+<a name="l-106"></a><span class="tm">17:49:32</span><span class="nk"> &lt;Creatura85&gt;</span> a thunderstorm in summer season is not fun...
+<a name="l-107"></a><span class="tm">17:49:35</span><span class="nk"> &lt;Creatura85&gt;</span> but thanks anyway...
+<a name="l-108"></a><span class="tm">17:52:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> let's move to the next topic
+<a name="l-109"></a><span class="tm">17:52:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Next Meeting</span>
+<a name="l-110"></a><span class="tm">17:53:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> we could meet in 2 weeks. either on 23th or 27th
+<a name="l-111"></a><span class="tm">17:53:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> some days before scheduled GM
+<a name="l-112"></a><span class="tm">17:53:16</span><span class="nk"> &lt;poorboywilly&gt;</span> what date is GM?
+<a name="l-113"></a><span class="tm">17:53:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> 2012-08-30
+<a name="l-114"></a><span class="tm">17:53:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> I could likely make available an updated DVD some days before
+<a name="l-115"></a><span class="tm">17:54:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> as unofficial RC2.5
+<a name="l-116"></a><span class="tm">17:54:20</span><span class="nk"> &lt;LWFinger&gt;</span> Both days work for me.
+<a name="l-117"></a><span class="tm">17:54:38</span><span class="nk"> &lt;poorboywilly&gt;</span> if that were the case 23 would give more time for fixing, 27 more time for testing :)
+<a name="l-118"></a><span class="tm">17:55:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> number of changes is not so high atm
+<a name="l-119"></a><span class="tm">17:55:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> I'd prefer 23th
+<a name="l-120"></a><span class="tm">17:55:33</span><span class="nk"> &lt;LWFinger&gt;</span> OK
+<a name="l-121"></a><span class="tm">17:56:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">next meeting 2012-08-23 17:00 UTC</span>
+<a name="l-122"></a><span class="tm">17:56:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">bmwiedemann publishes RC2.5 DVD / repo before</span>
+<a name="l-123"></a><span class="tm">17:56:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-124"></a><span class="tm">17:57:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> there is currently a process ongoing to document the openSUSE release process.
+<a name="l-125"></a><span class="tm">17:57:52</span><span class="nk"> &lt;LWFinger&gt;</span> Good.
+<a name="l-126"></a><span class="tm">17:58:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> one question I was asked was if we had some checklist, that we tick off before a release
+<a name="l-127"></a><span class="tm">17:58:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> and openqa tests were the closest I could think of
+<a name="l-128"></a><span class="tm">17:59:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> but I did not know, if anyone beside me looks at those results
+<a name="l-129"></a><span class="tm">17:59:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> and reproduces / files bugs
+<a name="l-130"></a><span class="tm">17:59:43</span><span class="nk"> &lt;LWFinger&gt;</span> I always run wireless testing on WEP, WPA and WPA2.
+<a name="l-131"></a><span class="tm">18:00:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> which is a good thing
+<a name="l-132"></a><span class="tm">18:00:13</span><span class="nk"> &lt;LWFinger&gt;</span> I watch openqa in the early MSX days to see if it is building.
+<a name="l-133"></a><span class="tm">18:00:37</span><span class="nk"> &lt;LWFinger&gt;</span> I mean if builds are available.
+<a name="l-134"></a><span class="tm">18:01:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> I sometimes use it to determine when it is safe to update factory
+<a name="l-135"></a><span class="tm">18:02:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> but overall, we don't have a big systematic test coverage apart from wifi and openQA
+<a name="l-136"></a><span class="tm">18:03:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe we don't need to because our beta testers use a whole bunch of software
+<a name="l-137"></a><span class="tm">18:04:05</span><span class="nk"> &lt;LWFinger&gt;</span> I think that is correct.
+<a name="l-138"></a><span class="tm">18:04:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> it might mean, that less used software remain be completely broken in GM
+<a name="l-139"></a><span class="tm">18:05:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> I had that with some games in earlier times
+<a name="l-140"></a><span class="tm">18:05:52</span><span class="nk"> &lt;LWFinger&gt;</span> I hope the developer does their own testing, but obviously things could be broken.
+<a name="l-141"></a><span class="tm">18:06:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe we should make a list of packages on the DVD and tick off those that someone tested
+<a name="l-142"></a><span class="tm">18:07:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> I could probably build some easy+fast CGI for that
+<a name="l-143"></a><span class="tm">18:08:05</span><span class="nk"> &lt;LWFinger&gt;</span> The results would be interesting.
+<a name="l-144"></a><span class="tm">18:08:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> ~15000 packages in the repo
+<a name="l-145"></a><span class="tm">18:08:44</span><span class="nk"> &lt;LWFinger&gt;</span> AFAIK, I only install ~2000.
+<a name="l-146"></a><span class="tm">18:08:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> 5000 on DVD
+<a name="l-147"></a><span class="tm">18:09:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> and even of those you install, you might only use 30%
+<a name="l-148"></a><span class="tm">18:10:29</span><span class="nk"> &lt;poorboywilly&gt;</span> do you imagine coverage for every library, or just "applications" proper?
+<a name="l-149"></a><span class="tm">18:10:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> applications would be sufficient
+<a name="l-150"></a><span class="tm">18:10:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> libraries that are not used by any application are not interesting
+<a name="l-151"></a><span class="tm">18:11:00</span><span class="nk"> &lt;LWFinger&gt;</span> I agree.
+<a name="l-152"></a><span class="tm">18:11:07</span><span class="nk"> &lt;poorboywilly&gt;</span> ha...true
+<a name="l-153"></a><span class="tm">18:12:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> testing that everything can be installed is the easier part
+<a name="l-154"></a><span class="tm">18:13:02</span><span class="nk"> &lt;poorboywilly&gt;</span> yes that could be easily automated
+<a name="l-155"></a><span class="tm">18:13:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> except for conflicting packages
+<a name="l-156"></a><span class="tm">18:13:44</span><span class="nk"> &lt;poorboywilly&gt;</span> to answer the question from earlier, having kiwi_hybridpersistent=yes is not default
+<a name="l-157"></a><span class="tm">18:14:06</span><span class="nk"> &lt;poorboywilly&gt;</span> the first boot it worked, then I tried to reboot and it said it can't mount the partition
+<a name="l-158"></a><span class="tm">18:15:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> ah, we had this effect of the extra partition getting broken on reboot
+<a name="l-159"></a><span class="tm">18:15:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> it remained intact, when you just turned off the system without reboot
+<a name="l-160"></a><span class="tm">18:16:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> which is exactly the opposite of what is normally recommended
+<a name="l-161"></a><span class="tm">18:17:09</span><span class="nk"> &lt;poorboywilly&gt;</span> what should I do normally?
+<a name="l-162"></a><span class="tm">18:18:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> normally, you reboot/shutdown your systems cleanly
+<a name="l-163"></a><span class="tm">18:18:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> and not just hit the hard reset or power button
+<a name="l-164"></a><span class="tm">18:19:22</span><span class="nk"> &lt;poorboywilly&gt;</span> ok I get it...well I did one of those two, but I think I selected restart
+<a name="l-165"></a><span class="tm">18:20:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> there is some software bug to be fixed with clicfs (which is doing the overlaying)
+<a name="l-166"></a><span class="tm">18:20:40</span><span class="nk"> &lt;poorboywilly&gt;</span> yes, I see lost+found folder and some file with clicfs in the name in the hybrid partition
+<a name="l-167"></a><span class="tm">18:22:16</span><span class="nk"> &lt;poorboywilly&gt;</span> what do I do with the usb drive now when I need to put a new image on it--just use dd the same again?
+<a name="l-168"></a><span class="tm">18:22:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes
+<a name="l-169"></a><span class="tm">18:22:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> you will loose data that you stored in the persistent partition
+<a name="l-170"></a><span class="tm">18:23:11</span><span class="nk"> &lt;poorboywilly&gt;</span> ok that is expected
+<a name="l-171"></a><span class="tm">18:24:00</span><span class="nk"> &lt;poorboywilly&gt;</span> is there any bug I should file in regards to the mount failure, clicfs etc?
+<a name="l-172"></a><span class="tm">18:25:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> I would think, that there is already one
+<a name="l-173"></a><span class="tm">18:26:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> but I can't find any right now. so just make a new one in the Live Media category
+<a name="l-174"></a><span class="tm">18:28:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> would you guys be interested in a structured application testing event?
+<a name="l-175"></a><span class="tm">18:29:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe just starting an application and seeing it not immediately crash would be sufficient for GM
+<a name="l-176"></a><span class="tm">18:29:06</span><span class="nk"> &lt;poorboywilly&gt;</span> ok I'll make a bug.  Not sure what that means
+<a name="l-177"></a><span class="tm">18:29:14</span><span class="nk"> &lt;poorboywilly&gt;</span> oh in regards to the checklist
+<a name="l-178"></a><span class="tm">18:29:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes
+<a name="l-179"></a><span class="tm">18:29:43</span><span class="nk"> &lt;LWFinger&gt;</span> I might be.
+<a name="l-180"></a><span class="tm">18:29:50</span><span class="nk"> &lt;poorboywilly&gt;</span> I would be interested, but depending on work (been a bear lately)
+<a name="l-181"></a><span class="tm">18:30:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> it could be as easy as ticking off the applications you use everyday anyway
+<a name="l-182"></a><span class="tm">18:31:11</span><span class="nk"> &lt;poorboywilly&gt;</span> true, I could do that for everything I've used so far
+<a name="l-183"></a><span class="tm">18:31:47</span><span class="nk"> &lt;poorboywilly&gt;</span> for a meeting to cooperate on it, I will come if I can
+<a name="l-184"></a><span class="tm">18:32:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> not sure, if I will have enough time to organize it, but will try
+<a name="l-185"></a><span class="tm">18:32:55</span><span class="nk"> &lt;LWFinger&gt;</span> OK
+<a name="l-186"></a><span class="tm">18:33:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> any other questions for today?
+<a name="l-187"></a><span class="tm">18:33:18</span><span class="nk"> &lt;LWFinger&gt;</span> No
+<a name="l-188"></a><span class="tm">18:34:02</span><span class="nk"> &lt;poorboywilly&gt;</span> no, and thanks for all the help
+<a name="l-189"></a><span class="tm">18:34:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-190"></a><span class="tm">18:34:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

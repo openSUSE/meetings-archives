@@ -1,0 +1,256 @@
+17:29:49 <wstephenson> #startmeeting
+17:29:49 <bugbot> Meeting started Thu Nov 11 17:29:49 2010 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:29:49 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:31:37 <wstephenson> welcome to this week's meeting
+17:31:39 <wstephenson> what have we got
+17:31:43 <wstephenson> agenda:
+17:31:49 <wstephenson> drop 11.2 from KDE:Unstable:SC build?
+17:31:55 <wstephenson> * Assign additional #opensuse-kde IRC channel operator(s)
+17:32:02 <wstephenson> * Replacement of some "older" applications in KDF ? (e.g. Rekonq vs Arora, Bluedevil vs kbluetooth, etc)
+17:32:10 <wstephenson> * old action items
+17:32:14 <wstephenson> * status reports
+17:32:18 <wstephenson> * Q&A, misc
+17:33:28 <wstephenson> rabauke, llunak, herby, javier_, leinir, mrdocs, sebas, thrice`, tigerfoot, tittiatcoke, anaumov, cb400f, Dominian, dirk, coolo, ping - meeting starting!
+17:33:43 <Dominian> ack
+17:33:49 <leinir> present
+17:33:54 <javier_> me too
+17:33:55 <thrice`> +1
+17:33:56 <Dominian> I'm awake.. I'm awake!
+17:33:59 <wstephenson> * old action items
+17:34:13 <wstephenson> wstephenson - media package lists in gitorious - not done
+17:34:20 <wstephenson> * status report
+17:34:39 * wstephenson was variously at the conference, on holiday and being ill for the last 3 weeks
+17:34:48 <wstephenson> so not much to tell there.
+17:34:59 * tigerfoot sorry, on customer site, so don't count too much on me.
+17:35:09 <wstephenson> just catching up things, making KDE-SDK-Live more generally useful.
+17:35:17 <wstephenson> writing milestone announcements
+17:35:20 * tittiatcoke was busy with the update of Unstable
+17:35:22 <wstephenson> anyone else got a story to tell?
+17:35:30 <wstephenson> how is Unstable?
+17:35:46 <tittiatcoke> Surprisingly stable :-)
+17:36:12 <tigerfoot> Unstable work great lot's of bug have disappear ... really
+17:36:16 <tittiatcoke> There is quite some progress on PowerDevil and Solid with regards to upower and udisk. So I guess we might see a hal-less KDE 4.6
+17:36:38 <thrice`> I talked to the k3b guys a couple weeks ago about the dependence of k3b on hal; he mentioned that the only code that relies on hal for k3b, is to basically tell hal to stop polling the optical drive constantly
+17:36:40 <tigerfoot> tittiatcoke: cool.
+17:36:50 <wstephenson> tittiatcoke: needs breaking then!
+17:37:03 <wstephenson> thrice`: good news
+17:37:08 <wstephenson> was that markuss?
+17:37:11 <thrice`> so, once solid kills the hal dep, k3b can too.  currently, the spec file specifically calls it as a depends
+17:37:27 <thrice`> wstephenson, yep :>
+17:37:51 <tittiatcoke> I want to see what works and not with just udisk and upower.
+17:38:02 <wstephenson> there was a list of missing things on k-h-d@
+17:38:06 <wstephenson> sec
+17:38:35 <thrice`> http://mail.kde.org/pipermail/kde-hardware-devel/2010-November/001108.html    is the thread
+17:39:09 <wstephenson> yeah
+17:39:26 <wstephenson> only 3 left out of 6
+17:40:08 * wstephenson is bug triaging kmail2 this weekend
+17:40:14 <wstephenson> anyone wants to help, come to #kontact
+17:40:33 <wstephenson> i'm rerolling kde-sdk-live with debuginfo as a test article.
+17:41:07 <wstephenson> any more status?
+17:42:02 <tittiatcoke> not from me
+17:42:16 <wstephenson> * drop 11.2 from KUSC?
+17:43:08 <cb400f> alin's item?
+17:43:57 <wstephenson> yes
+17:44:05 <wstephenson> 11.2 doesn't look any redder than 11.3
+17:44:20 <wstephenson> so i guess he suggested it to save build resources
+17:44:32 <alin> wstephenson: hi... sorry teaching... storm here
+17:44:57 <wstephenson> alin: ah there you are
+17:45:05 <tittiatcoke> wstephenson: It is indeed only to save build resources.
+17:45:18 <cb400f> anyone got an estimate how much build power the 11.1 EOL will save? ~20-30% ? :-)
+17:45:22 <tittiatcoke> I don't have any particular 11.2 issues with Unstable
+17:45:33 <alin> wstephenson: I am an anarchist but I still care
+17:45:48 <wstephenson> anyone against?
+17:45:58 <cb400f> maybe ask on the ml?
+17:46:06 <tittiatcoke> I guess that we should still announce it on the ML
+17:46:17 <cb400f> I wouldn't be surprised if there's quite a few 11.2+kusc people there
+17:46:18 <wstephenson> i'll check with the OBS guys too, see if there is a resource shortage atm.
+17:46:23 <tittiatcoke> I don't know how many other 11.2 users are using Unstable
+17:46:33 <alin> that is perfect... we see who is using it... and help them to migrate to 11.3 or higher
+17:46:40 <alin> if the number is not big
+17:46:47 <cb400f> of course it could be a good way to push those people to KDF instead :-)
+17:47:00 <wstephenson> hah, this machine is 11.2 because 11.3's perl won't run squeezeboxserver, want to fix that? ;)
+17:47:30 <wstephenson> i'll check if we have cause with the OBS guys
+17:47:41 <wstephenson> otherwise it seems like micro-optimisation.
+17:47:48 <tittiatcoke> wstephenson: Could we find out how much download we have for that repo ?
+17:48:01 <wstephenson> coolo: about?
+17:48:18 <thrice`> yeah, perhaps see how many pull from it
+17:48:41 <wstephenson> https://build.opensuse.org/ stats don't look too loaded.
+17:48:54 <wstephenson> #action wstephenson check demand and resource levels
+17:49:03 <rabauke> people that use unstable are likely not to use an "older" release as a base for that.
+17:49:04 <wstephenson> * extend operator list for this channel
+17:49:41 <wstephenson> background, only old kde team members have ops here, and we're not always on hand
+17:49:57 <rabauke> *are not likely to use...
+17:50:08 <Dominian> most of those members are opensuse members as wel I take it?
+17:50:19 <Dominian> er..OPs are opensuse members is what I meant.
+17:50:31 <wstephenson> Dominian: the current set are/were all employees actually
+17:50:41 <Dominian> ahhhhh
+17:50:44 <wstephenson> so a couple of people have suggested names to me
+17:51:10 <wstephenson> which are *drum roll* cb400f, mrdocs and tittiatcoke
+17:51:24 * Dominian nods
+17:51:25 <wstephenson> what do we think of that?
+17:51:43 <thrice`> sounds fine :>
+17:51:43 <Dominian> all contributing opensuse members.. I see no issue with it.
+17:52:00 <cb400f> I'm a noob operator.. but I can manage to update the topic :-)
+17:52:07 <Dominian> heh
+17:52:11 <cb400f> rarely see much trolling here anyway
+17:52:14 <Dominian> its not that difficult to op in a chan :P
+17:52:23 <tittiatcoke> Guess we are all nicely behaving :-)
+17:52:30 <Dominian> I OP for ##linux... 750+ nicks..
+17:52:37 <Dominian> that gets nuts every so often
+17:52:44 <wstephenson> well the criteria is being here and being responsible
+17:52:58 <wstephenson> then keeping a cool head
+17:53:04 <tittiatcoke> I guess with the three of us that should be possible :-)
+17:53:11 <Dominian> wstephenson: Should also be a opensuse member I would think?
+17:53:51 <wstephenson> yes i suppose, do the candidates all fulfil that? i assume so.
+17:53:59 <Dominian> yeah it appears they do
+17:54:12 <wstephenson> have any of you opped much before?
+17:54:24 * tittiatcoke not really
+17:54:40 * wstephenson is a terrible op and prefers not to do it unless needed
+17:54:47 <cb400f> I'm an op in #suse and #opensuse-chat too.. but I don't really know what I'm doing, I was pushed :-)
+17:54:56 <wstephenson> well it's mainly about not power tripping
+17:54:56 <cb400f> and #opensuse-nordic
+17:55:05 <wstephenson> and not overreacting
+17:55:09 <wstephenson> Dominian: agree?
+17:55:41 <wstephenson> the more you use the power to kickban people, the less it helps.
+17:56:05 <wstephenson> cb400f: if you can handle #suse then you are fine
+17:56:09 <wstephenson> mrdocs: around?
+17:56:27 <tittiatcoke> Doesn't seem like it
+17:57:09 <Dominian> wstephenson: Eh.. I have no say so :)  I'm not even an opensuse member (official) yet ;)
+17:57:27 <wstephenson> Dominian: well, if you op ##linux you might have an opinion, even if not a say
+17:57:37 <Dominian> ahh
+17:57:45 <Dominian> Yeah.. kickbanning is usually a last resort
+17:57:48 <cb400f> wstephenson: I should have my temper and impulses under control.. my biggest concern is accidentally banning 75% of germany or so :-)
+17:57:55 <Dominian> but sometimes its hard to avoid it
+17:58:08 <Dominian> cb400f: If you need tips.. you ask me.
+17:58:16 * Dominian was, at one point, freenode staff as well.. so I've been around a bit.
+17:59:04 <tittiatcoke> Good to know that we have a very experienced person around :-)
+17:59:14 <cb400f> yup
+17:59:41 <alin> wstephenson: do not give them power to kick... they will bully me...
+17:59:51 <wstephenson> can only the founder change the op list?
+17:59:57 <Dominian> anyone with +f
+17:59:59 <wstephenson> i'm looking in chanserv's help
+18:00:23 <Dominian> wstephenson: so you should be able to
+18:00:40 <Dominian> /msg chanserv flags #opensuse-kde cb400f +<flags>
+18:00:51 <wstephenson> #action wstephenson give new ops ops
+18:01:11 <Dominian> and keep in mind don't give +f unless you want others the ability to add/remove flags
+18:01:14 <wstephenson> oh and another thing
+18:01:14 <wstephenson> i don't usually op unless i need to
+18:01:32 <wstephenson> it saves you from people who think the op is the 24h info service
+18:02:12 <wstephenson> ok, i'll read the docs and do it right instead of doing it now.
+18:02:24 <wstephenson> anything more to discuss on that topic
+18:02:27 <Dominian> Yeah the flags in chanserv are all nickserv account based
+18:02:28 <wstephenson> ?
+18:02:29 <Dominian> keep that in mind as well
+18:02:45 <wstephenson> Dominian: meaning make sure people are registered?
+18:03:19 <Dominian> Its best
+18:03:26 * tittiatcoke I am registered
+18:03:38 <Dominian> If you do it based on Nick like:  Nick!*@* would mean anyone with the nick Nick would have flags on the channel
+18:04:06 * wstephenson is afk, holding baby for 2 mins
+18:05:21 * cb400f is registered too
+18:05:43 <wstephenson> so make sure nick is protected too?
+18:08:49 <Dominian> protected?
+18:08:57 <Dominian> the nick protection just keeps peole from sitting on your nick
+18:09:06 <Dominian> for the flags to apply they'd have to identify to the nick to nickserv
+18:09:10 <wstephenson> ok
+18:09:40 <wstephenson> * Replacement of some "older" applications in KDF ? (e.g. Rekonq vs Arora, Bluedevil vs kbluetooth, etc)
+18:09:56 <wstephenson> who owns that?
+18:11:41 <tittiatcoke> wstephenson: I put that one up, but cb400f mentioned that he wanted to discuss the strategy around it
+18:13:00 <wstephenson> bluedevil is just waiting on me to action it
+18:13:16 <tittiatcoke> cb400f: Anything you want to add ?
+18:13:17 <cb400f> not really.. I would just like to urge people to submit the stuff we want in 11.4 to KDF asap so it can be thoroughly tested
+18:13:21 <wstephenson> rekonq/arora - dunno, both are active
+18:13:25 <wstephenson> ok, noted
+18:13:44 <cb400f> afterall KDF is what should ensure world domination shortly
+18:14:05 <wstephenson> indeed
+18:14:12 <cb400f> and update the patterns accordingly.. so the stuff gets installed for people too
+18:15:00 <rabauke> then strigi should be updated as well!
+18:15:01 <cb400f> gtk-oxygen-engine, and phonon-vlc are other big candidates for kdf imo
+18:15:04 <wstephenson> yeah that proved a bit trickier, i have to go round via MRs to the gitorious project
+18:15:23 <rabauke> not sure if the new release makes it in time, but there have been significant fixes since 0.7.2.
+18:15:45 <tittiatcoke> cb400f: phonon-vlc can not go without vlc in Factory. I will submit it first to multimedia (or something similar)
+18:16:15 <cb400f> ok.. I wonder where gtk-oxygen-engine would belong.. oxygen-molecule is not in KDF either it seems
+18:16:15 <rabauke> vandenoever promised a new strigi release soon
+18:16:35 <wstephenson> he's not online.
+18:16:37 <tittiatcoke> cb400f: gtk-oxygen-engine is in Extra, but I can move it to KDF ?
+18:16:39 <wstephenson> or i'd twist his arm
+18:17:06 <cb400f> tittiatcoke: if we think it's better than oxygen-molecule it should definitely go in the distro.. asap
+18:17:16 <tittiatcoke> :-)
+18:17:22 <tittiatcoke> wstephenson: Any thoughts on that one ?
+18:17:23 <cb400f> I tend to think so.. but I don't use that many gtk apps.. so I could be missing something
+18:17:56 <tittiatcoke> Well, I am also using gtk-oxygen-engine. It's very good
+18:18:03 <wstephenson> tittiatcoke: i haven't tested it.
+18:18:11 <wstephenson> on my todo now
+18:18:22 <tittiatcoke> wstephenson: Ok. It is in Extra and it's actively maintained
+18:18:51 <wstephenson> i'll ask the gnomes what they think of it
+18:18:59 <wstephenson> what about the browsers?
+18:19:13 <wstephenson> i'd keep both. dunno about changing standard
+18:19:19 <tittiatcoke> personally I like Rekonq better
+18:19:30 <tittiatcoke> atm KDF only has arora
+18:19:42 <cb400f> I think FF should remain default.. but we need rekonq in the distro to please kde purists
+18:19:52 <cb400f> too few people use Extra
+18:20:16 <cb400f> koolo says Extra fewer users than KDF :-(
+18:20:30 <cb400f> Extra _has_ fewer users
+18:22:22 <wstephenson> rekonq is the only real candidate for default browser
+18:22:27 <cb400f> same for updatedapps btw... dunno what's wrong with people... everybody should use Extra and UpdatedApps :-)
+18:22:27 <wstephenson> aside from FF
+18:22:44 <wstephenson> cb400f: we should publicise services instead of individual projects
+18:23:51 <wstephenson> so what action do we need on rekonq?
+18:23:56 <wstephenson> move it to KDF?
+18:23:57 * herby likes konqueror with webkit
+18:24:15 * javier_ likes konqueror with khtml
+18:24:28 <tittiatcoke> wstephenson: I am fine with moving it to KDF
+18:24:59 <tittiatcoke> Would be better as that Rekonq officially requires Qt 4.7
+18:25:17 <wstephenson> konq with khtml or webkit is surprisingly good now.
+18:25:24 * cb400f likes opera, but thinks rekonq in kdf is critical for world domination/competition with kubuntu
+18:25:41 <tittiatcoke> cb400f: Opera 11 looks good :-)
+18:26:26 <alin> wstephenson: there are silly small things... and few big ones...
+18:26:32 <alin> wstephenson: with rekonq...
+18:26:49 <cb400f> wstephenson: yes, move rekonq to kdf.. drop arora or move it to extra or contrib
+18:26:56 <alin> wstephenson: 1... flash blocker needs attention
+18:26:56 <wstephenson> this all sounds like an "include them all, but don't change the default" outcome. agree?
+18:27:01 <alin> 2.spell checker
+18:27:09 <javier_> wstephenson: +1
+18:27:14 <alin> 1big no google voice/video
+18:27:15 <tittiatcoke> +1
+18:27:18 <cb400f> move to kdf as non-default browser, but available in main repo for anti-gtk obsessers
+18:27:23 <alin> 2big yahoo is not happy
+18:27:50 <alin> wstephenson: we can change the default to chromium
+18:28:11 <tittiatcoke> alin: Don't come up with that one :-) It is not that nice browser either :-)
+18:28:25 <javier_> no, please
+18:28:27 <cb400f> alin: is there a nice kde theme for it.. and kde file dialog?
+18:28:40 <cb400f> and mimetype association
+18:28:54 <alin> cb400f: do not swear at me...
+18:29:06 <alin> cb400f: I just throw an idea...
+18:29:50 <wstephenson> so, end of topic?
+18:30:44 <cb400f> then we just need dmuller to fix qt so rekonq can have html5 video/audio :-)
+18:31:15 <wstephenson> webkit update?
+18:31:15 <tittiatcoke> Yup. end of this topic
+18:31:24 <tittiatcoke> Seems so
+18:31:27 <cb400f> something related to qmultimedia I think
+18:31:30 <wstephenson> * Q&A, Misc
+18:31:34 <wstephenson> i'll poke
+18:31:43 <wstephenson> #action wstephenson poke dirk about Qt html5 stuff
+18:32:13 <thrice`> 4.7.1 was recently pushed :-)
+18:32:23 <cb400f> there's a bugreport.. now if I could only find it...
+18:33:13 <wstephenson> so new kde booster hiring is going very well. that's all i'm going to say to avoid invoking sod's law.
+18:33:54 <wstephenson> nothing else to tell here.
+18:34:05 <javier_> btw, I'm trying to fix the kjots thing
+18:34:14 <wstephenson> javier_: how's that going?
+18:34:41 <javier_> I applied a big patch but the bug reporter says that he doesn't see the option for sorting
+18:34:45 <javier_> so, I don't know
+18:35:11 <thrice`> javier_, did you generate that diff from the webgui ?
+18:35:19 <thrice`> er, the kde websvn gui *
+18:35:42 <javier_> thrice`: nop. I downloaded some files from websvn.k.o and generated the patch afterwards
+18:35:57 <tittiatcoke> javier_: Can you see that your files are being build ?
+18:36:28 <wstephenson> did you remember %patchNNN? ;)
+18:36:36 <javier_> tittiatcoke: I was going to do so but I couldn't (blocked status)
+18:36:44 <javier_> still blocked
+18:36:52 <javier_> wstephenson: sure ;-)
+18:37:39 <javier_> Patch10 blabla and %patch10
+18:37:49 <cb400f> thrice`: do you have the bug # for the rekonq html5 video/audio issue? .. iirc I got it from you, but can't find it in my logz
+18:37:50 <wstephenson> ok
+18:37:59 <wstephenson> i'll end the meeting if that's ok
+18:38:10 <tittiatcoke> Yup
+18:38:12 <javier_> sure
+18:38:44 <wstephenson> thank you gentlemen.
+18:38:47 <wstephenson> #endmeeting

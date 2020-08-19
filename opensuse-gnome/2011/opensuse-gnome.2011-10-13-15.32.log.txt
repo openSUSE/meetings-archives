@@ -1,0 +1,230 @@
+15:32:33 <vuntz> #startmeeting openSUSE GNOME Meeting
+15:32:33 <bugbot> Meeting started Thu Oct 13 15:32:33 2011 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:32:33 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:32:57 <vuntz> so, who's chairing?
+15:33:07 <psankar> malcolmlewis, ^ ?
+15:33:21 * malcolmlewis has no idea what to do
+15:33:32 <vuntz> DimStar, fcrozat, FunkyPenguin, glin, Ilmehtar, metalgod, sshaw, tigerfoot, zaitor: meeting now
+15:33:39 * malcolmlewis maybe next time
+15:33:42 <metalgod> yes sir
+15:33:44 <vuntz> ok
+15:33:48 <vuntz> so I'll chair
+15:33:49 <psankar> malcolmlewis, ok
+15:33:56 <psankar> vuntz, before we begin the meeting
+15:33:56 <fcrozat> k
+15:33:57 <Ilmehtar> vuntz: I'm only half here...Brainshare wifi isn't so great :)
+15:33:59 <glin> ok
+15:34:07 <vuntz> topics for today:
+15:34:07 <vuntz> Project Update & Plans/Tasks for 12.1
+15:34:07 <vuntz> GNOME 3.2 && Upstream updates
+15:34:08 <vuntz> Q & A
+15:34:22 <FunkyPenguin> je suis ici, mon capitain!
+15:34:28 <psankar> vuntz, I would like to give a Congrats message to DimStar and captain_magnus, on behalf of the openSUSE GNOME Team :-)
+15:34:28 <vuntz> we can have more topics if people want
+15:34:58 <psankar> as both of them got married recently
+15:35:16 <vuntz> indeed!
+15:35:40 <malcolmlewis> Congratulations indeed :)
+15:35:44 <vuntz> which is why DimStar is now ignoring us ;-)
+15:35:49 <psankar> :)
+15:35:55 <vuntz> #topic Project Update & Plans/Tasks for 12.1
+15:35:59 <glin> congradulations
+15:36:36 <badshah> Congrats!
+15:36:51 <metalgod> congrats
+15:37:00 <vuntz> it's been a long time since the last meeting, so I'll simply state our current status
+15:37:13 <vuntz> we have 3.2.0 in Factory
+15:37:37 <vuntz> nearly all of our packages are up-to-dat
+15:37:38 <vuntz> e
+15:37:54 <vuntz> (I see libepc and tracker just got a release :-))
+15:38:16 <vuntz> we have only a few outstanding sr waiting
+15:38:27 <vuntz> 4 as far as I can see
+15:38:36 <vuntz> the cheese one is waiting for upstream approval
+15:38:44 <FunkyPenguin> what about backporting to 11.4?
+15:38:50 <vuntz> the glib2/desktop-file-utils ones are also waiting for upstream glib approval
+15:39:09 <vuntz> and the software-center one is just waiting for a proper review (hopefully before the week-end)
+15:39:35 <vuntz> FunkyPenguin: that would be a good topic to add
+15:39:45 <vuntz> overall, things are pretty solid
+15:39:46 <metalgod> we will have 3.2.1 ?
+15:40:18 <vuntz> we have a few very visible bugs, but in the worst case, we could release maintenance updates for those. So it's not too bad
+15:40:30 <vuntz> for 3.2.1, I'm unsure
+15:40:37 <vuntz> it's going to be released next week
+15:40:42 <vuntz> but we have rc1 next week
+15:40:57 <vuntz> and I'm kind of mixed on having a lot of changes between rc1 and rc2
+15:41:16 <vuntz> it'd be nice to have someone start a thread on opensuse-factory about this
+15:41:18 <malcolmlewis> What about the install pattern for Gnome 3.2? Isn't it still pulling compiz?
+15:41:30 <vuntz> malcolmlewis: it shouldn't. I've removed that a while ago
+15:42:04 * vuntz checks
+15:42:16 * psankar has been busy with some events in personal life and so not watching factory for few days. otherwise would've volunteered for that :(
+15:42:19 <vuntz> (booting a vm)
+15:42:26 <malcolmlewis> ahh ok, looks that way
+15:42:48 <vuntz> as for the plans/tasks: right now, it's really all about fixing the visible issues
+15:42:59 <vuntz> I've sent a mail about this on the list
+15:43:10 <vuntz> things are moving slowly there -- help would be most welcome
+15:43:41 <vuntz> malcolmlewis: confirming compiz is not on the livecd
+15:43:52 <psankar> http://lists.opensuse.org/opensuse-gnome/2011-10/msg00010.html
+15:43:58 <vuntz> #info GNOME 3.2.0 in Factory, nearly all packages up-to-date
+15:44:11 <badshah> vuntz, i think it might be better to just stick to 3.2.0 and only decide to ship 3.2.1 if there are major concerns with 3.2.0 that the update fixes
+15:44:13 <malcolmlewis> thanks :) is still downloading the beta, but checked it's gone in the 11.4 3.2
+15:44:16 <vuntz> #info we're also looking good on the sr side of things
+15:44:37 <vuntz> #info list of major issues we should focus on: AAAAAAhttp://lists.opensuse.org/opensuse-gnome/2011-10/msg00010.html
+15:44:57 <vuntz> bugbot: help
+15:44:57 <bugbot> vuntz: (help [<plugin>] [<command>]) -- This command gives a useful description of what <command> does. <plugin> is only necessary if the command is in more than one plugin.
+15:45:08 <vuntz> hrm, how do I remove the last info?
+15:45:18 <vuntz> badshah: yeah, that's an option
+15:45:33 <psankar> vuntz, thats okay. i think we can understand it :-)
+15:45:34 <vuntz> badshah: the issue is that 3.2.1 likely fixes some nice bugs
+15:45:42 <malcolmlewis> I can look at the bluetooth one
+15:46:10 <vuntz> #undo
+15:46:10 <bugbot> Removing item from minutes: <MeetBot.items.Info object at 0x1496050>
+15:46:19 <vuntz> #info list of major issues we should focus on: http://lists.opensuse.org/opensuse-gnome/2011-10/msg00010.html
+15:46:29 <vuntz> malcolmlewis: that'd be great
+15:46:52 <vuntz> the fact that I can only test with one device doesn't help :-)
+15:47:16 <vuntz> are people feeling we should do other things for 12.1?
+15:47:34 <vuntz> or any bug you think is really important?
+15:48:03 <malcolmlewis> Wondering what the status is on sweettooth...
+15:48:27 <vuntz> malcolmlewis: http://mail.gnome.org/archives/gnome-infrastructure/2011-October/msg00018.html
+15:48:41 <vuntz> summary: they're working on getting the website up
+15:48:54 <vuntz> client-side, we have everything packaged and installed by default
+15:49:04 <vuntz> so as soon as extensions.gnome.org is live, this should just work
+15:50:02 <vuntz> ok, if you can think of anything, this can go in Q & A
+15:50:04 <psankar> vuntz, I propose we let jpunit give a small update about what EWS is and its status for openSUSE
+15:50:14 <vuntz> let's do that now :-)
+15:50:15 <malcolmlewis> There was an article published somewhere on the changes to the extension coding, but for the life of me I can't find it anymore. Was hoping to clean up the hotspot one
+15:50:27 <vuntz> #topic Update about what EWS is and its status for openSUSE
+15:50:37 <psankar> jpunit, stage is yours
+15:51:16 <psankar> jpunit, you there ?
+15:52:01 * malcolmlewis wonders what ews is...
+15:52:06 <psankar> I think I can give a miniscule update regarding that as jpunit seem to be away.
+15:52:16 <psankar> EWS stands for Exchange Web Services
+15:52:23 <psankar> It is a new backend for Evolution
+15:52:29 <jpunit> psankar: Evolution-ews provides connectivity to MS Exchange servers 2007  and later
+15:52:30 <psankar> to connect with Microsoft Exchange Server
+15:52:35 <jpunit> psankar: ye continue ..
+15:52:40 <psankar> jpunit, ah yes. he is back. please continue :-)
+15:53:24 <jpunit> psankar: so it will replace evolution-mapi .. which was dependent on openchange and samba.. not supported in opensuse
+15:53:45 <vuntz> yeah!
+15:53:48 <vuntz> that's great
+15:53:54 <psankar> evolution-mapi was the old evolution backend to talk with exchange servers
+15:54:08 <psankar> jpunit, so will be seeing it in factory soon ?
+15:54:09 <vuntz> #info EWS stands for Exchange Web Services
+15:54:17 <jpunit> I am building evolution-ews which will be ready tomorrow
+15:54:18 <vuntz> #info it provides connectivity to MS Exchange servers 2007 and later
+15:54:33 <jpunit> psankar: yes I can submit it tomorrow ..
+15:54:34 <psankar> jpunit, nice
+15:54:39 <vuntz> #info it's replacing evolution-mapi, which we never really had
+15:54:45 <jpunit> Thanks DimStar for helping me out
+15:54:47 <psankar> :-)
+15:54:53 <vuntz> #info it will be submitted tomorrow
+15:54:57 <vuntz> jpunit: that's really cool news
+15:55:30 <jpunit> vuntz: thanks ..:)
+15:55:39 <vuntz> any question on ews?
+15:56:16 <malcolmlewis> So it's for openSUSE and SLE?
+15:56:25 <jpunit> malcolmlewis: for both
+15:56:34 <malcolmlewis> kewl :)
+15:56:39 <jpunit> malcolmlewis: it has been submitted for SLE
+15:57:08 <malcolmlewis> should get into SP2 then...
+15:57:18 <jpunit> malcolmlewis: yes it will go there
+15:58:23 <jpunit> current development is going on so in future you can see tarball update if permitted ..
+15:58:48 <vuntz> jpunit: thanks for the info on ews!
+15:58:52 <vuntz> let's move to GNOME 3.2 in 11.4
+15:59:00 <vuntz> #topic Status of GNOME 3.2 for 11.4
+15:59:04 <vuntz> fcrozat: here? :-)
+15:59:17 * vuntz has no idea what the current status is
+15:59:36 <malcolmlewis> I've been trying to debug the screensaver issue...
+16:00:20 <malcolmlewis> Also the battery status indicator is missing (but that may be me fluffing with extensions)
+16:00:36 * psankar could see the battery status fine
+16:00:47 <malcolmlewis> must just be me then
+16:01:16 * vuntz looks the build status in obs
+16:01:18 <malcolmlewis> what about the screensaver? I thought it was being deprecated in 3.2 anyway?
+16:01:50 <vuntz> malcolmlewis: nope. That's for 3.4
+16:02:03 <malcolmlewis> ahh ok
+16:02:39 <vuntz> so I see a few build issues in G:S:3.2
+16:02:51 <vuntz> at least a few of them are related to tracker not building right now
+16:02:58 <vuntz> which is something fcrozat has been working on
+16:03:44 <vuntz> so, yeah, don't have more details
+16:03:57 <vuntz> #info GNOME:STABLE:3.2 created but still being worked on (so not published)
+16:04:13 <vuntz> I guess fcrozat would welcome help :-)
+16:04:25 <vuntz> #info people can help fix the few remaining build issues
+16:04:40 <vuntz> FunkyPenguin: did you have any specific question on this, or details to share?
+16:04:51 <fcrozat> I don't have time to fix the failure in G:S:3.2 now..
+16:05:09 * psankar notes to talk with some new build guys who joined for OES, to convince them to take up some oS-GNOME build things
+16:05:41 <vuntz> malcolmlewis: would you be interested in fixing the remaining build issues in G:S:3.2?
+16:06:01 <malcolmlewis> I can try :)
+16:06:40 <vuntz> that'd be cool
+16:06:56 <vuntz> #action malcolmlewis to try to fix build issues on G:S:3.2
+16:07:02 <vuntz> malcolmlewis: you can always ask for help :-)
+16:07:27 <psankar> malcolmlewis, in case I get some build volunteers, I will refer them to you (and here)
+16:07:27 <malcolmlewis> Yup, and I'm sure I'll need it
+16:07:37 <malcolmlewis> psankar, ok :)
+16:07:47 <vuntz> ok, let's move on
+16:07:56 <fcrozat> malcolmlewis: it is mostly getting tracker to build. Remaining failure are caused by tracker ;)
+16:07:56 <vuntz> #topic openSUSE 12.1 GNOME Highlights
+16:08:29 <vuntz> AJaeger requested help on gnome highlights for 12.1: http://lists.opensuse.org/opensuse-gnome/2011-10/msg00019.html
+16:08:35 <vuntz> I really won't have time for this
+16:08:47 <vuntz> so it'd be great to have people do this
+16:09:01 <vuntz> taking the release notes from GNOME 3.0 and 3.2 is likely a good first step
+16:09:09 <psankar> vuntz, I volunteer for this
+16:09:16 <psankar> vuntz, I should be able to get this done.
+16:09:21 <vuntz> #info AJaeger requested help to describe GNOME Highlights in 12.1
+16:09:22 <psankar> please #action me on it
+16:09:25 <vuntz> psankar: that'd be cool
+16:09:38 <vuntz> #info GNOME 3.0/3.2 release notes are a good basis
+16:09:52 <vuntz> #action psankar volunteers for the job
+16:10:18 <vuntz> I'm sure others can help psankar :-)
+16:10:28 <psankar> :)
+16:11:11 <vuntz> so moving on
+16:11:21 <vuntz> I guess we can skip "GNOME 3.2 && Upstream updates ", since it was covered by the first topic
+16:11:25 <vuntz> #topic Q & A
+16:11:47 <psankar> vuntz, you mentioned something about GSoc issue
+16:11:57 <psankar> about software center porting or some such
+16:12:15 <psankar> I am sorry I have not followed up on that. but does it need some coding love as of now ?
+16:12:18 <vuntz> well, we have the software center ported to packagekit
+16:12:56 <vuntz> this was done by Alex Eftimie for GSoC
+16:13:06 <vuntz> nmarques has been reworking the package a bit
+16:13:12 <vuntz> and said this needs some more changes
+16:13:28 <psankar> okay
+16:13:38 <psankar> i will talk with nmarques about that
+16:13:47 <vuntz> we also need to update our infrastructure to publish the metadata needed by the software center
+16:13:55 <vuntz> but it was suggested to do that after 12.1
+16:13:59 <psankar> okay
+16:14:17 <vuntz> so we might get the package in 12.1, although not really working, and fix it with a maintenance update
+16:14:26 <psankar> okay
+16:15:19 <psankar> I think we are done with the questions :)
+16:16:01 <vuntz> no other question?
+16:16:03 <badshah> I have one small question: abt the gnome-extension opensuse package search extension
+16:16:50 <badshah> vuntz, do you have any suggestion as to how the string could be made translatable?
+16:17:22 <vuntz> badshah: I think we can have something like <ShortName lang="fr">Foo</ShortName>
+16:17:25 <vuntz> I tried it
+16:17:32 <vuntz> but apparently, gnome-shell doesn't look at it yet
+16:17:37 <vuntz> so we need to fix gnome-shell to do so
+16:18:14 <badshah> vuntz, i see; what do you suggest abt this then? too late to get it into the default installation with all these changes
+16:18:36 <vuntz> badshah: actually, it's not too late if we can get a fix for gnome-shell
+16:18:36 <badshah> for ref this is bug 722219
+16:18:39 <bugbot> openSUSE bug 722219 in openSUSE 12.1 (GNOME) "GNOME: Install gnome-shell-extension-openSUSE-package search by default" [Normal,New] https://bugzilla.novell.com/722219
+16:19:52 <badshah> vuntz, i am happy to help, but i will only be able to access the internet regularly after the 18th Oct; thats post-RC1
+16:19:54 <malcolmlewis> badshah, when it's all finalized, one for the wiki would be good...
+16:20:00 <vuntz> badshah: still doable
+16:20:16 <badshah> vuntz, thatnks, then I will try to work on this
+16:21:02 <vuntz> badshah: hrm, it's xml:lang, not lang, I guess
+16:22:46 <badshah> Also, what is the status on the alt-power menu button extension: are we going to install it by default or stick to what upstream does?
+16:23:22 <vuntz> https://bugzilla.gnome.org/show_bug.cgi?id=661676
+16:23:25 <bugbot> Gnome bug 661676 in gnome-shell (general) "Make it possible to have translatable names for search providers" [Normal,Unconfirmed]
+16:23:53 <vuntz> badshah: for alt-power, as I said, it's really a matter of making it work (or installed by default) only on some hardware
+16:24:58 <badshah> vuntz, i guess thats not easy to do, is it?
+16:25:09 <vuntz> no idea
+16:25:14 <vuntz> this should be investigated
+16:25:40 <psankar> vuntz, I dont know what it is. but it sounds interesting. i will try to help badshah in this one.
+16:25:40 <jsubl2> where would i begin reading to see if i could learn to assist. with packaging or triage
+16:25:51 <badshah> possibly something like network-manager being enabled on laptops but disabled on desktops like we had with 11.4
+16:26:36 <badshah> vuntz, i will try to work on this too, so it would be okay to do after RC1 as well?
+16:27:00 <vuntz> possibly
+16:27:21 <vuntz> the extension needs to be rock-solid, and all that
+16:27:34 <badshah> psankar, thanks!
+16:27:58 <psankar> jsubl2, there is a meeting going on now. after it is over, you will get an answer :)
+16:28:04 <jsubl2> sorry
+16:28:04 <badshah> vuntz, yes, i understand
+16:28:10 <psankar> jsubl2, np :)
+16:29:07 <vuntz> okay
+16:29:10 <vuntz> any last question?
+16:30:51 <vuntz> no?
+16:30:57 <vuntz> so we're done :-)
+16:31:00 <vuntz> #endmeeting

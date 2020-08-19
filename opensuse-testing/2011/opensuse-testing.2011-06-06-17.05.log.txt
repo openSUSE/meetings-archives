@@ -1,0 +1,125 @@
+17:05:23 <bmwiedemann> #startmeeting
+17:05:23 <bugbot> Meeting started Mon Jun  6 17:05:23 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:05:23 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:05:33 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting You can still add to the agenda on the wiki while the meeting is in progress
+17:05:53 <bmwiedemann> #topic MS1 experience
+17:06:07 <bmwiedemann> first (and so far only) topic on the list
+17:06:34 <LWFinger> Should we go in turn?
+17:06:40 <bmwiedemann> we had 5-6 days to have a good look at MS1. I mostly looked at openqa
+17:06:59 <bmwiedemann> filing some bugs in the process (linked on openqa.o.o)
+17:07:34 <bmwiedemann> and I hope to get MS2 into a better shape than MS1.
+17:07:35 <bmwiedemann> done
+17:08:19 <tigerfoot> for me factory during the M1 stage was really awfull ...
+17:08:30 <bmwiedemann> what broke?
+17:08:44 <tigerfoot> Now everything start to become better ... even if some SR make more than 7 days to be accepted
+17:09:05 <tigerfoot> bmwiedemann: mainly the gcc46 integration
+17:09:16 <tigerfoot> and the whole stack of dependencies
+17:09:52 <bmwiedemann> I know cartman worked a long time on fixing build failures from gcc46
+17:10:11 * tigerfoot expect next break in KDF ( so not immediately in Factory ) with the introduction of KDE-4.7 even if it's called a boring release :-)
+17:10:54 <tigerfoot> But I didn't retest full installation of factory with M1 so I can tell what's wrong on that side ...
+17:11:03 <bmwiedemann> openqa also tests KDF (named kde-devel there) - so we might get it working before it goes into factory
+17:11:53 <tigerfoot> I've tested systemd but get total fail on my main installation ... need more tests on proper install ... and we have a long way to get it ready for 12.1 if we want it
+17:12:27 <tigerfoot> will see result in July/August when fcrozat will work on it ...
+17:13:37 <bmwiedemann> will be around MS4 then. I would not like systemd to enter factory after MS6, so it might work
+17:13:56 <LWFinger> Agreed on that point.
+17:14:50 <ReferenceSeete> Yes, MS6 is basically RC0
+17:15:08 <bmwiedemann> or "beta" - meaning feature-complete
+17:15:57 <ReferenceSeete> You mean Google's definition of "beta" meaning "finished but no promises from us" hasn't caught on?
+17:16:06 <ReferenceSeete> :)
+17:16:09 <tigerfoot> on another side I'm trying to convince more users to start testing factory now, explaining the bugs we can get out now will not be in M6 or more ...
+17:16:31 <LWFinger> Good luck with that.
+17:16:38 <tigerfoot> some have accepted to start at M2/3 which is good
+17:16:53 <tigerfoot> most of them doing that on virtualbox or kvm ...
+17:17:16 <bmwiedemann> that is safe at least. but IMHO most testing is needed after MS4
+17:17:16 <tigerfoot> Did we have made any progress to our Testing USB key project ? bmwiedemann
+17:17:23 <LWFinger> I needle people on the Forums with a "Did you test?" Doesn't seem to help.
+17:17:25 <bmwiedemann> tigerfoot: not yet
+17:18:15 <tigerfoot> LWFinger: I'm so sorry to not be in forums ... promise once my mail will be unified under kontact, I will activate the nntp ...
+17:18:23 <bmwiedemann> http://www.suse.de/~coolo/opensuse_12.1/ lists 2011-08-08 for "Feature and version freeze for the base system"
+17:18:59 <LWFinger> tigerfoot: Good.
+17:19:18 <bmwiedemann> so systemd would best be working then
+17:19:21 <tigerfoot> Testing after M4 is short , as the delay that Coolo has made between release are really short to have people awake to download the iso, then put that on usb, then test full hardware, get some help, push bugs
+17:20:18 <tigerfoot> bmwiedemann: systemd is really complex as we have to replace all the server stack used in /etc/init.d/ by native script, some exist, most of them are in alpha/beta stage
+17:20:19 <bmwiedemann> tigerfoot: right. but there are just so many things changing before MS4 that chances are high for your bugs to be resolved without you even testing and hitting them
+17:21:07 <tigerfoot> bmwiedemann: should be ask for 12.2 and longer delay between M4 and M6 for tests purpose to our beloved release manager ?
+17:21:13 <tigerfoot> should we
+17:21:29 * tigerfoot thing 12.1 is already in the box :-)
+17:22:00 <ReferenceSeete> In the end would a longer period between M4 & M6 make a difference?
+17:22:09 <tigerfoot> but in case of trouble the number permit a release on 1st december or 12th January ...
+17:22:35 <bmwiedemann> I once calced that 3 weeks between releases is minimum for a useful download+test+report+build+retest+publish cycle
+17:22:48 <tigerfoot> ReferenceSeete: I saw last time a full of thing coming into the M6, and none have been tested a lot ...
+17:22:57 <tigerfoot> bmwiedemann: I agree with that .
+17:23:07 <ReferenceSeete> Given that that the final release date is fixed...making the gap between some milestones means shorter gaps between others.
+17:23:20 <ReferenceSeete> I guess the advantage is on the side of 'social engineering'
+17:23:29 <tigerfoot> And if you follow the bug list, a lot lot of bug hitting 11.4 should have been avoid
+17:23:35 <bmwiedemann> ReferenceSeete: we could have 5 Milestones instead of 6
+17:24:24 <tigerfoot> bmwiedemann: we already have M1 is not that welll with all the not loading system saw around.
+17:24:29 <ReferenceSeete> bmweidemann: Yes, I suppose we could consider Factory to be a perpetual "MS1" and see how long that works in promoting testing..
+17:24:50 <ReferenceSeete> So the first 'proper' milestone would be labeled "2"
+17:25:10 <bmwiedemann> factory could be MS0 for 3 months, too
+17:25:41 <bmwiedemann> with factory-tested snapshots marking usable states
+17:25:52 <LWFinger> At what stage is there a "feature freeze"?
+17:26:16 <ReferenceSeete> I agree, it is MS0.  I'm just thinking how we can avoid the learning curve of "there's no more MS6".
+17:26:34 <bmwiedemann> LWFinger: MS4-MS6 - depending if you have  core/leaf packages
+17:26:41 <tigerfoot> LWFinger: Like just before introducing gcc46 factory was really stable ...
+17:27:15 <tigerfoot> bmwiedemann: good point on core/leaf ..
+17:27:54 <LWFinger> I know only part of the gcc46 story. Is it more than new warnings?
+17:27:55 <ReferenceSeete> If people feel more comfortable with MS6 than 5, MS5 than 4...and there's a real difference in testing contributions...that's an incentive to keep the name "Milestone 6".
+17:28:02 * tigerfoot will have to good in 18 minutes ...
+17:28:38 <tigerfoot> keep M6, but allow a bigger time frame before RC
+17:29:20 <LWFinger> Ready for my experiences with MS1?
+17:29:24 * tigerfoot %s/good/go/p
+17:29:44 <bmwiedemann> ReferenceSeete: we might as well propose to rename the last MS to "beta" so that people will have a better idea of it's higher importance
+17:30:08 <bmwiedemann> LWFinger: OK, your turn :)
+17:30:25 <ReferenceSeete> bmwiedemann: I agree with just naming it beta.  Unfortunately I thought "milestone" was being used to avoid the term "beta"
+17:30:26 <LWFinger> I was traveling, thus limited testing.
+17:31:04 <LWFinger> I tried KDE Live on a VB VM and hit the login problem.
+17:31:51 <LWFinger> I then loaded the Gnome Live CD. When it seemed to boot, then I installed from that.
+17:32:10 <tigerfoot> classical one, which hit KDF weeks ago unfortunately
+17:32:27 <LWFinger> After installation, I added the KDE desktop and everything seems OK.
+17:33:00 <LWFinger> I need to do more testing, but so fay no major killers for me.
+17:33:06 <LWFinger> done.
+17:34:09 <bmwiedemann> IMHO there were some easily avoidable bugs left in (possibly because we did not look at openqa the week before MS1)
+17:35:15 <LWFinger> Was there a full week between factory again building and MS1?
+17:35:29 <tigerfoot> openqa need a week of promotion before M2 :-)
+17:36:19 <bmwiedemann> it also needs some overhaul for GNOME3/fallback mode
+17:36:39 <bmwiedemann> how do you want to promote it?
+17:36:40 * tigerfoot sorry have to go, but reside here like a zombie
+17:37:09 <tigerfoot> bmwiedemann: making some more articles, and try to get developpers awake about it and the result
+17:37:22 <bmwiedemann> OK
+17:37:23 <tigerfoot> in ml and lizard
+17:38:25 <bmwiedemann> #info discussed issues with MS1: among those the KDE login problem = bug 687781
+17:39:03 <bmwiedemann> #topic open discussion
+17:39:33 <bmwiedemann> there was a question from jdd on the meeting wiki page about how to use packman on Factory
+17:40:51 <ReferenceSeete> Packman/Factory is pretty minimalist.
+17:41:14 <LWFinger> AFAIK, packman does not try to build until late in the MS stage.
+17:41:14 <ReferenceSeete> Was there a breakage issue?
+17:41:31 <ReferenceSeete> No, Packman builds along side Factory now.
+17:41:43 <ReferenceSeete> At least they try.
+17:42:00 <ReferenceSeete> The most recent builds I see in the mirror I use are from June 1st.
+17:42:16 <bmwiedemann> I think the problem is that  yast2 community repos get pulled from http://opensuse-community.org/openSUSE_114_Community_Additional.xml
+17:42:18 <LWFinger> They may still be working through the gcc46 issues.
+17:42:54 <ReferenceSeete> Sorry June 2nd
+17:43:28 <ReferenceSeete> They only maintain their "Essentials" sub-repo for Factory.
+17:43:47 <ReferenceSeete> If you want the other software, you need to wait for a final release or build it yourself.
+17:44:13 <bmwiedemann> even getting the essentials would be nice
+17:45:25 <ReferenceSeete> I don't know what the exact problem was, but bmwiedemann is probably right - the person may be using the community repos list and not the Packman Factory build
+17:47:13 <ReferenceSeete> The mirror I use is: http://anorien.csc.warwick.ac.uk/mirrors/packman/suse/Factory/Essentials/
+17:47:38 <ReferenceSeete> The person having troubles could try that and then report success/failure
+17:48:24 <bmwiedemann> OK
+17:48:32 <bmwiedemann> I will email him
+17:49:26 <LWFinger> The description of what to do is at http://en.opensuse.org/Additional_package_repositories#Packman.
+17:54:36 <bmwiedemann> shall we propose the MS6=>Beta rename somewhere? on opensuse-project ML?
+17:55:28 <LWFinger> I think that would be a good idea.
+17:55:46 <ReferenceSeete> Agreed
+17:57:46 <bmwiedemann> who volunteers to write the email with our reasoning?
+17:58:12 <LWFinger> I'll draft it.
+17:58:43 <bmwiedemann> btw: ietherpad.com is a nice place to write texts collaboratively
+17:59:38 <bmwiedemann> any more topics for today?
+18:00:00 <bmwiedemann> #action LWFinger drafts proposal email for MS6=>Beta rename
+18:00:38 <ReferenceSeete> Looks like the end for today.
+18:01:06 <LWFinger> I'll do a draft, email it, and create a public pad at ietherpad.com.
+18:01:17 <bmwiedemann> Then this is the end. for today.
+18:01:23 <LWFinger> I have no more.
+18:01:26 <bmwiedemann> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:01:39 <bmwiedemann> #endmeeting

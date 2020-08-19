@@ -1,0 +1,120 @@
+15:01:57 <vuntz> #startmeeting openSUSE Project meeting
+15:01:57 <bugbot> Meeting started Wed Aug  7 15:01:57 2013 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:01:57 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:02:03 <vuntz> hey hey hey
+15:02:16 <vuntz> Ilmehtar, Funkypenguin: here?
+15:02:26 <vuntz> robjo said on the list he wouldn't be able to join
+15:02:35 <vuntz> and who else is here? :-)
+15:05:15 <Ilmehtar> vuntz: I'm here
+15:05:41 <Ilmehtar> vuntz: I'm doing a horrible nasty upgrade of a terrible ugly windows based .NET application that I'd rather put out of its misery than touch
+15:05:43 <Ilmehtar> vuntz: but i'm here..
+15:05:53 <vuntz> heh
+15:05:55 <vuntz> anybody else?
+15:06:12 <vuntz> if it's just Ilmehtar and me, then we might as well just watch Ilmehtar's upgrade fail :-)
+15:06:18 <DimStar> :)
+15:06:28 <DimStar> live stream?
+15:06:45 <Ilmehtar> vuntz: we can review and clear one Action Item - I finally updated -project on the Local Coodinator programme, we're having a meeting next Tuesday
+15:06:56 <Ilmehtar> DimStar: banned on YouTube - too much swearing
+15:07:27 <vuntz> Ilmehtar: yay!
+15:08:05 <vuntz> we have an item on the agenda (openSUSE on raspberry pi)
+15:08:16 <vuntz> but I'm not sure there's anyone to discuss this item?
+15:08:34 <madanyang> vuntz: I was the one to put it on the agenda
+15:08:57 <madanyang> it sucks to use raspbian instead of opensuse
+15:09:06 <vuntz> hey madanyang
+15:09:08 <vuntz> so let's discuss this
+15:09:13 <vuntz> #topic openSUSE on raspberry pi
+15:09:31 <vuntz> madanyang: want to give a quick intro on the topic?
+15:09:39 <andy0023> #info
+15:10:03 <madanyang> well the whole situation is on the mailing-list of the opensuse-arm
+15:10:49 <madanyang> it starts with http://lists.opensuse.org/opensuse-arm/2013-07/msg00050.html
+15:10:54 <Ilmehtar> can you summerise it?
+15:11:18 <madanyang> the key is http://lists.opensuse.org/opensuse-arm/2013-08/msg00000.html
+15:11:54 <madanyang> andrew wafaa says the priority is armv7 since it is future
+15:12:15 <madanyang> but the real truth of the matter is raspi is cheap and has 1.5 millon sold out
+15:12:25 <madanyang> with no opensuse running on it
+15:12:48 <madanyang> ok maybe exagration but not many
+15:13:24 <madanyang> if raspi is aiming youngsters and those who want to stay young we as opensuse are not taking part
+15:13:40 <madanyang> so this is a nutshell summary
+15:15:06 <vuntz> I quickly read the thread, and it seems to me that the issue is simply that nobody is working on armv6
+15:15:41 <madanyang> vuntz the obs has no running armv6
+15:16:16 <madanyang> see https://build.opensuse.org/monitor
+15:16:17 <vuntz> madanyang: I see no reply to http://lists.opensuse.org/opensuse-arm/2013-08/msg00008.html
+15:18:13 <madanyang> but if there is no running armv6 it is somehow related to obs and probably only adrian can answer
+15:20:53 <vuntz> madanyang: but in http://lists.opensuse.org/opensuse-arm/2013-07/msg00050.html there was "all packages build in OBS are for ARM6"
+15:21:14 <vuntz> so it sounds like we can build packages from armv6
+15:21:16 <Ilmehtar> madanyang: I see both an armv6 and armv5 scheduler and stats that suggest packages are getting built. if I recall correctly, it's possible to build armv6 packages on OBS using the QEMU method, pretty sure I remember Adrian talking about that at some point
+15:22:04 <Ilmehtar> madanyang: OBS might not have armv6 hardware, that would explain why you dont see it in the list of builders
+15:22:38 <madanyang> Ilmehtar: shouldn't qemu instances be visible also
+15:23:12 <Ilmehtar> madanyang: but my understanding is a proper 'port' of openSUSE to a new architecture requires a lot more than just 'can obs build it'? I know the ARM team have to put a lot of love and attention into getting hardware/drivers/etc all working - and from Andy's mail I think that's the biggest roadblock - it's lots of work, and they want to focus on newer
+15:23:12 <Ilmehtar> architectures
+15:23:24 <madanyang> vuntz: - http://lists.opensuse.org/opensuse-arm/2013-07/msg00050.html "all packages build in OBS are for ARM6, but can't be used, as I have no image
+15:23:24 <madanyang> to start from."
+15:24:10 <vuntz> madanyang: that doesn't sound like an OBS limitation
+15:24:23 <madanyang> Ilmehtar: so fine to loose a potential market with affordable hardware sorry that is bad business
+15:24:31 <vuntz> it sounds to me that we simply need someone to build such an image :/
+15:25:37 <vuntz> and this is an area where we can only rely on what people want to do
+15:25:40 <madanyang> vuntz: I'll have a look to build a jeos-jeos image (double jeos is intended)
+15:26:40 <Ilmehtar> madanyang: great :)
+15:27:20 <vuntz> #info current efforts of ARM team are targetted at ARMv7+
+15:27:23 <madanyang> I will blog it through lizards, but I have 2 weeks before holidays so I am a bit tight
+15:27:37 <vuntz> #info unfortunately, Raspberry Pi is ARMv6
+15:27:49 <vuntz> #info OBS is able to build for ARMv6 (via qemu)
+15:28:03 <madanyang> vuntz: how about donating some raspis ?
+15:28:25 <vuntz> #info it seems the only missing piece is somebody working on a base image
+15:28:50 <vuntz> madanyang: this could work, but we still need to find somebody who would be willing to do the work
+15:28:58 <vuntz> madanyang: I would suggest the idea on the arm mailing list
+15:29:29 <vuntz> and if people say "I'm happy to step up if I get the hardware", then donation would be useful
+15:29:42 <madanyang> OMG one more to join/follow/read/post
+15:30:16 <madanyang> in the mean time is there any reason that arm mailing list is not in news.gmane.org
+15:31:15 <vuntz> I think it's simply because someone needs to register it in gmane.org
+15:31:20 <vuntz> I believe anyone can do that
+15:31:31 <vuntz> (although I never did it myself, so not sure how to do it :-))
+15:31:40 <Ilmehtar> a quick google suggests - http://gmane.org/add.php
+15:33:36 <vuntz> ok
+15:33:43 <vuntz> any other topic?
+15:33:56 <madanyang> Ilmehtar: Yes but isn't there a team/person to these simple things
+15:34:45 <madanyang> I am not expecting suse people to do it but isn't an opensuse team not there like forums
+15:35:43 <Ilmehtar> hmm? there's dozens of services like gmane, heck, we even have our own with lists.opensuse.org, I dont think it would be a productive use of someones time to go around making sure we're registered on every single one of them
+15:36:10 <Ilmehtar> especially as anyone who does want it, can request it themselves .. if you want to make sure all the opensuse mailing lists are on gmane, please go ahead :)
+15:37:15 <madanyang> Ok will do
+15:37:53 <Ilmehtar> thank you
+15:39:07 <vuntz> no other topic?
+15:39:25 <Funkypenguin> vuntz: sorry im here now
+15:39:43 <vuntz> Funkypenguin: heh, want to comment on the chat above?
+15:40:26 <Funkypenguin> just catching up on the backlog
+15:41:09 <madanyang> Ilmehtar: registration done
+15:41:13 <Funkypenguin> ok...
+15:41:28 <Funkypenguin> re the RaspberryPi topic:
+15:41:45 <Funkypenguin> there is work already underway to support it
+15:42:33 <Funkypenguin> we used to have ARMv5 which was able to run on the Pi, but as the Pi is the only device people were concerned about we shelved v5 in favour for the better optimised v6
+15:43:00 <Funkypenguin> problem as I mentioned in the thread is that we are very constrained with resources (read people)
+15:43:56 <Funkypenguin> as far as the core distro is concerned, v7 and above are the target architectures - the Pi is the only v6 board available and there are many more v7 devices
+15:44:13 <Funkypenguin> (and prices are dropping constantly)
+15:45:26 <Funkypenguin> if people want Pi support they will unfortunately have to step up and help out, we just cant do it all - the few people we have are struggling as it is
+15:46:08 <Funkypenguin> having Pi hardware won't really help much as it doesn't support KVM/Xen and as such can't be used in the OBS, only qemu
+15:46:31 <Funkypenguin> it is mostly people helping fix the base image and also fix package breakages
+15:46:55 <vuntz> Funkypenguin: but donating the hardware to some people might motivate them?
+15:47:31 <Funkypenguin> ah, donating hardware to people wanting to help could indeed be beneficial
+15:47:47 <Funkypenguin> my concern is making sure that those people actually do the work
+15:47:53 <Funkypenguin> im all for it in theory
+15:47:53 <vuntz> right
+15:48:30 <madanyang> Funkypenguin: which devel repo to be branched to fix problems
+15:49:26 <Funkypenguin> madanyang: https://build.opensuse.org/project/show/openSUSE:Factory:ARM is the correct repo to use
+15:49:44 <Funkypenguin> but as vuntz mentioned we need to get the bootstrap complete
+15:51:18 <Funkypenguin> the best thing to do is to ask either on irc or mailing list for how best to help out with that
+15:52:43 <Funkypenguin> one thing to note is that you may need to wait for a response
+15:53:13 <Funkypenguin> does anyone else have any comments on this topic?
+15:53:36 <Funkypenguin> don't get me wrong im not saying we shouldn't support the Pi, just that it isn't a focus for us
+15:54:19 <madanyang> Funkypenguin: on the openSUSE:Factory:Arm when I look there is standard/armv6l and then there is armv6l
+15:54:28 <Funkypenguin> it is effectively the same issue that many other projects have of concentrating on current and future architectures rather than old one
+15:56:04 <Funkypenguin> madanyang: use armv6hl
+15:56:08 <vuntz> okay
+15:56:17 <madanyang> Funkypenguin: and until the armv6l has the backlog cleared there is not much to do, or ?
+15:56:31 <Funkypenguin> pretty much
+15:57:15 <Funkypenguin> unfortunately we're running out of dylithium crytals for the OBS, so if we can find some more it's a waiting game
+15:57:45 <vuntz> as we're nearing the end of the hour: is there any other quick topic people would like to discuss?
+15:57:53 <vuntz> otherwise, we're done and arm discussion can go on :-)
+15:58:19 <madanyang> vuntz: Thanks
+15:58:49 <vuntz> nothing, so we're done :-)
+15:58:53 <vuntz> thanks everyone!
+15:58:56 <vuntz> #endmeeting

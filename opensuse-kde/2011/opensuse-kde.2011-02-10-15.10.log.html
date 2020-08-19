@@ -1,0 +1,467 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:10:56</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:10:56</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Feb 10 15:10:56 2011 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:10:56</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:11:02</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">tittiatcoke:</span> buienradar suggests so :)
+<a name="l-5"></a><span class="tm">15:11:17</span><span class="nk"> &lt;wstephenson&gt;</span> so whatta we got?
+<a name="l-6"></a><span class="tm">15:11:22</span><span class="nk"> &lt;wstephenson&gt;</span> Agenda:
+<a name="l-7"></a><span class="tm">15:11:29</span><span class="nk"> &lt;wstephenson&gt;</span> * old action items
+<a name="l-8"></a><span class="tm">15:11:33</span><span class="nk"> &lt;wstephenson&gt;</span> * status report
+<a name="l-9"></a><span class="tm">15:11:37</span><span class="nk"> &lt;wstephenson&gt;</span> * 11.4 stabilisations
+<a name="l-10"></a><span class="tm">15:11:41</span><span class="nk"> &lt;wstephenson&gt;</span> * Q&amp;A, Misc
+<a name="l-11"></a><span class="tm">15:12:05</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> are you ok to do minutes again?
+<a name="l-12"></a><span class="tm">15:12:34</span><span class="nk"> &lt;remur_030&gt;</span> sure
+<a name="l-13"></a><span class="tm">15:13:04</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">Team meeting - old action items</span>
+<a name="l-14"></a><span class="tm">15:13:11</span><span class="nk"> &lt;wstephenson&gt;</span> * wstephenson to contact i18n team with regards to openSUSE guides.
+<a name="l-15"></a><span class="tm">15:13:13</span><span class="nk"> &lt;wstephenson&gt;</span> not done
+<a name="l-16"></a><span class="tm">15:13:21</span><span class="nk"> &lt;wstephenson&gt;</span> * javier to further explore the live cd listings on kde-apps
+<a name="l-17"></a><span class="tm">15:13:28</span><span class="nk"> &lt;wstephenson&gt;</span> done, Beineri gave him the listing account
+<a name="l-18"></a><span class="tm">15:13:30</span><span class="nk"> &lt;sebas&gt;</span> seems German guides are underway and due 23rd
+<a name="l-19"></a><span class="tm">15:13:38</span><span class="nk"> &lt;wstephenson&gt;</span> * all Check kde packagekit frontend http://en.opensuse.org/openSUSE:KDE_11.4_packagekit
+<a name="l-20"></a><span class="tm">15:14:08</span><span class="nk"> &lt;sebas&gt;</span> pkgkit works fine on two 11.4 systems here
+<a name="l-21"></a><span class="tm">15:14:12</span><span class="nk"> &lt;sebas&gt;</span> 3 actually
+<a name="l-22"></a><span class="tm">15:14:17</span><span class="nk"> &lt;sebas&gt;</span> different archs
+<a name="l-23"></a><span class="tm">15:14:44</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">sebas:</span> did you test online updates, app installation, distro upgrade, ...?
+<a name="l-24"></a><span class="tm">15:14:51</span><span class="nk"> &lt;rabauke&gt;</span> I think it misses notifications.
+<a name="l-25"></a><span class="tm">15:15:09</span><span class="nk"> &lt;sebas&gt;</span> I didn't test distro upgrades, the others work fine
+<a name="l-26"></a><span class="tm">15:15:11</span><span class="nk"> &lt;wstephenson&gt;</span> i didn't test it myself, too busy
+<a name="l-27"></a><span class="tm">15:15:12</span><span class="nk"> &lt;rabauke&gt;</span> it's not meant for dup AFAIK
+<a name="l-28"></a><span class="tm">15:15:34</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">rabauke:</span> not sure notifications are really needed, the icon being visible or not is enough distraction imo
+<a name="l-29"></a><span class="tm">15:15:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> Does it follow vendor settings from zypper, etc ?
+<a name="l-30"></a><span class="tm">15:16:00</span><span class="nk"> &lt;rabauke&gt;</span> and it lacks the option to actually add an online repo
+<a name="l-31"></a><span class="tm">15:16:02</span><span class="nk"> &lt;sebas&gt;</span> seems so, but I didn't make sure
+<a name="l-32"></a><span class="tm">15:16:06</span><span class="nk"> &lt;rabauke&gt;</span> or at least start the yast module
+<a name="l-33"></a><span class="tm">15:16:26</span><span class="nk"> &lt;sebas&gt;</span> it's an update notification and installer, not a package manager
+<a name="l-34"></a><span class="tm">15:16:35</span><span class="nk"> &lt;sebas&gt;</span> so it should be kept small and focused on just that
+<a name="l-35"></a><span class="tm">15:16:42</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> i added that patch, should be in RC1
+<a name="l-36"></a><span class="tm">15:16:51</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">sebas:</span> the button is already there
+<a name="l-37"></a><span class="tm">15:17:04</span><span class="nk"> &lt;wstephenson&gt;</span> the main problem is the zypp backend
+<a name="l-38"></a><span class="tm">15:17:11</span><span class="nk"> &lt;sebas&gt;</span> which button?
+<a name="l-39"></a><span class="tm">15:17:12</span><span class="nk"> &lt;wstephenson&gt;</span> as cb400f has been saying, it's been hacked
+<a name="l-40"></a><span class="tm">15:17:22</span><span class="nk"> &lt;remur_030&gt;</span> at least that is how I understand the developer who wanted to know how to access yast inst_source
+<a name="l-41"></a><span class="tm">15:17:26</span><span class="nk"> &lt;sebas&gt;</span> ok, then I'm not having the update running maybe, I only have configure
+<a name="l-42"></a><span class="tm">15:17:39</span><span class="nk"> &lt;sebas&gt;</span> and review, and hide
+<a name="l-43"></a><span class="tm">15:18:12</span><span class="nk"> &lt;wstephenson&gt;</span> duncanmv gave me some pointers how to fix it, but i haven't got my hands dirty yet
+<a name="l-44"></a><span class="tm">15:18:14</span><span class="nk"> &lt;rabauke&gt;</span> if there is no icon in the systray if there are no updates available because there is not update repo how does the user find that button?
+<a name="l-45"></a><span class="tm">15:18:31</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> why should there be no update repo?
+<a name="l-46"></a><span class="tm">15:18:52</span><span class="nk"> &lt;wstephenson&gt;</span> since it's a mixture of C, boost C++ and libzypp data structures that scare a namby-pamby Qt developer like me.
+<a name="l-47"></a><span class="tm">15:19:07</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">remur_030:</span> who knows. but kupdateapplet did have it for a reason.
+<a name="l-48"></a><span class="tm">15:20:01</span><span class="nk"> &lt;wstephenson&gt;</span> there should be an update repo after a 11.4 GM install/upgrade
+<a name="l-49"></a><span class="tm">15:20:22</span><span class="nk"> &lt;wstephenson&gt;</span> anyone else should be able to use yast to configure an update repo
+<a name="l-50"></a><span class="tm">15:20:50</span><span class="nk"> &lt;remur_030&gt;</span> +1, low profile updater should be enough to keep the system uptodate
+<a name="l-51"></a><span class="tm">15:21:49</span><span class="nk"> &lt;remur_030&gt;</span> do you get a notification after a kernel update to reboot?
+<a name="l-52"></a><span class="tm">15:22:19</span><span class="nk"> &lt;anaumov&gt;</span> wstephenson, I have a little bit free time now. We can work together with that (and with duncanmv)
+<a name="l-53"></a><span class="tm">15:22:20</span><span class="nk"> &lt;wstephenson&gt;</span> for everyones information, there is an 11.4 test update repo with all the usual classes of updates
+<a name="l-54"></a><span class="tm">15:22:28</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">anaumov:</span> it's too hard for you.
+<a name="l-55"></a><span class="tm">15:23:20</span><span class="nk"> &lt;wstephenson&gt;</span> remur_030, rabauke: did you test it?
+<a name="l-56"></a><span class="tm">15:23:27</span><span class="nk"> &lt;sebas&gt;</span> I know what happened to me when mum or dad told me "it's too hard for you" :)
+<a name="l-57"></a><span class="tm">15:23:30</span><span class="nk"> &lt;rabauke&gt;</span> IMHO the notifications "you should reboot" etc should not autohide
+<a name="l-58"></a><span class="tm">15:23:44</span><span class="nk"> &lt;anaumov&gt;</span> sebas, :)
+<a name="l-59"></a><span class="tm">15:23:53</span><span class="nk"> &lt;remur_030&gt;</span> no I didn't yet, waiting for 11.4 rc1 to be honest
+<a name="l-60"></a><span class="tm">15:24:01</span><span class="nk"> &lt;rabauke&gt;</span> the "affects package manager" works correctly. same for "reboot needed", i.e. the notification is shown
+<a name="l-61"></a><span class="tm">15:24:31</span><span class="nk"> &lt;wstephenson&gt;</span> good. which notifications are missing then? generally 'update available'?
+<a name="l-62"></a><span class="tm">15:25:21 </span><span class="nka">* sebas</span> <span class="ac">still thinks that no notification is just fine in this case</span>
+<a name="l-63"></a><span class="tm">15:25:27</span><span class="nk"> &lt;sebas&gt;</span> it doesn't need direct action
+<a name="l-64"></a><span class="tm">15:25:37</span><span class="nk"> &lt;sebas&gt;</span> more of a "upgrade when you get some time" thing
+<a name="l-65"></a><span class="tm">15:25:48</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> first of all the version in 11.4 does not distinguish between security and other updates. and the notification that updates are available is missing as well.
+<a name="l-66"></a><span class="tm">15:25:59</span><span class="nk"> &lt;cb400f&gt;</span> how distinctive is the icon?
+<a name="l-67"></a><span class="tm">15:26:10</span><span class="nk"> &lt;wstephenson&gt;</span> it's a greenish smear. not monochrome.
+<a name="l-68"></a><span class="tm">15:26:12</span><span class="nk"> &lt;sebas&gt;</span> easily recognizable, I find
+<a name="l-69"></a><span class="tm">15:26:31</span><span class="nk"> &lt;rabauke&gt;</span> I do think that notifications must be there because the icon might appear while the user is away and security updates should definitely get the attention and acknowledgement of the user.
+<a name="l-70"></a><span class="tm">15:26:36 </span><span class="nka">* cb400f</span> <span class="ac">tends to agree that the icon popping out is enough</span>
+<a name="l-71"></a><span class="tm">15:26:36</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">sebas:</span> i think security updates should be notified
+<a name="l-72"></a><span class="tm">15:26:48</span><span class="nk"> &lt;rabauke&gt;</span> even more so if the icon is hidden after a while. not sure though if that happens.
+<a name="l-73"></a><span class="tm">15:27:10</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">wstephenson:</span> I think they should be installed automatically
+<a name="l-74"></a><span class="tm">15:27:17</span><span class="nk"> &lt;sebas&gt;</span> http://i.imgur.com/G9Dcq.png &lt;&lt; icon
+<a name="l-75"></a><span class="tm">15:27:28</span><span class="nk"> &lt;rabauke&gt;</span> oh and I just noticed that there is another icon added to the systray in case a reboot is needed so there is kind of a permanent notification for that case.
+<a name="l-76"></a><span class="tm">15:27:51</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> the icon does not tell you anything regarding the importance of the updates
+<a name="l-77"></a><span class="tm">15:27:58</span><span class="nk"> &lt;wstephenson&gt;</span> hm, the icon is passive there?
+<a name="l-78"></a><span class="tm">15:28:09</span><span class="nk"> &lt;sebas&gt;</span> right yes ... that seems a bug
+<a name="l-79"></a><span class="tm">15:28:42</span><span class="nk"> &lt;sebas&gt;</span> I'm having a similar bug in lion mail, maybe that's why I didn't notice
+<a name="l-80"></a><span class="tm">15:29:20</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">report bug: update icon is passive when updates are available</span>
+<a name="l-81"></a><span class="tm">15:29:43</span><span class="nk"> &lt;wstephenson&gt;</span> would anyone else find a monochrome icon more pleasing?
+<a name="l-82"></a><span class="tm">15:30:07</span><span class="nk"> &lt;cb400f&gt;</span> for reboot? or in general?
+<a name="l-83"></a><span class="tm">15:30:15</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> whose AI is that?
+<a name="l-84"></a><span class="tm">15:30:20</span><span class="nk"> &lt;rabauke&gt;</span> http://wstaw.org/m/2011/02/10/plasma-desktopYZ2111.jpg shows the second icon
+<a name="l-85"></a><span class="tm">15:30:51</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> do you mena the icons apper i.e. the next kpackagekit version uses?
+<a name="l-86"></a><span class="tm">15:31:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> no, since we're not shipping apper in 11.4
+<a name="l-87"></a><span class="tm">15:31:29</span><span class="nk"> &lt;wstephenson&gt;</span> maybe we can steal them from it though, are they nice?
+<a name="l-88"></a><span class="tm">15:31:29</span><span class="nk"> &lt;rabauke&gt;</span> those do distinguish between the different kind of updates but the "security" one is a joke regarding its signal.
+<a name="l-89"></a><span class="tm">15:32:54</span><span class="nk"> &lt;remur_030&gt;</span> colored systray icons are for 'active' processes and monochrome ones for background stuff right?
+<a name="l-90"></a><span class="tm">15:33:21</span><span class="nk"> &lt;cb400f&gt;</span> monochrome for "workspace", colour for "applications"
+<a name="l-91"></a><span class="tm">15:33:30</span><span class="nk"> &lt;rabauke&gt;</span> it depends on whether you want something standing our or not. https://bugs.kde.org/show_bug.cgi?id=264051
+<a name="l-92"></a><span class="tm">15:33:33</span><span class="nk"> &lt;bugbot&gt;</span> KDE bug 264051 in Oxygen (icons) "kpackagekit/apper needs "alarm" icon" [Normal,Unconfirmed]
+<a name="l-93"></a><span class="tm">15:33:38</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> active icons are the ones in the tray at all times, passive ones are in the extender
+<a name="l-94"></a><span class="tm">15:33:52</span><span class="nk"> &lt;rabauke&gt;</span> ^^there you can see the icons
+<a name="l-95"></a><span class="tm">15:34:14</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> hm right poor choice of words, I meant it in the spirit of cb400f
+<a name="l-96"></a><span class="tm">15:34:16</span><span class="nk"> &lt;rabauke&gt;</span> https://bugs.kde.org/attachment.cgi?id=56380
+<a name="l-97"></a><span class="tm">15:34:24</span><span class="nk"> &lt;rabauke&gt;</span> direct link to the picture
+<a name="l-98"></a><span class="tm">15:35:07</span><span class="nk"> &lt;rabauke&gt;</span> IMHO security updates need to shout at the user and wait for acknowledgement of their notification.
+<a name="l-99"></a><span class="tm">15:35:20</span><span class="nk"> &lt;wstephenson&gt;</span> and what is the gear for?
+<a name="l-100"></a><span class="tm">15:36:11</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> propably supposed to hint at 'inner workings' of the system
+<a name="l-101"></a><span class="tm">15:36:19</span><span class="nk"> &lt;wstephenson&gt;</span> is there a chance we will get something fixed for 11.4 for this?
+<a name="l-102"></a><span class="tm">15:36:46</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> do you mean new icons?
+<a name="l-103"></a><span class="tm">15:36:55</span><span class="nk"> &lt;wstephenson&gt;</span> new icons, changed notifications, etc
+<a name="l-104"></a><span class="tm">15:37:11</span><span class="nk"> &lt;remur_030&gt;</span> I think rabauke is right, persistent notification for security updates (if we can distinguish that), the icons are too tiny to really catch attention anyway
+<a name="l-105"></a><span class="tm">15:37:13</span><span class="nk"> &lt;rabauke&gt;</span> dantii is away since weeks, so I guess not
+<a name="l-106"></a><span class="tm">15:37:45</span><span class="nk"> &lt;wstephenson&gt;</span> anyone want to try to patch that into kpackagekit?
+<a name="l-107"></a><span class="tm">15:37:53</span><span class="nk"> &lt;cb400f&gt;</span> guess the kupdateapplet icons could easily be "ported" if we wanted
+<a name="l-108"></a><span class="tm">15:37:55</span><span class="nk"> &lt;tittiatcoke&gt;</span> and I wonder if he will make changes to kpackagekit or that he will implement it in Apper
+<a name="l-109"></a><span class="tm">15:37:56</span><span class="nk"> &lt;rabauke&gt;</span> apper does already have the code
+<a name="l-110"></a><span class="tm">15:37:59</span><span class="nk"> &lt;rabauke&gt;</span> and it works
+<a name="l-111"></a><span class="tm">15:38:06</span><span class="nk"> &lt;rabauke&gt;</span> yet it is not released yet.
+<a name="l-112"></a><span class="tm">15:38:15</span><span class="nk"> &lt;wstephenson&gt;</span> i think sebas might have a point but it's too late to rework the update notification UX for 11.4 now
+<a name="l-113"></a><span class="tm">15:38:24</span><span class="nk"> &lt;cb400f&gt;</span> is apper much more than a name change? .. is it fundamentally different?
+<a name="l-114"></a><span class="tm">15:38:30</span><span class="nk"> &lt;remur_030&gt;</span> sorry for my dumb question, but what is apper now?
+<a name="l-115"></a><span class="tm">15:38:45</span><span class="nk"> &lt;wstephenson&gt;</span> so i suggest we make it similar to kupdateapplet for now
+<a name="l-116"></a><span class="tm">15:38:48</span><span class="nk"> &lt;cb400f&gt;</span> it's the successor of kpk
+<a name="l-117"></a><span class="tm">15:38:50</span><span class="nk"> &lt;wstephenson&gt;</span> ie patch in a notitification
+<a name="l-118"></a><span class="tm">15:38:57</span><span class="nk"> &lt;wstephenson&gt;</span> i think it is the next version of kpk + new name
+<a name="l-119"></a><span class="tm">15:39:18</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">remur_030:</span> Apper is the successor of kpk.
+<a name="l-120"></a><span class="tm">15:39:23</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> the UI is different and it does distinguish bettween the categories of updates. other than that there is not much that can change in such an app. :)
+<a name="l-121"></a><span class="tm">15:39:39</span><span class="nk"> &lt;remur_030&gt;</span> ah ok, so it's mainly rework and rebranding instead of a whole new approach
+<a name="l-122"></a><span class="tm">15:39:48</span><span class="nk"> &lt;rabauke&gt;</span> yes
+<a name="l-123"></a><span class="tm">15:40:12</span><span class="nk"> &lt;remur_030&gt;</span> I feared apper might relate to apt
+<a name="l-124"></a><span class="tm">15:40:16</span><span class="nk"> &lt;wstephenson&gt;</span> och no
+<a name="l-125"></a><span class="tm">15:40:28</span><span class="nk"> &lt;wstephenson&gt;</span> moving away from packagekit would be a lot of work
+<a name="l-126"></a><span class="tm">15:40:34</span><span class="nk"> &lt;rabauke&gt;</span> I think it does actually since apparently that pk-backend is "the best"
+<a name="l-127"></a><span class="tm">15:40:55</span><span class="nk"> &lt;cb400f&gt;</span> better than yum? .. that would be a laugh :-)
+<a name="l-128"></a><span class="tm">15:41:00</span><span class="nk"> &lt;wstephenson&gt;</span> does anyone want to try adding a notification to the 0.6.11 kpackagekit we are shipping?
+<a name="l-129"></a><span class="tm">15:41:48</span><span class="nk"> &lt;wstephenson&gt;</span> ok, then let's move on, i'll work on the backend.
+<a name="l-130"></a><span class="tm">15:41:59</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson, duncanmv fix packagekit-zypp some more</span>
+<a name="l-131"></a><span class="tm">15:42:12</span><span class="nk"> &lt;wstephenson&gt;</span> * all test phonon-gstreamer + pulseaudio combo
+<a name="l-132"></a><span class="tm">15:42:14</span><span class="nk"> &lt;cb400f&gt;</span> I could have a look at the icons from kupdateapplet and see if they could/should replace the kpk ones
+<a name="l-133"></a><span class="tm">15:42:18</span><span class="nk"> &lt;anaumov&gt;</span> <span class="cmd">#action </span><span class="cmdline">anaumov study packagekit-zypp</span>
+<a name="l-134"></a><span class="tm">15:42:24</span><span class="nk"> &lt;anaumov&gt;</span> :)
+<a name="l-135"></a><span class="tm">15:42:33</span><span class="nk"> &lt;rabauke&gt;</span> maybe we should put an explanation of the icon into the "hello user" message when starting kde since there is no way the user might guess what the icon stands for
+<a name="l-136"></a><span class="tm">15:42:44</span><span class="nk"> &lt;rabauke&gt;</span> even less so without notifications
+<a name="l-137"></a><span class="tm">15:42:46</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> good suggestion
+<a name="l-138"></a><span class="tm">15:42:52</span><span class="nk"> &lt;wstephenson&gt;</span> give it some continuity
+<a name="l-139"></a><span class="tm">15:43:02</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">cb400f patch in icons from kupdateapplet</span>
+<a name="l-140"></a><span class="tm">15:43:16</span><span class="nk"> &lt;rabauke&gt;</span> that would help indeed
+<a name="l-141"></a><span class="tm">15:43:36</span><span class="nk"> &lt;wstephenson&gt;</span> so, PA + gstreamer
+<a name="l-142"></a><span class="tm">15:44:27</span><span class="nk"> &lt;rabauke&gt;</span> installing streamer plugins via kpk seems to work on 11.4 but fails on 11.3.
+<a name="l-143"></a><span class="tm">15:44:51</span><span class="nk"> &lt;rabauke&gt;</span> the shortages regarding fading and euqalizer have been mentioned already
+<a name="l-144"></a><span class="tm">15:45:17</span><span class="nk"> &lt;wstephenson&gt;</span> i have some bugs: 668757, and i can't find the other one atm
+<a name="l-145"></a><span class="tm">15:45:21</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 668757 in openSUSE 11.4 (KDE4 Applications) "invalid sound card (HDMI output) selected by default by Kmix" [Major,Needinfo] https://bugzilla.novell.com/668757
+<a name="l-146"></a><span class="tm">15:45:28</span><span class="nk"> &lt;wstephenson&gt;</span> reporter claimed that amarok and firefox together blocked sound
+<a name="l-147"></a><span class="tm">15:46:22</span><span class="nk"> &lt;cb400f&gt;</span> there were some complaints on -factory ml too about borked sound.. do we know the week points of PA? .. Flash? skype? other stuff?
+<a name="l-148"></a><span class="tm">15:46:23</span><span class="nk"> &lt;wstephenson&gt;</span> i have no problems, but then i have boring intel systems
+<a name="l-149"></a><span class="tm">15:46:34</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> you sure that's the right report?
+<a name="l-150"></a><span class="tm">15:46:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess I fall into the same category :-) Boring lenovo lappie
+<a name="l-151"></a><span class="tm">15:47:17</span><span class="nk"> &lt;wstephenson&gt;</span> flash and skype should be ok
+<a name="l-152"></a><span class="tm">15:47:21</span><span class="nk"> &lt;cb400f&gt;</span> actually I think they said most problems were with intel hda... but it seems to work for me too
+<a name="l-153"></a><span class="tm">15:47:40</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> no, but i can't find actual BRs for the other ones
+<a name="l-154"></a><span class="tm">15:47:50</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">cb400f:</span> flash and skype always were the problem for me with pulseaudio, once firefox flash took alsa nothing else could use sound anymore
+<a name="l-155"></a><span class="tm">15:47:52</span><span class="nk"> &lt;wstephenson&gt;</span> "[opensuse-factory] 11.4 M6" from De Donn Washburn etc
+<a name="l-156"></a><span class="tm">15:48:21</span><span class="nk"> &lt;cb400f&gt;</span> but washburn has problems with _everything_ ... _always_
+<a name="l-157"></a><span class="tm">15:48:33</span><span class="nk"> &lt;remur_030&gt;</span> if something else had sound before they worked, but I am unsure who was to blame here
+<a name="l-158"></a><span class="tm">15:48:33</span><span class="nk"> &lt;wstephenson&gt;</span> yes
+<a name="l-159"></a><span class="tm">15:48:47</span><span class="nk"> &lt;wstephenson&gt;</span> i need to talk to saschpe about it too, he has problems, is sane, and down the hall.
+<a name="l-160"></a><span class="tm">15:50:14</span><span class="nk"> &lt;wstephenson&gt;</span> ok, nothing much else to discuss
+<a name="l-161"></a><span class="tm">15:50:24</span><span class="nk"> &lt;wstephenson&gt;</span> * wstephenson make phonon 4.4.4 pkgs
+<a name="l-162"></a><span class="tm">15:50:26</span><span class="nk"> &lt;wstephenson&gt;</span> done
+<a name="l-163"></a><span class="tm">15:50:41</span><span class="nk"> &lt;wstephenson&gt;</span> * discussion on repo naming etc to deferred to next meeting
+<a name="l-164"></a><span class="tm">15:50:49</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> this was yours from last meeting
+<a name="l-165"></a><span class="tm">15:51:06</span><span class="nk"> &lt;wstephenson&gt;</span> did you mean rename the actual repos or just improve their descriptions and wiki help?
+<a name="l-166"></a><span class="tm">15:51:20</span><span class="nk"> &lt;wstephenson&gt;</span> please let it be the latter, renaming causes mass indigestion
+<a name="l-167"></a><span class="tm">15:51:38</span><span class="nk"> &lt;saschpe&gt;</span> <span class="hi">wstephenson:</span> sorry, I've been really busy and haven't yet found the time to look into it
+<a name="l-168"></a><span class="tm">15:51:45</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">saschpe:</span> same here
+<a name="l-169"></a><span class="tm">15:52:03</span><span class="nk"> &lt;wstephenson&gt;</span> (for "your problem" == it)
+<a name="l-170"></a><span class="tm">15:52:58</span><span class="nk"> &lt;saschpe&gt;</span> <span class="hi">wstephenson:</span> btw. maybe it's not entirely pulse's (or kde's pulse integration) fault, I've had issues with only alsa. However. they went away after a reboot. rather strange it is
+<a name="l-171"></a><span class="tm">15:53:27</span><span class="nk"> &lt;wstephenson&gt;</span> ok, we're not going into it in detail now either
+<a name="l-172"></a><span class="tm">15:53:44 </span><span class="nka">* wstephenson</span> <span class="ac">shakes rabauke</span>
+<a name="l-173"></a><span class="tm">15:54:08</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> we can keep it as discussion point for later and move on for now I guess
+<a name="l-174"></a><span class="tm">15:54:14</span><span class="nk"> &lt;wstephenson&gt;</span> ok
+<a name="l-175"></a><span class="tm">15:54:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> you have the floor
+<a name="l-176"></a><span class="tm">15:54:24</span><span class="nk"> &lt;remur_030&gt;</span> Huh?
+<a name="l-177"></a><span class="tm">15:54:27</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">Team meeting - 11.4 stabilization</span>
+<a name="l-178"></a><span class="tm">15:54:36</span><span class="nk"> &lt;remur_030&gt;</span> ah, not status before?
+<a name="l-179"></a><span class="tm">15:54:46</span><span class="nk"> &lt;wstephenson&gt;</span> bah :)
+<a name="l-180"></a><span class="tm">15:54:50</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">Team meeting - status</span>
+<a name="l-181"></a><span class="tm">15:55:40 </span><span class="nka">* wstephenson</span> <span class="ac">'s status: Fosdem, cleaned up UI jargon strings upstream, started looking at gross memory leaks too.</span>
+<a name="l-182"></a><span class="tm">15:55:50</span><span class="nk"> &lt;remur_030&gt;</span> 11.4rc1 wwith kde4.6.0 going out right?
+<a name="l-183"></a><span class="tm">15:56:00</span><span class="nk"> &lt;cb400f&gt;</span> it's out
+<a name="l-184"></a><span class="tm">15:56:27</span><span class="nk"> &lt;wstephenson&gt;</span> last week: 11.4RC1 submissions, sometime several times over because the factory reviewers have become militant about changelog entries
+<a name="l-185"></a><span class="tm">15:56:40 </span><span class="nka">* tittiatcoke</span> <span class="ac">status:  Updates Unstable based on the KDE packages that moved to GIT</span>
+<a name="l-186"></a><span class="tm">15:57:31</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">also:</span> obexd updated, bluedevil obsoletes kbluetooth correctly now, packaged kamoso and qt-gstreamer for fun, fixed akonadi autostart when clock events are not shown.
+<a name="l-187"></a><span class="tm">15:57:39</span><span class="nk"> &lt;wstephenson&gt;</span> anyone tested that in RC1 yet?
+<a name="l-188"></a><span class="tm">15:58:08 </span><span class="nka">* cb400f</span> <span class="ac">just dupped during the meeting</span>
+<a name="l-189"></a><span class="tm">15:58:09</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> sorry, was away.
+<a name="l-190"></a><span class="tm">15:58:30</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> ok, we're coming back to that after status and 11.4 stabilisation efforts
+<a name="l-191"></a><span class="tm">15:58:33</span><span class="nk"> &lt;rabauke&gt;</span> I'm constantly dupping.
+<a name="l-192"></a><span class="tm">15:58:37 </span><span class="nka">* wstephenson</span> <span class="ac">tested it now</span>
+<a name="l-193"></a><span class="tm">15:58:37</span><span class="nk"> &lt;cb400f&gt;</span> hmm.. obexd not in default install :-(
+<a name="l-194"></a><span class="tm">15:59:11</span><span class="nk"> &lt;cb400f&gt;</span> did dup fail or did the patterns? .. not 100% sure the snapshot repo is up to date though.. only updated ~300 packages
+<a name="l-195"></a><span class="tm">15:59:15</span><span class="nk"> &lt;cb400f&gt;</span> or the deps
+<a name="l-196"></a><span class="tm">15:59:15</span><span class="nk"> &lt;wstephenson&gt;</span> maybe we should call Apper Duppy if we don't get the backend fixed: http://en.wikipedia.org/wiki/Duppy
+<a name="l-197"></a><span class="tm">15:59:58</span><span class="nk"> &lt;cb400f&gt;</span> :-)
+<a name="l-198"></a><span class="tm">15:59:58</span><span class="nk"> &lt;wstephenson&gt;</span> "malevolent ghost or spirit that zypper dup's your system without being asked to"
+<a name="l-199"></a><span class="tm">16:00:06</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> I had the same suspission but my release files states RC1
+<a name="l-200"></a><span class="tm">16:00:31</span><span class="nk"> &lt;cb400f&gt;</span> bluedevil 10.2-1.1 doesn't seem to have requires obexd
+<a name="l-201"></a><span class="tm">16:00:37</span><span class="nk"> &lt;cb400f&gt;</span> 1.0.2
+<a name="l-202"></a><span class="tm">16:00:54</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> yeah that's on my todo
+<a name="l-203"></a><span class="tm">16:01:22</span><span class="nk"> &lt;cb400f&gt;</span> gah.. and obexd still wants evolution-data-server
+<a name="l-204"></a><span class="tm">16:01:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> ah but look what's in the obexd package :)
+<a name="l-205"></a><span class="tm">16:01:55</span><span class="nk"> &lt;wstephenson&gt;</span> nothing important.
+<a name="l-206"></a><span class="tm">16:02:10</span><span class="nk"> &lt;wstephenson&gt;</span> so bluedevil will pull in obex-client and obex-data server
+<a name="l-207"></a><span class="tm">16:02:20</span><span class="nk"> &lt;cb400f&gt;</span> ah :-)
+<a name="l-208"></a><span class="tm">16:02:20</span><span class="nk"> &lt;wstephenson&gt;</span> and the gnomes will udpate obexd and get those too
+<a name="l-209"></a><span class="tm">16:02:32 </span><span class="nka">* cb400f</span> <span class="ac">tells zypper to abort</span>
+<a name="l-210"></a><span class="tm">16:02:48</span><span class="nk"> &lt;wstephenson&gt;</span> i actually spent time testing 11.3 gnome update, during fosdem.
+<a name="l-211"></a><span class="tm">16:02:54</span><span class="nk"> &lt;remur_030&gt;</span> "OK OK! Exiting immediately..." ;-)
+<a name="l-212"></a><span class="tm">16:03:18</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> do they do a good job at it?
+<a name="l-213"></a><span class="tm">16:03:26</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> could you add an impa account to your 11.4 and test?
+<a name="l-214"></a><span class="tm">16:03:38</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> well the obexd bit works
+<a name="l-215"></a><span class="tm">16:04:18</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> regarding that kontact crash
+<a name="l-216"></a><span class="tm">16:04:32</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> hm? I use imap on 11.3 kdf, should this be any different?
+<a name="l-217"></a><span class="tm">16:04:38</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">rabauke:</span> already have.. also already rebooted.. no crash
+<a name="l-218"></a><span class="tm">16:04:53</span><span class="nk"> &lt;rabauke&gt;</span> then why can I reproduce with a livecd?
+<a name="l-219"></a><span class="tm">16:05:01</span><span class="nk"> &lt;cb400f&gt;</span> build 1034, which I believe you tested with is old anyway
+<a name="l-220"></a><span class="tm">16:05:05</span><span class="nk"> &lt;cb400f&gt;</span> rc1 is 1056 afaik
+<a name="l-221"></a><span class="tm">16:05:16</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> I disabled planner and special dates
+<a name="l-222"></a><span class="tm">16:05:45</span><span class="nk"> &lt;rabauke&gt;</span> and I took the live cd the download section gave me.
+<a name="l-223"></a><span class="tm">16:06:02</span><span class="nk"> &lt;cb400f&gt;</span> hrm.. obexd-client want to pull obexd ... which pulls half of gnome
+<a name="l-224"></a><span class="tm">16:06:42</span><span class="nk"> &lt;rabauke&gt;</span> I'll download the 1056 and try again
+<a name="l-225"></a><span class="tm">16:06:47</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">rabauke:</span> you can't trust the download section, use: http://download.opensuse.org/factory/iso/
+<a name="l-226"></a><span class="tm">16:06:57</span><span class="nk"> &lt;cb400f&gt;</span> download section pushes ms6
+<a name="l-227"></a><span class="tm">16:07:04</span><span class="nk"> &lt;rabauke&gt;</span> but since I can reproduce it with kdf on 11.3 it should still be valid
+<a name="l-228"></a><span class="tm">16:07:09</span><span class="nk"> &lt;cb400f&gt;</span> not the daily rebuilds
+<a name="l-229"></a><span class="tm">16:07:30</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">remur_030:</span> should be the same
+<a name="l-230"></a><span class="tm">16:07:40</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> bugid?
+<a name="l-231"></a><span class="tm">16:08:06</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> grumble, ok, i should have tested kde upgrade too
+<a name="l-232"></a><span class="tm">16:08:33</span><span class="nk"> &lt;wstephenson&gt;</span> any more status?
+<a name="l-233"></a><span class="tm">16:08:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> nope
+<a name="l-234"></a><span class="tm">16:09:00</span><span class="nk"> &lt;cb400f&gt;</span> can you poke dirk with https://bugzilla.novell.com/show_bug.cgi?id=656144
+<a name="l-235"></a><span class="tm">16:09:04</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 656144 in openSUSE 11.4 (X11 Applications) "Root user Qt4 applications not using Oxygen-style by default" [Minor,Reopened]
+<a name="l-236"></a><span class="tm">16:09:13</span><span class="nk"> &lt;cb400f&gt;</span> or can/should someone else handle it?
+<a name="l-237"></a><span class="tm">16:09:44</span><span class="nk"> &lt;wstephenson&gt;</span> http://software.opensuse.org/developer/en now pushes RC1 btw
+<a name="l-238"></a><span class="tm">16:09:54</span><span class="nk"> &lt;cb400f&gt;</span> one guy even thought he was getting yast-gtk because of the sad qt widget style on yast :-)
+<a name="l-239"></a><span class="tm">16:09:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> dirk is on holiday this week.
+<a name="l-240"></a><span class="tm">16:11:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Is it properly fixed when setting the correct style with qtconfig ?
+<a name="l-241"></a><span class="tm">16:11:41</span><span class="nk"> &lt;wstephenson&gt;</span> we configured qt to use !oxygen a while back because oxygen was doing some stupid stuff over dbus that caused apps to block
+<a name="l-242"></a><span class="tm">16:11:56</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">tittiatcoke:</span> using "desktop settings" in qtconfig should work, but it doesn't
+<a name="l-243"></a><span class="tm">16:12:10</span><span class="nk"> &lt;cb400f&gt;</span> setting "oxygen" in qtconfig works, but that's not correct.. that's a hack
+<a name="l-244"></a><span class="tm">16:12:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Maybe it is the issue that wstephenson is indicating.
+<a name="l-245"></a><span class="tm">16:12:40</span><span class="nk"> &lt;remur_030&gt;</span> why became window deco that powerful?
+<a name="l-246"></a><span class="tm">16:12:48</span><span class="nk"> &lt;wstephenson&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=514056
+<a name="l-247"></a><span class="tm">16:12:52</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 514056 in openSUSE 11.2 (KDE4 Applications) "dbus hangs when kfmclient is run by root" [Normal,Closed: upstream]
+<a name="l-248"></a><span class="tm">16:13:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> I guess it is a patch to Qt ?
+<a name="l-249"></a><span class="tm">16:13:08</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> you mean widget style
+<a name="l-250"></a><span class="tm">16:13:29</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> right
+<a name="l-251"></a><span class="tm">16:14:53</span><span class="nk"> &lt;wstephenson&gt;</span> ok, that looks unfixed
+<a name="l-252"></a><span class="tm">16:15:13</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> and we have to live with 656144 until it is
+<a name="l-253"></a><span class="tm">16:16:08</span><span class="nk"> &lt;cb400f&gt;</span> :-( .. too bad.. that'll be an FAQ in #suse
+<a name="l-254"></a><span class="tm">16:16:37</span><span class="nk"> &lt;cb400f&gt;</span> hmm.. my imap test account subscribed to opensuse@ tells me that a guy from the lug is posting there :-)
+<a name="l-255"></a><span class="tm">16:16:47</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">Team meeting - 11.4 stabilization</span>
+<a name="l-256"></a><span class="tm">16:16:57</span><span class="nk"> &lt;wstephenson&gt;</span> since this is what we've been discussing anyway
+<a name="l-257"></a><span class="tm">16:17:31</span><span class="nk"> &lt;remur_030&gt;</span> yeah, rabauke pointed out the nvidia bug yesterday and I was kinda shocked how many user are affected and how many dupes there were
+<a name="l-258"></a><span class="tm">16:18:20</span><span class="nk"> &lt;cb400f&gt;</span> oh, yeah.. we should try to verify on 11.4... and force sndirsch to make 256.x.x.x for 11.4 if it happens there too
+<a name="l-259"></a><span class="tm">16:18:24</span><span class="nk"> &lt;wstephenson&gt;</span> so i hoped earlier in the release cycle that we would get 4.6.1 out in time for 11.4 but it's scheduled for feb 28th, which is just too risky for 11.4 GM on March 11
+<a name="l-260"></a><span class="tm">16:18:34</span><span class="nk"> &lt;remur_030&gt;</span> meanwhile cb400f pointed out that we have alot of users not running bare opensuse anymore but spiced up with other repos, add tumbleweed and evergreen to the mix we lack people running plain opensuse
+<a name="l-261"></a><span class="tm">16:19:13</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> conclusion, not enough plain 11.4 testing from those able to do good testing?
+<a name="l-262"></a><span class="tm">16:19:18</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">cb400f:</span> someone already said it happens on M6 as well =/
+<a name="l-263"></a><span class="tm">16:19:50</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> yeah, I know I failed at that too
+<a name="l-264"></a><span class="tm">16:20:00</span><span class="nk"> &lt;cb400f&gt;</span> I plan to try over the weekend... if I can get the crap blob to compile... often a problem on the milestones etc.
+<a name="l-265"></a><span class="tm">16:20:04</span><span class="nk"> &lt;rabauke&gt;</span> at least with kr46 kde gets a lot of testers
+<a name="l-266"></a><span class="tm">16:20:22</span><span class="nk"> &lt;remur_030&gt;</span> also testing alone isn't enough, on the nvidia bug we had a lot of people reporting this
+<a name="l-267"></a><span class="tm">16:20:44</span><span class="nk"> &lt;remur_030&gt;</span> well admittedly at least to me it looked like the usual nvidia vs plasma case
+<a name="l-268"></a><span class="tm">16:21:07</span><span class="nk"> &lt;remur_030&gt;</span> most people in here running 64bit propably doesn't help either =/
+<a name="l-269"></a><span class="tm">16:21:13</span><span class="nk"> &lt;wstephenson&gt;</span> yep.  what i'd like to do is establish if it's unique to opensuse
+<a name="l-270"></a><span class="tm">16:21:20</span><span class="nk"> &lt;wstephenson&gt;</span> anyone know?
+<a name="l-271"></a><span class="tm">16:21:32</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> the kde bug report is long and there was not a single non-suse report
+<a name="l-272"></a><span class="tm">16:21:39</span><span class="nk"> &lt;rabauke&gt;</span> +1
+<a name="l-273"></a><span class="tm">16:21:57</span><span class="nk"> &lt;cb400f&gt;</span> we should find out what nvidia version is pushed by kubutno
+<a name="l-274"></a><span class="tm">16:22:11</span><span class="nk"> &lt;cb400f&gt;</span> wouldn't surprise me one bit if all of those suckers are using oooold nvidia
+<a name="l-275"></a><span class="tm">16:22:35</span><span class="nk"> &lt;rabauke&gt;</span> there will surely be people building their nvidia drivers so they would have got it as well even if the official kubuntu driver was older
+<a name="l-276"></a><span class="tm">16:22:35</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">cb400f:</span> i know similar stuff happened before, but atleast arch or fedora users should have chipped in on it
+<a name="l-277"></a><span class="tm">16:22:52</span><span class="nk"> &lt;remur_030&gt;</span> plus kubuntu users propably have nvidia repos as well
+<a name="l-278"></a><span class="tm">16:23:07</span><span class="nk"> &lt;rabauke&gt;</span> yep, not a single non-opensuse user in &gt;100 comments
+<a name="l-279"></a><span class="tm">16:23:19</span><span class="nk"> &lt;cb400f&gt;</span> but how can it be suse specific and happen on 11.3 and 11.4 with various different kernels etc.
+<a name="l-280"></a><span class="tm">16:23:22</span><span class="nk"> &lt;cb400f&gt;</span> :-(
+<a name="l-281"></a><span class="tm">16:23:38</span><span class="nk"> &lt;rabauke&gt;</span> if it walsk like a duck, looks like a duck and sounds like a duck, chances are it is a duck.
+<a name="l-282"></a><span class="tm">16:23:59</span><span class="nk"> &lt;rabauke&gt;</span> s/duck/lizard
+<a name="l-283"></a><span class="tm">16:24:02</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">cb400f:</span> i guess it's some patch somewhere to a shared library that has a rarely used codepatch before 4.5
+<a name="l-284"></a><span class="tm">16:24:10</span><span class="nk"> &lt;wstephenson&gt;</span> and how to tell which part of the duck is sick? our xorg, our gcc?
+<a name="l-285"></a><span class="tm">16:24:13</span><span class="nk"> &lt;remur_030&gt;</span> sadly people didn't check the vanilla kernel...
+<a name="l-286"></a><span class="tm">16:24:29</span><span class="nk"> &lt;remur_030&gt;</span> s/codepatch/codepath
+<a name="l-287"></a><span class="tm">16:24:35</span><span class="nk"> &lt;wstephenson&gt;</span> this is one of those times when i wished i had llunak around
+<a name="l-288"></a><span class="tm">16:24:39</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> that's the hard part, but it's still an opensuse issue.
+<a name="l-289"></a><span class="tm">16:25:56</span><span class="nk"> &lt;cb400f&gt;</span> how good is nouveau on 11.4? ;-)
+<a name="l-290"></a><span class="tm">16:26:18</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">cb400f:</span> propably still not good enough power managment for mobile chips =(
+<a name="l-291"></a><span class="tm">16:26:29</span><span class="nk"> &lt;wstephenson&gt;</span> however good it is, people will still use nvidia.
+<a name="l-292"></a><span class="tm">16:27:00</span><span class="nk"> &lt;rabauke&gt;</span> yep, if only because they have a newer card and do not use tumbleweed to get an updated vouveau
+<a name="l-293"></a><span class="tm">16:27:37</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> would there be someone around at suse who might be better assigned this task?
+<a name="l-294"></a><span class="tm">16:27:41</span><span class="nk"> &lt;cb400f&gt;</span> on tumbleweed they'd have to (re)build the driver constantly
+<a name="l-295"></a><span class="tm">16:27:58</span><span class="nk"> &lt;cb400f&gt;</span> so they'll prolly just use nouveau
+<a name="l-296"></a><span class="tm">16:27:59</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> ping
+<a name="l-297"></a><span class="tm">16:28:01</span><span class="nk"> &lt;remur_030&gt;</span> as you said it could be anywhere
+<a name="l-298"></a><span class="tm">16:28:23</span><span class="nk"> &lt;rabauke&gt;</span> they would always get the latest nouveau and thus not need nvidia (if nouveau would be any good)
+<a name="l-299"></a><span class="tm">16:28:24</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> what is the bugno?
+<a name="l-300"></a><span class="tm">16:28:30</span><span class="nk"> &lt;wstephenson&gt;</span> sndirsch is the obvious guy but he's so loaded he's flinging anything with "kde" in the subject at me, irrespective of severity
+<a name="l-301"></a><span class="tm">16:28:46</span><span class="nk"> &lt;remur_030&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=648718
+<a name="l-302"></a><span class="tm">16:28:51</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 648718 in openSUSE 11.3 (KDE4 Workspace) "plasma-desktop crashes with lastes nvidia driver 260.19.12" [Critical,Assigned]
+<a name="l-303"></a><span class="tm">16:28:54</span><span class="nk"> &lt;remur_030&gt;</span> llunak ^
+<a name="l-304"></a><span class="tm">16:29:37</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> the problem is it's only kde, and only opensuse
+<a name="l-305"></a><span class="tm">16:29:51</span><span class="nk"> &lt;wstephenson&gt;</span> so upstream and xorg both say it's someone else's fault
+<a name="l-306"></a><span class="tm">16:29:58</span><span class="nk"> &lt;cb400f&gt;</span> it happens with vbox too
+<a name="l-307"></a><span class="tm">16:30:02</span><span class="nk"> &lt;remur_030&gt;</span> and only 32bit systems
+<a name="l-308"></a><span class="tm">16:30:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> vbox + nvidia + virtual 3d hardware?
+<a name="l-309"></a><span class="tm">16:30:20</span><span class="nk"> &lt;cb400f&gt;</span> vbox, amarok, and plasma (digital clock)
+<a name="l-310"></a><span class="tm">16:30:22</span><span class="nk"> &lt;rabauke&gt;</span> but you can avoid it by running the app with strace …
+<a name="l-311"></a><span class="tm">16:30:24</span><span class="nk"> &lt;wstephenson&gt;</span> or any vbox?
+<a name="l-312"></a><span class="tm">16:30:29</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> no the vbox gui
+<a name="l-313"></a><span class="tm">16:30:37</span><span class="nk"> &lt;wstephenson&gt;</span> ah right
+<a name="l-314"></a><span class="tm">16:30:37</span><span class="nk"> &lt;cb400f&gt;</span> I think it's related to the qt ui
+<a name="l-315"></a><span class="tm">16:30:58</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> propably strace resets some bogus flags
+<a name="l-316"></a><span class="tm">16:31:38</span><span class="nk"> &lt;cb400f&gt;</span> as I understand it people get that "floating point exception" error when just trying to launch the vbox qt ui
+<a name="l-317"></a><span class="tm">16:33:15</span><span class="nk"> &lt;wstephenson&gt;</span> what else is a hot 11.4 problem right now?
+<a name="l-318"></a><span class="tm">16:33:19</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">rabauke:</span> second reboot.. still don't get the kontact crash... instead it's fscking up with kwallet access
+<a name="l-319"></a><span class="tm">16:33:22</span><span class="nk"> &lt;wstephenson&gt;</span> i think pim and akonadi and nepomuk are ok
+<a name="l-320"></a><span class="tm">16:33:41</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> did you logout with kmail "open"
+<a name="l-321"></a><span class="tm">16:33:42</span><span class="nk"> &lt;wstephenson&gt;</span> although i've seen kwallet access warnings that cb400f mentions
+<a name="l-322"></a><span class="tm">16:33:42</span><span class="nk"> &lt;cb400f&gt;</span> .. and akonadi self test
+<a name="l-323"></a><span class="tm">16:33:53</span><span class="nk"> &lt;wstephenson&gt;</span> i opened a bug for akonadi self test
+<a name="l-324"></a><span class="tm">16:34:06</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> that's the "bug in old log" self test warning?
+<a name="l-325"></a><span class="tm">16:34:11</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> powermanagmeent on desktops
+<a name="l-326"></a><span class="tm">16:34:15</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">rabauke:</span> yep.. same system, and same setup as before when I had the problem.. only a dup is the difference
+<a name="l-327"></a><span class="tm">16:34:31</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">wstephenson:</span> yup, looks like it
+<a name="l-328"></a><span class="tm">16:34:42</span><span class="nk"> &lt;cb400f&gt;</span> we should prolly just have stuck with pim4.4.9 :-)
+<a name="l-329"></a><span class="tm">16:34:59</span><span class="nk"> &lt;rabauke&gt;</span> and there is still that bug that "performance" on notebooks does not set brightness to 100%
+<a name="l-330"></a><span class="tm">16:35:12</span><span class="nk"> &lt;cb400f&gt;</span> 4.4.10 seems to be a trick to force people to move to pim4.6 faster &gt;:-)
+<a name="l-331"></a><span class="tm">16:35:32</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> what about PM on desktops? suspending after 99 minutes?
+<a name="l-332"></a><span class="tm">16:35:35</span><span class="nk"> &lt;rabauke&gt;</span> "recently installed apps" missing from kmenu
+<a name="l-333"></a><span class="tm">16:35:59</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> suspending the display after 10 minutes. fixed for 4.6.1
+<a name="l-334"></a><span class="tm">16:36:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> Maybe that can be backported to 4.6.0 ? If we find the correct patch
+<a name="l-335"></a><span class="tm">16:36:39</span><span class="nk"> &lt;rabauke&gt;</span> the digi clock still shows no shadow for the date although sebas supposedly fixed that upstream
+<a name="l-336"></a><span class="tm">16:37:12</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">rabauke:</span> Hm, maybe I forgot that ... I'll check and seek to get it into 4.6.1
+<a name="l-337"></a><span class="tm">16:37:33</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">tittiatcoke:</span> I have the bugnumer on my other computer so I can "add" it to the meeting minutes on the ml
+<a name="l-338"></a><span class="tm">16:37:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> Yes, please. Then I will check and see if I can get it into the packages
+<a name="l-339"></a><span class="tm">16:38:23</span><span class="nk"> &lt;rabauke&gt;</span> it also seems that opensuse patches the battery plasmoid and shows unreadable fonts for the percentage which is displayed on the battery icon. according to sebas that percentage does not exist in upstream kde
+<a name="l-340"></a><span class="tm">16:38:29</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">tittiatcoke:</span> will do
+<a name="l-341"></a><span class="tm">16:38:46 </span><span class="nka">* sebas</span> <span class="ac">checks again :)</span>
+<a name="l-342"></a><span class="tm">16:39:14</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">rabauke:</span> it does exist, but works fine here
+<a name="l-343"></a><span class="tm">16:39:28</span><span class="nk"> &lt;sebas&gt;</span> it's an upstream bug though, and it's not 100% fixable
+<a name="l-344"></a><span class="tm">16:39:51</span><span class="nk"> &lt;rabauke&gt;</span> http://wstaw.org/m/2011/02/10/plasma-desktopCs2111.jpg
+<a name="l-345"></a><span class="tm">16:39:55</span><span class="nk"> &lt;sebas&gt;</span> we're bound by smallest readable font setting on one hand and size of the battery one the other, both we have no control over
+<a name="l-346"></a><span class="tm">16:40:03</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">sebas:</span> ^^ try to find the percentag on the battery icon :)
+<a name="l-347"></a><span class="tm">16:40:12</span><span class="nk"> &lt;wstephenson&gt;</span> huh, never noticed that overlay on the battery icon
+<a name="l-348"></a><span class="tm">16:40:13</span><span class="nk"> &lt;rabauke&gt;</span> it's a matter of colour
+<a name="l-349"></a><span class="tm">16:40:33</span><span class="nk"> &lt;cb400f&gt;</span> grr.. getting phonon errors now too.. "blah blah not working, falling back to default"
+<a name="l-350"></a><span class="tm">16:40:46</span><span class="nk"> &lt;sebas&gt;</span> oow, that one ... that's a problem with an upstream patch
+<a name="l-351"></a><span class="tm">16:40:51</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> I get that with any but the xine backend as soon as I start amarok
+<a name="l-352"></a><span class="tm">16:41:05 </span><span class="nka">* cb400f</span> <span class="ac">'s kneejerk reaction is to blame fdo and gstreamer</span>
+<a name="l-353"></a><span class="tm">16:41:10</span><span class="nk"> &lt;sebas&gt;</span> it's not there in my trunk build, and it shouldn't since it duplicates already shown information
+<a name="l-354"></a><span class="tm">16:41:13</span><span class="nk"> &lt;rabauke&gt;</span> ok, so it's upstream and I have to reopen those bugs?
+<a name="l-355"></a><span class="tm">16:41:19</span><span class="nk"> &lt;cb400f&gt;</span> I got it now on login for a fresh user on rc1
+<a name="l-356"></a><span class="tm">16:41:27</span><span class="nk"> &lt;rabauke&gt;</span> oh, not upstream
+<a name="l-357"></a><span class="tm">16:41:36</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">rabauke:</span> only the digiclock shadow
+<a name="l-358"></a><span class="tm">16:41:51</span><span class="nk"> &lt;sebas&gt;</span> but it's on my kanban list now, so more likely to get picked up than just bugzilla :)
+<a name="l-359"></a><span class="tm">16:41:55</span><span class="nk"> &lt;rabauke&gt;</span> whereever it comes from it should either be removed or fixed to show the "normal" text colour
+<a name="l-360"></a><span class="tm">16:42:07</span><span class="nk"> &lt;cb400f&gt;</span> and some error about saving bookmarks to user-places.xbel
+<a name="l-361"></a><span class="tm">16:42:20</span><span class="nk"> &lt;sebas&gt;</span> the battery is bugfree (tm), the patch should probably just be dropped
+<a name="l-362"></a><span class="tm">16:42:37</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">rabauke:</span> removed, it's completely unnecessary
+<a name="l-363"></a><span class="tm">16:42:39</span><span class="nk"> &lt;rabauke&gt;</span> does the upstream battery feature the "time remaining"?
+<a name="l-364"></a><span class="tm">16:42:44</span><span class="nk"> &lt;sebas&gt;</span> percentage is readable right next to it
+<a name="l-365"></a><span class="tm">16:42:54</span><span class="nk"> &lt;sebas&gt;</span> yes, but only after fiddling with the config
+<a name="l-366"></a><span class="tm">16:43:05</span><span class="nk"> &lt;sebas&gt;</span> no ui for that
+<a name="l-367"></a><span class="tm">16:43:06</span><span class="nk"> &lt;rabauke&gt;</span> ok
+<a name="l-368"></a><span class="tm">16:43:25</span><span class="nk"> &lt;rabauke&gt;</span> so opensuse enables that by default and IMHO that should stay
+<a name="l-369"></a><span class="tm">16:43:47</span><span class="nk"> &lt;sebas&gt;</span> fine with me
+<a name="l-370"></a><span class="tm">16:43:55 </span><span class="nka">* sebas</span> <span class="ac">has it on as well</span>
+<a name="l-371"></a><span class="tm">16:43:58</span><span class="nk"> &lt;remur_030&gt;</span> hmm sorry if I interrupt, but this is adressing single bugs, not even pretty big ones, could we do something to get better testing with opensuse 11.4?
+<a name="l-372"></a><span class="tm">16:44:31</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> please
+<a name="l-373"></a><span class="tm">16:44:35</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> what do you suggest?
+<a name="l-374"></a><span class="tm">16:44:37</span><span class="nk"> &lt;remur_030&gt;</span> in general that is? I know we used to do bug squashing sessions, they seem to be out of fashion now, no idea if for a good reason or not
+<a name="l-375"></a><span class="tm">16:45:17</span><span class="nk"> &lt;cb400f&gt;</span> they should be after the release or at some other time.. not 3 weeks before GM is declared
+<a name="l-376"></a><span class="tm">16:45:22</span><span class="nk"> &lt;remur_030&gt;</span> it's obvious there are people reporting bugs on bnc, but most just fix on their single bug and don't help on other ones
+<a name="l-377"></a><span class="tm">16:46:04</span><span class="nk"> &lt;rabauke&gt;</span> I think it will be hard to get more 11.4 testers but kde does get a fair amount of testers via kdf and kr46.
+<a name="l-378"></a><span class="tm">16:46:19</span><span class="nk"> &lt;wstephenson&gt;</span> how about divide and conquer? we start handling incoming bugs according to area (pim, mobile, workspace, ...)
+<a name="l-379"></a><span class="tm">16:46:31</span><span class="nk"> &lt;cb400f&gt;</span> a shitload of people will install rc1... whether they can be considered testers or not is a different matter
+<a name="l-380"></a><span class="tm">16:46:38</span><span class="nk"> &lt;wstephenson&gt;</span> and by handle i mean good triage, and checking branch for fixes
+<a name="l-381"></a><span class="tm">16:46:43</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> the bug looks like a toolchain problem ... or at least they are the ones to have a look at it and figure something out
+<a name="l-382"></a><span class="tm">16:47:32</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> ok, so if i can get matz or richi to look at an nvidia machine exhibiting the bug you think they'll have enough to go on?
+<a name="l-383"></a><span class="tm">16:48:24</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">others:</span> thoughts?
+<a name="l-384"></a><span class="tm">16:48:51</span><span class="nk"> &lt;wstephenson&gt;</span> right now i feel like i'm the little dutch boy running round putting his finger in whichever leak shouts loudest atm
+<a name="l-385"></a><span class="tm">16:49:01</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> the single teams won't have more people all of a sudden, but I guess grouping by certain expertise is a good idea
+<a name="l-386"></a><span class="tm">16:49:33</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> =/ we can't fix most stuff ourself
+<a name="l-387"></a><span class="tm">16:49:41 </span><span class="nka">* tittiatcoke</span> <span class="ac">lends his fingers to wstephenson in order to close more holes</span>
+<a name="l-388"></a><span class="tm">16:50:32</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> even if we can get timely triage on incoming bugs, that saves me some time that i can spend on fixing them
+<a name="l-389"></a><span class="tm">16:50:53</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> the more I think about your idea the more I like it, the usual bugsquashing method was going through all the kde bugs without any certain grouping, so you parctically had to find new information any time
+<a name="l-390"></a><span class="tm">16:50:58</span><span class="nk"> &lt;rabauke&gt;</span> what about a kde bug mailinglist?
+<a name="l-391"></a><span class="tm">16:51:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> I don't know if this would help, but I could validate bugs if they have been solved upstream
+<a name="l-392"></a><span class="tm">16:51:03</span><span class="nk"> &lt;cb400f&gt;</span> there are indeed many holes :-( ... too many late changes.. pim.. phonon.. pulse.. bluedevil... etc.
+<a name="l-393"></a><span class="tm">16:51:08 </span><span class="nka">* cb400f</span> <span class="ac">has to leave</span>
+<a name="l-394"></a><span class="tm">16:51:23</span><span class="nk"> &lt;remur_030&gt;</span> chances are if you do 20 strigi bugs in a row you might have an idea where to look at it
+<a name="l-395"></a><span class="tm">16:51:59</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> I don't think we'd scare people off using opensuse-kde for bugs as well
+<a name="l-396"></a><span class="tm">16:52:03</span><span class="nk"> &lt;wstephenson&gt;</span> and i don't think it would be that hard, we don't have 20 strigi bugs yet
+<a name="l-397"></a><span class="tm">16:52:15</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> I have commented in the bugreport and yes, I think the best chance (and possibly only one) is to walk up personally to somebody who knows the dynamic loader and annoy them until they have a look
+<a name="l-398"></a><span class="tm">16:52:27</span><span class="nk"> &lt;remur_030&gt;</span> people randomly dump there bugreports at -kde already
+<a name="l-399"></a><span class="tm">16:52:30</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> ok, thanks for looking
+<a name="l-400"></a><span class="tm">16:52:54</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">remur_030:</span> not sure but if I would get new bugs as email it would be easier to check for things I can try out.
+<a name="l-401"></a><span class="tm">16:53:33</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> ? that is already possible, watch kde-maintainers@suse.de
+<a name="l-402"></a><span class="tm">16:53:36</span><span class="nk"> &lt;wstephenson&gt;</span> or just having a stored bugzilla query to run every day
+<a name="l-403"></a><span class="tm">16:54:17</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">remur_030:</span> ok, then I'll try that one.
+<a name="l-404"></a><span class="tm">16:54:36</span><span class="nk"> &lt;wstephenson&gt;</span> ok, i have to leave at 1800 too
+<a name="l-405"></a><span class="tm">16:54:39</span><span class="nk"> &lt;remur_030&gt;</span> there was actually a good wiki for that written by llunak for the bugsqash events I think
+<a name="l-406"></a><span class="tm">16:54:53</span><span class="nk"> &lt;wstephenson&gt;</span> what else?
+<a name="l-407"></a><span class="tm">16:55:31</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> I'll look for it later
+<a name="l-408"></a><span class="tm">16:55:40</span><span class="nk"> &lt;remur_030&gt;</span> nothing I guess for now =/
+<a name="l-409"></a><span class="tm">16:55:41</span><span class="nk"> &lt;rabauke&gt;</span> my issue with the community repos can wait
+<a name="l-410"></a><span class="tm">16:55:44</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> do you want to take the AI to identify areas to assign to people for timely triage?
+<a name="l-411"></a><span class="tm">16:55:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> I guess nothing for now
+<a name="l-412"></a><span class="tm">16:56:02</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> yes I'll make a mail to discuss it further on the ml
+<a name="l-413"></a><span class="tm">16:56:22</span><span class="nk"> &lt;wstephenson&gt;</span> OTOMH i would say pim, workspace, defaults, random-apps
+<a name="l-414"></a><span class="tm">16:56:55</span><span class="nk"> &lt;remur_030&gt;</span> sounds good
+<a name="l-415"></a><span class="tm">16:57:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">remur_030:</span> You can count on me for upstream validation. I guess I am qualified enough for it :-)
+<a name="l-416"></a><span class="tm">16:58:05</span><span class="nk"> &lt;wstephenson&gt;</span> then it just needs one of us per area to run a query once a day on new kde-maintainers bugs, tag new bugs of that area, then run another query that shows all 11.4 bugs with the tag and keep triaging them
+<a name="l-417"></a><span class="tm">16:58:13</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">tittiatcoke:</span> upstream validation as in happens on bare kde sc trunk?
+<a name="l-418"></a><span class="tm">16:58:31</span><span class="nk"> &lt;amonthoth&gt;</span> choqok 1.0 is always crashing since M6 to RC1
+<a name="l-419"></a><span class="tm">16:58:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">remur_030:</span> Daily KDE updates :-) with all the patches from openSUSE
+<a name="l-420"></a><span class="tm">17:00:10</span><span class="nk"> &lt;remur_030&gt;</span> ok
+<a name="l-421"></a><span class="tm">17:00:41</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">amonthoth:</span> we're in a meeting, please wait
+<a name="l-422"></a><span class="tm">17:00:55</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">remur_030 bring up triage strategy on list.</span>
+<a name="l-423"></a><span class="tm">17:00:57</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> http://en.opensuse.org/openSUSE:Bug_Screening_KDE#Bugreport_organization_in_bugzilla
+<a name="l-424"></a><span class="tm">17:00:59</span><span class="nk"> &lt;amonthoth&gt;</span> sorry
+<a name="l-425"></a><span class="tm">17:01:00</span><span class="nk"> &lt;wstephenson&gt;</span> * Q&amp;A misc
+<a name="l-426"></a><span class="tm">17:01:39</span><span class="nk"> &lt;wstephenson&gt;</span> going, going, ...
+<a name="l-427"></a><span class="tm">17:01:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> gone
+<a name="l-428"></a><span class="tm">17:01:48</span><span class="nk"> &lt;remur_030&gt;</span> meeting time ok for the future?
+<a name="l-429"></a><span class="tm">17:01:58</span><span class="nk"> &lt;wstephenson&gt;</span> ok by me, as long as it doesn't go over 2 hours
+<a name="l-430"></a><span class="tm">17:01:59</span><span class="nk"> &lt;remur_030&gt;</span> that is thursday 15 UTC?
+<a name="l-431"></a><span class="tm">17:02:09</span><span class="nk"> &lt;remur_030&gt;</span> agreed, we should limit that
+<a name="l-432"></a><span class="tm">17:02:20</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> you prefer Wednesdays, don't you?
+<a name="l-433"></a><span class="tm">17:02:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> As long that sometimes it can be done on Wednesday :-)
+<a name="l-434"></a><span class="tm">17:02:38</span><span class="nk"> &lt;remur_030&gt;</span> was there any opposition to wednesdays?
+<a name="l-435"></a><span class="tm">17:02:51 </span><span class="nka">* remur_030</span> <span class="ac">can't remember any</span>
+<a name="l-436"></a><span class="tm">17:03:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> I don't think there was any opposition.
+<a name="l-437"></a><span class="tm">17:03:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> For me the Wednesday is easier due to travel arrangements (most of the time travelling on Thursday afternoon/evening)
+<a name="l-438"></a><span class="tm">17:03:51</span><span class="nk"> &lt;wstephenson&gt;</span> ok, so we keep wednesdays, but at 1500UTC
+<a name="l-439"></a><span class="tm">17:03:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok
+<a name="l-440"></a><span class="tm">17:04:31</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

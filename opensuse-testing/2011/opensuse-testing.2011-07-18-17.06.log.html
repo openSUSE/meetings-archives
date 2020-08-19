@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:06:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:06:01</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Jul 18 17:06:01 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:06:01</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:06:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-5"></a><span class="tm">17:06:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-6"></a><span class="tm">17:07:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">MS3 experience</span>
+<a name="l-7"></a><span class="tm">17:07:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> the final MS3 is still not out, but I upgraded one of my laptops to factory and it still worked
+<a name="l-8"></a><span class="tm">17:08:27</span><span class="nk"> &lt;LWFinger&gt;</span> What kernel on factory? Is it 3.0?
+<a name="l-9"></a><span class="tm">17:08:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> openQA is still showing smaller problems (e.g. amarok segfaulting on KDE-Live)
+<a name="l-10"></a><span class="tm">17:08:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> 3.0-rc6 right now and MS3 should have rc7
+<a name="l-11"></a><span class="tm">17:09:16</span><span class="nk"> &lt;jradzuweit&gt;</span> I still run MS2
+<a name="l-12"></a><span class="tm">17:10:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> should we meet next monday to talk about MS3 then?
+<a name="l-13"></a><span class="tm">17:11:04</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-14"></a><span class="tm">17:11:50</span><span class="nk"> &lt;jradzuweit&gt;</span> +1
+<a name="l-15"></a><span class="tm">17:12:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. let's move to the next topic then
+<a name="l-16"></a><span class="tm">17:12:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">will discuss MS3 on 2011-07-25</span>
+<a name="l-17"></a><span class="tm">17:12:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Request to rename MS6 to Beta</span>
+<a name="l-18"></a><span class="tm">17:13:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> what is the state of the discussion on that topic?
+<a name="l-19"></a><span class="tm">17:14:20</span><span class="nk"> &lt;LWFinger&gt;</span> Most people have been supportive.
+<a name="l-20"></a><span class="tm">17:15:09</span><span class="nk"> &lt;LWFinger&gt;</span> I hope you have followed the d=iscussion on the mailing lists - postings have been on project, factory and testoing.
+<a name="l-21"></a><span class="tm">17:15:56</span><span class="nk"> &lt;LWFinger&gt;</span> Coolo was skeptical that it would make a difference, but has agreed. He will want metrics on the value.
+<a name="l-22"></a><span class="tm">17:16:46</span><span class="nk"> &lt;LWFinger&gt;</span> We have an offer of help for publicity.
+<a name="l-23"></a><span class="tm">17:17:06</span><span class="nk"> &lt;LWFinger&gt;</span> That covers the highlights.
+<a name="l-24"></a><span class="tm">17:17:39</span><span class="nk"> &lt;LWFinger&gt;</span> Any questions?
+<a name="l-25"></a><span class="tm">17:18:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> I had only read the summary on testing ML and proposed two crude metrics there
+<a name="l-26"></a><span class="tm">17:19:21</span><span class="nk"> &lt;LWFinger&gt;</span> Your ideas are good, but we likely need more.
+<a name="l-27"></a><span class="tm">17:21:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe we could have some way to count users? e.g. via the downloads that always happen after install (such as flash-player)
+<a name="l-28"></a><span class="tm">17:22:15</span><span class="nk"> &lt;jradzuweit&gt;</span> page hits?
+<a name="l-29"></a><span class="tm">17:22:59</span><span class="nk"> &lt;jradzuweit&gt;</span> can we have the number of downloads?
+<a name="l-30"></a><span class="tm">17:23:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, coolo can get logs from download.o.o
+<a name="l-31"></a><span class="tm">17:24:03</span><span class="nk"> &lt;jradzuweit&gt;</span> for the product they publish how many downloads happend
+<a name="l-32"></a><span class="tm">17:24:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> while this excludes mirrors, it is still a meaningful number
+<a name="l-33"></a><span class="tm">17:24:29</span><span class="nk"> &lt;jradzuweit&gt;</span> so maybe collo can give us this number per MS
+<a name="l-34"></a><span class="tm">17:25:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes. that would be helpful.
+<a name="l-35"></a><span class="tm">17:25:54</span><span class="nk"> &lt;LWFinger&gt;</span> The bug reports may be more significant as they reflect actual testing.
+<a name="l-36"></a><span class="tm">17:26:13</span><span class="nk"> &lt;jradzuweit&gt;</span> we can combine this
+<a name="l-37"></a><span class="tm">17:26:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> but they also reflect the buggyness of the software
+<a name="l-38"></a><span class="tm">17:27:02</span><span class="nk"> &lt;LWFinger&gt;</span> Of course, but will 12.1-beta be any buggier than 11.4-MS6?
+<a name="l-39"></a><span class="tm">17:27:29</span><span class="nk"> &lt;jradzuweit&gt;</span> I already have a bugzilla report about this
+<a name="l-40"></a><span class="tm">17:27:40</span><span class="nk"> &lt;jradzuweit&gt;</span> not on MS level , but per release
+<a name="l-41"></a><span class="tm">17:28:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> yes, bugs can be added after MS5/6 (e.g. because people want to get their features in last minute)
+<a name="l-42"></a><span class="tm">17:29:13</span><span class="nk"> &lt;LWFinger&gt;</span> The number of bugs found in GM after 6 months will be the really critical number.
+<a name="l-43"></a><span class="tm">17:29:50</span><span class="nk"> &lt;LWFinger&gt;</span> Are we not feature frozen after MS4?
+<a name="l-44"></a><span class="tm">17:29:51</span><span class="nk"> &lt;jradzuweit&gt;</span> critical for what?
+<a name="l-45"></a><span class="tm">17:30:37</span><span class="nk"> &lt;LWFinger&gt;</span> Critical as to the value of the name change. Did we find bugs early enough to fix them before GM?
+<a name="l-46"></a><span class="tm">17:31:37</span><span class="nk"> &lt;jradzuweit&gt;</span> I wouldn't put too much into this name change
+<a name="l-47"></a><span class="tm">17:31:55</span><span class="nk"> &lt;jradzuweit&gt;</span> maybe it makes more sense to have some statistics
+<a name="l-48"></a><span class="tm">17:32:28</span><span class="nk"> &lt;jradzuweit&gt;</span> I had two nice reports showing whats going on
+<a name="l-49"></a><span class="tm">17:32:53</span><span class="nk"> &lt;LWFinger&gt;</span> What reports?
+<a name="l-50"></a><span class="tm">17:33:06</span><span class="nk"> &lt;jradzuweit&gt;</span> comparing releases
+<a name="l-51"></a><span class="tm">17:33:16</span><span class="nk"> &lt;jradzuweit&gt;</span> comparing reales per component
+<a name="l-52"></a><span class="tm">17:33:42</span><span class="nk"> &lt;jradzuweit&gt;</span> was interesting to see where bugs appeared most
+<a name="l-53"></a><span class="tm">17:34:16</span><span class="nk"> &lt;LWFinger&gt;</span> Are these reports available?
+<a name="l-54"></a><span class="tm">17:34:45</span><span class="nk"> &lt;jradzuweit&gt;</span> I have to recreate them
+<a name="l-55"></a><span class="tm">17:35:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> bugzilla has a report.cgi to do those stats - I also linked it in my email
+<a name="l-56"></a><span class="tm">17:35:21</span><span class="nk"> &lt;jradzuweit&gt;</span> but as with every statistics I will not distribute them
+<a name="l-57"></a><span class="tm">17:35:27</span><span class="nk"> &lt;jradzuweit&gt;</span> to the public
+<a name="l-58"></a><span class="tm">17:37:17</span><span class="nk"> &lt;jradzuweit&gt;</span> the conclusion is, most bugs are found in the final
+<a name="l-59"></a><span class="tm">17:37:24</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> Thanks. I just created the table.
+<a name="l-60"></a><span class="tm">17:37:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> likely because final has a) most users and b) most usage time
+<a name="l-61"></a><span class="tm">17:40:43</span><span class="nk"> &lt;jradzuweit&gt;</span> yupp, so you can' heardly compare this with the milestoones
+<a name="l-62"></a><span class="tm">17:42:17</span><span class="nk"> &lt;jradzuweit&gt;</span> s/can'/can't/
+<a name="l-63"></a><span class="tm">17:43:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> "can hardly compare" sounds better ;)
+<a name="l-64"></a><span class="tm">17:43:21</span><span class="nk"> &lt;LWFinger&gt;</span> We can hope that the trend of decreasing numbers in final between 11.3 and 11.4 continues.
+<a name="l-65"></a><span class="tm">17:43:23</span><span class="nk"> &lt;jradzuweit&gt;</span> right
+<a name="l-66"></a><span class="tm">17:44:20</span><span class="nk"> &lt;jradzuweit&gt;</span> we should try to do this bug day more continously
+<a name="l-67"></a><span class="tm">17:45:40</span><span class="nk"> &lt;LWFinger&gt;</span> I added 11.2 to the table and there were fewer bugs in 11.3 final than in 11.2. The trend is good.
+<a name="l-68"></a><span class="tm">17:46:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> we want to do at least one big bug-squashing party around MS6. but could do one or two smaller bug events before
+<a name="l-69"></a><span class="tm">17:47:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">jradzuweit:</span> what should be the main focus? re-testing older 11.4 or 12.1-MS bugs?
+<a name="l-70"></a><span class="tm">17:48:25</span><span class="nk"> &lt;jradzuweit&gt;</span> main focus 12.1, but if you are testing in certain areas
+<a name="l-71"></a><span class="tm">17:48:38</span><span class="nk"> &lt;jradzuweit&gt;</span> why not checking if old bugs are still there
+<a name="l-72"></a><span class="tm">17:49:02</span><span class="nk"> &lt;LWFinger&gt;</span> I think we need to do both.
+<a name="l-73"></a><span class="tm">17:50:12</span><span class="nk"> &lt;LWFinger&gt;</span> Perhaps we could have a party after MS4 that concentrates of 11.4 bugs still in 12.1.
+<a name="l-74"></a><span class="tm">17:50:41</span><span class="nk"> &lt;LWFinger&gt;</span> Then after Beta, check for the new ones in 12.1.
+<a name="l-75"></a><span class="tm">17:51:26</span><span class="nk"> &lt;jradzuweit&gt;</span> we could put some on a wiki page
+<a name="l-76"></a><span class="tm">17:51:46</span><span class="nk"> &lt;jradzuweit&gt;</span> and request the community for retests
+<a name="l-77"></a><span class="tm">17:52:54</span><span class="nk"> &lt;jradzuweit&gt;</span> doing a whole day testing, my wife will kill me ;)
+<a name="l-78"></a><span class="tm">17:53:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">jradzuweit:</span> I would re-activate my openbugs.zq1.de tool for that occasion. it is so much faster than wiki or bugzilla
+<a name="l-79"></a><span class="tm">17:53:33</span><span class="nk"> &lt;jradzuweit&gt;</span> sure
+<a name="l-80"></a><span class="tm">17:57:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">rename of MS6 to Beta is likely</span>
+<a name="l-81"></a><span class="tm">17:57:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open bugs day planning</span>
+<a name="l-82"></a><span class="tm">17:59:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> MS4 is not very far away, so we would have to start planning an open bugs day soon
+<a name="l-83"></a><span class="tm">17:59:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> Roadmap says MS4 comes on 2011-08-11
+<a name="l-84"></a><span class="tm">18:00:49</span><span class="nk"> &lt;LWFinger&gt;</span> Would a Sunday work? If so, perhaps 08-21.
+<a name="l-85"></a><span class="tm">18:01:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> that would allow for a delayed release, too
+<a name="l-86"></a><span class="tm">18:02:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> so would be good
+<a name="l-87"></a><span class="tm">18:03:27</span><span class="nk"> &lt;jradzuweit&gt;</span> agree, but I can't attend all the day
+<a name="l-88"></a><span class="tm">18:03:40</span><span class="nk"> &lt;jradzuweit&gt;</span> ok, I have to leave now
+<a name="l-89"></a><span class="tm">18:03:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> few people will be awake 24h that day ;)
+<a name="l-90"></a><span class="tm">18:03:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> so it is alright
+<a name="l-91"></a><span class="tm">18:04:08</span><span class="nk"> &lt;jradzuweit&gt;</span> bye
+<a name="l-92"></a><span class="tm">18:04:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> Ciao
+<a name="l-93"></a><span class="tm">18:04:24</span><span class="nk"> &lt;LWFinger&gt;</span> The main thing is to attract others besides the TCT.
+<a name="l-94"></a><span class="tm">18:04:56</span><span class="nk"> &lt;LWFinger&gt;</span> As soon as we set a date, I'll start the publicity.
+<a name="l-95"></a><span class="tm">18:05:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> be sure to email news@o.o
+<a name="l-96"></a><span class="tm">18:05:33</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-97"></a><span class="tm">18:07:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. anything else to discuss?
+<a name="l-98"></a><span class="tm">18:09:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-99"></a><span class="tm">18:09:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

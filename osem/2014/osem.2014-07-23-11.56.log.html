@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#osem log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">11:56:46</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">OSEM status/progress meeting</span>
+<a name="l-2"></a><span class="tm">11:56:46</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Jul 23 11:56:46 2014 UTC.  The chair is KalabiYau. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">11:56:46</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">11:57:28</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#chair </span><span class="cmdline">differentreality ancorgs ChrisBr gopesh henne KalabiYau</span>
+<a name="l-5"></a><span class="tm">11:57:28</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: ChrisBr KalabiYau ancorgs differentreality gopesh henne
+<a name="l-6"></a><span class="tm">11:57:43</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">ChrisBr:</span> you have entirely changed the mail notifications that I built :P
+<a name="l-7"></a><span class="tm">11:58:03</span><span class="nk"> &lt;gopesh&gt;</span> I haven't completed them and the delayed jobs integration is still left
+<a name="l-8"></a><span class="tm">11:59:39</span><span class="nk"> &lt;ChrisBr&gt;</span> Not entirely ... Henne wanted to be consistent ...
+<a name="l-9"></a><span class="tm">11:59:40</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">short standup</span>
+<a name="l-10"></a><span class="tm">11:59:57</span><span class="nk"> &lt;KalabiYau&gt;</span> we shall start, guys. Hi, everyone!
+<a name="l-11"></a><span class="tm">12:00:04</span><span class="nk"> &lt;gopesh&gt;</span> hello
+<a name="l-12"></a><span class="tm">12:00:08</span><span class="nk"> &lt;gopesh&gt;</span> everyone
+<a name="l-13"></a><span class="tm">12:00:24</span><span class="nk"> &lt;ancorgs&gt;</span> I have half on the brain in the meeting, mention me if you really need me :-)
+<a name="l-14"></a><span class="tm">12:00:34</span><span class="nk"> &lt;KalabiYau&gt;</span> ancorgs, sure
+<a name="l-15"></a><span class="tm">12:00:45</span><span class="nk"> &lt;KalabiYau&gt;</span> can we share  our current status? How things are going? Any problems, achievements, things to be proud?
+<a name="l-16"></a><span class="tm">12:01:28</span><span class="nk"> &lt;gopesh&gt;</span> Well the admin backend looks really professional great work ChrisBr
+<a name="l-17"></a><span class="tm">12:01:59</span><span class="nk"> &lt;differentreality&gt;</span> I am working on the roles and the authorization, I am implementing tests, I stubmle upon stuff that need to be reworked and it's still a work in progress
+<a name="l-18"></a><span class="tm">12:02:32</span><span class="nk"> &lt;KalabiYau&gt;</span> from my side, i've done some deploument and CI related tasks which are tracked in #263, removed Hound CI and replaced it with rubocop. Slowly moving towards proper style ;) Additionally we've moved production instance and now we running it on master + all the errors notifications we got via errbit
+<a name="l-19"></a><span class="tm">12:02:56</span><span class="nk"> &lt;gopesh&gt;</span> I am currently working on email notifications, the implementation is almost over however the delayed jobs integration and some polishing is still left
+<a name="l-20"></a><span class="tm">12:03:17</span><span class="nk"> &lt;KalabiYau&gt;</span> ancorgs, ChrisBr, henne anything to share?
+<a name="l-21"></a><span class="tm">12:03:51</span><span class="nk"> &lt;ancorgs&gt;</span> not here
+<a name="l-22"></a><span class="tm">12:03:55</span><span class="nk"> &lt;KalabiYau&gt;</span> oh yeah, we have some stuff around happening with travis/phantomjs, but seems temp fix is in place, done by gopesh
+<a name="l-23"></a><span class="tm">12:03:58</span><span class="nk"> &lt;ChrisBr&gt;</span> Okay, currently I'm working on the default mail templates and fixing bugs for event update state but the this PR
+<a name="l-24"></a><span class="tm">12:03:58</span><span class="nk"> &lt;ChrisBr&gt;</span> is already finish and I will discuss some issues with gopesh after meeting and waiting for review! The next small
+<a name="l-25"></a><span class="tm">12:03:58</span><span class="nk"> &lt;ChrisBr&gt;</span> tasks is a bug in a migration (reported from differentreality) and the issue with js and travis :/ My next big task
+<a name="l-26"></a><span class="tm">12:03:58</span><span class="nk"> &lt;ChrisBr&gt;</span> is the refactoring of the admin menu structure which I would like to start tomorrow
+<a name="l-27"></a><span class="tm">12:04:17</span><span class="nk"> &lt;KalabiYau&gt;</span> cool
+<a name="l-28"></a><span class="tm">12:04:32</span><span class="nk"> &lt;henne&gt;</span> I'm starting to work on the user onboarding
+<a name="l-29"></a><span class="tm">12:04:41</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">agile structuring</span>
+<a name="l-30"></a><span class="tm">12:04:59</span><span class="nk"> &lt;KalabiYau&gt;</span> Seems everyone reported, back to agenda.
+<a name="l-31"></a><span class="tm">12:06:28</span><span class="nk"> &lt;KalabiYau&gt;</span> My idea is about to limit our focus to move with osem progress more rapidly and more fractionated. So, we can establish a milestone - it is there in fact, https://github.com/openSUSE/osem/issues?milestone=1&amp;state=open
+<a name="l-32"></a><span class="tm">12:07:38</span><span class="nk"> &lt;KalabiYau&gt;</span> say, we _all_ agree on some stuff we can deliver in one milestone. This example holds data of 6 Aug. With 8 issues. We all discuss should we do something or not in this milestone, assign ourself to tasks and proceed
+<a name="l-33"></a><span class="tm">12:07:47</span><span class="nk"> &lt;henne&gt;</span> clashes a bit with my GSoC project plan for ChrisBr
+<a name="l-34"></a><span class="tm">12:08:00</span><span class="nk"> &lt;KalabiYau&gt;</span> why it is good? It is more focused approach
+<a name="l-35"></a><span class="tm">12:08:20</span><span class="nk"> &lt;KalabiYau&gt;</span> no worries, as tasks in GSoC project can be included
+<a name="l-36"></a><span class="tm">12:08:26</span><span class="nk"> &lt;KalabiYau&gt;</span> as you are working on that anyway
+<a name="l-37"></a><span class="tm">12:08:55</span><span class="nk"> &lt;KalabiYau&gt;</span> but very basic idea is to do only commited stuff. simple
+<a name="l-38"></a><span class="tm">12:09:06</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, that way it will do?
+<a name="l-39"></a><span class="tm">12:09:40</span><span class="nk"> &lt;gopesh&gt;</span> Well we haven't confirmed on what shall we do about the user deletion
+<a name="l-40"></a><span class="tm">12:09:41</span><span class="nk"> &lt;KalabiYau&gt;</span> GSoC is good, but OSEM should move forward as well. As at some point GSoC will end and need to move on
+<a name="l-41"></a><span class="tm">12:09:50</span><span class="nk"> &lt;henne&gt;</span> true
+<a name="l-42"></a><span class="tm">12:10:08</span><span class="nk"> &lt;henne&gt;</span> I of course like a more focused approach
+<a name="l-43"></a><span class="tm">12:10:17</span><span class="nk"> &lt;KalabiYau&gt;</span> any objections from milestone approach from anyone?
+<a name="l-44"></a><span class="tm">12:10:23</span><span class="nk"> &lt;henne&gt;</span> we just have to figure out the details with the current schedule
+<a name="l-45"></a><span class="tm">12:10:35</span><span class="nk"> &lt;KalabiYau&gt;</span> we have time for it, no hurry
+<a name="l-46"></a><span class="tm">12:10:39</span><span class="nk"> &lt;KalabiYau&gt;</span> just a test-drive )
+<a name="l-47"></a><span class="tm">12:10:56</span><span class="nk"> &lt;KalabiYau&gt;</span> how it will work out, and we will decide later on
+<a name="l-48"></a><span class="tm">12:11:30</span><span class="nk"> &lt;KalabiYau&gt;</span> no objections so far, only concerns, which can be and should be solved. Then seems we are good. Moving on.
+<a name="l-49"></a><span class="tm">12:12:04</span><span class="nk"> &lt;henne&gt;</span> so when / how are we going to decide on milestone content?
+<a name="l-50"></a><span class="tm">12:12:23</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#action </span><span class="cmdline">all agree on milestone content</span>
+<a name="l-51"></a><span class="tm">12:12:45</span><span class="nk"> &lt;ChrisBr&gt;</span> <span class="hi">KalabiYau:</span> and what happens if we are faster / slower than commited?
+<a name="l-52"></a><span class="tm">12:13:23</span><span class="nk"> &lt;gopesh&gt;</span> <span class="hi">ChrisBr:</span> faster is good and slower is not an issue :)
+<a name="l-53"></a><span class="tm">12:13:35</span><span class="nk"> &lt;KalabiYau&gt;</span> If we are faster - we just agree on something else until milestone ends, if slower, next time we will be wiser. Practice shows that it needs two-five sprints to make proper estimations
+<a name="l-54"></a><span class="tm">12:13:45</span><span class="nk"> &lt;KalabiYau&gt;</span> gopesh, agree
+<a name="l-55"></a><span class="tm">12:14:16</span><span class="nk"> &lt;ChrisBr&gt;</span> <span class="hi">KalabiYau:</span> Okay
+<a name="l-56"></a><span class="tm">12:14:21</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, each should estimate his plans, tasks he think he/she want/need to deliver until end of milestone and add em to milestone
+<a name="l-57"></a><span class="tm">12:15:07</span><span class="nk"> &lt;KalabiYau&gt;</span> until say tomorrow evening and on friday we will COMMIT - means milestone experiment officially running
+<a name="l-58"></a><span class="tm">12:15:26</span><span class="nk"> &lt;KalabiYau&gt;</span> any qustions/objections?
+<a name="l-59"></a><span class="tm">12:15:33</span><span class="nk"> &lt;KalabiYau&gt;</span> s/questions/objections/
+<a name="l-60"></a><span class="tm">12:15:44</span><span class="nk"> &lt;KalabiYau&gt;</span> :) cool
+<a name="l-61"></a><span class="tm">12:15:50</span><span class="nk"> &lt;henne&gt;</span> I always like to do collaboratively
+<a name="l-62"></a><span class="tm">12:15:50</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">BigGoals v.1</span>
+<a name="l-63"></a><span class="tm">12:15:56</span><span class="nk"> &lt;henne&gt;</span> wait...
+<a name="l-64"></a><span class="tm">12:16:10</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">agile structuring</span>
+<a name="l-65"></a><span class="tm">12:16:14</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">agile structuring</span>
+<a name="l-66"></a><span class="tm">12:16:27</span><span class="nk"> &lt;KalabiYau&gt;</span> waiting :)
+<a name="l-67"></a><span class="tm">12:16:47</span><span class="nk"> &lt;henne&gt;</span> I would like to meet on Milestone.end and discuss content of the next milestone
+<a name="l-68"></a><span class="tm">12:17:01</span><span class="nk"> &lt;henne&gt;</span> so we at least sync once per milestone...
+<a name="l-69"></a><span class="tm">12:17:01</span><span class="nk"> &lt;KalabiYau&gt;</span> absolutely, that how it should work
+<a name="l-70"></a><span class="tm">12:17:06</span><span class="nk"> &lt;henne&gt;</span> k
+<a name="l-71"></a><span class="tm">12:17:18</span><span class="nk"> &lt;ChrisBr&gt;</span> <span class="hi">KalabiYau:</span> The sprint period is then from 25.07-06.08?
+<a name="l-72"></a><span class="tm">12:17:30</span><span class="nk"> &lt;KalabiYau&gt;</span> ChrisBr, something like it, yes
+<a name="l-73"></a><span class="tm">12:17:35</span><span class="nk"> &lt;KalabiYau&gt;</span> it is flexible
+<a name="l-74"></a><span class="tm">12:17:55</span><span class="nk"> &lt;ChrisBr&gt;</span> Ah okay, so no exactly two week sprints
+<a name="l-75"></a><span class="tm">12:18:03</span><span class="nk"> &lt;KalabiYau&gt;</span> but to get result we need some discipline
+<a name="l-76"></a><span class="tm">12:18:25</span><span class="nk"> &lt;KalabiYau&gt;</span> i would say, each milestone catch up we do review of what is done and next plans
+<a name="l-77"></a><span class="tm">12:18:34</span><span class="nk"> &lt;KalabiYau&gt;</span> how long should be next sprint and stuff
+<a name="l-78"></a><span class="tm">12:18:44</span><span class="nk"> &lt;KalabiYau&gt;</span> anything else to this topic?
+<a name="l-79"></a><span class="tm">12:19:13</span><span class="nk"> &lt;KalabiYau&gt;</span> seems not :)
+<a name="l-80"></a><span class="tm">12:19:15</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">BigGoals v.1</span>
+<a name="l-81"></a><span class="tm">12:19:25</span><span class="nk"> &lt;KalabiYau&gt;</span> that is more questionable topic
+<a name="l-82"></a><span class="tm">12:19:47</span><span class="nk"> &lt;KalabiYau&gt;</span> big goals can allow us to build project work on OSEM more valuable to ourselves
+<a name="l-83"></a><span class="tm">12:20:00</span><span class="nk"> &lt;KalabiYau&gt;</span> like we want to get 100 installations, to help guys out there
+<a name="l-84"></a><span class="tm">12:20:04</span><span class="nk"> &lt;henne&gt;</span> I think we also need more discipline when taking on issues
+<a name="l-85"></a><span class="tm">12:20:15</span><span class="nk"> &lt;KalabiYau&gt;</span> is it good feeling to achieve?
+<a name="l-86"></a><span class="tm">12:20:20</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, elaborate please
+<a name="l-87"></a><span class="tm">12:20:57</span><span class="nk"> &lt;henne&gt;</span> well if we're going to work with issues in milestones we need more discipline in recording thing we're going to do
+<a name="l-88"></a><span class="tm">12:21:12</span><span class="nk"> &lt;henne&gt;</span> and more discipline in recording when we start to work on something etc etc
+<a name="l-89"></a><span class="tm">12:21:27</span><span class="nk"> &lt;KalabiYau&gt;</span> absolutely
+<a name="l-90"></a><span class="tm">12:21:34</span><span class="nk"> &lt;henne&gt;</span> we have currently 2 competing implementation of cancancan and email templates for instance
+<a name="l-91"></a><span class="tm">12:21:36</span><span class="nk"> &lt;KalabiYau&gt;</span> i would extract it to wiki somewhere
+<a name="l-92"></a><span class="tm">12:21:46</span><span class="nk"> &lt;KalabiYau&gt;</span> ;) that should be synced
+<a name="l-93"></a><span class="tm">12:22:03</span><span class="nk"> &lt;KalabiYau&gt;</span> as it is kinda spending time for competitors
+<a name="l-94"></a><span class="tm">12:22:21</span><span class="nk"> &lt;henne&gt;</span> how about we use https://waffle.io/openSUSE/osem
+<a name="l-95"></a><span class="tm">12:22:47</span><span class="nk"> &lt;KalabiYau&gt;</span> awesome
+<a name="l-96"></a><span class="tm">12:22:50</span><span class="nk"> &lt;KalabiYau&gt;</span> we could
+<a name="l-97"></a><span class="tm">12:22:53</span><span class="nk"> &lt;KalabiYau&gt;</span> i am on it
+<a name="l-98"></a><span class="tm">12:23:18</span><span class="nk"> &lt;KalabiYau&gt;</span> so seems idea of big goals did not get any attention, so i would postpone it for better implementation
+<a name="l-99"></a><span class="tm">12:23:21</span><span class="nk"> &lt;gopesh&gt;</span> this is awesome
+<a name="l-100"></a><span class="tm">12:23:31</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">tools and improvements</span>
+<a name="l-101"></a><span class="tm">12:23:40</span><span class="nk"> &lt;KalabiYau&gt;</span> i think waffle will help us!
+<a name="l-102"></a><span class="tm">12:24:25</span><span class="nk"> &lt;KalabiYau&gt;</span> and let's write something in contribution.md to leverage tasks assignment?
+<a name="l-103"></a><span class="tm">12:24:36</span><span class="nk"> &lt;henne&gt;</span> yeah
+<a name="l-104"></a><span class="tm">12:24:53</span><span class="nk"> &lt;KalabiYau&gt;</span> that will eliminate problems like competing implementations in the same milestone
+<a name="l-105"></a><span class="tm">12:25:28</span><span class="nk"> &lt;henne&gt;</span> and it will separate feature issues from bug issues
+<a name="l-106"></a><span class="tm">12:25:36</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#action </span><span class="cmdline">KalabiYau PR with Milestone discipline + issues discipline/Codename 'RubyGrandma'</span>
+<a name="l-107"></a><span class="tm">12:26:04</span><span class="nk"> &lt;KalabiYau&gt;</span> yeah
+<a name="l-108"></a><span class="tm">12:26:08</span><span class="nk"> &lt;differentreality&gt;</span> haha
+<a name="l-109"></a><span class="tm">12:26:28</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">free talk</span>
+<a name="l-110"></a><span class="tm">12:26:48</span><span class="nk"> &lt;KalabiYau&gt;</span> we have ton's of issues in GH and we need to clean them
+<a name="l-111"></a><span class="tm">12:26:57</span><span class="nk"> &lt;henne&gt;</span> not back to Big Goals? :)
+<a name="l-112"></a><span class="tm">12:26:58</span><span class="nk"> &lt;KalabiYau&gt;</span> as many of them looks abandoned
+<a name="l-113"></a><span class="tm">12:27:12</span><span class="nk"> &lt;KalabiYau&gt;</span> we can, actually
+<a name="l-114"></a><span class="tm">12:27:21</span><span class="nk"> &lt;KalabiYau&gt;</span> but seems i need to wrap it up better
+<a name="l-115"></a><span class="tm">12:27:37</span><span class="nk"> &lt;KalabiYau&gt;</span> who is up to big Goals?
+<a name="l-116"></a><span class="tm">12:27:45 </span><span class="nka">* henne</span> <span class="ac">is</span>
+<a name="l-117"></a><span class="tm">12:27:46</span><span class="nk"> &lt;gopesh&gt;</span> I am
+<a name="l-118"></a><span class="tm">12:27:57 </span><span class="nka">* KalabiYau</span> <span class="ac">is</span>
+<a name="l-119"></a><span class="tm">12:28:08</span><span class="nk"> &lt;ChrisBr&gt;</span> too
+<a name="l-120"></a><span class="tm">12:28:13</span><span class="nk"> &lt;KalabiYau&gt;</span> okay
+<a name="l-121"></a><span class="tm">12:28:14</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="topic">#topic </span><span class="topicline">BigGoals v.1</span>
+<a name="l-122"></a><span class="tm">12:28:27</span><span class="nk"> &lt;KalabiYau&gt;</span> so, those can drive process of milestone solving
+<a name="l-123"></a><span class="tm">12:28:58</span><span class="nk"> &lt;KalabiYau&gt;</span> if each milestone has in a background some part of big idea called 'epic', that way we will deliver more than awesomeness
+<a name="l-124"></a><span class="tm">12:29:20</span><span class="nk"> &lt;KalabiYau&gt;</span> self esteem, warm feeling, respect from fellow foss'ers
+<a name="l-125"></a><span class="tm">12:29:21</span><span class="nk"> &lt;KalabiYau&gt;</span> and so on
+<a name="l-126"></a><span class="tm">12:29:33</span><span class="nk"> &lt;ChrisBr&gt;</span> sounds great :)
+<a name="l-127"></a><span class="tm">12:29:54</span><span class="nk"> &lt;KalabiYau&gt;</span> i presume we can collect ideas for big goals until next week and then choose 3-5 for one calendar year
+<a name="l-128"></a><span class="tm">12:30:01</span><span class="nk"> &lt;KalabiYau&gt;</span> how is that
+<a name="l-129"></a><span class="tm">12:30:02</span><span class="nk"> &lt;KalabiYau&gt;</span> ?
+<a name="l-130"></a><span class="tm">12:30:11</span><span class="nk"> &lt;henne&gt;</span> where do we record those?
+<a name="l-131"></a><span class="tm">12:30:15</span><span class="nk"> &lt;gopesh&gt;</span> that sounds great
+<a name="l-132"></a><span class="tm">12:30:18</span><span class="nk"> &lt;KalabiYau&gt;</span> etherpad/wiki/you name it
+<a name="l-133"></a><span class="tm">12:30:45</span><span class="nk"> &lt;gopesh&gt;</span> or maybe in GH with label BigGoals
+<a name="l-134"></a><span class="tm">12:30:57</span><span class="nk"> &lt;KalabiYau&gt;</span> sure, when we choose
+<a name="l-135"></a><span class="tm">12:31:13</span><span class="nk"> &lt;KalabiYau&gt;</span> when we settle goals for a year, we can put them into GH
+<a name="l-136"></a><span class="tm">12:31:22</span><span class="nk"> &lt;KalabiYau&gt;</span> but to brainstorm we need some other place
+<a name="l-137"></a><span class="tm">12:31:25</span><span class="nk"> &lt;henne&gt;</span> goals are not worth a penny if you don't announce them. I would put them into README.md :)
+<a name="l-138"></a><span class="tm">12:31:33</span><span class="nk"> &lt;KalabiYau&gt;</span> henne, +1
+<a name="l-139"></a><span class="tm">12:31:40</span><span class="nk"> &lt;KalabiYau&gt;</span> GH + readme for tracking
+<a name="l-140"></a><span class="tm">12:31:41</span><span class="nk"> &lt;gopesh&gt;</span> for Big Goals I think we should ask people in the entire community like in the biweekly of opensuse-project
+<a name="l-141"></a><span class="tm">12:31:44</span><span class="nk"> &lt;henne&gt;</span> move the install documentation out of there
+<a name="l-142"></a><span class="tm">12:32:08</span><span class="nk"> &lt;KalabiYau&gt;</span> gopesh, asking is good
+<a name="l-143"></a><span class="tm">12:32:20</span><span class="nk"> &lt;KalabiYau&gt;</span> but each of the proposal should be filtered
+<a name="l-144"></a><span class="tm">12:32:33</span><span class="nk"> &lt;KalabiYau&gt;</span> we decide where to steer, but we listen carefully
+<a name="l-145"></a><span class="tm">12:32:42</span><span class="nk"> &lt;henne&gt;</span> yeah and we should have an idea what we want before asking anyone
+<a name="l-146"></a><span class="tm">12:32:50</span><span class="nk"> &lt;KalabiYau&gt;</span> :) true
+<a name="l-147"></a><span class="tm">12:33:13</span><span class="nk"> &lt;differentreality&gt;</span> I think that BigGoals is more what we, developers of OSEM, want for the application. One of which would be to raise awareness about the existence of OSEM among FOSS communities, for instance.
+<a name="l-148"></a><span class="tm">12:33:14</span><span class="nk"> &lt;henne&gt;</span> as a first step, let's get an idea what we, as a group, want from this
+<a name="l-149"></a><span class="tm">12:33:31</span><span class="nk"> &lt;KalabiYau&gt;</span> differentreality, that would be super
+<a name="l-150"></a><span class="tm">12:33:49</span><span class="nk"> &lt;KalabiYau&gt;</span> i wanna cookie !
+<a name="l-151"></a><span class="tm">12:33:56</span><span class="nk"> &lt;KalabiYau&gt;</span> from RubyGrandma
+<a name="l-152"></a><span class="tm">12:34:00</span><span class="nk"> &lt;KalabiYau&gt;</span> sorry :)
+<a name="l-153"></a><span class="tm">12:34:26</span><span class="nk"> &lt;KalabiYau&gt;</span> i want our stuff to be more widely used, i want more collaborators, especially from non rails world
+<a name="l-154"></a><span class="tm">12:34:34</span><span class="nk"> &lt;gopesh&gt;</span> One of the big goals would be to enhance the Android Application of OSEM, giving people the power to manage their stuff via mobile
+<a name="l-155"></a><span class="tm">12:34:41</span><span class="nk"> &lt;KalabiYau&gt;</span> we are running out of time, btw
+<a name="l-156"></a><span class="tm">12:35:18</span><span class="nk"> &lt;KalabiYau&gt;</span> i suggest we establish a plan for this BigGoals thing and move on with it in async
+<a name="l-157"></a><span class="tm">12:35:23</span><span class="nk"> &lt;KalabiYau&gt;</span> deal?
+<a name="l-158"></a><span class="tm">12:35:25</span><span class="nk"> &lt;henne&gt;</span> Note your awesome ideas down somewhere and let's discuss them tomorrow
+<a name="l-159"></a><span class="tm">12:35:36</span><span class="nk"> &lt;gopesh&gt;</span> I think people will use the app more wisely and OSEM will be more popular
+<a name="l-160"></a><span class="tm">12:36:00</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#task </span><span class="cmdline">KalabiYau establish a place for BigGoals sub-prj tracking and brainstorming</span>
+<a name="l-161"></a><span class="tm">12:36:08</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#action </span><span class="cmdline">KalabiYau establish a place for BigGoals sub-prj tracking and brainstorming</span>
+<a name="l-162"></a><span class="tm">12:36:15</span><span class="nk"> &lt;KalabiYau&gt;</span> Then we are done
+<a name="l-163"></a><span class="tm">12:36:18</span><span class="nk"> &lt;KalabiYau&gt;</span> thanks a lot
+<a name="l-164"></a><span class="tm">12:36:24</span><span class="nk"> &lt;KalabiYau&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

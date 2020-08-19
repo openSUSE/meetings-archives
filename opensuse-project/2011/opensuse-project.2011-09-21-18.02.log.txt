@@ -1,0 +1,880 @@
+18:02:09 <mrdocs> #startmeeting openSUSE project meeting
+18:02:09 <bugbot> Meeting started Wed Sep 21 18:02:09 2011 UTC.  The chair is mrdocs. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:02:09 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:02:11 <AJaeger> dragotin: Yes, meeting!
+18:02:15 * suseROCKs wonders if that's going to make dragotin run now
+18:02:15 <dragotin> even better
+18:02:30 <mrdocs> #chairs prusnak suseROCKs AlanClark mrdocs
+18:02:45 <suseROCKs> I assume henne is on FTO?
+18:02:51 <mrdocs> #chair prusnak suseROCKs AlanClark mrdocs
+18:02:51 <bugbot> Current chairs: AlanClark mrdocs prusnak suseROCKs
+18:02:51 <dragotin> he is
+18:02:53 <AJaeger> suseROCKs: Yes, he is
+18:03:19 <mrdocs> #chair henne
+18:03:19 <bugbot> Current chairs: AlanClark henne mrdocs prusnak suseROCKs
+18:03:23 <mrdocs> just in case
+18:03:35 <mrdocs> shall we  begin ?
+18:03:37 <AlanClark> Have we heard from Rupert?
+18:03:47 <mrdocs> not recently
+18:04:01 <AlanClark> ok, on with the agenda
+18:04:08 <dragotin> I run to another computer, see you soon
+18:04:10 <mrdocs> #topic Old Action Items
+18:04:23 <mrdocs> #info http://bit.ly/opensuse_action_items
+18:05:12 <suseROCKs> I don't think there's anything discussable in that list right now
+18:05:24 <suseROCKs> they're almost all stagnated for various reasons
+18:05:26 * mrdocs nods
+18:06:04 <suseROCKs> hmm that should be a new status item for bugzilla  "Status = Stagnated"  :-)
+18:06:07 <mrdocs> #info http://bit.ly/opensuse_board_ais
+18:06:12 <mrdocs> suseROCKs:  Stuck
+18:06:38 <suseROCKs> thought Stuck meant Breakfast  :-)
+18:06:41 <mrdocs> bug 670594
+18:06:41 <bugbot> openSUSE bug 670594 in openSUSE.org (Board) "Write an announcement about the new process of creating the foundation." [Critical,Assigned] https://bugzilla.novell.com/670594
+18:06:58 <mrdocs> https://bugzilla.novell.com/show_bug.cgi?id=670590
+18:07:01 <bugbot> openSUSE bug 670590 in openSUSE.org (Board) "user search for bugzilla" [Normal,New]
+18:07:04 <suseROCKs> all items here is also stagnated/stuck
+18:07:09 * mrdocs nods
+18:07:16 * mrdocs moves on
+18:07:32 <mrdocs> #topic Status Reports
+18:07:47 <mrdocs> wstephenson: vuntz anything from Desktop Teams ?
+18:08:14 <vuntz> mrdocs: usual package updates
+18:08:22 <dragotin> re
+18:08:33 <mrdocs> dragotin: ?
+18:08:43 <dragotin> yes
+18:09:05 <mrdocs> thought you had something to report, other than beer consumption at OSC :)
+18:09:08 <suseROCKs> he's just saying he's back in case we didn't miss him, but fact is, we ALWAYS miss dragotin!
+18:09:17 * mrdocs nods
+18:09:22 <suseROCKs> wait... there was beer???
+18:09:31 <dragotin> sorry, didn't want to confuse
+18:09:38 <mrdocs> dragotin: NP
+18:09:46 <mrdocs> next any other status reports ?
+18:09:58 <suseROCKs> Beta of 12.1 has been delayed by up to two weeks
+18:10:02 <mrdocs> yes
+18:10:10 <mrdocs> good thing methinks
+18:10:30 <suseROCKs> another status update....  Marketing team had its hackfest this past Thurs and Friday
+18:10:48 <suseROCKs> a lot of tasks got assigned and we'll see some good results in time for 12.1 release day I'm sure
+18:10:50 * manugupt1 will say what he did at the fest
+18:10:58 <suseROCKs> go for it, manugupt1
+18:11:06 <mrdocs> manugupt1: we are all ears
+18:11:09 <manugupt1> Well we plan to work on openqa
+18:11:27 <mrdocs> awesome
+18:11:28 <manugupt1> We have release announcements ready and me and Jos wants to make it the next big software at openSUSE
+18:11:42 <manugupt1> Something like openSUSE Project = openSUSE + OBS + OpenQA
+18:11:47 <manugupt1> We have 5 articles ready
+18:11:56 <manugupt1> Bernhard is making a 1.0 release soon
+18:12:02 <mrdocs> great stuff ! :)
+18:12:18 <manugupt1> By 11th october it should be on news / media
+18:12:28 <manugupt1> and then a series of howtos if the media agrees
+18:12:29 <mrdocs> #info openqa will make a 1.0 release by 11 Oct
+18:12:44 <manugupt1> That is what the plan is
+18:12:46 * dragotin doesn't really like the equation
+18:13:00 <suseROCKs> dragotin,  what would you suggest?
+18:13:08 <manugupt1> Anyone can chip in here http://ietherpad.com/openqa
+18:13:21 <manugupt1> Ok.. We just thought and would like
+18:13:31 <dragotin> openSUSE is still more than openSUSE + OBS + OpenQA
+18:13:54 <dragotin> for example community :-)
+18:14:00 <manugupt1> dragotin: But its not public yet.. something we need to work on I agree
+18:14:08 <dragotin> ok
+18:14:10 <manugupt1> dragotin: We are the biggest community no one can beat that :)
+18:14:19 <manugupt1> The whole world agrees
+18:14:20 <AlanClark> I agree with dragotin.  There's more to the project.
+18:14:20 <suseROCKs> dragotin,  well you're right about that.  During the "Message BoF' at the conference, people wanted the distro to be distinctively named.    "openSUSE" should be generic, while Distro should be something like "openSUSE Distro" or something like that
+18:14:30 <mrdocs> + good beer :)
+18:14:52 <suseROCKs> and I will be publishing my BoF report tomorrow on the Message BoF
+18:14:57 <dragotin> suseROCKs: good point to have openSUSE set free
+18:15:24 <mrdocs> anything else for this ?
+18:15:29 <mrdocs> any other reports ?
+18:15:34 <suseROCKs> how about a conference report?
+18:15:41 <suseROCKs> overall stats and such?
+18:15:41 <coolo> we can name it coolOpensuse :)
+18:15:48 <mrdocs> coolo: :D
+18:15:50 <manugupt1> suseROCKs: One has already been published during the hackfest
+18:15:51 <dragotin> coolo: lol
+18:15:57 <manugupt1> but more are welcome :)
+18:16:08 <suseROCKs> manugupt1,   yes but I'm saying a status report that is entered into the record here
+18:16:20 <manugupt1> Oh.. sorry..
+18:16:24 <coolo> dragotin: of course written with the stereo sign where the O is
+18:16:33 <AlanClark> osc11 huge success, what more can be said?
+18:16:47 * mrdocs was really sad to miss it
+18:17:03 <suseROCKs> Did we raise some decent funds from beer and t-shirt sales?
+18:17:04 * AlanClark wonders what happened to the left over beer?
+18:17:16 <mrdocs> AlanClark: prolly none left ;)
+18:17:19 <dragotin> AlanClark: its in the office
+18:17:19 <manugupt1> Awesome beer and pizzas and lots of cheese
+18:17:28 <prusnak> i guess we now know why we haven't seen henne since the conference ended :)
+18:17:31 <AlanClark> by the way, henne never brewed that root beer for  me ;-)
+18:17:34 <dragotin> AlanClark: the next event is on october 22nd
+18:17:50 <mrdocs> dragotin: where ?
+18:17:51 <izabelvalverde> for me was great cause I'll step into wiki team to help henne
+18:17:52 <suseROCKs> What s on Oct 22nd?
+18:18:11 <dragotin> An event called "Lange Nacht der Wissenschaften"
+18:18:21 <dragotin> its a Nuremberg local event
+18:18:22 <mrdocs> izabelvalverde: awesome... big necessary job :)
+18:18:31 <dragotin> of tech companies, universities and such
+18:18:36 <suseROCKs> dragotin,   are you just saying that to try to get me to twist my tongue?
+18:18:52 <dragotin> we have a room there at the university in Nbg.
+18:19:01 <yaloki> suseROCKs: now I am, sorry, kids → bed and such
+18:19:03 <dragotin> and will see more than 1000 people there probabbly
+18:19:10 <izabelvalverde> mrdocs besides a great team ;-)
+18:19:22 <mrdocs> yaloki: o/
+18:19:31 <AlanClark> dragotin; glad to see it go to good use
+18:19:39 <suseROCKs> Speaking of events...  openSUSE Community will be making its first official appearance at Brainshare in 3 weeks from now as special guests of SUSE.  W00T!
+18:19:51 <mrdocs> yup
+18:20:03 <mrdocs> big important place for visibilty
+18:20:07 <mrdocs> next
+18:20:14 <mrdocs> any other remaining reports ?
+18:20:16 <manugupt1> and also comment on this it would be great for a few people I know and have mentioned there http://sysbytes.wordpress.com/2011/09/19/opensuse-india/ :)
+18:21:26 <mrdocs> manugupt1: make sure those are on planet and in news where appropriate
+18:21:29 <suseROCKs> ok mrdocs  I guess that's all the status updates
+18:21:37 * mrdocs moves on
+18:21:40 <manugupt1> mrdocs: yes..
+18:21:59 <mrdocs> #topic 2012 elections
+18:22:15 <bear454> Do we really have to talk politics ?
+18:22:18 <yaloki> :)
+18:22:29 <mrdocs> who wants to start on that one.. anyone from current commitee
+18:22:31 <mrdocs> ?
+18:22:34 <suseROCKs> only when it involves your extreme leftist views, bear454   :-)
+18:22:39 <yaloki> we have a commitee yet ?
+18:22:41 <suseROCKs> mrdocs,  I'll take this one
+18:22:52 <mrdocs> suseROCKs: go go go
+18:22:56 <AJaeger> mrdocs: There's no current committee - just the one from the last election;)
+18:23:02 <suseROCKs> no we don't have a committee yet, but AlanClark  and I have already begun drafting the request for volunteers
+18:23:34 <suseROCKs> it requires the board to review the text and modify where appropriate and then I'll post it ASAP where relevant
+18:23:35 <suseROCKs> http://ietherpad.com/board-elections
+18:23:37 <mrdocs> suseROCKs: what else needs doing ?
+18:23:39 <izabelvalverde> I can step into committee if it needed
+18:23:58 <AlanClark> need to mention that we discussed the elections at the osc general meeting.
+18:24:05 * suseROCKs adds izabelvalverde to the committee list of volunteers
+18:24:36 <AlanClark> Thanks izabelvalverde!
+18:24:40 <yaloki> izabelvalverde: kudos
+18:24:44 * mrdocs wonders if oy would also help
+18:25:06 <AlanClark> we had 2 people volunteer at the general meeting
+18:25:17 <yaloki> wstephenson: would you be interested in being in the election committee again? if I'm not mistaken, you were part of it last time
+18:25:19 <mrdocs> AlanClark: how many do we need in total
+18:25:32 <AJaeger> Deadline of 7th October is too long IMO. Let's get this out and have it closed before the next project meeting
+18:25:35 <suseROCKs> 237, mrdocs
+18:25:48 <drago> yaloki: I think it was digitltom
+18:26:01 <suseROCKs> AJaeger,  that's fine too.   We litterally made this draft an hour ago and its just a brain dump as of now
+18:26:11 <yaloki> drago: oh.. but wstephenson was in in the time before then, I'm pretty sure he was
+18:26:11 <AlanClark> AJaeger, I agree
+18:26:14 <yaloki> :)
+18:26:58 <yaloki> ok, so once we have the committee we need a time frame
+18:27:04 <AJaeger> Last year it was digitltom, Sascha Manns, Stathis Iosifidis, Satoru Matsumoto
+18:27:05 <mrdocs> exactly
+18:27:09 <yaloki> I already announced I'm running
+18:27:37 <AJaeger> yaloki: You need to announce it properly once the election committee has declared how to do it ;)
+18:27:42 <yaloki> AJaeger: yep
+18:27:44 <suseROCKs> yaloki,   the time frame is primarily designed by the committee itself
+18:27:52 <yaloki> correct
+18:27:53 <suseROCKs> so the sooner we get the committee formed, the sooner the time frame evolves
+18:27:57 <AJaeger> yaloki: But it means you should not join the election committee...
+18:28:03 <yaloki> AJaeger: I know, I won't :)
+18:28:17 <oy> mrdocs: yes, I would help
+18:28:18 <AlanClark> not to speak for digitom, in talking to him he said he would help.  He's not available to lead, but will help with the technical stuff
+18:28:28 <yaloki> kudos to oy too!
+18:28:40 <suseROCKs> ok so we have two volunteers now
+18:28:48 <suseROCKs> do we want to set a cap for number of volunteers?
+18:28:52 <mrdocs> oy: yes... i think you have done a lot and certainly are trustworthy
+18:28:56 <yaloki> wasn't it 5 people ?
+18:28:58 <yaloki> or 3 ?
+18:29:16 <mrdocs> 4 last year
+18:29:25 <AlanClark> let's cap it at 5
+18:29:29 <yaloki> I wonder whether 3 would be sufficient, actually
+18:29:33 <izabelvalverde> suseROCKs who's 2?
+18:29:35 <AJaeger> "The election is run by an Election Committee that consists of at least three openSUSE members. The Election Committee is appointed for each election by the board. "
+18:29:40 <suseROCKs> izabelvalverde,   you and Oy
+18:29:43 * AJaeger cites the rules
+18:29:50 <yaloki> and, as AlanClark said, probably digitltom too
+18:30:03 <mrdocs> ok so
+18:30:04 <yaloki> so we might have 3 already
+18:30:16 <yaloki> oy: weren't you on one of those committees in the past ?
+18:30:25 <suseROCKs> well digitltom never really considred himself an active member of the past teams,  just a tech assistant iirc
+18:30:29 <AJaeger> yaloki: No, he was not.
+18:30:31 <yaloki> would be good to know from someone who has been there whether 3 is enough
+18:30:38 <AJaeger> suseROCKs: He was active.
+18:30:43 <yaloki> hmmm okay
+18:30:45 <suseROCKs> ok
+18:30:51 <mrdocs> #info izabelvalverde oy and 2 others have volunteered to work on Election Commitee
+18:30:56 <AJaeger> yaloki: You need two active and committed people ;)
+18:30:59 <mrdocs> any action items ?
+18:31:03 * yaloki is being too practical right now :>
+18:31:08 <suseROCKs> so does this mean we don't have to do an announcement after all?  :-)
+18:31:18 <AJaeger> So, should we just make the three the commitee and not do a call for volunteers?
+18:31:24 <mrdocs> yeah, we annouce the appointments
+18:31:28 <yaloki> AJaeger: +1
+18:31:29 <AlanClark> let's do the announcement
+18:31:35 <mrdocs> no i we still ask
+18:31:39 <prusnak> suseROCKs: please do, but sent it ASAP
+18:31:41 * nmarques loves democracy
+18:31:48 <mrdocs> so if someone wants to, can raise their hand
+18:31:59 <suseROCKs> prusnak,   ok but we need to make sure the text is agreeable.
+18:32:11 <suseROCKs> Also AJaeger proposes a different deadline date for volunteers.  What is the new date proposed?
+18:32:23 <AJaeger> mrdocs: Then make a short timeline - next project meeting is on the 5th, so make the deadline the 4th.
+18:32:35 <yaloki> AJaeger: yeah true, that's probably better indeed
+18:32:36 <suseROCKs> ok I'll modify it then
+18:32:49 * suseROCKs modifies and will send out after the meeting
+18:33:05 <mrdocs> #action item - AlanClark suseROCKs to make announcement calling for Election Commitee volunteers
+18:33:12 <suseROCKs> if there4s any other textual polishings, please speak now or forever hold your peace  :-)
+18:33:13 <AlanClark> of those who volunteered today, are any of you williing to lead the committee?
+18:33:28 <izabelvalverde> I'm not :-D
+18:33:36 <mrdocs> #action deadline 4 Oct
+18:33:44 <prusnak> the text looks ok to me
+18:33:46 <bear454> AlanClark: what's involved in "leading the committee" ?
+18:33:47 <mrdocs> next ?
+18:33:57 <suseROCKs> mrdocs,   I think your action item needed a little more decriptiveness  :-)
+18:34:02 <bear454> AlanClark: wiki link ?
+18:34:15 <mrdocs> suseROCKs: yup
+18:34:21 <AlanClark> bear454: keeping the commmittee on track
+18:34:33 <AJaeger> bear454:  The leading is informal, there's no leader but you need to keep everything on track.
+18:34:45 <mrdocs> reporting to the board in a timely fashion
+18:34:46 <AJaeger> bear454: http://en.opensuse.org/openSUSE:Board_election
+18:35:03 <bear454> that sounds like something I'd be *horrible* at :/
+18:35:12 <AJaeger> mrdocs: The election committee does not report to the board - it works on its own once setup.
+18:35:20 * mrdocs nods
+18:35:39 <yaloki> and tom is there with his experience for the technical side of things
+18:35:43 <yaloki> (voting, counting)
+18:35:44 <AJaeger> But you don't want to kick it awake every two weeks ;)
+18:36:11 <mrdocs> next ?
+18:36:17 <mrdocs> anything else to add
+18:36:18 <mrdocs> ?
+18:36:19 <suseROCKs> AJaeger,   it doesn't report per se, but it should give regular status updates to let us know things are on track
+18:36:41 <suseROCKs> and that can be done during Project meeting's Status Updates topic section
+18:37:10 <AJaeger> Yes, it should inform the community what the status is.
+18:37:55 <suseROCKs> ok I think that's all for this topic...  /me yields the floor back to meeting chair
+18:38:12 <AlanClark> bear454: by the way, you'd make a great lead.
+18:38:37 <mrdocs> #topic permission@ requests
+18:38:41 <mrdocs> First
+18:38:50 <mrdocs> Request for Bronze sponsorship of openSUSE from Heinlein Support
+18:38:57 <bear454> GAH
+18:39:05 * bear454 volunteers to lead the election committee
+18:39:06 <mrdocs> comments ?
+18:39:13 <AlanClark> I'll take the lead on this one
+18:39:25 <mrdocs> #info bear454 to lead the election committee
+18:39:43 <AlanClark> Board members, you should have seen the permission request on this.
+18:39:53 <mrdocs> yup
+18:39:58 <mrdocs> i see no issues there
+18:40:09 <suseROCKs> si
+18:40:22 <mrdocs> suseROCKs: there are ?
+18:40:29 <suseROCKs> no
+18:40:33 <mrdocs> +1 from me
+18:40:37 <suseROCKs> si to AlanClark saying we should have read it  :-P
+18:40:41 <AlanClark> What I would ask from the board is to approve the proposal to add them as a Bronze Sponsor with AJ and I to work the details
+18:40:54 <mrdocs> AlanClark: great
+18:40:57 <drago> Bronze Sponsor for what?
+18:41:02 <mrdocs> openSUSE
+18:41:04 <suseROCKs> well hang on AlanClark ....
+18:41:06 <AJaeger> drago: Bronze Sponsor for the project
+18:41:20 <drago> what will they donate?
+18:41:25 <suseROCKs> I welcome sponsors, just like all others.  But one thing we've always raised the question of in the past and never quite figured out how to answer is... "What does sponsor mean?"
+18:41:33 <AJaeger> drago: Those are the details to work out ;)
+18:41:51 <AJaeger> drago: Hosting is one option - as the two of us discussed at osc11
+18:41:52 <suseROCKs> so we should approve before the details?
+18:42:01 <drago> I see, thanks
+18:42:02 <mrdocs> suseROCKs: in this case its money, hardware or services rendered
+18:42:24 <AJaeger> suseROCKs: I suggest you let AlanClark and myself continue investigating.
+18:42:41 <suseROCKs> AJaeger,  that's what I would prefer as well,
+18:42:51 <AJaeger> I suggest that the two of us report back before we make a final "signature" under everything, we'd like to have a "go ahead and work out details"
+18:42:53 <suseROCKs> unless you are asking us to approve the investigation itself?
+18:43:04 <suseROCKs> yes AJaeger   +1 to that
+18:43:07 <AJaeger> And your guidance on what to look for
+18:43:17 <mrdocs> ok I move we ok it as AlanClark suggested then a final ok after the details are understood
+18:43:36 <suseROCKs> +1  (official vote)
+18:43:37 <mrdocs> a second ?
+18:43:47 <mrdocs> prusnak:  ?
+18:43:55 <suseROCKs> don't go parliamentarian on us mrdocs   :-)
+18:44:05 <prusnak> i am okay with investigation
+18:44:11 <mrdocs> suseROCKs: trying to move things along :)
+18:44:19 <prusnak> i don't think we need to vote on investigating
+18:44:53 <suseROCKs> no but its fun to use the keystroke combo once in a while to create the + sign  :-)
+18:45:16 <suseROCKs> next item?
+18:45:32 <mrdocs> #info AlanClark AJaeger to further discuss and report final details for Heinlein Support
+18:45:43 <mrdocs> Open Source Press ?
+18:46:01 <AlanClark> This is another request that came in from @permission
+18:46:03 <mrdocs> I'll say a couple things there
+18:46:34 <mrdocs> I have had a good experience with them in discussing a book contract
+18:47:14 <mrdocs> very pro open source, good people to work with
+18:47:16 <mrdocs> eg
+18:47:31 <mrdocs> very responsive and reasonable
+18:47:49 <mrdocs> i need to re-read their request, but i did not see anything which bites
+18:47:50 <mrdocs> but
+18:48:15 <suseROCKs> that's all very good and I have no doubt of their professionalism.   However they are requesting an exclusive contract to distribute boxed 12.1 DVDs and that's a problem in my book.
+18:48:17 <AJaeger> There is one think we should discuss for sure - exclusivity.
+18:48:29 <mrdocs> requesting to ship a box.. no issues there, but not exclusively
+18:48:30 <mrdocs> and
+18:48:44 <drago> why not exclusively?
+18:48:49 <mrdocs> its not clear to me if it is meant in German or English or other languages
+18:49:05 <drago> they are talking about a *openSUSE* box, right
+18:49:07 <drago> ?
+18:49:12 <AJaeger> mrdocs: German for sure, the others I don't know
+18:49:19 <suseROCKs> drago,    For one thing, we have already given approvals to others in smaller groups to distribute openSUSE in their regions.   We can't shut them down
+18:49:19 <mrdocs> AJaeger: exactly
+18:49:33 <drago> so exclusivity would not harm any derivates
+18:49:44 <drago> suseROCKs: whom?
+18:50:02 <suseROCKs> we'd have to look back our records for whom, but there's someone in England if I'm not mistaken
+18:50:04 <izabelvalverde> exclusivity would be better than nothing here in Brazil
+18:50:10 <nmarques> may I ask one simple question ?
+18:50:18 <nmarques> just plain curiosity
+18:50:27 <yaloki> nmarques: just ask :)
+18:50:28 <nmarques> when one asks for exclusivity he has to give something back
+18:50:29 <Ilmehtar> suseROCKs: SatManUK, you're right
+18:50:40 <nmarques> what are they offering for 'exclusivity' ?
+18:50:50 <nmarques> what does openSUSE gets from it ?
+18:50:51 <yaloki> nmarques: doing it in the first place, I guess
+18:50:56 <suseROCKs> nmarques,   at this time they are offering nothing except asking for exclusivity.  That's the other issue I have
+18:51:09 <nmarques> so the answer seems to be quite easy :)
+18:51:16 <nmarques> I lay back now
+18:51:18 <AJaeger> I think the exclusivity is only about the "box" - and I would not make it any broader.
+18:51:30 <suseROCKs> but we hve had problems with "exclusive" distributors in the past.   and I don't see why we want to get locked into something that only one distributor gets to do
+18:51:47 <suseROCKs> plus in their email request they ask for advertisement space on the .de version of openSUSE website.
+18:51:55 <drago> suseROCKs: nobody will make the investment if it is not exclusive
+18:52:03 <suseROCKs> That tells me they don't necessarily have a plan to reach out to other markets.
+18:52:04 <mrdocs> From the request:  "
+18:52:06 <mrdocs> We may use openSUSE trademarks, logos, and artwork for the software
+18:52:06 <AJaeger> suseROCKs: Besides SUSE in the past, there was never an exclusive distributor
+18:52:07 <drago> and how many official opensuse boxes do you want to have?
+18:52:07 <mrdocs> box openSUSE 12.1. We may use these exclusively, ie. other companies
+18:52:09 <mrdocs> like open-slx GmbH are not allowed to use trademarks and logos for
+18:52:10 <mrdocs> version 12.1.
+18:52:31 <suseROCKs> AJaeger,   open-slx claimed to have a contract  (though maybe not necessarily "exclusive")
+18:52:32 <nmarques> just another question
+18:52:40 <AJaeger> suseROCKs: Not exclusive!
+18:52:41 <suseROCKs> in which case, exclusivitity takes this to a higher level than in the past
+18:52:48 <nmarques> how much is worth the german market for openSUSE in value and volume ? :)
+18:52:57 <nmarques> that would point how much 'exclusivity' is worth
+18:52:57 <izabelvalverde> when in the past exclusively?
+18:53:01 <mrdocs> nmarques: good question
+18:53:11 <nmarques> mrdocs: ;)
+18:53:39 <AJaeger> I doubt they will sell more than 10000 boxes.
+18:53:39 <mrdocs> now so we obviously cannot accept their proposal as is
+18:53:47 <nmarques> 10.000 boxes ? :)
+18:54:03 <nmarques> that's quite a lot
+18:54:03 <izabelvalverde> if so great!!!
+18:54:04 <suseROCKs> I don't know.  I just see repeat problems of the past if we have to do a contract.
+18:54:08 <mrdocs> how do we move forward ?
+18:54:14 <nmarques> my advice ?
+18:54:17 <drago> depends on how they market it, right?
+18:54:18 <AJaeger> nmarques: That's a few - we had 200000 in the past.
+18:54:21 <bear454> nmarques: be careful with your thousandths separator... in US 10.000 == 10.
+18:54:33 <nmarques> take no action until you have all the data
+18:54:39 <AJaeger> bear454: I meant 10k ;)
+18:54:50 <nmarques> we're talking maybe on big numbers
+18:54:56 <nmarques> with zero return for openSUSE
+18:54:58 <nmarques> ;)
+18:55:04 <nmarques> and we still have to make free advertisment ?
+18:55:09 <nmarques> sounds like a very good deal
+18:55:11 <nmarques> for them
+18:55:12 <nmarques> :)
+18:55:15 <AJaeger> nmarques: It's small numbers with the margins they have.
+18:55:23 <yaloki> nmarques: there is an implicit turnaround though
+18:55:27 <yaloki> nmarques: more users
+18:55:29 <drago> nmarques: you could have applied as well :-)
+18:55:36 <prusnak> return for opensuse is that there ARE actually some boxes
+18:55:40 <nmarques> yaloki: more users? sounds like a falacy to me
+18:55:41 <yaloki> right
+18:55:48 <drago> and nobody said that there is zero return for opensuse
+18:55:50 <AlanClark> mrdocs, I'll take the action item to reply to their request; explaining that we are not inclined to offer exclusive, etc...
+18:55:51 <nmarques> yaloki: who buys boxes ? legacy users or new users ? :)
+18:55:54 <yaloki> nmarques: well, if they don't do it, there is no boxed openSUSE at all
+18:56:06 <nmarques> yaloki: yeah, I'm not against
+18:56:07 <yaloki> nmarques: in countries with bad internet connections, it's still very much an option
+18:56:11 <yaloki> (and that includes germany)
+18:56:12 <nmarques> yaloki: just take something out of it
+18:56:16 <nmarques> yaloki: for example
+18:56:20 <drago> yaloki: unfortunately true :-(
+18:56:23 <mrdocs> AlanClark: let's work on this together as I have had contact with Markus as well
+18:56:29 <nmarques> yaloki: they should do the advertisement for openSUSE, not the other way around
+18:56:30 <yaloki> nmarques: I see your point, but as AJaeger said, the margin is very low
+18:56:43 <nmarques> yaloki: the problem isn't the margin
+18:56:51 <nmarques> yaloki: we can't take money from them can we ? :)
+18:56:54 <AJaeger> One info: We should really reply to them today, they are time constrainted to hit the christmas season.
+18:57:00 <nmarques> yaloki: so the $US or €'s are not worth
+18:57:07 <yaloki> nmarques: probably difficult, indeed
+18:57:10 <nmarques> yaloki: but we can take other things, like advertisement and promotion
+18:57:16 <yaloki> sure
+18:57:17 <AlanClark> mrdocs, +1  in working together.  I'll draft an email and send it to the board for review
+18:57:17 <izabelvalverde> but more users and someone doing what we can't
+18:57:18 <nmarques> yaloki: we shouldn't advertise for them
+18:57:24 <nmarques> they should be advisertising for us ;)
+18:57:33 <yaloki> nmarques: we advertise anyway
+18:57:34 <suseROCKs> ok let's let AlanClark and mrdocs  proceed to reach out to them to work out more detailed data and then we can make a more informed choice
+18:57:41 <mrdocs> #action AlanClark and mrdocs reply to their request of OSP , but to decline the "exclusive" part
+18:57:46 <suseROCKs> but I'm not voting for any exclusivity at this time
+18:58:00 <mrdocs> suseROCKs: no it definitely needs more definition
+18:58:02 <drago> more interesting is if they will provide install support for example
+18:58:04 <nmarques> I only suggest one thing
+18:58:05 <yaloki> the exclusivity bit is really the tricky part, everything else, well, why would we be opposed to it
+18:58:05 <AJaeger> suseROCKs: I'm against exclusivity - and if we do it, limit it in time and region!
+18:58:15 <nmarques> dont hand over exclusivity for periods longer than a year or a cycle
+18:58:21 <nmarques> so if something goes really out of hand
+18:58:33 <nmarques> we have a natural contractual bail out ;)
+18:58:33 <yaloki> AJaeger: *definitely* time-limited and requiring re-negotiation for example
+18:58:39 <yaloki> we know what happened in the past
+18:58:46 <AJaeger> But you can say: We will inform you before we give somebody else the same rights.
+18:58:46 <yaloki> nmarques: agreed
+18:58:47 <nmarques> AJaeger: +1
+18:58:48 <mrdocs> nmarques yaloki even more, specific targets
+18:58:51 <suseROCKs> AJaeger,    limited may be thecompormise option
+18:59:00 <mrdocs> next
+18:59:09 <mrdocs> HaiSoft
+18:59:21 * mrdocs does not recall seeing that one
+18:59:34 <prusnak> bootable usb key thingie
+18:59:54 <drago> heh - seems we're hyping :-)
+19:00:00 <suseROCKs> distributing bootable openSUSE USB keys?
+19:00:00 <AJaeger> And this is not a box - but openSUSE sold in a shop and thus competition to what OSB offers.
+19:00:18 * yaloki thinks "OHaiSoft" would be funnier
+19:00:20 <AlanClark> This one just came in from @permission, not all may have seen it yet
+19:00:35 <mrdocs> AlanClark: no i just searched, can you forward ?
+19:00:36 * suseROCKs goes to look for it
+19:00:59 <prusnak> 19:38 CEST
+19:01:07 <prusnak> subj: openSUSE logo for bootable USB Key
+19:01:09 <mrdocs> today ?
+19:01:17 <prusnak> yes
+19:01:17 <AJaeger> mrdocs: today, 90 minutes ago
+19:01:20 <mrdocs> got it
+19:01:21 <AlanClark> yes it just came in today.
+19:01:21 <yaloki> AJaeger: so it goes back to OSB again, and limiting what that exclusivity means, but that's something that needs to be taken care of anyway, to avoid making it impossible for communities to distribute DVDs and such
+19:01:22 <suseROCKs> "I am contacting you because I would like to print the openSUSE logo on a
+19:01:22 <suseROCKs> USB Key. This key will be sold with the latest Live version of openSUSE at
+19:01:22 <suseROCKs> a reasonable price, across Europe.
+19:01:22 <suseROCKs> "
+19:01:26 <mrdocs> buried :S
+19:02:22 <suseROCKs> that one I can easily _+1 on.  Doesn't request any burdens upon us and accepts his own role and burdens for the distribution of the keys
+19:02:46 <AJaeger> nmarques: I would have expected you to speak up and ask to get something back for the project ;)
+19:03:07 <AlanClark> I'm +1 on this one
+19:03:13 <prusnak> +1 here as well
+19:03:23 <AJaeger> Haisoft wants to make money with it  - anything we won't to have go back t othe project?
+19:03:29 <suseROCKs> and we do get these types of requests from time to time, which is why agreeing to an exclusivity contract is not exactly a good thing
+19:03:58 <cboltz> AJaeger: maybe some usb keys for free? ;-)
+19:04:11 <suseROCKs> AJaeger,   well here's what we came up with a few months ago.  Since we haven't really gotten a foundation in place, we decided that any requests that have money-making potential will be granted a one-year limited permissions
+19:04:12 <AJaeger> I have an additional question on these topics: Currently we have links to open-SLX for the openSUSE 11.4 box. Would we link to Haisoft?
+19:04:20 <AJaeger> suseROCKs: Ah, ok.
+19:04:24 <yaloki> suseROCKs: otoh it could be a bit weird to have *two* resellers propose openSUSE 12.1 boxes on the shelf :)
+19:04:25 <suseROCKs> that way we can revisit the issue in the future in accordance with the business plans of openSUSE Project
+19:04:47 <suseROCKs> yaloki,   I don't think its that weird
+19:04:55 <AJaeger> yaloki: Yeah, one DVD, one USB key.
+19:05:08 <yaloki> AJaeger: that's alright I think, but having 2 boxed sets.. heh
+19:05:14 <yaloki> well yeah, maybe it isn't weird
+19:05:19 <izabelvalverde> USB cheaper to ship!
+19:05:20 <prusnak> the more the merrier :)
+19:05:31 <mrdocs> well haisoft is only proposing live images, not installers
+19:05:33 <yaloki> true, true :)
+19:05:36 <mrdocs> so
+19:05:40 <suseROCKs> yaloki,   a store owner/store product buyer isn't likely to buy the same product to stock their shelves from two different vendors
+19:05:58 <suseROCKs> +1 Prusnak
+19:05:59 <mrdocs> +1 for me as well, if limited to one year as we have done with prior requests
+19:06:14 <mrdocs> ok who replies ?
+19:06:24 <suseROCKs> I can do it
+19:06:33 <prusnak> jfyi there is one no vote from someone from the legal dept
+19:06:35 <AJaeger> I suggest another topic: How do we promote these boxes/products from our pages? How prominently do we want this - and this includes also derivates like the open-SLX
+19:06:36 <AlanClark> suseROCKS - I'll do it
+19:06:38 <prusnak> how do we deal with this?
+19:06:51 <prusnak> are we overriding this?
+19:06:51 <suseROCKs> ok AlanClark
+19:06:52 <AlanClark> suseROCKS - I need to include novell legal on
+19:07:10 <yaloki> prusnak: there are only two options: promote all or promote neither
+19:07:27 <suseROCKs> prusnak,   let AlanClark slap around the legal department until they fear him and give him anything he wants under the sun  :-)
+19:07:36 <nmarques> AJaeger: sry I missed something... get back what ?
+19:07:46 <AJaeger> AlanClark: It's Scott Corfield - isn't he marketing?
+19:07:46 <mrdocs> #action AlanClark to contact legal and follow-up with HaiSoft, board votes OK with permission
+19:07:49 <nmarques> AJaeger: was answering mails :/
+19:08:02 <AlanClark> Scott is marketing not legal
+19:08:04 <AJaeger> nmarques: No problem - read the above discussion on haisoft.
+19:08:06 <nmarques> AJaeger: about the USB sticks ?
+19:08:13 <nmarques> AJaeger: yeah, I would ask something
+19:08:24 <nmarques> AJaeger: a % of sticks for our own marketing and events
+19:08:27 <mrdocs> AJaeger: yes good point about our promotion activites
+19:08:35 <nmarques> AJaeger: so we can distribute a few to our users/enthusiasts
+19:09:00 <mrdocs> AlanClark: ^^ can you add this to your reply ?
+19:09:04 <nmarques> AJaeger: I can contact a few companies in Shen Zen or whatever it's called to check for the normal prices of USB sticks (manufacturing costs)
+19:09:29 <nmarques> AJaeger: I do have a few contacts, but I would say that the production cost of a 2/4GB stick is bellow 1€
+19:09:43 <nmarques> AJaeger: so asking them a few hundreds would be sane enough :)
+19:09:50 <AlanClark> mrdocs: I'll add the request to the email
+19:09:58 <mrdocs> nmarques: plus in some countries there is a media tax + duties
+19:10:06 <mrdocs> AlanClark: thanks :)
+19:10:09 <nmarques> mrdocs: export laws
+19:10:13 <mrdocs> anything else on this ?
+19:10:25 <suseROCKs> I think we can move on
+19:10:35 <nmarques> mrdocs: either way production costs are low
+19:10:40 <mrdocs> #topic where can we improve ?
+19:10:48 <mrdocs> #info http://en.opensuse.org/openSUSE:What_to_improve_osc11_session
+19:10:58 <nmarques> mrdocs: asking like 500 sticks for our own marketing peeps wouldn't sound unresonable to me
+19:11:16 <nmarques> mrdocs: plus the promotion we can give and visibility
+19:11:17 <mrdocs> nmarques: i agree if they are making 10k
+19:11:33 <nmarques> mrdocs: that's my suggestion :)
+19:11:40 <nmarques> mrdocs: but it's really up to you guys :)
+19:11:50 <nmarques> mrdocs: and yeah, I'm the mercenary kind :)
+19:11:58 <mrdocs> nmarques: let's see what AlanClark comes up with
+19:12:03 <prusnak> nmarques: good suggestion
+19:12:28 <nmarques> prusnak: yeah, give the tools to our most efforted ambassadors
+19:12:36 <mrdocs> nmarques: exactly
+19:12:38 <nmarques> prusnak: they will make good usage of them :)
+19:12:41 <suseROCKs> I need to step away for a couple minutes
+19:12:49 <mrdocs> ok me too
+19:13:00 <suseROCKs> does that mean we have intermission?  :-)
+19:13:22 <mrdocs> #topci 5 min intermission
+19:13:25 <mrdocs> gr
+19:13:31 <suseROCKs> a first!   W00T!
+19:13:33 <mrdocs> #topic 5 min intermission
+19:13:42 <yaloki> lol
+19:13:54 <mrdocs> back @21:18 CET
+19:14:02 <prusnak> pee pause break
+19:14:14 <andy__> that was intense!
+19:15:19 * yaloki watches the queue to the bathrooms
+19:15:50 <drago> hmmrmrmm
+19:15:52 <yaloki> don't forget washing your hands!
+19:15:55 <yaloki> :)
+19:17:52 * suseROCKs is back with dripping hands
+19:18:12 * mrdocs hopes people also return with favortie $beverage
+19:18:24 <mrdocs> we're back
+19:18:29 * yaloki DCCs a round
+19:18:33 <mrdocs> #topic where can we improve ?
+19:18:39 <mrdocs> #info http://en.opensuse.org/openSUSE:What_to_improve_osc11_session
+19:18:47 <mrdocs> Who wants to start ?
+19:18:58 <suseROCKs> ok so I was at that BoF led by robjo
+19:19:12 <AlanClark> I suggest we table this till next meeting robjo isn't able to attend today
+19:19:18 <mrdocs> yeah
+19:19:27 <suseROCKs> and though he's not here, I'd like to commend RobJo for fulfilling our request to do the BoF
+19:19:27 <AlanClark> unless suseROCKS wants to report
+19:19:30 <mrdocs> but it is s meaty subject
+19:19:45 <suseROCKs> I'd like to let robjo handle it.  He deserves it
+19:20:01 <mrdocs> yeah that wiki page is well done
+19:20:09 <yaloki> +1
+19:20:14 <suseROCKs> +1
+19:20:29 <AJaeger> robjo is not here today
+19:20:48 <AJaeger> He suggested before the meeting to postpone until next meeting
+19:21:04 <mrdocs> #action postpone discussion until robjo can attend
+19:21:23 <mrdocs> #topic Q&A
+19:21:55 <mrdocs> Jedibeeftrix asks: Any update on Jos's request for assistance with Bretzn and how this will affect opensuse 12.1?
+19:22:12 <mrdocs> gah
+19:22:13 <suseROCKs> HAH  nice jos!
+19:22:28 <prusnak> i can answer
+19:22:32 <mrdocs> good
+19:22:56 <prusnak> next week we have a hackweek in SUSE offices and AFAIK Frank is coming to NUE office to work on integrating Bretzn into 12.1
+19:22:57 <suseROCKs> make an action item for Jos to send prusnak a bag of waffles for stepping in for him  :-)
+19:23:13 * mrdocs grins
+19:23:19 <drago> prusnak is right, Frank will be here
+19:23:30 <suseROCKs> ahh that leads to another question
+19:23:33 <mrdocs> prusnak: good news.. anything else we need to know or do ?
+19:23:37 <prusnak> otherwise i don't know about anyone from the community who'd stepped up for this
+19:23:46 <drago> still that does not mean that he/we can do it alone
+19:24:11 <mrdocs> drago: what help is needed ?
+19:24:16 <prusnak> exactly, so if there are any volunteers, you know whom to contact
+19:24:24 <drago> mrdocs: coding currently I guess
+19:24:31 <suseROCKs> y'know  this is actually an old question that was addressed in previous meeting at some point, just never removed from the wiki.
+19:24:34 <yaloki> .oO(usually happens that way, with stuff developed behind the scenes...)
+19:24:49 <suseROCKs> And we don't really have a way of directly answering that question except for expecting people to read our logs
+19:25:13 <suseROCKs> let's add this answer to the wiki page after the question
+19:25:33 <drago> yaloki: you mean bretzn?
+19:25:35 <mrdocs> well in this case it seems Jos needs to bang the drum for community participation
+19:25:56 <suseROCKs> well that kind of leads to my next question, mrdocs, which I'm going to address to drago
+19:25:59 <yaloki> drago: amongst a few other cases, yes :)
+19:26:45 <suseROCKs> drago,   The hackweek itself isn't widely publicized.   I planned to write an article but some are telling me this is only for internal SUSE folks and not a broad hackweek for everyone.  Can you explain the participatory goals of hackweek?
+19:26:51 <drago> yaloki: there has been a very public sprint at the beginning of the year, you remember?
+19:27:14 <yaloki> drago: nope, so that might be just me
+19:27:28 <suseROCKs> actually I thought it was end of last y ear?
+19:27:34 <drago> yaloki: it could always be opener of course
+19:27:40 <AJaeger> suseROCKs: Hackweek is indeed a SUSE internal event - and this year we're a bit late with organizing it.
+19:27:53 <drago> hackweek: Well, yes, the communication sucks
+19:28:13 <drago> but AFAIK its of course not "only for SUSE folks"
+19:28:13 <yaloki> drago: what I find puzzling is that, typically, the *concept* isn't discussed a lot :\
+19:28:22 <suseROCKs> well its never too late to communicate, but as one person said to me earlier today, no real need to publicize because externally people can hack anytime they want.  I'm not sure I agree with that perception
+19:28:23 <AJaeger> It's internal but some participants invite others to work with them.
+19:28:27 <yaloki> well, effectively, it kind of is
+19:28:27 <drago> who tells that?
+19:28:47 <yaloki> AJaeger: true
+19:29:14 <suseROCKs> so should we or should we not publicize it?
+19:29:22 <drago> Why should it be internal? I mean, every Geeko can say "I do a hackweek" and hack with us
+19:29:34 <drago> of course, please publicize
+19:29:35 <suseROCKs> drago,   That's my feeling as well.
+19:29:47 <yaloki> drago: but why would that be hackweek, everyone else is doing it during their spare time, just as usual
+19:29:51 <AJaeger> drago: Indeed - but you don't want to have to mentor everybody on how to e.g. work the build service.
+19:29:57 <izabelvalverde> we have many things to publicize not sure if SUSE should be the main need right now
+19:30:27 <suseROCKs> but we've publicizzed hackweeks in the past
+19:30:33 <prusnak> hackweek since its 3rd edition is not what it used to be (1st and 2nd one)
+19:30:35 <drago> guys, if somebody does NOT want to mentor - granted. He/she can simply say that.
+19:30:51 <mrdocs> izabelvalverde: good point and moreover, many of the devs blog about their stuff, during and after it
+19:31:01 <mrdocs> prusnak: what's different ?
+19:31:02 <drago> But I do not see a reason why we shouldnt beat the drum just because of that
+19:31:35 <suseROCKs> mrdocs,  but simultaneously, having an actual hackweek may inspire someone who does have skills do do their own hacking but has been procrastinating up to now.   That's where publicizing does a good thing
+19:31:37 <prusnak> mrdocs: well, if it were not for this meeting you would not learn about it
+19:31:39 <drago> we need good marketing and hackweek is a good thing
+19:31:44 <drago> so lets talk about that
+19:31:50 <prusnak> while back then nat was writing about it literally everywhere
+19:31:54 <suseROCKs> plus since hackweek is about anything under the FOSS sun, it enhances our image that openSUSE is more than just a distro.  Its a project that fosters all of FOSS
+19:32:10 <prusnak> but we faild to find a replacement for him once he started to work on studio
+19:32:10 <AJaeger> I think we should write something - with two intends: One the one hand to invite to hack together, on the other to tell that many people are hacking on projects out of their comfort space. So, they might hang around in other channels with other problems than usual.
+19:32:37 <yaloki> "invite to hack together" …
+19:32:50 <suseROCKs> or invite to just hack, period?
+19:33:02 <yaloki> well
+19:33:10 <yaloki> there is definitely a need for information about it
+19:33:13 <izabelvalverde> "invite to hack together"
+19:33:17 <prusnak> but fwiw i think having an internal hackweek is fine
+19:33:26 <yaloki> because, inevitably, some people will hackweek on things other people have already been doing in the community
+19:33:28 <prusnak> we just have to decide if it is a public event or now
+19:33:31 <yaloki> and which they don't know about
+19:33:35 <yaloki> so hackweek can do harm as well
+19:33:43 <prusnak> because if it is we should sponsor some people to come to the offices
+19:33:49 <AJaeger> prusnak: It will be a public event - because people speak about it like we do here ;)
+19:33:54 <drago> yaloki: please...
+19:34:08 <suseROCKs> prusnak,   I don't think we have to get to the point of sponsoring travel, especially since it starts this Monday
+19:34:20 <drago> prusnak: of course it is public
+19:34:29 <yaloki> drago: "please" what? just saying, needs to be some interaction
+19:34:50 <prusnak> drago: really? i learned about it 2 days ago
+19:34:53 <yaloki> drago: the potential is there, so, information is needed
+19:34:55 <drago> yaloki: interaction is *always* needed, right?
+19:34:58 <manugupt1> yaloki: How does that harm the project off topic though
+19:35:26 <drago> doing FOSS can never harm, right?
+19:35:27 <yaloki> manugupt1: because other people have been doing something during their spare time and then, suddenly, bang, someone else is doing the same without re-using what has been done
+19:35:34 <drago> evne if efforts are doubled
+19:35:40 <yaloki> oh hell no
+19:35:42 <drago> thats one of the mechanisms of FOSS
+19:35:51 <yaloki> not if you want to be a community
+19:36:05 <drago> I am not saying we should strive for
+19:36:06 <drago> surely
+19:36:07 <manugupt1> yaloki: Unless entangled in ego issues.. it should not harm imo yes duplication sucks
+19:36:20 <manugupt1> But sometime stuff happens
+19:36:28 <yaloki> it's a little more complex than that though
+19:36:36 <drago> yaloki: where do you see a problem?
+19:36:41 <suseROCKs> yaloki, does have a point, and he is speaking from personal experience on this matter as he got "banged"
+19:36:41 <drago> yaloki: speak out bluntly
+19:37:03 <yaloki> suseROCKs: but it's not even that what I have in mind
+19:37:10 <yaloki> well
+19:37:12 <yaloki> pretty simple
+19:37:22 <yaloki> hackweek, high visiblity, lots of blogging
+19:37:30 <yaloki> people with connections, more visiblity and presence in the project
+19:37:35 <suseROCKs> but the thing is here, is what yaloki seems to be saying (from my interpretation) is that there needs to be a more orderly fashion of some sort  and I don't know if that can be done in such a short time period before Monday
+19:37:38 <yaloki> they do something other people have been doing already
+19:37:56 <yaloki> those other people not necessarily having the presence and visibility in the project
+19:38:06 <yaloki> just imagine how you'd feel
+19:38:14 <yaloki> so, I'm just saying, that _could_ happen
+19:38:16 <suseROCKs> yaloki,  yup  I totally can relate to that feeling
+19:38:21 <suseROCKs> but how do you avoid that?
+19:38:26 <yaloki> and hence we _need_ to spread some information about hackweek to the community
+19:38:38 * drago experienced that recently with his Owncloud sync client
+19:38:56 <yaloki> so that, even if those doing hackweek don't care, those who could get their stuff overwritten and stampeded have a chance of keeping an eye and say "hey! hey! wait!"
+19:38:57 <suseROCKs> its a depressing feeling,  for sure
+19:39:11 <yaloki> that's all I'm saying
+19:39:20 <mrdocs> yaloki: good points
+19:39:22 <mrdocs> so
+19:39:27 <yaloki> I'm obviously having a few specific cases in mind, but that's not the issue, and nothing I'd discuss here anyway ^^
+19:39:27 <suseROCKs> yaloki,   I get it   now  answer is... how do we address it?
+19:39:34 <mrdocs> where do we go from here ?
+19:39:39 <drago> we could avoid that using openFATE for example more consequentely
+19:39:46 <yaloki> drago: good point
+19:40:01 <yaloki> and maybe just send a line or two about that potential situation to those who will participate in hackweek
+19:40:02 <manugupt1> But would it be one entry or a lot of different open fate entries
+19:40:03 <drago> and if people do not speak about there projects, they're pimped. True
+19:40:29 <mrdocs> drago: seems to me that needs to be addressed inside - that is getting devs to pay attention to openfate
+19:40:38 <andy__> surely publicity will make people want to share their ideas for hackweek
+19:40:42 <suseROCKs> "pimped"  Now that's a cool word coming out of Drago!  :-)
+19:40:46 <yaloki> duplication and forking is not an issue, it's a lot more about the psychological impact and not having the same "weapons" in terms of time, contact to key people on the project, and visibility
+19:40:58 <drago> suseROCKs: from the Bugzilla sources !
+19:41:07 <drago> suseROCKs: really.
+19:41:14 <mrdocs> hehe
+19:41:19 <prusnak> drago: maybe everyone who writes a blogpost about his hackweek project can get one Old Toad :)
+19:41:26 <yaloki> eheh
+19:41:31 <prusnak> we have to motivate SUSE folks I guess
+19:41:49 <suseROCKs> So do we have a solution here?
+19:41:50 <mrdocs> and to get more people looking at openfate for ideas
+19:41:56 <yaloki> mrdocs: +1
+19:42:16 * drago likes to avoid using alcohol as motivation ;-)
+19:42:17 <prusnak> because i am sure that out of 200 people having hackweek next week we won't hear a word from 168 of them
+19:42:39 <drago> prusnak: true unfortunately
+19:42:44 <suseROCKs> agreed
+19:42:46 <prusnak> s/Old Toad/big lollypop/
+19:42:49 <mrdocs> prusnak: too bad.. then it begs the question about changing that
+19:43:16 <suseROCKs> ok guys... time out for a second  so I can say something...
+19:43:19 <drago> mrdocs: the only solution is to make a sooo coool openSUSE project so that everybody cares about
+19:43:21 <mrdocs> what can the community do to get this in the open and more interactive with the outside wolrd ?
+19:43:38 <suseROCKs> I see 2 things... 1) We are trying to hash out the ideal solution here  and 2) We need to publicize this very soon
+19:43:39 <mrdocs> suseROCKs: go
+19:44:01 <suseROCKs> its late at night for many of you, and the complexiity of this discussion tells me that I'm not going to be the ideal person to write up the first draft of the article
+19:44:13 <mrdocs> 1. we cannot fix now 2. needs action
+19:44:16 <drago> prusnak: try to find out who is in charge of this HW
+19:44:25 <AJaeger> drago: Your boss;)
+19:44:28 <drago> prusnak: and tell him about the issue
+19:44:30 <suseROCKs> I'll be glad to work on the second draft and polish it up for the morning.  But wwho can volunteer to write 1st draft tonight?
+19:44:33 <drago> AJaeger: I doubt
+19:44:53 <AJaeger> drago: That's what I heard yesterday on the hallways - and it seemed a recent appointment
+19:45:13 <prusnak> that's the problem, i guess, no one knows who's in charge
+19:45:22 <drago> ok, lost...
+19:45:33 <prusnak> before it was clear that it is nat or jw
+19:46:12 <suseROCKs> I fear you guys might have rushed into this hackweek but I think we're past the point of resolving that and we should just bite it and figure out the best way to go from here for an awesome start on Monday
+19:46:50 <AJaeger> prusnak: jw is involved - ask him and roland.
+19:47:00 <izabelvalverde> well I hope your hackweek will better that the one last week!
+19:47:00 <drago> prusnak: yes, please contact jw
+19:47:01 <AJaeger> Can we move on to my question?
+19:47:09 <AJaeger> I suggested a few minutes ago to discuss: How do we promote these boxes/products from our pages? How prominently do we want this - and this includes also derivates like the open-SLX
+19:47:09 <drago> prusnak: he will understand the issue
+19:47:26 <mrdocs> AJaeger: yup you are next :)
+19:47:28 <mrdocs> so
+19:47:33 <AJaeger> mrdocs: Thanks
+19:47:33 <mrdocs> action item ?
+19:47:41 <mrdocs> AJaeger: i did not forget :)
+19:47:44 <suseROCKs> who wants to write up the first draft ASAP?
+19:47:54 <mrdocs> suseROCKs: i can if given some details
+19:48:19 <mrdocs> #action mrdocs to try and start a first draft tonight
+19:48:27 <suseROCKs> well I'm kinda hoping to shorten the gap here by having the person with the most details do the brain dump into the first draft
+19:48:39 <mrdocs> suseROCKs: yes.. i see
+19:48:50 <suseROCKs> mrdocs,   it needs to be published like tomorrow morning to make this owrthwhile
+19:48:55 <suseROCKs> *worthwhile
+19:48:58 <mrdocs> by Friday
+19:49:10 <suseROCKs> Friday's always a bad day for publication.  low readership
+19:49:19 * mrdocs nods
+19:49:21 <mrdocs> but
+19:49:25 <AJaeger> suseROCKs: jw, prusnak, myself can review it tomorrow and publish in the afternoon
+19:49:37 <mrdocs> good
+19:49:41 <suseROCKs> works for me!  :-)
+19:49:43 <mrdocs> i need to step away
+19:49:51 <mrdocs> bbi 2
+19:50:11 <mrdocs> suseROCKs: so please add the action item, then its AJ's turn
+19:50:13 <suseROCKs> hmm I think we're actually kind of done with the meeting now, aren't we?
+19:50:21 <suseROCKs> oh yeah AJ ....
+19:50:30 <andy__> Likely done
+19:50:50 <suseROCKs> #action  mrdocs to write first draft of hackweek announcement, aj, prusnak and jw will review and publish it by end of day Thursday
+19:50:57 <suseROCKs> ok  AJaeger   you have the floor
+19:50:59 <AJaeger> I suggested a few minutes ago to discuss: How do we promote these boxes/products from our pages? How prominently do we want this - and this includes also derivates like the open-SLX
+19:51:04 <AJaeger> http://software.opensuse.org/114/en right now contains a link "Buy openSUSE" which links to http://en.opensuse.org/Buy_openSUSE.
+19:51:19 <AJaeger> So, how do we want to do this? What are the guidelines to add external links here?
+19:51:42 <AJaeger> opensourcepress asked to be included - and open-SLX as derivative are interested as well.
+19:51:54 <AJaeger> The Haisoft USB stick is another think to add somehow.
+19:51:56 <suseROCKs> AJaeger,   my initial thought is to just have a page with the logos of various distributors and people can click to the one they like.  But I wonder if distibutors are going to appreciate being all on the same page
+19:52:12 <drago> hehe - hard thing
+19:52:15 <suseROCKs> but yes we should definitely promote those who distribute us
+19:52:34 <nmarques> guys sry for trolling but in the end if possible I have a request to the board
+19:52:38 <drago> other projects do not do that btw
+19:52:44 <nmarques> just let me know if there's time
+19:52:53 <suseROCKs> drago,   Just means we're better than the rest  :-)
+19:52:56 <AJaeger> drago: Other projects don't have a box ;)
+19:52:58 <yaloki> nmarques: mail is prolly better, as not every board member is here right now
+19:53:03 <suseROCKs> after all, other projects don't even have their own beer!
+19:53:04 <drago> KDE does not promote openSUSE :-)
+19:53:22 <drago> I know that does not really match
+19:53:30 <drago> but still, we don't _have_ to do it
+19:53:56 <AJaeger> drago: Right, we don't have to. But we did in the past.
+19:53:57 <suseROCKs> drago,   but here's the thing.   We are not a large community like others.  So engaging in a partnership of marketing  helps to further our reach where other projects have larger teams to do the work
+19:54:20 <AJaeger> But exactly since we don't have to, we should be clear on what we want to promote and what *not*
+19:54:28 <drago> AJaeger: right
+19:54:34 <mrdocs> AJaeger: exactly
+19:54:49 <mrdocs> and that has never been clearly discussed, let alone defined
+19:55:00 <suseROCKs> AJaeger,   I think any product that is portraying openSUSE under the goodwill clause should simply get a listing on a page.   One page listing all of these
+19:55:08 <drago> the easiest and most equal solution is to not do it at all
+19:55:20 <AlanClark> I think it should be limited to those which " redistribute without modifications" according to the trademark guidelines
+19:55:24 <drago> suseROCKs: good compromise
+19:55:36 <mrdocs> AlanClark: +1
+19:55:53 <AJaeger> AlanClark: So, no derivatives like open-SLX?
+19:55:54 <mrdocs> as we then know what is in the tin
+19:56:07 <drago> the problem is that we basically promote everything
+19:56:16 <drago> ie. openSUSE Edu, Medical etc.
+19:56:30 <suseROCKs> we're not really promoting Balsam
+19:56:40 <drago> so why do we discuss the "real" openSUSE clones?
+19:56:41 <AJaeger> openSUSE Edu and Medical are part of openSUSE - aren't they?
+19:56:45 <drago> its really difficult
+19:56:58 <AlanClark> AJaeger; still pondering that one.  I like the idea of basing the decisionon the trademark guidelines, so that we have a known basis of judgement
+19:57:04 <suseROCKs> drago,   those are community-grown projects.  I'd be likely to promote them  but in a different way,  not in a products page
+19:57:11 <mrdocs> drago: let's be clear, community driven is different
+19:57:22 <mrdocs> we
+19:57:50 <drago> ok, so lets promote Balsam - they consider themselves community as well I am sure
+19:57:52 <mrdocs> let's limit this to commercially driven derivatives
+19:57:56 <AJaeger> drago: Yes, it's not easy - and I don't expect an answer tonight. We can table that for the next meeting and thus give everybody of us the chance to come up with a great idea - or realize it's too complex.
+19:58:16 <drago> AJaeger: its complex, but we need a solution
+19:58:25 <yaloki> .oO(and there's a difference between considering yourself and actually being...)
+19:58:28 <drago> and I agree on postponing
+19:58:28 <AlanClark> +1 AJaeger.  let's put this on the agenda for next time
+19:58:34 <suseROCKs> I'll go with AJaeger's suggestion and table it for now....
+19:58:37 <drago> yaloki: sure, but who decides?
+19:58:44 <mrdocs> AJaeger: no its not impossible, just needs some thought and reasonably good guidlines
+19:58:44 <yaloki> drago: I know, I know
+19:58:50 <drago> yaloki: you see my point?
+19:58:51 <yaloki> it is complicated, indeed
+19:58:57 <yaloki> drago: yes, absolutely
+19:59:16 * drago actually saw that coming....
+19:59:17 <yaloki> drago: not the first time we discuss/brainstorm about it, really not easy
+19:59:31 <drago> yaloki: right
+19:59:47 <suseROCKs> I suggest we make a list of all the possible products  (community derivatives, etc.) and then we can have a broader overview of where the examples lie
+20:00:12 <mrdocs> suseROCKs: yes, we also need to think about stuff from susetudio
+20:00:29 <mrdocs> so
+20:00:30 <AlanClark> mrdocs; ugh
+20:00:32 <drago> suseROCKs: well, all possible products? You thought of openSUSE beer two years ago?
+20:00:47 <mrdocs> AlanClark: yes :S
+20:00:49 <drago> suseROCKs: No chance to foresee all products
+20:00:55 <suseROCKs> drago,   no that's not what I mean.
+20:01:14 <drago> suseROCKs: ah, sorry
+20:01:23 <suseROCKs> drago,  what I mean is we're all throwing in little examples here and htere,  but if we can itemize the existing examples, we can then easily divide them into categories and then be able to make a more prudent determination
+20:01:38 <mrdocs> suseROCKs: exactly
+20:01:49 <suseROCKs> its a helluva lot easier to look at a list of examples than a "oh by the way this one too"  :-)
+20:01:58 <drago> suseROCKs: good, but than we discuss all over again and again
+20:02:10 <mrdocs> so where do we go from here ?
+20:02:12 <AlanClark> actually guys, there is one easy answer, that many won't like, but it is an answer. Only post those that sponsor the project.
+20:02:16 <drago> but we probably can not avoid that anyway
+20:02:37 <mrdocs> AlanClark: yes, definitely a possibilty
+20:02:40 <suseROCKs> AlanClark,  and that opens up the age old question that's been brought up before... "What is our definition of Sponsor"?  :-)
+20:02:42 <drago> AlanClark: thats good
+20:03:02 * drago drops off now
+20:03:04 <AJaeger> suseROCKs: We do have "official" sponsors
+20:03:06 <drago> good night everybody
+20:03:09 <AJaeger> drago: Good night!
+20:03:15 <mrdocs> drago: thanks for joining :)
+20:03:16 <andy__> drago: night
+20:03:19 <izabelvalverde> drago night ;-)
+20:04:07 <mrdocs> suseROCKs: sponsors = money, services in kind, goods in kind
+20:04:28 <mrdocs> which can include beer, guns and lawyers :)
+20:04:28 <suseROCKs> mrdocs,  AJaeger   but this question has been raised a number of times in board meetings over the past year and no one has ever come up with an answer
+20:05:03 <mrdocs> suseROCKs: well apart from my list above what would you add to that ?
+20:05:07 <AJaeger> suseROCKs: Sorry, I don't remember these - might have skipped all of those ;-(
+20:05:37 <AlanClark> I don't remember that being an issue either
+20:05:51 <warlordfff> hey
+20:05:56 <warlordfff> good afternoon
+20:06:02 <suseROCKs> it was raised during our discussions with open-slx  and they kept banding around that they were the major sponsor of openSUSE
+20:06:11 <suseROCKs> and I kept asking... what's their definition and our definition of sponsorship
+20:06:12 <yaloki> HAHAHAHAHHahhahHAHAHAHHA
+20:06:15 <yaloki> oops, sorry :)
+20:06:23 <suseROCKs> what's our expectations vs. the sponsor's expectations, etc.
+20:06:30 <suseROCKs> yaloki,   exactly!  :-)
+20:06:36 <AlanClark> ah stepped into that one
+20:07:27 <warlordfff> I want to join the election comitie
+20:07:33 <yaloki> kudos to warlordfff !
+20:07:37 <warlordfff> do I still have time?
+20:07:41 <AJaeger> warlordfff: Great!
+20:07:53 <warlordfff> I forgot to write that down yesterday
+20:08:32 <mrdocs> gah sorry irc died on my
+20:08:53 <yaloki> but as AJaeger said, we should still have a public call
+20:09:01 <yaloki> to give everybody a chance to be part of that committee
+20:09:06 <yaloki> and not just those who were on IRC today
+20:09:15 <warlordfff> ok
+20:09:18 <mrdocs> can someone pastebin the recent chat ?
+20:09:25 <suseROCKs> and we will send out that email announcement shortly
+20:09:26 <warlordfff> one question about something else
+20:09:34 <AlanClark> I think we've spent enough time on the this topic today, I'd recommend that we put it on the agenda for next meeting, so that we can think through some proposals
+20:09:35 <nmarques> mrdocs: sign me up for the guns... if anyone is handing over G36C's, I could use one :)
+20:09:39 <warlordfff> if I have the time?
+20:09:40 <nmarques> mrdocs: and save 4000€'s :)
+20:09:58 <AJaeger> AlanClark: +1
+20:10:01 <mrdocs> nmarques: i was thinking of the warren zevon song :)
+20:10:20 <nmarques> guys
+20:10:25 <nmarques> mind if I say something :)
+20:10:37 <mrdocs> nmarques: sure
+20:10:38 <nmarques> you guys need a plan for some sort of 'franchising' the brand
+20:10:46 <nmarques> something very well thought of
+20:10:56 <nmarques> that would solve the problems with sponsorships and friends
+20:11:00 <nmarques> ;)
+20:11:11 <nmarques> it shouldn't be a 'per case' thingie
+20:11:17 <mrdocs> nmarques: i know exactly of what you are speaking
+20:11:29 <AJaeger> nmarques: There are guidelines on what bronce, silver and gold sponsorship means.
+20:11:30 <mrdocs> nmarques: is that something you could take on ?
+20:11:59 <nmarques> mrdocs: that is something I can help with ;) (help i nthe role of follower, not as in the role of leader)
+20:12:19 <nmarques> mrdocs: I have theoretical expertise to do it, but no real life experience on doing it
+20:12:24 <nmarques> mrdocs: but it's a start :)
+20:12:48 <AJaeger> http://en.opensuse.org/images/2/2f/Sponsoring-concept-opensuse.pdf should be the sponsor brochure
+20:13:00 <mrdocs> AJaeger: thanks
+20:13:48 <AJaeger> mmh, that one misses bronze sponsorship
+20:14:18 <yaloki> can we end the meeting?
+20:14:24 <mrdocs> AJaeger: that needs to be pretty and attractive
+20:14:26 <mrdocs> yes
+20:15:04 <mrdocs> #action postpone discussion for sponsor levels for next meeting
+20:15:08 <suseROCKs> +1 to meeting end
+20:15:15 <mrdocs> anyone else have anything ?
+20:15:24 <mrdocs> 1,2,3...
+20:15:27 * yaloki haz stomach bug, wanna share
+20:15:29 <yaloki> ;)
+20:15:29 <suseROCKs> 3,2, 1
+20:15:31 <mrdocs> #endmeeting

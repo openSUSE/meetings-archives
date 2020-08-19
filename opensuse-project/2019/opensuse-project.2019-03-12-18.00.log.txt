@@ -1,0 +1,183 @@
+18:00:05 <ddemaio> #startmeeting
+18:00:05 <bugbot> Meeting started Tue Mar 12 18:00:05 2019 UTC.  The chair is ddemaio. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:00:05 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:00:14 <ddemaio> #chair ddemaio
+18:00:14 <bugbot> Current chairs: ddemaio
+18:00:34 <ddemaio> #info Welcome to the week 9 meeting leading up to the openSUSE Conference 2019. I’m going to post by topic. We can discuss the topic. I’ll add the info. If you want to add info to the topic, put a hashtag info, hashtag idea, hashtag link, hashtag question. I will post the meeting minutes to the opensuse-project mailing list after the meeting.
+18:00:43 <ddemaio> #topic Status
+18:00:43 <ddemaio> #info Registration 173
+18:01:15 <ddemaio> I think this number will start to increase
+18:01:23 <ddemaio> Still pretty solid though
+18:01:37 <knurpht> yup
+18:01:42 <ddemaio> #topic events.o.o
+18:01:42 <ddemaio> #info An updated was made to the events.o.o software (OSEM). The update caused some issues. If anyone wants to help out with the issues, they are listed in the below link. Most of this is written in ruby. The open issues can be viewed at https://github.com/openSUSE/osem/issues
+18:01:42 <ddemaio> #info The bug with the schedule was fixed
+18:01:42 <ddemaio> #link https://events.opensuse.org/conferences/oSC19/schedule
+18:02:09 <ddemaio> So, I think we should focus on the schedule a bit today/tonight
+18:02:23 <ddemaio> #topic Schedule
+18:02:23 <ddemaio> #info Let’s go over the scheduled talks and see what we can re-adjust to deconflict some talks and align some talks.
+18:02:23 <ddemaio> #link Day 1 https://events.opensuse.org/conferences/oSC19/schedule#2019-05-24
+18:02:23 <ddemaio> Are there any talks you see that we should adjust?
+18:02:39 <ddemaio> #link Day 2 https://events.opensuse.org/conferences/oSC19/schedule#2019-05-25
+18:02:40 <ddemaio> #link Day 3 https://events.opensuse.org/conferences/oSC19/schedule#2019-05-26
+18:03:20 <ddemaio> So far, no one has emailed me about shifting talks to accommodate a scheduling conflict
+18:03:44 <ddemaio> let's start with day 1
+18:04:51 <ddemaio> No need to really look at the talks from 10 to 11:45 as those are keynotes
+18:05:27 <knurpht> Maybe switch the 1st en 3rd Kubic talk?
+18:06:14 <knurpht> AFAIK Richard's is more generic, doing that first might give the audience of ..In production some background.
+18:06:22 <ddemaio> so put richards first and move ish to where richards talk is now
+18:06:32 <ddemaio> true
+18:07:11 <knurpht> Yup
+18:07:38 <cboltz> technical question - is it possible to "rotate" the schedule by 90 degrees (= rooms as columns)?
+18:08:02 <knurpht> cboltz: noticed that change too.
+18:08:49 <cboltz> I'm slightly ;-) annoyed by having 3 pages/clicks per day instead of one page for the whole day
+18:08:51 <ddemaio> it's not possible from the ui of events.o.o, but https://github.com/openSUSE/osem/issues
+18:09:02 <ddemaio> bug might be the way to solve it
+18:09:32 <cboltz> ok, I'll open a bugreport later
+18:10:01 <ddemaio> small steps cboltz. I was just happy to be able to view the schedule for the meeting today. that bug was fixed last week
+18:10:16 <cboltz> ;-)
+18:10:40 <ddemaio> so if I move ish and richard, richard would have back to back talks
+18:10:51 <ddemaio> should we do that to him
+18:10:57 <knurpht> cboltz: it's a feature, not a bug.
+18:11:16 <ddemaio> or should we shift richards first talk to another slot
+18:11:29 <knurpht> or put Ish in the middle, would work for me AFAICS
+18:11:42 <knurpht> So, R, Ish, R
+18:12:23 <ddemaio> but the kube r first then ish then r tkd
+18:13:01 <ddemaio> or r tkd, then ish, then r kube
+18:14:16 <knurpht> Ah, sorry. moment
+18:15:21 <ddemaio> if you refresh, you should see r, r, Igawa then ish
+18:16:08 <ddemaio> I tried to focus on the two rooms talks starting at the same time
+18:17:25 <knurpht> R openSUSE Kubic, then Igawa, then R TDK, then Ish ?
+18:18:47 <ddemaio> refresh
+18:18:53 <knurpht> Trying to have some logic. Introduction/general first, then the rest.
+18:19:29 <knurpht> Yup, that's what I meant
+18:20:11 <ddemaio> I had to switch the other room's talk arond to make it work, but I think that doesn't make much of a difference what comes first for the room at the moment
+18:20:50 <ddemaio> ok. what about the last four talks of the day
+18:21:23 <ddemaio> should I switch the shorter ones to the last spot
+18:21:51 <ddemaio> ceph and eos should start at the same time
+18:22:31 <cboltz> IMHO the current schedule is better
+18:22:50 <ddemaio> ok. we will go with that. On to Day 2
+18:22:57 <cboltz> it gives people from the packaging workshop to switch over to "re-thinking spec files" without missing something in the middle of the workshop
+18:24:35 <ddemaio> sounds good
+18:24:49 <knurpht> agrees
+18:25:17 <ddemaio> with the workshop on day 2, I started it a little before as I thought going up to 12:30 wasn't the best idea
+18:26:10 <cboltz> agreed
+18:27:03 <ddemaio> it looks like the 13:00 hour talk is missing
+18:27:53 <knurpht> the ws is on day 1
+18:28:05 <knurpht> rethinking as well
+18:28:28 <ddemaio> Ah. I know what that is
+18:28:53 <ddemaio> andreas withdrew a talk
+18:30:05 <knurpht> Packaging WS and Rethinking -> day 2? Mostly a lot of people miss friday, if we move them to saturday, we'd attract more audience probably
+18:30:29 <ddemaio> but then decided not to. forgot to change it
+18:31:06 <ddemaio> so move day 1 to day 2 and day 2 to day one in the main room
+18:31:40 <knurpht> No, just the packaging stuff.
+18:31:57 <knurpht> the workshop and the rethinking one.
+18:32:22 <ddemaio> so change one workshop with another
+18:34:12 <knurpht> only move day2 seminarraum1 -> day2 seminarraum1 and vice versa
+18:35:53 <knurpht> this new interface sucks IMNSO. We could click on dates, header showed to rooms in columns, times in rows.
+18:38:15 <ddemaio> can you refresh
+18:39:34 <ddemaio> I moved the keysigning to friday and all the friday workshops to saturday
+18:43:28 <knurpht> That leaves re-thinking spec files before the workshop, but maybe that's OK.
+18:44:08 <cboltz> I'd say these two are mostly independent, and not having them overlap is a feature
+18:44:56 <knurpht> cboltz: indeed, re-thinking immediately after a workshop may be confusing
+18:45:23 <knurpht> at least for old idiots like me
+18:45:57 <ddemaio> so it looks good
+18:46:18 * cboltz wonders if he should add knurpht's last line (and only that) to his signature collection
+18:47:21 <knurpht> ddemaio: yep
+18:47:21 <cboltz> another question for saturday -
+18:47:26 <ddemaio> how does the rest of the talks look on saturday.
+18:47:34 <ddemaio> sure, what cboltz
+18:47:38 <cboltz> it looks like I'll end up handling the lightning talks
+18:47:44 <cboltz> can we please fix the title?
+18:47:48 <ddemaio> yes
+18:47:53 <ddemaio> sure
+18:47:54 <cboltz> s/beer/wine/g ;-)
+18:48:00 <ddemaio> ah
+18:48:02 <ddemaio> sure
+18:48:33 <cboltz> next question: do we get problems with Z-Bau if I bring the wine and some glasses?
+18:48:34 * knurpht wants to move cboltz's lightning beer talks to 0730 AM
+18:48:53 <ddemaio> Lighting Beer and Wine (Not Wine) Talks w/cboltz
+18:49:02 <cboltz> knurpht: that's known as "Fr�hschoppen" here ;-)
+18:49:43 <ddemaio> Wein
+18:50:13 <ddemaio> Lighting Beer and Wein (Not Wine) Talks w/cboltz
+18:50:30 <knurpht> ROTFL
+18:52:31 <comrad> are you talking about chemnitz?
+18:52:41 <cboltz> as long as I don't have to bring the beer, I'm fine with that ;-)
+18:52:53 <cboltz> comrad: no, we do planning for the openSUSE Conference
+18:53:31 <cboltz> ddemaio: how much involved do you want to be in the lightning talks?
+18:53:38 <ddemaio> ok, it's update
+18:53:51 <cboltz> I'd propose to change "speakers" to me, and to remove "w/ cboltz" from the title if that's ok for you
+18:54:13 <cboltz> ... to be involved ...
+18:54:15 <ddemaio> I think you can give the intro if you want or maybe anna could give the intro as well. It's up to you
+18:54:44 <cboltz> I can give the intro, no problem
+18:55:02 <cboltz> I guess I'll also have to ask for and select the talks, right?
+18:55:03 <ddemaio> If you log in and to a submission with the same, title, I will schedule it. There is a bug to change the speaker in OSEM
+18:56:02 <cboltz> submissions are closed, which makes that a bit hard ;-)
+18:56:19 <cboltz> (I don't have special permissions on events.o.o, and I'm not sure if I want them ;-)
+18:57:02 <cboltz> ah, I was able to change the speaker
+18:57:09 <cboltz> the trick was to remove you first ;-)
+18:57:30 <ddemaio> it has you as the speaker. just me as the submitter
+18:58:40 <cboltz> the submitter doesn't seem to be public, so - who cares? ;-)
+19:00:44 <knurpht> re. sunday, could we move the DNF talk to some other place and do the Meeting the board earlier?
+19:01:01 * cboltz has to leave for dinner - I'll read the log later, and if necessary answer on the mailinglist
+19:03:23 <ddemaio> you want the board meeting earlier
+19:03:35 <knurpht> Yup.
+19:03:46 <ddemaio> ok. let me look at it
+19:04:19 <knurpht> Even though it was quite a success last year, quite a lot of people already left to catch planes, trains and automobiles.
+19:07:55 <knurpht> If we move DNF -> day2, seminarraum1, we could
+19:08:26 <ddemaio> can you refresh
+19:09:40 <ddemaio> I could also make it the first thing on the sunday and move those talks to 13:00
+19:09:49 <knurpht> That's a good one.
+19:10:33 <ddemaio> the way it is or the idea above
+19:10:41 <knurpht> The way it is now.
+19:11:10 <ddemaio> ok. There is one other topic I wanted to bring up for the meeting
+19:11:21 <ddemaio> then we can discuss and close out the meeting
+19:11:51 <ddemaio> #topic School / Girl's Day at openSUSE conference
+19:12:29 <ddemaio> #topic desktop apps leaders meetup
+19:12:57 <knurpht> That's 2 topics :D
+19:13:18 <ddemaio> #info With the school/girl's day, a member of the community said they would be willing to put together this if we had some room
+19:13:52 <knurpht> and, do we have some room?
+19:13:54 <ddemaio> since we rearranged the schedule a bit, we could have it in seminar room 2
+19:14:21 <ddemaio> in the morning and after the gpg keysigning
+19:14:44 <knurpht> OK, if someone is willing to put it together, let's do that and see what happens.
+19:15:17 <ddemaio> as for the desktop apps leaders meetup. there is a room in the back I have for them just as a meetup room if they decide to do it. I've informed them that we have some space for them already
+19:16:22 <ddemaio> ok. sounds good. I will write them and update them about the new schedule and let them know they have have a room. thanks for helping out cbotlz and knurpht
+19:16:40 <knurpht> Do you think someone has to chair the app leaders meetup?
+19:16:45 <ddemaio> next topics will just be posted for the record
+19:17:19 <knurpht> You're welcome, thank you.
+19:17:21 <ddemaio> probably not. they have a telegram group I follow and they all know one another, so they would control it
+19:17:49 <knurpht> Ah, OK.
+19:17:56 <ddemaio> #topic Sponsors
+19:17:57 <ddemaio> #info MySQL and arm have been listed as a sponsor.
+19:17:57 <ddemaio> #info waiting on how to collect arm funds for sponsorship
+19:17:57 <ddemaio> #iinfo Amazon said they would sponsor oSC19 as a Platinum Sponsor. Still working on details on how help pay for the cost of the backpacks and t-shirts.
+19:17:57 <ddemaio> #info BMW has expressed interest in sponsoring oSC19. I sent them the details. Waiting on response
+19:18:11 <ddemaio> #topic Volunteer Team
+19:18:12 <ddemaio> #info Seeking a person to lead the volunteer team.
+19:18:12 <ddemaio> If you want to volunteer at the conference or lead the volunteer team, please email ddemaio@opensuse.org with the subject “oSC19 Volunteer Team”
+19:18:12 <ddemaio> We have two members who plan on being on the volunteer team. We just don’t have anyone to lead it just yet.
+19:18:13 <ddemaio> #topic Visas
+19:18:16 <ddemaio> #info Processed two more invitation letters.
+19:18:18 <ddemaio> #link https://news.opensuse.org/2018/11/20/find-out-the-visa-requirements-to-attend-osc19/
+19:18:29 <ddemaio> #topic media
+19:18:30 <ddemaio> #info Swapnil will attend.
+19:18:30 <ddemaio> #topic Insurance
+19:18:30 <ddemaio> #info insurance has been ordered via
+19:18:30 <ddemaio> #link https://www.eventassec.de/rechner-kurzfristige-veranstaltungs-haftpflichtversicherung/?vnr
+19:18:45 <ddemaio> #topic Travel Support Program
+19:18:46 <ddemaio> #info The deadline for submitting for the TSP is April 12. Article was published on Dec. 18.
+19:18:46 <ddemaio> #link http://bit.ly/2R3UP4F
+19:19:15 <ddemaio> #topic Links
+19:19:16 <ddemaio> #link Trello board - https://trello.com/b/xhSviOKO
+19:19:16 <ddemaio> #link - https://www.ticketprinting.com/Event-Badges/
+19:19:16 <ddemaio> #link Week 1 - https://community.opensuse.org/meetings/opensuse-project/2018/opensuse-project.2018-11-06-18.00.html
+19:19:16 <ddemaio> #link Week 2 - http://community.opensuse.org/meetings/opensuse-project/2018/opensuse-project.2018-11-20-18.00.html
+19:19:20 <ddemaio> #link Week 3 - http://community.opensuse.org/meetings/opensuse-project/2018/opensuse-project.2018-12-04-18.00.html
+19:19:22 <ddemaio> #link Week 4 - http://community.opensuse.org/meetings/opensuse-project/2018/opensuse-project.2018-12-18-18.00.html
+19:19:24 <ddemaio> #link Week 5 - http://community.opensuse.org/meetings/opensuse-project/2019/opensuse-project.2019-01-15-18.00.html
+19:19:27 <ddemaio> #link Week 6 - http://community.opensuse.org/meetings/opensuse-project/2019/opensuse-project.2019-01-29-18.00.html
+19:19:32 <ddemaio> #link Week 7 - http://community.opensuse.org/meetings/opensuse-project/2019/opensuse-project.2019-02-12-18.00.html
+19:19:35 <ddemaio> #link Week 8 - http://community.opensuse.org/meetings/opensuse-project/2019/opensuse-project.2019-02-26-18.00.html
+19:19:50 <ddemaio> #topic Next meeting
+19:19:51 <ddemaio> #info The next meeting will be March 26 at 18:00 UTC.
+19:20:00 <ddemaio> #endmeeting

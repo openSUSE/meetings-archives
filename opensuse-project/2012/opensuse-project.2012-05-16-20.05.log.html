@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">20:05:15</span><span class="nk"> &lt;yaloki&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">20:05:15</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed May 16 20:05:15 2012 UTC.  The chair is yaloki. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">20:05:15</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">20:05:38</span><span class="nk"> &lt;yaloki&gt;</span> <span class="cmd">#chair </span><span class="cmdline">mrdocs AlanClark FunkyPenguin _wstephenson</span>
+<a name="l-5"></a><span class="tm">20:05:38</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: AlanClark FunkyPenguin _wstephenson mrdocs yaloki
+<a name="l-6"></a><span class="tm">20:05:51</span><span class="nk"> &lt;AlanClark&gt;</span> Howdy
+<a name="l-7"></a><span class="tm">20:06:00</span><span class="nk"> &lt;BManojlovic&gt;</span> hello
+<a name="l-8"></a><span class="tm">20:06:08</span><span class="nk"> &lt;yaloki&gt;</span> so, the agenda is here, as usual: http://en.opensuse.org/openSUSE:Project_meeting
+<a name="l-9"></a><span class="tm">20:06:21</span><span class="nk"> &lt;yaloki&gt;</span> <span class="topic">#topic </span><span class="topicline">Forum infrastructure stability</span>
+<a name="l-10"></a><span class="tm">20:06:50</span><span class="nk"> &lt;yaloki&gt;</span> jim in here?
+<a name="l-11"></a><span class="tm">20:06:57</span><span class="nk"> &lt;yaloki&gt;</span> apparently not
+<a name="l-12"></a><span class="tm">20:07:05</span><span class="nk"> &lt;yaloki&gt;</span> not sure why it's on the agenda tbh
+<a name="l-13"></a><span class="tm">20:07:12</span><span class="nk"> &lt;yaloki&gt;</span> we talked about it at the last meeting
+<a name="l-14"></a><span class="tm">20:07:23</span><span class="nk"> &lt;yaloki&gt;</span> not much to do at the moment, we're waiting to see how the situation evolves
+<a name="l-15"></a><span class="tm">20:07:31</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">yaloki:</span> seems the agenda seems not up to date.
+<a name="l-16"></a><span class="tm">20:07:33</span><span class="nk"> &lt;yaloki&gt;</span> haven't heard nor been informed of anything since then
+<a name="l-17"></a><span class="tm">20:07:43</span><span class="nk"> &lt;yaloki&gt;</span> yeah I guess that one is a leftover
+<a name="l-18"></a><span class="tm">20:07:52 </span><span class="nka">* tigerfoot</span> <span class="ac">would just add a notice about susehelp which start to have a lot of trouble</span>
+<a name="l-19"></a><span class="tm">20:08:02</span><span class="nk"> &lt;tigerfoot&gt;</span> plugin sql / mysql
+<a name="l-20"></a><span class="tm">20:08:02</span><span class="nk"> &lt;victorhck&gt;</span> morning Yaloki?
+<a name="l-21"></a><span class="tm">20:08:12</span><span class="nk"> &lt;victorhck&gt;</span> it's time to dinner! :D
+<a name="l-22"></a><span class="tm">20:08:16</span><span class="nk"> &lt;yaloki&gt;</span> indeed
+<a name="l-23"></a><span class="tm">20:08:24</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">tigerfoot:</span> only benJIman can fix that
+<a name="l-24"></a><span class="tm">20:08:41</span><span class="nk"> &lt;yaloki&gt;</span> <span class="topic">#topic </span><span class="topicline">Documenting the New Branding and design guidelines. Wiki, or similar setup. (by art team)</span>
+<a name="l-25"></a><span class="tm">20:08:49</span><span class="nk"> &lt;yaloki&gt;</span> "art team", the stage is yours
+<a name="l-26"></a><span class="tm">20:08:50 </span><span class="nka">* tigerfoot</span> <span class="ac">would love benJIman open next years a google summer of code to support also other db</span>
+<a name="l-27"></a><span class="tm">20:09:19</span><span class="nk"> &lt;yaloki&gt;</span> anyone?
+<a name="l-28"></a><span class="tm">20:09:22</span><span class="nk"> &lt;tigerfoot&gt;</span> with upstream choob ..
+<a name="l-29"></a><span class="tm">20:09:43</span><span class="nk"> &lt;yaloki&gt;</span> um, folks
+<a name="l-30"></a><span class="tm">20:09:55</span><span class="nk"> &lt;yaloki&gt;</span> for the record: don't put items on the agenda if you're not there to talk about it, please
+<a name="l-31"></a><span class="tm">20:10:00</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">yaloki:</span> I don't know who put those on the meeting ... but 21st April seems long time ago
+<a name="l-32"></a><span class="tm">20:10:06</span><span class="nk"> &lt;benJIman&gt;</span> It's on my list to move it to opensu.se. It's server problem. Ironically was better when running fedora packaged mysql
+<a name="l-33"></a><span class="tm">20:10:11</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">suseROCKs:</span> anditosan ^^^^
+<a name="l-34"></a><span class="tm">20:10:33</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">benJIman:</span> you should try to move to mariadb then ...
+<a name="l-35"></a><span class="tm">20:10:43</span><span class="nk"> &lt;tigerfoot&gt;</span> should be the default next 12.2 anyway ...
+<a name="l-36"></a><span class="tm">20:10:47</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">tigerfoot:</span> the agenda change is between last meeting and now
+<a name="l-37"></a><span class="tm">20:10:59</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">benJIman:</span> ok let's get in touch about that :)
+<a name="l-38"></a><span class="tm">20:11:06</span><span class="nk"> &lt;yaloki&gt;</span> now, on topic please
+<a name="l-39"></a><span class="tm">20:11:07</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">yaloki:</span> oki ...
+<a name="l-40"></a><span class="tm">20:11:10</span><span class="nk"> &lt;benJIman&gt;</span> openSUSE Mariadb is actually part of the problem. It keeps crashing.
+<a name="l-41"></a><span class="tm">20:11:17</span><span class="nk"> &lt;yaloki&gt;</span> 3
+<a name="l-42"></a><span class="tm">20:11:17</span><span class="nk"> &lt;yaloki&gt;</span> 2
+<a name="l-43"></a><span class="tm">20:11:19</span><span class="nk"> &lt;yaloki&gt;</span> 1
+<a name="l-44"></a><span class="tm">20:11:20</span><span class="nk"> &lt;AlanClark&gt;</span> doesn't look like we have the art team
+<a name="l-45"></a><span class="tm">20:11:28</span><span class="nk"> &lt;yaloki&gt;</span> <span class="topic">#topic </span><span class="topicline">Revising and managing the artwork pages (by art team)</span>
+<a name="l-46"></a><span class="tm">20:11:36</span><span class="nk"> &lt;yaloki&gt;</span> 3
+<a name="l-47"></a><span class="tm">20:11:37</span><span class="nk"> &lt;yaloki&gt;</span> 2
+<a name="l-48"></a><span class="tm">20:11:37</span><span class="nk"> &lt;yaloki&gt;</span> 1
+<a name="l-49"></a><span class="tm">20:11:41</span><span class="nk"> &lt;yaloki&gt;</span> <span class="topic">#topic </span><span class="topicline">Brief mention of the possible new widget style for opensuse  (by art team)</span>
+<a name="l-50"></a><span class="tm">20:11:42</span><span class="nk"> &lt;tigerfoot&gt;</span> just me, but have no idea about what they'v3 put
+<a name="l-51"></a><span class="tm">20:11:53</span><span class="nk"> &lt;yaloki&gt;</span> 3
+<a name="l-52"></a><span class="tm">20:11:53</span><span class="nk"> &lt;yaloki&gt;</span> 2
+<a name="l-53"></a><span class="tm">20:11:54</span><span class="nk"> &lt;yaloki&gt;</span> 1
+<a name="l-54"></a><span class="tm">20:11:56</span><span class="nk"> &lt;yaloki&gt;</span> <span class="topic">#topic </span><span class="topicline">handling of SLE12 bugs (make them public?)</span>
+<a name="l-55"></a><span class="tm">20:12:05</span><span class="nk"> &lt;tigerfoot&gt;</span> +1
+<a name="l-56"></a><span class="tm">20:12:23</span><span class="nk"> &lt;cboltz&gt;</span> I already proposed it on the mailinglist
+<a name="l-57"></a><span class="tm">20:12:24</span><span class="nk"> &lt;tigerfoot&gt;</span> until they content private data
+<a name="l-58"></a><span class="tm">20:12:32</span><span class="nk"> &lt;mrdocs&gt;</span> we definitely need a looser set of rules
+<a name="l-59"></a><span class="tm">20:12:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">anditosan:</span> did you put those artwork things on the agenda?
+<a name="l-60"></a><span class="tm">20:12:38</span><span class="nk"> &lt;cboltz&gt;</span> but only got some +1 from people who probably can't decide on it ;-)
+<a name="l-61"></a><span class="tm">20:12:52</span><span class="nk"> &lt;yaloki&gt;</span> no, it was "Etrounev" (on the wiki)
+<a name="l-62"></a><span class="tm">20:13:05 </span><span class="nka">* mrdocs</span> <span class="ac">wonders who actually can say yes or no to bugzilla policy</span>
+<a name="l-63"></a><span class="tm">20:13:09</span><span class="nk"> &lt;mrdocs&gt;</span> brb
+<a name="l-64"></a><span class="tm">20:13:10</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">it-s:</span> you miss your agenda then
+<a name="l-65"></a><span class="tm">20:13:36</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">cboltz:</span> um okay
+<a name="l-66"></a><span class="tm">20:13:41</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">mrdocs:</span> I'd say someone with a @suse.de/.com address would be a good start ;-)
+<a name="l-67"></a><span class="tm">20:13:45 </span><span class="nka">* tigerfoot</span> <span class="ac">knows it-s was sick last days ...</span>
+<a name="l-68"></a><span class="tm">20:13:54</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">cboltz:</span> so the hard part is finding out who to poke in the eye in the first place to get anything moving on that
+<a name="l-69"></a><span class="tm">20:14:08</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">jospoortvliet:</span> do you have an idea?
+<a name="l-70"></a><span class="tm">20:14:13</span><span class="nk"> &lt;yaloki&gt;</span> gerald?
+<a name="l-71"></a><span class="tm">20:14:15</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">cboltz:</span>  what mailing list did you post on?
+<a name="l-72"></a><span class="tm">20:14:27</span><span class="nk"> &lt;cboltz&gt;</span> on project IIRC
+<a name="l-73"></a><span class="tm">20:14:34</span><span class="nk"> &lt;cboltz&gt;</span> under the "freight train" subject
+<a name="l-74"></a><span class="tm">20:14:43</span><span class="nk"> &lt;AlanClark&gt;</span> ok.
+<a name="l-75"></a><span class="tm">20:14:44</span><span class="nk"> &lt;it-s&gt;</span> huh
+<a name="l-76"></a><span class="tm">20:14:45</span><span class="nk"> &lt;it-s&gt;</span> why?
+<a name="l-77"></a><span class="tm">20:15:05</span><span class="nk"> &lt;it-s&gt;</span> <span class="hi">tigerfoot:</span> why do I miss it?
+<a name="l-78"></a><span class="tm">20:15:14</span><span class="nk"> &lt;tigerfoot&gt;</span> the 2 first topics of the meeting
+<a name="l-79"></a><span class="tm">20:15:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> I never have ideas but this is something - I can try to ask around. henne might have a better idea on where to start, however, I have no clue :D
+<a name="l-80"></a><span class="tm">20:15:30</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">it-s:</span> I'll pick them up right after this topic
+<a name="l-81"></a><span class="tm">20:15:31</span><span class="nk"> &lt;it-s&gt;</span> oh wait
+<a name="l-82"></a><span class="tm">20:15:39</span><span class="nk"> &lt;it-s&gt;</span> I got preoccupied :D
+<a name="l-83"></a><span class="tm">20:15:49</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">jospoortvliet:</span> okay
+<a name="l-84"></a><span class="tm">20:15:50</span><span class="nk"> &lt;it-s&gt;</span> can I still go back and unmiss them?
+<a name="l-85"></a><span class="tm">20:15:58</span><span class="nk"> &lt;yaloki&gt;</span> I guess we need to poke someone who's.. in charge of SLE... lol
+<a name="l-86"></a><span class="tm">20:16:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">it-s:</span> if you have a time machine :D
+<a name="l-87"></a><span class="tm">20:16:13</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">it-s:</span> yes, they're next
+<a name="l-88"></a><span class="tm">20:16:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">yaloki:</span> actually, AJ might have an idea
+<a name="l-89"></a><span class="tm">20:16:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> let me ping him on this, OK?
+<a name="l-90"></a><span class="tm">20:16:38</span><span class="nk"> &lt;AlanClark&gt;</span> let's assign this to Jos and have him report back next meeting
+<a name="l-91"></a><span class="tm">20:16:44</span><span class="nk"> &lt;it-s&gt;</span> OK
+<a name="l-92"></a><span class="tm">20:16:44 </span><span class="nka">* tigerfoot</span> <span class="ac">serve another p-max glass to yaloki, hope to undo the 3.2.1 on 2 first topics</span>
+<a name="l-93"></a><span class="tm">20:16:51</span><span class="nk"> &lt;it-s&gt;</span> let me know when to start shouting
+<a name="l-94"></a><span class="tm">20:16:52</span><span class="nk"> &lt;yaloki&gt;</span> <span class="cmd">#action </span><span class="cmdline">jospoortvliet prod AJ about some sort of statement/opinion/decision about changing the policy for SLE12 bugs, to make them public</span>
+<a name="l-95"></a><span class="tm">20:17:03</span><span class="nk"> &lt;yaloki&gt;</span> <span class="topic">#topic </span><span class="topicline">Documenting the New Branding and design guidelines. Wiki, or similar setup. (by art team)</span>
+<a name="l-96"></a><span class="tm">20:17:07</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">it-s:</span> nao please
+<a name="l-97"></a><span class="tm">20:17:16</span><span class="nk"> &lt;it-s&gt;</span> aha alright then
+<a name="l-98"></a><span class="tm">20:17:19</span><span class="nk"> &lt;it-s&gt;</span> hi everyone
+<a name="l-99"></a><span class="tm">20:17:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">yaloki:</span> I do have to know exactly what I'm asking for
+<a name="l-100"></a><span class="tm">20:17:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">yaloki:</span> and I have no idea atm
+<a name="l-101"></a><span class="tm">20:17:36</span><span class="nk"> &lt;yaloki&gt;</span> ah, a second
+<a name="l-102"></a><span class="tm">20:17:38</span><span class="nk"> &lt;it-s&gt;</span> you may know (or not know) but the art team has decided to become very active
+<a name="l-103"></a><span class="tm">20:17:46</span><span class="nk"> &lt;it-s&gt;</span> and even productive (sometimes)
+<a name="l-104"></a><span class="tm">20:17:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">it-s:</span> yes it's scary
+<a name="l-105"></a><span class="tm">20:18:02</span><span class="nk"> &lt;it-s&gt;</span> and so the forst thing we need to talk about is: Documenting the New Branding and design guidelines. Wiki, or similar setup. (by art team)
+<a name="l-106"></a><span class="tm">20:18:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">yaloki:</span> let's revisit that sle12 thing after it-s is done
+<a name="l-107"></a><span class="tm">20:18:10</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">jospoortvliet:</span> about changing the default policy for SLE 12 related bugs in bugzilla, and make them public by default, rather than private by default (and having to jump through hoops to get them public)
+<a name="l-108"></a><span class="tm">20:18:32</span><span class="nk"> &lt;it-s&gt;</span> the thing is that we have a lot planned and wouldnm't want to miss anything
+<a name="l-109"></a><span class="tm">20:18:43</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">it-s:</span> sounds very useful indeed
+<a name="l-110"></a><span class="tm">20:18:47</span><span class="nk"> &lt;it-s&gt;</span> so we are asking for a special place somehwere on the wiki to put all the stuff into
+<a name="l-111"></a><span class="tm">20:19:03</span><span class="nk"> &lt;it-s&gt;</span> without overwriting what is already there
+<a name="l-112"></a><span class="tm">20:19:15</span><span class="nk"> &lt;it-s&gt;</span> so to make it clear
+<a name="l-113"></a><span class="tm">20:19:19</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">it-s:</span> what's your definition of "special place"?
+<a name="l-114"></a><span class="tm">20:19:34</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">it-s:</span> we have already one portal for that http://en.opensuse.org/Portal:Artwork
+<a name="l-115"></a><span class="tm">20:19:46</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">cboltz:</span> a happy place :D
+<a name="l-116"></a><span class="tm">20:20:40</span><span class="nk"> &lt;it-s&gt;</span> aha
+<a name="l-117"></a><span class="tm">20:20:44</span><span class="nk"> &lt;it-s&gt;</span> ok this is fine
+<a name="l-118"></a><span class="tm">20:20:47</span><span class="nk"> &lt;tigerfoot&gt;</span> I think the place is good, now I wouldn't say perfect for its organization, or content ...
+<a name="l-119"></a><span class="tm">20:21:00</span><span class="nk"> &lt;tigerfoot&gt;</span> feel free to give love (a lot) to it
+<a name="l-120"></a><span class="tm">20:21:00</span><span class="nk"> &lt;it-s&gt;</span> so it's OK if we start changing/addig/removing things
+<a name="l-121"></a><span class="tm">20:21:02</span><span class="nk"> &lt;yaloki&gt;</span> anyone who's active on the wiki who could help out it-s ?
+<a name="l-122"></a><span class="tm">20:21:12</span><span class="nk"> &lt;it-s&gt;</span> I have an account
+<a name="l-123"></a><span class="tm">20:21:36</span><span class="nk"> &lt;tigerfoot&gt;</span> manu can help with wiki structure if needed ...
+<a name="l-124"></a><span class="tm">20:21:37</span><span class="nk"> &lt;it-s&gt;</span> so I technically could start using that section as long as everyone os alright with that
+<a name="l-125"></a><span class="tm">20:21:39</span><span class="nk"> &lt;yaloki&gt;</span> to answer any questions, how to organize the content ..
+<a name="l-126"></a><span class="tm">20:21:48</span><span class="nk"> &lt;it-s&gt;</span> that would be great
+<a name="l-127"></a><span class="tm">20:21:50</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">it-s:</span> go go green do,
+<a name="l-128"></a><span class="tm">20:21:52 </span><span class="nka">* it-s</span> <span class="ac">writes down</span>
+<a name="l-129"></a><span class="tm">20:21:52</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">it-s:</span> sure. you're in the artwork team, it's the artwork portal, just go ahead :)
+<a name="l-130"></a><span class="tm">20:22:00</span><span class="nk"> &lt;yaloki&gt;</span> oh sorry, to quote henne: "just do it" ;)
+<a name="l-131"></a><span class="tm">20:22:15</span><span class="nk"> &lt;it-s&gt;</span> right so then the next questio/topic is "Revising and managing the artwork pages (by art team)"
+<a name="l-132"></a><span class="tm">20:22:17</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">yaloki:</span> the quote wasn't kick ass ?
+<a name="l-133"></a><span class="tm">20:22:21</span><span class="nk"> &lt;tigerfoot&gt;</span> :-)
+<a name="l-134"></a><span class="tm">20:22:30</span><span class="nk"> &lt;it-s&gt;</span> and this is just basically a request to start modifying the existing stuff
+<a name="l-135"></a><span class="tm">20:22:42</span><span class="nk"> &lt;it-s&gt;</span> may we have everyones permission?
+<a name="l-136"></a><span class="tm">20:22:44</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">it-s:</span> go don't ask
+<a name="l-137"></a><span class="tm">20:23:00</span><span class="nk"> &lt;it-s&gt;</span> well that makes it easier
+<a name="l-138"></a><span class="tm">20:23:10</span><span class="nk"> &lt;AlanClark&gt;</span> The wiki has history - so go for it
+<a name="l-139"></a><span class="tm">20:23:11</span><span class="nk"> &lt;it-s&gt;</span> fine and finally a teh big one
+<a name="l-140"></a><span class="tm">20:23:17</span><span class="nk"> &lt;it-s&gt;</span> "Brief mention of the possible new widget style for opensuse (by art team)"
+<a name="l-141"></a><span class="tm">20:23:31</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">it-s:</span> you can ask review for publishing if unsure at the beginning ...
+<a name="l-142"></a><span class="tm">20:23:40</span><span class="nk"> &lt;it-s&gt;</span> so me and Andy are looking inot creating a special "suse" widget style
+<a name="l-143"></a><span class="tm">20:23:55</span><span class="nk"> &lt;it-s&gt;</span> to make sure we have a stron brand out there
+<a name="l-144"></a><span class="tm">20:23:59</span><span class="nk"> &lt;it-s&gt;</span> strong
+<a name="l-145"></a><span class="tm">20:24:05</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">it-s:</span> basically, most of the stuff on those pages was either done by those still involved (and I bet they support improvements) or people who left (but they have no say anymore...) so I'd say just do what you think is right...
+<a name="l-146"></a><span class="tm">20:24:16</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">it-s:</span> and there's history so we can change things back :D
+<a name="l-147"></a><span class="tm">20:24:28</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">it-s:</span> +1 cool on the widget style :D
+<a name="l-148"></a><span class="tm">20:24:31</span><span class="nk"> &lt;jospoortvliet&gt;</span> but lots of work...
+<a name="l-149"></a><span class="tm">20:24:43</span><span class="nk"> &lt;it-s&gt;</span> so we are looking for any help we can get as neither of us is a dev
+<a name="l-150"></a><span class="tm">20:24:51</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">it-s:</span> the idea is get it done for 12.3 ? right not before ?
+<a name="l-151"></a><span class="tm">20:24:55</span><span class="nk"> &lt;it-s&gt;</span> we know so we thought of taking an existing one
+<a name="l-152"></a><span class="tm">20:25:14</span><span class="nk"> &lt;it-s&gt;</span> <span class="hi">tigerfoot:</span> the idea is to get it done "Some day" ;P
+<a name="l-153"></a><span class="tm">20:25:36</span><span class="nk"> &lt;tigerfoot&gt;</span> better when it's done, than never :-)
+<a name="l-154"></a><span class="tm">20:26:02</span><span class="nk"> &lt;it-s&gt;</span> Andy has so far got in touch with the guy who did ""/me forgot the name
+<a name="l-155"></a><span class="tm">20:26:08 </span><span class="nka">* it-s</span> <span class="ac">does facepalm</span>
+<a name="l-156"></a><span class="tm">20:26:21</span><span class="nk"> &lt;it-s&gt;</span> anyway, it was a KDE3 style and quite a nice one
+<a name="l-157"></a><span class="tm">20:26:31</span><span class="nk"> &lt;it-s&gt;</span> we thought a few mods and it could do well for us
+<a name="l-158"></a><span class="tm">20:26:45</span><span class="nk"> &lt;it-s&gt;</span> but he says he's unsure if he is interested
+<a name="l-159"></a><span class="tm">20:27:07</span><span class="nk"> &lt;it-s&gt;</span> so - if you know anyone who could help - please ket us/him know
+<a name="l-160"></a><span class="tm">20:27:58</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">it-s:</span> you talk about the domino style ?
+<a name="l-161"></a><span class="tm">20:28:30</span><span class="nk"> &lt;it-s&gt;</span> yes!
+<a name="l-162"></a><span class="tm">20:28:33</span><span class="nk"> &lt;it-s&gt;</span> <span class="hi">tigerfoot:</span> thanksw
+<a name="l-163"></a><span class="tm">20:28:35</span><span class="nk"> &lt;it-s&gt;</span> <span class="hi">tigerfoot:</span> thanks
+<a name="l-164"></a><span class="tm">20:28:47</span><span class="nk"> &lt;it-s&gt;</span> it was a nice style
+<a name="l-165"></a><span class="tm">20:29:05</span><span class="nk"> &lt;it-s&gt;</span> add a little gloss and it'll alright for starters
+<a name="l-166"></a><span class="tm">20:29:55</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="cmd">#info </span><span class="cmdline">http://kde-look.org/content/show.php/Domino?content=42804</span>
+<a name="l-167"></a><span class="tm">20:30:13</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">it-s:</span> this one right ?
+<a name="l-168"></a><span class="tm">20:31:51</span><span class="nk"> &lt;it-s&gt;</span> exactly
+<a name="l-169"></a><span class="tm">20:32:15</span><span class="nk"> &lt;it-s&gt;</span> the way it is there however it's a little pail
+<a name="l-170"></a><span class="tm">20:32:32</span><span class="nk"> &lt;it-s&gt;</span> so more contrast ++creative theming and we have a winner
+<a name="l-171"></a><span class="tm">20:32:46</span><span class="nk"> &lt;it-s&gt;</span> but if no one wants to take on it we will have to think of somethign else
+<a name="l-172"></a><span class="tm">20:33:31</span><span class="nk"> &lt;it-s&gt;</span> that is all I had to say
+<a name="l-173"></a><span class="tm">20:33:41</span><span class="nk"> &lt;it-s&gt;</span> carry on as usual :)
+<a name="l-174"></a><span class="tm">20:35:03</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">it-s:</span> can I propose you setup an action list, what has to be done by Art team, what/where others can helps you, and report back next meeting
+<a name="l-175"></a><span class="tm">20:35:30</span><span class="nk"> &lt;tigerfoot&gt;</span> if everybody agree on the fact that getting a more sus'ish own style could be a good idea.
+<a name="l-176"></a><span class="tm">20:36:41</span><span class="nk"> &lt;tigerfoot&gt;</span> for me it's a big +1 especially if we integrate the oxygen-gtk and then get also gtk apps included and branded
+<a name="l-177"></a><span class="tm">20:37:07</span><span class="nk"> &lt;yaloki&gt;</span> shall we move on?
+<a name="l-178"></a><span class="tm">20:37:16</span><span class="nk"> &lt;AlanClark&gt;</span> I like the style idea.
+<a name="l-179"></a><span class="tm">20:37:27</span><span class="nk"> &lt;yaloki&gt;</span> oh it's the last item on the agenda so... ^^
+<a name="l-180"></a><span class="tm">20:37:48</span><span class="nk"> &lt;yaloki&gt;</span> there's a last item sorry
+<a name="l-181"></a><span class="tm">20:37:53</span><span class="nk"> &lt;yaloki&gt;</span> <span class="topic">#topic </span><span class="topicline">Incomplete upgrade of mediawiki instance and problems related to it</span>
+<a name="l-182"></a><span class="tm">20:38:03</span><span class="nk"> &lt;yaloki&gt;</span> I believe manu added it
+<a name="l-183"></a><span class="tm">20:38:08</span><span class="nk"> &lt;yaloki&gt;</span> but he isn't here
+<a name="l-184"></a><span class="tm">20:38:14</span><span class="nk"> &lt;yaloki&gt;</span> anyone knows anything about that?
+<a name="l-185"></a><span class="tm">20:38:26</span><span class="nk"> &lt;AlanClark&gt;</span> nope
+<a name="l-186"></a><span class="tm">20:38:57</span><span class="nk"> &lt;cboltz&gt;</span> the best way for wiki problems is to mail the opensuse-web mailinglist and CC matthew
+<a name="l-187"></a><span class="tm">20:39:06</span><span class="nk"> &lt;cboltz&gt;</span> (assuming that -web and -wiki finally get merged...)
+<a name="l-188"></a><span class="tm">20:39:25</span><span class="nk"> &lt;tigerfoot&gt;</span> I think he want to discuss about the problem of leading / like trying to go to wiki.opensuse.org/ redirect to en.opensuse.org//
+<a name="l-189"></a><span class="tm">20:40:09</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">tigerfoot:</span> the only thing we need to "discuss" about that is
+<a name="l-190"></a><span class="tm">20:40:13</span><span class="nk"> &lt;cboltz&gt;</span> who can and will fix it
+<a name="l-191"></a><span class="tm">20:40:14</span><span class="nk"> &lt;cboltz&gt;</span> ;-)
+<a name="l-192"></a><span class="tm">20:40:22</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">cboltz:</span> agree .
+<a name="l-193"></a><span class="tm">20:41:27</span><span class="nk"> &lt;tigerfoot&gt;</span> yaloki can we add one topic (more a comment/call) ?
+<a name="l-194"></a><span class="tm">20:41:32</span><span class="nk"> &lt;yaloki&gt;</span> sure
+<a name="l-195"></a><span class="tm">20:41:49</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="topic">#topic </span><span class="topicline">Artwork in 12.2</span>
+<a name="l-196"></a><span class="tm">20:42:07</span><span class="nk"> &lt;yaloki&gt;</span> <span class="topic">#topic </span><span class="topicline">Artwork in 12.2</span>
+<a name="l-197"></a><span class="tm">20:42:09</span><span class="nk"> &lt;yaloki&gt;</span> a chair has to do it
+<a name="l-198"></a><span class="tm">20:42:24</span><span class="nk"> &lt;tigerfoot&gt;</span> Finally the artwork has been merged in factory, except grub2 which will follow very soon.
+<a name="l-199"></a><span class="tm">20:42:38</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">yaloki:</span> thx
+<a name="l-200"></a><span class="tm">20:43:07</span><span class="nk"> &lt;tigerfoot&gt;</span> but with the M4 delayed and now skipped, pretty much nothing has been deeply tested ...
+<a name="l-201"></a><span class="tm">20:43:47</span><span class="nk"> &lt;tigerfoot&gt;</span> so getting more test and bug to resolve is important during the Beta time starting next week .
+<a name="l-202"></a><span class="tm">20:43:54</span><span class="nk"> &lt;tigerfoot&gt;</span> end
+<a name="l-203"></a><span class="tm">20:47:08</span><span class="nk"> &lt;AlanClark&gt;</span> thanks for the heads up tigerfoot
+<a name="l-204"></a><span class="tm">20:51:34</span><span class="nk"> &lt;anditosan&gt;</span> are we on the artwork subject still?
+<a name="l-205"></a><span class="tm">20:52:21</span><span class="nk"> &lt;AlanClark&gt;</span> did we lose yaloki?
+<a name="l-206"></a><span class="tm">20:52:28</span><span class="nk"> &lt;anditosan&gt;</span> yalok, AlanClark ?
+<a name="l-207"></a><span class="tm">20:52:30</span><span class="nk"> &lt;anditosan&gt;</span> maybe
+<a name="l-208"></a><span class="tm">20:52:52</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">anditosan:</span> it's not yet closed ,, so if you have something to shout it's now
+<a name="l-209"></a><span class="tm">20:53:03</span><span class="nk"> &lt;anditosan&gt;</span> ok, I don't have a lot of time so I will try to be quick
+<a name="l-210"></a><span class="tm">20:53:08</span><span class="nk"> &lt;anditosan&gt;</span> first artwork point
+<a name="l-211"></a><span class="tm">20:53:20</span><span class="nk"> &lt;anditosan&gt;</span> documenting the new branding and design guidelines
+<a name="l-212"></a><span class="tm">20:53:30</span><span class="nk"> &lt;anditosan&gt;</span> since there are some changes to artwork coming up
+<a name="l-213"></a><span class="tm">20:53:56</span><span class="nk"> &lt;anditosan&gt;</span> we would like to revise the wiki we have about artwork and possibly take down some of them for not applying to new upcoming guidelines
+<a name="l-214"></a><span class="tm">20:54:10</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">anditosan:</span>  I think it-s covered this
+<a name="l-215"></a><span class="tm">20:54:14</span><span class="nk"> &lt;anditosan&gt;</span> who do we talk to about taking down wikis that relate to artwork that might become obsolete?
+<a name="l-216"></a><span class="tm">20:54:17</span><span class="nk"> &lt;anditosan&gt;</span> oh ok
+<a name="l-217"></a><span class="tm">20:54:27</span><span class="nk"> &lt;anditosan&gt;</span> then I am really late lol, I thought he had not
+<a name="l-218"></a><span class="tm">20:54:36</span><span class="nk"> &lt;anditosan&gt;</span> :D
+<a name="l-219"></a><span class="tm">20:54:57</span><span class="nk"> &lt;anditosan&gt;</span> did he also mention the work for a new widget style for openSUSE?
+<a name="l-220"></a><span class="tm">20:55:03</span><span class="nk"> &lt;AlanClark&gt;</span> yes
+<a name="l-221"></a><span class="tm">20:55:06</span><span class="nk"> &lt;anditosan&gt;</span> sorry I am backtracking :D
+<a name="l-222"></a><span class="tm">20:55:12</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">anditosan:</span> read the backlog ...
+<a name="l-223"></a><span class="tm">20:55:14</span><span class="nk"> &lt;tigerfoot&gt;</span> :d
+<a name="l-224"></a><span class="tm">20:55:17</span><span class="nk"> &lt;anditosan&gt;</span> ok, then no more to be said, thanks friends :D
+<a name="l-225"></a><span class="tm">20:55:33</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">yaloki:</span> time to close ...
+<a name="l-226"></a><span class="tm">20:55:38</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">anditosan:</span> thanks for joining - check with it-s
+<a name="l-227"></a><span class="tm">20:55:40</span><span class="nk"> &lt;yaloki&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

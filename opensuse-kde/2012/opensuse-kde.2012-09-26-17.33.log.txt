@@ -1,0 +1,598 @@
+17:33:23 <tittiatcoke> #startmeeting
+17:33:23 <bugbot> Meeting started Wed Sep 26 17:33:23 2012 UTC.  The chair is tittiatcoke. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:33:23 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:33:40 <tittiatcoke> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+17:34:11 <tittiatcoke> Ok. Let's start with the meeting. Who is all present ?
+17:34:19 <skunze1> ping
+17:34:30 * mrdocs waves
+17:34:33 <maxlin> \o
+17:34:45 <cb400f> o/
+17:34:51 <NicoK> hi
+17:34:55 <alin> hi
+17:35:16 <tittiatcoke> Topics for tonight's meeting are:
+17:35:21 <tittiatcoke> 1) Team organization
+17:35:33 <tittiatcoke> 2) KDE Repositories and our plans for 12.3
+17:35:38 <tittiatcoke> 3) Status reports
+17:35:43 <tittiatcoke> 4) Q&A, misc
+17:35:55 <tittiatcoke> any other topics that we should discuss ?
+17:36:28 <tittiatcoke> Ok. Then lets start with the first topic.
+17:36:44 <tittiatcoke> #topic Team organization
+17:37:00 <alin> einar77_work: ping
+17:37:15 <mrdocs> cartman: ping
+17:37:19 <tittiatcoke> alin: einar77 indicated that he would be a little later
+17:37:42 <alin> tittiatcoke: italians are always late...
+17:37:51 <alin> tittiatcoke: joking...
+17:38:51 <tittiatcoke> I raised the topic of Team organization to discuss how we as an community team want to continue. I guess that everybody read on the mailinglist that Will can no longer full time support the KDE team as that the Boosters also has to take other tasks. Based on his indication I had the feeling that we seem to be a little lost (so to speak)
+17:39:40 <tittiatcoke> Any comments on this /
+17:39:41 <tittiatcoke> ?
+17:40:31 <alin> first we shall know on whom we can really to break things
+17:40:35 <NicoK> so packaging mainly needs to be done by community members?
+17:40:41 <alin> I do not see rabauke
+17:41:13 <ctrippe> NicoK: That's what I understood
+17:41:14 <alin> krop is missing too
+17:41:28 <NicoK> what does this exactly mean (will not being available), e.g. which tasks have to be done by someone else now?
+17:41:36 <tittiatcoke> NicoK: Correct. I had a discussion with Dimstar on the situation in the Gnome team and it is the same situation there. Gnome is community driven at the moment
+17:41:58 <tittiatcoke> alin: rabauke couldn't make it. He seems to have only time during the weekend.
+17:43:03 <NicoK> we should identify and make a list of the tasks that we need to do now - also it seems that there are some scripts out there to ease packaging in case a new version comes out - it wuold be nice to have them available somewhere
+17:43:11 <NicoK> to avoid double work
+17:43:25 <tittiatcoke> A lot is already done by community members. Look at the KR49 repo. A perfect example of community work. Also KUSC is community driven.
+17:44:25 <tittiatcoke> One of the tasks that needs to be handled is the coordination of the team efforts, leading/organization the team meetings and sometimes to make a final decision on something
+17:44:33 <alin> tittiatcoke: I think we shall nominate one person for each repo
+17:44:41 <mrdocs> tittiatcoke: i see you in the same place as Dimstar - our benevolent overlord :)
+17:44:50 <skunze1> teh things i can think of is packaging, bug assignees and support (in a broad sense) and documentation
+17:45:00 <tittiatcoke> mrdocs: Lol :-) but I am not sure if the whole team sees it also that way
+17:46:12 <cb400f> it's a meritocracy.. whoever will package stuff and fix bugs in KDF automatically becomes an/the overlord
+17:46:24 <mrdocs> true
+17:47:22 <tittiatcoke> cb400f: true. But still there are some things that goes beyond just packaging and fixing stuff
+17:47:55 <skunze1> I guess the persons who can tell us are the ones who did the job before
+17:48:27 <tittiatcoke> Which is Bille in this case :-)
+17:49:26 <tittiatcoke> I don't think we have to sort it out tonight, but I wanted to catch your thoughts on this subject and to see if the team is ready to become completely community-driven :-)
+17:49:43 <skunze1> he will be able to read this later - might be an idea to create a list of things so far done by the boosters team - for KDE of course
+17:50:13 <skunze1> tittiatcoke: I think we do not have a big choice in that - the alternative is to fail I guess
+17:50:13 <tittiatcoke> Yes. I will ask him to put some things in an email so that we can see what needs to be done and how to organize this.
+17:50:30 <tittiatcoke> skunze1: :-)
+17:51:41 <NicoK> maybe don't just put it into an email but also the wiki - or at least we need to sum it up in the wiki at some point...
+17:51:57 <skunze1> the wiki is also a point
+17:52:08 <tittiatcoke> Another item in this category is the indication that alin did. We had the same thing in the past, but the old masters disappeared slowly. I think it would be good to nominate a responsible person for each of the repositories we have. (In my opinion this would be KRxy, KDS, KDF, KUSC).
+17:52:35 <tittiatcoke> NicoK: Ok. I will create a wiki page for this, where we can list the tasks we see and put also our comments there.
+17:52:45 <NicoK> it should be clear then what this person is supposed to do
+17:53:11 <Bille> here's an old list of the general maintainers' responsibilities: http://en.opensuse.org/openSUSE:KDE_Maintainers_Cheat_Sheet
+17:54:05 <tittiatcoke> That looks like a good starting point
+17:54:21 <NicoK> indeed
+17:54:49 <mrdocs> dont forget if Bille is busy I can access private bugs now
+17:55:01 <tittiatcoke> noted :-)
+17:55:11 <skunze1> L3 Bugs - we need to cut that out or find a solution - I think no community member has access to those
+17:55:21 <Bille> i'm on leave for the next 2 weeks btw
+17:55:38 <mrdocs> skunze1: the short term solution is I negitate :)
+17:55:43 <mrdocs> negotiate
+17:55:52 <mrdocs> Bille: btw, congrats :-)
+17:55:53 <Bille> skunze1: yep, and we're even trying to kick those out of the openSUSE Team's task list. but it needs kde maintenance skills in another team
+17:55:57 <Bille> mrdocs: thanks
+17:56:18 <Bille> and we should do this without scoring the own goal of getting SLE to drop all kde packages :)
+17:56:49 <skunze1> true :)
+17:56:51 <mrdocs> Bille: you mean no more KDE in SLE ?
+17:56:52 <maxlin> :)
+17:56:59 <Bille> mrdocs: yes
+17:56:59 <einar77> late late late!
+17:57:08 <einar77> Is the meeting still ongoing?
+17:57:16 <einar77> couldn't make any faster than this
+17:57:25 <skunze1> einar77: we're still at the first topic ;)
+17:57:31 <tittiatcoke> einar77: Yup. We are at the same topic :-) Team organization
+17:57:35 <mrdocs> Bille: then the question is can we maintain SLE build then ?
+17:57:52 <mrdocs> even if unoffical builds
+17:58:05 <Bille> mrdocs: *we* can certainly build vs sle releases
+17:58:12 <skunze1> I mean if Gnome is in the same situation - SLE will not drop Gnome and KDE
+17:58:17 <Bille> mrdocs: anyway that is only one bad possible outcome i want to avoid
+17:58:23 <Bille> it hasn't happened
+17:58:51 <alin> tittiatcoke: before we decide on reps for kde repos maybe we shall first decide on repos
+17:59:07 <Bille> and it would be a dishonest outcome given that there is customer demand for kde
+17:59:14 <Bille> anyway, not really on-topic
+17:59:19 <skunze1> true
+17:59:33 <tittiatcoke> Bille: Any comments/hints from your side on how we should organize ourselves as a team
+18:00:02 <Bille> tittiatcoke: not too many people on each responsibility, so people don't assume someone else will do a task
+18:00:32 <tittiatcoke> alin: I would like to have first an alignment if we need such persons per repo. Then later when we have the repo's we can assign a person if required
+18:00:34 <tittiatcoke> Bille: Ok.
+18:01:43 <NicoK> I'd say, have at least 2 persons per repo for cases of unavailability
+18:01:45 <skunze1> in maintenance i'm out - I'm neither a developer nor packager (yet) and it will take a while to reach an level to take on task like this
+18:02:16 <ctrippe> NicoK: +1
+18:03:51 <tittiatcoke> NicoK: That would be good. I see the tasks of such person(s) to review/accept the SR's, be the main contact for that repo and in the case of KRxy when to update to a newer version.
+18:04:28 <tittiatcoke> and of course to coordinate the work in that repo.
+18:05:01 <einar77> not to mention that different repos have different levels of maintenance in my view
+18:05:17 <tittiatcoke> einar77: can you elaborate a little more on that ?
+18:05:22 <NicoK> if main development is happening only in KDF though - then the other repo's "gurus" don't have much to do... so basically we need someone for KDF
+18:05:50 <einar77> tittiatcoke: a KDF needs in my view more work than a KRxy
+18:05:59 <einar77> not to say that the latter is no work
+18:06:06 <einar77> quite the opposite
+18:06:24 <tittiatcoke> I agree, but KRxy would have monthly updates, etc. And I think that KRxy is much more exposed to the outside world than KDF
+18:06:48 <einar77> hm, I gueess you're right
+18:07:16 <NicoK> but KRxy should only link to KDF versions, so imho this means, after/immediately before a new release: get it building in KDF, then link it to KRxy
+18:07:51 <NicoK> the only exception to that was the period of the 12.2 freeze for KDF recently
+18:08:15 <alin> can we define x?
+18:08:19 <tittiatcoke> Correct, but the question would be if we have 4.9.3 in KR49 and KDF is jumping from 4.9.3 to 4.10 beta, would we no longer update KR49 to 4.9.4 when that comes ?
+18:08:38 <alin> let us say.. we maintain x=current and x-1
+18:08:47 <alin> the rest people are on their own?
+18:09:01 <einar77> tittiatcoke: I would keeep the Rxy repos until upstream EOLs
+18:09:03 <NicoK> anyway, we need to keep (double) work down as much as possible; concentrating on one repo alone is already much to do
+18:09:10 <tittiatcoke> alin: So you mean we would support KR49 and KR48 ?
+18:09:20 <skunze1> for KDS the question wouldbe bugfixes for the 2 year maintenanceperiod
+18:09:30 <einar77> As upstream, I would say there's little gain unless it's KDS
+18:09:39 <NicoK> KDF only ever got RC's - and after an RC, normally no new minor release of the previous version comes out - 4.8.5 is the only exception I know of
+18:09:42 <alin> tittiatcoke: KDS is the one that somehow is related with sled?
+18:09:58 <tittiatcoke> alin: I am not sure. Bille ^^
+18:10:03 <ctrippe> alin: no
+18:10:22 <skunze1> nope KDS is the KDE Version a release was shipped with
+18:10:24 <ctrippe> it is the devel project for updates for the last relaease version of opensuse
+18:10:37 <maxlin> alin: no
+18:10:42 <alin> then what is the reason of a KDS?
+18:10:46 <tittiatcoke> as far as I understood KDS was created in the past where we didn't had the current maintenance support
+18:11:13 <tittiatcoke> KDS should build updates that then could be incorporated in the latest openSUSE official release.
+18:11:21 <alin> then the discussion is for each repo against what base we build?
+18:11:45 <alin> tittiatcoke: can't that be done in the official update repo of the oss?
+18:11:46 <skunze1> KDS should only build against the release for which it was shipped
+18:11:50 <tittiatcoke> alin: you are going to fast :-)
+18:12:16 <skunze1> lets start from the top then - KDF :)
+18:12:47 <tittiatcoke> before we jump to the repository topic, can we close the first topic. I would suggest that we all look at the link that Bille provided and add our comments there. Then in the next meeting we can discuss changes and responsibility assignments. Everybody ok ?
+18:12:56 <tittiatcoke> skunze1: just a sec :-)
+18:13:10 <NicoK> tittiatcoke: ok
+18:13:14 <skunze1> tittiatcoke: ok
+18:13:43 <tittiatcoke> #action everyone Check the Team tasklist on http://en.opensuse.org/openSUSE:KDE_Maintainers_Cheat_Sheet
+18:14:18 <tittiatcoke> #topic KDE Repositories What do we want to achieve with which repo
+18:14:29 <tittiatcoke> Ok. Now let's have the big discussion :-)
+18:14:43 <tittiatcoke> Let's start with the number one on the list. KDE:Distro:Stable.
+18:14:58 <alin> tittiatcoke: I propose to ax it
+18:15:01 <alin> axe it
+18:15:14 <NicoK> I personally don't have any plans with it; nor do I see its use now that we have KRxy
+18:15:29 <tittiatcoke> Currently that one contains the KDE release shipped with 12.2 and was intended to provide KDE minor updates as that there was no maintenance workflow yet.
+18:15:41 <cb400f> if there are different ways to prepare patches, it has no use
+18:15:51 <cb400f> (different _better_ ways)
+18:16:05 <NicoK> ship updates from the according KRxy
+18:16:24 <alin> NicoK: probably the best
+18:16:34 <cb400f> KRxy is still links from KDF no?
+18:16:37 <Bille> tittiatcoke: i'd dispute that purpose for KDS
+18:16:55 <alin> cb400f: only the when x=c
+18:16:59 <alin> current
+18:17:10 <tittiatcoke> Bille: Ok.Can you help out on it's purpose ?
+18:17:13 <Bille> as that use was removed by KRxy and osc maintenance
+18:17:18 <NicoK> cb400f: fixed links, i.e. it does not always point to the latest version in KDF
+18:17:39 <tittiatcoke> Bille: Ok, but in the past when we didn't had KRxy and osc maintenance, it was had that purpose ?
+18:17:46 * tittiatcoke removes was
+18:18:01 <cb400f> say 12.2 has amarok 2.5 ... krxy has amarok 2.6.. how do prepare a patch for amarok in KRxy?
+18:18:08 <Bille> the purpose it still has is to test updates to the distro release KDE
+18:18:27 <cb400f> there's the test-update repo though
+18:18:35 <Bille> the difference to KRxy is that you can leave it publish-enabled without affecting many users
+18:19:06 <NicoK> Bille: isn't that, what the test-update repo is there for?
+18:19:08 <Bille> cb400f: then each revision has got to go through the maintenance team
+18:19:27 <cb400f> ah, not good
+18:20:21 <Bille> it also serves to define the set of packages that we maintain for the distro release
+18:20:21 <tittiatcoke> Bille: Do we have examples from the past where we used KDS ?
+18:20:22 <skunze1> so if I understand taht correctly KDS contains the shipped state + Updates fro KDE since shipment but no new Versionsupdates
+18:21:00 <Bille> otherwise how do you tell which packages to update and test? querying with osc maintainer, looking at the patterns, etc
+18:21:16 <Bille> skunze1: not quite, we have done some .z updates in the patst
+18:21:37 <Bille> tittiatcoke: every maintenance update to KDE went through there
+18:21:37 <NicoK> only 1 or 2 iirc
+18:21:49 <Bille> ie testing and adding patches
+18:22:21 <NicoK> do we have the manpower to maintain that?
+18:22:29 <ctrippe> IMHO the question is, do we want to ship updates to KDE SC regulrarly then we could use KRxy instead of KDS
+18:22:31 <NicoK> that should be the question...
+18:22:39 <tittiatcoke> Bille: But that would mean that we should setup multiple KDS repo's. How else can we support the KDE version of 12.1 with the current KDS ?
+18:22:43 <Bille> ctrippe: that's a question and an answer
+18:22:59 <Bille> tittiatcoke: in practise we only tried hard to support the previous release
+18:23:13 <Bille> anything else was supported via osc branches
+18:23:37 <Bille> since we never had the manpower to offer perfect support for all  maintained releases
+18:24:19 <tittiatcoke> Ok. So the question would be more if we want to ship updates to KDE SC regurlary to our users.
+18:24:43 <einar77> tittiatcoke: as in point releases?
+18:24:50 <tittiatcoke> Correct.
+18:25:04 <Bille> NicoK: if we, and the opensuse project (via its maintenance team) accept to ship all .z point releases as maintenance updates, you could use KRxy for that
+18:25:08 <einar77> Although there may be regression, I would encourage that
+18:25:11 <einar77> regressions
+18:25:25 <NicoK> Bille: +1
+18:25:30 <ctrippe> einar77: +1
+18:25:32 <einar77> as I said, I happen to see quite often people in the forums that have issues with version X while X.1 has it fixed
+18:25:37 <Bille> the drawback is you risk pissing off regular KRxy users while you are testing yet another unproven patch from the kdepim or nepomuk teams
+18:25:52 <cb400f> I'd prefer not to have nepomuk and akonadi blow up in my face every month
+18:25:56 <cb400f> or plasma
+18:25:59 <NicoK> this is probably the most tested repo as (and I think, I'm not only talking about myself) we developers don't use KDS...
+18:26:12 <cb400f> and what about non-SC stuff?
+18:26:21 <einar77> cb400f: toe be honest, the only big issue with 4.9.0 -> 4.9.1 was the kwin regression
+18:26:45 <cb400f> does that also mean pushing feature releases of digikam and amarok etc. as official updates?
+18:26:50 <NicoK> and we resolved that in the packages quite quickly...
+18:26:57 <Bille> anyway, thats all i have to add KDS, and i've said it already on the list
+18:27:06 <tittiatcoke> cb400f: I guess we would have KUA for that one.
+18:27:08 <skunze1> if we ship x.y+.z updates regularily through online updates what do we do with the users that do not want to upgrade to a newer KDE in a release - in that case we would not fix bugs - or as a alternative - we could offer a block for KDE Updates in apper ?
+18:27:17 <NicoK> before shipping KRxy as an update, we should probably let 2 weeks pass...
+18:27:36 <Bille> cb400f: i wouldn't conflate non sc app version update policy with whether to use KDS or osc branches or KRxy for maintenance update development
+18:27:36 <einar77> NicoK: +1
+18:27:41 <Bille> cb400f: different discussion...
+18:27:50 <einar77> agreed, non SC stuff is another matter entirely
+18:27:59 <ctrippe> NicoK: +1
+18:28:12 <einar77> (especially since some non SC stuff is... exotic in the way they do things)
+18:28:42 <Bille> NicoK: how would you prefer to test inter-point release patches for critical bugs that show up after you've published? osc branch?
+18:29:21 <cb400f> they'd be tested in kdf I guess?
+18:29:37 <NicoK> Bille: first testing in KDF (since this is the main development project), then (if successful), update link in KRxy
+18:29:52 <NicoK> before KDF probably a osc branch
+18:29:59 <NicoK> that's what I did in the past
+18:30:02 <Bille> cb400f: what if kdf is 4.10 and the last opensuse release had 4.9?
+18:30:04 <NicoK> if it affects only one package
+18:30:44 <NicoK> Bille: when 4.10 lands KDF, there shouldn't be any extra point releases of 4.9
+18:31:13 <NicoK> anyway, if KDF and KR49 are decoupled, packages are copied to KR49 and thus we can test 49 specific patches there
+18:31:36 <NicoK> the preiod where this is necessary (and we really have 2 dev branches) should be rather short
+18:31:41 <NicoK> *period
+18:32:32 <tittiatcoke> Ok. If I conclude on what has been said, then the KDE team would like very much to provide point releases throught the standard update process of an openSUSE release.And the preferred way of providing these updates is to utilize the KRxy reo for this.
+18:32:44 <einar77> agreed
+18:32:51 <NicoK> +1
+18:33:08 <cb400f> most users won't be able to install them anyway thanks to pk/zypp-pk >:-)
+18:33:16 <Bille> cynic :)
+18:33:23 <tittiatcoke> Bille: Who in the maintenance team should be contact for this ?
+18:33:29 <skunze1> sounds good for me - but I predict a shitstorm on the mailinglist
+18:33:53 <alin> tittiatcoke: one more thing...what versions we build against?
+18:34:04 <ctrippe> I also agree and fear the cb400f might be right :(
+18:34:07 <cb400f> skunze1: maybe on the opensuse@opensuse.org list... the opensuse-kde only has version whores
+18:34:13 <alin> do we offer the last kdexy for the stone age oss?
+18:34:37 <Bille> tittiatcoke: maintenance@opensuse.org
+18:34:53 <alin> cb400f: ctrippe not if they remove packagekit
+18:35:12 <tittiatcoke> #action tittiatcoke contact the maintenance team to discuss the possiblity to provide KDE point releases throught the maintenance workflow
+18:35:14 <skunze1> the best would be to do it for all supported releases  if Evergreen wants to keep a version going I doubt that they keep updating the KDE Version then
+18:35:33 <ctrippe> alin: sure, that's the problem :)
+18:35:48 <alin> skunze1: the problem is that new kde means new base libs
+18:35:59 <NicoK> for peoply not wanting to update, "zypper al" should be made available more prominently in the updaters, e.g. in YOU, it should block the patch, not the packages...
+18:36:07 <skunze1> alin: if it is clear that the repo is frozen without updates and maintenance - then why not
+18:36:09 <alin> skunze1: and you end up forcing them to update packages they do not want... a lot of work for us
+18:36:24 <skunze1> then only the space on the server is limiting
+18:36:40 <alin> skunze1: kr49 shall we build it against 12.1?
+18:36:59 <alin> skunze1: or only 12.2 and factory... maybe troubleweed?
+18:37:23 <ctrippe> alin: I only would decide this on a case by case basis. If it can be done with reasonable work I am all for it otherwise don't build for the oldest oS release
+18:37:50 <tittiatcoke> I would propose to build the KRxy releases to the current openSUSE release and the release -1.
+18:38:01 <skunze1> alin: difficult
+18:38:02 <einar77> speaking of version updates, I have some thoughts but I'd rather put them at the end of the topics unless there's something in the queue to discuss
+18:38:02 <alin> ctrippe: reasonable for you and I means one thing... always you will find people who think is reasonable to run 49 on 11.4
+18:38:51 <tittiatcoke> alin: what would be your proposal for KR49 ?
+18:38:59 <ctrippe> alin: sure, but if we don't provide it they have to live with it.
+18:39:51 <NicoK> tittiatcoke: if we agree to ship point releases as updates, there won't be anything to do for 12.2 anyway since 4.8.5 was the last in the 4.8 series...
+18:39:53 <skunze1> tumbleweed should not really concern us - as it is only a link anyway
+18:40:25 <ctrippe> tittiatcoke: I agree with your KR49 proposal (although I have no idea how its state for 11.4 is).
+18:40:36 <skunze1> NicoK: you would propose to only update .z releases but not .y
+18:40:41 <skunze1> its one option
+18:41:11 <tittiatcoke> skunze1: You are thinking of shipping KDE 4.9.1 to the 12.2 users as an update ?
+18:41:13 <NicoK> that's how I read the discussion - me personally, I'll go for the latest release anyway :P
+18:41:41 <skunze1> but the f.e we probably will skip some releases (like there will never be an official release with 4.9
+18:41:50 <skunze1> me to personally
+18:42:26 <skunze1> tittiatcoke: it would be a major break from the past
+18:42:48 <tittiatcoke> In my opinion if people want to update to a newer KDE version, then they either should switch to tumbleweed or utilize the newer KRxy repo. (in this case KR49).
+18:43:00 <einar77> tittiatcoke: I'm on the fence, as I said earlier
+18:43:09 <skunze1> but in the end what do we save when we cut KDS but maintain a lot of KDRx.y#s
+18:43:13 <einar77> especially wrt point updates
+18:43:43 <cb400f> mine too.. the point releases are bad enough, major feature upgrades is madness of fedoraesque proportions
+18:43:46 <ctrippe> tittiatcoke: +1
+18:43:49 <NicoK> we don't maintain a lot of KRxy - only the latest! (same as with KDS - there was only one)
+18:44:28 <tittiatcoke> If we have a sudden bug in the KDE version shipped with 12.1, then KDS wouldn't help us here either.
+18:45:18 <NicoK> tittiatcoke: but we have a chance of fixing it in the appropriate KRxy if someone put the patch there...
+18:45:21 <skunze1> NicoK:  weoffer on the server KDR 4.7 for 11.4 , 4.8 for 11.4/12.1/12.2 and 4.9 for 11.4712.1/12.2 if I'm not mistaken - some might be only mirrored but they are there
+18:45:42 <NicoK> tittiatcoke: +yes, but we have...
+18:45:48 <tittiatcoke> NicoK: Correct, :-)
+18:45:55 <einar77> cb400f: actually I am of the opposite view
+18:46:09 <einar77> from my user support (distro-agnostic) PoV
+18:46:32 <skunze1> einar77: user support can be a pain :)
+18:46:44 <tittiatcoke> einar77: But I would like to prevent that we are creating a kind of KDE tumbleweed :-)
+18:46:57 <maxlin> sorry, just back. so we supposed cut KDS and do maintenance update from KRxy?
+18:47:04 <NicoK> skunze1: they are there, but after having polished their latest updates, they barely ever rebuild and thus contain a stable state without additional effort necessary for the old KRxys
+18:47:07 <tittiatcoke> maxlin: That is the current proposal
+18:47:27 <skunze1> NicoK: ok - as I said i'm not a packager
+18:47:30 <einar77> tittiatcoke: agreed as well
+18:47:46 <maxlin> then how about the rest of applications, ex. ktorrent, etc
+18:47:56 <maxlin> if they need a update?
+18:48:06 <ctrippe> Do we do this, dropping KDS, already now, or do we leave it for 12.2?
+18:48:17 <skunze1> currentlywe have the updatedapps repo?
+18:48:25 <tittiatcoke> So I would propose to build KR47 for 11.4,  KR48 for 11.4/12.1/12.2 and KR49 for 12.1/12.2. Anyway in a few months we would drop the overall support for 11.4
+18:48:58 <tittiatcoke> maxlin: If there are bugfixes, then we provide them through the normal maintenance workflow. Otherwise we have KUA for this
+18:49:02 <cb400f> skunze1: KUA is non-SC version upgrades ... not patches for existing versions in the released distro
+18:49:13 <ctrippe> maxlin: Until now we only discussed the KDE SC, how this effects updates for e.g. amarok has to follow
+18:49:27 <skunze1> cb400f: ok
+18:49:29 <maxlin> ok
+18:49:47 * Bille is going to bed
+18:49:53 <Bille> 2 hours sleep in last 27
+18:49:57 <tittiatcoke> Bille: Good night and thanks
+18:50:02 <Bille> i look forward to the minutes!
+18:50:15 <maxlin> Bille: good night
+18:51:02 <ctrippe> Bille: good night (and congrats as I didn't say this earlier)
+18:51:06 <alin> tittiatcoke: me... current and factory
+18:51:49 <alin> tittiatcoke: if people want to use new versions update... if not remain with the maximum offered by some previous KRxx
+18:52:13 <Bille> thx
+18:52:13 <tittiatcoke> alin: why would we build KR49 against factory ? Do we not have KDF for that
+18:52:40 <alin> tittiatcoke: true
+18:53:05 <einar77> indeed
+18:53:20 <NicoK> +1
+18:53:52 <alin> tittiatcoke: I go to grub something to munch... but I shall be back for our goals
+18:54:01 <tittiatcoke> ok
+18:55:23 <NicoK> let's continue though - we don't have all night ;)
+18:55:27 <tittiatcoke> So we agree on my proposal ?
+18:56:03 <NicoK> KR47 for 11.4,  KR48 for 11.4/12.1/12.2 and KR49 for 12.1/12.2?
+18:56:08 <tittiatcoke> Yup
+18:56:21 <NicoK> and additionally KDF for 12.1, 12.2, Factory?
+18:56:31 <ctrippe> +1
+18:56:36 <tittiatcoke> NicoK: I believe KDF should only be build for Factory and 12.2
+18:56:39 <cb400f> what would be the point of pushing 4.9 to 12.2?
+18:56:55 <cb400f> it's extra work, and with zero benefit to anyone
+18:57:01 <tittiatcoke> cb400f: Just to provide a repo for those 12.2 that would like to update
+18:57:09 <NicoK> tittiatcoke: fine with me
+18:57:26 <cb400f> ah, crap, I misunderstood.. thought it was about official updates
+18:57:28 <NicoK> tittiatcoke: restricting it to 12.2 and Factory also reduces build load
+18:57:31 <cb400f> carry on, nothing to see
+18:57:40 <tittiatcoke> :-)
+18:57:56 <maxlin> fine with me
+18:58:22 <maxlin> next?
+18:58:27 <tittiatcoke> Ok. I assume this is agreed then
+18:58:56 <tittiatcoke> #info KR47 builds for 11.4, KR48 builds for 11.4/12.1/12.2, KR49 build for 12.1/12.2 and KDF builds for 12.2/Factory
+18:59:51 <skunze1> sounds good
+19:00:19 <tittiatcoke> #topic development workflow for new opensuse releases
+19:01:17 <tittiatcoke> Ok. Next topic
+19:01:35 * tigerfoot arrive only now, what a backlog ... congrats guys :-)
+19:02:10 <tittiatcoke> The current development workflow is to have the newer KDE release (snapshots) in KUSC, then when it reaches RC level to move it to KDF and then move it to Factory.
+19:02:31 <tittiatcoke> I guess we should add that once it moves to Factory we also should start setting up the KRxy repo for it.
+19:02:46 <tittiatcoke> Based on what we discussed I do not see a reason to change this.
+19:03:02 <ctrippe> +1
+19:03:16 <tigerfoot> +1
+19:03:18 <NicoK> so KRxy repo just before the release with the final version in it?
+19:03:32 <NicoK> or are you talking about setting it up with the RCs, too?
+19:03:46 <NicoK> I'd go for the first...
+19:03:47 <tigerfoot> and especially if the publish build is looked down until the release is real
+19:04:23 <NicoK> publish will be disabled before the release in KRxy as well...
+19:04:36 <tittiatcoke> NicoK: +1
+19:04:45 <ctrippe> NicoK: My understanding would be only before the final version
+19:05:10 <NicoK> ok (@final version only)
+19:05:21 <tittiatcoke> +1
+19:06:05 <NicoK> in general, this means that KRxy will probably be delayed a bit in publishing the latest release as it needs to be fully building in KDF first before we link it in KRxy
+19:06:35 <NicoK> so depending on how long we need to polish in KDF, KRxy may not have build and published right at release day - hopefully KDF will though
+19:06:45 <tittiatcoke> #info Development workflow remains the same KUSC -> KDF (rc's) -> Factory. KRxy repo will be setup just before the openSUSE release.
+19:07:13 <NicoK> tittiatcoke: KRxy repo will be setup just before the KDE xy release
+19:07:17 <NicoK> noe openSUSE
+19:07:24 <NicoK> *not
+19:07:27 <tittiatcoke> Ok
+19:07:29 <maxlin> yeah
+19:07:38 <tittiatcoke> #info Development workflow remains the same KUSC -> KDF (rc's) -> Factory. KRxy repo will be setup just before the KDE release
+19:07:46 <tittiatcoke> Will correct that in the minutes :-)
+19:08:24 <tittiatcoke> #topic Targetted KDE release for 12.3
+19:08:40 <NicoK> tittiatcoke: also this is just the development workflow for new major KDE releases - not minor like 4.9.2
+19:08:41 <tittiatcoke> Maybe this is an open door, but are we targetting to release 12.3 with KDE 4.10 or 4.9.x ?
+19:08:50 <tittiatcoke> NicoK: Correct
+19:09:21 <skunze1> first question - when will 12.3 be released?
+19:09:25 <cb400f> assuming 12.3 is released in March, 4.10
+19:09:45 <cb400f> but we don't know that.. only it's pretty certain it will not be _before_ march
+19:09:52 <skunze1> if march I would target 4.10 - depending on when the freeze is
+19:10:05 <NicoK> since we'd like to ship point releases as updates now, we could go with 4.10, right?
+19:10:09 <cb400f> the freeze would be about 2 months before.. so it would be tight
+19:10:17 <tittiatcoke> mrdocs: Are you aware of any timing for 12.3 ?
+19:10:41 <cb400f> exactly like 11.4 which shipped in march 2011 with nice and byggy 4.6.0
+19:10:56 <skunze1> March would be the regular release of 12.3 - not counting the 12.2 delay - so it would be 6month after 12.2
+19:11:01 <rabauke> good evening gentlemen! :)
+19:11:04 * tigerfoot look around in rumor thread .... look the bird's fligth and say March is good :-)
+19:11:18 <NicoK> 05/03/2012: 4.10.1 release - if that's around the same time of 12.3, we could immediately ship that, too
+19:11:35 <maxlin> tigerfoot: this question should to coolo :)
+19:11:35 <einar77> I can keep up to speed with upstream's changed
+19:11:35 <cb400f> tigerfoot: evil forces are fighting for the 12 year cycle
+19:11:37 <einar77> changes
+19:11:41 <skunze1> like we did the 4.8.5 this time
+19:11:44 <maxlin> tittiatcoke: this question should to coolo :)
+19:11:48 <maxlin> tigerfoot: sorry
+19:11:55 <cb400f> (of course because their real agenda is to promote tumbleweed over opensuse)
+19:11:58 <einar77> I'm keeping watch of many things upstream
+19:12:00 <tigerfoot> maxlin: no problems :-)
+19:12:11 <tittiatcoke> maxlin: Will check tomorrow with coolo
+19:12:26 <einar77> what I can tell you already for 4.10
+19:12:36 <skunze1> if we get to a 12 months cycle - someone would always be screwed - either GNOME or KDE
+19:12:38 <mrdocs> tittiatcoke: no idea on timing for 12.3, the sum up at the summit was 12.2 delay was an exception
+19:12:46 <skunze1> so the would be the worst possible option
+19:12:49 <rabauke> I'd go for shipping 4.10 and those that want a more stable KDE release wait until 4.10.1 or .2 has been shipped.
+19:12:56 <tittiatcoke> #action tittiatcoke check with coolo the release calendar for 12.3 and when the freeze would be
+19:12:57 <mrdocs> and no one at the sumiit mentioned changing our schedule
+19:12:58 <cb400f> september would also be a quite sucky release time for 12 month releases imho
+19:13:08 <einar77> rabauke: bear in mind that a lot of new things might introduce regressions
+19:13:12 <cb400f> with the summer holidays and such
+19:13:30 <einar77> (I'm seeing some atm, not saying that they won't be fixed, but these aren't minor bugs)
+19:13:35 <tittiatcoke> I guess that with 12.3 we would have the first option to release utilize the new maintenance updates as that we would have then a release that ships either the .0 or .1 relase
+19:13:35 <rabauke> einar77: that's why people can wait until after the .0 release. assuming .1 etc. are shipped.
+19:13:56 <mrdocs> cartman can also be pinged about the release... we now have a real review team :)
+19:14:12 <rabauke> einar77: and 12.3 as such is "a lot of new things". AFAIK kdelibs is "frozen" anyway until KDE5.
+19:14:13 <tittiatcoke> mrdocs: Ok.
+19:14:20 <einar77> rabauke: plasmoids -> QML
+19:14:37 <einar77> often the transition is not painless
+19:14:39 <cb400f> also there'd be about 6 weeks after 12.3 freeze to backport patches from upstream.. so it wouldn't be completely fresh, vanilla 4.10
+19:14:46 <tigerfoot> einar77: could they be worst than actually ...
+19:14:57 <einar77> on the topic of patches
+19:14:59 <rabauke> sure, but as I said, shipping .0 and minor releases until .5 will give users the choice when to change their distro.
+19:15:17 <einar77> I was thinking that perhaps there should be a way to keep a lits of things we might want in
+19:15:43 <tittiatcoke> einar77: what do you mean with things we might want in ?
+19:15:52 <einar77> tittiatcoke: example in case is udisks2
+19:15:54 <einar77> for example
+19:16:05 <einar77> no one noticed it was there
+19:16:06 <tittiatcoke> Ok. But that one is already in KDF :-)
+19:16:15 <einar77> but I mean, we discovered it existed and it didn't work
+19:16:22 <einar77> because alin had a problem with mounting
+19:16:48 <skunze1> but udisks2 comes anyway for gnome so worst case udisk1 needs to be maintained by KDE if we are the only one shipping it - or am I completely wrong here?
+19:16:51 <einar77> Bille: how would you classify a patch to be applied from upstream after freeze?
+19:16:54 <einar77> skunze1: it was an example
+19:17:08 <einar77> I mean, the questions are actuqlly 2
+19:17:08 <tittiatcoke> einar77: Bille isn't there anymore. He went to bed after a rough night :-)
+19:17:23 <einar77> 1. what makes a patch worthy of inclusion?
+19:17:35 <einar77> 2. how do we keep in touch with upstream to know what's needed?
+19:17:42 <einar77> I can probably give a hand with point 2
+19:17:49 <rabauke> 1. crash/data loss for sure
+19:17:54 <einar77> since I follow development quite closely
+19:18:13 <einar77> (I read k-c-d, kde-pim, nepomuk and I'm subscribed to plasma-devel)
+19:19:22 <tittiatcoke> I guess we also have to look at what components are being upgraded by other parties in Factory. udisks2 was announced by the Gnome team, so we had time to prepare ourselves. The next big chunck is going to be the removal of ConsoleKit, where we would require additional patches to kdebase4-workspace so that it gets systemd awareness. Those patches are not even upstream
+19:19:43 <einar77> tittiatcoke: powerdevil support for systemd is in since today
+19:19:46 <einar77> (FYI)
+19:19:58 <einar77> that's what I meant by reporting this stuff
+19:20:16 <tittiatcoke> einar77: That one, yes. But without the workspace patch, you would loose shutdown, suspend, etc
+19:20:18 <einar77> but I'd rather keep a list somewhere, I assume the wiki *cannot* be used for this?
+19:20:37 <skunze1> metabug?
+19:20:41 <tittiatcoke> einar77: I guess this is exactly what the next topic should cover. :-)
+19:20:55 <einar77> tittiatcoke: so I was a little on a rush ;)
+19:21:12 <tittiatcoke> To close the current topic. I guess that most votes goes to provide KDE 4.10 with 12.3 (if the release schedule allows it) ?
+19:21:24 <einar77> being upstream-biased I say +1
+19:21:30 <skunze1> yes
+19:21:31 <rabauke> +1
+19:21:43 <tittiatcoke> NicoK: ?
+19:21:54 <cb400f> like you have to ask ;-)
+19:21:58 <tittiatcoke> :-)
+19:21:58 <maxlin> einar77: after freeze...in my experience, if that patch fix the crash, segmentation fault, feature lost, such critical bug, even they possibly cause ship-block
+19:22:01 <skunze1> otherwise we would be in the same situation like with 12.2 - shipping with a not current version
+19:22:31 <einar77> maxlin: good point
+19:22:37 <tittiatcoke> #info Target is shipping KDE 4.10 with openSUSE 12.3
+19:22:56 <maxlin> einar77: other minor bugs could throught maintenance update after release
+19:22:58 <tittiatcoke> #topic Improvement and other points for KDE in openSUSE 12.3
+19:23:06 <tittiatcoke> einar77: Your topic :-)
+19:23:15 <alin> tittiatcoke: mine too
+19:23:31 <einar77> tittiatcoke: ok, so basically we need to keep a list of tihngs we want applied
+19:23:44 <einar77> and eventually *remove* them once they're no longer needed (upstream etc)
+19:23:49 <einar77> ti would IMO help packaging
+19:23:50 <tittiatcoke> So as indicated we have current udisks2 support in KDF, based on upstream. fcrozat is working on a new version of systemd which would obsolete ConsoleKit.
+19:24:19 <einar77> current KDE isn't as patched as in the good old days, but there are a number of patches still
+19:24:21 <alin> I have 2 points... 1 build a desktop theme with a colour scheme consistent with our branding (Produkt with changed colours?) 2. ktp?
+19:24:43 <NicoK> sorry, I was away for 2 min - yes@4.10 for 12.3 as mentioned earlier
+19:24:46 <einar77> alin: for 2 I think the next version might probably be enough for daily use
+19:25:25 <einar77> it should be put in a repo that's not KUP (once the next version is out) and be throroughly tested
+19:25:40 <tittiatcoke> I would propose to do two things. Let's create a wiki page that lists these items that we would like to see or need to do. Another is that we should create a metabug to list those bugs that could cause a ship-block.
+19:25:45 <alin> einar77: the ideaisto move it in kr people can see it... bugs discovered
+19:25:50 <skunze1> I started using ktp as my work messenger since 12.2 is out - it works quite well - but what we definitely would need is a metapackage - now you have to install every plugin manually
+19:26:00 <einar77> tittiatcoke: ++
+19:26:00 <rabauke> artwork is always hard to get and very subjective. So I wonder whether it's worth the effort. In fact the air theme fits any branding since it is transparent.
+19:26:01 <ctrippe> tittiatcoke: +1
+19:26:09 <maxlin> tittiatcoke: +1
+19:26:12 <rabauke> you could adjust the blue to green
+19:26:40 <alin> rabauke: yes... and we shall... product does more is more subtle
+19:26:41 <tittiatcoke> #action tittiatcoke create a wiki page to list the items we need to do and create a metabug to be used to list the ship-block bugs
+19:27:00 <NicoK> tittiatcoke +1 @ wiki page
+19:27:12 <skunze1> tittiatcoke: and maybe a 2nd metabug for the smaller bugs - something like the papercut initiative - not a must fix but a list of nice to have fixes
+19:27:16 <tigerfoot> +1 and offer link to ml
+19:27:25 <tittiatcoke> tigerfoot: definitely
+19:27:38 <tittiatcoke> skunze1: +1
+19:27:47 <NicoK> +1
+19:27:52 <rabauke> alin: when aya was used there was a discussion about it being too old fashioned etc. That's why I would vote for using whatever upstream uses and just adjust the colours, i.e. highlight colour, shadowe etc.
+19:28:30 <skunze1> I have to admit that i actually always liked our artwork
+19:28:41 <tittiatcoke> alin: As soon as the wiki-page is there you could list your proposal. It can then be discussed at the next meeting.
+19:28:51 <rabauke> currently it's upstream.
+19:29:10 <rabauke> = least work for opensUSE
+19:29:38 <alin> tittiatcoke: +1
+19:30:05 <rabauke> sounds good
+19:30:10 <alin> rabauke: yes... at the moment we do not do it
+19:30:27 <einar77> tittiatcoke: I can help on the todo things
+19:30:27 <tittiatcoke> Ok. I guess we can close this topic. We can add our items to the wiki page as soon as I have created it :-)
+19:30:31 <tigerfoot> rabauke: I would prefer a more dark greenish with very light gray for font, so errors and bugs are less visible :-)
+19:30:45 <skunze1> tigerfoot: LOL
+19:30:45 <einar77> tittiatcoke: in fact I can try to keep it up to date wrt the upstream work
+19:30:51 <tittiatcoke> einar77: Thanks
+19:30:57 <rabauke> that'S the problem with artwork, many like different things. :)
+19:30:59 <tigerfoot> einar77: thx ...
+19:31:16 <einar77> tittiatcoke: you may want to set up an action, so I don't forget and I'm motivated ;)
+19:31:24 <tigerfoot> rabauke: and packaging it, is a pain, or at least not yet efficient ...
+19:31:33 <alin> so nobody tried produkt
+19:31:44 <tittiatcoke> einar77: You were talking about the artwork ?
+19:31:52 <einar77> no, patches etc
+19:31:56 <tittiatcoke> Ok :-)
+19:32:00 <tigerfoot> :-)
+19:32:16 <tittiatcoke> #action einar77 helping out with patches
+19:32:20 <einar77> I said because I need to take my leave now
+19:32:23 <tittiatcoke> Ok.
+19:32:29 <einar77> but I'll read the rest of the minutes later or tomorrow morning
+19:32:29 <rabauke> alin: the screenshots I saw looked dark grey + orange, plain layout.
+19:32:29 <tigerfoot> alin: produkt is too blue :)
+19:32:38 <skunze1> einar77: have a good night
+19:32:39 <einar77> see you later guys!
+19:32:44 <tittiatcoke> einar77: See you later. Thanks
+19:32:53 <maxlin> einar77: cu :)
+19:33:05 <tittiatcoke> Ok. guys let's push this a little :-)
+19:33:14 <tittiatcoke> #topic Status Report.
+19:33:18 * tigerfoot going out, not with einar77 , continue this excellent mood of meeting ...
+19:33:26 <tittiatcoke> Any status reports ?
+19:33:31 <tittiatcoke> tigerfoot: thanks. Have a good night
+19:33:35 <tigerfoot> cu
+19:33:42 <skunze1> tigerfoot: cu
+19:33:44 <tittiatcoke> NicoK: What is the status of KR49 atm ?
+19:33:59 <NicoK> there are still some packages that differ from KDF :(
+19:34:11 <NicoK> the main reason is because development diverged between the two
+19:34:25 <NicoK> and at least two changelog entries exist now and I don't really know how to proceed with them
+19:34:33 <cb400f> dunno if this qualifies.. but we seem to have shipped krita crashing on startup with 12.2.. and the same happens with calligra 2.4.3... any plans of getting calligra 2.5.x to KDF?
+19:34:53 <tittiatcoke> NicoK: Which packages ?
+19:34:53 <NicoK> cb400f: I already tried that
+19:35:27 <NicoK> and had problems with the changelogs...
+19:35:41 <tittiatcoke> NicoK: So KR49 has Calligra 2.5.x ?
+19:35:53 <NicoK> tittiatcoke: yes, 2.5.2 iirc
+19:36:09 <tittiatcoke> NicoK: Ok. Let me check that tomorrow and then get calligra 2.5.x in KDF asap
+19:36:22 <tittiatcoke> #action tittiatcoke check calligra packages in KR49 and push it to KDF
+19:36:43 <NicoK> it is not only calligra that differs...
+19:36:45 <tittiatcoke> NicoK: Any other packages ?
+19:36:57 <cb400f> wonder if there's reasonably simple fix for 2.4.x.. krita is one of the crown jewels.. it's pretty embarassing to ship a version that doesn't even start with the distro :-/
+19:37:12 <NicoK> tittiatcoke: a lot actually
+19:37:16 <tittiatcoke> cb400f: I agree.
+19:37:24 <ctrippe> cb400f: there is https://bugzilla.novell.com/show_bug.cgi?id=778260#c2
+19:37:27 <bugbot> openSUSE bug 778260 in openSUSE 12.2 (KDE4 Applications) "Krita crashes during start" [Major,New]
+19:37:27 <tittiatcoke> NicoK: Can you send me a short email with the packages that have those issues ?
+19:38:01 <NicoK> ok: the main question there (which I also posted to the opensuse-kde ml) is whether and how to keep the attributions or KR49 packagers
+19:38:32 <cb400f> hmm.. so 2.5 will prolly be affected too without the change :-/
+19:38:46 <NicoK> regarding calligra: see https://build.opensuse.org/request/show/135527
+19:38:48 * cb400f wonders if RH maintains ld too
+19:38:57 <NicoK> I polished that one in another try at this regard
+19:39:56 <NicoK> for another mess at package diffs, see https://build.opensuse.org/package/rdiff?opackage=kdebase4-workspace&oproject=KDE%3ADistro%3AFactory&package=kdebase4-workspace&project=KDE%3ARelease%3A49&rev=75
+19:40:19 <tittiatcoke> NicoK: That one seems to be fine.
+19:40:46 <NicoK> which?
+19:41:15 <tittiatcoke> the latest Calligra submit
+19:41:23 <NicoK> I hope so, too :)
+19:41:51 <NicoK> but I couldn't keep the timestamps of the KR49 changes - anyway, they probably don't matter that much
+19:42:00 <NicoK> at least the attributions are still there
+19:42:31 <tittiatcoke> NicoK: Well, I will accept that one now :-)
+19:42:49 <NicoK> I don't know if there are any further changes in KR49 but already the changes in KDF make re-linking KR49 not easy
+19:43:14 <tittiatcoke> Can imagine.
+19:43:45 <NicoK> anyway, as mentioned before, iirc Dirk had some scripts easing KDE updates - I'd like to have those scripts documented/available somewhere
+19:43:52 <NicoK> if possible
+19:44:00 <NicoK> (for next updates)
+19:44:46 <NicoK> atm though there is a lot of work to be done to get KR49 clean and push changes to KDF before development continues even more in KDF
+19:44:51 <tittiatcoke> NicoK: What type of scripts ? I have a script with which I am pushing the updates of KUSC (and creating the tarballs automatically from the git sources). But I guess I can adjust it to download the tarballs from a certain location
+19:45:57 <tittiatcoke> Ok. Any further updates ?
+19:46:02 <NicoK> I always thought of "download release/pre-release tarballs" -> "adapt package spec" -> "osc ar"-> "osc ci..."
+19:46:32 <NicoK> and from what I read, I suspect the final tarballs are available somewhere before the release for us packagers...
+19:46:38 <tittiatcoke> NicoK: I will change my script a little and then send it to you
+19:46:44 <NicoK> I'm not on the appropriate ml though
+19:46:46 <tittiatcoke> NicoK: Correct.
+19:47:00 <NicoK> ok, could we publish that for the other maintainers?
+19:47:06 <tittiatcoke> Sure
+19:47:11 <maxlin> btw I have a talk of our KDE working model on osc'12(the topic is maintenance model though)
+19:47:25 <NicoK> that would be great
+19:47:27 <tittiatcoke> Ok
+19:47:34 <tittiatcoke> nothing secret :-)
+19:47:49 <maxlin> if we decided new working model before osc, I will modify my slides :)
+19:48:30 <tittiatcoke> maxlin: It depends if the maintenance team is accepting point release updates through the maintenance channel. I will drop them an email tomorrow and communicate their response to the team
+19:49:06 <maxlin> tittiatcoke: ok, tnx
+19:49:11 <tittiatcoke> maxlin: welcome
+19:49:14 <cb400f> maxlin: maybe you can adjust it to be about the new state of the kde team
+19:49:36 <NicoK> tittiatcoke: the action item at re-linking KR49 to KDF and pushing changes it top-priority imo (further divergations make it only worse to maintain the packages)
+19:49:36 <maxlin> cb400f: I will
+19:50:22 <NicoK> I'm afraid, I don't have too much time during the next few days though
+19:50:22 <tittiatcoke> NicoK: Correct. For now we should put priority on that and try to prevent package maintainance in KDF until KR49 is in shape.
+19:50:30 <NicoK> +1
+19:50:49 <tittiatcoke> NicoK: Can you send me a list of the packages that needs work? I will try to help out there.
+19:51:13 <tittiatcoke> #info Current team priority is to get KR49 is the right shape before work on KDF continues.
+19:51:38 <tittiatcoke> #action NicoK send a list of packages to tittiatcoke that needs working on.
+19:51:39 <NicoK> I'll try to get one - probably every package that has a diff compared to KDF
+19:51:47 <tittiatcoke> NicoK: That is fine :-)
+19:51:52 <tittiatcoke> Will try as much as I can.
+19:52:04 <tittiatcoke> Next week I would have also quite some time in the evenings :-)
+19:52:05 <NicoK> there are some that don't have a baserev yet either...
+19:52:14 <tittiatcoke> NicoK: Ok. Just list them.
+19:52:22 <NicoK> k
+19:52:37 <tittiatcoke> Ok. Let's move to the last topic :-)
+19:52:43 <tittiatcoke> #topic Q&A, Misc.
+19:52:58 <tittiatcoke> Any other things to mention, comment, etc ?
+19:53:52 <rabauke> A big thanks to all of you for contributing to KDE on openSUSE!
+19:53:53 <tittiatcoke> I guess this is a no ?
+19:54:10 <tittiatcoke> rabauke: Thanks for supporting the team :-)
+19:54:34 <tittiatcoke> Ok. Let's conclude the meeting. It was a long but productive one.
+19:54:38 <maxlin> anyone will go osc'12?
+19:54:53 <tittiatcoke> Thanks for your participation
+19:55:03 <tittiatcoke> maxlin: not me :-)
+19:55:05 <maxlin> sorry, off-topic :p
+19:55:11 <maxlin> k
+19:55:16 <tittiatcoke> maxlin: no problem, it is the Misc topic anyway
+19:55:23 <tittiatcoke> so everything is on-topic
+19:55:34 <maxlin> :-)
+19:56:19 <tittiatcoke> Ok. Let's end the meeting :-)
+19:56:30 <tittiatcoke> #endmeeting

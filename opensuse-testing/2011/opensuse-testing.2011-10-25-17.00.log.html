@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:00:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:00:54</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Tue Oct 25 17:00:54 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:00:54</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:00:55</span><span class="nk"> &lt;Holgi&gt;</span> good
+<a name="l-5"></a><span class="tm">17:01:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-6"></a><span class="tm">17:01:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-7"></a><span class="tm">17:01:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-8"></a><span class="tm">17:01:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">RC1 experience</span>
+<a name="l-9"></a><span class="tm">17:02:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> I run RC1 on my desktop and a netbook. most things just work.
+<a name="l-10"></a><span class="tm">17:02:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> but on my netbook, dhcpcd was not started on ifup wlan0
+<a name="l-11"></a><span class="tm">17:03:26</span><span class="nk"> &lt;LWFinger&gt;</span> I have not tried ifup, but it works witn NetworkManager.
+<a name="l-12"></a><span class="tm">17:03:40</span><span class="nk"> &lt;LWFinger&gt;</span> I'll test later.
+<a name="l-13"></a><span class="tm">17:04:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> there are still some bugs seen from openQA test results, most things not too big
+<a name="l-14"></a><span class="tm">17:04:14</span><span class="nk"> &lt;Holgi&gt;</span> I have it on my workstation and found bug#726385
+<a name="l-15"></a><span class="tm">17:04:41</span><span class="nk"> &lt;Holgi&gt;</span> gpg encryption not working
+<a name="l-16"></a><span class="tm">17:06:16</span><span class="nk"> &lt;LWFinger&gt;</span> I have RC1 on my laptop, a desktop and a netbook (soon). Again most things work.
+<a name="l-17"></a><span class="tm">17:06:57</span><span class="nk"> &lt;LWFinger&gt;</span> I had a few failures with systemd booting - 1 in 3 tries failed, but an update seems to fix that.
+<a name="l-18"></a><span class="tm">17:07:43</span><span class="nk"> &lt;LWFinger&gt;</span> The plasmoid NM applet no longer requests the system password so oftem.
+<a name="l-19"></a><span class="tm">17:08:04</span><span class="nk"> &lt;Holgi&gt;</span> sometimes I was also lost with systemd
+<a name="l-20"></a><span class="tm">17:08:28</span><span class="nk"> &lt;Holgi&gt;</span> e.a. I tried to get init 5 by default by changing /etc/inittab
+<a name="l-21"></a><span class="tm">17:08:37</span><span class="nk"> &lt;Holgi&gt;</span> but this did not work
+<a name="l-22"></a><span class="tm">17:09:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> yast2 runlevel  works
+<a name="l-23"></a><span class="tm">17:09:10</span><span class="nk"> &lt;Holgi&gt;</span> which is not a "surprise"
+<a name="l-24"></a><span class="tm">17:09:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> or manipulating /etc/systemd/system/default.target
+<a name="l-25"></a><span class="tm">17:09:33</span><span class="nk"> &lt;Holgi&gt;</span> thx
+<a name="l-26"></a><span class="tm">17:09:53</span><span class="nk"> &lt;LWFinger&gt;</span> My laptop was updated from Factory - the desktop form the 12.1 repos.
+<a name="l-27"></a><span class="tm">17:10:27</span><span class="nk"> &lt;Holgi&gt;</span> I still need to learn
+<a name="l-28"></a><span class="tm">17:10:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">12.1 was branched from Factory after RC1 so these will now evolve more independently</span>
+<a name="l-29"></a><span class="tm">17:11:17</span><span class="nk"> &lt;LWFinger&gt;</span> Switching from systemd to systemV using F5 now works again - it was broken for a while.
+<a name="l-30"></a><span class="tm">17:11:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> it's good to have this fallback
+<a name="l-31"></a><span class="tm">17:12:11</span><span class="nk"> &lt;LWFinger&gt;</span> Yes - just in case.
+<a name="l-32"></a><span class="tm">17:12:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> do we have documentation available on how to switch back to sysV permanently?
+<a name="l-33"></a><span class="tm">17:13:36</span><span class="nk"> &lt;LWFinger&gt;</span> No, this is what I was typing: "I see a new option "Default". Do you know where the control file for this is found."
+<a name="l-34"></a><span class="tm">17:14:08</span><span class="nk"> &lt;HolgiDE&gt;</span> not sure
+<a name="l-35"></a><span class="tm">17:14:37</span><span class="nk"> &lt;LWFinger&gt;</span> This subject is something for the release notes.
+<a name="l-36"></a><span class="tm">17:14:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> right
+<a name="l-37"></a><span class="tm">17:17:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> google turns up something about gfxboot --change-config boot:init=...
+<a name="l-38"></a><span class="tm">17:19:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> what else?
+<a name="l-39"></a><span class="tm">17:20:24</span><span class="nk"> &lt;LWFinger&gt;</span> I did not find any likely candidates with "grep -r systemd /etc/*".
+<a name="l-40"></a><span class="tm">17:20:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> according to bnc#723041 this should do: zypper in sysvinit-init
+<a name="l-41"></a><span class="tm">17:22:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> because the /sbin/init symlink is used by default. easy enough mechanism
+<a name="l-42"></a><span class="tm">17:23:17</span><span class="nk"> &lt;LWFinger&gt;</span> That looks promising. My system has systemdinit and systemd-sysvinit.
+<a name="l-43"></a><span class="tm">17:24:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> bugfixes for RC2 should be checked in this Friday. So any bug not reported soon, will stay in
+<a name="l-44"></a><span class="tm">17:25:03</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">note:</span> /sbin/init is a link to /bin/systemd.
+<a name="l-45"></a><span class="tm">17:25:34</span><span class="nk"> &lt;LWFinger&gt;</span> I will report the deadline on the Forum.
+<a name="l-46"></a><span class="tm">17:26:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> openQA still showed an xorg crash - but it only occurred sometimes and only after install finished, so people can just do a reset to make the installed system boot up
+<a name="l-47"></a><span class="tm">17:27:55</span><span class="nk"> &lt;Holgi&gt;</span> I had a wired status after installation
+<a name="l-48"></a><span class="tm">17:28:00</span><span class="nk"> &lt;Holgi&gt;</span> I changed to console
+<a name="l-49"></a><span class="tm">17:28:08</span><span class="nk"> &lt;Holgi&gt;</span> and every key was printed twice
+<a name="l-50"></a><span class="tm">17:28:17</span><span class="nk"> &lt;Holgi&gt;</span> but since it was gone after reboot
+<a name="l-51"></a><span class="tm">17:29:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> strange indeed.
+<a name="l-52"></a><span class="tm">17:29:25</span><span class="nk"> &lt;LWFinger&gt;</span> The Forum reports lots of problems with DVD installation. I never use the DVD and cannot confirm.
+<a name="l-53"></a><span class="tm">17:29:40</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> it was a LXDE installation
+<a name="l-54"></a><span class="tm">17:30:06</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> did you test 379 on openqa with LXDE already?
+<a name="l-55"></a><span class="tm">17:30:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> there was a bug left in that caused software selection to crash whole yast
+<a name="l-56"></a><span class="tm">17:30:30</span><span class="nk"> &lt;Holgi&gt;</span> I also ran into that
+<a name="l-57"></a><span class="tm">17:30:38</span><span class="nk"> &lt;LWFinger&gt;</span> Is that fixed?
+<a name="l-58"></a><span class="tm">17:30:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes. lxde looked OK on openQA
+<a name="l-59"></a><span class="tm">17:31:05</span><span class="nk"> &lt;Holgi&gt;</span> I mean, you are changen to console as well during a openqa test run
+<a name="l-60"></a><span class="tm">17:31:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> should be fixed. as I understood the bugreport, it was an incomplete rebuild
+<a name="l-61"></a><span class="tm">17:31:17</span><span class="nk"> &lt;Holgi&gt;</span> did you see something similar to my problem?
+<a name="l-62"></a><span class="tm">17:31:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> no
+<a name="l-63"></a><span class="tm">17:31:40</span><span class="nk"> &lt;LWFinger&gt;</span> One other problem with my system - Thunderbird crashes on its initial run, but is OK the second time.
+<a name="l-64"></a><span class="tm">17:31:42</span><span class="nk"> &lt;Holgi&gt;</span> ok, then maybe a nouveau issue
+<a name="l-65"></a><span class="tm">17:31:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. http://openqa.opensuse.org/viewimg/opensuse/testresults/openSUSE-DVD-i586-Build0379-lxde/logpackages-1.png
+<a name="l-66"></a><span class="tm">17:32:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> if only your keystrokes were printed twice, it could also be an input dev problem
+<a name="l-67"></a><span class="tm">17:35:13</span><span class="nk"> &lt;Holgi&gt;</span> ok
+<a name="l-68"></a><span class="tm">17:37:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> then we need to set a date for next meeting
+<a name="l-69"></a><span class="tm">17:37:53</span><span class="nk"> &lt;Holgi&gt;</span> when is rc2 release planed?
+<a name="l-70"></a><span class="tm">17:38:30</span><span class="nk"> &lt;Holgi&gt;</span> november, 3rd
+<a name="l-71"></a><span class="tm">17:39:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> next week. so shall we meet the monday after it?
+<a name="l-72"></a><span class="tm">17:39:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> 2011-11-07
+<a name="l-73"></a><span class="tm">17:39:40</span><span class="nk"> &lt;LWFinger&gt;</span> OK here.
+<a name="l-74"></a><span class="tm">17:39:59</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> do you think we will make 03.11. with rc2 ?
+<a name="l-75"></a><span class="tm">17:40:13</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> if yes 2011-11-07 seem to be good
+<a name="l-76"></a><span class="tm">17:41:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> we could still re-schedule the meeting, when it is delayed
+<a name="l-77"></a><span class="tm">17:41:34</span><span class="nk"> &lt;LWFinger&gt;</span> Wiht 12.1 no longer in Factory, the chances of a release killer should be minimized.
+<a name="l-78"></a><span class="tm">17:42:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> it also means that many factory users will no more be testing the same thing as 12.1
+<a name="l-79"></a><span class="tm">17:43:13</span><span class="nk"> &lt;LWFinger&gt;</span> I posted on the Beta Forum that they should switch to 12.1 repos. I hope they did.
+<a name="l-80"></a><span class="tm">17:44:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, the download.opensuse.org/distribution/12.1/repo s will only have RCs - the current development state is in yet another place
+<a name="l-81"></a><span class="tm">17:44:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> which I still need to find for openQA to test it :)
+<a name="l-82"></a><span class="tm">17:45:32</span><span class="nk"> &lt;LWFinger&gt;</span> Please post that on the Testing ML, when you find it.
+<a name="l-83"></a><span class="tm">17:47:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK, I will
+<a name="l-84"></a><span class="tm">17:48:49</span><span class="nk"> &lt;LWFinger&gt;</span> I understood Coolo to say that he would cherry-pick new stuff in Factory and put it in the 12.1 repos, but I probably misinterpreted.
+<a name="l-85"></a><span class="tm">17:50:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> this is what he will do. but that is a 12.1 OBS project
+<a name="l-86"></a><span class="tm">17:50:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> and maybe not an FTP tree suitable for zypper or install
+<a name="l-87"></a><span class="tm">17:50:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> not sure
+<a name="l-88"></a><span class="tm">17:51:27</span><span class="nk"> &lt;LWFinger&gt;</span> Does a rolling update from RC1 to RC2 make sense to you? It does to me.
+<a name="l-89"></a><span class="tm">17:52:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> it might need zypper dup (did for 11.4 as some versions were downgraded then)
+<a name="l-90"></a><span class="tm">17:52:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> and yes, could be helpful
+<a name="l-91"></a><span class="tm">17:52:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> more / easier testing
+<a name="l-92"></a><span class="tm">17:53:19</span><span class="nk"> &lt;LWFinger&gt;</span> I will be interested in what Coolo has to say.
+<a name="l-93"></a><span class="tm">17:54:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> can ask tomorrow and email to testing ML
+<a name="l-94"></a><span class="tm">17:54:40</span><span class="nk"> &lt;LWFinger&gt;</span> Thanks.
+<a name="l-95"></a><span class="tm">17:56:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> anything else to discuss?
+<a name="l-96"></a><span class="tm">17:56:48</span><span class="nk"> &lt;LWFinger&gt;</span> No.
+<a name="l-97"></a><span class="tm">17:58:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> Then I will close today's meeting. Thanks everyone for attending. I will add lin
+<a name="l-98"></a><span class="tm">17:58:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> ks to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-99"></a><span class="tm">17:58:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:01:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:01:41</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Jul 19 17:01:40 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:01:41</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:01:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">17:01:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-6"></a><span class="tm">17:01:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-7"></a><span class="tm">17:01:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">12.2 testing</span>
+<a name="l-8"></a><span class="tm">17:02:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#chair </span><span class="cmdline">Holgi</span>
+<a name="l-9"></a><span class="tm">17:02:06</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: Holgi bmwiedemann
+<a name="l-10"></a><span class="tm">17:02:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> I'm running 12.2-RC1 on several machines now and still Beta2 on others. Only small issues so far
+<a name="l-11"></a><span class="tm">17:03:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> got the lxdm problem patched and SRed now :)
+<a name="l-12"></a><span class="tm">17:03:34</span><span class="nk"> &lt;Holgi&gt;</span> I'm running beta 2 on my workstation
+<a name="l-13"></a><span class="tm">17:03:40</span><span class="nk"> &lt;Holgi&gt;</span> still
+<a name="l-14"></a><span class="tm">17:04:19</span><span class="nk"> &lt;Holgi&gt;</span> hope to have some time next week for rc a
+<a name="l-15"></a><span class="tm">17:04:22</span><span class="nk"> &lt;Holgi&gt;</span> 1
+<a name="l-16"></a><span class="tm">17:04:35</span><span class="nk"> &lt;LWFinger&gt;</span> I have RC1 on 2 machines.
+<a name="l-17"></a><span class="tm">17:05:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> I had display problems with kdm on nouveau
+<a name="l-18"></a><span class="tm">17:05:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> needed rcxdm restart , so I switched to lxdm for now
+<a name="l-19"></a><span class="tm">17:06:04</span><span class="nk"> &lt;LWFinger&gt;</span> Nouveau fails on both of mine. Someday I need to file a proper bug report.
+<a name="l-20"></a><span class="tm">17:06:58</span><span class="nk"> &lt;LWFinger&gt;</span> One of my displays is at 1024x768 and is OK with the frame buffer driver.
+<a name="l-21"></a><span class="tm">17:07:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> best file it upstream
+<a name="l-22"></a><span class="tm">17:08:19</span><span class="nk"> &lt;LWFinger&gt;</span> Yes on the upstream. The other is 1280x800, which the fb cannot handle and nv crashes. Bug # 770560.
+<a name="l-23"></a><span class="tm">17:08:52</span><span class="nk"> &lt;LWFinger&gt;</span> I hope to get that last one fixed before GM.
+<a name="l-24"></a><span class="tm">17:09:53</span><span class="nk"> &lt;LWFinger&gt;</span> No other problems.
+<a name="l-25"></a><span class="tm">17:13:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> bgerber, a-865, yaloki - any 12.2 testing?
+<a name="l-26"></a><span class="tm">17:14:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> BManojlovic, Creatura85, Ilmehtar, m4z: ping
+<a name="l-27"></a><span class="tm">17:15:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> then we could move to the next topic
+<a name="l-28"></a><span class="tm">17:15:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">next meeting</span>
+<a name="l-29"></a><span class="tm">17:15:39</span><span class="nk"> &lt;LWFinger&gt;</span> OK
+<a name="l-30"></a><span class="tm">17:16:11</span><span class="nk"> &lt;LWFinger&gt;</span> What is current release date for RC2?
+<a name="l-31"></a><span class="tm">17:16:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> I guess next week
+<a name="l-32"></a><span class="tm">17:17:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> coolo got all 12.2 packages building now
+<a name="l-33"></a><span class="tm">17:17:18</span><span class="nk"> &lt;LWFinger&gt;</span> Good.
+<a name="l-34"></a><span class="tm">17:18:15</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">Larry:</span> I ask about openSUSE conference in Orlando - I will take part- you a well?
+<a name="l-35"></a><span class="tm">17:18:29</span><span class="nk"> &lt;Holgi&gt;</span> you as well?
+<a name="l-36"></a><span class="tm">17:19:10</span><span class="nk"> &lt;LWFinger&gt;</span> I saw the question, but my KDE session crashed before I sent my answer. No, I will not.
+<a name="l-37"></a><span class="tm">17:19:55</span><span class="nk"> &lt;Holgi&gt;</span> would be good chance to meet face to fac. where are you located?
+<a name="l-38"></a><span class="tm">17:20:40</span><span class="nk"> &lt;LWFinger&gt;</span> As a retired person, travel like that is difficult. I'm in Kansas City, MO, about 1/2 the country away.
+<a name="l-39"></a><span class="tm">17:20:54</span><span class="nk"> &lt;Holgi&gt;</span> I See
+<a name="l-40"></a><span class="tm">17:21:12</span><span class="nk"> &lt;Holgi&gt;</span> to bad
+<a name="l-41"></a><span class="tm">17:21:12</span><span class="nk"> &lt;LWFinger&gt;</span> This is a big country.
+<a name="l-42"></a><span class="tm">17:21:26</span><span class="nk"> &lt;LWFinger&gt;</span> Yes, it is too bad.
+<a name="l-43"></a><span class="tm">17:21:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> I'll be in Prague in October
+<a name="l-44"></a><span class="tm">17:22:38 </span><span class="nka">* Holgi</span> <span class="ac">not</span>
+<a name="l-45"></a><span class="tm">17:22:46</span><span class="nk"> &lt;LWFinger&gt;</span> That is a nice city. I hope you don't have to work too hard.
+<a name="l-46"></a><span class="tm">17:23:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> openSUSE conference there will be some work and some fun
+<a name="l-47"></a><span class="tm">17:23:35</span><span class="nk"> &lt;LWFinger&gt;</span> Good!
+<a name="l-48"></a><span class="tm">17:24:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> I might be on vacation in 14d from now
+<a name="l-49"></a><span class="tm">17:25:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> so what about 2012-08-09 for next meeting?
+<a name="l-50"></a><span class="tm">17:25:54</span><span class="nk"> &lt;LWFinger&gt;</span> I will not be available from July 26 till August 7. The 9th would be good.
+<a name="l-51"></a><span class="tm">17:26:15</span><span class="nk"> &lt;Holgi&gt;</span> I will be on vacation after you
+<a name="l-52"></a><span class="tm">17:27:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> If I understood roadmap planning correctly, august is supposed to be a quiet months with all those vacations
+<a name="l-53"></a><span class="tm">17:27:52</span><span class="nk"> &lt;Holgi&gt;</span> so meet in sept then?
+<a name="l-54"></a><span class="tm">17:28:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> we can have the meeting on 2012-08-09 and then meet 2-3 weeks after it
+<a name="l-55"></a><span class="tm">17:28:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> it still is an important time for testing
+<a name="l-56"></a><span class="tm">17:28:51</span><span class="nk"> &lt;LWFinger&gt;</span> That is OK with me, and we certainly need the testing.
+<a name="l-57"></a><span class="tm">17:29:13</span><span class="nk"> &lt;Holgi&gt;</span> ok. I'm just not sure if I will join on the 9the
+<a name="l-58"></a><span class="tm">17:30:07</span><span class="nk"> &lt;LWFinger&gt;</span> We can hope that meeting will be as uneventful as today.
+<a name="l-59"></a><span class="tm">17:30:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> yep. likely will
+<a name="l-60"></a><span class="tm">17:30:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">next meeting 2012-08-09 17:00 UTC</span>
+<a name="l-61"></a><span class="tm">17:30:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-62"></a><span class="tm">17:31:00</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">Holgi:</span> You can do as tigerfoot has done and post anything you want us to see on the wiki.
+<a name="l-63"></a><span class="tm">17:31:26</span><span class="nk"> &lt;Holgi&gt;</span> yes
+<a name="l-64"></a><span class="tm">17:31:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> I submitted a session to the openSUSE conference about how to improve development of openSUSE-Factory
+<a name="l-65"></a><span class="tm">17:32:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> as BoF/discussion
+<a name="l-66"></a><span class="tm">17:32:36</span><span class="nk"> &lt;LWFinger&gt;</span> What ideas do you have?
+<a name="l-67"></a><span class="tm">17:34:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> having a staging area, where automated tests are run on submissions
+<a name="l-68"></a><span class="tm">17:35:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> if tests pass, packages can move to the more stable Factory area
+<a name="l-69"></a><span class="tm">17:35:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> and if tests fail, things have to be fixed first
+<a name="l-70"></a><span class="tm">17:35:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> (either the packages or the tests)
+<a name="l-71"></a><span class="tm">17:36:19</span><span class="nk"> &lt;LWFinger&gt;</span> I see how that would get feedback to the dev earlier. Would it save build time as well?
+<a name="l-72"></a><span class="tm">17:36:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> it might
+<a name="l-73"></a><span class="tm">17:36:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> but it could also need extra build power
+<a name="l-74"></a><span class="tm">17:37:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> to build dependent packages in the staging area
+<a name="l-75"></a><span class="tm">17:37:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> so that a new gcc would show its effects
+<a name="l-76"></a><span class="tm">17:37:26</span><span class="nk"> &lt;LWFinger&gt;</span> Am I correct that build capacity is rate-limiting?
+<a name="l-77"></a><span class="tm">17:37:55 </span><span class="nka">* Creatura85</span> <span class="ac">says good evening</span>
+<a name="l-78"></a><span class="tm">17:38:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> there is some way to prioritize in OBS. e.g. armv5 gets less builds than armv7 for that reason
+<a name="l-79"></a><span class="tm">17:38:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> and there is a cap on the number of workers
+<a name="l-80"></a><span class="tm">17:38:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> from the hardware
+<a name="l-81"></a><span class="tm">17:38:31</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> pong
+<a name="l-82"></a><span class="tm">17:38:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Creatura85:</span> good evening. did you test 12.2-RC1 ?
+<a name="l-83"></a><span class="tm">17:39:01</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> yes
+<a name="l-84"></a><span class="tm">17:39:14</span><span class="nk"> &lt;Creatura85&gt;</span> managed to upgrade from beta to rc1 without any problems
+<a name="l-85"></a><span class="tm">17:39:33</span><span class="nk"> &lt;Creatura85&gt;</span> 1500 + packages got upgraded
+<a name="l-86"></a><span class="tm">17:39:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> which is probably everything
+<a name="l-87"></a><span class="tm">17:40:21</span><span class="nk"> &lt;LWFinger&gt;</span> Was that with zypper dup, or with booting NET or DVD?
+<a name="l-88"></a><span class="tm">17:41:09</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> yes all :)
+<a name="l-89"></a><span class="tm">17:41:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> zypper up ?
+<a name="l-90"></a><span class="tm">17:41:32</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> zypper dup with the oss, non-oss repos enabled
+<a name="l-91"></a><span class="tm">17:41:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> zypper dup can be a bit more dangerous
+<a name="l-92"></a><span class="tm">17:41:56</span><span class="nk"> &lt;Creatura85&gt;</span> someone said something about non-oss having a separate repo ?
+<a name="l-93"></a><span class="tm">17:42:01</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> not this time
+<a name="l-94"></a><span class="tm">17:42:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> good
+<a name="l-95"></a><span class="tm">17:42:30</span><span class="nk"> &lt;Creatura85&gt;</span> oss and non-oss are the main repos
+<a name="l-96"></a><span class="tm">17:42:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> you could get away without non-oss
+<a name="l-97"></a><span class="tm">17:42:54</span><span class="nk"> &lt;LWFinger&gt;</span> Good that you tested that route. I used NET to upgrade. As I had been following factory-snapshot, only ~50 packages.
+<a name="l-98"></a><span class="tm">17:43:16</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">LWFinger:</span> factory and 12.2 are separate now as far as i know
+<a name="l-99"></a><span class="tm">17:43:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> but factory-snapshot might contain 12.2-RC1
+<a name="l-100"></a><span class="tm">17:43:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> atm
+<a name="l-101"></a><span class="tm">17:43:58</span><span class="nk"> &lt;Creatura85&gt;</span> bootloader looks ok, the issue with the first login attempt still is around at kde login prompt
+<a name="l-102"></a><span class="tm">17:44:07</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> could be
+<a name="l-103"></a><span class="tm">17:44:18</span><span class="nk"> &lt;Creatura85&gt;</span> the software module does not crash now
+<a name="l-104"></a><span class="tm">17:44:20</span><span class="nk"> &lt;Creatura85&gt;</span> its fixed
+<a name="l-105"></a><span class="tm">17:44:45</span><span class="nk"> &lt;LWFinger&gt;</span> That first login problem is fixed for me. Curious.
+<a name="l-106"></a><span class="tm">17:46:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> if that is our worst bug, we will be fine :D
+<a name="l-107"></a><span class="tm">17:47:06</span><span class="nk"> &lt;LWFinger&gt;</span> At least networking looks solid. With that, updates are OK.
+<a name="l-108"></a><span class="tm">17:47:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> I already saw several bigger things rejected for 12.2 - they might still come later as updates, but it should make for a solid 12.2-GM
+<a name="l-109"></a><span class="tm">17:48:11</span><span class="nk"> &lt;Creatura85&gt;</span> <span class="hi">bmwiedemann:</span> that sounds good to me
+<a name="l-110"></a><span class="tm">17:48:23</span><span class="nk"> &lt;Creatura85&gt;</span> stability is the most import part now
+<a name="l-111"></a><span class="tm">17:48:48</span><span class="nk"> &lt;Creatura85&gt;</span> *important
+<a name="l-112"></a><span class="tm">17:49:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> there is usability, security... they compete sometimes
+<a name="l-113"></a><span class="tm">17:51:04</span><span class="nk"> &lt;a-865&gt;</span> no installs in weeks, just updating to RC1 on most machines bmwiedemann
+<a name="l-114"></a><span class="tm">17:51:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> so updates apparently work well now
+<a name="l-115"></a><span class="tm">17:51:55</span><span class="nk"> &lt;a-865&gt;</span> except none of RC1 is available on mirrors except to zypper and YaST
+<a name="l-116"></a><span class="tm">17:52:09</span><span class="nk"> &lt;a-865&gt;</span> can't look to see what's new
+<a name="l-117"></a><span class="tm">17:52:33</span><span class="nk"> &lt;a-865&gt;</span> filed bnc 772151 some hours ago
+<a name="l-118"></a><span class="tm">17:52:42</span><span class="nk"> &lt;a-865&gt;</span> and OF 313803
+<a name="l-119"></a><span class="tm">17:54:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">a-865:</span> http://ftp5.gwdg.de/pub/linux/suse/opensuse/factory-snapshot/repo/oss/ should contain a mirror of RC1
+<a name="l-120"></a><span class="tm">17:55:09</span><span class="nk"> &lt;a-865&gt;</span> My repos are set to distribution/12.2, and work fine with zypper and YaST NAICT
+<a name="l-121"></a><span class="tm">17:56:04</span><span class="nk"> &lt;a-865&gt;</span> plus updates/12.2
+<a name="l-122"></a><span class="tm">17:57:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">a-865:</span> yes, because /distribution/12.2/repo/oss/ redirects to factory-snapshot/repo/oss/ (until 12.2 is finished)
+<a name="l-123"></a><span class="tm">17:58:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> you can see that with curl -I http://download.opensuse.org/distribution/12.2/repo/oss/
+<a name="l-124"></a><span class="tm">18:01:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">a-865:</span> for the fontconfig problem. did you try placing changes in /etc/font/local.conf ? it seems to be there for user changes
+<a name="l-125"></a><span class="tm">18:03:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> do we have other proposals on how to make Factory better?
+<a name="l-126"></a><span class="tm">18:04:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> (or at least the Milestones and other releases, which is what matters for most users)
+<a name="l-127"></a><span class="tm">18:07:16</span><span class="nk"> &lt;Creatura85&gt;</span> no i have no idea at the moment
+<a name="l-128"></a><span class="tm">18:07:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> then we should close today's meeting
+<a name="l-129"></a><span class="tm">18:07:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> unless you have other things to discuss
+<a name="l-130"></a><span class="tm">18:07:48</span><span class="nk"> &lt;Creatura85&gt;</span> waiting for RC2 bmwiedemann :)
+<a name="l-131"></a><span class="tm">18:08:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

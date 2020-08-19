@@ -1,0 +1,621 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-gnome log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">13:04:18</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE GNOME Meeting</span>
+<a name="l-2"></a><span class="tm">13:04:18</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Fri Aug  6 13:04:18 2010 UTC.  The chair is metalgod. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">13:04:18</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">13:04:39</span><span class="nk"> &lt;DimStar&gt;</span> well, I can give it a try...
+<a name="l-5"></a><span class="tm">13:04:45</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action  </span><span class="cmdline">openSUSE 11.3 Release: A summary and discussion of what went right/wrong</span>
+<a name="l-6"></a><span class="tm">13:04:58</span><span class="nk"> &lt;DimStar&gt;</span> interestingly enough the 'run back' on the thread was rather low. Only a handful of replies comming in.
+<a name="l-7"></a><span class="tm">13:05:32</span><span class="nk"> &lt;DimStar&gt;</span> The general tone was rather positive, except vuntz ranting that we started too late with features. And the 2nd negative is that we get way too late serious testers / bugreportes on board
+<a name="l-8"></a><span class="tm">13:05:58</span><span class="nk"> &lt;metalgod&gt;</span> i have to agree with the QA part
+<a name="l-9"></a><span class="tm">13:06:03</span><span class="nk"> &lt;metalgod&gt;</span> but it's our fault
+<a name="l-10"></a><span class="tm">13:06:36</span><span class="nk"> &lt;DimStar&gt;</span> nobody else was to be blamed... it's one of the parts we, as gnome team, did bad.. be it testing or attarcting teters
+<a name="l-11"></a><span class="tm">13:06:47</span><span class="nk"> &lt;metalgod&gt;</span> how can we improve that for 11.4 ?
+<a name="l-12"></a><span class="tm">13:06:59</span><span class="nk"> &lt;psankar&gt;</span> bribe badshah400 with some t-shirts ? ;-)
+<a name="l-13"></a><span class="tm">13:07:17</span><span class="nk"> &lt;badshah400&gt;</span> psankar, :)
+<a name="l-14"></a><span class="tm">13:07:38</span><span class="nk"> &lt;DimStar&gt;</span> that is certainly something we NEED: badshah400 did a great job and needs recognition for this job.... vuntz? anything you can do there?
+<a name="l-15"></a><span class="tm">13:07:39</span><span class="nk"> &lt;captain_magnus&gt;</span> I did experince bugs but didn't report one single issue
+<a name="l-16"></a><span class="tm">13:07:55</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">captain_magnus:</span> that fine and valid: as long as you go on and fix the bugs
+<a name="l-17"></a><span class="tm">13:07:57</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> I need an action item to investigate this, indeed
+<a name="l-18"></a><span class="tm">13:08:04</span><span class="nk"> &lt;captain_magnus&gt;</span> My problem was that I was too busy with other things :-(
+<a name="l-19"></a><span class="tm">13:08:31</span><span class="nk"> &lt;metalgod&gt;</span> i think we should somewhat motivate users to use G:F a little early or test Milestones
+<a name="l-20"></a><span class="tm">13:08:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz investigate how to get some goodies for highly active contributors</span>
+<a name="l-21"></a><span class="tm">13:08:34</span><span class="nk"> &lt;badshah400&gt;</span> DimStar, thanks
+<a name="l-22"></a><span class="tm">13:09:11</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> it's better to have people test milestones than G:F
+<a name="l-23"></a><span class="tm">13:09:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> G:F is moving fast at times
+<a name="l-24"></a><span class="tm">13:09:20</span><span class="nk"> &lt;metalgod&gt;</span> yes
+<a name="l-25"></a><span class="tm">13:09:26</span><span class="nk"> &lt;vuntz&gt;</span> so not the best option for testers
+<a name="l-26"></a><span class="tm">13:09:26</span><span class="nk"> &lt;DimStar&gt;</span> other than that, I think we really let go on 'formal communication'. nobody cared for organized meetings.
+<a name="l-27"></a><span class="tm">13:09:43</span><span class="nk"> &lt;psankar&gt;</span> 2.30 testing on 11.3 is a good move
+<a name="l-28"></a><span class="tm">13:09:43 </span><span class="nka">* vuntz</span> <span class="ac">wonders if bugbot took the #action he wrote</span>
+<a name="l-29"></a><span class="tm">13:09:52</span><span class="nk"> &lt;mw_&gt;</span> the meetings ain't run like they used to be :)
+<a name="l-30"></a><span class="tm">13:09:53</span><span class="nk"> &lt;psankar&gt;</span> vuntz, i guess only metalgod can command it
+<a name="l-31"></a><span class="tm">13:10:04</span><span class="nk"> &lt;psankar&gt;</span> hey mw_
+<a name="l-32"></a><span class="tm">13:10:07</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">metalgod:</span> #chair vuntz
+<a name="l-33"></a><span class="tm">13:10:08</span><span class="nk"> &lt;badshah400&gt;</span> one thing I believe would help testers is to have milestone to milestone goals for GNOME
+<a name="l-34"></a><span class="tm">13:10:13</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz investigate how to get some goodies for highly active contributors</span>
+<a name="l-35"></a><span class="tm">13:10:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> do you have any example of how this would work?
+<a name="l-36"></a><span class="tm">13:10:46</span><span class="nk"> &lt;metalgod&gt;</span> well one thing i've noticed is that there's lot's of users testing fedora beta
+<a name="l-37"></a><span class="tm">13:10:49</span><span class="nk"> &lt;metalgod&gt;</span> and ubuntu beta
+<a name="l-38"></a><span class="tm">13:10:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> ie, what kind of goals?
+<a name="l-39"></a><span class="tm">13:10:56</span><span class="nk"> &lt;metalgod&gt;</span> but not many opensuse beta/milestones
+<a name="l-40"></a><span class="tm">13:11:16</span><span class="nk"> &lt;badshah400&gt;</span> vuntz, I am sorry, I meant like having a summary of changes
+<a name="l-41"></a><span class="tm">13:11:19</span><span class="nk"> &lt;metalgod&gt;</span> i'm not saying that opensuse milestones are broken because as you know are not :)
+<a name="l-42"></a><span class="tm">13:11:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> are you okay to make the meetings happen during this cycle?
+<a name="l-43"></a><span class="tm">13:11:30</span><span class="nk"> &lt;psankar&gt;</span> vuntz, yes. I am ready to.
+<a name="l-44"></a><span class="tm">13:11:37</span><span class="nk"> &lt;captain_magnus&gt;</span> <span class="hi">metalgod:</span> Do you actually run with the milestones/betas?
+<a name="l-45"></a><span class="tm">13:11:40</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> sweet. DimStar will be happy :-)
+<a name="l-46"></a><span class="tm">13:11:43</span><span class="nk"> &lt;badshah400&gt;</span> I think the thing missing is developer-tester synchronisation or something like it, perhaps I cant explain clearly
+<a name="l-47"></a><span class="tm">13:11:50</span><span class="nk"> &lt;metalgod&gt;</span> i think we should really highlight some features to motive users to test it
+<a name="l-48"></a><span class="tm">13:11:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> that's a good point. Summary of changes.
+<a name="l-49"></a><span class="tm">13:11:52</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">captain_magnus:</span> yes
+<a name="l-50"></a><span class="tm">13:11:54</span><span class="nk"> &lt;captain_magnus&gt;</span> <span class="hi">metalgod:</span> Or upgrade from factory as I do?
+<a name="l-51"></a><span class="tm">13:12:11</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">captain_magnus:</span> usually i do a clean install around M6
+<a name="l-52"></a><span class="tm">13:12:20</span><span class="nk"> &lt;metalgod&gt;</span> that's why i'm using upstart :)
+<a name="l-53"></a><span class="tm">13:12:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> I would expect that having regular meetings to explain what's going on would actually help for this. What do you think?
+<a name="l-54"></a><span class="tm">13:12:34</span><span class="nk"> &lt;badshah400&gt;</span> but suppose a developer points out a important changes [and makes it verbose], then that would help testers see if those changes break things or not
+<a name="l-55"></a><span class="tm">13:12:51</span><span class="nk"> &lt;badshah400&gt;</span> vuntz, yes that would definitely help
+<a name="l-56"></a><span class="tm">13:12:52</span><span class="nk"> &lt;metalgod&gt;</span> i have to agree with badshah400 on that
+<a name="l-57"></a><span class="tm">13:13:07</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> I think it's the best way to "force" ourselves to summarize changes
+<a name="l-58"></a><span class="tm">13:13:11</span><span class="nk"> &lt;metalgod&gt;</span> highlight features motivates users to install a milestone
+<a name="l-59"></a><span class="tm">13:13:21</span><span class="nk"> &lt;badshah400&gt;</span> but having a thread on the mailing-list would too
+<a name="l-60"></a><span class="tm">13:13:26</span><span class="nk"> &lt;metalgod&gt;</span> like "GNOME ships blah for the first time... please test"
+<a name="l-61"></a><span class="tm">13:13:28</span><span class="nk"> &lt;vuntz&gt;</span> I don't think we're good at documenting stuff with no social pressure ;-)
+<a name="l-62"></a><span class="tm">13:13:28</span><span class="nk"> &lt;henne&gt;</span> i would say: invest into the milestone announcements
+<a name="l-63"></a><span class="tm">13:13:29</span><span class="nk"> &lt;badshah400&gt;</span> metalgod, right
+<a name="l-64"></a><span class="tm">13:13:35</span><span class="nk"> &lt;psankar&gt;</span> metalgod, so you can add a #action on me to schedule meetings regularly (/me grins at FunkyPenguin who said it will be only once ;-0 )
+<a name="l-65"></a><span class="tm">13:13:49</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">on me to schedule meetings regularly</span>
+<a name="l-66"></a><span class="tm">13:13:58</span><span class="nk"> &lt;DimStar&gt;</span> agreed on that: we should also all blog more about things we did like that... the NM0.8.1 update for example got quiet some users as I've seen... new features are attracting.
+<a name="l-67"></a><span class="tm">13:14:03</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> ;)
+<a name="l-68"></a><span class="tm">13:14:07</span><span class="nk"> &lt;psankar&gt;</span> metalgod, ;-)
+<a name="l-69"></a><span class="tm">13:14:17</span><span class="nk"> &lt;captain_magnus&gt;</span> <span class="hi">DimStar:</span> +1
+<a name="l-70"></a><span class="tm">13:14:18</span><span class="nk"> &lt;henne&gt;</span> great milestone announcements will attract testers. more than meetings i bet :)
+<a name="l-71"></a><span class="tm">13:14:21</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">DimStar:</span> yeah agreed... too bad i'm too lazy
+<a name="l-72"></a><span class="tm">13:14:26</span><span class="nk"> &lt;metalgod&gt;</span> tweeting too
+<a name="l-73"></a><span class="tm">13:14:29</span><span class="nk"> &lt;captain_magnus&gt;</span> <span class="hi">DimStar:</span> i'm using your branch
+<a name="l-74"></a><span class="tm">13:14:36</span><span class="nk"> &lt;metalgod&gt;</span> (we have a opensuse-gnome account on tweeter)
+<a name="l-75"></a><span class="tm">13:14:38</span><span class="nk"> &lt;FunkyPenguin&gt;</span> psankar, i dont recall saying that ;)
+<a name="l-76"></a><span class="tm">13:14:41</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">henne:</span> oh, the meetings is the place where we can collect the list of changes. And then we can put that in announcements
+<a name="l-77"></a><span class="tm">13:14:58</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">vuntz:</span> sure :)
+<a name="l-78"></a><span class="tm">13:14:58</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">henne:</span> i loved your announcement on M2 or M3
+<a name="l-79"></a><span class="tm">13:15:21</span><span class="nk"> &lt;metalgod&gt;</span> ok people can we move to the next topic ?
+<a name="l-80"></a><span class="tm">13:15:39</span><span class="nk"> &lt;vuntz&gt;</span> oh, we can abuse the opensuse-gnome account. Could we maybe have a bot here that would be able to post tweets when we ask it to do so?
+<a name="l-81"></a><span class="tm">13:15:39</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod:</span> ok with me
+<a name="l-82"></a><span class="tm">13:15:44</span><span class="nk"> &lt;metalgod&gt;</span> so we need to find a way to attract more powerusers to test Milestones and GNOME:Factory
+<a name="l-83"></a><span class="tm">13:15:45</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">metalgod:</span> thanks. they did cost me half a day to day. so shouldnt take you guys more then 2 hours to have a great GNOME paragraph
+<a name="l-84"></a><span class="tm">13:15:59</span><span class="nk"> &lt;metalgod&gt;</span> to avoid bugs on final
+<a name="l-85"></a><span class="tm">13:16:39</span><span class="nk"> &lt;metalgod&gt;</span> about late features DimStar... anything to say ?
+<a name="l-86"></a><span class="tm">13:16:43</span><span class="nk"> &lt;psankar&gt;</span> metalgod, just one more comment.
+<a name="l-87"></a><span class="tm">13:16:48</span><span class="nk"> &lt;metalgod&gt;</span> go ahead
+<a name="l-88"></a><span class="tm">13:17:23</span><span class="nk"> &lt;psankar&gt;</span> metalgod, if we have a wiki page explaining how to test gnome:factory in a vm, it will be good. During 11.2, I could never get vmware working, kvm was cmdline driven - didnt want to learn etc,
+<a name="l-89"></a><span class="tm">13:17:36</span><span class="nk"> &lt;DimStar&gt;</span> late features: well: I can only agree with vuntz. There was no clear distrinctions what we want to do besides getting the latest version of every gnome package in.
+<a name="l-90"></a><span class="tm">13:17:57</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> sounds great... also building G:F on susestudio
+<a name="l-91"></a><span class="tm">13:18:15</span><span class="nk"> &lt;metalgod&gt;</span> volunteers for psankar proposal ?
+<a name="l-92"></a><span class="tm">13:18:27</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">DimStar:</span> I guess we can discuss how to improve that significantly when we discuss point 5 today :)
+<a name="l-93"></a><span class="tm">13:18:33</span><span class="nk"> &lt;vuntz&gt;</span> wait, wait. I feel we have many good points that should be recorded in the minutes with #info :-)
+<a name="l-94"></a><span class="tm">13:18:47</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> can you do #chair joe
+<a name="l-95"></a><span class="tm">13:18:51</span><span class="nk"> &lt;metalgod&gt;</span> sure
+<a name="l-96"></a><span class="tm">13:18:52</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">metalgod:</span> I think I can have a look at SuSE studio... but we better get a kiwi config inside OBS... (studio is too manual for this)
+<a name="l-97"></a><span class="tm">13:18:53</span><span class="nk"> &lt;vuntz&gt;</span> err, #chair vuntz
+<a name="l-98"></a><span class="tm">13:18:59</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#chair </span><span class="cmdline">vuntz</span>
+<a name="l-99"></a><span class="tm">13:18:59</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: metalgod vuntz
+<a name="l-100"></a><span class="tm">13:19:20</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">DimStar:</span> i guess we need to start packaging new stuff early
+<a name="l-101"></a><span class="tm">13:19:34</span><span class="nk"> &lt;psankar&gt;</span> Now is the time everyone waits eagerly to see what vuntz will say to himself ;-)
+<a name="l-102"></a><span class="tm">13:19:35</span><span class="nk"> &lt;metalgod&gt;</span> deja-dup and rygel could be packaged a few months ago
+<a name="l-103"></a><span class="tm">13:19:37</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we should use meetings to collect list of changes in GNOME, as a basis for GNOME paragraph in milestones announcements</span>
+<a name="l-104"></a><span class="tm">13:19:46</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">metalgod:</span> I actually believe we did a good job with keeping up-to-date with packages...
+<a name="l-105"></a><span class="tm">13:19:57</span><span class="nk"> &lt;metalgod&gt;</span> yes we did thanks to you DimStar
+<a name="l-106"></a><span class="tm">13:19:59</span><span class="nk"> &lt;DimStar&gt;</span> but NEW things also need to be brought to attention.
+<a name="l-107"></a><span class="tm">13:20:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we should be more active in promoting our work, via the opensuse-gnome identi.ca/twitter account and blogs</span>
+<a name="l-108"></a><span class="tm">13:20:36</span><span class="nk"> &lt;metalgod&gt;</span> ok so what if we do a research and find a few packages to package for 11.4 ?
+<a name="l-109"></a><span class="tm">13:20:53</span><span class="nk"> &lt;metalgod&gt;</span> what people want and what is useful and what we can remove ?
+<a name="l-110"></a><span class="tm">13:21:04</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> I have a list of stuff to packages on the old wiki...
+<a name="l-111"></a><span class="tm">13:21:05</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod:</span> good idea
+<a name="l-112"></a><span class="tm">13:21:15</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> i'll take that action if you don't mind
+<a name="l-113"></a><span class="tm">13:21:27</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> I think you brought most of this in 'features' already?
+<a name="l-114"></a><span class="tm">13:21:31</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">metalgod find new packages for 11.4, remove old</span>
+<a name="l-115"></a><span class="tm">13:21:40 </span><span class="nka">* DimStar</span> <span class="ac">is ashamed for not looking regularly into openfate</span>
+<a name="l-116"></a><span class="tm">13:21:50</span><span class="nk"> &lt;vuntz&gt;</span> fwiw, since 11.4 will go with 2.32, we'll have quite a few months where things will be quieter than usual, packaging-wise. So it's a good opportunity to add missing apps
+<a name="l-117"></a><span class="tm">13:21:50</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-118"></a><span class="tm">13:22:04</span><span class="nk"> &lt;metalgod&gt;</span> can we move to next topic ?
+<a name="l-119"></a><span class="tm">13:22:07</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> anything to say ?
+<a name="l-120"></a><span class="tm">13:22:46</span><span class="nk"> &lt;vuntz&gt;</span> nothing more to add (I feel we said too much at the same time, so we need good minutes to capture all this)
+<a name="l-121"></a><span class="tm">13:22:56</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-122"></a><span class="tm">13:23:16</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">GUADEC Update (Vuntz and DimStar)</span>
+<a name="l-123"></a><span class="tm">13:23:27</span><span class="nk"> &lt;metalgod&gt;</span> i'm missing someone ?
+<a name="l-124"></a><span class="tm">13:23:43</span><span class="nk"> &lt;psankar&gt;</span> metalgod, I guess it is fine
+<a name="l-125"></a><span class="tm">13:24:08</span><span class="nk"> &lt;metalgod&gt;</span> so what guadec brought to us except we won't have GNOME 3.0 in September ?
+<a name="l-126"></a><span class="tm">13:24:13</span><span class="nk"> &lt;metalgod&gt;</span> :)
+<a name="l-127"></a><span class="tm">13:24:30</span><span class="nk"> &lt;vuntz&gt;</span> well, I guess it was useful to see what's going to happen...
+<a name="l-128"></a><span class="tm">13:24:34</span><span class="nk"> &lt;vuntz&gt;</span> is there any specific question?
+<a name="l-129"></a><span class="tm">13:24:37</span><span class="nk"> &lt;psankar&gt;</span> metalgod, that is the big news :-)
+<a name="l-130"></a><span class="tm">13:25:00</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> anyone interested in opensuse or questions about OBS ?
+<a name="l-131"></a><span class="tm">13:25:18</span><span class="nk"> &lt;DimStar&gt;</span> guadec was a good opportunity to see a bit 'behind' the scenes and I think / hope that we managed to strengthen our links also inside opensuse-gnome a little bit, as we had several people from our team there.
+<a name="l-132"></a><span class="tm">13:25:26</span><span class="nk"> &lt;vuntz&gt;</span> I felt opensuse was more visible than in the past, so that was good
+<a name="l-133"></a><span class="tm">13:25:43</span><span class="nk"> &lt;vuntz&gt;</span> and we had stuffed geekos to give away. People loved them
+<a name="l-134"></a><span class="tm">13:25:44</span><span class="nk"> &lt;metalgod&gt;</span> i haven't quit about bringing opensuse to gnome developers
+<a name="l-135"></a><span class="tm">13:26:09</span><span class="nk"> &lt;metalgod&gt;</span> we should blog more about jhbuild experience and general package manager stuff
+<a name="l-136"></a><span class="tm">13:26:17</span><span class="nk"> &lt;psankar&gt;</span> was there a openSUSE talk of somekind ?
+<a name="l-137"></a><span class="tm">13:26:36</span><span class="nk"> &lt;captain_magnus&gt;</span> <span class="hi">metalgod:</span> Yes I agree.... Too bad vuntz doesn't :-/
+<a name="l-138"></a><span class="tm">13:26:49</span><span class="nk"> &lt;metalgod&gt;</span> yes
+<a name="l-139"></a><span class="tm">13:27:10</span><span class="nk"> &lt;metalgod&gt;</span> our package manager is top quality but people still thinks apt is the best
+<a name="l-140"></a><span class="tm">13:27:12</span><span class="nk"> &lt;metalgod&gt;</span> same for yum
+<a name="l-141"></a><span class="tm">13:27:15</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> there's no real downstream talk at guadec
+<a name="l-142"></a><span class="tm">13:27:23</span><span class="nk"> &lt;psankar&gt;</span> vuntz, okay.
+<a name="l-143"></a><span class="tm">13:27:32</span><span class="nk"> &lt;vuntz&gt;</span> although I think BinLi1 mentioned obs in some slides
+<a name="l-144"></a><span class="tm">13:27:37</span><span class="nk"> &lt;mmeeks&gt;</span> <span class="hi">vuntz:</span> argh - I am fixing bugs from time to time,
+<a name="l-145"></a><span class="tm">13:27:42</span><span class="nk"> &lt;metalgod&gt;</span> if people realize that we removed most of the susisms from the GNOME livecd
+<a name="l-146"></a><span class="tm">13:27:44</span><span class="nk"> &lt;mmeeks&gt;</span> <span class="hi">vuntz:</span> I just committed another set of fixes yesterday
+<a name="l-147"></a><span class="tm">13:27:49</span><span class="nk"> &lt;mmeeks&gt;</span> <span class="hi">vuntz:</span> OTOH - that thing is a huge time-sink.
+<a name="l-148"></a><span class="tm">13:27:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">captain_magnus:</span> nod. I'm not a good blogger. I hate that :-)
+<a name="l-149"></a><span class="tm">13:27:58</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> i read jimmac's post about GUADEC http://jimmac.musichall.cz/log/?p=1035
+<a name="l-150"></a><span class="tm">13:27:58</span><span class="nk"> &lt;mmeeks&gt;</span> <span class="hi">vuntz:</span> what do you want from me - blood ? :-)
+<a name="l-151"></a><span class="tm">13:28:27</span><span class="nk"> &lt;badshah400&gt;</span> is there some benefit from the 3.0 design that could be put in for 2.32 or is it really too different/drastic?
+<a name="l-152"></a><span class="tm">13:28:35</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">mmeeks:</span> dude, you're still the bonobo maintainer. You're a superhero! PK has to be easy! ;-)
+<a name="l-153"></a><span class="tm">13:28:43</span><span class="nk"> &lt;mmeeks&gt;</span> hah
+<a name="l-154"></a><span class="tm">13:28:45</span><span class="nk"> &lt;captain_magnus&gt;</span> <span class="hi">vuntz:</span> It's not about many blog posts... It's about you talking about openSUSE
+<a name="l-155"></a><span class="tm">13:28:46</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> that's the next topic
+<a name="l-156"></a><span class="tm">13:29:00</span><span class="nk"> &lt;vuntz&gt;</span> ah, so I'll wait for the next topic, then :-)
+<a name="l-157"></a><span class="tm">13:29:00</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">mmeeks:</span> i'm loosing my head with PK too
+<a name="l-158"></a><span class="tm">13:29:01</span><span class="nk"> &lt;mmeeks&gt;</span> The PK daemon is even more 'optimistic' about threading than bonobo was (sad to say)
+<a name="l-159"></a><span class="tm">13:29:06</span><span class="nk"> &lt;metalgod&gt;</span> i share your pain
+<a name="l-160"></a><span class="tm">13:29:08</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod:</span> ok
+<a name="l-161"></a><span class="tm">13:29:30</span><span class="nk"> &lt;mmeeks&gt;</span> <span class="hi">metalgod:</span> sure, OTOH - it's an awesome concept &amp; wonderful to have so ... ;-)
+<a name="l-162"></a><span class="tm">13:29:42</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">mmeeks:</span> doing apt-rpm backend isn't trust me ;)
+<a name="l-163"></a><span class="tm">13:29:44</span><span class="nk"> &lt;mmeeks&gt;</span> <span class="hi">metalgod:</span> if you are getting a series of crashers; try master ...
+<a name="l-164"></a><span class="tm">13:30:06</span><span class="nk"> &lt;metalgod&gt;</span> ok sorry
+<a name="l-165"></a><span class="tm">13:30:07</span><span class="nk"> &lt;mmeeks&gt;</span> <span class="hi">metalgod:</span> interesting ! why're you working on that ? :-)
+<a name="l-166"></a><span class="tm">13:30:09</span><span class="nk"> &lt;metalgod&gt;</span> next topic
+<a name="l-167"></a><span class="tm">13:30:17</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">mmeeks:</span> the distro i work for uses apt-rpm
+<a name="l-168"></a><span class="tm">13:30:36</span><span class="nk"> &lt;metalgod&gt;</span> API is horrible (c++) and uses lua embedded bindings
+<a name="l-169"></a><span class="tm">13:31:20</span><span class="nk"> &lt;metalgod&gt;</span> ok vuntz and DimStar can we move ?
+<a name="l-170"></a><span class="tm">13:31:22</span><span class="nk"> &lt;psankar&gt;</span> i think we are getting a little distracted.
+<a name="l-171"></a><span class="tm">13:31:45</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">Current Repositories organization (Vuntz) (how to get GNOME 2.30 packages in 11.2, 11.3 etc.)</span>
+<a name="l-172"></a><span class="tm">13:31:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> I'm not sure what kind of really relevant things I can say about guadec, so moving on is good
+<a name="l-173"></a><span class="tm">13:32:01</span><span class="nk"> &lt;vuntz&gt;</span> this one is easy
+<a name="l-174"></a><span class="tm">13:32:04</span><span class="nk"> &lt;metalgod&gt;</span> i think captain_magnus and DimStar can also talk about this one
+<a name="l-175"></a><span class="tm">13:32:26</span><span class="nk"> &lt;vuntz&gt;</span> we have GNOME:STABLE:2.30 for 11.2 and 11.3
+<a name="l-176"></a><span class="tm">13:32:36</span><span class="nk"> &lt;vuntz&gt;</span> and 11.2 users should make sure to also use GNOME:Backports:2.30
+<a name="l-177"></a><span class="tm">13:33:28</span><span class="nk"> &lt;vuntz&gt;</span> the only feedback I remember about G:S:2.30 is a gdm issue
+<a name="l-178"></a><span class="tm">13:33:30</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> GNOME:STABLE:3.0 is too much for 11.2 users ? :)
+<a name="l-179"></a><span class="tm">13:33:37</span><span class="nk"> &lt;DimStar&gt;</span> is tehre any way to 'enforce' such repo dependenices? Most issues we see are from missing / old pakcages
+<a name="l-180"></a><span class="tm">13:33:57</span><span class="nk"> &lt;metalgod&gt;</span> i also think we should update telepathy packages on G:F
+<a name="l-181"></a><span class="tm">13:34:12</span><span class="nk"> &lt;vuntz&gt;</span> wait, wait. Let's stay on 2.30 for now
+<a name="l-182"></a><span class="tm">13:34:14</span><span class="nk"> &lt;metalgod&gt;</span> it brings new features and doesn't mess with empathy
+<a name="l-183"></a><span class="tm">13:34:16</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">metalgod:</span> G:F is catching up... vuntz was reviewinng most of my SRs last night
+<a name="l-184"></a><span class="tm">13:34:32</span><span class="nk"> &lt;vuntz&gt;</span> did someone fix the gdm issue?
+<a name="l-185"></a><span class="tm">13:34:44</span><span class="nk"> &lt;vuntz&gt;</span> (I posted instructions in a mail, iirc)
+<a name="l-186"></a><span class="tm">13:34:46</span><span class="nk"> &lt;metalgod&gt;</span> s/G:F/G:S:2.30\g
+<a name="l-187"></a><span class="tm">13:35:07</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> want to fix gdm issue ? :)
+<a name="l-188"></a><span class="tm">13:35:09</span><span class="nk"> &lt;psankar&gt;</span> vuntz, if none has looked into it. I can take it up over the weekend (gdm login err. dialog)
+<a name="l-189"></a><span class="tm">13:35:17</span><span class="nk"> &lt;metalgod&gt;</span> yay
+<a name="l-190"></a><span class="tm">13:35:18</span><span class="nk"> &lt;psankar&gt;</span> metalgod, yes . action me ;-)
+<a name="l-191"></a><span class="tm">13:35:31</span><span class="nk"> &lt;vuntz&gt;</span> see http://lists.opensuse.org/opensuse-gnome/2010-07/msg00075.html
+<a name="l-192"></a><span class="tm">13:35:32</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">psankar take care of gdm 2.30 on GNOME:STABLE:2.30</span>
+<a name="l-193"></a><span class="tm">13:36:06</span><span class="nk"> &lt;vuntz&gt;</span> except for the gdm issue, it seems G:S:2.30 is working relatively well, so I guess we could advertize it a bit more?
+<a name="l-194"></a><span class="tm">13:36:09</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">DimStar:</span> you mind if i update telepathy for 2.30 ?
+<a name="l-195"></a><span class="tm">13:36:22</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> re telepathy in G:S:2.30
+<a name="l-196"></a><span class="tm">13:36:34</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> why do you want to update the telepathy stack there?
+<a name="l-197"></a><span class="tm">13:36:46</span><span class="nk"> &lt;vuntz&gt;</span> (ie, for which features
+<a name="l-198"></a><span class="tm">13:36:51</span><span class="nk"> &lt;mmeeks&gt;</span> <span class="hi">metalgod:</span> I believe rpm itself is getting a chunk of lua stuff inside itself - at least librpm now depends on lua on some of my systems ;-)
+<a name="l-199"></a><span class="tm">13:36:55</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> easy... because i use protocols that usually gets new features and fixes
+<a name="l-200"></a><span class="tm">13:37:05 </span><span class="nka">* mmeeks</span> <span class="ac">wonders how the madness infected the lower levels of the system ...</span>
+<a name="l-201"></a><span class="tm">13:37:10</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">except for a gdm issue, G:S:2.30 is working relatively well and can be more widely advertized</span>
+<a name="l-202"></a><span class="tm">13:37:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> examples?
+<a name="l-203"></a><span class="tm">13:37:32</span><span class="nk"> &lt;mmeeks&gt;</span> "using mostly spoons - we dig a tunnel out of the city - and abandon RPM there ... ;-)"
+<a name="l-204"></a><span class="tm">13:37:50</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> well msn (yeah i know it sucks) got connection fixes and file transfers (same for gtalk)
+<a name="l-205"></a><span class="tm">13:37:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> generally, I think G:S:* should be about official GNOME only. We can have a few exceptions, but we're careful about them
+<a name="l-206"></a><span class="tm">13:38:00</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">mmeeks:</span> not the poor rpm!
+<a name="l-207"></a><span class="tm">13:38:11</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">mmeeks:</span> not sure if our rpm uses it.. it's 4.6.0
+<a name="l-208"></a><span class="tm">13:38:21</span><span class="nk"> &lt;metalgod&gt;</span> apt-rpm sucks point.
+<a name="l-209"></a><span class="tm">13:38:29</span><span class="nk"> &lt;FunkyPenguin&gt;</span> vuntz, could that gdm issue be what is causing my pain?
+<a name="l-210"></a><span class="tm">13:38:39</span><span class="nk"> &lt;mmeeks&gt;</span> <span class="hi">darix:</span> speaking of which - I need a SUSE-ist volunteer to come and talk about RPM at the MeeGo conference in Ireland - who is my man ? :-)
+<a name="l-211"></a><span class="tm">13:38:43</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> except that some of those might require a newer telepathy-glib, and this gets a bit more complex
+<a name="l-212"></a><span class="tm">13:38:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">FunkyPenguin:</span> for meego? I doubt so
+<a name="l-213"></a><span class="tm">13:39:05</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">mmeeks:</span> rudi
+<a name="l-214"></a><span class="tm">13:39:51</span><span class="nk"> &lt;FunkyPenguin&gt;</span> vuntz, but my machine is upgraded from 11.2 and using G:S:2.30
+<a name="l-215"></a><span class="tm">13:40:13</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> so if there isn't any newer telepathy-glib dependency can i start bumping telepathy-* ? i always build telepathy-butterfly for me
+<a name="l-216"></a><span class="tm">13:41:09</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-217"></a><span class="tm">13:41:11</span><span class="nk"> &lt;metalgod&gt;</span> next topic ?
+<a name="l-218"></a><span class="tm">13:41:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> well
+<a name="l-219"></a><span class="tm">13:41:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> I'd love to hear what DimStar thinks
+<a name="l-220"></a><span class="tm">13:41:33</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> making life easy for you again, huh?
+<a name="l-221"></a><span class="tm">13:41:35</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> I'm a bit reluctant to this, since then it's too easy to start updating many other things
+<a name="l-222"></a><span class="tm">13:42:33</span><span class="nk"> &lt;metalgod&gt;</span> will discuss later then
+<a name="l-223"></a><span class="tm">13:42:46</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">Update about Meego (FunkyPenguin) (FCrozat will also be pulled in to</span>
+<a name="l-224"></a><span class="tm">13:42:47</span><span class="nk"> &lt;metalgod&gt;</span> make him feel at home ;-) )
+<a name="l-225"></a><span class="tm">13:42:57</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">Update about Meego (FunkyPenguin) (FCrozat will also be pulled in to make him feel at home ;-) )</span>
+<a name="l-226"></a><span class="tm">13:42:58 </span><span class="nka">* fcrozat</span> <span class="ac">hides..</span>
+<a name="l-227"></a><span class="tm">13:43:12</span><span class="nk"> &lt;FunkyPenguin&gt;</span> haha, you wont hide for long
+<a name="l-228"></a><span class="tm">13:43:22 </span><span class="nka">* darix</span> <span class="ac">pushes fcrozat out into the spotlight</span>
+<a name="l-229"></a><span class="tm">13:43:42</span><span class="nk"> &lt;FunkyPenguin&gt;</span> ok, there are a couple of major issues - the network panel is somewhat borked
+<a name="l-230"></a><span class="tm">13:43:42</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> i moved the 11.4 thingy to the end don't worry :)
+<a name="l-231"></a><span class="tm">13:43:57</span><span class="nk"> &lt;FunkyPenguin&gt;</span> as is the internet panel
+<a name="l-232"></a><span class="tm">13:44:46</span><span class="nk"> &lt;FunkyPenguin&gt;</span> the network issue i think is down to a change from using the old nbtk to the newer mx
+<a name="l-233"></a><span class="tm">13:45:02</span><span class="nk"> &lt;FunkyPenguin&gt;</span> it works in a fashion, but doesnt display properly and is painful to use
+<a name="l-234"></a><span class="tm">13:45:25</span><span class="nk"> &lt;FunkyPenguin&gt;</span> main issue is there doesnt seem to be a maintainer anymore for network-manager-netbook
+<a name="l-235"></a><span class="tm">13:45:49</span><span class="nk"> &lt;FunkyPenguin&gt;</span> the web panel issue i think is down to chromium which is a weird beast on its own
+<a name="l-236"></a><span class="tm">13:45:52</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">FunkyPenguin:</span> tambet or binli ?
+<a name="l-237"></a><span class="tm">13:45:52</span><span class="nk"> &lt;psankar&gt;</span> BinLi isnt ?
+<a name="l-238"></a><span class="tm">13:46:04</span><span class="nk"> &lt;BinLi1&gt;</span> <span class="hi">FunkyPenguin:</span> I'd take care of it
+<a name="l-239"></a><span class="tm">13:46:14</span><span class="nk"> &lt;FunkyPenguin&gt;</span> BinLi1, great thanks
+<a name="l-240"></a><span class="tm">13:46:22</span><span class="nk"> &lt;BinLi1&gt;</span> But may be next week, :)
+<a name="l-241"></a><span class="tm">13:46:40</span><span class="nk"> &lt;FunkyPenguin&gt;</span> like i said i *think* it is down to no longer using nbtk but maybe mmeeks can confirm?
+<a name="l-242"></a><span class="tm">13:47:03</span><span class="nk"> &lt;BinLi1&gt;</span> There are a bug for it now
+<a name="l-243"></a><span class="tm">13:47:39</span><span class="nk"> &lt;FunkyPenguin&gt;</span> i have also had some people say that hey cant actually pull up the web services settings or emapthy settings - apparently it pulls up gnome-control-center
+<a name="l-244"></a><span class="tm">13:48:36</span><span class="nk"> &lt;FunkyPenguin&gt;</span> once the network panel is fixed im happy to release a beta image with any known caveats
+<a name="l-245"></a><span class="tm">13:49:20</span><span class="nk"> &lt;FunkyPenguin&gt;</span> locally i have an issue logging into meego but it appears to be unrelated as i can login fine on other machines
+<a name="l-246"></a><span class="tm">13:49:49</span><span class="nk"> &lt;FunkyPenguin&gt;</span> any questions on the meego stuff?
+<a name="l-247"></a><span class="tm">13:50:44</span><span class="nk"> &lt;metalgod&gt;</span> btw... everybody welcome fcrozat to opensuse-gnome and to goblin/meego team !!
+<a name="l-248"></a><span class="tm">13:50:55</span><span class="nk"> &lt;FunkyPenguin&gt;</span> oh i need to thank DimStar for fixing a load of crud, and also anubisg1 who is going through and cleaning things up
+<a name="l-249"></a><span class="tm">13:50:59</span><span class="nk"> &lt;metalgod&gt;</span> when you need a rpm spec and gnome guru you have him :)
+<a name="l-250"></a><span class="tm">13:51:27</span><span class="nk"> &lt;FunkyPenguin&gt;</span> we should hopefully be able to provide both 32 &amp; 64 bit builds now
+<a name="l-251"></a><span class="tm">13:51:33</span><span class="nk"> &lt;psankar&gt;</span> FunkyPenguin, are you presenting about smeegol in meego conf ?
+<a name="l-252"></a><span class="tm">13:52:04</span><span class="nk"> &lt;FunkyPenguin&gt;</span> i havent submitted a talk as i doubt i can make the conf (atm)
+<a name="l-253"></a><span class="tm">13:53:11</span><span class="nk"> &lt;metalgod&gt;</span> ok can we move to the next topic ?
+<a name="l-254"></a><span class="tm">13:53:17</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">FunkyPenguin:</span> fcrozat anything to say ?
+<a name="l-255"></a><span class="tm">13:53:23</span><span class="nk"> &lt;FunkyPenguin&gt;</span> not from em
+<a name="l-256"></a><span class="tm">13:53:29</span><span class="nk"> &lt;FunkyPenguin&gt;</span> err me even
+<a name="l-257"></a><span class="tm">13:53:41</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">metalgod:</span> nothing to say either
+<a name="l-258"></a><span class="tm">13:53:55</span><span class="nk"> &lt;metalgod&gt;</span> ok move
+<a name="l-259"></a><span class="tm">13:54:10</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">- GNOME Pet Peeves summary and followup plan (Atri ?)</span>
+<a name="l-260"></a><span class="tm">13:54:16</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> isn't you ?
+<a name="l-261"></a><span class="tm">13:54:21</span><span class="nk"> &lt;badshah400&gt;</span> OK, right
+<a name="l-262"></a><span class="tm">13:54:51</span><span class="nk"> &lt;badshah400&gt;</span> so I wanted to colect user-feedback on little issues with GNOME that hurt general usability
+<a name="l-263"></a><span class="tm">13:55:05</span><span class="nk"> &lt;badshah400&gt;</span> I have listed whatever feedback I received here http://wiki.opensuse.org/User:Badshah400
+<a name="l-264"></a><span class="tm">13:55:45</span><span class="nk"> &lt;badshah400&gt;</span> My intention is to identify corresponding upstream bugs and nudge the developers to fix them or so
+<a name="l-265"></a><span class="tm">13:56:04</span><span class="nk"> &lt;badshah400&gt;</span> for example this icon scrambling bug in GNOME has been around for like ever
+<a name="l-266"></a><span class="tm">13:56:08</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> why don't you join GNOME usability team ?
+<a name="l-267"></a><span class="tm">13:56:14</span><span class="nk"> &lt;psankar&gt;</span> badshah400, or get them fixed by us and push upstream :-)
+<a name="l-268"></a><span class="tm">13:56:44</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod:</span> I am a no-hope about coding :)
+<a name="l-269"></a><span class="tm">13:57:10</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> the usability team *usually* doesn't code
+<a name="l-270"></a><span class="tm">13:57:16</span><span class="nk"> &lt;badshah400&gt;</span> so I don't think I can help much
+<a name="l-271"></a><span class="tm">13:57:17</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">badshah400:</span> so you fit in the usability team :)
+<a name="l-272"></a><span class="tm">13:57:27</span><span class="nk"> &lt;badshah400&gt;</span> OK :)
+<a name="l-273"></a><span class="tm">13:57:28</span><span class="nk"> &lt;vuntz&gt;</span> it's nice to have a list like this
+<a name="l-274"></a><span class="tm">13:57:35</span><span class="nk"> &lt;metalgod&gt;</span> read HIG badshah400
+<a name="l-275"></a><span class="tm">13:57:39</span><span class="nk"> &lt;metalgod&gt;</span> join the mailing list
+<a name="l-276"></a><span class="tm">13:57:48</span><span class="nk"> &lt;badshah400&gt;</span> good then I will see what I need to do about it
+<a name="l-277"></a><span class="tm">13:57:54</span><span class="nk"> &lt;badshah400&gt;</span> yes, I have read the HIG
+<a name="l-278"></a><span class="tm">13:57:55</span><span class="nk"> &lt;psankar&gt;</span> may be during OSC10, people can solve all this in a GNOME hackroom ?
+<a name="l-279"></a><span class="tm">13:57:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> do you intend to keep this list up-to-date and to get more feedback from users to have more items?
+<a name="l-280"></a><span class="tm">13:58:16</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> I feel it's a bit more useful than bugzilla bugs, especially if there's someone who makes sure the list is not too long and reasonable
+<a name="l-281"></a><span class="tm">13:58:32</span><span class="nk"> &lt;badshah400&gt;</span> just the other day, and was surprised about the conflict between "Forgive the user" and lack of undo button in nautilus
+<a name="l-282"></a><span class="tm">13:59:02</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> yes, I plan to update list as and when I receive more feedback
+<a name="l-283"></a><span class="tm">13:59:30</span><span class="nk"> &lt;badshah400&gt;</span> and also to follow up on them and see if there is some way I can help in some way
+<a name="l-284"></a><span class="tm">13:59:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> sweet
+<a name="l-285"></a><span class="tm">13:59:50</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> maybe blog about it to get more feedback?
+<a name="l-286"></a><span class="tm">14:00:08</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> can i add an action to you ?
+<a name="l-287"></a><span class="tm">14:00:24</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> OK, will do, but my lizards blog is not aggregated on plantesuse yet (just mailed admin)
+<a name="l-288"></a><span class="tm">14:00:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> I can't stress that it's important to keep the list relatively short (even if you add a new item when another is removed)
+<a name="l-289"></a><span class="tm">14:00:27</span><span class="nk"> &lt;psankar&gt;</span> I remember abock making some blog about making the notification dialog more attractive, colourful, configurable etc. but dont know if it was pushed upstream
+<a name="l-290"></a><span class="tm">14:00:31</span><span class="nk"> &lt;vuntz&gt;</span> stress enough
+<a name="l-291"></a><span class="tm">14:00:36</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod:</span> sure do :)
+<a name="l-292"></a><span class="tm">14:00:38</span><span class="nk"> &lt;DimStar&gt;</span> we might also want to promote the list the our 'official' list of pet peeves (meaning out of the User: namespace in GNOME: namespace?)
+<a name="l-293"></a><span class="tm">14:00:58</span><span class="nk"> &lt;vuntz&gt;</span> yeah
+<a name="l-294"></a><span class="tm">14:01:07</span><span class="nk"> &lt;vuntz&gt;</span> as long as there's someone to maintain it :-)
+<a name="l-295"></a><span class="tm">14:01:18</span><span class="nk"> &lt;DimStar&gt;</span> sure, but I trust in Atri
+<a name="l-296"></a><span class="tm">14:01:26</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">DimStar:</span> I will do that, just have not managed to follow up on all of the points yet
+<a name="l-297"></a><span class="tm">14:01:31</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">badshah400 convince him to join usability team and keep his list update</span>
+<a name="l-298"></a><span class="tm">14:01:36</span><span class="nk"> &lt;metalgod&gt;</span> next topic ?
+<a name="l-299"></a><span class="tm">14:01:59</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">oS-GNOME A11y goals and plans for 11.4 (decriptor/sshaw, suseROCKS?)</span>
+<a name="l-300"></a><span class="tm">14:02:10</span><span class="nk"> &lt;metalgod&gt;</span> i think we should move this
+<a name="l-301"></a><span class="tm">14:02:13</span><span class="nk"> &lt;psankar&gt;</span> i guess none of them are up. so we can skip it.
+<a name="l-302"></a><span class="tm">14:02:18</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-303"></a><span class="tm">14:02:29</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">11.4 Focus and plans (The 3 champs - Vuntz, Captain_Magnus, Dimstar)</span>
+<a name="l-304"></a><span class="tm">14:02:33</span><span class="nk"> &lt;metalgod&gt;</span> ok the big one here
+<a name="l-305"></a><span class="tm">14:02:39</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">11.4 Focus and plans (All of us)</span>
+<a name="l-306"></a><span class="tm">14:03:06</span><span class="nk"> &lt;vuntz&gt;</span> so
+<a name="l-307"></a><span class="tm">14:03:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sshaw:</span> heh, you're two minutes late!
+<a name="l-308"></a><span class="tm">14:03:38</span><span class="nk"> &lt;vuntz&gt;</span> upstream, the plan is to have:
+<a name="l-309"></a><span class="tm">14:03:43</span><span class="nk"> &lt;vuntz&gt;</span> 2.32 at the end of September
+<a name="l-310"></a><span class="tm">14:03:47</span><span class="nk"> &lt;vuntz&gt;</span> 3.0 at the end of March
+<a name="l-311"></a><span class="tm">14:04:00</span><span class="nk"> &lt;vuntz&gt;</span> for openSUSE, the plan for 11.4 is to release mid-March
+<a name="l-312"></a><span class="tm">14:04:11</span><span class="nk"> &lt;vuntz&gt;</span> so we can't have 3.0 ready for 11.4
+<a name="l-313"></a><span class="tm">14:04:34</span><span class="nk"> &lt;vuntz&gt;</span> therefore, the idea is to have 11.4 ship with 2.32, and provide an additional project on the build service for 3.0
+<a name="l-314"></a><span class="tm">14:04:49</span><span class="nk"> &lt;vuntz&gt;</span> we'll try hard to have 3.0 available as soon as it's out in this project
+<a name="l-315"></a><span class="tm">14:04:50</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">vuntz:</span> how hard would be it be to release 3.0 2-4 weeks earlier?
+<a name="l-316"></a><span class="tm">14:04:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> upstream?
+<a name="l-317"></a><span class="tm">14:05:03</span><span class="nk"> &lt;darix&gt;</span> yes
+<a name="l-318"></a><span class="tm">14:05:18</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">darix:</span> ship a release candidate/beta ?
+<a name="l-319"></a><span class="tm">14:05:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> quite hard. That'd make our release cycle shorter, and we probably don't want this for 3.0
+<a name="l-320"></a><span class="tm">14:05:23</span><span class="nk"> &lt;DimStar&gt;</span> release mid-march means freeze mid-february... so we would need G3 even 6 weeks earlier
+<a name="l-321"></a><span class="tm">14:05:42</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">DimStar:</span> well
+<a name="l-322"></a><span class="tm">14:05:57</span><span class="nk"> &lt;darix&gt;</span> we would of course have all RCs/betas of 3.0 in 11.4 already
+<a name="l-323"></a><span class="tm">14:06:04</span><span class="nk"> &lt;darix&gt;</span> so we just push in the final 3.0
+<a name="l-324"></a><span class="tm">14:06:11</span><span class="nk"> &lt;darix&gt;</span> so 4 weeks would be fine
+<a name="l-325"></a><span class="tm">14:06:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> I think to have coolo accept this, we'd need to have 3.0 out for RC1
+<a name="l-326"></a><span class="tm">14:07:00</span><span class="nk"> &lt;darix&gt;</span> yes
+<a name="l-327"></a><span class="tm">14:07:10</span><span class="nk"> &lt;charles_&gt;</span> <span class="hi">darix:</span> pong
+<a name="l-328"></a><span class="tm">14:07:22</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">charles_:</span> query in a few
+<a name="l-329"></a><span class="tm">14:07:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> RC1 checkin is Feb 4th
+<a name="l-330"></a><span class="tm">14:07:44</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">vuntz:</span> but if you have all G3 RCs in it ... then the changes from RC to final shouldnt be that much right?
+<a name="l-331"></a><span class="tm">14:08:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> well, all packages will get updated, still
+<a name="l-332"></a><span class="tm">14:08:08</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> no big code change, but still a new tarball
+<a name="l-333"></a><span class="tm">14:08:19</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">vuntz:</span> sure
+<a name="l-334"></a><span class="tm">14:08:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> and that's a no-go for RC2
+<a name="l-335"></a><span class="tm">14:08:25</span><span class="nk"> &lt;vuntz&gt;</span> (imho)
+<a name="l-336"></a><span class="tm">14:08:50</span><span class="nk"> &lt;vuntz&gt;</span> but really, the thing is that I don't see 3.0 out before March 20th anyway
+<a name="l-337"></a><span class="tm">14:09:11</span><span class="nk"> &lt;vuntz&gt;</span> and I don't feel it's reasonable for us to release 11.4 with something that is not even 3.0
+<a name="l-338"></a><span class="tm">14:09:20</span><span class="nk"> &lt;vuntz&gt;</span> (I'd feel much more comfortable with 3.0.1)
+<a name="l-339"></a><span class="tm">14:09:48</span><span class="nk"> &lt;badshah400&gt;</span> my personal opinion is to concentrate on making the most out of GNOME 2.32.x rather than on 3.0
+<a name="l-340"></a><span class="tm">14:09:53</span><span class="nk"> &lt;psankar&gt;</span> we will delay 11.4 release ;-) ?
+<a name="l-341"></a><span class="tm">14:10:04</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">psankar:</span> Agree... best option there is!
+<a name="l-342"></a><span class="tm">14:10:17</span><span class="nk"> &lt;darix&gt;</span> for gnome? never :p
+<a name="l-343"></a><span class="tm">14:10:47 </span><span class="nka">* darix</span> <span class="ac">goes back to lurk mode</span>
+<a name="l-344"></a><span class="tm">14:11:07</span><span class="nk"> &lt;vuntz&gt;</span> and delaying 11.4 is not really feasible
+<a name="l-345"></a><span class="tm">14:11:17</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> that's bad for marketing
+<a name="l-346"></a><span class="tm">14:11:24</span><span class="nk"> &lt;badshah400&gt;</span> why not just focus on 2.32.x and make it more usable
+<a name="l-347"></a><span class="tm">14:11:24</span><span class="nk"> &lt;metalgod&gt;</span> all distros will ship 3.0 on april
+<a name="l-348"></a><span class="tm">14:11:27</span><span class="nk"> &lt;vuntz&gt;</span> we have to live with the fact that once every 3 releases, we can't have the latest GNOME
+<a name="l-349"></a><span class="tm">14:11:28</span><span class="nk"> &lt;metalgod&gt;</span> and we don't
+<a name="l-350"></a><span class="tm">14:11:37</span><span class="nk"> &lt;badshah400&gt;</span> I see
+<a name="l-351"></a><span class="tm">14:11:42</span><span class="nk"> &lt;metalgod&gt;</span> but in general i agree
+<a name="l-352"></a><span class="tm">14:11:47</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> seriously. If we have a build service project ready for this, with livecd, that's really the same
+<a name="l-353"></a><span class="tm">14:12:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> we can even "release" before the other distros, this way
+<a name="l-354"></a><span class="tm">14:12:34</span><span class="nk"> &lt;metalgod&gt;</span> yes i agree vuntz
+<a name="l-355"></a><span class="tm">14:12:41</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> I think we could market it kind-of flashy (like *-respin)?
+<a name="l-356"></a><span class="tm">14:12:48</span><span class="nk"> &lt;metalgod&gt;</span> better ship stable than unstable
+<a name="l-357"></a><span class="tm">14:12:49</span><span class="nk"> &lt;DimStar&gt;</span> good point: we should make sure to have live CD spins available shortly after release.. some, that when you install, give you the normal repos &amp; the GNOME3 one straight enabled...
+<a name="l-358"></a><span class="tm">14:13:01</span><span class="nk"> &lt;DimStar&gt;</span> then we can 'sell' it as an intermediate 11.4.1 release!
+<a name="l-359"></a><span class="tm">14:13:15</span><span class="nk"> &lt;metalgod&gt;</span> the day after GNOME 3.0 we can have it available for users
+<a name="l-360"></a><span class="tm">14:13:26</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">metalgod:</span> we're not that slow! same day :)
+<a name="l-361"></a><span class="tm">14:13:49</span><span class="nk"> &lt;metalgod&gt;</span> eheh
+<a name="l-362"></a><span class="tm">14:13:55</span><span class="nk"> &lt;metalgod&gt;</span> right OBS rocks!!
+<a name="l-363"></a><span class="tm">14:13:55</span><span class="nk"> &lt;psankar&gt;</span> Best Laid Plans :-) Sounds attractive.
+<a name="l-364"></a><span class="tm">14:14:05</span><span class="nk"> &lt;metalgod&gt;</span> ok action then
+<a name="l-365"></a><span class="tm">14:14:21</span><span class="nk"> &lt;vuntz&gt;</span> so, that's the plan for which upstream version to use
+<a name="l-366"></a><span class="tm">14:14:30</span><span class="nk"> &lt;DimStar&gt;</span> anybody here knows how to make live cd's build in OBS? (I think kiwi needs to be enabled on a per-project bassi)
+<a name="l-367"></a><span class="tm">14:14:31</span><span class="nk"> &lt;vuntz&gt;</span> now, there's the question of what feature we want to focus on for 11.4
+<a name="l-368"></a><span class="tm">14:14:36</span><span class="nk"> &lt;badshah400&gt;</span> I think this can be an action item too: market and highlight 3.0 live-cd thru blogs and tweete and so on
+<a name="l-369"></a><span class="tm">14:14:42</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">everyone get GNOME 3.0 available in the same day for opeSUSE 11.4 and try to get a respin 11.4.1</span>
+<a name="l-370"></a><span class="tm">14:15:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> see GNOME:Medias
+<a name="l-371"></a><span class="tm">14:15:00</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> i think we should focus on packaging more applications
+<a name="l-372"></a><span class="tm">14:15:12</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">metalgod:</span> the 11.4.1 'version tag' probably needs some approval from the project.
+<a name="l-373"></a><span class="tm">14:15:24</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">DimStar:</span> yes that's why i added "try to get"
+<a name="l-374"></a><span class="tm">14:15:57</span><span class="nk"> &lt;vuntz&gt;</span> so, we agree want more apps
+<a name="l-375"></a><span class="tm">14:16:03</span><span class="nk"> &lt;vuntz&gt;</span> but that's not really a feature
+<a name="l-376"></a><span class="tm">14:16:08</span><span class="nk"> &lt;metalgod&gt;</span> true
+<a name="l-377"></a><span class="tm">14:16:13</span><span class="nk"> &lt;badshah400&gt;</span> what apps are we talking about? is there a voting page?
+<a name="l-378"></a><span class="tm">14:16:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> I have a list somewhere, and metalgod wants to collect more ideas
+<a name="l-379"></a><span class="tm">14:16:32</span><span class="nk"> &lt;badshah400&gt;</span> ok
+<a name="l-380"></a><span class="tm">14:16:34</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> i already have that action.. research for new apps and package it
+<a name="l-381"></a><span class="tm">14:17:04</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> i can add you to that action if you want...
+<a name="l-382"></a><span class="tm">14:17:10</span><span class="nk"> &lt;DimStar&gt;</span> we need something more suitable for the list... openfate is too cluttered for that, so is bugzilla (I'd need a quick overview of what is requested, who works on it, what are the issues with it)
+<a name="l-383"></a><span class="tm">14:17:16</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod:</span> ok that sounds good
+<a name="l-384"></a><span class="tm">14:17:47</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">badshah400 research with metalgod for new apps to be available on 11.4</span>
+<a name="l-385"></a><span class="tm">14:17:51</span><span class="nk"> &lt;psankar&gt;</span> metalgod, I got 2 packagers (non-openSUSE)  asking if they can help with some packaging. I will point them to you.
+<a name="l-386"></a><span class="tm">14:18:00</span><span class="nk"> &lt;vuntz&gt;</span> btw, I propose to have a "new app of the week" thing, where we work on packaging at least one specific new app per week
+<a name="l-387"></a><span class="tm">14:18:04</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> sure me or someone from the team
+<a name="l-388"></a><span class="tm">14:18:12</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">DimStar:</span> Let us have a wiki page for that
+<a name="l-389"></a><span class="tm">14:18:18</span><span class="nk"> &lt;DimStar&gt;</span> (in bugzilla it could be handled with whiteboard tagging... but it's bad that those requests are to be bound to a 'version' of opensuse)
+<a name="l-390"></a><span class="tm">14:18:36</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> sounds good
+<a name="l-391"></a><span class="tm">14:18:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> can you also create a wiki page to track 11.4 features?
+<a name="l-392"></a><span class="tm">14:18:54</span><span class="nk"> &lt;badshah400&gt;</span> openSUSE:GNOME_Features_11.4 would do
+<a name="l-393"></a><span class="tm">14:18:58</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> yes
+<a name="l-394"></a><span class="tm">14:19:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz start a "new app of the week" thing, where we work on packaging at least one specific new app per week</span>
+<a name="l-395"></a><span class="tm">14:19:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> sweet, thanks!
+<a name="l-396"></a><span class="tm">14:19:17</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> any specific features like more branding ?
+<a name="l-397"></a><span class="tm">14:19:20</span><span class="nk"> &lt;vuntz&gt;</span> fwiw, in my notes, I have a few things I want to work on:
+<a name="l-398"></a><span class="tm">14:19:43</span><span class="nk"> &lt;vuntz&gt;</span> make sure all the PackageKit integration works well (to install codecs, mime handlers, fonts, etc.)
+<a name="l-399"></a><span class="tm">14:20:07</span><span class="nk"> &lt;vuntz&gt;</span> work with upstream on the tracker-search-tool UI to improve it
+<a name="l-400"></a><span class="tm">14:20:18</span><span class="nk"> &lt;metalgod&gt;</span> i.e. xchat-gnome could point to #opensuse by default
+<a name="l-401"></a><span class="tm">14:20:24</span><span class="nk"> &lt;metalgod&gt;</span> or #opensuse-gnome
+<a name="l-402"></a><span class="tm">14:20:37</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> pet peeve, not feature :-)
+<a name="l-403"></a><span class="tm">14:20:41</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> (but good one)
+<a name="l-404"></a><span class="tm">14:20:52</span><span class="nk"> &lt;metalgod&gt;</span> right :/
+<a name="l-405"></a><span class="tm">14:20:58</span><span class="nk"> &lt;vuntz&gt;</span> and my third feature I want to see is "be ready for GNOME 3 in March"
+<a name="l-406"></a><span class="tm">14:21:17</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> we talked a few releases ago for a ggreeter replacement
+<a name="l-407"></a><span class="tm">14:21:21</span><span class="nk"> &lt;metalgod&gt;</span> but we left that idea
+<a name="l-408"></a><span class="tm">14:21:28</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> that's an important one and we need the GNOME:3 repo asap to have testers capabilities...
+<a name="l-409"></a><span class="tm">14:21:29</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">vuntz:</span> I'd be nice to have some good testing/help with a11y stuff :)
+<a name="l-410"></a><span class="tm">14:21:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sshaw:</span> if you can write what's needed to have a good a11y story, we can turn this into a feature
+<a name="l-411"></a><span class="tm">14:22:07</span><span class="nk"> &lt;sshaw&gt;</span> we have potentially a rare opportunity to excel here
+<a name="l-412"></a><span class="tm">14:22:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sshaw:</span> I agree, but the issue is really that we don't know what to do :-)
+<a name="l-413"></a><span class="tm">14:22:32</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">vuntz:</span> the biggest thing right now would be to test at-spi2
+<a name="l-414"></a><span class="tm">14:22:33</span><span class="nk"> &lt;badshah400&gt;</span> feature request: have a directory Pictures/Wallpapers and patch gnome-appearance-properties to automatically add images in it to the wallpaper list
+<a name="l-415"></a><span class="tm">14:22:47</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> I'm not really a big fan of a ggreeter replacement, to be honest. I'm happy to not have this anymore...
+<a name="l-416"></a><span class="tm">14:22:53</span><span class="nk"> &lt;metalgod&gt;</span> me too :)
+<a name="l-417"></a><span class="tm">14:23:07</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> where would this directory live?
+<a name="l-418"></a><span class="tm">14:23:10</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">sshaw:</span> do you have instructions on 'how to test' that thing? Maybe we could use testopia in bugzilla to come up with some test plans?
+<a name="l-419"></a><span class="tm">14:23:29</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> ~/Pictures/Wallpapers
+<a name="l-420"></a><span class="tm">14:24:16</span><span class="nk"> &lt;psankar&gt;</span> badshah400, i use something called webilder that has a similar capability - http://psankar.blogspot.com/2009/10/stunning-random-wallpapers-for-your.html
+<a name="l-421"></a><span class="tm">14:24:18</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> that's already implemented in http://blogs.gnome.org/thos/2010/07/26/gnome-background-chooser-flickr/
+<a name="l-422"></a><span class="tm">14:24:25</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> *very important* we need to investigate again what apps are going to be installed by default on 11.4 livecd
+<a name="l-423"></a><span class="tm">14:24:25</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">DimStar:</span> I'll work with my team.  We already have some tests
+<a name="l-424"></a><span class="tm">14:24:37</span><span class="nk"> &lt;metalgod&gt;</span> g-d-u wasn't installed by default *àgain* on 11.2
+<a name="l-425"></a><span class="tm">14:24:40</span><span class="nk"> &lt;metalgod&gt;</span> err 11.3
+<a name="l-426"></a><span class="tm">14:24:47</span><span class="nk"> &lt;sshaw&gt;</span> I want to work with the kde team as well since I think this is something that they could benefit from it
+<a name="l-427"></a><span class="tm">14:24:48</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">feature: make sure all the PackageKit integration works well (to install codecs, mime handlers, fonts, etc.)</span>
+<a name="l-428"></a><span class="tm">14:24:57</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">feature: work with upstream on the tracker-search-tool UI to improve it</span>
+<a name="l-429"></a><span class="tm">14:25:15</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">feature: be ready for GNOME 3 in March</span>
+<a name="l-430"></a><span class="tm">14:25:27</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> this flicr thing looks good, is it in upstream already?
+<a name="l-431"></a><span class="tm">14:25:28</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">feature? (ask sshaw) excel in a11y</span>
+<a name="l-432"></a><span class="tm">14:25:30</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">everyone see what apps should be installed by default... we are missing g-d-u and g-c-m</span>
+<a name="l-433"></a><span class="tm">14:26:06</span><span class="nk"> &lt;vuntz&gt;</span> any other idea of features?
+<a name="l-434"></a><span class="tm">14:26:14</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> we had an old page
+<a name="l-435"></a><span class="tm">14:26:18</span><span class="nk"> &lt;vuntz&gt;</span> any volunteer to browse openfate and make sure we find the relevant page?
+<a name="l-436"></a><span class="tm">14:26:20</span><span class="nk"> &lt;metalgod&gt;</span> with lot's of features
+<a name="l-437"></a><span class="tm">14:26:23</span><span class="nk"> &lt;vuntz&gt;</span> s/page/ones/
+<a name="l-438"></a><span class="tm">14:26:26</span><span class="nk"> &lt;metalgod&gt;</span> i will
+<a name="l-439"></a><span class="tm">14:26:37</span><span class="nk"> &lt;BinLi1&gt;</span> how about the fastboot? is it a features of GNOME?
+<a name="l-440"></a><span class="tm">14:26:39</span><span class="nk"> &lt;badshah400&gt;</span> ever-existing feature? improve the slab experience in several ways.
+<a name="l-441"></a><span class="tm">14:26:47</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#action </span><span class="cmdline">metalgod browse openfate for new features</span>
+<a name="l-442"></a><span class="tm">14:26:58</span><span class="nk"> &lt;psankar&gt;</span> badshah400, once shell comes i guess none will need slab
+<a name="l-443"></a><span class="tm">14:27:00</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">BinLi1:</span> we will have systemd so we won't need fastboot ;)
+<a name="l-444"></a><span class="tm">14:27:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> we probably need to find someone to work on gnome-main-menu for this, though
+<a name="l-445"></a><span class="tm">14:27:20</span><span class="nk"> &lt;badshah400&gt;</span> like getting rid of New applications for a-b and so on
+<a name="l-446"></a><span class="tm">14:27:47</span><span class="nk"> &lt;BinLi1&gt;</span> <span class="hi">metalgod:</span> fine, :D
+<a name="l-447"></a><span class="tm">14:28:04</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">BinLi1:</span> ask kay he is the guru
+<a name="l-448"></a><span class="tm">14:28:16</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> yes, not many responses to my bug-reports at bnc about main-menu/ab
+<a name="l-449"></a><span class="tm">14:28:24</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> porting yast to polkit ;)
+<a name="l-450"></a><span class="tm">14:28:27 </span><span class="nka">* metalgod</span> <span class="ac">runs</span>
+<a name="l-451"></a><span class="tm">14:28:43</span><span class="nk"> &lt;DimStar&gt;</span> oh.. polkit good one!
+<a name="l-452"></a><span class="tm">14:28:52</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">psankar:</span> 2.32 is in 11.4, so it is still needed though
+<a name="l-453"></a><span class="tm">14:29:00</span><span class="nk"> &lt;DimStar&gt;</span> Have it be usable again and let it REMEMBER what I do?
+<a name="l-454"></a><span class="tm">14:29:02</span><span class="nk"> &lt;sshaw&gt;</span> I have one for BinLi1, bridge network support in NM :)
+<a name="l-455"></a><span class="tm">14:29:09</span><span class="nk"> &lt;badshah400&gt;</span> and if it is there, why not make it better :)
+<a name="l-456"></a><span class="tm">14:29:10</span><span class="nk"> &lt;metalgod&gt;</span> i'm still get the feeling that our gdm is slower than fedora
+<a name="l-457"></a><span class="tm">14:29:16</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> that's by design...
+<a name="l-458"></a><span class="tm">14:29:27</span><span class="nk"> &lt;psankar&gt;</span> badshah400, agreed. I was just trying to point out that there may not be much developer enthusiasm to fix bugs in that
+<a name="l-459"></a><span class="tm">14:29:27</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> broken by design does not make it good.
+<a name="l-460"></a><span class="tm">14:29:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> that's because fedora probably has patches from git that make it faster
+<a name="l-461"></a><span class="tm">14:29:45</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> sure, but we can't fix it ourselves. This has to be done upstream
+<a name="l-462"></a><span class="tm">14:29:54</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> you can for example in the updater select that you want the security updates 'automatically' installed.. daily... and then it waits daily for the root password.. --&gt; broken by deisgn
+<a name="l-463"></a><span class="tm">14:29:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> and someone has to have good arguments with proper knowledge for this
+<a name="l-464"></a><span class="tm">14:30:22</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> that's a feature on its own, imho
+<a name="l-465"></a><span class="tm">14:30:38</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> want me to add it with #info? :-)
+<a name="l-466"></a><span class="tm">14:30:42</span><span class="nk"> &lt;BinLi1&gt;</span> <span class="hi">sshaw:</span> yeah, it's a good feature, I wanna do it in Hackweek, but no more time for it
+<a name="l-467"></a><span class="tm">14:30:43</span><span class="nk"> &lt;metalgod&gt;</span> another "feature" we add is to contribute more upstream
+<a name="l-468"></a><span class="tm">14:30:54</span><span class="nk"> &lt;metalgod&gt;</span> i guess we can join redhat in this journey :)
+<a name="l-469"></a><span class="tm">14:31:07</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> I'd be happy with it :)
+<a name="l-470"></a><span class="tm">14:31:17</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">BinLi1:</span> :(  it would be a huge help with kvm/xen
+<a name="l-471"></a><span class="tm">14:31:28</span><span class="nk"> &lt;kay&gt;</span> <span class="hi">BinLi1:</span> what is "fastboot"? you mean the boot option?
+<a name="l-472"></a><span class="tm">14:31:39</span><span class="nk"> &lt;BinLi1&gt;</span> <span class="hi">sshaw:</span> Yeah, I know, I'll take a look the feature
+<a name="l-473"></a><span class="tm">14:32:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">feature: fix 'automatically install security updates' option in updater to not ask for root password daily (PackageKit-polkit fun)</span>
+<a name="l-474"></a><span class="tm">14:32:40</span><span class="nk"> &lt;BinLi1&gt;</span> <span class="hi">kay:</span> not just boot option, like Ubuntu, make it look like faster
+<a name="l-475"></a><span class="tm">14:32:51</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> that's a danger feature ;)
+<a name="l-476"></a><span class="tm">14:32:56</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">vuntz:</span> JFYI: autobuild team will release a package for that soon
+<a name="l-477"></a><span class="tm">14:32:59</span><span class="nk"> &lt;metalgod&gt;</span> fedora adopted it for a week after f12 release
+<a name="l-478"></a><span class="tm">14:33:03</span><span class="nk"> &lt;darix&gt;</span> (something we use on our servers since years)
+<a name="l-479"></a><span class="tm">14:33:20</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">metalgod:</span> if you limit it to "patches"
+<a name="l-480"></a><span class="tm">14:33:27</span><span class="nk"> &lt;darix&gt;</span> and to non interactive patches
+<a name="l-481"></a><span class="tm">14:33:35</span><span class="nk"> &lt;darix&gt;</span> it isnt as dangerous anymore
+<a name="l-482"></a><span class="tm">14:33:40</span><span class="nk"> &lt;vuntz&gt;</span> any other feature?
+<a name="l-483"></a><span class="tm">14:34:07</span><span class="nk"> &lt;BinLi1&gt;</span> How about the appearance design of GNOME?
+<a name="l-484"></a><span class="tm">14:34:22</span><span class="nk"> &lt;BinLi1&gt;</span> Or the theme
+<a name="l-485"></a><span class="tm">14:34:53</span><span class="nk"> &lt;vuntz&gt;</span> want to change the default?
+<a name="l-486"></a><span class="tm">14:34:58</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">BinLi1:</span> sounds interesting but it has to be done with upstream
+<a name="l-487"></a><span class="tm">14:35:00</span><span class="nk"> &lt;DimStar&gt;</span> themeing is an important thing which we also have to look at early for the gnome3 repo... we won't have time at release date for that anyhow.
+<a name="l-488"></a><span class="tm">14:35:24</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">vuntz:</span> do we need to be watching the new dconf? stuff
+<a name="l-489"></a><span class="tm">14:35:35</span><span class="nk"> &lt;sshaw&gt;</span> or whatever the replacement for gconf is
+<a name="l-490"></a><span class="tm">14:35:37</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sshaw:</span> define "watching"? :-)
+<a name="l-491"></a><span class="tm">14:35:56</span><span class="nk"> &lt;badshah400&gt;</span> btw, who's theming? jimmac is not, so who is?
+<a name="l-492"></a><span class="tm">14:36:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> no idea :/
+<a name="l-493"></a><span class="tm">14:36:10</span><span class="nk"> &lt;darix&gt;</span> rlihm?
+<a name="l-494"></a><span class="tm">14:36:12</span><span class="nk"> &lt;psankar&gt;</span> we dont Own any upstream project except evo. and so we may not need to watch for dconf ;-)
+<a name="l-495"></a><span class="tm">14:36:13</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">vuntz:</span> make sure its well tested in our environment
+<a name="l-496"></a><span class="tm">14:36:14</span><span class="nk"> &lt;darix&gt;</span> gnokii
+<a name="l-497"></a><span class="tm">14:36:15</span><span class="nk"> &lt;metalgod&gt;</span> people i think we should discuss this topic again next week or in the next meeting
+<a name="l-498"></a><span class="tm">14:36:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sshaw:</span> we'll have dconf available relatively soon
+<a name="l-499"></a><span class="tm">14:36:26 </span><span class="nka">* vuntz</span> <span class="ac">looks at DimStar who was working on it at some point</span>
+<a name="l-500"></a><span class="tm">14:36:27</span><span class="nk"> &lt;metalgod&gt;</span> we will have time to think
+<a name="l-501"></a><span class="tm">14:36:35</span><span class="nk"> &lt;darix&gt;</span> i would ask those 2
+<a name="l-502"></a><span class="tm">14:36:42</span><span class="nk"> &lt;darix&gt;</span> they are also involved in the opensuse-art team
+<a name="l-503"></a><span class="tm">14:37:05</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> ? on what?
+<a name="l-504"></a><span class="tm">14:37:05</span><span class="nk"> &lt;metalgod&gt;</span> can we move to the last topic ?
+<a name="l-505"></a><span class="tm">14:37:11</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> dconf
+<a name="l-506"></a><span class="tm">14:37:15</span><span class="nk"> &lt;psankar&gt;</span> darix, but afaik their work is limited to pictures and not themes. (may be i am wrong)
+<a name="l-507"></a><span class="tm">14:37:24</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">psankar:</span> you are
+<a name="l-508"></a><span class="tm">14:37:31</span><span class="nk"> &lt;darix&gt;</span> gnokii was working already on the 11.4 installer
+<a name="l-509"></a><span class="tm">14:37:34</span><span class="nk"> &lt;psankar&gt;</span> darix, i stand corrected :)
+<a name="l-510"></a><span class="tm">14:37:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> if you don't have dconf anymore, tell me and I'll do it
+<a name="l-511"></a><span class="tm">14:37:53</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> we really need it before we push the gsettings stuff to factory
+<a name="l-512"></a><span class="tm">14:38:05</span><span class="nk"> &lt;metalgod&gt;</span> people
+<a name="l-513"></a><span class="tm">14:38:07</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">vuntz:</span> it would be cool to see a gtk installer (much simplified) for gnome live
+<a name="l-514"></a><span class="tm">14:38:10</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> it's in my branch... isn't it SRed?
+<a name="l-515"></a><span class="tm">14:38:19</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">metalgod:</span> yes sir?
+<a name="l-516"></a><span class="tm">14:38:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> nope
+<a name="l-517"></a><span class="tm">14:38:30</span><span class="nk"> &lt;sshaw&gt;</span> but that might be a bit too much work and maintenance
+<a name="l-518"></a><span class="tm">14:38:32</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">darix:</span> let's move to another topic ? :)
+<a name="l-519"></a><span class="tm">14:38:35</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> do it, do it!
+<a name="l-520"></a><span class="tm">14:38:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> (even if it's broken; I'll fix it)
+<a name="l-521"></a><span class="tm">14:38:50</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> will check it after the meeting..
+<a name="l-522"></a><span class="tm">14:39:10</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic  </span><span class="topicline">World Domination (all of us)</span>
+<a name="l-523"></a><span class="tm">14:39:24</span><span class="nk"> &lt;psankar&gt;</span> metalgod, you can ignore it ;-)
+<a name="l-524"></a><span class="tm">14:39:29</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> ah.. vala newer required.. that's why I stopped (0.9.2+)
+<a name="l-525"></a><span class="tm">14:39:32</span><span class="nk"> &lt;metalgod&gt;</span> i think we all talked about this topic a lot
+<a name="l-526"></a><span class="tm">14:39:35</span><span class="nk"> &lt;metalgod&gt;</span> so move to the next
+<a name="l-527"></a><span class="tm">14:39:38</span><span class="nk"> &lt;psankar&gt;</span> metalgod, we have already reached it ;-)
+<a name="l-528"></a><span class="tm">14:39:46</span><span class="nk"> &lt;metalgod&gt;</span> <span class="topic">#topic </span><span class="topicline">Q &amp; A</span>
+<a name="l-529"></a><span class="tm">14:39:57</span><span class="nk"> &lt;metalgod&gt;</span> So now it's time to post your questions
+<a name="l-530"></a><span class="tm">14:39:59</span><span class="nk"> &lt;metalgod&gt;</span> go go go
+<a name="l-531"></a><span class="tm">14:40:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> submit whatever you have, I'll finish it
+<a name="l-532"></a><span class="tm">14:40:19</span><span class="nk"> &lt;metalgod&gt;</span> i have a question to everyone
+<a name="l-533"></a><span class="tm">14:40:27</span><span class="nk"> &lt;metalgod&gt;</span> how can we improve updates ?
+<a name="l-534"></a><span class="tm">14:40:38</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> what's the issue with updates? :-)
+<a name="l-535"></a><span class="tm">14:40:41</span><span class="nk"> &lt;metalgod&gt;</span> i mean... it takes lot's of time to reach the end users
+<a name="l-536"></a><span class="tm">14:41:01</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> maybe ask the maintenance team to document why it takes time
+<a name="l-537"></a><span class="tm">14:41:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> there might be good reasons for this
+<a name="l-538"></a><span class="tm">14:41:13</span><span class="nk"> &lt;metalgod&gt;</span> sure
+<a name="l-539"></a><span class="tm">14:41:20</span><span class="nk"> &lt;metalgod&gt;</span> yes documentation helps
+<a name="l-540"></a><span class="tm">14:41:36</span><span class="nk"> &lt;metalgod&gt;</span> because the current doesn't explain so good how this works
+<a name="l-541"></a><span class="tm">14:41:58</span><span class="nk"> &lt;metalgod&gt;</span> even for a developer from the community who wants to update his package
+<a name="l-542"></a><span class="tm">14:42:02</span><span class="nk"> &lt;metalgod&gt;</span> wants/needs
+<a name="l-543"></a><span class="tm">14:42:30</span><span class="nk"> &lt;metalgod&gt;</span> other questions ?
+<a name="l-544"></a><span class="tm">14:42:34</span><span class="nk"> &lt;psankar&gt;</span> I have one Question. Regarding boosters. We have only vuntz now in boosters for GNOME. I saw a new booster opening but from liason officer wstephenson 's blog post it sounded like it was for KDE. Already KDE has wstephenson  lubos working on boosters. So I believe we should get a gnome based booster, so that we can spare some time for vuntz amidst his busy upstream activities.
+<a name="l-545"></a><span class="tm">14:42:59</span><span class="nk"> &lt;badshah400&gt;</span> +1
+<a name="l-546"></a><span class="tm">14:43:10</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">psankar:</span> we had federico in the boosters team, but preloads ate him.
+<a name="l-547"></a><span class="tm">14:43:16</span><span class="nk"> &lt;DimStar&gt;</span> vuntz should use his powers on that one.
+<a name="l-548"></a><span class="tm">14:43:22</span><span class="nk"> &lt;psankar&gt;</span> wstephenson, yes. I remember that :(
+<a name="l-549"></a><span class="tm">14:43:32</span><span class="nk"> &lt;metalgod&gt;</span> well
+<a name="l-550"></a><span class="tm">14:43:35</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">wstephenson:</span> doesn't change that we are 1 short ;)
+<a name="l-551"></a><span class="tm">14:43:46</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">wstephenson:</span> I need to bug you later today about some kde stuff :)
+<a name="l-552"></a><span class="tm">14:43:49</span><span class="nk"> &lt;metalgod&gt;</span> i would like to apply for that job
+<a name="l-553"></a><span class="tm">14:44:00</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">sshaw:</span> how do you stop management overrides sucking everyone who can help on a preload into the abyss?
+<a name="l-554"></a><span class="tm">14:44:01</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> I think if wstephenson's post lead you to think it was for KDE, then wstephenson's post was misleading :-)
+<a name="l-555"></a><span class="tm">14:44:08</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> it's a booster position
+<a name="l-556"></a><span class="tm">14:44:15</span><span class="nk"> &lt;psankar&gt;</span> metalgod, why not ? go ahead :-)
+<a name="l-557"></a><span class="tm">14:44:19</span><span class="nk"> &lt;vuntz&gt;</span> ie, the desktops are not directly relevant to this position
+<a name="l-558"></a><span class="tm">14:44:26</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">wstephenson:</span> tis sad, but I'm a believer in back filling ;0
+<a name="l-559"></a><span class="tm">14:44:27</span><span class="nk"> &lt;sshaw&gt;</span> ;)
+<a name="l-560"></a><span class="tm">14:44:31</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> just waiting for a confirmation
+<a name="l-561"></a><span class="tm">14:44:43</span><span class="nk"> &lt;sshaw&gt;</span> <span class="hi">metalgod:</span> to apply for it?
+<a name="l-562"></a><span class="tm">14:44:55</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">sshaw:</span> yes
+<a name="l-563"></a><span class="tm">14:44:55</span><span class="nk"> &lt;psankar&gt;</span> vuntz, but i see that wstephenson or lubok or coolo working directly on gnome . so if you count the boosters working for #oS-gnome it will be only you
+<a name="l-564"></a><span class="tm">14:44:59</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">sshaw:</span> location etc..
+<a name="l-565"></a><span class="tm">14:45:13</span><span class="nk"> &lt;metalgod&gt;</span> and of course if i can really quit my current job
+<a name="l-566"></a><span class="tm">14:45:36</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">metalgod:</span> you can ALWAYS quit your current job.... we're in the 21st century
+<a name="l-567"></a><span class="tm">14:45:37</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">psankar:</span> coolo doesn't work on kde any more than cornelius or duncanmv do
+<a name="l-568"></a><span class="tm">14:45:38</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> I'm unsure how much coolo still works on kde, but that's probably not that much -- he's a busy hero
+<a name="l-569"></a><span class="tm">14:45:40</span><span class="nk"> &lt;psankar&gt;</span> vuntz, so if we get another person also from a KDE background, i believe you will again be overloaded.
+<a name="l-570"></a><span class="tm">14:45:51</span><span class="nk"> &lt;psankar&gt;</span> wstephenson, vuntz oh okay.
+<a name="l-571"></a><span class="tm">14:46:23</span><span class="nk"> &lt;vuntz&gt;</span> and of course, I'd love to have a gnome-friendly person fill that position
+<a name="l-572"></a><span class="tm">14:46:41</span><span class="nk"> &lt;vuntz&gt;</span> but the important part is that it's a booster position
+<a name="l-573"></a><span class="tm">14:46:55</span><span class="nk"> &lt;psankar&gt;</span> apart from that , I see boosters as a critical set of people. So I  believe having a GNOME guy will help maintain neutrality in numbers.  Just my opinion. You people know better ;-)
+<a name="l-574"></a><span class="tm">14:47:30</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> yes and i think it would be important to GNOME upstream too
+<a name="l-575"></a><span class="tm">14:47:35 </span><span class="nka">* sshaw</span> <span class="ac">sadly has to go and miss the rest of the meeting :(</span>
+<a name="l-576"></a><span class="tm">14:47:51</span><span class="nk"> &lt;metalgod&gt;</span> not everyone has the luck to contribute to GNOME in the day job
+<a name="l-577"></a><span class="tm">14:48:07</span><span class="nk"> &lt;psankar&gt;</span> metalgod, +1 ;-)
+<a name="l-578"></a><span class="tm">14:48:45</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> 44741
+<a name="l-579"></a><span class="tm">14:48:48</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-580"></a><span class="tm">14:48:52</span><span class="nk"> &lt;anaumov&gt;</span> metalgod, tja... like to KDE :)
+<a name="l-581"></a><span class="tm">14:48:52</span><span class="nk"> &lt;metalgod&gt;</span> next question ?
+<a name="l-582"></a><span class="tm">14:49:50 </span><span class="nka">* pcutler</span> <span class="ac">thinks we should clone vuntz</span>
+<a name="l-583"></a><span class="tm">14:49:52</span><span class="nk"> &lt;psankar&gt;</span> i guess we are done.
+<a name="l-584"></a><span class="tm">14:49:57</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-585"></a><span class="tm">14:50:04</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> thanks
+<a name="l-586"></a><span class="tm">14:50:06</span><span class="nk"> &lt;metalgod&gt;</span> so thanks everyone for being in the meeting
+<a name="l-587"></a><span class="tm">14:50:24</span><span class="nk"> &lt;metalgod&gt;</span> we will resume it soon and send it to the ML
+<a name="l-588"></a><span class="tm">14:50:26 </span><span class="nka">* psankar</span> <span class="ac">congratulates metalgod on his debut as a chair :-)</span>
+<a name="l-589"></a><span class="tm">14:50:29</span><span class="nk"> &lt;metalgod&gt;</span> bye bye
+<a name="l-590"></a><span class="tm">14:50:33</span><span class="nk"> &lt;vuntz&gt;</span> thanks!
+<a name="l-591"></a><span class="tm">14:50:38</span><span class="nk"> &lt;vuntz&gt;</span> was a good meeting
+<a name="l-592"></a><span class="tm">14:50:38</span><span class="nk"> &lt;psankar&gt;</span> metalgod, you need to #endmeeting
+<a name="l-593"></a><span class="tm">14:50:40</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> actually it's the 3 ou 4 time
+<a name="l-594"></a><span class="tm">14:50:46</span><span class="nk"> &lt;metalgod&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

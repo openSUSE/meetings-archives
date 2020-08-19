@@ -1,0 +1,493 @@
+16:09:47 <wstephenson> #startmeeting
+16:09:47 <bugbot> Meeting started Thu Aug 19 16:09:47 2010 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:09:47 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:09:52 <llunak> I'm still on vacation today, that makes me the same like the rest of the crowd
+16:09:59 <wstephenson> brave man ;)
+16:10:16 <wstephenson> #topic agenda
+16:10:27 <kmi> the kde3 stuff
+16:10:31 <llunak> I think you understood it the wrong way around, but whatever
+16:10:40 <wstephenson> * keep kdebase3 etc for 11.4? what's left depending on kdelibs/base3
+16:10:46 <wstephenson> * old items
+16:10:50 <wstephenson> * status report
+16:10:57 <wstephenson> * Stop fixing KDE3 packages/repos since it is perceived as maintaining,
+16:11:04 <wstephenson> * Discuss openSUSE:KDE ideas 11.4
+16:11:09 <wstephenson> * KDE:45 SC repo
+16:11:19 <wstephenson> * KDE Four Reloaded call for testing/feedback
+16:11:27 <wstephenson> * Q&A, misc
+16:11:32 <wstephenson> any other agenda items?
+16:11:50 <kmi> i added "package new kde apps for dummies"
+16:11:54 <kmi> to the wiki
+16:12:10 <tigerfoot> kmi : link ?
+16:12:10 <wstephenson> * Create a “Package new KDE apps” for dummies tutorial (kmi)
+16:12:11 <kmi> if thats ok
+16:12:19 <wstephenson> tigerfoot: http://en.opensuse.org/openSUSE:KDE_Meetings
+16:12:22 <wstephenson> so
+16:12:24 <llunak> kmi: http://kde-apps.org/content/show.php/kde-obs-generator?content=121094
+16:12:34 <wstephenson> #topic old action items
+16:13:09 <wstephenson> #chair wstephenson
+16:13:09 <bugbot> Current chairs: wstephenson
+16:13:12 <wstephenson> #topic old action items
+16:13:23 <wstephenson> bah
+16:13:37 <kmi> bug triage results?
+16:13:44 <wstephenson> #topic old action items
+16:13:56 <llunak> wstephenson: what? the topic not changing? the bugbot needs admin, but I think it's better if the topic is actually kept intact
+16:14:00 <wstephenson> * cb400f will announce the call for adoption of orphaned packages
+16:14:10 <wstephenson> llunak: i will change it manually then
+16:14:46 <wstephenson> cb400f_: done, i think
+16:14:58 <wstephenson> * javier_: Announce bug triage 13th-16th of August - done
+16:15:04 <wstephenson> * llunak update meeting howto (meetbot, etc.)
+16:15:09 <llunak> not done yet
+16:15:12 <wstephenson> * llunak lead discussion about KDE:45 repo on opensuse-kde list
+16:15:18 <wstephenson> we started that in your absence
+16:15:22 <llunak> ok
+16:15:27 <wstephenson> * remur_030 read llunak's mail on -project about what a strategy is about
+16:15:45 <wstephenson> not here
+16:15:59 <wstephenson> * wstephenson will send to the list the changes made on kde-four-live
+16:16:11 <wstephenson> not done, but sort of worked around by direct communication
+16:16:36 <wstephenson> TOPIC: status reports
+16:16:43 <javier_> wstephenson: nice caveats.odt :-)
+16:16:54 * wstephenson starts
+16:17:35 <wstephenson> so kde-four-live is out for a week
+16:17:42 <wstephenson> and this little other thing called 4.5.0
+16:18:02 <wstephenson> mostly i have been fixing akonadi and nepomuk bugs from top to bottom
+16:18:11 <kmi> \o/
+16:18:22 <wstephenson> preparing the online update for 4.4.4
+16:18:33 <wstephenson> i think it works ootb with that update
+16:18:40 * tigerfoot congrats wstephenson ... (o) (°)
+16:18:58 <wstephenson> also some community things, helping alin get started with image building, hanging out here, fighting stupid on the lists.
+16:19:02 <wstephenson> who's next?
+16:19:57 <wstephenson> javier_: how did the bug traiage go?
+16:19:58 <kmi> releases k3b 2.0.1 a few days ago
+16:20:08 <wstephenson> saw that, good work
+16:20:17 <javier_> wstephenson: well, we closed some bugs
+16:20:35 <javier_> and i even built kdelibs4-apidocs (wishlist)
+16:20:37 * wstephenson closed a lot of pim bugs
+16:21:14 <wstephenson> javier_: fancy doing a quick report about it?
+16:21:26 <wstephenson> i saw a lot of action from ctrippe and stephen dunn
+16:21:59 <javier_> wstephenson: ok, i'll send a message to -kde to gather info about the kde bug triage
+16:22:16 <wstephenson> just a short blog with who was active and how many bugs were closed. you can use bugzilla to get the numbers.
+16:22:27 <anaumov> and what's about that? https://bugzilla.novell.com/show_bug.cgi?id=632216
+16:22:30 <javier_> ok
+16:22:30 <bugbot> openSUSE bug 632216 in openSUSE 11.3 (KDE4 Workspace) "unable to start KDE, graphical login always fails" [Critical,Resolved: invalid]
+16:22:56 <wstephenson> rabauke blogged thoroughly :)
+16:23:08 <wstephenson> llunak: holiday report?
+16:23:19 <llunak> wstephenson: the vacation was nice, thank you
+16:23:21 <wstephenson> anaumov: resolved invalid, no need to discuss
+16:23:33 <rabauke> did I?
+16:23:35 <rabauke> :)
+16:23:58 <anaumov> llunak, ;)
+16:24:03 <wstephenson> ok
+16:24:33 <wstephenson> TOPIC: Stop fixing KDE3 packages/repos since it is perceived as maintaining
+16:24:41 <kmi> anaumov: black screen looks like incompatible gpu dirvers or broken plasma config
+16:24:56 <rabauke> that's mine
+16:25:20 <rabauke> it seems to cause confusion if novell staff works on the kde3 repo
+16:25:48 <llunak> it's irrelevant whether novell staff works on the repo too or not
+16:25:50 <wstephenson> certain people are capable of creating confusion out of the scarcest facts in this regard
+16:26:02 <kmi> it'll also cause confusion if the staff doesnt
+16:26:12 <rabauke> why? it was dropped. period
+16:26:16 <kmi> i think you cant please every1
+16:26:54 <llunak> if somebody points to the repo directly, slap them with http://en.opensuse.org/KDE3
+16:27:10 <rabauke> that does not work, as the mailinglist shows
+16:27:14 <llunak> and if somebody doesn't understand what the word 'maintenance' means, that's their problem
+16:28:11 <kmi> anybody knows what distro the trinity guys use? if oS maybe they want to maintain it
+16:28:22 <bitshuffler__> buntu
+16:29:17 <rabauke> I do not see any reason in helping to keep that repo working, it just makes its death longer suggesting support for kde3
+16:29:29 <llunak> rabauke: I haven't caught up with the lists yet - it is somebody else or just Ilya again (or whatever the english transcription of the name is)?
+16:29:47 <kmi> i wouldn't mind if the kde3 for 11.3 repo was even deleted completely, but i dont have any repo access numbers
+16:30:00 <llunak> I use several packages from the KDE3 repo
+16:30:14 <bitshuffler__> rabauke: so don't do that. I just don't see why not anyone else who wants to spent time with it shouldn't do it, regardless if one is a N employee or not.
+16:30:21 <llunak> so I don't see why I those should be deleted or kept failing
+16:30:28 <kmi> like? (that kinda affects the kdebase3 topic as well)
+16:30:44 <wstephenson> llunak: just ilya
+16:31:16 <rabauke> others as well, otherwise they would not call for will etc if things are broken
+16:31:18 <llunak> I've told him already, he apparently is unable to get what 'maintained' or 'supported' means, even if you slapped him with a huge dictionary
+16:31:22 <wstephenson> i kind of expect strange behaviour from ppl taking on this job
+16:31:48 <llunak> rabauke: that's why we have the KDE3 wiki page, just post the link, done
+16:32:20 <rabauke> ok. but keeping that repo alive causes more harm than good imho
+16:32:32 <bitshuffler__> why?
+16:32:46 <llunak> we can move the repo somewhere else, so that it's not KDE:KDE3, if others think it's a good idea, but I will not support removing the packages
+16:33:02 <kmi> if lubos wants a few apps from that repo, it's ok when he fixes a few issues here and there
+16:33:10 <anaumov> Ilya write on planetSUSE about KDE2 too, it's funny I think...
+16:33:28 <wstephenson> rabauke: i think the angry squad will be angry whatever we do
+16:33:30 <bitshuffler__> I'm against moving it cause it just creates more mess and wins nothing imho.
+16:33:43 <kmi> kde3 should move to the same place as unsuported SC releases (4.5, 4.7,..)
+16:33:54 <llunak> and I can blog 'KDE3 is dead' if you want and think it'll make it openSUSE-oficial
+16:33:56 <wstephenson> i thought about it and realised they are classic Laggards and eventually will join us in KDE 4 or go elsewhere. nothing we can do will please them.
+16:34:00 <bitshuffler__> kmi: which wont work since it isn't unstable
+16:34:03 <rabauke> wstephenson: correct. yet if its gone, its gone and it comes to an dend
+16:34:21 <anaumov> llunak, +1
+16:34:43 <wstephenson> llunak: i think that will just poke the bees' nest.
+16:34:44 <bitshuffler__> rabauke: again, in what way does the existence of that repo harm you? If you don't use it then it doesn't bother you anyways.
+16:35:12 <javier_> Unsupported:KDE3?
+16:35:22 <rabauke> bitshuffler__: it makes kde3 users think that it is not eol
+16:35:29 <bitshuffler__> just leave it to folks who are interested in it and be done with it. After all it is also a plus for suse that installing kde 3 is still possible.
+16:35:49 <rabauke> thus stay stay around, keep on pesting
+16:35:59 <llunak> rabauke:  slap them with the wiki page and ignore them afterwards
+16:36:01 <bitshuffler__> rabauke: so let them use it. better than some endless "omg kde4 iis teh sucks, kde3 was thaaaaaaaaaaaaat much better".
+16:36:17 <wstephenson> and meanwhile we actively moderate the lists to shut down the flames
+16:36:18 <llunak> if that doesn't help, tell me and I'll slap them with the KDE3 wiki page, harder
+16:36:18 <kmi> bitshuffler__: +1
+16:36:32 <rabauke> bitshuffler__: if the reop was gone, that discussion was gone. as long as it exists, that discussion will come up again and again
+16:36:39 <anaumov> bitshuffler__, do you want to support supported KDE3?
+16:36:56 <kmi> how about actively dropping it for 11.4?
+16:37:02 <javier_> we would have to improve our wiki slapping skills then
+16:37:04 <kmi> not even an unsupported repo
+16:37:15 <bitshuffler__> anaumov: no, I couldn't care less about it but apparently there  are some peeps who like it and as long as they keep it building I don't see why it should get removed.
+16:37:31 <wstephenson> kmi: against the sense of the OBS, ppl should be able to do stuff they want to do
+16:38:03 <kmi> just offerering a compromise between rabauke and bitshuffler ;)
+16:38:10 <bitshuffler__> rabauke: well, there simply is no reason that your will has to get forced on others who disagree with you. If you don't like it then just ignore it and forget about its existence
+16:38:19 <bitshuffler__> and point anyone who doesn't get it to the wiki page
+16:38:58 <rabauke> bitshuffler__: as if that would work
+16:39:00 <anaumov> bitshuffler__, you have to understand, that we need people who will help with KDE�
+16:39:05 <anaumov> *KDE3
+16:39:11 <bitshuffler__> seriously, we have it, it builds and it is interesting for ppl. So, if you don't like it just leave it alone and let others worry about it.
+16:39:15 <kmi> rabauke: you could create a mail rule and filter  all kde3 mails
+16:39:25 <szal> doesn't Packman have KDE3?
+16:39:27 <wstephenson> oh read the "KDE3 Enthusiasts" thread on opensuse@
+16:39:28 <rabauke> bitshuffler__: it does not build without the help of the opensuse kde devs
+16:39:45 <wstephenson> anaumov: *we* don't need people who will help with kde 3
+16:39:54 <wstephenson> kde 3 fans seem to need it
+16:39:57 <bitshuffler__> anaumov: well, there are ppl who "help" / care about kde 3 and fix the stuff so just let them do that if that is how they like to spent their time.
+16:40:28 <bitshuffler__> rabauke: and if those help out there then it still is their free choice.
+16:40:33 <rabauke> I would not have a problem if those that claim kde3 is still alive would keep that repo building but its those that tell them that it's dead
+16:40:48 <kmi> rabauke: you could create a mail rule and filter  all kde3 mails
+16:40:51 <bitshuffler__> rabauke: as in llunak just explained why he does that
+16:41:15 <wstephenson> so, as chair - are we getting anywhere with this?
+16:41:20 <kmi> no
+16:41:24 <rabauke> no
+16:41:28 <bitshuffler__> just leave it alone
+16:41:34 <llunak> hmm, pity I was on vacation, I could have finally tried how moderation works
+16:41:55 <llunak> next time I'll block these 'KDE3 again' threads
+16:42:01 <rabauke> Yet as long as you fix kde3 I can fully understand those that think it is supported.
+16:42:37 <kmi> next topic please ;)
+16:42:38 <wstephenson> let's move on, and remember that the KDE3 wiki page is your best defense against them
+16:42:51 <wstephenson> * Discuss openSUSE:KDE ideas 11.4
+16:43:16 <kmi> martin filled the page already
+16:43:18 <wstephenson> TOPIC: ^
+16:43:21 <kmi> i did a bit
+16:43:44 <kmi> he and i seem to agree that phonon-vlc should be default
+16:44:16 <rabauke> does it actually work?
+16:44:17 <bitshuffler__> and where do you get the vlc from (or isn't that necessary)?
+16:44:27 <rabauke> never did here
+16:44:35 <kmi> bitshuffler__: VLC without mpeg codecs is in playground
+16:44:49 <kmi> backend works for me better than any other backend i ever tried
+16:44:50 <bitshuffler__> kmi: and that works better than xine?
+16:44:59 <kmi> just one quirk:
+16:45:08 <bitshuffler__> hm, iirc I tried it some time ago and just listened to silence
+16:45:10 <rabauke> what about cpu uzsage?
+16:45:39 <rabauke> and it has to work with the packman vlc otherwise its pretty useless
+16:45:40 <kmi> when I exit a multimedia app, instead of normal quitting, it crashes additionally, but since i exit it anyway, i don't care much
+16:45:44 <wstephenson> i heard that was a bit higher.
+16:45:51 <kmi> it works with pacman
+16:45:56 <rabauke> wstephenson: double here
+16:46:10 <tigerfoot> having a audio engine without mpeg is just useless ...
+16:46:13 <kmi> I have so far no problems with cpu usabe
+16:46:31 <rabauke> kmi: does it use more than xine?
+16:46:38 <rabauke> if so that is a problem
+16:46:44 <kmi> if the VAAPI-VDPAU wrapper worked, i would also have GPU acceleration
+16:46:45 <wstephenson> if anyone doesn't know sandsmark, he's the Phonon guy.
+16:47:03 <llunak> this is discussing a bit too ahead - is it in Factory, if not, is it suitable for it?
+16:47:04 <tigerfoot> it will just drive more user to make the mistake to put videolan and packman repo ...
+16:47:05 <kmi> I never compared xine vs vlc CPU-wise. i don't notice a difference
+16:47:06 <sandsmark> phonon-vlc apparently supports vaapi
+16:47:17 <sandsmark> (probably Xine too, haven't tested, though)
+16:47:20 <wstephenson> sandsmark: scrollback - http://paste.opensuse.org/80853325
+16:47:23 <sandsmark> kmi: they both use ffmpeg
+16:47:29 <rabauke> kmi: on a netbook your battery will
+16:47:39 <sandsmark> there shouldn't be a noticeable difference
+16:47:46 <kmi> i have a notebook ;)
+16:47:56 <kmi> i don't see any difference
+16:47:58 <tigerfoot> rabauke: only without the power unit  :-)
+16:48:04 <wstephenson> sandsmark: are there any big ticket items preventing us from assessing p-vlc as backend?
+16:48:06 <sandsmark> but I'm not sure Phonon-VLC is ready, tbh.
+16:48:08 <kmi> and if vaapi works, it should even be much lover
+16:48:18 <wstephenson> next release is in January, fwiw
+16:48:23 <kmi> I use it since it's in playground
+16:48:24 <sandsmark> wstephenson: there are some bugs, like missing audio effects (→ sometimes weird behaviour in amarok)
+16:48:27 <sandsmark> oh
+16:48:42 <kmi> works like a charm except that crash-on-exit thingie that sounds worse than it is
+16:48:43 <wstephenson> sandsmark: eg crossfade
+16:48:57 <sandsmark> well, amarok doesn't have crossfader with any backend yet
+16:49:03 <sandsmark> (should be fairly easy, though)
+16:49:08 <llunak> there's not much point in discussing playground material
+16:49:09 <wstephenson> shows what i know ;)
+16:49:20 <wstephenson> ok.
+16:49:20 <llunak> we it needs to make it into factory, after that it may become the default
+16:49:27 <llunak> s/we//
+16:49:33 <kmi> just saying even as playground it works better for me than gstreamer and xine
+16:49:58 <llunak> then push it for factory
+16:50:31 <kmi> someone with leet programming skillz ;) just needs to look at that crash bug to make it mainstream compatible IMO
+16:50:43 <wstephenson> kmi: bug#?
+16:50:51 <wstephenson> sandsmark: know what kmi is referring to?
+16:50:56 <sandsmark> nope
+16:50:57 <kmi> didn't file any, because it's in playground ;)
+16:51:06 <sandsmark> kmi: do you have a backtrace?
+16:51:19 <kmi> in a minute ;)
+16:51:50 <wstephenson> ok, next item on the ideas?
+16:52:07 <wstephenson> who wrote "matching green icons"? for what?
+16:52:20 <wstephenson> we are looking at http://en.opensuse.org/openSUSE:KDE_ideas_11.4
+16:52:37 <kmi> i think its a leftover fom 11.3
+16:52:48 <bitshuffler__> can I add some "get rid of green and make a blue release!"?
+16:53:04 <javier_> hehe
+16:53:07 <kmi> to make it look like kubuntu, mandriva, and fedora? ;)
+16:53:21 * wstephenson shrugs
+16:53:24 <wstephenson> lets ignore that
+16:53:36 <kmi> fine with me
+16:53:39 <bitshuffler__> dunno what color mandirva has but the rest is more gnome distros so ...
+16:53:43 <wstephenson> cb400f_: your disable animations option
+16:53:49 <wstephenson> bitshuffler__: blue
+16:54:08 <wstephenson> cb400f_: appeals to me and no doubt some of the more moderate members of the angry brigade too.
+16:54:09 <bitshuffler__> heh, well, blue rocks ;D
+16:55:19 <wstephenson> cb400f_:  is afk
+16:55:36 <wstephenson> so the PA thing i started separately on the list, consensus is to try it out
+16:55:55 <wstephenson> i'll leave rekonq to last
+16:56:04 <wstephenson> looking at the Single features list now
+16:56:25 <bitshuffler__> but the kde integration for OOo & firefox will stay, right?
+16:56:39 <wstephenson> bitshuffler__: i expect so
+16:56:45 <wstephenson> but we need to fix this slowdown bug
+16:56:51 <bitshuffler__> fine :)
+16:57:04 <wstephenson> lots of little things in the Single Features list would be good to have
+16:57:24 <wstephenson> but i dunno where the engineering time is going to come from.
+16:57:34 <bitshuffler__> well, would you write me some "working app to sync my mobile with kontact" if I add it there? ;P
+16:57:36 <kmi> in my experience OO + KDE integration is also less stable, but since crashing OO does not start Dr. Konqui, i have no backtrace
+16:57:54 <wstephenson> bitshuffler__: sure. in my sleep. :P
+16:58:02 <bitshuffler__> \o/ :D
+16:58:20 <wstephenson> the randr item is on my and others' todos for 4.6
+16:58:24 <wstephenson> (upstream)
+16:58:28 <wstephenson> so will get done
+16:58:49 <javier_> anti virus plasmoid?
+16:59:02 <wstephenson> *coughs*
+16:59:18 <javier_> it's part of single features
+16:59:19 <wstephenson> firewall status and apparmor is easy to do.
+16:59:35 <wstephenson> i think antivirus is unrealistic
+16:59:56 <wstephenson> unless it says 'you're using opensuse KDE, no virus writer cares about hitting such a small target' ;)
+16:59:58 <bitshuffler__> what for? you need it on a server and that doesn't run X
+17:00:14 <kmi> indeed
+17:00:36 <wstephenson> bitshuffler__: do you mean email virus scanning?
+17:00:46 <herby> A KDE client for fwzs would be nice
+17:01:23 <wstephenson> http://gitorious.org/opensuse/fwzs
+17:01:26 <wstephenson> first i hear of it
+17:01:31 <wstephenson> "Firewall zone switcher"
+17:01:31 <bitshuffler__> wstephenson: yes, basically you just need it for mail & file servers or not?
+17:01:33 <kmi> I think phishing detection in kmail makes more sense than virus checking
+17:01:38 <wstephenson> bitshuffler__: yes, no need to discuss further
+17:02:04 <wstephenson> kmi: we'll have enough to do with PIM just making sure we don't lose features with the akonadi port for 4.6
+17:02:18 <kmi> i know.
+17:02:21 <anaumov> maybe it will be better just to do what we have more stable and... just better?
+17:02:45 <wstephenson> herby: looks like about 1/2 a day's work...
+17:03:15 <wstephenson> just turn http://gitorious.org/opensuse/fwzs/blobs/master/fwzsapp.py into a python plasmoid.
+17:03:29 <herby> wstephenson: Yes should be easy.
+17:03:48 <wstephenson> ok so we should rank these features by prio
+17:03:50 <wstephenson> i'll add a few
+17:04:05 <wstephenson> i'll start that process and ask for comments.
+17:04:20 <wstephenson> TOPIC: keep kdebase3 etc for 11.4? what's left depending on kdelibs/base3
+17:04:25 <wstephenson> that's sort of a feature
+17:04:38 <wstephenson> who added that?
+17:05:18 <kmi> btw, filed https://bugzilla.novell.com/show_bug.cgi?id=632903 after I installed the debug symbols
+17:05:22 <bugbot> openSUSE bug 632903 in openSUSE 11.3 (KDE4 Workspace) "Phonon-VLC causes segfault in app exit" [Normal,New]
+17:05:39 <rabauke> it's more an upstream issue though
+17:06:18 <llunak> wstephenson: it's not a sort of a feature
+17:06:38 <wstephenson> llunak: design decision for next release then
+17:06:38 <llunak> wstephenson: we need to keep that part of the KDE3 building if we still ship it, and there may be 3rd party apps that still need the libs
+17:07:05 <wstephenson> sandsmark: bug ^
+17:07:11 <kmi> i don't know any. maybe llunak can enlighten us which apps he still uses
+17:07:27 <llunak> kmi: none that must be in the release
+17:07:44 <wstephenson> quanta, gambas?
+17:08:03 <wstephenson> the list is getting shorter now kmymoney released
+17:08:10 <llunak> there's gsoc for kde4-based quanta, although I don't know the timeline
+17:08:25 <wstephenson> it was milianw so it probably succeeded.
+17:08:37 <herby> I have read quanta will become part of kdevelop
+17:08:37 <llunak> I wouldn't consider a BASIC IDE that important
+17:08:42 <wstephenson> no,
+17:08:52 <wstephenson> although it is probably used by thousands of angry old sysadmins ;)
+17:08:55 <kmi> seamonkey is a better web editor anyway
+17:09:45 <wstephenson> anything else?
+17:09:46 <llunak> I think we should postpone this topic until late alpha or early beta phase
+17:09:49 <wstephenson> ok
+17:10:00 <kmi> when is that, btw?
+17:10:09 <wstephenson> #action postpone kde3* inclusion decision until late alpha/beta
+17:10:10 <kmi> package deadline
+17:10:29 <wstephenson> kmi: http://www.suse.de/~coolo/opensuse_11.4/
+17:10:52 <kmi> is that "component freeze"?
+17:11:03 <wstephenson> no
+17:11:10 <wstephenson> around dec/jan
+17:11:34 <wstephenson> M6 16 dec
+17:11:37 <kmi> ah, ok. deciding about rekonq has some time then, too
+17:11:51 <wstephenson> TOPIC: repositories specific for KDE SC 4.5
+17:12:15 <wstephenson> ok just a quick summary of what happened since last meeting
+17:12:21 <javier_> this reminds me of openSUSE installer's icons... right now it's a mixture of gnome and kde icons
+17:12:31 <wstephenson> javier_ is doing branding work for open-PC
+17:12:35 <javier_> shouldn't be oxygen made the default?
+17:12:40 <wstephenson> was going to base on KDF
+17:12:52 <wstephenson> javier_: yes, -> Q&A, Misc now though
+17:12:59 <javier_> ok
+17:13:21 <wstephenson> but since lots of people ask for 4.5 'stable' and a product release needs a stable repo
+17:13:34 <wstephenson> he agreed to help maintain a KDE:45 repo
+17:13:37 <wstephenson> or whatever we call it
+17:13:47 <javier_> well, one possibility was using kde 4.5.0 from k:d:f with the repo disabled
+17:13:59 <wstephenson> i suggest to discuss further on list, if there are no further questions.
+17:14:10 <wstephenson> javier_: that prevents people from adding new apps though.
+17:14:21 <javier_> i am no maintainer expert but i would def like to help and learn in the process
+17:14:26 <kmi> did the list bring any result wtr?
+17:14:41 <kmi> we discussed already several times
+17:14:43 <wstephenson> a stable project is a good place to learn
+17:14:54 <javier_> wstephenson: i know, that's why having kde45 is a nice idea: )
+17:15:06 <wstephenson> kmi: i think it's just about agreeing the nitty gritty now
+17:15:08 <wstephenson> 1) name
+17:15:19 <wstephenson> 2) update policy, frequency
+17:15:32 <wstephenson> 3) technical implementation, frozen linkrevs or what
+17:15:54 <wstephenson> llunak: want to kick this off on list with those subtopics as starting points?
+17:15:54 <bitshuffler__> wstephenson: to what do you want to link?
+17:16:13 <bitshuffler__> regarding the update policy: when new upstream release comes out or to add bug fix patches
+17:16:17 <wstephenson> bitshuffler__: linking to good revs of KDF is one possibility, until it goes 4.6
+17:16:30 <wstephenson> bitshuffler__: details. we'll do this on list
+17:16:38 <wstephenson> but you're right, those are the kind of questions
+17:16:46 <wstephenson> then javier_ has a clear program
+17:16:52 <kmi> an alternative could be to switch kdf at 4.6RC,not beta...
+17:16:52 <bitshuffler__> oh, I thought it is merely about a 4.5 repo
+17:17:19 <bitshuffler__> kmi: that would slow down development for 11.4 or not?
+17:17:23 <javier_> one possibility: link when there's a new stable KDE SC release
+17:17:31 <javier_> only
+17:17:50 <llunak> wstephenson: I haven't caught up on the list yet
+17:18:03 <llunak> wstephenson: but I can take the AI
+17:18:10 <wstephenson> llunak: ok, i'll start the discussion so it gets done sooner.
+17:18:30 <wstephenson> #action wstephenson start KDE:45 project implementation discussion on list
+17:18:46 <wstephenson> any more questions that can't be handled on list?
+17:19:16 <kmi> media player / phonon-vlc?
+17:20:56 <wstephenson> kmi: OT now :)
+17:21:07 <wstephenson> TOPIC: KDE Four Reloaded image call for testing/feedback
+17:21:13 <alin> hi boys I made it too
+17:21:17 <alin> wstephenson: just in time
+17:21:25 <kmi> i though the question was what to outource to the ML
+17:21:42 <wstephenson> kmi: yes, scoped to the kde45 project discussion though.
+17:21:50 <wstephenson> alin: ok, it's your time!
+17:21:53 <kmi> k, sry
+17:21:53 <alin> javier_: did you update the update_packahe
+17:22:06 <javier_> alin: no, not yet
+17:22:15 <wstephenson> alin and javier_ have updated the 11.3 KDE 4.5.0 reloaded image, with suse branding
+17:22:23 <wstephenson> at some point i would like to make a splash about it
+17:22:29 <alin> wstephenson: I have been in town, they are still painting the doors so I get high if I spend too much time in the office
+17:22:30 <wstephenson> and rtyler will push it on his site
+17:22:33 <javier_> my idea is to have kde-reloaded the classic way: openSUSE 11.3 KDE4 Live CD packages + 4.5.0 + Updates
+17:22:42 <wstephenson> agreed
+17:22:58 <wstephenson> do we release it now, or wait for eg 4.5.1?
+17:23:10 <javier_> I think we can release it now
+17:23:15 <alin> wstephenson: once the packages are solved we should release it
+17:23:20 <wstephenson> or keep releasing with updates from KDE:45
+17:23:33 <alin> wstephenson: makes life easier for the ones who want to install
+17:23:50 <javier_> wstephenson: better wait then and make two announcements
+17:23:55 <alin> when is KDE:45 coming to life?
+17:23:57 <tittiatcoke> apologies for being late. To be honest I didn't expect that the meeting was still ongoing
+17:23:57 <kmi> wait a few days until we have a 4.5 repo and preconfigure Reloaded to access it instead of factory?
+17:24:08 <javier_> kmi: +1
+17:24:10 <alin> kmi: good idea
+17:24:13 <wstephenson> can someone update the README.pdf with a disclaimer that this is unsupported?
+17:24:27 <wstephenson> it's made from caveats.odt in the package sources
+17:24:37 <wstephenson> kmi: +1
+17:24:42 <llunak> KDE:45 repo may take more than a few days
+17:24:44 <alin> wstephenson: you MF want some bleeding edge stuff you are on your own after you click enter
+17:24:49 <alin> click ok
+17:24:52 <alin> llunak: why?
+17:25:09 <wstephenson> alin: those paint fumes smell of guinness.
+17:25:33 <alin> wstephenson: maybe I do not know I quit drinking guiness many years ago
+17:25:40 <llunak> because things usually take a bit longer than expected?
+17:25:45 <kmi> llunak: at first we could simply agree on a name and to a symlink to factory
+17:25:56 <javier_> kmi: +1
+17:25:56 <alin> llunak: we put tittiatcoke to do it and will be fast
+17:26:07 <tittiatcoke> alin: hehehe
+17:26:11 <llunak> kmi: hmm, ok, that might make things faster at the start
+17:26:17 <alin> tittiatcoke: I thought you are hiding
+17:26:26 <javier_> that would be great
+17:26:29 <tittiatcoke> alin: Nope. I guess I arrived at the right moment
+17:26:57 <alin> tittiatcoke: cool was the same with me
+17:27:08 <wstephenson> i'm ok to wait a bit
+17:27:12 <wstephenson> we've got enough going on atm
+17:27:20 <tittiatcoke> +1
+17:27:34 <alin> let us do an a-team for the kde45 and then once ready we update the live
+17:27:46 <wstephenson> ok
+17:28:04 <alin> who voluntiers? for the kde45 repo?
+17:28:10 <wstephenson> #action kde-four-reloaded-team: polish while waiting for KDE:45 to come on tap
+17:29:05 <wstephenson> alin: javier_ is going to help
+17:29:05 <alin> wstephenson: ok... do we have size restrictions?
+17:29:19 <alin> wstephenson: he should
+17:29:23 <wstephenson> and i guess llunak and i will help get it established
+17:29:31 <alin> wstephenson: joking
+17:29:32 <wstephenson> alin: 732something bytes
+17:29:44 <wstephenson> and remember that the x86_64 livecd is bigger than the i686 one
+17:29:48 <alin> wstephenson: cool... we will need a list with things that have to be on
+17:30:01 <alin> wstephenson: yes around 7MiB
+17:30:03 <wstephenson> alin: you are empowered to go make that list.
+17:30:18 <wstephenson> next topic...
+17:30:24 <wstephenson> TOPIC: Create a “Package new KDE apps” for dummies tutorial
+17:30:26 <alin> wstephenson: that is a mistake I will put only expensive one on it...
+17:30:27 <wstephenson> kmi: ^
+17:30:45 <kmi> you posted a kde-apps link
+17:30:52 <javier_> wstephenson: i remember you gave a me link with the package list of openSUSE 11.3 KDE4 but it wasn't quite what i was looking for. Perhaps we can make one and put it in gitorious, same place as kde4_unstable
+17:30:58 <kmi> didn't look at it the past few minutes
+17:31:19 <wstephenson> javier_: yes, let's do that offline
+17:31:29 <javier_> ok
+17:31:30 <wstephenson> #action wstephenson put pacakge list in gitorious
+17:31:51 <wstephenson> kmi: llunak's kde-obs-generator tool is a packaging tool for dummies
+17:32:18 <wstephenson> as well as that some people are working on adding it to qt creator, to make packaging for devs easier
+17:32:20 <kmi> sounds perfect for me ;)
+17:32:23 <wstephenson> dunno about the dummies set though
+17:32:42 <wstephenson> sebas, leinir: know anything about frank's project to tell us?
+17:33:26 <javier_> it's a bit offtopic, but a plasmoid workshop at the openSUSE Conference would be great
+17:33:41 <javier_> are you planning any kde workshops there?
+17:33:51 <wstephenson> javier_: packaging plasmoids?
+17:34:07 <wstephenson> no dev workshops planned but i do have one i was developing for linuxtag that i can give
+17:34:07 <javier_> wstephenson: no, creating plasmoids
+17:34:28 <javier_> okis
+17:34:56 <javier_> wstephenson: which frank's project are you referring to?
+17:34:57 <wstephenson> ok then
+17:35:00 <llunak> javier_: there's a page at techbase.kde.org
+17:35:09 <wstephenson> javier_: OBS packaging support in qt creator
+17:35:20 <wstephenson> javier_: your frank
+17:35:23 <leinir> Well, other than that we're proceeding at pace with it, not really - if you want to check the design document, it's in the obs-qt-creator team clone on gitorious :)
+17:35:33 <leinir> javier_: Hello, we are colleagues ;)
+17:35:34 <javier_> I know, but a workshop (if possible) would be perfect
+17:35:49 <anaumov> javier_, +1
+17:35:51 <wstephenson> oh dragotin asked me if you are using his old qt creator obs plugin code at all?
+17:36:00 <wstephenson> javier_: gladly
+17:36:02 <javier_> wstephenson: I meant which one of frank's project
+17:36:09 <javier_> leinir: hi ;)
+17:36:25 <wstephenson> javier_: are we on the same page now?
+17:36:25 <javier_> leinir: are you also working on the open-pc?
+17:36:54 <leinir> wstephenson: i didn't know there was one... but it would make sense to do so, sure :) have you got a link handy? (also, that part of the project is sebas' :) )
+17:37:02 <leinir> javier_: No, i'm working on ocs :)
+17:37:13 <javier_> wstephenson: which page you mean?
+17:37:19 <javier_> leinir: ocs?
+17:37:35 <leinir> javier_: open collaboration services :)
+17:37:37 <wstephenson> leinir: i'll ask dragotin for it
+17:37:46 <leinir> Also, opendesktop.org's server side :)
+17:38:00 <wstephenson> ok if that's it, let's talk about Frankitschek Global Empire in Q&A, misc.
+17:38:06 <wstephenson> TOPIC: Q&A, Misc.
+17:38:38 <javier_> leinir: perhaps it could be integrated with the Open-PC's desktop in the future :)
+17:39:22 <leinir> javier_: it sort of already does - the social desktop plasmoid uses ocs already ;)
+17:39:51 <javier_> hmm, but the plasmoid is not on the desktop (by default)
+17:40:01 <wstephenson> leinir: are you coming to the opensuse conf?
+17:40:32 <javier_> I think I can talk now about the installer's icons
+17:41:11 <wstephenson> sure
+17:41:32 <javier_> well, the installer uses different styles of icons and i was wondering if we could make oxygen's the default one
+17:41:48 <javier_> since kde is the default desktop
+17:42:06 <kmi> at least for DVD and KDE Live CD +1
+17:42:23 <wstephenson> afaik yes this would be accepted, there was some discussion about it on -artwork or -marketing i think
+17:42:29 <javier_> for some reason, YaST uses GNOME-style icons by default
+17:42:42 <javier_> yes, it was on -artwork
+17:43:06 <javier_> ok
+17:43:29 <llunak> javier_: for yast, make a bugreport (and add kde-maintainers to CC)
+17:44:10 <leinir> wstephenson: Well, i certainly wouldn't mind that - Frank did mention it :)
+17:44:11 * leinir growls at stupid internets :P
+17:44:29 <javier_> llunak: iirc, there are two directories, the default one and another one for oxygen
+17:44:39 <wstephenson> leinir: excellent
+17:44:51 <javier_> so if the yast people change that, we wouldn't have to do anything extra
+17:45:25 <javier_> wstephenson: action for me
+17:45:45 <wstephenson> #action javier_ bugreport for yast to use oxygen icons in installer.
+17:45:51 <javier_> thanks
+17:46:18 <wstephenson> well if that's it
+17:46:31 <wstephenson> i will end the structured part of the meeting
+17:46:40 <wstephenson> of course we can continue to chat
+17:46:42 <alin> javier_: do not run I will be back in 2 minutes
+17:46:51 <alin> javier_: I want to ask you something about packages
+17:47:13 <wstephenson> thanks everyone for coming
+17:47:15 <wstephenson> #endmeeting

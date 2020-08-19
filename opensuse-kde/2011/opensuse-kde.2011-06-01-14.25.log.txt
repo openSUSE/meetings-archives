@@ -1,0 +1,156 @@
+14:25:21 <wstephenson> #startmeeting
+14:25:21 <bugbot> Meeting started Wed Jun  1 14:25:21 2011 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:25:21 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+14:25:26 <wstephenson> i'll chair
+14:26:02 <wstephenson> agenda:
+14:26:52 <wstephenson> argh, kmail hates me
+14:26:58 * wstephenson makes it up
+14:27:09 <wstephenson> old agenda items
+14:27:32 <wstephenson> status reports
+14:33:33 * mrdocs returns as well
+14:33:54 <wstephenson> * kill phonon-backend-xine
+14:34:23 <wstephenson> * revise the live image pages (linusxsusefan)
+14:34:46 <wstephenson> * 12.1 features (scheduling for stability) (cb400f)
+14:35:04 <wstephenson> tittiatcoke: was there a decision last time about the meeting time?
+14:35:27 <wstephenson> tittiatcoke: i don't see  minutes
+14:35:49 <tittiatcoke> wstephenson: I wasn't present on the last meeting, but when I raised this topic the time before we agreed on 4pm CET
+14:37:26 <mrdocs> tittiatcoke: was me who wanted the change, because later was not good... i am now working from home, so im flexible
+14:37:26 <wstephenson> tittiatcoke: ok
+14:37:47 <wstephenson> and iirc titti was travelling at 1800
+14:37:56 * mrdocs nods
+14:37:56 <tittiatcoke> wstephenson: Correct :-)
+14:38:25 <wstephenson> i'm asking because our meeting attendance isn't great for a while now
+14:38:27 <wstephenson> anyway
+14:38:53 <wstephenson> old action items are all mine and not done
+14:39:06 <wstephenson> status reports: me: linuxtag, and PNM/KNM hacking
+14:39:42 <wstephenson> i've removed ModemManager stuff from the Solid::Control namespace now and am making PNM run with it
+14:40:06 <wstephenson> on the way i've turned up some nasty pragmatic api problems that have to be fixed
+14:40:49 <wstephenson> cartman is representing us at the Randa KDE sprint that is starting today
+14:40:57 <tittiatcoke> me: Helping out a little with 4.7Beta1 and getting the latest pnm nm09 branch version in Playground for tigerfoot to test :-)
+14:41:05 <wstephenson> dirk and cornelius will be representing us at the upcoming Qt contributors sprint
+14:41:30 <mrdocs> tittiatcoke: im going to sacrifice my netbook to 4.7 now
+14:41:36 <tittiatcoke> still want to do a bigger cleanup in KUSC
+14:41:45 <tittiatcoke> mrdocs: Should work fine.
+14:42:05 <tittiatcoke> tigerfoot: Any comments on PNM from Playground ?
+14:42:35 <wstephenson> i'm also interested, i'm not sure my work will be ready for M1
+14:43:38 <tittiatcoke> wstephenson: I believe that 12.1 M1 has been released one or two days ago
+14:44:05 <wstephenson> oops :)
+14:45:29 <tittiatcoke> wstephenson: In playground I have now the latest pnm from the nm09 branch. With me everything is working ok and that even with a NM 0.9 without the famous f15 branch. I pushed it earlier this week to playground for tigerfoot to test.
+14:45:30 <wstephenson> alin: any PNM data to report? still waiting for my port?
+14:45:30 <tigerfoot> tittiatcoke: it works wifi,vpn wire
+14:45:55 <tigerfoot> didn't have time to test umts/hsdpa yet
+14:46:03 <tittiatcoke> tigerfoot: So the only downside is that you have to recreate the connections ?
+14:46:14 <tittiatcoke> tigerfoot: That should also work fine. :-)
+14:46:50 <tigerfoot> but with kauth/polkit asking root password is annoying and I suspect it lead to kde bug 258916
+14:46:53 <bugbot> KDE bug 258916 in policykit-kde (polkit-kde-authentication-agent-1) "PolicyKit1-KDE (polkit-kde-authentication-agent-1) crash on shutdown [g_type_check_instance_is_a, g_object_unref,    , PolkitQt1::Agent::Session::Private::~Private]" [Crash,Unconfirmed] http://bugs.kde.org/258916
+14:47:04 * cb400f appears.. managed to forget the meeting shortly after chatting about it :-(
+14:47:06 <tigerfoot> each time I close kde seesoin
+14:47:26 <wstephenson> hi cb400f
+14:47:40 <alin> wstephenson: yes... I am still waiting is useless to report them
+14:47:51 <wstephenson> tigerfoot: polkit is annoying but should be an easy fix.
+14:47:54 <alin> wstephenson: until you release something
+14:47:59 <wstephenson> the main thing is the NM functionality is working
+14:48:10 <alin> wstephenson: yes...
+14:48:12 <wstephenson> i have to fix the design flaws so cdma can work
+14:48:28 <tigerfoot> wstephenson: the missing part in info panel is a line for ipv6 addr
+14:48:31 <alin> wstephenson: mine works great... tries to connect even the bluetooth mouse to interner
+14:48:31 <wstephenson> then backport the rest of the recent nm09 branch work onto mine branch
+14:48:33 <alin> t
+14:48:41 <tittiatcoke> tigerfoot: Strangely enough I do not get that bug
+14:49:19 <tittiatcoke> wstephenson: with the current nm09 branch, I have the mobile broadband working
+14:50:00 <tigerfoot> tittiatcoke: I'm on KDF + openSUSE_Factory, could explain
+14:50:03 <tittiatcoke> tigerfoot: I assume that this IPv6 address is also missing in the older version of pnm :-)
+14:50:23 <tittiatcoke> tigerfoot: could be. I wonder however if it is resolved by a newer KDE version or a newer polkit version
+14:50:27 <tigerfoot> tittiatcoke: exact
+14:50:47 <wstephenson> ilia has been adding ipv6 stuff to nm09 branch bit by bit
+14:50:58 <wstephenson> so, on the agenda:
+14:51:13 <wstephenson> * [phonon-backend-xine removal
+14:51:16 <wstephenson> anyone against this?
+14:51:25 <wstephenson> i've been using gstreamer since 11.4 was out, no problems on 3 machines
+14:51:41 <wstephenson> basically upstream have said they will not support the xine backend any more
+14:51:55 <tittiatcoke> can't say anything there. Have been using the vlc backend
+14:52:29 <cb400f> wstephenson: did you try skipping in mp3 tracks in amarok? or using equalizer in amarok? :-)
+14:52:39 <tittiatcoke> But for factory gstreamer would be the better choice
+14:52:43 <cb400f> I've also sometimes gotten bogus warnings about missing mp3 support
+14:52:55 <tigerfoot> xine is the only one having equalizer function
+14:52:56 <tittiatcoke> cb400f: Equalizer is something Xine specific unfortunately.
+14:53:09 <cb400f> but I haven't really tried latest phonon or phonon-gstreamer.. maybe it's better
+14:53:39 <tigerfoot> Has not crash from weeks here ( not the case of everything in factory :-)
+14:53:59 <cb400f> but afaict xine is still functionally fully on par with vlc and gstreamer... and prolly better for some specific features
+14:54:33 <wstephenson> except its problems with pulse, and its unfixable bugs
+14:54:55 <tigerfoot> can we put a check list on agenda, to try each usage case of audio sound system ( amarok, kaffeine, spip etc )
+14:55:18 <cb400f> hmm
+14:55:18 <mrdocs> tigerfoot: salut.. yes good idea
+14:56:10 <mrdocs> currently xine works perfectly with alsa and all of my installs
+14:56:12 <cb400f> rabauke already created such a wiki page for 11.4
+14:56:22 <cb400f> we still managed to miss some of the issues
+14:56:24 <mrdocs> im positively allergic to pulse
+14:56:46 <cb400f> http://en.opensuse.org/openSUSE:KDE_11.4_phonon-backend
+14:57:34 <cb400f> but I guess there's no discussion about the default.. just whether to keep xine around for a bit, or remove it already
+14:57:37 <wstephenson> ok, let's make this a flagship "early and often" switch.
+14:58:08 <tigerfoot> mrdocs: hello, good pulse :-)
+14:58:23 <wstephenson> actioN: wstephenson write kconf_update script for M2 to switch existing users to gstreamer
+15:00:02 <jllo> moin
+15:00:15 <wstephenson> next
+15:00:28 <wstephenson> * revise the live image pages (linuxsusefan)
+15:00:32 <wstephenson> already discussed
+15:00:46 <wstephenson> #action wstephenson to add linuxsusefan to ACL
+15:00:57 <wstephenson> #action wstephenson write kconf_update script for M2 to switch existing users to gstreamer
+15:00:59 <wstephenson> hi javier
+15:01:07 <javier> hi wstephenson
+15:01:18 <wstephenson> * 12.1 features for stability (cb400f)
+15:02:11 <cb400f> see http://lists.opensuse.org/opensuse-kde/2011-05/msg00123.html and http://en.opensuse.org/openSUSE:KDE_ideas
+15:03:29 <cb400f> basically a call to submit new stuff to KDF earlier, and to test it more thoroughly than was the case for 11.4
+15:03:59 <cb400f> especially considering Will will be away when it comes to crunchtime
+15:04:04 <wstephenson> makes sense
+15:04:30 <wstephenson> the other problem is we are as usual finding it hard to hire some cover for my absence in a timely fashion
+15:05:04 <cb400f> though I don't think 12.1 will have many obtrusive changes to core, default components
+15:06:07 <wstephenson> still even pattern package changes need doing right (eg knm/pnm_)
+15:07:25 <cb400f> feature and version freeze is supposed to mark the end of feature developement, not the beginning :-)
+15:08:14 <cb400f> which is btw. on september 1
+15:08:16 <wstephenson> i doubt there are any objections to this plan
+15:08:18 <tittiatcoke> I guess this would mean that we have to update KDF to 4.7 Beta 1 :-)
+15:08:20 <wstephenson> so how to implement it?
+15:08:43 <wstephenson> decide which of the ideas to do
+15:08:54 <wstephenson> then have a policy on regular version updates
+15:09:04 <tittiatcoke> Correct
+15:09:31 <wstephenson> cb400f: well i'm back to work on aug 25th. so that gives me half a week for all the features. no sweat ;)
+15:09:32 <tittiatcoke> If we have decided to include a certain package, then we should have a version already in KDF (even if this would be a Beta version)
+15:09:42 <cb400f> :-)
+15:09:58 <wstephenson> and allow .z version increases after version freeze?
+15:10:04 <wstephenson> (even... amarok??)
+15:10:15 <cb400f> yep, e.g. kamoso and calligra.. I think it's beyond doubt that we want to include those, no?
+15:10:24 <cb400f> maybe new koffice too
+15:10:56 <wstephenson> i know this is taking sides, but i'm not wasting my time on new koffice when there is calligra.
+15:11:10 <tittiatcoke> :-) I already forgot about koffice :-)
+15:11:56 <wstephenson> anything else?
+15:11:58 <tittiatcoke> I guess these are the two big ones.  The move of KDF to 4.7 Beta 1 and replacing koffice with Calligra.
+15:12:01 <cb400f> hm.. I think koffice sounds pretty interesting :-) .. seems they are focusing on three core apps, and on stability and polish over exciting new features, mobile versions etc. :-)
+15:12:26 <tittiatcoke> cb400f: But enough interesting to have it as default or just in KDE:Extra ?
+15:12:29 <wstephenson> if not i suggest cb400f volunteers to write up the policy for 12.1
+15:13:03 <wstephenson> iirc they are still arbitrating what to do about the naming of koffice (post split)
+15:13:11 <cb400f> guess we'll see when koffice comes out next week :-)
+15:13:18 <mrdocs> calligra is the future IMO... they have lots of developers and are making good progress
+15:13:41 <cb400f> sure, but they also have 14 apps to worry about on a gazillion different formfactors
+15:13:41 <mrdocs> i saw krita's new stuff at LGM ... impressive
+15:13:51 <tittiatcoke> But they really should start supporting ms-office formats (in writing and reading)
+15:14:12 <wstephenson> anyway, back to topic
+15:14:15 <wstephenson> anything more to discuss?
+15:14:42 <tittiatcoke> What about 4.7 Beta 1 in KDF ?
+15:14:52 <cb400f> asap if you ask me
+15:14:52 <wstephenson> a job for next week, ok?
+15:15:06 <wstephenson> i'm in the UK until monday, then i'll tackle it
+15:15:21 <tittiatcoke> I can help out there. I was just wondering if we need to save anything of KDE 4.6.x what is currently in KDF
+15:15:39 <mrdocs> tittiatcoke: what's different in 4.7 ?
+15:15:42 <cb400f> better ask javier if everything is copied to KR
+15:16:12 <tittiatcoke> mrdocs: Not that much new stuff. :-) 4.7 up to now was boring and stable :-(
+15:16:23 <cb400f> mrdocs: judging by the text strings it's almost a maintanance release.. with the exception of pim :-)
+15:16:36 <tittiatcoke> but one nice thing is better support for desktop effects :-)
+15:16:57 * cb400f is pleased by the checkbox for "show events" in digital clock >:-)
+15:16:59 <wstephenson> 4.7 is supposed to be boring and stable in contrast to gnome 3.0
+15:16:59 <mrdocs> more eye candy :)
+15:17:11 <wstephenson> i have got to go...
+15:17:28 <tittiatcoke> Ok.
+15:17:39 <wstephenson> may i endmeeting so the minutes are ready?
+15:17:43 <tittiatcoke> yes
+15:17:46 <wstephenson> #endmeeting

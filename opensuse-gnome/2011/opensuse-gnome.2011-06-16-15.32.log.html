@@ -1,0 +1,420 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-gnome log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:32:35</span><span class="nk"> &lt;sreeves&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:32:35</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Jun 16 15:32:35 2011 UTC.  The chair is sreeves. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:32:35</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:32:37 </span><span class="nka">* nmarques</span> <span class="ac">ready</span>
+<a name="l-5"></a><span class="tm">15:32:50</span><span class="nk"> &lt;vuntz&gt;</span> ah, cool
+<a name="l-6"></a><span class="tm">15:32:53</span><span class="nk"> &lt;vuntz&gt;</span> sreeves is magic
+<a name="l-7"></a><span class="tm">15:33:03</span><span class="nk"> &lt;sreeves&gt;</span> welcome everyone to the June edition of our meeting
+<a name="l-8"></a><span class="tm">15:33:18</span><span class="nk"> &lt;cbosdonnat&gt;</span> <span class="hi">vuntz:</span> I was about to leave... and not sure if I'ld be helpful there
+<a name="l-9"></a><span class="tm">15:33:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sreeves:</span> can you #chair me? I'll do some #action/#agreed/#info every now and then
+<a name="l-10"></a><span class="tm">15:33:29</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cbosdonnat:</span> no problem
+<a name="l-11"></a><span class="tm">15:33:36</span><span class="nk"> &lt;sreeves&gt;</span> <span class="cmd">#chair </span><span class="cmdline">vuntz</span>
+<a name="l-12"></a><span class="tm">15:33:36</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: sreeves vuntz
+<a name="l-13"></a><span class="tm">15:33:48</span><span class="nk"> &lt;sreeves&gt;</span> lets get started...
+<a name="l-14"></a><span class="tm">15:33:54</span><span class="nk"> &lt;sreeves&gt;</span> <span class="topic">#topic </span><span class="topicline">Project Update</span>
+<a name="l-15"></a><span class="tm">15:34:24</span><span class="nk"> &lt;sreeves&gt;</span> who wants this one - no one is listed on the agenda to run it ?
+<a name="l-16"></a><span class="tm">15:34:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> want to say a few words? :-)
+<a name="l-17"></a><span class="tm">15:34:41 </span><span class="nka">* metalgod</span> <span class="ac">back from the dead</span>
+<a name="l-18"></a><span class="tm">15:34:42</span><span class="nk"> &lt;DimStar&gt;</span> thanks... i can try.
+<a name="l-19"></a><span class="tm">15:35:08</span><span class="nk"> &lt;DimStar&gt;</span> well, we (me a bit more than vuntz... but still) were busy preparing gnome 3.1.2 in factory, which looks to get in good shape as it seems
+<a name="l-20"></a><span class="tm">15:35:14 </span><span class="nka">* vuntz</span> <span class="ac">wonders why the topic didn't change</span>
+<a name="l-21"></a><span class="tm">15:35:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Project Update</span>
+<a name="l-22"></a><span class="tm">15:35:38</span><span class="nk"> &lt;metalgod&gt;</span> vuntz, the bot needs to be oped
+<a name="l-23"></a><span class="tm">15:35:40</span><span class="nk"> &lt;vuntz&gt;</span> oh
+<a name="l-24"></a><span class="tm">15:36:09</span><span class="nk"> &lt;nmarques&gt;</span> -ChanServ- You are not authorized to perform this operation.
+<a name="l-25"></a><span class="tm">15:36:22</span><span class="nk"> &lt;metalgod&gt;</span> done
+<a name="l-26"></a><span class="tm">15:36:43</span><span class="nk"> &lt;sreeves&gt;</span> <span class="topic">#topic </span><span class="topicline">Project Update</span>
+<a name="l-27"></a><span class="tm">15:37:06</span><span class="nk"> &lt;sreeves&gt;</span> ok - bot is working now. DimStar take continue
+<a name="l-28"></a><span class="tm">15:37:09</span><span class="nk"> &lt;DimStar&gt;</span> another interesting thing, which hopefully will help having less broken installs, is our new typelib()-style Provides/Requires logic (based on gobject-introspection)
+<a name="l-29"></a><span class="tm">15:37:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">GNOME 3.1.2 is in G:F (for the most parts)</span>
+<a name="l-30"></a><span class="tm">15:38:35</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">New automatic typelib()-style Provides/Requires logic is available in gobject-introspection</span>
+<a name="l-31"></a><span class="tm">15:38:51</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">DimStar:</span> update us on the requires part of that logic - has that part been rolled into factory ?
+<a name="l-32"></a><span class="tm">15:38:51</span><span class="nk"> &lt;DimStar&gt;</span> for the parts of 3.1.2 not in G:F, you can blame vuntz for being so slow
+<a name="l-33"></a><span class="tm">15:39:13</span><span class="nk"> &lt;DimStar&gt;</span> the requires part is not yet pushed to Factory, it is only enabled in G:F for now.
+<a name="l-34"></a><span class="tm">15:39:20</span><span class="nk"> &lt;vuntz&gt;</span> I think we can push it now
+<a name="l-35"></a><span class="tm">15:39:27</span><span class="nk"> &lt;vuntz&gt;</span> it looks to work good enough
+<a name="l-36"></a><span class="tm">15:39:31</span><span class="nk"> &lt;DimStar&gt;</span> I'm actually waiting for a proper rebuild of some packages in oS:F to show that it works (polkit for example laks a rebuild)
+<a name="l-37"></a><span class="tm">15:39:54</span><span class="nk"> &lt;DimStar&gt;</span> currently, gnome-shll Requires typelib(Polkit) which is not provided by anything
+<a name="l-38"></a><span class="tm">15:40:45</span><span class="nk"> &lt;DimStar&gt;</span> (which causes a problem on G:F, that it is not properly installable at this moment)
+<a name="l-39"></a><span class="tm">15:42:40</span><span class="nk"> &lt;DimStar&gt;</span> what else can I say about G:* prj..
+<a name="l-40"></a><span class="tm">15:43:00</span><span class="nk"> &lt;DimStar&gt;</span> oh right: we also have libproxy 0.4.7, which uses gsettings as the backend to get the info to the apps. so finally this should be working again too
+<a name="l-41"></a><span class="tm">15:43:18</span><span class="nk"> &lt;DimStar&gt;</span> (apps linking to libproxy get proper settings again)
+<a name="l-42"></a><span class="tm">15:43:45</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">New libproxy, which now correctly works in GNOME 3</span>
+<a name="l-43"></a><span class="tm">15:43:57</span><span class="nk"> &lt;sreeves&gt;</span> cool
+<a name="l-44"></a><span class="tm">15:44:54</span><span class="nk"> &lt;DimStar&gt;</span> and the latest: glib2 libs moved back from /lib to /usr/lib
+<a name="l-45"></a><span class="tm">15:45:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">glib2 libs moved back from /lib to /usr/lib</span>
+<a name="l-46"></a><span class="tm">15:45:25</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> did I miss something of importance?
+<a name="l-47"></a><span class="tm">15:45:50</span><span class="nk"> &lt;vuntz&gt;</span> there's agreement that we don't care about /lib vs /usr/lib (except in early boot), that's why we did that change
+<a name="l-48"></a><span class="tm">15:45:56</span><span class="nk"> &lt;vuntz&gt;</span> I have some interesting bits too
+<a name="l-49"></a><span class="tm">15:46:14</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> oh.. you did some work too? :P
+<a name="l-50"></a><span class="tm">15:46:28</span><span class="nk"> &lt;vuntz&gt;</span> in the last 3 weeks, we removed 21 packages from our projects
+<a name="l-51"></a><span class="tm">15:47:13</span><span class="nk"> &lt;vuntz&gt;</span> those were all old things that are dead upstream
+<a name="l-52"></a><span class="tm">15:47:24</span><span class="nk"> &lt;vuntz&gt;</span> I sent a mail for most of them
+<a name="l-53"></a><span class="tm">15:47:33</span><span class="nk"> &lt;vuntz&gt;</span> I'm considering dropping a few more
+<a name="l-54"></a><span class="tm">15:47:39</span><span class="nk"> &lt;vuntz&gt;</span> (gnome-pilot, for instance)
+<a name="l-55"></a><span class="tm">15:47:47</span><span class="nk"> &lt;FunkyPenguin&gt;</span> oh yes please!
+<a name="l-56"></a><span class="tm">15:48:10</span><span class="nk"> &lt;vuntz&gt;</span> and regarding new packages...
+<a name="l-57"></a><span class="tm">15:48:27</span><span class="nk"> &lt;vuntz&gt;</span> we have frogr
+<a name="l-58"></a><span class="tm">15:48:40</span><span class="nk"> &lt;vuntz&gt;</span> the new gnome-contacts
+<a name="l-59"></a><span class="tm">15:48:47</span><span class="nk"> &lt;vuntz&gt;</span> and some other boring bits
+<a name="l-60"></a><span class="tm">15:49:03</span><span class="nk"> &lt;FunkyPenguin&gt;</span> pinpoint?
+<a name="l-61"></a><span class="tm">15:49:20</span><span class="nk"> &lt;vuntz&gt;</span> indeed
+<a name="l-62"></a><span class="tm">15:49:32</span><span class="nk"> &lt;vuntz&gt;</span> but apparently hermes didn't send me a mail for it, so it's not in my list :-)
+<a name="l-63"></a><span class="tm">15:50:02</span><span class="nk"> &lt;vuntz&gt;</span> well, going back in older mails, I also see gpick, smuxi, mangler
+<a name="l-64"></a><span class="tm">15:50:36</span><span class="nk"> &lt;vuntz&gt;</span> last thing
+<a name="l-65"></a><span class="tm">15:50:47</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, gpick is being ported to GTK3, hopefully will be before freeze/release
+<a name="l-66"></a><span class="tm">15:50:56</span><span class="nk"> &lt;vuntz&gt;</span> we need to make sure that M2 has a nice working GNOME livecd
+<a name="l-67"></a><span class="tm">15:51:11</span><span class="nk"> &lt;vuntz&gt;</span> right now, I'm unsure that the GNOME livecd has all the required packages
+<a name="l-68"></a><span class="tm">15:51:23</span><span class="nk"> &lt;vuntz&gt;</span> did anyone try a recent build?
+<a name="l-69"></a><span class="tm">15:51:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">We dropped 21 packages (usually because they were dead upstream, or deprecated)</span>
+<a name="l-70"></a><span class="tm">15:52:08</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">We added a few interesting packages (frogr, pinpoint, gpick, smuxi, mangler and gnome-contacts)</span>
+<a name="l-71"></a><span class="tm">15:52:29</span><span class="nk"> &lt;coolo&gt;</span> you're lucky - just yesterday a factory livecd dropped out
+<a name="l-72"></a><span class="tm">15:53:12</span><span class="nk"> &lt;vuntz&gt;</span> :-)
+<a name="l-73"></a><span class="tm">15:53:16</span><span class="nk"> &lt;vuntz&gt;</span> anyone willing to take a look at that?
+<a name="l-74"></a><span class="tm">15:54:40</span><span class="nk"> &lt;FunkyPenguin&gt;</span> yeah ok i'll have a look
+<a name="l-75"></a><span class="tm">15:54:45</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I will take look into it
+<a name="l-76"></a><span class="tm">15:55:12</span><span class="nk"> &lt;sreeves&gt;</span> <span class="cmd">#action </span><span class="cmdline">FunkyPenguin and nmarques will look at the M2 live cd</span>
+<a name="l-77"></a><span class="tm">15:55:20</span><span class="nk"> &lt;vuntz&gt;</span> cool, thanks
+<a name="l-78"></a><span class="tm">15:55:21</span><span class="nk"> &lt;sreeves&gt;</span> thanks
+<a name="l-79"></a><span class="tm">15:55:40</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">vuntz:</span> DimStar - anything else on the project update ?
+<a name="l-80"></a><span class="tm">15:55:53</span><span class="nk"> &lt;nmarques&gt;</span> I do have a question
+<a name="l-81"></a><span class="tm">15:55:54</span><span class="nk"> &lt;vuntz&gt;</span> check for issues like "gnome-shell is not on the cd" or "this obviously required package is missing" (for theming, for instance)
+<a name="l-82"></a><span class="tm">15:56:01</span><span class="nk"> &lt;nmarques&gt;</span> nvm
+<a name="l-83"></a><span class="tm">15:56:05</span><span class="nk"> &lt;nmarques&gt;</span> it's on another topic
+<a name="l-84"></a><span class="tm">15:56:06</span><span class="nk"> &lt;FunkyPenguin&gt;</span> <span class="hi">coolo:</span> have you got a link for the iso please?
+<a name="l-85"></a><span class="tm">15:56:14</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sreeves:</span> that's all for me
+<a name="l-86"></a><span class="tm">15:56:22</span><span class="nk"> &lt;fcrozat&gt;</span> (you can check kiwi image from gnome3 live cd for a good reference)
+<a name="l-87"></a><span class="tm">15:56:27</span><span class="nk"> &lt;vuntz&gt;</span> http://download.opensuse.org/factory/iso/
+<a name="l-88"></a><span class="tm">15:56:29</span><span class="nk"> &lt;fcrozat&gt;</span> in GNOME:Medias
+<a name="l-89"></a><span class="tm">15:56:43</span><span class="nk"> &lt;coolo&gt;</span> <span class="hi">FunkyPenguin:</span> http://download.opensuse.org/factory/iso/
+<a name="l-90"></a><span class="tm">15:57:23</span><span class="nk"> &lt;nmarques&gt;</span> downloading build49
+<a name="l-91"></a><span class="tm">15:57:24</span><span class="nk"> &lt;FunkyPenguin&gt;</span> thanks
+<a name="l-92"></a><span class="tm">15:57:32</span><span class="nk"> &lt;sreeves&gt;</span> I have a generic install question - if someone wanted to do a new stable (non factory) G3 install which method do we recommend ?
+<a name="l-93"></a><span class="tm">15:57:43</span><span class="nk"> &lt;sreeves&gt;</span> grab the live-dvd from gnome website and install it, or install 11.4 and then one-click/zypper dup it ?
+<a name="l-94"></a><span class="tm">15:58:28</span><span class="nk"> &lt;FunkyPenguin&gt;</span> personally i would say the latter
+<a name="l-95"></a><span class="tm">15:58:29</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sreeves:</span> I'd recommend installing 11.4 and then following instructions on http://en.opensuse.org/openSUSE:GNOME_3.0
+<a name="l-96"></a><span class="tm">15:58:55</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">vuntz:</span> do we end up with different branding in the result ?
+<a name="l-97"></a><span class="tm">15:59:11</span><span class="nk"> &lt;vuntz&gt;</span> but I never tried installing fcrozat's live images, and maybe it's better that way
+<a name="l-98"></a><span class="tm">15:59:50</span><span class="nk"> &lt;fcrozat&gt;</span> well, it is almost equivalent
+<a name="l-99"></a><span class="tm">16:00:04</span><span class="nk"> &lt;fcrozat&gt;</span> except live image has its own bootsplash
+<a name="l-100"></a><span class="tm">16:00:44</span><span class="nk"> &lt;fcrozat&gt;</span> and adding "liveinstall" to boot cmdline isn't that obvious (it is not a problem for the promo DVD where there is a entry in syslinux)
+<a name="l-101"></a><span class="tm">16:02:12</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">fcrozat:</span> ah I forgot about the "liveinstall" cmdline - I installed from yast
+<a name="l-102"></a><span class="tm">16:02:40</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">sreeves:</span> yes, unfortunately, the "liveinstall" syslinux tricks can't be automated in kiwi yet
+<a name="l-103"></a><span class="tm">16:04:09</span><span class="nk"> &lt;sreeves&gt;</span> ok - anything else on project update ?
+<a name="l-104"></a><span class="tm">16:04:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sreeves:</span> I think we can move on :-)
+<a name="l-105"></a><span class="tm">16:04:27</span><span class="nk"> &lt;sreeves&gt;</span> <span class="topic">#topic </span><span class="topicline">Yast 3 -Gnome 3 plans</span>
+<a name="l-106"></a><span class="tm">16:04:49</span><span class="nk"> &lt;sreeves&gt;</span> btw - http://en.opensuse.org/openSUSE:GNOME_meeting to follow the agenda
+<a name="l-107"></a><span class="tm">16:05:10</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">prusnak:</span> this topic is listed as yours
+<a name="l-108"></a><span class="tm">16:06:32</span><span class="nk"> &lt;sreeves&gt;</span> no prusnak :-(
+<a name="l-109"></a><span class="tm">16:07:02</span><span class="nk"> &lt;sreeves&gt;</span> <span class="topic">#topic </span><span class="topicline">Replacing F-spot by Shotwell</span>
+<a name="l-110"></a><span class="tm">16:07:11</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">vuntz:</span> is this your topic ?
+<a name="l-111"></a><span class="tm">16:07:48</span><span class="nk"> &lt;vuntz&gt;</span> yes
+<a name="l-112"></a><span class="tm">16:07:56</span><span class="nk"> &lt;nmarques&gt;</span> is it shotwell or spotwell ? :)
+<a name="l-113"></a><span class="tm">16:08:02</span><span class="nk"> &lt;vuntz&gt;</span> so we had some interesting discussion on the mailing list
+<a name="l-114"></a><span class="tm">16:08:33</span><span class="nk"> &lt;vuntz&gt;</span> there were obviously no clear result
+<a name="l-115"></a><span class="tm">16:09:17</span><span class="nk"> &lt;vuntz&gt;</span> it's a bit mixed
+<a name="l-116"></a><span class="tm">16:09:42</span><span class="nk"> &lt;vuntz&gt;</span> but from the reactions, it looks to me that we can switch to shotwell for now, and get feedback during the milestones on that
+<a name="l-117"></a><span class="tm">16:10:01</span><span class="nk"> &lt;prusnak&gt;</span> sorry, i was afk, back now
+<a name="l-118"></a><span class="tm">16:10:05</span><span class="nk"> &lt;vuntz&gt;</span> (knowing that people who will simply upgrade will keep f-spot, and f-spot will still be installable anyway)
+<a name="l-119"></a><span class="tm">16:10:12</span><span class="nk"> &lt;iznogood&gt;</span> If we change default - will that be yet an other nail in f-spots coffin? Are we the last distro with it as default?
+<a name="l-120"></a><span class="tm">16:10:27</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">prusnak:</span> I'll switch back to you after this topic ends
+<a name="l-121"></a><span class="tm">16:10:32</span><span class="nk"> &lt;prusnak&gt;</span> ok
+<a name="l-122"></a><span class="tm">16:10:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">iznogood:</span> hrm, I don't think it matters much from an upstream perspective
+<a name="l-123"></a><span class="tm">16:11:57</span><span class="nk"> &lt;vuntz&gt;</span> any opinion?
+<a name="l-124"></a><span class="tm">16:12:20</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">vuntz:</span> I'm not sure I saw an overwhelming reason to switch in the thread  - what would you say is the main reason to switch the default ?
+<a name="l-125"></a><span class="tm">16:12:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sreeves:</span> for me, it's the activity upstream
+<a name="l-126"></a><span class="tm">16:13:12</span><span class="nk"> &lt;vuntz&gt;</span> as of today, if there's an important issue in f-spot, I'm not optimistic we can get it fixed
+<a name="l-127"></a><span class="tm">16:13:17</span><span class="nk"> &lt;vuntz&gt;</span> while for shotwell, it will get fixed
+<a name="l-128"></a><span class="tm">16:13:52</span><span class="nk"> &lt;sreeves&gt;</span> yeah
+<a name="l-129"></a><span class="tm">16:14:28</span><span class="nk"> &lt;metalgod&gt;</span> also f-spot is using outdate libraries
+<a name="l-130"></a><span class="tm">16:14:28 </span><span class="nka">* sreeves</span> <span class="ac">is not a big fan of the move but I have only used f-spot so I can't really compare</span>
+<a name="l-131"></a><span class="tm">16:14:46</span><span class="nk"> &lt;metalgod&gt;</span> shotwell tends to use newer stuff (gtk3)
+<a name="l-132"></a><span class="tm">16:14:56 </span><span class="nka">* nmarques</span> <span class="ac">I don't use either, so I have really no position towards this</span>
+<a name="l-133"></a><span class="tm">16:15:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sreeves:</span> so you'll have an opportunity to try it :-)
+<a name="l-134"></a><span class="tm">16:15:29</span><span class="nk"> &lt;FunkyPenguin&gt;</span> personally i found f-spot to outperform shotwell, but let's see how things go
+<a name="l-135"></a><span class="tm">16:15:39</span><span class="nk"> &lt;vuntz&gt;</span> and really, we can easily decide to switch back before the betas
+<a name="l-136"></a><span class="tm">16:15:53</span><span class="nk"> &lt;iznogood&gt;</span> <span class="hi">sreeves:</span> as long as f-spot is still there and wont be changed for upgraders - I tend wote for the "fresh and happing" software as default
+<a name="l-137"></a><span class="tm">16:16:16</span><span class="nk"> &lt;vuntz&gt;</span> btw, if you have any annoyance when trying shotwell, compared to f-spot, please share them
+<a name="l-138"></a><span class="tm">16:16:34</span><span class="nk"> &lt;vuntz&gt;</span> shotwell people will love such feedback
+<a name="l-139"></a><span class="tm">16:16:50</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">Discussion on default photo manager on the list, with no real conclusion</span>
+<a name="l-140"></a><span class="tm">16:17:10</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">One good reason to switch to shotwell is the upstream activity</span>
+<a name="l-141"></a><span class="tm">16:17:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">Try shotwell as default during milestones, and see how it goes</span>
+<a name="l-142"></a><span class="tm">16:17:40</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to make shotwell default (instead of f-spot)</span>
+<a name="l-143"></a><span class="tm">16:17:59</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">all to send feedback on / issues with shotwell</span>
+<a name="l-144"></a><span class="tm">16:18:06</span><span class="nk"> &lt;vuntz&gt;</span> I think that summarizes things
+<a name="l-145"></a><span class="tm">16:18:14</span><span class="nk"> &lt;vuntz&gt;</span> we can move to next topic, I guess :-)
+<a name="l-146"></a><span class="tm">16:18:24</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">vuntz:</span> you will send an update to the thread with this decision ?
+<a name="l-147"></a><span class="tm">16:18:50</span><span class="nk"> &lt;vuntz&gt;</span> yes
+<a name="l-148"></a><span class="tm">16:19:02</span><span class="nk"> &lt;sreeves&gt;</span> <span class="topic">#topic </span><span class="topicline">Yast 3 - Gnome 3 plans</span>
+<a name="l-149"></a><span class="tm">16:19:08</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">prusnak:</span> take it away
+<a name="l-150"></a><span class="tm">16:19:20</span><span class="nk"> &lt;prusnak&gt;</span> these are actually two topics
+<a name="l-151"></a><span class="tm">16:19:28</span><span class="nk"> &lt;prusnak&gt;</span> a) how to integrate yast 2 into gnome 3
+<a name="l-152"></a><span class="tm">16:20:00</span><span class="nk"> &lt;prusnak&gt;</span> b) rewrite yast-gtk from gtk2 to gtk3 preferably inspire by system settings look
+<a name="l-153"></a><span class="tm">16:20:19</span><span class="nk"> &lt;prusnak&gt;</span> b) is an effort of yast-gtk maintainer
+<a name="l-154"></a><span class="tm">16:20:32</span><span class="nk"> &lt;prusnak&gt;</span> unfortunately, i have no info about that
+<a name="l-155"></a><span class="tm">16:20:50</span><span class="nk"> &lt;prusnak&gt;</span> about a) i started a discussion on -gnome ML, there were not a lot of responses, though
+<a name="l-156"></a><span class="tm">16:21:14</span><span class="nk"> &lt;vuntz&gt;</span> true :-)
+<a name="l-157"></a><span class="tm">16:21:38</span><span class="nk"> &lt;metalgod&gt;</span> maybe because nobody knows how gnome 3.2 will look :)
+<a name="l-158"></a><span class="tm">16:21:44</span><span class="nk"> &lt;prusnak&gt;</span> what I saw was that people tend to like 3 options: 1) have yast menuitem in status menu, 2) have yast icon is system settings, 3) have yast tab on activities dashboard
+<a name="l-159"></a><span class="tm">16:22:13</span><span class="nk"> &lt;prusnak&gt;</span> combination of these 3 is also possible
+<a name="l-160"></a><span class="tm">16:22:28 </span><span class="nka">* nmarques</span> <span class="ac">when I can get a few seconds to expose my case about this, let me know</span>
+<a name="l-161"></a><span class="tm">16:22:31</span><span class="nk"> &lt;metalgod&gt;</span> my opinion is that you should wait for what gnome-shell 3.2 will bring to us
+<a name="l-162"></a><span class="tm">16:22:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">prusnak:</span> option 3 is likely a bad one in the long term, as gnome-shell might move away from "tabs" there
+<a name="l-163"></a><span class="tm">16:22:55</span><span class="nk"> &lt;prusnak&gt;</span> to wrap it up, there's no consensus yet, but I created a proof of concept gnome-extension for 1)
+<a name="l-164"></a><span class="tm">16:23:24</span><span class="nk"> &lt;metalgod&gt;</span> that's the best option now
+<a name="l-165"></a><span class="tm">16:23:56</span><span class="nk"> &lt;fcrozat&gt;</span> option 2 is already there
+<a name="l-166"></a><span class="tm">16:24:09</span><span class="nk"> &lt;fcrozat&gt;</span> not convinced by option 1..
+<a name="l-167"></a><span class="tm">16:24:14</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">fcrozat:</span> really? it is?
+<a name="l-168"></a><span class="tm">16:24:15</span><span class="nk"> &lt;metalgod&gt;</span> prusnak, this is why you shouldn't take option 3 http://jimmac.musichall.cz/log/?p=1181
+<a name="l-169"></a><span class="tm">16:24:31</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">prusnak:</span> did you try typing yast in g3 ?
+<a name="l-170"></a><span class="tm">16:24:40</span><span class="nk"> &lt;fcrozat&gt;</span> it should appear in the icon list
+<a name="l-171"></a><span class="tm">16:24:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">fcrozat:</span> it's not in the system settings :-)
+<a name="l-172"></a><span class="tm">16:25:03</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">vuntz:</span> it is, here
+<a name="l-173"></a><span class="tm">16:25:13</span><span class="nk"> &lt;malcolmlewis&gt;</span> option 1 interferes with other extensions
+<a name="l-174"></a><span class="tm">16:25:18</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">vuntz:</span> you didn't merge changes for gnome-menus-branding-openSUSE ?
+<a name="l-175"></a><span class="tm">16:25:25</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">fcrozat:</span> i have older version of gnome i suppose (3.0.1)
+<a name="l-176"></a><span class="tm">16:25:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">fcrozat:</span> s/system settings/control center/ to clarify
+<a name="l-177"></a><span class="tm">16:26:20</span><span class="nk"> &lt;fcrozat&gt;</span> ohh, you mean in gnome-control-center ?
+<a name="l-178"></a><span class="tm">16:26:26</span><span class="nk"> &lt;nmarques&gt;</span> I think this is a dead end and there's no easy solution
+<a name="l-179"></a><span class="tm">16:26:33</span><span class="nk"> &lt;nickfennell&gt;</span> Is it expected behaviour for the G:S:3 activities pane to simply bring up an instance of an application rather than open a new one
+<a name="l-180"></a><span class="tm">16:26:41</span><span class="nk"> &lt;fcrozat&gt;</span> I though you mean in "applications / system" in gnome-shell
+<a name="l-181"></a><span class="tm">16:27:11</span><span class="nk"> &lt;nickfennell&gt;</span> eg, I have terminator running. I press SUPERKEY and type out 'terminator' rather than starting a new instance (which is what I want (GNOME-DO behaviour) ) it simply focuses one I already have open
+<a name="l-182"></a><span class="tm">16:28:52</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">prusnak:</span> so, for now, the option that looks the "less wrong" to me is 2
+<a name="l-183"></a><span class="tm">16:29:34</span><span class="nk"> &lt;vuntz&gt;</span> but I must admit I'm not extremely convinced either...
+<a name="l-184"></a><span class="tm">16:29:41</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, prusnak : it's the cleanest one, but will require a nem panel and someone has to do it
+<a name="l-185"></a><span class="tm">16:30:07</span><span class="nk"> &lt;nmarques&gt;</span> the problem with yast is that it's too bloated, 40+ modules
+<a name="l-186"></a><span class="tm">16:30:17</span><span class="nk"> &lt;prusnak&gt;</span> no no no
+<a name="l-187"></a><span class="tm">16:30:20</span><span class="nk"> &lt;prusnak&gt;</span> just to have 1 icon
+<a name="l-188"></a><span class="tm">16:30:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> oh, it should not be a panel inside the control center
+<a name="l-189"></a><span class="tm">16:30:22</span><span class="nk"> &lt;nmarques&gt;</span> that kills any concept for clean integration
+<a name="l-190"></a><span class="tm">16:30:24</span><span class="nk"> &lt;prusnak&gt;</span> saying yast
+<a name="l-191"></a><span class="tm">16:30:28</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> just an icon to start the yast center
+<a name="l-192"></a><span class="tm">16:30:40</span><span class="nk"> &lt;nmarques&gt;</span> prusnak, yeah I know, 1 icon on the syspanel that will open a new instance with the modules
+<a name="l-193"></a><span class="tm">16:30:53</span><span class="nk"> &lt;malcolmlewis&gt;</span> and put uner the 'System' heading
+<a name="l-194"></a><span class="tm">16:31:01</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">malcolmlewis:</span> exactly
+<a name="l-195"></a><span class="tm">16:31:13</span><span class="nk"> &lt;nmarques&gt;</span> so you will dump 40+ modules on system ?
+<a name="l-196"></a><span class="tm">16:31:24</span><span class="nk"> &lt;prusnak&gt;</span> no, just 1 icon under system YaST
+<a name="l-197"></a><span class="tm">16:31:35</span><span class="nk"> &lt;nmarques&gt;</span> what happens when you click it ?
+<a name="l-198"></a><span class="tm">16:31:45</span><span class="nk"> &lt;malcolmlewis&gt;</span> YaST opens
+<a name="l-199"></a><span class="tm">16:31:48</span><span class="nk"> &lt;prusnak&gt;</span> it launches yast window
+<a name="l-200"></a><span class="tm">16:31:51</span><span class="nk"> &lt;nmarques&gt;</span> ok
+<a name="l-201"></a><span class="tm">16:32:23</span><span class="nk"> &lt;prusnak&gt;</span> i personally like the option 1, but i agree that having "system settings" and "yast control center" is confusing
+<a name="l-202"></a><span class="tm">16:32:33</span><span class="nk"> &lt;prusnak&gt;</span> especially when the first one launches gnome-control-center :)
+<a name="l-203"></a><span class="tm">16:32:48</span><span class="nk"> &lt;fcrozat&gt;</span> and yast isn't really helpful as a name for newbies
+<a name="l-204"></a><span class="tm">16:32:48</span><span class="nk"> &lt;nmarques&gt;</span> prusnak, for new users maybe, for loyal users, everyone knows what YaST is
+<a name="l-205"></a><span class="tm">16:33:06</span><span class="nk"> &lt;nmarques&gt;</span> prusnak, we shouldn't ignore that YaST is one of the most known factors about *SUSE
+<a name="l-206"></a><span class="tm">16:33:19</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">pro:</span> yast is (or at least it used to be) one of the unique selling points of suse
+<a name="l-207"></a><span class="tm">16:33:28</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">con:</span> it would diverge from upstream gnome
+<a name="l-208"></a><span class="tm">16:33:57</span><span class="nk"> &lt;nmarques&gt;</span> what concerns about 1
+<a name="l-209"></a><span class="tm">16:34:11</span><span class="nk"> &lt;nmarques&gt;</span> is what malcolm mentioned before, it might trigger problems with other extensions
+<a name="l-210"></a><span class="tm">16:34:26</span><span class="nk"> &lt;sreeves&gt;</span> I think option 1 diverges less than option 2
+<a name="l-211"></a><span class="tm">16:34:34</span><span class="nk"> &lt;nmarques&gt;</span> and people will try to customize using every single package available... for what I've seen in forums and users
+<a name="l-212"></a><span class="tm">16:34:56</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">nmarques:</span> it does not trigger if it's directly in gnome-shell package :)
+<a name="l-213"></a><span class="tm">16:35:00</span><span class="nk"> &lt;sreeves&gt;</span> option 2 does not fit into the flow - ie you can't return from yast back to the control-center
+<a name="l-214"></a><span class="tm">16:35:03 </span><span class="nka">* vuntz</span> <span class="ac">sees that DimStar is not following the meeting and working on packages instead ;-)</span>
+<a name="l-215"></a><span class="tm">16:35:24</span><span class="nk"> &lt;nmarques&gt;</span> prusnak, ok :)
+<a name="l-216"></a><span class="tm">16:35:33</span><span class="nk"> &lt;DimStar&gt;</span> <span class="hi">vuntz:</span> I'm following :)
+<a name="l-217"></a><span class="tm">16:35:54</span><span class="nk"> &lt;prusnak&gt;</span> fwiw, i don't really care, i usually launch yast from cmdline, i was just asked to start a discussion and create an extension :)
+<a name="l-218"></a><span class="tm">16:36:12</span><span class="nk"> &lt;nmarques&gt;</span> I barelly use YaST either :)
+<a name="l-219"></a><span class="tm">16:36:20</span><span class="nk"> &lt;prusnak&gt;</span> so i'd happy with dropping out of this process at this point
+<a name="l-220"></a><span class="tm">16:36:21</span><span class="nk"> &lt;nmarques&gt;</span> vi does the job for most things in /etc/sysconfig :)
+<a name="l-221"></a><span class="tm">16:36:26</span><span class="nk"> &lt;prusnak&gt;</span> and let someone else to pickup
+<a name="l-222"></a><span class="tm">16:37:15</span><span class="nk"> &lt;nmarques&gt;</span> I think that a good starting point would be for the yast2 panel maintainer to say 'hi' and see if he's up to migrate it
+<a name="l-223"></a><span class="tm">16:37:29</span><span class="nk"> &lt;nmarques&gt;</span> and pick up from there
+<a name="l-224"></a><span class="tm">16:37:53</span><span class="nk"> &lt;nmarques&gt;</span> I can't really help on that one, goes far beyond my knowledge :/
+<a name="l-225"></a><span class="tm">16:38:22 </span><span class="nka">* nmarques</span> <span class="ac">- which reminds me to stfu about it</span>
+<a name="l-226"></a><span class="tm">16:38:39</span><span class="nk"> &lt;malcolmlewis&gt;</span> or is the focus on Web YaST so maybe not keen on looking at gtk3?
+<a name="l-227"></a><span class="tm">16:39:11</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-228"></a><span class="tm">16:39:28</span><span class="nk"> &lt;sreeves&gt;</span> ok - sounds like we won't reach an agreement today
+<a name="l-229"></a><span class="tm">16:39:40</span><span class="nk"> &lt;vuntz&gt;</span> it sounds like either option 1 or 2
+<a name="l-230"></a><span class="tm">16:39:49</span><span class="nk"> &lt;vuntz&gt;</span> and we won't reach a decision with 100% agreement anyway
+<a name="l-231"></a><span class="tm">16:40:01</span><span class="nk"> &lt;vuntz&gt;</span> so someone has to take a decision
+<a name="l-232"></a><span class="tm">16:40:15</span><span class="nk"> &lt;nmarques&gt;</span> we have one decision, we stroke out option 3
+<a name="l-233"></a><span class="tm">16:40:21</span><span class="nk"> &lt;nmarques&gt;</span> which is already a good starting point :)
+<a name="l-234"></a><span class="tm">16:40:50</span><span class="nk"> &lt;vuntz&gt;</span> I'll try to make the change for option 2, so people can try it
+<a name="l-235"></a><span class="tm">16:41:00</span><span class="nk"> &lt;vuntz&gt;</span> and then we can decide between extension and control center
+<a name="l-236"></a><span class="tm">16:41:24</span><span class="nk"> &lt;nmarques&gt;</span> just one thing
+<a name="l-237"></a><span class="tm">16:41:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">Still no real decision. Two main options are adding yast item to status menu, and adding an icon in the control center</span>
+<a name="l-238"></a><span class="tm">16:41:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">There is a gnome-shell extension for first option: http://stick.gk2.sk/blog/2011/06/gnome-shell-extension-yast-status-menu/</span>
+<a name="l-239"></a><span class="tm">16:42:03</span><span class="nk"> &lt;nmarques&gt;</span> control center option has one pro, users will find it where it has always been, which is a very strong pro
+<a name="l-240"></a><span class="tm">16:42:09</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to make change for option 2, so people can play with it too</span>
+<a name="l-241"></a><span class="tm">16:42:50</span><span class="nk"> &lt;vuntz&gt;</span> I suggest to move on now :-)
+<a name="l-242"></a><span class="tm">16:42:58</span><span class="nk"> &lt;nickfennell&gt;</span> Personally I find having multiple 'control panels' convoluted and confusing. Surely your focus should remain around YaST and 'plug in' to that?
+<a name="l-243"></a><span class="tm">16:43:02</span><span class="nk"> &lt;vuntz&gt;</span> maybe skip the next topic as it'll be slow
+<a name="l-244"></a><span class="tm">16:43:09</span><span class="nk"> &lt;vuntz&gt;</span> and go straight to nmarques' topics
+<a name="l-245"></a><span class="tm">16:43:22</span><span class="nk"> &lt;nmarques&gt;</span> extensions packaging ?
+<a name="l-246"></a><span class="tm">16:43:38</span><span class="nk"> &lt;vuntz&gt;</span> will be a long topic, so we keep it for next meeting or mailing list
+<a name="l-247"></a><span class="tm">16:43:59</span><span class="nk"> &lt;nmarques&gt;</span> ok
+<a name="l-248"></a><span class="tm">16:44:14</span><span class="nk"> &lt;sreeves&gt;</span> <span class="topic">#topic </span><span class="topicline">GNOME branding font</span>
+<a name="l-249"></a><span class="tm">16:44:26</span><span class="nk"> &lt;nmarques&gt;</span> for reference: https://bugzilla.novell.com/show_bug.cgi?id=699959
+<a name="l-250"></a><span class="tm">16:44:27</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">nmarques:</span> you're up
+<a name="l-251"></a><span class="tm">16:44:35</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 699959 in openSUSE 12.1 (GNOME) "Fifth Leg font doesn't provide Cyrillic glyphs" [Enhancement,New]
+<a name="l-252"></a><span class="tm">16:44:42</span><span class="nk"> &lt;nmarques&gt;</span> while it's problem for GNOME2 which won't be happening on 12.1
+<a name="l-253"></a><span class="tm">16:44:48</span><span class="nk"> &lt;nmarques&gt;</span> I'm not sure if it's a problem for G3
+<a name="l-254"></a><span class="tm">16:44:54</span><span class="nk"> &lt;nmarques&gt;</span> my default install uses Cantarell fonts
+<a name="l-255"></a><span class="tm">16:45:10</span><span class="nk"> &lt;vuntz&gt;</span> I guess it's mostly a question of which font we use for the default
+<a name="l-256"></a><span class="tm">16:45:26</span><span class="nk"> &lt;nmarques&gt;</span> russian speaking users are a very important segment of our community and active
+<a name="l-257"></a><span class="tm">16:45:42</span><span class="nk"> &lt;nmarques&gt;</span> so in case our default font doesn't support russian cyrillian glyphs
+<a name="l-258"></a><span class="tm">16:45:46</span><span class="nk"> &lt;nmarques&gt;</span> we should consider one that does
+<a name="l-259"></a><span class="tm">16:45:51</span><span class="nk"> &lt;nmarques&gt;</span> and that's pretty much it
+<a name="l-260"></a><span class="tm">16:45:55</span><span class="nk"> &lt;nmarques&gt;</span> suggestions ? :)
+<a name="l-261"></a><span class="tm">16:46:20 </span><span class="nka">* vuntz</span> <span class="ac">is fine with Cantarell as default</span>
+<a name="l-262"></a><span class="tm">16:46:31</span><span class="nk"> &lt;nmarques&gt;</span> me too
+<a name="l-263"></a><span class="tm">16:46:42</span><span class="nk"> &lt;nmarques&gt;</span> anyone knows if it supports russian glyphs?
+<a name="l-264"></a><span class="tm">16:47:00</span><span class="nk"> &lt;nmarques&gt;</span> guess not ;)
+<a name="l-265"></a><span class="tm">16:47:38</span><span class="nk"> &lt;nmarques&gt;</span> I'll find it out
+<a name="l-266"></a><span class="tm">16:47:43 </span><span class="nka">* nickfennell</span> <span class="ac">thinks 'lmgtfy.com'</span>
+<a name="l-267"></a><span class="tm">16:48:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> I can see cyrillic in my window titles if I have cyrillic text there
+<a name="l-268"></a><span class="tm">16:48:08</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> it might not be cantarell, though; could be another font
+<a name="l-269"></a><span class="tm">16:48:27</span><span class="nk"> &lt;nmarques&gt;</span> I will find out that and test it, then we'll if we need changes
+<a name="l-270"></a><span class="tm">16:48:30</span><span class="nk"> &lt;nmarques&gt;</span> move to next ?
+<a name="l-271"></a><span class="tm">16:48:32</span><span class="nk"> &lt;nmarques&gt;</span> :)
+<a name="l-272"></a><span class="tm">16:48:38 </span><span class="nka">* nmarques</span> <span class="ac">knows everyone's tired :)</span>
+<a name="l-273"></a><span class="tm">16:48:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">nmarques to make sure that Cantarell is used as default font for window frames</span>
+<a name="l-274"></a><span class="tm">16:49:10</span><span class="nk"> &lt;sreeves&gt;</span> <span class="topic">#topic </span><span class="topicline">Potential gnome2 spin</span>
+<a name="l-275"></a><span class="tm">16:49:21</span><span class="nk"> &lt;federico1&gt;</span> cantarell needs http://jeff.ecchi.ca/blog/2011/04/13/on-cantarell/ to be fixed - the irregular spacings
+<a name="l-276"></a><span class="tm">16:50:02</span><span class="nk"> &lt;nickfennell&gt;</span> You see scaling issues with Cantarell also, not sure if that's even remotely relevant
+<a name="l-277"></a><span class="tm">16:50:36</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">nmarques:</span> this topic is yours also
+<a name="l-278"></a><span class="tm">16:50:51</span><span class="nk"> &lt;nmarques&gt;</span> ok
+<a name="l-279"></a><span class="tm">16:50:52</span><span class="nk"> &lt;vuntz&gt;</span> federico1, nickfennell: I'd argue that fifth-leg is likely worse in every regard, especially as jimmac won't work on it anymore
+<a name="l-280"></a><span class="tm">16:51:08</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">federico1:</span> I think irregular spacings has been fixed
+<a name="l-281"></a><span class="tm">16:51:10</span><span class="nk"> &lt;vuntz&gt;</span> (we were just talking about the font for window titles)
+<a name="l-282"></a><span class="tm">16:51:18</span><span class="nk"> &lt;nmarques&gt;</span> I've made a small poll on the forums about the possibility of having a GNOME2 spin (not to be included on factory)
+<a name="l-283"></a><span class="tm">16:51:29</span><span class="nk"> &lt;nmarques&gt;</span> and discussed a bit about potential issues with vincent
+<a name="l-284"></a><span class="tm">16:51:40</span><span class="nk"> &lt;federico1&gt;</span> <span class="hi">vuntz:</span> don't know about fifth-leg
+<a name="l-285"></a><span class="tm">16:51:50</span><span class="nk"> &lt;federico1&gt;</span> <span class="hi">fcrozat:</span> oh, that's good news
+<a name="l-286"></a><span class="tm">16:52:03</span><span class="nk"> &lt;nmarques&gt;</span> the pool is 51% pro, 49% against (considering KDE users usually vote for no)
+<a name="l-287"></a><span class="tm">16:52:05</span><span class="nk"> &lt;federico1&gt;</span> it has pretty letterforms, but those spacings make it really hard read
+<a name="l-288"></a><span class="tm">16:52:26</span><span class="nk"> &lt;nmarques&gt;</span> so my question is, if I'm to make (and I mean make and not trying) such option available
+<a name="l-289"></a><span class="tm">16:52:54</span><span class="nk"> &lt;nmarques&gt;</span> does it bring any additional value to openSUSE, or does it conflict with anything on-going ?
+<a name="l-290"></a><span class="tm">16:53:42</span><span class="nk"> &lt;nmarques&gt;</span> would we be interesting in having an optional G2 spin ?
+<a name="l-291"></a><span class="tm">16:53:51</span><span class="nk"> &lt;vuntz&gt;</span> it would have to be made in such a way as to not conflict with the default install :-)
+<a name="l-292"></a><span class="tm">16:54:01</span><span class="nk"> &lt;vuntz&gt;</span> so I don't see a potential conflict
+<a name="l-293"></a><span class="tm">16:54:09</span><span class="nk"> &lt;nmarques&gt;</span> the /opt install as suggested previously
+<a name="l-294"></a><span class="tm">16:54:30</span><span class="nk"> &lt;vuntz&gt;</span> so the question is: is the additional value important enough to invest efforts in there?
+<a name="l-295"></a><span class="tm">16:54:36 </span><span class="nka">* vuntz</span> <span class="ac">has no strong opinion</span>
+<a name="l-296"></a><span class="tm">16:54:58</span><span class="nk"> &lt;nmarques&gt;</span> my only concern comes in a way of users going KDE and not GNOME3
+<a name="l-297"></a><span class="tm">16:55:20</span><span class="nk"> &lt;nmarques&gt;</span> if we're going to loose people who haven't made their minds to G3 to other platforms, it does justify the efforts
+<a name="l-298"></a><span class="tm">16:55:45</span><span class="nk"> &lt;nmarques&gt;</span> and on a personal level, tackling potential migrations to KDE is reason enough for me :)
+<a name="l-299"></a><span class="tm">16:56:42</span><span class="nk"> &lt;nickfennell&gt;</span> As vuntz will know, going from G2 to G3 is quite a change in overall concept, perhaps drafting a more G2 like interface will keep people away from the likes of KDE
+<a name="l-300"></a><span class="tm">16:57:34</span><span class="nk"> &lt;nickfennell&gt;</span> Initially G3 is quite off putting
+<a name="l-301"></a><span class="tm">16:57:43</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> any opinion about building a GNOME session that looks like GNOME 2, but with the GNOME 3 fallback mode?
+<a name="l-302"></a><span class="tm">16:57:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> sounds easier to me
+<a name="l-303"></a><span class="tm">16:58:25</span><span class="nk"> &lt;nickfennell&gt;</span> Introduce G2 configurable panels into G3 shell?
+<a name="l-304"></a><span class="tm">16:58:37</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, we can try that, I'm not familiar with it, but if you believe it can be done, then we for sure try it, I have time to put into it
+<a name="l-305"></a><span class="tm">16:58:40 </span><span class="nka">* nickfennell</span> <span class="ac">has no idea if that's even possible.</span>
+<a name="l-306"></a><span class="tm">16:59:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nickfennell:</span> did you try the fallback mode?
+<a name="l-307"></a><span class="tm">16:59:18</span><span class="nk"> &lt;nickfennell&gt;</span> vuntz, yes. Quite liked it but I'm more impressed by gnome-shell
+<a name="l-308"></a><span class="tm">16:59:34</span><span class="nk"> &lt;nickfennell&gt;</span> fallback mode was very good but felt unpolished
+<a name="l-309"></a><span class="tm">16:59:41</span><span class="nk"> &lt;nickfennell&gt;</span> "safe mode" if you will.
+<a name="l-310"></a><span class="tm">16:59:59</span><span class="nk"> &lt;nmarques&gt;</span> nickfennell, but that polishment has to be done at code level, not really something I can help much
+<a name="l-311"></a><span class="tm">17:00:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nickfennell:</span> how is it more unpolished that GNOME 2?
+<a name="l-312"></a><span class="tm">17:00:26</span><span class="nk"> &lt;nmarques&gt;</span> the main concern that I see around G3 is the lack of customization
+<a name="l-313"></a><span class="tm">17:00:48</span><span class="nk"> &lt;nickfennell&gt;</span> nickfennell, because from GNOME3 you expect more. GNOME2 we know what we can get and put up with it
+<a name="l-314"></a><span class="tm">17:00:55</span><span class="nk"> &lt;nickfennell&gt;</span> lol, vuntz
+<a name="l-315"></a><span class="tm">17:01:00</span><span class="nk"> &lt;nickfennell&gt;</span> .
+<a name="l-316"></a><span class="tm">17:01:29</span><span class="nk"> &lt;nmarques&gt;</span> the problem with fallback mode starts with the name ;)
+<a name="l-317"></a><span class="tm">17:01:38</span><span class="nk"> &lt;nickfennell&gt;</span> Certainly.
+<a name="l-318"></a><span class="tm">17:01:39</span><span class="nk"> &lt;nmarques&gt;</span> it sounds like a cut-down version of GNOME :)
+<a name="l-319"></a><span class="tm">17:01:45</span><span class="nk"> &lt;nickfennell&gt;</span> It sounds like a fall back mode
+<a name="l-320"></a><span class="tm">17:01:51</span><span class="nk"> &lt;nmarques&gt;</span> and not really like a feature of GNOME2
+<a name="l-321"></a><span class="tm">17:01:56</span><span class="nk"> &lt;vuntz&gt;</span> you never see it's called fallback if you log in there directly
+<a name="l-322"></a><span class="tm">17:01:57</span><span class="nk"> &lt;nmarques&gt;</span> s/GNOME2/G3
+<a name="l-323"></a><span class="tm">17:02:08</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">nmarques:</span> I prefer the idea of calling it "Less Scary Mode"
+<a name="l-324"></a><span class="tm">17:02:12</span><span class="nk"> &lt;vuntz&gt;</span> so just call the session "GNOME 2 Look and Feel"
+<a name="l-325"></a><span class="tm">17:02:18</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, wrong approach :)
+<a name="l-326"></a><span class="tm">17:02:20</span><span class="nk"> &lt;nickfennell&gt;</span> GNOME3 and GNOME3+
+<a name="l-327"></a><span class="tm">17:02:21</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, look what the press is calling it :)
+<a name="l-328"></a><span class="tm">17:02:36</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, fallback mode is already the name recognized by everyone for it :)
+<a name="l-329"></a><span class="tm">17:02:43</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, but thats a marketing issue :)
+<a name="l-330"></a><span class="tm">17:02:49</span><span class="nk"> &lt;vuntz&gt;</span> but the point is that you'd configure this session in a different anyway
+<a name="l-331"></a><span class="tm">17:02:52</span><span class="nk"> &lt;nmarques&gt;</span> but we have a decision :)
+<a name="l-332"></a><span class="tm">17:02:53</span><span class="nk"> &lt;vuntz&gt;</span> so it wouldn't be the upstream fallback
+<a name="l-333"></a><span class="tm">17:02:57</span><span class="nk"> &lt;nmarques&gt;</span> no GNOME2
+<a name="l-334"></a><span class="tm">17:03:01</span><span class="nk"> &lt;vuntz&gt;</span> it'd be the openSUSE GNOME 2 Look and Feel
+<a name="l-335"></a><span class="tm">17:03:09</span><span class="nk"> &lt;nickfennell&gt;</span> Polish fallback mode into being something much nicer
+<a name="l-336"></a><span class="tm">17:03:10</span><span class="nk"> &lt;nmarques&gt;</span> and try to improve the 'fallback mode' to something more desirable for users
+<a name="l-337"></a><span class="tm">17:03:14</span><span class="nk"> &lt;nickfennell&gt;</span> ^^
+<a name="l-338"></a><span class="tm">17:03:27</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nickfennell:</span> again, what is unpolished compared to gnome 2?
+<a name="l-339"></a><span class="tm">17:03:42</span><span class="nk"> &lt;nickfennell&gt;</span> vuntz, default theme, colours, panel sizes,
+<a name="l-340"></a><span class="tm">17:03:42</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nickfennell:</span> that's a real question, to know what work would need to be done
+<a name="l-341"></a><span class="tm">17:03:53</span><span class="nk"> &lt;vuntz&gt;</span> so theming
+<a name="l-342"></a><span class="tm">17:03:53</span><span class="nk"> &lt;nickfennell&gt;</span> vuntz, aa fonts
+<a name="l-343"></a><span class="tm">17:03:56</span><span class="nk"> &lt;nickfennell&gt;</span> entirely.
+<a name="l-344"></a><span class="tm">17:03:56</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, lack of customization is the main problem :)
+<a name="l-345"></a><span class="tm">17:04:06</span><span class="nk"> &lt;metalgod&gt;</span> one thing i miss is the ability to put icons on the panel
+<a name="l-346"></a><span class="tm">17:04:13</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> you can do that...
+<a name="l-347"></a><span class="tm">17:04:16</span><span class="nk"> &lt;nickfennell&gt;</span> I miss the panels as a whole
+<a name="l-348"></a><span class="tm">17:04:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> which lack of customization?
+<a name="l-349"></a><span class="tm">17:04:23</span><span class="nk"> &lt;metalgod&gt;</span> vuntz, right click on the menu and add it ?
+<a name="l-350"></a><span class="tm">17:04:25</span><span class="nk"> &lt;nickfennell&gt;</span> having one top panel is a real ballache
+<a name="l-351"></a><span class="tm">17:04:27</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nickfennell:</span> and they're here, in fallback mode. Same code.
+<a name="l-352"></a><span class="tm">17:04:28 </span><span class="nka">* malcolmlewis</span> <span class="ac">has icons on the panel</span>
+<a name="l-353"></a><span class="tm">17:04:46</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, panel sizes, remove that crappy glass look from the shell
+<a name="l-354"></a><span class="tm">17:04:56</span><span class="nk"> &lt;vuntz&gt;</span> wait wait wait
+<a name="l-355"></a><span class="tm">17:05:00</span><span class="nk"> &lt;vuntz&gt;</span> we're not talking about the shell here
+<a name="l-356"></a><span class="tm">17:05:10</span><span class="nk"> &lt;vuntz&gt;</span> so
+<a name="l-357"></a><span class="tm">17:05:14</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, response times seem somewhat worse than G2 with a proper GTK engine (like pixmap)
+<a name="l-358"></a><span class="tm">17:05:23</span><span class="nk"> &lt;nickfennell&gt;</span> vuntz, can you theme fallback to look like gnome-shell?
+<a name="l-359"></a><span class="tm">17:06:04</span><span class="nk"> &lt;vuntz&gt;</span> I'd ask everyone to look at the fallback mode, forget it's called fallback, and read http://www.vuntz.net/journal/archive/2011/04/13
+<a name="l-360"></a><span class="tm">17:06:30</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, for starters, can we change the session name and strike off any ideas of 'fallback' ?
+<a name="l-361"></a><span class="tm">17:06:38</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> ignore that for now
+<a name="l-362"></a><span class="tm">17:06:44</span><span class="nk"> &lt;vuntz&gt;</span> just try it
+<a name="l-363"></a><span class="tm">17:06:53</span><span class="nk"> &lt;vuntz&gt;</span> and see if it can be a good basis for what you want to do
+<a name="l-364"></a><span class="tm">17:07:05</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, will with with M2
+<a name="l-365"></a><span class="tm">17:07:23</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">nmarques:</span> so are you okay with an action item of looking into a customized fallback mode and then we move to the next topic ?
+<a name="l-366"></a><span class="tm">17:07:25</span><span class="nk"> &lt;nmarques&gt;</span> *will do
+<a name="l-367"></a><span class="tm">17:07:26</span><span class="nk"> &lt;vuntz&gt;</span> if it's a good basis, we'll create a special session, not named fallback, with different settings, etc.
+<a name="l-368"></a><span class="tm">17:07:35</span><span class="nk"> &lt;nmarques&gt;</span> sreeves, yeah
+<a name="l-369"></a><span class="tm">17:07:43</span><span class="nk"> &lt;vuntz&gt;</span> if it's not, then staying with GNOME 2 in /opt would be the way
+<a name="l-370"></a><span class="tm">17:08:05</span><span class="nk"> &lt;sreeves&gt;</span> <span class="cmd">#action </span><span class="cmdline">nmarques to look into feasibility of a customized version of fallback mode</span>
+<a name="l-371"></a><span class="tm">17:08:09</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, the idea can be marketized with our users :)
+<a name="l-372"></a><span class="tm">17:08:24</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I think we can do something productive here
+<a name="l-373"></a><span class="tm">17:08:30</span><span class="nk"> &lt;sreeves&gt;</span> <span class="cmd">#info </span><span class="cmdline">look at http://www.vuntz.net/journal/archive/2011/04/13</span>
+<a name="l-374"></a><span class="tm">17:08:41</span><span class="nk"> &lt;sreeves&gt;</span> <span class="topic">#topic </span><span class="topicline">Q/A</span>
+<a name="l-375"></a><span class="tm">17:09:19</span><span class="nk"> &lt;vuntz&gt;</span> first one: any opinion about building the broadway backend in gtk+ by default?
+<a name="l-376"></a><span class="tm">17:09:45</span><span class="nk"> &lt;vuntz&gt;</span> (see http://blogs.gnome.org/alexl/2010/11/23/gtk3-vs-html5/)
+<a name="l-377"></a><span class="tm">17:11:48 </span><span class="nka">* vuntz</span> <span class="ac">looks at fcrozat who will have an opinion on this for sure</span>
+<a name="l-378"></a><span class="tm">17:12:10</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">vuntz:</span> none :)
+<a name="l-379"></a><span class="tm">17:12:10</span><span class="nk"> &lt;sreeves&gt;</span> <span class="hi">vuntz:</span> there is no performance hit by having an additional backend available, correct ?
+<a name="l-380"></a><span class="tm">17:12:15</span><span class="nk"> &lt;malcolmlewis&gt;</span> (and http://blogs.gnome.org/alexl/2011/03/15/gtk-html-backend-update/)?
+<a name="l-381"></a><span class="tm">17:12:23</span><span class="nk"> &lt;fcrozat&gt;</span> does it have additional dependencies ?
+<a name="l-382"></a><span class="tm">17:12:37</span><span class="nk"> &lt;fcrozat&gt;</span> the issue with gtk+ backends is they aren't pluggable..
+<a name="l-383"></a><span class="tm">17:13:52</span><span class="nk"> &lt;vuntz&gt;</span> I don't see a new dep
+<a name="l-384"></a><span class="tm">17:13:56</span><span class="nk"> &lt;vuntz&gt;</span> I don't expect performance hit
+<a name="l-385"></a><span class="tm">17:14:07</span><span class="nk"> &lt;vuntz&gt;</span> but it's just something people can play with
+<a name="l-386"></a><span class="tm">17:14:25</span><span class="nk"> &lt;malcolmlewis&gt;</span> looks interesting
+<a name="l-387"></a><span class="tm">17:14:55</span><span class="nk"> &lt;sreeves&gt;</span> I say build it then
+<a name="l-388"></a><span class="tm">17:15:07</span><span class="nk"> &lt;malcolmlewis&gt;</span> ^^ +1
+<a name="l-389"></a><span class="tm">17:15:50</span><span class="nk"> &lt;sreeves&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to enable build of broadway backend in gtk+</span>
+<a name="l-390"></a><span class="tm">17:16:23</span><span class="nk"> &lt;sreeves&gt;</span> other questions ?
+<a name="l-391"></a><span class="tm">17:16:34 </span><span class="nka">* sreeves</span> <span class="ac">realizes meeting has gone quite long</span>
+<a name="l-392"></a><span class="tm">17:17:22</span><span class="nk"> &lt;sreeves&gt;</span> okay let's end now. thanks everyone for the good discussions
+<a name="l-393"></a><span class="tm">17:17:25</span><span class="nk"> &lt;sreeves&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

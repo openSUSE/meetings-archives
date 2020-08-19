@@ -1,0 +1,293 @@
+18:01:52 <bmwiedemann> #startmeeting
+18:01:52 <bugbot> Meeting started Mon Jan 16 18:01:52 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:01:53 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:02:03 <bmwiedemann> Hello everyone
+18:02:03 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+18:02:03 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+18:02:32 <Creatura85> good evening bmwiedemann
+18:02:35 <Creatura85> and Holgi
+18:02:45 <LWFinger> Hi everyone.
+18:02:49 <Holgi> re Creatura85
+18:02:58 <Creatura85> hello LWFinger
+18:03:19 <Holgi> hi larry
+18:03:30 <bmwiedemann> #topic Testing Team
+18:04:02 <bmwiedemann> LWFinger: this is pretty much your topic (even though, I also feel, that there is some work to be done)
+18:04:19 <LWFinger> Yes, it is.
+18:05:06 <LWFinger> The reason I brought this up is that the TCT has more than 20 members, but only a few of us do anything.
+18:05:29 <LWFinger> Should we reorganize and remove the inactive "members"?
+18:05:43 <Creatura85> LWFinger: i just know 3 members since i joined this channel and now :)
+18:06:07 <Creatura85> you, bmwiedemann and Holgi, where are rest of 17 listed ?
+18:06:14 <Creatura85> they are not on the wiki page
+18:06:43 <bmwiedemann> Creatura85: http://en.opensuse.org/openSUSE:Testing_Core_team
+18:07:24 <Creatura85> ok, i`m updated now
+18:07:42 <LWFinger> Holgi: It is your group. What do you think?
+18:07:55 <Holgi> LWFinger: sometimes there is also jradzuweit
+18:08:11 <Holgi> LWFinger: from my point of view
+18:08:24 <Holgi> LWFinger: no work, no present -> no member
+18:09:03 <bmwiedemann> but just kicking someone does feel bad.
+18:09:10 <Holgi> that means -> we can change the page
+18:09:12 <LWFinger> I agree. Is that something you handle, or should the rest of us do it?
+18:09:24 <bmwiedemann> we could start by asking them first, if they want to remain part of the team (and do some testing) or want to leave
+18:09:30 <Creatura85> Holgi: how do you define an member of the testing team?
+18:09:35 <Holgi> but it's not "my group"
+18:10:29 <Holgi> Creatura85: we starte with a group of applicants
+18:10:41 <bmwiedemann> I know, some others from the TCT joined in our Open-Bugs-Days
+18:11:06 <bmwiedemann> or just file bugs when they encounter them
+18:11:08 <Holgi> I think it's an dynamic group
+18:11:20 <Creatura85> :)
+18:11:24 <Holgi> we just need to talk if members need to be on the page
+18:11:56 <Creatura85> i belive they must be, and to put at least an e-mail address
+18:12:11 <LWFinger> They all get the meeting notices. Obviously, if they cared, they would be here.
+18:12:29 <Creatura85> but, since i`m new here, i will leave it up to you guys to decide it
+18:12:39 <Creatura85> LWFinger: +1
+18:12:57 <Holgi> Creatura85: we also have the opensuse-testing mailing list
+18:13:06 <Holgi> Creatura85: as a contact point
+18:13:51 <Holgi> I mean it's not that I want to remove people from the group that are contributing, but > 1 year of no reaction is like leaving the group
+18:13:59 <Creatura85> Holgi: i dont want to be rude but for me a mailing list is a bit ... i dont` know... hard to digest
+18:14:02 <Creatura85> :)
+18:14:13 <Holgi> Creatura85: I see
+18:14:14 <bmwiedemann> some are active on ML, but not on IRC
+18:14:27 <Holgi> bmwiedemann: then we do not need to remove them
+18:14:29 <Creatura85> i was a subscriber to one i did not like much about it :)
+18:15:12 <bmwiedemann> Creatura85: what is better to digest then?
+18:15:16 <Creatura85> i guess you need to create a small poll here with a single question
+18:15:22 <Creatura85> regarding members
+18:16:12 <Creatura85> bmwiedemann: i dont know but personally i dont like mailing lists too much, they eat to much inbox :)
+18:16:24 <LWFinger> Should we request new applications similar to what was done earlier? Any current member that does not reallpy can be cut.
+18:17:05 <LWFinger> s/reallpy/reapply/
+18:17:46 <Creatura85> LWFinger: lets say i want to apply for the testing team what are the conditions for an applicant ? and of course where does one apply ? :)
+18:17:51 <Holgi> LWFinger: I don't think that's necessary
+18:17:58 * a-865 sees a grand total of 1 opensuse-testing mailing list post in archives for month of January
+18:18:07 <Holgi> LWFinger: either someone is active or not
+18:18:27 <Holgi> LWFinger: application process was just use to start a group
+18:18:45 <Holgi> maybe request for new members / help in forums/mailing lists
+18:19:03 <bmwiedemann> a-865: that is because 12.1 release is out and 12.2 is only just starting
+18:19:28 <LWFinger> Holgi: OK. Thus we make the group truly dynamic.
+18:19:41 <Holgi> LWFinger: that is my view on that
+18:19:41 <a-865> right, between a GA announcement and a first milestone, what is there to test?
+18:20:10 <Holgi> LWFinger: my guess some of initial applicants wanted to say: look I'm member of an openSUSE team mainly
+18:20:27 <Holgi> LWFinger: not mainly help - and that is not what we want
+18:20:36 <LWFinger> Holgi: I agree.
+18:20:39 <Holgi> LWFinger: we are looking for people that cuntribute
+18:20:44 <Holgi> contribute
+18:21:52 <bmwiedemann> Holgi: what is the point of having this TCT list anyway? (apart from testopia technicalities) - would be much nicer if people could be opensuse-testers by just filing on bugzilla and discussing on ML/IRC/whereever
+18:22:23 <Holgi> bmwiedemann: right, that is also my view - remove the list of names
+18:22:52 <Holgi> bmwiedemann: everybody can test, join this meeting or discuss in our mailinglist
+18:23:39 <Holgi> the group is defined by active contributers
+18:23:41 <bmwiedemann> we could also do another round of "invite to testing" on forums before next Beta
+18:23:43 <Creatura85> Holgi: thats nice if everybody can contribute
+18:24:25 <LWFinger> OK, I'll do the "invite to testing".
+18:24:57 <bmwiedemann> many open-source projects have a meritocracy. Those who do things, define how it is done
+18:25:01 <Creatura85> LWFinger: you shoud post a link here in channel`s topic as well :)
+18:25:43 <LWFinger> Creatura85: I don't understand.
+18:26:16 <LWFinger> Creatura85: Link to what?
+18:26:26 <Creatura85> LWFinger: you should post an link to the forum post in this channell
+18:26:29 <Creatura85> thats what i said
+18:26:36 <Creatura85> *channel
+18:27:12 <LWFinger> OK. I'm not sure what that will do, but I'll do it.
+18:27:41 <Creatura85> you may never know
+18:30:24 * Creatura85 excuse my lag :)
+18:31:19 <bmwiedemann> other thoughts on this topic?
+18:31:25 <LWFinger> If I can summarize, we will (1) remove the list of names from the wiki page, and (2) Post the invitation for testing in several places. Anything else?
+18:31:49 <Creatura85> LWFinger: sounds good with 2
+18:32:13 * Holgi agrees
+18:32:21 <bmwiedemann> for 2) wait until software gets into a more testable state. say a week before MS4
+18:32:35 <LWFinger> OK.
+18:33:34 <bmwiedemann> #topic Bug Status VERIFIED/CLOSED
+18:34:05 <bmwiedemann> whose topic was this?
+18:34:09 <Creatura85> that topic was added by me
+18:34:33 <Creatura85> i`m new to this, so the question is fair i suppose: what do we do to solved bugs by a new version or updates?
+18:35:20 <bmwiedemann> Creatura85: you mean regressions introduced by new versions?
+18:35:35 <Creatura85> no bw
+18:35:35 <Creatura85> no bmwiedemann
+18:35:54 <Creatura85> i was talking about bugs that where solved/fixed by updates or new packages
+18:36:11 <Creatura85> should a bug report be closed if such a tthing happens ?
+18:36:29 <bmwiedemann> if the bugs only occurred on Factory, and the new version was accepted into Factory, then yes.
+18:36:50 <Creatura85> and what about stable versions
+18:36:50 <Creatura85> ?
+18:36:53 <bmwiedemann> if it was in a released version like 11.4 or 12.1, then there would need to be a maintenance update
+18:37:14 <bmwiedemann> and when that one is pushed out for all versions, the bug should be CLOSED
+18:37:46 <Creatura85> then its no problem if i closed several bugs
+18:37:55 <Creatura85> that i have reproduced
+18:38:11 <Creatura85> and i foundem fixed on stable 12.1 opensuse
+18:38:59 <Creatura85> i can provide a link if you want to check me :)
+18:39:04 <LWFinger> As long as the bug was produced against 12.1 and it has been fixed, then it should be closed.
+18:39:17 <bmwiedemann> sometimes, no updates are released for old versions (e.g. if change would be too intrusive or bug is unimportant), then it just stays open
+18:39:36 <bmwiedemann> or is CLOSED as WONTFIX
+18:39:49 <Creatura85> LWFinger: yes i have tested only againts 12.1
+18:39:56 <Creatura85> i have a clean OS under vbox
+18:40:08 <Creatura85> *against
+18:40:17 <Creatura85> with official repo`s only
+18:40:18 <Holgi> there are different types of CLOSED:
+18:40:34 <Holgi> CLOSED FIXED means: developer applied fix
+18:41:07 <Holgi> CLOSED VERIFIED means: fix is released and tested as fixed
+18:41:39 <Holgi> so usually a bug goes to CLOSED FIXED
+18:41:47 <Holgi> then tested and to CLOSED VERIFIED
+18:41:54 <Creatura85> if bugzilla loads i will post a link :)
+18:42:07 <Creatura85> https://bugzilla.novell.com/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&bug_status=CLOSED&email1=creation1985%40yahoo.com&emaillongdesc1=1&emailtype1=substring&query_format=advanced&order=bug_severity%2Cpriority&query_based_on=
+18:42:09 <Holgi> but sure, if you find an open bug as fixed you can go to CLOSED VERIFIED directly
+18:42:34 <Creatura85> here are the bugs that i have checked :)
+18:42:47 <bmwiedemann> Holgi: I think, VERIFIED is yet another state like RESOLVED or CLOSED
+18:43:09 <Creatura85> i have applied only closed fixed
+18:43:17 <Holgi> bmwiedemann: yes, maybe I was not specific enough
+18:43:37 <Creatura85> "Please stand by ..." @ bugzilla
+18:43:47 <Creatura85> does the link loads for you ?
+18:43:50 <Holgi> correct: would be: RESOLVED FIXED and RESOLVED VERIFIED then closed
+18:44:08 <Holgi> Creatura85: yes
+18:44:33 <Creatura85> damn... since the protests in my country even the internet sucks...
+18:45:22 <Creatura85> i`m glad it works for you Holgi
+18:45:56 <Holgi> Creatura85: what's "your" country?
+18:46:08 <Creatura85> Romania
+18:47:00 <Creatura85> finally is loaded :)
+18:47:19 <Holgi> it's slow here in Germany as well
+18:47:26 <Holgi> so not local problem for you
+18:47:47 <a-865> way slow here in SE USA
+18:47:50 <Creatura85> Holgi: i live in an ex-comunist country
+18:47:56 <Creatura85> dont be so sure about it :)
+18:48:17 <LWFinger> Slow in the central USA as well.
+18:48:29 <Holgi> Creatura85: I have no insights - so you might be right ;-)
+18:48:36 <LWFinger> It appears to be a novell.com problem.
+18:48:48 <Creatura85> LWFinger: i hope so
+18:49:25 <bmwiedemann> so shall we move to our next topic?
+18:49:43 <bmwiedemann> #topic 12.2 testing planning
+18:49:57 <Creatura85> yes bmwiedemann
+18:52:31 <bmwiedemann> MS1 should be coming later this month, but there will be a lot of development going on until freeze starts in April (according to preliminary http://www.suse.de/~coolo/opensuse_12.2/ )
+18:54:28 <Holgi> M1 on Jan, 21st
+18:54:42 <Holgi> = this saturday
+18:55:04 <bmwiedemann> releases are usually on Thursdays... so this is likely not reliable
+18:55:20 <LWFinger> That may not happen. The Live CD's fail to boot  ATM.
+18:56:10 <Creatura85> so i guess that not much testing around to do ?
+18:56:12 <bmwiedemann> until last week, only zypper dup worked to get a current factory system (and then they broke even this with a glibc update ;-(
+18:56:28 <LWFinger> In addition, OBS was down for a few days.
+18:57:04 <bmwiedemann> yes. SAN died from multi-HDD failure. needed restore from backup
+18:57:29 <Holgi> Creatura85: are you awre of http://openqa.opensuse.org/ ?
+18:57:46 <Holgi> Creatura85: that gives you a good first impression on a build
+18:58:42 <Creatura85> Holgi: i prefer to simply test and report
+18:58:45 <Creatura85> :)
+18:58:51 <Creatura85> yes i know about that site
+18:58:58 <Holgi> Creatura85: I mean if it's worth of testing
+18:59:49 <LWFinger> If openQA cannot boot it on a KVM virtual machine, do not waste your bandwidth downloading.
+19:00:00 <Creatura85> is there something wrong with using vbox and bugzilla as ways to test and report bugs ?
+19:00:43 <bmwiedemann> it is usually OK. just that VBox might have bugs of its own.
+19:01:14 <LWFinger> Creatura85: No. I seldom test on a real machine until MS4, and then usually run in production with MS5 and later.
+19:01:46 <Creatura85> bmwiedemann:  i realise that but so foar so good
+19:01:59 <Creatura85> and truste me i dont push vbox much around :)
+19:02:30 <bmwiedemann> fine
+19:02:41 <LWFinger> There have been cases where VBox would not boot 11.4 MSx, but not for a while.
+19:03:22 <Creatura85> LWFinger: well i dont have another real machine to use, each of my 160gb hdd`s have their own OS on them :)
+19:03:32 <Creatura85> i will try to do my best with vbox
+19:03:48 <Holgi> Creatura85: testing virtual is fine in nearly all cases
+19:04:17 <LWFinger> I'm fortunate enough to have a 500 GB hard drive with several partitions suitable for /.
+19:04:43 <Creatura85> :)
+19:04:46 <Creatura85> lucky you
+19:04:56 <Creatura85> this is my real machine
+19:04:56 <Creatura85> Sysinfo for 'creation': Linux 3.2.0-2-desktop running KDE Development Platform 4.7.2 (4.7.2) "release 5", CPU: Intel(R) Core 2 CPU          4400  @ 2.00GHz at 1200 MHz (4019 bogomips), HD: 243/761GB, RAM: 1392/1992MB, 151 proc's, 8.8h up
+19:06:16 <bmwiedemann> it's good
+19:07:10 <bmwiedemann> so for testing 12.2, I will keep openQA running as good as I can and maybe add some test, when it is easy and worthwhile
+19:07:16 <Creatura85> vbox has 512 mb of ram, and 20gb of space
+19:08:55 <Creatura85> does the testing team has a lider? :)
+19:09:08 <Creatura85> or liders ?
+19:10:58 <Creatura85> a small board of 3 persons should be nice to be put on the wiki
+19:11:24 <Creatura85> why? you may ask, simply for orientation :)
+19:12:15 <bmwiedemann> leaders? as in people organizing?
+19:12:24 <Creatura85> yes,
+19:12:27 <Creatura85> like that
+19:12:43 <Creatura85> composed of the most experienced
+19:12:57 <bmwiedemann> Holgi, LWFinger and me do a lot of the organization.
+19:13:03 <Creatura85> and i suggest that you bmwiedemann, Holgi and LWFinger should the the magnificent 3
+19:13:06 <Creatura85> :P
+19:13:45 <Creatura85> well then i belive that your names should remain in the wiki as the testing team planers or organizators :)
+19:14:53 <bmwiedemann> but, uhm... what if other people would like to organize... would they not feel disencouraged then?
+19:15:33 <Creatura85> no
+19:15:43 <Creatura85> because they will have to colaborate with you
+19:15:50 <Creatura85> and thus improve
+19:16:26 <Creatura85> but since you have 20 members and dont now how many of them are still active
+19:16:29 <Creatura85> that wont be the case
+19:17:05 <bmwiedemann> OK
+19:18:44 <bmwiedemann> I suppose, LWFinger will continue wireless testing on new kernels with 12.2
+19:19:09 <bmwiedemann> I saw, even Linus now uses openSUSE :)
+19:20:00 <Creatura85> i heard he like xfce more than gnome 3
+19:20:07 <Creatura85> :P
+19:20:07 <Creatura85> *likes
+19:20:23 <bmwiedemann> well. I also know KDE-developers who liked gnome3
+19:20:41 <LWFinger> Yes, I will continue testing wireless.
+19:20:45 <bmwiedemann> so everyone does as he likes. this is why we have choice in openSUSE.
+19:21:05 <Creatura85> bmwiedemann: correct
+19:21:25 <Creatura85> i can edit the wiki page at members and leave only the 3 of you
+19:21:35 <Creatura85> ?
+19:22:34 <bmwiedemann> but you should then also add some explanation, that these are just for coordination and everyone is supposed to test, file, discuss, etc
+19:22:49 <Creatura85> coordonation members ?
+19:22:56 <Creatura85> does that sound good to you ?
+19:23:12 <LWFinger> coordinating would be the correct word.
+19:23:23 <Creatura85> sorry :)
+19:23:36 <Creatura85> how about "main coordinating members" ?
+19:23:53 <bmwiedemann> sound appropriate :)
+19:24:09 <Creatura85> LWFinger: ?
+19:24:13 <Creatura85> Holgi: ?
+19:24:37 <LWFinger> That's OK. English is not your mother tongue. It is mine. The idea is OK with me.
+19:24:59 <Creatura85> ok
+19:25:35 <Creatura85> you are free to edit after me
+19:27:02 <Holgi> Creatura85: I would vote for: if you have questions, you can contact us 3
+19:28:08 <bmwiedemann> or the ML
+19:28:08 <Creatura85> sure Holgi
+19:30:37 <Creatura85> well on to the next topic then ?
+19:30:50 <Creatura85> Bernhard M. Wiedemann 	bmwiedemann ; ICQ: 41890653 	susetestingbmw at lsmod de 		Germany
+19:30:52 <Creatura85> Holger "Holgi" Sickenberg 	Holgi 	holgi - at - opensuse - org 		Germany
+19:30:52 <Creatura85> Larry Finger 	LWFinger 	Larry.Finger@lwfinger.net 		US
+19:31:01 <Creatura85> is this correct ?
+19:32:26 <Creatura85> http://en.opensuse.org/openSUSE:Testing_Core_team
+19:32:51 <bmwiedemann> looks OK. Don't worry, we can still edit it later.
+19:33:13 <Creatura85> yes i know
+19:33:30 <Creatura85> i see that the wiki page needs some works in other areas as well
+19:34:46 <bmwiedemann> yep
+19:35:13 <Creatura85> well if you guys have the time this days i can "bug" you with the questions and wait for an answer
+19:35:20 <Creatura85> :P
+19:35:26 <LWFinger> Creaqtura85: Yes, that is correct.
+19:36:08 <bmwiedemann> Creatura85: that would be nice of you.
+19:36:36 <Creatura85> this is my first time using the wiki so correct me if i wrong
+19:37:13 <bmwiedemann> you want to use the preview before saving
+19:37:33 <Creatura85> i used it and all looks fine to me
+19:38:12 <bmwiedemann> good
+19:38:54 <bmwiedemann> let's move to the last topic then
+19:39:03 <bmwiedemann> #topic next meeting
+19:39:42 <Creatura85> so pick a date
+19:39:45 <Creatura85> :)
+19:39:49 <bmwiedemann> as there is not much to test or discuss right now, we could have our next meeting in 4 weeks
+19:39:52 <Creatura85> are meetings once a month ?
+19:40:12 <Creatura85> yes, sounds good to me
+19:40:36 <bmwiedemann> Creatura85: it is slightly dynamic. before a release we sometimes met every week
+19:41:06 <LWFinger> Do we want to be a little closer to MS1? In 4 weeks is OK.
+19:41:44 <Creatura85> bmwiedemann: understood
+19:41:57 <Creatura85> i bet that M1 will not boot under vbox even in live mode
+19:41:57 <Creatura85> :P
+19:42:46 <LWFinger> That is a safe bet.
+19:43:18 <bmwiedemann> I could talk coolo into delaying M1 until it is bootable ;)
+19:43:21 <Creatura85> will see that on m1 release
+19:43:47 <Creatura85> bmwiedemann: i`m the only one that uses vbox ?
+19:43:51 <bmwiedemann> no
+19:44:09 <LWFinger> I use VBox.
+19:44:44 <LWFinger> Is Feb 6 OK - that is 4 weeks.
+19:44:49 <Creatura85> well then.. do you guys want to delay m1 release ?
+19:44:56 <bmwiedemann> I thought 2012-02-13
+19:45:32 <LWFinger> You are right. I counted wrong.
+19:45:38 <Creatura85> feb 6 is 3 weeks
+19:45:41 <Creatura85> :)
+19:45:51 <bmwiedemann> Creatura85: there is no point in releasing software that can not be used
+19:46:20 <bmwiedemann> so 2012-02-13 18:00 UTC again
+19:46:30 <LWFinger> Right.
+19:46:49 <Creatura85> lets vote for it: do you guys belive that m1 should be released on another date ?
+19:47:16 <Creatura85> a few days of delay
+19:47:56 <bmwiedemann> I'm for releasing it, when it is installing+booting - whenever that will be
+19:48:02 <LWFinger> In the past, the Release Manager controls that. If it will not work at all, he usually waits. I say let Coolo decide.
+19:48:46 <Creatura85> :)
+19:49:28 <Creatura85> Holgi:
+19:49:30 <LWFinger> As openQA will learn first if a particular build, Coolo can be notified as bmwiedermann said earlier.
+19:49:31 <Creatura85> what about you ?
+19:49:35 <Creatura85> what do you thing ?
+19:52:01 <bmwiedemann> the decision is with the Release Manager anyway (which is usually sane).
+19:52:24 <Creatura85> well then bmwiedemann you keep in touch with Coolo
+19:52:28 <Creatura85> :)
+19:52:47 <bmwiedemann> let us close today's meeting. we talked long enough
+19:52:56 <LWFinger> I agree.
+19:53:09 <bmwiedemann> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+19:53:09 <bmwiedemann> #endmeeting

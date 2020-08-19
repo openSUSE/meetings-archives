@@ -1,0 +1,409 @@
+17:02:24 <bmwiedemann> #startmeeting
+17:02:24 <bugbot> Meeting started Mon Jun 18 17:02:24 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:02:24 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:02:33 <bmwiedemann> Hello everyone
+17:02:33 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:02:33 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:02:45 <bmwiedemann> #topic 12.2 testing
+17:03:43 <bmwiedemann> btw: I found a nice trick with systemd: when you call rcsomeinitscript status xxx, it will not redirect to systemd, but call the actual status code in the init script :)
+17:04:14 <a-865> to work around bug 746595 by using sysvinit-init means slow booting due to bug 766035 :-(
+17:04:14 <bmwiedemann> as for 12.2, I installed it on two desktop machines and my netbook at home and it works fairly well so far.
+17:04:14 <BManojlovic> which is strange on 12.1 it is systemd
+17:05:16 <a-865> I have 12.2 on 13 machines
+17:05:17 <bmwiedemann> hmm... I had numlock on by default with systemd
+17:05:26 <a-865> how?
+17:05:33 <bmwiedemann> by default.
+17:05:41 <bmwiedemann> after a fresh install.
+17:06:09 <a-865> must be nice
+17:06:25 <bmwiedemann> the num-LED is not lighted, though
+17:06:34 <a-865> no matter what I try, with systemd-init NUM is never on until I hit the key
+17:06:36 <a-865> but
+17:06:45 <a-865> I nearly always boot to runlevel 3
+17:06:59 <bmwiedemann> there are not real runlevels with systemd
+17:07:15 <a-865> runlevel 3 = no X
+17:07:28 <a-865> hafta call it something
+17:07:33 <a-865> old name just works
+17:07:59 <bmwiedemann> OK, so it is about numlock on the text console
+17:07:59 <a-865> I nearly always boot with 3 on cmdline :-)
+17:08:04 <LWFinger> It certainly looks like runlvel 3
+17:08:42 <bmwiedemann> anyway... there are more severe bugs.
+17:08:50 <a-865> I have kdmrc to set NUM on in KDM, and desktop settings to do it post-login
+17:09:17 <bmwiedemann> I added sysvinit testing to openQA.o.o tests
+17:10:24 <a-865> no auto NUM on means I no test time on things that depend on systemd
+17:10:52 <bmwiedemann> that is OK. a whole linux system can work without systemd ;)
+17:11:31 <bmwiedemann> I setup vdr+xawtv last weekend and found+fixed two bugs in the process
+17:11:47 <a-865> anyone besides me hit by bug 766059 ?
+17:12:57 <bmwiedemann> no. have not needed this for a long time.
+17:13:10 <bmwiedemann> only xorg tweak I do is to enable synaptics tapping
+17:13:14 <bmwiedemann> and that still works
+17:14:40 <a-865> automagic OK often, but often not good when eyes not so good
+17:14:53 * Creatura85 good evening
+17:15:12 <LWFinger> I do not see 766059.
+17:15:32 <bmwiedemann> Creatura85: good evening. do you have 12.2 testing experience to share?
+17:15:36 <Creatura85> hope i did not miss anything :)
+17:15:36 * a-865 wonders which video LWFinger uses
+17:15:46 <Creatura85> bmwiedemann: yes, i have something to share
+17:16:12 <Creatura85> bmwiedemann: when moving in to console and running init 3 i get only a black screen
+17:16:15 <LWFinger> I am using the non-accelerated video with NVIDIA.
+17:16:19 <Creatura85> did you get this ?
+17:16:41 <a-865> LWFinger: 766059 is intel only
+17:17:25 <LWFinger> The only Intel adapter I have is on a netbook that is still running 12.2.
+17:17:45 <a-865> 766059 is 12.2
+17:18:04 <LWFinger> I meant 12.1, not 12.2.
+17:18:05 <a-865> LWFinger: 12.1 on netbook?
+17:18:13 <LWFinger> Yes.
+17:18:46 <bmwiedemann> Creatura85: yes, I have seen a black text console on one of my desktops, too. maybe it does not have a KMS driver. what graphics chip do you have?
+17:19:16 <Creatura85> i have vbox with the guest additions installed
+17:20:08 <bmwiedemann> something to retry with current Factory...
+17:20:26 <Creatura85> bmwiedemann: ?
+17:20:31 <bmwiedemann> yes?
+17:20:44 <Creatura85> [18 06 2012 20:20] <bmwiedemann> something to retry with current Factory... -> is this related to me ? :)
+17:21:05 <Creatura85> i have submited this bug https://bugzilla.novell.com/show_bug.cgi?id=767249 curios if it happens under 12.2 as well
+17:21:09 <bugbot> openSUSE bug 767249 in openSUSE 12.1 (KDE4 Workspace) "Widgets that need python are not running under KDE 4.8.4" [Normal,New]
+17:21:51 <bmwiedemann> Creatura85: you can retry it, or I might try it, if I get VBox setup anywhere
+17:22:46 <Creatura85> retry what bmwiedemann?
+17:23:15 <bmwiedemann> retry the VBox black text console
+17:25:11 <LWFinger> Creatura85: What medium was used for that VBox install?
+17:25:46 <Creatura85> LWFinger: i cant remember that
+17:25:53 <Creatura85> let me see in the forums
+17:26:58 <a-865> anyone else tried using widehat directly very much lately? for me it used to be very fast and reliable. Now it's unreachable half the time. :-(
+17:27:14 <bmwiedemann> maybe too many had the same idea ;)
+17:27:19 <Creatura85> LWFinger: "Corrupted Content Error" from forums.opensuse.org
+17:27:31 <Creatura85> The page you are trying to view cannot be shown because an error in the data transmission was detected.
+17:27:33 <a-865> I can understand slowdown, but not unreachable.
+17:27:48 <LWFinger> I did see a black screen with a qemu-kvm boot of the KDE Live CD yesterday. Perhaps it is the same.
+17:27:53 <bmwiedemann> there were some outages last weekend, that affected the OBS, too
+17:28:21 <Creatura85> it seems the forums are down again
+17:28:42 <Creatura85> LWFinger: sorry in the forum post i have the build id used to install the system
+17:28:51 <Creatura85> but i can say for sure that it was a dvd iso
+17:29:14 <a-865> bug 767383 was a big surprise. I expected it to be reproducible elsewhere, to need to file upstream. :-p
+17:30:42 <bmwiedemann> Mozilla cares a lot about Windows, because most of their users are there
+17:31:28 <Creatura85> bmwiedemann: i have tested again
+17:31:35 <Creatura85> moved to console, logged in as root
+17:31:39 <Creatura85> runned init 3
+17:31:54 <Creatura85> after that i got the black screen again
+17:32:15 <bmwiedemann> with current factory? and what graphics chip was it (lspci tells this)
+17:32:49 <Creatura85> not with current factory, i have the 12.2 repos
+17:32:53 <bmwiedemann> however, overall, I see quality now moving towards usable.
+17:33:03 <bmwiedemann> 12.2 repos are beta1, so rather outdated
+17:33:17 <Creatura85> ok, it means i must change them
+17:33:54 * a-865 never figured out where any 12.2 repos are hiding
+17:34:41 <bmwiedemann> a-865: there is http://download.opensuse.org/factory/repo/oss/
+17:34:49 <bmwiedemann> and http://download.opensuse.org/factory-tested/repo/oss/
+17:34:57 <bmwiedemann> which is more stable but not as fast moving
+17:34:58 <Creatura85> bmwiedemann: what should i use
+17:35:02 <Creatura85> factory or factory-tested?
+17:35:14 <bmwiedemann> factory-tested should be better
+17:35:21 <a-865> bmwiedemann: I only count as 12.2 anything with 12.2 in URL
+17:36:32 <bmwiedemann> a-865: then you only have http://download.opensuse.org/distribution/12.2/repo/oss/ which is the snapshot
+17:36:35 <LWFinger> I use the repos noted above to get a rolling update. I test with a sandbox machine, then apply to main laptop.
+17:36:37 <bmwiedemann> e.g. Beta1 atm
+17:39:29 <a-865> bmwiedemann: that redirects to Factory here - all attempts here to find any URL with 12.2 in it fail
+17:39:48 <a-865> except the one that says 12.2-Beta1
+17:39:58 <bmwiedemann> a-865: it is a 12.2 URL. the redirect is only until the final release
+17:41:19 <Creatura85> bmwiedemann: added the factory-tested repos
+17:41:23 <Creatura85> starting upgrade
+17:41:50 <Creatura85> bmwiedemann: https://bugzilla.novell.com/show_bug.cgi?id=767249 bug present under 12.2 beta 1
+17:41:54 <bugbot> openSUSE bug 767249 in openSUSE 12.1 (KDE4 Workspace) "Widgets that need python are not running under KDE 4.8.4" [Normal,New]
+17:41:59 <a-865> I just use factory-snapshot to install, and change repos.d/ to factory
+17:42:07 <bmwiedemann> you might need to call "depmod -a" afterwards because the kernel package upgrade is not smooth
+17:42:32 <bmwiedemann> a-865: that is OK. you could also install from factory right away
+17:42:56 <Creatura85> bmwiedemann: i will re-install vbox guest additions
+17:42:57 <Creatura85> :)
+17:43:04 <Creatura85> i dont see dkms anywhere
+17:43:11 <Creatura85> i needed that package
+17:44:16 <bmwiedemann> Creatura85: is there not a virtualbox kmp package?
+17:44:18 <a-865> bmwiedemann: I used to do that routinely until systemd and yast bugs started causing so much failure
+17:44:44 <bmwiedemann> yast one is fixed already... just needs to get through the pipe into factory
+17:45:05 <Creatura85> bmwiedemann: the kmp packages have a bug
+17:45:06 <Creatura85> :)
+17:45:15 <Creatura85> someone on the forums reported this
+17:45:22 <bmwiedemann> oh.
+17:45:24 <Creatura85> i dont remember the id
+17:45:33 <Creatura85> again i was posted on the forums :D
+17:46:18 <bmwiedemann> maybe bug 766325
+17:47:20 <bmwiedemann> but that one could be easy to fix
+17:48:11 <a-865> I did do a fresh install with systemd-init a few days ago
+17:48:13 <Creatura85> bmwiedemann: no, its not that one
+17:48:43 <a-865> boot "3", login on tty2, login on tty3, startx on tty2 causes X on tty4 O_O
+17:49:02 <a-865> never looked to see if bug filed on that yet
+17:49:09 <LWFinger> As I don't use standard kernels, I get my VBox kernel module by building from source. That would be a work-around.
+17:49:42 <bmwiedemann> a-865: it is amazing that startx is still working
+17:50:00 <bmwiedemann> with no SUID bit anymore
+17:50:18 <a-865> always fix that with /etc/permissions.local
+17:50:29 <bmwiedemann> yep. that is the best way.
+17:51:01 <bmwiedemann> LWFinger: Creatura85 was looking for dkms which is exactly for rebuilding modules on kernel-upgrades
+17:51:22 <LWFinger> I don't use dkms.
+17:51:46 <Creatura85> the repos from stable version has it
+17:51:54 <bmwiedemann> jradzuweit: did you test 12.2, too?
+17:53:30 <jradzuweit> not really
+17:55:04 <bmwiedemann> will you test Beta2? I expect it will be quite good
+17:55:36 <Creatura85> bmwiedemann: upgrades from factory-tested are installing
+17:55:45 <Creatura85> i will be able to retry the console test soon
+17:56:35 <jradzuweit> bmwiedemann: my plan was to start with Beta
+17:57:07 <bmwiedemann> Creatura85: good. don't forget depmod -a .... and then reboot to have the new kernel
+17:57:34 <bmwiedemann> jradzuweit: good start.
+17:58:48 <Creatura85> weird... i get some errors
+17:59:43 <LWFinger> Creatura85: Installing?
+17:59:43 <Creatura85> bmwiedemann: http://pastebin.com/3ZztqmSa
+17:59:46 <bmwiedemann> a-865: there was a post on news.o.o about rsync.o.o being unstable - and it is a CNAME to widehat :)
+18:01:14 <a-865> bmwiedemann: good to know. it's available ATM
+18:02:15 <Creatura85> LWFinger: the error repeats it self
+18:02:22 <Creatura85> i get the same from other packages
+18:03:23 <bmwiedemann> what is the error message?
+18:04:09 <Creatura85> http://pastebin.com/3ZztqmSa
+18:04:21 <Creatura85> its the same
+18:05:12 <bmwiedemann> aha! that is the same error as in the bug for the virtualbox kmp
+18:06:08 <bmwiedemann> the missing file is part of the perl package
+18:06:54 <bmwiedemann> but I could imagine, that only some of perl was updated... needs looking at.
+18:07:12 <LWFinger> Is unicore/Heavy.pl the missing file?
+18:07:27 <bmwiedemann> yes
+18:08:38 <LWFinger> A locate command says I have "/usr/lib/perl5/5.16.0/unicore/Heavy.pl" on my system. I wonder what happened.
+18:08:54 <bmwiedemann> I have it here, too
+18:09:57 <Creatura85> wtf, why are gnome 3 packages installing...
+18:10:01 <Creatura85> i have only kde installed
+18:10:26 <bmwiedemann> I had seen that too, once
+18:10:44 <Creatura85> bmwiedemann: why is happening ?
+18:11:04 <jradzuweit> Creatura85: maybe you ahe some other package which requires Gnome
+18:11:30 <Creatura85> what package requires tracker-miner ?
+18:11:31 <Creatura85> :)
+18:11:33 <bmwiedemann> there could be requires or recommends for it
+18:11:34 <Creatura85> or many other
+18:11:48 <bmwiedemann> rpm -q --whatrequires tracker-miner
+18:12:36 <bmwiedemann> (does not work for recommends, though)
+18:12:41 <LWFinger> On my system, nothing requires it.
+18:13:10 <Creatura85> i got some modprobe errors :)
+18:13:38 <jradzuweit> Creatura85: I don't know, try rpm -q --requires <package>
+18:13:39 <bmwiedemann> could be OK... depending on what it was
+18:14:30 <Creatura85> now it installs gnome-documents, (as another e.g of a weird package )
+18:14:46 <Creatura85> i will run depmod -a before rebooting as you suggested
+18:15:05 <Creatura85> Installing: gnome-control-center-branding-openSUSE-12.2-1.1 .....................................................[done]
+18:15:08 <Creatura85> LOL
+18:15:50 <bmwiedemann> did you do zypper up or zypper dup?
+18:15:57 <bmwiedemann> because zypper up should not install new packages
+18:16:04 <Creatura85> Installing: gnome-panel-lang-3.4.2.1-1.1 ........................................................................[done]
+18:16:08 <Creatura85> zypper dup
+18:16:23 <bmwiedemann> that could explain it
+18:16:30 <Creatura85> to upgrade from the beta repo`s to the factory-tested ones
+18:16:44 <bmwiedemann> most of the time, you just want zypper up - it is safer.
+18:16:46 <Creatura85> bmwiedemann: its weird how, i have kde but i got gnome too
+18:17:10 <bmwiedemann> e.g. when half of factory did not build, zypper dup proposed to uninstall the missing packages
+18:17:22 <Creatura85> Installing: gnome-session-fallback-session-3.4.2-1.2 ............................................................[done]
+18:17:24 <Creatura85> :)
+18:17:45 <Creatura85> so i got 2 desktops now
+18:17:50 <bmwiedemann> and it helps reading what it intends to do, before pressing return
+18:18:34 <Creatura85> bmwiedemann: i`ve done zypper dup in the past too
+18:18:40 <Creatura85> i did not get such a mess like now
+18:18:42 <Creatura85> :)
+18:18:56 <Creatura85> the upgrade process went well all the times
+18:20:27 <bmwiedemann> it can go well. but one has to be more careful with zypper dup
+18:20:54 <bmwiedemann> meanwhile... we could move to the next topic
+18:21:16 <bmwiedemann> #topic Next Meeting
+18:21:54 <bmwiedemann> there should be a Beta2 this week, so we could meet again in 2 weeks to discuss it
+18:22:22 <bmwiedemann> that would be 2012-07-02 17:00 UTC
+18:22:30 <Creatura85> i got an error, it says could not find /dev/root
+18:23:12 <LWFinger> july 2 is OK here.
+18:23:53 <bmwiedemann> any objections?
+18:24:16 <a-865> 0
+18:24:25 <bmwiedemann> #agreed next meeting 2012-07-02 17:00 UTC
+18:24:31 <bmwiedemann> #topic open discussion
+18:24:51 <Creatura85> bmwiedemann: http://imageshack.us/f/14/snapshot4y.png/
+18:25:02 <bmwiedemann> the other good news is that I started to organize a BetaPizzaParty in Nuremberg
+18:25:28 <bmwiedemann> which helps to give developers/testers an incentive to move to 12.2
+18:25:43 <Creatura85> enjoy the pizza
+18:26:41 <bmwiedemann> it is still two weeks to go
+18:27:11 <LWFinger> Creatura85: Looks as if you are missing a disk friver in the init ramfs.
+18:27:29 <bmwiedemann> Creatura85: looks as if, in addition to the depmod -a, it would also have needed an mkinitrd
+18:28:13 <Creatura85> and how do i fix this ? :)
+18:28:30 <bmwiedemann> can you boot from LiveCD, mount the rootfs, chroot into it, and run mkinitrd there?
+18:29:03 <Creatura85> never tried this before :)
+18:29:13 <LWFinger> Lucky you.
+18:29:49 <Creatura85> i never got in to things like this
+18:30:24 <Creatura85> downloading a live iso
+18:30:27 <Creatura85> from factory
+18:30:34 <Creatura85> after i boot it what do i do ?
+18:30:41 <bmwiedemann> DVDs also have a rescue portion, so that could also work.
+18:31:03 <bmwiedemann> after it booted, you mount your installed Linux' root partition
+18:31:19 <bmwiedemann> e.g. mount /dev/sdb5 /mnt
+18:31:31 <bmwiedemann> cd /mnt
+18:31:38 <bmwiedemann> mount --bind /proc proc
+18:31:43 <bmwiedemann> mount --bind /sys sys
+18:31:46 <bmwiedemann> mount --bind /dev dev
+18:31:54 <bmwiedemann> and finally: chroot .
+18:32:00 <bmwiedemann> and therein: mkinitrd
+18:32:28 <Creatura85> ok :)
+18:34:11 <Creatura85> this mirror a bit slow
+18:35:01 <Creatura85> bmwiedemann: for open discussion do you think that a one year release cycle would be good ?
+18:35:43 * a-865 thinks 8 months good unless a major revamp like systemd or KMS is included
+18:36:09 <bmwiedemann> either 8 or 12 months can work well.
+18:36:30 <bmwiedemann> what matters is how much effort+time we put into stabilizing compared to developing
+18:36:40 <LWFinger> Agreed.
+18:36:50 <bmwiedemann> someone calced the ratio to be 1:7 which is not so good
+18:37:10 <bmwiedemann> whereas linux kernel has 2 weeks merge window with many more weeks of stabilizing to follow
+18:37:20 <Creatura85> if 8 months are good why are there problems with the developing of the next version ?
+18:37:50 <bmwiedemann> also, our development strategies could be adapted. e.g. run tests on code before it enters Factory
+18:38:18 <bmwiedemann> Creatura85: because too much bad stuff happened during this 8 months cycle.
+18:38:31 <bmwiedemann> gcc47 breaking things in unexpected places.
+18:38:34 <Creatura85> you mean the gcc issues ?
+18:38:40 <Creatura85> oh :)
+18:38:54 <bmwiedemann> some people moving stuff from /bin to /usr/bin breaking many things (mkinitrd, kiwi, inst-sys)
+18:39:09 <LWFinger> The kernel model would be good. The merged material has been in the "next" location for 2-3 months previously.
+18:39:41 <bmwiedemann> Creatura85: I remember blocxx or so being broken, because it had a const variable that was written to.
+18:39:53 <bmwiedemann> it just worked before
+18:40:13 <Creatura85> bad luck i guess
+18:40:42 <bmwiedemann> LWFinger: I think, coolo wants openSUSE:Factory:Staging to be a bit like linux-next
+18:41:15 <bmwiedemann> of course OBS is not as sophisticated as git in this regard
+18:41:30 <LWFinger> I think he is right. 12.3 should go to staging and that material to 13.1.
+18:42:20 <poorboywilly> I don't find the kernel process analagous to a distro process...the kernel developers have specific things they want to work on, distro is packaging things as they come from upstream
+18:42:22 <bmwiedemann> there is still the danger of splitting efforts between the very latests and the staging stuff
+18:42:58 <bmwiedemann> poorboywilly: it is not only packaging. many packages need patches to work. and testing
+18:43:06 <LWFinger> Of course, but the finished product is much more likely to be on time, and to work.
+18:43:54 <bmwiedemann> developing a distribution in an agile fashion... having a shippable product of a given minimum quality at any time
+18:43:56 <poorboywilly> bmwiedemann: yes, but it's more reactive than active...the distro must wait for upstream
+18:44:12 <poorboywilly> kernel just starts implementing what they want
+18:44:20 <LWFinger> What should be the relative importance of working correctly, as opposed to being the latest and greatest?
+18:44:35 <bmwiedemann> poorboywilly: yes, in some places. but kernel also waits for "external" contributions like btrfs or drivers
+18:44:57 <bmwiedemann> what comes in time can get in and what comes too late will wait for the next cycle
+18:45:10 <LWFinger> I don't think file systems or drivers are external.
+18:45:35 <bmwiedemann> LWFinger: but you can't easily predict when certain things will come
+18:45:59 <poorboywilly> well there is still a problem of scale...the kernel's devel cycle is much shorter than 8 or 12 months
+18:45:59 <LWFinger> Ys, but the absolute freeze is what makes it work.
+18:46:30 <poorboywilly> if we do one integration/testing cycle in that 12 months, we are very likely to miss a lot of things, and the integration is massive
+18:47:08 <bmwiedemann> LWFinger: I would wish for a rather stable Core OS, that can install, update and little more. applications ontop (those that have alternatives) can be a bit more edgy
+18:47:30 <poorboywilly> I think these freeze/integrations need to happen repeatedly, the problem seems to me that we try to integrate all of factory all at once every time something is updated
+18:47:43 <LWFinger> I agree that the analogy is not perfect.
+18:47:53 <Creatura85> since we are at testing
+18:48:06 <bmwiedemann> poorboywilly: we had a staging area for gcc47 at least
+18:48:10 <Creatura85> openSUSE-GNOME-LiveCD-i686-Build0443-Media.iso is booting, gnome 3 is loading fine and the OS can be used
+18:48:18 <bmwiedemann> so people did fix some things before they hit factory
+18:48:27 <poorboywilly> bmwiedemann: yes, I think that what needs to happen is created a tiered staging process
+18:48:42 <bmwiedemann> poorboywilly: I think, that will happen
+18:48:46 <poorboywilly> 80/20 rule:  80% of packages are bound to cause very little pain
+18:48:51 <poorboywilly> 20% will cause lots of pain
+18:49:02 <bmwiedemann> systemd :P
+18:49:29 <Creatura85> bmwiedemann: followed the steps above
+18:49:33 <bmwiedemann> maybe a bit like the 1% owning 57% of the money or so
+18:49:36 <Creatura85> trying again
+18:49:42 <poorboywilly> yes...kernel, toolchain, systemd, grub, other very low-level system in one tier, libs and apps in another tier, leaf packages in third tier
+18:49:53 <Creatura85> interesting bootsplash
+18:50:02 <Creatura85> i geeko followed by aliens :P
+18:50:03 <Creatura85> *is
+18:50:05 <poorboywilly> tier three can be integrated at virtually any time without worry, tier one should attempt fewest integrations
+18:50:10 <bmwiedemann> poorboywilly: and many of those were touched for the usrmerge
+18:50:28 <bmwiedemann> agree
+18:50:29 * a-865 wonders if any here know why the huge oxygen-icon-theme-scalable gets rebuilt virtually daily
+18:51:21 <bmwiedemann> poorboywilly: at least, we should be most careful, when changing any of the core packages
+18:51:50 <bmwiedemann> e.g. I thought about creating a temp repo with all old and some new packages and running my openQA.o.o tests on that
+18:52:24 <poorboywilly> much agreed...that's where I think the kernel analogy comes in.  If we integrate outside of factory first we should have useable factory for testing out regressions
+18:52:47 <LWFinger> Yes.
+18:53:13 <bmwiedemann> poorboywilly: also there is Tumbleweed - it touches mostly non-core components, so it works rather smoothly most of the time
+18:54:02 <bmwiedemann> it updates Kernels, but these days kernels don't change much and dont break much either.
+18:54:11 <Creatura85> bmwiedemann: i did not worked
+18:54:20 <Creatura85> still getting the same thing
+18:54:37 <bmwiedemann> Creatura85: but the mkinitrd in the chroot did work?
+18:54:59 <Creatura85> yes it worked
+18:55:03 <bmwiedemann> strange.
+18:55:15 <Creatura85> even if the output said something about missing kernel modules
+18:55:35 <bmwiedemann> hmm... depends on which ones
+18:55:35 <LWFinger> What modules?
+18:55:49 <Creatura85> i have issues depmod -a before rebooting
+18:56:05 <Creatura85> they where plenty sorry i did not saved the output somewhere :)
+18:56:50 <bmwiedemann> you could retry
+18:57:08 <LWFinger> When you redo it, look at the lsmod output from the Live CD, and make certain none of the disk-related ones are missing.
+18:57:41 <Creatura85> LWFinger: how do i know that they are disk related ?
+18:57:42 <bmwiedemann> poorboywilly: the interesting part will still be how we test Factory:Staging
+18:57:54 <bmwiedemann> it might be too unstable for most people to use
+18:58:16 <LWFinger> That is the real question. They will have strings like "ata", etc.
+18:58:18 <bmwiedemann> but if we manage to do it well, it should give us a Factory repo, that would rarely break
+18:58:41 <Creatura85> LWFinger: i have seen that
+18:58:47 <Creatura85> ata , sata too
+18:59:00 <LWFinger> Mine are ata-generic, pata-amd, and lots of scsi stuff.
+18:59:02 <bmwiedemann> it also prints the list of included modules
+18:59:45 <poorboywilly> bmwiedemann: yes, that I think we need.  Bugs are one thing, but not being able to have a building snapshot...how do you test
+19:00:02 <Creatura85> LWFinger: yes scsi was too
+19:00:08 <Creatura85> scsi, ata, sata
+19:00:12 <Creatura85> i remember these
+19:00:30 <LWFinger> Are those the missing ones?
+19:02:45 <Creatura85> LWFinger: among other yes
+19:02:45 <bmwiedemann> poorboywilly: yes, though sometimes non-building packages are better than building ones that are broken
+19:02:56 <Creatura85> i remember one from trolltech or something like that
+19:02:58 <bmwiedemann> because while it does not build, the old one will still be in place
+19:03:23 <bmwiedemann> I guess, this is why some rpms have a %check section that runs as part of the build
+19:05:34 <LWFinger> Creatura85: If those critical modules cannot be put into the initrd, you may have to reinstall.
+19:06:00 <poorboywilly> the big questions are I think, if we implement staging areas, firstly does it improve the workflow or just move the problem around, and secondly what if anything needs to be added to OBS to support his
+19:06:03 <poorboywilly> *this
+19:06:06 <Creatura85> LWFinger: testing the kde live iso and installing tomorow if needed
+19:07:27 <bmwiedemann> poorboywilly: OBS is our tool we made to build openSUSE, so I am pretty sure, that we will put effort into improving it to build the future openSUSE
+19:07:56 <Creatura85> hooray
+19:08:01 <Creatura85> finally the kde iso boots fine
+19:08:04 <bmwiedemann> and yes, I think, staging areas can improve the workflow.
+19:08:24 <bmwiedemann> I like the Debian workflow with sid=unstable, testing and stable
+19:08:44 <poorboywilly> bmwiedemann: intuitively I think it does, but I haven't done enough dirty work with OBS to know for sure myself
+19:09:03 <bmwiedemann> where new packages only get into sid. when they have been in there for some time without bug reports, they can move to testing
+19:09:10 <LWFinger> Creatura85: I just finished rebuilding the KDE Live CD locally and it booted here.
+19:09:47 <bmwiedemann> OBS has some limitations. e.g. I don't know of a way to submit more than one package in a way so that they are ensured to stay together
+19:09:49 <Creatura85> LWFinger: in the milestone 3 stage it failed to boot for me
+19:10:51 <LWFinger> Creatura85: There were many problems then that have been fixed. The worst was a failure of the expr statement.
+19:11:41 <Creatura85> works but its slow as hell
+19:11:48 <Creatura85> even with 768 mb of ram for it
+19:12:41 <poorboywilly> so it would either need a new way to group packages for submission, or diff/submit whole projects
+19:14:00 * a-865 was running KDE4.8.4 on 12.2 on a laptop with only 384M RAM saturday
+19:14:23 <Creatura85> it freezed
+19:14:31 <Creatura85> nothing i working...
+19:14:53 <Creatura85> *is
+19:14:59 <bmwiedemann> poorboywilly: yes
+19:15:54 <Creatura85> oh well i will wait for beta 2 before doing a reinstall
+19:16:28 <LWFinger> OK. It should be only a few days.
+19:16:42 <Creatura85> congrats for the live gnome iso
+19:16:46 <Creatura85> that one works :)
+19:17:32 <LWFinger> I only reported the failures. I'm not quite ready to fix them yet.
+19:17:45 <Creatura85> ok LWFinger
+19:20:35 <bmwiedemann> poorboywilly: I think, making osc copypac and osc sr work on whole projects should not be so hard
+19:23:10 <bmwiedemann> what other features would a future OBS need?
+19:23:53 <Creatura85> more people working at it
+19:23:54 <Creatura85> :)
+19:23:56 <Creatura85> ?
+19:24:20 <bmwiedemann> you mean coding on OBS?
+19:24:25 <bmwiedemann> or packaging in OBS?
+19:25:12 <Creatura85> i mean a balance between both
+19:25:17 <Creatura85> we can have obs without codders
+19:25:26 <Creatura85> *cant
+19:25:35 <Creatura85> and we cant have opensuse without packagers :)
+19:25:40 <Creatura85> and testers
+19:25:43 <Creatura85> and so on
+19:25:50 <bmwiedemann> we need a bit of everything.
+19:26:16 <bmwiedemann> but I am a coder, packager, tester and user all at the same time :-)
+19:26:28 <bmwiedemann> boundaries are blurred with open-source
+19:27:00 <LWFinger> I guess we need more of you. :)
+19:27:03 <poorboywilly> not a feature specifically, but the packaging documentation should be thoroughly updated
+19:27:04 <Creatura85> damn, a really working multitasking user
+19:27:10 <Creatura85> LWFinger: +1
+19:27:11 <poorboywilly> make sure we have current best practices
+19:28:00 <Creatura85> bmwiedemann: i`m trying to be a tester but i have a long road ahead :)
+19:28:14 <bmwiedemann> poorboywilly: good point
+19:28:31 <bmwiedemann> I remember Adrian starting something in docbook format that is still rather lacking... And I think the wiki is more suited to some of this
+19:29:57 <poorboywilly> yes, the wiki has lots of good stuff
+19:31:11 <bmwiedemann> and yes, packaging can be... a long way of learning
+19:31:36 <bmwiedemann> e.g. doing "osc vc" before you commit a change that shall make it to Factory
+19:33:13 <poorboywilly> yes, and what sorts of features/syntax etc. in specfiles is recommended vs. old stuff you may find that isn't recommended anymore
+19:34:11 <bmwiedemann> I'm not a fan of cleanup and making it all new and normalized
+19:34:30 <LWFinger> Creatura85: My home-built KDE Live CD froze when booted with qemu-kvm, but works fine on a real machine.
+19:35:01 <bmwiedemann> but I know, the License: field needs to contain an entry from http://spdx.org/licenses/
+19:36:03 <Creatura85> LWFinger: i have tested the iso using vbox
+19:36:07 <bmwiedemann> LWFinger: I think, they need >1GB RAM
+19:36:18 <poorboywilly> not necessarily for cleanup, but for new packages
+19:36:21 <bmwiedemann> LWFinger: and freeze or crash, when it gets full
+19:36:42 <bmwiedemann> poorboywilly: I usually base new packages on old package spec files
+19:36:51 <poorboywilly> yeah I've had an RPMLint error with the licenses
+19:36:52 <Creatura85> bmwiedemann: i have 2gb of on my pc
+19:36:58 <Creatura85> 768 is all i can give
+19:37:45 <bmwiedemann> get more RAM - it is cheap these days.
+19:37:50 <LWFinger> Creatura85: The real machine has 2 GB RAM and swap enabled.
+19:38:50 <bmwiedemann> LWFinger: coolo wanted to do some changes to the liveCDs, so that mysql data will not occupy 128MB+ or RAM right after boot
+19:40:03 <Creatura85> LWFinger: yes it does
+19:41:24 <bmwiedemann> I need to leave then, so let's close today's meeting
+19:41:27 <a-865> more RAM is only cheap if you have empty RAM slots and don't need a new mobo & CPU to get more
+19:41:49 <LWFinger> CU in two weeks.
+19:42:07 <bmwiedemann> LWFinger: Ciao larry.
+19:42:21 <bmwiedemann> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+19:42:26 <bmwiedemann> #endmeeting

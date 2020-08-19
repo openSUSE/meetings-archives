@@ -1,0 +1,153 @@
+17:00:00 <bmwiedemann> #startmeeting
+17:00:00 <bugbot> Meeting started Mon Jul 25 17:00:00 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:00:00 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:00:09 <bmwiedemann> Hello everyone
+17:00:09 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:00:09 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:00:35 <LWFinger> Hi
+17:00:53 <bmwiedemann> #topic MS3 experience
+17:01:17 <bmwiedemann> finally, MS3 was released last Wednesday, so we really have something to talk about :)
+17:01:28 <bmwiedemann> LWFinger: do you want to start?
+17:02:31 <LWFinger> OK.
+17:02:54 <jradzuweit> Hi
+17:03:11 <LWFinger> I have not been able to do much testing as I was busy last week and out of town on the weekend.
+17:03:36 <jradzuweit> after zypper dup, only failsafe boot works
+17:04:09 <LWFinger> I tested a patch for Bug #702461 that worked - at least part way.
+17:04:54 <jradzuweit> I still try to figure out what goes wrong
+17:05:03 <LWFinger> The new code recognized the network devices, but wireless on the USB passthru for my VB VM did not connect.
+17:05:51 <LWFinger> I'm downloading NET build 0163 now and will try it. A zypper up this morning killed my VM.
+17:05:58 <LWFinger> Done.
+17:06:47 <bmwiedemann> LWFinger: be careful: they restructured the KDE repos, so openQA still shows some unresolved deps
+17:06:58 * jradzuweit is updating the Bugs-day wiki page
+17:07:00 <bmwiedemann> jradzuweit: did you try booting with nomodeset?
+17:07:13 <bmwiedemann> jradzuweit: great :)
+17:07:24 <jradzuweit> not yet, after the meeting, sah the bug report
+17:07:27 <LWFinger> bmwiedemann: Good to know.
+17:07:51 <jradzuweit> I already answered Andreas
+17:08:11 <jradzuweit> so he can put http://en.opensuse.org/openSUSE:Bug_Day on the news page
+17:08:36 <LWFinger> jradzuweit: Thanks.
+17:09:42 <bmwiedemann> jradzuweit: that is the page which vuntz had made. ours was the Open-Bugs-Day one linked on the bottom there
+17:10:03 <bmwiedemann> but might make sense to merge the two to avoid confusion :D
+17:10:38 <jradzuweit> yes I think so
+17:11:05 <LWFinger> I agree
+17:11:25 <bmwiedemann> jradzuweit: want to take that job?
+17:11:54 <jradzuweit> I am just in the middle of it ;)
+17:12:13 <bmwiedemann> great. then we shall not stop you
+17:12:20 <jradzuweit> :)
+17:12:49 <bmwiedemann> I upgraded one of my Laptops to MS3 and did not notice any new breakage there
+17:13:46 <bmwiedemann> openQA still shows some problems. especially with systemd
+17:15:15 <jradzuweit> say @bmwiedemann did you includet this btrfs test suite yet?
+17:15:50 <bmwiedemann> not yet.
+17:16:25 <bmwiedemann> I wanted to make my script a bit more general, so that I can do a run with xfs and ext4, too
+17:18:08 <LWFinger> Anyone have success with systemd?
+17:18:56 <bmwiedemann> when I tried it, it booted up really fast, but did not start /etc/init.d/xdm
+17:19:40 <bmwiedemann> not sure if there is already a bug for that
+17:21:44 <bmwiedemann> I added some other new and old issues on the most annoying bugs list, luckily nothing spectacular
+17:22:54 <bmwiedemann> I did research the liveUSB i686 breakage and found that someone replaced the isohybrid perl script with a bad C version, that mis-parsed 32-bit integers, if the topmost bit was set
+17:23:56 <LWFinger> That is annoying.
+17:25:26 <bmwiedemann> upstream already has a fix, so there should soon be improvement
+17:26:46 * jradzuweit has finished updating the wiki for now
+17:29:02 <LWFinger> Sorry, but I don't see the changes. Which page?
+17:29:15 <jradzuweit> http://en.opensuse.org/openSUSE:Open-Bugs-Day
+17:30:39 <LWFinger> I still get the one from April.
+17:30:53 <jradzuweit> ???
+17:30:55 <bmwiedemann> the date on top is old
+17:31:22 <bmwiedemann> "The second" is also outdated
+17:31:43 <jradzuweit> try now
+17:31:57 <bmwiedemann> and I guess, we should throw in at least 5 t-shirts for reward
+17:33:12 <LWFinger> It is getting better.
+17:33:39 <jradzuweit> I will polish the pages during the week
+17:33:44 <bmwiedemann> IMHO we should also overhaul the HowTo
+17:34:14 <bmwiedemann> as we are looking at rather recent bugs that have a high chance of still being there
+17:35:16 <LWFinger> The "Links" part at the bottom also needs updating. I have not yet posted on the Forum, and have no updated info.
+17:35:43 <jradzuweit> ok, I remove this for now
+17:36:43 <bmwiedemann> do we have any more MS3 experiences to share?
+17:37:03 <jradzuweit> not from me
+17:37:39 <LWFinger> No. After yoour warning about the KDE repos, I'm now installing Gnome.
+17:37:51 <bmwiedemann> #topic Open-Bugs-Day #3 planning
+17:39:07 <bmwiedemann> how will we spread the word about the upcoming Open-Bugs-Day? forum and news.o.o?
+17:39:35 <jradzuweit> Andreas Jaeger will add it to news.o.o
+17:40:03 <bmwiedemann> great.
+17:40:35 <LWFinger> It has already been sent to news.o.o and will go in the beta portion of the forum. I have sent an announcement in the Weekly News and will keep that going.
+17:41:32 <jradzuweit> great :)
+17:41:47 <bmwiedemann> that should be sufficient.
+17:42:13 <LWFinger> I hope so. I cannot think of any other places.
+17:42:45 <bmwiedemann> development is still ongoing, so we will need to have another bug party later
+17:44:08 <bmwiedemann> I guess in September around 12.1-Beta :)
+17:44:59 <LWFinger> As I recall, that one will concentrate on open 12.1 bugs.
+17:45:40 <bmwiedemann> or even new ones. And would be nice if we could involve some developers then, to get those fixed
+17:45:55 <jradzuweit> Beta should be good, so maybe we can draw a little more attention on this
+17:46:03 <LWFinger> How to do that?
+17:47:00 <jradzuweit> if beta sounds better than MS 6, then maybe more people will join
+17:47:25 <bmwiedemann> I heard about a Pizza Party event at SUSE, that involved developers installing the beta
+17:48:00 <jradzuweit> maybe we can do a worldwide Bug-Day?
+17:48:59 <bmwiedemann> sure. but everyone looking at the same thing on the same day, can also be a big waste of resources, if they all stumble on the same bug
+17:49:42 <jradzuweit> sure, but than come your tool in
+17:50:11 <bmwiedemann> that is made for old bugs
+17:51:04 <jradzuweit> so we have a little time to organize it and do some preparation
+17:51:18 <bmwiedemann> yes
+17:51:48 <jradzuweit> maybe we do it like "follow the sun support", starting in India
+17:52:00 <jradzuweit> handing over to Europa
+17:52:12 <LWFinger> The IRC channel should also help coordinate new bugs.
+17:52:12 <jradzuweit> handing over to America
+17:52:25 <bmwiedemann> yes. that would work
+17:53:17 <bmwiedemann> we could also collect current issues on an etherpad
+17:53:33 <LWFinger> Good idea.
+17:53:42 <jradzuweit> and mailinglist
+17:54:15 <bmwiedemann> isn't ML too slow?
+17:54:30 <jradzuweit> I don't think so
+17:55:18 <jradzuweit> for keeping everybody in sync it's ok
+17:55:39 <jradzuweit> we could give an in between status
+17:56:01 <bmwiedemann> would be OK for organisational stuff. but for discussion I fear it would be too noisy
+17:56:07 <jradzuweit> not everybody has a IRC running all the time
+17:56:32 <bmwiedemann> oh. hmm...
+17:57:22 <bmwiedemann> but etherpad just works in the browser, so maybe people would just use that
+17:57:55 <jradzuweit> what about twitter?
+17:58:00 <jradzuweit> that's fast
+17:58:21 <bmwiedemann> #info AJ will write news on Open-Bugs-Day #3 and LWFinger will write on forum
+17:58:37 <bmwiedemann> I hardly use twitter. but might also work :)
+17:58:56 <LWFinger> I'm not a twitter user.
+17:59:51 <jradzuweit> me neither, but we are still learning
+18:01:16 <jradzuweit> we can probe on the next Open-Bug-Day
+18:01:42 <bmwiedemann> yep
+18:03:49 <bmwiedemann> do we need to discuss the Beta rename anymore?
+18:04:14 <jradzuweit> no
+18:04:31 <LWFinger> No.
+18:06:00 <bmwiedemann> good. about the September/Beta event... do you have any idea how we can make it a fun global project day?
+18:06:36 <bmwiedemann> e.g. awarding points and highscore rankings to participants :)
+18:07:00 <jradzuweit> ask the boosters, maybe they have a idea
+18:07:33 <LWFinger> I think we need a few more participants in this discussion.
+18:07:50 <jradzuweit> whom?
+18:08:21 <LWFinger> I can try the Forum. Lots of good ideas there.
+18:15:35 <bmwiedemann> bug-squashing can really be fun
+18:15:59 <bmwiedemann> like Sherlock Holmes finding the culprit
+18:16:41 <bmwiedemann> LWFinger: will you gather ideas from our forum?
+18:16:51 <LWFinger> Yes.
+18:18:17 <bmwiedemann> great. any more ideas? otherwise we could close today's meeting
+18:18:35 <LWFinger> Nothing here.
+18:19:11 <LWFinger> Next meeting?
+18:19:42 <bmwiedemann> right. should be shortly after MS4 before the OBD #3
+18:19:50 <jradzuweit> bmwiedemann what about the conference, any plans
+18:19:53 <LWFinger> Agreed.
+18:20:18 <LWFinger> August 15?
+18:20:21 <bmwiedemann> 2011-08-15 17:00 UTC
+18:20:32 <LWFinger> Good
+18:20:37 <jradzuweit> agreed
+18:20:41 <bmwiedemann> jradzuweit: I will be at openSUSE conference of course
+18:20:54 <bmwiedemann> submitted a Testing BoF session
+18:21:02 <bmwiedemann> and a talk on "one year of openQA"
+18:21:34 <jradzuweit> maybe I will come, got ok from my wife ;)
+18:21:57 <LWFinger> Wish I could.
+18:22:30 <bmwiedemann> Dan of SUSE's QA-automation team wants to join the Testing BoF, too as he managed to get approval to publish some internal test automation tool
+18:23:02 <LWFinger> Sounds very interesting.
+18:23:27 <jradzuweit> some video streaming would be cool
+18:23:31 <bmwiedemann> maybe we should have a like chat or video streaming to US :)
+18:23:50 <LWFinger> That would be nice.
+18:24:20 <bmwiedemann> if internet worked there, I could run skype on my netbook
+18:24:40 <jradzuweit> I have to leave now, c u
+18:24:48 <LWFinger> Bye
+18:24:48 <bmwiedemann> Ciao Juergen
+18:24:58 <bmwiedemann> we are pretty much done anyway
+18:26:37 <bmwiedemann> so let's close today's meeting
+18:26:49 <bmwiedemann> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:27:12 <bmwiedemann> #endmeeting

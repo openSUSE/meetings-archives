@@ -1,0 +1,142 @@
+16:00:16 <AJaeger> #startmeeting openFATE screening team meeting - http://en.opensuse.org/openSUSE:Openfate_screening
+16:00:16 <bugbot> Meeting started Thu Nov 11 16:00:16 2010 UTC.  The chair is AJaeger. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:00:16 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:00:34 <AJaeger> Welcome everybody to the openFATE team screening meeting
+16:00:59 * HeliosReds is back from bed.
+16:01:03 <AJaeger> First I'd like to hear who's interested in participating, could people speak up that are, please?
+16:01:14 <AJaeger> Wow, HeliosReds is alive - great!
+16:01:27 <HeliosReds> ;-)
+16:01:35 <digitltom> AJaeger:  i am here, too :-)
+16:01:49 <AJaeger> Welcome digitltom and HeliosReds!
+16:03:03 <digitltom> so, https://features.opensuse.org/preview/ is running the latest codebase from git now
+16:03:10 <AJaeger> Sounds like a intimate meeting ;)
+16:03:25 <AJaeger> digitltom: Glad to hear and thanks a lot for getting everything in shape!
+16:03:43 * AJaeger has seen Remy already handling a lot of features, so this is good...
+16:04:18 <AJaeger> HeliosReds have you started using openFATE?
+16:04:44 <HeliosReds> I haven't got the permission to change status yet.
+16:05:19 <AJaeger> HeliosReds: You shouldn't need permissions AFAIK - digitltom?
+16:05:42 <digitltom> there are no permissions
+16:05:50 <AJaeger> HeliosReds, so just go ahead!
+16:06:04 <digitltom> HeliosReds:  just login and click on 'edit products'
+16:06:30 <digitltom> you need to use /preview of course
+16:06:38 <HeliosReds> I see. Now I can. :-)
+16:06:56 <AJaeger> HeliosReds if you have questions on using it, ask digitltom or myself any time on IRC.
+16:07:09 <HeliosReds> Thanks.
+16:07:52 <HeliosReds> I've written some questions on TitanPad.
+16:07:55 <AJaeger> HeliosReds: I suggest that you just go ahead - like Remy did - with editing features and write up questions you have and then let's document them.
+16:08:07 <AJaeger> HeliosReds, let's go through those on the TitanPad now.
+16:08:15 <digitltom> link?
+16:08:19 <HeliosReds> http://openfate.titanpad.com/2010-11-11-meeting
+16:08:21 <AJaeger> #info http://openfate.titanpad.com/2010-11-11-meeting? is the titanPad
+16:08:41 <AJaeger> question: What is the goal of screening?
+16:09:21 <AJaeger> I see the following goals:
+16:10:15 <AJaeger> * creating good features - that means working with the requesters on getting good proposals out
+16:10:27 <AJaeger> * sorting them so that the teams can evaluate them
+16:10:43 <AJaeger> * figuring out themes for the next release
+16:10:55 <AJaeger> * proposing big topics based on what's in FATE
+16:11:16 <AJaeger> * and then helping to market them so that they get implemented...
+16:11:43 <AJaeger> HeliosReds looking at your answer, my idea was to do it as follows:
+16:11:56 <HeliosReds> Agreed.
+16:12:18 <AJaeger> Cleanup unconfirmed features, add tags - and take care that we have for each tag a person to evaluate it.
+16:12:42 <AJaeger> for example, a feature tagged GNOME might get evaluated by dimstar or vuntz...
+16:13:15 <metalgod> AJaeger: marking duplicate ones is very important
+16:13:54 <AJaeger> metalgod: Cleanup includes rejected underspecified features if there's no reaction, marking some as duplicates etc
+16:14:24 <metalgod> got it
+16:15:15 <HeliosReds> AJaeger: You've listed some tags like base_system, gnome, kde... are there responsible persons for each team ?
+16:15:27 <metalgod> AJaeger: it's possible now to set a target developer for a feature ?
+16:15:32 <AJaeger> HeliosReds, metalgod: I will update tomorrow the wiki page with more information from what we discussed today...
+16:15:49 <metalgod> i only saw developer: novell
+16:15:55 <digitltom> metalgod:  yes, you can set developers
+16:15:57 <AJaeger> metalgod: Yes, You can add a developer - but that doesn't mean they will do it ;)
+16:16:06 <metalgod> cool
+16:16:15 <metalgod> AJaeger: sure
+16:16:28 <digitltom> metalgod:  for novell employees we are only allowed to display 'novell'...
+16:16:33 <AJaeger> HeliosReds: Yes, that was my initial list of tags where I hope that we find experts easily...
+16:16:38 <metalgod> for us on the community is nice
+16:17:04 <digitltom> metalgod:  community developers are shown
+16:17:36 <AJaeger> HeliosReds: Then dimstar would just look for features marked gnome...
+16:18:35 <AJaeger> HeliosReds: So, dimstart would then move the feature to "eval by teamlead" which I will call "marketplace". We will not add any teamleads here at all, digitltom takes care to enter a default value for us ;)
+16:19:07 <AJaeger> Then any developer can say : O, there's a great feature in "marketplace", I like to do it...
+16:19:31 <AJaeger> ... signs himself up as developer and changes the feature to implementation - and later to done.
+16:19:37 <HeliosReds> OK. Then I will add listed tags to untagged features when I have time.
+16:19:55 <AJaeger> HeliosReds: And if those features look fine, move them to "New"
+16:21:01 <AJaeger> Regarding "reject": If a feature is not clear, e.g. it's proposed to add package "xy" but no URL is given, I suggest to ask "Please give a URL to the home page of xy"
+16:21:13 <AJaeger> and if nothing happens for two weeks, then we reject the feature.
+16:21:22 <AJaeger> Similar if the description is not clear...
+16:21:48 <AJaeger> ... or misses a benefit.
+16:22:07 <HeliosReds> Do we need 'Needinfo' status like Bugzilla?
+16:22:18 <AJaeger> We have to define - and document - ourselves what we need in a feature and then point to it.
+16:22:38 <AJaeger> HeliosReds: You can add somebody as "Infoprovider" thus marking the feature as Needinfo.
+16:23:15 <AJaeger> But the state does not change - needinfo in FATE is bound to persons, you can even add severals as infoproviders...
+16:23:29 <AJaeger> digitltom: It is possible to add infoproviders, isn't it?
+16:23:43 <digitltom> it should be, yes
+16:24:20 <HeliosReds> Who can be the infoprovider other than the requester?
+16:25:06 <AJaeger> HeliosReds: for moving to new, it's mainly the requester.  In later changes you might want to add experts.
+16:25:19 <AJaeger> For example dimstar might ask vuntz for feedback...
+16:25:43 <AJaeger> From the pad: Since so many features have been requested already, it is very difficult to find out whether a newly requested feature is duplicated or done. Is there any easy and good way to verify whether a feature is duplicated or already done?
+16:26:00 <AJaeger> digitltom: any ideas?
+16:26:21 <AJaeger> I think for many features only the experts will know whether something is done...
+16:26:45 <digitltom> you mean whether the feature is implemented without being set to done?
+16:27:08 <AJaeger> digitltom: A feature in state unconfirmed might be done already, yes.
+16:27:21 <AJaeger> digitltom: There are too many hidden juwels in the distro ;)
+16:27:35 <digitltom> i think that's the task of the screeners to find out...
+16:27:54 <AJaeger> digitltom: They will never find all ;)
+16:28:09 <AJaeger> digitltom: So, what kind of tool support do we have - if the feature is in fate?
+16:28:37 <AJaeger> digitltom: Can I open two openFATE instances - separate windows - and in one edit and search in the other one?
+16:28:55 <digitltom> sure
+16:29:36 <digitltom> i would search for keywords of the new feature and check if there is a similar one
+16:29:53 <digitltom> or simply check if it's done in factory
+16:29:59 <AJaeger> Ok, let's see how this works in practice
+16:30:50 <AJaeger> Regarding prioritizing: For marketing purposes, we will highlight in each release only a handfull of large features/themes
+16:31:30 <AJaeger> So, we should find - and I don't know how to do this -the big topics and speak about them  - and give them a high priority (mandatory).
+16:31:52 <AJaeger> IMO more than 20 mandatory features for 11.4 is impossible to track...
+16:32:32 <AJaeger> So, after screening and setting initial priorities, we might need to revisit priorities - but this is something we have to handle via trial and error, I don't konw a good way to do it.
+16:33:10 <AJaeger> HeliosReds: Still awake?
+16:33:16 <HeliosReds> Who can decide whether a feature is mandatory?
+16:33:54 <AJaeger> HeliosReds: We as a team can decide that. But we have no power, so if we find nobody to implement it, then it won't get done...
+16:34:16 <AJaeger> But marking it as mandatory, we can market it - your idea to mention these in the own is a good one!
+16:36:13 <HeliosReds> How should we handle features receiving the higher number of votes?
+16:36:35 <AJaeger> high number of votes playes into the priority IMO
+16:37:06 <AJaeger> HeliosReds: This is something we need to figure out together ;)
+16:38:48 <HeliosReds> How do you think about my proposal which I wrote on the pad?
+16:39:14 <AJaeger> HeliosReds: The one about weekly news?
+16:39:24 <HeliosReds> At each bi-weekly meeting, we will see the status of the features receiving the higher number (more than 30 is reasonable?) of votes. And when we find the status of such features are still 'unconfirmed', we will push forward them and search the right persons who can implement them, or at least, evaluate them.
+16:39:40 <AJaeger> HeliosReds: Good idea...
+16:40:33 <AJaeger> HeliosReds: I will take your ideas and comments and edit the wiki pages tomorrow to make everything a bit clearer...
+16:40:49 <HeliosReds> Thanks. ;-)
+16:41:09 <AJaeger> There will still be some holes that we have to fill after we handled a couple of features...
+16:41:27 <AJaeger> and I'm sure we will adjust the process over time as well...
+16:41:59 <AJaeger> HeliosReds: Regarding meeting: What time works better for you?
+16:42:18 <AJaeger> We started at 16:00 UTC - give me your preference
+16:43:04 <HeliosReds> 1 or 2 hours earlier - 14:00 or 15:00 would be convenient for me.
+16:43:31 <AJaeger> HeliosReds: So be it next time ;)
+16:44:27 <rtyler> FunkyPenguin: ping
+16:44:29 <AJaeger> digitltom, HeliosReds, everybody: Anything else we should discuss regarding openFATE screening?
+16:44:48 <AJaeger> rtyler, FunkyPenguin: Do you want to discuss openFATE with us?
+16:45:08 <rtyler> uh, sure
+16:45:17 <rtyler> was I interrupting something?
+16:45:31 <rtyler> there's no #opensuse-smeegol to harass FunkyPenguin in so I dropped by -project :P
+16:45:34 <AJaeger> rtyler: We're just having a small team meeting ;)
+16:45:45 * rtyler zips his lips
+16:45:49 <AJaeger> rtyler: it's #opensuse-goblin AFAIK
+16:45:54 <digitltom> AJaeger:  maybe we should set some goals like no unconfirmed features after milestone5 or so
+16:46:21 <AJaeger> digitltom: And also close openFATE for the creation of new features at that time?
+16:46:21 <rtyler> damnit, does nobody ad meetings to the calendar anymore? all I had this week was a german wiki team meeting
+16:46:34 <digitltom> AJaeger:  sure, i just need the dates
+16:46:39 <AJaeger> rtyler: this meeting is in the calendar
+16:46:51 <AJaeger> digitltom: ok, I'll add this to the wiki in my rework tomorrow
+16:47:42 <AJaeger> any other suggestions, ideas?
+16:48:18 <HeliosReds> AJaeger: I'll try to edit some status until the next meeting and when I get some questions, I'll ask you.
+16:48:21 <digitltom> AJaeger:  we currently don't show emails in the features. we should evaluate whether we can enable this
+16:48:52 <digitltom> we should also check if we can remove the novell employee hiding
+16:49:12 <AJaeger> digitltom: yeah, let's see what's possible...
+16:50:28 <HeliosReds> BTW, when do you plan to replace features.o.o with features.o.o/preview ?
+16:50:32 <AJaeger> HeliosReds: Yes, ask anytime myself or digitltom
+16:51:07 <AJaeger> HeliosReds: digitltom is the master developer and therfore tool expert
+16:51:19 <digitltom> HeliosReds:  when quite soon i'd say when noone complains
+16:51:40 <AJaeger> HeliosReds: If neither of us finds any bugs...
+16:52:12 <AJaeger> ok, anything else to discuss for now?
+16:53:16 <digitltom> not from my side
+16:53:46 <HeliosReds> Not for now. I'll see how it works anyway.
+16:54:10 <AJaeger> ok, thanks! HAve a good evening/night/day everybody!
+16:54:13 <AJaeger> #endmeeting

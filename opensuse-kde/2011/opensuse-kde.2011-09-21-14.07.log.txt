@@ -1,0 +1,217 @@
+14:07:13 <wstephenson> #startmeeting
+14:07:13 <bugbot> Meeting started Wed Sep 21 14:07:13 2011 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:07:13 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+14:07:32 <wstephenson> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+14:08:02 <wstephenson> so there are a couple of agenda items that might have been discussed already
+14:08:13 <wstephenson> tell me if they are old...
+14:08:17 <wstephenson> agenda:
+14:08:19 <wstephenson> status update
+14:08:39 <wstephenson> * include QuickFormat disk utility in default installation
+14:08:44 <wstephenson> * online update of PNM
+14:08:54 <wstephenson> * update bluedevil to 1.2.1
+14:09:00 <wstephenson> * misc
+14:09:11 <wstephenson> i'll leave out old action items for a fresh start
+14:09:33 <wstephenson> anything else?
+14:09:57 <tittiatcoke> please also add the topic about removal of empty basepackages
+14:10:08 <tittiatcoke> or obsoleting of them
+14:10:18 <wstephenson> * dropping/obsoleting empty base packages
+14:10:36 <tittiatcoke> thanks
+14:10:42 <wstephenson> #topic status report
+14:11:00 <wstephenson> i'm back, working 50%
+14:11:07 <wstephenson> that means 9 - 13 mon to friday
+14:11:37 <wstephenson> after that i will probably be around more than i was during the summer but i have Anna to look after so no guarantees of a quick response.
+14:12:16 <wstephenson> i won't be travelling as much for that reason, so i will be blogging etc more
+14:12:33 <wstephenson> cartman and maxlin are going to continue to help SUSE GmbH side
+14:12:37 <wstephenson> other status?
+14:13:20 <tittiatcoke> :I guess we can report that 4.7.1 is in KDF and in KR47.  KDF and Factory have been updated to soprano 2.7.0 and the latest versions of raptor v2, rasqal and redland.
+14:13:53 <wstephenson> cool
+14:14:46 <wstephenson> * include QuickFormat disk util
+14:14:54 <wstephenson> tittiatcoke: know if this was discussed?
+14:15:03 <krop> doesn't ring a bell
+14:15:16 <wstephenson> o hai, krop.
+14:15:21 <tittiatcoke> To be honest I don't know. My last meeting was sometime in June :-)
+14:15:22 <krop> Hoi!
+14:15:31 <Abhish> It was only mentioned briefly in Factory Mailing list.
+14:15:32 <wstephenson> were there any meetings that weren't minuted in my absence
+14:15:37 <wstephenson> tittiatcoke: same here ;)
+14:16:13 <wstephenson> Abhish: ok
+14:16:23 <wstephenson> #action wstephenson investigate quickformat disk util
+14:16:28 <wstephenson> * online update of PNM
+14:16:36 <wstephenson> did this happen?
+14:17:13 <tittiatcoke> I believe so. At least I took the NM09 branch and make it work for Factory and KDF. But maybe we can update it again in time for Factory Beta
+14:17:19 <javier_> hola
+14:17:22 * javier_ is back
+14:17:28 <wstephenson> from where?
+14:17:33 <EagleScreen> hello
+14:17:43 <javier_> i wasn't at my desk ;)
+14:17:47 <tittiatcoke> wstephenson: That question was for me ?
+14:17:58 <wstephenson> tittiatcoke: a 11.4 online update wouldn't be NM09 branch though, right?
+14:18:14 <wstephenson> tittiatcoke: "from where?" was to javier_
+14:18:24 <wstephenson> javier_: bah i thought something interesting like a trip to the ISS;
+14:18:29 <wstephenson> you never know ;)
+14:18:34 <javier_> :)
+14:18:41 <javier_> not yet ;)
+14:18:47 <tittiatcoke> wstephenson: What I did is to take the whole git repo for PNM and then to take the master branch for 11.3 and 11.4. Factory however uses a git branch nm09 to compile the nm09 branch :-)
+14:19:11 <tittiatcoke> This all with a single tarball and a few %if statements :-)
+14:19:39 <wstephenson> ok
+14:20:04 <wstephenson> interesting technique, nobody complained?
+14:20:20 <krop> nobody noticed :)
+14:20:23 <tittiatcoke> Nope.
+14:21:51 <tittiatcoke> cartman was happy about it and he was the one submitting it to Factory.
+14:22:32 <wstephenson> looks like the one in KUA needs updating, then i'll push to update
+14:22:38 <wstephenson> Update:Test
+14:22:47 <wstephenson> #action tittiatcoke update KUA/KDF snapshot
+14:22:55 <tittiatcoke> Oki
+14:23:16 <wstephenson> * update bluedevil to 1.2.1 in Factory
+14:23:18 <wstephenson> no brainer
+14:23:34 <wstephenson> #action wstephenson update bluedevil to 1.2.1
+14:24:06 <wstephenson> #topic dropping/obsoleting empty base packages (binary pkgs with same name as src package)
+14:24:12 <EagleScreen> some people has been testing new bluedevil (like me) it hasn't regressions, and it has some new interesting fearures
+14:24:23 <wstephenson> tittiatcoke: what's to discuss?
+14:24:40 <wstephenson> EagleScreen: yes, afiestas delivers solid code there
+14:24:51 <wstephenson> i noticed phonon.rpm went away
+14:25:02 <wstephenson> what files went into libphonon?
+14:25:19 <tittiatcoke> I guess that it was noticable that we have somebody who took as a target to resolve every single rpmlint error that the KDE packages have.
+14:26:36 <tittiatcoke> One of the topics he claims that have been discussed on the mailing list is that when a package has an empty base package (e.g. kdesdk4 ), that these packages should be removed. This on it self is not the issue, but the question is where do we put the obsoletes/provides for this.
+14:27:16 <tittiatcoke> especially if we have the situation that a new package is replacing the base package (e.g. like what happened with phonon).
+14:27:46 <tittiatcoke> cartman and I have been discussing some possiblities, but I guess we both wanted to have two things agreed here in the meeting.
+14:28:25 <tittiatcoke> the first thing being that we are indeed all agreeing to remove those base packages and the second thing where are we putting the provides/obsoletes. kde4-filesystem could be a good package, or maybe some other
+14:29:10 <wstephenson> sec, crying baby
+14:29:14 <tittiatcoke> :-)
+14:30:06 <EagleScreen> I don't want to be a jerk, but don't forget to update kdbg to 2.5
+14:30:48 <wstephenson> i don't think all in kde4-fs is right
+14:31:01 <tittiatcoke> #action tittiatcoke update kdbg to 2.5.0
+14:31:11 <wstephenson> #chair tittiatcoke
+14:31:11 <bugbot> Current chairs: tittiatcoke wstephenson
+14:31:16 <wstephenson> redo
+14:31:19 <tittiatcoke> #action tittiatcoke update kdbg to 2.5.0
+14:31:48 <wstephenson> eg phonon is a kde dep
+14:32:09 <tittiatcoke> to be honest I didn't noticed phonon, yet
+14:32:27 <wstephenson> are these really only empty basepackages? i guess so because of the error
+14:32:50 <wstephenson> if so there should be a main subpackage like libXXXn that can be used as the replacement
+14:33:12 <tittiatcoke> Well, not all of them are empty. e.g. kdebase4 got removed and replaced by plasmoid-folderview.
+14:33:39 <tittiatcoke> The question is now however will zypper automatically update kdebase4 with plasmoid-folderview or is this an action that needs to be performed by the user ?
+14:34:59 <tittiatcoke> for the kdebase4 change, we resolved it by putting a require for plasmoid-folderview in kdebase4-openSUSE
+14:35:19 <wstephenson> given the Provides/Obsoletes pair in plasmoid-folderview, it would
+14:35:29 <wstephenson> it's effectively a package rename
+14:35:38 <tittiatcoke> Ok.
+14:35:45 <cb400f> I think kdesdk4 includes 2-3 files or so.. at least it used to
+14:35:58 <cb400f> some ontology stuff or so
+14:35:59 <wstephenson> hi cb400f
+14:36:03 <cb400f> o/
+14:36:34 <tittiatcoke> for the kdebase4 change, we resolved it by putting a require for plasmoid-folderview in kdebase4-openSUSE
+14:36:41 <tittiatcoke> I mean the kdesdk4 change
+14:37:04 * tittiatcoke cleans his keyboard and tries it again :-)
+14:37:11 <wstephenson> take your time ;)
+14:38:10 <tittiatcoke> for kdesdk4 he renamed the base package into kdesdk-strigi and created two new packages as well. the strigi package is now obsoleting the kdesdk4 package, but part of it is not also in a package called kdesdk4-kprofilemethog
+14:38:21 <tittiatcoke> *kdesdk4-kprofilemethod
+14:38:51 <tittiatcoke> So it is getting a little confusing for people that used to have something installed and suddenly finding out that they have to install a new package
+14:39:24 <wstephenson> users should not have to manually select the replacement package
+14:40:02 <tittiatcoke> but what if 1 package is splitted out in two packages ? Should one of the replacement packages have a Require to the other ?
+14:40:40 <tittiatcoke> I guess this has become quite a hot topic as that the person is rapidly sending requests to KDF to resolve all kind of rpmlint errors
+14:40:42 <wstephenson> no, i'm not sure
+14:41:03 <wstephenson> i'd ask on -packaging about that scenario
+14:41:32 <wstephenson> we should have a list of techniques to resolve the most common cases
+14:41:42 <tittiatcoke> That is the reaons why there are a couple of SR's still waiting for approval/Rejection as that things are not 100% clear.
+14:42:15 <wstephenson> ok, let's look at those and clear them up
+14:42:31 <javier_> yes, Todd is working like crazy on improving KDF
+14:42:40 <wstephenson> do you have enough overview to write a mail to -packaging summarising the cases?
+14:43:07 <tittiatcoke> :-) But we have to prepare outselves, because with KDE moving to GIT more and more, we are ending up with separate packages which have to replace certain existing packages.
+14:43:16 <tittiatcoke> wstephenson: I guess I can create such email
+14:43:46 <tittiatcoke> at least I can sum up all the possibilities
+14:44:36 <tittiatcoke> #action tittiatcoke create email to -packaging to validate package obsoleting/removal
+14:45:09 <wstephenson> ok
+14:45:19 <wstephenson> next topic is...
+14:45:30 <wstephenson> #topic misc, Q&A
+14:45:53 <tittiatcoke> I have a question about KDE:Unstable:SC.
+14:47:02 <tittiatcoke> I know my favorite topic, but since the release of 4.7.0, KUSC has seen two updates and somehow it seems dead :-) A bug was even created by jobermayr to complain that KUSC doesn't contain weekly snapshot updates, which I resolved by changing the wiki. But the truth is that we are far far away from weekly updates.
+14:47:30 <wstephenson> tittiatcoke: and you were doing the updates, or is dirk?
+14:48:47 <tittiatcoke> dirk is the one that does the updates. I can easily take this over, but I am not sure if dirk is going to be happy with it. It was his playground to test tarball snapshots. But he is not even updating kdelibs4 with a newer version number (But I guess this might be difficult as that kdelibs master is frozen)
+14:49:43 <wstephenson> i think we should arrange a separate meeting with dirk
+14:49:53 <tittiatcoke> wstephenson: My idea exactly
+14:50:22 <wstephenson> #action wstephenson arrange KUSC future meeting with dirk
+14:50:37 <wstephenson> ok?
+14:50:40 <tittiatcoke> yup
+14:50:51 <wstephenson> any more misc?
+14:51:06 <javier_> I have asked darix to delete the openSUSE_Factory target for KR47
+14:51:13 <krop> I have one question about KDE:Unstable:Playground
+14:51:35 <javier_> we already have KDF for factory stuff :)
+14:52:22 <krop> We have ~10-20 packages that are either prehistoric and/or don't fit the KUP description
+14:53:24 <wstephenson> what is the question?
+14:53:38 <krop> what to do with these packages ?
+14:53:43 <krop> examples:
+14:53:56 <cb400f> kamoso! :-)
+14:54:18 <krop> scribus-unstable (not updated for 8 months, simon, tristan, a few plasmoids from an antique era...
+14:54:43 <wstephenson> mrdocs: scribus?
+14:55:03 <tittiatcoke> krop: I would vote for deletion of those packages. Also a playground needs cleaning from time to time :-)
+14:55:05 <wstephenson> i'd wipebinaries scribus and disable build until mrdocs needs to preview another scribus beta
+14:55:09 <wstephenson> drop the plasmoids
+14:55:33 <cb400f> oops.. I'm outdated again.. kamoso now exists in kde:extra... should be in kdf though :-)
+14:55:54 <tittiatcoke> I guess that scribus was the initial version that mrdocs created in Playground, which later got submitted to KDF with the released version of scribus
+14:56:06 <krop> cb400f: kamoso is maintained in kup
+14:57:23 <tittiatcoke> As indicated if packages are no longer maintained for a couple of months, we should delete them
+14:57:31 <tittiatcoke> at least imo
+14:58:23 <krop> I'll proceed in two steps: send a mail to the list asking the respective maintainers to move the released versions to an appropriate repo
+14:58:26 <javier_> I would ping the last contributors of those packages before deleting anything
+14:58:26 <cb400f> maybe say 6 months? ... 2 months is not that long
+14:58:29 <krop> then delete the obsolete stuff
+14:58:33 <wstephenson> cb400f: +1
+14:58:35 <wstephenson> krop: +1
+14:59:01 <tittiatcoke> If I may add another little topic ?
+14:59:02 <cb400f> do we still have that graveyard somewhere for unmaintained packages?
+14:59:25 <wstephenson> under home:llunak iirc
+14:59:26 <javier_> afaik, no
+14:59:27 <krop> llunak's attic ?
+14:59:36 <javier_> ah there
+14:59:50 <cb400f> right.. graveyard was a bit dramatic
+15:00:20 <tittiatcoke> graveyard would have been created of llunak would have started to clean his attic :-)
+15:00:30 <tittiatcoke> s/of/if/
+15:00:33 <wstephenson> home:llunak:attic
+15:00:40 * wstephenson needs to go
+15:01:10 <elchevive1968_> someone ask on ml right now about the packagekit frontend to be used on 12.1 (if it will be updated to Apper)
+15:01:45 <tittiatcoke> I wanted to bring that one up also :-)   I have spoken with danntti in the past and he would do his best to create an official release for apper, but this never happened
+15:01:49 <wstephenson> i have a todo to investigate
+15:01:55 <wstephenson> i don't think apper is mature yet
+15:02:01 <tittiatcoke> I am using apper from git and that works fine :-)
+15:02:44 <wstephenson> tittiatcoke: can you endmeeting when ready?
+15:02:48 <wstephenson> bored 1 year old here
+15:02:56 <javier_> time flies
+15:02:57 <tittiatcoke> wstephenson: A lot has changed in Apper during your absence. danntti really pushed a lot of stuff so that he could make an official release so that we could include it in 12.1
+15:03:01 <tittiatcoke> wstephenson: Sure
+15:04:03 <tittiatcoke> #action wstephenson investigate apper
+15:04:11 <tittiatcoke> anything else ?
+15:04:29 <wstephenson> not from me
+15:04:42 <tittiatcoke> javier_:  ?
+15:04:43 <wstephenson> thanks everyone for your contributions
+15:04:43 <tittiatcoke> cb400f: ?
+15:05:03 <tittiatcoke> Thanks wstephenson and welcome back :-)
+15:05:03 <javier_> not really
+15:05:08 <cb400f> hm?
+15:05:09 <javier_> +1
+15:05:12 <wstephenson> it's like i was never away
+15:05:36 <cb400f> it felt like ages for the rest of us ;-)
+15:05:45 <tittiatcoke> krop: elchevive1968_: anything else from your side ?
+15:06:20 <cb400f> I wasn't here for the start of the meeting
+15:06:28 <cb400f> but I'm quite concerned about the default desktop
+15:06:51 <krop> Ah yes
+15:06:57 * krop has something
+15:07:01 <tittiatcoke> cb400f:  what are your concerns ?
+15:07:06 <cb400f> no folderview... pushing activities on people.. "dropping" virtual desktops.. messed up icons for "Documents" and "public_html" in dolphin
+15:07:35 <cb400f> and the duplicated launchers/icons things for FF and dolphin.. but sebaz says that's fixed in 4.7.2 though
+15:07:53 <tittiatcoke> I saw an email on those launchers.
+15:08:21 <elchevive1968_> no
+15:09:38 <tittiatcoke> cb400f: I guess that the activities and dropping virtual desktops is something from upstream ?
+15:10:02 <cb400f> yes, I think so too.. doesn't mean we should accept it :-)
+15:10:29 <cb400f> I thought they were going conservative in 4.7 to pick up all the gnome run-aways... but clearly not :-)
+15:11:07 <tittiatcoke> Activities is something that is heavily developed in 4.8
+15:12:02 <tittiatcoke> krop: What was your something ? :-)
+15:12:09 <krop> for O:F users, please check whether opening your KDE session and/or opening the file dialog takes longer when using systemd
+15:13:32 <tittiatcoke> Is that still the case with the latest Factory update ?
+15:13:40 <krop> define latest
+15:13:59 <tittiatcoke> this morning :-)
+15:14:10 <EagleScreen> I personally find activities very unuseful for most of the users, but I find the new small launchers for Dolphin and Firefox a total good decision
+15:14:12 <krop> I didn't update yet
+15:14:19 <tittiatcoke> krop: Ok. Was just wondering
+15:15:26 <tittiatcoke> Anything else ?
+15:16:07 <tittiatcoke> Ok, then I will close the meeting. Thanks everyone
+15:16:16 <tittiatcoke> #endmeeting

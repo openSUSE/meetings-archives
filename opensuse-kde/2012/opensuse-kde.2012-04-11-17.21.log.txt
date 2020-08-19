@@ -1,0 +1,118 @@
+17:21:55 <ctrippe> #startmeeting
+17:21:55 <bugbot> Meeting started Wed Apr 11 17:21:55 2012 UTC.  The chair is ctrippe. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:21:55 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:22:09 <ctrippe> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+17:23:27 <ctrippe> let's start with old action items
+17:23:43 <ctrippe> 1.) wstephenson blog about last meeting's decisions
+17:23:45 <Bille> eek
+17:23:53 <Bille> half done
+17:24:09 <ctrippe> 2.) tittiatcoke to update apper to the latest version
+17:24:31 <tittiatcoke> Not done. Will do that tomorrow. the kross-stuff and KUSC got in the way
+17:25:16 <ctrippe> 3.) is without responsible person: add greeter to 12.2 features
+17:26:40 <ctrippe> 4.) wstephenson evaluate beclock
+17:27:06 <wstephenson_home> done
+17:27:13 <wstephenson_home> works, doesn't crash kwin
+17:27:36 <wstephenson_home> not sure if it's useful enough on its own to be part of the default effects
+17:29:00 <ctrippe> 5.) rabauke evaluate akonadi-google (not -googledata) for default install
+17:29:01 <pvdm_> BeClock is nice. (sorry don't mean to interfere in your meeting :D )
+17:29:02 <wstephenson_home> i found it a bit distracting too
+17:29:41 <cb400f> we need less distractions, not more :-)
+17:30:28 <pvdm_> wstephenson_home: it disappears when you hover over it. And the placement on your desktop (postition) is crucial.
+17:31:48 <wstephenson_home> since rabauke is not here, i guess we punt until next week's daytime meeting
+17:32:03 <ctrippe> ok
+17:32:29 <wstephenson_home> pvdm_: i wonder what 'uses mousepolling' means
+17:32:31 <ctrippe> These were the old action items
+17:32:35 <wstephenson_home> that's a lubos question
+17:33:03 <wstephenson_home> however i wish the panel tooltips would hide on hover too.
+17:33:17 * wstephenson_home used ubuntu unity and windows phone this weekend for refreshment
+17:33:32 * tigerfoot (sorry need to go) have only one point to mention : I've prepared a ksplash-qml version for 12.2 (factory) you can play with at http://dl.dropbox.com/u/13333867/openSUSE/openSUSE-12.1-ksplash-qml.tar.bz2
+17:33:44 <wstephenson_home> tigerfoot: please mail the list too
+17:34:07 <tigerfoot> wstephenson_home: I think I've already done it ... now waiting it-s final design ...
+17:34:43 <wstephenson_home> tigerfoot: oh, that mail. didn't notice it was the same thing
+17:35:03 <wstephenson_home> ctrippe: status reports?
+17:35:07 <ctrippe> If there isn't anything more to e.g. beclock I would move on to status reports
+17:35:21 <ctrippe> #topic status reports
+17:36:19 <ctrippe> someone wants to start? tittiatcoke, wstephenson_home?
+17:36:29 * wstephenson_home did not get much done since last weekend. updated calligra to 2.4.0, read mail, easter weekend, looked at kubuntu's lowfat settings package for klyde
+17:36:42 <wstephenson_home> was rather underwhelmed by Unity
+17:37:05 * tittiatcoke did an full update of KUSC and published the first snapshot of KDE 4.9. Also created the missing package kross-interpreters
+17:37:21 <wstephenson_home> it's not awful, it's more conservative than eg gnome-shell, but it still feels unfinished and patchy in 12.04beta
+17:38:12 <wstephenson_home> err, *since last week's meeting ^
+17:38:26 <ctrippe> I fixed some small packaging bugs and changed some visible strings in kde packages (more on that later) Continued with cleaing up old 11.3 bugs. Made tittiatcoke package kross-interpreters :-)
+17:38:30 <wstephenson_home> hud is a joke. basically we could emulate the whole thing with a plasma layout
+17:38:42 * tigerfoot found that kmix crash I got, happen only when hdmi is plugged to the laptop ... will need to find a dev that have hdmi (cartman) perhaps
+17:38:51 <ctrippe> since the last *late* meeting
+17:38:55 * tigerfoot off will read the report.
+17:39:43 <ctrippe> anyone else?
+17:40:48 <ctrippe> Otherwise I would move on to the topics from the wiki
+17:41:19 <wstephenson_home> javier fixed the livecd for 4.8.2
+17:41:37 <wstephenson_home> ok, move on
+17:41:41 <ctrippe> #topic kdelive
+17:41:47 <ctrippe> Care and revision of this kde page: http://home.kde.org/~kdelive/ --Linuxsusefan
+17:41:48 <javier> well, the live cd needs to do some exercise
+17:42:27 <javier> some time ago I submitted a un update to the perl scripts used to update it
+17:42:36 <javier> *an
+17:42:55 <javier> I could re send it
+17:43:09 <javier> but the structure of the page needs some work I think
+17:43:20 <wstephenson_home> yep
+17:43:20 <javier> to make it look fresh
+17:43:25 <ctrippe> agrees
+17:43:45 <wstephenson_home> i'm *not* the man for that job
+17:44:01 <javier> perhaps a screenshot with a nice download button is enough
+17:44:15 <javier> saying "includes KDE 4.8.x"
+17:44:34 <javier> or do we want  to have the list of packages?
+17:45:01 <cb400f> should prolly do something simple, requiring minimum maintenance
+17:45:04 <wstephenson_home> +1
+17:45:14 <ctrippe> +1
+17:45:48 <wstephenson_home> but a modern design would be great
+17:45:57 <wstephenson_home> i'll ask eugeine
+17:45:58 <wstephenson_home> -i
+17:46:11 <wstephenson_home> ctrippe: action that to me
+17:47:00 <ctrippe> #action wstephenson_home ask eugene about a modern but simple design for kdelive webpage
+17:47:28 <ctrippe> then I'll continue with the next item
+17:47:48 <ctrippe> #topic openSUSE specific KDE translations
+17:48:03 <ctrippe> Do we as KDE Team have to take care to get pot files for KDE specfic files (update-desktop-files-kde-services.pot, kde4-openSUSE.pot) updated for translators, as I recently changed two strings there. (Even if I don't know how to generate them.) -- ctrippe
+17:48:12 <ctrippe> so that's from me.
+17:48:35 <wstephenson_home> ctrippe: yes we do, and i get reminder mails from karl eichwalder about updating them
+17:48:48 <wstephenson_home> and mostly i ignore it because i haven't generated them in the past
+17:49:02 <wstephenson_home> although somewhere i have a howto written for my by lubos when he left the team
+17:49:07 <wstephenson_home> so i could dig that out
+17:49:39 <ctrippe> I would say this is the next action for you
+17:50:05 <wstephenson_home> yeah me too :/
+17:50:10 <ctrippe> but maybe we should put this in the wiki that it has not always to be your job if possible
+17:50:11 <wstephenson_home> i might have to do some actions this week
+17:50:26 <wstephenson_home> i will dig out the howto, do it once, document it and then look for a i18n coordinator
+17:50:34 <wstephenson_home> it should be a case of running a script
+17:51:05 <ctrippe> #action wstephenson_home find out how to generate the pot files for openSUSE specific KDE translations
+17:52:11 <ctrippe> that was it from the wiki
+17:52:43 <ctrippe> #topic Q&A, Misc
+17:53:51 <cb400f> wstephenson_home: do you expect klyde to be available as an option on the dvd installer under "desktop selection"?
+17:54:13 <cb400f> or as an unofficial livecd?
+17:54:55 <einar77> Speaking of misc topics, the cause of startkde LD_BIND_NOw crash still not found (nor a reliable reproducible way to trigger it) - yes, came in late
+17:54:56 <wstephenson_home> cb400f: not sure, it would be nice to have it under *other* but then everyone else will want to have it too
+17:55:07 <wstephenson_home> (is there an 'everyone else'?)
+17:55:21 <wstephenson_home> now that nelson ragequit again, not sure i see anyone pushing Cinnamon
+17:55:21 <cb400f> yeah.. unity, cinnamon, mate
+17:55:29 <cb400f> .. and all the other gnome workspaces :-)
+17:55:36 <wstephenson_home> KDE 3?
+17:55:44 <cb400f> eew.. that too
+17:55:44 <wstephenson_home> *NOOO*
+17:55:53 <alin> stop that...
+17:56:07 <alin> no bad words in the channel
+17:56:14 <einar77> Once the meeting is over I have one mention wrt that, as a "community heads up"
+17:57:06 <wstephenson_home> cb400f: i will do a livecd first though
+17:57:26 <cb400f> maybe it would be better to just clean and lean the official kde a bit :-)
+17:57:47 <wstephenson_home> basically i just want to do that and a branding rpm that configures all the services to klyde levels and then sit back and see what ppl do with it, and fix our mainstream desktop
+17:59:11 <wstephenson_home> any more Q&A?
+17:59:34 <ctrippe> I'll start a countdown
+17:59:59 <ctrippe> 3
+18:00:07 <cb400f> is calligra 2.4.0 ready to be linked to kua? :-)
+18:00:07 <ctrippe> 2
+18:00:33 <wstephenson_home> ctrippe: or use this one: http://www.youtube.com/watch?v=9RzCB3VRruE
+18:00:42 <cb400f> oh, seems already published in kdf
+18:00:49 * cb400f setlinkrevs
+18:01:25 <ctrippe> cb400f: but you must create also a link for calligra docs which was missing in KDF when I last looked, see 751106
+18:01:41 <ctrippe> bug 751106 that is
+18:01:41 <bugbot> openSUSE bug 751106 in openSUSE 12.2 (KDE4 Applications) "After installation of calligra-kexi from KDE Factory for openSUSE Factory the English documentation is missing" [Normal,New] https://bugzilla.novell.com/751106
+18:02:29 <ctrippe> ok I think that was it.
+18:02:45 <ctrippe> #endmeeting

@@ -1,0 +1,244 @@
+17:01:05 <vuntz> #startmeeting openSUSE Project Meeting
+17:01:05 <bugbot> Meeting started Wed Nov 14 17:01:05 2012 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:01:05 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:01:20 <vuntz> here we go!
+17:01:28 <vuntz> so, who do we have for the meeting?
+17:01:31 * vuntz looks left and right
+17:01:39 <hendersj> I'm here today. :)
+17:01:56 <tigerfoot> half of me
+17:02:00 * lnussel is here
+17:02:11 <vuntz> tigerfoot: where's the other half? :-)
+17:03:07 <vuntz> so, here's the agenda we have on the wiki right now:
+17:03:07 <vuntz> Update on inactive mailing lists (see bug)
+17:03:08 <vuntz> Update on GCI (Google Code-In) (Manu)
+17:03:08 <vuntz> Update on admin@o.o reactiveness (Vincent)
+17:03:08 <vuntz> Status of Board elections (Vincent)
+17:03:10 <vuntz> Next meeting chair (current chair)
+17:03:36 <vuntz> if there's any topic people want to add, no problem, we'll have the topic after those ones
+17:03:55 <vuntz> and of course, there's Q&A at the end
+17:04:13 <vuntz> so first topic
+17:04:19 <vuntz> #topic Update on inactive mailing lists
+17:04:56 <vuntz> so we had a bug to track this: https://bugzilla.novell.com/show_bug.cgi?id=785517
+17:05:01 <bugbot> openSUSE bug 785517 in openSUSE.org (Infrastructure) "Closing down of Inactive Mailing Lists" [Enhancement,Resolved: upstream]
+17:05:10 <tigerfoot> vuntz: sorry migrating postgresql Gigabyte server with new packages ... which part (right or left) did you prefer here ;-)
+17:05:18 <vuntz> but it was closed because the admin team is already tracking this
+17:05:31 <vuntz> afaik, it's not done yet
+17:06:00 <cboltz> henne told me at the conference it's the usual ENOTIME
+17:06:01 <vuntz> don't have any more update on this, I guess manu might know more (but he's sleeping)
+17:06:11 <cboltz> (see also http://lists.opensuse.org/opensuse-project/2012-11/msg00033.html )
+17:06:26 <vuntz> #info not done yet, mostly due to lack of time
+17:07:04 <vuntz> cboltz: do you know if henne is the one who will handle that at some point?
+17:07:29 <cboltz> in theory yes - he's the ML admin on many (all?) lists
+17:07:41 <cboltz> in practise, I don't know if/when he has time
+17:08:00 <cboltz> I also don't know who else has access to lists.o.o
+17:08:07 <vuntz> #info henne will likely be the one dealing with this
+17:08:46 <tigerfoot> vuntz a todo, create a backup ML admin no?
+17:09:15 <tigerfoot> one people that Henne can instruct ...
+17:09:32 <vuntz> tigerfoot: let me move to the "Update on admin@o.o reactiveness" topic so we can discuss this :-)
+17:09:39 <vuntz> #topic Update on admin@o.o reactiveness
+17:10:05 <vuntz> #info suggestion to create a backup admin for mailing list, so that previous topic can be dealt with faster
+17:10:36 <vuntz> #info some discussion about admin@ was summarized by christian: http://lists.opensuse.org/opensuse-project/2012-11/msg00033.html
+17:10:48 <vuntz> tigerfoot: it's not a bad idea, indeed
+17:11:02 <vuntz> we might need to know who's doing what in admin@ first (there might already be a backup?)
+17:12:11 <cboltz> do we have a list of the *.opensuse.org infrastructure?
+17:12:11 <vuntz> darix: is there some documentation of who is doing what on admin@? (and if no, do you think it's reasonable to ask for such a list, so people can know where to step up?)
+17:12:27 * vuntz is only aware of http://en.opensuse.org/openSUSE:Services_team
+17:12:43 <vuntz> cboltz: http://en.opensuse.org/openSUSE:Services_help ?
+17:13:26 <vuntz> (darix is in another meeting at the same time, so might be slow to answer)
+17:13:41 <cboltz> indeed, Services_help looks good
+17:13:59 <darix> vuntz: which items are handled slow mainly for people?
+17:15:20 <vuntz> darix: I've heard about additions to planet.o.o and mailing list-related things, but maybe those were exceptional cases -- can't tell
+17:15:56 <darix> vuntz: well planet was slow because pascal stepped down and i didnt jump up fast enough.
+17:16:02 <darix> i might have someone to help me with that.
+17:16:16 <vuntz> that's great news!
+17:16:20 <darix> for ml it is similar ... henne is officially assigned
+17:16:31 <darix> but not sure we can easily give access to this
+17:17:18 <vuntz> #info someone might step up soon to help with planet.o.o administration
+17:17:54 <tigerfoot> more precisely from darix words, someone internal of SUSE no?
+17:18:11 <darix> tigerfoot: well for planet it will be a community member
+17:18:27 <tigerfoot> oh okay .. cool
+17:18:41 <vuntz> #info helping with ML might be possible only from SUSE people at the moment (due to access restrictions)
+17:19:00 <vuntz> tigerfoot, cboltz: have you heard of any other issues with admin@ reactiveness?
+17:20:15 <vuntz> and do you feel we should try to find a SUSE guy to help henne with ML maintenance?
+17:20:16 <cboltz> IIRC not - except wiki update, but that's not directly related to admin@
+17:21:05 <cboltz> for the MLs - merging and closing some of the MLs was decided at least a year ago IIRC - does that answer the question? ;-)
+17:21:13 <tigerfoot> vuntz: not recently for admin ( and well the infrastructure is going right the last weeks)
+17:21:21 <vuntz> cboltz: heh, fair enough :-)
+17:21:23 <darix> cboltz: i can try to poke henne about it
+17:21:51 <tigerfoot> darix beware of the bear
+17:22:09 <darix> tigerfoot: i got a weight advantage
+17:22:33 <cboltz> darix: you'll have to change the importance of the MLs on his TODO list - not sure how to manage that ;-)
+17:22:48 <vuntz> darix: can you also ask henne if he's okay having someone helping him with ML?
+17:25:04 <darix> vuntz: yes
+17:25:20 <vuntz> darix: sweet, thanks!
+17:25:25 <vuntz> #action darix to ask henne about getting someone else to help with administrating the mailing lists
+17:25:32 <vuntz> anything else on this topic?
+17:25:54 <cboltz> maybe the status of the wiki update
+17:26:04 <cboltz> in case someone knows more than I know ;-)
+17:26:39 <vuntz> cboltz: maybe tell us what you know, and then we'll see if someone knows more :-)
+17:27:15 <cboltz> I know that Scott had 1.19 in git, but it didn't work for some reason
+17:27:32 <cboltz> now git (and enstage.o.o) is back to 1.17
+17:27:45 <cboltz> and I can't find 1.19 in git anymore
+17:28:08 <digitltom> cboltz:  we need to ask scott, he was the only one involved
+17:28:37 <cboltz> I was afraid of this answer ;-)
+17:28:39 <vuntz> cboltz: what's the git repo url?
+17:29:06 <digitltom> https://github.com/openSUSE/wiki
+17:29:22 <vuntz> digitltom: thanks!
+17:29:43 <vuntz> cboltz: isn't this a 1.19 branch: https://github.com/openSUSE/wiki/tree/mw_upgrade_1.19
+17:30:02 <cboltz> yes, but the files in it are from 1.17
+17:30:09 <cboltz> (check for example the release notes)
+17:30:39 <vuntz> hrm, weird
+17:30:50 <vuntz> I guess someone force-pushed an old revision
+17:31:08 <digitltom> it looks like that
+17:32:02 <vuntz> #info status of wiki update: an attempt to update to 1.19 was in git, but it didn't work, so everything went back to 1.17. The git branch (repo: https://github.com/openSUSE/wiki) also got force-pushed :/
+17:32:27 <vuntz> cboltz: did you try to talk to scott about this?
+17:32:46 <cboltz> ENOTIMEYET, sorry
+17:33:01 <vuntz> cboltz: no worry :-)
+17:33:14 <cboltz> but I promise to do it before the mailinglist cleanup is done ;-)
+17:33:18 <vuntz> heh
+17:33:21 <vuntz> works for me
+17:33:31 <vuntz> #action cboltz to ask scott about status of wiki update
+17:33:39 <vuntz> ok
+17:33:46 <vuntz> anything else on infrastructure?
+17:34:31 * vuntz takes this as a no
+17:34:33 <vuntz> next topic!
+17:34:36 <vuntz> #topic Update on GCI (Google Code-In)
+17:34:52 <vuntz> manu is not here, but he gave me an update on this earlier today
+17:35:00 <vuntz> so we didn't make it
+17:35:33 <vuntz> the selected organizations can be found at: http://google-opensource.blogspot.fr/2012/11/mentoring-organizations-for-google-code.html
+17:36:03 <vuntz> there's a good reason we didn't make it, though: we didn't have any ideas in our list of ideas, so there was no real point in applying :/
+17:36:52 <vuntz> my guess is that we failed at pushing people to think about ideas to put on the list
+17:37:08 <vuntz> and we might not have had someone with enough time to do that push
+17:37:12 <vuntz> (manu was busy, for instance)
+17:37:32 <vuntz> so something we should get better at for next year...
+17:37:51 <vuntz> #info we're not participating this year
+17:38:03 <vuntz> #info list of selected organizations: http://google-opensource.blogspot.fr/2012/11/mentoring-organizations-for-google-code.html
+17:38:27 <vuntz> #info we did a bad job at creating a list of ideas for students since we didn't have any ideas :/
+17:38:40 <vuntz> any question/comment on this topic?
+17:39:36 <darix> hmm
+17:39:41 <darix> no osc gsoc next year?
+17:39:45 <vuntz> (it's worth pointing out that selected orgs don't have hundreds of tasks listed; so we could have done that)
+17:39:46 <}ls{> is there still a chance to get on this list?
+17:40:13 <vuntz> darix: no, that's just code-in; I don't think it will have any specific influence on our participation for GSoC next year
+17:40:15 <tigerfoot> Shouldn't we ( we has people knowing how GCI works) educate, and publish more in advance topis on news, and drive/mentor futur mentoring candidate ?
+17:40:25 <darix> ah
+17:40:25 <vuntz> }ls{: as far as I know, no, not for this year
+17:41:02 <tigerfoot> and yes clarify GCI versus GSOC
+17:41:14 <vuntz> tigerfoot: I guess we should, yes...
+17:41:15 <vuntz> sure
+17:41:40 <vuntz> so both GCI and GSoC are programs sponsored by Google to get students to contribute to free software projects
+17:41:57 <vuntz> GCI is targetted at high-school students, and is about short/easy tasks
+17:42:05 <vuntz> there's no more money involved
+17:42:13 <digitltom> vuntz:  maybe we should just decide not to participate in gci, when we don't have the manpower to do a proper application
+17:42:20 <vuntz> GSoC is for university students, and last 3-4 months
+17:42:23 * tigerfoot don't have money, and did we have easy tasks :-)
+17:43:15 <vuntz> digitltom: well, we thought we'd have manpower as we had people stepping up to do the admin work. But without mentor manpower, indeed...
+17:44:50 <vuntz> my feeling is that we didn't try that much to get people to be mentors, so we don't even know if people didn't want that or not
+17:45:47 <vuntz> #info next time, we will need to evaluate if there's interest for mentoring students in GCI, so we can know if it's worth applying
+17:46:20 <vuntz> okay, moving on to next topic, I guess
+17:46:33 <vuntz> #topic Status of Board elections
+17:46:41 <vuntz> digitltom: do you want to say a few words on this?
+17:48:22 <digitltom> we already have 2 candidates
+17:49:00 <digitltom> we have the page: http://en.opensuse.org/openSUSE:Board_election
+17:49:13 <darix> vuntz: got to run
+17:49:14 <darix> later
+17:49:43 <digitltom> so please tell us if you want to apply, or want to nominate a candidate until 27.11.
+17:49:49 <vuntz> #info elections fully documented at http://en.opensuse.org/openSUSE:Board_election
+17:49:56 <vuntz> #info already two candidates
+17:50:01 <digitltom> Ballots will open on 5.12.
+17:50:25 <vuntz> #info people can apply to run, or nominate a candidate until November 27th
+17:50:31 <vuntz> darix: thanks!
+17:52:20 <vuntz> as digitltom mention, we can nominate people. So don't hesitate to nominate people you'd like to see on the board!
+17:52:34 <vuntz> (or don't hesitate to run! :-))
+17:52:45 <digitltom> please send nominations to election-officials@opensuse.org
+17:52:46 <vuntz> any comment/question?
+17:52:49 <nmarques> nominations have a sad history :)
+17:52:49 <tigerfoot> digitltom: you said 2 candidates but only one is visible on the wiki page
+17:53:22 <tigerfoot> nmarques: we don't get busy with past things, only bright future has our attention :-)
+17:53:44 <nmarques> tigerfoot, "those who can not remember the past are condemned to repeat it" - Alexander Dumas
+17:55:02 <vuntz> tigerfoot: second candidate is tittiatcoke (he sent a mail to opensuse-project); I guess wiki page didn't get updated so far :-)
+17:56:49 <tigerfoot> vuntz: cool
+17:57:12 <tigerfoot> nmarques: those who look at the past, forget the present, and have no idea for the future ... (me)
+17:57:20 <tigerfoot> :-)
+17:57:31 <vuntz> ok, let's move on to next topic?
+17:58:00 <vuntz> #topic Next meeting chair
+17:58:26 <vuntz> I'm not 100% sure I can attend the next meeting
+17:58:54 <vuntz> so it'd be nice to have someone step up to chair it in case I can't make it :-)
+17:59:25 * vuntz looks at hendersj ;-)
+18:00:01 <vuntz> (I can see if some board member can be there, but afaik, the current time is not too good for most of them)
+18:00:17 <hendersj> :)
+18:00:37 <hendersj> I'd be happy to if my schedule allows and if I know what I need to do to get the ball rolling. :)
+18:01:00 <hendersj> I do, however, have a meeting next time around that overlaps by 30 minutes.
+18:01:12 <vuntz> ah, not perfect then
+18:01:33 <hendersj> If the current time isn't good for the board, though, maybe we should evaluate a time that is better?
+18:01:39 <vuntz> okay, I'll see if I can find someone in case I'll be busy
+18:02:46 <vuntz> hendersj: well, there's generally no good time that work for most people; my understanding was that this time works okay-ish for other people who want to join the meetings
+18:02:51 <tigerfoot> vuntz: a small post on -project ml with the different steps or a link to wiki page, how to stand up and act correctly ...
+18:03:12 <vuntz> http://en.opensuse.org/Portal:Meetings has some info on how to use bugbot
+18:03:23 <vuntz> and that's really what most people need to know
+18:03:33 <vuntz> I can write down some more stuff, though
+18:03:48 <vuntz> #action vuntz to find a replacement chair in case he can't make it for next meeting
+18:04:02 <vuntz> #action vuntz to write some short doc on what chairing involves, and how to do it
+18:04:08 <cboltz> vuntz: I don't think this is a "technical" problem ;-)
+18:04:27 <hendersj> vuntz:  That URL is interesting but it looks like op privs are needed to use bugbot (unless I'm reading that wrong)?
+18:04:27 <cboltz> IMHO the problem is that the chair should know something about the topics of the meeting
+18:04:37 <cboltz> or at least know who knows it ;-)
+18:04:56 <vuntz> hendersj: yeah, we can give you that
+18:04:58 <hendersj> cboltz:  Yes, that's what happened last time - I'd have happily started it if I'd known it was OK to do so (now I know), but I had no idea about any of the topics.
+18:05:19 <hendersj> vuntz:  OK - that sounds good. :)
+18:05:24 <anditosan> maybe contact the people who proposed the ideas about the agenda and explain better what they mean by it
+18:05:29 <vuntz> cboltz: all topics should have a name associated to them, so we know who shall lead them (imho)
+18:05:46 <hendersj> That would be a good idea - always good to know whose item an agenda item is. :)
+18:05:57 <anditosan> hendersj, true!
+18:06:09 <vuntz> "If you add things to the agenda make sure to leave your name" (from the agenda page)
+18:06:28 <vuntz> :-)
+18:06:34 <vuntz> we're already overtime
+18:06:38 <vuntz> let's quickly move to Q&A
+18:06:42 <vuntz> #topic Q&A
+18:07:55 <vuntz> any question?
+18:08:14 <hendersj> Not from me.
+18:09:31 <vuntz> ok, no question :-)
+18:09:38 <vuntz> #info no question!
+18:09:38 <hendersj> Actually....speaking of op privs on IRC, I remember now thinking that maybe it would be useful if we had that for the forum admins for the forums channel.
+18:09:42 <anditosan> did you consider my idea of hiring a designer from suse to help the project?
+18:10:16 * cboltz recomments a #undo
+18:10:23 <vuntz> #undo
+18:10:23 <bugbot> Removing item from minutes: <MeetBot.items.Info object at 0x15a1890>
+18:10:30 <hendersj> (or selected staff, I know malcolmlewis is around on IRC on occasion)
+18:10:31 <vuntz> cboltz: thanks, that's what I was looking for ;-)
+18:10:47 * malcolmlewis hides
+18:10:53 <vuntz> hendersj: the forum channel is #opensuse-forum?
+18:11:07 <hendersj> #opensuse-forums
+18:11:53 <vuntz> I have absolutely no idea how to do that :-)
+18:12:02 <vuntz> hendersj: I recommend you talk to darix about that
+18:12:17 <hendersj> OK, will do - just e-mail admin@o.o?
+18:12:44 <vuntz> #info hendersj asking about handling op privs on #opensuse-forums; nobody present knows, but darix or admin@ should know
+18:13:00 <vuntz> hendersj: http://en.opensuse.org/openSUSE:Services_help#irc_channels
+18:13:15 <vuntz> #undo
+18:13:15 <bugbot> Removing item from minutes: <MeetBot.items.Info object at 0x16b3e90>
+18:13:18 <hendersj> Perfect, thanks - will follow up offline. :)
+18:13:31 <vuntz> #info hendersj asking about handling op privs on #opensuse-forums; nobody present knows, but darix or ircops@o.o should know
+18:13:54 <vuntz> anditosan: re your question
+18:14:14 <anditosan> has the board thoght about the idea of having a paid designer for the project?
+18:14:21 <anditosan> I have not received word from Benito
+18:14:40 <vuntz> the board itself didn't discuss that
+18:14:44 <anditosan> right
+18:14:46 <tigerfoot> toscalix
+18:14:55 * tigerfoot oups sorry
+18:15:16 <vuntz> and this is indeed something that, I feel, would feel in toscalix' hands
+18:15:23 <vuntz> but I can chat with him about this if you want?
+18:15:27 <anditosan> vuntz, could you bring the up the question to SUSE? I don't seem to get an answer
+18:16:25 <anditosan> I know that right now kwwii and a another designer are the desgin team but an extra person would be ideal if SUSE thought this was worthwhile
+18:16:28 <vuntz> #info anditosan raises the topic of having a paid designer (from SUSE) to work on openSUSE; vuntz will chat with toscalix to see if there's a possibility for this
+18:16:43 <vuntz> #action vuntz to talk to toscalix about a paid designer for openSUSE
+18:16:47 <anditosan> thank you
+18:17:08 <anditosan> that's all for me
+18:17:33 <vuntz> if there's nothing else, I suggest we close the meeting since we're nearly 20 minutes late :-)
+18:17:49 <vuntz> 1
+18:17:51 <vuntz> 2
+18:17:55 <vuntz> 3
+18:17:58 <vuntz> ok, we're done :-)
+18:18:00 <vuntz> thanks all!
+18:18:00 <cboltz> vuntz: you'll have to wait 3 minutes - we are only 17 minutes late ;-)
+18:18:04 <tigerfoot> thx
+18:18:06 <vuntz> #endmeeting

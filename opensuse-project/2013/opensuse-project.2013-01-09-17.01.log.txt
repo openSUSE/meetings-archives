@@ -1,0 +1,345 @@
+17:01:03 <vuntz> #startmeeting openSUSE Project Meeting
+17:01:03 <bugbot> Meeting started Wed Jan  9 17:01:03 2013 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:01:03 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:01:21 <vuntz> so, who's here for the meeting?
+17:01:35 <vuntz> hey hendersj
+17:01:59 <hendersj> Hey, vuntz
+17:02:40 * |miska| is here to watch what is going on, but no particular topic to discuss from him
+17:03:04 <robjo> here
+17:03:09 <vuntz> looks like we're not that many here :/
+17:03:17 * DimStar is quiet observer today
+17:03:20 * malcolmlewis is lurking
+17:03:40 <vuntz> agenda we have so far is:
+17:03:42 * aplanas is reading the channel
+17:03:44 <vuntz> Quick review of action items from last meeting (current chair)
+17:03:46 <vuntz> Attendance of project meetings from board members (Warlordfff)
+17:03:50 <vuntz> and that's about it
+17:03:53 * izabelvalverde just watching
+17:04:21 <vuntz> anything people would like to add to the agenda?
+17:04:38 <manugupt1> I have a thing to discuss regarding gsoc preps can we add it still
+17:04:38 <hendersj> Not from me at this time
+17:04:44 <vuntz> manugupt1: sure!
+17:04:47 <robjo> Well, this was also supposed to be the board transition meeting
+17:04:56 <robjo> whatever that means
+17:05:03 <manugupt1> Next meeting is also fine
+17:05:06 <vuntz> robjo: hrm, was it? project meeting != board meeting
+17:05:53 <robjo> In the last meeting we said something about Jan 9 being a board transition meeting, but maybe I am not remembering this correctly
+17:06:13 <robjo> tittiatcoke: ping
+17:06:19 <robjo> FunkyPenguin: ping
+17:06:21 <vuntz> robjo: http://community.opensuse.org/meetings/opensuse-project/2012/opensuse-project.2012-12-12-17.00.log.html
+17:06:22 <tittiatcoke> Am here :-)
+17:06:27 <robjo> yaloki: ping
+17:07:30 <vuntz> robjo: we'll start with the other topics, if that's fine with you, and figure that out afterwards?
+17:07:46 <robjo> Yes, lets go
+17:07:47 <vuntz> (I guess the other topics shouldn't take an hour anyway ;-))
+17:07:49 <vuntz> ok
+17:08:02 <vuntz> #topic Attendance of project meetings from board members
+17:08:08 <vuntz> err
+17:08:17 <vuntz> forgot the review of action items
+17:08:20 <vuntz> #topic Quick review of action items from last meeting
+17:08:33 <vuntz> darix to ask henne about getting someone else to help with administrating the mailing lists
+17:08:50 <vuntz> I don't think we got any news on this, I'll ping darix after the meeting
+17:08:57 <vuntz> (unless he's here right now)
+17:09:06 <vuntz> #action darix to ask henne about getting someone else to help with administrating the mailing lists
+17:09:13 <vuntz> cboltz to ask scott about status of wiki update
+17:09:21 <cboltz> I finally found some time to ask for the wiki upgrade status (mail sent some minutes ago to -web)
+17:09:39 <cboltz> so we should know more in some days
+17:09:55 <vuntz> http://lists.opensuse.org/opensuse-web/2013-01/msg00000.html
+17:10:23 <vuntz> cboltz: that's cool, thanks. May I keep an action item on you to monitor progress on this?
+17:10:27 <robjo> OK, thus cboltz should report in the next meeting
+17:10:47 <vuntz> #info cboltz sent a query about the status of wiki upgrade: http://lists.opensuse.org/opensuse-web/2013-01/msg00000.html
+17:10:51 <cboltz> vuntz: yes
+17:10:55 <vuntz> sweet
+17:11:20 <vuntz> #action cboltz to monitor status of wiki upgrade and report any news on this
+17:11:30 <vuntz> vuntz to talk to toscalix about a paid designer for openSUSE
+17:11:59 <vuntz> I think I did it before leaving for the holidays
+17:12:37 <vuntz> but that was a bad timing, I guess
+17:12:46 <vuntz> I'll get an answer for the next meeting
+17:12:54 <vuntz> #action vuntz to talk to toscalix about a paid designer for openSUSE
+17:13:00 <vuntz> vuntz to summarize discussion to the board
+17:13:04 <vuntz> that was about the summit discussion
+17:13:19 <vuntz> so this was done
+17:13:24 <vuntz> there was some talk inside the board
+17:13:35 <vuntz> and we asked SUSE to book the venue for the week-end
+17:13:58 <vuntz> we also asked if we could share some sessions with SUSECon, to make openSUSE a bit more visible
+17:14:20 <robjo> So we need to send out a call for volunteers.
+17:14:35 <vuntz> I pinged inside SUSE earlier this week to get an update on this, so no news yet, but I guess we'll have to start moving soon
+17:14:39 <vuntz> robjo: yep
+17:14:46 <robjo> I'll do that, will send something to -project today
+17:15:34 <vuntz> #info board discussed the Summit topic after last meeting, and asked SUSE to book the venue for the week-end
+17:16:05 <vuntz> #info board also asked SUSE about sharing sessions with SUSECon, to make openSUSE a bit more visible
+17:16:21 <vuntz> #action robjo to send a call for volunteers for openSUSE Summit
+17:16:36 <vuntz> robjo: do you have a rough idea of the areas for which we need volunteers?
+17:17:02 <robjo> Everything, we'll need an organization team similar to oSC team
+17:17:21 <vuntz> right :-)
+17:18:02 <vuntz> I guess we can discuss summit and conference afterwards too, actually
+17:18:08 <vuntz> let's move to the next topic first
+17:18:18 <vuntz> #topic Attendance of project meetings from board members
+17:18:31 <vuntz> so Warlordfff is not here, unfortunately
+17:18:41 <vuntz> but iirc, that's a topic that was of interest to other people
+17:19:10 <vuntz> anyone willing to start the discussion? :-)
+17:19:23 <robjo> Well it's not really hard to figure out, only 3 of us are here and I have to agree that is not sufficient.
+17:19:29 <hendersj> +1
+17:20:10 <robjo> The community has every right to expect that board members are present, for the most part, at the regularly scheduled project meetings.
+17:20:17 <vuntz> do you think all board members should be here? Half of them?
+17:20:53 <robjo> IMHO all board members should be here most of the time.
+17:21:00 <hendersj> I think that these meetings should be seen as important enough to make the effort for the board to attend - if they're not important enough for the board to attend, then why hold them?
+17:21:11 <hendersj> It seems that this should be one of the primary venues for discussion with the board
+17:21:52 <robjo> +1
+17:22:02 <vuntz> so, assuming the meeting time is bad for board members, should we change the time to accomodate board members (even if it'd make it worse for others)?
+17:22:22 <|miska|> Well, you can't make everybody happy
+17:22:49 <|miska|> And the rest of attendees is changing
+17:22:52 <vuntz> #info project meetings are seen as one of the primary venues for discussion with the board
+17:23:00 <hendersj> I think finding a time that the majority of the board can be here would be good, but I also think there needs to be some commitment on the part of the board to attend the meetings regardless of the time.
+17:23:20 <hendersj> The way I see it, these meetings are a sort of "project steering" meeting, but if the board is supposed to be involved in that, they need to be here.
+17:25:01 <manugupt1> Well Board has people from europe and us.. and both of them are here.. I think an hour +- is good otherwise it gets either too late or too early for South Asia regions atleast
+17:25:03 <vuntz> for the record, based on past discussion with a few board members, this time was pretty bad for some of them
+17:25:14 <robjo> Except for me the rest of the current board is located in Europe. I realize that the time of the meeting is potentially after work or around diner. However, moving one's schedule around every two weeks by an hour or so should not be too much to ask.
+17:25:17 <vuntz> (travelling back from work, for instance)
+17:25:34 <hendersj> I agree, robjo
+17:25:36 <saurabhsood91> manugupt1: +1
+17:25:52 <vuntz> I'll take this feedback to the board
+17:26:27 <vuntz> #action vuntz to push board members to be more present at project meetings
+17:26:42 <hendersj> I mean, yes, this is a volunteer effort, so a standard similar to a paid position maybe isn't 100% appropriate.  The time isn't always convenient for me (I do contract work myself), but I make the time to be here.  But it /is/ 10 AM here.
+17:26:53 * victorhck a littler later ;)
+17:26:59 <vuntz> if people are fine, I'll check with them if moving the meeting one hour earlier/later would work better for them
+17:27:10 <hendersj> :)
+17:27:24 <cboltz> vuntz: what about some type of "penality" for board members who don't show up? ;-)
+17:27:30 <vuntz> #action vuntz to investigate if one hour earlier/later would work better for both the board and other community members
+17:27:44 <cboltz> maybe something like "you have to deliver coffee at the conference"? ;-)
+17:28:03 <vuntz> heh
+17:28:11 <robjo> cboltz: funny
+17:28:20 <vuntz> anything else on this topic?
+17:28:59 * vuntz assumes no
+17:29:11 <robjo> next topic then
+17:29:17 <vuntz> #topic GSoC preparation
+17:29:20 <robjo> manugupt1: ?
+17:29:22 <manugupt1> Hi
+17:29:45 <manugupt1> I had a discussion, I wanted to send some posters to local LUGs as soon as GSoC is announced
+17:30:19 <manugupt1> And also want to do things a bit earlier so that we do not miss it like GCI. This would have us better and more students
+17:30:21 <victorhck> manugupt1: what poster do you finally choose?
+17:30:35 <manugupt1> victorhck: Both we can send 2 posters I believe
+17:30:50 <vuntz> manugupt1: do we have a group of admin ready? :-)
+17:30:54 <manugupt1> So this a call for volunteers those who can help
+17:31:17 <saurabhsood91> manugupt1 victorhck: one of my friends has also come up with a poster. I will soon post it onto the mailing list
+17:31:17 <manugupt1> vuntz: Well I mailed and asked for help for people..
+17:31:41 <robjo> manugupt1: sorry I am out this time
+17:31:45 <manugupt1> vuntz: this time I can admin
+17:31:52 <manugupt1> saurabhsood91: vuntz ?
+17:32:09 <saurabhsood91> manugupt1: ?
+17:32:28 <manugupt1> Be the admins.. Matt can be ready I believe
+17:32:34 <vuntz> manugupt1: hrm, did you mail me? If yes, I haven't received it
+17:32:36 <saurabhsood91> manugupt1: count me in ;)
+17:32:46 <vuntz> (if no, no issue, I probably can't do it this year)
+17:32:48 <robjo> manugupt1: did you send a message to -project I do not recall seeing it
+17:33:11 <manugupt1> robjo: No.. I did not as of now.. since I was just calling it off casually as of now
+17:33:17 <manugupt1> and asking aroudn people
+17:33:18 <vuntz> #info manugupt1 is working on getting a team of admins
+17:33:45 <robjo> looks like we have 3, manugupt1 saurabhsood91 and matt, is that not sufficient?
+17:33:56 <vuntz> that should be good enough, yes
+17:34:22 <vuntz> #info the team of admins will likely be manugupt1 saurabhsood91 and matt
+17:34:42 <vuntz> manugupt1: are you also starting to gather project ideas and mentors?
+17:34:47 <robjo> Thus I think you should set up the project wiki page now and send out a message to -project and -factory
+17:34:56 <robjo> The sooner the better
+17:34:58 <manugupt1> vuntz: Will work on the wiki page this weekend already on my todo
+17:35:13 <robjo> manugupt1: great, thankyou
+17:35:36 <saurabhsood91> manugupt1: we can add some projects that didnt make it last year to this years page
+17:35:52 <manugupt1> saurabhsood91: We will have to ask the mentors but lets discuss it on -project ML
+17:36:11 <robjo> Anything else for GSoC?
+17:36:12 <vuntz> #action manugupt1 and admin team to work on wiki pages for GSoC to gather project ideas
+17:36:14 <saurabhsood91> manugupt1: ok. we will keep them tentative
+17:36:28 <manugupt1> Nothing else for me now..
+17:36:34 <vuntz> manugupt1: re the posters to local LUGs: do you need help for this?
+17:36:43 <manugupt1> vuntz: that will be great
+17:36:44 <vuntz> or is this all ready?
+17:36:57 <manugupt1> I am collecting a list of LUGs, posters are ready.. sending is a problem
+17:37:17 <vuntz> do you intend to send printed posters, or pdf that LUGs can print?
+17:37:31 <manugupt1> I think printed is better what do you think
+17:38:09 <vuntz> it's better, but that means some budget
+17:38:13 <robjo> We should also make certain that all ambassadors that present openSUSE at an event have material advertising GSoC and openSUSE
+17:38:17 <vuntz> we'd need to have a rought estimation of the costs
+17:38:32 <vuntz> robjo: good point
+17:38:42 <manugupt1> vuntz: Depends on where we send from
+17:38:55 <robjo> SCALx is probably the first event coming up in February, I think
+17:39:01 <manugupt1> robjo: Will post on Mailing lists (-project and -ambassadors) ;
+17:39:14 <manugupt1> robjo: by that time GSoC is not announced, Google does not appreciate it
+17:39:26 <manugupt1> we can off course be ready as soon as Google announces it
+17:39:39 <robjo> manugupt1: OK, lets just be ready
+17:40:03 <vuntz> manugupt1: we send them from where someone can send them, I'd say :-)
+17:40:29 <manugupt1> yeah.. vuntz can SUSE Coordinate them if I can get a list of addresses
+17:40:30 <vuntz> it might make sense to delegate that task to ambassadors
+17:40:36 <manugupt1> and or ambassadors too
+17:40:57 <vuntz> manugupt1: not sure; I can ask the openSUSE team, but I guess they have some hot topics to deal with
+17:40:58 <manugupt1> Good point.. I have not seen activity on ambasssador list for a long time
+17:41:14 <manugupt1> vuntz: openSUSE team is here :)
+17:41:26 <robjo> Can we not send them from the Nuermberg office and ask someone on Agustine's team to handle this?
+17:41:28 <|miska|> :-D
+17:42:08 <|miska|> I also think that it might make sesne to use ambasadors
+17:42:53 <|miska|> As they probably already knows the LUG and what to do and stuff
+17:42:58 <manugupt1> I can sponsor for Indian LUGs
+17:43:01 <saurabhsood91> how about some people taking responsibility for some regions, and for the remaining regions, contact the ambassadors?
+17:43:05 <|miska|> But not sure once the money is involved
+17:43:10 <robjo> Another option might be to have them printed at a local printer and just handle the cost via purchase order
+17:43:10 <vuntz> ok
+17:43:10 <manugupt1> and send
+17:43:35 <vuntz> can someone chat to ambassadors to see to which extent they could handle that?
+17:43:45 <vuntz> (and how much money they would need for that)
+17:45:01 <manugupt1> vuntz: Can the board help us decide with the money thing
+17:45:02 <robjo> who is sending a mail to ambassadors to get the ball rolling?
+17:45:32 <robjo> Lets first see whether we actually have to do shipping or if we can do local printing.
+17:45:40 <manugupt1> Ok.. can we summarize the contents of the mail ( not to miss out anything so that I can send it )
+17:45:42 <vuntz> manugupt1: the board  can help once there's estimation of how much it costs
+17:45:51 <manugupt1> vuntz: Ok..
+17:45:54 <robjo> For example, a local printer in Brazil is probably cheaper than sending posters from Germany to Brazil
+17:46:15 <izabelvalverde> robjo good point
+17:46:35 <manugupt1> That is why I said I will handle India :)
+17:46:51 <izabelvalverde> print and mail is cheaper but in a Country like Brazil with many LUG's we usually send a pdf for them
+17:47:09 <manugupt1> izabelvalverde: If I can send the posters can you handle it :)
+17:47:12 <vuntz> so, who'll send the mail to ambassadors?
+17:47:35 <|miska|> Maybe would be a good idea to ask amabasadors whether they actually need it printed or whether they can do it by themselves
+17:47:36 <vuntz> (someone other than manugupt1 would be best, since he already has other action items)
+17:47:41 <robjo> I thought manugupt1 would
+17:47:42 <izabelvalverde> manugupt1 sorry, I would prefer pdf since works better here
+17:47:45 <manugupt1> saurabhsood91: ?
+17:47:53 <manugupt1> izabelvalverde: I will sed the pdf across to you
+17:47:59 <saurabhsood91> manugupt1: didnt get u
+17:48:14 <manugupt1> saurabhsood91: can you mail to ambassadors?
+17:48:26 <toscalix> there is a bigger constrain than price or logistics......it is the administrative work and the payment process. This is why it is so difficult to solve the problem for companies
+17:48:31 <saurabhsood91> manugupt1: sure. will send it
+17:48:32 <saurabhsood91> ;)
+17:48:50 <vuntz> cool
+17:49:05 <vuntz> #action saurabhsood91 to mail ambassadors to see how to best handle sending posters for GSoC to LUGs
+17:49:08 <vuntz> okay, next topic
+17:49:12 <robjo> Looks like we need more help. Can you just send a message to -ambassadors asking for help in handling this.
+17:49:43 <robjo> I ran across something today that I'd like to discuss briefly.
+17:49:49 <vuntz> sure
+17:50:01 <vuntz> go ahead
+17:50:05 <robjo> #topic donations
+17:50:09 <vuntz> #topic Donations
+17:50:32 <robjo> SUSE has a new web store, that went live earlier this week.
+17:51:07 <robjo> I would like to see us have a permanent "donate to the openSUSE project" button in the store
+17:51:25 <manugupt1> +1
+17:51:27 <hendersj> +1, we occasionally get questions about this in the forums
+17:51:37 <robjo> do people think that we need to have an openSUSE instance of the store or that we can piggy back on the SUSE store?
+17:51:37 <vuntz> robjo: want to work on that? :-)
+17:51:53 <robjo> vuntz: actually I am already pushing that topic
+17:51:56 <vuntz> cool
+17:52:15 * vuntz doesn't think it's worth having a separate openSUSE instance
+17:52:21 <robjo> I am not certain that an openSUSE instance of the store is possible
+17:52:33 <manugupt1> robjo: Maybe openSUSE Goodies too
+17:52:59 <robjo> and I agree with vuntz, I also do not see the need for a separate instance
+17:53:17 <|miska|> Is it actually worth it having it in SUSE? I'm just wondering, as a big company, how much money does SUSE have to spend to process 5EUR payment
+17:53:37 <robjo> manugupt1: THe store does not yet support "retail items" such as shirts, but will in the future, when it does, then yes we want openSUSE stuff as well
+17:54:09 <|miska|> And I also see another issue that people might want to know what the money were used for when they donate...
+17:54:31 <Sleep_Walker> good point
+17:54:38 <robjo> |miska|: We do not have to worry about "worth" it. The store infrastructure is there, and we can ask if we can get what we want
+17:54:41 <|miska|> But I'm actually more concern with costs of money handling on SUSE side
+17:54:42 <izabelvalverde> the donate button seems great also might be easier for SUSE to forward to openSUSE when is needed
+17:55:05 <vuntz> |miska|: a requirement to implement this would be that the money goes to the funds that the board controls
+17:55:18 <manugupt1> +!
+17:55:20 <manugupt1> +1
+17:55:44 <|miska|> robjo: Well, so far they are selling SLE that cost quite a lot so if it takes 50 Eur to process order...
+17:55:54 <vuntz> and then the transparency "problem" is in the board's hands (it needs to be resolved anyway ;-))
+17:56:28 <vuntz> #info new SUSE shop went live and the suggestion to have a "Donate to openSUSE" button there is back
+17:56:35 <|miska|> vuntz: Ok, if these money are going to be controled by board, I say great!
+17:56:40 <robjo> |miska|: again that is not our concern, if SUSE is willing to have a "Donate to openSUSE" button than that should be good enough for us
+17:57:16 <vuntz> robjo: do you agree that we should make sure the money that comes out of that (minus 5% or 10% for the shop service, I guess) should be controlled by the board?
+17:57:28 <|miska|> Well, you'll see what will they tell you on that
+17:57:37 <vuntz> (asking before putting that in the minutes ;-))
+17:57:58 <robjo> vuntz: yes, but that is the "financial transperancy" discussion that is a board issue and OT for the current topic.
+17:58:09 <vuntz> robjo: it's not the same discussion, no
+17:58:25 <vuntz> I'm not talking about transparency
+17:58:38 <vuntz> I'm talking about making sure that the money stays with openSUSE. Transparency comes later :-)
+17:58:58 <vuntz> where "stays with openSUSE" is "comes under control of the board"
+17:59:01 <tittiatcoke> vuntz:: I guess that everybody agrees on that one :-)
+17:59:23 <robjo> There are a number of points to consider here. A number of them are implementation details. The key point is "Do we want a buttton in the SUSE store?" yes or no
+17:59:31 <robjo> Everything else is tangential
+18:00:01 <vuntz> tittiatcoke: well, given what I've seen in some other projects, I'm not 100% sure everybody agrees ;-)
+18:00:26 <robjo> For now we do not need to worry about processing fees, and how we show how much money is donated and where it is used.
+18:00:41 <vuntz> robjo: I'm sorry, but it's not tangential for me
+18:00:56 <robjo> Yes, the money has to stay with openSUSE of course, it says after all "Donate to openSUSE",
+18:01:04 <tittiatcoke> robjo: I guess that another question, what kind of audience does the SUSE shop attract and is the audience willing to donate money.
+18:01:17 <izabelvalverde> I don't think SUSE needs to "save" % besides the transfers costs
+18:01:25 <vuntz> robjo: the money could be used by SUSE to pay for an openSUSE developer, for instance
+18:01:37 <robjo> Well, we can link from various openSUSE places to the SUSE shop
+18:02:18 <|miska|> yes if money goes to openSUSE -  "comes under control of the board"
+18:02:33 <vuntz> robjo: while it's still good for openSUSE, I'm not sure I'd agree with that way of handling the money
+18:02:49 <vuntz> robjo: so knowing how the money is handled is a prerequisite for having the button
+18:03:35 <robjo> vuntz: OK, then my question was pre-mature and this becomes a board issue and not a project meeting issue
+18:04:23 <tittiatcoke> robjo: I don't think your question was pre-mature. It alerted us for an opportunity, but we need to know the conditions around it before we can take the decision whether or not to go for it
+18:05:34 <vuntz> robjo: do you want to have this topic discussed inside the board, and come back with more details at next meeting?
+18:05:40 <robjo> tittiatcoke: In the end I see it that we would define the parameters what happens to the money.
+18:05:49 <robjo> we as in board
+18:05:55 <vuntz> (if yes, I'll just give you an action item for this)
+18:06:18 <robjo> but the community has to decide whether we (community) is OK with having such a button in the SUSE store
+18:06:31 <Sleep_Walker> if there could be button, could that be just link to some opensuse.org site?
+18:06:49 <Sleep_Walker> where the donation actually can happen?
+18:07:17 <Sleep_Walker> I'm a bit concerned about mixing opensuse and suse again
+18:07:21 <robjo> Sleep_Walker: opensuse.org would link to suse.com/store/donate or whatever the address might be.
+18:07:30 <izabelvalverde> few lines ago the "mail costs" was relevant and now with an opportunity to have some different income became "discusseble" :D
+18:07:32 <Sleep_Walker> why not the other way?
+18:08:12 <izabelvalverde> as community member the donation button seems to me a great way to help small things happen in the project, like hardware, goods and so on
+18:08:18 <robjo> Sleep_Walker: that would possibly require a spearate instance of the store, which I am not certain we will get.
+18:08:37 <Sleep_Walker> donation means store?
+18:08:47 <vuntz> izabelvalverde: I think we all agree it's fine if we control the money :-)
+18:08:52 <robjo> The store will be SUSE branded and not openSUSE branded. We can possibly ask to get an openSUSE link that changes the branding.
+18:09:06 <izabelvalverde> vuntz not sure!
+18:09:08 <vuntz> robjo: if you don't mind, I'll just give you an action item to discuss this topic further (with SUSE, the board, and on opensuse-project if you think it's okay)
+18:09:17 <vuntz> since we're going out of time
+18:09:22 <Sleep_Walker> +1
+18:09:34 <robjo> vuntz: fine with me
+18:10:00 <vuntz> #action robjo to investigate the "Donate to openSUSE" button in SUSE shop and discuss the topic with different parties
+18:10:07 <vuntz> ok
+18:10:24 <vuntz> let's quickly see if there are quick questionhs
+18:10:26 <vuntz> #topic AOB
+18:10:55 <vuntz> anyone?
+18:11:25 <tittiatcoke> not from me
+18:11:36 <hendersj> AOB?
+18:11:42 <vuntz> any other business
+18:11:42 <hendersj> Oh, got it.
+18:11:57 <vuntz> sorry, I should avoid that :-)
+18:12:00 <hendersj> One quick question - I've not heard back from ircops@ or admin@ about my cloak for IRC....
+18:12:21 <saurabhsood91> hendersj: same here...i should have got that a year ago
+18:12:43 <hendersj> I've asked a couple of times now - can someone nudge? :)
+18:13:39 <vuntz> I'm actually wondering if it's not up to the membership officials to deal with that
+18:13:44 <vuntz> see end of https://en.opensuse.org/openSUSE:Membership_officials
+18:13:49 * vuntz isn't sure
+18:13:54 <manugupt1> vuntz: darix handled it for me
+18:14:11 <manugupt1> vuntz: We should have a less busier sysadmin
+18:14:21 <victorhck> and I mail to admin and asked to yaloki about planet openSUSE-es
+18:14:27 <manugupt1> vuntz: that will offload his and henne;s work too
+18:14:34 <victorhck> about a petition from spanish blogger
+18:14:47 <|miska|> vuntz: AFAIK, cloaks are set in connect and exported for admins to set up, but apart from setting it in connect I don't know what happens next...
+18:15:02 <cboltz> IIRC the typical answer is "we depend on freenode staff" - maybe someone can convince freenode to give one or two openSUSE persons the permissions to create the cloaks?
+18:15:19 <vuntz> anyone willing to help hendersj investigate this?
+18:16:11 <vuntz> ah well, I'll chat with darix then
+18:16:19 <hendersj> k, thanks, vuntz. :)
+18:16:36 <vuntz> #action vuntz to chat with darix about status of setting up irc cloaks
+18:17:03 <vuntz> anyone to help victorhck for planet openSUSE-es? :-)
+18:17:28 <vuntz> victorhck: when did you ping for this, btw?
+18:17:43 <victorhck> you mean the mail?
+18:17:53 <vuntz> yep
+18:18:13 <victorhck> mail 1 one week ago (more or less)
+18:18:30 <victorhck> and I ping yaloki here before chritsmas
+18:18:44 <victorhck> and the user send petition in November
+18:18:51 <vuntz> ah, well, I guess the holidays can explain things
+18:19:00 <victorhck> maybe
+18:19:13 <victorhck> well I will wait
+18:19:14 <victorhck> ;)
+18:19:31 <vuntz> maybe ping again at the beginning of next week, since things accumulated during the holidays will have settled
+18:19:43 <vuntz> (best to ping by mail, btw)
+18:19:44 <vuntz> ok
+18:19:53 <vuntz> #topic Next meeting date & chair
+18:20:06 <vuntz> #info next meeting on January 23rd
+18:20:16 <vuntz> I'm not 100% I'll be able to make it
+18:20:21 <vuntz> as I won't be hime
+18:20:22 <vuntz> home
+18:20:34 <vuntz> anyone who'd be available to chair the meeting if I'm not there?
+18:20:48 * vuntz looks at robjo and hendersj ;-)
+18:21:03 <vuntz> for the record, there's doc on chairing at the end of https://en.opensuse.org/openSUSE:Project_meeting
+18:21:14 <hendersj> :)  I'm not 100% sure at this moment either, I may be on a new gig that week and don't yet know the schedule.
+18:21:32 <robjo> I can do it, not certain if I have the correct permissions
+18:22:00 <vuntz> robjo: I'll give you op on that day
+18:22:26 <vuntz> #info next chair is robjo (or vuntz if he manages to join)
+18:22:31 <vuntz> cool, thanks all!
+18:22:36 <vuntz> #endmeeting

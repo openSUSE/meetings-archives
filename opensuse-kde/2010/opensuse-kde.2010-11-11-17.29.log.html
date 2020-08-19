@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:29:49</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:29:49</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Nov 11 17:29:49 2010 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:29:49</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:31:37</span><span class="nk"> &lt;wstephenson&gt;</span> welcome to this week's meeting
+<a name="l-5"></a><span class="tm">17:31:39</span><span class="nk"> &lt;wstephenson&gt;</span> what have we got
+<a name="l-6"></a><span class="tm">17:31:43</span><span class="nk"> &lt;wstephenson&gt;</span> agenda:
+<a name="l-7"></a><span class="tm">17:31:49</span><span class="nk"> &lt;wstephenson&gt;</span> drop 11.2 from KDE:Unstable:SC build?
+<a name="l-8"></a><span class="tm">17:31:55</span><span class="nk"> &lt;wstephenson&gt;</span> * Assign additional #opensuse-kde IRC channel operator(s)
+<a name="l-9"></a><span class="tm">17:32:02</span><span class="nk"> &lt;wstephenson&gt;</span> * Replacement of some "older" applications in KDF ? (e.g. Rekonq vs Arora, Bluedevil vs kbluetooth, etc)
+<a name="l-10"></a><span class="tm">17:32:10</span><span class="nk"> &lt;wstephenson&gt;</span> * old action items
+<a name="l-11"></a><span class="tm">17:32:14</span><span class="nk"> &lt;wstephenson&gt;</span> * status reports
+<a name="l-12"></a><span class="tm">17:32:18</span><span class="nk"> &lt;wstephenson&gt;</span> * Q&amp;A, misc
+<a name="l-13"></a><span class="tm">17:33:28</span><span class="nk"> &lt;wstephenson&gt;</span> rabauke, llunak, herby, javier_, leinir, mrdocs, sebas, thrice`, tigerfoot, tittiatcoke, anaumov, cb400f, Dominian, dirk, coolo, ping - meeting starting!
+<a name="l-14"></a><span class="tm">17:33:43</span><span class="nk"> &lt;Dominian&gt;</span> ack
+<a name="l-15"></a><span class="tm">17:33:49</span><span class="nk"> &lt;leinir&gt;</span> present
+<a name="l-16"></a><span class="tm">17:33:54</span><span class="nk"> &lt;javier_&gt;</span> me too
+<a name="l-17"></a><span class="tm">17:33:55</span><span class="nk"> &lt;thrice`&gt;</span> +1
+<a name="l-18"></a><span class="tm">17:33:56</span><span class="nk"> &lt;Dominian&gt;</span> I'm awake.. I'm awake!
+<a name="l-19"></a><span class="tm">17:33:59</span><span class="nk"> &lt;wstephenson&gt;</span> * old action items
+<a name="l-20"></a><span class="tm">17:34:13</span><span class="nk"> &lt;wstephenson&gt;</span> wstephenson - media package lists in gitorious - not done
+<a name="l-21"></a><span class="tm">17:34:20</span><span class="nk"> &lt;wstephenson&gt;</span> * status report
+<a name="l-22"></a><span class="tm">17:34:39 </span><span class="nka">* wstephenson</span> <span class="ac">was variously at the conference, on holiday and being ill for the last 3 weeks</span>
+<a name="l-23"></a><span class="tm">17:34:48</span><span class="nk"> &lt;wstephenson&gt;</span> so not much to tell there.
+<a name="l-24"></a><span class="tm">17:34:59 </span><span class="nka">* tigerfoot</span> <span class="ac">sorry, on customer site, so don't count too much on me.</span>
+<a name="l-25"></a><span class="tm">17:35:09</span><span class="nk"> &lt;wstephenson&gt;</span> just catching up things, making KDE-SDK-Live more generally useful.
+<a name="l-26"></a><span class="tm">17:35:17</span><span class="nk"> &lt;wstephenson&gt;</span> writing milestone announcements
+<a name="l-27"></a><span class="tm">17:35:20 </span><span class="nka">* tittiatcoke</span> <span class="ac">was busy with the update of Unstable</span>
+<a name="l-28"></a><span class="tm">17:35:22</span><span class="nk"> &lt;wstephenson&gt;</span> anyone else got a story to tell?
+<a name="l-29"></a><span class="tm">17:35:30</span><span class="nk"> &lt;wstephenson&gt;</span> how is Unstable?
+<a name="l-30"></a><span class="tm">17:35:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> Surprisingly stable :-)
+<a name="l-31"></a><span class="tm">17:36:12</span><span class="nk"> &lt;tigerfoot&gt;</span> Unstable work great lot's of bug have disappear ... really
+<a name="l-32"></a><span class="tm">17:36:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> There is quite some progress on PowerDevil and Solid with regards to upower and udisk. So I guess we might see a hal-less KDE 4.6
+<a name="l-33"></a><span class="tm">17:36:38</span><span class="nk"> &lt;thrice`&gt;</span> I talked to the k3b guys a couple weeks ago about the dependence of k3b on hal; he mentioned that the only code that relies on hal for k3b, is to basically tell hal to stop polling the optical drive constantly
+<a name="l-34"></a><span class="tm">17:36:40</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">tittiatcoke:</span> cool.
+<a name="l-35"></a><span class="tm">17:36:50</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> needs breaking then!
+<a name="l-36"></a><span class="tm">17:37:03</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">thrice`:</span> good news
+<a name="l-37"></a><span class="tm">17:37:08</span><span class="nk"> &lt;wstephenson&gt;</span> was that markuss?
+<a name="l-38"></a><span class="tm">17:37:11</span><span class="nk"> &lt;thrice`&gt;</span> so, once solid kills the hal dep, k3b can too.  currently, the spec file specifically calls it as a depends
+<a name="l-39"></a><span class="tm">17:37:27</span><span class="nk"> &lt;thrice`&gt;</span> wstephenson, yep :&gt;
+<a name="l-40"></a><span class="tm">17:37:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> I want to see what works and not with just udisk and upower.
+<a name="l-41"></a><span class="tm">17:38:02</span><span class="nk"> &lt;wstephenson&gt;</span> there was a list of missing things on k-h-d@
+<a name="l-42"></a><span class="tm">17:38:06</span><span class="nk"> &lt;wstephenson&gt;</span> sec
+<a name="l-43"></a><span class="tm">17:38:35</span><span class="nk"> &lt;thrice`&gt;</span> http://mail.kde.org/pipermail/kde-hardware-devel/2010-November/001108.html    is the thread
+<a name="l-44"></a><span class="tm">17:39:09</span><span class="nk"> &lt;wstephenson&gt;</span> yeah
+<a name="l-45"></a><span class="tm">17:39:26</span><span class="nk"> &lt;wstephenson&gt;</span> only 3 left out of 6
+<a name="l-46"></a><span class="tm">17:40:08 </span><span class="nka">* wstephenson</span> <span class="ac">is bug triaging kmail2 this weekend</span>
+<a name="l-47"></a><span class="tm">17:40:14</span><span class="nk"> &lt;wstephenson&gt;</span> anyone wants to help, come to #kontact
+<a name="l-48"></a><span class="tm">17:40:33</span><span class="nk"> &lt;wstephenson&gt;</span> i'm rerolling kde-sdk-live with debuginfo as a test article.
+<a name="l-49"></a><span class="tm">17:41:07</span><span class="nk"> &lt;wstephenson&gt;</span> any more status?
+<a name="l-50"></a><span class="tm">17:42:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> not from me
+<a name="l-51"></a><span class="tm">17:42:16</span><span class="nk"> &lt;wstephenson&gt;</span> * drop 11.2 from KUSC?
+<a name="l-52"></a><span class="tm">17:43:08</span><span class="nk"> &lt;cb400f&gt;</span> alin's item?
+<a name="l-53"></a><span class="tm">17:43:57</span><span class="nk"> &lt;wstephenson&gt;</span> yes
+<a name="l-54"></a><span class="tm">17:44:05</span><span class="nk"> &lt;wstephenson&gt;</span> 11.2 doesn't look any redder than 11.3
+<a name="l-55"></a><span class="tm">17:44:20</span><span class="nk"> &lt;wstephenson&gt;</span> so i guess he suggested it to save build resources
+<a name="l-56"></a><span class="tm">17:44:32</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> hi... sorry teaching... storm here
+<a name="l-57"></a><span class="tm">17:44:57</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> ah there you are
+<a name="l-58"></a><span class="tm">17:45:05</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> It is indeed only to save build resources.
+<a name="l-59"></a><span class="tm">17:45:18</span><span class="nk"> &lt;cb400f&gt;</span> anyone got an estimate how much build power the 11.1 EOL will save? ~20-30% ? :-)
+<a name="l-60"></a><span class="tm">17:45:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> I don't have any particular 11.2 issues with Unstable
+<a name="l-61"></a><span class="tm">17:45:33</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> I am an anarchist but I still care
+<a name="l-62"></a><span class="tm">17:45:48</span><span class="nk"> &lt;wstephenson&gt;</span> anyone against?
+<a name="l-63"></a><span class="tm">17:45:58</span><span class="nk"> &lt;cb400f&gt;</span> maybe ask on the ml?
+<a name="l-64"></a><span class="tm">17:46:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess that we should still announce it on the ML
+<a name="l-65"></a><span class="tm">17:46:17</span><span class="nk"> &lt;cb400f&gt;</span> I wouldn't be surprised if there's quite a few 11.2+kusc people there
+<a name="l-66"></a><span class="tm">17:46:18</span><span class="nk"> &lt;wstephenson&gt;</span> i'll check with the OBS guys too, see if there is a resource shortage atm.
+<a name="l-67"></a><span class="tm">17:46:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> I don't know how many other 11.2 users are using Unstable
+<a name="l-68"></a><span class="tm">17:46:33</span><span class="nk"> &lt;alin&gt;</span> that is perfect... we see who is using it... and help them to migrate to 11.3 or higher
+<a name="l-69"></a><span class="tm">17:46:40</span><span class="nk"> &lt;alin&gt;</span> if the number is not big
+<a name="l-70"></a><span class="tm">17:46:47</span><span class="nk"> &lt;cb400f&gt;</span> of course it could be a good way to push those people to KDF instead :-)
+<a name="l-71"></a><span class="tm">17:47:00</span><span class="nk"> &lt;wstephenson&gt;</span> hah, this machine is 11.2 because 11.3's perl won't run squeezeboxserver, want to fix that? ;)
+<a name="l-72"></a><span class="tm">17:47:30</span><span class="nk"> &lt;wstephenson&gt;</span> i'll check if we have cause with the OBS guys
+<a name="l-73"></a><span class="tm">17:47:41</span><span class="nk"> &lt;wstephenson&gt;</span> otherwise it seems like micro-optimisation.
+<a name="l-74"></a><span class="tm">17:47:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Could we find out how much download we have for that repo ?
+<a name="l-75"></a><span class="tm">17:48:01</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">coolo:</span> about?
+<a name="l-76"></a><span class="tm">17:48:18</span><span class="nk"> &lt;thrice`&gt;</span> yeah, perhaps see how many pull from it
+<a name="l-77"></a><span class="tm">17:48:41</span><span class="nk"> &lt;wstephenson&gt;</span> https://build.opensuse.org/ stats don't look too loaded.
+<a name="l-78"></a><span class="tm">17:48:54</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson check demand and resource levels</span>
+<a name="l-79"></a><span class="tm">17:49:03</span><span class="nk"> &lt;rabauke&gt;</span> people that use unstable are likely not to use an "older" release as a base for that.
+<a name="l-80"></a><span class="tm">17:49:04</span><span class="nk"> &lt;wstephenson&gt;</span> * extend operator list for this channel
+<a name="l-81"></a><span class="tm">17:49:41</span><span class="nk"> &lt;wstephenson&gt;</span> background, only old kde team members have ops here, and we're not always on hand
+<a name="l-82"></a><span class="tm">17:49:57</span><span class="nk"> &lt;rabauke&gt;</span> *are not likely to use...
+<a name="l-83"></a><span class="tm">17:50:08</span><span class="nk"> &lt;Dominian&gt;</span> most of those members are opensuse members as wel I take it?
+<a name="l-84"></a><span class="tm">17:50:19</span><span class="nk"> &lt;Dominian&gt;</span> er..OPs are opensuse members is what I meant.
+<a name="l-85"></a><span class="tm">17:50:31</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Dominian:</span> the current set are/were all employees actually
+<a name="l-86"></a><span class="tm">17:50:41</span><span class="nk"> &lt;Dominian&gt;</span> ahhhhh
+<a name="l-87"></a><span class="tm">17:50:44</span><span class="nk"> &lt;wstephenson&gt;</span> so a couple of people have suggested names to me
+<a name="l-88"></a><span class="tm">17:51:10</span><span class="nk"> &lt;wstephenson&gt;</span> which are *drum roll* cb400f, mrdocs and tittiatcoke
+<a name="l-89"></a><span class="tm">17:51:24 </span><span class="nka">* Dominian</span> <span class="ac">nods</span>
+<a name="l-90"></a><span class="tm">17:51:25</span><span class="nk"> &lt;wstephenson&gt;</span> what do we think of that?
+<a name="l-91"></a><span class="tm">17:51:43</span><span class="nk"> &lt;thrice`&gt;</span> sounds fine :&gt;
+<a name="l-92"></a><span class="tm">17:51:43</span><span class="nk"> &lt;Dominian&gt;</span> all contributing opensuse members.. I see no issue with it.
+<a name="l-93"></a><span class="tm">17:52:00</span><span class="nk"> &lt;cb400f&gt;</span> I'm a noob operator.. but I can manage to update the topic :-)
+<a name="l-94"></a><span class="tm">17:52:07</span><span class="nk"> &lt;Dominian&gt;</span> heh
+<a name="l-95"></a><span class="tm">17:52:11</span><span class="nk"> &lt;cb400f&gt;</span> rarely see much trolling here anyway
+<a name="l-96"></a><span class="tm">17:52:14</span><span class="nk"> &lt;Dominian&gt;</span> its not that difficult to op in a chan :P
+<a name="l-97"></a><span class="tm">17:52:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> Guess we are all nicely behaving :-)
+<a name="l-98"></a><span class="tm">17:52:30</span><span class="nk"> &lt;Dominian&gt;</span> I OP for ##linux... 750+ nicks..
+<a name="l-99"></a><span class="tm">17:52:37</span><span class="nk"> &lt;Dominian&gt;</span> that gets nuts every so often
+<a name="l-100"></a><span class="tm">17:52:44</span><span class="nk"> &lt;wstephenson&gt;</span> well the criteria is being here and being responsible
+<a name="l-101"></a><span class="tm">17:52:58</span><span class="nk"> &lt;wstephenson&gt;</span> then keeping a cool head
+<a name="l-102"></a><span class="tm">17:53:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess with the three of us that should be possible :-)
+<a name="l-103"></a><span class="tm">17:53:11</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">wstephenson:</span> Should also be a opensuse member I would think?
+<a name="l-104"></a><span class="tm">17:53:51</span><span class="nk"> &lt;wstephenson&gt;</span> yes i suppose, do the candidates all fulfil that? i assume so.
+<a name="l-105"></a><span class="tm">17:53:59</span><span class="nk"> &lt;Dominian&gt;</span> yeah it appears they do
+<a name="l-106"></a><span class="tm">17:54:12</span><span class="nk"> &lt;wstephenson&gt;</span> have any of you opped much before?
+<a name="l-107"></a><span class="tm">17:54:24 </span><span class="nka">* tittiatcoke</span> <span class="ac">not really</span>
+<a name="l-108"></a><span class="tm">17:54:40 </span><span class="nka">* wstephenson</span> <span class="ac">is a terrible op and prefers not to do it unless needed</span>
+<a name="l-109"></a><span class="tm">17:54:47</span><span class="nk"> &lt;cb400f&gt;</span> I'm an op in #suse and #opensuse-chat too.. but I don't really know what I'm doing, I was pushed :-)
+<a name="l-110"></a><span class="tm">17:54:56</span><span class="nk"> &lt;wstephenson&gt;</span> well it's mainly about not power tripping
+<a name="l-111"></a><span class="tm">17:54:56</span><span class="nk"> &lt;cb400f&gt;</span> and #opensuse-nordic
+<a name="l-112"></a><span class="tm">17:55:05</span><span class="nk"> &lt;wstephenson&gt;</span> and not overreacting
+<a name="l-113"></a><span class="tm">17:55:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Dominian:</span> agree?
+<a name="l-114"></a><span class="tm">17:55:41</span><span class="nk"> &lt;wstephenson&gt;</span> the more you use the power to kickban people, the less it helps.
+<a name="l-115"></a><span class="tm">17:56:05</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> if you can handle #suse then you are fine
+<a name="l-116"></a><span class="tm">17:56:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">mrdocs:</span> around?
+<a name="l-117"></a><span class="tm">17:56:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> Doesn't seem like it
+<a name="l-118"></a><span class="tm">17:57:09</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">wstephenson:</span> Eh.. I have no say so :)  I'm not even an opensuse member (official) yet ;)
+<a name="l-119"></a><span class="tm">17:57:27</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Dominian:</span> well, if you op ##linux you might have an opinion, even if not a say
+<a name="l-120"></a><span class="tm">17:57:37</span><span class="nk"> &lt;Dominian&gt;</span> ahh
+<a name="l-121"></a><span class="tm">17:57:45</span><span class="nk"> &lt;Dominian&gt;</span> Yeah.. kickbanning is usually a last resort
+<a name="l-122"></a><span class="tm">17:57:48</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">wstephenson:</span> I should have my temper and impulses under control.. my biggest concern is accidentally banning 75% of germany or so :-)
+<a name="l-123"></a><span class="tm">17:57:55</span><span class="nk"> &lt;Dominian&gt;</span> but sometimes its hard to avoid it
+<a name="l-124"></a><span class="tm">17:58:08</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">cb400f:</span> If you need tips.. you ask me.
+<a name="l-125"></a><span class="tm">17:58:16 </span><span class="nka">* Dominian</span> <span class="ac">was, at one point, freenode staff as well.. so I've been around a bit.</span>
+<a name="l-126"></a><span class="tm">17:59:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> Good to know that we have a very experienced person around :-)
+<a name="l-127"></a><span class="tm">17:59:14</span><span class="nk"> &lt;cb400f&gt;</span> yup
+<a name="l-128"></a><span class="tm">17:59:41</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> do not give them power to kick... they will bully me...
+<a name="l-129"></a><span class="tm">17:59:51</span><span class="nk"> &lt;wstephenson&gt;</span> can only the founder change the op list?
+<a name="l-130"></a><span class="tm">17:59:57</span><span class="nk"> &lt;Dominian&gt;</span> anyone with +f
+<a name="l-131"></a><span class="tm">17:59:59</span><span class="nk"> &lt;wstephenson&gt;</span> i'm looking in chanserv's help
+<a name="l-132"></a><span class="tm">18:00:23</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">wstephenson:</span> so you should be able to
+<a name="l-133"></a><span class="tm">18:00:40</span><span class="nk"> &lt;Dominian&gt;</span> /msg chanserv flags #opensuse-kde cb400f +&lt;flags&gt;
+<a name="l-134"></a><span class="tm">18:00:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson give new ops ops</span>
+<a name="l-135"></a><span class="tm">18:01:11</span><span class="nk"> &lt;Dominian&gt;</span> and keep in mind don't give +f unless you want others the ability to add/remove flags
+<a name="l-136"></a><span class="tm">18:01:14</span><span class="nk"> &lt;wstephenson&gt;</span> oh and another thing
+<a name="l-137"></a><span class="tm">18:01:14</span><span class="nk"> &lt;wstephenson&gt;</span> i don't usually op unless i need to
+<a name="l-138"></a><span class="tm">18:01:32</span><span class="nk"> &lt;wstephenson&gt;</span> it saves you from people who think the op is the 24h info service
+<a name="l-139"></a><span class="tm">18:02:12</span><span class="nk"> &lt;wstephenson&gt;</span> ok, i'll read the docs and do it right instead of doing it now.
+<a name="l-140"></a><span class="tm">18:02:24</span><span class="nk"> &lt;wstephenson&gt;</span> anything more to discuss on that topic
+<a name="l-141"></a><span class="tm">18:02:27</span><span class="nk"> &lt;Dominian&gt;</span> Yeah the flags in chanserv are all nickserv account based
+<a name="l-142"></a><span class="tm">18:02:28</span><span class="nk"> &lt;wstephenson&gt;</span> ?
+<a name="l-143"></a><span class="tm">18:02:29</span><span class="nk"> &lt;Dominian&gt;</span> keep that in mind as well
+<a name="l-144"></a><span class="tm">18:02:45</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Dominian:</span> meaning make sure people are registered?
+<a name="l-145"></a><span class="tm">18:03:19</span><span class="nk"> &lt;Dominian&gt;</span> Its best
+<a name="l-146"></a><span class="tm">18:03:26 </span><span class="nka">* tittiatcoke</span> <span class="ac">I am registered</span>
+<a name="l-147"></a><span class="tm">18:03:38</span><span class="nk"> &lt;Dominian&gt;</span> If you do it based on Nick like:  Nick!*@* would mean anyone with the nick Nick would have flags on the channel
+<a name="l-148"></a><span class="tm">18:04:06 </span><span class="nka">* wstephenson</span> <span class="ac">is afk, holding baby for 2 mins</span>
+<a name="l-149"></a><span class="tm">18:05:21 </span><span class="nka">* cb400f</span> <span class="ac">is registered too</span>
+<a name="l-150"></a><span class="tm">18:05:43</span><span class="nk"> &lt;wstephenson&gt;</span> so make sure nick is protected too?
+<a name="l-151"></a><span class="tm">18:08:49</span><span class="nk"> &lt;Dominian&gt;</span> protected?
+<a name="l-152"></a><span class="tm">18:08:57</span><span class="nk"> &lt;Dominian&gt;</span> the nick protection just keeps peole from sitting on your nick
+<a name="l-153"></a><span class="tm">18:09:06</span><span class="nk"> &lt;Dominian&gt;</span> for the flags to apply they'd have to identify to the nick to nickserv
+<a name="l-154"></a><span class="tm">18:09:10</span><span class="nk"> &lt;wstephenson&gt;</span> ok
+<a name="l-155"></a><span class="tm">18:09:40</span><span class="nk"> &lt;wstephenson&gt;</span> * Replacement of some "older" applications in KDF ? (e.g. Rekonq vs Arora, Bluedevil vs kbluetooth, etc)
+<a name="l-156"></a><span class="tm">18:09:56</span><span class="nk"> &lt;wstephenson&gt;</span> who owns that?
+<a name="l-157"></a><span class="tm">18:11:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> I put that one up, but cb400f mentioned that he wanted to discuss the strategy around it
+<a name="l-158"></a><span class="tm">18:13:00</span><span class="nk"> &lt;wstephenson&gt;</span> bluedevil is just waiting on me to action it
+<a name="l-159"></a><span class="tm">18:13:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Anything you want to add ?
+<a name="l-160"></a><span class="tm">18:13:17</span><span class="nk"> &lt;cb400f&gt;</span> not really.. I would just like to urge people to submit the stuff we want in 11.4 to KDF asap so it can be thoroughly tested
+<a name="l-161"></a><span class="tm">18:13:21</span><span class="nk"> &lt;wstephenson&gt;</span> rekonq/arora - dunno, both are active
+<a name="l-162"></a><span class="tm">18:13:25</span><span class="nk"> &lt;wstephenson&gt;</span> ok, noted
+<a name="l-163"></a><span class="tm">18:13:44</span><span class="nk"> &lt;cb400f&gt;</span> afterall KDF is what should ensure world domination shortly
+<a name="l-164"></a><span class="tm">18:14:05</span><span class="nk"> &lt;wstephenson&gt;</span> indeed
+<a name="l-165"></a><span class="tm">18:14:12</span><span class="nk"> &lt;cb400f&gt;</span> and update the patterns accordingly.. so the stuff gets installed for people too
+<a name="l-166"></a><span class="tm">18:15:00</span><span class="nk"> &lt;rabauke&gt;</span> then strigi should be updated as well!
+<a name="l-167"></a><span class="tm">18:15:01</span><span class="nk"> &lt;cb400f&gt;</span> gtk-oxygen-engine, and phonon-vlc are other big candidates for kdf imo
+<a name="l-168"></a><span class="tm">18:15:04</span><span class="nk"> &lt;wstephenson&gt;</span> yeah that proved a bit trickier, i have to go round via MRs to the gitorious project
+<a name="l-169"></a><span class="tm">18:15:23</span><span class="nk"> &lt;rabauke&gt;</span> not sure if the new release makes it in time, but there have been significant fixes since 0.7.2.
+<a name="l-170"></a><span class="tm">18:15:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> phonon-vlc can not go without vlc in Factory. I will submit it first to multimedia (or something similar)
+<a name="l-171"></a><span class="tm">18:16:15</span><span class="nk"> &lt;cb400f&gt;</span> ok.. I wonder where gtk-oxygen-engine would belong.. oxygen-molecule is not in KDF either it seems
+<a name="l-172"></a><span class="tm">18:16:15</span><span class="nk"> &lt;rabauke&gt;</span> vandenoever promised a new strigi release soon
+<a name="l-173"></a><span class="tm">18:16:35</span><span class="nk"> &lt;wstephenson&gt;</span> he's not online.
+<a name="l-174"></a><span class="tm">18:16:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> gtk-oxygen-engine is in Extra, but I can move it to KDF ?
+<a name="l-175"></a><span class="tm">18:16:39</span><span class="nk"> &lt;wstephenson&gt;</span> or i'd twist his arm
+<a name="l-176"></a><span class="tm">18:17:06</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">tittiatcoke:</span> if we think it's better than oxygen-molecule it should definitely go in the distro.. asap
+<a name="l-177"></a><span class="tm">18:17:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-178"></a><span class="tm">18:17:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Any thoughts on that one ?
+<a name="l-179"></a><span class="tm">18:17:23</span><span class="nk"> &lt;cb400f&gt;</span> I tend to think so.. but I don't use that many gtk apps.. so I could be missing something
+<a name="l-180"></a><span class="tm">18:17:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> Well, I am also using gtk-oxygen-engine. It's very good
+<a name="l-181"></a><span class="tm">18:18:03</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> i haven't tested it.
+<a name="l-182"></a><span class="tm">18:18:11</span><span class="nk"> &lt;wstephenson&gt;</span> on my todo now
+<a name="l-183"></a><span class="tm">18:18:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Ok. It is in Extra and it's actively maintained
+<a name="l-184"></a><span class="tm">18:18:51</span><span class="nk"> &lt;wstephenson&gt;</span> i'll ask the gnomes what they think of it
+<a name="l-185"></a><span class="tm">18:18:59</span><span class="nk"> &lt;wstephenson&gt;</span> what about the browsers?
+<a name="l-186"></a><span class="tm">18:19:13</span><span class="nk"> &lt;wstephenson&gt;</span> i'd keep both. dunno about changing standard
+<a name="l-187"></a><span class="tm">18:19:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> personally I like Rekonq better
+<a name="l-188"></a><span class="tm">18:19:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> atm KDF only has arora
+<a name="l-189"></a><span class="tm">18:19:42</span><span class="nk"> &lt;cb400f&gt;</span> I think FF should remain default.. but we need rekonq in the distro to please kde purists
+<a name="l-190"></a><span class="tm">18:19:52</span><span class="nk"> &lt;cb400f&gt;</span> too few people use Extra
+<a name="l-191"></a><span class="tm">18:20:16</span><span class="nk"> &lt;cb400f&gt;</span> koolo says Extra fewer users than KDF :-(
+<a name="l-192"></a><span class="tm">18:20:30</span><span class="nk"> &lt;cb400f&gt;</span> Extra _has_ fewer users
+<a name="l-193"></a><span class="tm">18:22:22</span><span class="nk"> &lt;wstephenson&gt;</span> rekonq is the only real candidate for default browser
+<a name="l-194"></a><span class="tm">18:22:27</span><span class="nk"> &lt;cb400f&gt;</span> same for updatedapps btw... dunno what's wrong with people... everybody should use Extra and UpdatedApps :-)
+<a name="l-195"></a><span class="tm">18:22:27</span><span class="nk"> &lt;wstephenson&gt;</span> aside from FF
+<a name="l-196"></a><span class="tm">18:22:44</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> we should publicise services instead of individual projects
+<a name="l-197"></a><span class="tm">18:23:51</span><span class="nk"> &lt;wstephenson&gt;</span> so what action do we need on rekonq?
+<a name="l-198"></a><span class="tm">18:23:56</span><span class="nk"> &lt;wstephenson&gt;</span> move it to KDF?
+<a name="l-199"></a><span class="tm">18:23:57 </span><span class="nka">* herby</span> <span class="ac">likes konqueror with webkit</span>
+<a name="l-200"></a><span class="tm">18:24:15 </span><span class="nka">* javier_</span> <span class="ac">likes konqueror with khtml</span>
+<a name="l-201"></a><span class="tm">18:24:28</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> I am fine with moving it to KDF
+<a name="l-202"></a><span class="tm">18:24:59</span><span class="nk"> &lt;tittiatcoke&gt;</span> Would be better as that Rekonq officially requires Qt 4.7
+<a name="l-203"></a><span class="tm">18:25:17</span><span class="nk"> &lt;wstephenson&gt;</span> konq with khtml or webkit is surprisingly good now.
+<a name="l-204"></a><span class="tm">18:25:24 </span><span class="nka">* cb400f</span> <span class="ac">likes opera, but thinks rekonq in kdf is critical for world domination/competition with kubuntu</span>
+<a name="l-205"></a><span class="tm">18:25:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Opera 11 looks good :-)
+<a name="l-206"></a><span class="tm">18:26:26</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> there are silly small things... and few big ones...
+<a name="l-207"></a><span class="tm">18:26:32</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> with rekonq...
+<a name="l-208"></a><span class="tm">18:26:49</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">wstephenson:</span> yes, move rekonq to kdf.. drop arora or move it to extra or contrib
+<a name="l-209"></a><span class="tm">18:26:56</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> 1... flash blocker needs attention
+<a name="l-210"></a><span class="tm">18:26:56</span><span class="nk"> &lt;wstephenson&gt;</span> this all sounds like an "include them all, but don't change the default" outcome. agree?
+<a name="l-211"></a><span class="tm">18:27:01</span><span class="nk"> &lt;alin&gt;</span> 2.spell checker
+<a name="l-212"></a><span class="tm">18:27:09</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> +1
+<a name="l-213"></a><span class="tm">18:27:14</span><span class="nk"> &lt;alin&gt;</span> 1big no google voice/video
+<a name="l-214"></a><span class="tm">18:27:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> +1
+<a name="l-215"></a><span class="tm">18:27:18</span><span class="nk"> &lt;cb400f&gt;</span> move to kdf as non-default browser, but available in main repo for anti-gtk obsessers
+<a name="l-216"></a><span class="tm">18:27:23</span><span class="nk"> &lt;alin&gt;</span> 2big yahoo is not happy
+<a name="l-217"></a><span class="tm">18:27:50</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> we can change the default to chromium
+<a name="l-218"></a><span class="tm">18:28:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> Don't come up with that one :-) It is not that nice browser either :-)
+<a name="l-219"></a><span class="tm">18:28:25</span><span class="nk"> &lt;javier_&gt;</span> no, please
+<a name="l-220"></a><span class="tm">18:28:27</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">alin:</span> is there a nice kde theme for it.. and kde file dialog?
+<a name="l-221"></a><span class="tm">18:28:40</span><span class="nk"> &lt;cb400f&gt;</span> and mimetype association
+<a name="l-222"></a><span class="tm">18:28:54</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> do not swear at me...
+<a name="l-223"></a><span class="tm">18:29:06</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> I just throw an idea...
+<a name="l-224"></a><span class="tm">18:29:50</span><span class="nk"> &lt;wstephenson&gt;</span> so, end of topic?
+<a name="l-225"></a><span class="tm">18:30:44</span><span class="nk"> &lt;cb400f&gt;</span> then we just need dmuller to fix qt so rekonq can have html5 video/audio :-)
+<a name="l-226"></a><span class="tm">18:31:15</span><span class="nk"> &lt;wstephenson&gt;</span> webkit update?
+<a name="l-227"></a><span class="tm">18:31:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> Yup. end of this topic
+<a name="l-228"></a><span class="tm">18:31:24</span><span class="nk"> &lt;tittiatcoke&gt;</span> Seems so
+<a name="l-229"></a><span class="tm">18:31:27</span><span class="nk"> &lt;cb400f&gt;</span> something related to qmultimedia I think
+<a name="l-230"></a><span class="tm">18:31:30</span><span class="nk"> &lt;wstephenson&gt;</span> * Q&amp;A, Misc
+<a name="l-231"></a><span class="tm">18:31:34</span><span class="nk"> &lt;wstephenson&gt;</span> i'll poke
+<a name="l-232"></a><span class="tm">18:31:43</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson poke dirk about Qt html5 stuff</span>
+<a name="l-233"></a><span class="tm">18:32:13</span><span class="nk"> &lt;thrice`&gt;</span> 4.7.1 was recently pushed :-)
+<a name="l-234"></a><span class="tm">18:32:23</span><span class="nk"> &lt;cb400f&gt;</span> there's a bugreport.. now if I could only find it...
+<a name="l-235"></a><span class="tm">18:33:13</span><span class="nk"> &lt;wstephenson&gt;</span> so new kde booster hiring is going very well. that's all i'm going to say to avoid invoking sod's law.
+<a name="l-236"></a><span class="tm">18:33:54</span><span class="nk"> &lt;wstephenson&gt;</span> nothing else to tell here.
+<a name="l-237"></a><span class="tm">18:34:05</span><span class="nk"> &lt;javier_&gt;</span> btw, I'm trying to fix the kjots thing
+<a name="l-238"></a><span class="tm">18:34:14</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> how's that going?
+<a name="l-239"></a><span class="tm">18:34:41</span><span class="nk"> &lt;javier_&gt;</span> I applied a big patch but the bug reporter says that he doesn't see the option for sorting
+<a name="l-240"></a><span class="tm">18:34:45</span><span class="nk"> &lt;javier_&gt;</span> so, I don't know
+<a name="l-241"></a><span class="tm">18:35:11</span><span class="nk"> &lt;thrice`&gt;</span> javier_, did you generate that diff from the webgui ?
+<a name="l-242"></a><span class="tm">18:35:19</span><span class="nk"> &lt;thrice`&gt;</span> er, the kde websvn gui *
+<a name="l-243"></a><span class="tm">18:35:42</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">thrice`:</span> nop. I downloaded some files from websvn.k.o and generated the patch afterwards
+<a name="l-244"></a><span class="tm">18:35:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">javier_:</span> Can you see that your files are being build ?
+<a name="l-245"></a><span class="tm">18:36:28</span><span class="nk"> &lt;wstephenson&gt;</span> did you remember %patchNNN? ;)
+<a name="l-246"></a><span class="tm">18:36:36</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">tittiatcoke:</span> I was going to do so but I couldn't (blocked status)
+<a name="l-247"></a><span class="tm">18:36:44</span><span class="nk"> &lt;javier_&gt;</span> still blocked
+<a name="l-248"></a><span class="tm">18:36:52</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> sure ;-)
+<a name="l-249"></a><span class="tm">18:37:39</span><span class="nk"> &lt;javier_&gt;</span> Patch10 blabla and %patch10
+<a name="l-250"></a><span class="tm">18:37:49</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">thrice`:</span> do you have the bug # for the rekonq html5 video/audio issue? .. iirc I got it from you, but can't find it in my logz
+<a name="l-251"></a><span class="tm">18:37:50</span><span class="nk"> &lt;wstephenson&gt;</span> ok
+<a name="l-252"></a><span class="tm">18:37:59</span><span class="nk"> &lt;wstephenson&gt;</span> i'll end the meeting if that's ok
+<a name="l-253"></a><span class="tm">18:38:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> Yup
+<a name="l-254"></a><span class="tm">18:38:12</span><span class="nk"> &lt;javier_&gt;</span> sure
+<a name="l-255"></a><span class="tm">18:38:44</span><span class="nk"> &lt;wstephenson&gt;</span> thank you gentlemen.
+<a name="l-256"></a><span class="tm">18:38:47</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

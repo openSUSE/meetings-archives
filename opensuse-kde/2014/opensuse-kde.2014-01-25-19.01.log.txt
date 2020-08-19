@@ -1,0 +1,330 @@
+19:01:35 <tittiatcoke> #startmeeting
+19:01:35 <bugbot> Meeting started Sat Jan 25 19:01:35 2014 UTC.  The chair is tittiatcoke. Information about MeetBot at http://wiki.debian.org/MeetBot.
+19:01:35 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+19:01:51 <kigurame> tittiatcoke: does all the work end of meeting bye !
+19:01:59 <tittiatcoke> '#meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+19:02:11 <tittiatcoke> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+19:02:14 <kigurame> that quick enough ?
+19:02:22 <tittiatcoke> nope.
+19:02:28 <kigurame> damn
+19:02:36 <tittiatcoke> Ok. Agenda topics (feel free to add):
+19:03:30 <tittiatcoke> 1) KDE for openSUSE 13.2
+19:03:49 <tittiatcoke> 1a Which version do we go for ? (4.12 with nepomuk or 4.13 with baloo)
+19:04:03 <tittiatcoke> 1b Do we move forward with KlyDE ?
+19:04:36 <tittiatcoke> 2) Cloverleaf things that would be interesting and nice to haves for openSUSE 13.2
+19:04:42 <tittiatcoke> 3) Status KF5
+19:04:47 <tittiatcoke> 4) AOB
+19:04:57 <tittiatcoke> 5) end :)
+19:05:07 <tittiatcoke> any other topic ?
+19:05:13 <einar77> So far it's OK like this
+19:05:14 <einar77> IMO
+19:05:20 <kigurame> Seconded
+19:05:56 <tittiatcoke> Ok. then lets start with the first one :) The biggest one imo
+19:06:04 <tittiatcoke> #topic KDE for openSUSE 13.2
+19:06:52 <tittiatcoke> I guess we have all read the changed that are about to happen regarding nepomuk and baloo. Seems that upstream is going to state that if you don't want breakage you shouldn't upgrade.
+19:07:20 <tittiatcoke> So the question is do we remain with 4.12 and nepomuk and we just fix bugs, etc. Or do we make the jump to 4.13 and baloo ?
+19:07:20 <einar77> How many users are actually using nepomuk on opensuse?
+19:07:27 <einar77> that's what I'm wondering
+19:07:35 <tittiatcoke> einar77: Good question :)
+19:07:58 <tittiatcoke> I don't know. I guess not many although nepomuk was improved in 4.11 and 4.12
+19:08:00 <kigurame> I honestly don't use nepomuk
+19:08:03 <einar77> I do
+19:08:04 <SFaulken> I'm in favour of making the jump, and working with/pushing to upstream for bugfixes
+19:08:19 <cb400f> does this only affect file indexing? ... or all the other features (mail indexing, dolphin tooltips etc.)
+19:08:59 <cb400f> and does the breaking only affect upgraded systems, or are fresh installations with baloo expected to be broken too?
+19:09:06 <tittiatcoke> cb400f: It will affect everything. Nepomuk will be completely replaced by baloo.
+19:09:21 <petracvv> I haven't really used nepomuk either; the jump will have to be made at some point anyways (since baloo is the successor)
+19:09:22 <tittiatcoke> cb400f: The breakage is mainly based on programs that haven't make the conversion yet to baloo
+19:09:27 <SFaulken> so far, I'm rather encouraged, in my testing, with baloo vs. nepomuk
+19:09:35 <kigurame> I'd rather jump now
+19:09:46 <herby> I guess most people who have nemomuk anabled do not make real use of it and would be pleased to have something mor lightweight
+19:09:55 <kigurame> i played with baloo a bit it's cetrainly less hungry
+19:09:57 <einar77> I would rather use balo
+19:09:58 <einar77> o
+19:10:04 <einar77> so +1 from me to use 4.13
+19:10:05 <einar77> and baloo
+19:10:16 <einar77> off and on for a bit
+19:10:25 <kigurame> 4.13 with baloo for me also
+19:10:36 <SFaulken> I think the bigger percentage of users aren't using nepomuk, but I have no data to back this up.
+19:10:39 <cb400f> has kdepim made the baloo conversion?
+19:10:48 <kigurame> even though existing user migration will be a pain.
+19:11:01 <SFaulken> I vote 4.13 with baloo.
+19:11:13 <tittiatcoke> cb400f: That one is in progress. There is already a baloo feeder, but not everything is converted yet. This will happen before 4.13 release
+19:11:18 <tigerfoot> I use nepomuk, but the result doesn't meet the expectation ...
+19:11:41 <tittiatcoke> cb400f: And believe me once you have worked with baloo, you don't want nepomuk anymore :)
+19:12:02 <SFaulken> yeah, I haven't had baloo doing any crazy runaway processes yet.
+19:12:06 * tigerfoot want to see it real :-)
+19:12:38 <tittiatcoke> tigerfoot: Willing to jump on KUSC ?
+19:12:40 <herby> I will give baloo a try when it's available in KDE:Release:413
+19:12:50 <cb400f> I guess 13.2 would have 4.13.2 or so.. gives some time to fix the worst issues
+19:12:58 <tittiatcoke> cb400f: yup
+19:13:06 * tigerfoot tend to prefer 413 + baloo even before 13.2 (which doesn't have a stone graved release date)
+19:13:19 <kigurame> baloo's nice and kdepim is progressing nicely appearntly just jumped the ML real quick
+19:13:33 <tittiatcoke> tigerfoot: as soon as 4.13 is released, we will have a repo for it
+19:13:54 <tittiatcoke> kigurame: I guess we see a bigger push once baloo is accepted
+19:13:57 <SFaulken> I see that the next release of kubuntu is tentatively planning on shipping 4.13
+19:14:07 * tigerfoot propose then to shout out it loud to get the maximum of feedback at that time ...
+19:14:17 <SFaulken> we wouldn't want to get stuck behind those silly *buntus.
+19:14:29 <tittiatcoke> SFaulken: correct :)
+19:14:50 <tittiatcoke> Ok. I guess we can conclude that we will go for 4.13 or higher for oS 13.2
+19:14:54 <SFaulken> if kubuntu is going to do it I would expect netrunner and SolydK will as well.
+19:14:58 <kigurame> tittiatcoke: it's safe to say we all agree then
+19:15:42 <tittiatcoke> #info we will track KDE upstream released for openSUSE 13.2 (most likely this will be 4.13.x)
+19:16:10 * tigerfoot think could be 4.14 in November ;-)
+19:16:51 <tittiatcoke> That brings us to the next topic, regarding KlyDE.  The project that wstephenson started to split KDE based on patterns and to make it possible not to install the semantic and activities stuff.
+19:17:10 <tittiatcoke> #topic KlyDE ? Moving forward or dropping it.
+19:17:47 <SFaulken> well, *most* of what we were hammering on in KlyDE can be done through patterns, really.
+19:17:51 <kigurame> To be honest as much work as was put into it with the steady pace of improvements to KDE in general i don't see the need.
+19:17:53 <tigerfoot> I'm inclined be in favor off KlyDe so users can keep choice ...
+19:18:13 <SFaulken> alot of it was just tweaking of configs, and less actual new code, or splitting of packages.
+19:18:16 <kigurame> perhaps we can split the packages a bit more
+19:18:40 <tittiatcoke> I guess we have to keep in mind the move to baloo and of course the bigger jump KF5 which is moving quite well
+19:19:17 <tittiatcoke> if we want to move forward with KlyDE then we need to have the patterns that we want to offer to the users.
+19:19:21 <kigurame> tittiatcoke: even the whole KDE memory footprint shrunk quite a bit
+19:19:38 <tittiatcoke> yup. So less reasons to really push KlyDE.
+19:19:40 <SFaulken> well, on that front, if we can offer more of the KlyDE style modularity, mimicking what KF5 is meant to do, it will easy the transition, when KDE5 drops.
+19:19:52 <tittiatcoke> true
+19:19:54 <SFaulken> as opposed to the mass shock that happened in the KDE3-KDE4 transition.
+19:20:03 <kigurame> very good point
+19:20:18 <petracvv> does the kde basis pattern include semantic desktop?
+19:20:36 <SFaulken> I mean, there's people *still* pissed about the change from 3.x to 4.x
+19:20:46 <tittiatcoke> petracvv: yes. kde basis pulls in kdebase4-workspace, which pulls in nepomuk, activities, etc
+19:20:57 <kigurame> tittiatcoke: but like yoou said we would need to establish some patterns (i rember writing a email about that a few months ago)
+19:21:08 <tittiatcoke> the current packages were never designed to be modular
+19:21:23 <tittiatcoke> kigurame: yup. And unfortunately it never took off. :(
+19:21:36 <kigurame> heh
+19:21:39 <SFaulken> well, and we'd have to tweak out kdebase4-workspace, to make nepomuk et. al. recommends, or whatever, instead of requires.
+19:21:45 * tigerfoot think you should have use the 2016 keyword :-)
+19:21:59 <kigurame> tittiatcoke: largely my fault to i got busy :)
+19:22:00 <tittiatcoke> tigerfoot: As jpoortvliet is doing ?
+19:22:27 <petracvv> tittiatcoke: ok. I think for a base install we don't really need the semantic stuff. Might be worth modifying packages a bit to allow that
+19:22:28 <SFaulken> you know, we really should have invited jos to this mess  =P
+19:22:29 <tittiatcoke> kigurame: not only yours :) Also me and shumski didn't spend the time on it anymore as that we started with KF5 and then baloo came :)
+19:22:29 <tigerfoot> tittiatcoke: if you want to have a big thread and no result, my anwser is yes :-)
+19:22:54 <tittiatcoke> tigerfoot: lol :) Well, you are in a position now to stop the thread :)
+19:23:09 <kigurame> i could poke jos if you wish
+19:23:14 * tigerfoot prefer to get result before stopping any trains :-)
+19:23:14 <tittiatcoke> petracvv: true
+19:23:28 <tittiatcoke> kigurame: don't you dare or I kick you out of this channel :)
+19:23:40 <cb400f> I have no interest in klyde personally ... and I wonder who would benefit from it.. a few experts who know how to manipulate patterns and who don't need akonadi and/or nepomuk
+19:23:52 <cb400f> can't be many of those
+19:23:54 <SFaulken> I mean, it's realtively simple to do some spec file tweaks, and provide a "kde-basic" and "Kde-Full" pattern
+19:24:05 <SFaulken> or something in between even.
+19:24:09 <tittiatcoke> krop isn't here, but I know that he is not in favor of splitting the packages
+19:24:17 <tigerfoot> But about what you could want have to do with the package, I remember that normally 2014 should be the hackaton year, so if one is useful for the kde team think about it.
+19:24:29 <kigurame> cb400f: true the original design idea was to automate this process somewhat offering selections.
+19:24:31 <tittiatcoke> :)
+19:24:50 <cb400f> to address the "kde is bloated" whiners, it would be more effective to disable a lot of the stuff popping up all over the place and clean some ui settings.. which is what creates that perception
+19:25:25 <tittiatcoke> cb400f: that is a good point. I know that Jos looked at redesigning the systemsettings and to make different groupings
+19:25:35 <kigurame> But like i said as great as it was working on it and getting results now with KF5 on the horizon i think it's moot
+19:25:41 <cb400f> kigurame: unless an official klyde live image and a prominent dvd install option is offered, it won't reach a large public... and I don't see that happening
+19:25:48 <SFaulken> we have the beginnings of a simplified system settings in the KlyDE packages.
+19:26:07 <SFaulken> which would be pretty trivial to roll into KUSC
+19:26:07 <cb400f> also it just creates even more differentiation than we already have, where not two people are running the same set of packages
+19:26:10 <tigerfoot> can't that be fixed upstream ?
+19:26:22 <petracvv> cb400f: or maybe just offer a Base option when installing the KDE livedvd
+19:26:37 <kigurame> cb400f: This was outside of opensuse at the time it would have been default.
+19:27:05 <SFaulken> tigerfoot: well, it *could* be, but you go look at kubuntu, netrunner, or any of the other major KDE providing distros, they use a more simplified KDE system settings than openSUSE currently ships.
+19:27:44 <SFaulken> and even as an experienced KDE user, I still find myself hunting around for certain things in the system settings.
+19:27:46 <tigerfoot> SFaulken: so a good workshop for OSC and push upstream that next Akademy.
+19:28:02 <SFaulken> tigerfoot: yeah, it would be.
+19:28:31 * tigerfoot propose as action SFaulken organize a workshop at osc : make systemsettings the tool you dream
+19:29:07 <cb400f> some cleaning of the standard kde patterns and other klyde ideas might be in place.. but offering two more or less completely different kde experiences I would be against
+19:29:42 <SFaulken> cb400f: I am in agreement with that.
+19:29:47 <kigurame> I would'nt be against cleaning the kde patterns.
+19:29:48 <petracvv> cb400f: I don't think we were leaning that way anymore.
+19:30:28 <SFaulken> well, we never *really* intended KlyDE to be it's own seperate codebase and environment.
+19:30:32 <petracvv> cleaning up the patterns is probably the best way forward now; no need to split too many things up
+19:30:55 <SFaulken> it was more an exercise in streamlining and modularity, that was always intended to be pushed back into KDE.
+19:31:05 <kigurame> So no on KlyDE but more cleaning the current patterns and maybe simpliefied settings
+19:31:13 <SFaulken> Agreed
+19:31:38 <kigurame> tittiatcoke: that work for you ?
+19:31:43 <tittiatcoke> works for me :)
+19:31:51 <tigerfoot> +1
+19:31:57 <cb400f> disabling a bunch of default tooltips and system sounds etc. and other "clutter" by default wouldn't hurt either ;-)
+19:32:04 <tittiatcoke> Can I set an action for SFaulken to push the cloverleaf work to KUSC so that a bigger group can have a look at it ?
+19:32:19 <cb400f> some exotic krunners etc.
+19:32:41 <kigurame> besided KDE is so bloated it sits with a win7 vm FF dolphin 6 terminals @ 1.5Gb
+19:32:49 <tittiatcoke> :)  I guess the best would be to setup a wiki page where we can indicate the things that we want to change, disable or remove :)
+19:32:52 <SFaulken> oh yes, terribly bloated.
+19:33:06 <SFaulken> oversized, ram hungry, processor eating monster.
+19:33:09 <SFaulken> I hates it.
+19:33:14 <cb400f> :-)
+19:33:24 <kigurame> tittiatcoke: yes a bit more collab would be great our last efforts were a bit all over the place
+19:33:35 <SFaulken> yeah, we need some organization.
+19:33:37 <tittiatcoke> #action SFaulken push the cloverleaf systemsettings to KUSC as a starting point for further optimizations
+19:33:45 <SFaulken> whether it's a wiki page, or trello board, or whatever.
+19:33:58 <kigurame> one we actually ALL use
+19:34:02 <SFaulken> aye.
+19:34:11 <tigerfoot> and ping back it to the ML
+19:34:12 <SFaulken> and actually check, once in a while  =P
+19:34:16 <kigurame> tittiatcoke: no offence intended :P
+19:34:24 <tittiatcoke> #action tittiatcoke create a wikipage where everybody can indicate optimizations, etc.
+19:34:29 <tittiatcoke> No offence taken :)
+19:34:40 <tittiatcoke> SFaulken: We will have regular meetings and measure the progress there :)
+19:34:53 <kigurame> great.
+19:34:57 <SFaulken> cause, frankly, the kde team is about like herding cats   =P
+19:35:12 <tittiatcoke> SFaulken: cats ? You sure
+19:35:32 <kigurame> tittiatcoke: What's next o wise one ?
+19:35:33 <SFaulken> well, I was thinking slightly rabid ocelots, but close enough  =P
+19:35:38 <tittiatcoke> lol :)
+19:35:41 <tittiatcoke> Ok. next topic
+19:35:55 <tittiatcoke> #topic Cloverleaf things that would be interesting and nice to haves for openSUSE 13.2
+19:36:20 <tittiatcoke> kigurame: SFaulken petracvv  Anything else that Cloverleaf offered which would be interesting to move it to openSUSE ?
+19:37:05 <SFaulken> well, the kernel optimizations, we're still maintaining in our own kernel branch
+19:37:08 <petracvv> kigurame has a kernel he maintains... and we have some fontconfigs
+19:37:32 <SFaulken> but alot of what we were doing has been rolled into 3.13 mainline
+19:37:43 <kigurame> kernel wise yep
+19:37:49 <petracvv> Maybe tlp for battery life
+19:38:02 <kigurame> Ah yeah good one
+19:38:06 <kigurame> we do have that
+19:38:09 <tittiatcoke> petracvv: what tip ?
+19:38:30 <kigurame> http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html
+19:38:33 <kigurame> that
+19:38:40 <petracvv> kigurame: beat me to it :P
+19:38:49 <SFaulken> we've got a fair bt of work with pipeline, since the "official" package is broken again.
+19:38:57 <petracvv> SFaulken: pipelight*
+19:39:20 <kigurame> tittiatcoke: i've been slowly pushing all the other stuff upstream
+19:39:48 <kigurame> you can tell by devel:cloverleaf shriking :)
+19:40:26 <SFaulken> I'm working on some more esoteric stuff, but it's not going to be much interest to most of your average openSUSE users
+19:40:27 <tittiatcoke> :)
+19:40:47 <SFaulken> We do have a meeting tomorrow with aaron about working on bringing bodega to opensuse
+19:40:58 <SFaulken> so you should start seeing some code show up there, for testing purposes.
+19:41:06 <tittiatcoke> isn't bodega a software manager or am I wrong ?
+19:41:19 <SFaulken> tittiatcoke: think the google play store, or apple itunes store.
+19:41:26 <tittiatcoke> SFaulken: Ok :)
+19:41:27 <SFaulken> with ties into the software manager.
+19:41:37 <kigurame> The things we maintain right now is a mainline kernel with bfq, wine with the compholio and wine multimedia patches, pipelight, and all the packages for the kmp's and virtualbox
+19:41:38 <tigerfoot> until we can pilot it by bluetooth :-)
+19:41:46 <petracvv> possibly no more packagekit :D
+19:41:47 <tittiatcoke> I hope it will support YaST/zypper :)
+19:42:05 <SFaulken> right now, it's good to go with PackageKit on plasma-active.   But I no want PackageKit.   PackageKit ew.
+19:42:14 <tittiatcoke> :)
+19:42:30 <SFaulken> which does remind me, and maybe we add that as another point of discussion, anything else the kde team wants us to bug aaron about when we talk to him tomorrow?
+19:42:34 <kigurame> The only package foreign to opensuse atm is tlp
+19:42:39 <tittiatcoke> Ok. I guess we could try to push tlp into Factory.
+19:42:53 <cb400f> SFaulken: ETA on the vivaldi? ;-)
+19:43:01 <cb400f> .. better not :-)
+19:43:11 <tittiatcoke> We can announce it on the opensuse-factory ml and then see the reaction.
+19:43:15 <SFaulken> tlp is pretty nice, fairly analogous to jupiter on fuduntu.   does wonders for battery life.
+19:43:27 <tittiatcoke> kigurame: Will you do that or you want me to do it ?
+19:44:21 <kigurame> You can if you wish i was gonna try and bump it a minor version this weekend.
+19:44:59 <tittiatcoke> kigurame: Ok
+19:45:26 <tittiatcoke> #action tittiatcoke Announce tlp as a new package for Factory.
+19:46:51 <kigurame> plasma active is function'
+19:46:58 <tittiatcoke> :)
+19:47:01 <tigerfoot> SFaulken: ask Aaron to not forget my Vivaldi tablet, delivery next week at Fosdem :-)
+19:47:15 <SFaulken> ok, so the entire team wants vivaldi tablets, noa.
+19:47:21 <kigurame> lol
+19:47:27 <SFaulken> will do.
+19:47:40 <tittiatcoke> Ok.
+19:47:43 <tittiatcoke> next topic
+19:47:46 <kigurame> SFaulken: still a bit funky on the N7 too
+19:47:48 <tittiatcoke> #topic KF5 Status
+19:47:59 <SFaulken> I'm sure aaron will have them ready to go.
+19:48:05 <tittiatcoke> Unfortunately shumski isn't here, so we keep this topic for the next meeting
+19:48:22 <tittiatcoke> #topic AOB
+19:48:31 <tittiatcoke> Anything else to discuss, guys ?
+19:48:46 <cb400f> do we plan to make phonon-vlc the default on 13.2?
+19:48:56 <SFaulken> I would be in favour of that.
+19:48:59 <tittiatcoke> cb400f: yup
+19:49:01 <kigurame> me too
+19:49:11 <tigerfoot> Any volunteers to demo KDE like Daemon on openSUSE next week-end at Fosdem
+19:49:15 <tittiatcoke> same thing is that plasma-nm will replace NetworkManager-kde4
+19:49:16 <cb400f> if so I wonder if we shouldn't make vlc the default video player.. since it's Qt, popular, actively developed
+19:49:31 <cb400f> that would also simplify codec installation etc.
+19:49:32 <SFaulken> I'm also good with that.
+19:49:34 * kigurame shudder networkmanager
+19:50:04 <tittiatcoke> cb400f: help me out :) Which one do we have currenctly as default ?
+19:50:10 <cb400f> of course it's not a real kde application.. but there are no good actively developed kde video players really :-/
+19:50:14 <kigurame> Kaff
+19:50:15 <cb400f> kaffeine
+19:50:17 * tigerfoot invite kde gsoc to propose a mentor and a student to develop kwicked (see proposal on -projet ml)
+19:50:38 <kigurame> which 99% of us promptly replace with vlc
+19:50:39 <tittiatcoke> Ok :)
+19:50:50 <kigurame> even the non experienced users
+19:51:02 <cb400f> people know it from windows
+19:51:15 <tittiatcoke> Ok. So we already have two entries for our new wiki page :)  Phonon-vlc and vlc
+19:51:16 * cb400f tends to use smplayer actually, but that's not a viable default
+19:51:26 <kigurame> yes and they learned vlc=easy playback
+19:51:35 <tittiatcoke> tigerfoot: why kwicked ?
+19:51:47 <tittiatcoke> tigerfoot: you should try plasma-nm, that one is really good
+19:51:49 <tigerfoot> qmlwicked work too ...
+19:52:10 <tittiatcoke> plasma.nm is fully qml :)
+19:52:10 <tigerfoot> plasma-nm is for networkmanager which goes away no ?
+19:52:22 <tittiatcoke> tigerfoot: No. Just the old KDE client
+19:52:29 <SFaulken> ok, I've got something to get to, so I'll catch the rest of the meeting in the log  =P
+19:52:36 <kigurame> did i mention the strangswan plugin finnaly works on plasma-nm ?
+19:52:38 <tittiatcoke> SFaulken: Ok. Thanks for joining
+19:52:46 <tittiatcoke> kigurame: nope. but good to hear :)
+19:52:48 <kigurame> stongswan
+19:52:59 * kigurame sighs
+19:53:02 * tigerfoot is lost in plasma ocean now ...
+19:53:05 <SFaulken> oh, before I leave, I propose we rebase everything on gtk3.    *ducks*
+19:53:05 <kigurame> my typing today
+19:53:14 <tigerfoot> you mean we already have a frontend for wicked ?
+19:53:17 <tittiatcoke> tigerfoot: plasma-nm is heavily worked on by lukas tinkl and jan grulich from Fedora :)
+19:53:36 <tittiatcoke> tigerfoot: No, plasma-nm is a frontend for NetworkManager/ModemManager
+19:53:57 <kigurame> wich i wish we could replace all together
+19:54:15 <tigerfoot> that's why I ping to have a gsoc mentor (kde hacker) + a bunch of student to work on a qml frontend for wicked
+19:54:23 <tittiatcoke> tigerfoot: Are you sure you mean wicked or wicd ?
+19:54:45 <tigerfoot> WICKED as those bastard didn't register the networkd daemon ...
+19:54:47 <SFaulken> yeah, I'm not a big NetworkManager fan, but it's better than alot of the other alternatives.
+19:54:53 * tigerfoot send wicd to /dev/null
+19:55:19 <tigerfoot> wicked is becoming the defacto network daemon in 13.2
+19:55:21 <kigurame> SFaulken: a neccessary evil atm
+19:55:31 <SFaulken> kigurame: yeah, I know.
+19:55:33 <tittiatcoke> and with that replacing NetworkManager ?
+19:55:39 <tigerfoot> tittiatcoke: yeap
+19:55:47 <cb400f> connman seems to work well on the Jolla :-)
+19:55:48 <tittiatcoke> On who's decision ?
+19:55:52 <tigerfoot> will be the default for SLE12 .. so
+19:55:58 <tigerfoot> expect it will work :-)
+19:56:32 * tigerfoot just afraid that after not being able to use bluetooth, with loose also networking :-)
+19:56:36 <tittiatcoke> tigerfoot: Don't tell me that the SLE boys pushed this. I am sure that Gnome is not going to accept that
+19:56:50 * kigurame trawls the wicked github repo
+19:57:06 <tigerfoot> tittiatcoke: take 30 minutes tomorrow to check factory ml :-)
+19:57:37 <kigurame> hey this does'nt look half bad
+19:57:44 <tittiatcoke> tigerfoot: you mean the wicked wicked thread ?
+19:58:06 <tigerfoot> yeap ...
+19:58:25 <cb400f> does wicked do mobile broadband and vpn and the whole shebang?
+19:58:30 <cb400f> or just wifi like wicd
+19:58:37 <tigerfoot> it will cb400f ...
+19:59:01 <tigerfoot> and for one time, I start to trust the dev about the implementation ...
+19:59:18 * tigerfoot now is looking around to find hacker for a nice frontend ...
+19:59:45 <tigerfoot> even on 13.1 you can use it for basic stuff
+19:59:56 <tittiatcoke> tigerfoot: But that still doesn't show the decision that this will be default nor that everybody is in favor
+20:00:27 <cb400f> doesn't sound like it'll be complete and rock solid 6 months from now
+20:00:57 <tigerfoot> cb400f: it start at least one year and a half ...
+20:01:06 <tittiatcoke> From what I can see this is going back to the stone age where we have all kind of ifup files again
+20:01:31 <tigerfoot> tittiatcoke: really, guess what will happen if it's the default for SLE12 and 13.2 delayed until november ...
+20:02:04 <tittiatcoke> tigerfoot: And you expect that Gnome will change the heavy integration with NetworkManager to start using wicked ?
+20:02:13 <tigerfoot> nope xml description files
+20:02:17 <cb400f> sle(12) will be the testbed for opensuse again? :-)
+20:02:21 <tittiatcoke> tigerfoot: Don't we as main contributors have a right to decide on this ?
+20:02:29 <tigerfoot> gnome will just have to use the nice qml frontend :-)
+20:02:32 <kigurame> hmmmm that sounds messy
+20:02:52 <tittiatcoke> tigerfoot: This is going into the wrong direction. SUSE is taking over and messing up a good distro
+20:03:17 <tigerfoot> tittiatcoke: I don't yet know if it is the case ...
+20:03:39 <cb400f> also, it would be unusual for sle people not to blindly follow RH
+20:03:45 <tittiatcoke> tigerfoot: Lets see.
+20:03:47 * tigerfoot just hope (really hope high) to get some anwser for opensuse team & factory team about it ...
+20:04:08 <tittiatcoke> tigerfoot: I guess that we first have to ask the question, before we can expect an answer
+20:04:38 <tigerfoot> cb400f: they don't agree for years about networking ...
+20:04:46 <tittiatcoke> but ok. lets see in which direction this goes.
+20:05:06 <tittiatcoke> and it is KDE unrelated at the moment.
+20:05:10 <tigerfoot> now the war is open RHEL goes to networkmanager (scratch rewrite V) and suse other way ...
+20:05:46 <kigurame> i'm gonna skidazzle
+20:05:56 * tigerfoot sorry to polute backlog ... My first objective, was to point the lack of frontend eventually
+20:05:56 <kigurame> for a few
+20:06:13 <tittiatcoke> Ok. last item. Next meeting ?
+20:06:45 <tittiatcoke> I guess that we are somehow now stuck on the Saturday evening to get also the participation of kigurame, petracvv and SFaulken-AFK
+20:06:56 <tittiatcoke> tigerfoot: no problem.
+20:07:27 <tittiatcoke> Is everybody ok with this timing ? If so, then we can set a new meeting for 8 February at 8 pm CET
+20:07:56 <tittiatcoke> Going once, going twice....
+20:08:09 <petracvv> works for me
+20:08:33 <kigurame> same here
+20:08:40 * tigerfoot could be afk due to board f2f ... but will try
+20:09:06 <tittiatcoke> #info team meetings will be held on Saturday evening at 8 pm CET. Next meeting on 8 February
+20:09:19 <tittiatcoke> Ok. Thanks everyone. Meeting is closed
+20:09:23 <tittiatcoke> #endmeeting

@@ -1,0 +1,69 @@
+17:52:03 <bmwiedemann> #startmeeting
+17:52:03 <bugbot> Meeting started Mon Sep 26 17:52:03 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:52:03 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:52:25 <bmwiedemann> #topic current Factory experience
+17:52:42 <bmwiedemann> #info current factory is not in an installable state, but upgrading to Factory from 11.4 or MS5 works well
+17:52:49 <LWFinger> At 12:02, tigerfoot was leaving to eat.
+17:53:53 <LWFinger> Do you want us to go in turn?
+17:54:39 <bmwiedemann> I'm using current factory on my netbook and my work desktop, plus an slightly older factory on my Notebook (as fallback)
+17:55:18 <bmwiedemann> found a wireless kernel bug and one in imagemagick (added test to openQA) - but most things work
+17:55:38 <bmwiedemann> done
+17:56:33 <LWFinger> I'm using current factory on a desktop, a notebook, and a netbook.
+17:57:33 <LWFinger> At first, I had problems with systemd, but those are now fixed or worked-around. The last problem was with sound.
+17:58:16 <LWFinger> The workaround was to add my user to the audio group - I don't know isf the underlying permissions problem is fixed.
+17:59:38 <LWFinger> I also had trouble with the KDE networkmanager applet not finding any devices. As a work around, I switched to Gnome's nm_applet.
+18:01:03 <LWFinger> That also has been mostly fixed. The KDE version still asks for the root password and the encryption secret too often indicating a policy problem, but it works.
+18:02:22 <bmwiedemann> I noticed the password popups when my WLAN AP went down
+18:03:01 <LWFinger> That should not happen.
+18:03:30 <LWFinger> Both the desktop and laptop have nVidia graphics devices. I'm not running standard kernels and I have KMS turned off. I need to test with nouveau.
+18:04:17 <bmwiedemann> I ran the LiveUSB on one Nvidia machine and it booted into X
+18:04:30 <LWFinger> The netbook has Intel i915 graphics. KMS works fine there.
+18:04:34 <LWFinger> Done.
+18:04:45 <tigerfoot> back
+18:04:51 * tigerfoot reading backlog
+18:06:09 <tigerfoot> LWFinger: for the NM there's just an update today in KDF with fresh git
+18:06:22 <tigerfoot> should fix my network icon too.
+18:06:47 <tigerfoot> Otherwise the NM & polkit thing are mostly pain in ass.
+18:07:34 <LWFinger> I already have the latest from factory. Still has the problem. Agreed about the PITA.
+18:07:37 <bmwiedemann> I can check with lnussel on the topic
+18:07:38 <tigerfoot> I don't want to put my normal user as admin, and then I've to enter root password when I connect a wifi (needed to update the last time use = stupid) then I have to put my kwallet password
+18:07:51 <tigerfoot> which contain the wpa secret ...
+18:08:30 <tigerfoot> same or even worse with modemmanager, it lock my sim card after three wrong pin code ...
+18:09:06 <tigerfoot> no support for ipv6 information in status panel ...
+18:09:15 <LWFinger> I have not files a bug as I need to clean out all my secrets and the wallet and start over first.
+18:10:00 <tigerfoot> One day freedesktop will understand that if I open my session with a password, I shouldn't have to enter it more than once ...
+18:10:12 <tigerfoot> or offer the possibility of ...
+18:14:11 <tigerfoot> otherwise actually there's missing packages, etc ... but not a real report during the time needed by coolo to build B1 :D
+18:15:36 <tigerfoot> I can get my hardware able to wake up from suspend, and didn't find the reason or the cause, but my system is quite complicated with dual harddrive in raid0 + encryption + lvm on top + systemd
+18:15:57 <tigerfoot> suspend to ram work most of the time.
+18:16:40 <bmwiedemann> most of the time, laptops are better with suspend than desktops
+18:16:51 <tigerfoot> on the kde side, 4.7.1 has real difficulties to get nepomuk working. Trueg is now back and submit more & more patch, but all didn't hit our repositories yet.
+18:17:03 <tigerfoot> bmwiedemann: it's a laptop :D
+18:17:20 <tigerfoot> even if it can beat most of desktop outside ...
+18:19:10 <bmwiedemann> thought, because raid in laptops is rare
+18:19:56 <LWFinger> The dual harddrive is unusual.
+18:20:22 <tigerfoot> bmwiedemann: yeap I've replace the dvd which I don't use to get more place, and speed as I can't afford the price of 1TB ssd actually :D
+18:20:52 * tigerfoot think about experiences in factory in recent weeks.
+18:21:53 <tigerfoot> I'm using the nvidia 280.13 wilth the installer .run, and redo the installation each time kernel, mesa, or xorg related things change, and never get a trouble or crash in kde.
+18:22:42 <tigerfoot> most of the time the installer complain about some link that are broken... So reinstall is the good way to get the system stable.
+18:23:26 <tigerfoot> systemd start to be really more & more usefull & stable .... Work with a bunch of server daemon apache2, mysql, postgresql
+18:24:36 <bmwiedemann> it is finally getting into a usuable state.
+18:25:20 <LWFinger> As I said earlier, it works for me.
+18:25:39 <tigerfoot> ok next topic ?
+18:25:59 * tigerfoot knows that the phone will ring in 20minutes :D
+18:27:22 <bmwiedemann> #topic BetaPizzaParty
+18:28:09 <bmwiedemann> with release date of Beta still being uncertain, I will probably discuss with AJ tomorrow to schedule the Party in 2 weeks.
+18:28:45 <bmwiedemann> so maybe 2011-10-13
+18:29:04 <tigerfoot> bmwiedemann: on 14th it's the 15 years of kde ...
+18:29:21 <tigerfoot> and the 09.10.11 kde launch plasma-active ...
+18:29:34 <tigerfoot> We will have to make noise :)
+18:29:54 <tigerfoot> or try to convince peeps to use beta-pizza to see latest kde :D
+18:30:22 <bmwiedemann> the 13th is just for the Nuremberg party. anyone else is of course free to schedule their own.
+18:31:07 <bmwiedemann> of course, there will be a nice KDE 4.7.1 in 12.1-Beta
+18:31:51 * manugupt1 looks at 9..10..11 awesome date for kde release
+18:32:32 <bmwiedemann> we will have our 12.1 release on 11.11.11
+18:32:43 <bmwiedemann> (hopefully)
+18:35:01 <bmwiedemann> any more topics?
+18:36:07 <LWFinger> None here.
+18:36:19 <bmwiedemann> then let us close the meeting.
+18:36:26 <bmwiedemann> #endmeeting

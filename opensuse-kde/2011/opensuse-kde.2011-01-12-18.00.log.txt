@@ -1,0 +1,427 @@
+18:00:52 <wstephenson> #startmeeting
+18:00:52 <bugbot> Meeting started Wed Jan 12 18:00:52 2011 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:00:52 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:01:24 <wstephenson> #action tigerfoot think about how to execute next release cycle better (calendar, task allocation)
+18:01:51 <wstephenson> #action tittiatcoke think about how to execute next release cycle better (calendar, task allocation)
+18:02:00 <wstephenson> ok to move on?
+18:02:12 <tigerfoot> yeap
+18:02:22 <wstephenson> * repo planning
+18:02:26 <wstephenson> afaik this is 2 things:
+18:02:39 <wstephenson> kdepim46 going forward and KR46 needed or not
+18:03:10 <wstephenson> tittiatcoke: are you ok to maintain kdepim46 until there is a release?
+18:03:13 <cb400f> do we expect KDF to go to 4.7 beta?
+18:03:14 <tittiatcoke> Wouldn't KR46 replace KR45 ?
+18:03:31 <tigerfoot> wstephenson: kr46 is in fact distro/stable after 11.4 release ?
+18:03:32 <Linuxsusefan> KR46
+18:03:42 <tittiatcoke> wstephenson: Yes. I am fine with it. It is running with the OBS _services, so it is just pressing a button to update :-)
+18:03:47 <remur_030> tigerfoot: +1, do we really need all the leaf updates?
+18:03:55 <rabauke> people will call for KR46 as soon as there is a new minor release
+18:03:56 <wstephenson> tittiatcoke: yes, subject to javier's open-pc needs
+18:04:04 <remur_030> this is up to javier though
+18:04:22 <tittiatcoke> open-pc needs ?
+18:04:23 <cb400f> tigerfoot: no, stable will be 4.6.1 or so.. the version whores will cry and yell if they can't get 4.6.2/3/4 etc., so they can complain again about the regressions
+18:04:24 <rabauke> and IMHO it's better to keep KR45 users out of KDF unless os 11.5 will feature KDE 4.6
+18:04:34 <wstephenson> tittiatcoke: open-pc uses a KR45 based repo
+18:04:39 <tittiatcoke> wstephenson: Aha. Ok
+18:05:02 <remur_030> wstephenson: just pushing the 4.5.x updates into the usual update stream still is a no go?
+18:05:11 <javier> all people are talking to me at the same time
+18:05:24 <wstephenson> remur_030: theoretically  maintenance is open to it
+18:05:36 <wstephenson> but it would be painful for people on slow connections
+18:05:38 <javier> I think KR46 would be good until we have 11.4
+18:05:43 <cb400f> whut? releasing 4.5 as an official update to 11.3?
+18:05:47 <rabauke> wstephenson: and it would cause plasma issues
+18:06:05 <remur_030> wstephenson: that'd be an update after every month, but right =/
+18:06:05 <tittiatcoke> I guess here tumbleweed would help :-)
+18:06:12 <wstephenson> and making it optional would be messy, we'd end up asking "are you using 4.6.1 or 4.6.x"?
+18:06:16 <rabauke> wstephenson: that's another issue to make sure for 11.4, update causing plasma to crash because of 4.4 config files.
+18:06:26 <remur_030> cb400f: whops I meant 4.6.x ...
+18:06:27 <wstephenson> tittiatcoke: yes, tumbleweed's job sort of
+18:06:36 <wstephenson> rabauke: not on my radar, is there a BR for it?
+18:06:57 <cb400f> I protest in the strongest terms against burdening people with minor upgrades full of regressions
+18:07:01 <rabauke> wstephenson: I always tell people to back up their crashing configs and submit them. not sure if they do
+18:07:19 <wstephenson> cb400f: so against a KR46?
+18:07:25 <remur_030> cb400f: it's supposed to be only fixes, no idea if kde upstream really limits itself to that though =/
+18:07:30 <cb400f> as official update, most certainly
+18:07:31 <javier> wstephenson: tittiatcoke: replacing KR45 with KR46 is OK for me as long as upgrade from 4.5.x to 4.6.x go OK
+18:07:32 <wstephenson> cb400f: people who want 4.6 should use KDF then?
+18:07:49 <wstephenson> javier: what would you do for open-pc then?
+18:07:51 <cb400f> if someone wants to maintain it, and someone adds it as unsupported repo, that's a different matter
+18:08:17 <wstephenson> cb400f: i tend to agree, we make it easy enough to keep up with OBS repos
+18:08:33 <cb400f> but yeah, unless KDF goes to 4.7 beta I don't see much reason for KR4.6
+18:09:00 <javier> wstephenson: we aren't using KR45 directly, remember? Well, I would test 4.6.x first and see how it goes
+18:09:00 <rabauke> I do, because people should not KDF if they do not want to test.
+18:09:02 <tigerfoot> +1 for cb400f
+18:09:08 <remur_030> cb400f: 4.7beta should be about 4.6.4, people will miss out on 4.6.5
+18:09:30 <remur_030> about the same time as 4.6.4
+18:09:57 <rabauke> KDF should not be advertised but for testers IMO. KRx is where people who just want to update should be directed. That way they are in charge of version changes, i.e. they have to change the repo.
+18:10:09 <cb400f> more importantly they'd be moved to beta ... most of them completely unprepared
+18:10:28 <cb400f> but if KDF stays on 4.6 until 4.7 final, then it's a different matter
+18:10:39 <wstephenson> i do think KR45 has been a success in insulating ppl from sudden betas
+18:10:52 <rabauke> and KR46 would be consistent with the existence of KR45. People get confused if 4.5 is in KR45 but 4.6 will be in KDf and 4.7 maybe again in KR47 etc.
+18:10:54 <cb400f> but I'm not sure what we want to do.. I guess 4.7 comes in july... 11.5 will be out in mid november
+18:11:03 <wstephenson> we did get a few people complaining in surprise when 4.6 landed in KDF, but fewer than before
+18:11:05 <rabauke> just add a new KRx repo for every version and everybody is happy
+18:11:25 <cb400f> rabauke: they always get confused.. they also get confused if KDF and KR46 both have the same version
+18:11:28 <rabauke> wstephenson: yes, because most use KR45
+18:11:54 <cb400f> and they'll get even more confused if we did KR45, KR46 and don't do KR47
+18:11:56 <javier> yes, too many repos perhaps?
+18:12:02 <rabauke> cb400f: I don't think so since they can follow the same naming and KR45 -> KR46 is more obvious than KDF ever will be.
+18:12:04 * dev001 mumbles ... there are those of us who focus strongly on production-ready, NOT always the bleeding-edge of Factory ... the KR45 repos have been HUGELY valued!!
+18:12:22 <rabauke> cb400f: that's why there should be a KR47 if KDE 4.7 is released
+18:12:44 <cb400f> you want production ready.. use tested, supported stuff in the distro
+18:12:54 <rabauke> It's just consistent to supply KRx repos for every KDE version.
+18:13:09 <cb400f> KR45 has caused people a lot of problems with plasma nvidia crashes, and other smaller or bigger hickups
+18:13:11 <dev001> cb400f: itired old discussion.  i  would if 'distro' had what was needed.
+18:13:15 <wstephenson> cb400f: and as another data point compared to opensuse-gnome we're doing a fantastic job of offering multiple KDE versions for multiple opensuse releases.
+18:13:22 <Linuxsusefan> rabauke: +1
+18:13:26 <rabauke> cb400f: and how would that have changed if kr45 was kdf?
+18:13:28 <javier> maybe we could rename KR45 to something else that doesn't need to have its name changed when a new kde version arrives
+18:13:58 <cb400f> rabauke: it's also a lot of work, and a distraction from KDF.. less people on KDF.. less testing for opensuse+1
+18:14:05 <rabauke> javier: why? the name mediates the content, that's perfect and exactly what kdf does not do
+18:14:19 <cb400f> and a support mess with a friggin load of different repos with more or less the same versions
+18:14:26 <rabauke> less people on kdf is good, because we do not want "casual" kdf users IMHO
+18:14:41 <cb400f> casual users don't use kr45 either
+18:14:53 <rabauke> IMHO KR45 was a huge success and thus this kind of naming and repo should continue.
+18:15:03 <rabauke> they do
+18:15:03 <javier> rabauke: to have less repo... it would be less confusing I think.... KR45, KR46, ...
+18:15:23 <cb400f> let's look at the numbers again.. ~250.000 people using OSS... maybe 20k, or 30k using the very most popular OBS repos
+18:15:51 <wstephenson> coolo: got your OBS repo usage stats handy?
+18:16:18 <dev001> rabauke +1.  *all* our users are on KR45 --  casual & otherwise
+18:16:28 <rabauke> javier: if the repo name is mediating the content the number of repos does not confuse users. everybody knows that kr45 is kde 4.5 and if he wants kde 4.6 guess which repo he will look for.
+18:16:39 <cb400f> most casual users can't even figure out how to add kde:updatedapps and kde:extra in community repos list
+18:16:48 <cb400f> those repos are not even among the most popular
+18:16:58 <rabauke> confusing is to have to change from KR to KD and back again, not from KRx to KRy
+18:16:59 <javier> rabauke: I agree on that
+18:17:25 <javier> rabauke: maybe we could have KR4x on the repo community list
+18:17:30 <rabauke> cb400f: kr45 is less popular than kdf?
+18:17:41 <rabauke> javier: that would be nice indeed
+18:18:14 <cb400f> I don't think coolo released stats that recent.. but I wouldn't be surprised if it is
+18:18:19 <rabauke> so over time more and more people will learn that KDE x.y is in KRxy which is straight forward and easy to remember.
+18:19:00 <cb400f> which means, more work for us, and less people testing Factory KDE
+18:19:08 <tigerfoot> especially if we communicate about that.
+18:19:09 <cb400f> all in all, poorer opensuse releases
+18:19:29 <wstephenson> i see your point
+18:19:39 <rabauke> people using kr45 do not submit bugs.
+18:19:49 <javier> rabauke: not true
+18:19:50 <rabauke> testers use kdf
+18:19:53 <wstephenson> but i'm not sure that it's due to KR45 taking testers away from KDF
+18:19:55 <tigerfoot> cb400f: when it crash under KDF the bug goes upstream not Novell
+18:20:03 <rabauke> javier: bnc or bko bugs?
+18:20:08 <javier> bnc
+18:20:14 <wstephenson> and IIRC KDF is *the* most popular OBS repo by quite a long shot
+18:20:17 <rabauke> ok.
+18:20:19 <wstephenson> s/shot/way/
+18:20:42 <javier> cool :-)
+18:21:06 <rabauke> Given that there are people who maintain KRxy I think it is the most obvious and thus best naming scheme and should be kept for all KDE releases.
+18:21:10 <cb400f> tigerfoot: it's not just about crashes.. and drkonqi is not the only way to report bugs you know
+18:21:23 <rabauke> wstephenson: how would that be if there was a KR46 repo?
+18:21:29 <tigerfoot> cb400f: unfortunately I know that :-)
+18:21:29 <cb400f> it's also about getting the right stuff in.. default configuration... packaging errors etc.
+18:21:34 <dev001> " people using kr45 do not submit bugs"  ... um, srsly?  not.
+18:21:47 <rabauke> dev001: I meant bnc bugs
+18:21:52 <krop> upstream gets reports from all kinds of repo
+18:22:04 <dev001> bnc being @novell?
+18:22:08 <krop> (we even get some KDE 4.3.x reports)
+18:22:11 <rabauke> exactly, but kdf is for novell bugs.
+18:22:15 <rabauke> dev001: yes
+18:22:22 <ctrippe> javier: but the number of bnc bugs is ~10 to 1 for KDF to K45
+18:22:33 <javier> ctrippe: right
+18:22:42 <cb400f> I wonder if we would do upstream a favour by disabling drkonqi for certain repos :-)
+18:22:58 <javier> so, what to do?
+18:23:05 <dev001> rabauke: still, disagree. we use KR45 extensively.  bugs are filed typically FIRST @ novell, and we come to opensuse* irc to annoy people -- first.  it's "our" distro.  that's where we focus resources -- first.
+18:23:11 <rabauke> is there somebody willing to maintain KR46?
+18:23:12 <javier> is KR45 stealing potential KDF testers?
+18:23:18 <wstephenson> dev001: bko=bugs.kde.org, bnc=bugzilla.novell.com
+18:23:18 <javier> rabauke: o/
+18:23:19 <krop> cb400f: upstream refuses bugs from outdated versions already
+18:23:25 <dev001> wstephenson: ah, thx
+18:23:42 <cb400f> ah, good
+18:23:44 <rabauke> dev001: since KR45 is not a suse release bugs at novell often don't make sense though
+18:24:26 <rabauke> reporting bugs from kdf at bnc does make most sense.
+18:24:46 <rabauke> If there is nobody willing to maintain a KR46 the question whether to create it is useless anyway.
+18:24:58 <wstephenson> folks, we're heading up on the hour mark and we have a lot more ground to cover. what's the best way to proceed on this topic?
+18:25:00 <dev001> rabauke: may be factually the case.  but, imo & experience, KR45 *is* our 'release' -- distro is simply not an option for us.  as for @novell bug-reporting, and related #irc, it's where the expertise/interest lie.  mostly ...
+18:25:01 <javier> btw, ctrippe thanks for the bug triaging stuff you're doing for KR45
+18:25:03 <javier> :)
+18:25:28 <javier> rabauke: I am willing to help maintaining that repo
+18:25:36 <ctrippe> javier: welcome
+18:25:58 <rabauke> javier: since you do KR45 you can judge the workload. is it doable?
+18:26:02 <cb400f> maybe kr46 could just be links from KDF.. like kr45 was before KDF went 4.6beta
+18:26:22 <rabauke> and of what use is kdf to 4.6 anyway after 11.4 got released?
+18:26:28 <javier> rabauke: yes, it is. i am not the only person maintaining it
+18:27:21 <javier> dirk has uploaded tarballs to KR45, others have sr'ed new versions of some packages, ...
+18:27:49 <javier> and now dirk is testing tarballs in KR45 instead of home:dirkmueller:KDExy
+18:28:08 <rabauke> shall we jsut do a vote on whether kr46 seems sensible to each one of us?
+18:28:28 <javier> my main concern is "stealing KDF testers"
+18:28:38 <wstephenson> rabauke: i think that's premature
+18:28:45 <rabauke> kdf is finished as soon as 11.4 is released
+18:28:46 <javier> including myself... I am not using KDF because I am maintaining KR45
+18:28:50 <remur_030> rabauke: it's javiers baby, I don't think we can tell him what to do
+18:28:56 <wstephenson> let's list the issues and discuss it on list?
+18:28:57 <cb400f> nope, then kdf becomes 11.5
+18:29:04 <wstephenson> * stealing KDF testers
+18:29:09 <wstephenson> * consuming team time
+18:29:14 <cb400f> it's not like kdf will lie idle for 4 months
+18:29:27 <rabauke> 11.5 is far away and will not feature whatever will be in kdf after 11.4 got released.
+18:29:27 <wstephenson> * easily identifiable for version whores
+18:29:27 <javier> maybe we could have a discussion on opensuse-kde ml?
+18:29:36 <javier> about this KR46
+18:29:58 <rabauke> 11.5 will hopefully feature KDE 4.7 :)
+18:30:00 <Linuxsusefan> rabauke: if the user does not have more in the repo to be confused jungle, it makes sense to build next to the kr45 KR46 ... otherwise look that is no longer a man who when to have kde4.x how and where
+18:30:19 <rabauke> Linuxsusefan: I agree
+18:30:30 <cb400f> rabauke: KDF will be updated with every release inbetween.. as has always been the case
+18:30:43 <cb400f> only question is if it will go to 4.7beta or wait for 4.7final
+18:30:59 <cb400f> and of course kdf will also be used to update all the apps, and link them to kde:updatedapps
+18:31:07 <rabauke> cb400f: if peope want to help 11.4 and hence that KDE version, they should use STABLE thouhg
+18:31:24 <rabauke> so kdf steals STABLE tester! ;)
+18:31:36 <Linuxsusefan> rabauke:I take care of the German wiki page kde, how can you explain that to the users what is contained where. is already difficult enough
+18:31:53 <cb400f> if 11.4 was properly tested we wouldn't need to fix it afterwards
+18:32:05 <rabauke> Linuxsusefan: I know. the whole "factory" term is confusing.
+18:32:30 <rabauke> cb400f: if that was true 11.2 was properly tested because there was no KR45
+18:32:49 <cb400f> Linuxsusefan: do you know the kde_repositories wiki page?
+18:33:27 <Linuxsusefan> cb400f: yes, the german wikipage of kde
+18:34:19 <wstephenson> so
+18:34:26 <wstephenson> time to move this to the list :)
+18:34:27 <tigerfoot> next topic
+18:34:32 <rabauke> the nice thing about KRxy is that there is no need for a wiki explanation since everybody who knows that KR45 contains KDE 4.5 will easily know where to get KDe 4.6
+18:34:49 <wstephenson> *  tapping and Synaptiks - enable it and fix broken X default? (cb400f)
+18:34:59 <cb400f> the list won't help... question is who will maintain it, who will support the users.. and what are the plans for KDF wrt. 4.7beta
+18:35:12 <cb400f> ok, then
+18:35:19 <wstephenson> cb400f: right, but we aren't coming to a decision here and we have other things to handle more urgently
+18:35:20 <rabauke> if they are ok with it, the same people that do things for KR45
+18:35:47 * rabauke is all for changing X defaults regarding tapping!
+18:35:48 <cb400f> since 11.3 Xorg ships with tapping disabled cuz apparently this suits gnomers, this makes kde users annoyed, and makes them think their touchpad is not supported by suse
+18:36:14 <rabauke> very annoying for users who do not have a clue where to search for it.
+18:36:30 <tittiatcoke> Is this a configuration setting or ..  ?
+18:36:31 <cb400f> so I'm wondering if we couldn't/shouldn't fix this problem via synaptiks default settings
+18:36:39 <rabauke> tittiatcoke: yes
+18:36:53 <wstephenson> cb400f: have you got a url for the "suits gnomers" bit?
+18:36:56 <rabauke> synaptiks sticks to X's defaults
+18:37:01 <cb400f> here's a mailing list link http://lists.opensuse.org/opensuse-factory/2010-06/msg00256.html|Touchpad
+18:37:35 <cb400f> there's also a bugreport somewhere... with some heated discussions
+18:37:39 <wstephenson> ok. i'm in favour of enabling it
+18:37:54 <wstephenson> although one of my laptops is very annoying when tapping is enabled (too sensitive)
+18:38:06 <wstephenson> it's worse than being used to tapping and unable to do so
+18:38:14 <rabauke> maybe also enable "disable tapping while typing"?
+18:38:17 <wstephenson> other way around
+18:38:22 <cb400f> I was thinking that too
+18:38:23 <wstephenson> it's better than...
+18:38:29 <wstephenson> rabauke: +1
+18:38:42 <rabauke> Then we need a good timeout. let me check mine.
+18:39:06 <cb400f> yeah, iirc 1 sec is the default.. that's too long
+18:39:34 <tigerfoot> I've 2.5sec
+18:39:41 <rabauke> .8 seconds
+18:39:59 <rabauke> tigerfoot: that's really long! :)
+18:40:32 * krop must vanish. bbl
+18:40:34 <rabauke> cb400f: one second was too long for me as well
+18:40:44 <cb400f> yeah, you can go get coffee before you can use your touchpad after typing :-)
+18:40:47 <tigerfoot> yeap but when you are using mainly your keyboard, and a part of your hand rip on that damned touchpad, I don't want my mouse flying around:-)
+18:41:10 * tigerfoot have also dual stick on his lappy :-)
+18:41:14 <rabauke> anybody else using that feature?
+18:41:15 <javier> yes, please enable tapping :-)
+18:41:35 * mrdocs comes back after emergency trip to supermarket for diapers for missdocs
+18:41:43 <tigerfoot> and add the disable it if a mouse is plugged ...
+18:42:07 <wstephenson> tigerfoot: is that an option in synaptiks?
+18:42:24 <rabauke> tigerfoot: that bit is tricky since I do have to ignore some "mice" or have the touchpad disabled all the time.
+18:42:27 <mrdocs> ahh well that explains why my touchpas kinda sucks... + enabled and guive synaptiks a good default
+18:42:27 <tigerfoot> kcm_touchpad I thing ..
+18:42:47 <cb400f> kcm_touchpad is dead, long live synaptiks
+18:42:52 <wstephenson> mrdocs: i hate those trips
+18:42:58 <tigerfoot> no synaptiks ..
+18:43:06 <mrdocs> wstephenson: yeah sucks.. :)
+18:43:09 <mrdocs> brb
+18:43:33 <rabauke> I have to ignore broadcom corp device and ps/2 mouse
+18:44:10 <tigerfoot> rabauke ok if that cause more trouble just forget, I've no pb to change whatever default is done ...
+18:44:39 * tigerfoot think I've change over the years, >70% of default choice anyway ...
+18:45:14 <wstephenson> ok so summary is 'enable tapping and disable while typing with 0.8' seconds?
+18:45:41 <tigerfoot> go with that ...
+18:45:44 <tittiatcoke> I will take this action point, as that I have packaged synaptiks anyway :-)
+18:46:10 <cb400f> who can tell that to the meetbot?
+18:46:16 <wstephenson> me
+18:46:26 <mrdocs> cb400f: you can if you take op
+18:46:39 <wstephenson> #action tittiatcoke 'enable tapping and disable while typing with 0.8 seconds' for synaptiks in kdebase4-opensuse config
+18:46:50 <tittiatcoke> The first testing package I will send to cb400f :-)
+18:46:59 <wstephenson> tittiatcoke: not in the synaptiks package itself, ok?
+18:46:59 * cb400f watches world dom barometer skyrocket
+18:47:16 <tittiatcoke> wstephenson: :-)
+18:47:30 * tigerfoot have to go in 10minutes ...
+18:47:32 <wstephenson> * k3b 2.0.2 without hal requirement? (cb400f)
+18:47:35 * mrdocs in 5
+18:47:53 <wstephenson> jack be nimble, jack be quick then
+18:48:00 <tigerfoot> k3b no hal work  and regonize my drive ...  thx cb400f
+18:48:01 <cb400f> the guy sent a mail to the list.. I just wanted to make sure someone was on it
+18:48:02 <wstephenson> cb400f: summary pls
+18:48:09 <wstephenson> no
+18:48:17 <wstephenson> #action wstephenson review hal k3b 2.0.2 list
+18:48:27 <mrdocs> we need a release  tho
+18:48:33 <tittiatcoke> cb400f: But 2.0.1 also works without hal.
+18:48:38 <cb400f> http://lists.opensuse.org/opensuse-kde/2011-01/msg00019.html
+18:48:40 <wstephenson> * Akonadi and mysqld running on livecd and for fresh user (cb400f)
+18:49:09 <cb400f> again, just wanted to draw attention to this bugreport which I consider quite important https://bugzilla.novell.com/show_bug.cgi?id=661844|
+18:49:13 <bugbot> openSUSE bug 661844 in openSUSE 11.4 (KDE4 Workspace) "Akonadi starts on login" [Normal,New]
+18:49:44 <cb400f> einar77 said there should be a hidden option to fix it easily but I can't get it to work.. I tried asking in #plasma but no answer
+18:50:02 <cb400f> (guess they're tired of anti-akonadi whiners)
+18:50:35 <cb400f> but I think it's silly to run an empty mysqld for every user.. when only a fraction is using kmail/korganizer/kaddressbook
+18:50:47 <wstephenson> cb400f: i'll look at it, last time it was krunners. i guess it's the calendar integration in the clock widget now.
+18:50:59 <wstephenson> #action wstephenson handle bnc#661844
+18:51:08 <cb400f> yup.. it's the clock, and the calendar events runner
+18:51:35 <wstephenson> i see in the BR. good BR.
+18:51:40 <cb400f> if you remove the clock and disable that runner the problem is solved, but I can't make akonadi not start by adding "showevents=false" to plasma-desktop-appletsrc
+18:51:51 <wstephenson> i think i can get to the bottom of that
+18:52:04 <wstephenson> * KPackageKit status and damage control
+18:52:16 <tigerfoot> :-) oh that one
+18:52:20 <wstephenson> who owns that?
+18:52:23 <mrdocs> did packagekit get to Factory ?
+18:52:33 <wstephenson> just checking
+18:52:43 <cb400f> that's me too.. it was partly because I was confused if kpk intentionally replaced kupdateapplet
+18:52:53 <mrdocs> i even bribed the gnome folks to get it done :)
+18:53:06 <tittiatcoke> :-)
+18:53:17 <cb400f> but also there are some critical bugs... kpk crashes if sw_single is open when it checks for updates... might be fixed in pk 0.6.11 according to dantti
+18:53:21 <rabauke> PakcageKit is in G:F
+18:53:29 <wstephenson> 0.6.11 is in oF and GF
+18:53:30 * mrdocs fixed a security bug for them
+18:53:35 * mrdocs pats OBS
+18:53:42 * tittiatcoke sees that mrdocs is practising his bribing skills already :-)
+18:53:47 <cb400f> and (k)pk wants to install vendor change updates.. but I think duncan is on that
+18:54:12 <wstephenson> cb400f: so it dies if something else has the zypp lock?
+18:54:12 <cb400f> so, actually for now there's prolly not much for us to do
+18:54:22 <cb400f> in ms5 it does
+18:54:22 <wstephenson> great. i like these kinds of points
+18:54:31 <rabauke> there are issues witht he backend, which seem to be os's issue and some with the frontend, which is upstream
+18:54:31 <cb400f> but dantti said it's a bug in pk-qt
+18:54:38 <wstephenson> we do need to TEST online updates with kpk
+18:54:45 <cb400f> which should be fixed in 0.6.11... ms5 had 0.6.10
+18:54:47 <mrdocs> can we get it for  ?
+18:54:51 <mrdocs> er
+18:54:57 <wstephenson> rabauke, cb400f do we have one list of all these issues?
+18:54:57 <mrdocs> can we get it for  11.3 ?
+18:55:03 <tittiatcoke> wstephenson: If PackageKit is in Factory, I guess we have to send the update of KPackageKit also to o:F
+18:55:07 <cb400f> there are test patches for 11.4 of inkscape
+18:55:10 <rabauke> I'm testing kpk on os factory
+18:55:23 <cb400f> so you can test it if you install factory version of inkscape
+18:55:45 <cb400f> .. or you can add KUP and watch kpk suggest to install 15-20 beta/git revisions :-)
+18:55:48 <rabauke> one issue with the frontend is that it does not allow the user to add an update repo.
+18:56:37 <wstephenson> tittiatcoke: kpackagekit 0.6.3.3 is in both oF and KDF, is there a newer version?>
+18:56:50 <remur_030> rabauke: is it really intended as a full featured yast/zypper alternative?
+18:56:59 <cb400f> but anyway.. next item.. we need to test it with pk 0.6.11 and follow https://bugzilla.novell.com/show_bug.cgi?id=637764
+18:57:01 <wstephenson> rabauke: afaik PK is not intended to handle repo add/remove/modify
+18:57:03 <bugbot> openSUSE bug 637764 in openSUSE 11.4 (GNOME) "Packagekit updater applet in GNOME sees upgrades/updates from all repositories irrespective of vendor changes" [Major,New]
+18:57:07 <tittiatcoke> wstephenson: Nope :-)
+18:57:08 <rabauke> maybe it would be helpful to have a wiki page that helps users to debug whether it is a frontend or backend issue.
+18:57:23 <rabauke> wstephenson: yes, but it could open yast
+18:57:27 <wstephenson> rabauke: are you volunteering?
+18:57:32 <wstephenson> rabauke: and that doesn't work for you?
+18:57:37 <rabauke> wstephenson: I reported it already.
+18:57:41 <remur_030> rabauke: I think dantti wanted to add it
+18:57:58 <wstephenson> rabauke: i meant for a wiki page?
+18:58:02 <rabauke> within the last days there was no feedback on the bugs. We'll see
+18:58:07 <wstephenson> sth like my NM page at userbase.kde.org
+18:58:23 <rabauke> wstephenson: I can add my knowledge to one, yes. where should I put it in the wiki structure?
+18:58:47 <cb400f> btw.. kpk also appears in systemsettings as "software management"... same as sw_single in yast... maybe a bit confusing
+18:58:55 <mrdocs> eew
+18:59:00 <wstephenson> rabauke: openSUSE:KDE_11.4_packagekit
+18:59:04 <tigerfoot> cb400f: +1
+18:59:26 <wstephenson> cb400f: i can rename it if you make a bug for me to not forget it
+18:59:41 <cb400f> but it creates i18n issues etc. :-|
+18:59:46 <rabauke> wstephenson: ok
+18:59:54 <wstephenson> cb400f: it will go through the suse i18n channel
+19:00:02 <cb400f> ok, I'll create a bugreport
+19:00:17 <cb400f> will you #action me ?
+19:00:32 <wstephenson> #action cb400f report kpk naming clash with sw_single
+19:00:45 <wstephenson> #action rabauke write  openSUSE:KDE_11.4_packagekit
+19:00:50 <wstephenson> next
+19:01:01 <wstephenson> * Switch off nepomuk/nepomuk+strigi by default in 11.4?
+19:01:08 <mrdocs> +1
+19:01:14 * mrdocs dinner
+19:01:16 <cb400f> I vote nepo on, strigi off, same as 11.3
+19:01:16 <mrdocs> bbiab
+19:01:24 <rabauke> http://trueg.wordpress.com/2010/09/10/someone-requested-excerpts-for-query-results/ would be one useful nepomuk feature. :)
+19:01:32 <wstephenson> i don't think nepo off is realistic
+19:01:36 * tigerfoot too hungry ... heard the wife cry ....
+19:01:39 <cb400f> exactly
+19:01:39 <wstephenson> rabauke: was that never merged?
+19:01:51 <tigerfoot> just limit the folder it has to index ...
+19:01:55 <rabauke> wstephenson: at least it is not shown in kde 4.6
+19:01:56 <wstephenson> cb400f: and what about strigi only on xdg-user-dirs?
+19:02:03 <remur_030> wstephenson: how does that strigi only for xdg-folders working out?
+19:02:14 <tigerfoot> wstephenson: the trueg thing ( context is not in our build )
+19:02:25 <cb400f> I think it's too risky - too heavy on resources and power... and not a very good search ui anyway
+19:02:25 <rabauke> strigi si crashing dolphin etc. atm, so that one would have to be solved first
+19:02:27 <wstephenson> tigerfoot: i'm loath to add patches
+19:02:36 <tigerfoot> :-)
+19:02:40 <cb400f> better make it opt-in for the peope who actually want desktop search
+19:02:52 <rabauke> another issue with nepomuk is that its db never ever decreases
+19:03:04 <tigerfoot> can agree with cb400f ...
+19:03:09 <wstephenson> well with the controller applet it will be easily enableable
+19:03:10 <remur_030> rabauke: you might want to explore the past? ;-)
+19:03:23 <tittiatcoke> wstephenson: Would it be possible to add the latest patches  from Trueg ?
+19:03:30 <tigerfoot> rabauke: and the backup things crash ... systematic ( upstrean bug reported )
+19:03:45 <wstephenson> tittiatcoke: i am going to give him some more feedback and see what he says
+19:04:14 <wstephenson> tittiatcoke: a 30 minute hang on login while it reorganises is not acceptable
+19:04:33 <tittiatcoke> wstephenson: Ok. I can indicate that since this morning, virtuoso is keeping quiet :-)  But krop indicated that with him he did not suffer from this hang on the first run
+19:04:44 <wstephenson> i don't know the size of krop's db
+19:04:50 <wstephenson> i assume it's proportional to that
+19:04:50 <tittiatcoke> krop ^^
+19:05:04 <wstephenson> he's away
+19:05:06 <tittiatcoke> I will check with krop later.
+19:05:16 <wstephenson> anyone against cb400f's "same as 11.3" suggestion?
+19:05:27 <tittiatcoke> I think this is a good default setup
+19:05:47 <wstephenson> ok i hear no objections
+19:05:49 <wstephenson> next
+19:05:51 <wstephenson> * Q&A, misc
+19:06:33 <wstephenson> any takers?
+19:06:37 <tittiatcoke> I have one question with regards to versioning packages come from git
+19:06:44 <wstephenson> oh yeah, i saw your mail
+19:07:00 <tittiatcoke> KDE itself is slowly moving to git (kdebindings has moved today) and the question is now how to versioning this ?
+19:07:10 <wstephenson> unix timestamp seems more exact than just the date
+19:07:29 <tittiatcoke> dirk packages Unstable using YYYYMMDD, but the _obs services is using the timestamp of the last commit.
+19:07:41 <wstephenson> i guess dirk didn't respond to your mail?
+19:07:45 <tittiatcoke> nope :-)
+19:08:13 <wstephenson> i'll poke
+19:08:29 <wstephenson> do you have strong feelings either way?
+19:08:30 <tittiatcoke> Thanks :-)
+19:08:54 <tittiatcoke> wstephenson: Well, as said using the unix timestamp would be confirm the current obs _service services
+19:09:03 <tittiatcoke> adrianS chose for that one :-
+19:09:06 <tittiatcoke> :-)
+19:09:51 <javier> is this the largest kde meeting ever? :p
+19:09:56 <javier> I mean longest
+19:10:01 <wstephenson> no, we started late
+19:10:08 <wstephenson> we've gone over 120 minutes before :)
+19:10:16 <wstephenson> any more Q&A?
+19:10:20 <wstephenson> because i'm hungry
+19:10:32 <mrdocs> wstephenson: no excuse :)
+19:10:47 <tittiatcoke> Nothing from me
+19:10:55 * cb400f wants to know more about that work permit :-)
+19:10:57 <mrdocs> btw, would 1600 CET be a possible alternative time ?
+19:11:07 <mrdocs> for meeting ?
+19:11:28 <wstephenson> so an hour earlier?
+19:11:29 <mrdocs> i know its awkward for dads :)
+19:11:37 <cb400f> bit early for me.. maybe 16.30?
+19:11:39 <tittiatcoke> wstephenson: That would be 2 hrs earlier
+19:11:50 <wstephenson> doh
+19:12:05 * wstephenson is fine either way
+19:12:31 <mrdocs> can we try it next meet and if attendance drops i will shut up :)
+19:13:47 <wstephenson> mrdocs: suggest it on list please, too many people have had to leave by now
+19:13:57 <mrdocs> wstephenson: will do
+19:14:07 <wstephenson> ok so that's it
+19:14:15 <wstephenson> thanks for coming, it's been a great meeting
+19:14:21 <mrdocs> exactly
+19:14:23 <wstephenson> we had enough stored up since our last full meeting :)
+19:14:26 * mrdocs dinner for real
+19:14:31 <wstephenson> best of luck for 2011
+19:14:43 <wstephenson> let's make kde on suse rock
+19:14:51 <tittiatcoke> Yeah
+19:14:56 <wstephenson> and thanks for all your commitment and hard work in 2010
+19:15:08 <javier> well, I want to use that I've been translating the kde quick guide into Spanish... 40% is done so far :)
+19:15:09 <tittiatcoke> and let's go to the moon with KDE Unstable :-)
+19:15:12 <javier> say
+19:15:18 <javier> not use
+19:15:27 <wstephenson> javier: cool!
+19:15:44 <javier> and I want to motivate other to do the same ;-)
+19:15:47 <javier> *others
+19:15:53 <wstephenson> get duncanmv to help maybe
+19:16:10 <javier> I mean translating to other languages
+19:16:14 <javier> not just es
+19:16:17 <javier> ok
+19:17:14 <cb400f> wstephenson: #endmeeting
+19:17:19 <wstephenson> #endmeeting

@@ -1,0 +1,686 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:00:48</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:00:48</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Jun  2 18:00:48 2010 UTC.  The chair is henne. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:00:48</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:00:51</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">yaloki:</span> prusnaks article is not shown
+<a name="l-5"></a><span class="tm">18:00:54</span><span class="nk"> &lt;prusnak&gt;</span> hola
+<a name="l-6"></a><span class="tm">18:01:06</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">openSUSE Board Meeting</span>
+<a name="l-7"></a><span class="tm">18:01:26</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">yaloki:</span> AJaeger: darix told me the cron issue is solved, but it does not seem to be fixed
+<a name="l-8"></a><span class="tm">18:01:29</span><span class="nk"> &lt;henne&gt;</span> Welcome to the openSUSE Board Meeting!
+<a name="l-9"></a><span class="tm">18:01:35</span><span class="nk"> &lt;prusnak&gt;</span> let's take it off meeting and discuss tomorrow ...
+<a name="l-10"></a><span class="tm">18:01:47</span><span class="nk"> &lt;suseROCKs&gt;</span> so we are indeed having a meeting now...  /me scratches head
+<a name="l-11"></a><span class="tm">18:02:00</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> why not?
+<a name="l-12"></a><span class="tm">18:02:21</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   just confused,  I thought we said our next meeting was on 16th
+<a name="l-13"></a><span class="tm">18:02:32</span><span class="nk"> &lt;henne&gt;</span> no
+<a name="l-14"></a><span class="tm">18:02:45</span><span class="nk"> &lt;suseROCKs&gt;</span> so I stopped my other plans for this hour because that's the way I am... 100% dedicated to openSUSE!  :-)
+<a name="l-15"></a><span class="tm">18:02:54</span><span class="nk"> &lt;henne&gt;</span> we talked about when to add the "growing ocmmunity" agenda item
+<a name="l-16"></a><span class="tm">18:03:11</span><span class="nk"> &lt;suseROCKs&gt;</span> oic
+<a name="l-17"></a><span class="tm">18:03:38</span><span class="nk"> &lt;henne&gt;</span> so the agenda for this meeting is:
+<a name="l-18"></a><span class="tm">18:04:03</span><span class="nk"> &lt;henne&gt;</span> 1.  openSUSE Foundation
+<a name="l-19"></a><span class="tm">18:04:04</span><span class="nk"> &lt;henne&gt;</span> 2. Strategy Discussion
+<a name="l-20"></a><span class="tm">18:04:04</span><span class="nk"> &lt;henne&gt;</span> 3. Growing the Community
+<a name="l-21"></a><span class="tm">18:04:05</span><span class="nk"> &lt;henne&gt;</span> 1. Our Problems
+<a name="l-22"></a><span class="tm">18:04:05</span><span class="nk"> &lt;henne&gt;</span> 1. Mirror mails on admin@opensuse.org
+<a name="l-23"></a><span class="tm">18:04:06</span><span class="nk"> &lt;henne&gt;</span> 4. Trademark Approvals
+<a name="l-24"></a><span class="tm">18:04:08</span><span class="nk"> &lt;henne&gt;</span> 5. Questions &amp; Answers
+<a name="l-25"></a><span class="tm">18:04:11</span><span class="nk"> &lt;henne&gt;</span> 1. From Wiki (see questions section below)
+<a name="l-26"></a><span class="tm">18:04:13</span><span class="nk"> &lt;henne&gt;</span> 2. From Channel
+<a name="l-27"></a><span class="tm">18:04:27</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#chair </span><span class="cmdline">yaloki suseROCKs prusnak rhorstkoetter michl</span>
+<a name="l-28"></a><span class="tm">18:04:27</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: henne michl prusnak rhorstkoetter suseROCKs yaloki
+<a name="l-29"></a><span class="tm">18:04:31</span><span class="nk"> &lt;suseROCKs&gt;</span> always impressed how fast henne types.
+<a name="l-30"></a><span class="tm">18:04:54 </span><span class="nka">* henne</span> <span class="ac">types with his mouse</span>
+<a name="l-31"></a><span class="tm">18:05:03</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE Foundation</span>
+<a name="l-32"></a><span class="tm">18:05:23</span><span class="nk"> &lt;henne&gt;</span> didn't michl say he wanted to share this document?
+<a name="l-33"></a><span class="tm">18:05:30</span><span class="nk"> &lt;henne&gt;</span> did i miss it?
+<a name="l-34"></a><span class="tm">18:05:32</span><span class="nk"> &lt;suseROCKs&gt;</span> I have not read the documentation on the Foundation yet.  Did anything unusual jump out from anyone else?
+<a name="l-35"></a><span class="tm">18:05:34</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> only internally
+<a name="l-36"></a><span class="tm">18:05:41</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> with the board, not publicly
+<a name="l-37"></a><span class="tm">18:05:47</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-38"></a><span class="tm">18:05:52</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   he handed printouts to us on Sat.
+<a name="l-39"></a><span class="tm">18:05:53</span><span class="nk"> &lt;henne&gt;</span> but where did he share it?
+<a name="l-40"></a><span class="tm">18:05:54</span><span class="nk"> &lt;yaloki&gt;</span> or *cough* not at all *cough*
+<a name="l-41"></a><span class="tm">18:06:03</span><span class="nk"> &lt;henne&gt;</span> ah saturday!
+<a name="l-42"></a><span class="tm">18:06:12</span><span class="nk"> &lt;yaloki&gt;</span> sooo
+<a name="l-43"></a><span class="tm">18:06:18</span><span class="nk"> &lt;henne&gt;</span> so i'm excluded because i dont play with you on weekends!
+<a name="l-44"></a><span class="tm">18:06:19</span><span class="nk"> &lt;suseROCKs&gt;</span> he's not allowed to email it ot us  :-)
+<a name="l-45"></a><span class="tm">18:06:24</span><span class="nk"> &lt;henne&gt;</span> *sniff*
+<a name="l-46"></a><span class="tm">18:06:35</span><span class="nk"> &lt;henne&gt;</span> alright. i twist his arm on monday
+<a name="l-47"></a><span class="tm">18:06:46</span><span class="nk"> &lt;suseROCKs&gt;</span> be gentle!
+<a name="l-48"></a><span class="tm">18:06:46</span><span class="nk"> &lt;yaloki&gt;</span> state of things right now is that michl is going to poke Novell upmost management in order to see whether they would sponsor us for creating the foundation
+<a name="l-49"></a><span class="tm">18:06:59</span><span class="nk"> &lt;yaloki&gt;</span> as it involves a few costs (lawyer to create the status, etc..)
+<a name="l-50"></a><span class="tm">18:07:05</span><span class="nk"> &lt;henne&gt;</span> okay so nothing moved since friday...
+<a name="l-51"></a><span class="tm">18:07:14</span><span class="nk"> &lt;yaloki&gt;</span> if yes, cool, if not, we'll find another way
+<a name="l-52"></a><span class="tm">18:07:36</span><span class="nk"> &lt;henne&gt;</span> true
+<a name="l-53"></a><span class="tm">18:07:43</span><span class="nk"> &lt;yaloki&gt;</span> so things regarding the foundation are currently a bit on hold as we're waiting for that piece of information
+<a name="l-54"></a><span class="tm">18:07:58</span><span class="nk"> &lt;suseROCKs&gt;</span> but in any case, for those reading us now, we are determined to move this forward as quickly as humanly possible.
+<a name="l-55"></a><span class="tm">18:08:00</span><span class="nk"> &lt;yaloki&gt;</span> and.. err.. I don't know actually, there hasn't been any other progress apart from that
+<a name="l-56"></a><span class="tm">18:08:33</span><span class="nk"> &lt;yaloki&gt;</span> yeah, we've been quite busy with the strategy these days so we'll definitely have to pick up on the foundation as well
+<a name="l-57"></a><span class="tm">18:08:47</span><span class="nk"> &lt;yaloki&gt;</span> either way, with novell's sponsoring of costs or not, we'll have it done
+<a name="l-58"></a><span class="tm">18:08:59</span><span class="nk"> &lt;yaloki&gt;</span> questions ? remarks ?
+<a name="l-59"></a><span class="tm">18:09:08</span><span class="nk"> &lt;yaloki&gt;</span> anyone awake/paying attention anyway? :)
+<a name="l-60"></a><span class="tm">18:09:17</span><span class="nk"> &lt;henne&gt;</span> no
+<a name="l-61"></a><span class="tm">18:09:21</span><span class="nk"> &lt;AJaeger&gt;</span> no
+<a name="l-62"></a><span class="tm">18:09:24</span><span class="nk"> &lt;yaloki&gt;</span> that's what I thought :)
+<a name="l-63"></a><span class="tm">18:09:28</span><span class="nk"> &lt;suseROCKs&gt;</span> maybe
+<a name="l-64"></a><span class="tm">18:09:48</span><span class="nk"> &lt;yaloki&gt;</span> but basically, we still have to decide whether it'll be in the US or in .de
+<a name="l-65"></a><span class="tm">18:10:18</span><span class="nk"> &lt;prusnak&gt;</span> i got the feeling that it doesn't matter for novell
+<a name="l-66"></a><span class="tm">18:10:19</span><span class="nk"> &lt;henne&gt;</span> yes thats the next step
+<a name="l-67"></a><span class="tm">18:10:24</span><span class="nk"> &lt;yaloki&gt;</span> and then define the status, with the help of a lawyer or not (rhorstkoetter has some background in it so that would do as well)
+<a name="l-68"></a><span class="tm">18:10:35</span><span class="nk"> &lt;prusnak&gt;</span> so we can flip a coin or decide in board
+<a name="l-69"></a><span class="tm">18:10:42</span><span class="nk"> &lt;yaloki&gt;</span> (or "some" background, ironically, as that's what he's studying right now :))
+<a name="l-70"></a><span class="tm">18:10:54</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">prusnak:</span> right, it's our call anyway
+<a name="l-71"></a><span class="tm">18:10:59</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">prusnak:</span> I suppose you mean US vs DE
+<a name="l-72"></a><span class="tm">18:11:03</span><span class="nk"> &lt;prusnak&gt;</span> yes
+<a name="l-73"></a><span class="tm">18:11:09</span><span class="nk"> &lt;yaloki&gt;</span> yup, our call
+<a name="l-74"></a><span class="tm">18:11:26</span><span class="nk"> &lt;yaloki&gt;</span> we have a pretty good picture of the framework as it is in germany
+<a name="l-75"></a><span class="tm">18:11:41</span><span class="nk"> &lt;yaloki&gt;</span> but not really up-to-date regarding a non-for-profit in the US
+<a name="l-76"></a><span class="tm">18:11:43</span><span class="nk"> &lt;suseROCKs&gt;</span> the only significant difference I saw between the two countries, based on past discussions here, is that if we go .de we have to re-vote all board members to the new Foundation
+<a name="l-77"></a><span class="tm">18:11:59</span><span class="nk"> &lt;Siju&gt;</span> both aren't posible?
+<a name="l-78"></a><span class="tm">18:12:00</span><span class="nk"> &lt;suseROCKs&gt;</span> whereas in US, you don't have to have an election.  You can just hand-pick for the starting board.
+<a name="l-79"></a><span class="tm">18:12:01</span><span class="nk"> &lt;yaloki&gt;</span> right, you must have an initial vote
+<a name="l-80"></a><span class="tm">18:12:08</span><span class="nk"> &lt;prusnak&gt;</span> yes, we have a lot of people to "mentor" us if we go for .DE
+<a name="l-81"></a><span class="tm">18:12:08</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">Siju:</span> means costs x 2
+<a name="l-82"></a><span class="tm">18:12:18</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">Siju:</span> maybe, at some point in the future, if it's highly successful :)
+<a name="l-83"></a><span class="tm">18:12:36</span><span class="nk"> &lt;henne&gt;</span> may i state this gain: i don't want to be part of the e.v....
+<a name="l-84"></a><span class="tm">18:12:43</span><span class="nk"> &lt;henne&gt;</span> board
+<a name="l-85"></a><span class="tm">18:12:54</span><span class="nk"> &lt;suseROCKs&gt;</span> restate please?
+<a name="l-86"></a><span class="tm">18:12:56</span><span class="nk"> &lt;yaloki&gt;</span> right
+<a name="l-87"></a><span class="tm">18:12:57</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">henne:</span> yes, we remember it
+<a name="l-88"></a><span class="tm">18:13:02</span><span class="nk"> &lt;henne&gt;</span> k :)
+<a name="l-89"></a><span class="tm">18:13:07</span><span class="nk"> &lt;suseROCKs&gt;</span> i don't remember that
+<a name="l-90"></a><span class="tm">18:13:08</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> why?
+<a name="l-91"></a><span class="tm">18:13:08</span><span class="nk"> &lt;yaloki&gt;</span> so it will not automatically be foundation board == opensuse board
+<a name="l-92"></a><span class="tm">18:13:15</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> henne does not want to participate in e.V. nor in 501c3
+<a name="l-93"></a><span class="tm">18:13:18</span><span class="nk"> &lt;suseROCKs&gt;</span> you're saying if we go with e.V, you don't want to be involved anymore?
+<a name="l-94"></a><span class="tm">18:13:28</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> he does not want to be on the board of a NFP
+<a name="l-95"></a><span class="tm">18:13:34</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> no i'm saying that i don't want to be in the foundation
+<a name="l-96"></a><span class="tm">18:13:35</span><span class="nk"> &lt;suseROCKs&gt;</span> oh
+<a name="l-97"></a><span class="tm">18:13:40</span><span class="nk"> &lt;prusnak&gt;</span> so we'll have to throw election for both cases
+<a name="l-98"></a><span class="tm">18:13:45</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> not as board member
+<a name="l-99"></a><span class="tm">18:13:49</span><span class="nk"> &lt;suseROCKs&gt;</span> I see
+<a name="l-100"></a><span class="tm">18:13:50</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">prusnak:</span> yep
+<a name="l-101"></a><span class="tm">18:13:59</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   you mean you don't want an opportunity to skim funds?  ;-)
+<a name="l-102"></a><span class="tm">18:14:24</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> yeah exactly :)
+<a name="l-103"></a><span class="tm">18:14:33</span><span class="nk"> &lt;wolfiR&gt;</span> may I ask a question?
+<a name="l-104"></a><span class="tm">18:14:34</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> he has enough already from sending spam emails in late 90s
+<a name="l-105"></a><span class="tm">18:14:41</span><span class="nk"> &lt;yaloki&gt;</span> anyhow, IIRC we agreed that at some point, if we don't manage to get ahold of more information regarding a NFP in the US, we'll simply go for an e.V. (NFP in germany)
+<a name="l-106"></a><span class="tm">18:14:48</span><span class="nk"> &lt;henne&gt;</span> nah it's just that spreading funds and stuff is not what i want to do
+<a name="l-107"></a><span class="tm">18:15:01</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">wolfiR:</span> just ask
+<a name="l-108"></a><span class="tm">18:15:03</span><span class="nk"> &lt;yaloki&gt;</span> we poked around on the foundations mailing list at freedesktop.org but didn't get any usable feedback
+<a name="l-109"></a><span class="tm">18:15:06</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> yes we did :)
+<a name="l-110"></a><span class="tm">18:15:23</span><span class="nk"> &lt;wolfiR&gt;</span> who will be members of the e.V. the openSUSE members or another group?
+<a name="l-111"></a><span class="tm">18:15:24</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> actually, I wonder whether we're not there yet already heh
+<a name="l-112"></a><span class="tm">18:15:26</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> well "it doesnt matter" was what i took away
+<a name="l-113"></a><span class="tm">18:15:33</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">wolfiR:</span> another group, we'll have elections
+<a name="l-114"></a><span class="tm">18:15:43</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">wolfiR:</span> of course, people could be on both
+<a name="l-115"></a><span class="tm">18:15:49</span><span class="nk"> &lt;wolfiR&gt;</span> <span class="hi">yaloki:</span> not the board, the members
+<a name="l-116"></a><span class="tm">18:15:54</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">wolfiR:</span> I don't see any reason to forbid having a person on both
+<a name="l-117"></a><span class="tm">18:15:57</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">wolfiR:</span> if we go for e.v. at least some have to physical present and the initial meeting and stuff
+<a name="l-118"></a><span class="tm">18:16:05</span><span class="nk"> &lt;wolfiR&gt;</span> 7 afaik
+<a name="l-119"></a><span class="tm">18:16:08</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">wolfiR:</span> we'll have to sort that out with the statuses
+<a name="l-120"></a><span class="tm">18:16:14</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">wolfiR:</span> right
+<a name="l-121"></a><span class="tm">18:16:22</span><span class="nk"> &lt;henne&gt;</span> brb
+<a name="l-122"></a><span class="tm">18:16:42</span><span class="nk"> &lt;yaloki&gt;</span> an e.V. requires having 7 members, from which the board is elected, iirc
+<a name="l-123"></a><span class="tm">18:17:10</span><span class="nk"> &lt;suseROCKs&gt;</span> if we're talking about general members, we can easily assume all openSUSE Community Members are also members of the Foundation
+<a name="l-124"></a><span class="tm">18:17:16</span><span class="nk"> &lt;gnokii&gt;</span> yaloki u need 7 ppl to found one
+<a name="l-125"></a><span class="tm">18:17:16</span><span class="nk"> &lt;prusnak&gt;</span> how about setting a deadline ? (again)
+<a name="l-126"></a><span class="tm">18:17:22</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">wolfiR:</span> we haven't taken care of those details yet -- we do have that information somewhere as rupert informed us, but not worked out yet
+<a name="l-127"></a><span class="tm">18:17:26</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">gnokii:</span> yep
+<a name="l-128"></a><span class="tm">18:17:31</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> no
+<a name="l-129"></a><span class="tm">18:17:32</span><span class="nk"> &lt;prusnak&gt;</span> e.g. when there is not a strong indication we should not go for e.V. until end of June
+<a name="l-130"></a><span class="tm">18:17:34</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> probably not
+<a name="l-131"></a><span class="tm">18:17:36</span><span class="nk"> &lt;prusnak&gt;</span> we'll start it
+<a name="l-132"></a><span class="tm">18:17:41</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,   you decide if you want to tell Ron Hovsepian to adhere to a deadline to review the material.  :-)
+<a name="l-133"></a><span class="tm">18:17:41</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> because you need to keep lists of members
+<a name="l-134"></a><span class="tm">18:17:45</span><span class="nk"> &lt;gnokii&gt;</span> and I prefer an e.V there would be new elections
+<a name="l-135"></a><span class="tm">18:18:03</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">gnokii:</span> as we just said, with either option (US or DE), we will have elections
+<a name="l-136"></a><span class="tm">18:18:07</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> deadline for us to decide whether it's e.V or 501c3
+<a name="l-137"></a><span class="tm">18:18:18</span><span class="nk"> &lt;wolfiR&gt;</span> but only members are allowed to vote
+<a name="l-138"></a><span class="tm">18:18:30</span><span class="nk"> &lt;wolfiR&gt;</span> so it's important detail who will be a member
+<a name="l-139"></a><span class="tm">18:18:37</span><span class="nk"> &lt;yaloki&gt;</span> yeah
+<a name="l-140"></a><span class="tm">18:18:40</span><span class="nk"> &lt;wolfiR&gt;</span> for the acceptance in the community
+<a name="l-141"></a><span class="tm">18:18:41</span><span class="nk"> &lt;yaloki&gt;</span> there are a few tricks though
+<a name="l-142"></a><span class="tm">18:19:03</span><span class="nk"> &lt;bitshuffler&gt;</span> did you ask the kde dudes why they chose e.v. now? (I would guess they had a reason)
+<a name="l-143"></a><span class="tm">18:19:03</span><span class="nk"> &lt;yaloki&gt;</span> there are a few ways to avoid having to keep track of a list of 500 members and have them vote nevertheless
+<a name="l-144"></a><span class="tm">18:19:31</span><span class="nk"> &lt;javier_&gt;</span> I also prefer the e.V. option
+<a name="l-145"></a><span class="tm">18:19:31</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">bitshuffler:</span> we tried to get ahold of cschumacher but never managed to get into a meeting with him, at least up to now
+<a name="l-146"></a><span class="tm">18:19:45</span><span class="nk"> &lt;suseROCKs&gt;</span> javier_,   may I ask your opinion why?
+<a name="l-147"></a><span class="tm">18:19:56</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">bitshuffler:</span> that being said, for KDE I would assume that it was a natural choice just because it's a very germany-centric project in terms of contributors
+<a name="l-148"></a><span class="tm">18:20:41</span><span class="nk"> &lt;yaloki&gt;</span> we don't really expect any significant difference between an e.V. (DE) and a 501c3 (USA) though
+<a name="l-149"></a><span class="tm">18:21:01</span><span class="nk"> &lt;yaloki&gt;</span> as an example, it doesn't bind nationalities in any way
+<a name="l-150"></a><span class="tm">18:21:12</span><span class="nk"> &lt;yaloki&gt;</span> i.e. you don't have to be german to be in a german e.V., and the same accounts for a 501c3
+<a name="l-151"></a><span class="tm">18:21:13</span><span class="nk"> &lt;suseROCKs&gt;</span> right,  the initial review by Alan Clark showed no difference from a legal standpoint significantly between eV and 501c3
+<a name="l-152"></a><span class="tm">18:21:21</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> yep
+<a name="l-153"></a><span class="tm">18:22:03</span><span class="nk"> &lt;suseROCKs&gt;</span> but I'm still curious from a community perspective why javier_  and possibly others prefer german eV.   That preference could have a significant impact on support and revenues etc.
+<a name="l-154"></a><span class="tm">18:22:13</span><span class="nk"> &lt;yaloki&gt;</span> personally, I've put forward my preference for an e.V. based on the fact that the risk/potential for patent litigations in court is higher in the US than in .de
+<a name="l-155"></a><span class="tm">18:22:14</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">suseROCKs:</span> because of the location mainly
+<a name="l-156"></a><span class="tm">18:22:17</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> i guess it is just a personal feeling
+<a name="l-157"></a><span class="tm">18:22:27</span><span class="nk"> &lt;prusnak&gt;</span> you live in europe - eV is closer to your "heart"
+<a name="l-158"></a><span class="tm">18:22:31</span><span class="nk"> &lt;prusnak&gt;</span> and vice versa
+<a name="l-159"></a><span class="tm">18:22:50</span><span class="nk"> &lt;suseROCKs&gt;</span> that's my assumption as well, prusnak.  There seems to be an affinity, which is fine
+<a name="l-160"></a><span class="tm">18:22:56</span><span class="nk"> &lt;javier_&gt;</span> it probably implies more than that
+<a name="l-161"></a><span class="tm">18:23:04</span><span class="nk"> &lt;yaloki&gt;</span> yeah, there is nothing really decisive for either option at this point
+<a name="l-162"></a><span class="tm">18:23:08</span><span class="nk"> &lt;javier_&gt;</span> EU laws vs US laws perhaps?
+<a name="l-163"></a><span class="tm">18:23:13</span><span class="nk"> &lt;bitshuffler&gt;</span> <span class="hi">suseROCKs:</span> easy, germany has less ridiculous laws &amp; suing practices (at least a bit)
+<a name="l-164"></a><span class="tm">18:23:16</span><span class="nk"> &lt;yaloki&gt;</span> we do have some more background information and available expertise for an e.V. at this point
+<a name="l-165"></a><span class="tm">18:23:22</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">bitshuffler:</span> yeah, as I said above
+<a name="l-166"></a><span class="tm">18:23:29</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">javier_:</span> what EU laws? :)
+<a name="l-167"></a><span class="tm">18:23:35</span><span class="nk"> &lt;suseROCKs&gt;</span> but as we've seen also from our market research, we have openSUSE strong presence in Central Europe.  So the affinity is already there, whereas we need to grow it elsewhere.
+<a name="l-168"></a><span class="tm">18:23:51</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> that is most probably the case, yes
+<a name="l-169"></a><span class="tm">18:23:56</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">question:</span> do we still need to discuss whether it's eV or 501c3?
+<a name="l-170"></a><span class="tm">18:23:58</span><span class="nk"> &lt;suseROCKs&gt;</span> but I'd prefer not to use the Foundation's location as an impetus for growth.  Just what is most fiscally/legally sound
+<a name="l-171"></a><span class="tm">18:24:04</span><span class="nk"> &lt;prusnak&gt;</span> do we want to throw voting?
+<a name="l-172"></a><span class="tm">18:24:10</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">prusnak:</span> no. especially not re-discuss
+<a name="l-173"></a><span class="tm">18:24:31</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">yaloki:</span> I'm not a lawyer, but I guess it's easier for an European company to donate to a eV
+<a name="l-174"></a><span class="tm">18:24:32</span><span class="nk"> &lt;suseROCKs&gt;</span> prusnak,   no  I think we're done discussing for the time being and our primary wait-and-hold right now is to hear back from Novell ELC
+<a name="l-175"></a><span class="tm">18:24:35</span><span class="nk"> &lt;yaloki&gt;</span> I'd just say e.V. and be done with it (the choice)
+<a name="l-176"></a><span class="tm">18:24:44</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">javier_:</span> it's not, not at this point at least
+<a name="l-177"></a><span class="tm">18:24:56</span><span class="nk"> &lt;prusnak&gt;</span> so let me ask again: how about agreeing that if there are no strong indications we should not go for eV until end of june for example , just settle for this option
+<a name="l-178"></a><span class="tm">18:25:12</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">prusnak:</span> sounds fine, don't know whether michl will have an answer until then
+<a name="l-179"></a><span class="tm">18:25:17</span><span class="nk"> &lt;yaloki&gt;</span> (nor whether it will be relevant or not)
+<a name="l-180"></a><span class="tm">18:25:19</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">yaloki:</span> and perhaps it means more fiscal benefits... I don't know
+<a name="l-181"></a><span class="tm">18:25:24 </span><span class="nka">* henne</span> <span class="ac">thinks its a nice deadline</span>
+<a name="l-182"></a><span class="tm">18:25:27</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">javier_:</span> no
+<a name="l-183"></a><span class="tm">18:25:37 </span><span class="nka">* yaloki</span> <span class="ac">thinks so too</span>
+<a name="l-184"></a><span class="tm">18:25:39</span><span class="nk"> &lt;henne&gt;</span> suseROCKs?
+<a name="l-185"></a><span class="tm">18:25:52</span><span class="nk"> &lt;yaloki&gt;</span> might be worth waiting for a response on michl's request?
+<a name="l-186"></a><span class="tm">18:26:08</span><span class="nk"> &lt;yaloki&gt;</span> we'll have to wait for that anyway before we can engage
+<a name="l-187"></a><span class="tm">18:26:14</span><span class="nk"> &lt;henne&gt;</span> lets just decide now. michl can break it when he needs to :)
+<a name="l-188"></a><span class="tm">18:26:17</span><span class="nk"> &lt;suseROCKs&gt;</span> yes,  let's take the opportunity for what will possibly be the only breathing time we have before we hit the ground running on foundation paperwork, etc.
+<a name="l-189"></a><span class="tm">18:26:19</span><span class="nk"> &lt;yaloki&gt;</span> I'd much prefer to have the monies to go through a lawyer to set it up
+<a name="l-190"></a><span class="tm">18:26:22</span><span class="nk"> &lt;henne&gt;</span> this is not about life and death
+<a name="l-191"></a><span class="tm">18:26:25 </span><span class="nka">* michl</span> <span class="ac">not here</span>
+<a name="l-192"></a><span class="tm">18:26:25</span><span class="nk"> &lt;michl&gt;</span> but which request?
+<a name="l-193"></a><span class="tm">18:26:33</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">michl:</span> *cough* none *cough*
+<a name="l-194"></a><span class="tm">18:26:50</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">michl:</span> if we don't get enough input on 501c3 by end of june we do an e.v.
+<a name="l-195"></a><span class="tm">18:26:51</span><span class="nk"> &lt;suseROCKs&gt;</span> funny how none of the board members who said they can't make it to today's meeting are here now.
+<a name="l-196"></a><span class="tm">18:27:11</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> we love openSUSE 150%
+<a name="l-197"></a><span class="tm">18:27:20</span><span class="nk"> &lt;yaloki&gt;</span> ok, does anyone disagree on having that deadline ?
+<a name="l-198"></a><span class="tm">18:27:23</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   when michl and i talked to Alan, we discussed 501c3 vs. e.V. and we agreed generally if the communtiy wants e.V.  let's just go with that.
+<a name="l-199"></a><span class="tm">18:27:23</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> its your irresistable charm
+<a name="l-200"></a><span class="tm">18:27:29</span><span class="nk"> &lt;yaloki&gt;</span> +1 from me for deadline end of june
+<a name="l-201"></a><span class="tm">18:27:37</span><span class="nk"> &lt;prusnak&gt;</span> +1 from me :)
+<a name="l-202"></a><span class="tm">18:27:41</span><span class="nk"> &lt;javier_&gt;</span> +1
+<a name="l-203"></a><span class="tm">18:27:43</span><span class="nk"> &lt;suseROCKs&gt;</span> But in last meeting, Rupert insisted we still do more analysis on 501c3.   i prefer not to, and just go with e.V and be done with it.
+<a name="l-204"></a><span class="tm">18:27:44</span><span class="nk"> &lt;henne&gt;</span> +1 from my mom
+<a name="l-205"></a><span class="tm">18:27:56</span><span class="nk"> &lt;yaloki&gt;</span> ok, decided then
+<a name="l-206"></a><span class="tm">18:28:09</span><span class="nk"> &lt;yaloki&gt;</span> (enough for a quorum at least ;))
+<a name="l-207"></a><span class="tm">18:28:15</span><span class="nk"> &lt;prusnak&gt;</span> so please do not open this topic for 4 weeks, thanks :)
+<a name="l-208"></a><span class="tm">18:28:18</span><span class="nk"> &lt;gnokii&gt;</span> ur are all looks like politicians only talking
+<a name="l-209"></a><span class="tm">18:28:24</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">if we don't get enough input on 501c3 by end of june we do an e.v.</span>
+<a name="l-210"></a><span class="tm">18:28:26</span><span class="nk"> &lt;yaloki&gt;</span> any more questions/remarks? or should we go on with the next item ?
+<a name="l-211"></a><span class="tm">18:28:35</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">gnokii:</span> it's called "thinking"
+<a name="l-212"></a><span class="tm">18:28:51</span><span class="nk"> &lt;suseROCKs&gt;</span> gnokii,   is there something important we're not addressing that you feel we need to address?
+<a name="l-213"></a><span class="tm">18:29:13</span><span class="nk"> &lt;michl&gt;</span> <span class="hi">henne:</span> k
+<a name="l-214"></a><span class="tm">18:29:24</span><span class="nk"> &lt;gnokii&gt;</span> yaloki no its called duck for decisions
+<a name="l-215"></a><span class="tm">18:29:31</span><span class="nk"> &lt;henne&gt;</span> he's just rambling
+<a name="l-216"></a><span class="tm">18:29:38</span><span class="nk"> &lt;suseROCKs&gt;</span> umm... I thought we just made a decision?
+<a name="l-217"></a><span class="tm">18:29:41</span><span class="nk"> &lt;henne&gt;</span> lets move on
+<a name="l-218"></a><span class="tm">18:29:51</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Strategy Discussion</span>
+<a name="l-219"></a><span class="tm">18:30:20</span><span class="nk"> &lt;yaloki&gt;</span> there was a blog post on news.o.o (and planet) describing what we did so far
+<a name="l-220"></a><span class="tm">18:30:35</span><span class="nk"> &lt;yaloki&gt;</span> any questions/remarks regarding that ?
+<a name="l-221"></a><span class="tm">18:30:50</span><span class="nk"> &lt;prusnak&gt;</span> and there will be another exhaustive email starting discussion on Monday
+<a name="l-222"></a><span class="tm">18:31:05</span><span class="nk"> &lt;bitshuffler&gt;</span> are you really serious about the "base for derivatives" part since that sounds too much like buntu, kbuntu, xbuntu, whateverbuntu ~ as in a waste of time?
+<a name="l-223"></a><span class="tm">18:31:07</span><span class="nk"> &lt;henne&gt;</span> how do you plan to do that?
+<a name="l-224"></a><span class="tm">18:31:18</span><span class="nk"> &lt;henne&gt;</span> just discuss on opensuse-project?
+<a name="l-225"></a><span class="tm">18:31:20</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">bitshuffler:</span> no, it's very different
+<a name="l-226"></a><span class="tm">18:31:27</span><span class="nk"> &lt;prusnak&gt;</span> wait for complete proposal
+<a name="l-227"></a><span class="tm">18:31:34</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">henne:</span> discuss on project ML _AND_ forums
+<a name="l-228"></a><span class="tm">18:32:03</span><span class="nk"> &lt;yaloki&gt;</span> (and yes, we're aware of the pain it induces)
+<a name="l-229"></a><span class="tm">18:32:09</span><span class="nk"> &lt;henne&gt;</span> you should make an effort to keep it readable
+<a name="l-230"></a><span class="tm">18:32:09</span><span class="nk"> &lt;prusnak&gt;</span> AJ and me will collect ideas on wiki
+<a name="l-231"></a><span class="tm">18:32:20</span><span class="nk"> &lt;prusnak&gt;</span> (both from ML and forums)
+<a name="l-232"></a><span class="tm">18:32:24</span><span class="nk"> &lt;yaloki&gt;</span> but as we can't manage to get everyone on a single media.. *sigh*
+<a name="l-233"></a><span class="tm">18:32:47</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,  we will try but we have agreed that while we will monitor and attempt to keep the discussion on track, we will not influence the general community discussion.
+<a name="l-234"></a><span class="tm">18:32:59</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">bitshuffler:</span> We have three different proposals - we don't want all three of them.  so, wait for the full proposal and then let's see which one is the best
+<a name="l-235"></a><span class="tm">18:33:07</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> i mean more hands on stuff
+<a name="l-236"></a><span class="tm">18:33:09</span><span class="nk"> &lt;suseROCKs&gt;</span> It is our desire that our proposal will be completely vetted and endorsed by the community in order for it to be successful.
+<a name="l-237"></a><span class="tm">18:33:15</span><span class="nk"> &lt;henne&gt;</span> like splitting very long mails into smaller ones
+<a name="l-238"></a><span class="tm">18:33:16</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> We will take part in the discussion.
+<a name="l-239"></a><span class="tm">18:33:31</span><span class="nk"> &lt;henne&gt;</span> or tell ml-admin when to stop a thread
+<a name="l-240"></a><span class="tm">18:33:36</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">bitshuffler:</span> also, we wanted to present several different options for people to choose from and/or comment on, adapt
+<a name="l-241"></a><span class="tm">18:33:45</span><span class="nk"> &lt;henne&gt;</span> there are things we can do to make this less pain
+<a name="l-242"></a><span class="tm">18:33:48</span><span class="nk"> &lt;suseROCKs&gt;</span> do we actually have an ml-admin?   Who is he?
+<a name="l-243"></a><span class="tm">18:34:00</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> henne
+<a name="l-244"></a><span class="tm">18:34:07</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> ranjid from india
+<a name="l-245"></a><span class="tm">18:34:07</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> well, yes, we'll do our best to be present and do the housekeeping too
+<a name="l-246"></a><span class="tm">18:34:09</span><span class="nk"> &lt;suseROCKs&gt;</span> ooooh  so that's what he does!  :-)
+<a name="l-247"></a><span class="tm">18:34:36</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> i think its very important
+<a name="l-248"></a><span class="tm">18:34:44</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> yep
+<a name="l-249"></a><span class="tm">18:34:49</span><span class="nk"> &lt;henne&gt;</span> and i have very nice experience with that with the factory opening
+<a name="l-250"></a><span class="tm">18:34:58</span><span class="nk"> &lt;suseROCKs&gt;</span> we have no doubts the discussion will be lively and fruitful
+<a name="l-251"></a><span class="tm">18:35:28</span><span class="nk"> &lt;henne&gt;</span> i can write a summary to strategy
+<a name="l-252"></a><span class="tm">18:35:35</span><span class="nk"> &lt;henne&gt;</span> are you interested?
+<a name="l-253"></a><span class="tm">18:35:39</span><span class="nk"> &lt;suseROCKs&gt;</span> sure
+<a name="l-254"></a><span class="tm">18:35:51</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> a summary of what? rules for a productive email discussion? :)
+<a name="l-255"></a><span class="tm">18:35:53</span><span class="nk"> &lt;suseROCKs&gt;</span> but shouldn't rahjid be writing that summary?
+<a name="l-256"></a><span class="tm">18:36:17</span><span class="nk"> &lt;yaloki&gt;</span> "rules of engagement" ^^
+<a name="l-257"></a><span class="tm">18:36:20</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> well rules how to keep the noise down by simple technical measures :)
+<a name="l-258"></a><span class="tm">18:36:28</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> yes, please :)
+<a name="l-259"></a><span class="tm">18:36:31</span><span class="nk"> &lt;henne&gt;</span> k
+<a name="l-260"></a><span class="tm">18:36:45</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> we should include that in the initial mail that'll open up the discussion
+<a name="l-261"></a><span class="tm">18:37:05</span><span class="nk"> &lt;henne&gt;</span> its more rules about your initial mail ;)
+<a name="l-262"></a><span class="tm">18:37:46</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#action </span><span class="cmdline">henne to write rules of engagement for email discussion to strategy team</span>
+<a name="l-263"></a><span class="tm">18:37:52</span><span class="nk"> &lt;suseROCKs&gt;</span> move on.
+<a name="l-264"></a><span class="tm">18:38:10</span><span class="nk"> &lt;henne&gt;</span> is there nothing to see?
+<a name="l-265"></a><span class="tm">18:38:24</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> ?
+<a name="l-266"></a><span class="tm">18:38:28</span><span class="nk"> &lt;AJaeger&gt;</span> nope:-/
+<a name="l-267"></a><span class="tm">18:38:33</span><span class="nk"> &lt;suseROCKs&gt;</span> see?
+<a name="l-268"></a><span class="tm">18:38:34</span><span class="nk"> &lt;henne&gt;</span> move on. there is nothing to see
+<a name="l-269"></a><span class="tm">18:38:44</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Growing the Community</span>
+<a name="l-270"></a><span class="tm">18:39:01</span><span class="nk"> &lt;henne&gt;</span> i actually tried to summarize what we talked about in the project meeting today
+<a name="l-271"></a><span class="tm">18:39:19</span><span class="nk"> &lt;suseROCKs&gt;</span> but couldn't?
+<a name="l-272"></a><span class="tm">18:39:21</span><span class="nk"> &lt;henne&gt;</span> we stil need to send out minutes to reach a wider audience
+<a name="l-273"></a><span class="tm">18:39:33</span><span class="nk"> &lt;yaloki&gt;</span> sorry, didn't check the logs yet
+<a name="l-274"></a><span class="tm">18:39:37</span><span class="nk"> &lt;henne&gt;</span> michl wanted to that that right?
+<a name="l-275"></a><span class="tm">18:39:49</span><span class="nk"> &lt;suseROCKs&gt;</span> "we" who?  The project or the Board?
+<a name="l-276"></a><span class="tm">18:40:04</span><span class="nk"> &lt;henne&gt;</span> you and me baby
+<a name="l-277"></a><span class="tm">18:40:08</span><span class="nk"> &lt;henne&gt;</span> and the kids
+<a name="l-278"></a><span class="tm">18:40:16</span><span class="nk"> &lt;henne&gt;</span> the board of course!
+<a name="l-279"></a><span class="tm">18:40:39</span><span class="nk"> &lt;suseROCKs&gt;</span> well  yes we need to publish the minutes more widely or at least point to our logs more clearly
+<a name="l-280"></a><span class="tm">18:40:51</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> so actually, with "the project meeting today", you meant the board meeting on friday? :)
+<a name="l-281"></a><span class="tm">18:41:03</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> no
+<a name="l-282"></a><span class="tm">18:41:03</span><span class="nk"> &lt;suseROCKs&gt;</span> but also, in our F2F meeting, I mentioned that we need to also have each board member post an article monthly
+<a name="l-283"></a><span class="tm">18:41:06</span><span class="nk"> &lt;yaloki&gt;</span> ok :)
+<a name="l-284"></a><span class="tm">18:41:15</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> i summarized our friday meeting in the project meeting today
+<a name="l-285"></a><span class="tm">18:41:17</span><span class="nk"> &lt;suseROCKs&gt;</span> yaloki,   yes  henne confused me on that too
+<a name="l-286"></a><span class="tm">18:41:23</span><span class="nk"> &lt;henne&gt;</span> but think we still need to send out minutes
+<a name="l-287"></a><span class="tm">18:41:27</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> ah, ok, great :)
+<a name="l-288"></a><span class="tm">18:41:35</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> yep, makes sense
+<a name="l-289"></a><span class="tm">18:41:54</span><span class="nk"> &lt;suseROCKs&gt;</span> so i hope we at least agree to each of us posting 1 article about the musings of the community
+<a name="l-290"></a><span class="tm">18:41:58</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">henne:</span> I think it should be worth it writing a short board meeting summary on ML
+<a name="l-291"></a><span class="tm">18:42:00</span><span class="nk"> &lt;henne&gt;</span> so prusnak and i were asking ourself who had the ai to do that?
+<a name="l-292"></a><span class="tm">18:42:03</span><span class="nk"> &lt;suseROCKs&gt;</span> 2 articles per board member per year should not be that hard
+<a name="l-293"></a><span class="tm">18:42:20</span><span class="nk"> &lt;prusnak&gt;</span> i guess we forgot to mention release team discussion
+<a name="l-294"></a><span class="tm">18:42:26</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> if you have a good log in the project meeting, I'm fine with doing a summary
+<a name="l-295"></a><span class="tm">18:42:44</span><span class="nk"> &lt;suseROCKs&gt;</span> minutes publication alone are not going to grow the community.   Minutes are going to be read primarily by those already in the community
+<a name="l-296"></a><span class="tm">18:42:47</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">prusnak:</span> oh right!
+<a name="l-297"></a><span class="tm">18:42:48</span><span class="nk"> &lt;yaloki&gt;</span> it's just that unfortunately, I didn't keep any notes from the meet on friday
+<a name="l-298"></a><span class="tm">19:00:20</span><span class="nk"> &lt;suseROCKs&gt;</span> we just fixed a second failure
+<a name="l-299"></a><span class="tm">19:00:22</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> in other word a ticketing system ;)
+<a name="l-300"></a><span class="tm">19:00:29</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> no, just being polite :)
+<a name="l-301"></a><span class="tm">19:00:37</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> but that too, yes
+<a name="l-302"></a><span class="tm">19:00:43</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">henne:</span> there is a ticket system in place for opensuse infrastructure
+<a name="l-303"></a><span class="tm">19:00:54</span><span class="nk"> &lt;darix&gt;</span> but i guess we failed to communicate that :)
+<a name="l-304"></a><span class="tm">19:00:56</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">darix:</span> not-public...
+<a name="l-305"></a><span class="tm">19:01:01</span><span class="nk"> &lt;suseROCKs&gt;</span> retro?
+<a name="l-306"></a><span class="tm">19:01:04</span><span class="nk"> &lt;darix&gt;</span> no
+<a name="l-307"></a><span class="tm">19:01:30</span><span class="nk"> &lt;darix&gt;</span> 2 things. there is ticket@opensuse.org (IIRC). that will open one in the internal tool
+<a name="l-308"></a><span class="tm">19:01:35</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   here's my thinking...  (brace yourself)
+<a name="l-309"></a><span class="tm">19:01:42</span><span class="nk"> &lt;henne&gt;</span> omg!
+<a name="l-310"></a><span class="tm">19:01:46 </span><span class="nka">* henne</span> <span class="ac">gets the video camer</span>
+<a name="l-311"></a><span class="tm">19:01:51</span><span class="nk"> &lt;henne&gt;</span> suseROCKs is thinking!
+<a name="l-312"></a><span class="tm">19:01:55</span><span class="nk"> &lt;darix&gt;</span> but since 1.5 weeks we have an infrastructure component in the bugzilla
+<a name="l-313"></a><span class="tm">19:01:59 </span><span class="nka">* yaloki</span> <span class="ac">falls off his chair</span>
+<a name="l-314"></a><span class="tm">19:02:10</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">darix:</span> orly? cool :)
+<a name="l-315"></a><span class="tm">19:02:16</span><span class="nk"> &lt;darix&gt;</span> opensuse -&gt; opensuse.org -&gt; infrastructure
+<a name="l-316"></a><span class="tm">19:02:16</span><span class="nk"> &lt;suseROCKs&gt;</span> as you and others complain that what we consider roadblocks are non-existent, why not we post a general request for comments on where community sees roadblocks and focus on dispelling any myths that they had about it in the firs tplace?
+<a name="l-317"></a><span class="tm">19:02:24</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">darix:</span> but bugzilla is no ticketing system ;)
+<a name="l-318"></a><span class="tm">19:02:30</span><span class="nk"> &lt;AJaeger&gt;</span> great that darix and coolo take care of mirrors - but I suggest to document this as part of the admin pages...
+<a name="l-319"></a><span class="tm">19:02:31</span><span class="nk"> &lt;henne&gt;</span> its a ticket dump
+<a name="l-320"></a><span class="tm">19:02:36</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">henne:</span> the difference between the 2 is marginal
+<a name="l-321"></a><span class="tm">19:03:01</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">darix:</span> internal tools is bad IMO.
+<a name="l-322"></a><span class="tm">19:03:12</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">AJaeger:</span> i propose bugzilla as external interface
+<a name="l-323"></a><span class="tm">19:03:13</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> because we can KISS and just come up with the ones we know about
+<a name="l-324"></a><span class="tm">19:03:16</span><span class="nk"> &lt;henne&gt;</span> or get told about
+<a name="l-325"></a><span class="tm">19:03:19</span><span class="nk"> &lt;darix&gt;</span> thats why i asked for the component
+<a name="l-326"></a><span class="tm">19:03:20</span><span class="nk"> &lt;yaloki&gt;</span> ok, so bugzilla is the right place to file tickets for infrastructure
+<a name="l-327"></a><span class="tm">19:03:30</span><span class="nk"> &lt;henne&gt;</span> k
+<a name="l-328"></a><span class="tm">19:03:41</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">AJaeger:</span> for the other stuff lars and me are still sorting a few things before things get announced.
+<a name="l-329"></a><span class="tm">19:03:48</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> I agree
+<a name="l-330"></a><span class="tm">19:04:18</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">darix:</span> so would it be OK that if mirror emails are unanswered on admin@ I create tickets for them in bugzilla ? (and reply to them with the link to their bug)
+<a name="l-331"></a><span class="tm">19:04:35</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">darix:</span> (just trying to get some work load off of your shoulders)
+<a name="l-332"></a><span class="tm">19:04:51</span><span class="nk"> &lt;suseROCKs&gt;</span> yaloki,   but what if the mail got answered directly and didn't cc' the original mail group?
+<a name="l-333"></a><span class="tm">19:04:57</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">yaloki:</span> it just has a backlog atm. normally it is like 1 mail per month on that topic
+<a name="l-334"></a><span class="tm">19:04:58</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> i mean this also does not spark to many expectations
+<a name="l-335"></a><span class="tm">19:05:08</span><span class="nk"> &lt;suseROCKs&gt;</span> see I presumed that someone *was* ansewring them directly, and today I learn that's not the case.
+<a name="l-336"></a><span class="tm">19:05:10</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">darix:</span> there have been a lot more recently
+<a name="l-337"></a><span class="tm">19:05:16</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">darix:</span> more like one every 2 or 3 days
+<a name="l-338"></a><span class="tm">19:05:44</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">yaloki:</span> it was just a small spike. normally it is quiet
+<a name="l-339"></a><span class="tm">19:06:01</span><span class="nk"> &lt;yaloki&gt;</span> ok
+<a name="l-340"></a><span class="tm">19:06:10</span><span class="nk"> &lt;henne&gt;</span> can we get off the implementation of the mirror thing?
+<a name="l-341"></a><span class="tm">19:06:17</span><span class="nk"> &lt;henne&gt;</span> i'm sure darix is on top of that
+<a name="l-342"></a><span class="tm">19:06:36</span><span class="nk"> &lt;henne&gt;</span> if you want to help him lets do that after the meeting okay? :)
+<a name="l-343"></a><span class="tm">19:06:48</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   I would suggest  s/get off/move on from/    "get off" left a kinky connotation
+<a name="l-344"></a><span class="tm">19:07:03</span><span class="nk"> &lt;henne&gt;</span> me kinky? never!
+<a name="l-345"></a><span class="tm">19:08:07</span><span class="nk"> &lt;henne&gt;</span> so where else do we fail? :)
+<a name="l-346"></a><span class="tm">19:08:07</span><span class="nk"> &lt;suseROCKs&gt;</span> come on... next!   I need to go downtown to replace the phone I lost in NUE
+<a name="l-347"></a><span class="tm">19:09:41</span><span class="nk"> &lt;suseROCKs&gt;</span> move on... there are no additional suggestions atm although I'm certain we'll have them as they arise.
+<a name="l-348"></a><span class="tm">19:09:42</span><span class="nk"> &lt;henne&gt;</span> so we're bug free?
+<a name="l-349"></a><span class="tm">19:10:53</span><span class="nk"> &lt;AJaeger&gt;</span> let me get back to the write down - if we empower people we should make that konwn
+<a name="l-350"></a><span class="tm">19:11:25</span><span class="nk"> &lt;AJaeger&gt;</span> we should also cheer them up occasionally - and we should find a way to tutor first.
+<a name="l-351"></a><span class="tm">19:11:47</span><span class="nk"> &lt;AJaeger&gt;</span> And then what if that person has a problem and needs help? Where to go?
+<a name="l-352"></a><span class="tm">19:11:49</span><span class="nk"> &lt;yaloki&gt;</span> yep, that's the somewhat bigger plan
+<a name="l-353"></a><span class="tm">19:11:52</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> Brilliant point Ajaeger
+<a name="l-354"></a><span class="tm">19:11:57</span><span class="nk"> &lt;henne&gt;</span> i don't think we're not in need for a general purpose plan for this...
+<a name="l-355"></a><span class="tm">19:12:24</span><span class="nk"> &lt;yaloki&gt;</span> at the very least, I think that the board needs to play the role of a facilitator there
+<a name="l-356"></a><span class="tm">19:12:29</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> I thought this was a general purpose discussion - mirror was just a concrete first example
+<a name="l-357"></a><span class="tm">19:12:33</span><span class="nk"> &lt;yaloki&gt;</span> if people don't know whom to get in touch with, poke board@o.o
+<a name="l-358"></a><span class="tm">19:12:37</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> Tutor is the key, without this maney mistakes
+<a name="l-359"></a><span class="tm">19:12:46</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> many mistakes
+<a name="l-360"></a><span class="tm">19:13:10</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">CarlosRibeiro:</span> Yes - but everybody makes mistakes and that should not hinder a person.
+<a name="l-361"></a><span class="tm">19:13:12</span><span class="nk"> &lt;suseROCKs&gt;</span> CarlosRibeiro,   yes but we also agree that it is okay for people to make mistakes, as long as they are given the opportunity to make them.
+<a name="l-362"></a><span class="tm">19:13:14</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> yep, but that needs some degree of organization
+<a name="l-363"></a><span class="tm">19:13:16</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> safety-net :)
+<a name="l-364"></a><span class="tm">19:13:21</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> maybe a online chat for help, and we can schedule some guys to take care
+<a name="l-365"></a><span class="tm">19:13:23</span><span class="nk"> &lt;robjo&gt;</span> But tutoring does not scale!
+<a name="l-366"></a><span class="tm">19:13:24</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> no, contact point
+<a name="l-367"></a><span class="tm">19:13:34</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> then we find out whom to poke and put them in touch
+<a name="l-368"></a><span class="tm">19:13:38</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">robjo:</span> *Initial* tutoring
+<a name="l-369"></a><span class="tm">19:13:42</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> it's not about doing the work ourselves
+<a name="l-370"></a><span class="tm">19:13:44</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">robjo:</span> not for the whole time
+<a name="l-371"></a><span class="tm">19:13:52</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">robjo:</span> of course it scales
+<a name="l-372"></a><span class="tm">19:13:53</span><span class="nk"> &lt;henne&gt;</span> so what are you talking about?
+<a name="l-373"></a><span class="tm">19:14:06</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">AJaeger:</span> Even initial tutoring is difficult, I think
+<a name="l-374"></a><span class="tm">19:14:08</span><span class="nk"> &lt;henne&gt;</span> some general purpose plan to for new contributors?
+<a name="l-375"></a><span class="tm">19:14:23</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> who are you talking to ? :)
+<a name="l-376"></a><span class="tm">19:14:29</span><span class="nk"> &lt;AJaeger&gt;</span> or old contributors taking over a new role
+<a name="l-377"></a><span class="tm">19:14:31</span><span class="nk"> &lt;suseROCKs&gt;</span> robjo,   but the point is if someone wants to do something and needs assistance, we should be able to provide someone to tutor that person.
+<a name="l-378"></a><span class="tm">19:14:34</span><span class="nk"> &lt;henne&gt;</span> the people that participate in this discussion
+<a name="l-379"></a><span class="tm">19:14:51</span><span class="nk"> &lt;suseROCKs&gt;</span> "Here just do it" with no guidance (tutoring) at all is not fruitful.
+<a name="l-380"></a><span class="tm">19:14:59</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> Mistakes is important I know, but could be not so good without lessons learned
+<a name="l-381"></a><span class="tm">19:15:08</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">suseROCKs:</span> agreed, but we need better resources for slef help
+<a name="l-382"></a><span class="tm">19:15:09</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> indeed
+<a name="l-383"></a><span class="tm">19:15:27</span><span class="nk"> &lt;suseROCKs&gt;</span> robjo,  that's what we're identifying now, indeed
+<a name="l-384"></a><span class="tm">19:15:30</span><span class="nk"> &lt;henne&gt;</span> of course not. but how the tutoring will work is at the discretion of the one doing it rightr?
+<a name="l-385"></a><span class="tm">19:15:33</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> we also want to be in a friendly environment where failing is OK, and where we can have honest feedback to improve what we do
+<a name="l-386"></a><span class="tm">19:15:44</span><span class="nk"> &lt;henne&gt;</span> we always strive for general purpose plans...
+<a name="l-387"></a><span class="tm">19:15:53</span><span class="nk"> &lt;henne&gt;</span> they sound nice and never work
+<a name="l-388"></a><span class="tm">19:15:53</span><span class="nk"> &lt;AJaeger&gt;</span> but also we as community have to accept the mistakes and be under the assumption that people learn - instead of "he made a mistake one year ago and I'm going to tell that every time again he shows up..."
+<a name="l-389"></a><span class="tm">19:16:06</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">yaloki:</span> Agreed
+<a name="l-390"></a><span class="tm">19:16:07</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> I preparing some short videos about how to contribute to opensuse, but only in portugues, the videos have no more than 2 minutes and I'm using students from public schools here in brazil
+<a name="l-391"></a><span class="tm">19:16:13</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> I don't see any plan here
+<a name="l-392"></a><span class="tm">19:16:19</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> just explaining the motivation
+<a name="l-393"></a><span class="tm">19:16:21</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   +1,000
+<a name="l-394"></a><span class="tm">19:16:32</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">CarlosRibeiro:</span> Cool, please send links - and a short translation if possible.
+<a name="l-395"></a><span class="tm">19:16:38</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> its about you accepting that we might end up with no milestone announcement for a couple of times :)
+<a name="l-396"></a><span class="tm">19:16:40</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> pretty soon
+<a name="l-397"></a><span class="tm">19:16:44</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> maybe 2 weeks
+<a name="l-398"></a><span class="tm">19:17:07</span><span class="nk"> &lt;suseROCKs&gt;</span> CarlosRibeiro,  we can subtitle your videos into multiple langauges easily on YouTube
+<a name="l-399"></a><span class="tm">19:17:16</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> and situations like that
+<a name="l-400"></a><span class="tm">19:17:27</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> even if you desperately need them
+<a name="l-401"></a><span class="tm">19:17:38</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> ok 10 dollars for that translations/subtitles
+<a name="l-402"></a><span class="tm">19:18:04</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> huh?
+<a name="l-403"></a><span class="tm">19:18:08</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> and I send the links withsubtitle done
+<a name="l-404"></a><span class="tm">19:18:17</span><span class="nk"> &lt;henne&gt;</span> can we discuss one topic at a time please?
+<a name="l-405"></a><span class="tm">19:18:17</span><span class="nk"> &lt;suseROCKs&gt;</span> :-)
+<a name="l-406"></a><span class="tm">19:18:39</span><span class="nk"> &lt;henne&gt;</span> either videos or what AJaeger talked about
+<a name="l-407"></a><span class="tm">19:18:41</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> It's me accepting that they will be late for some time - and I think asking whether the responsible person will do them is fine
+<a name="l-408"></a><span class="tm">19:19:59</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> thats what we mean. you need to let them fail
+<a name="l-409"></a><span class="tm">19:20:15</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> and then say: hey you were supposed to do that. why didn't you?
+<a name="l-410"></a><span class="tm">19:20:29</span><span class="nk"> &lt;yaloki&gt;</span> anyway, it's not something we're going to solve right now right here
+<a name="l-411"></a><span class="tm">19:20:31</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   I think AJaeger doesn't disagree with that.  He's on board with that concept.
+<a name="l-412"></a><span class="tm">19:20:46</span><span class="nk"> &lt;yaloki&gt;</span> what could we do right now
+<a name="l-413"></a><span class="tm">19:20:53</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> yep.
+<a name="l-414"></a><span class="tm">19:20:57</span><span class="nk"> &lt;yaloki&gt;</span> start a discussion on "where do we fail" ?
+<a name="l-415"></a><span class="tm">19:21:05</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> actually i think he isn't (fully) :)
+<a name="l-416"></a><span class="tm">19:21:15 </span><span class="nka">* AJaeger</span> <span class="ac">thinks that there's a subtile difference between my thinking and henne's but we agree on the big picture</span>
+<a name="l-417"></a><span class="tm">19:21:16</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   although "fail" is related to quality of work.  If a person accepts a task and then disappears completely without any delivery at all, that's not fail,  That's ball-dropping.  period.
+<a name="l-418"></a><span class="tm">19:21:34 </span><span class="nka">* AJaeger</span> <span class="ac">will to talk a bit further with henne in person to clarify this</span>
+<a name="l-419"></a><span class="tm">19:21:43</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-420"></a><span class="tm">19:21:46 </span><span class="nka">* suseROCKs</span> <span class="ac">sends AJaeger a suit of armor</span>
+<a name="l-421"></a><span class="tm">19:21:53</span><span class="nk"> &lt;henne&gt;</span> so what about the other things?
+<a name="l-422"></a><span class="tm">19:22:05</span><span class="nk"> &lt;henne&gt;</span> should we write down responsibilities?
+<a name="l-423"></a><span class="tm">19:22:19</span><span class="nk"> &lt;yaloki&gt;</span> I think that one area where we fail is precisely "whom to get in touch with for ..."
+<a name="l-424"></a><span class="tm">19:22:32</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> I suggest that teams write down responsibilities
+<a name="l-425"></a><span class="tm">19:22:47</span><span class="nk"> &lt;yaloki&gt;</span> http://en.opensuse.org/FAIL is a good start
+<a name="l-426"></a><span class="tm">19:22:50</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> on the team page?
+<a name="l-427"></a><span class="tm">19:22:52</span><span class="nk"> &lt;yaloki&gt;</span> but even that page is not well-known
+<a name="l-428"></a><span class="tm">19:22:56</span><span class="nk"> &lt;suseROCKs&gt;</span> well SJ did a nice job starting a teams page on the wiki.   This should help to direct people to the proper group for further exploration
+<a name="l-429"></a><span class="tm">19:22:57</span><span class="nk"> &lt;AJaeger&gt;</span> so, if we have in the wiki an admin team page, it should have  a section "mirror admin"
+<a name="l-430"></a><span class="tm">19:23:06</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> Yeah
+<a name="l-431"></a><span class="tm">19:23:42</span><span class="nk"> &lt;suseROCKs&gt;</span> but its clear, even amongst ourselves here on the board, that we don't always know who to turn to and we need to be more knowledgeable about that.
+<a name="l-432"></a><span class="tm">19:23:44</span><span class="nk"> &lt;SJ&gt;</span> Just a note : Team template contains a contact section
+<a name="l-433"></a><span class="tm">19:23:48</span><span class="nk"> &lt;henne&gt;</span> how?
+<a name="l-434"></a><span class="tm">19:24:03</span><span class="nk"> &lt;henne&gt;</span> any ideas?
+<a name="l-435"></a><span class="tm">19:24:04</span><span class="nk"> &lt;suseROCKs&gt;</span> "how?" to which?
+<a name="l-436"></a><span class="tm">19:24:04</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> at least we know people we can poke to find out :)
+<a name="l-437"></a><span class="tm">19:24:09</span><span class="nk"> &lt;henne&gt;</span> http://wiki.opensuse.org/openSUSE:Weekly_news_team
+<a name="l-438"></a><span class="tm">19:24:20</span><span class="nk"> &lt;henne&gt;</span> this is a typical team page made with the new template
+<a name="l-439"></a><span class="tm">19:24:29</span><span class="nk"> &lt;henne&gt;</span> whats missing?
+<a name="l-440"></a><span class="tm">19:25:02</span><span class="nk"> &lt;suseROCKs&gt;</span> btw (a bit off point) didn't we schedule a DNS change for the wiki yesterday?
+<a name="l-441"></a><span class="tm">19:25:15</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> I don't like the style how the team members are presented but that's off-topic here
+<a name="l-442"></a><span class="tm">19:25:26</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> you really should participate in the project meetings :P
+<a name="l-443"></a><span class="tm">19:25:29 </span><span class="nka">* SJ</span> <span class="ac">feels suseROCKs doesnt read any mails :-)</span>
+<a name="l-444"></a><span class="tm">19:25:38</span><span class="nk"> &lt;AJaeger&gt;</span> The members section wit hthe job descriptions is excellent!
+<a name="l-445"></a><span class="tm">19:25:40</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> we discussed that there too. pushed to july
+<a name="l-446"></a><span class="tm">19:25:43</span><span class="nk"> &lt;suseROCKs&gt;</span> Uhh  guys....   I travelled 20 1/2 hours yesterday!
+<a name="l-447"></a><span class="tm">19:26:06</span><span class="nk"> &lt;SJ&gt;</span> suseROCKs, easy , was just kidding . We all know :-)
+<a name="l-448"></a><span class="tm">19:26:12</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">AJaeger:</span> so if every team has such a page its enough?
+<a name="l-449"></a><span class="tm">19:26:26</span><span class="nk"> &lt;suseROCKs&gt;</span> SJ,   no.   henne scares the crap out of me.  you should see him in person.  Scary!
+<a name="l-450"></a><span class="tm">19:26:44</span><span class="nk"> &lt;SJ&gt;</span> Lets see if I get a chance ;-)
+<a name="l-451"></a><span class="tm">19:26:53</span><span class="nk"> &lt;SJ&gt;</span> AJaeger, yes , Job ---&gt; Tasks
+<a name="l-452"></a><span class="tm">19:27:03</span><span class="nk"> &lt;SJ&gt;</span> AJaeger, Tasks ---&gt; Jobs *
+<a name="l-453"></a><span class="tm">19:27:25</span><span class="nk"> &lt;SJ&gt;</span> In short that section is dynamic .
+<a name="l-454"></a><span class="tm">19:27:32</span><span class="nk"> &lt;suseROCKs&gt;</span> ok is the discussion of how team pages are structured board-pertinent?  I don't htink so,  I think this is -project pertinent
+<a name="l-455"></a><span class="tm">19:27:51</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> AJaeger brought it up in the fail section :)
+<a name="l-456"></a><span class="tm">19:28:04</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> because he said that this is something we fail with
+<a name="l-457"></a><span class="tm">19:28:26</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> (in the few cases where we empowered contributors)
+<a name="l-458"></a><span class="tm">19:28:49</span><span class="nk"> &lt;yaloki&gt;</span> so.. this discussion is drying out
+<a name="l-459"></a><span class="tm">19:28:55</span><span class="nk"> &lt;yaloki&gt;</span> could we move on ?
+<a name="l-460"></a><span class="tm">19:29:00</span><span class="nk"> &lt;suseROCKs&gt;</span> +1 yaloki
+<a name="l-461"></a><span class="tm">19:29:05</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">henne:</span> if every team has it, I'm happy
+<a name="l-462"></a><span class="tm">19:29:12</span><span class="nk"> &lt;henne&gt;</span> there you go. we can :)
+<a name="l-463"></a><span class="tm">19:29:16 </span><span class="nka">* AJaeger</span> <span class="ac">just needed a beer</span>
+<a name="l-464"></a><span class="tm">19:29:23</span><span class="nk"> &lt;yaloki&gt;</span> anything we could do to trigger a broader discussion about this ?
+<a name="l-465"></a><span class="tm">19:29:31</span><span class="nk"> &lt;henne&gt;</span> first dipers, then beer
+<a name="l-466"></a><span class="tm">19:29:33</span><span class="nk"> &lt;henne&gt;</span> a classic
+<a name="l-467"></a><span class="tm">19:29:39</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> portuguese translations done for http://pt.opensuse.org/FAIL
+<a name="l-468"></a><span class="tm">19:29:41</span><span class="nk"> &lt;suseROCKs&gt;</span> dipers?
+<a name="l-469"></a><span class="tm">19:29:48</span><span class="nk"> &lt;yaloki&gt;</span> s/dipers/diapers/
+<a name="l-470"></a><span class="tm">19:30:00</span><span class="nk"> &lt;henne&gt;</span> grammarnazi!
+<a name="l-471"></a><span class="tm">19:30:03</span><span class="nk"> &lt;henne&gt;</span> 8)
+<a name="l-472"></a><span class="tm">19:30:06</span><span class="nk"> &lt;yaloki&gt;</span> ok, stop going offtopic and into details please
+<a name="l-473"></a><span class="tm">19:30:18</span><span class="nk"> &lt;yaloki&gt;</span> could we move on and finish this meeting? :)
+<a name="l-474"></a><span class="tm">19:30:23</span><span class="nk"> &lt;henne&gt;</span> yes how do we want to continues?
+<a name="l-475"></a><span class="tm">19:30:27</span><span class="nk"> &lt;suseROCKs&gt;</span> oh hell...  first seeing henne show up in leather chaps and mesh shirt, now envisioning him in diapers.  I definitely need a beer now
+<a name="l-476"></a><span class="tm">19:30:28</span><span class="nk"> &lt;henne&gt;</span> continue
+<a name="l-477"></a><span class="tm">19:31:00</span><span class="nk"> &lt;henne&gt;</span> how about we make an announcement that we have a permanent agenda item for our meetings where we discuss failures
+<a name="l-478"></a><span class="tm">19:31:11</span><span class="nk"> &lt;yaloki&gt;</span> I really don't know, we just clogged up so much stuff
+<a name="l-479"></a><span class="tm">19:31:21</span><span class="nk"> &lt;suseROCKs&gt;</span> I prefer not to call it "Failure" topic
+<a name="l-480"></a><span class="tm">19:31:22</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> that sounds good
+<a name="l-481"></a><span class="tm">19:31:46</span><span class="nk"> &lt;suseROCKs&gt;</span> but I debate generally whether such a topic belongs in board meeting or in project meeting
+<a name="l-482"></a><span class="tm">19:31:49</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> fuck up?
+<a name="l-483"></a><span class="tm">19:32:15</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> we said on friday that we want to do this for the next couple of months
+<a name="l-484"></a><span class="tm">19:32:32</span><span class="nk"> &lt;suseROCKs&gt;</span> must have been when I dozed off  :-)
+<a name="l-485"></a><span class="tm">19:32:37</span><span class="nk"> &lt;yaloki&gt;</span> doesn't matter
+<a name="l-486"></a><span class="tm">19:32:59</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> that's the point "Fail" is kind of rude word in portugues and also in spanish. I was thinking about other possible word but ... for now no idea
+<a name="l-487"></a><span class="tm">19:33:15</span><span class="nk"> &lt;yaloki&gt;</span> sure, fail is a hard word
+<a name="l-488"></a><span class="tm">19:33:23</span><span class="nk"> &lt;yaloki&gt;</span> but that's precisely what it is :)
+<a name="l-489"></a><span class="tm">19:33:26</span><span class="nk"> &lt;suseROCKs&gt;</span> Fail = opportunity to me
+<a name="l-490"></a><span class="tm">19:33:31</span><span class="nk"> &lt;henne&gt;</span> yeah. call it like it is
+<a name="l-491"></a><span class="tm">19:33:32</span><span class="nk"> &lt;yaloki&gt;</span> "where do we underperform" .. ugh.. :)
+<a name="l-492"></a><span class="tm">19:33:49</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> now _that_ did sound like a politician :)
+<a name="l-493"></a><span class="tm">19:34:03</span><span class="nk"> &lt;suseROCKs&gt;</span> I prefer not to call it "where do we underperform"... too many of my ex-girlfriends will show up to comment.
+<a name="l-494"></a><span class="tm">19:34:06</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> for people that know little bit english Fail is not so rude, but for most part sounds quite rude
+<a name="l-495"></a><span class="tm">19:34:09</span><span class="nk"> &lt;henne&gt;</span> are we a girls boarding school?
+<a name="l-496"></a><span class="tm">19:34:16</span><span class="nk"> &lt;henne&gt;</span> that we can't use hard words?
+<a name="l-497"></a><span class="tm">19:34:26</span><span class="nk"> &lt;yaloki&gt;</span> geez are we going to discuss whether we should call it fail ?
+<a name="l-498"></a><span class="tm">19:34:26</span><span class="nk"> &lt;henne&gt;</span> i thought we're more like a biker gang
+<a name="l-499"></a><span class="tm">19:34:32</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> don't misunderstood, please henne
+<a name="l-500"></a><span class="tm">19:34:39</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> blue oyster bar? *g*
+<a name="l-501"></a><span class="tm">19:34:51</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> we just need to find a better word, or not, just it
+<a name="l-502"></a><span class="tm">19:34:52</span><span class="nk"> &lt;suseROCKs&gt;</span> ok move on
+<a name="l-503"></a><span class="tm">19:34:57</span><span class="nk"> &lt;suseROCKs&gt;</span> wrap up this topic
+<a name="l-504"></a><span class="tm">19:35:01</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> oh how did you come up with this great name of our headquarter? ;)
+<a name="l-505"></a><span class="tm">19:35:02</span><span class="nk"> &lt;yaloki&gt;</span> let's just call it "where do we fail" and change that if we have a better idea ;)
+<a name="l-506"></a><span class="tm">19:35:07</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> ^^
+<a name="l-507"></a><span class="tm">19:35:16</span><span class="nk"> &lt;yaloki&gt;</span> now I can't get that music out of my head
+<a name="l-508"></a><span class="tm">19:35:16</span><span class="nk"> &lt;henne&gt;</span> so who takes the AI?
+<a name="l-509"></a><span class="tm">19:35:17</span><span class="nk"> &lt;suseROCKs&gt;</span> "Where do we fail"...  I endorse taht
+<a name="l-510"></a><span class="tm">19:35:47</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> to do what, send an email to -project to announce that we'll make that a regular item at each board meeting ? (etc...)
+<a name="l-511"></a><span class="tm">19:35:54</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-512"></a><span class="tm">19:35:58</span><span class="nk"> &lt;henne&gt;</span> the announcement
+<a name="l-513"></a><span class="tm">19:36:03</span><span class="nk"> &lt;suseROCKs&gt;</span> AI?  Its just an added permanent topic.  Which should be mentioned in our "from-now-on" well-publicized minutes
+<a name="l-514"></a><span class="tm">19:36:22</span><span class="nk"> &lt;suseROCKs&gt;</span> that's all
+<a name="l-515"></a><span class="tm">19:36:34</span><span class="nk"> &lt;henne&gt;</span> i think we should introduce that
+<a name="l-516"></a><span class="tm">19:36:38</span><span class="nk"> &lt;yaloki&gt;</span> <span class="cmd">#action </span><span class="cmdline">yaloki announce "where do we fail"</span>
+<a name="l-517"></a><span class="tm">19:36:46</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> Where do we can improve / make better -sounds not so bad and maybe aout of context rsrs, but "Where do we fail" sounds better than only "fail"
+<a name="l-518"></a><span class="tm">19:36:47</span><span class="nk"> &lt;henne&gt;</span> k
+<a name="l-519"></a><span class="tm">19:36:59</span><span class="nk"> &lt;suseROCKs&gt;</span> ok here's a question about action items
+<a name="l-520"></a><span class="tm">19:37:18</span><span class="nk"> &lt;suseROCKs&gt;</span> how do we come up with a way that we're properly reminded/poked about our AI's?
+<a name="l-521"></a><span class="tm">19:37:44</span><span class="nk"> &lt;yaloki&gt;</span> have them in retro
+<a name="l-522"></a><span class="tm">19:37:48</span><span class="nk"> &lt;suseROCKs&gt;</span> too often we either forget about it immediately (due to long meetings and a desire to shake our head away from the meeting)  or because we don't communicate it well afterwards.
+<a name="l-523"></a><span class="tm">19:37:54</span><span class="nk"> &lt;yaloki&gt;</span> no meta-discussions during the meeting please
+<a name="l-524"></a><span class="tm">19:37:56</span><span class="nk"> &lt;yaloki&gt;</span> next item
+<a name="l-525"></a><span class="tm">19:38:06</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-526"></a><span class="tm">19:38:35</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> MC hammer, the next item please :&gt;
+<a name="l-527"></a><span class="tm">19:38:58 </span><span class="nka">* suseROCKs</span> <span class="ac">once visited MC Hammer before he became a taxi driver</span>
+<a name="l-528"></a><span class="tm">19:39:17</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Trademark Approvals</span>
+<a name="l-529"></a><span class="tm">19:39:41</span><span class="nk"> &lt;henne&gt;</span> there is nothing to discuss anymore here right?
+<a name="l-530"></a><span class="tm">19:39:45</span><span class="nk"> &lt;suseROCKs&gt;</span> right
+<a name="l-531"></a><span class="tm">19:39:50</span><span class="nk"> &lt;yaloki&gt;</span> indeed
+<a name="l-532"></a><span class="tm">19:39:52</span><span class="nk"> &lt;henne&gt;</span> so we scratch that from the agenda
+<a name="l-533"></a><span class="tm">19:40:05</span><span class="nk"> &lt;henne&gt;</span> then we have only one topic left
+<a name="l-534"></a><span class="tm">19:40:17</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Questions and Answers</span>
+<a name="l-535"></a><span class="tm">19:40:26</span><span class="nk"> &lt;henne&gt;</span> there are none on the wiki
+<a name="l-536"></a><span class="tm">19:40:44</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> I would like to return to de e.V vs other that I forgot
+<a name="l-537"></a><span class="tm">19:40:45</span><span class="nk"> &lt;yaloki&gt;</span> anything here ?
+<a name="l-538"></a><span class="tm">19:40:47</span><span class="nk"> &lt;SJ&gt;</span> Most of  it was completed during the meeting :-)
+<a name="l-539"></a><span class="tm">19:40:56</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> trust I ll be quicky
+<a name="l-540"></a><span class="tm">19:40:57</span><span class="nk"> &lt;suseROCKs&gt;</span> let's make it a point to announce board meetings on ML's and include "ask your questions at the wiki here" from now on
+<a name="l-541"></a><span class="tm">19:41:04</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> +1
+<a name="l-542"></a><span class="tm">19:41:19</span><span class="nk"> &lt;henne&gt;</span> we need reminder
+<a name="l-543"></a><span class="tm">19:41:26</span><span class="nk"> &lt;henne&gt;</span> i already started to set it up
+<a name="l-544"></a><span class="tm">19:41:29</span><span class="nk"> &lt;henne&gt;</span> on lists
+<a name="l-545"></a><span class="tm">19:41:37</span><span class="nk"> &lt;henne&gt;</span> but then others things became more pressing
+<a name="l-546"></a><span class="tm">19:41:42</span><span class="nk"> &lt;AJaeger&gt;</span> add the openSUSE news calendar to your calendar - it includes the board meeting ;)
+<a name="l-547"></a><span class="tm">19:41:45</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> I don't think is a good idea to remain focus on Europe, openSUSE is very well know up there
+<a name="l-548"></a><span class="tm">19:41:45</span><span class="nk"> &lt;henne&gt;</span> anyone interested in continuing?
+<a name="l-549"></a><span class="tm">19:41:57</span><span class="nk"> &lt;henne&gt;</span> its very easy
+<a name="l-550"></a><span class="tm">19:41:59</span><span class="nk"> &lt;suseROCKs&gt;</span> an auto-reminder to send out mails would be useful instead of us remember to write it up every two weeks.
+<a name="l-551"></a><span class="tm">19:41:59</span><span class="nk"> &lt;SJ&gt;</span> henne , what ?
+<a name="l-552"></a><span class="tm">19:42:01</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> doesn't have much to do with "known" or not
+<a name="l-553"></a><span class="tm">19:42:20</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> it's about having a country where we have legal expertise
+<a name="l-554"></a><span class="tm">19:42:23</span><span class="nk"> &lt;henne&gt;</span> http://www.linuxjournal.com/article/3529
+<a name="l-555"></a><span class="tm">19:42:25</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> ok, I understood
+<a name="l-556"></a><span class="tm">19:42:33</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> and we also need to define a location for the foundation's offices
+<a name="l-557"></a><span class="tm">19:42:43</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> and actually meet there (IRL) once a year
+<a name="l-558"></a><span class="tm">19:43:12</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> for an e.V. in germany, the idea is to have the suse offices in nürnberg as the foundation's office location
+<a name="l-559"></a><span class="tm">19:43:19</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> great as it's only once for year, what about carnaval, brasil, betiful grils, good weather....
+<a name="l-560"></a><span class="tm">19:43:20</span><span class="nk"> &lt;suseROCKs&gt;</span> its a good idea to start from a base of strength (which is Central Europe) but I agree that we should continue our drive to expand our markets elsewhere.
+<a name="l-561"></a><span class="tm">19:43:21</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> (more or a legal requirement than anything else)
+<a name="l-562"></a><span class="tm">19:43:27</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> just kidding guys
+<a name="l-563"></a><span class="tm">19:43:29</span><span class="nk"> &lt;suseROCKs&gt;</span> CarlosRibeiro,  and that's a project for the Marketing team  :-)
+<a name="l-564"></a><span class="tm">19:43:36</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> and, unfortunately, 2000$ for travel :(
+<a name="l-565"></a><span class="tm">19:44:03</span><span class="nk"> &lt;henne&gt;</span> and even more unfortunately brasil is not part of germany (yet)
+<a name="l-566"></a><span class="tm">19:44:05</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> If we do not get a fligh company as sponsor for the project yes
+<a name="l-567"></a><span class="tm">19:44:06</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> I know, it's tricky
+<a name="l-568"></a><span class="tm">19:44:09</span><span class="nk"> &lt;yaloki&gt;</span> heheh
+<a name="l-569"></a><span class="tm">19:44:16</span><span class="nk"> &lt;yaloki&gt;</span> that sounds like a plan, but please not ryanair
+<a name="l-570"></a><span class="tm">19:44:23</span><span class="nk"> &lt;SJ&gt;</span> henne, you seeking for volunteers (from the board) ?
+<a name="l-571"></a><span class="tm">19:44:24</span><span class="nk"> &lt;henne&gt;</span> the office needs to be based in germany if we go with an e.v. :)
+<a name="l-572"></a><span class="tm">19:44:25</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   even though all those from Germany in WW2 are hiding there?  :-)
+<a name="l-573"></a><span class="tm">19:44:51</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">SJ:</span> ?
+<a name="l-574"></a><span class="tm">19:44:53</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">SJ:</span> from anywhere!
+<a name="l-575"></a><span class="tm">19:45:05</span><span class="nk"> &lt;suseROCKs&gt;</span> volunteers for what?
+<a name="l-576"></a><span class="tm">19:45:16</span><span class="nk"> &lt;SJ&gt;</span> suseROCKs, yaloki, the reminder thing .
+<a name="l-577"></a><span class="tm">19:45:19</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> but I understand your concern
+<a name="l-578"></a><span class="tm">19:45:20</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> setting um 'reminder' which is a commandline tool for meeting reminders
+<a name="l-579"></a><span class="tm">19:45:22</span><span class="nk"> &lt;SJ&gt;</span> henne, okay .
+<a name="l-580"></a><span class="tm">19:45:36</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> we don't want to be unfair, or "keep it under control" in europe or anything like that
+<a name="l-581"></a><span class="tm">19:45:37</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> thanks yaloki
+<a name="l-582"></a><span class="tm">19:45:46</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> http://www.linuxjournal.com/article/3529
+<a name="l-583"></a><span class="tm">19:45:54</span><span class="nk"> &lt;henne&gt;</span> its exactly what we need
+<a name="l-584"></a><span class="tm">19:46:03</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> it's really just a pragmatic preference, from our own understanding -- of course, we might be very wrong by doing so
+<a name="l-585"></a><span class="tm">19:46:04</span><span class="nk"> &lt;SJ&gt;</span> henne, I'try to get my hands on it and If results are positive will let you know ;-)
+<a name="l-586"></a><span class="tm">19:46:10</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">SJ:</span> cool thanks :)
+<a name="l-587"></a><span class="tm">19:46:15</span><span class="nk"> &lt;SJ&gt;</span> :D
+<a name="l-588"></a><span class="tm">19:46:16</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> don't worry guys, 2014 FIFA worldcup will be here, Olimpic games too.
+<a name="l-589"></a><span class="tm">19:46:29</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> I can wait for our moment for openSUSE ;-)
+<a name="l-590"></a><span class="tm">19:46:57</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> we do see the strong activity and motivation right now in south america
+<a name="l-591"></a><span class="tm">19:47:00</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> here in the middle of the jungle
+<a name="l-592"></a><span class="tm">19:47:00</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#action </span><span class="cmdline">SJ get his hands dirty with reminder: http://www.linuxjournal.com/article/3529</span>
+<a name="l-593"></a><span class="tm">19:47:25</span><span class="nk"> &lt;suseROCKs&gt;</span> So we now have a Board secretary.  :-)
+<a name="l-594"></a><span class="tm">19:47:43</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">CarlosRibeiro:</span> I sure hope you're already going to have your moment in openSUSE very soon anyway ;)
+<a name="l-595"></a><span class="tm">19:47:46</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> great, wonderfull brillhant, I have some key friends that are working very hard with me to make opensuse even more well know here
+<a name="l-596"></a><span class="tm">19:47:47</span><span class="nk"> &lt;SJ&gt;</span> helper :-)
+<a name="l-597"></a><span class="tm">19:47:48</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> The advantage of an open meeting ;)
+<a name="l-598"></a><span class="tm">19:48:18</span><span class="nk"> &lt;henne&gt;</span> okay anything else we need to discuss?
+<a name="l-599"></a><span class="tm">19:48:23</span><span class="nk"> &lt;suseROCKs&gt;</span> I was kind of hoping for a sexy secretary.   I'm sure SJ is cute but...
+<a name="l-600"></a><span class="tm">19:48:45</span><span class="nk"> &lt;suseROCKs&gt;</span> CarlosRibeiro,   I agree taht we have a lot of opportunities to grow in South America and you know that I am working with you on that.
+<a name="l-601"></a><span class="tm">19:48:55</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> enogh suseROCKS, I'm only 18 old
+<a name="l-602"></a><span class="tm">19:48:58</span><span class="nk"> &lt;SJ&gt;</span> suseROCKs, One thing I always wanted to mention ( I wrote that in my blog) , openSUSE lacks hotties
+<a name="l-603"></a><span class="tm">19:49:09</span><span class="nk"> &lt;SJ&gt;</span> ;-)
+<a name="l-604"></a><span class="tm">19:49:25</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> don't make me afraid about your relatins with SJ
+<a name="l-605"></a><span class="tm">19:49:25</span><span class="nk"> &lt;yaloki&gt;</span> we already have LaTeX, what else do you want
+<a name="l-606"></a><span class="tm">19:49:29</span><span class="nk"> &lt;suseROCKs&gt;</span> Calr  No way you are not 18
+<a name="l-607"></a><span class="tm">19:49:33</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> :-D
+<a name="l-608"></a><span class="tm">19:49:39</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">SJ:</span> but i'm here?
+<a name="l-609"></a><span class="tm">19:49:49</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">SJ:</span> and henne is cute
+<a name="l-610"></a><span class="tm">19:49:50</span><span class="nk"> &lt;henne&gt;</span> you shall not have any hotties beside me!
+<a name="l-611"></a><span class="tm">19:49:58</span><span class="nk"> &lt;suseROCKs&gt;</span> henne in leather is hot
+<a name="l-612"></a><span class="tm">19:49:59</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> no, just above you
+<a name="l-613"></a><span class="tm">19:50:07</span><span class="nk"> &lt;henne&gt;</span> okay we're drifting
+<a name="l-614"></a><span class="tm">19:50:08 </span><span class="nka">* yaloki</span> <span class="ac">plays the blue oyster bar music again</span>
+<a name="l-615"></a><span class="tm">19:50:11</span><span class="nk"> &lt;henne&gt;</span> lol
+<a name="l-616"></a><span class="tm">19:50:15</span><span class="nk"> &lt;henne&gt;</span> ahhhhhh
+<a name="l-617"></a><span class="tm">19:50:19</span><span class="nk"> &lt;SJ&gt;</span> haha k . later on :D
+<a name="l-618"></a><span class="tm">19:50:37</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so I guess we're done and I can go downtown now to replace my phone that I lost at NUE
+<a name="l-619"></a><span class="tm">19:50:39</span><span class="nk"> &lt;yaloki&gt;</span> any more questions/topics ?
+<a name="l-620"></a><span class="tm">19:50:51</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">SJ:</span> you said "most" were answered, anything left ?
+<a name="l-621"></a><span class="tm">19:51:07</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> you say that as if its the fault of NUE ;)
+<a name="l-622"></a><span class="tm">19:51:18</span><span class="nk"> &lt;SJ&gt;</span> yaloki, I meant during the discussion . Where noone should write , wrote (most) :-)
+<a name="l-623"></a><span class="tm">19:51:21</span><span class="nk"> &lt;suseROCKs&gt;</span> it IS!
+<a name="l-624"></a><span class="tm">19:51:34</span><span class="nk"> &lt;suseROCKs&gt;</span> I was nice enough to take pictures of Nuremberg and I lost my phone!  How dare you all!
+<a name="l-625"></a><span class="tm">19:51:49</span><span class="nk"> &lt;SJ&gt;</span> yaloki, thats a rule right . When Board talks no one talks
+<a name="l-626"></a><span class="tm">19:51:51</span><span class="nk"> &lt;SJ&gt;</span> :-)
+<a name="l-627"></a><span class="tm">19:51:55</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">SJ:</span> no
+<a name="l-628"></a><span class="tm">19:51:59</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">SJ:</span> it's a public meeting
+<a name="l-629"></a><span class="tm">19:52:01</span><span class="nk"> &lt;suseROCKs&gt;</span> no
+<a name="l-630"></a><span class="tm">19:52:09</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">SJ:</span> it's a discussion, with everyone
+<a name="l-631"></a><span class="tm">19:52:18</span><span class="nk"> &lt;suseROCKs&gt;</span> only when henne  talks.  But that's more a fear thing than a rule.
+<a name="l-632"></a><span class="tm">19:52:29</span><span class="nk"> &lt;SJ&gt;</span> suseROCKs, yaloki, okay :D
+<a name="l-633"></a><span class="tm">19:52:35</span><span class="nk"> &lt;henne&gt;</span> lol
+<a name="l-634"></a><span class="tm">19:52:36</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">SJ:</span> we planned it that way for purely organizational issues with the first few meetings, but we don't do that any more
+<a name="l-635"></a><span class="tm">19:52:48</span><span class="nk"> &lt;suseROCKs&gt;</span> ok bye bye all!
+<a name="l-636"></a><span class="tm">19:52:54</span><span class="nk"> &lt;SJ&gt;</span> yaloki, yeah I had that in mind.
+<a name="l-637"></a><span class="tm">19:52:58</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> o/
+<a name="l-638"></a><span class="tm">19:53:01</span><span class="nk"> &lt;henne&gt;</span> thats the second time today someone calls me fearsome
+<a name="l-639"></a><span class="tm">19:53:03</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> ok
+<a name="l-640"></a><span class="tm">19:53:18</span><span class="nk"> &lt;SJ&gt;</span> suseROCKs, we hope to see you in the next meeting (whore) :-) . BYE .
+<a name="l-641"></a><span class="tm">19:53:25</span><span class="nk"> &lt;yaloki&gt;</span> henne, LaTeX, blue oyster bar, how can that combo be fearsome
+<a name="l-642"></a><span class="tm">19:53:25</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   I call you other things, but this is a family channel
+<a name="l-643"></a><span class="tm">19:53:26</span><span class="nk"> &lt;henne&gt;</span> but in fact im the hottie biker gang boss from the blue oyster bar
+<a name="l-644"></a><span class="tm">19:53:28</span><span class="nk"> &lt;yaloki&gt;</span> oh.. now I see..
+<a name="l-645"></a><span class="tm">19:53:39 </span><span class="nka">* yaloki</span> <span class="ac">tries to remove those pictures from his head</span>
+<a name="l-646"></a><span class="tm">19:53:43</span><span class="nk"> &lt;yaloki&gt;</span> aaaargh
+<a name="l-647"></a><span class="tm">19:53:47</span><span class="nk"> &lt;yaloki&gt;</span> kill... me...
+<a name="l-648"></a><span class="tm">19:53:52</span><span class="nk"> &lt;yaloki&gt;</span> ok, we're done ?
+<a name="l-649"></a><span class="tm">19:53:57</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> suseROCKst hnaks for your supporting us in the middle of the jungle, because this we call you as tarzan
+<a name="l-650"></a><span class="tm">19:54:00</span><span class="nk"> &lt;gnokii&gt;</span> yaloki cant sleep with that
+<a name="l-651"></a><span class="tm">19:54:01</span><span class="nk"> &lt;henne&gt;</span> we're done
+<a name="l-652"></a><span class="tm">19:54:07</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">yaloki:</span> I would prefer another image at the end ;)
+<a name="l-653"></a><span class="tm">19:54:10</span><span class="nk"> &lt;yaloki&gt;</span> ---&gt;8---------------------------------------------------------------------------------------------------
+<a name="l-654"></a><span class="tm">19:54:14</span><span class="nk"> &lt;yaloki&gt;</span> done
+<a name="l-655"></a><span class="tm">19:54:17</span><span class="nk"> &lt;suseROCKs&gt;</span> Tarzan just became fat!  :-)
+<a name="l-656"></a><span class="tm">19:54:17</span><span class="nk"> &lt;henne&gt;</span> thanks everybody for participating
+<a name="l-657"></a><span class="tm">19:54:25</span><span class="nk"> &lt;henne&gt;</span> and helping me to ruin yalokis life
+<a name="l-658"></a><span class="tm">19:54:35</span><span class="nk"> &lt;yaloki&gt;</span> *g*
+<a name="l-659"></a><span class="tm">19:54:41</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

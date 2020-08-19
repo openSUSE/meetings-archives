@@ -1,0 +1,585 @@
+13:44:48 <vuntz> #startmeeting openSUSE GNOME Meeting
+13:44:48 <bugbot> Meeting started Thu Dec 16 13:44:48 2010 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+13:44:48 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+13:45:03 <psankar> nmarques, we will take care of it. we - I and you
+13:45:09 <psankar> after the meeting
+13:45:10 <vuntz> #topic Project Update
+13:45:17 <nmarques> psankar, that's  a plan +1
+13:45:18 <vuntz> ok, project update
+13:45:24 <vuntz> DimStar: anything? :-)
+13:45:35 <DimStar> project update? Hmm..
+13:45:52 <DimStar> only the usual: packages are up-to-date... vuntz fixed a big bunch of build failures
+13:46:00 <psankar> gnome:next ?
+13:46:44 <vuntz> from my side, I see a few things:
+13:46:46 <vuntz> a few new apps that were packaged and pushed to factory (waiting for legal review)
+13:46:53 <vuntz> I probably need to update the wiki page for that
+13:47:07 <vuntz> we're up-to-date, as DimStar said
+13:47:26 <vuntz> we did a few maintenance updates for 11.3 recently, which is good
+13:47:35 <vuntz> we could do more -- if people want to help, that's welcome
+13:47:55 <vuntz> and we have GNOME:Next which we just started
+13:48:04 <vuntz> it will contain GNOME 3 in the future
+13:48:09 <badshah400> regarding gnome:next, is this the project that will be used to supply end-users with a stable 3.0 once it is released?
+13:48:12 <vuntz> hopefully, it'll be ready before the end of the year
+13:48:28 <vuntz> badshah400: GNOME:Next is explicitly not for end-users -)
+13:48:41 <vuntz> once 3.0 will be ready, we'll move it to G:S:3.0
+13:48:56 <DimStar> I don't think we should ever have users use gnome:next.... it should more serve us our 'devel bed' while factory is closed... we will probably make a GNOME:STABLE:3.0 for the users
+13:48:57 <badshah400> vuntz: ok, so this is a test-bed sort of
+13:49:14 <vuntz> badshah400: yeah, it's for developers/packagers
+13:49:25 <psankar> Do we plan to create anything for tumbleweed ? can gnome-next be used there ?
+13:49:26 <vuntz> fwiw, I explicitly mentioned in the title of the project that it's not for end-users :-)
+13:49:36 <vuntz> ah, tumbleweed, that's another good topic
+13:49:45 <vuntz> tumbleweed should use the latest G:S:*
+13:50:06 <DimStar> did we/you SR it already?
+13:50:09 <vuntz> I wanted to check with DimStar, but I think we're ready to submit all of G:S:2.32
+13:50:31 <vuntz> DimStar: :-) If you're fine with it, we can sr it
+13:50:37 <DimStar> there is a small list of packages that could get an update in G:S:2.32... volunteers? :)
+13:50:41 <vuntz> I'm not aware of any issue in G:S:2.32
+13:51:02 <DimStar> stability wise it seems to be fine.. I don't see much complaining about it.
+13:51:06 <vuntz> DimStar: good point
+13:51:17 <vuntz> most of them can be taken from G:F, though ;-)
+13:52:24 <psankar> DimStar, can you mail the list about the list of packages needing help ?
+13:52:30 <badshah400> DimStar: these are just minor version upgrades, nothing big right? so I can look into them
+13:52:52 <vuntz> psankar: osc collab todo --project GNOME:STABLE:2.32
+13:53:28 <psankar> vuntz, ah yes. I forgot that
+13:53:46 <vuntz> badshah400: note that for most of them, we can just take the version from G:F. It's just a matter of copying them, which I can trivially do after the meeting
+13:53:55 <badshah400> vuntz: ok then
+13:53:59 <vuntz> there's just glib2 which will require manual work
+13:54:03 <vuntz> as far as I can tell
+13:54:22 <vuntz> badshah400: so you can take this one, if you want
+13:54:56 <badshah400> vuntz: glib2 for G:S:2.32? ok
+13:55:17 <vuntz> badshah400: yep
+13:56:55 <badshah400> ok
+13:57:31 <vuntz> coming back to GNOME:Next and Tumbleweed:
+13:57:45 <vuntz> if people want to help with either of those, you're most welcome
+13:57:56 <vuntz> for Tumbleweed, especially, we'll likely need testers, I guess
+13:58:11 * psankar volunteers
+13:58:19 <psankar> I am very much interested in tumbleweed
+13:58:22 <nmarques> vuntz, you know my help is very limited but within the boundaries of what I can help, feel free to send some my way if you think I can handle it (no coding)
+13:58:49 <psankar> I am planning to run it in my laptop also, so I will give feedback for gnome as well
+13:59:24 <vuntz> psankar: that's cool
+14:00:18 <vuntz> nmarques: well, if you have time to update packages, test stuff, triage bugs, etc. you're always welcome. It's up to you to choose how you want to help :-)
+14:00:37 <vuntz> ah, I forgot to take action items and info
+14:00:51 <vuntz> #info GNOME in Factory is up-to-date and (mostly) builds fine now
+14:01:02 <mrdocs> vuntz: im going to be testing the graphics apps no matter what :)
+14:01:08 <metalgod> sorry for taking so long
+14:01:12 <vuntz> #info we got some new apps again (most are waiting for legal review)
+14:01:33 <vuntz> #info we got some maintenance releases, we could do more if people can help
+14:01:37 <nmarques> vuntz, me and bugs don't work very well ;) I always end up embarassing myself when I try to help... but once I get some more 'bearing' with packages I'll help update packages
+14:01:47 <metalgod> vuntz: make me in the updates
+14:02:12 <vuntz> #info GNOME:Next got created; it will track 3.0 for now. It's not for end-users though (it will move to G:S:3.0 when it will be ready)
+14:02:31 <vuntz> #info we'll push G:S:2.32 to Tumbleweed
+14:02:48 <vuntz> #action psankar to install Tumbleweed and look for GNOME issues there
+14:03:00 <vuntz> #action badshah400 to update glib2 in G:S:2.32
+14:03:13 <vuntz> #action vuntz to copy latest 2.32 versions from G:F to G:S:2.32
+14:03:21 <vuntz> #action vuntz to sr G:S:2.32 to tumbleweed
+14:03:25 <vuntz> phew
+14:03:30 <vuntz> I hope I didn't miss anything ;-)
+14:03:37 <badshah400> vuntz: any specific packages for 11.3 updates you r thinking about?
+14:03:54 <vuntz> metalgod, badshah400: we need to look at the various bugs
+14:04:10 <vuntz> I know there's a big libwebkit update to do (for 11.1, 11.2, 11.3), though
+14:04:31 <vuntz> it's a big big task, so I'm unsure how hard it will be :/
+14:04:35 <metalgod> i've been taking care of applications that loose functionality ie. empathy connection to msn, pidgin icq etc...
+14:04:59 <vuntz> badshah400: do you want to try to do a simple update next time?
+14:05:08 <metalgod> it's very important to keep "stable" users with all functionality ok
+14:05:46 <badshah400> vuntz: yes, sure i can do the easy ones
+14:05:49 <vuntz> cool
+14:06:19 <vuntz> #info metalgod and badshah400 are willing to help for maintenance updates
+14:06:29 <vuntz> #action vuntz to look for next maintenance updates to do
+14:06:31 <vuntz> cool
+14:06:44 <vuntz> so, let's move to the next topic :-)
+14:06:53 <metalgod> right on time
+14:06:59 * psankar has not done his AIs and feels shameful about it
+14:07:02 <metalgod> the action items are always on the topic
+14:07:19 <vuntz> well, not right now :-)
+14:07:23 <metalgod> eheh
+14:07:41 <psankar> I shall complete my action items by this weekend for sure. was stuck in some busy things in dayjob . sorry.
+14:07:45 <vuntz> last meeting: http://community.opensuse.org/meetings/opensuse-gnome/2010/opensuse-gnome.2010-11-25-13.45.html
+14:07:51 <metalgod> that's right
+14:08:08 <vuntz> so I did my AI, and sent the info to psankar :-)
+14:08:12 <psankar> :-)
+14:09:03 <vuntz> so just to keep the old AI alive:
+14:09:11 <vuntz> #action psankar Talk with the security team about gnomesu replacement for Yast
+14:09:21 <vuntz> #action psankar ask ajorg (mono team) if someone can SR smuxi to G:Apps
+14:09:42 <vuntz> actually, looking at some old minutes...
+14:09:46 <vuntz> #action vuntz to discuss with legal team how to make the licensing-related bugs open by default
+14:10:23 <vuntz> ok
+14:10:26 <vuntz> anything else on AI?
+14:10:52 <vuntz> I take it as a no :-)
+14:10:59 <psankar> :)
+14:11:31 <vuntz> so we need to triage this:
+14:11:33 <vuntz> https://features.opensuse.org/query/tag?tag=gnome
+14:12:15 <vuntz> unfortunately, this lists features that are done too (?)
+14:12:18 <vuntz> but yeah
+14:12:30 <vuntz> ideally, I'd like some of us to do it together
+14:12:40 <nmarques> vuntz, https://features.opensuse.org/308271
+14:12:48 <nmarques> vuntz, I have packaged software to do this
+14:13:12 <vuntz> nmarques: where is it? Did you sr it to G:A?
+14:13:14 <nmarques> vuntz, but it has 1 problem... it only works with images, not with .xml stuff like we use :(
+14:13:21 <vuntz> #info we need to triage https://features.opensuse.org/query/tag?tag=gnome
+14:13:22 <psankar> nmarques, that is AWESOME. it works with latest gdm ?
+14:13:26 <nmarques> vuntz, I haven't submitted it because of that
+14:13:28 <vuntz> nmarques: which .xml stuff?
+14:13:29 <nmarques> psankar, yes
+14:13:45 <psankar> nmarques, cool. Thanks.
+14:13:55 <nmarques> vuntz, the software displays a preview of the current wallpaper... if the wallpaper is something like IK.xml
+14:14:04 <nmarques> vuntz, it blows up... that aside, it works pretty nice
+14:14:24 <nmarques> vuntz, I haven't done python, but I can try to hack it ;)
+14:14:25 <vuntz> ah
+14:14:30 <vuntz> nmarques: well, we need to fix it
+14:14:46 <vuntz> nmarques: did you file a bug for this?
+14:14:48 <nmarques> it's a 10 min thingie for someone proeficient with python ;)
+14:15:01 <nmarques> vuntz, yeah... no reply... ubuntu fan stuff
+14:15:18 <psankar> nmarques, that package is not in upstream git ?
+14:15:27 <psankar> nmarques, but just in ubuntu's repos ?
+14:15:39 <vuntz> nmarques: let's talk about this after the meeting, if you don't mind
+14:15:54 <nmarques> sure :)
+14:16:01 <nmarques> https://bugs.launchpad.net/gdm2setup/+bug/682868
+14:16:02 <bugbot> Malone bug 682868 in gdm2setup "default wallpaper, not an image..." [Undecided,New]
+14:16:17 <vuntz> so, would people be available to do some feature triage day?
+14:16:28 <psankar> IF it is in a weekend, I can
+14:16:28 <nmarques> psankar, https://features.opensuse.org/308271
+14:16:30 <vuntz> to be honest, I'd expect it to only take a few hours
+14:16:54 <badshah400> vuntz: yes, this weekend would be fine for me too
+14:17:17 <nmarques> vuntz, I have one volunteer for helping with GNOME who actually is starting on GTK, anyone available to get him on the team's workflow ? :)
+14:17:41 <vuntz> I probably can't help this week-end, fwiw
+14:17:53 <vuntz> nmarques: can we discuss this in Q&A? :-)
+14:18:04 <vuntz> nmarques: (just trying to follow the meeting agenda)
+14:18:37 <nmarques> vuntz, sry
+14:20:00 <psankar> vuntz, weekdays are ruled out for me. unless they are after 1300 UTC
+14:20:31 <vuntz> is there anyone who would like to take care of the organization of such a day? :-)
+14:20:31 <psankar> but after 1300 UTC any day should be fine I guess (unless there are some critsits / exceptions)
+14:20:47 <vuntz> it's mostly just defining a date/time
+14:20:57 * psankar proposes badshah400
+14:21:56 <badshah400> i am not around next week, but if it is this weekend or something, yes I can do it I guess
+14:22:30 <vuntz> badshah400: oh, it's just finding date+time, no need to even be available for the day :-)
+14:22:58 <vuntz> #action psankar & badshah400 to find a date/time for the feature triage day
+14:23:02 <vuntz> ::-)
+14:23:05 <badshah400> vuntz: ok, then
+14:23:06 <psankar> :)
+14:23:10 <vuntz> ok, next
+14:23:14 <psankar> vuntz, or is it a good idea
+14:23:17 <psankar> vuntz, if
+14:23:21 <vuntz> yes?
+14:23:29 <nmarques> ok
+14:23:34 <psankar> vuntz, you can propose the list of triage guideliens ? (what to pick / reject Etc.)
+14:23:45 <metalgod> nmarques: the volunteer direct him to me
+14:23:48 <psankar> so that everyone can do it in their own time ?
+14:23:58 <metalgod> i'll help him with packaging and gtk stuff
+14:24:02 <psankar> will not be coordinated but will get some more eyeballs
+14:24:04 <vuntz> psankar: well, I'm afraid we don't have such guidelines at the moment, that's the issue
+14:24:21 <psankar> vuntz, oh okay. we will get the date and will let you know
+14:24:30 <nmarques> metalgod, will do... I'll talk to you later and I'll introduce you to him... thanks for doing it :)
+14:24:34 <vuntz> psankar: I think we need to do a first pass together, and that will help us define guidelines to do what you propose afterwards
+14:24:47 <metalgod> nmarques: np
+14:24:47 <psankar> vuntz, neat
+14:24:48 <vuntz> nmarques: so, ayatana?
+14:25:06 <nmarques> about ayatana... the libs are no problem and there are 4 base libs already done
+14:25:35 <nmarques> indicators, we can use a few without changes... others we shouldn't even look for them because they demand deep core patching (gnome-power-* and other wicked stuff)
+14:25:47 <nmarques> I do have a couple of problems with one or another package
+14:25:59 <nmarques> specially vala related, but it's on track
+14:26:18 <vuntz> #info libs are no problem, and mostly done
+14:26:27 <nmarques> the stuff that's done, works out of the box
+14:26:42 <nmarques> needs polishing most
+14:26:53 <metalgod> nmarques: what was your motivation to implement this stuff if gnome will move to 3.0
+14:26:56 <vuntz> #info some indicators are already fine, but some should probably be ignored (require core patching)
+14:26:59 <metalgod> even ubuntu will abandon that design ?
+14:27:16 <vuntz> #info polishing is needed
+14:27:19 <nmarques> metalgod, because I staying with GNOME2 for 1 or 2 more cycles
+14:27:52 <nmarques> metalgod, old habbits die hard... panel for 12 years... hard to ditch now ;)
+14:28:28 <metalgod> nmarques: and what about unity ? you will package it too ?
+14:28:50 <nmarques> metalgod, I will try, but I will wait a bit to see what Adam will do on fedora ;)
+14:28:57 <psankar> iirc yeah he offered to. but wanted some packaging help as well
+14:29:00 <nmarques> metalgod, and some of this libs will be required for it ;)
+14:29:01 <metalgod> nmarques: ok sounds good
+14:29:07 <psankar> i meant nmarques not adam, btw ^
+14:29:26 <nmarques> currently there's only a group of people working this out
+14:29:29 <nmarques> on Arch Linux
+14:29:43 <nmarques> I'm also following their advancements and checking how they are doing it :)
+14:30:00 <nmarques> vuntz, I'm done, it's not much to say really :)
+14:30:17 <nmarques> vuntz, only 1 patch needed on GTK
+14:30:21 <nmarques> vuntz, the one I told you about
+14:30:30 <vuntz> right
+14:30:32 <nmarques> vuntz, if that happens... then all of this will work
+14:30:38 <vuntz> I want federico to look at it
+14:30:42 <nmarques> vuntz, some indicators will not work, but those we don't need them
+14:30:47 <nmarques> because GNOME offers better by default
+14:30:59 <nmarques> that's the case for battery indicator and nm-applet
+14:31:19 <nmarques> and ubuntu's solution for nm-applet replacement does rely on Intel's Connection Manager
+14:31:23 <vuntz> nmarques: do you need any specific help?
+14:31:49 <nmarques> vuntz, just maybe a fix on the package I sent for the list, and for reviewing my packages so that I know they are properly done
+14:32:00 <nmarques> vuntz, that aside... I'm going cool :)
+14:32:04 <vuntz> so, yeah, the usual stuff
+14:32:12 <vuntz> okay
+14:32:18 <vuntz> thanks, let's move to the next topic :-)
+14:32:39 <metalgod> nmarques: the plan is to include in G:A or stay on G:Ayatana ?
+14:32:39 * psankar sits straight
+14:32:39 <vuntz> fcrozat: hop
+14:33:00 <metalgod> i think fcrozat have some interesting news for us ;)
+14:33:34 <nmarques> metalgod, some like base libs and some apps which don't require mess up... can go to G:A, the rest of the stuff that needs patching I would rather have a separate repo so I can provide the patched apps in parallel for users who want to check that out
+14:33:49 <nmarques> metalgod, but I don't plan to merge it with openSUSE's default GNOME offer
+14:34:00 <nmarques> metalgod, just as an option for whoever wants
+14:34:14 <metalgod> nmarques: awesome :)
+14:34:31 <fcrozat> so, I've started to use source services to get GNOME3 (mainly gnome-shell) working on a "stable" platform ie 11.3
+14:34:45 <fcrozat> but it is still a bit problematic to get everything built
+14:34:54 <fcrozat> so, I'm going to do the work in two phases
+14:35:12 <fcrozat> first, branch packages from :Next to my gnome3 to get tarball release built against 11.3
+14:35:23 <fcrozat> build ISO based on that
+14:35:45 <fcrozat> and then, enable source service on packages, so the iso (and packages) can be update easily
+14:36:14 <fcrozat> the idea is to not brand the iso too much as openSUSE, since the plan is to be used by GNOME upstream folks too
+14:36:18 <fcrozat> (to test gnome3)
+14:36:27 <metalgod> good news
+14:36:49 <fcrozat> I'll try to merge back the source service changes needed in specfile back to next
+14:37:12 <fcrozat> (additional build requirements and so on) so the work would not be lost when gnome3 is released
+14:38:31 <metalgod> fcrozat: why don't you use 11.4m5 to build gnome-shell ?
+14:38:48 <fcrozat> metalgod: because too much things changed and aren't stable
+14:39:05 <metalgod> it should be easier to build
+14:39:08 <metalgod> ok
+14:39:14 <psankar> fcrozat, IIUC, is this for using latest GNOME 3 on 11.3 ?
+14:39:15 <vuntz> #info the idea is to use use source services to easily provide a live image
+14:39:18 <fcrozat> it isn't that difficult
+14:39:26 <metalgod> good to know that we will have a openSUSE livecd to get tested by GNOME upstream
+14:39:35 <vuntz> #info we want the image to be usable by upstream, so it shouldn't be branded openSUSE too strongly
+14:39:41 <fcrozat> psankar: yep..
+14:39:48 <vuntz> #info this work will be merge with the G:N work
+14:39:48 <psankar> fcrozat, neat okay. thanks.
+14:39:49 <fcrozat> psankar: at least until 11.4 is released
+14:39:53 <psankar> got it
+14:40:06 <fcrozat> I might push updated drm / mesa stuff there too
+14:40:19 <fcrozat> but first things first :)
+14:40:51 <metalgod> fcrozat: another question.... any plans to integrate opensuse OBS with gnome buildbots ?
+14:41:09 <fcrozat> metalgod: can't be done..
+14:41:21 <fcrozat> metalgod: but if you want to donate a system to run jhbuild
+14:41:27 <fcrozat> there is no problem :)
+14:41:42 <metalgod> fcrozat: ehehe too much power for my machine :)
+14:42:09 <metalgod> fcrozat: similar to what people did in the past with deb's
+14:42:30 <vuntz> #action vuntz to investigate if we can find some server that can be used as build bot for build.gnome.org
+14:42:32 <fcrozat> gnome buildbots aren't using packages but jhbuild.. what is needed is "raw power"
+14:43:15 <vuntz> anything else on the GNOME 3 git packages?
+14:43:25 <fcrozat> no
+14:43:35 <vuntz> good, next topic :-)
+14:43:43 <psankar> fcrozat, It may be a stupid suggestion but I have heard that icecream does distributed builds and uses multiple machines cpu power etc. may be it can help ?
+14:44:10 <fcrozat> psankar: it could.. we "just" need a "master" server somewhere
+14:44:21 <fcrozat> (and the icecream nodes would need to be on the same network)
+14:44:38 <psankar> fcrozat, yeah.
+14:45:06 <badshah400> issue with M5: no banshee, tomboy, gnome-do; imo better coordination is required with mono repos so that such a problem can be avoided
+14:45:24 <vuntz> #info with M5: no banshee, tomboy, gnome-do
+14:45:51 <metalgod> vuntz: the gnome-keyring bug counts ? :)
+14:45:57 <vuntz> that's quite a big issue
+14:46:03 <vuntz> anybody willing to talk to mono people about this?
+14:46:14 <metalgod> i can ask gabaug1 about banshee
+14:46:36 <metalgod> and see if he want's to get 1.9.1 in factory
+14:47:11 <vuntz> metalgod: the gnome-keyring issue is quite bad, but we need to be able to reproduce it :/
+14:47:33 <vuntz> metalgod: re banshee: unless 1.10 is released in February, we'll have to stay with 1.8
+14:48:16 <badshah400> why not have the banshee build in gnome:apps (it is our default player) instead of its own repo (which upstream can use as usual)?
+14:48:22 <metalgod> vuntz: banshee development version have been very stable and since banshee is developed "in-house"....
+14:48:26 <metalgod> but yeah i agree with you
+14:48:31 <vuntz> badshah400: the banshee people like it this way
+14:48:45 <vuntz> metalgod: banshee is not developed "in-house"
+14:48:46 <badshah400> vuntz: that's 2.0 and not 1.10 you are talking about :)
+14:48:57 <vuntz> it's a community project, with contributors from various distros :-)
+14:49:06 <metalgod> vuntz: right :)
+14:50:22 <metalgod> ok
+14:50:35 <metalgod> vuntz: put the action on me
+14:50:39 <metalgod> mono apps
+14:50:43 <vuntz> ok
+14:50:58 <vuntz> #action metalgod to find a solution for the mono apps not being in M5
+14:51:03 <vuntz> anything else?
+14:51:16 <metalgod> banshee failed to build on factory last night
+14:51:30 <badshah400> vuntz: the packagekit updater applet issue
+14:51:31 <vuntz> as far as I can tell, things are mostly fine. There are a few things that need to be polished, but no big issue
+14:51:33 <metalgod> vuntz: we deal with the theme too ?
+14:51:52 <vuntz> badshah400: I'd like to see if the new PackageKit helps
+14:51:53 <metalgod> badshah400: what's wrong with the updater ?
+14:51:58 <vuntz> badshah400: I have 0.6.11 coming soon
+14:52:33 <metalgod> impressive PK from factory updates packages from all repositories
+14:52:45 <metalgod> thanks for who did that
+14:53:44 <badshah400> metalgod: that's the issue; it is a BIG change from 11.3 and needs to be mentioned in the release notes in capital letters to make it clear to everyone
+14:53:59 <nmarques> metalgod, mine seems to be following the repo priority ;)
+14:54:16 <metalgod> badshah400: i think it's pretty cool
+14:54:34 <metalgod> this way deals with 11.4-updates and packman packages at the same time
+14:54:38 <metalgod> which makes sense
+14:55:14 <metalgod> finally PK does something useful besides updates
+14:55:34 <badshah400> metalgod: it deviates from the vendor stickiness policy of openSUSE
+14:55:40 <badshah400> bug 637764
+14:55:42 <bugbot> openSUSE bug 637764 in openSUSE 11.4 (GNOME) "Packagekit updater applet in GNOME sees upgrades/updates from all repositories irrespective of vendor changes" [Major,New] https://bugzilla.novell.com/637764
+14:56:05 <vuntz> badshah400: I forgot. Does pkcon works correctly?
+14:56:32 <metalgod> badshah400: the old behavior was only to search for updates and perform updates
+14:56:49 <metalgod> i don't think it's bad but look
+14:56:56 <badshah400> vuntz: i don't know at least with the latest mileston
+14:57:18 <metalgod> if you have G:S:2.32 and packman PK will try to update your packages that have a version lower than the current repositories
+14:57:37 <badshah400> vuntz: i will get back to you with some testing later then?
+14:57:54 <vuntz> badshah400: cool
+14:58:10 <vuntz> metalgod: re "we deal with the theme too ?"
+14:58:16 <vuntz> metalgod: what did you ean?
+14:58:18 <vuntz> mean
+14:58:21 <badshah400> metalgod: i am complaining about the fact that pk-applets behaviour has gone from doing zypper patch to zypper up
+14:58:43 <metalgod> vuntz: mean if we decide which artwork (theme and icons) goes to gnome
+14:58:49 <vuntz> #info there's some discussion on https://bugzilla.novell.com/637764, a change in the behavior of the packagekit updater
+14:59:03 <vuntz> #action badshah400 to check if pkcon exhibits the same behavior as the updater applet
+14:59:18 <vuntz> metalgod: where can we see the proposed artwork?
+14:59:23 <nmarques> metalgod, I agree with you in one way... but I also hold reservations
+14:59:30 <nmarques> vuntz, hold, I link
+15:00:01 <nmarques> http://karl-tux-stadt.de/ktuxs/?p=2677
+15:00:01 <metalgod> vuntz: someone is already getting new stuff on factory
+15:00:05 <nmarques> the grey one is for GNOME
+15:00:06 <metalgod> but gnome stuff is still on 11.3
+15:00:10 <nmarques> I find it very depressing
+15:00:11 <nmarques> :(
+15:00:30 <badshah400> also while we are on theming, who is maintaining sonar since jimmac left? upstream or us?
+15:00:48 <nmarques> vuntz, Gnokii also keeping sonar
+15:01:04 <metalgod> badshah400: i think mmeeks can give you a help with PK
+15:01:06 <vuntz> let's move to the next topic and keep discussing this :-)
+15:01:21 <vuntz> #info should we move to the new theme? http://karl-tux-stadt.de/ktuxs/?p=2677
+15:01:28 <psankar> I believe sonar is in upstream . no ?
+15:01:35 <vuntz> badshah400: we are maintaining sonar
+15:01:44 <nmarques> psankar, upstream is clearlooks I think
+15:01:46 <psankar> IOW, jimmac still mainains it ?
+15:02:02 <nmarques> vuntz, I would suggest we upgrade default icon set to Faenza
+15:02:09 <psankar> nmarques, what I mean is, the theme is not in suse repos but still maintained by jimmac
+15:02:09 <nmarques> vuntz, I can maintain it if needed
+15:02:10 <metalgod> well
+15:02:12 <vuntz> psankar: no, jimmac doesn't maintain the opensuse theme stuff anymore
+15:02:18 <psankar> vuntz, oh okay
+15:02:25 <metalgod> we should stick with this theme for 11.4
+15:02:28 <vuntz> so, let's first discuss the background
+15:02:29 <metalgod> and get a new one for 12.0
+15:02:33 <metalgod> because of GNOME 3.0
+15:02:34 <vuntz> gnokii joined us for that :-)
+15:02:44 <gnokii> nmarques: to change it not has something todo with the respect of jimmacs work so plz, I also like faenza more
+15:02:50 <metalgod> brb
+15:03:02 <nmarques> gnokii, jimmac isn't here... we are
+15:03:30 <gnokii> nmarques: that ppl not are here have nothing to do with not respect there work!
+15:03:35 <nmarques> gnokii, and blind allegiance won't take us far when our desktop is ugly as hell, specially with icon sets ;)
+15:03:41 <vuntz> please please please
+15:03:41 * mmeeks emphatically can't do everything and PK/zypp was just a rescue-from-the-flames scenario I've moved on from ;-)
+15:03:51 <mmeeks> metalgod: AFAIR there was some intel-ite who was maintaining that now, cf. the git log.
+15:03:53 <vuntz> can we just focus on the background right now? :-)
+15:04:00 <gnokii> vuntz +1
+15:04:30 <vuntz> gnokii: my main worry about this background is that it's the upstream KDE one
+15:04:51 <vuntz> (and well, the grey is depressing, but that's something else :-))
+15:05:05 <gnokii> mmh kde has an celadon one now
+15:05:19 <psankar> vuntz, gnokii nmarques : I am a bit lost. What is the proposal ? we should change the theme ? or wallpaper ? or both ?
+15:05:33 <nmarques> psankar, ignore my previous remarks
+15:05:46 <vuntz> psankar: the proposed background is http://karl-tux-stadt.de/ktuxs/?p=2677 (left one)
+15:05:47 <gnokii> psankar: the problem is the theme, sonar has a dark green in it
+15:05:59 <gnokii> vuntz thas was a long time ago
+15:06:07 <gnokii> give me a fe seconds
+15:06:16 * psankar waits for gnokii
+15:06:31 * nmarques pulls the whip and grins
+15:07:42 <vuntz> fwiw, something to consider for GNOME theming:
+15:07:49 <psankar> vuntz, so if there is nothing else, we can close the topic
+15:07:50 <fcrozat> we could switch to gnome3 theme, for gtk2 ? (if it is fixed correctly for metacity and gtk2)
+15:08:08 <vuntz> for 11.4+1, when we'll have GNOME 3, I think we should keep the upstream theme (there's a big push upstream to have one theme used in all distros)
+15:08:33 <vuntz> so my personal opinion is that, except maybe for the background, we should keep the current theming for 11.4
+15:08:38 <nmarques> vuntz, there is a sonar for gnome-shell
+15:08:48 <vuntz> psankar: we're waiting for gnokii :-)
+15:09:01 <gnokii> http://img.susepaste.org/59475213
+15:09:08 * psankar looks
+15:09:18 <vuntz> nmarques: I know, I packaged it. But still, we should move to the upstream theming when we get GNOME 3, imho
+15:09:40 <gnokii> that is what KDE wanted, so that wallpaper now contains also colors they are used in sonar
+15:10:24 <psankar> vuntz, gnokii I would prefer a little more brighter wallpaper. but artists know the minds of people better than programmers. so I leave it to you :-)
+15:10:50 <psankar> btw, my current wallpaper is : http://eng.hebus.com/image-208954.html (so I may be biased by my current wallpaper)
+15:10:56 <gnokii> psankar the fun is the grey one was loved from many ppl its in right now
+15:11:13 <vuntz> gnokii: my issue is still that it's based on the upstream kde thing
+15:11:27 <psankar> gnokii, oh okay.
+15:11:47 <vuntz> gnokii: so why couldn't we do the same thing for the upstream gnome background?
+15:11:48 <psankar> may be we can have a wallpaper voting ?  ;-)
+15:11:56 <gnokii> vuntz no it should not the upstream from KDE (nuno dont like them)
+15:12:14 <gnokii> vuntz but for make sure its not we can ask will
+15:12:20 <metalgod> mmeeks: ok, we were talking about the current behavior which is a bit different from the behavior on 11.3
+15:12:32 <vuntz> which is http://git.gnome.org/browse/gnome-themes-standard/tree/themes/Adwaita/backgrounds/stripes.jpg
+15:12:42 <vuntz> err, http://git.gnome.org/browse/gnome-themes-standard/plain/themes/Adwaita/backgrounds/stripes.jpg
+15:12:48 <metalgod> mmeeks: imo makes sense the current behavior that is tracking all repos instead of tracking only the updates
+15:13:53 <gnokii> vuntz who created that?
+15:14:01 <psankar> vuntz, that looks better to me
+15:14:39 <metalgod> i love the background http://karl-tux-stadt.de/ktuxs/?p=2677
+15:14:41 <vuntz> gnokii: jimmac
+15:14:43 <metalgod> very futuristic
+15:14:51 <metalgod> but it doesn't deal with sonar :/
+15:15:12 <gnokii> psankar: I also like that one more, but KDE needs for there theme more differences in the wallpaper with lights
+15:15:14 <nmarques> metalgod, I find it very depremoted of 'life', like a 'walking corpse'
+15:15:40 <psankar> gnokii, oh okay
+15:16:10 <psankar> nmarques, I suggest not to speak in such a way (corpse), especially when the creator is around :-) (even otherwise also)
+15:16:11 <nmarques> metalgod, my opinion is that our artwork should favor joy and fun... and not be melancholic or have a 'sick' look
+15:16:16 <metalgod> nmarques: well i see your point... live colors are much nicer
+15:16:17 <gnokii> vuntz can the gnome team live with the celadon one from KDE?
+15:16:25 <metalgod> but the background feels very futuristic
+15:16:55 <vuntz> gnokii: http://ivan.fomentgroup.org/blog/2010/08/12/distribution-branding-and-stripes/ indicates that the wallpaper is the kde one
+15:17:00 <metalgod> nmarques: well ubuntu artwork is dark and melancholic too... reminds me of macosx
+15:17:02 <nmarques> psankar, it's a way of expressing how I feel, a metaphore or analogy ;)
+15:17:08 <vuntz> gnokii: personally, I'm not really happy about that
+15:17:25 <nmarques> metalgod, to be honest, I like more GNOME's default green wallpaper ;P
+15:17:34 <psankar> nmarques, FWIW, I share the feeling that "it needs more brightness / life" but just not hte "corpse " part (may be it is just a cultural difference)
+15:17:40 <vuntz> gnokii: mostly because I can hear people saying "GNOME is slowly disappearing, openSUSE is KDE-centric, etc." again
+15:17:47 <nmarques> vuntz, one quick question
+15:17:48 <psankar> vuntz, +1
+15:17:57 <gnokii> vuntz me is also not so happy, but we need something what respects gnome and KDE and shows its one thing openSUSE
+15:17:58 <vuntz> gnokii: not because it looks bad
+15:18:13 <nmarques> vuntz, how would you face a community made wallpaper pack to be installed also ?
+15:18:18 <gnokii> vuntz ok, which color wants the gnome team?
+15:18:22 <vuntz> nmarques: not sure I understand
+15:18:30 <vuntz> gnokii: the question is not about the color. It's the design itself
+15:19:07 <nmarques> vuntz, currently we ship stock gnome and opensuse artwork... could we add to install a small pack (4/6 wallpapers) of wallpapers submitted by the community as an option ?
+15:19:07 <gnokii> vuntz u remember 11.2 sonar like bootsplash and then Nunos KDE wallpaper it looked not how one product
+15:19:15 <vuntz> nmarques: sure, we can do that
+15:19:23 <vuntz> gnokii: I agree we want one design
+15:19:39 <gnokii> yeah and that is the hard part
+15:20:12 <ReferenceSeete> Why not modify the 11.2 theme?
+15:20:20 <gnokii> there are to solutions both bigger environments accept same color or the same "pattern"
+15:20:21 <nmarques> psankar, ok... sry for the expression
+15:20:22 <vuntz> gnokii: but if the design sends the message "this is a KDE distro" or "this is a GNOME distro", then it might not be a good thing
+15:20:39 <gnokii> vuntz u know me I dont like to send out that message
+15:20:45 <badshah400> gnokii: fwiw, i support vuntz abt the design of the wallpaper. It does not look original enough, and especially from the GNOME side it looks like borrowing from KDE -- ouch :)
+15:20:51 <vuntz> gnokii: don't get me wrong, I'm not blaming you :-)
+15:21:02 <gnokii> I know
+15:21:06 <vuntz> gnokii: I'm just saying that the gnome team will have a hard time accepting this one
+15:21:16 <gnokii> I only to make sure that I dont like borrowing also
+15:22:02 <nmarques> metalgod, I don't like either Ubuntu wallpapers... but they transmit a positive feeling... and we should go after that offer also... transmit to users a positive feeling
+15:22:12 <vuntz> gnokii: it's also worth pointing out that upstream GNOME will want us to use the upstream GNOME design for 11.4+1
+15:22:23 <vuntz> gnokii: so maybe we'll have to get two different designs in the future anyway
+15:22:25 <nmarques> vuntz, I strongly disagree with that
+15:22:32 <nmarques> vuntz, we as a distro should have our own image
+15:22:54 <vuntz> nmarques: our own image doesn't have to hide the upstream image
+15:22:55 <gnokii> vuntz, it would be ok with me to use the style when we try to change the color to celadon?
+15:23:03 <badshah400> gnokii: nothing personal at all, but to someone who has had a loko at KDE's default and ours wouldn't this be the feeling getting across to him?
+15:23:26 <psankar> nmarques, well, if the upstream thing is beautiful, why not ? :-)
+15:23:29 <nmarques> vuntz, it makes sense for distros like Fedora which are 'unpolished'
+15:23:48 <gnokii> nmarques: u should say that to mizmo!
+15:23:51 <metalgod> nmarques: yes i agree with you in that
+15:23:56 <nmarques> vuntz, we are associated in a way with a distro that also aims to Desktop
+15:24:22 <vuntz> ok
+15:24:24 <nmarques> vuntz, we need to keep our image amongst users strong... and not be just another distro with default look of a project
+15:24:31 <vuntz> nmarques: so
+15:24:40 <vuntz> nmarques: let's take this: http://img.susepaste.org/59475213
+15:24:45 <gnokii> psankar: I like the upstream from gnome also, but when we would use from all the upstream is it openSUSE then?
+15:24:55 <vuntz> nmarques: this is KDE's brand + opensuse's brand
+15:25:01 <nmarques> vuntz, no
+15:25:05 <vuntz> nmarques: isn't this what we'd want to do (but with GNOME's brand)?
+15:25:10 <nmarques> vuntz, we give gnokii a chance to surprise us ;)
+15:25:17 <gnokii> aah no
+15:25:26 <nmarques> gnokii, u bailing out ?
+15:25:31 <metalgod> vuntz: i'm all for that wallpaper
+15:25:39 <gnokii> the gnome team has the right for wishes and we definitly find something we can all agree with
+15:25:45 <metalgod> if we need to change sonar colors a bit it won't be hard
+15:25:55 <nmarques> metalgod, I can hack it if needed
+15:26:01 <vuntz> metalgod: so you're fine using the background that upstream KDE wants distro to use?
+15:26:12 <vuntz> metalgod: (to make sure that all KDE distros have the same feeling)
+15:26:23 <gnokii> vuntz we dont use the upstream
+15:26:33 <badshah400> i am all against using brand KDE + * on a gnome desktop
+15:26:33 <gnokii> we use a design from a KDE guy
+15:27:08 <metalgod> vuntz: i'm not fine... but it's almost the same wallpaper gnome upstream have
+15:27:24 <fcrozat> then let's use the one from upstream then
+15:27:41 <vuntz> gnokii: it is the one that KDE recommends, as far as I know
+15:27:48 <psankar> I wont be bothered too much about using a image from KDE desktop if it is beautiful. but I am not impressed with this wallpaper. sorry. It doesnt look good for my eyes.
+15:27:54 <vuntz> gnokii: it's not just designed by a KDE guy
+15:28:05 <nmarques> anyone up for a bit of humor to distress the tension ?
+15:28:45 <gnokii> u sure it becomes the upstream default?
+15:28:48 * nmarques wonders about ignoring all the cultural issues and: http://wallpampers.com/pictures/3723/opensuse.png
+15:28:48 <wstephenson> fyi stripes isn't the upstream theme by kde, it's just by a KDE guy.
+15:29:02 <gnokii> thx will
+15:29:56 <vuntz> wstephenson: so my understanding from http://ivan.fomentgroup.org/blog/2010/08/12/distribution-branding-and-stripes/ is that this wallpaper is designed to be used by upstream and downstreams
+15:30:40 <wstephenson> vuntz: it's not the 4.6 or 4.5 default wallpaper
+15:30:41 <wstephenson> sec, finding it
+15:30:55 <metalgod> ok can i propose something ?
+15:31:08 <metalgod> what about doing a different wallpaper
+15:31:12 <metalgod> (stick with green)
+15:31:15 <metalgod> or dark green
+15:31:20 <metalgod> and use the same on all desktops
+15:31:22 <nmarques> metalgod, green is the hardest color to work
+15:31:23 <psankar> metalgod, +1
+15:31:24 <wstephenson> i wouldn't worry about it being 'teh tainted by KDE'
+15:31:32 <nmarques> metalgod, green never looks like the same on different monitors
+15:31:32 <metalgod> i know nmarques i designed CM theme
+15:31:37 <wstephenson> but that other distributions all have their own flavours.
+15:31:43 <nmarques> metalgod, I dont use CM ;)
+15:31:52 <wstephenson> (and every android phone has something similar too)
+15:32:02 <metalgod> that's why most of distros use dark green
+15:32:28 <nmarques> I really don't care about what wallpaper to use
+15:32:33 <nmarques> as long as its full of life
+15:32:40 <nmarques> and transmits a strong positive feeling
+15:32:41 <nmarques> ;)
+15:32:44 <badshah400> fwiw, http://ivan.fomentgroup.org/blog/2010/08/12/stripes-wallpaper/
+15:32:45 <nmarques> that should be the concern
+15:32:57 <nmarques> the feeling we want users to have
+15:33:03 <badshah400> says KDE SC 4.5 comes with a new wallpaper named "Stripes"
+15:33:11 <gnokii> metalgod: because I have to do the bootsplash also
+15:33:12 <vuntz> wstephenson: well, upstream gnome has something similar too
+15:33:28 <wstephenson> yeah i saw Adwaita too
+15:33:28 <gnokii> metalgod: and that should be neutral
+15:33:28 <vuntz> wstephenson: which is why it's a bit hard to not use the one from upstream gnome for us...
+15:33:35 <nmarques> wstephenson, I don't share that thought about 'tainted'
+15:34:08 <metalgod> gnokii: bootsplash doesn't need to be equal to desktop wallpapers
+15:34:14 <metalgod> as long as you keep the same color
+15:35:03 <wstephenson> vuntz: go ahead, it's your wallpaper :)
+15:35:08 <gnokii> metalgod: it should look familiar not very different
+15:35:25 <vuntz> wstephenson: the issue is that if we want a consistent theme for the whole distro, we can't do that
+15:35:29 <nmarques> metalgod, I tend to agree with gnokii, a consistent look is better
+15:35:49 <metalgod> well as i said... i love the current artwork (i like the dark dark dark green)
+15:36:04 <metalgod> feels futuristic but i have to agree also that it's a bit morbid
+15:36:04 <vuntz> anyway
+15:36:12 <vuntz> we're not really moving here
+15:36:17 <gnokii> +1
+15:36:19 <wstephenson> vuntz: i think Adwaita could be made consistent in palette with Stripes without breaking anyone's heart.
+15:36:22 <metalgod> ok
+15:36:26 <psankar> nmarques, well, what pleases gnome may not please KDE and vice versa. So , I believe we should give up and just choose something that the coreteeam feels good
+15:36:29 <metalgod> what options do we have right now vuntz ?
+15:36:38 <gnokii> wstephenson: I pinged jimmac if he can do it with celadon
+15:36:41 <vuntz> wstephenson: it'sd still be a different image from the boot splash, eg
+15:36:42 <psankar> all eyes towards vuntz ;-)
+15:37:06 <vuntz> based on what I can see here, there's no agreement so far
+15:37:28 <nmarques> psankar, I think we should face it from the scope of 'distribution' and not project ;)
+15:37:43 <vuntz> gnokii: what's the right mailing list to discuss this?
+15:37:48 <vuntz> opensuse-artwork?
+15:38:23 <nmarques> psankar, it would be nice if people recognized the distro by the looks of the screenshot/wallpaper, that would earn major points for openSUSE ;)
+15:38:41 <nmarques> psankar, despite of being GNOME or KDE... the apps often will tell that
+15:38:58 <gnokii> vuntz, when u like to do it, do it but dont make it too long, because there is a lot of work to do after it
+15:39:23 <psankar> nmarques, yeah. we will have a gecko in the wallpaper and make it green-ish :-)
+15:39:34 <nmarques> psankar, thats not what I meant :)
+15:39:45 <vuntz> gnokii: I'll start a thread on opensuse-gnome, and try to summarize the result
+15:39:52 <vuntz> gnokii: does that work for you?
+15:40:06 <gnokii> the right, mailinglist, mmh gnome for gnome, kde for kde, and project for all
+15:40:16 <vuntz> gnokii: so it's not opensuse-artwork?
+15:40:24 <psankar> should be spam -project for this ?  ;_)
+15:40:29 <gnokii> vuntz work with me, but as I said think on it not to long
+15:40:30 <psankar> s/be/we/
+15:40:34 <vuntz> I'm fine with using -project ;-)
+15:40:35 <wstephenson> vuntz: having the same image in bootsplash, gfxboot, displaymanager and logged in desktop is boring anyway. they can be related but distinct.
+15:40:49 <metalgod> vuntz: yeah better have a thread on -project or -gnome and go on votes for the next meeting
+15:40:56 <metalgod> otherwise we will talk a lot about this
+15:41:06 <vuntz> wstephenson: in the plymouth+gdm+gnome world, having the same image makes the boot experience much smoother
+15:41:12 <vuntz> ok
+15:41:19 <metalgod> even making it on -project would be hard
+15:41:36 <nmarques> if you want my 2 cents on this
+15:41:37 * psankar believes making any decision on -project is hard ;-)
+15:41:44 <gnokii> psankar: +1
+15:41:45 <vuntz> #action vuntz to start discussion on opensuse-gnome about the background, and get this discussed on opensuse-project afterwards
+15:41:47 <psankar> metalgod, ^ ;-) (just for fun)
+15:41:51 <vuntz> any other Q&A?
+15:41:57 <ReferenceSeete> GNOME 3.0 LiveCDs.  If I understand there will not be one based upon 11.4 until GM release?
+15:42:05 <nmarques> vuntz, 1 more
+15:42:16 <vuntz> ReferenceSeete: we're trying to get some earlier than this
+15:42:21 <metalgod> yeah maybe wstephenson can get this on -kde too
+15:42:31 <nmarques> vuntz, for Unity we could use libzeitgeist... any negative issues on libzeitgeist and eggdbus ?
+15:42:53 <metalgod> nmarques: well libzeitgeist should be ported to gtk3 and use gdbus from glib
+15:42:54 <vuntz> nmarques: eggdbus got dropped from Factory because it's deprecated, not maintained anymore, and dead
+15:42:56 <nmarques> vuntz, I know you already told me, eggdbus was dropped from factory... any special reason ?
+15:43:05 <metalgod> afaik all eggdbus stuff is on gdbus
+15:43:09 <vuntz> nmarques: eggdbus has become gdbus, which is in glib now
+15:43:20 <vuntz> nmarques: so libzeitgeist should be ported to gdbus
+15:43:23 <vuntz> should be easy
+15:43:37 <nmarques> ok... that sorts it... wait for upstream ;)
+15:43:45 <nmarques> thats all from me then
+15:43:57 <nmarques> psankar, I'm available if you want to work the features for marketing :)
+15:44:05 <gnokii> vuntz wstephenson can we make that for next version of openSUSE in an other way?
+15:44:15 <vuntz> gnokii: make what? :-)
+15:44:19 <psankar> nmarques, nope. I need to run for my dinner before the shops close. this meeting has laster for 2+ hours ;-)
+15:44:22 <gnokii> the design stuff
+15:44:38 <nmarques> psankar, no worries, just let me know when you have some time so we can do it ;)
+15:44:49 <nmarques> psankar, the sooner I report this to marketing the better
+15:44:55 <psankar> nmarques, okay
+15:44:59 <vuntz> gnokii: not sure
+15:45:04 <nmarques> psankar, have a good meal!
+15:45:37 <gnokii> vuntz wstephenson like to sit with u down and speak before the work is done for the next version
+15:45:44 <vuntz> gnokii: let me close the meeting, and I'll be available for you
+15:45:54 <kay> vuntz: /etc/init.d/xdm is another fine piece of SUSE art :)
+15:46:04 <vuntz> #endmeeting

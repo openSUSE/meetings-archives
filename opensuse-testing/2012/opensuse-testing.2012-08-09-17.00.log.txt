@@ -1,0 +1,190 @@
+17:00:22 <bmwiedemann> #startmeeting
+17:00:22 <bugbot> Meeting started Thu Aug  9 17:00:22 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:00:22 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:00:24 <bmwiedemann> Hello everyone
+17:00:24 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:00:31 <bmwiedemann> #topic 12.2 testing
+17:00:54 <bmwiedemann> I have upgraded several of my physical machines from RC1 to RC2 now
+17:01:20 <bmwiedemann> and they have a nicer graphical boot screen now (though the gray on green is sometimes a bit low contrast)
+17:02:03 <bmwiedemann> I have seen the gdm uglyness on nouveau, too. but rcxdm restart seemed to help there
+17:02:39 <bmwiedemann> openqa had found an install hangup that was only introduced after RC2 and is already fixed, so it should not have affected anyone
+17:03:09 <LWFinger> Is the new boot screen with grub2?
+17:03:14 <bmwiedemann> yes
+17:03:41 <bmwiedemann> before it just had white text on black bg
+17:03:58 <LWFinger> I switched to grub2 after upgrading, and I still get the text screen.
+17:04:14 <LWFinger> I must have missed something.
+17:04:48 <bmwiedemann> running yast2 bootloader again, could help
+17:05:05 <LWFinger> OK, I'll try that.
+17:06:05 <bmwiedemann> and I have one PC with 5Ghz USB-Wifi that regularly disconnects from my FritzBox
+17:06:26 <bmwiedemann> but I had that problem with the Fritzbox earlier on other machines, too
+17:07:03 <LWFinger> What wireless device? Fritzbox apparently does some things differently.
+17:08:11 <bmwiedemann> LWFinger: would have to check the details when I come home. it is a USB-device from AVM
+17:08:35 <LWFinger> OK. Let me know by E-mail.
+17:10:20 <bmwiedemann> overall, quality is quite good
+17:10:58 <LWFinger> I agree.
+17:11:02 <poorboywilly> I was quite impressed with how smooth RC2 is running
+17:11:43 <bmwiedemann> otherwise it would not be a release candidate ;)
+17:12:08 <bmwiedemann> Gold Master is scheduled for 2012-08-30
+17:12:38 <poorboywilly> plenty of time to fix the last remaining issues.  Is KDE going to get the bug fix update they released to 4.8?
+17:13:11 <poorboywilly> 4.8.5 I suppose it is
+17:13:18 <bmwiedemann> don't know. if the fixes are important enough. and tested and working
+17:13:50 <bmwiedemann> people are afraid to break stuff at this stage
+17:14:00 <poorboywilly> kgpg, konsole and kthml seem to have some important fixes
+17:14:03 <poorboywilly> indeed
+17:14:17 <poorboywilly> this is the changelog
+17:14:18 <poorboywilly> http://www.kde.org/announcements/changelogs/changelog4_8_4to4_8_5.php
+17:14:43 <bmwiedemann> often the answer is: if it can be fixed later with an update, we can do that later
+17:14:59 <LWFinger> I still have the issue from bug 770560. It has not even been assigned yet.
+17:15:04 <poorboywilly> has anyone else tried to set the meta key with RC2?  I was not able to get that to work
+17:16:50 <bmwiedemann> LWFinger: maybe test/file it upstream?
+17:17:52 <LWFinger> I'm not sure which part of upstream to send. Is it nv or libpthread?
+17:18:52 <bmwiedemann> I would expect libpthread to be OK, as it gets plenty testing elsewhere
+17:20:20 <LWFinger> OK, nv is likely the problem.
+17:21:36 <bmwiedemann> in your second backtrace, pthread does not even appear.
+17:21:50 <bmwiedemann> just some NULL-pointer dereference
+17:23:08 <LWFinger> That was under gdb, and I'm not sure I did it right. Obviously, I need to do more debugging.
+17:25:27 <bmwiedemann> you learn a lot about software when debugging it :)
+17:25:46 <bmwiedemann> poorboywilly: do you have any other 12.2 testing experience?
+17:26:33 <poorboywilly> amarok is crashing, I think it is bug 769540
+17:27:30 <poorboywilly> I had a kernel panic, but I think that was when the live-usb system tried to suspend...I don't think that is a possibility, correct me if I'm wrong
+17:27:56 <poorboywilly> I left the system for a few and came back to the panic, so it is hard to say I need more testing for that one
+17:29:15 <poorboywilly> other than those things (and the meta key) I've had very smooth sailing, it has been enjoyable
+17:30:03 <bmwiedemann> poorboywilly: suspend-to-ram might work (but does not on all machines). suspend-to-disk can not work with live-usb
+17:31:03 <poorboywilly> I suspected something like that.  I will have to test that more thoroughly
+17:31:06 <LWFinger> There might not be enough ram with the Live system - I would be surprised that it tried to suspend.
+17:32:04 <bmwiedemann> at least with live-liveusb it does not use RAM for the written files
+17:32:30 <poorboywilly> bmwiedemann: what do you mean by written files?
+17:32:32 <bmwiedemann> (though I did not recently test if it creates the hybrid overlay properly)
+17:33:00 <bmwiedemann> poorboywilly: on liveCD, everything that is written must be kept in RAM
+17:33:12 <bmwiedemann> because there is no way to write to a read-only medium
+17:33:33 <poorboywilly> oh I see what you mean
+17:33:35 <bmwiedemann> e.g. KDE's akonadi launches mysql that occupies ~160MB alone
+17:34:04 <LWFinger> In general, have you found kernel 3.4.6 to be stable?
+17:34:13 <bmwiedemann> yes
+17:34:42 <LWFinger> Good. I have not run 3.4 for quite a while.
+17:34:51 <poorboywilly> the directions I'm using imply that you have to set the option in grub (http://en.opensuse.org/SDB:Live_USB_stick#Live_USB_stick_with_persistent_file_system)
+17:34:56 <poorboywilly> is this still true?
+17:35:03 <bmwiedemann> only my desktop machine hung this morning from extreme slowness - likely firefox using 5GB RAM again... had to power it off after 30 minutes of trying
+17:36:22 <bmwiedemann> poorboywilly: I remember a time, when this was the default. either the wiki is outdated or the default was changed back
+17:36:53 <poorboywilly> or maybe I'm confusing it...maybe it still writes to the usb drive but the writes don't presist?
+17:37:37 <bmwiedemann> that could also be
+17:38:02 <bmwiedemann> throwing away the overlay
+17:38:25 <bmwiedemann> you can see it, if you do fdisk -l on such an USB-stick
+17:38:58 <bmwiedemann> if it has two partitions, the second one is for keeping the runtime data
+17:39:17 <bmwiedemann> while the first one contains the read-only compressed data
+17:39:28 <poorboywilly> ok, going to switch computers so I can test this out, brb
+17:42:17 <bmwiedemann> LWFinger: I will try to reproduce the nv bug at home tomorrow.
+17:43:19 <Creatura85> good evening
+17:43:41 <LWFinger> I have a second machine to try. That one has 1024x768 resolution, so little benefit for nv.
+17:44:06 <poorboywilly> I have an nvidia on one computer I can test it too
+17:44:07 <Creatura85> a thunderstorm is comming so i will resume my exploration of 12.2 rc2
+17:44:31 <poorboywilly> although I'm very impressed by the responsiveness of noveau, even 1920x1200 desktop
+17:44:37 <Creatura85> yast - software module is working as it should
+17:44:53 <bmwiedemann> great :)
+17:44:56 <poorboywilly> 12.1 it didn't quite feel fully up to snuff, but for any regular desktop needs it is feeling fit in 12.2
+17:44:57 <Creatura85> grub2 is still a pain, i had to reinstall it after upgrading from rc1 to rc2
+17:45:25 <Creatura85> because after the message welcome to grub2 the bootloader menu did not appeared
+17:45:36 <Creatura85> the login but for kde is still present
+17:45:40 <Creatura85> *bug
+17:45:43 <LWFinger> Did the update switch to grub, or was grub2 broken?
+17:45:52 <bmwiedemann> the "first login fails" bug?
+17:46:02 <Creatura85> even if i type my user/pass right the login fails
+17:46:07 <Creatura85> yeah that one bmwiedemann
+17:46:17 <Creatura85> LWFinger: did rc1 had grub2 ?
+17:46:23 <Creatura85> if i remember right it did
+17:46:25 <LWFinger> Yes.
+17:46:36 <Creatura85> so rc2 has the final version 2.00 of the bootloader
+17:46:46 <Creatura85> under rc1 the grub2 bootloader worked fine
+17:47:32 <poorboywilly> does diagonal window resizing only work on the bottom two corners in gnome?  I use KDE usually
+17:47:53 <LWFinger> Grub2 works for me under RC2, but I only switched after RC2 was installed.
+17:48:07 <Creatura85> storm is comming.. sorry i cant stay logged in
+17:48:45 <Creatura85> LWFinger: i had 1.99 version of grub
+17:48:55 <Creatura85> rc2 upgraded to 2.00
+17:49:11 <Creatura85> good bye now... sorry again...
+17:49:13 <bmwiedemann> grub2 worked for me even when upgrading from RC1
+17:49:21 <bmwiedemann> have fun Creatura85
+17:49:32 <Creatura85> a thunderstorm in summer season is not fun...
+17:49:35 <Creatura85> but thanks anyway...
+17:52:11 <bmwiedemann> let's move to the next topic
+17:52:34 <bmwiedemann> #topic Next Meeting
+17:53:01 <bmwiedemann> we could meet in 2 weeks. either on 23th or 27th
+17:53:09 <bmwiedemann> some days before scheduled GM
+17:53:16 <poorboywilly> what date is GM?
+17:53:24 <bmwiedemann> 2012-08-30
+17:53:52 <bmwiedemann> I could likely make available an updated DVD some days before
+17:54:06 <bmwiedemann> as unofficial RC2.5
+17:54:20 <LWFinger> Both days work for me.
+17:54:38 <poorboywilly> if that were the case 23 would give more time for fixing, 27 more time for testing :)
+17:55:03 <bmwiedemann> number of changes is not so high atm
+17:55:17 <bmwiedemann> I'd prefer 23th
+17:55:33 <LWFinger> OK
+17:56:00 <bmwiedemann> #agreed next meeting 2012-08-23 17:00 UTC
+17:56:19 <bmwiedemann> #action bmwiedemann publishes RC2.5 DVD / repo before
+17:56:50 <bmwiedemann> #topic open discussion
+17:57:37 <bmwiedemann> there is currently a process ongoing to document the openSUSE release process.
+17:57:52 <LWFinger> Good.
+17:58:07 <bmwiedemann> one question I was asked was if we had some checklist, that we tick off before a release
+17:58:42 <bmwiedemann> and openqa tests were the closest I could think of
+17:59:21 <bmwiedemann> but I did not know, if anyone beside me looks at those results
+17:59:32 <bmwiedemann> and reproduces / files bugs
+17:59:43 <LWFinger> I always run wireless testing on WEP, WPA and WPA2.
+18:00:07 <bmwiedemann> which is a good thing
+18:00:13 <LWFinger> I watch openqa in the early MSX days to see if it is building.
+18:00:37 <LWFinger> I mean if builds are available.
+18:01:06 <bmwiedemann> I sometimes use it to determine when it is safe to update factory
+18:02:38 <bmwiedemann> but overall, we don't have a big systematic test coverage apart from wifi and openQA
+18:03:46 <bmwiedemann> maybe we don't need to because our beta testers use a whole bunch of software
+18:04:05 <LWFinger> I think that is correct.
+18:04:46 <bmwiedemann> it might mean, that less used software remain be completely broken in GM
+18:05:05 <bmwiedemann> I had that with some games in earlier times
+18:05:52 <LWFinger> I hope the developer does their own testing, but obviously things could be broken.
+18:06:14 <bmwiedemann> maybe we should make a list of packages on the DVD and tick off those that someone tested
+18:07:14 <bmwiedemann> I could probably build some easy+fast CGI for that
+18:08:05 <LWFinger> The results would be interesting.
+18:08:06 <bmwiedemann> ~15000 packages in the repo
+18:08:44 <LWFinger> AFAIK, I only install ~2000.
+18:08:50 <bmwiedemann> 5000 on DVD
+18:09:54 <bmwiedemann> and even of those you install, you might only use 30%
+18:10:29 <poorboywilly> do you imagine coverage for every library, or just "applications" proper?
+18:10:44 <bmwiedemann> applications would be sufficient
+18:10:57 <bmwiedemann> libraries that are not used by any application are not interesting
+18:11:00 <LWFinger> I agree.
+18:11:07 <poorboywilly> ha...true
+18:12:16 <bmwiedemann> testing that everything can be installed is the easier part
+18:13:02 <poorboywilly> yes that could be easily automated
+18:13:15 <bmwiedemann> except for conflicting packages
+18:13:44 <poorboywilly> to answer the question from earlier, having kiwi_hybridpersistent=yes is not default
+18:14:06 <poorboywilly> the first boot it worked, then I tried to reboot and it said it can't mount the partition
+18:15:01 <bmwiedemann> ah, we had this effect of the extra partition getting broken on reboot
+18:15:15 <bmwiedemann> it remained intact, when you just turned off the system without reboot
+18:16:00 <bmwiedemann> which is exactly the opposite of what is normally recommended
+18:17:09 <poorboywilly> what should I do normally?
+18:18:22 <bmwiedemann> normally, you reboot/shutdown your systems cleanly
+18:18:31 <bmwiedemann> and not just hit the hard reset or power button
+18:19:22 <poorboywilly> ok I get it...well I did one of those two, but I think I selected restart
+18:20:09 <bmwiedemann> there is some software bug to be fixed with clicfs (which is doing the overlaying)
+18:20:40 <poorboywilly> yes, I see lost+found folder and some file with clicfs in the name in the hybrid partition
+18:22:16 <poorboywilly> what do I do with the usb drive now when I need to put a new image on it--just use dd the same again?
+18:22:32 <bmwiedemann> yes
+18:22:54 <bmwiedemann> you will loose data that you stored in the persistent partition
+18:23:11 <poorboywilly> ok that is expected
+18:24:00 <poorboywilly> is there any bug I should file in regards to the mount failure, clicfs etc?
+18:25:19 <bmwiedemann> I would think, that there is already one
+18:26:34 <bmwiedemann> but I can't find any right now. so just make a new one in the Live Media category
+18:28:33 <bmwiedemann> would you guys be interested in a structured application testing event?
+18:29:04 <bmwiedemann> maybe just starting an application and seeing it not immediately crash would be sufficient for GM
+18:29:06 <poorboywilly> ok I'll make a bug.  Not sure what that means
+18:29:14 <poorboywilly> oh in regards to the checklist
+18:29:24 <bmwiedemann> yes
+18:29:43 <LWFinger> I might be.
+18:29:50 <poorboywilly> I would be interested, but depending on work (been a bear lately)
+18:30:13 <bmwiedemann> it could be as easy as ticking off the applications you use everyday anyway
+18:31:11 <poorboywilly> true, I could do that for everything I've used so far
+18:31:47 <poorboywilly> for a meeting to cooperate on it, I will come if I can
+18:32:37 <bmwiedemann> not sure, if I will have enough time to organize it, but will try
+18:32:55 <LWFinger> OK
+18:33:00 <bmwiedemann> any other questions for today?
+18:33:18 <LWFinger> No
+18:34:02 <poorboywilly> no, and thanks for all the help
+18:34:10 <bmwiedemann> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:34:12 <bmwiedemann> #endmeeting

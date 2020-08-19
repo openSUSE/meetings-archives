@@ -1,0 +1,634 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">16:09:45</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">16:09:45</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Jul 22 16:09:45 2010 UTC.  The chair is llunak. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">16:09:45</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">16:09:55</span><span class="nk"> &lt;llunak&gt;</span> agenda:
+<a name="l-5"></a><span class="tm">16:10:05</span><span class="nk"> &lt;llunak&gt;</span> * repositories specific for KDE SC versions (e.g. 4.5.x)
+<a name="l-6"></a><span class="tm">16:10:12</span><span class="nk"> &lt;llunak&gt;</span> * unstable repositories reorganization
+<a name="l-7"></a><span class="tm">16:10:23</span><span class="nk"> &lt;llunak&gt;</span> * wiki move
+<a name="l-8"></a><span class="tm">16:10:31</span><span class="nk"> &lt;llunak&gt;</span> * add individual bugowners for packages in KDE:Extra
+<a name="l-9"></a><span class="tm">16:10:38</span><span class="nk"> &lt;llunak&gt;</span> * procedure/time frame to dissolve KDE:KDE4:Community repository
+<a name="l-10"></a><span class="tm">16:10:44</span><span class="nk"> &lt;llunak&gt;</span> * old action items
+<a name="l-11"></a><span class="tm">16:10:49</span><span class="nk"> &lt;llunak&gt;</span> * status report
+<a name="l-12"></a><span class="tm">16:10:52</span><span class="nk"> &lt;llunak&gt;</span> * Q&amp;A, misc
+<a name="l-13"></a><span class="tm">16:10:58</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">old action items</span>
+<a name="l-14"></a><span class="tm">16:11:14</span><span class="nk"> &lt;llunak&gt;</span> * llunak will post the conclusion around repository reorganization to the list
+<a name="l-15"></a><span class="tm">16:11:21</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">llunak:</span> that's from which wiki?
+<a name="l-16"></a><span class="tm">16:11:39</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Beineri:</span> http://en.opensuse.org/openSUSE:KDE_Meetings
+<a name="l-17"></a><span class="tm">16:12:13</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">llunak:</span> that one has at least one more entry (playground repositories)
+<a name="l-18"></a><span class="tm">16:12:33</span><span class="nk"> &lt;llunak&gt;</span> as for the AI, done in practice, the repos are already in place, written down also in http://old-en.opensuse.org/KDE/RepositoryRenaming
+<a name="l-19"></a><span class="tm">16:12:55</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Beineri:</span> those happen to be unstable too; I'm not removing the item second time
+<a name="l-20"></a><span class="tm">16:13:16</span><span class="nk"> &lt;llunak&gt;</span> * All think about correct naming for KKUD and Playground
+<a name="l-21"></a><span class="tm">16:13:24</span><span class="nk"> &lt;llunak&gt;</span> will be discussed as one topic
+<a name="l-22"></a><span class="tm">16:13:31</span><span class="nk"> &lt;llunak&gt;</span> * javier announce and run a bug triage
+<a name="l-23"></a><span class="tm">16:13:37</span><span class="nk"> &lt;llunak&gt;</span> announcement done, so in progress
+<a name="l-24"></a><span class="tm">16:13:52</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">AI:</span> javier run a bug triage
+<a name="l-25"></a><span class="tm">16:14:00</span><span class="nk"> &lt;llunak&gt;</span> * wstephenson see if rpmlint warnings can be hung on a lime tree for easy plucking
+<a name="l-26"></a><span class="tm">16:14:21</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> for somewhen later, right? do you want to keep this one?
+<a name="l-27"></a><span class="tm">16:14:25</span><span class="nk"> &lt;wstephenson&gt;</span> i'm doing that as part of the next Junior Jobs boosters team sprint.
+<a name="l-28"></a><span class="tm">16:14:28 </span><span class="nka">* rtyler</span> <span class="ac">waves to Kmetamorphosis</span>
+<a name="l-29"></a><span class="tm">16:15:05</span><span class="nk"> &lt;wstephenson&gt;</span> i am going to look at using KDE's krazy infrastructure to collect opensuse JJs
+<a name="l-30"></a><span class="tm">16:15:31</span><span class="nk"> &lt;wstephenson&gt;</span> btw
+<a name="l-31"></a><span class="tm">16:15:45</span><span class="nk"> &lt;dirkMobile&gt;</span> hmm, nice idea
+<a name="l-32"></a><span class="tm">16:15:56</span><span class="nk"> &lt;wstephenson&gt;</span> 'krazy' is not an adjective, it's the name of a service that combines junior jobs, minor bugs, static code testing results
+<a name="l-33"></a><span class="tm">16:16:05</span><span class="nk"> &lt;llunak&gt;</span> * llunak,wstephenson document how-to-maintain Extra
+<a name="l-34"></a><span class="tm">16:16:22</span><span class="nk"> &lt;llunak&gt;</span> http://old-en.opensuse.org/KDE/Extra_Repository , http://old-en.opensuse.org/KDE/UpdatedApps_Repository
+<a name="l-35"></a><span class="tm">16:16:31</span><span class="nk"> &lt;llunak&gt;</span> they haven't been moved yet
+<a name="l-36"></a><span class="tm">16:16:44</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">AI:</span> llunak move wiki pages about maintaining Extra/UpdatedApps repos
+<a name="l-37"></a><span class="tm">16:16:50</span><span class="nk"> &lt;wstephenson&gt;</span> not done here
+<a name="l-38"></a><span class="tm">16:17:11</span><span class="nk"> &lt;llunak&gt;</span> * javier will create LiveCDs of unstable KDE
+<a name="l-39"></a><span class="tm">16:17:17</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> ?
+<a name="l-40"></a><span class="tm">16:17:41</span><span class="nk"> &lt;javier_&gt;</span> yes
+<a name="l-41"></a><span class="tm">16:17:55</span><span class="nk"> &lt;javier_&gt;</span> they are built
+<a name="l-42"></a><span class="tm">16:17:55</span><span class="nk"> &lt;llunak&gt;</span> is that 'done' ?
+<a name="l-43"></a><span class="tm">16:18:04</span><span class="nk"> &lt;javier_&gt;</span> well, there are some issues in the last build
+<a name="l-44"></a><span class="tm">16:18:08</span><span class="nk"> &lt;llunak&gt;</span> ok
+<a name="l-45"></a><span class="tm">16:18:15</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">ie:</span> it doesn't build
+<a name="l-46"></a><span class="tm">16:18:24</span><span class="nk"> &lt;wstephenson&gt;</span> but small stuff?
+<a name="l-47"></a><span class="tm">16:18:28</span><span class="nk"> &lt;javier_&gt;</span> i'm also working on a kde-four-live cd
+<a name="l-48"></a><span class="tm">16:18:29</span><span class="nk"> &lt;javier_&gt;</span> yes
+<a name="l-49"></a><span class="tm">16:18:36</span><span class="nk"> &lt;javier_&gt;</span> some dependencies
+<a name="l-50"></a><span class="tm">16:18:54</span><span class="nk"> &lt;javier_&gt;</span> imho, kde-unstable-live looks good
+<a name="l-51"></a><span class="tm">16:18:59</span><span class="nk"> &lt;javier_&gt;</span> at least the last build i tried
+<a name="l-52"></a><span class="tm">16:19:01</span><span class="nk"> &lt;FL1SK&gt;</span> Is unstable set to 4.5 now?
+<a name="l-53"></a><span class="tm">16:19:09</span><span class="nk"> &lt;FL1SK&gt;</span> good
+<a name="l-54"></a><span class="tm">16:19:10</span><span class="nk"> &lt;wstephenson&gt;</span> i'm going to look at kde-unstable-live tonight, if i see any bad bits, i'll fix.
+<a name="l-55"></a><span class="tm">16:19:29</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">FL1SK:</span> unstable is 4.6
+<a name="l-56"></a><span class="tm">16:19:35</span><span class="nk"> &lt;javier_&gt;</span> right now there's an issue on obs
+<a name="l-57"></a><span class="tm">16:19:41 </span><span class="nka">* mrdocs</span> <span class="ac">waves</span>
+<a name="l-58"></a><span class="tm">16:19:43</span><span class="nk"> &lt;remur_030&gt;</span> 4.5rc2 is in factory
+<a name="l-59"></a><span class="tm">16:19:54</span><span class="nk"> &lt;llunak&gt;</span> ok, that's all for AIs
+<a name="l-60"></a><span class="tm">16:19:57</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> so kde-four-live = K:D:F, kde-unstable-live = KKUD?
+<a name="l-61"></a><span class="tm">16:19:58</span><span class="nk"> &lt;mrdocs&gt;</span> first time in a meeting in a while
+<a name="l-62"></a><span class="tm">16:20:09</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> that's right
+<a name="l-63"></a><span class="tm">16:20:21</span><span class="nk"> &lt;javier_&gt;</span> k-u-l is based on openSUSE Factory as well
+<a name="l-64"></a><span class="tm">16:20:29</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">status report</span>
+<a name="l-65"></a><span class="tm">16:20:41</span><span class="nk"> &lt;FL1SK&gt;</span> where are the change docs for 4.6
+<a name="l-66"></a><span class="tm">16:20:42</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">k-f-l:</span> openSUSE 11.3 + K:D:F
+<a name="l-67"></a><span class="tm">16:20:49</span><span class="nk"> &lt;FL1SK&gt;</span> how do we know what's supposed to be different
+<a name="l-68"></a><span class="tm">16:21:03</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">FL1SK:</span> too soon
+<a name="l-69"></a><span class="tm">16:21:07</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">FL1SK:</span> read the release announcement in 6 months :-)
+<a name="l-70"></a><span class="tm">16:21:16</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">FL1SK:</span> it's very much in flux now, no specific plans
+<a name="l-71"></a><span class="tm">16:21:21</span><span class="nk"> &lt;wstephenson&gt;</span> 4.5 was just branched from trunk and not yet released, there are barely any changes in trunk yet
+<a name="l-72"></a><span class="tm">16:21:30</span><span class="nk"> &lt;FL1SK&gt;</span> ok
+<a name="l-73"></a><span class="tm">16:21:38</span><span class="nk"> &lt;wstephenson&gt;</span> lots of mobile UI stuff for kdepim has been merged already, for meego :)
+<a name="l-74"></a><span class="tm">16:21:40</span><span class="nk"> &lt;FL1SK&gt;</span> where are the plan guides
+<a name="l-75"></a><span class="tm">16:21:42</span><span class="nk"> &lt;wstephenson&gt;</span> that's your sneak preview.
+<a name="l-76"></a><span class="tm">16:21:50</span><span class="nk"> &lt;FL1SK&gt;</span> oh good
+<a name="l-77"></a><span class="tm">16:21:52</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">FL1SK:</span> can we keep this for the 'misc' topic the next time please?
+<a name="l-78"></a><span class="tm">16:21:56</span><span class="nk"> &lt;FL1SK&gt;</span> glad to see meego using it
+<a name="l-79"></a><span class="tm">16:22:09</span><span class="nk"> &lt;FL1SK&gt;</span> ok llunak
+<a name="l-80"></a><span class="tm">16:22:18</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">status:</span> 11.3 is out, looking good so far
+<a name="l-81"></a><span class="tm">16:22:29</span><span class="nk"> &lt;llunak&gt;</span> KDE:Distro:Factory is at 4.5rcsomething
+<a name="l-82"></a><span class="tm">16:22:51</span><span class="nk"> &lt;FL1SK&gt;</span> just a thought: maybe it would be nice to have an updated wiki that shows differences in each unstable;factory;stable
+<a name="l-83"></a><span class="tm">16:22:55</span><span class="nk"> &lt;remur_030&gt;</span> anybody notice the livecd starting with a broken folderview for the desktop?
+<a name="l-84"></a><span class="tm">16:22:56</span><span class="nk"> &lt;javier_&gt;</span> 4.4.93 i believe
+<a name="l-85"></a><span class="tm">16:23:13</span><span class="nk"> &lt;FL1SK&gt;</span> sorry for the off topic
+<a name="l-86"></a><span class="tm">16:23:24</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> no.. broken how?
+<a name="l-87"></a><span class="tm">16:23:24</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">remur_030:</span> 11.3 livecd?
+<a name="l-88"></a><span class="tm">16:23:26</span><span class="nk"> &lt;llunak&gt;</span> anything else worth mentioning?
+<a name="l-89"></a><span class="tm">16:23:28</span><span class="nk"> &lt;remur_030&gt;</span> the 11.3 kde i586 livecd that is
+<a name="l-90"></a><span class="tm">16:23:41</span><span class="nk"> &lt;remur_030&gt;</span> yeah, 'dbus crashed'
+<a name="l-91"></a><span class="tm">16:23:53</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">status:</span> patched k3b, kipi-plugins, kdelibs, doing some akonadi fixes from trunk atm.
+<a name="l-92"></a><span class="tm">16:23:58</span><span class="nk"> &lt;wstephenson&gt;</span> err from 1.4/4.5
+<a name="l-93"></a><span class="tm">16:24:51</span><span class="nk"> &lt;wstephenson&gt;</span> what about froscon?
+<a name="l-94"></a><span class="tm">16:24:58</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> are you going?
+<a name="l-95"></a><span class="tm">16:25:00</span><span class="nk"> &lt;llunak&gt;</span> ah yes, the KDE:Extra, KDE:UpdatedApps, KDE:Distro:Factory and KDE:Distro:Stable repos are up
+<a name="l-96"></a><span class="tm">16:25:11</span><span class="nk"> &lt;llunak&gt;</span> but that's been already kind of mentioned during old AIs
+<a name="l-97"></a><span class="tm">16:25:19</span><span class="nk"> &lt;wstephenson&gt;</span> still, big job, well done everybody
+<a name="l-98"></a><span class="tm">16:25:26</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> everybody is, as far as I understood
+<a name="l-99"></a><span class="tm">16:25:56</span><span class="nk"> &lt;llunak&gt;</span> ok, next
+<a name="l-100"></a><span class="tm">16:26:04</span><span class="nk"> &lt;llunak&gt;</span> ... what is 'new items' topic ?
+<a name="l-101"></a><span class="tm">16:26:07</span><span class="nk"> &lt;wstephenson&gt;</span> so is froscon in Bonn convenient for any of the rest of the kde community to meet up with me and llunak?
+<a name="l-102"></a><span class="tm">16:26:11</span><span class="nk"> &lt;wstephenson&gt;</span> jussasec..
+<a name="l-103"></a><span class="tm">16:26:13</span><span class="nk"> &lt;llunak&gt;</span> http://en.opensuse.org/openSUSE:Managing_KDE_meetings mentions it
+<a name="l-104"></a><span class="tm">16:27:36</span><span class="nk"> &lt;cb400f&gt;</span> maybe it just means "additional agenda items to the standard set"
+<a name="l-105"></a><span class="tm">16:28:04</span><span class="nk"> &lt;llunak&gt;</span> well, I'll simply dump it, until somebody starts missing it
+<a name="l-106"></a><span class="tm">16:28:35</span><span class="nk"> &lt;llunak&gt;</span> hmm, it was rabauke who's added it
+<a name="l-107"></a><span class="tm">16:28:38</span><span class="nk"> &lt;llunak&gt;</span> anyway
+<a name="l-108"></a><span class="tm">16:28:43</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> just a sec for what?
+<a name="l-109"></a><span class="tm">16:28:51</span><span class="nk"> &lt;wstephenson&gt;</span> froscon answers.
+<a name="l-110"></a><span class="tm">16:29:04</span><span class="nk"> &lt;wstephenson&gt;</span> seeing if we can do something useful for opensuse-kde there
+<a name="l-111"></a><span class="tm">16:29:16</span><span class="nk"> &lt;llunak&gt;</span> froscon is http://froscon.org, aug 21st-22nd
+<a name="l-112"></a><span class="tm">16:29:56</span><span class="nk"> &lt;llunak&gt;</span> ok, think about it, it's still a month away
+<a name="l-113"></a><span class="tm">16:30:16</span><span class="nk"> &lt;llunak&gt;</span> and I think I'll juggle the topics now, easy ones first
+<a name="l-114"></a><span class="tm">16:30:21</span><span class="nk"> &lt;wstephenson&gt;</span> k
+<a name="l-115"></a><span class="tm">16:30:31</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">procedure/time frame to dissolve KDE:KDE4:Community repository</span>
+<a name="l-116"></a><span class="tm">16:30:55</span><span class="nk"> &lt;llunak&gt;</span> every maintainer in the repo has been already notified, so I suggest we give them a week, then warn again it's going away, and good-bye
+<a name="l-117"></a><span class="tm">16:30:58</span><span class="nk"> &lt;remur_030&gt;</span> when is tittiacoke back? he has the best overview here...
+<a name="l-118"></a><span class="tm">16:31:01</span><span class="nk"> &lt;llunak&gt;</span> somebody seeing a problem with that?
+<a name="l-119"></a><span class="tm">16:31:15</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">llunak:</span> you really want to delete the rest?
+<a name="l-120"></a><span class="tm">16:31:23</span><span class="nk"> &lt;remur_030&gt;</span> will you delete it or just disable?
+<a name="l-121"></a><span class="tm">16:31:53</span><span class="nk"> &lt;mrdocs&gt;</span> first thing i would do is disable build on :Community
+<a name="l-122"></a><span class="tm">16:32:05</span><span class="nk"> &lt;mrdocs&gt;</span> no need to waste OBS power
+<a name="l-123"></a><span class="tm">16:32:12</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Beineri:</span> what else do you want to do with it? it's just useless rubbish if nobody has been bothered to move it to KDE:Extra
+<a name="l-124"></a><span class="tm">16:32:13</span><span class="nk"> &lt;Beineri&gt;</span> KDE:Extra only has 29 packages today, KDE:KDE4:Community 188
+<a name="l-125"></a><span class="tm">16:32:35</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">llunak:</span> why is it useless rubbish?
+<a name="l-126"></a><span class="tm">16:32:45</span><span class="nk"> &lt;llunak&gt;</span> because nobody cares about it?
+<a name="l-127"></a><span class="tm">16:32:57</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">llunak:</span> the old opensuse releases are also moved to discontinued with barely anyone taking a peek
+<a name="l-128"></a><span class="tm">16:33:00</span><span class="nk"> &lt;llunak&gt;</span> and it's not exported anymore in the community list in yast
+<a name="l-129"></a><span class="tm">16:33:01</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">llunak:</span> someone cared to package it?
+<a name="l-130"></a><span class="tm">16:33:09</span><span class="nk"> &lt;cb400f&gt;</span> much of it is old stuff irrelevant for recent releases
+<a name="l-131"></a><span class="tm">16:33:14</span><span class="nk"> &lt;llunak&gt;</span> and stopped caring afterwards
+<a name="l-132"></a><span class="tm">16:33:23</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">llunak:</span> has there been newer releases?
+<a name="l-133"></a><span class="tm">16:33:25</span><span class="nk"> &lt;cb400f&gt;</span> like plasma theme air for 4.2.. systemloadviewer plasmoid ..
+<a name="l-134"></a><span class="tm">16:33:31</span><span class="nk"> &lt;llunak&gt;</span> move what's interesting, the rest is not interesting by definition
+<a name="l-135"></a><span class="tm">16:33:56</span><span class="nk"> &lt;cb400f&gt;</span> but.. all titti's packages prolly still need moving
+<a name="l-136"></a><span class="tm">16:33:59</span><span class="nk"> &lt;remur_030&gt;</span> well then we should wait for more then one week, maybe disable in a week but not just drop it
+<a name="l-137"></a><span class="tm">16:34:07</span><span class="nk"> &lt;remur_030&gt;</span> and at least let tittiacoke have a say
+<a name="l-138"></a><span class="tm">16:34:18</span><span class="nk"> &lt;llunak&gt;</span> I'll wait for tittiacoke then
+<a name="l-139"></a><span class="tm">16:35:05</span><span class="nk"> &lt;Beineri&gt;</span> It's not nice to delete someone's work whatever.
+<a name="l-140"></a><span class="tm">16:35:12</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">AI:</span> llunak take care of removing KDE:KDE4:Community as appropriate
+<a name="l-141"></a><span class="tm">16:35:16</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Beineri:</span> they have been told
+<a name="l-142"></a><span class="tm">16:35:30</span><span class="nk"> &lt;llunak&gt;</span> if it happens, it's because they don't care
+<a name="l-143"></a><span class="tm">16:35:56</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">Beineri:</span> bitshuffler e-mailed all the maintainers directly I think
+<a name="l-144"></a><span class="tm">16:35:57</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">llunak:</span> so did you ask if someone thinks a package is useful and wants to take over a package which hasn't been moved yet?
+<a name="l-145"></a><span class="tm">16:36:16</span><span class="nk"> &lt;cb400f&gt;</span> but of course they might all be away on holiday like titti
+<a name="l-146"></a><span class="tm">16:36:29</span><span class="nk"> &lt;Beineri&gt;</span> just because an initial maintainer left openSUSE doesn't mean that a package is not interesting (to others)
+<a name="l-147"></a><span class="tm">16:36:40</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Beineri:</span> so take over and move it
+<a name="l-148"></a><span class="tm">16:36:48</span><span class="nk"> &lt;llunak&gt;</span> or anybody else
+<a name="l-149"></a><span class="tm">16:37:03</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">llunak:</span> I can make a loop with copypc in one command shell line ;-)
+<a name="l-150"></a><span class="tm">16:37:11</span><span class="nk"> &lt;llunak&gt;</span> I'll wait longer, that makes sense, but there's no point in keeping old rubbish around forever just because somebody might find it useful maybe perhaps one day
+<a name="l-151"></a><span class="tm">16:37:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> maybe we can do a 'packages for sale' style mail
+<a name="l-152"></a><span class="tm">16:37:33</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">llunak:</span> ... if you're not seem to be interested trying to find a new maintainers.
+<a name="l-153"></a><span class="tm">16:38:29</span><span class="nk"> &lt;dirkMobile&gt;</span> if it builds keep it
+<a name="l-154"></a><span class="tm">16:38:30</span><span class="nk"> &lt;Beineri&gt;</span> so how about a post/blog that supposedly any now left package in KDE:KDE4:Community searches a new maintainer?
+<a name="l-155"></a><span class="tm">16:38:42</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Beineri:</span> do you want that as AI?
+<a name="l-156"></a><span class="tm">16:38:53 </span><span class="nka">* Beineri</span> <span class="ac">doesn't blog anymore ;-)</span>
+<a name="l-157"></a><span class="tm">16:39:04</span><span class="nk"> &lt;llunak&gt;</span> nobody reads blogs anymore anyway
+<a name="l-158"></a><span class="tm">16:39:32 </span><span class="nka">* rtyler</span> <span class="ac">weeps</span>
+<a name="l-159"></a><span class="tm">16:39:55</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">llunak:</span> perhaps the weekly news team could mention something?
+<a name="l-160"></a><span class="tm">16:39:59</span><span class="nk"> &lt;Beineri&gt;</span> how about a dummy maintainer account to symbolize a package searchs a maintainer?
+<a name="l-161"></a><span class="tm">16:40:08</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">bugowner:</span> kde-maintainer-wanted
+<a name="l-162"></a><span class="tm">16:40:14</span><span class="nk"> &lt;Beineri&gt;</span> or alike
+<a name="l-163"></a><span class="tm">16:40:23</span><span class="nk"> &lt;wstephenson&gt;</span> reminds me of someone's gitorious 'orphaned' project status suggestion...
+<a name="l-164"></a><span class="tm">16:40:49</span><span class="nk"> &lt;Beineri&gt;</span> well, on package level. not having orphaned packages in a separate project
+<a name="l-165"></a><span class="tm">16:41:22</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Beineri:</span> I don't think that'd do anything useful in practice
+<a name="l-166"></a><span class="tm">16:41:51</span><span class="nk"> &lt;Beineri&gt;</span> or by definitions that are all packages which have only inherited maintainers
+<a name="l-167"></a><span class="tm">16:42:14</span><span class="nk"> &lt;llunak&gt;</span> actually that is another topic
+<a name="l-168"></a><span class="tm">16:42:48</span><span class="nk"> &lt;llunak&gt;</span> can we just wrap up this one? I'll wait for titti to come back, post to opensuse-kde@ and eventually dump the repo
+<a name="l-169"></a><span class="tm">16:43:11</span><span class="nk"> &lt;wstephenson&gt;</span> fine by me
+<a name="l-170"></a><span class="tm">16:43:39</span><span class="nk"> &lt;cb400f&gt;</span> remember to say "packages for sale" in the post to opensuse-kde :-)
+<a name="l-171"></a><span class="tm">16:43:44</span><span class="nk"> &lt;llunak&gt;</span> with 'eventually' being when there's nobody caring anymore
+<a name="l-172"></a><span class="tm">16:43:58</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">add individual bugowners for packages in KDE:Extra</span>
+<a name="l-173"></a><span class="tm">16:44:11</span><span class="nk"> &lt;llunak&gt;</span> the full description is: add individual bugowners for packages in KDE:Extra (I think this would be useful to get bugs for these packages addressed. Now one has to go through the changelog of a package to guess who is usually responsible for updating it to find the right assignee.) (I will probably not be able to attend the meeting. ctrippe)
+<a name="l-174"></a><span class="tm">16:44:46</span><span class="nk"> &lt;remur_030&gt;</span> sounds like a good rule for :Extra
+<a name="l-175"></a><span class="tm">16:44:51</span><span class="nk"> &lt;llunak&gt;</span> which is like what was started above - having somebody directly reponsible for a package
+<a name="l-176"></a><span class="tm">16:45:03</span><span class="nk"> &lt;llunak&gt;</span> although I think it'd be better to have a maintainer rather than bugowner
+<a name="l-177"></a><span class="tm">16:45:21</span><span class="nk"> &lt;wstephenson&gt;</span> so explicit maintainers per pkg too?
+<a name="l-178"></a><span class="tm">16:45:40</span><span class="nk"> &lt;llunak&gt;</span> maybe maintainer+bugowner set
+<a name="l-179"></a><span class="tm">16:45:54</span><span class="nk"> &lt;dirkMobile&gt;</span> i think that was actually meant anyway
+<a name="l-180"></a><span class="tm">16:45:59</span><span class="nk"> &lt;llunak&gt;</span> I think it makes sense, right now it'd save us some trouble with KDE:KDE4:Community
+<a name="l-181"></a><span class="tm">16:47:08</span><span class="nk"> &lt;llunak&gt;</span> so I'll add a rule that a package should have an explicit maintainer and bugreport owner set, if not, it's maintainer by the KDE team as a whole, with all consequences (dropping if we feel like it, etc.)
+<a name="l-182"></a><span class="tm">16:47:10</span><span class="nk"> &lt;llunak&gt;</span> ok?
+<a name="l-183"></a><span class="tm">16:47:55</span><span class="nk"> &lt;remur_030&gt;</span> so if no one wants to maintain it gets dragged in anyways?
+<a name="l-184"></a><span class="tm">16:48:02</span><span class="nk"> &lt;remur_030&gt;</span> as long as it currently builds?
+<a name="l-185"></a><span class="tm">16:48:09</span><span class="nk"> &lt;remur_030&gt;</span> works... ;-)
+<a name="l-186"></a><span class="tm">16:48:19</span><span class="nk"> &lt;dirkMobile&gt;</span> there man be multiple maintainers
+<a name="l-187"></a><span class="tm">16:48:25</span><span class="nk"> &lt;dirkMobile&gt;</span> can
+<a name="l-188"></a><span class="tm">16:48:29</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">remur_030:</span> that's up to the repo maintainers :)
+<a name="l-189"></a><span class="tm">16:48:39</span><span class="nk"> &lt;llunak&gt;</span> generally, I think that's ok
+<a name="l-190"></a><span class="tm">16:49:03</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">llunak:</span> well the project gurus should decide then, as the burden will propably lay upon then if something breaks...
+<a name="l-191"></a><span class="tm">16:49:07</span><span class="nk"> &lt;llunak&gt;</span> "maintainer(s)" then
+<a name="l-192"></a><span class="tm">16:49:22</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">remur_030:</span> yes
+<a name="l-193"></a><span class="tm">16:49:30</span><span class="nk"> &lt;remur_030&gt;</span> as in current community status =(
+<a name="l-194"></a><span class="tm">16:49:56</span><span class="nk"> &lt;llunak&gt;</span> ok, anything else here?
+<a name="l-195"></a><span class="tm">16:50:21</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">AI:</span> update KDE:Extra docs to suggest explicit package maintainers
+<a name="l-196"></a><span class="tm">16:50:50</span><span class="nk"> &lt;llunak&gt;</span> actually, there may be a little problem if the package is maintained by somebody who's e.g. new and we don't trust them yet to get maintainership
+<a name="l-197"></a><span class="tm">16:51:05</span><span class="nk"> &lt;llunak&gt;</span> i.e. only SRs
+<a name="l-198"></a><span class="tm">16:51:23</span><span class="nk"> &lt;llunak&gt;</span> hmm ... they still can get a bugowner then, so no problem
+<a name="l-199"></a><span class="tm">16:51:25</span><span class="nk"> &lt;llunak&gt;</span> ok
+<a name="l-200"></a><span class="tm">16:51:28</span><span class="nk"> &lt;wstephenson&gt;</span> whose AI?
+<a name="l-201"></a><span class="tm">16:51:40</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">AI:</span> llunak update KDE:Extra docs to suggest explicit package maintainers
+<a name="l-202"></a><span class="tm">16:51:41</span><span class="nk"> &lt;wstephenson&gt;</span> (i can take it)
+<a name="l-203"></a><span class="tm">16:51:57</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">wiki move</span>
+<a name="l-204"></a><span class="tm">16:52:22</span><span class="nk"> &lt;llunak&gt;</span> as you've probably noticed, the wiki has been replaced by a new instance, with the old one being at old-en.opensuse.org
+<a name="l-205"></a><span class="tm">16:52:39</span><span class="nk"> &lt;llunak&gt;</span> and since it's a new one ,from scratch, many articles haven't been moved yet
+<a name="l-206"></a><span class="tm">16:52:52</span><span class="nk"> &lt;llunak&gt;</span> so if you see something missing, feel free to move it
+<a name="l-207"></a><span class="tm">16:52:53</span><span class="nk"> &lt;llunak&gt;</span> however
+<a name="l-208"></a><span class="tm">16:53:07</span><span class="nk"> &lt;wstephenson&gt;</span> respect the law!
+<a name="l-209"></a><span class="tm">16:53:08</span><span class="nk"> &lt;llunak&gt;</span> there are new rules e.g. for structure, so don't do that completely blindly
+<a name="l-210"></a><span class="tm">16:53:37</span><span class="nk"> &lt;llunak&gt;</span> http://en.opensuse.org/Portal:Wiki has all the info and you should very preferably read all of it
+<a name="l-211"></a><span class="tm">16:54:29</span><span class="nk"> &lt;llunak&gt;</span> the two most important changes:
+<a name="l-212"></a><span class="tm">16:54:31</span><span class="nk"> &lt;llunak&gt;</span> 1) it is not KDE/Meetings/Managing, but it's "Managing KDE meetings', i.e. normal speech, no subpages
+<a name="l-213"></a><span class="tm">16:54:57</span><span class="nk"> &lt;llunak&gt;</span> contributor stuff is in the openSUSE: namespace, e.g. "openSUSE:KDE meetings"
+<a name="l-214"></a><span class="tm">16:55:11</span><span class="nk"> &lt;llunak&gt;</span> the default namespace is only for "showing off", i.e. only for users who do not contribute at all
+<a name="l-215"></a><span class="tm">16:55:22</span><span class="nk"> &lt;llunak&gt;</span> note that whining in bugzilla is considered contributing here too
+<a name="l-216"></a><span class="tm">16:55:43</span><span class="nk"> &lt;llunak&gt;</span> questions on this?
+<a name="l-217"></a><span class="tm">16:56:07</span><span class="nk"> &lt;wstephenson&gt;</span> what are the big things we lack in the new wiki
+<a name="l-218"></a><span class="tm">16:56:11</span><span class="nk"> &lt;wstephenson&gt;</span> repo structure was done
+<a name="l-219"></a><span class="tm">16:56:53</span><span class="nk"> &lt;cb400f&gt;</span> all the meeting archives weren't moved afaik
+<a name="l-220"></a><span class="tm">16:56:57</span><span class="nk"> &lt;llunak&gt;</span> I'm not sure, I expect these things will slowly turn up when needed
+<a name="l-221"></a><span class="tm">16:57:05</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">cb400f:</span> I'll do that
+<a name="l-222"></a><span class="tm">16:57:10</span><span class="nk"> &lt;wstephenson&gt;</span> the kde developers guide needs love, i'll do that.
+<a name="l-223"></a><span class="tm">16:57:15 </span><span class="nka">* Beineri</span> <span class="ac">mumbles Configuration Management...</span>
+<a name="l-224"></a><span class="tm">16:57:28</span><span class="nk"> &lt;llunak&gt;</span> oh, btw, there's http://old-en.opensuse.org/Special:Export and http://en.opensuse.org/Special:Import , which can be quite useful
+<a name="l-225"></a><span class="tm">16:57:52</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">Beineri:</span> what is configuration management?
+<a name="l-226"></a><span class="tm">16:58:15</span><span class="nk"> &lt;initialZero&gt;</span> shouldn't the kde page have bug reporting and contributing?
+<a name="l-227"></a><span class="tm">16:58:21</span><span class="nk"> &lt;Beineri&gt;</span> ... read, don't throw away all history/documentation why/how or not something was developed. old meetings minutes, ideas pages, ...
+<a name="l-228"></a><span class="tm">16:58:47</span><span class="nk"> &lt;llunak&gt;</span> old-en.opensuse.org is supposed to stay
+<a name="l-229"></a><span class="tm">16:58:52</span><span class="nk"> &lt;Beineri&gt;</span> forever?
+<a name="l-230"></a><span class="tm">16:59:00</span><span class="nk"> &lt;llunak&gt;</span> as far as I understood
+<a name="l-231"></a><span class="tm">16:59:14</span><span class="nk"> &lt;llunak&gt;</span> or long enough, at least
+<a name="l-232"></a><span class="tm">16:59:14 </span><span class="nka">* Beineri</span> <span class="ac">hasn't seen an announcement about that</span>
+<a name="l-233"></a><span class="tm">16:59:30</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">initialZero:</span> no, bugreporting is contributing
+<a name="l-234"></a><span class="tm">16:59:51</span><span class="nk"> &lt;llunak&gt;</span> a link to openSUSE:KDE page can be there though
+<a name="l-235"></a><span class="tm">17:00:02</span><span class="nk"> &lt;initialZero&gt;</span> yeah
+<a name="l-236"></a><span class="tm">17:00:22</span><span class="nk"> &lt;llunak&gt;</span> and it is there, at the bottom
+<a name="l-237"></a><span class="tm">17:00:38</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">llunak:</span> what's the name of reporting already reported trouble, but closed with a sentence as this bug report is a mess, please open a new one :-) ?
+<a name="l-238"></a><span class="tm">17:00:43</span><span class="nk"> &lt;initialZero&gt;</span> ahh I expected an icon
+<a name="l-239"></a><span class="tm">17:00:49</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">initialZero:</span> /KDE == "marketing" - /Portal:KDE == the interesting stuff :-)
+<a name="l-240"></a><span class="tm">17:01:10</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">tigerfoot:</span> I don't know what you mean
+<a name="l-241"></a><span class="tm">17:01:14</span><span class="nk"> &lt;mad_soft&gt;</span> where i find packages with 4.4.5 version of kde?
+<a name="l-242"></a><span class="tm">17:01:23</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">mad_soft:</span> topic
+<a name="l-243"></a><span class="tm">17:01:36</span><span class="nk"> &lt;mad_soft&gt;</span> ok!
+<a name="l-244"></a><span class="tm">17:01:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">mad_soft:</span> meeting, please wait until the end..
+<a name="l-245"></a><span class="tm">17:01:42</span><span class="nk"> &lt;llunak&gt;</span> hmm? the bugbot doesn't keep the meeting topic??
+<a name="l-246"></a><span class="tm">17:01:43</span><span class="nk"> &lt;initialZero&gt;</span> mad_soft you can ask after the meeting
+<a name="l-247"></a><span class="tm">17:01:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> it sets it to #topic
+<a name="l-248"></a><span class="tm">17:02:11</span><span class="nk"> &lt;tigerfoot&gt;</span> see bug 624321 (after the meeting of course)
+<a name="l-249"></a><span class="tm">17:02:14</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 624321 in openSUSE 11.3 (OpenOffice.org) "openoffice under kde unable to open smb:// uri files" [Major,New] https://bugzilla.novell.com/624321
+<a name="l-250"></a><span class="tm">17:02:22</span><span class="nk"> &lt;llunak&gt;</span> that's lame
+<a name="l-251"></a><span class="tm">17:02:23</span><span class="nk"> &lt;llunak&gt;</span> anyway
+<a name="l-252"></a><span class="tm">17:02:44</span><span class="nk"> &lt;llunak&gt;</span> two topic remaining, 4.5 repo and unstable repos ... hmm, the dilema of which one to choose first ...
+<a name="l-253"></a><span class="tm">17:03:09</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">unstable repositories reorganization</span>
+<a name="l-254"></a><span class="tm">17:03:24</span><span class="nk"> &lt;llunak&gt;</span> (naively hoping this one would be quicker and we should finish it anyway)
+<a name="l-255"></a><span class="tm">17:03:43</span><span class="nk"> &lt;llunak&gt;</span> http://old-en.opensuse.org/KDE/RepositoryRenaming is the original page
+<a name="l-256"></a><span class="tm">17:03:50</span><span class="nk"> &lt;llunak&gt;</span> http://old-en.opensuse.org/KDE/RepositoryRenaming2 is about today
+<a name="l-257"></a><span class="tm">17:04:01</span><span class="nk"> &lt;llunak&gt;</span> we still need to do something about unstable software
+<a name="l-258"></a><span class="tm">17:04:24</span><span class="nk"> &lt;llunak&gt;</span> as said in the page, there are two kinds of unstable KDE software, SC snapshots and any other KDE software
+<a name="l-259"></a><span class="tm">17:04:38</span><span class="nk"> &lt;llunak&gt;</span> mixing them is bad (I think we agreed on this already the last time), so we need 2 repos
+<a name="l-260"></a><span class="tm">17:04:51</span><span class="nk"> &lt;llunak&gt;</span> so for today there is deciding on the layout and on the names
+<a name="l-261"></a><span class="tm">17:05:10</span><span class="nk"> &lt;llunak&gt;</span> the page has some options for the layout
+<a name="l-262"></a><span class="tm">17:05:21</span><span class="nk"> &lt;llunak&gt;</span> some other options for the layout missing?
+<a name="l-263"></a><span class="tm">17:05:28</span><span class="nk"> &lt;llunak&gt;</span> or other questions?
+<a name="l-264"></a><span class="tm">17:05:30</span><span class="nk"> &lt;cb400f&gt;</span> I think we need 3 repos :-)
+<a name="l-265"></a><span class="tm">17:05:36</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">cb400f:</span> why?
+<a name="l-266"></a><span class="tm">17:05:37</span><span class="nk"> &lt;cb400f&gt;</span> kde:unstable:sc
+<a name="l-267"></a><span class="tm">17:05:42</span><span class="nk"> &lt;cb400f&gt;</span> kde:unstable:apps
+<a name="l-268"></a><span class="tm">17:05:45</span><span class="nk"> &lt;cb400f&gt;</span> kde:playground
+<a name="l-269"></a><span class="tm">17:05:59</span><span class="nk"> &lt;llunak&gt;</span> what's the difference between the last 2?
+<a name="l-270"></a><span class="tm">17:06:03</span><span class="nk"> &lt;initialZero&gt;</span> what's the diff
+<a name="l-271"></a><span class="tm">17:06:05</span><span class="nk"> &lt;cb400f&gt;</span> and I wonder where an unstable user would get stable amarok or so
+<a name="l-272"></a><span class="tm">17:06:26</span><span class="nk"> &lt;dirkMobile&gt;</span> from updatedapps
+<a name="l-273"></a><span class="tm">17:06:44</span><span class="nk"> &lt;wstephenson&gt;</span> built vs K:U:SC
+<a name="l-274"></a><span class="tm">17:06:57</span><span class="nk"> &lt;cb400f&gt;</span> but at certain times it might not be there, if the stable version is the latest
+<a name="l-275"></a><span class="tm">17:07:01</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> I don't think tha'ts generally needed
+<a name="l-276"></a><span class="tm">17:07:14</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">cb400f:</span> it may not be where?
+<a name="l-277"></a><span class="tm">17:07:17</span><span class="nk"> &lt;dirkMobile&gt;</span> or Kde:extra
+<a name="l-278"></a><span class="tm">17:07:18</span><span class="nk"> &lt;Beineri&gt;</span> a stable release apps using features of a yet to be released SC?
+<a name="l-279"></a><span class="tm">17:07:20</span><span class="nk"> &lt;cb400f&gt;</span> in UpdatedApps
+<a name="l-280"></a><span class="tm">17:07:35</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Beineri:</span> same as kdepim44 built vs kde sc 4.5
+<a name="l-281"></a><span class="tm">17:07:52</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">cb400f:</span> UpdatedApps has always (in theory) the latest stable version, so why shouldn't it be there?
+<a name="l-282"></a><span class="tm">17:07:53</span><span class="nk"> &lt;wstephenson&gt;</span> anyway, generally a hypothetical problem, put it out of your mind
+<a name="l-283"></a><span class="tm">17:07:54</span><span class="nk"> &lt;cb400f&gt;</span> but I should prolly shut up.. I'd never use unstable anyway.. unstable users should speak for themselves
+<a name="l-284"></a><span class="tm">17:08:16</span><span class="nk"> &lt;initialZero&gt;</span> I use unstable
+<a name="l-285"></a><span class="tm">17:08:19</span><span class="nk"> &lt;cb400f&gt;</span> I just don't think alin, titti etc. want to use random snapshots of every single kde app
+<a name="l-286"></a><span class="tm">17:08:25</span><span class="nk"> &lt;cb400f&gt;</span> (non sc app)
+<a name="l-287"></a><span class="tm">17:08:30</span><span class="nk"> &lt;initialZero&gt;</span> and typically I never want stable
+<a name="l-288"></a><span class="tm">17:08:32</span><span class="nk"> &lt;llunak&gt;</span> they won't
+<a name="l-289"></a><span class="tm">17:08:55</span><span class="nk"> &lt;llunak&gt;</span> they'll just use SNAPSHOT and whatever else repo with apps they'll want
+<a name="l-290"></a><span class="tm">17:09:04</span><span class="nk"> &lt;llunak&gt;</span> SNAPSHOT is just SC
+<a name="l-291"></a><span class="tm">17:09:25</span><span class="nk"> &lt;llunak&gt;</span> ok, so other questions or proposals or can be just vote?
+<a name="l-292"></a><span class="tm">17:09:33</span><span class="nk"> &lt;initialZero&gt;</span> vote
+<a name="l-293"></a><span class="tm">17:10:03</span><span class="nk"> &lt;llunak&gt;</span> before vote, let me ask : would somebody vote for 2) or 4) ?
+<a name="l-294"></a><span class="tm">17:10:42</span><span class="nk"> &lt;initialZero&gt;</span> can I get a link
+<a name="l-295"></a><span class="tm">17:10:50</span><span class="nk"> &lt;llunak&gt;</span> http://old-en.opensuse.org/KDE/RepositoryRenaming2
+<a name="l-296"></a><span class="tm">17:11:22</span><span class="nk"> &lt;Beineri&gt;</span> why this capitalization?
+<a name="l-297"></a><span class="tm">17:11:27</span><span class="nk"> &lt;llunak&gt;</span> because if not, we're just down to "do we group unstable repos together?" and "what do we name them?"
+<a name="l-298"></a><span class="tm">17:11:51</span><span class="nk"> &lt;llunak&gt;</span> what capitalization? the one that says "with SNAPSHOT and PLAYGROUND used as name placeholder" ?
+<a name="l-299"></a><span class="tm">17:12:06</span><span class="nk"> &lt;Beineri&gt;</span> SNAPSHOT v Snapshot
+<a name="l-300"></a><span class="tm">17:12:18</span><span class="nk"> &lt;wstephenson&gt;</span> caps indicate placeholder
+<a name="l-301"></a><span class="tm">17:12:26</span><span class="nk"> &lt;wstephenson&gt;</span> we should have written $SNAPSHOT
+<a name="l-302"></a><span class="tm">17:12:42</span><span class="nk"> &lt;initialZero&gt;</span> makes more sense
+<a name="l-303"></a><span class="tm">17:12:59</span><span class="nk"> &lt;llunak&gt;</span> ok, then let's run it just as the two questions:
+<a name="l-304"></a><span class="tm">17:13:05</span><span class="nk"> &lt;llunak&gt;</span> do we group unstable repos together?
+<a name="l-305"></a><span class="tm">17:13:23</span><span class="nk"> &lt;llunak&gt;</span> vote either as "together" or "separate toplevel"
+<a name="l-306"></a><span class="tm">17:13:32</span><span class="nk"> &lt;llunak&gt;</span> now:
+<a name="l-307"></a><span class="tm">17:14:05</span><span class="nk"> &lt;llunak&gt;</span> (that means the vote should be done now :) )
+<a name="l-308"></a><span class="tm">17:14:26</span><span class="nk"> &lt;initialZero&gt;</span> together
+<a name="l-309"></a><span class="tm">17:14:26</span><span class="nk"> &lt;cb400f&gt;</span> tough choice
+<a name="l-310"></a><span class="tm">17:14:28 </span><span class="nka">* Beineri</span> <span class="ac">demands a recount</span>
+<a name="l-311"></a><span class="tm">17:14:46</span><span class="nk"> &lt;cb400f&gt;</span> can't we vote on the names first? ;-)
+<a name="l-312"></a><span class="tm">17:15:13</span><span class="nk"> &lt;cb400f&gt;</span> separate
+<a name="l-313"></a><span class="tm">17:15:30</span><span class="nk"> &lt;llunak&gt;</span> you mean, directly vote on the final result?
+<a name="l-314"></a><span class="tm">17:15:58</span><span class="nk"> &lt;llunak&gt;</span> if grouped together, some other option then KDE:Unstable:(something) ?
+<a name="l-315"></a><span class="tm">17:16:03</span><span class="nk"> &lt;llunak&gt;</span> s/then/than/
+<a name="l-316"></a><span class="tm">17:16:05</span><span class="nk"> &lt;wstephenson&gt;</span> together
+<a name="l-317"></a><span class="tm">17:16:39</span><span class="nk"> &lt;wstephenson&gt;</span> well my suggestion for 'together' would be KDE:Unstable:SC and KDE:Unstable:Extra
+<a name="l-318"></a><span class="tm">17:16:43</span><span class="nk"> &lt;cb400f&gt;</span> my vote for separate is conditioned on SNAPSHOT being replaced with something very scary :-)
+<a name="l-319"></a><span class="tm">17:16:58</span><span class="nk"> &lt;wstephenson&gt;</span> which motivates them being together
+<a name="l-320"></a><span class="tm">17:17:16</span><span class="nk"> &lt;llunak&gt;</span> let's try including names then, I hope it wouldn't get too complicated
+<a name="l-321"></a><span class="tm">17:17:34</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> Extra I find strange, because it has associations with KDE:Extra
+<a name="l-322"></a><span class="tm">17:17:44</span><span class="nk"> &lt;llunak&gt;</span> ok, so throw around some options
+<a name="l-323"></a><span class="tm">17:17:52</span><span class="nk"> &lt;llunak&gt;</span> KDE:Unstable:SC + KDE:Unstable:Playground
+<a name="l-324"></a><span class="tm">17:18:10</span><span class="nk"> &lt;llunak&gt;</span> KDE:Snapshot + KDE:Playground
+<a name="l-325"></a><span class="tm">17:18:12</span><span class="nk"> &lt;_sc_&gt;</span> but -- doesn't "separate" mean someone could get a scary app by itself, where if 'together' they'd have to get a lot of scary stuff at once?
+<a name="l-326"></a><span class="tm">17:18:20</span><span class="nk"> &lt;initialZero&gt;</span> is playground still used elsewhere?
+<a name="l-327"></a><span class="tm">17:18:45</span><span class="nk"> &lt;cb400f&gt;</span> nope..  the other playgrounds would be removed
+<a name="l-328"></a><span class="tm">17:18:48</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">_sc_:</span> no, 'separate' refers to the use or not of a 2nd level namespace
+<a name="l-329"></a><span class="tm">17:18:49</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">_sc_:</span> that's just grouping at repo level, there are still two separate repos
+<a name="l-330"></a><span class="tm">17:18:56</span><span class="nk"> &lt;wstephenson&gt;</span> 'Unstable' in the suggestions above
+<a name="l-331"></a><span class="tm">17:19:15</span><span class="nk"> &lt;initialZero&gt;</span> why not just apps instead of playground
+<a name="l-332"></a><span class="tm">17:19:23</span><span class="nk"> &lt;llunak&gt;</span> KDE:Unstable:SC + KDE:Unstable:Other
+<a name="l-333"></a><span class="tm">17:19:28</span><span class="nk"> &lt;initialZero&gt;</span> it already says unstable
+<a name="l-334"></a><span class="tm">17:19:47</span><span class="nk"> &lt;llunak&gt;</span> ok, but it may not be just apps
+<a name="l-335"></a><span class="tm">17:19:49</span><span class="nk"> &lt;initialZero&gt;</span> other is good too
+<a name="l-336"></a><span class="tm">17:19:55</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">initialZero:</span> same reasoning why we called KDE:Extra what it is
+<a name="l-337"></a><span class="tm">17:20:25</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> i used K:U:Extra above because it should have associations with KDE:Extra, why is that bad?
+<a name="l-338"></a><span class="tm">17:20:51</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> KDE:Extra does not have digikam, but K:U:Extra might - it'd also prevent saying just 'Extra'
+<a name="l-339"></a><span class="tm">17:21:18 </span><span class="nka">* cb400f</span> <span class="ac">is sold on KDE:Unstable:SC + KDE:Unstable:Playground</span>
+<a name="l-340"></a><span class="tm">17:21:19</span><span class="nk"> &lt;llunak&gt;</span> so no more options? are people just tired from the heat outside :) ? last time there were so many options
+<a name="l-341"></a><span class="tm">17:21:46</span><span class="nk"> &lt;llunak&gt;</span> not that I'm complaining, I'm just surprised
+<a name="l-342"></a><span class="tm">17:21:55</span><span class="nk"> &lt;llunak&gt;</span> ok, so let me sum the options up and number them
+<a name="l-343"></a><span class="tm">17:22:11</span><span class="nk"> &lt;llunak&gt;</span> 1) KDE:Unstable:SC and KDE:Unstable:Extra
+<a name="l-344"></a><span class="tm">17:22:21</span><span class="nk"> &lt;llunak&gt;</span> 2) KDE:Unstable:SC + KDE:Unstable:Playground
+<a name="l-345"></a><span class="tm">17:22:28</span><span class="nk"> &lt;llunak&gt;</span> 3) KDE:Snapshot + KDE:Playground
+<a name="l-346"></a><span class="tm">17:22:38</span><span class="nk"> &lt;llunak&gt;</span> 4) KDE:Unstable:SC + KDE:Unstable:Other
+<a name="l-347"></a><span class="tm">17:23:12</span><span class="nk"> &lt;llunak&gt;</span> more? otherwise I'm starting the vote
+<a name="l-348"></a><span class="tm">17:23:12</span><span class="nk"> &lt;initialZero&gt;</span> will unstable:extra be similar to extra
+<a name="l-349"></a><span class="tm">17:23:27</span><span class="nk"> &lt;cb400f&gt;</span> it would be extra++
+<a name="l-350"></a><span class="tm">17:23:32</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">initialZero:</span> I wouldn't say so, more like free for all
+<a name="l-351"></a><span class="tm">17:23:44</span><span class="nk"> &lt;initialZero&gt;</span> got it
+<a name="l-352"></a><span class="tm">17:23:46</span><span class="nk"> &lt;cb400f&gt;</span> since it could have apps which are in the distro (digikam, amarok, k3b)
+<a name="l-353"></a><span class="tm">17:24:07</span><span class="nk"> &lt;initialZero&gt;</span> then I vote 4
+<a name="l-354"></a><span class="tm">17:24:16</span><span class="nk"> &lt;cb400f&gt;</span> 2
+<a name="l-355"></a><span class="tm">17:24:16</span><span class="nk"> &lt;llunak&gt;</span> ok, vote now:
+<a name="l-356"></a><span class="tm">17:24:30</span><span class="nk"> &lt;dirkMobile&gt;</span> 1
+<a name="l-357"></a><span class="tm">17:24:31</span><span class="nk"> &lt;wstephenson&gt;</span> 4, then
+<a name="l-358"></a><span class="tm">17:24:35</span><span class="nk"> &lt;javier_&gt;</span> what bout KDE:Snapshot and KDE:Snapshot:Playground?
+<a name="l-359"></a><span class="tm">17:24:38 </span><span class="nka">* _sc_</span> <span class="ac">votes #4</span>
+<a name="l-360"></a><span class="tm">17:24:53</span><span class="nk"> &lt;llunak&gt;</span> 4
+<a name="l-361"></a><span class="tm">17:25:19</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> that's what http://old-en.opensuse.org/KDE/RepositoryRenaming2 listed as one option, as a subrepo
+<a name="l-362"></a><span class="tm">17:25:36</span><span class="nk"> &lt;cb400f&gt;</span> you're voting bad :-) .. k:u:other doesn't make much sense when not used together with k:u:SC
+<a name="l-363"></a><span class="tm">17:26:24</span><span class="nk"> &lt;cb400f&gt;</span> people with stable, factory etc. could add "other".. and then it would look and sound weird
+<a name="l-364"></a><span class="tm">17:26:27</span><span class="nk"> &lt;javier_&gt;</span> there's no KDE:Snapshot:Extra or KDE:Snapshot:Playground
+<a name="l-365"></a><span class="tm">17:26:35</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">cb400f:</span> I think the name fits quite well - it's simply random unstable stuff
+<a name="l-366"></a><span class="tm">17:27:07</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> that's 2) in the page, you just swapped it around
+<a name="l-367"></a><span class="tm">17:27:25</span><span class="nk"> &lt;javier_&gt;</span> ok
+<a name="l-368"></a><span class="tm">17:27:35 </span><span class="nka">* javier_</span> <span class="ac">votes for 1</span>
+<a name="l-369"></a><span class="tm">17:28:01</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">1:</span> 2 votes, 2: 1 vote, 4: 4 votes
+<a name="l-370"></a><span class="tm">17:28:21</span><span class="nk"> &lt;llunak&gt;</span> somebody really unhappy with KDE:Unstable:SC + KDE:Unstable:Other?
+<a name="l-371"></a><span class="tm">17:28:27</span><span class="nk"> &lt;_sc_&gt;</span> dang -- that's with 74 nicks in the channel
+<a name="l-372"></a><span class="tm">17:28:31</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">dirkMobile:</span> you specifically?
+<a name="l-373"></a><span class="tm">17:28:55</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">llunak:</span> Extra or Playground sounds better than Other
+<a name="l-374"></a><span class="tm">17:29:16</span><span class="nk"> &lt;wstephenson&gt;</span> Playground is only meaningful to the insiders
+<a name="l-375"></a><span class="tm">17:29:31</span><span class="nk"> &lt;Kmetamorphosis&gt;</span> 1
+<a name="l-376"></a><span class="tm">17:29:32</span><span class="nk"> &lt;cb400f&gt;</span> other is only meaningful if you know that it is "other than sc"
+<a name="l-377"></a><span class="tm">17:29:42</span><span class="nk"> &lt;llunak&gt;</span> well, you probably won't want others to play with the repo anyway :)
+<a name="l-378"></a><span class="tm">17:29:43</span><span class="nk"> &lt;javier_&gt;</span> yepp
+<a name="l-379"></a><span class="tm">17:30:03</span><span class="nk"> &lt;javier_&gt;</span> Other sounds like the outcasts to me
+<a name="l-380"></a><span class="tm">17:30:07</span><span class="nk"> &lt;javier_&gt;</span> lol
+<a name="l-381"></a><span class="tm">17:30:23</span><span class="nk"> &lt;cb400f&gt;</span> unstable:playground &lt;- double warning, less risk of the wrong people messing with it :-)
+<a name="l-382"></a><span class="tm">17:30:23</span><span class="nk"> &lt;wstephenson&gt;</span> there is no perfect naming
+<a name="l-383"></a><span class="tm">17:30:39</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">cb400f:</span> +1
+<a name="l-384"></a><span class="tm">17:31:02</span><span class="nk"> &lt;llunak&gt;</span> hmm, but that's actually a good point, we can name most repos on their own now, but 'Other' alone doesn't fit
+<a name="l-385"></a><span class="tm">17:31:04</span><span class="nk"> &lt;javier_&gt;</span> but isn't unstgable a playground somehow
+<a name="l-386"></a><span class="tm">17:31:20</span><span class="nk"> &lt;llunak&gt;</span> we have Extra, UpdatedApps, Factory, Stable, SC and Other
+<a name="l-387"></a><span class="tm">17:31:42</span><span class="nk"> &lt;initialZero&gt;</span> then extra if other so bad
+<a name="l-388"></a><span class="tm">17:31:49</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> and the version-specific repos might introduce more
+<a name="l-389"></a><span class="tm">17:32:01</span><span class="nk"> &lt;Kmetamorphosis&gt;</span> What is the difference between Extra and UpdatedApps?
+<a name="l-390"></a><span class="tm">17:32:03</span><span class="nk"> &lt;wstephenson&gt;</span> i could be persuaded to support Extra again
+<a name="l-391"></a><span class="tm">17:32:07</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">initialZero:</span> that's not really an improvement if Extra is already taken :)
+<a name="l-392"></a><span class="tm">17:32:13</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Kmetamorphosis:</span> UpdatedApps is only apps, no libs
+<a name="l-393"></a><span class="tm">17:32:23</span><span class="nk"> &lt;wstephenson&gt;</span> just updates to things that are already on distro releases
+<a name="l-394"></a><span class="tm">17:32:28</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">Kmetamorphosis:</span> UA newer versions of stuff in the distro.. Extra, stuff that's not in the distro
+<a name="l-395"></a><span class="tm">17:32:34</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">llunak:</span> if extra is taken, then playground?
+<a name="l-396"></a><span class="tm">17:32:39</span><span class="nk"> &lt;initialZero&gt;</span> but updatedapps makes it sound like they are better
+<a name="l-397"></a><span class="tm">17:33:02</span><span class="nk"> &lt;cb400f&gt;</span> updatedapps should be better most of the time
+<a name="l-398"></a><span class="tm">17:33:07</span><span class="nk"> &lt;wstephenson&gt;</span> which is good because we don't want beginners attracted to other repos
+<a name="l-399"></a><span class="tm">17:33:51</span><span class="nk"> &lt;javier_&gt;</span> unstable:snapshot:playground:testing then
+<a name="l-400"></a><span class="tm">17:34:08</span><span class="nk"> &lt;javier_&gt;</span> ;-)
+<a name="l-401"></a><span class="tm">17:34:10</span><span class="nk"> &lt;initialZero&gt;</span> what about NotSC
+<a name="l-402"></a><span class="tm">17:34:12</span><span class="nk"> &lt;wstephenson&gt;</span> ;)
+<a name="l-403"></a><span class="tm">17:34:48</span><span class="nk"> &lt;javier_&gt;</span> NotSC could be everything except SC
+<a name="l-404"></a><span class="tm">17:34:49</span><span class="nk"> &lt;llunak&gt;</span> actually, if I try to think logically about it, then KDE:Unstable:Playground makes the most sense - Playground alone is meaninful, it's under Unstable:, so those who do not get the meaning won't play with it, and it leaves us with separate names for every repo
+<a name="l-405"></a><span class="tm">17:35:06</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">llunak:</span> +1
+<a name="l-406"></a><span class="tm">17:35:07</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> its good enough for me.
+<a name="l-407"></a><span class="tm">17:35:34</span><span class="nk"> &lt;cb400f&gt;</span> me too :-)
+<a name="l-408"></a><span class="tm">17:35:37</span><span class="nk"> &lt;initialZero&gt;</span> I used to get beat up on the playground
+<a name="l-409"></a><span class="tm">17:35:41</span><span class="nk"> &lt;initialZero&gt;</span> :(
+<a name="l-410"></a><span class="tm">17:35:49</span><span class="nk"> &lt;cb400f&gt;</span> that's an argument _for_ the name
+<a name="l-411"></a><span class="tm">17:35:51</span><span class="nk"> &lt;llunak&gt;</span> and everybody voted for KDE:Unstable:SC + KDE:Unstable:&lt;something&gt;
+<a name="l-412"></a><span class="tm">17:36:02</span><span class="nk"> &lt;cb400f&gt;</span> because that's what'll happen when you use the repo :-)
+<a name="l-413"></a><span class="tm">17:36:11</span><span class="nk"> &lt;javier_&gt;</span> lol @ cb400f
+<a name="l-414"></a><span class="tm">17:36:17</span><span class="nk"> &lt;initialZero&gt;</span> good point
+<a name="l-415"></a><span class="tm">17:36:39</span><span class="nk"> &lt;initialZero&gt;</span> so are we voting on &lt;something&gt;
+<a name="l-416"></a><span class="tm">17:36:44</span><span class="nk"> &lt;llunak&gt;</span> ok, KDE:Unstable:SC + KDE:Unstable:Playground - "yes" or "no" ?
+<a name="l-417"></a><span class="tm">17:36:50</span><span class="nk"> &lt;cb400f&gt;</span> yes
+<a name="l-418"></a><span class="tm">17:36:53</span><span class="nk"> &lt;javier_&gt;</span> yes
+<a name="l-419"></a><span class="tm">17:36:57</span><span class="nk"> &lt;initialZero&gt;</span> no
+<a name="l-420"></a><span class="tm">17:37:09</span><span class="nk"> &lt;llunak&gt;</span> yes
+<a name="l-421"></a><span class="tm">17:37:36</span><span class="nk"> &lt;Kmetamorphosis&gt;</span> yes
+<a name="l-422"></a><span class="tm">17:37:42 </span><span class="nka">* llunak</span> <span class="ac">hopes he hasn't confused the hell out of everybody here by now</span>
+<a name="l-423"></a><span class="tm">17:38:01</span><span class="nk"> &lt;dirkMobile&gt;</span> yes
+<a name="l-424"></a><span class="tm">17:38:09</span><span class="nk"> &lt;elchevive1968_&gt;</span> yes
+<a name="l-425"></a><span class="tm">17:38:13</span><span class="nk"> &lt;Kmetamorphosis&gt;</span> As a new openSUSE user, the word Playground scares me (as it should).
+<a name="l-426"></a><span class="tm">17:38:13</span><span class="nk"> &lt;llunak&gt;</span> 10 ... 9 ...
+<a name="l-427"></a><span class="tm">17:38:34</span><span class="nk"> &lt;initialZero&gt;</span> where's wstephenson
+<a name="l-428"></a><span class="tm">17:38:44</span><span class="nk"> &lt;llunak&gt;</span> 3 ... 2 ... 1 ... 0 ... boom :)
+<a name="l-429"></a><span class="tm">17:39:05</span><span class="nk"> &lt;llunak&gt;</span> ok, congratulations, we've survived it
+<a name="l-430"></a><span class="tm">17:39:13</span><span class="nk"> &lt;initialZero&gt;</span> yeah!
+<a name="l-431"></a><span class="tm">17:39:16 </span><span class="nka">* wstephenson</span> <span class="ac">just wants it to be over</span>
+<a name="l-432"></a><span class="tm">17:39:20</span><span class="nk"> &lt;wstephenson&gt;</span> and was getting food.
+<a name="l-433"></a><span class="tm">17:39:26</span><span class="nk"> &lt;llunak&gt;</span> KDE:Unstable:SC + KDE:Unstable:Playground
+<a name="l-434"></a><span class="tm">17:39:30</span><span class="nk"> &lt;wstephenson&gt;</span> now the next one
+<a name="l-435"></a><span class="tm">17:39:35</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">AI:</span> llunak arrange renaming of unstable repos
+<a name="l-436"></a><span class="tm">17:39:46</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">KDE SC version-specific repositories</span>
+<a name="l-437"></a><span class="tm">17:40:12</span><span class="nk"> &lt;llunak&gt;</span> the story is simple - users turn up again and again and want a repo with KDE SC &lt;this exactly version&gt;
+<a name="l-438"></a><span class="tm">17:40:20</span><span class="nk"> &lt;javier_&gt;</span> that sounds like having several stable repos
+<a name="l-439"></a><span class="tm">17:40:35</span><span class="nk"> &lt;initialZero&gt;</span> so kde:playground and k:u:s will be the same?
+<a name="l-440"></a><span class="tm">17:40:47</span><span class="nk"> &lt;llunak&gt;</span> preferably the latest stable KDE SC, even if there's no important difference to KDE:Distro:Stable
+<a name="l-441"></a><span class="tm">17:41:01</span><span class="nk"> &lt;javier_&gt;</span> ok
+<a name="l-442"></a><span class="tm">17:41:24</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">initialZero:</span> kde:playground will dissappear and become kde:unstable:playground
+<a name="l-443"></a><span class="tm">17:41:26</span><span class="nk"> &lt;wstephenson&gt;</span> and 50% of the time (roughly) KDE:Distro:Stable lags the latest SC by one release
+<a name="l-444"></a><span class="tm">17:41:40</span><span class="nk"> &lt;llunak&gt;</span> this however doesn't fit the way we create repos for openSUSE
+<a name="l-445"></a><span class="tm">17:41:41</span><span class="nk"> &lt;initialZero&gt;</span> s/k:u:s/K:U:P
+<a name="l-446"></a><span class="tm">17:41:54</span><span class="nk"> &lt;dirkMobile&gt;</span> <span class="hi">llunak:</span> with suse patches?
+<a name="l-447"></a><span class="tm">17:42:19</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">dirkMobile:</span> I think they don't give a damn about that ... version whores is probably a very good description here
+<a name="l-448"></a><span class="tm">17:42:38</span><span class="nk"> &lt;wstephenson&gt;</span> KDE:VersionWhores:45, ...?
+<a name="l-449"></a><span class="tm">17:42:48</span><span class="nk"> &lt;dirkMobile&gt;</span> <span class="hi">llunak:</span> but i do
+<a name="l-450"></a><span class="tm">17:42:50</span><span class="nk"> &lt;initialZero&gt;</span> I'm offended
+<a name="l-451"></a><span class="tm">17:43:14</span><span class="nk"> &lt;dirkMobile&gt;</span> <span class="hi">wstephenson:</span> but not Kdf
+<a name="l-452"></a><span class="tm">17:43:16</span><span class="nk"> &lt;llunak&gt;</span> I mean, KDE:Distro:Stable is probably a stabler choice than &lt;latest KDE SC&gt;
+<a name="l-453"></a><span class="tm">17:43:49</span><span class="nk"> &lt;initialZero&gt;</span> llunak always
+<a name="l-454"></a><span class="tm">17:44:05</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">initialZero:</span> sorry, I didn't make this up, and I think it actually describes the motivation quite well
+<a name="l-455"></a><span class="tm">17:44:52</span><span class="nk"> &lt;Kmetamorphosis&gt;</span> Is this name describing those who want access to 4.5 once it is released, or only those who nitpick between 4.4.x or 4.5.x?
+<a name="l-456"></a><span class="tm">17:44:53</span><span class="nk"> &lt;llunak&gt;</span> anyway, technically this is not a big deal - the repo can either be created only before K:D:Factory goes to another minor version, or it can just follow it
+<a name="l-457"></a><span class="tm">17:44:54</span><span class="nk"> &lt;initialZero&gt;</span> I'm a recovering version whore is all
+<a name="l-458"></a><span class="tm">17:45:19</span><span class="nk"> &lt;wstephenson&gt;</span> aren't we all?
+<a name="l-459"></a><span class="tm">17:45:35</span><span class="nk"> &lt;llunak&gt;</span> so the work is mainly doing something after K:D:Factory goes the version up
+<a name="l-460"></a><span class="tm">17:45:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Kmetamorphosis:</span> not sure what the difference is between those 2 variations.
+<a name="l-461"></a><span class="tm">17:45:54</span><span class="nk"> &lt;initialZero&gt;</span> where do testing packages go before updates to stable
+<a name="l-462"></a><span class="tm">17:46:00</span><span class="nk"> &lt;llunak&gt;</span> so the two questions are: 1) do we want such a repository? 2) is there somebody to do the work?
+<a name="l-463"></a><span class="tm">17:46:50</span><span class="nk"> &lt;Kmetamorphosis&gt;</span> What I was trying to get at was, I don't care if I'm using 4.4.5 over whatever the stable is, but I would like to be able to use 4.5 once it is released without having to deal with downgrading once factory updates.
+<a name="l-464"></a><span class="tm">17:46:56</span><span class="nk"> &lt;cb400f&gt;</span> a lot of people want it surely, prolly not many of them here
+<a name="l-465"></a><span class="tm">17:47:11</span><span class="nk"> &lt;llunak&gt;</span> e.g. Cristian Morales Vega said he'd take care of such a repo, but only until K:D:Factory has the next version stable, which is about a month, and also only for 11.3
+<a name="l-466"></a><span class="tm">17:47:18</span><span class="nk"> &lt;cb400f&gt;</span> Beineri and reddwarf mentioned some interest in doing some work
+<a name="l-467"></a><span class="tm">17:47:25</span><span class="nk"> &lt;llunak&gt;</span> I probably wouldn't want such a repo under KDE:
+<a name="l-468"></a><span class="tm">17:48:01</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">reddwarf:</span> there?
+<a name="l-469"></a><span class="tm">17:48:30</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">cb400f:</span> uhm, sure - i'm lacking work ;-)
+<a name="l-470"></a><span class="tm">17:48:33</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Kmetamorphosis:</span> it's about access to 4.5 once released
+<a name="l-471"></a><span class="tm">17:48:37</span><span class="nk"> &lt;llunak&gt;</span> hmm ... I suggest we postpone this topic until next time, so that such people can be told more in advance to join here
+<a name="l-472"></a><span class="tm">17:49:07</span><span class="nk"> &lt;llunak&gt;</span> and it's been going on for quite long today already
+<a name="l-473"></a><span class="tm">17:49:09</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">cb400f:</span> I'm also interested in helping with that repo
+<a name="l-474"></a><span class="tm">17:49:41</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> we could also investigate the use of zypp services to reduce the work
+<a name="l-475"></a><span class="tm">17:49:49</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">AI:</span> llunak lead discussion about KDE:45 repo on opensuse-kde list
+<a name="l-476"></a><span class="tm">17:49:56</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> how?
+<a name="l-477"></a><span class="tm">17:49:59</span><span class="nk"> &lt;wstephenson&gt;</span> afair someone on the -gnome list said they are finally viable
+<a name="l-478"></a><span class="tm">17:50:05</span><span class="nk"> &lt;dirkMobile&gt;</span> zypp services?
+<a name="l-479"></a><span class="tm">17:50:23</span><span class="nk"> &lt;cb400f&gt;</span> maybe kde:temp:45 or so.. if it really comes to that
+<a name="l-480"></a><span class="tm">17:50:34</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak,dirk:</span> as far as I know they can be something like a symlink
+<a name="l-481"></a><span class="tm">17:50:46</span><span class="nk"> &lt;cb400f&gt;</span> since it's a recurring problem
+<a name="l-482"></a><span class="tm">17:51:04</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">dirkMobile:</span> you build all KDE SC releases somewhere anyway, don't you?
+<a name="l-483"></a><span class="tm">17:51:16</span><span class="nk"> &lt;javier_&gt;</span> ideally, there would be a repo for kde stables releases so that repo switching is not needed
+<a name="l-484"></a><span class="tm">17:51:16</span><span class="nk"> &lt;wstephenson&gt;</span> that we could use to point eg "KDE:SC:45" to "KDE:Distro:Factory" until it becomes 4.6pre
+<a name="l-485"></a><span class="tm">17:51:39</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> can you find out details about that?
+<a name="l-486"></a><span class="tm">17:51:59</span><span class="nk"> &lt;initialZero&gt;</span> wouldn't it be mosre beneficial not to put 45 in factory
+<a name="l-487"></a><span class="tm">17:52:19</span><span class="nk"> &lt;dirkMobile&gt;</span> wstephendon:
+<a name="l-488"></a><span class="tm">17:52:26</span><span class="nk"> &lt;javier_&gt;</span> if factory has a newer release than kde45  maybe we could copy the kde part into factory
+<a name="l-489"></a><span class="tm">17:52:37</span><span class="nk"> &lt;javier_&gt;</span> or link it
+<a name="l-490"></a><span class="tm">17:52:40</span><span class="nk"> &lt;dirkMobile&gt;</span> does the build service support it?
+<a name="l-491"></a><span class="tm">17:52:59</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> sure, gimme an AI
+<a name="l-492"></a><span class="tm">17:53:20</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">initialZero:</span> the next release isn't going to ship 4.5, i think that's why
+<a name="l-493"></a><span class="tm">17:53:25</span><span class="nk"> &lt;javier_&gt;</span> openSUSE release
+<a name="l-494"></a><span class="tm">17:53:26</span><span class="nk"> &lt;dirkMobile&gt;</span> the zypp services are just a list of repositories
+<a name="l-495"></a><span class="tm">17:53:27</span><span class="nk"> &lt;initialZero&gt;</span> we should move this to -kde
+<a name="l-496"></a><span class="tm">17:53:33</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">AI:</span> wstephenson investigate details about creating repository symlinks
+<a name="l-497"></a><span class="tm">17:53:40</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">dirkMobile:</span> o-g may be in error, i'll find out
+<a name="l-498"></a><span class="tm">17:53:55</span><span class="nk"> &lt;initialZero&gt;</span> javier_ yes that's why factory should not have it
+<a name="l-499"></a><span class="tm">17:54:04</span><span class="nk"> &lt;llunak&gt;</span> ok, let's wrap up
+<a name="l-500"></a><span class="tm">17:54:06</span><span class="nk"> &lt;dirkMobile&gt;</span> well zypp does supor
+<a name="l-501"></a><span class="tm">17:54:09</span><span class="nk"> &lt;llunak&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A, misc</span>
+<a name="l-502"></a><span class="tm">17:54:22</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">item:</span> KDE:KDE4:UNSTABLE:Desktop:kdepim45
+<a name="l-503"></a><span class="tm">17:54:31</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">initialZero:</span> sorry, I understood that you understood the opposite
+<a name="l-504"></a><span class="tm">17:54:34</span><span class="nk"> &lt;initialZero&gt;</span> I wanted to say great job on 11.3!
+<a name="l-505"></a><span class="tm">17:54:48</span><span class="nk"> &lt;dirkMobile&gt;</span> support it however you need to create the list manually i think
+<a name="l-506"></a><span class="tm">17:54:51</span><span class="nk"> &lt;wstephenson&gt;</span> when KKUD was 4.5pre, this repo contained kdepim 4.5 packages in kdepim4 etc
+<a name="l-507"></a><span class="tm">17:54:51 </span><span class="nka">* javier_</span> <span class="ac">has to upgrade his laptop to 11.3</span>
+<a name="l-508"></a><span class="tm">17:55:16</span><span class="nk"> &lt;wstephenson&gt;</span> somehow now KKUD:kdepim45 started containing 4.6 snapshots
+<a name="l-509"></a><span class="tm">17:55:29</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">dirkMobile:</span> is one of your update scripts touching that repo too?
+<a name="l-510"></a><span class="tm">17:55:56</span><span class="nk"> &lt;dirkMobile&gt;</span> hmm, yes
+<a name="l-511"></a><span class="tm">17:55:58</span><span class="nk"> &lt;wstephenson&gt;</span> i have reverted it to kdepim* 4.5 for akonadi port testing
+<a name="l-512"></a><span class="tm">17:56:14</span><span class="nk"> &lt;dirkMobile&gt;</span> i might have uploaded the wrong version there
+<a name="l-513"></a><span class="tm">17:56:17</span><span class="nk"> &lt;wstephenson&gt;</span> which is a bit weird since it doesn't build vs KKUD now, but vs K:D:F
+<a name="l-514"></a><span class="tm">17:56:25</span><span class="nk"> &lt;dirkMobile&gt;</span> yeah
+<a name="l-515"></a><span class="tm">17:56:31</span><span class="nk"> &lt;wstephenson&gt;</span> but temporary so roll with it
+<a name="l-516"></a><span class="tm">17:56:36</span><span class="nk"> &lt;wstephenson&gt;</span> it's still unstable.
+<a name="l-517"></a><span class="tm">17:56:41</span><span class="nk"> &lt;dirkMobile&gt;</span> we should rename it
+<a name="l-518"></a><span class="tm">17:56:45</span><span class="nk"> &lt;cb400f&gt;</span> maybe it should move to k:u:p :-)
+<a name="l-519"></a><span class="tm">17:56:56</span><span class="nk"> &lt;llunak&gt;</span> shouldn't this be done in K:D:Factory now? KKUD should be now just trunk, no?
+<a name="l-520"></a><span class="tm">17:57:30</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> no, putting kdepim45 in factory is like handing out grenades at a kindergarten
+<a name="l-521"></a><span class="tm">17:57:37</span><span class="nk"> &lt;cb400f&gt;</span> lol
+<a name="l-522"></a><span class="tm">17:57:53</span><span class="nk"> &lt;wstephenson&gt;</span> so i'd like to keep it under KKUD where angels fear to tread
+<a name="l-523"></a><span class="tm">17:58:39</span><span class="nk"> &lt;cb400f&gt;</span> but an official beta release is coming up, or?
+<a name="l-524"></a><span class="tm">17:58:40</span><span class="nk"> &lt;wstephenson&gt;</span> where it goes after the KKUD rename, ?
+<a name="l-525"></a><span class="tm">17:58:51</span><span class="nk"> &lt;cb400f&gt;</span> KUP
+<a name="l-526"></a><span class="tm">17:58:52</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> yes, keeps getting postponed
+<a name="l-527"></a><span class="tm">17:58:59</span><span class="nk"> &lt;dirkMobile&gt;</span> something like kde:unstable:pim should make sense
+<a name="l-528"></a><span class="tm">17:59:03</span><span class="nk"> &lt;wstephenson&gt;</span> KUP:kdepim45 subrepo?
+<a name="l-529"></a><span class="tm">17:59:46</span><span class="nk"> &lt;cb400f&gt;</span> KUP main repo.. that's what it's for.. unreleased stuff :-)
+<a name="l-530"></a><span class="tm">17:59:51</span><span class="nk"> &lt;dirkMobile&gt;</span> or simply unstable:extra
+<a name="l-531"></a><span class="tm">18:00:13</span><span class="nk"> &lt;wstephenson&gt;</span> same as KUP
+<a name="l-532"></a><span class="tm">18:00:23</span><span class="nk"> &lt;wstephenson&gt;</span> ok, i'm fine with that, if KUP can build vs KDF
+<a name="l-533"></a><span class="tm">18:00:35</span><span class="nk"> &lt;llunak&gt;</span> it can
+<a name="l-534"></a><span class="tm">18:00:52</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">dirkMobile:</span> can you take care of your script before the next K:U:SC update run?
+<a name="l-535"></a><span class="tm">18:01:28</span><span class="nk"> &lt;wstephenson&gt;</span> that's a scary silence
+<a name="l-536"></a><span class="tm">18:01:33</span><span class="nk"> &lt;wstephenson&gt;</span> i don't know if i dare to osc up
+<a name="l-537"></a><span class="tm">18:02:06</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">wstephenson:</span> dirkMobile is just a script and you triggered an unimplemented path...
+<a name="l-538"></a><span class="tm">18:02:12</span><span class="nk"> &lt;wstephenson&gt;</span> i just got the project to build through because kdepim45 depends on new stuff in kdepimlibs from 4.5 branch
+<a name="l-539"></a><span class="tm">18:02:44</span><span class="nk"> &lt;wstephenson&gt;</span> i'll assume that's a yes
+<a name="l-540"></a><span class="tm">18:02:54</span><span class="nk"> &lt;wstephenson&gt;</span> I have another * any other business item
+<a name="l-541"></a><span class="tm">18:02:59</span><span class="nk"> &lt;wstephenson&gt;</span> 11.4 features
+<a name="l-542"></a><span class="tm">18:03:12</span><span class="nk"> &lt;wstephenson&gt;</span> i have a longish list of things we could do for 11.4
+<a name="l-543"></a><span class="tm">18:03:28</span><span class="nk"> &lt;wstephenson&gt;</span> most of them are about hardware/platform integration
+<a name="l-544"></a><span class="tm">18:03:29</span><span class="nk"> &lt;cb400f&gt;</span> has the Ideas wiki page been moved?
+<a name="l-545"></a><span class="tm">18:03:37</span><span class="nk"> &lt;wstephenson&gt;</span> and feature parity with other desktops/distri
+<a name="l-546"></a><span class="tm">18:03:38</span><span class="nk"> &lt;initialZero&gt;</span> is there a wiki for ideas
+<a name="l-547"></a><span class="tm">18:04:07</span><span class="nk"> &lt;wstephenson&gt;</span> http://old-en.opensuse.org/KDE/Ideas/11.3
+<a name="l-548"></a><span class="tm">18:04:13</span><span class="nk"> &lt;dirkMobile&gt;</span> <span class="hi">wstephenson:</span> sure
+<a name="l-549"></a><span class="tm">18:04:23</span><span class="nk"> &lt;wstephenson&gt;</span> its the place before things go to features.o.o
+<a name="l-550"></a><span class="tm">18:04:29</span><span class="nk"> &lt;wstephenson&gt;</span> the antechamber if you like
+<a name="l-551"></a><span class="tm">18:04:33</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">dirkMobile:</span> thanks.
+<a name="l-552"></a><span class="tm">18:04:56</span><span class="nk"> &lt;wstephenson&gt;</span> so i'll make a 11.4 ideas page and put them up there for discussion, contemplation
+<a name="l-553"></a><span class="tm">18:05:04</span><span class="nk"> &lt;wstephenson&gt;</span> i may also start a series of blogs about them
+<a name="l-554"></a><span class="tm">18:06:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">preview:</span> kbluetooth testing, polkit-1-kde, kpackagekit/shaman, mobile broadband, working xrandr stuff,
+<a name="l-555"></a><span class="tm">18:06:31</span><span class="nk"> &lt;wstephenson&gt;</span> the rest is on my whiteboard, i can't recall atm
+<a name="l-556"></a><span class="tm">18:07:13</span><span class="nk"> &lt;llunak&gt;</span> some of that sounds more like upstream, but ok
+<a name="l-557"></a><span class="tm">18:07:16</span><span class="nk"> &lt;initialZero&gt;</span> is that it
+<a name="l-558"></a><span class="tm">18:07:53</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> well it may be integrating upstream stuff well into opensuse.
+<a name="l-559"></a><span class="tm">18:07:59</span><span class="nk"> &lt;llunak&gt;</span> anything else to discuss?
+<a name="l-560"></a><span class="tm">18:08:03</span><span class="nk"> &lt;javier_&gt;</span> btw, I would like to know if it's ok for the openSUSE/KDE team to have KDE:Open-PC
+<a name="l-561"></a><span class="tm">18:08:08</span><span class="nk"> &lt;javier_&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=623979
+<a name="l-562"></a><span class="tm">18:08:11</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 623979 in openSUSE.org (OBS Request) "Kiwi-enabled project for Open-PC" [Normal,Needinfo]
+<a name="l-563"></a><span class="tm">18:08:45</span><span class="nk"> &lt;javier_&gt;</span> if you want to add your comments, please do so in the bug report
+<a name="l-564"></a><span class="tm">18:08:46</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> was the 'why is this in KDE namespace?' question answered?
+<a name="l-565"></a><span class="tm">18:08:59</span><span class="nk"> &lt;javier_&gt;</span> yes
+<a name="l-566"></a><span class="tm">18:09:15</span><span class="nk"> &lt;javier_&gt;</span> one of the main features of the Open-PC is KDE
+<a name="l-567"></a><span class="tm">18:09:35</span><span class="nk"> &lt;initialZero&gt;</span> but its not only kde
+<a name="l-568"></a><span class="tm">18:09:43</span><span class="nk"> &lt;javier_&gt;</span> right
+<a name="l-569"></a><span class="tm">18:10:00</span><span class="nk"> &lt;javier_&gt;</span> but some people didn't like the idea of making the Open-PC namespace
+<a name="l-570"></a><span class="tm">18:10:14</span><span class="nk"> &lt;javier_&gt;</span> so maybe it fits on KDE:
+<a name="l-571"></a><span class="tm">18:10:33</span><span class="nk"> &lt;wstephenson&gt;</span> openSUSE:Derivative:Open-PC ?
+<a name="l-572"></a><span class="tm">18:10:41</span><span class="nk"> &lt;llunak&gt;</span> I think it'd be better to have it as toplevel (there is other toplevel stuff, so why not)
+<a name="l-573"></a><span class="tm">18:10:50</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> that could be another option
+<a name="l-574"></a><span class="tm">18:11:20</span><span class="nk"> &lt;javier_&gt;</span> ok
+<a name="l-575"></a><span class="tm">18:11:38</span><span class="nk"> &lt;dirkMobile&gt;</span> respin:open-pc?
+<a name="l-576"></a><span class="tm">18:11:50</span><span class="nk"> &lt;initialZero&gt;</span> then medical and edu should be there too
+<a name="l-577"></a><span class="tm">18:11:54</span><span class="nk"> &lt;wstephenson&gt;</span> how does Edu-life do it?
+<a name="l-578"></a><span class="tm">18:12:03</span><span class="nk"> &lt;javier_&gt;</span> hmm good question
+<a name="l-579"></a><span class="tm">18:12:31</span><span class="nk"> &lt;wstephenson&gt;</span> and meego?
+<a name="l-580"></a><span class="tm">18:12:36</span><span class="nk"> &lt;javier_&gt;</span> i think it's under education
+<a name="l-581"></a><span class="tm">18:13:01</span><span class="nk"> &lt;javier_&gt;</span> yepp
+<a name="l-582"></a><span class="tm">18:13:02</span><span class="nk"> &lt;javier_&gt;</span> https://build.opensuse.org/project/packages?project=Education
+<a name="l-583"></a><span class="tm">18:13:22</span><span class="nk"> &lt;initialZero&gt;</span> they are all at root
+<a name="l-584"></a><span class="tm">18:13:44</span><span class="nk"> &lt;wstephenson&gt;</span> ok then
+<a name="l-585"></a><span class="tm">18:14:01</span><span class="nk"> &lt;wstephenson&gt;</span> propose Open-PC as a root namespace, saying that it is not just KDE customisation
+<a name="l-586"></a><span class="tm">18:14:08</span><span class="nk"> &lt;initialZero&gt;</span> derivative would have been nice
+<a name="l-587"></a><span class="tm">18:14:19</span><span class="nk"> &lt;wstephenson&gt;</span> then when we get too many root namespaces, propose openSUSE:Derivative
+<a name="l-588"></a><span class="tm">18:14:33</span><span class="nk"> &lt;javier_&gt;</span> ok
+<a name="l-589"></a><span class="tm">18:14:53</span><span class="nk"> &lt;javier_&gt;</span> remember the most important software part of Open-PC is KDE
+<a name="l-590"></a><span class="tm">18:15:13</span><span class="nk"> &lt;javier_&gt;</span> but i don't mind if it's under namespace
+<a name="l-591"></a><span class="tm">18:15:19</span><span class="nk"> &lt;javier_&gt;</span> *other
+<a name="l-592"></a><span class="tm">18:15:50</span><span class="nk"> &lt;wstephenson&gt;</span> ok
+<a name="l-593"></a><span class="tm">18:15:52</span><span class="nk"> &lt;wstephenson&gt;</span> i gtg
+<a name="l-594"></a><span class="tm">18:16:01</span><span class="nk"> &lt;javier_&gt;</span> ok
+<a name="l-595"></a><span class="tm">18:16:05</span><span class="nk"> &lt;wstephenson&gt;</span> thanks everyone for coming, and doing stuff
+<a name="l-596"></a><span class="tm">18:16:07</span><span class="nk"> &lt;initialZero&gt;</span> you can always have open-pc:kde
+<a name="l-597"></a><span class="tm">18:16:09</span><span class="nk"> &lt;llunak&gt;</span> if there's nothing else, the meeting is over, thanks for taking part
+<a name="l-598"></a><span class="tm">18:16:12</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> good work on the bug triage btw
+<a name="l-599"></a><span class="tm">18:16:22</span><span class="nk"> &lt;javier_&gt;</span> thanks
+<a name="l-600"></a><span class="tm">18:16:39</span><span class="nk"> &lt;javier_&gt;</span> i finally talked with her :)
+<a name="l-601"></a><span class="tm">18:16:41</span><span class="nk"> &lt;wstephenson&gt;</span> and thanks everyone for facing up to the renaming, i know it's fiddly and annoying
+<a name="l-602"></a><span class="tm">18:16:43</span><span class="nk"> &lt;javier_&gt;</span> she was very helpful
+<a name="l-603"></a><span class="tm">18:16:43</span><span class="nk"> &lt;wstephenson&gt;</span> (at least i think so)
+<a name="l-604"></a><span class="tm">18:17:06</span><span class="nk"> &lt;initialZero&gt;</span> I had a lot of fun!
+<a name="l-605"></a><span class="tm">18:17:09</span><span class="nk"> &lt;wstephenson&gt;</span> thanks especially llunak :)
+<a name="l-606"></a><span class="tm">18:17:14</span><span class="nk"> &lt;wstephenson&gt;</span> well that's the motto around here.
+<a name="l-607"></a><span class="tm">18:17:26</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

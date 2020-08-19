@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:07:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:07:35</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Nov 12 18:07:35 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:07:35</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:07:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">18:07:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-6"></a><span class="tm">18:07:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-7"></a><span class="tm">18:08:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">MS1 testing</span>
+<a name="l-8"></a><span class="tm">18:08:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> I ran the usual openQA tests on factory but most of them failed for MS1 from the KVM/cirrus-X11 problem
+<a name="l-9"></a><span class="tm">18:10:01</span><span class="nk"> &lt;Ilmehtar&gt;</span> I've seen some very weird issues with KVM in 12.2, the basics all seem fine, but stuff like Splice, which should be working, especially in GNOME Factory, seem to be really misbehaving
+<a name="l-10"></a><span class="tm">18:10:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> there was also a problem with serial console in KVM
+<a name="l-11"></a><span class="tm">18:11:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> bnc#779727
+<a name="l-12"></a><span class="tm">18:11:47</span><span class="nk"> &lt;poorboywilly&gt;</span> testing on a usb kde live cd was pretty smooth
+<a name="l-13"></a><span class="tm">18:11:58</span><span class="nk"> &lt;Ilmehtar&gt;</span> oh joy my bugzilla session timed out, now I get to play Novell authentication russian roulette
+<a name="l-14"></a><span class="tm">18:12:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Ilmehtar:</span> I read they fixed the auth problems recently
+<a name="l-15"></a><span class="tm">18:12:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> plus, to read a bug, you dont need to be logged in
+<a name="l-16"></a><span class="tm">18:12:41</span><span class="nk"> &lt;Ilmehtar&gt;</span> actually, that was the first smooth login I've had in months, so maybe they did
+<a name="l-17"></a><span class="tm">18:13:35</span><span class="nk"> &lt;Ilmehtar&gt;</span> true, it's a force of habit I have partner access and my day job has me looking at a lot of bugs for Novell bugs we use in the office.. and I need to login to see those
+<a name="l-18"></a><span class="tm">18:13:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> I should soon try the USB-Live thing on my machines, too
+<a name="l-19"></a><span class="tm">18:14:13</span><span class="nk"> &lt;poorboywilly&gt;</span> I didn't test on my laptop though because the md5/sha1 sums did not match for the i586 image
+<a name="l-20"></a><span class="tm">18:15:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> GNOME-i686 one?
+<a name="l-21"></a><span class="tm">18:16:52</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">bmwiedemann:</span> I guess we need to either package that reversion or see how quick qemu upstream is going to do the same
+<a name="l-22"></a><span class="tm">18:17:17</span><span class="nk"> &lt;poorboywilly&gt;</span> yes i686, but kde
+<a name="l-23"></a><span class="tm">18:18:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Ilmehtar:</span> I packaged it, but it is still in my home repo only
+<a name="l-24"></a><span class="tm">18:18:13</span><span class="nk"> &lt;Holgi&gt;</span> I do not have any experiences with 12.2 yet
+<a name="l-25"></a><span class="tm">18:18:55</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">bmwiedemann:</span> and you want someone to test it..let me go grab my laptop ;-)
+<a name="l-26"></a><span class="tm">18:18:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Holgi:</span> 12.2 runs much smoother than 12.1 (which had some kernel problems)
+<a name="l-27"></a><span class="tm">18:19:32</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> sorry typo, I mean 12.3
+<a name="l-28"></a><span class="tm">18:19:42 </span><span class="nka">* Holgi</span> <span class="ac">is using 12.2 already</span>
+<a name="l-29"></a><span class="tm">18:19:50</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">Holgi:</span> I agree, 12.2 for me has been one of those 'sweet spot' versions - normally as soon as we get the thing released I'm straight back on factory but I've been a slacker moving on from 12.2
+<a name="l-30"></a><span class="tm">18:19:55</span><span class="nk"> &lt;Ilmehtar&gt;</span> ahh, well, I still think 12.2 is awesome
+<a name="l-31"></a><span class="tm">18:21:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">poorboywilly:</span> just fetched the GNOME-i686 iso and it also has a mismatch of the md5sum - and that is no transmission problem, because rsync has internal checks
+<a name="l-32"></a><span class="tm">18:22:33</span><span class="nk"> &lt;Ilmehtar&gt;</span> same here, darn, thats what I was going to use
+<a name="l-33"></a><span class="tm">18:23:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> I'd declare the checksums to be broken. Will check with coolo/adrian tomorrow
+<a name="l-34"></a><span class="tm">18:23:54</span><span class="nk"> &lt;poorboywilly&gt;</span> interestingly the signature seems to be fine
+<a name="l-35"></a><span class="tm">18:25:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> looking at the timestamps, .iso and .asc are dated 2012-11-07 while the checksums are dated 2012-11-08
+<a name="l-36"></a><span class="tm">18:27:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> might be related to recent OBS upgrades
+<a name="l-37"></a><span class="tm">18:27:24</span><span class="nk"> &lt;poorboywilly&gt;</span> shall I file a bug?
+<a name="l-38"></a><span class="tm">18:28:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">poorboywilly:</span> I'll do it
+<a name="l-39"></a><span class="tm">18:29:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> for the time being, here is what I got from rsync:
+<a name="l-40"></a><span class="tm">18:29:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> c81b90394f57fd4db9b56af73b6470db4d0258bd  factory/iso/openSUSE-GNOME-LiveCD-i686-Build0166-Media.iso
+<a name="l-41"></a><span class="tm">18:29:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> 2eb4771be09bbd05e323b3240b045e0d5e23552d  factory/iso/openSUSE-GNOME-LiveCD-x86_64-Build0166-Media.iso
+<a name="l-42"></a><span class="tm">18:29:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> 3e4a5a117df77b833e058af29ad12c92ac55e54c  factory/iso/openSUSE-KDE-LiveCD-i686-Build0166-Media.iso
+<a name="l-43"></a><span class="tm">18:29:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> 8728455651d7318ded8fb8531c1905b25cb001db  factory/iso/openSUSE-KDE-LiveCD-x86_64-Build0166-Media.iso
+<a name="l-44"></a><span class="tm">18:29:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> (sha1sum that is)
+<a name="l-45"></a><span class="tm">18:32:36</span><span class="nk"> &lt;Ilmehtar&gt;</span> thanks
+<a name="l-46"></a><span class="tm">18:33:33</span><span class="nk"> &lt;poorboywilly&gt;</span> yep that matches the KDE-i686 I downloaded
+<a name="l-47"></a><span class="tm">18:34:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> it seems, the KDE-64 iso is the only one with matching checksums :)
+<a name="l-48"></a><span class="tm">18:34:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> I would have expected all of them to be off - for the sake of consistency
+<a name="l-49"></a><span class="tm">18:38:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> any other 12.3 testing experience to share?
+<a name="l-50"></a><span class="tm">18:39:10</span><span class="nk"> &lt;Ilmehtar&gt;</span> not from me - I hope to dramatically change that before the next meeting ;-)
+<a name="l-51"></a><span class="tm">18:40:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> I hope we get factory installs back into a working state soon
+<a name="l-52"></a><span class="tm">18:42:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> filed OBS bug (bnc#789295)
+<a name="l-53"></a><span class="tm">18:42:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> so let's finish this topic then
+<a name="l-54"></a><span class="tm">18:43:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">schedule next meeting</span>
+<a name="l-55"></a><span class="tm">18:43:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> when shall we meet again?
+<a name="l-56"></a><span class="tm">18:44:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> MS2 is due 2012-12-13
+<a name="l-57"></a><span class="tm">18:44:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> so we could meet on 17th
+<a name="l-58"></a><span class="tm">18:45:49</span><span class="nk"> &lt;poorboywilly&gt;</span> that sounds reasonable
+<a name="l-59"></a><span class="tm">18:46:25</span><span class="nk"> &lt;Holgi&gt;</span> should be fine
+<a name="l-60"></a><span class="tm">18:46:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">next meeting 2012-12-17 18:00 UTC</span>
+<a name="l-61"></a><span class="tm">18:47:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-62"></a><span class="tm">18:48:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> any parts that should be covered by openQA tests?
+<a name="l-63"></a><span class="tm">18:51:15</span><span class="nk"> &lt;poorboywilly&gt;</span> does it look at the checksums? :)
+<a name="l-64"></a><span class="tm">18:52:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> there are no checksums for factory isos
+<a name="l-65"></a><span class="tm">18:52:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> except the embedded ones
+<a name="l-66"></a><span class="tm">18:53:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> but those are not checked yet. could be an extra variant, though
+<a name="l-67"></a><span class="tm">18:56:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> will take a few minutes to integrate it
+<a name="l-68"></a><span class="tm">18:57:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> any other topics you want to talk about?
+<a name="l-69"></a><span class="tm">18:58:22</span><span class="nk"> &lt;poorboywilly&gt;</span> we discussed last development cycle testing at least the initial loading of all applications, and having a tool that we could use mark off what has been tested
+<a name="l-70"></a><span class="tm">18:58:35</span><span class="nk"> &lt;poorboywilly&gt;</span> does such a tool exist, or does it need to be made?
+<a name="l-71"></a><span class="tm">19:00:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> I once made http://openqa.opensuse.org/openqa/qatests/qa_runall.pl
+<a name="l-72"></a><span class="tm">19:00:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> it will output, if the program backgrounded, blocked or exited by itself
+<a name="l-73"></a><span class="tm">19:00:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> and how much output it produced
+<a name="l-74"></a><span class="tm">19:01:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> but we still would need some smart way of post-processing such output
+<a name="l-75"></a><span class="tm">19:01:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> (and it might not be safe to run - depending on what programs are installed)
+<a name="l-76"></a><span class="tm">19:02:01</span><span class="nk"> &lt;poorboywilly&gt;</span> true
+<a name="l-77"></a><span class="tm">19:02:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> I can just add it after the tests, so it does not disturb the outcome
+<a name="l-78"></a><span class="tm">19:05:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> mostly added mediacheck now
+<a name="l-79"></a><span class="tm">19:06:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> we also had trouble with the rescue system in the past
+<a name="l-80"></a><span class="tm">19:06:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> but that will be a bit more complicated
+<a name="l-81"></a><span class="tm">19:08:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. let's end today's meeting then
+<a name="l-82"></a><span class="tm">19:08:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> thanks all for joining.
+<a name="l-83"></a><span class="tm">19:08:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-84"></a><span class="tm">19:08:53</span><span class="nk"> &lt;poorboywilly&gt;</span> thank you
+<a name="l-85"></a><span class="tm">19:09:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

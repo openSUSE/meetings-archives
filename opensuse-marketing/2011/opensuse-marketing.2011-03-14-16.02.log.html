@@ -1,0 +1,918 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-marketing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">16:02:04</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE 11.4 Release Marketing Post-Mortem Review</span>
+<a name="l-2"></a><span class="tm">16:02:04</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Mar 14 16:02:04 2011 UTC.  The chair is suseROCKs. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">16:02:04</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">16:02:45</span><span class="nk"> &lt;suseROCKs&gt;</span> Moin Moin world!   And welcome to the first post-11.4 Meeting
+<a name="l-5"></a><span class="tm">16:03:09 </span><span class="nka">* jospoortvliet</span> <span class="ac">is surprised we survived</span>
+<a name="l-6"></a><span class="tm">16:03:12</span><span class="nk"> &lt;suseROCKs&gt;</span> I want to congratulate ALLL of you for your hard work on 11.4 release
+<a name="l-7"></a><span class="tm">16:03:16</span><span class="nk"> &lt;jospoortvliet&gt;</span> +1
+<a name="l-8"></a><span class="tm">16:03:29 </span><span class="nka">* AJaeger</span> <span class="ac">claps as well ;)</span>
+<a name="l-9"></a><span class="tm">16:03:34 </span><span class="nka">* jospoortvliet</span> <span class="ac">hopes everyone catched up to sleep</span>
+<a name="l-10"></a><span class="tm">16:03:57</span><span class="nk"> &lt;manugupt1&gt;</span> +1000
+<a name="l-11"></a><span class="tm">16:03:57</span><span class="nk"> &lt;suseROCKs&gt;</span> and a shoutout to the developers and packagers too because I'm seeing less than usual traffic to the support channel and people there are reporting little issues with their 11.4's
+<a name="l-12"></a><span class="tm">16:04:33</span><span class="nk"> &lt;suseROCKs&gt;</span> but despite any postives we have, there's always time to review and see room for improvements
+<a name="l-13"></a><span class="tm">16:04:37 </span><span class="nka">* lupinstein</span> <span class="ac">is better</span>
+<a name="l-14"></a><span class="tm">16:04:52</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, maybe change the -project channel topic that can be the best shout out :)
+<a name="l-15"></a><span class="tm">16:05:00</span><span class="nk"> &lt;yaloki&gt;</span> it's a mixed bag, as usual
+<a name="l-16"></a><span class="tm">16:05:00</span><span class="nk"> &lt;suseROCKs&gt;</span> particularly I'd like to find a way that we don't lose so much sleep next time  :-D
+<a name="l-17"></a><span class="tm">16:05:06</span><span class="nk"> &lt;yaloki&gt;</span> apparently wifi support is disatrous
+<a name="l-18"></a><span class="tm">16:05:16</span><span class="nk"> &lt;yaloki&gt;</span> and lots of issues with GPU drivers
+<a name="l-19"></a><span class="tm">16:05:19</span><span class="nk"> &lt;yaloki&gt;</span> "disastrous" even
+<a name="l-20"></a><span class="tm">16:05:47</span><span class="nk"> &lt;suseROCKs&gt;</span> here's what we will do today
+<a name="l-21"></a><span class="tm">16:06:06</span><span class="nk"> &lt;suseROCKs&gt;</span> it's primarily a gabfest with focus on the questions listed at http://piratepad.net/oS-Marketing-11-4-Post-mortem
+<a name="l-22"></a><span class="tm">16:06:09</span><span class="nk"> &lt;yaloki&gt;</span> but faster zypper has been noticed widely
+<a name="l-23"></a><span class="tm">16:06:25</span><span class="nk"> &lt;tony_&gt;</span> from what I've seen in Tech Support forums GPU issues spotty and mainly 32-bit, otherwise good. Wifi mostly good but surprisingly some Broadcom issues
+<a name="l-24"></a><span class="tm">16:06:31</span><span class="nk"> &lt;suseROCKs&gt;</span> and as we disucss we'll fill in our notes and then bring it up for further discussion on the ML   and eventually create a solid roadmap for the next release marketing strategy
+<a name="l-25"></a><span class="tm">16:06:43</span><span class="nk"> &lt;yaloki&gt;</span> although there were some weird issues with 32bit packages installed on 64bit systems, saw two people leave on #opensuse-fr because of that
+<a name="l-26"></a><span class="tm">16:07:11</span><span class="nk"> &lt;yaloki&gt;</span> and not having sax, as usual …
+<a name="l-27"></a><span class="tm">16:07:27</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> no, I meant "sax"
+<a name="l-28"></a><span class="tm">16:07:30</span><span class="nk"> &lt;yaloki&gt;</span> ^^
+<a name="l-29"></a><span class="tm">16:07:39</span><span class="nk"> &lt;tigerfoot&gt;</span> sax3 is for gosc
+<a name="l-30"></a><span class="tm">16:07:43</span><span class="nk"> &lt;suseROCKs&gt;</span> well I think we overspoke on our claim of broadcom support.  It did not work out of the box with linux kernel support  and according to GregKH, there's still a lot of broadcoms that aren't supported yet on openSUSE
+<a name="l-31"></a><span class="tm">16:08:01</span><span class="nk"> &lt;yaloki&gt;</span> packman has the evil broadcom-wl
+<a name="l-32"></a><span class="tm">16:08:12</span><span class="nk"> &lt;suseROCKs&gt;</span> yes that's where I ended up going
+<a name="l-33"></a><span class="tm">16:08:13</span><span class="nk"> &lt;yaloki&gt;</span> bbl
+<a name="l-34"></a><span class="tm">16:08:39</span><span class="nk"> &lt;suseROCKs&gt;</span> so I guess that's one area we had problems with... claims of things that weren't quite all that true
+<a name="l-35"></a><span class="tm">16:09:13</span><span class="nk"> &lt;suseROCKs&gt;</span> oh goody  someone is working on the pirate pad already.   Thank you.    the pad is hard for me to read on this laptop
+<a name="l-36"></a><span class="tm">16:09:20</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> AS usual, the release will find much more usage than any RC - and therefore more bugs are found ;-(
+<a name="l-37"></a><span class="tm">16:09:24</span><span class="nk"> &lt;AJaeger&gt;</span> We could use more testers
+<a name="l-38"></a><span class="tm">16:09:40</span><span class="nk"> &lt;AJaeger&gt;</span> And the one thing we failed was sending out timely announcements of our releases.
+<a name="l-39"></a><span class="tm">16:09:46</span><span class="nk"> &lt;AJaeger&gt;</span> RC1 was not send out at all.
+<a name="l-40"></a><span class="tm">16:09:59</span><span class="nk"> &lt;tigerfoot&gt;</span> and don't forget there's not really a RC1 due to the too big iso ...
+<a name="l-41"></a><span class="tm">16:10:07</span><span class="nk"> &lt;suseROCKs&gt;</span> ok   so   good pre-release campaigning was a factor...
+<a name="l-42"></a><span class="tm">16:10:18</span><span class="nk"> &lt;AJaeger&gt;</span> On the other hand, even if those bugs had been found, we need more people fixing bugs.
+<a name="l-43"></a><span class="tm">16:10:19</span><span class="nk"> &lt;tigerfoot&gt;</span> lot's of people out there don't want to test before rc1 (which is bad)
+<a name="l-44"></a><span class="tm">16:10:20</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> it seems so...
+<a name="l-45"></a><span class="tm">16:10:21</span><span class="nk"> &lt;suseROCKs&gt;</span> - RC announcements
+<a name="l-46"></a><span class="tm">16:10:24</span><span class="nk"> &lt;suseROCKs&gt;</span> - Call for testers
+<a name="l-47"></a><span class="tm">16:10:32</span><span class="nk"> &lt;AJaeger&gt;</span> - call for bugfixing
+<a name="l-48"></a><span class="tm">16:10:48</span><span class="nk"> &lt;tony_&gt;</span> @yaloki SAX was deprecated long ago, not even a part of 11.3
+<a name="l-49"></a><span class="tm">16:10:51</span><span class="nk"> &lt;tigerfoot&gt;</span> start the campaign at M4 or M5 ...
+<a name="l-50"></a><span class="tm">16:11:18</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">tony_:</span> but people are missing that tool and asking for it, check it's score on openFATE
+<a name="l-51"></a><span class="tm">16:11:18</span><span class="nk"> &lt;suseROCKs&gt;</span> tigerfoot,   there's good and bad reasons why people don't want to test.   Perhaps we should create a strategy of easing people's concerns about testing?
+<a name="l-52"></a><span class="tm">16:11:32</span><span class="nk"> &lt;suseROCKs&gt;</span> "You too can be a tester.  it's easy!"
+<a name="l-53"></a><span class="tm">16:11:46 </span><span class="nka">* tigerfoot</span> <span class="ac">already is :-)</span>
+<a name="l-54"></a><span class="tm">16:11:56</span><span class="nk"> &lt;suseROCKs&gt;</span> already is what?
+<a name="l-55"></a><span class="tm">16:12:09 </span><span class="nka">* tigerfoot</span> <span class="ac">run actually 11.5 RC1 :-)</span>
+<a name="l-56"></a><span class="tm">16:12:20</span><span class="nk"> &lt;suseROCKs&gt;</span> I heard about that flub  LOL
+<a name="l-57"></a><span class="tm">16:12:33 </span><span class="nka">* amonthoth</span> <span class="ac">is a beta tester now</span>
+<a name="l-58"></a><span class="tm">16:12:46</span><span class="nk"> &lt;AJaeger&gt;</span> We have to motivate both - more testers and more bugfixes. I would right now (in the next 3 months or so) concentrate on the bugfixing part.
+<a name="l-59"></a><span class="tm">16:12:49</span><span class="nk"> &lt;tony_&gt;</span> @AJaeger Amen. I think more than other releases I've seen there are more bugs which should have been caught
+<a name="l-60"></a><span class="tm">16:13:29</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   ok  so let's look at bugfixers for a moment...    What kind of people do we need for that?   How do we increase the pool of people with good skillset to participate?
+<a name="l-61"></a><span class="tm">16:13:39</span><span class="nk"> &lt;suseROCKs&gt;</span> Education of how to fix bugs even if you're a newbie?
+<a name="l-62"></a><span class="tm">16:13:48</span><span class="nk"> &lt;suseROCKs&gt;</span> (newbie meaning new to bugfixing, not to Linux)
+<a name="l-63"></a><span class="tm">16:13:57</span><span class="nk"> &lt;amonthoth&gt;</span> how to make a tutorial to bugfixes
+<a name="l-64"></a><span class="tm">16:14:16</span><span class="nk"> &lt;tony_&gt;</span> @tigerfoot SAX was deprecated for good reason, I've followed its progress in Tech Forums. Most people will miss, but new Display Manager performs better
+<a name="l-65"></a><span class="tm">16:14:21</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> First you need to screen the bugs - somehow junior task. Then fix them - might need debugging/development skills
+<a name="l-66"></a><span class="tm">16:15:02</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, Thats a booster milestone too
+<a name="l-67"></a><span class="tm">16:15:02</span><span class="nk"> &lt;manugupt1&gt;</span> getting more people involved in -factory
+<a name="l-68"></a><span class="tm">16:15:03</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">tony_:</span> I know that, manual config ( which is one line edition now) is pretty cool, all the rest work out of the box ...
+<a name="l-69"></a><span class="tm">16:15:06</span><span class="nk"> &lt;manugupt1&gt;</span> maybe we should ask them
+<a name="l-70"></a><span class="tm">16:15:10</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   okay.    There's two camps here.  One camp is those on the tech side who should focus on creating the documentation etc.  And then there's our camp where we take the information from them and market that need hard to the world.
+<a name="l-71"></a><span class="tm">16:15:26</span><span class="nk"> &lt;suseROCKs&gt;</span> we can't market what we don't know  :-)
+<a name="l-72"></a><span class="tm">16:16:08</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">suseROCKs:</span> I disappointed now :-) I always believe you can do that
+<a name="l-73"></a><span class="tm">16:16:14</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so I see a lot of talk so far about pre-release campaigning.  All good thoughts.
+<a name="l-74"></a><span class="tm">16:16:23</span><span class="nk"> &lt;suseROCKs&gt;</span> Now what about the actual release.   What was good/bad about it?
+<a name="l-75"></a><span class="tm">16:16:42</span><span class="nk"> &lt;suseROCKs&gt;</span> tigerfoot,   sure   I know everything....   :-D
+<a name="l-76"></a><span class="tm">16:16:43</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, The release was awesome
+<a name="l-77"></a><span class="tm">16:16:59</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   sure it was, but many of us nearly died from lack of sleep  LOL
+<a name="l-78"></a><span class="tm">16:17:03</span><span class="nk"> &lt;AJaeger&gt;</span> + The Product_highlights
+<a name="l-79"></a><span class="tm">16:17:07</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm shocked jospoortvliet is alive!
+<a name="l-80"></a><span class="tm">16:17:13</span><span class="nk"> &lt;AJaeger&gt;</span> + working as a team - you all rocked!!!!!!!!!!!!!!!!!1
+<a name="l-81"></a><span class="tm">16:17:34</span><span class="nk"> &lt;manugupt1&gt;</span> I have a but
+<a name="l-82"></a><span class="tm">16:17:43</span><span class="nk"> &lt;suseROCKs&gt;</span> but or butt?
+<a name="l-83"></a><span class="tm">16:17:56</span><span class="nk"> &lt;manugupt1&gt;</span> too lets continue it for a week too lets not break the writing brigade
+<a name="l-84"></a><span class="tm">16:18:27</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">AJaeger:</span> I agree on that the team work was spectacular, be prepare for two weeks next time :-) so jospoortvliet would not be alone to Finish in hurry the Product whatever ...
+<a name="l-85"></a><span class="tm">16:18:28</span><span class="nk"> &lt;suseROCKs&gt;</span> why a week?  We should be writing forever    its constantly good noise
+<a name="l-86"></a><span class="tm">16:18:38</span><span class="nk"> &lt;suseROCKs&gt;</span> and as I always say,  our relese campaign lasts for 8 months, not a few days
+<a name="l-87"></a><span class="tm">16:18:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> sure
+<a name="l-88"></a><span class="tm">16:18:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> but we all need to catch our breath :D
+<a name="l-89"></a><span class="tm">16:19:11</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">suseROCKs:</span> in the future, (next week) kde 4.6.1 is available everywhere, next month gnome3
+<a name="l-90"></a><span class="tm">16:19:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> I am trying to force myself to do an xfce 4.8 review
+<a name="l-91"></a><span class="tm">16:19:15</span><span class="nk"> &lt;suseROCKs&gt;</span> Could we have been able to start the skeleton of the Product Highlights like a month or so earlier?   so we were not cramming at the last minute?
+<a name="l-92"></a><span class="tm">16:19:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> and there are other ideas for articles
+<a name="l-93"></a><span class="tm">16:19:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> yes
+<a name="l-94"></a><span class="tm">16:19:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> that is what we should've done
+<a name="l-95"></a><span class="tm">16:19:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> but it's extremely hard, esp in openSUSE - it is big and often hard to know what version exactly we will ship
+<a name="l-96"></a><span class="tm">16:19:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> so we could've done more but - not everything.
+<a name="l-97"></a><span class="tm">16:19:59</span><span class="nk"> &lt;tigerfoot&gt;</span> yeap there's some surprises
+<a name="l-98"></a><span class="tm">16:20:00</span><span class="nk"> &lt;suseROCKs&gt;</span> so let's put that in our roadmap....   What's the earliest that a PH can begin?   after M5?  RC1?
+<a name="l-99"></a><span class="tm">16:20:20</span><span class="nk"> &lt;jospoortvliet&gt;</span> BTW all who worked on the product highlights - they have been awesomely useful. We should now go through them and use them again and again for articles about openSUSE :D
+<a name="l-100"></a><span class="tm">16:20:25</span><span class="nk"> &lt;tigerfoot&gt;</span> M6 is normally pretty fixed
+<a name="l-101"></a><span class="tm">16:20:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> for example, zypper improvements and kernel improvements haven't been put in an article yet
+<a name="l-102"></a><span class="tm">16:20:45</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   yes.. that PH is now my central source of information to refer to
+<a name="l-103"></a><span class="tm">16:20:46</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">suseROCKs:</span> but check that with coolo and his plan for 11.5
+<a name="l-104"></a><span class="tm">16:20:55</span><span class="nk"> &lt;tony_&gt;</span> Maybe organizing efforts, Enforce common collaboration tools, division of labor, a Project Management app
+<a name="l-105"></a><span class="tm">16:20:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> so why not just copy-paste that part and turn it into an article for the release?
+<a name="l-106"></a><span class="tm">16:21:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony_:</span> the more you organize the more you spend on overhead. Its something to be very carful with
+<a name="l-107"></a><span class="tm">16:21:18</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">jospoortvliet:</span> you need a 32cores to see real big differences for the kernel :-)
+<a name="l-108"></a><span class="tm">16:21:23</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, no because the product highlights are everywhere
+<a name="l-109"></a><span class="tm">16:21:31</span><span class="nk"> &lt;manugupt1&gt;</span> The links atleast
+<a name="l-110"></a><span class="tm">16:21:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> yup that is true
+<a name="l-111"></a><span class="tm">16:21:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> still worth turning into articles, not all ppl read the whole thing
+<a name="l-112"></a><span class="tm">16:21:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> what I find unfortunate is that we didn't manage to get a video in there
+<a name="l-113"></a><span class="tm">16:22:02</span><span class="nk"> &lt;jospoortvliet&gt;</span> jdd was working on something
+<a name="l-114"></a><span class="tm">16:22:03</span><span class="nk"> &lt;tony_&gt;</span> @jos Yes, organizing overhead is a tough nut. It would mean that whoever manages has to step back and &lt;not&gt; do content
+<a name="l-115"></a><span class="tm">16:22:04</span><span class="nk"> &lt;suseROCKs&gt;</span> tony_,  +1 to what jospoortvliet  ssaid, and remember in FOSS,  its all volunteer, so no matter how much you organize, people will only work on what they are interested and motivated in.  No one can "order" someone to do something
+<a name="l-116"></a><span class="tm">16:22:15</span><span class="nk"> &lt;suseROCKs&gt;</span> except jospoortvliet   he orders me around....    :-D
+<a name="l-117"></a><span class="tm">16:22:16</span><span class="nk"> &lt;jospoortvliet&gt;</span> but apparently didn't finish in time. A video would've given some stats on how many ppl read it :D
+<a name="l-118"></a><span class="tm">16:22:19</span><span class="nk"> &lt;manugupt1&gt;</span> yes.. but not copy paste people might just say they have an habit pf copying
+<a name="l-119"></a><span class="tm">16:22:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony_:</span> yes that is happening to some extend, suseROCKs does a lot of that. But part of how a FOSS team works is also to lead by example...
+<a name="l-120"></a><span class="tm">16:23:00</span><span class="nk"> &lt;tony_&gt;</span> @suserocks Agreed. That's why project management has to account for what's on time and not. If something's not happening it has to be addressed but NO BLAME EVER
+<a name="l-121"></a><span class="tm">16:23:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> of course
+<a name="l-122"></a><span class="tm">16:23:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony_:</span> indeed, we can try to do that more
+<a name="l-123"></a><span class="tm">16:23:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> it's why we have action items and such
+<a name="l-124"></a><span class="tm">16:23:29</span><span class="nk"> &lt;suseROCKs&gt;</span> we do have some project management tools here but I've not been too happy with them so far...   its something I'll have to re-review
+<a name="l-125"></a><span class="tm">16:23:57</span><span class="nk"> &lt;suseROCKs&gt;</span> and tony_   fyi  if you type the first few letters of a nick and hit &lt;tab&gt;  it will autocomplete the nick for you and then the person is properly notified that you talked to them
+<a name="l-126"></a><span class="tm">16:24:07</span><span class="nk"> &lt;suseROCKs&gt;</span> no need for "@suserocks" :-)
+<a name="l-127"></a><span class="tm">16:24:49</span><span class="nk"> &lt;suseROCKs&gt;</span> so we agree that PH should begin development after M6?
+<a name="l-128"></a><span class="tm">16:25:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> yes
+<a name="l-129"></a><span class="tm">16:25:20</span><span class="nk"> &lt;jospoortvliet&gt;</span> so put that in the release plan
+<a name="l-130"></a><span class="tm">16:25:20</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. I have an idea in mind too
+<a name="l-131"></a><span class="tm">16:25:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> ;-)
+<a name="l-132"></a><span class="tm">16:25:38</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#info </span><span class="cmdline">Product Highlights should begin creation upon the release of M6 version of next release</span>
+<a name="l-133"></a><span class="tm">16:25:51</span><span class="nk"> &lt;manugupt1&gt;</span> Can I share the idea?
+<a name="l-134"></a><span class="tm">16:25:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> btw before we finish, can I get 5 min on the agenda to talk about what articles to do and who does it, over the coming week(s)?
+<a name="l-135"></a><span class="tm">16:26:00</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   as long as its in context  :-)
+<a name="l-136"></a><span class="tm">16:26:16</span><span class="nk"> &lt;manugupt1&gt;</span> yes it is wrt next release
+<a name="l-137"></a><span class="tm">16:26:19</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   I guess we can give you that...  (groan)
+<a name="l-138"></a><span class="tm">16:26:27 </span><span class="nka">* AJaeger</span> <span class="ac">is going to update the Launch_checklist</span>
+<a name="l-139"></a><span class="tm">16:26:31</span><span class="nk"> &lt;suseROCKs&gt;</span> go
+<a name="l-140"></a><span class="tm">16:26:38</span><span class="nk"> &lt;manugupt1&gt;</span> Who goes me / jospoortvliet
+<a name="l-141"></a><span class="tm">16:26:43</span><span class="nk"> &lt;suseROCKs&gt;</span> you manugupt1
+<a name="l-142"></a><span class="tm">16:26:59</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. lets call the next release as the release of innovation
+<a name="l-143"></a><span class="tm">16:27:04</span><span class="nk"> &lt;manugupt1&gt;</span> Because
+<a name="l-144"></a><span class="tm">16:27:29</span><span class="nk"> &lt;manugupt1&gt;</span> Most probably we will have appstream, SaX3, systemd and a whole lot of new features maybe grub2
+<a name="l-145"></a><span class="tm">16:27:33</span><span class="nk"> &lt;suseROCKs&gt;</span> umm   no offense but that's not within the context here  :-)
+<a name="l-146"></a><span class="tm">16:27:49</span><span class="nk"> &lt;manugupt1&gt;</span> and loads of exciting stuff
+<a name="l-147"></a><span class="tm">16:28:03</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,  we should have a discussion about the campaign message strategy  sure.  But what we're talking about now is looking at our nuts and bolts of the marketing process itself
+<a name="l-148"></a><span class="tm">16:28:34</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. suseROCKs
+<a name="l-149"></a><span class="tm">16:28:53</span><span class="nk"> &lt;suseROCKs&gt;</span> i.e., we should be looking at what worked and what didn't work this time  so we learn from our experience here
+<a name="l-150"></a><span class="tm">16:29:20</span><span class="nk"> &lt;suseROCKs&gt;</span> lupinstein,    any thoughts on the social media/marketing front?   what was good/bad?
+<a name="l-151"></a><span class="tm">16:29:21</span><span class="nk"> &lt;tony_&gt;</span> <span class="hi">jospoortvliet:</span> Jos, if you want help evaluating collaboration tools, I will set aside time for that with you
+<a name="l-152"></a><span class="tm">16:29:23</span><span class="nk"> &lt;manugupt1&gt;</span> yes.. suseROCKs
+<a name="l-153"></a><span class="tm">16:29:49</span><span class="nk"> &lt;suseROCKs&gt;</span> over here tony_    :-)
+<a name="l-154"></a><span class="tm">16:30:35</span><span class="nk"> &lt;AJaeger&gt;</span> I think lupinstein got the job assigned to late ;)
+<a name="l-155"></a><span class="tm">16:30:41</span><span class="nk"> &lt;suseROCKs&gt;</span> not trying to assert my title here, but I'm the team lead and such things can be reviewed with me.   Putting too much on Jos's lap will overwhelm him once again as he works beyond just the marketing team.
+<a name="l-156"></a><span class="tm">16:30:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony_:</span> see what suseROCKs says - he has a darn good point ;-)
+<a name="l-157"></a><span class="tm">16:31:00</span><span class="nk"> &lt;AJaeger&gt;</span> We should have created events on facebook etc. and invited folks to it- building up some hype much earlier
+<a name="l-158"></a><span class="tm">16:31:06</span><span class="nk"> &lt;jospoortvliet&gt;</span> I love to help but time is not exactly something I have in abundance
+<a name="l-159"></a><span class="tm">16:31:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> love to hear your thoughts on social media stuff, you did great there imho
+<a name="l-160"></a><span class="tm">16:31:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> but I bet there is room for improve ment
+<a name="l-161"></a><span class="tm">16:31:34</span><span class="nk"> &lt;tony_&gt;</span> <span class="hi">suseROCKs:</span>  I will work with any and all including you Bryen on Collaboration Tools...
+<a name="l-162"></a><span class="tm">16:31:42</span><span class="nk"> &lt;suseROCKs&gt;</span> I think lupinstein  did an amazing job in such a short period of time
+<a name="l-163"></a><span class="tm">16:31:57</span><span class="nk"> &lt;manugupt1&gt;</span> lupinstein, terrorpup HATS OFFFFFFF
+<a name="l-164"></a><span class="tm">16:32:19</span><span class="nk"> &lt;suseROCKs&gt;</span> I was churning out lots of tweets cuz I had limited time on Thursday and hope many of them were creative/cool enough to get retweeted throughout the day
+<a name="l-165"></a><span class="tm">16:32:40</span><span class="nk"> &lt;lupinstein&gt;</span> well the one thing that I notice that a lot people posted but didn't use the correct hash tag
+<a name="l-166"></a><span class="tm">16:32:41</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> I agree - and doing better means starting earlier and not having only one person on the task ;)
+<a name="l-167"></a><span class="tm">16:32:42 </span><span class="nka">* suseROCKs</span> <span class="ac">finally replaced his Panama hat with a brand new one last night if anyone was interested  :-D</span>
+<a name="l-168"></a><span class="tm">16:32:55</span><span class="nk"> &lt;manugupt1&gt;</span> I did a lot of tweets from any source I got
+<a name="l-169"></a><span class="tm">16:33:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> ok so we should have decided on the hashtag earlier and communicated it better
+<a name="l-170"></a><span class="tm">16:33:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> should be in the release plan: decide on hashtag and communicate it EVERYWHERE
+<a name="l-171"></a><span class="tm">16:33:17</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger,   yes but I also like that there is a central coordinator, and for that I continue to rely on lupinstein for that.  But we should definitely make sure there are no points of failure anywhere
+<a name="l-172"></a><span class="tm">16:33:20</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="cmd">#openSUSE </span><span class="cmdline">it was, we need to get that out</span>
+<a name="l-173"></a><span class="tm">16:33:30</span><span class="nk"> &lt;lupinstein&gt;</span> manugupt1, was great to find stuff  from outside the group which was a big help
+<a name="l-174"></a><span class="tm">16:33:55</span><span class="nk"> &lt;manugupt1&gt;</span> but people who knew it also did not use the #tag
+<a name="l-175"></a><span class="tm">16:34:06</span><span class="nk"> &lt;manugupt1&gt;</span> Thanks luizmachado
+<a name="l-176"></a><span class="tm">16:34:09</span><span class="nk"> &lt;manugupt1&gt;</span> thanks lupinstein
+<a name="l-177"></a><span class="tm">16:34:09</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> sometimes ppl forget :D
+<a name="l-178"></a><span class="tm">16:34:14</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#action   </span><span class="cmdline">lupinstein to create a longer-term strategy for social networking</span>
+<a name="l-179"></a><span class="tm">16:34:15</span><span class="nk"> &lt;tony_&gt;</span> I suspect re social networking it would be useful to setup the infrastructure ahead of time so that a single tweet goes everywhere
+<a name="l-180"></a><span class="tm">16:34:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony_:</span> afaik we have that pretty much set up, yes?
+<a name="l-181"></a><span class="tm">16:34:43</span><span class="nk"> &lt;lupinstein&gt;</span> on Facebook we really made a difference, I send status on it
+<a name="l-182"></a><span class="tm">16:34:46</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">tony_:</span> What do you mean with that?
+<a name="l-183"></a><span class="tm">16:34:58</span><span class="nk"> &lt;suseROCKs&gt;</span> tony_,   we have that   but its more than just about getting single tweets to multiple places.  its about getting others to generate buzz and noise.    its a combined effort
+<a name="l-184"></a><span class="tm">16:35:46</span><span class="nk"> &lt;manugupt1&gt;</span> We missed on reddit and digg
+<a name="l-185"></a><span class="tm">16:36:00</span><span class="nk"> &lt;suseROCKs&gt;</span> lupinstein,   please note, in the action item above,  I assign you to the strategy lead for SocNet, but you shouldn't feel like you're the only person to work on it.   Involve others to give feedback/input on the strategy design
+<a name="l-186"></a><span class="tm">16:36:26</span><span class="nk"> &lt;lupinstein&gt;</span> not problem, I welcome all to help :-)
+<a name="l-187"></a><span class="tm">16:36:39</span><span class="nk"> &lt;suseROCKs&gt;</span> and we should look for ways to keep the noise going for weeks and months, not just after release days
+<a name="l-188"></a><span class="tm">16:36:47</span><span class="nk"> &lt;lupinstein&gt;</span> and welcome all input
+<a name="l-189"></a><span class="tm">16:36:50</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">lupinstein:</span> next time ask for help - break out jobs and ask for volunteers ;)
+<a name="l-190"></a><span class="tm">16:36:57</span><span class="nk"> &lt;suseROCKs&gt;</span> we want people to watch the #opensuse hashtag daily, not once every 8 months  :-)
+<a name="l-191"></a><span class="tm">16:37:15</span><span class="nk"> &lt;lupinstein&gt;</span> AJaeger, will do
+<a name="l-192"></a><span class="tm">16:37:19 </span><span class="nka">* rtyler</span> <span class="ac">wakes up</span>
+<a name="l-193"></a><span class="tm">16:37:42</span><span class="nk"> &lt;suseROCKs&gt;</span> now   I should probably clarify a distinction here.    We have "social media" and "social networking"   both are very different animals
+<a name="l-194"></a><span class="tm">16:37:49</span><span class="nk"> &lt;tony_&gt;</span> <span class="hi">jospoortvliet:</span> Since I usually do social networking myself, I don't know how we did it but for starters tying in Twitter, Facebook, posted RSS feed to embed in personal websites/blogs on other Web2.0 platforms
+<a name="l-195"></a><span class="tm">16:37:49</span><span class="nk"> &lt;tony_&gt;</span> My correction to my post, I usually &lt;don't&gt; do social neworking, I usually spend all my time in "Technical" not extending my online life
+<a name="l-196"></a><span class="tm">16:38:01</span><span class="nk"> &lt;suseROCKs&gt;</span> and the context I speak to lupinstein about is "social networking"...   now let's look at "social media"     Did we do well there?
+<a name="l-197"></a><span class="tm">16:38:11</span><span class="nk"> &lt;suseROCKs&gt;</span> This reflects on news.opensuse.org btw
+<a name="l-198"></a><span class="tm">16:38:36</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> and about the mistakes we made, being too positive about certain features, let me tell an evil secret. It is true that exaggeration and over-enthusiasm somethimes leads to problems. But those hit only a few ppl and the benefits of more attention are often worth it. See the effects of advertising LibreOffice - we're of course not REALLY the first but it was mentioned and echoed EVERYWHERE.
+<a name="l-199"></a><span class="tm">16:38:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> Ubuntu uses this trick ALL THE TIME
+<a name="l-200"></a><span class="tm">16:38:49</span><span class="nk"> &lt;jospoortvliet&gt;</span> and it's why THEY are on top in GOOGLE Trends
+<a name="l-201"></a><span class="tm">16:38:54</span><span class="nk"> &lt;jospoortvliet&gt;</span> and NOT their number of users...
+<a name="l-202"></a><span class="tm">16:39:17</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony_:</span> well you did fine, that's a great start :D
+<a name="l-203"></a><span class="tm">16:39:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony_:</span> but you mean having one platform to get it all out
+<a name="l-204"></a><span class="tm">16:39:27</span><span class="nk"> &lt;lupinstein&gt;</span> well I want to really sit down see what worked and want didn't and then go from there
+<a name="l-205"></a><span class="tm">16:39:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony_:</span> that is not a bad idea for sure...
+<a name="l-206"></a><span class="tm">16:39:37</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   in general, I'm not concerned with some of the faux pax's we made there.   My concern is we probably didn't get enough content generated in the first place
+<a name="l-207"></a><span class="tm">16:39:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> that's what this is supposed to be :D
+<a name="l-208"></a><span class="tm">16:39:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> that is true to some extend at least...
+<a name="l-209"></a><span class="tm">16:39:51</span><span class="nk"> &lt;suseROCKs&gt;</span> a lot of work rested on manugupt1  and he tried repeatedly to get others on board, and with lack of real success
+<a name="l-210"></a><span class="tm">16:40:06</span><span class="nk"> &lt;suseROCKs&gt;</span> he really saved us.  Bravo manugupt1
+<a name="l-211"></a><span class="tm">16:41:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> yes manugupt1 deserves a special treat
+<a name="l-212"></a><span class="tm">16:41:13</span><span class="nk"> &lt;suseROCKs&gt;</span> imo,  we needed two things...  a)  more writers to be available.  I see a need to recruit mroe writers.  and b)  Product Highlights avaialable earlier thus inspiring more potential storylines
+<a name="l-213"></a><span class="tm">16:41:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> pretty much all the big articles that came out in the days before the release came from him...
+<a name="l-214"></a><span class="tm">16:41:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span>  yup
+<a name="l-215"></a><span class="tm">16:42:01</span><span class="nk"> &lt;suseROCKs&gt;</span> and we should wecome writers even if they're not openSUSE users.    Writers are always looking for places where they can show off their writing abilities
+<a name="l-216"></a><span class="tm">16:42:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> and for info of all: those articles don't need to be perfect. Manu's got a lot of changes - I copied in large parts of our feature guide to make them bigger. And his english isn't perfect. BUT still without him we would not have had them. The start of an article is often the hardest part, editing is quite easy even if it ends up adding or changing a lot!
+<a name="l-217"></a><span class="tm">16:42:52</span><span class="nk"> &lt;lupinstein&gt;</span> I know I wanted to help more with writing, but been tied down at work :(
+<a name="l-218"></a><span class="tm">16:43:37</span><span class="nk"> &lt;suseROCKs&gt;</span> +1 jospoortvliet
+<a name="l-219"></a><span class="tm">16:43:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> well it's not about blaming anyone, we need to get new ppl all the time.
+<a name="l-220"></a><span class="tm">16:44:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> And we do, so we shouldn't complain. It didn't work out perfect but it went great
+<a name="l-221"></a><span class="tm">16:44:14</span><span class="nk"> &lt;suseROCKs&gt;</span> and in that context... the fact that we did SOOO much with so few people, is ROCK AWESOME
+<a name="l-222"></a><span class="tm">16:44:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> we DID do almost twice as good as last release, remember ;-)
+<a name="l-223"></a><span class="tm">16:44:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> and it's not like that release was so horrible...
+<a name="l-224"></a><span class="tm">16:44:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> yup
+<a name="l-225"></a><span class="tm">16:44:57</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">jospoortvliet:</span> The release went very good - compared to others
+<a name="l-226"></a><span class="tm">16:45:08</span><span class="nk"> &lt;suseROCKs&gt;</span> so jospoortvliet    since this is relevant to your "5 minute addition"  how else do you feel we can improve on outputting more material?
+<a name="l-227"></a><span class="tm">16:45:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> the timing you mentioned is the biggest thing
+<a name="l-228"></a><span class="tm">16:45:39</span><span class="nk"> &lt;jospoortvliet&gt;</span> its why I wanted to have a marketing meeting around beginning of feb...
+<a name="l-229"></a><span class="tm">16:45:42</span><span class="nk"> &lt;jospoortvliet&gt;</span> not end :D
+<a name="l-230"></a><span class="tm">16:45:53 </span><span class="nka">* tigerfoot</span> <span class="ac">too :-)</span>
+<a name="l-231"></a><span class="tm">16:45:59</span><span class="nk"> &lt;suseROCKs&gt;</span> well  yes and no
+<a name="l-232"></a><span class="tm">16:46:01</span><span class="nk"> &lt;manugupt1&gt;</span> Thanks all I was out to get some water
+<a name="l-233"></a><span class="tm">16:46:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> not saying that doing it at scale wasn't the right choice
+<a name="l-234"></a><span class="tm">16:46:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> it was
+<a name="l-235"></a><span class="tm">16:46:29</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">manugupt1:</span> you missed some really good praise :)
+<a name="l-236"></a><span class="tm">16:46:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> lol
+<a name="l-237"></a><span class="tm">16:46:34</span><span class="nk"> &lt;suseROCKs&gt;</span> not to sound like I am slamming anyone, but it was mentioned a number of times that we are not supposed to wait until hackfest to start working.  But people didn't do much before (and even after)  hackfest.
+<a name="l-238"></a><span class="tm">16:46:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> sure
+<a name="l-239"></a><span class="tm">16:46:48</span><span class="nk"> &lt;suseROCKs&gt;</span> we need people to roll up their sleeves on their own.  How do we motivate this?
+<a name="l-240"></a><span class="tm">16:46:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> but a meeting (or a few meetings) can really help start up
+<a name="l-241"></a><span class="tm">16:46:54</span><span class="nk"> &lt;jospoortvliet&gt;</span> moreover many didn't really know how this thing worked
+<a name="l-242"></a><span class="tm">16:47:01</span><span class="nk"> &lt;suseROCKs&gt;</span> yes
+<a name="l-243"></a><span class="tm">16:47:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> I started the feature guide much earlier but it only got traction AT the meeting
+<a name="l-244"></a><span class="tm">16:47:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> it needed face to face explanation of how that thing works
+<a name="l-245"></a><span class="tm">16:47:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> it still does
+<a name="l-246"></a><span class="tm">16:47:13</span><span class="nk"> &lt;lupinstein&gt;</span> one thing not to take a way for talk about writers, I was very happy to see the number of Geeko on Facebook for the two days of the release.
+<a name="l-247"></a><span class="tm">16:47:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> ;-)
+<a name="l-248"></a><span class="tm">16:47:19</span><span class="nk"> &lt;manugupt1&gt;</span> The best of irc rtyler you dont miss praises :)
+<a name="l-249"></a><span class="tm">16:47:28</span><span class="nk"> &lt;jospoortvliet&gt;</span> now ppl have seen it, next time you can all help writing it much better, right? ;-)
+<a name="l-250"></a><span class="tm">16:47:47</span><span class="nk"> &lt;jospoortvliet&gt;</span> so for next time, I think we'd do a lot better already if we have that feature guide a bit earlier we'll rock.
+<a name="l-251"></a><span class="tm">16:47:57</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   but at the same time, can we say we're going to have a marketing hackfest before each release?   We can't depend on that, although I hope the money-powers that be will now see that such hackfests have positive results and need to be a regular thing
+<a name="l-252"></a><span class="tm">16:48:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> I think, as I can't affort such a marketing meeting next time, that we should have smaller meetings in other places
+<a name="l-253"></a><span class="tm">16:48:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> eg one in europe one in usa one brazil or so, or virtual ones, collaboration days, things like that
+<a name="l-254"></a><span class="tm">16:48:46</span><span class="nk"> &lt;suseROCKs&gt;</span> we did  pretty well with our Collaboration Days and I do intend to have more of those
+<a name="l-255"></a><span class="tm">16:48:51</span><span class="nk"> &lt;suseROCKs&gt;</span> like once every 2-3 months
+<a name="l-256"></a><span class="tm">16:49:04</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">jospoortvliet:</span> I think scheduling some hack-days virtually for weekends prior to the release would help
+<a name="l-257"></a><span class="tm">16:49:11</span><span class="nk"> &lt;amonthoth&gt;</span> should we do a public survey post intalling and publishing it to get usabilitiy metrics and to know why ppl will keep using oS 114 or not
+<a name="l-258"></a><span class="tm">16:49:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> the meeting was a big success (but where is that report to prove it you promised? :D ) but doing it more than once every few years simply won't happen
+<a name="l-259"></a><span class="tm">16:49:17</span><span class="nk"> &lt;rtyler&gt;</span> I simply can't afford to spend a lot of time on openSUSE during the week :/
+<a name="l-260"></a><span class="tm">16:49:17</span><span class="nk"> &lt;jospoortvliet&gt;</span> $10.000 is a lot of money
+<a name="l-261"></a><span class="tm">16:49:38</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   you'll be getting that report   no worries  :-D
+<a name="l-262"></a><span class="tm">16:49:44</span><span class="nk"> &lt;manugupt1&gt;</span> rtyler, +1
+<a name="l-263"></a><span class="tm">16:49:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> goooood :D
+<a name="l-264"></a><span class="tm">16:49:52</span><span class="nk"> &lt;lupinstein&gt;</span> next time hackfest at my house
+<a name="l-265"></a><span class="tm">16:49:59</span><span class="nk"> &lt;lupinstein&gt;</span> save a lot of money
+<a name="l-266"></a><span class="tm">16:50:16</span><span class="nk"> &lt;suseROCKs&gt;</span> rtyler,    nothing to stop you from saying  "You know what guys?  We need to collaborate on &lt;item&gt;  Let's meet on Saturday and talk about it together."
+<a name="l-267"></a><span class="tm">16:50:16</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">rtyler:</span> yeah, I know. What lupinstein suggests is actually a good idea. Having smaller meetings with more local ppl at somebody's place...
+<a name="l-268"></a><span class="tm">16:50:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> that's quite doable
+<a name="l-269"></a><span class="tm">16:50:28</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">lupinstein:</span> I am
+<a name="l-270"></a><span class="tm">16:50:29</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. once again all I have a few ideas in my mind need your opinions regarding it even though it may / may not fall directly under marketing
+<a name="l-271"></a><span class="tm">16:50:47</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> wait a bit pls
+<a name="l-272"></a><span class="tm">16:50:54</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. jospoortvliet
+<a name="l-273"></a><span class="tm">16:50:55 </span><span class="nka">* suseROCKs</span> <span class="ac">hides the fact that he has 4 bedrooms in his house and only one is used.  shhhh</span>
+<a name="l-274"></a><span class="tm">16:50:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">amonthoth:</span> good idea, but can you bring it up a bit later too
+<a name="l-275"></a><span class="tm">16:51:01</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">suseROCKs:</span> I agree, I hadn't really participated in 11.3, so *now* I know this :P
+<a name="l-276"></a><span class="tm">16:51:07</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> now THAT is interesting :D
+<a name="l-277"></a><span class="tm">16:51:15</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">jospoortvliet:</span> the other rooms are where the bodies are stashed
+<a name="l-278"></a><span class="tm">16:51:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">rtyler:</span> oh....
+<a name="l-279"></a><span class="tm">16:51:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> but back on topic
+<a name="l-280"></a><span class="tm">16:51:31</span><span class="nk"> &lt;jospoortvliet&gt;</span> the question was how can we do better next time
+<a name="l-281"></a><span class="tm">16:51:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> so a few things
+<a name="l-282"></a><span class="tm">16:51:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> - start earlier
+<a name="l-283"></a><span class="tm">16:51:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> - do more meetings
+<a name="l-284"></a><span class="tm">16:51:53</span><span class="nk"> &lt;suseROCKs&gt;</span> well   jospoortvliet   I'd rephrase that to "do more focused meetings"
+<a name="l-285"></a><span class="tm">16:51:54</span><span class="nk"> &lt;jospoortvliet&gt;</span> - I think we agree the product highlights are central to our efforts
+<a name="l-286"></a><span class="tm">16:51:55</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">suseROCKs:</span> I have a survey monkey account if you want to do a proper survey
+<a name="l-287"></a><span class="tm">16:52:04</span><span class="nk"> &lt;AJaeger&gt;</span> brb
+<a name="l-288"></a><span class="tm">16:52:25</span><span class="nk"> &lt;lupinstein&gt;</span> jospoortvliet, start early, get one person to manager task, but get more to help with the task.
+<a name="l-289"></a><span class="tm">16:52:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">AJaeger:</span> suseROCKs  it was amonthoth's idea, let him lead it :D but let's first focus on doing better next time, communicaton wise
+<a name="l-290"></a><span class="tm">16:52:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> we always need more ppl. The question is not IF but HOW.
+<a name="l-291"></a><span class="tm">16:52:42</span><span class="nk"> &lt;suseROCKs&gt;</span> yeah  I missed something about a survey??
+<a name="l-292"></a><span class="tm">16:52:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> I asked amonthoth to bring it up again
+<a name="l-293"></a><span class="tm">16:52:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> focus pls focus
+<a name="l-294"></a><span class="tm">16:53:08</span><span class="nk"> &lt;tony2&gt;</span> Recommend for next time creating Doc templates based on existing Docs, intention to try to "fill in the blanks" as much as possible
+<a name="l-295"></a><span class="tm">16:53:09</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> so how could we do the social media better
+<a name="l-296"></a><span class="tm">16:53:10</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">jospoortvliet:</span> I think another point is that we should all be running the RCs that we're writing articles about and checking things out :P
+<a name="l-297"></a><span class="tm">16:53:13 </span><span class="nka">* suseROCKs</span> <span class="ac">refocuses</span>
+<a name="l-298"></a><span class="tm">16:53:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> how can we coordinate better?
+<a name="l-299"></a><span class="tm">16:53:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">rtyler:</span> good point
+<a name="l-300"></a><span class="tm">16:53:30</span><span class="nk"> &lt;lupinstein&gt;</span> jospoortvliet,  that a good question because I know I when to the #suse asking for help to do digg, and didn't get a lot of people.
+<a name="l-301"></a><span class="tm">16:53:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">rtyler:</span> and it would help if earlier rc's would have artwork for us
+<a name="l-302"></a><span class="tm">16:53:39</span><span class="nk"> &lt;rtyler&gt;</span> I think as soon as RC1 comes out, we should start preparing materials
+<a name="l-303"></a><span class="tm">16:53:57</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">jospoortvliet:</span> screenshots are one thing, I'm referring more to some of the versionconfusion with the KDE/GNOME articles
+<a name="l-304"></a><span class="tm">16:54:01</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">rtyler:</span> M5 is good ...
+<a name="l-305"></a><span class="tm">16:54:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">rtyler:</span> the earlier idea was to start the feature guide full-steam when M6 is out
+<a name="l-306"></a><span class="tm">16:54:02</span><span class="nk"> &lt;suseROCKs&gt;</span> and with virtualbox,  no excuse anymore to not be running RC's
+<a name="l-307"></a><span class="tm">16:54:11</span><span class="nk"> &lt;rtyler&gt;</span> ah
+<a name="l-308"></a><span class="tm">16:54:14</span><span class="nk"> &lt;rtyler&gt;</span> I like that idea too :P
+<a name="l-309"></a><span class="tm">16:54:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> good point
+<a name="l-310"></a><span class="tm">16:54:32</span><span class="nk"> &lt;lupinstein&gt;</span> +1 M5, then we can make it more focus when get close to release
+<a name="l-311"></a><span class="tm">16:54:33</span><span class="nk"> &lt;suseROCKs&gt;</span> m6 to start the feature guide,  RC to be the last point of excuse to not be running in VM.  :-)
+<a name="l-312"></a><span class="tm">16:54:40</span><span class="nk"> &lt;rtyler&gt;</span> too bad we can't get M5/6 in SUSE Studio for test driving the release ;)
+<a name="l-313"></a><span class="tm">16:54:40</span><span class="nk"> &lt;tigerfoot&gt;</span> there's one week between M5 -&gt; M6 -&gt; one week RC1, one Week RC2
+<a name="l-314"></a><span class="tm">16:54:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> we started the feature guide earlier actually
+<a name="l-315"></a><span class="tm">16:55:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> see tigerfoot's comment
+<a name="l-316"></a><span class="tm">16:55:15</span><span class="nk"> &lt;rtyler&gt;</span> hate to ask the stupid question, but how does this whole release process change our marketing plans with the advent of Tumbleweed?
+<a name="l-317"></a><span class="tm">16:55:19</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   ok.  But when is the actual freeze when we cannot add more to the release?
+<a name="l-318"></a><span class="tm">16:55:31</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, after rc2
+<a name="l-319"></a><span class="tm">16:55:31</span><span class="nk"> &lt;jospoortvliet&gt;</span> look I can do the skeleton on the feature guide. But I noticed that a big barrier to contribution was the question of HOW to contribute
+<a name="l-320"></a><span class="tm">16:55:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> I bet this is relevant for more things
+<a name="l-321"></a><span class="tm">16:55:42 </span><span class="nka">* rtyler</span> <span class="ac">apologizes for being late, if this was already covered</span>
+<a name="l-322"></a><span class="tm">16:55:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> that happens only when the GM is made :D
+<a name="l-323"></a><span class="tm">16:55:57</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> seriously, they can change big things until release day...
+<a name="l-324"></a><span class="tm">16:56:02</span><span class="nk"> &lt;jospoortvliet&gt;</span> so we can't rely on that :(
+<a name="l-325"></a><span class="tm">16:56:03</span><span class="nk"> &lt;suseROCKs&gt;</span> rtyler,   well..  if we continue to finetune our message and build up sustained noise, it won't really matter.    People should be interested in and trying out openSUSE no matter whether it was just released yestereday or 3 months ago
+<a name="l-326"></a><span class="tm">16:56:20</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   no  there's a freeze point.
+<a name="l-327"></a><span class="tm">16:56:23</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">rtyler:</span> My current impression of Tumbleweed is that bugs are still being worked out. Mostly works but not completely so it'll be awhile before we know future major releases will end
+<a name="l-328"></a><span class="tm">16:56:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">rtyler:</span> ignore tumbleweed for that, we focus on the release. That's how NEW users get openSUSE.
+<a name="l-329"></a><span class="tm">16:56:38</span><span class="nk"> &lt;suseROCKs&gt;</span> though you can convince coolo to go past the freeze point, you have to really convince him
+<a name="l-330"></a><span class="tm">16:56:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> tumbleweed is simply an awesome feature
+<a name="l-331"></a><span class="tm">16:56:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> true, true
+<a name="l-332"></a><span class="tm">16:56:56</span><span class="nk"> &lt;lupinstein&gt;</span> well that's why you start early then at the time of the release go thru and pick what important, believe or not that how a lot of magazine do it
+<a name="l-333"></a><span class="tm">16:56:57</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">tony2:</span> good to know, i'll drop you an email later with more questions I have regarding tumbleweed for omgsuse :)
+<a name="l-334"></a><span class="tm">16:57:05</span><span class="nk"> &lt;jospoortvliet&gt;</span> but for minor bugfix releases - well, it's hard to lock things :(
+<a name="l-335"></a><span class="tm">16:57:17</span><span class="nk"> &lt;suseROCKs&gt;</span> brb guys
+<a name="l-336"></a><span class="tm">16:57:26</span><span class="nk"> &lt;lupinstein&gt;</span> they might have about 50 stories but at the time of release pick only the top 15 that matter
+<a name="l-337"></a><span class="tm">16:57:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> sigh and suseROCKs runs away?
+<a name="l-338"></a><span class="tm">16:58:23</span><span class="nk"> &lt;Dominian&gt;</span> in the middle of a meeting?
+<a name="l-339"></a><span class="tm">16:58:24</span><span class="nk"> &lt;Dominian&gt;</span> shame!
+<a name="l-340"></a><span class="tm">16:59:27 </span><span class="nka">* tigerfoot</span> <span class="ac">think suseROCKs goes to return the meat to dry in unoccupied rooms :-)</span>
+<a name="l-341"></a><span class="tm">16:59:35</span><span class="nk"> &lt;suseROCKs&gt;</span> im back
+<a name="l-342"></a><span class="tm">16:59:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok let's try to re-focus again
+<a name="l-343"></a><span class="tm">17:00:01</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">jospoortvliet:</span> Re how people contribute should probably be addressed when we can find sufficient collab tools
+<a name="l-344"></a><span class="tm">17:00:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> we were talking about getting more writing finished earlier
+<a name="l-345"></a><span class="tm">17:00:29</span><span class="nk"> &lt;Dominian&gt;</span> hrm.. looking at the digg post for the release announcement.. only 17 people dugg it? wtf
+<a name="l-346"></a><span class="tm">17:00:35</span><span class="nk"> &lt;suseROCKs&gt;</span> tony2,  do you feel that it is unclear to people that come to the marketing team how they can contribute?   Should we provide more solid guidance?
+<a name="l-347"></a><span class="tm">17:00:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> and about the digg and other social media stuff
+<a name="l-348"></a><span class="tm">17:00:42</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">Dominian:</span> in all fairness, digg only has 35 users now :P
+<a name="l-349"></a><span class="tm">17:00:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> I think he has a point
+<a name="l-350"></a><span class="tm">17:00:55</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">rtyler:</span> do what!?
+<a name="l-351"></a><span class="tm">17:00:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> we need to document things more clearly
+<a name="l-352"></a><span class="tm">17:01:05</span><span class="nk"> &lt;jospoortvliet&gt;</span> eg I know ppl make video's like jdd but they weren't used in the end
+<a name="l-353"></a><span class="tm">17:01:06</span><span class="nk"> &lt;jospoortvliet&gt;</span> too bad
+<a name="l-354"></a><span class="tm">17:01:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> we need to have clear what we require for the feature guide
+<a name="l-355"></a><span class="tm">17:01:13</span><span class="nk"> &lt;suseROCKs&gt;</span> its a good point.     We have the jobs page but we rreally didn't put much energy on that
+<a name="l-356"></a><span class="tm">17:01:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> and I can write up something for that :D
+<a name="l-357"></a><span class="tm">17:01:22</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">jospoortvliet:</span> tacking on to tony2's point, for this release I basically just hung out and waited for somebody to tell me to do something :P
+<a name="l-358"></a><span class="tm">17:01:23</span><span class="nk"> &lt;jospoortvliet&gt;</span> so give me that action item
+<a name="l-359"></a><span class="tm">17:01:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">rtyler:</span> that was quite OK
+<a name="l-360"></a><span class="tm">17:01:41</span><span class="nk"> &lt;Dominian&gt;</span> Yeah I hung out.. didn' thave to do anything
+<a name="l-361"></a><span class="tm">17:01:44</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">suseROCKs:</span> When people know which tools to use and how, then people should be able to contribute on their own time and in a disconnected way, less pressure sync with others
+<a name="l-362"></a><span class="tm">17:01:46</span><span class="nk"> &lt;Dominian&gt;</span> I upgraded, that's about it :)
+<a name="l-363"></a><span class="tm">17:01:51</span><span class="nk"> &lt;Dominian&gt;</span> oh and dugg the article on digg.com
+<a name="l-364"></a><span class="tm">17:01:57</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#action </span><span class="cmdline">jospoortvliet to create guidelines for creating a solid and awesome Product Highlights</span>
+<a name="l-365"></a><span class="tm">17:02:24</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, jospoortvliet why not use retro
+<a name="l-366"></a><span class="tm">17:02:28</span><span class="nk"> &lt;suseROCKs&gt;</span> tony2,   excellent point.  I will take that into consideration
+<a name="l-367"></a><span class="tm">17:02:31</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> what is that?
+<a name="l-368"></a><span class="tm">17:02:38</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, one sec
+<a name="l-369"></a><span class="tm">17:02:41</span><span class="nk"> &lt;manugupt1&gt;</span> http://retro.opensuse.org/
+<a name="l-370"></a><span class="tm">17:02:53</span><span class="nk"> &lt;suseROCKs&gt;</span> retro sucks in my opinion and you can't just use it,  you have to authorize people to use it
+<a name="l-371"></a><span class="tm">17:03:43</span><span class="nk"> &lt;suseROCKs&gt;</span> its a tool with big administrative overhead and the landing page can only point to the booster project which misleads people and makes it hard to navigate
+<a name="l-372"></a><span class="tm">17:04:11</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm all for hearing ideas from tony2 for better project management tools that fit well in our team
+<a name="l-373"></a><span class="tm">17:04:28</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> and even the boosters don't use it...
+<a name="l-374"></a><span class="tm">17:04:33</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, I am saying let us have ours
+<a name="l-375"></a><span class="tm">17:04:35</span><span class="nk"> &lt;suseROCKs&gt;</span> provided we can integrate it into our infrastructure.
+<a name="l-376"></a><span class="tm">17:04:49</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, I think they do atleast they all mark what has been done and not
+<a name="l-377"></a><span class="tm">17:05:12</span><span class="nk"> &lt;manugupt1&gt;</span> That is how it looks from outside any way
+<a name="l-378"></a><span class="tm">17:05:14</span><span class="nk"> &lt;suseROCKs&gt;</span> boosters use it extensively   but other teams don't because it just is too unweildy
+<a name="l-379"></a><span class="tm">17:05:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> problem with project management: it is overhead. Someone should take on a task, feel responsible, and get others to help. That is all the managmeent you need - a person who is responsible for something. That was me for the feature guide and chuck for the social media etc
+<a name="l-380"></a><span class="tm">17:05:30</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">suseROCKs:</span> :) Just don't ask me today. Yesterday I started d/l more project management from OSS, I will need to know if I find a 3rd party how difficult to get mounted on a Novell or openSUSE Server
+<a name="l-381"></a><span class="tm">17:05:53</span><span class="nk"> &lt;suseROCKs&gt;</span> tony2,   sure  we have a bit of time to figure out a good sane approach.
+<a name="l-382"></a><span class="tm">17:05:56</span><span class="nk"> &lt;manugupt1&gt;</span> tony2, anything with ror, php mysql and no java is fine I think
+<a name="l-383"></a><span class="tm">17:05:58</span><span class="nk"> &lt;suseROCKs&gt;</span> ok back to riting
+<a name="l-384"></a><span class="tm">17:06:36</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   more to say on writing?
+<a name="l-385"></a><span class="tm">17:06:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> nope, will write that page
+<a name="l-386"></a><span class="tm">17:07:11</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   to be honest, I feel the news team needs to have a meeting to review a lot of things.  Not just related to release, but the overall process.   Is it working well?  not working well?  etc.
+<a name="l-387"></a><span class="tm">17:07:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> agreed
+<a name="l-388"></a><span class="tm">17:07:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> it's rather quiet right now anyway
+<a name="l-389"></a><span class="tm">17:07:36</span><span class="nk"> &lt;jospoortvliet&gt;</span> and it shouldn't be, around release :D
+<a name="l-390"></a><span class="tm">17:07:37</span><span class="nk"> &lt;suseROCKs&gt;</span> yes
+<a name="l-391"></a><span class="tm">17:07:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> but part of it is that I don't even keep up with news@o.o mail :(
+<a name="l-392"></a><span class="tm">17:07:50</span><span class="nk"> &lt;suseROCKs&gt;</span> who wants to call that meeting?
+<a name="l-393"></a><span class="tm">17:07:51</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">suseROCKs:</span> Have you guys thought about using something like redmine or dotProject.net software for project management?
+<a name="l-394"></a><span class="tm">17:08:49</span><span class="nk"> &lt;suseROCKs&gt;</span> Dominian,   no  and tbh  right now if we ask for a new tool to be added, we'll get pushback  "We already have retro and it worksforme"   we need to clearly elaborate why something new would be better
+<a name="l-395"></a><span class="tm">17:09:02</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">Dominian:</span> If anyone has a recommendation, private offline to me and I'll be sure to take a look at it and then discuss with Bryen
+<a name="l-396"></a><span class="tm">17:09:27</span><span class="nk"> &lt;lupinstein&gt;</span> call
+<a name="l-397"></a><span class="tm">17:09:33</span><span class="nk"> &lt;AJaeger2&gt;</span> Let's first figure out what are our requirements. I hate evening too many different tools but we need to get our job done.
+<a name="l-398"></a><span class="tm">17:09:46</span><span class="nk"> &lt;suseROCKs&gt;</span> right
+<a name="l-399"></a><span class="tm">17:09:56</span><span class="nk"> &lt;suseROCKs&gt;</span> as stated, we need to ensure a sane approach
+<a name="l-400"></a><span class="tm">17:09:57 </span><span class="nka">* rtyler</span> <span class="ac">agrees</span>
+<a name="l-401"></a><span class="tm">17:10:14</span><span class="nk"> &lt;suseROCKs&gt;</span> don't implement a need for the sake of need.   One week's need is another week's option  :-D
+<a name="l-402"></a><span class="tm">17:10:17</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">AJaeger2:</span> I hope I'm experienced enough evaluating Collab to recommend something both Usable and User Friendly
+<a name="l-403"></a><span class="tm">17:10:42</span><span class="nk"> &lt;AJaeger2&gt;</span> <span class="hi">tony2:</span> First we need to know what problems we have ;)
+<a name="l-404"></a><span class="tm">17:10:44</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so what other areas can we talk about today?
+<a name="l-405"></a><span class="tm">17:10:57</span><span class="nk"> &lt;manugupt1&gt;</span> I have a lot to talk about
+<a name="l-406"></a><span class="tm">17:11:00</span><span class="nk"> &lt;suseROCKs&gt;</span> I don't think we did a good enough job rallying up the ambassadors.   What do you guys think?
+<a name="l-407"></a><span class="tm">17:11:38 </span><span class="nka">* AJaeger2</span> <span class="ac">agrees</span>
+<a name="l-408"></a><span class="tm">17:11:40</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, again the question is how
+<a name="l-409"></a><span class="tm">17:11:44</span><span class="nk"> &lt;manugupt1&gt;</span> to rally them up
+<a name="l-410"></a><span class="tm">17:11:57</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,    #1 solution in my mind is consolidation.;
+<a name="l-411"></a><span class="tm">17:12:07</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, need to do it asap
+<a name="l-412"></a><span class="tm">17:12:11</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">tony2:</span> WEll I'll have to read up on retro..
+<a name="l-413"></a><span class="tm">17:12:21</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">suseROCKs:</span> I mean what is wrong with retro that you don't like? Watch features are you guys looking for?
+<a name="l-414"></a><span class="tm">17:12:24</span><span class="nk"> &lt;suseROCKs&gt;</span> we have too many things spread out and we're starting to talk about getting it all back together.   Ambassador, marketing, artwork lists   all are too spread apart and one hand doesn't know what the other is doing
+<a name="l-415"></a><span class="tm">17:12:34</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">AJaeger2:</span> Off the top of my head common "Must Have" Centralized bulletin board for all, Doc Management supporting revisioning, proper Auth/Auth/Admin levels, optional SSO discussion tools, more
+<a name="l-416"></a><span class="tm">17:12:41</span><span class="nk"> &lt;manugupt1&gt;</span> Lets have a single ML
+<a name="l-417"></a><span class="tm">17:13:03</span><span class="nk"> &lt;manugupt1&gt;</span> for artwork marketing multimedia and ambassadors
+<a name="l-418"></a><span class="tm">17:13:07</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   and that's on my todo to send out a discussion on that on all 3 ml's to get everyone to agree to consolidation
+<a name="l-419"></a><span class="tm">17:13:17</span><span class="nk"> &lt;amonthoth&gt;</span> <span class="hi">suseROCKs:</span> +1
+<a name="l-420"></a><span class="tm">17:13:29</span><span class="nk"> &lt;suseROCKs&gt;</span> yeah see  I didn't even know a multimedia ml existed until very recently  :-)
+<a name="l-421"></a><span class="tm">17:13:34</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">suseROCKs:</span>  That's why on my "Must Have" list is a Centralized bulletin board so common info can be posted for all
+<a name="l-422"></a><span class="tm">17:13:52</span><span class="nk"> &lt;manugupt1&gt;</span> tony2, suseROCKs why not use connect better
+<a name="l-423"></a><span class="tm">17:14:00</span><span class="nk"> &lt;manugupt1&gt;</span> Whats the use otherwise
+<a name="l-424"></a><span class="tm">17:14:04</span><span class="nk"> &lt;suseROCKs&gt;</span> tony2,    yup   its a issue that's getting raised repeatedly lately and a solution must come soon
+<a name="l-425"></a><span class="tm">17:14:11</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">manugupt1:</span> Anything can be considered
+<a name="l-426"></a><span class="tm">17:14:13</span><span class="nk"> &lt;amonthoth&gt;</span> there is shattered info and resources
+<a name="l-427"></a><span class="tm">17:14:16</span><span class="nk"> &lt;AJaeger2&gt;</span> <span class="hi">tony2:</span> Let's continue this discussion another time. I'd like to understand what exactly you mean and where it hinders us today.
+<a name="l-428"></a><span class="tm">17:14:27 </span><span class="nka">* tigerfoot</span> <span class="ac">ask tony2 manugupt1 Dominian to postpone any comment on tools to after meeting ...</span>
+<a name="l-429"></a><span class="tm">17:14:42</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">AJaeger2:</span> Agreed
+<a name="l-430"></a><span class="tm">17:14:51</span><span class="nk"> &lt;manugupt1&gt;</span> tigerfoot, ok
+<a name="l-431"></a><span class="tm">17:15:08</span><span class="nk"> &lt;suseROCKs&gt;</span> regardless of the fact that we didn't make enough noise with ambassadors, its not over yet.  We can continue to make noise NOW because we need more launch parties
+<a name="l-432"></a><span class="tm">17:15:26</span><span class="nk"> &lt;suseROCKs&gt;</span> launch parties do not have to be around the date of a release.   I believe lupinstein  has his scheduled for april
+<a name="l-433"></a><span class="tm">17:15:37</span><span class="nk"> &lt;lupinstein&gt;</span> may
+<a name="l-434"></a><span class="tm">17:15:43</span><span class="nk"> &lt;suseROCKs&gt;</span> ok may
+<a name="l-435"></a><span class="tm">17:15:44</span><span class="nk"> &lt;suseROCKs&gt;</span> :-D
+<a name="l-436"></a><span class="tm">17:15:55</span><span class="nk"> &lt;lupinstein&gt;</span> May 14th, at the ITT Linux Install Fest
+<a name="l-437"></a><span class="tm">17:16:02</span><span class="nk"> &lt;suseROCKs&gt;</span> I have not seen a single rally call to ambassadors on that ml.    manugupt1 warlordfff or carlos?
+<a name="l-438"></a><span class="tm">17:16:29</span><span class="nk"> &lt;Dominian&gt;</span> Yeah there hasn't been much traffic on the ambassador's list that I've seen as of late
+<a name="l-439"></a><span class="tm">17:16:30</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, There was by lupinstein I believe for Launch parties
+<a name="l-440"></a><span class="tm">17:16:35</span><span class="nk"> &lt;manugupt1&gt;</span> no one responded
+<a name="l-441"></a><span class="tm">17:17:04</span><span class="nk"> &lt;lupinstein&gt;</span> yea, think that's why henne didn't use the page we worked on, waste of time
+<a name="l-442"></a><span class="tm">17:17:30</span><span class="nk"> &lt;suseROCKs&gt;</span> lupinstein,  manugupt1   so what do you think is the reason for lack of interest?
+<a name="l-443"></a><span class="tm">17:18:23</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, Cannot say... people who started off as ambassadors are actually and contributing awesome
+<a name="l-444"></a><span class="tm">17:18:25</span><span class="nk"> &lt;lupinstein&gt;</span> To be honest, I don't think are following the ambassador list
+<a name="l-445"></a><span class="tm">17:18:42</span><span class="nk"> &lt;manugupt1&gt;</span> we just have 2 extremes who work and who do not
+<a name="l-446"></a><span class="tm">17:18:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> sorry for being away for a while
+<a name="l-447"></a><span class="tm">17:18:55</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-448"></a><span class="tm">17:18:55</span><span class="nk"> &lt;lupinstein&gt;</span> only traffic I seen jos, the welcome team and my e-mail
+<a name="l-449"></a><span class="tm">17:18:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> I disagree in bringing ambassadors too close to international marketing
+<a name="l-450"></a><span class="tm">17:19:12</span><span class="nk"> &lt;manugupt1&gt;</span> being an ambassador is something like you can do once in an year
+<a name="l-451"></a><span class="tm">17:19:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> actually I'd advocate for ambassadors to get a ML per country AND an easy way to reach them all by internationals
+<a name="l-452"></a><span class="tm">17:19:27</span><span class="nk"> &lt;jospoortvliet&gt;</span> if you're an ambassador in Brazil or Greece, chances are about 0.1% that you want to be on an english ML
+<a name="l-453"></a><span class="tm">17:19:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> ANY english ML
+<a name="l-454"></a><span class="tm">17:19:35</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   not necessarily.  There's plenty of ways to be an ambassador more than once a year
+<a name="l-455"></a><span class="tm">17:19:43</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, does not work that way except for a few countries
+<a name="l-456"></a><span class="tm">17:19:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> as long as we demand you to understand english we limit ourselves a lot
+<a name="l-457"></a><span class="tm">17:19:50</span><span class="nk"> &lt;lupinstein&gt;</span> jos, then how we will know if they are doing anything
+<a name="l-458"></a><span class="tm">17:19:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> the locals need to be able to have their own thing
+<a name="l-459"></a><span class="tm">17:20:11</span><span class="nk"> &lt;AJaeger2&gt;</span> Regarding ambassadors, tell me once I can speak a few minutes about openSUSE 11.4 PromoDVDs...
+<a name="l-460"></a><span class="tm">17:20:17</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,    fair enough re: language barriers.   But how do we convey to those in different languages what they need/should be doing and get them up to speed?
+<a name="l-461"></a><span class="tm">17:20:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> and by having a way to address them all at once (the ambassador ML should send mails to each of those ML's for example?!? and be moderated more strongly? something like that) we have our connection with international project
+<a name="l-462"></a><span class="tm">17:20:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> many ppl who could be ambassador right now are not
+<a name="l-463"></a><span class="tm">17:20:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> that was my rant :D
+<a name="l-464"></a><span class="tm">17:21:10 </span><span class="nka">* tigerfoot</span> <span class="ac">agree with locals &amp; jospoortvliet</span>
+<a name="l-465"></a><span class="tm">17:21:22</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   I'm also of the inclination that "ambassador" is just a title  and in reality it means a title plus the added buraruacy of writing reports
+<a name="l-466"></a><span class="tm">17:21:48</span><span class="nk"> &lt;manugupt1&gt;</span> manugupt1, does not see any point probably because he is in India where computers run in English
+<a name="l-467"></a><span class="tm">17:22:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> yes and no
+<a name="l-468"></a><span class="tm">17:22:15</span><span class="nk"> &lt;suseROCKs&gt;</span> for example, when I mentioned that Tony is our ambassador to San Diego, someone pointed out he's not officially an ambassador.  But to me, it makes no difference that he didn't register.  he still represented and did a good job, and I'm sure he doesn't want the obligation of writing a report every time he ambassades  (yes I just invented a verb)
+<a name="l-469"></a><span class="tm">17:22:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> true true
+<a name="l-470"></a><span class="tm">17:22:44</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm not a registered ambassador and I still represent the project
+<a name="l-471"></a><span class="tm">17:22:54</span><span class="nk"> &lt;jospoortvliet&gt;</span> but we should make it easier to make those event reports (a web form maybe) and give incentives to do so
+<a name="l-472"></a><span class="tm">17:22:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> as we discussed in the marketing meeting!
+<a name="l-473"></a><span class="tm">17:23:10</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, everything we could has been done
+<a name="l-474"></a><span class="tm">17:23:17</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> hell no
+<a name="l-475"></a><span class="tm">17:23:19</span><span class="nk"> &lt;lupinstein&gt;</span> I thought the point of the ambassador was to get the word out and to get reports on what they doing, having a center mailing issue is great, but before we go to local group we need to use the tools that are in place. That a big problem, that no one uses what is in place.
+<a name="l-476"></a><span class="tm">17:23:22</span><span class="nk"> &lt;suseROCKs&gt;</span> heh
+<a name="l-477"></a><span class="tm">17:23:23</span><span class="nk"> &lt;manugupt1&gt;</span> look at Stathis He does it so much
+<a name="l-478"></a><span class="tm">17:23:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> it is still a lot of work to make an event report
+<a name="l-479"></a><span class="tm">17:23:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> filling in a form on a site is 10000x easier than making a wiki page
+<a name="l-480"></a><span class="tm">17:23:48</span><span class="nk"> &lt;Dominian&gt;</span> and some ambassadors, like myself, promote in other ways.. not just at events et al.
+<a name="l-481"></a><span class="tm">17:23:49</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   sure ambassadors get the word out.  But plenty of people in the project get the word out without being an ambassador  (and do a good job of it too)
+<a name="l-482"></a><span class="tm">17:23:51</span><span class="nk"> &lt;jospoortvliet&gt;</span> that is a barier much bigger than what most ppl are iwlling to do
+<a name="l-483"></a><span class="tm">17:23:53</span><span class="nk"> &lt;lupinstein&gt;</span> Agree jospoortvliet I hate the wiki
+<a name="l-484"></a><span class="tm">17:23:54</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Dominian:</span> that too :D
+<a name="l-485"></a><span class="tm">17:23:55</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, the more you will add to it, less is will be the over head
+<a name="l-486"></a><span class="tm">17:24:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> sure
+<a name="l-487"></a><span class="tm">17:24:05</span><span class="nk"> &lt;lupinstein&gt;</span> it a f'in pain to file reports
+<a name="l-488"></a><span class="tm">17:24:05</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, then I propose a google form
+<a name="l-489"></a><span class="tm">17:24:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> that would be fine if it was open source ;-)
+<a name="l-490"></a><span class="tm">17:24:20</span><span class="nk"> &lt;jospoortvliet&gt;</span> you know how some ppl would respond...
+<a name="l-491"></a><span class="tm">17:24:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> but I'd be fine with that
+<a name="l-492"></a><span class="tm">17:24:30</span><span class="nk"> &lt;Dominian&gt;</span> I havfe no time to get to events.. so me creating reports of what I'm doing would be like "Interjected openSUSE and its features into a conversation that involved Ubuntu, Fedora, and CentOS... life is good"
+<a name="l-493"></a><span class="tm">17:24:35</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, then I will have to make a PHP Script when I have time
+<a name="l-494"></a><span class="tm">17:24:47</span><span class="nk"> &lt;lupinstein&gt;</span> hell I could write an nice php form that could post reports
+<a name="l-495"></a><span class="tm">17:24:48</span><span class="nk"> &lt;manugupt1&gt;</span> Basically mail to the marketing ML
+<a name="l-496"></a><span class="tm">17:24:57</span><span class="nk"> &lt;manugupt1&gt;</span> lupinstein, you got me :)
+<a name="l-497"></a><span class="tm">17:24:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> the thing we need is that those reports once filled in get send to the marketing ML, are aggregated on an RSS feed, go to planet openSUSE, are visibe on news.opensuse.org in a box somewhere, stuff like that
+<a name="l-498"></a><span class="tm">17:25:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> now writing a report is quite useless
+<a name="l-499"></a><span class="tm">17:25:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> something needs to be done with the reports
+<a name="l-500"></a><span class="tm">17:25:31</span><span class="nk"> &lt;Dominian&gt;</span> wait.. what is IN the report?
+<a name="l-501"></a><span class="tm">17:25:32</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so we have a lot of thoughts about how to improve and solidify the ambassador program,  but the immediate need right now is to figure out how to get the ambassadors to make the noise we need right now...
+<a name="l-502"></a><span class="tm">17:25:35</span><span class="nk"> &lt;diamond_gr&gt;</span> trying to follow the wiki.
+<a name="l-503"></a><span class="tm">17:25:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> they should be aggregated in the ambassador's profile in the wiki
+<a name="l-504"></a><span class="tm">17:25:40</span><span class="nk"> &lt;diamond_gr&gt;</span> wiki is fine
+<a name="l-505"></a><span class="tm">17:25:40</span><span class="nk"> &lt;lupinstein&gt;</span> jospoortvliet, to do that I recomment not using the wiki, because as you stated it need to be simple. Remember KISS
+<a name="l-506"></a><span class="tm">17:25:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> so they buidl a trackrecord
+<a name="l-507"></a><span class="tm">17:25:43</span><span class="nk"> &lt;Dominian&gt;</span> I would think as ambassadors you'd want their personal views/experiences from their findings?
+<a name="l-508"></a><span class="tm">17:25:48</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, lupinstein I propose this Lets have a php form that mails to the Marketing ML
+<a name="l-509"></a><span class="tm">17:25:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> I don't care what tech we use
+<a name="l-510"></a><span class="tm">17:25:56</span><span class="nk"> &lt;jospoortvliet&gt;</span> as long as we make the proces automated and easy
+<a name="l-511"></a><span class="tm">17:26:12</span><span class="nk"> &lt;manugupt1&gt;</span> lupinstein, what do you say??
+<a name="l-512"></a><span class="tm">17:26:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> mail is not enough, it should end up in an ambassadors profile if he/she was there
+<a name="l-513"></a><span class="tm">17:26:16</span><span class="nk"> &lt;jospoortvliet&gt;</span> so they get bragging rights
+<a name="l-514"></a><span class="tm">17:26:17</span><span class="nk"> &lt;suseROCKs&gt;</span> yes  less bureaucracy
+<a name="l-515"></a><span class="tm">17:26:34</span><span class="nk"> &lt;jospoortvliet&gt;</span> and it should be visible somewhere so we can go over them say once per 3 monts, and write a nice article aobut the events
+<a name="l-516"></a><span class="tm">17:26:36</span><span class="nk"> &lt;jospoortvliet&gt;</span> and we can track statistics
+<a name="l-517"></a><span class="tm">17:26:44</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, we can have a database about it just that
+<a name="l-518"></a><span class="tm">17:26:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> and we can have a feed on our homepage showing the events suse has been at
+<a name="l-519"></a><span class="tm">17:26:47</span><span class="nk"> &lt;Dominian&gt;</span> What other promotional materials are provided to ambassadors, if any?  Just curious.
+<a name="l-520"></a><span class="tm">17:27:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Dominian:</span> look at teh marketing materials page in the wiki
+<a name="l-521"></a><span class="tm">17:27:04</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   you mean openSUSE,  right?
+<a name="l-522"></a><span class="tm">17:27:05</span><span class="nk"> &lt;Dominian&gt;</span> thanks
+<a name="l-523"></a><span class="tm">17:27:05</span><span class="nk"> &lt;lupinstein&gt;</span> manugupt1, you don't know KISS -- Keep it Simple St****.  The wiki is not Simple
+<a name="l-524"></a><span class="tm">17:27:09</span><span class="nk"> &lt;tony2&gt;</span> Cool. I'll add all the recent observations to my "Collab Tools Feature List"
+<a name="l-525"></a><span class="tm">17:27:11</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> sure don't complain dude
+<a name="l-526"></a><span class="tm">17:27:17</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, thats something big you are thinking now
+<a name="l-527"></a><span class="tm">17:27:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> again I don't care where it ends up as long as it is easy
+<a name="l-528"></a><span class="tm">17:27:23</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   I was just doing what AJaeger2  does  :-D
+<a name="l-529"></a><span class="tm">17:27:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> yes I know
+<a name="l-530"></a><span class="tm">17:27:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> it is big
+<a name="l-531"></a><span class="tm">17:27:44</span><span class="nk"> &lt;suseROCKs&gt;</span> ok back to the pressing question...  not the format...   What can we do to boost ambassador noise RIGHT NOW?
+<a name="l-532"></a><span class="tm">17:27:48</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> this is something we might be able to do in connect, yes?
+<a name="l-533"></a><span class="tm">17:28:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> can we have one more minute for this idea?
+<a name="l-534"></a><span class="tm">17:28:02</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, exactly we need to identify connect
+<a name="l-535"></a><span class="tm">17:28:03</span><span class="nk"> &lt;suseROCKs&gt;</span> How can we communicate to them and inspire them to run out and do a launch party soon?
+<a name="l-536"></a><span class="tm">17:28:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> I think we have an opportunity of making the ambassadorship more meaningful
+<a name="l-537"></a><span class="tm">17:28:10</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   ok
+<a name="l-538"></a><span class="tm">17:28:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> and visible
+<a name="l-539"></a><span class="tm">17:28:18</span><span class="nk"> &lt;lupinstein&gt;</span> jospoortvliet, right now if you asked me to do something on the wiki, I rather cut my wrist and watch myself bleed
+<a name="l-540"></a><span class="tm">17:28:34</span><span class="nk"> &lt;manugupt1&gt;</span> We as a team are failing the boosters hardwork I am sorry but I feel this way connect is being ignored
+<a name="l-541"></a><span class="tm">17:28:37</span><span class="nk"> &lt;lupinstein&gt;</span> the pain of cutting my wrist is less painful than to use the wiki
+<a name="l-542"></a><span class="tm">17:28:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> ok. I guess you understand what I am thinking about...
+<a name="l-543"></a><span class="tm">17:28:55</span><span class="nk"> &lt;lupinstein&gt;</span> don't believe ask tigerfoot, he will back me
+<a name="l-544"></a><span class="tm">17:28:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> so how about I send a mail to the boosters about connect, asking if this is something they can do with it
+<a name="l-545"></a><span class="tm">17:29:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> ?
+<a name="l-546"></a><span class="tm">17:29:05</span><span class="nk"> &lt;jospoortvliet&gt;</span> I'm sure they will see a nail :D
+<a name="l-547"></a><span class="tm">17:29:07</span><span class="nk"> &lt;jospoortvliet&gt;</span> hehe
+<a name="l-548"></a><span class="tm">17:29:11</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, yes :)
+<a name="l-549"></a><span class="tm">17:29:14</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   the problem with Connect or any other tool is that it is just one more thing someone has to go to and be aware of its existence.   The fewer places people have to go to, the better
+<a name="l-550"></a><span class="tm">17:29:29</span><span class="nk"> &lt;Dominian&gt;</span> ya know.. I'm starting to see a common theme...
+<a name="l-551"></a><span class="tm">17:29:32</span><span class="nk"> &lt;Dominian&gt;</span> too many tools
+<a name="l-552"></a><span class="tm">17:29:40</span><span class="nk"> &lt;suseROCKs&gt;</span> exactly
+<a name="l-553"></a><span class="tm">17:29:44</span><span class="nk"> &lt;Dominian&gt;</span> iirc the meeting last week in #opensuse-project was smililary focused
+<a name="l-554"></a><span class="tm">17:29:51</span><span class="nk"> &lt;Dominian&gt;</span> wow.. bad spelling
+<a name="l-555"></a><span class="tm">17:29:54</span><span class="nk"> &lt;suseROCKs&gt;</span> welcome to ambassadors.   Please go to wiki, connect, retro, ml....
+<a name="l-556"></a><span class="tm">17:29:54</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> lupinstein you two would you be willing to help the boosters with this, either suggesting things or doing your PHP fu?
+<a name="l-557"></a><span class="tm">17:29:57</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, when we are thinking of multiple tools here why nt then integrate everything with connect
+<a name="l-558"></a><span class="tm">17:30:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> in that case I add you in CC when mailing
+<a name="l-559"></a><span class="tm">17:30:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> I want it integrated in wiki etc, connect - that's what the boosters want to use for identity management in all of openSUSE. it will be everywhere anyway
+<a name="l-560"></a><span class="tm">17:30:32</span><span class="nk"> &lt;lupinstein&gt;</span> I am game for anything that would make life easier and do like you said
+<a name="l-561"></a><span class="tm">17:30:36</span><span class="nk"> &lt;jospoortvliet&gt;</span> so let's reinforce that pls
+<a name="l-562"></a><span class="tm">17:30:40</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,  welll  if there's a better way to integrate, then great.   But right now, integration isn't very good, is it?
+<a name="l-563"></a><span class="tm">17:30:41</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> ok
+<a name="l-564"></a><span class="tm">17:30:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> suseROCKs: see what I just said :D
+<a name="l-565"></a><span class="tm">17:31:11</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> right now it's not there
+<a name="l-566"></a><span class="tm">17:31:12</span><span class="nk"> &lt;tigerfoot&gt;</span> just check that post http://michal.hrusecky.net/2011/03/virtual-opensuse-11-4-release-party/
+<a name="l-567"></a><span class="tm">17:31:13</span><span class="nk"> &lt;suseROCKs&gt;</span> yes
+<a name="l-568"></a><span class="tm">17:31:18</span><span class="nk"> &lt;jospoortvliet&gt;</span> but they work on that...
+<a name="l-569"></a><span class="tm">17:31:19 </span><span class="nka">* AJaeger2</span> <span class="ac">likes to interrupt for a second, since I have to leave now</span>
+<a name="l-570"></a><span class="tm">17:31:19</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">question:</span> what do other projects provide to their 'ambassassors' as tools?
+<a name="l-571"></a><span class="tm">17:31:25</span><span class="nk"> &lt;tigerfoot&gt;</span> Michal made it with a google doc :-)
+<a name="l-572"></a><span class="tm">17:31:34</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger2,   go for it
+<a name="l-573"></a><span class="tm">17:31:40</span><span class="nk"> &lt;tigerfoot&gt;</span> don't know how he will get the result ...
+<a name="l-574"></a><span class="tm">17:31:57</span><span class="nk"> &lt;AJaeger2&gt;</span> I'm currently buried with sending out of openSUSE DVDs and thus we have restored an old page:
+<a name="l-575"></a><span class="tm">17:31:58</span><span class="nk"> &lt;AJaeger2&gt;</span> http://software.opensuse.org/order/new
+<a name="l-576"></a><span class="tm">17:32:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Dominian:</span> I don't really know, would be good to know... Feel free to spend a bit time on analyzing that and mail the marketing ML with it, would be very interesting and you can do that in an hour or so...
+<a name="l-577"></a><span class="tm">17:32:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">AJaeger2:</span>  +1
+<a name="l-578"></a><span class="tm">17:32:21</span><span class="nk"> &lt;AJaeger2&gt;</span> Please review the page and send me your comments on how to change the text to make it friendly (me = aj at opensuse dot org)
+<a name="l-579"></a><span class="tm">17:32:33</span><span class="nk"> &lt;AJaeger2&gt;</span> The page is not functional yet, so don't order anything
+<a name="l-580"></a><span class="tm">17:32:36</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">jospoortvliet:</span> Well, I'm just going over the marketing materials site...
+<a name="l-581"></a><span class="tm">17:32:39</span><span class="nk"> &lt;Dominian&gt;</span> I see one big issue
+<a name="l-582"></a><span class="tm">17:32:40</span><span class="nk"> &lt;Dominian&gt;</span> its not finished.
+<a name="l-583"></a><span class="tm">17:32:44</span><span class="nk"> &lt;Dominian&gt;</span> lots of gaps
+<a name="l-584"></a><span class="tm">17:32:53</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger2,    we have 11.4's to ship already?
+<a name="l-585"></a><span class="tm">17:32:54</span><span class="nk"> &lt;AJaeger2&gt;</span> But I want to use that page as only way to advertize openSUSE 11.4 media
+<a name="l-586"></a><span class="tm">17:33:15</span><span class="nk"> &lt;AJaeger2&gt;</span> openSUSE 11.4 PromoDVDs will not be ready before next weeks, as soon as I know more details, I tell you.
+<a name="l-587"></a><span class="tm">17:33:29</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#action  </span><span class="cmdline">team to review text of http://software.opensuse.org/order/new and send comments to AJaeger</span>
+<a name="l-588"></a><span class="tm">17:33:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Dominian:</span> yup you are right we need a lot more work on those
+<a name="l-589"></a><span class="tm">17:33:36</span><span class="nk"> &lt;lupinstein&gt;</span> :( I got Texas Linux Fest on April 2nd
+<a name="l-590"></a><span class="tm">17:33:39</span><span class="nk"> &lt;manugupt1&gt;</span> AJaeger2, will it be ready by the time vuntz comes to India
+<a name="l-591"></a><span class="tm">17:33:44</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">jospoortvliet:</span> quite a bit of work
+<a name="l-592"></a><span class="tm">17:33:51</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger2,   ok  for now I'm telling people don't expect until early April.  Is that a fair estimate?
+<a name="l-593"></a><span class="tm">17:33:58</span><span class="nk"> &lt;jospoortvliet&gt;</span> any help is appreciated, and more importantly, we need someone to 'adopt' one of those things, have it as his/her baby and push others to get it done until it is done
+<a name="l-594"></a><span class="tm">17:33:58</span><span class="nk"> &lt;AJaeger2&gt;</span> <span class="hi">manugupt1:</span> AS soon as I know details, I tell you ;)
+<a name="l-595"></a><span class="tm">17:34:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> then move on to the next :D
+<a name="l-596"></a><span class="tm">17:34:04</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">jospoortvliet:</span> I think a lot of my issue with contributing.. I think I have a form of ADD.. because I try to pay attention to too much at one time!
+<a name="l-597"></a><span class="tm">17:34:06</span><span class="nk"> &lt;jospoortvliet&gt;</span> so if you're looking for a baby, pick one :D
+<a name="l-598"></a><span class="tm">17:34:08</span><span class="nk"> &lt;manugupt1&gt;</span> thanks AJaeger2
+<a name="l-599"></a><span class="tm">17:34:12</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Dominian:</span> same for me :D
+<a name="l-600"></a><span class="tm">17:34:15</span><span class="nk"> &lt;AJaeger2&gt;</span> <span class="hi">suseROCKs:</span> Yes but I hope earlier
+<a name="l-601"></a><span class="tm">17:34:20</span><span class="nk"> &lt;tony2&gt;</span> brb everybody. Will post next when I have something to say
+<a name="l-602"></a><span class="tm">17:34:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Dominian:</span> so pick a few babies there and push them :D
+<a name="l-603"></a><span class="tm">17:34:28</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">jospoortvliet:</span> hehe
+<a name="l-604"></a><span class="tm">17:34:35</span><span class="nk"> &lt;AJaeger2&gt;</span> But therefore I need to have the above page live to make everything much smoother and easier on my part.
+<a name="l-605"></a><span class="tm">17:34:40</span><span class="nk"> &lt;suseROCKs&gt;</span> AJaeger2,   anything else?
+<a name="l-606"></a><span class="tm">17:34:55</span><span class="nk"> &lt;AJaeger2&gt;</span> That's it from me for now - need to take care of some issues here...
+<a name="l-607"></a><span class="tm">17:34:59</span><span class="nk"> &lt;lupinstein&gt;</span> I wish I has access to the DVD copier then I could burn my own for TLF.
+<a name="l-608"></a><span class="tm">17:35:05</span><span class="nk"> &lt;AJaeger2&gt;</span> thanks and sorry for the interruption
+<a name="l-609"></a><span class="tm">17:35:07</span><span class="nk"> &lt;suseROCKs&gt;</span> ok thanks AJaeger2
+<a name="l-610"></a><span class="tm">17:35:48</span><span class="nk"> &lt;suseROCKs&gt;</span> lupinstein,   bribe AJaeger2 and he'll maybe give you first priority.    You just might be able to get it in time
+<a name="l-611"></a><span class="tm">17:36:04</span><span class="nk"> &lt;Dominian&gt;</span> Is there a list of al the tools out there? a la news.o.o, forums.o.o, connect.o.o etc?
+<a name="l-612"></a><span class="tm">17:36:32</span><span class="nk"> &lt;lupinstein&gt;</span> AJaeger2, need a babysitter, wink wink, cut your grass, wash your car.
+<a name="l-613"></a><span class="tm">17:36:59</span><span class="nk"> &lt;manugupt1&gt;</span> What else do we have to cover
+<a name="l-614"></a><span class="tm">17:37:28</span><span class="nk"> &lt;suseROCKs&gt;</span> we were talking about improving the overall ambassador program and its tools....
+<a name="l-615"></a><span class="tm">17:37:38</span><span class="nk"> &lt;suseROCKs&gt;</span> did we come to conclusions or does it require more debate?
+<a name="l-616"></a><span class="tm">17:37:55</span><span class="nk"> &lt;manugupt1&gt;</span> We need conclusions
+<a name="l-617"></a><span class="tm">17:38:03</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet?
+<a name="l-618"></a><span class="tm">17:38:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> we still need to get clear what we can do better in the social media area
+<a name="l-619"></a><span class="tm">17:38:48</span><span class="nk"> &lt;lupinstein&gt;</span> ok, I will on that
+<a name="l-620"></a><span class="tm">17:38:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> in the ambassadors area as well - we have one thing (make event reports more visible and maybe create local ML's)
+<a name="l-621"></a><span class="tm">17:38:57</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   social media or social networking?   Let's make sure we always make that distinction  :-)
+<a name="l-622"></a><span class="tm">17:38:57</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">Dominian:</span> Usually periodically I check out the CRM demo sites. One place, try out everything, anything
+<a name="l-623"></a><span class="tm">17:39:03</span><span class="nk"> &lt;tigerfoot&gt;</span> did we notice the action about the merging of ML ?
+<a name="l-624"></a><span class="tm">17:39:04</span><span class="nk"> &lt;lupinstein&gt;</span> if you want to tag it for item of action
+<a name="l-625"></a><span class="tm">17:39:05</span><span class="nk"> &lt;Dominian&gt;</span> eh
+<a name="l-626"></a><span class="tm">17:39:06</span><span class="nk"> &lt;jospoortvliet&gt;</span> eg ask kostas how he works - the local team has their own infrastructure.
+<a name="l-627"></a><span class="tm">17:39:09</span><span class="nk"> &lt;suseROCKs&gt;</span> two very different beasts
+<a name="l-628"></a><span class="tm">17:39:09</span><span class="nk"> &lt;jospoortvliet&gt;</span> we should make that easier
+<a name="l-629"></a><span class="tm">17:39:19</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, I have only one issue with more MLs
+<a name="l-630"></a><span class="tm">17:39:21</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">tony2:</span> my point being I don't know where all these sites are :)
+<a name="l-631"></a><span class="tm">17:39:24</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tigerfoot:</span> merging artwork and marketing - good. merging ambassadors - will just chase them away
+<a name="l-632"></a><span class="tm">17:39:45</span><span class="nk"> &lt;suseROCKs&gt;</span> and merging multimedia?
+<a name="l-633"></a><span class="tm">17:39:46</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> if you don't speak english having a greek ambassador list is quite crucial you know...
+<a name="l-634"></a><span class="tm">17:40:00</span><span class="nk"> &lt;Dominian&gt;</span> hrm..
+<a name="l-635"></a><span class="tm">17:40:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> fine too. I want to do something about language barriers, that's what we have to break...
+<a name="l-636"></a><span class="tm">17:40:08</span><span class="nk"> &lt;manugupt1&gt;</span> we have around 120 ambassador then it does not help
+<a name="l-637"></a><span class="tm">17:40:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> social media incl social networks
+<a name="l-638"></a><span class="tm">17:40:25</span><span class="nk"> &lt;Dominian&gt;</span> here's something intereseting I'm seeing on the Fedora ambassadors.. they provide an ambassador's polo shirt and/or a button up shirt
+<a name="l-639"></a><span class="tm">17:40:26</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">Dominian:</span> email me offline. I'll recommend places you can try without installing anything
+<a name="l-640"></a><span class="tm">17:40:34</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   and that's a toughie.    How do we break the language barrier if there's just one ambassador in a particular region
+<a name="l-641"></a><span class="tm">17:40:42</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, we have an opensuse google group for India that is a support forum and ambassador forum too
+<a name="l-642"></a><span class="tm">17:40:45</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> sure in that case it isn't needed
+<a name="l-643"></a><span class="tm">17:40:54</span><span class="nk"> &lt;suseROCKs&gt;</span> I guess we need "language ambassadors" in addition to geogrpahical ambassadors
+<a name="l-644"></a><span class="tm">17:41:00</span><span class="nk"> &lt;diamond_gr&gt;</span> Agree on Polo shirt. Ambassadors outfit
+<a name="l-645"></a><span class="tm">17:41:00</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">tony2:</span> Well, I'm not talking about other software.. just the current stuff that opensuse is utilizing to interact with its user base, ambassadors, marketing etc
+<a name="l-646"></a><span class="tm">17:41:16</span><span class="nk"> &lt;Dominian&gt;</span> http://fedoraproject.org/wiki/Ambassadors/PoloShirt
+<a name="l-647"></a><span class="tm">17:41:31</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">jospoortvliet:</span> automatic online translators not sufficient?
+<a name="l-648"></a><span class="tm">17:41:37</span><span class="nk"> &lt;Dominian&gt;</span> ahh
+<a name="l-649"></a><span class="tm">17:41:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> eg the brazil team, the greek team, the german team, the dutch team I try to build - the MUST have a ML. THe dutch team now mails with each other in CC but nobody can join that ML and sometimes ppl fall off
+<a name="l-650"></a><span class="tm">17:41:39</span><span class="nk"> &lt;suseROCKs&gt;</span> hey  tshirts and stuff are good to talk about,  but let's focus on the organizational stuff for now
+<a name="l-651"></a><span class="tm">17:41:42</span><span class="nk"> &lt;Dominian&gt;</span> they charge 25Euro for the shirt
+<a name="l-652"></a><span class="tm">17:41:44</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony2:</span> hell no of course not...
+<a name="l-653"></a><span class="tm">17:41:50</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">suseROCKs:</span> yeah sorry just reading :)
+<a name="l-654"></a><span class="tm">17:42:12</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">Dominian:</span> Agreed. In particular I'm not familiar with Connect, Will follow up on that
+<a name="l-655"></a><span class="tm">17:42:18</span><span class="nk"> &lt;Dominian&gt;</span> same
+<a name="l-656"></a><span class="tm">17:42:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> we need an easy way to set up a local ambassador team. opensuse-ambassadors-nl@opensuse.org is what I would love to have. Would make my team building 100x easier
+<a name="l-657"></a><span class="tm">17:42:26</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,    ok  so the 'Main" ambassador list is for the top-level ambassador of a region who then has the responsibility of conveying to smaller groups?
+<a name="l-658"></a><span class="tm">17:42:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> I can point ppl to that, subscribe there and join the conversation
+<a name="l-659"></a><span class="tm">17:42:40</span><span class="nk"> &lt;jospoortvliet&gt;</span> in KDE and GNOME this works often over the translation lists...
+<a name="l-660"></a><span class="tm">17:42:41</span><span class="nk"> &lt;suseROCKs&gt;</span> or rather to regional groups that are language specific?
+<a name="l-661"></a><span class="tm">17:42:42</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">tony2:</span> I have an account on there, just not sure what use connect is :)
+<a name="l-662"></a><span class="tm">17:42:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> something like that, yes
+<a name="l-663"></a><span class="tm">17:43:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> I think language specific but eg portugal and brazil want something unique I bet
+<a name="l-664"></a><span class="tm">17:43:19</span><span class="nk"> &lt;diamond_gr&gt;</span> dissagree with opensuse-ambassadors-el mailing list.
+<a name="l-665"></a><span class="tm">17:43:31</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   ok so there's two things then.... a)  ensure there's at least one person who can speak English and b)  how do we know the conveying occurred?    It's silent for us on our end when we don't know activity happens on the other end
+<a name="l-666"></a><span class="tm">17:43:47</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> true, issue
+<a name="l-667"></a><span class="tm">17:43:52</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, exactly
+<a name="l-668"></a><span class="tm">17:43:55</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">diamond_gr:</span> so you would not want to have a greek ml?
+<a name="l-669"></a><span class="tm">17:44:03</span><span class="nk"> &lt;manugupt1&gt;</span> thats what I am trying to say
+<a name="l-670"></a><span class="tm">17:44:17</span><span class="nk"> &lt;manugupt1&gt;</span> How many of you know that we have an openSUSE India google group
+<a name="l-671"></a><span class="tm">17:44:31</span><span class="nk"> &lt;diamond_gr&gt;</span> we have the simple local mailing list that can we all use. the ambassadors can use the international.
+<a name="l-672"></a><span class="tm">17:44:33</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> manugupt1: make no illusions this IS what happens already. it is why many ambassadors are so quiet - they simply use other channels
+<a name="l-673"></a><span class="tm">17:44:42</span><span class="nk"> &lt;suseROCKs&gt;</span> and if we have one person responsible for conveying between the master and language ML's... we create a potential point of failure too.   But then again, it seems we've got a huge point of failure now to begin with.
+<a name="l-674"></a><span class="tm">17:44:50</span><span class="nk"> &lt;diamond_gr&gt;</span> if they cannot understand english, they can write to theri language.
+<a name="l-675"></a><span class="tm">17:44:53</span><span class="nk"> &lt;jospoortvliet&gt;</span> as the openSUSE infrastructure (a global, english-only ambassador ML is useless for them tot talk to their local team)
+<a name="l-676"></a><span class="tm">17:45:12</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   I don't disagree with you.  You're making valid points.    But I'm trying to figure out how we can have better cohesion here.
+<a name="l-677"></a><span class="tm">17:45:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">diamond_gr:</span> so you HAVE a local ml already
+<a name="l-678"></a><span class="tm">17:45:28</span><span class="nk"> &lt;diamond_gr&gt;</span> for some maybe will be just spam.
+<a name="l-679"></a><span class="tm">17:45:29</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, then if we break it down it will more a pita
+<a name="l-680"></a><span class="tm">17:45:31</span><span class="nk"> &lt;suseROCKs&gt;</span> Did lupinstein's rally call get conveyed to the language ml's?
+<a name="l-681"></a><span class="tm">17:45:34</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> well let's just start with building up local teams THEN worry about coordination. We start with 0 remember
+<a name="l-682"></a><span class="tm">17:45:37</span><span class="nk"> &lt;suseROCKs&gt;</span> we dunno
+<a name="l-683"></a><span class="tm">17:45:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> it's a step forward already
+<a name="l-684"></a><span class="tm">17:45:46</span><span class="nk"> &lt;diamond_gr&gt;</span> jospoortvliet, yes, we have.
+<a name="l-685"></a><span class="tm">17:45:49</span><span class="nk"> &lt;manugupt1&gt;</span> We will again have problem's reading MLs
+<a name="l-686"></a><span class="tm">17:45:57</span><span class="nk"> &lt;amonthoth&gt;</span> who is going to monitor every language and region ?
+<a name="l-687"></a><span class="tm">17:45:59</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> well now we simply lost the ppl
+<a name="l-688"></a><span class="tm">17:46:07</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">amonthoth:</span> nobody as that is impossible.
+<a name="l-689"></a><span class="tm">17:46:14</span><span class="nk"> &lt;lupinstein&gt;</span> ? I think a local ok, but we need first to get everyone to use the tools we have, ppl aren't even doing that
+<a name="l-690"></a><span class="tm">17:46:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> look it is a choice between having good coordination and barely any ambassadors or having strong local communities and ALWAYS having to fight to keep in contact
+<a name="l-691"></a><span class="tm">17:46:32</span><span class="nk"> &lt;jospoortvliet&gt;</span> I rather have the second
+<a name="l-692"></a><span class="tm">17:46:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> so I think we should set up local ML's :D
+<a name="l-693"></a><span class="tm">17:46:44</span><span class="nk"> &lt;amonthoth&gt;</span> that's because ambassador regional mailing list is not practical at all
+<a name="l-694"></a><span class="tm">17:46:52</span><span class="nk"> &lt;lupinstein&gt;</span> you can make all the list you want, but to be honest the ambassador won't use them
+<a name="l-695"></a><span class="tm">17:46:55</span><span class="nk"> &lt;suseROCKs&gt;</span> diamond_gr,  manugupt1  amonthoth    I think jospoortvliet's point is very relevant because our marketing message is shifting from a "we're a great distro" to "we're not just a distro" and if that message isn't consistent, we're wasting our time here strategizing.
+<a name="l-696"></a><span class="tm">17:46:56</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, Ok.. then we will think we have no event reports
+<a name="l-697"></a><span class="tm">17:47:09</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> I want the ambassadors to set up their own if they need it
+<a name="l-698"></a><span class="tm">17:47:29</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> they can be in other languages, they'll have to be anyway.
+<a name="l-699"></a><span class="tm">17:47:30</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">jospoortvliet:</span> I agree decentralization is way to go but there has to be a way for centralized info to be distributed officially
+<a name="l-700"></a><span class="tm">17:47:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> you don't realize that most ambassadors don't speak english
+<a name="l-701"></a><span class="tm">17:47:39</span><span class="nk"> &lt;jospoortvliet&gt;</span> seriously
+<a name="l-702"></a><span class="tm">17:47:43</span><span class="nk"> &lt;jospoortvliet&gt;</span> MOST SPEAK NO ENGLISH
+<a name="l-703"></a><span class="tm">17:48:05</span><span class="nk"> &lt;Dominian&gt;</span> Well, why not keep the opensuse-ambassador list for centralizd communication.. then have opensuse-marketing-&lt;lang&gt; for the per language list?
+<a name="l-704"></a><span class="tm">17:48:13</span><span class="nk"> &lt;tigerfoot&gt;</span> vraiment la majorité n'y comprenne rien :-)
+<a name="l-705"></a><span class="tm">17:48:16</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, ok.. maybe its because of the region
+<a name="l-706"></a><span class="tm">17:48:20</span><span class="nk"> &lt;suseROCKs&gt;</span> Dominian,   that's what jospoortvliet  is saying.
+<a name="l-707"></a><span class="tm">17:48:21</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> yes
+<a name="l-708"></a><span class="tm">17:48:24</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">suseROCKs:</span> ah
+<a name="l-709"></a><span class="tm">17:48:34</span><span class="nk"> &lt;Dominian&gt;</span> see I'm trying to pay attention to too much again
+<a name="l-710"></a><span class="tm">17:48:38</span><span class="nk"> &lt;jospoortvliet&gt;</span> brazil, NL, germany, greece, actually most of europe works better locla
+<a name="l-711"></a><span class="tm">17:48:39</span><span class="nk"> &lt;lupinstein&gt;</span> jos my point is those that do, don't even use the list
+<a name="l-712"></a><span class="tm">17:48:42</span><span class="nk"> &lt;manugupt1&gt;</span> tigerfoot, lols
+<a name="l-713"></a><span class="tm">17:48:49</span><span class="nk"> &lt;suseROCKs&gt;</span> Dominian,   but I want to ensure that information in a regional ml comes back to the main ml too so we all know about what's going on
+<a name="l-714"></a><span class="tm">17:48:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> I can NOT build a local NL team if I have to tell them to join the international ambassador list
+<a name="l-715"></a><span class="tm">17:48:57</span><span class="nk"> &lt;suseROCKs&gt;</span> cohesion of message is important right now
+<a name="l-716"></a><span class="tm">17:48:57</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">suseROCKs:</span> ah
+<a name="l-717"></a><span class="tm">17:48:57</span><span class="nk"> &lt;jospoortvliet&gt;</span> so I will need a local ML
+<a name="l-718"></a><span class="tm">17:49:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> and so will everyone for who english is not a normal language
+<a name="l-719"></a><span class="tm">17:49:06</span><span class="nk"> &lt;jospoortvliet&gt;</span> spanish
+<a name="l-720"></a><span class="tm">17:49:07</span><span class="nk"> &lt;jospoortvliet&gt;</span> french
+<a name="l-721"></a><span class="tm">17:49:10</span><span class="nk"> &lt;jospoortvliet&gt;</span> portugese
+<a name="l-722"></a><span class="tm">17:49:11</span><span class="nk"> &lt;jospoortvliet&gt;</span> german
+<a name="l-723"></a><span class="tm">17:49:13</span><span class="nk"> &lt;jospoortvliet&gt;</span> greece
+<a name="l-724"></a><span class="tm">17:49:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> etc
+<a name="l-725"></a><span class="tm">17:49:17</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   now here's another question
+<a name="l-726"></a><span class="tm">17:49:25</span><span class="nk"> &lt;lupinstein&gt;</span> ok, but then how we know they are doing things
+<a name="l-727"></a><span class="tm">17:49:28</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, just create it let it be in hands of whoever wants to create
+<a name="l-728"></a><span class="tm">17:49:32</span><span class="nk"> &lt;manugupt1&gt;</span> it
+<a name="l-729"></a><span class="tm">17:49:37</span><span class="nk"> &lt;Dominian&gt;</span> <span class="hi">suseROCKs:</span> You could assign a main ambassador to facilitate management over that regional list and push information to the central mailing list that is important for everyone to know.
+<a name="l-730"></a><span class="tm">17:49:57</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">lupinstein:</span> we'll loose information and we have to live with that. Of course we should strive to have ppl who coordinate. Eg like Kostas and diamond_gr do for the greece community/tema
+<a name="l-731"></a><span class="tm">17:49:57</span><span class="nk"> &lt;Dominian&gt;</span> or a couple of ambassadors etc
+<a name="l-732"></a><span class="tm">17:49:59</span><span class="nk"> &lt;suseROCKs&gt;</span> we have langauage ml's now, right?  for support and other stuff.    Should we be having -amasasador &lt;lang&gt; list too or just all in one ML?   Keep the noise up on all of them?
+<a name="l-733"></a><span class="tm">17:50:02</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, thats what other communitites hv done specially portuguese and spanish
+<a name="l-734"></a><span class="tm">17:50:04</span><span class="nk"> &lt;jospoortvliet&gt;</span> and carlos and izabel for the brazilians
+<a name="l-735"></a><span class="tm">17:50:07</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">suseROCKs:</span> I disagree. Centralized info should be a single main one way channel to regionals. Info in other direction should be through different individual channels. Thats my IMO
+<a name="l-736"></a><span class="tm">17:50:31</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. Let me propose something
+<a name="l-737"></a><span class="tm">17:50:34</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> one big ML is a mess
+<a name="l-738"></a><span class="tm">17:50:38</span><span class="nk"> &lt;manugupt1&gt;</span> Lets have a centralised list
+<a name="l-739"></a><span class="tm">17:50:44</span><span class="nk"> &lt;suseROCKs&gt;</span> because even here in marketing, I keep telling people to pay attention to -project and -factory ml's to really kinow the project.    There *has* to be a way to make sure folks understand the overall project and its goings-on
+<a name="l-740"></a><span class="tm">17:50:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> +1
+<a name="l-741"></a><span class="tm">17:51:05</span><span class="nk"> &lt;suseROCKs&gt;</span> those in other languages surely miss out on so much  :-(
+<a name="l-742"></a><span class="tm">17:51:19</span><span class="nk"> &lt;manugupt1&gt;</span> Any language which needs a list can be requested by the admin
+<a name="l-743"></a><span class="tm">17:52:16</span><span class="nk"> &lt;suseROCKs&gt;</span> to the admin  :-)
+<a name="l-744"></a><span class="tm">17:52:21 </span><span class="nka">* bear454</span> <span class="ac">mumbles about how much there is to read on this channel</span>
+<a name="l-745"></a><span class="tm">17:52:35</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, roght
+<a name="l-746"></a><span class="tm">17:52:37</span><span class="nk"> &lt;manugupt1&gt;</span> roght
+<a name="l-747"></a><span class="tm">17:52:39</span><span class="nk"> &lt;manugupt1&gt;</span> right
+<a name="l-748"></a><span class="tm">17:52:46</span><span class="nk"> &lt;diamond_gr&gt;</span> suseROCKs, +1
+<a name="l-749"></a><span class="tm">17:53:44</span><span class="nk"> &lt;tony2&gt;</span> How difficult would it be to request Novell/openSUSE to develop a localization translation package for mailing lists if we don't already do this?
+<a name="l-750"></a><span class="tm">17:53:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> ok and if you're an admin for a local language list you MUST be on the ambassador mailinglist
+<a name="l-751"></a><span class="tm">17:54:08</span><span class="nk"> &lt;lupinstein&gt;</span> I can agree with that jos
+<a name="l-752"></a><span class="tm">17:54:15</span><span class="nk"> &lt;suseROCKs&gt;</span> acceptable rule
+<a name="l-753"></a><span class="tm">17:54:17</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, we do not have that HR
+<a name="l-754"></a><span class="tm">17:54:20</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony2:</span> sorry but how interested are you in the discussions around planning of local events around the world? count on 200+ mails per day dude... seriously
+<a name="l-755"></a><span class="tm">17:54:22</span><span class="nk"> &lt;jospoortvliet&gt;</span> you don't want that
+<a name="l-756"></a><span class="tm">17:54:31</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> HR?
+<a name="l-757"></a><span class="tm">17:54:38</span><span class="nk"> &lt;manugupt1&gt;</span> human resources
+<a name="l-758"></a><span class="tm">17:54:52</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   I live for the 200+ worldwide plannign mails per day   :-D
+<a name="l-759"></a><span class="tm">17:55:16</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">jospoortvliet:</span> That is why I posted earlier to Bryen that the Centralized Channel should be one way, and upstream info should be separate
+<a name="l-760"></a><span class="tm">17:55:31</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">tony2:</span> yes, that is not a bad idea
+<a name="l-761"></a><span class="tm">17:56:16</span><span class="nk"> &lt;suseROCKs&gt;</span> tony2,   but at the same time we need the return info so we know things are actually going on.  Especially as Jos and I start to put special focus on regions that are underrepresented
+<a name="l-762"></a><span class="tm">17:56:51</span><span class="nk"> &lt;suseROCKs&gt;</span> we gave special focus to US, Brazil and Greece in the last 6 months and that is returning bountifuls.    Next year, we need to focus on new regions that aren't getting attention
+<a name="l-763"></a><span class="tm">17:57:04</span><span class="nk"> &lt;suseROCKs&gt;</span> how do we know this if there's a language barrier?
+<a name="l-764"></a><span class="tm">17:57:21</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">suseROCKs:</span> I envision proper Collab Tools to do this. So, for instance on typical web based CRMs each Dept/Region/entity would be a child web CRM that can automatically feed to a Parent CRM site
+<a name="l-765"></a><span class="tm">17:57:31</span><span class="nk"> &lt;tigerfoot&gt;</span> :-)
+<a name="l-766"></a><span class="tm">17:57:35</span><span class="nk"> &lt;manugupt1&gt;</span> I suggest we go jos's way and try it out we can always check the aftermath
+<a name="l-767"></a><span class="tm">17:57:48</span><span class="nk"> &lt;suseROCKs&gt;</span> that's a possibility  sure
+<a name="l-768"></a><span class="tm">17:57:57 </span><span class="nka">* tigerfoot</span> <span class="ac">predict a fail ... ambassadors will never spend a minute or two to learn how a crm work ...</span>
+<a name="l-769"></a><span class="tm">17:58:00</span><span class="nk"> &lt;manugupt1&gt;</span> I love tony2 now for his wonderful ideas
+<a name="l-770"></a><span class="tm">17:58:04</span><span class="nk"> &lt;suseROCKs&gt;</span> let's give it a shot, tony2    I'd like to see if that helps our long-term planning.  For sure!
+<a name="l-771"></a><span class="tm">17:58:30 </span><span class="nka">* tigerfoot</span> <span class="ac">employee do that, but they are paid for doing that, of fired to not do that ....</span>
+<a name="l-772"></a><span class="tm">17:59:04 </span><span class="nka">* manugupt1</span> <span class="ac">thought tigerfoot was self-employed</span>
+<a name="l-773"></a><span class="tm">17:59:12</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">tigerfoot:</span> I have excellent historical experience using DNN on the Microsoft platform, it's very simple for Users who edit site directly. If we need similar I need to find similar running on Linux
+<a name="l-774"></a><span class="tm">17:59:27</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so do we  need to proceed further on this area?   or can we have a focused collaboration on it?   We're already 2 hours into our meeting
+<a name="l-775"></a><span class="tm">17:59:32</span><span class="nk"> &lt;suseROCKs&gt;</span> which is a good thing cuz we clearly had a lot to say
+<a name="l-776"></a><span class="tm">17:59:54</span><span class="nk"> &lt;lupinstein&gt;</span> tigerfoot, I agree on the crm, we can't get 90% to send in a simple report
+<a name="l-777"></a><span class="tm">17:59:58</span><span class="nk"> &lt;suseROCKs&gt;</span> any objections to wrapping up so I can summarize today's discussions and put it on the ML for further feedback?
+<a name="l-778"></a><span class="tm">18:00:16</span><span class="nk"> &lt;manugupt1&gt;</span> I have a few ideas I wanted to discuss
+<a name="l-779"></a><span class="tm">18:00:33</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,    ideas pertaining to our post-mortem?
+<a name="l-780"></a><span class="tm">18:00:43</span><span class="nk"> &lt;manugupt1&gt;</span> No but for the future
+<a name="l-781"></a><span class="tm">18:00:47</span><span class="nk"> &lt;suseROCKs&gt;</span> if not, then it should be part of our regular general meeting
+<a name="l-782"></a><span class="tm">18:00:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> srry lost connection
+<a name="l-783"></a><span class="tm">18:00:52</span><span class="nk"> &lt;jospoortvliet&gt;</span> somehow
+<a name="l-784"></a><span class="tm">18:01:01</span><span class="nk"> &lt;amonthoth&gt;</span> have you tried www.opentaps.org or something similar for crm
+<a name="l-785"></a><span class="tm">18:01:01</span><span class="nk"> &lt;jospoortvliet&gt;</span> what was said after this:
+<a name="l-786"></a><span class="tm">18:01:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> to have a one-way communication to everyone is another way of doing it. So OR you have a moderated ambassador list (only approved messages, one way, to not over-flood the ambassadors) OR you require each local ML to have at least one (or two?) ppl to also be on the international list so they can coordinate
+<a name="l-787"></a><span class="tm">18:01:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> did suseROCKs kick me?
+<a name="l-788"></a><span class="tm">18:01:30</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. Still I have a thing to say
+<a name="l-789"></a><span class="tm">18:01:32</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">jospoortvliet:</span> yeap wrong button :-)
+<a name="l-790"></a><span class="tm">18:01:35</span><span class="nk"> &lt;jospoortvliet&gt;</span> hehe
+<a name="l-791"></a><span class="tm">18:01:36</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   I would never kick you...
+<a name="l-792"></a><span class="tm">18:01:39 </span><span class="nka">* suseROCKs</span> <span class="ac">lies</span>
+<a name="l-793"></a><span class="tm">18:01:44</span><span class="nk"> &lt;diamond_gr&gt;</span> how easy is for the admins to create a tool for us like a blog thing, using &lt;lang&gt;.opensusecommunities.org?
+<a name="l-794"></a><span class="tm">18:01:54</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">amonthoth:</span> Am open to all suggestions. Email me offline and I will eval for Bryen (unless he wants the extra work)
+<a name="l-795"></a><span class="tm">18:02:11</span><span class="nk"> &lt;suseROCKs&gt;</span> diamond_gr,   simply send an email to admin@ and they will respond with what they can do
+<a name="l-796"></a><span class="tm">18:02:15</span><span class="nk"> &lt;suseROCKs&gt;</span> admin@ is your friend
+<a name="l-797"></a><span class="tm">18:02:39</span><span class="nk"> &lt;amonthoth&gt;</span> tony2, oki doki
+<a name="l-798"></a><span class="tm">18:02:53</span><span class="nk"> &lt;manugupt1&gt;</span> And this one is kinda urgent
+<a name="l-799"></a><span class="tm">18:03:10</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,    as you were offline I was saying we've run 2 hours into this meeting and asking if we wanted to wrap up and I'd summarize the discussion and send it to the ML for further feedback
+<a name="l-800"></a><span class="tm">18:03:26</span><span class="nk"> &lt;suseROCKs&gt;</span> and then manugupt1  said  "wait wait, I have a ton of ideas!"  :-)
+<a name="l-801"></a><span class="tm">18:03:30</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok so back to this. Can we tell the ambassadors they can ask admin@ for local ML's in the form of opensuse-ambassador-XX@opensuse.org as long as they have one person on the ambassador ML; or do we go with the other schedule, have a locked ambassador ML which sends mail to all those subteams?
+<a name="l-802"></a><span class="tm">18:03:37</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">suseROCKs:</span> aah ok
+<a name="l-803"></a><span class="tm">18:04:33</span><span class="nk"> &lt;manugupt1&gt;</span> anything you guys pick up :)
+<a name="l-804"></a><span class="tm">18:04:34</span><span class="nk"> &lt;suseROCKs&gt;</span> i'm not against continuing the meeting, though I have other things I need to do.    If the feel is hot, go for it and continue talking
+<a name="l-805"></a><span class="tm">18:04:51</span><span class="nk"> &lt;suseROCKs&gt;</span> still waiting for manugupt1  to spill out his ideas
+<a name="l-806"></a><span class="tm">18:04:56</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. yes
+<a name="l-807"></a><span class="tm">18:04:58</span><span class="nk"> &lt;toratoraman&gt;</span> hi
+<a name="l-808"></a><span class="tm">18:04:58</span><span class="nk"> &lt;manugupt1&gt;</span> I am saying now
+<a name="l-809"></a><span class="tm">18:05:15</span><span class="nk"> &lt;suseROCKs&gt;</span> hello toratoraman   are you the gentleman nmarques just told me about?
+<a name="l-810"></a><span class="tm">18:05:20</span><span class="nk"> &lt;manugupt1&gt;</span> we need a couple of write ups for GSoC within the next 2 days
+<a name="l-811"></a><span class="tm">18:05:34</span><span class="nk"> &lt;manugupt1&gt;</span> That is before 18th
+<a name="l-812"></a><span class="tm">18:05:46</span><span class="nk"> &lt;suseROCKs&gt;</span> define "write ups"
+<a name="l-813"></a><span class="tm">18:06:11</span><span class="nk"> &lt;toratoraman&gt;</span> ok. thank you
+<a name="l-814"></a><span class="tm">18:06:16</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, just that saying we are too excited about it and hope to have a better management / stuff to impress google authorities
+<a name="l-815"></a><span class="tm">18:06:21</span><span class="nk"> &lt;toratoraman&gt;</span> i want send my idea..
+<a name="l-816"></a><span class="tm">18:06:28</span><span class="nk"> &lt;toratoraman&gt;</span> pls.. e-mail adres..?
+<a name="l-817"></a><span class="tm">18:07:01</span><span class="nk"> &lt;manugupt1&gt;</span> What do you guys say about this?
+<a name="l-818"></a><span class="tm">18:07:09</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   no I'm asking what you mean by "write up"   an article?  an email? what?
+<a name="l-819"></a><span class="tm">18:07:16</span><span class="nk"> &lt;manugupt1&gt;</span> An article
+<a name="l-820"></a><span class="tm">18:07:19</span><span class="nk"> &lt;suseROCKs&gt;</span> toratoraman,   are you the one from Turkey?
+<a name="l-821"></a><span class="tm">18:07:21</span><span class="nk"> &lt;manugupt1&gt;</span> on news.opensuse.org
+<a name="l-822"></a><span class="tm">18:07:37</span><span class="nk"> &lt;toratoraman&gt;</span> yes. i m from Turkey
+<a name="l-823"></a><span class="tm">18:08:00</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> if you make a quick draft we'll make it sexy and push it
+<a name="l-824"></a><span class="tm">18:08:02</span><span class="nk"> &lt;jospoortvliet&gt;</span> ok?
+<a name="l-825"></a><span class="tm">18:08:15</span><span class="nk"> &lt;suseROCKs&gt;</span> jospoortvliet,   no you cannot add my picture to every article!
+<a name="l-826"></a><span class="tm">18:08:27</span><span class="nk"> &lt;manugupt1&gt;</span> jospoortvliet, I will try it
+<a name="l-827"></a><span class="tm">18:08:28</span><span class="nk"> &lt;toratoraman&gt;</span> and i had suse-tr.com web site
+<a name="l-828"></a><span class="tm">18:08:40</span><span class="nk"> &lt;toratoraman&gt;</span> but.. Novell not support for Turkey..
+<a name="l-829"></a><span class="tm">18:08:53</span><span class="nk"> &lt;manugupt1&gt;</span> also I wish to have sometime later an open week
+<a name="l-830"></a><span class="tm">18:08:57</span><span class="nk"> &lt;suseROCKs&gt;</span> guys,  a brief moment please.    nmarques just referred toratoraman to us.  He is a gentleman from Turkey who wishes to represent openSUSE in his country.  Let's welcome him!
+<a name="l-831"></a><span class="tm">18:09:10</span><span class="nk"> &lt;manugupt1&gt;</span> just like the one UBUNTU has
+<a name="l-832"></a><span class="tm">18:09:24</span><span class="nk"> &lt;manugupt1&gt;</span> Hya toratoraman
+<a name="l-833"></a><span class="tm">18:09:34</span><span class="nk"> &lt;amonthoth&gt;</span> wellcome toratoraman !
+<a name="l-834"></a><span class="tm">18:09:52</span><span class="nk"> &lt;toratoraman&gt;</span> thanks..
+<a name="l-835"></a><span class="tm">18:10:12</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">toratoraman:</span> Welcome! Are you saying the Turkish language (localization) or support or Novell/not openSUSE products is missing?
+<a name="l-836"></a><span class="tm">18:10:20</span><span class="nk"> &lt;suseROCKs&gt;</span> toratoraman,  is looking for information on how he can communicate with us and get involved.  Let's give him some information now.
+<a name="l-837"></a><span class="tm">18:10:20</span><span class="nk"> &lt;manugupt1&gt;</span> what do you say?
+<a name="l-838"></a><span class="tm">18:10:55</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,    like the Community Week we used to have  or even the Collaboration Days we have?
+<a name="l-839"></a><span class="tm">18:11:03</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">manugupt1:</span> just write :D
+<a name="l-840"></a><span class="tm">18:11:46</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   I mean we do have them periodically around here,  but you always say  "like Ubuntu has"  when we have them too.    I'm looking forward to the day when you say "like openSUSE has"  :-D
+<a name="l-841"></a><span class="tm">18:12:14</span><span class="nk"> &lt;toratoraman&gt;</span> Novell does not give support to Turkey. i now using debain. and my team using debian and pardus
+<a name="l-842"></a><span class="tm">18:12:47</span><span class="nk"> &lt;manugupt1&gt;</span> No open week is something where we teach people to use desktop and other noobish stuff
+<a name="l-843"></a><span class="tm">18:12:56</span><span class="nk"> &lt;suseROCKs&gt;</span> toratoraman,   well  Forget about Novell.  We are openSUSE and we have our own support.   If we can help with better support, let us know.  But tell us what specific support you need.
+<a name="l-844"></a><span class="tm">18:13:12</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   again... what we have here from time to time   :-D
+<a name="l-845"></a><span class="tm">18:13:30</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, when did we have it last
+<a name="l-846"></a><span class="tm">18:13:35</span><span class="nk"> &lt;suseROCKs&gt;</span> we haven't had one in about a year I guess, but we have had  yes
+<a name="l-847"></a><span class="tm">18:13:43</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">toratoraman:</span> OK I assume you mean you mean "localization" which means that all components and docs in the Turkish language. Someone should look into that
+<a name="l-848"></a><span class="tm">18:13:51</span><span class="nk"> &lt;manugupt1&gt;</span> I want to revive it
+<a name="l-849"></a><span class="tm">18:14:01</span><span class="nk"> &lt;manugupt1&gt;</span> Who all can help?
+<a name="l-850"></a><span class="tm">18:14:07</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   the biggest trick to arranging that is that most of the people participating are from Novell and thus Novell has to figure out which week to allow people to spend more time on a weeklong event than on their Novell tasks
+<a name="l-851"></a><span class="tm">18:14:36</span><span class="nk"> &lt;suseROCKs&gt;</span> arrrgh  manugupt1   quit saying things like that  :-P    "revive" made it sound like it died.  It never died.  it just happens when there is time availability
+<a name="l-852"></a><span class="tm">18:14:37</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, no It is one hour irc session
+<a name="l-853"></a><span class="tm">18:14:42</span><span class="nk"> &lt;suseROCKs&gt;</span> time to be more positive
+<a name="l-854"></a><span class="tm">18:14:56</span><span class="nk"> &lt;suseROCKs&gt;</span> yes manugupt1   one hour sessions spread out during the week.  That's what we did  :-D
+<a name="l-855"></a><span class="tm">18:15:12</span><span class="nk"> &lt;manugupt1&gt;</span> But we need to forget Novell suseROCKs :)
+<a name="l-856"></a><span class="tm">18:15:15</span><span class="nk"> &lt;suseROCKs&gt;</span> hence why its called "open week"  right?   cuz we have multiple one hour sessions
+<a name="l-857"></a><span class="tm">18:15:47</span><span class="nk"> &lt;suseROCKs&gt;</span> no we don't in this context.  Novell employees have a lot of brainpower that they can help transfer to the community.
+<a name="l-858"></a><span class="tm">18:16:08</span><span class="nk"> &lt;rtyler&gt;</span> <span class="hi">AJaeger2:</span> are you going to post something on lizards.o.o about the torrent numbers?
+<a name="l-859"></a><span class="tm">18:16:16</span><span class="nk"> &lt;tony2&gt;</span> <span class="hi">toratoraman:</span> Re Turkish language support - You may be right, but if you want me to verify contact me offlist "tonysu@su-networking.com"
+<a name="l-860"></a><span class="tm">18:16:33</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, do not agree we have tony2 tigerfoot the great brains
+<a name="l-861"></a><span class="tm">18:16:42</span><span class="nk"> &lt;manugupt1&gt;</span> yaloki,
+<a name="l-862"></a><span class="tm">18:16:47</span><span class="nk"> &lt;suseROCKs&gt;</span> tony2,     toratoraman  is asking to become an ambassador to help his community get more support within the community
+<a name="l-863"></a><span class="tm">18:17:17</span><span class="nk"> &lt;lupinstein&gt;</span> :-)
+<a name="l-864"></a><span class="tm">18:17:22</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   and all of them can commit time?    you can't guarantee that.   Coordinating times is a hard thing.  Trust me.
+<a name="l-865"></a><span class="tm">18:17:27</span><span class="nk"> &lt;suseROCKs&gt;</span> been there, done that several times
+<a name="l-866"></a><span class="tm">18:17:30</span><span class="nk"> &lt;lupinstein&gt;</span> we have a few ppl that should answer that
+<a name="l-867"></a><span class="tm">18:17:42</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, hmm ok..
+<a name="l-868"></a><span class="tm">18:17:45</span><span class="nk"> &lt;suseROCKs&gt;</span> and oh yeah lupinstein  knows something about Turkey!
+<a name="l-869"></a><span class="tm">18:18:02</span><span class="nk"> &lt;suseROCKs&gt;</span> manugupt1,   regardless  its still a good idea what you want to do.  But not in the context of this meeting
+<a name="l-870"></a><span class="tm">18:18:20</span><span class="nk"> &lt;manugupt1&gt;</span> toratoraman, bhaskar12del might just be visiting turkey during summer
+<a name="l-871"></a><span class="tm">18:18:21</span><span class="nk"> &lt;suseROCKs&gt;</span> and its a "just do it" thing.   If you think it should be done,  start writing up the outline for it and asking people to sign up for it.
+<a name="l-872"></a><span class="tm">18:18:30</span><span class="nk"> &lt;manugupt1&gt;</span> suseROCKs, ok
+<a name="l-873"></a><span class="tm">18:18:49</span><span class="nk"> &lt;suseROCKs&gt;</span> ok guys  anything else?
+<a name="l-874"></a><span class="tm">18:19:04</span><span class="nk"> &lt;tigerfoot&gt;</span> no :-)
+<a name="l-875"></a><span class="tm">18:19:13</span><span class="nk"> &lt;suseROCKs&gt;</span> oh come on tigerfoot
+<a name="l-876"></a><span class="tm">18:19:22</span><span class="nk"> &lt;lupinstein&gt;</span> +1 tigerfoot
+<a name="l-877"></a><span class="tm">18:19:36</span><span class="nk"> &lt;suseROCKs&gt;</span> surely you have a report about SL?
+<a name="l-878"></a><span class="tm">18:19:41 </span><span class="nka">* tigerfoot</span> <span class="ac">has a swiss cheese fondue to prepare &amp; is really hungry</span>
+<a name="l-879"></a><span class="tm">18:19:58</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">suseROCKs:</span> rtyler michal carloas, kostas are my writers :-)
+<a name="l-880"></a><span class="tm">18:20:02</span><span class="nk"> &lt;suseROCKs&gt;</span> a fondue with holes in it?
+<a name="l-881"></a><span class="tm">18:20:24</span><span class="nk"> &lt;tigerfoot&gt;</span> and a special report is ongoing ... jospoortvliet will have it tomorrow,
+<a name="l-882"></a><span class="tm">18:20:25</span><span class="nk"> &lt;suseROCKs&gt;</span> ok then I'm going to wrap up if no one says anyting more in the next 30 seconds...
+<a name="l-883"></a><span class="tm">18:20:36</span><span class="nk"> &lt;tigerfoot&gt;</span> then we will tell more about that ..
+<a name="l-884"></a><span class="tm">18:20:39 </span><span class="nka">* manugupt1</span> <span class="ac">blabbers</span>
+<a name="l-885"></a><span class="tm">18:20:40</span><span class="nk"> &lt;tony2&gt;</span> Thx all guys. Good to hear from all of you.
+<a name="l-886"></a><span class="tm">18:20:45</span><span class="nk"> &lt;tigerfoot&gt;</span> 20 sec
+<a name="l-887"></a><span class="tm">18:20:46</span><span class="nk"> &lt;suseROCKs&gt;</span> 15 second warning
+<a name="l-888"></a><span class="tm">18:20:52</span><span class="nk"> &lt;tigerfoot&gt;</span> 10 sec
+<a name="l-889"></a><span class="tm">18:20:57 </span><span class="nka">* lupinstein</span> <span class="ac">prays that no talks</span>
+<a name="l-890"></a><span class="tm">18:21:03</span><span class="nk"> &lt;suseROCKs&gt;</span> Thank you all!
+<a name="l-891"></a><span class="tm">18:21:06</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

@@ -1,0 +1,428 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:00:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE project</span>
+<a name="l-2"></a><span class="tm">15:00:06</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed May 15 15:00:06 2013 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:00:06</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:00:31</span><span class="nk"> &lt;vuntz&gt;</span> so so so, who's here for the meeting?
+<a name="l-5"></a><span class="tm">15:00:32 </span><span class="nka">* manugupt1</span> <span class="ac">is right on time :)</span>
+<a name="l-6"></a><span class="tm">15:00:38</span><span class="nk"> &lt;vuntz&gt;</span> hey manugupt1!
+<a name="l-7"></a><span class="tm">15:00:41 </span><span class="nka">* warlordfff</span> <span class="ac">here too</span>
+<a name="l-8"></a><span class="tm">15:00:44 </span><span class="nka">* differentreality</span> <span class="ac">me</span>
+<a name="l-9"></a><span class="tm">15:00:44</span><span class="nk"> &lt;manugupt1&gt;</span> hey vuntz :)
+<a name="l-10"></a><span class="tm">15:01:07</span><span class="nk"> &lt;vuntz&gt;</span> robjo, FunkyPenguin, tittiatcoke, wstephenson__, Ilmehtar: any of you here?
+<a name="l-11"></a><span class="tm">15:01:19</span><span class="nk"> &lt;robjo&gt;</span> mostly
+<a name="l-12"></a><span class="tm">15:01:30</span><span class="nk"> &lt;Ilmehtar&gt;</span> about 60% here
+<a name="l-13"></a><span class="tm">15:01:34 </span><span class="nka">* victorhck</span> <span class="ac">listening...</span>
+<a name="l-14"></a><span class="tm">15:01:36</span><span class="nk"> &lt;Ilmehtar&gt;</span> (at the computer, but the office is busy)
+<a name="l-15"></a><span class="tm">15:02:08</span><span class="nk"> &lt;vuntz&gt;</span> the agenda for today is available at https://en.opensuse.org/openSUSE:Project_meeting
+<a name="l-16"></a><span class="tm">15:02:16</span><span class="nk"> &lt;vuntz&gt;</span> I can see the following topics:
+<a name="l-17"></a><span class="tm">15:02:19</span><span class="nk"> &lt;vuntz&gt;</span> 1) GSoC Status
+<a name="l-18"></a><span class="tm">15:02:25</span><span class="nk"> &lt;vuntz&gt;</span> 2) oSC13 progress/issues
+<a name="l-19"></a><span class="tm">15:02:31</span><span class="nk"> &lt;vuntz&gt;</span> 3) New Ideas &amp; initiatives for the project?
+<a name="l-20"></a><span class="tm">15:02:38</span><span class="nk"> &lt;vuntz&gt;</span> 4) Questions
+<a name="l-21"></a><span class="tm">15:02:45</span><span class="nk"> &lt;vuntz&gt;</span> any other topic?
+<a name="l-22"></a><span class="tm">15:02:55 </span><span class="nka">* zimba12</span> <span class="ac">is here to represent owncloud for GSoC</span>
+<a name="l-23"></a><span class="tm">15:03:30</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> zimba12 Could u give me 2 minutes please I will be afk
+<a name="l-24"></a><span class="tm">15:03:38</span><span class="nk"> &lt;vuntz&gt;</span> sure
+<a name="l-25"></a><span class="tm">15:03:54</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> till then you can discuss oSC13
+<a name="l-26"></a><span class="tm">15:04:09</span><span class="nk"> &lt;vuntz&gt;</span> usually, we start with action items but I don't see any in the list
+<a name="l-27"></a><span class="tm">15:04:21</span><span class="nk"> &lt;zimba12&gt;</span> <span class="hi">manugupt1:</span> sure
+<a name="l-28"></a><span class="tm">15:04:25</span><span class="nk"> &lt;vuntz&gt;</span> warlordfff, differentreality: want to start with oSC13?
+<a name="l-29"></a><span class="tm">15:04:35</span><span class="nk"> &lt;warlordfff&gt;</span> well no problem here
+<a name="l-30"></a><span class="tm">15:04:37</span><span class="nk"> &lt;zimba12&gt;</span> <span class="hi">manugupt1:</span> actually i need 5 mins :)
+<a name="l-31"></a><span class="tm">15:04:37</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">oSC13 progress/issues</span>
+<a name="l-32"></a><span class="tm">15:04:40</span><span class="nk"> &lt;warlordfff&gt;</span> now
+<a name="l-33"></a><span class="tm">15:04:48</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">zimba12:</span> great then :)
+<a name="l-34"></a><span class="tm">15:04:53</span><span class="nk"> &lt;warlordfff&gt;</span> a small report
+<a name="l-35"></a><span class="tm">15:05:14</span><span class="nk"> &lt;warlordfff&gt;</span> until now we are doing quite well but we need more help
+<a name="l-36"></a><span class="tm">15:05:31</span><span class="nk"> &lt;warlordfff&gt;</span> epsecially when it comes to press
+<a name="l-37"></a><span class="tm">15:05:36</span><span class="nk"> &lt;warlordfff&gt;</span> is jospoortvliet around?
+<a name="l-38"></a><span class="tm">15:05:41</span><span class="nk"> &lt;warlordfff&gt;</span> anyway
+<a name="l-39"></a><span class="tm">15:05:57</span><span class="nk"> &lt;warlordfff&gt;</span> we also need the board to be more supportive
+<a name="l-40"></a><span class="tm">15:05:58</span><span class="nk"> &lt;vuntz&gt;</span> to get the word out? Or to invite press people at the event?
+<a name="l-41"></a><span class="tm">15:06:04</span><span class="nk"> &lt;warlordfff&gt;</span> both
+<a name="l-42"></a><span class="tm">15:06:16</span><span class="nk"> &lt;warlordfff&gt;</span> we have the word out pretty well
+<a name="l-43"></a><span class="tm">15:06:26</span><span class="nk"> &lt;warlordfff&gt;</span> but we definattelly can do it better
+<a name="l-44"></a><span class="tm">15:06:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">organization is doing rather well</span>
+<a name="l-45"></a><span class="tm">15:06:50</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">help is still needed, though</span>
+<a name="l-46"></a><span class="tm">15:06:58</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">warlordfff:</span> I had an issue trying to use the 'openSUSE' hotel booking code mentioned on http://conference.opensuse.org/#location for any hotel apart from Nea Metropolis
+<a name="l-47"></a><span class="tm">15:07:06</span><span class="nk"> &lt;warlordfff&gt;</span> so basically I have some questions for you vuntz
+<a name="l-48"></a><span class="tm">15:07:10</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> sure
+<a name="l-49"></a><span class="tm">15:07:23</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">Ilmehtar:</span>  can we talk about this later?
+<a name="l-50"></a><span class="tm">15:07:28</span><span class="nk"> &lt;warlordfff&gt;</span> so
+<a name="l-51"></a><span class="tm">15:07:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">one area for help: press (to get the word out, and to invite press people to the event)</span>
+<a name="l-52"></a><span class="tm">15:07:34</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">warlordfff:</span> sure
+<a name="l-53"></a><span class="tm">15:08:06</span><span class="nk"> &lt;warlordfff&gt;</span> we did not saw any posts or anything related to the oSC13 comming from the board side
+<a name="l-54"></a><span class="tm">15:08:12</span><span class="nk"> &lt;warlordfff&gt;</span> why is that
+<a name="l-55"></a><span class="tm">15:08:15</span><span class="nk"> &lt;warlordfff&gt;</span> ?
+<a name="l-56"></a><span class="tm">15:08:23</span><span class="nk"> &lt;warlordfff&gt;</span> I mean this is a communitty thing
+<a name="l-57"></a><span class="tm">15:08:39</span><span class="nk"> &lt;warlordfff&gt;</span> also no help came from there
+<a name="l-58"></a><span class="tm">15:08:55</span><span class="nk"> &lt;warlordfff&gt;</span> not even a single comment or a task taken in Trello
+<a name="l-59"></a><span class="tm">15:09:20</span><span class="nk"> &lt;warlordfff&gt;</span> don't get me wrong but I find this not good
+<a name="l-60"></a><span class="tm">15:09:21</span><span class="nk"> &lt;vuntz&gt;</span> is your expectation that the board actively contributes to the organization?
+<a name="l-61"></a><span class="tm">15:09:29</span><span class="nk"> &lt;warlordfff&gt;</span> of course
+<a name="l-62"></a><span class="tm">15:09:42</span><span class="nk"> &lt;wstephenson__&gt;</span> <span class="hi">vuntz:</span> here
+<a name="l-63"></a><span class="tm">15:09:52</span><span class="nk"> &lt;warlordfff&gt;</span> I thought that this was something that was expected
+<a name="l-64"></a><span class="tm">15:10:21</span><span class="nk"> &lt;warlordfff&gt;</span> but unfortunatelly nothing
+<a name="l-65"></a><span class="tm">15:10:36</span><span class="nk"> &lt;warlordfff&gt;</span> I mean not even a tweet from personal accounts
+<a name="l-66"></a><span class="tm">15:10:45</span><span class="nk"> &lt;vuntz&gt;</span> fwiw, we're talkign about https://trello.com/osc13
+<a name="l-67"></a><span class="tm">15:10:47</span><span class="nk"> &lt;warlordfff&gt;</span> how do you see this?
+<a name="l-68"></a><span class="tm">15:10:53</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-69"></a><span class="tm">15:11:14</span><span class="nk"> &lt;warlordfff&gt;</span> we would like your opinion on this
+<a name="l-70"></a><span class="tm">15:11:17</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">warlordfff:</span> I think that's a little unfair. The role of the board is to facilitate communication within the community, facilitate decision making, help resolve contacts, etc. We're not able to involve ourselves in the day-to-day operation every single part of the project
+<a name="l-71"></a><span class="tm">15:11:32</span><span class="nk"> &lt;warlordfff&gt;</span> a day to day ok
+<a name="l-72"></a><span class="tm">15:11:39</span><span class="nk"> &lt;warlordfff&gt;</span> but not even once?
+<a name="l-73"></a><span class="tm">15:11:50</span><span class="nk"> &lt;warlordfff&gt;</span> I mean people look at the board
+<a name="l-74"></a><span class="tm">15:11:57</span><span class="nk"> &lt;warlordfff&gt;</span> right?
+<a name="l-75"></a><span class="tm">15:12:10</span><span class="nk"> &lt;warlordfff&gt;</span> the feedback I got from people is
+<a name="l-76"></a><span class="tm">15:12:18</span><span class="nk"> &lt;warlordfff&gt;</span> how come the board is not there
+<a name="l-77"></a><span class="tm">15:12:48</span><span class="nk"> &lt;vuntz&gt;</span> interesting, I think the expectations are not the same on the two sides
+<a name="l-78"></a><span class="tm">15:13:02</span><span class="nk"> &lt;warlordfff&gt;</span> that is why I sent an e-mail
+<a name="l-79"></a><span class="tm">15:13:18</span><span class="nk"> &lt;warlordfff&gt;</span> but not a single board member answered
+<a name="l-80"></a><span class="tm">15:13:28</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> robjo did reply
+<a name="l-81"></a><span class="tm">15:13:37</span><span class="nk"> &lt;warlordfff&gt;</span> ok
+<a name="l-82"></a><span class="tm">15:13:42</span><span class="nk"> &lt;vuntz&gt;</span> asking "What can we do?"
+<a name="l-83"></a><span class="tm">15:14:01</span><span class="nk"> &lt;differentreality&gt;</span> ok maybe "nothing" was a strong word
+<a name="l-84"></a><span class="tm">15:14:32</span><span class="nk"> &lt;differentreality&gt;</span> what Kostas means is that we would like a bit more help - that can be actually doing tasks, or coordinating them so that another member can do them properly or helping in decision making as Ilmehtar said
+<a name="l-85"></a><span class="tm">15:14:56</span><span class="nk"> &lt;warlordfff&gt;</span> anyway
+<a name="l-86"></a><span class="tm">15:15:05</span><span class="nk"> &lt;robjo&gt;</span> I have to apologize, have a customer issue I am chasing and cannot concentrate on the meeting. If there is anything needed from me please ping me
+<a name="l-87"></a><span class="tm">15:15:11</span><span class="nk"> &lt;warlordfff&gt;</span> I am not bringing this up to argue
+<a name="l-88"></a><span class="tm">15:15:15</span><span class="nk"> &lt;vuntz&gt;</span> sure
+<a name="l-89"></a><span class="tm">15:15:27</span><span class="nk"> &lt;vuntz&gt;</span> I think what might be missing is having someone from the board closely following this topic
+<a name="l-90"></a><span class="tm">15:15:32</span><span class="nk"> &lt;warlordfff&gt;</span> I just want to know if you can do something to help
+<a name="l-91"></a><span class="tm">15:15:37</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">vuntz:</span> btw 99% of tasks are on trello, I am making sure of it
+<a name="l-92"></a><span class="tm">15:15:38</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-93"></a><span class="tm">15:15:56</span><span class="nk"> &lt;differentreality&gt;</span> and we could use the expertise and experience on some of them from people like board members
+<a name="l-94"></a><span class="tm">15:16:07</span><span class="nk"> &lt;differentreality&gt;</span> but if it helps we can send you some more specific tasks
+<a name="l-95"></a><span class="tm">15:16:10</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">differentreality:</span> but 99% of the tasks don't require a board member, but anybody (and that could be a board member, I don't disagree)
+<a name="l-96"></a><span class="tm">15:16:43</span><span class="nk"> &lt;differentreality&gt;</span> that's true, but still we would like to see some more active support of the board :)
+<a name="l-97"></a><span class="tm">15:16:52</span><span class="nk"> &lt;vuntz&gt;</span> understood
+<a name="l-98"></a><span class="tm">15:17:07</span><span class="nk"> &lt;warlordfff&gt;</span> if the board comes, for sure othes will follow too
+<a name="l-99"></a><span class="tm">15:17:17</span><span class="nk"> &lt;warlordfff&gt;</span> others
+<a name="l-100"></a><span class="tm">15:17:34</span><span class="nk"> &lt;warlordfff&gt;</span> it would be inspirational and motivating to a lot of people
+<a name="l-101"></a><span class="tm">15:17:48</span><span class="nk"> &lt;zoumpis&gt;</span> +1 warlordfff
+<a name="l-102"></a><span class="tm">15:17:53</span><span class="nk"> &lt;warlordfff&gt;</span> also
+<a name="l-103"></a><span class="tm">15:17:58</span><span class="nk"> &lt;Ilmehtar&gt;</span> I think that opinion misrepresents the role of the board
+<a name="l-104"></a><span class="tm">15:18:11</span><span class="nk"> &lt;warlordfff&gt;</span> ok, why?
+<a name="l-105"></a><span class="tm">15:18:19</span><span class="nk"> &lt;warlordfff&gt;</span> I mean
+<a name="l-106"></a><span class="tm">15:18:34</span><span class="nk"> &lt;warlordfff&gt;</span> the board are people important for the community
+<a name="l-107"></a><span class="tm">15:18:39</span><span class="nk"> &lt;manugupt1&gt;</span> Can I say something?
+<a name="l-108"></a><span class="tm">15:18:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> no need to ask :-)
+<a name="l-109"></a><span class="tm">15:18:50</span><span class="nk"> &lt;warlordfff&gt;</span> that means that are people who can give a better motivation
+<a name="l-110"></a><span class="tm">15:19:03</span><span class="nk"> &lt;Ilmehtar&gt;</span> if we follow your opinion to your logical community, then it would require the board to be involved in every aspect of the projects work
+<a name="l-111"></a><span class="tm">15:19:06</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">manugupt1:</span> please
+<a name="l-112"></a><span class="tm">15:19:08</span><span class="nk"> &lt;manugupt1&gt;</span> I mean Board can give a public face to oSC and congratulate on news
+<a name="l-113"></a><span class="tm">15:19:08</span><span class="nk"> &lt;warlordfff&gt;</span> say
+<a name="l-114"></a><span class="tm">15:19:25</span><span class="nk"> &lt;manugupt1&gt;</span> That will mean Board is helping a bit and also people perceive the Board is interested
+<a name="l-115"></a><span class="tm">15:19:49</span><span class="nk"> &lt;warlordfff&gt;</span> well it is not congratulations that we need right now, but this is also an idea
+<a name="l-116"></a><span class="tm">15:19:52</span><span class="nk"> &lt;manugupt1&gt;</span> I think the problem is people do not perceive Board not being helpful but dont realise that they too have lifes and are busy in other things also
+<a name="l-117"></a><span class="tm">15:20:01</span><span class="nk"> &lt;Ilmehtar&gt;</span> I believe that's infeasible for a project this size with a board of 6, who already get a fair amount of work from the boards defined role as on the wiki http://en.opensuse.org/openSUSE:Board
+<a name="l-118"></a><span class="tm">15:20:03</span><span class="nk"> &lt;manugupt1&gt;</span> Like invitation to oSC in news :) from the board
+<a name="l-119"></a><span class="tm">15:20:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> I think it's relatively fair to ask that the board at least more actively follows the conf organization, as it's an important event for the community
+<a name="l-120"></a><span class="tm">15:20:41</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">Ilmehtar:</span> A news article calling for everyone is not infeasible I believe but helping out in each and everything is surely
+<a name="l-121"></a><span class="tm">15:20:47</span><span class="nk"> &lt;differentreality&gt;</span> yeah... or board members could extend this invitation to oSC in their social media accounts (btw we have the messages ready in trello, people (any people) just need to copy paste them ;) )
+<a name="l-122"></a><span class="tm">15:21:00</span><span class="nk"> &lt;Ilmehtar&gt;</span> the Project have a team to provide news and marketing, we have a team to organise the conference, we have teams doing KDE, GNOME, what have you, I think its unfair to expect the Board the board to be an componant of all these activities of the project
+<a name="l-123"></a><span class="tm">15:21:01</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> but I agree it's hard to have the board be more involved in general
+<a name="l-124"></a><span class="tm">15:21:27</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">Ilmehtar:</span>  I thing you are a bit wrong here
+<a name="l-125"></a><span class="tm">15:21:52</span><span class="nk"> &lt;warlordfff&gt;</span> I mean making a tweet is not that time consuming
+<a name="l-126"></a><span class="tm">15:22:05</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">Ilmehtar:</span> not in general but once is ok :) and an official invite from the board is also good
+<a name="l-127"></a><span class="tm">15:22:24</span><span class="nk"> &lt;warlordfff&gt;</span> lets clear something here
+<a name="l-128"></a><span class="tm">15:22:33</span><span class="nk"> &lt;warlordfff&gt;</span> do you think we are wrong?
+<a name="l-129"></a><span class="tm">15:22:48</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">warlordfff:</span> Well I think we can strike a balance
+<a name="l-130"></a><span class="tm">15:22:55</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">warlordfff:</span> if that's all you want is the odd tweet from a board member - I'd like to direct you to the one I made on the 4th of May inviting people to sign up for travel support ;-)
+<a name="l-131"></a><span class="tm">15:22:56</span><span class="nk"> &lt;warlordfff&gt;</span> my case exactly
+<a name="l-132"></a><span class="tm">15:23:08</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> I think it's wrong to expect the board to be heavily involved
+<a name="l-133"></a><span class="tm">15:23:12</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">warlordfff:</span> I'm a little confused - I'm either doing what you're saying is expected of the board, or I think you're expecting too much from us
+<a name="l-134"></a><span class="tm">15:23:27</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> but I think it's right to expect the board to follow this more closely
+<a name="l-135"></a><span class="tm">15:23:45</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">vuntz:</span>  I expect exactly that
+<a name="l-136"></a><span class="tm">15:23:58</span><span class="nk"> &lt;warlordfff&gt;</span> and actually this is what we are asking here
+<a name="l-137"></a><span class="tm">15:24:18</span><span class="nk"> &lt;warlordfff&gt;</span> not necessary to take tasks and stuff
+<a name="l-138"></a><span class="tm">15:24:23</span><span class="nk"> &lt;vuntz&gt;</span> are there still conf team meetings? On irc or by phone?
+<a name="l-139"></a><span class="tm">15:24:32</span><span class="nk"> &lt;warlordfff&gt;</span> although it would be nice if you have some time
+<a name="l-140"></a><span class="tm">15:24:50</span><span class="nk"> &lt;warlordfff&gt;</span> well we resolve everything in trello
+<a name="l-141"></a><span class="tm">15:25:04</span><span class="nk"> &lt;warlordfff&gt;</span> so far its going well
+<a name="l-142"></a><span class="tm">15:25:10</span><span class="nk"> &lt;vuntz&gt;</span> well, trello is good for tracking tasks, but it's pretty bad for communication :-)
+<a name="l-143"></a><span class="tm">15:25:26</span><span class="nk"> &lt;warlordfff&gt;</span> I agree on that
+<a name="l-144"></a><span class="tm">15:25:42</span><span class="nk"> &lt;warlordfff&gt;</span> but so far it works better than expected
+<a name="l-145"></a><span class="tm">15:26:18</span><span class="nk"> &lt;warlordfff&gt;</span> anyway
+<a name="l-146"></a><span class="tm">15:26:26</span><span class="nk"> &lt;vuntz&gt;</span> would having some phone chat, or irc chat with a board member (or more) every week or every two weeks help?
+<a name="l-147"></a><span class="tm">15:26:30</span><span class="nk"> &lt;warlordfff&gt;</span> we have some specific things to ask
+<a name="l-148"></a><span class="tm">15:26:49</span><span class="nk"> &lt;vuntz&gt;</span> or would you prefer some other ways to have the board follow the work?
+<a name="l-149"></a><span class="tm">15:26:54</span><span class="nk"> &lt;vuntz&gt;</span> (like, just trello)
+<a name="l-150"></a><span class="tm">15:27:00</span><span class="nk"> &lt;warlordfff&gt;</span> we need some people to get contacted by you
+<a name="l-151"></a><span class="tm">15:27:17</span><span class="nk"> &lt;warlordfff&gt;</span> and we need some press releases on your side
+<a name="l-152"></a><span class="tm">15:27:52</span><span class="nk"> &lt;warlordfff&gt;</span> we will send you a precise mail with some tasks that you might be able to do it, how does that sound?
+<a name="l-153"></a><span class="tm">15:28:00</span><span class="nk"> &lt;vuntz&gt;</span> sure, a mail is fine
+<a name="l-154"></a><span class="tm">15:28:07</span><span class="nk"> &lt;warlordfff&gt;</span> ok
+<a name="l-155"></a><span class="tm">15:28:21</span><span class="nk"> &lt;vuntz&gt;</span> (fwiw, I would expect the marketing team to write press releases, but well, let's discuss that in the mail)
+<a name="l-156"></a><span class="tm">15:28:34</span><span class="nk"> &lt;warlordfff&gt;</span> well I expected that too
+<a name="l-157"></a><span class="tm">15:28:46</span><span class="nk"> &lt;warlordfff&gt;</span> and Jos made one or two to be honest
+<a name="l-158"></a><span class="tm">15:28:52</span><span class="nk"> &lt;warlordfff&gt;</span> a lot of people worked
+<a name="l-159"></a><span class="tm">15:28:55</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> I'll try to get all this discussed in the next board meeting (next monday)
+<a name="l-160"></a><span class="tm">15:29:05</span><span class="nk"> &lt;warlordfff&gt;</span> this would be perfect
+<a name="l-161"></a><span class="tm">15:29:08</span><span class="nk"> &lt;warlordfff&gt;</span> thank you
+<a name="l-162"></a><span class="tm">15:29:22</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">organization team would like to see more involvement from the board</span>
+<a name="l-163"></a><span class="tm">15:29:26</span><span class="nk"> &lt;warlordfff&gt;</span> so lets go to the next one
+<a name="l-164"></a><span class="tm">15:29:42</span><span class="nk"> &lt;warlordfff&gt;</span> how do you see the organization of oSC13
+<a name="l-165"></a><span class="tm">15:29:55</span><span class="nk"> &lt;manugupt1&gt;</span> Excellent Awesome Fantabulous so far
+<a name="l-166"></a><span class="tm">15:29:55</span><span class="nk"> &lt;warlordfff&gt;</span> I mean if you have any feedback on what we are doing
+<a name="l-167"></a><span class="tm">15:30:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">there's a balance to be found about involvement from the board (board cannot be involved everywhere, but oSC is important)</span>
+<a name="l-168"></a><span class="tm">15:30:15</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">warlordfff to send mail to board about concrete tasks board can help with</span>
+<a name="l-169"></a><span class="tm">15:30:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to make sure the whole topic is discussed in next board meeting</span>
+<a name="l-170"></a><span class="tm">15:30:44</span><span class="nk"> &lt;warlordfff&gt;</span> We really value feedback but so far we don't feel we have enough
+<a name="l-171"></a><span class="tm">15:31:19</span><span class="nk"> &lt;Ilmehtar&gt;</span> no news is good news?
+<a name="l-172"></a><span class="tm">15:31:23</span><span class="nk"> &lt;warlordfff&gt;</span> please feel free to put ideas on trello or send an e-mail if you don't like or like something to be done
+<a name="l-173"></a><span class="tm">15:31:36</span><span class="nk"> &lt;warlordfff&gt;</span> well Ilmehtar it goes both ways
+<a name="l-174"></a><span class="tm">15:31:55</span><span class="nk"> &lt;warlordfff&gt;</span> either is good news or noone is giving a cent about it
+<a name="l-175"></a><span class="tm">15:31:57</span><span class="nk"> &lt;vuntz&gt;</span> I think what will help is to have the program out, but we have to wait for that :-)
+<a name="l-176"></a><span class="tm">15:32:31</span><span class="nk"> &lt;differentreality&gt;</span> we are very close on the program, however there is an issue (posted just today in conf ML) that needs to be resolved first and rather fast.
+<a name="l-177"></a><span class="tm">15:33:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> one question I got asked, and I don't know the answer, is when the core days will be (ie, days with talks)
+<a name="l-178"></a><span class="tm">15:33:02</span><span class="nk"> &lt;differentreality&gt;</span> that's how we communicate to people (speakers and attendees but first of all speakers) the fact that they will be photographed/video recorded and they will appear on live streaming
+<a name="l-179"></a><span class="tm">15:33:25</span><span class="nk"> &lt;warlordfff&gt;</span> I have to tell you that a lot of never seen ideas are landing on this conference
+<a name="l-180"></a><span class="tm">15:33:26</span><span class="nk"> &lt;differentreality&gt;</span> we have some nice and most important concrete ideas on how to do it, however that involves some changes in OSEM
+<a name="l-181"></a><span class="tm">15:33:38</span><span class="nk"> &lt;differentreality&gt;</span> and I have no idea who will do that. Matt is not around and I am not sure if Henne can take care of that on top of everything else
+<a name="l-182"></a><span class="tm">15:33:52</span><span class="nk"> &lt;warlordfff&gt;</span> friday-saturday and sunday
+<a name="l-183"></a><span class="tm">15:34:43</span><span class="nk"> &lt;warlordfff&gt;</span> monday is more communitty stuff
+<a name="l-184"></a><span class="tm">15:34:43</span><span class="nk"> &lt;warlordfff&gt;</span> meaning 'hard core' opensuse meetings and stuff
+<a name="l-185"></a><span class="tm">15:34:43</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> maybe my question is quite late but the point is... the board had not involved more deeply in the previous conferences? I mean, more involvement and participation then now. I agree with kostas that more involvment of board could be quite better. But i will understand if i got not reply on this, specially because I'm late with my question
+<a name="l-186"></a><span class="tm">15:34:43</span><span class="nk"> &lt;differentreality&gt;</span> Friday - Monday that is, Thursday is preparations / decorations + volunteers training at the afternoon (which is mandatory for all volunteers) + pre-registration party
+<a name="l-187"></a><span class="tm">15:35:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">CarlosRibeiro:</span> I don't think the board was heavily involved in previous years, but I can't tell for sure as I wasn't on the board
+<a name="l-188"></a><span class="tm">15:35:27</span><span class="nk"> &lt;warlordfff&gt;</span> BTW you will be surprised but the volunteer traning, it will be like nothing you ever saw :D
+<a name="l-189"></a><span class="tm">15:35:49</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">vuntz:</span> thanks for your reply
+<a name="l-190"></a><span class="tm">15:36:03</span><span class="nk"> &lt;tampakrap&gt;</span> last year the board was not involved at all, and the onsite presence was depressing, and it was even raised during the onsite project meeting
+<a name="l-191"></a><span class="tm">15:36:09</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> time to ask your first question again? ;-)
+<a name="l-192"></a><span class="tm">15:36:21</span><span class="nk"> &lt;warlordfff&gt;</span> ?
+<a name="l-193"></a><span class="tm">15:36:30</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">warlordfff:</span> I had an issue trying to use the 'openSUSE' hotel booking code mentioned on http://conference.opensuse.org/#location for any hotel apart from Nea Metropolis
+<a name="l-194"></a><span class="tm">15:36:41</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">differentreality:</span> you?
+<a name="l-195"></a><span class="tm">15:37:01</span><span class="nk"> &lt;differentreality&gt;</span> Please offer me some details because so far no one ever told me about any problems and I can only assume everything works ok :/
+<a name="l-196"></a><span class="tm">15:37:30</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">differentreality:</span> basically, on the websites of all the other hotels I tried, i only got the discount when I went to the Nea Metropolis
+<a name="l-197"></a><span class="tm">15:37:54</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">Ilmehtar:</span> that's because the discount does not work on the online system of the other hotels, you have to email them
+<a name="l-198"></a><span class="tm">15:38:28</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">differentreality:</span> the website might need to be a little clearer then, as it only states "use the code "openSUSE" when registering"
+<a name="l-199"></a><span class="tm">15:38:37</span><span class="nk"> &lt;Ilmehtar&gt;</span> thanks for clearing that up :)
+<a name="l-200"></a><span class="tm">15:38:59</span><span class="nk"> &lt;differentreality&gt;</span> yes that's true... we do give the emails but we don't explicitely say that you should contact them by email unless otherwise mentioned
+<a name="l-201"></a><span class="tm">15:39:06</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">henne:</span> can we make that change asap plz ?
+<a name="l-202"></a><span class="tm">15:39:11</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">discount for hotels only work when reserving by mail (except for Nea Metropolis, where online system works too)</span>
+<a name="l-203"></a><span class="tm">15:39:28</span><span class="nk"> &lt;warlordfff&gt;</span> oh Saint henne is around?
+<a name="l-204"></a><span class="tm">15:39:30</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-205"></a><span class="tm">15:39:47</span><span class="nk"> &lt;vuntz&gt;</span> okay, unless there's a last comment/question, we should switch to the next topic
+<a name="l-206"></a><span class="tm">15:39:54</span><span class="nk"> &lt;differentreality&gt;</span> truth be told at least a couple said they will configure their online systems but that obviously hasn't happened (I check about that myself from time to time)
+<a name="l-207"></a><span class="tm">15:39:59</span><span class="nk"> &lt;vuntz&gt;</span> any last comment/question?
+<a name="l-208"></a><span class="tm">15:40:10</span><span class="nk"> &lt;warlordfff&gt;</span> well we have a lot to go
+<a name="l-209"></a><span class="tm">15:40:20</span><span class="nk"> &lt;warlordfff&gt;</span> but again please send us feedback
+<a name="l-210"></a><span class="tm">15:40:29</span><span class="nk"> &lt;warlordfff&gt;</span> nothing else on my side
+<a name="l-211"></a><span class="tm">15:40:53</span><span class="nk"> &lt;vuntz&gt;</span> moving on, then
+<a name="l-212"></a><span class="tm">15:40:56</span><span class="nk"> &lt;vuntz&gt;</span> thanks  warlordfff and differentreality!
+<a name="l-213"></a><span class="tm">15:40:59</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">GSoC Status</span>
+<a name="l-214"></a><span class="tm">15:41:09</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> here you go!
+<a name="l-215"></a><span class="tm">15:41:19</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> hey
+<a name="l-216"></a><span class="tm">15:41:23</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. Status is so far
+<a name="l-217"></a><span class="tm">15:41:30</span><span class="nk"> &lt;manugupt1&gt;</span> Everything is good so far
+<a name="l-218"></a><span class="tm">15:41:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">everything is good so far!</span>
+<a name="l-219"></a><span class="tm">15:42:01</span><span class="nk"> &lt;tampakrap&gt;</span> i've got a bunch of questions
+<a name="l-220"></a><span class="tm">15:42:04</span><span class="nk"> &lt;manugupt1&gt;</span> I am disappointed with Google we got less spots we could have done with a few more
+<a name="l-221"></a><span class="tm">15:42:09</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">tampakrap:</span> yes please
+<a name="l-222"></a><span class="tm">15:42:25</span><span class="nk"> &lt;tampakrap&gt;</span> so, I noticed very little activity on voting
+<a name="l-223"></a><span class="tm">15:42:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> how many slots?
+<a name="l-224"></a><span class="tm">15:42:34</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> 12
+<a name="l-225"></a><span class="tm">15:42:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we got 12 slots</span>
+<a name="l-226"></a><span class="tm">15:42:43</span><span class="nk"> &lt;zimba12&gt;</span> <span class="hi">manugupt1:</span> did you try to trade for more?
+<a name="l-227"></a><span class="tm">15:42:44</span><span class="nk"> &lt;tampakrap&gt;</span> are we going to vote on the proposals? and how about the proposals that are not opensuse ones? (syslog-ng etc)
+<a name="l-228"></a><span class="tm">15:43:03</span><span class="nk"> &lt;tampakrap&gt;</span> or are we going to count only on an irc meeting to select the students
+<a name="l-229"></a><span class="tm">15:43:05</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">zimba12:</span> yes.. I am talking with KDE ( they denied) I have mailed Cat @Google
+<a name="l-230"></a><span class="tm">15:43:43</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">tampakrap:</span> that was something I wanted to discuss too..
+<a name="l-231"></a><span class="tm">15:44:07</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">nemo:</span> koda ping
+<a name="l-232"></a><span class="tm">15:44:11</span><span class="nk"> &lt;nemo&gt;</span> pong
+<a name="l-233"></a><span class="tm">15:44:13</span><span class="nk"> &lt;tampakrap&gt;</span> i raised the issue in the mailing list with no reply, did it even hit the mailing list?
+<a name="l-234"></a><span class="tm">15:44:18</span><span class="nk"> &lt;tampakrap&gt;</span> the opensuse mentors one
+<a name="l-235"></a><span class="tm">15:44:24</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">tampakrap:</span> is theo right
+<a name="l-236"></a><span class="tm">15:44:29</span><span class="nk"> &lt;nemo&gt;</span> sheepluva also ping
+<a name="l-237"></a><span class="tm">15:44:41</span><span class="nk"> &lt;tampakrap&gt;</span> yep
+<a name="l-238"></a><span class="tm">15:44:47 </span><span class="nka">* sheepluva</span> <span class="ac">falls off his chair</span>
+<a name="l-239"></a><span class="tm">15:44:49</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">tampakrap:</span> none I can see :/
+<a name="l-240"></a><span class="tm">15:44:53</span><span class="nk"> &lt;sheepluva&gt;</span> I'm here I'm here
+<a name="l-241"></a><span class="tm">15:45:14</span><span class="nk"> &lt;manugupt1&gt;</span> hey sheepluva
+<a name="l-242"></a><span class="tm">15:45:25</span><span class="nk"> &lt;jospoortvliet&gt;</span> sorry for being late, I managed to lock myself out of my house and had to travel to my wife's work to get the key. You can laugh now.
+<a name="l-243"></a><span class="tm">15:45:27</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">tampakrap:</span> are you subscribed to the list?
+<a name="l-244"></a><span class="tm">15:45:29</span><span class="nk"> &lt;tampakrap&gt;</span> probably I was subscribed with my gmail account then instead of my opensuse one
+<a name="l-245"></a><span class="tm">15:45:36 </span><span class="nka">* vuntz</span> <span class="ac">laughs at jospoortvliet</span>
+<a name="l-246"></a><span class="tm">15:45:41 </span><span class="nka">* vuntz</span> <span class="ac">gives a cookie to jospoortvliet</span>
+<a name="l-247"></a><span class="tm">15:45:54</span><span class="nk"> &lt;manugupt1&gt;</span> hey jospoortvliet
+<a name="l-248"></a><span class="tm">15:46:03</span><span class="nk"> &lt;manugupt1&gt;</span> Ok.. I have a proposal ( and a problem at hand later)
+<a name="l-249"></a><span class="tm">15:46:06</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">jospoortvliet:</span>  did you call the firefighters?
+<a name="l-250"></a><span class="tm">15:46:16 </span><span class="nka">* jospoortvliet</span> <span class="ac">reads up on the log</span>
+<a name="l-251"></a><span class="tm">15:46:33</span><span class="nk"> &lt;manugupt1&gt;</span> I think all the orgs can decide their best proposals themselves since they are the ones who can judge them the best
+<a name="l-252"></a><span class="tm">15:46:56</span><span class="nk"> &lt;manugupt1&gt;</span> and then the next question is since we have less slots and I am hoping to get more before next week, how do we rank them
+<a name="l-253"></a><span class="tm">15:47:11</span><span class="nk"> &lt;manugupt1&gt;</span> One of the suggestions was use a round robin method between orgs
+<a name="l-254"></a><span class="tm">15:47:21</span><span class="nk"> &lt;sheepluva&gt;</span> ( manugupt1: I haven't gotten any mail from the mailing list since my Welcome mail actually )
+<a name="l-255"></a><span class="tm">15:47:51</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">sheepluva:</span> you joined  bit late I guess I did not mail after that .. also this was discussed earlier koda was on the ML I believe
+<a name="l-256"></a><span class="tm">15:48:15</span><span class="nk"> &lt;sheepluva&gt;</span> okidoki
+<a name="l-257"></a><span class="tm">15:48:54</span><span class="nk"> &lt;manugupt1&gt;</span> I am not sure if round robin could entirely be a great idea, I would like to know vuntz opinion on it
+<a name="l-258"></a><span class="tm">15:48:55</span><span class="nk"> &lt;zimba12&gt;</span> <span class="hi">manugupt1:</span> I agree with your proposal. I looked at other orgs proposals, but I feel confident only to score the owncloud ones
+<a name="l-259"></a><span class="tm">15:49:32</span><span class="nk"> &lt;tampakrap&gt;</span> my proposal would be to push mentors to vote on ALL the listed proposals, then we take the highest ranked ones, and we have an IRC meeting to clean up the duplicated ones if any
+<a name="l-260"></a><span class="tm">15:49:44</span><span class="nk"> &lt;zimba12&gt;</span> <span class="hi">manugupt1:</span> another easy thing would be: suborgs admin (yeah, i gave myself a title!) can ask for a number of spots
+<a name="l-261"></a><span class="tm">15:49:46</span><span class="nk"> &lt;tampakrap&gt;</span> that would need the less real time interaction between us
+<a name="l-262"></a><span class="tm">15:49:53</span><span class="nk"> &lt;zimba12&gt;</span> and see if that's compatible with everyone
+<a name="l-263"></a><span class="tm">15:50:37</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">tampakrap:</span> Actually many mentors have said they would be less comfortable with voting on all the ideas :/ thats why I am not sure
+<a name="l-264"></a><span class="tm">15:50:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> I'd go with zimba12's way first; if that just works, then it's the easiest way. If it doesn't, then you know how many slots are missing and can use another method
+<a name="l-265"></a><span class="tm">15:50:53</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">nemo:</span> and sheepluva what is your opinion
+<a name="l-266"></a><span class="tm">15:50:56</span><span class="nk"> &lt;tampakrap&gt;</span> what is the reason behind that?
+<a name="l-267"></a><span class="tm">15:51:06</span><span class="nk"> &lt;zimba12&gt;</span> <span class="hi">manugupt1:</span> vuntz: great. for instance, owncloud needs 2 spots, that's it
+<a name="l-268"></a><span class="tm">15:51:17</span><span class="nk"> &lt;zimba12&gt;</span> (ok, ideally 3, but we will be happy with 2)
+<a name="l-269"></a><span class="tm">15:51:33</span><span class="nk"> &lt;zimba12&gt;</span> how many suborgs do we have?
+<a name="l-270"></a><span class="tm">15:51:49</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">zimba12:</span> I think we have 4 orgs in all
+<a name="l-271"></a><span class="tm">15:52:10</span><span class="nk"> &lt;zimba12&gt;</span> <span class="hi">manugupt1:</span> btw, asking KDE for extraspots it's not the best ideas, i was with them last year and they have a lot of proposals
+<a name="l-272"></a><span class="tm">15:52:22</span><span class="nk"> &lt;zimba12&gt;</span> <span class="hi">manugupt1:</span> I wouldn't take spots from them
+<a name="l-273"></a><span class="tm">15:52:43</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">zimba12:</span> yes.. I mailed Cat and she asked me for the orgs which are umbrellaed under us so I guess Google forgot
+<a name="l-274"></a><span class="tm">15:52:51</span><span class="nk"> &lt;manugupt1&gt;</span> let me see what reply do I get from her
+<a name="l-275"></a><span class="tm">15:53:03</span><span class="nk"> &lt;zimba12&gt;</span> good, so there is hope
+<a name="l-276"></a><span class="tm">15:53:17</span><span class="nk"> &lt;manugupt1&gt;</span> yes I am really hoping that we get atleast 3
+<a name="l-277"></a><span class="tm">15:53:23</span><span class="nk"> &lt;zimba12&gt;</span> ok, owncloud wants 2 if opensuse has 12 or 3 if Cat gives more
+<a name="l-278"></a><span class="tm">15:53:40</span><span class="nk"> &lt;zimba12&gt;</span> how about syslog-ng?
+<a name="l-279"></a><span class="tm">15:53:40</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">nemo:</span> sheepluva ?
+<a name="l-280"></a><span class="tm">15:53:48</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">sheepluva:</span> they mailed me 4 I believe
+<a name="l-281"></a><span class="tm">15:53:55</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">zimba12:</span> they mailed me 4 I believe
+<a name="l-282"></a><span class="tm">15:54:17</span><span class="nk"> &lt;manugupt1&gt;</span> But I think we can ask them for 2
+<a name="l-283"></a><span class="tm">15:54:17</span><span class="nk"> &lt;zimba12&gt;</span> too many :)
+<a name="l-284"></a><span class="tm">15:54:25 </span><span class="nka">* manugupt1</span> <span class="ac">checks</span>
+<a name="l-285"></a><span class="tm">15:54:39</span><span class="nk"> &lt;manugupt1&gt;</span> preference is 4
+<a name="l-286"></a><span class="tm">15:55:01</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">zimba12:</span> ideally if we have 12 now I think 2+2+2+6
+<a name="l-287"></a><span class="tm">15:55:07</span><span class="nk"> &lt;cboltz&gt;</span> for AppArmor, 1 slot would be nice
+<a name="l-288"></a><span class="tm">15:55:14</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">cboltz:</span> yes :)
+<a name="l-289"></a><span class="tm">15:55:21</span><span class="nk"> &lt;manugupt1&gt;</span> and if we get upto 15
+<a name="l-290"></a><span class="tm">15:55:24</span><span class="nk"> &lt;nemo&gt;</span> <span class="hi">manugupt1:</span> sorry. was answering hedgewars bugs :)
+<a name="l-291"></a><span class="tm">15:55:32</span><span class="nk"> &lt;nemo&gt;</span> <span class="hi">manugupt1:</span> I agree we should select the ones we'd like you guys to vote on
+<a name="l-292"></a><span class="tm">15:55:53</span><span class="nk"> &lt;zimba12&gt;</span> <span class="hi">nemo:</span> are you hedgewars?
+<a name="l-293"></a><span class="tm">15:56:01</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">nemo:</span> Question here is how many slots would hedgewars want
+<a name="l-294"></a><span class="tm">15:56:02</span><span class="nk"> &lt;nemo&gt;</span> <span class="hi">manugupt1:</span> I don't mind the idea of voting on slot allocation although obviously all orgs would request at least a couple of slots for theirs ;)
+<a name="l-295"></a><span class="tm">15:56:18</span><span class="nk"> &lt;zimba12&gt;</span> 2+2+2+6 sounds good
+<a name="l-296"></a><span class="tm">15:56:19</span><span class="nk"> &lt;nemo&gt;</span> <span class="hi">manugupt1:</span> I was trying to catch up on all channel discussion :-p  wasn't sure what you wanted an opinion on :)
+<a name="l-297"></a><span class="tm">15:56:22</span><span class="nk"> &lt;nemo&gt;</span> fine
+<a name="l-298"></a><span class="tm">15:56:28</span><span class="nk"> &lt;zimba12&gt;</span> unless opensuse doesn't know what to do with 6 :)
+<a name="l-299"></a><span class="tm">15:56:42</span><span class="nk"> &lt;nemo&gt;</span> <span class="hi">manugupt1:</span> um. last I checked, we had the AI task which looks good, and one of the campaign tasks, assuming the person submits a bit more code to prove themselves
+<a name="l-300"></a><span class="tm">15:56:47</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">zimba12:</span> openSUSE knows :) we could do more with a few more though :P
+<a name="l-301"></a><span class="tm">15:56:51</span><span class="nk"> &lt;nemo&gt;</span> <span class="hi">manugupt1:</span> and the UI integration which is ambitious but cool
+<a name="l-302"></a><span class="tm">15:57:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> just wondering, is there any other comment/question about gsoc?
+<a name="l-303"></a><span class="tm">15:57:03</span><span class="nk"> &lt;nemo&gt;</span> I have some misgivings about the UI task, so, koda and sheepluva, I'd be fine w/ 2 personally
+<a name="l-304"></a><span class="tm">15:57:09</span><span class="nk"> &lt;vuntz&gt;</span> if yes we should move on to them ;-)
+<a name="l-305"></a><span class="tm">15:57:14</span><span class="nk"> &lt;nemo&gt;</span> I dearly wish someone had applied for the GLES2/HTML5 task, but what can you do...
+<a name="l-306"></a><span class="tm">15:57:27</span><span class="nk"> &lt;vuntz&gt;</span> (just to not eat too much time of the project meeting)
+<a name="l-307"></a><span class="tm">15:57:29</span><span class="nk"> &lt;tampakrap&gt;</span> first of all, it's not even clear to me on how we're going to vote/select the best proposals
+<a name="l-308"></a><span class="tm">15:57:39</span><span class="nk"> &lt;nemo&gt;</span> so my personal vote would be 2 slots out of my concerns about the frontend stuff.  but we could handle 3 and might like to try it.
+<a name="l-309"></a><span class="tm">15:57:45</span><span class="nk"> &lt;nemo&gt;</span> if you can spare them
+<a name="l-310"></a><span class="tm">15:57:53</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">lots of discussion about how to select the best proposals and how to split the slots among suborgs</span>
+<a name="l-311"></a><span class="tm">15:58:30</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">tampakrap:</span> Well if just give slots (that sounds good to me, and if everyone agrees) then openSUSE votes only on openSUSE ideas
+<a name="l-312"></a><span class="tm">15:58:39</span><span class="nk"> &lt;zimba12&gt;</span> and about who decides the students to assign to the slots, i think it's up to the suborgs first
+<a name="l-313"></a><span class="tm">15:58:47</span><span class="nk"> &lt;manugupt1&gt;</span> and hedgewars only on hedgewars and ownCloud on ownCloud and so on..
+<a name="l-314"></a><span class="tm">15:58:49</span><span class="nk"> &lt;zimba12&gt;</span> (we have already decided)
+<a name="l-315"></a><span class="tm">15:58:55</span><span class="nk"> &lt;tampakrap&gt;</span> ok but vote HOW? through the webapp? through some meeting?
+<a name="l-316"></a><span class="tm">15:59:06</span><span class="nk"> &lt;vuntz&gt;</span> guys, may I ask you to take a break on this topic and go on with it in 10 minutes?
+<a name="l-317"></a><span class="tm">15:59:14</span><span class="nk"> &lt;vuntz&gt;</span> just so that we wrap up the opensuse project meeting :-)
+<a name="l-318"></a><span class="tm">15:59:27 </span><span class="nka">* manugupt1</span> <span class="ac">thinks the meeting will wrap in 2 minutes so we can wait :P</span>
+<a name="l-319"></a><span class="tm">15:59:33</span><span class="nk"> &lt;vuntz&gt;</span> heh
+<a name="l-320"></a><span class="tm">15:59:46</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> any other news about gsoc you want to share, or shall we move on?
+<a name="l-321"></a><span class="tm">16:00:00</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> I think I can only answer questions
+<a name="l-322"></a><span class="tm">16:00:01</span><span class="nk"> &lt;zimba12&gt;</span> last thing: let's create a spreadsheet where we make things clear
+<a name="l-323"></a><span class="tm">16:00:21</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">zimba12:</span> Ok.. I will put all the proposals there.. on a google drive
+<a name="l-324"></a><span class="tm">16:00:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">manugupt1:</span> okay, I'll assume there's no question :-P
+<a name="l-325"></a><span class="tm">16:00:32</span><span class="nk"> &lt;manugupt1&gt;</span> <span class="hi">vuntz:</span> :P
+<a name="l-326"></a><span class="tm">16:00:37</span><span class="nk"> &lt;vuntz&gt;</span> I'll skip the " New Ideas &amp; initiatives for the project?" topic since we're short in time
+<a name="l-327"></a><span class="tm">16:00:45</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Any other question?</span>
+<a name="l-328"></a><span class="tm">16:01:07</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-329"></a><span class="tm">16:01:12</span><span class="nk"> &lt;vuntz&gt;</span> for the record, darix told me that the ticket system for the infrastructure is almost ready
+<a name="l-330"></a><span class="tm">16:01:12</span><span class="nk"> &lt;warlordfff&gt;</span> one more from me
+<a name="l-331"></a><span class="tm">16:01:23</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">vuntz:</span> nice!
+<a name="l-332"></a><span class="tm">16:01:24</span><span class="nk"> &lt;vuntz&gt;</span> (which means that many things will be unblocked)
+<a name="l-333"></a><span class="tm">16:01:35</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> fire!
+<a name="l-334"></a><span class="tm">16:01:37</span><span class="nk"> &lt;vuntz&gt;</span> (ahah)
+<a name="l-335"></a><span class="tm">16:01:44</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> openSUSE Adovocate. Any news, updates?
+<a name="l-336"></a><span class="tm">16:01:51</span><span class="nk"> &lt;warlordfff&gt;</span> can we have an oSC13 meeting here next Thursday? At 23?
+<a name="l-337"></a><span class="tm">16:01:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">ticket system for the infrastructure is almost ready</span>
+<a name="l-338"></a><span class="tm">16:02:06</span><span class="nk"> &lt;warlordfff&gt;</span> ping robjo
+<a name="l-339"></a><span class="tm">16:02:07</span><span class="nk"> &lt;warlordfff&gt;</span> henne:
+<a name="l-340"></a><span class="tm">16:02:07</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> you always can :-)
+<a name="l-341"></a><span class="tm">16:02:08</span><span class="nk"> &lt;warlordfff&gt;</span> joss
+<a name="l-342"></a><span class="tm">16:02:12</span><span class="nk"> &lt;warlordfff&gt;</span> jospoortvliet:
+<a name="l-343"></a><span class="tm">16:02:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> (as long as it works for people)
+<a name="l-344"></a><span class="tm">16:02:28</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> any answer for CarlosRibeiro?
+<a name="l-345"></a><span class="tm">16:02:50</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">warlordfff:</span> yeap
+<a name="l-346"></a><span class="tm">16:02:52</span><span class="nk"> &lt;warlordfff&gt;</span> yeap that is why I am asking
+<a name="l-347"></a><span class="tm">16:02:56</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">CarlosRibeiro:</span> yup! so, the change to the Ambassador Programme and its renaming to Advocates has been really well recieved.
+<a name="l-348"></a><span class="tm">16:02:58</span><span class="nk"> &lt;differentreality&gt;</span> and it would make sense to have a couple of people from artwork team during that meeting too
+<a name="l-349"></a><span class="tm">16:03:07</span><span class="nk"> &lt;warlordfff&gt;</span> but none seems to be around today
+<a name="l-350"></a><span class="tm">16:03:08</span><span class="nk"> &lt;Ilmehtar&gt;</span> all the feedback I've recieved has been positive
+<a name="l-351"></a><span class="tm">16:03:08</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">differentreality:</span> +1
+<a name="l-352"></a><span class="tm">16:03:14</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Ilmehtar:</span> that is good news
+<a name="l-353"></a><span class="tm">16:03:18</span><span class="nk"> &lt;warlordfff&gt;</span> cool
+<a name="l-354"></a><span class="tm">16:03:19</span><span class="nk"> &lt;jospoortvliet&gt;</span> +1 on that note :D
+<a name="l-355"></a><span class="tm">16:03:23</span><span class="nk"> &lt;anditosan&gt;</span> <span class="hi">differentreality:</span> what meeting is this? I would love to participate
+<a name="l-356"></a><span class="tm">16:03:39</span><span class="nk"> &lt;Ilmehtar&gt;</span> there has been a few concerns about the changes to the event merch, but when its explained to them, the concensus seems to be that it's a 'good thing' (tm)
+<a name="l-357"></a><span class="tm">16:03:57</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">anditosan:</span> warlordfff just asked if we can do an oSC13 meeting next Thursday (the 23rd)
+<a name="l-358"></a><span class="tm">16:03:57</span><span class="nk"> &lt;warlordfff&gt;</span> all around oSC13 anditosan
+<a name="l-359"></a><span class="tm">16:04:15</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Ilmehtar:</span> I also received some slightly less positive stuff, mostly due to the fact that we simply don't cover some cases that the old merch program DID cover. Like somebody just handing out things to friends...
+<a name="l-360"></a><span class="tm">16:04:26</span><span class="nk"> &lt;warlordfff&gt;</span> and anditosan we would love if you do participate :D
+<a name="l-361"></a><span class="tm">16:04:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> we'll hopefully find solutions for that in the future
+<a name="l-362"></a><span class="tm">16:04:29</span><span class="nk"> &lt;anditosan&gt;</span> thanks guys, I can participate :D
+<a name="l-363"></a><span class="tm">16:04:43</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">jospoortvliet:</span> that's true..but when I've explained the full story to people, they seem to accept the new changes
+<a name="l-364"></a><span class="tm">16:04:49</span><span class="nk"> &lt;anditosan&gt;</span> let's just set the time
+<a name="l-365"></a><span class="tm">16:05:23</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">jospoortvliet:</span>  Ilmehtar people don't like changes generally :D
+<a name="l-366"></a><span class="tm">16:05:33</span><span class="nk"> &lt;Ilmehtar&gt;</span> in terms of the Local Coordinators, I currently have 10 volunteers, including some really great candidates - a few of them are unlikely to become Local Coordinators right now as they're not established community people. I'm waiting to see over the next few days before deciding how many Local Coordinators and how big the various localities are going to be
+<a name="l-367"></a><span class="tm">16:05:51</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">Ilmehtar:</span> +1000 on that good to hear
+<a name="l-368"></a><span class="tm">16:05:54</span><span class="nk"> &lt;Ilmehtar&gt;</span> I'm a little concerned that, for example, I haven't recieved a volenteer for Greece yet, but I do realise most of them are probably busy with oSC 13 ;-)
+<a name="l-369"></a><span class="tm">16:05:55</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">Ilmehtar:</span>  should I apply?
+<a name="l-370"></a><span class="tm">16:06:04</span><span class="nk"> &lt;Ilmehtar&gt;</span> ^^
+<a name="l-371"></a><span class="tm">16:06:18</span><span class="nk"> &lt;warlordfff&gt;</span> really
+<a name="l-372"></a><span class="tm">16:06:19</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">warlordfff:</span> sure you must apply
+<a name="l-373"></a><span class="tm">16:06:19</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">warlordfff:</span> probably :-p
+<a name="l-374"></a><span class="tm">16:06:35</span><span class="nk"> &lt;warlordfff&gt;</span> oh
+<a name="l-375"></a><span class="tm">16:06:35</span><span class="nk"> &lt;vuntz&gt;</span> any other question?
+<a name="l-376"></a><span class="tm">16:06:37</span><span class="nk"> &lt;warlordfff&gt;</span> BTW
+<a name="l-377"></a><span class="tm">16:06:50</span><span class="nk"> &lt;victorhck&gt;</span> there's something new about planet.o.o ??
+<a name="l-378"></a><span class="tm">16:06:59</span><span class="nk"> &lt;Ilmehtar&gt;</span> a few of our Local Coordinator volenteers have great experience with the project, but weren't openSUSE members, so I used that as an excuse to get them to apply for membership
+<a name="l-379"></a><span class="tm">16:06:59</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">Ilmehtar:</span>  I got a mail that I must forward to you related to local coordinators
+<a name="l-380"></a><span class="tm">16:07:10</span><span class="nk"> &lt;victorhck&gt;</span> is planet.o.o on-line again ??
+<a name="l-381"></a><span class="tm">16:07:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">victorhck:</span> not yet, but the ticket system for infrastructure was blocking most infrastructure things, including this, I think
+<a name="l-382"></a><span class="tm">16:07:37</span><span class="nk"> &lt;Ilmehtar&gt;</span> which has also given me an excuse to poke the rest of my colleagues on the Membership approval team - we now have the queue down to only 4 down from 11 membership candidates
+<a name="l-383"></a><span class="tm">16:07:48</span><span class="nk"> &lt;warlordfff&gt;</span> anyway Ilmehtar consider me applied for thejob, can you?
+<a name="l-384"></a><span class="tm">16:07:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">victorhck:</span> it is online here
+<a name="l-385"></a><span class="tm">16:08:02</span><span class="nk"> &lt;Ilmehtar&gt;</span> there..I think that's the story of Advocates/Local Coordinators/Event Merch. so far, pretty good all round
+<a name="l-386"></a><span class="tm">16:08:04</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">victorhck:</span> doesn't work for you?
+<a name="l-387"></a><span class="tm">16:08:11</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">warlordfff:</span> :) really happy to hear that man
+<a name="l-388"></a><span class="tm">16:08:14</span><span class="nk"> &lt;victorhck&gt;</span> yep, I mean if some new geekos can sindicate thirs blogs...
+<a name="l-389"></a><span class="tm">16:08:16</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-390"></a><span class="tm">16:08:34</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">victorhck:</span> yeah, that's blocking on the ticket system, I think
+<a name="l-391"></a><span class="tm">16:09:08</span><span class="nk"> &lt;vuntz&gt;</span> okay, I guess we're over-time, let's end the meeting here
+<a name="l-392"></a><span class="tm">16:09:12</span><span class="nk"> &lt;vuntz&gt;</span> but we can keep chatting
+<a name="l-393"></a><span class="tm">16:09:12</span><span class="nk"> &lt;warlordfff&gt;</span> BTW another one comming from me
+<a name="l-394"></a><span class="tm">16:09:22</span><span class="nk"> &lt;warlordfff&gt;</span> any candidates for oSC14?
+<a name="l-395"></a><span class="tm">16:09:24</span><span class="nk"> &lt;vuntz&gt;</span> (and I expect some gsoc noise starting again ;-))
+<a name="l-396"></a><span class="tm">16:09:36</span><span class="nk"> &lt;warlordfff&gt;</span> I read something about France
+<a name="l-397"></a><span class="tm">16:09:36</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">warlordfff:</span> last I heard, the French were considering..
+<a name="l-398"></a><span class="tm">16:09:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> not officially yet, people investigating
+<a name="l-399"></a><span class="tm">16:09:50</span><span class="nk"> &lt;warlordfff&gt;</span> ok
+<a name="l-400"></a><span class="tm">16:09:53</span><span class="nk"> &lt;vuntz&gt;</span> thanks all!
+<a name="l-401"></a><span class="tm">16:09:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

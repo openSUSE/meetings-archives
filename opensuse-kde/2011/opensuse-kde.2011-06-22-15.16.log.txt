@@ -1,0 +1,270 @@
+15:16:21 <cartman> #startmeeting
+15:16:21 <bugbot> Meeting started Wed Jun 22 15:16:21 2011 UTC.  The chair is cartman. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:16:21 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:16:36 <cartman> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+15:16:55 <cartman> Hello everyone! =)
+15:17:18 <cartman> #topic old action items
+15:17:39 <cartman> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+15:17:48 <cartman> uhm bugbot not working?
+15:18:26 <cartman> cb400f: can you op bugbot too pls?
+15:18:38 <wstephenson_> back, with baby
+15:18:41 <cartman> :D
+15:19:07 <wstephenson_> so mrs bille is in some important call and bille jr woke up
+15:19:11 <wstephenson_> where are we?
+15:19:13 <cartman> =)
+15:19:16 <wstephenson_> did you find the mgmt links?
+15:19:19 <cartman> wstephenson: bugbot needs op to move on
+15:19:22 <cartman> yeah
+15:19:38 <wstephenson_> cartman: i op it as required for meetings
+15:19:42 <wstephenson_> as you seem to have done
+15:19:54 <cartman> hmm changing topic didn't work though
+15:20:15 <wstephenson_> apparently the uk team at the 2012 olympics may have to compete naked if my wife doesn't give this call her undivided attention.
+15:20:20 <cb400f> try again.. I just op'ed it
+15:20:30 <cartman> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+15:20:42 <cartman> ok, old action items
+15:20:51 <cartman> do we have any ?
+15:20:59 <wstephenson_> let's pretend not.
+15:21:12 <cartman> #topic status report
+15:21:23 <cartman> wstephenson_: whats the status of 4.7 packages in KDF?
+15:21:45 <wstephenson_> i am in progress porting KDF fixed to KUSC
+15:21:52 <wstephenson_> then i will copy KUSC back to KDF
+15:22:02 <wstephenson_> at the same time, dirk is doing 4.7beta2 in a clone of KUSC
+15:22:05 <cartman> ok, is any help needed from us atm. ?
+15:22:30 <wstephenson_> once he has go tthe final tarballs done, and i have moved 4.7 to KDF, he will repeat the upload, with KDF as target.
+15:22:42 <cartman> sounds like a plan, cool
+15:23:03 <wstephenson_> i will post the list of packages to fix in KUSC to the list now
+15:23:14 <cartman> ok
+15:23:15 <wstephenson_> you could help there if you want to, it's mostly just fiddly manual work
+15:23:23 <wstephenson_> a few things need rediffing
+15:23:28 <wstephenson_> the usual stuff :)
+15:23:32 <cartman> #action wstephenson Post list of packages to fix in KUSC
+15:23:54 <alin> wstephenson_: then is not bad...
+15:24:01 <cartman> wstephenson_: anything else from your side?
+15:24:03 <wstephenson_> no, titti did most of the work
+15:24:06 <alin> wstephenson_: naked UK olympic team...
+15:24:07 <wstephenson_> no, that's all i've been doing.
+15:24:22 <wstephenson_> alin: down boy!
+15:24:30 <cartman> we approve naked olympics
+15:24:45 <wstephenson_> cartman: agenda item++: my parental leave
+15:25:11 <cartman> ok do we somehow add it to agenda? #agenda something?
+15:25:30 <dirkMob> cartman: the test project is in KDE:Release:47
+15:25:31 <wstephenson_> cartman: no
+15:25:37 <cartman> wstephenson_: ok
+15:25:41 <dirkMob> cartman: not with the final tarballs yet
+15:25:45 <cartman> dirkMob: cool!
+15:25:53 <cartman> dirkMob: when is your holidays starting?
+15:27:08 <cartman> From my side, I'll start fixing packages from the list wstephenson_ posts
+15:27:15 <dirkMob> cartman: holidays?
+15:27:21 <cartman> #action cartman start fixing packages from the list wstephenson posts
+15:27:30 <cartman> dirkMob: usual 2 weeks summer holiday? :)
+15:27:39 <wstephenson_> wasn't dirk just on holiday?
+15:27:51 <cartman> even better then :)
+15:27:51 <dirkMob> cartman: I just had vacation, although I can barely remember it anymore :)
+15:28:00 <cartman> dirkMob: sorry! :)
+15:28:03 <dirkMob> cartman: next vacation is not before end of september
+15:28:07 <wstephenson_> nice to know the suse machine is working properly then
+15:28:10 <cartman> ok anyone else want to give updates?
+15:28:23 * mrdocs waves
+15:28:26 <mrdocs> sory im late
+15:28:28 <cartman> mrdocs: please
+15:29:01 <cartman> mrdocs: any updates?
+15:29:19 <cb400f> maybe it should be mentioned that javier created kr46/kdepim46
+15:29:26 <cartman> Yes
+15:29:31 <mrdocs> i pushed scribus 1.4.0.rc5 into Factory
+15:29:44 <cartman> mrdocs: thanks for that =)
+15:29:45 <mrdocs> last rc i think then 1.4 final
+15:29:46 <mrdocs> and
+15:29:59 <mrdocs> then i will prepare a maintenance update for 11.4
+15:30:31 <mrdocs> why so many RCs fixing OSC and Ubuntu bugs :S
+15:30:38 <mrdocs> +?
+15:30:39 <cartman> mrdocs: thats life
+15:30:43 * mrdocs nods
+15:30:51 <mrdocs> but its really solid now
+15:30:54 * javier is half-present
+15:30:59 <wstephenson_> so for 12.1
+15:31:04 <wstephenson_> kde 4.7
+15:31:12 <wstephenson_> pim migration from 4.4 to 4.7 tested
+15:31:18 <wstephenson_> nm 0.9 working
+15:31:18 <cartman> Thanks cb400f reminding me that we now have a kdepim46 project under KR46, thanks to javier
+15:31:24 <cartman> we need to test kdepim46 heavily
+15:31:29 * mrdocs nods
+15:31:34 <wstephenson_> i have tasked maxlin with that
+15:31:56 <cartman> #action maxlin finish 4.4 to 4.7 kdepim migration tests
+15:32:14 <cartman> I'll myself switch to KMail v1 first for my IMAP account
+15:32:16 <cartman> and do an update
+15:32:16 <wstephenson_> atm to 4.6, that should give us a repeatable set of tests we can use going forward
+15:32:42 <wstephenson_> i would also like to get maxlin active with the community
+15:32:46 <cb400f> I think I'll try moving my 11.4 pim data/settings to the laptop when 4.7 gets into factory and see how bad it goes
+15:32:57 <cartman> cb400f: very nice
+15:32:58 <wstephenson_> maybe sharing his experiences with joining us in a blog
+15:33:12 <cb400f> "factory" = kdf/11.4 in this case
+15:33:38 <mrdocs> wstephenson_: maxlin is ?
+15:33:39 <wstephenson_> the important thing to remember with pim is that it is migration that will create pain for users, not clean installs
+15:33:39 <cartman> wstephenson_: we can do that after management things are over later this month
+15:33:42 <tigerfoot> for repeatitive test, I can set an account with for exemple all opensuse-ml lists in it, wstephenson_ just forward the word to maxlin if he need that
+15:33:58 <wstephenson_> mrdocs: our new booster in beijing, who we freed from the gnome SLED dungeon
+15:34:04 <cartman> tigerfoot: that would be useful for us
+15:34:05 <mrdocs> LOL
+15:34:32 <tigerfoot> cartman: put an action to ping me back (as I'm a bit away of my office just now, and could forget )
+15:34:40 <cartman> kdepim gave us headaches before and its coming even more stronger now
+15:34:55 <cartman> #action tigerfoot create dummy mail accounts with opensuse-mls inside
+15:35:04 <wstephenson_> tigerfoot: i'll get him to document and share his test protocols on the wiki, so we can all do the same tests
+15:35:24 <tigerfoot> #action tigerfoot, renew also the cardav/caldav test server
+15:35:40 <cartman> anyone else want to give updates?
+15:35:56 <wstephenson_> apart from that i don't expect a lot of pain from 4.7, upstream are trying to take it steady with the desktop while -active gets the new features
+15:36:02 * tigerfoot can plug several tests accounts if needed ..
+15:36:12 <cartman> tigerfoot: I'll ask for one!
+15:36:29 <cartman> I can bravely test when its not my main account ;)
+15:36:30 <mrdocs> guys go to run... bbiaw
+15:36:46 <wstephenson_> regarding active, do we want to make it/netbook more prominent in 12.1?
+15:36:55 <wstephenson_> if so, add it to kdm as a session
+15:37:06 <wstephenson_> might also be a good starter task for maxlin
+15:37:13 <cartman> wstephenson_: no harm in adding a kdm session for it
+15:37:16 <dirkMob> wstephenson_: is it already in factory?
+15:37:22 <tigerfoot> wstephenson_: aren't it already available in 4.6.4 ?
+15:37:27 <cartman> sebas_: are you around?
+15:38:04 <cartman> we have a KDE:Active project inside OBS
+15:38:18 <cartman> but I don't think its stable enough to push to factory
+15:38:24 <cartman> we can however do live Active CDs
+15:38:41 <wstephenson_> dirkMob: cartman is right
+15:39:06 <wstephenson_> basically there are 4-5 additional packages that go on top of 4.7, that upstream are maintaining in KDE:Active
+15:39:35 <cartman> lets just do a live cd in time for 12.1 with Active then ?
+15:40:06 <dirkMob> hmm
+15:40:12 <wstephenson_> cartman: i think by the time 12.1 is done it might be worth including
+15:40:12 <dirkMob> will it be stable until 12.1 ?
+15:40:23 <cartman> dirkMob: supposed to be, yes
+15:40:30 <tigerfoot> wstephenson_: just a question, during your hollidays (:-) who maintain pnm 0.9 ?
+15:40:39 <wstephenson_> just doing a livecd will be duplicating what downstream are doing with the Balsam live images
+15:40:57 <wstephenson_> tigerfoot: i'll get to that when we are done discussing active
+15:41:10 <cartman> we can push them to Factory when they are stable, need sebas' input here
+15:42:50 <cartman> lets discuss this with sebas first?
+15:43:28 <wstephenson_> ok, but keep in mind he has his own schedule for openslx
+15:43:50 <cartman> well we can do the work, I just need an idea about how stable Active is, will be.
+15:43:59 <wstephenson_> atm it's hot
+15:44:11 <wstephenson_> tigerfoot: regarding PNM
+15:44:15 <cartman> hot things are bad for body ;)
+15:44:31 <wstephenson_> i'm happy to keep upstream (lamarque's) nm09 codebase in factory
+15:44:40 * tigerfoot open the window (cartman recomandation)
+15:44:57 <cartman> Let me switch to Q&A
+15:45:02 <wstephenson_> i will keep working on my branch and hopefully will merge them before 12.1
+15:45:10 <cartman> #topic Q&A, misc
+15:45:26 <tigerfoot> wstephenson_: ok for the moment we have two branches ...
+15:45:32 <cartman> wstephenson_: can we ask maxlin to do tests with new pnm too?
+15:45:36 <cartman> he did some wireless work already
+15:46:07 <tigerfoot> and wwan testing is important ( painfull as it always cost money )
+15:46:21 <cartman> I have no idea about testing wwan
+15:46:22 <wstephenson_> cartman: if needed, not sure if he has test hardware for it
+15:46:23 <cartman> ouch
+15:46:39 <wstephenson_> i can test wwan
+15:46:44 <cartman> I can test basic WEP/WPA/802.1x
+15:46:57 <wstephenson_> i thought you had wwan at home?
+15:47:08 <cartman> wwan means tethering?
+15:47:10 <wstephenson_> and you can test openvpn
+15:47:25 <wstephenson_> no, 3g/umts
+15:47:32 <cartman> uhm no I tether :-)
+15:47:37 <tigerfoot> cartman: wwan = 3g umts hdspa etc ...
+15:47:44 <cartman> I can test openvpn yes.
+15:48:04 <wstephenson_> np
+15:48:10 <cartman> so just leaves us with someone testing wwan, which wstephenson_ can do, ok :)
+15:48:13 * tigerfoot able (already) openvpn, umts, wifi abg (not n)
+15:48:14 <wstephenson_> well i can test umts, got 2 sets of hardware
+15:48:28 <wstephenson_> cartman: if you want to start popping sims, i can give you a usb surfstick
+15:48:33 <cb400f> iirc titti and alin have mobile broadband too
+15:48:33 * tigerfoot + ipv6 :-)
+15:48:42 <wstephenson_> where maxlin could help is with CDMA
+15:48:44 <cartman> wstephenson_: if you have a spare one, sure
+15:49:01 <wstephenson_> (when i get my branch merged, lamarque's comments out cdma support)
+15:49:10 <wstephenson_> ok
+15:49:14 <wstephenson_> any more q's on PNM?
+15:49:17 <cb400f> will test results with lamarque's stuff still be valid after the merge?
+15:49:39 <cartman> cb400f: no but in the worst case we
+15:49:39 <wstephenson_> cb400f: the 3g stuff will need retesting
+15:49:45 <cartman> we'll go with lamarque's code
+15:49:46 <wstephenson_> the rest is the same
+15:49:50 <wstephenson_> cartman: +1
+15:49:51 <tigerfoot> cb400f: hacknight during osc11 with pizza :-)
+15:50:04 <cb400f> ok.. not so bad then :-)
+15:50:26 <cartman> we should not fear to report bugs, so we know how bad the situation is
+15:50:28 <wstephenson_> cb400f: there is a red voda PCMCIA card you can have now on my test machine desk
+15:50:42 <wstephenson_> i will give you the surfstick too
+15:50:43 <alin> boys do not destroy the 3G support again... you force me to go to pub
+15:50:51 <wstephenson_> alin: we'll be gentle
+15:51:07 <cartman> alin: its OK if its a British pub
+15:51:11 <cartman> somehow  :P
+15:51:28 <alin> cartman: I am in Dublin... so going to a british pub.. would not be very ok
+15:51:33 <cartman> heheh
+15:51:45 <cartman> s/Brit/Ir
+15:52:06 <wstephenson_> other Q's?
+15:52:13 <cartman> so pim & pnm are our focus areas
+15:52:37 <alin> now that titti is away... do we still get weekly unstable?
+15:52:38 <wstephenson_> cartman: branding is a minor but important 12.1 feature
+15:52:48 <wstephenson_> alin: probably not until he gets back from holidays
+15:52:58 <wstephenson_> but you get 4.7rc1 next week anyway
+15:53:01 <cartman> alin: I'd rather not break his stuff
+15:53:05 <cartman> but yeah
+15:53:10 <cartman> Dirk will update us anyhow
+15:53:10 <alin> wstephenson_: good... let us hope todays update is fine
+15:53:13 <wstephenson_> alin: i am tinkering with KUSC anyway
+15:53:26 <alin> wstephenson_: I am on qt48 repo so...
+15:53:32 <wstephenson_> javier: any info on 12.1 branding?
+15:53:36 <cartman> wstephenson_: for branding, should we also take care of upstream branding packages?
+15:54:24 <alin> wstephenson_: I have some thing... there are few packages with only one file...
+15:54:30 <wstephenson_> cartman: they are automatically generated from the upstream tarballs
+15:54:35 <alin> wstephenson_: should not we just try to merge them
+15:54:43 <alin> wstephenson: kde-session is one of them
+15:54:46 <wstephenson_> cartman: when the theme name changes you need to add it o the file list, that's all
+15:54:53 <cartman> wstephenson_: ah ok
+15:55:23 <wstephenson_> i'll clean up and finish the branding howto in my evenings
+15:55:37 <javier> wstephenson_: not really. Robert will talk with the SUSE Studio people about it
+15:55:54 <javier> ah wait
+15:56:05 <wstephenson_> javier: why, are garrett and andy fitz doing opensuse branding now?
+15:56:06 <javier> that's regarding the based on openSUSE branding
+15:58:01 <wstephenson_> alin: they are separate packages so that people can change things by installing packages
+15:58:15 <wstephenson_> merging packages does not gain anything
+15:59:06 <wstephenson_> cartman: you may get some internal flak because the groupwise kresource won't work in pim 4.6
+15:59:15 <cartman> wstephenson_: gah
+15:59:24 <alin> wstephenson_: of course it gains... saves obs...
+15:59:33 <cartman> its only working half of the time now
+15:59:45 <wstephenson_> but they can use evo, the java client, or the web client. or resource maintaining that properly
+15:59:48 <alin> wstephenson_: but I do not see why someone would like the .desktop file to start kde without the kde...
+16:00:00 <cartman> wstephenson_: ok I'll keep that in mind
+16:00:03 <wstephenson_> alin: there is more than one kde session now
+16:00:15 <wstephenson_> cartman: just so you can give them an enlightened fsck off
+16:00:26 <cartman> wstephenson_: heheh
+16:01:12 <wstephenson_> other than that, systemd might give us some problems at the kdm level
+16:01:19 <wstephenson_> they say it won't but i don't trust them
+16:01:30 <cartman> We'll keep a close eye on that
+16:01:56 <wstephenson_> if you can encourage our community to test factory in systemd mode as early as possible, it would be great
+16:02:10 <cartman> I'll try that when its stable
+16:02:13 <cartman> its too broken atm.
+16:02:19 <cb400f> is systemd currently default in m1 (m2?)
+16:02:26 <tigerfoot> wstephenson_: for systemd I've some trouble to connect the dbus socket but don't have time to debug it.
+16:02:26 <cb400f> hmm
+16:02:30 <cartman> cb400f: I don't think so
+16:02:40 <tigerfoot> wstephenson_: perhaps fcrozat has already fixed that ...
+16:02:54 <cartman> tigerfoot: lets always report those bugs
+16:02:59 <cartman> don't wait until you can debug it
+16:03:02 <cartman> at least for systemd
+16:04:11 <tigerfoot> cartman: if I can't connect to internet I can't report them with error messages etc ... but anyway it on it's way
+16:04:45 <cartman> tigerfoot: have some internet sir, then
+16:05:23 * tigerfoot ask God to push a bit the fiber arrival here :-)
+16:06:24 <wstephenson_> cartman are you cc'ed on the systemd umbrella bug?
+16:06:36 <cartman> wstephenson_: not yet, I'll add myself
+16:07:20 <wstephenson_> bnc#696902
+16:07:38 <wstephenson_> ok, i gtg
+16:07:43 <wstephenson_> final from me:
+16:07:44 <cartman> ok
+16:07:48 <wstephenson_> parentlal leave
+16:08:00 <cartman> have fun!
+16:08:15 <wstephenson_> w8
+16:08:20 <wstephenson_> i am away from monday
+16:08:24 <wstephenson_> until sept 1
+16:08:33 <wstephenson_> i will still be around as a community guy
+16:08:37 <wstephenson_> so be nice to me :)
+16:08:44 <cartman> we'll :)
+16:09:01 <wstephenson_> i hope to get into blogging again
+16:09:14 <cartman> that would be nice :)
+16:09:23 <wstephenson_> ok
+16:09:38 <cartman> anyone else before finishing up? :)
+16:10:22 <cartman> alright
+16:10:25 <cartman> #endmeeting

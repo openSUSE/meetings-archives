@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:03:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:03:06</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Sep 12 17:03:06 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:03:06</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:03:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">17:03:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-6"></a><span class="tm">17:03:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-7"></a><span class="tm">17:04:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">MS5 experience</span>
+<a name="l-8"></a><span class="tm">17:04:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> I installed it on both my laptops and except for the KDE-NM bug, it worked well.
+<a name="l-9"></a><span class="tm">17:05:04</span><span class="nk"> &lt;Holgi&gt;</span> I ask "our" trainee to do some M5 testing
+<a name="l-10"></a><span class="tm">17:05:15</span><span class="nk"> &lt;Holgi&gt;</span> he found some issues using gnome
+<a name="l-11"></a><span class="tm">17:05:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> openQA is showing some new post-MS5 failures
+<a name="l-12"></a><span class="tm">17:05:44</span><span class="nk"> &lt;Holgi&gt;</span> and found out installation using a nfs repository does not work
+<a name="l-13"></a><span class="tm">17:07:42</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwidermann:</span> I have seen that empty resolv.conf, but only when using systemd.
+<a name="l-14"></a><span class="tm">17:08:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, LiveCDs have systemd already default enabled
+<a name="l-15"></a><span class="tm">17:08:59</span><span class="nk"> &lt;LWFinger&gt;</span> I have run MS5 of 3 different real machines and one VM for about 10 days. Problems with systemd and the KDE NM applet.
+<a name="l-16"></a><span class="tm">17:10:06</span><span class="nk"> &lt;LWFinger&gt;</span> With systemd, no mount of /home on one machine. Others are OK there, but empty resolv.conf.
+<a name="l-17"></a><span class="tm">17:10:14</span><span class="nk"> &lt;jradzuweit&gt;</span> Hi
+<a name="l-18"></a><span class="tm">17:10:25</span><span class="nk"> &lt;LWFinger&gt;</span> Hi.
+<a name="l-19"></a><span class="tm">17:10:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> I heard that coolo+fcrozat plan to make systemd the default. or maybe they even did for current Factory.
+<a name="l-20"></a><span class="tm">17:11:45</span><span class="nk"> &lt;LWFinger&gt;</span> I still need to check bugzilla and update existing reports or file new ones as appropriate.
+<a name="l-21"></a><span class="tm">17:12:08</span><span class="nk"> &lt;LWFinger&gt;</span> At least, GRUB lets you change it if necessary.
+<a name="l-22"></a><span class="tm">17:12:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> was the /home mount something special? crypto or so?
+<a name="l-23"></a><span class="tm">17:12:41</span><span class="nk"> &lt;LWFinger&gt;</span> No. Plain simple ext4 partition.
+<a name="l-24"></a><span class="tm">17:13:32</span><span class="nk"> &lt;LWFinger&gt;</span> I need to check /etc/fstab on this one against the ones that work to see if any diffs.
+<a name="l-25"></a><span class="tm">17:14:44</span><span class="nk"> &lt;jradzuweit&gt;</span> still are 11 bug new for systemd
+<a name="l-26"></a><span class="tm">17:15:05</span><span class="nk"> &lt;jradzuweit&gt;</span> s/bug/bugs/
+<a name="l-27"></a><span class="tm">17:17:26</span><span class="nk"> &lt;LWFinger&gt;</span> I'm in the process of doing an update on the system with the most systemd problems. That involved 1751 packages. Perhaps it will be better.
+<a name="l-28"></a><span class="tm">17:18:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> will be good to stress systemd as much as we can before our one and only Beta (in 10 days)
+<a name="l-29"></a><span class="tm">17:18:58</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-30"></a><span class="tm">17:21:37</span><span class="nk"> &lt;jradzuweit&gt;</span> I will put focus on systemd as well,
+<a name="l-31"></a><span class="tm">17:22:40</span><span class="nk"> &lt;jradzuweit&gt;</span> me is getting a beer
+<a name="l-32"></a><span class="tm">17:22:59</span><span class="nk"> &lt;LWFinger&gt;</span> Have one for me.
+<a name="l-33"></a><span class="tm">17:24:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> let's move to the next topic
+<a name="l-34"></a><span class="tm">17:24:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">oSC 2011</span>
+<a name="l-35"></a><span class="tm">17:25:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> aparrently it started yesterday
+<a name="l-36"></a><span class="tm">17:25:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> and I found many nice topics and interesting people to talk to there.
+<a name="l-37"></a><span class="tm">17:25:24</span><span class="nk"> &lt;Holgi&gt;</span> ;-)
+<a name="l-38"></a><span class="tm">17:26:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> tomorrow there will be testing BoF by me at 09:30 and another testing BoF by Jiri Slaby afterwards at 10:30
+<a name="l-39"></a><span class="tm">17:26:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> and Wednesday afternoon will have my talk on "one year of openqa.o.o"
+<a name="l-40"></a><span class="tm">17:27:32 </span><span class="nka">* Holgi</span> <span class="ac">will join</span>
+<a name="l-41"></a><span class="tm">17:27:52</span><span class="nk"> &lt;LWFinger&gt;</span> Are the contents of talks like yours normally posted on the Internet?
+<a name="l-42"></a><span class="tm">17:28:04</span><span class="nk"> &lt;jradzuweit&gt;</span> and afterwards some testing experience by SEIDEL, Conny (AMD Advanced Micro Devices)
+<a name="l-43"></a><span class="tm">17:28:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> not sure. I can publish my slides anyway
+<a name="l-44"></a><span class="tm">17:28:30</span><span class="nk"> &lt;LWFinger&gt;</span> Please do.
+<a name="l-45"></a><span class="tm">17:29:39</span><span class="nk"> &lt;jradzuweit&gt;</span> yesterday there was atalk about automated kernel testing
+<a name="l-46"></a><span class="tm">17:30:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://openqa.opensuse.org/opensuse/doc/openqa-osc2011.odp
+<a name="l-47"></a><span class="tm">17:30:16</span><span class="nk"> &lt;jradzuweit&gt;</span> by MARSIK, Vilem
+<a name="l-48"></a><span class="tm">17:30:48</span><span class="nk"> &lt;LWFinger&gt;</span> I have seen discussion about kernel testing on the Linux Kernel Mailing List.
+<a name="l-49"></a><span class="tm">17:32:27</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedermann:</span> Thanks for the link. Downloaded already.
+<a name="l-50"></a><span class="tm">17:33:09</span><span class="nk"> &lt;jradzuweit&gt;</span> maybe we could put them on the wiki?
+<a name="l-51"></a><span class="tm">17:34:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> to be useful standalone (without talk), the slides could use some additions.
+<a name="l-52"></a><span class="tm">17:35:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> however, I think, that automated testing (kernel and otherwise) will improve soon
+<a name="l-53"></a><span class="tm">17:36:19</span><span class="nk"> &lt;LWFinger&gt;</span> It is a necessary step - systems are too complex for only manual testing.
+<a name="l-54"></a><span class="tm">17:37:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> it's the only way to ensure that systems become better instead of replacing old bugs with new ones.
+<a name="l-55"></a><span class="tm">17:37:37</span><span class="nk"> &lt;LWFinger&gt;</span> Or keep the old ones as well. :)
+<a name="l-56"></a><span class="tm">17:38:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> yep
+<a name="l-57"></a><span class="tm">17:40:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> let's move to next topic
+<a name="l-58"></a><span class="tm">17:40:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">OpenBugsDay #3</span>
+<a name="l-59"></a><span class="tm">17:40:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> participation was rather low this time
+<a name="l-60"></a><span class="tm">17:40:49</span><span class="nk"> &lt;jradzuweit&gt;</span> yes
+<a name="l-61"></a><span class="tm">17:40:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe because the task was not so interesting or useful?
+<a name="l-62"></a><span class="tm">17:41:32</span><span class="nk"> &lt;jradzuweit&gt;</span> in germany it was one of the sunny days
+<a name="l-63"></a><span class="tm">17:41:44</span><span class="nk"> &lt;jradzuweit&gt;</span> so a lot of poeple are went swimming
+<a name="l-64"></a><span class="tm">17:41:45</span><span class="nk"> &lt;LWFinger&gt;</span> I really have no idea why, but very disappointing.
+<a name="l-65"></a><span class="tm">17:42:01</span><span class="nk"> &lt;jradzuweit&gt;</span> I think we need some more marketing
+<a name="l-66"></a><span class="tm">17:42:09</span><span class="nk"> &lt;LWFinger&gt;</span> I guess sunny days are too few to waste.
+<a name="l-67"></a><span class="tm">17:42:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> there was already a news.o.o article about our next great event... the Beta Pizza Party
+<a name="l-68"></a><span class="tm">17:42:55</span><span class="nk"> &lt;jradzuweit&gt;</span> I think we need more often some reports on testing
+<a name="l-69"></a><span class="tm">17:43:04</span><span class="nk"> &lt;LWFinger&gt;</span> I missed that. I wonder how good virtual pizza is.
+<a name="l-70"></a><span class="tm">17:44:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> you could have your own pizza, but I admit that it might not be the same
+<a name="l-71"></a><span class="tm">17:44:26</span><span class="nk"> &lt;LWFinger&gt;</span> I write a contribution every week to the Weekly News. What more?
+<a name="l-72"></a><span class="tm">17:44:54</span><span class="nk"> &lt;jradzuweit&gt;</span> some more on the mailing list
+<a name="l-73"></a><span class="tm">17:45:05</span><span class="nk"> &lt;jradzuweit&gt;</span> it is rarely used
+<a name="l-74"></a><span class="tm">17:45:06</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> I really like this :-)
+<a name="l-75"></a><span class="tm">17:46:16</span><span class="nk"> &lt;LWFinger&gt;</span> My stuff is always sent to the ML, as well. Holgi: Thanks.
+<a name="l-76"></a><span class="tm">17:46:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> I could write more updates on openQA results to the ML
+<a name="l-77"></a><span class="tm">17:47:46</span><span class="nk"> &lt;LWFinger&gt;</span> That would be usefil. I don't always check openqa.o.o as often as I should.
+<a name="l-78"></a><span class="tm">17:48:08</span><span class="nk"> &lt;jradzuweit&gt;</span> the time between posts are quite large, sometimes are weeks between posts
+<a name="l-79"></a><span class="tm">17:48:21</span><span class="nk"> &lt;jradzuweit&gt;</span> I think people loose interest
+<a name="l-80"></a><span class="tm">17:54:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> we should communicate more of our testing work over the testing ML
+<a name="l-81"></a><span class="tm">17:54:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. the systemd focus
+<a name="l-82"></a><span class="tm">17:54:43</span><span class="nk"> &lt;LWFinger&gt;</span> Please send me any thoughts on additional publicity on OBD #4 and on getting testers for the Beta.
+<a name="l-83"></a><span class="tm">17:56:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK
+<a name="l-84"></a><span class="tm">17:56:54</span><span class="nk"> &lt;LWFinger&gt;</span> I fear the systemd will be a big problem with 12.1 GM unless there is a real push on testing.
+<a name="l-85"></a><span class="tm">17:57:44</span><span class="nk"> &lt;LWFinger&gt;</span> With Fedora using it, I'm a little surprised that it not better, but ...
+<a name="l-86"></a><span class="tm">17:57:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">btw:</span> the Pizza Party is still pretty on top of http://news.opensuse.org/
+<a name="l-87"></a><span class="tm">17:58:08</span><span class="nk"> &lt;jradzuweit&gt;</span> UBuntu is not better either, but it looks smarter
+<a name="l-88"></a><span class="tm">17:58:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> there is also still trouble with nouveau and KMS
+<a name="l-89"></a><span class="tm">17:59:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-90"></a><span class="tm">17:59:52</span><span class="nk"> &lt;LWFinger&gt;</span> Those are old, continuing problems. None of my nVidia adapters work with nouveau, but the workarounds are well-known.
+<a name="l-91"></a><span class="tm">18:00:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> having nvidia fail out-of-the-box is still bad
+<a name="l-92"></a><span class="tm">18:00:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> for GM
+<a name="l-93"></a><span class="tm">18:01:49</span><span class="nk"> &lt;LWFinger&gt;</span> I'm running kernel 3.1 already - there will not be much help there.
+<a name="l-94"></a><span class="tm">18:02:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> any way that we could make "nomodeset" the default for nvidia adapters?
+<a name="l-95"></a><span class="tm">18:03:16</span><span class="nk"> &lt;LWFinger&gt;</span> I don't think that would be too much trouble when GRUB is installed. Good idea.
+<a name="l-96"></a><span class="tm">18:05:09</span><span class="nk"> &lt;LWFinger&gt;</span> I only use the framebuffer driver with 2D acceleration, and the people that want 3D alreay use the proprietary driver. Forcing nomodeset would not cause a problem.
+<a name="l-97"></a><span class="tm">18:05:48</span><span class="nk"> &lt;LWFinger&gt;</span> Where should the suggestion be placed?
+<a name="l-98"></a><span class="tm">18:05:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> opensuse-factory?
+<a name="l-99"></a><span class="tm">18:06:12</span><span class="nk"> &lt;LWFinger&gt;</span> OK, I'll start the ball rollinng.
+<a name="l-100"></a><span class="tm">18:06:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> great.
+<a name="l-101"></a><span class="tm">18:07:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> jradzuweit proposed to have openQA regularly provide preinstalled VM images for download. would be easy to add on my side
+<a name="l-102"></a><span class="tm">18:08:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> this way, people could just pull it and have their kvm or virtualbox start it for testing.
+<a name="l-103"></a><span class="tm">18:08:18</span><span class="nk"> &lt;LWFinger&gt;</span> Those were handy on OBD. I like the idea.
+<a name="l-104"></a><span class="tm">18:09:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. will probably enough to update daily or weekly as zypper up is easy.
+<a name="l-105"></a><span class="tm">18:10:34</span><span class="nk"> &lt;jradzuweit&gt;</span> I think weekly is sufficent
+<a name="l-106"></a><span class="tm">18:11:53</span><span class="nk"> &lt;LWFinger&gt;</span> Weekly should be enough.
+<a name="l-107"></a><span class="tm">18:18:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> jradzuweit wants to write an example report for testing ML
+<a name="l-108"></a><span class="tm">18:19:36</span><span class="nk"> &lt;LWFinger&gt;</span> Good.
+<a name="l-109"></a><span class="tm">18:20:54</span><span class="nk"> &lt;jradzuweit&gt;</span> ok I will post it to the ML
+<a name="l-110"></a><span class="tm">18:21:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> Then let's close today's meeting.
+<a name="l-111"></a><span class="tm">18:21:53</span><span class="nk"> &lt;jradzuweit&gt;</span> and getting more beer :)
+<a name="l-112"></a><span class="tm">18:21:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-113"></a><span class="tm">18:22:01</span><span class="nk"> &lt;Holgi&gt;</span> enjoy!
+<a name="l-114"></a><span class="tm">18:22:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

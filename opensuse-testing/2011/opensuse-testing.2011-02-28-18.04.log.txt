@@ -1,0 +1,256 @@
+18:04:56 <bmwiedemann> #startmeeting
+18:04:56 <bugbot> Meeting started Mon Feb 28 18:04:56 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:04:56 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:05:30 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+18:05:30 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+18:06:01 <bmwiedemann> #topic Experience with 11.4 RC2
+18:07:07 <bmwiedemann> I had RC2 mostly running in various VMs
+18:07:37 <bmwiedemann> on my notebooks where I tested Factory I would have had to use zypper dup with downgrades and other effects
+18:08:23 <bmwiedemann> worked fine so far. done :)
+18:08:52 <LWFinger> OK, I'll go next.
+18:09:21 <LWFinger> I have installed RC2 on 5 machines - 4 real, one VM.
+18:09:50 <LWFinger> All but one use KDE, the other has no GUI, only CL
+18:10:47 <LWFinger> The only problem is my NFS server runs V3 of NFS. An out of the box RC2 looks for V4.
+18:12:27 <LWFinger> It takes a long time to time out, and NetworkManager dies.  I don't have access to the bug number right now.
+18:13:32 <bmwiedemann> does it always die?
+18:13:43 <LWFinger> The workaround is to change the NFS config to default to V3. That fails immediately if the network is not up, and all goes OK.
+18:14:29 <LWFinger> bmwiedemann: It probably would not with a wired connection, but with wireless it always does.
+18:15:16 <LWFinger> My main laptop was upgraded to RC2.1 2 hours ago. All seems OK. Done.
+18:16:35 <Holgi> bmwiedemann: what about most annoying bugs list - which ones are fixed with 0017 ?
+18:17:43 <bmwiedemann> there is one about firefox close warning. upstream changed the default for firefox4-b10
+18:18:01 <bmwiedemann> but they changed it a bit more for b12 which is in RC2.1
+18:18:21 <Holgi> bmwiedemann: ok
+18:19:25 <LWFinger> That bug (https://bugzilla.novell.com/show_bug.cgi?id=669231) is now OK for me.
+18:19:28 <bugbot> openSUSE bug 669231 in openSUSE 11.4 (Firefox) "Firefox doesn't ask for closing multiple tabs." [Normal,Resolved: upstream]
+18:19:31 <bmwiedemann> http://en.opensuse.org/openSUSE:Most_annoying_bugs_11.4_dev has other entries, but I can not tell much about others
+18:19:55 <LWFinger> I have not checked any others.
+18:20:36 <bmwiedemann> I had seen https://bugzilla.novell.com/show_bug.cgi?id=671593 - and it is probably still in
+18:20:39 <bugbot> openSUSE bug 671593 in openSUSE 11.4 (Live Medium) "Live-USB system hangs when installing some additional packages." [Normal,New]
+18:21:13 <elm> yes, the USB subsystem seems to have many errors.
+18:21:15 <bmwiedemann> somehow clicfs is slowing down or locking when you install rpms on the writable overlay.
+18:21:20 <bmwiedemann> oh?
+18:21:33 <elm> last time my machine crashed after plugging in an usb stick.
+18:22:06 <bmwiedemann> is that specific to ohci or uhci?
+18:22:13 <bmwiedemann> or ehci.
+18:22:34 <elm> how can I determine this?
+18:23:22 <LWFinger> elm: I have not seen that, but I don'r run a standard kernel. If USB 3, it could be xhci, or is it xehci?
+18:23:26 <bmwiedemann> you could check your controller type with "lspci |grep USB"
+18:23:52 <bmwiedemann> I did not see crashes with USB either.
+18:24:06 <elm> 00:1d.0 USB Controller: Intel Corporation 82801CA/CAM USB Controller #1 (rev 02
+18:24:12 <bmwiedemann> but some radeon KMS screw-up (mailed it to testing ML)
+18:25:55 <elm> Yes; I have opened up a bug report for it at https://bugzilla.kernel.org/show_bug.cgi?id=25052.
+18:26:00 <bugbot> bugzilla.kernel.org bug 25052 in Drivers (Video(DRI - non Intel)) "kernel modesetting still does not work" [High,Reopened]
+18:26:03 <LWFinger> elm: That one is USB2.0, probably ehci.
+18:26:15 <elm> Anyone here for whom KMS does already work (radeon/nouveau)?
+18:26:41 <LWFinger> No, only i915.
+18:26:54 <elm> ?=i915
+18:27:11 <LWFinger> The Intel 945.
+18:27:43 <bmwiedemann> I have a Laptop with Nvidia graphics which works with 11.4 nouveau out-of-the-box
+18:27:47 <Holgi> I also have it working with i915
+18:27:51 <elm> ok; intel graphics seems to be more compatible.
+18:28:02 <bmwiedemann> =7700 Go
+18:28:15 <Holgi> out of the box
+18:28:23 <elm> anyone for whom it does not work?
+18:29:01 * Holgi just used nv
+18:29:16 <bmwiedemann> elm: yes: http://lists.opensuse.org/archive/opensuse-testing/2011-02/msg00031.html
+18:29:17 <elm> anyone who has an ATI card?
+18:29:57 <elm> or anyone for whom it does not work, yet?
+18:30:12 <Holgi> no, no
+18:31:12 <elm> ok, fine; - then I can report that i does work in 2 settings - and that it does not in two other settings.
+18:31:15 <bmwiedemann> elm: see above. ATI Radeon HD 3450 failed
+18:31:52 <Fisiu> hi
+18:31:58 <Holgi> hi Fisiu
+18:32:14 <bmwiedemann> hi Fisiu. do you have any experience from RC2 testing to share?
+18:32:32 <bmwiedemann> e.g. Bad Bugs (tm) ?
+18:32:33 <elm> Hello Fisiu! Does KMS work for you (graphics mode setting)?
+18:32:43 <Fisiu> just installed it on laptop...
+18:33:01 <elm> and?
+18:33:03 <Fisiu> bootsplash still has some glitches around geeko
+18:33:18 <elm> LWFinger: Does it work for you now? (KMS)
+18:33:31 <Fisiu> scrolling in touchpad doesn't work
+18:33:46 <LWFinger> On i945 - yes. On nVidia - no.
+18:34:01 <Fisiu> and I can't access to touchpad settings in KDE System Settings
+18:34:13 <bmwiedemann> Fisiu: why can't you?
+18:34:21 <elm> LWFinger: have you tested it with RC2 (the nv card)?
+18:34:36 <LWFinger> elm: Yes
+18:34:36 <Fisiu> kms works fine (ati mobility x700)
+18:34:46 <elm> LWFinger: What was the result (garbeled screen with vertically pixeled lines) ?
+18:35:38 <Fisiu> I have infou about "driver is not loaded or in wrong version"
+18:36:10 <LWFinger> elm: The bootsplash covers only the right half of the screen. The KDE screen looks as if the horiz pixel count is wrong.
+18:38:19 <bmwiedemann> LWFinger: horiz pixel count wrong looks like http://openqa.opensuse.org/opensuse/permanent/bug/bnc620385-1.png ?
+18:38:22 <elm> pixel count is wrong? - how does it look like?
+18:38:36 <elm> is part of the screen not displayed?
+18:39:27 <elm> ah vertically lined but still visible.
+18:39:35 <elm> thx a lot.
+18:39:40 <LWFinger> No, the entire screen is unreadable. It looks as if it has been sheared horizontally.
+18:40:16 <Fisiu> http://img842.imageshack.us/img842/1321/20110228190544.jpg
+18:40:46 <Fisiu> sorry for poor quality
+18:40:46 <LWFinger> No, completely unreadable.
+18:41:48 <elm> LWFinger: there is nothing you can see except pixels in different colors? - you do not even see if a window is open or not?
+18:41:48 <Holgi> Fisiu: I do  not
+18:41:58 <Holgi> Fisiu: see the problem
+18:42:19 <bmwiedemann> LWFinger: this one also had one pixel too few per line: http://openqa.opensuse.org/opensuse/permanent/bug/bnc652562-1.png
+18:42:30 <Fisiu> ok, I'll reproduce it on vbox then make a good screenshoot
+18:43:30 <bmwiedemann> any more RC2 experience to share?
+18:43:34 <LWFinger> I can see the color changes when my different screens come up, but not read anything.
+18:44:02 <LWFinger> Any instructions on how to get a screenshot when you can see noting?
+18:44:32 <bmwiedemann> LWFinger: with camera pointed to screen :D
+18:44:34 <elm> LWFinger: does it look different if you open up a console or when you just should have a black screen (no xclient)?
+18:45:08 <Fisiu> vbox has screen size 1024x768 and bootsplash looks fine
+18:45:32 <elm> LWFinger: No, I think you will need a digital camera - or another computer with webcam.
+18:46:20 <LWFinger> xclient is running. My consoles have a white background.and I see them start. Virtual consoles are OK.
+18:47:05 <elm> LWFinger: you actually see that there is something on the screen but everything is too sheared to read it; right?
+18:47:29 <LWFinger> elm: Yes. I'll restart one of my other boxes and see if I can get a picture.
+18:47:43 <Fisiu> on laptop, kms starts early and screen size is 1280x800 and bootsplash has glitches
+18:47:51 <elm> Well I ask, because at me you can absolutely see nothing except different colorful pixels.
+18:48:22 <elm> .
+18:48:22 <Holgi> maybe wrong color depth?
+18:48:55 <elm> Has anyone tested an external monitor as connected via DVI or HDMI or VGA?
+18:49:10 <Holgi> vga is working here
+18:50:59 <elm> LWFinge: integrated laptop screen or connected via cable?
+18:51:10 <elm> LWFinger: integrated laptop screen or connected via
+18:51:44 <elm> ah LVDS; integrated.
+18:51:57 <elm> (just opened you Xorg.log)
+18:52:37 <bmwiedemann> can we move on to next topic then?
+18:53:12 <elm> yes; one last question bmwiedmann
+18:53:41 <elm> Did you use an integrated or an external display (laptop/cable4dsipklay)?
+18:53:58 <Fisiu> Holgi: http://img51.imageshack.us/img51/5083/bootsplash1280x800.jpg
+18:54:02 <Holgi> elm: who?
+18:54:18 <LWFinger> elm: One of each.
+18:54:52 <Holgi> Fisiu: and what should I see? pixels with wrong color?
+18:55:06 <elm> and is there any difference for the itg/ext monitor?
+18:55:34 <Fisiu> look into background around logo
+18:56:02 <Holgi> Fisiu: I have the same - assumed this is intended
+18:56:22 <elm> Fisiu: same as at me: I think they have simply used this as an image. This kind of output is intended; isn`t it?
+18:57:26 <Fisiu> anyway it looks awful ;(
+18:57:37 <elm> I consent.
+18:58:24 <Fisiu> what's synaptics touchpad driver name?
+18:58:25 <elm> LWFinger: do you think that you still can get a screenshot for both the integrated and the external monitor?
+18:58:36 <bmwiedemann> Fisiu: "synaptics" ?
+18:58:52 <Fisiu> if so, it's not loaded here
+18:58:52 <bmwiedemann> it cares about all touchpads.
+18:59:02 <bmwiedemann> it is a userspace Xorg driver
+18:59:33 <Fisiu> how to verify which driver is used by touchpad
+19:00:06 <bmwiedemann> Fisiu: check /var/log/Xorg.0.log for "Synaptics" string
+19:02:13 <LWFinger> elm: I'll try. Where is a good place to post photos?
+19:02:15 <Fisiu> ok, in the meantime I rebooted system and now touchpad and kde settings for it work
+19:02:56 <Fisiu> I installed system from livecd, then installed all sugested packages with first yast sw run
+19:03:16 <Fisiu> I guess this driver is missing in livecd
+19:03:25 <bmwiedemann> LWFinger: http://img.susepaste.org/
+19:04:41 <Fisiu> here is log from xorg: http://paste.opensuse.org/10694765
+19:05:16 <bmwiedemann> Fisiu: looks good.
+19:05:32 <bmwiedemann> let's move on then.
+19:05:33 <Fisiu> yep :)
+19:05:45 <Fisiu> this channel is temporary?
+19:06:04 <bmwiedemann> Fisiu: it is permanent
+19:06:28 <bmwiedemann> #topic open-bugs bugzilla cleanup day
+19:07:15 <bmwiedemann> I had sent the open-bugs-day report to ML and did not really have much time to further look through bugzilla
+19:07:57 <bmwiedemann> http://lists.opensuse.org/archive/opensuse-testing/2011-02/msg00020.html
+19:08:03 <bmwiedemann> #link http://lists.opensuse.org/archive/opensuse-testing/2011-02/msg00020.html
+19:08:48 <Fisiu> I want to test rc2 on desktop too
+19:09:10 <bmwiedemann> so far 7 of 10 geeko-gear collections should have been sent as rewards
+19:09:38 <bmwiedemann> the others were still unclaimed
+19:10:24 <Fisiu> then I'll give You some post install news ;)
+19:10:33 <bmwiedemann> Fisiu: great.
+19:10:53 <bmwiedemann> is 2011-04-02 a good date for our next open-bugs-day?
+19:11:40 <bmwiedemann> and what should be the focus of it?
+19:12:20 <Holgi> bmwiedemann: sorry - what else that open bugs?
+19:12:33 <Holgi> s/that/than/
+19:12:50 <bmwiedemann> Holgi: there are so many old open bugs.
+19:13:17 <bmwiedemann> going through the 11.4 ones again might not yield much new information
+19:13:22 <Holgi> bmwiedemann: but 11.4 bugs
+19:13:35 <Holgi> bmwiedemann: ahh, I see
+19:13:59 <Holgi> bmwiedemann: but I doubt participants will install 11.3 just for this
+19:14:06 <Holgi> bmwiedemann: or do you think they will?
+19:14:27 <bmwiedemann> we could check for 11.[123] bugs on 11.4
+19:14:42 <bmwiedemann> which will be released as GM by then
+19:15:02 <Holgi> bmwiedemann: sounds like a good idea
+19:16:44 <bmwiedemann> this time we have ~1 month to prepare and more people will already have 11.4 installed
+19:16:46 * Fisiu is going to test RC so needs reboot ;)
+19:17:11 <Holgi> bmwiedemann: that's true
+19:17:38 <bmwiedemann> I also got useful feedback from remur_030
+19:18:39 <LWFinger> elm: The screen shot for one of my nVidea cards is at http://img.susepaste.org/7011653.
+19:18:39 <bmwiedemann> * approach the teams directly so they could maybe add it their meetings agenda and rally people as well - this is propably only useful for the bigger teams
+19:19:09 <bmwiedemann> * split up search ranges into components so a single person will find it's way
+19:19:09 <bmwiedemann> around easier
+19:19:09 <bmwiedemann> - switching from xpdf misrender to nouveau crash report to an untranslated
+19:19:09 <bmwiedemann> string requires constant reorientation
+19:19:49 <bmwiedemann> - single components often have a upstream resources that will help triaging, so people can find their way around in the xorg bugtracker and stick to it
+19:20:09 <bmwiedemann> - less community blessed teams like xorg have a single day to attract people into their world
+19:20:43 <bmwiedemann> I like the sorting by components
+19:20:55 <bmwiedemann> what do you think, what could be improved?
+19:21:38 <LWFinger> Being able to sort by components would be a big help.
+19:21:52 <Holgi> first of all: thanks everybody for organizing and running the cleanup day
+19:22:03 <Holgi> for me it looks like a good success
+19:22:12 <Holgi> even we were late in organizing
+19:22:17 <LWFinger> When we had only 5 displayed, I had to keep skipping to find one for my hard/software.
+19:22:31 <LWFinger> It was a big success.
+19:23:28 <LWFinger> April 2 is a good date for me.
+19:24:33 <bmwiedemann> pretty close to April 1 - but since we will announce it before, it should not be mistaken for an April's fools joke
+19:25:13 <Holgi> bmwiedemann: I don't think that should be any problem
+19:26:48 <bmwiedemann> anyone who does not agree for the focus to be "check for 11.[123] bugs on 11.4" ?
+19:26:50 <Holgi> jo k0da
+19:28:00 <bmwiedemann> #agreed The focus of next Open-Bugs-Day will be "check for 11.[123] bugs on 11.4".
+19:29:16 <bmwiedemann> LWFinger: what do you think about when to announce the details? need not be before 11.4 is out
+19:30:05 <Holgi> bmwiedemann: but we should at least release the date ASAP
+19:30:31 <bmwiedemann> Holgi: it was already on news.o.o in the summary
+19:31:01 <LWFinger> I agree that the daye sould be done ASAP and get it into the calenders. Details about 2 weeks in advance.
+19:32:02 <Holgi> bmwiedemann: http://news.opensuse.org/2011/02/16/open-bugs-day-on-sunday-the-20th-of-february/#more-7039 ?
+19:32:31 <LWFinger> I see it being in the News on March 19, 26, and April 1.
+19:33:06 <bmwiedemann> Holgi: http://news.opensuse.org/2011/02/25/open-bugs-day-held-last-sunday/
+19:34:01 <Holgi> bmwiedemann: I see - nevertheless we should announce the date apart from mentioning it there
+19:34:07 <bmwiedemann> yep
+19:34:19 <bmwiedemann> possibly in the next testing weekly news
+19:34:51 <LWFinger> OK. Date next Saturday and details 2 weeks later.
+19:34:59 <Holgi> bmwiedemann: how to follow the suggestion to involve other teams?
+19:35:34 <bmwiedemann> we could ask on #opensuse-gnome and #opensuse-kde - they have big teams
+19:36:15 <bmwiedemann> any volunteers?
+19:37:20 <bmwiedemann> then I will, when I find time
+19:37:54 <bmwiedemann> #action bmwiedemann will ask on #opensuse-gnome and #opensuse-kde for Open-Bugs-Day participation
+19:38:21 <bmwiedemann> #action LWFinger will publish Date next Saturday and details 2 weeks later
+19:39:06 <LWFinger> OK.
+19:40:07 <bmwiedemann> #topic graphics support: KMS support
+19:40:36 <bmwiedemann> elm: was this topic already covered in the first part? anything to add to our meeting summary?
+19:42:34 <bmwiedemann> #info does work in 2 settings - and it does not in two other settings
+19:42:59 <bmwiedemann> #topic open discussion
+19:43:07 * Holgi consider this as a "yes" ;-)
+19:43:13 <bmwiedemann> that was it for the agenda
+19:43:35 <bmwiedemann> any other things we could do / improve?
+19:44:05 <bmwiedemann> or just things you want mentioned
+19:44:41 <LWFinger> Has the "Check media" problem been added to openQA, or was that a one-of-a-kind problem?
+19:45:35 <bmwiedemann> LWFinger: I talked to the linuxrc maintainer and it always uses CD/DVDs as source for checksumming. it is too complex to do for 11.4, though.
+19:46:10 <LWFinger> OK.
+19:46:35 <bmwiedemann> or do you mean as automated test? so that it does not fail again on CDs
+19:46:51 <LWFinger> Yes, that was what I meant.
+19:47:45 <bmwiedemann> I'll put it on the todo list - but far down ;)
+19:47:57 <LWFinger> My workflow is to download the CD image and test it on a VM. If for an RM, I burn it and do the same test.
+19:48:33 <LWFinger> The false negative fooled me until I found it in the most annoying list.
+19:49:02 <bmwiedemann> that one is fixed
+19:50:49 <LWFinger> Anyone know what the "freeze" date is for 11.4 GM?
+19:51:03 <bmwiedemann> btw: I just started to merge first contributions to openQA testing
+19:52:02 <bmwiedemann> GM is 2011-03-03... and building+uploading takes a day
+19:52:24 <bmwiedemann> so deadline must be around today
+19:53:41 <LWFinger> Yhat means that RC2.1 is essentially GM.
+19:54:03 <bmwiedemann> there were still some checkins happening today
+19:54:32 <bmwiedemann> e.g. to have 11.4 community repos :D
+19:55:15 <LWFinger> Unless something goes wrong in the next 2 days, 11.4 will be better than 11.3.
+19:56:23 <Holgi> bmwiedemann: but in fact just huge problems get fixed
+19:57:27 <bmwiedemann> I could update my repo tomorrow and call it RC2.2
+19:58:01 <LWFinger> I'll pull again tomorrow just in case.
+19:59:00 <LWFinger> I have to do some Windows tech support for my sister in about 1 minute. I'll stay connected, but won't be answering questions.
+20:00:47 <Holgi> I think we are done anyway - not?
+20:01:16 <bmwiedemann> #topic schedule next meeting
+20:01:20 <bmwiedemann> one thing missing :)
+20:01:33 <bmwiedemann> when shall we meet again? after GM?
+20:02:35 <Holgi> after public release (10.3.)?
+20:03:03 <Holgi> that would be 14.3.
+20:03:55 <bmwiedemann> we could meet one week before, to discuss things to put on the non-dev most-annoying list
+20:04:48 <Holgi> but that would be next week
+20:05:39 <Holgi> = Rosenmontag
+20:06:23 <bmwiedemann> oh. we could do a small and inofficial meeting here anyway?
+20:06:35 <Holgi> no objections
+20:06:49 <Holgi> just don't know if I will be available
+20:08:16 <bmwiedemann> #agreed next meeting on 2011-03-07 (optional) and 2011-03-14 to discuss 11.4-GM
+20:08:54 <bmwiedemann> thanks everyone for attending
+20:09:17 <bmwiedemann> I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+20:09:30 <bmwiedemann> #endmeeting

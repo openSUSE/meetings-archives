@@ -1,0 +1,253 @@
+16:09:42 <wstephenson> #startmeeting
+16:09:42 <bugbot> Meeting started Thu Sep 30 16:09:42 2010 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:09:42 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:10:17 <wstephenson> this one is going to be pretty short so i'll just run it, anyone want to do minutes?
+16:10:45 * tigerfoot sorry have to leave in 10minutes
+16:11:25 <wstephenson> np
+16:11:31 <wstephenson> so, where are we
+16:11:32 <remur_030> wstephenson: I'll take the mintes
+16:11:35 <wstephenson> agenda:
+16:11:41 <wstephenson> * old action items
+16:11:43 <wstephenson> remur_030: thanks
+16:11:49 <wstephenson> * status report
+16:11:55 <wstephenson> * Lubos' move to OOo team
+16:12:00 <wstephenson> * Dev Days ticket giveaway
+16:12:05 <wstephenson> * Q&A, misc
+16:12:12 <wstephenson> any late agenda items?
+16:12:45 <wstephenson> no, ok.
+16:12:52 <wstephenson> * old action items
+16:13:06 * wstephenson leaves the topic out of bugbots control
+16:13:21 <wstephenson> * remur_030 write last call mail for the kde3 applications list
+16:13:30 <wstephenson> that was done wasn't it?
+16:13:33 <remur_030> did, no replies
+16:13:41 <wstephenson> np then
+16:13:45 <wstephenson> * wstephenson put package list in gitorious
+16:13:47 <wstephenson> not done
+16:13:58 <wstephenson> i am starting a new kde-maintainers repo
+16:14:00 <wstephenson> under opensuse/
+16:14:22 <wstephenson> and it will go in there with a lot of useful scripts for doing what we do
+16:14:32 <wstephenson> * status report
+16:15:00 * wstephenson has been at the kde-telepathy upstream sprint
+16:15:24 <wstephenson> there will be a kopete replacement as a Tech Preview for 11.4 (released with 4.6)
+16:15:34 <wstephenson> and hopefully displace kopete for 4.7
+16:15:36 <wstephenson> that's the plan
+16:16:08 * wstephenson did UI prototyping, documentation, telepathy package updating, dropped Tapioca and the old decibel packages
+16:16:11 <tittiatcoke> I saw that kcall is getting quite some attention too. I tried to build it, but I got stuck at the Telepathy gstreamer bindings
+16:16:33 <wstephenson> tittiatcoke: yes kcall will basically be a thin UI around kde-telepathy
+16:16:41 <remur_030> so there is chance for a decent sip application coming? =)
+16:17:04 <wstephenson> tittiatcoke: i needed packman gstreamer to get anything at all working
+16:17:20 <tittiatcoke> wstephenson: Ok.
+16:17:28 <wstephenson> and the same guy is developing kcall and the new contact list view so he's pretty active
+16:17:50 <wstephenson> gkiagia if you see him on irc
+16:18:04 <wstephenson> it uses nepomuk heavily so cb400f will not be pleased.
+16:18:10 <wstephenson> or else nepomuk will have to work ;)
+16:18:12 <wstephenson> apart from that
+16:18:17 <wstephenson> i've been doing online update stuff
+16:18:21 <wstephenson> fixing packages
+16:18:28 <wstephenson> adapting internal scripts for external use
+16:18:44 <wstephenson> (suse internal i mean)
+16:19:06 <wstephenson> switching KDF to Qt 4.7 and fixing breakages
+16:19:20 <wstephenson> oh and talking with Xorg about Kwin testing.
+16:19:30 <remur_030> hm?
+16:19:41 <wstephenson> remur_030: seen mgraesslin's recent blogs?
+16:19:57 <remur_030> wstephenson: yeah, pretty annoyed by the blame they get
+16:20:11 <wstephenson> improving communications between kde and xorg so we don't rely blindly on a broken stack
+16:20:24 <wstephenson> anyway. more on that to come
+16:20:31 <wstephenson> llunak couldn't make the meeting
+16:20:31 <remur_030> ok, how did you become involved?
+16:20:41 <wstephenson> he has mostly been working on kde-obs-generator i think
+16:20:53 <wstephenson> remur_030: i got involved because i have a big nose that gets stuck in things ;)
+16:21:15 <remur_030> hah alright, let's hope it will work out
+16:21:19 <wstephenson> remur_030: well i see an opportunity for us to use OBS to facilitate useful testing.
+16:21:36 <wstephenson> other status?
+16:21:43 <remur_030> I'll leave that out of the minutes for now, do a proper blog sometime please ;-)
+16:21:54 <wstephenson> yeah it's too early to really talk about yet.
+16:22:13 <remur_030> any horizon on kdf moving to kde 4.6?
+16:22:34 <remur_030> qt4.7 fallout seems low for me thus far
+16:22:49 <wstephenson> remur_030: still working on the november assumption
+16:23:03 <remur_030> ok
+16:23:30 <wstephenson> tittiatcoke: how's KUSC? staying up to date?
+16:24:19 <tittiatcoke> KUSC got a new snapshot earlier this week. Everything builds fine, except some segmentation faults after the latest Factory update. Fortunately only the kdebindings are affected.
+16:24:41 <wstephenson> i see einar77 is looking to help fix some bindings things
+16:25:32 <tittiatcoke> That would be good, however for 11.3 all of them build except the akonadi/nepomuk bindings. This due to not being up to date with the latest api chagnes
+16:25:35 <tittiatcoke> *changes
+16:25:42 <wstephenson> if no more status reports, i'll proceed. if you think of status later, mail remur_030.
+16:26:04 <tittiatcoke> Nothing KDE related from me :-)
+16:26:21 <wstephenson> * Lubos' move to OOo team
+16:26:22 <wstephenson> :(
+16:26:35 <tittiatcoke> He is leaving the KDE team ?
+16:26:42 <wstephenson> yes.
+16:27:04 <wstephenson> he was doing this job for a long time, and wants a change
+16:27:06 <remur_030> yeah sounded pretty much fed up on the 4.x cycle =/
+16:27:16 <tittiatcoke> :-) I see.
+16:27:19 <wstephenson> he will still be active upstream.
+16:27:27 <tittiatcoke> Will he be replaced internally ?
+16:27:29 <wstephenson> we are recruiting a replacement
+16:27:40 <tittiatcoke> Ok. :-)
+16:27:41 <wstephenson> we are looking internally and externally
+16:27:52 <remur_030> hm can't find his blogpost anymore
+16:27:55 <wstephenson> so if you didn't apply for the boosters job yet get your finger out.
+16:28:03 <wstephenson> he mailed opensuse-boosters@ about it
+16:28:32 <tittiatcoke> :-) Too busy with my daytime job :-)
+16:28:38 <wstephenson> any questions about that?
+16:28:49 <wstephenson> in the meantime i will keep the plates spinning.
+16:28:58 <tigerfoot> No just a good luck to Lubos ...
+16:29:03 <remur_030> hm not really, it's not like there is much to talk about =/
+16:29:12 * tigerfoot didn't know if ooo is better than kde :-)
+16:29:12 <wstephenson> i'll be doing less bug triage and more documenting what we do so that a new employee AND community can do them
+16:29:17 <tittiatcoke> wstephenson: So you will leading the team now ?
+16:29:29 <wstephenson> tittiatcoke: by default :)
+16:29:31 <tittiatcoke> *lead the team now :-)
+16:29:34 <tittiatcoke> :-)
+16:30:04 <tittiatcoke> Then congratulations to llunak and wstephenson
+16:30:05 <wstephenson> we've had quite some applications already so i am optimistic we'll get a good replacement
+16:31:33 <remur_030> guess he chose a nice time to go, LOo is going quite some changes
+16:31:38 <wstephenson> and i'll appreciate all of your help in keeping packages building, updates, bugs and anything else that needs doing
+16:32:01 <davepl> Just want to introduce myself, I'm Dave Plater or in emails Dave P
+16:32:03 <tittiatcoke> wstephenson: I am sure that I speak for all of us, that you can count on our help :-)
+16:32:10 <wstephenson> thanks guys :)
+16:32:15 <wstephenson> hi davepl, welcome!
+16:32:26 <wstephenson> so, where are we
+16:32:35 <wstephenson> Dev Days ticket
+16:32:40 <wstephenson> * Dev Days ticket
+16:33:07 <wstephenson> our good friends at QtDF gave us a way to recognise our favourite people
+16:33:27 <wstephenson> so i wrote http://lizards.opensuse.org/2010/09/30/opensuse-kde-meeting-tonight-last-minute-qt-dev-days-giveaway/
+16:33:52 <wstephenson> anybody here interested in going?
+16:34:09 <wstephenson> if you don't want to stand up, mail me at wstephenson@suse.de
+16:34:12 <anaumov> for 699� ?
+16:34:18 <wstephenson> anaumov: no, it's a free ticket
+16:34:25 <wstephenson> but we only have one
+16:34:36 * tittiatcoke already has a big event on those days in Berlin :-)
+16:34:54 <wstephenson> i should point out that the offer also covers Dev Days San Francisco
+16:35:01 <wstephenson> in case anyone's on the US west coast
+16:35:09 <wstephenson> but there can be only one.
+16:35:47 <wstephenson> any questions?
+16:35:51 <anaumov> hm...
+16:36:10 <remur_030> tittiatcoke: too bad, Berlin is nice but you should go to the dev days;-)
+16:36:35 <tittiatcoke> remur_030: Berlin is more interesting for me :-) I am not a Qt developer, but more into SAP technology :-)
+16:36:36 <wstephenson> oh munich would be 11-13 oct, SF is nov 1-3
+16:37:00 <wstephenson> the catch is it's the ticket only, not travel/accommodation.
+16:37:29 * remur_030 shivers
+16:37:33 <wstephenson> the pass covers the talks and the Qt training day as well
+16:37:44 <remur_030> SAP technology? ;-)
+16:38:19 <anaumov> cool ;)
+16:38:40 <wstephenson> moving on...
+16:38:55 <wstephenson> * Q&A, misc
+16:39:37 <wstephenson> shoot, ask general questions, shout, scream, cry out to your gods. no defecating in the channel though, we don't do brown here.
+16:40:10 <remur_030> any ideas for more attendence to the meeting? =)
+16:40:32 <krop> sure, add p0rn pics on the wiki page
+16:40:39 <thrice`> I had a question / comment.  I've tried to minorly-help out with some minor packaging, mostly in an attempt to re-learn RPM stuff; I've struggled to find good documentation on preferences for the KDE-related stuff, how to use macros properly, etc.
+16:40:53 <remur_030> krop: like there is not enough around for free already ;-)
+16:40:54 <NaCl> thrice` is everywhere
+16:40:55 <wstephenson> remur_030: i have a kalarm now to make me send out the reminder mail
+16:41:01 <thrice`> a centralized location sure would be great
+16:41:12 <thrice`> NaCl, yes, my lappy is suse these days ;)
+16:41:13 <wstephenson> thrice`: i'm very aware of this
+16:41:30 <wstephenson> thrice`: i will be working on the wiki from a packagers' POV next week
+16:41:46 <thrice`> wstephenson, oh, great :>
+16:41:50 <wstephenson> i may or may not use p0rn pics to illustrate the concepts
+16:42:05 <thrice`> then I may or may not read it ;)
+16:42:19 <NaCl> Also, this may be a bit beyond your control, but it seems that the KDE NetworkManager backend is cannot be directed to connect to wireless networks with hidden essids.
+16:42:34 <remur_030> we'd have a lot of publicity then ;-)
+16:42:36 <wstephenson> NaCl: known bug, totally my control and fault, haven't had time to fix it.
+16:42:49 <remur_030> not of the good kind though i guess
+16:42:59 <Dominian> odd
+16:43:11 <Dominian> I use the networkmanager plasmoid without issue.. although that's in KR45
+16:43:19 <thrice`> Dominian, hidden networks?
+16:43:19 <NaCl> wstephenson: think you're going to get time before December?
+16:43:20 <Dominian> not sure if the bug is in kr45 or standard kde
+16:43:21 <wstephenson> NaCl: i'm working on KNM and solid this weekend, i may get it fixed.
+16:43:24 <NaCl> oh, ok
+16:43:26 <NaCl> kewl
+16:43:28 <Dominian> thrice`: Yeah.. my home network is hidden.. works fine.
+16:43:29 <tittiatcoke> wstephenson: I want to let you know that I will withdraw my maintainership from KDE:Extra and KDE:Unstable:Playground. I want only to deal with Chromium and KDE:Unstable:SC.  Everything else somebody can take. I am sorry for this but mister davepl is ruining it nicely
+16:43:46 <Dominian> but that's using networkmanager plasmoid
+16:43:49 <Dominian> not sure if there's a difference
+16:43:52 <thrice`> wstephenson, great, I look forward to remomving hal next Monday
+16:44:08 <NaCl> Dominian: both appear to use the same backend
+16:44:14 <wstephenson> tittiatcoke: did you mean to say ruining or running?
+16:44:22 <tittiatcoke> ruining
+16:44:28 <Dominian> odd
+16:45:00 <Dominian> NaCl: I'll have to check when I get home.. actually ahng on let me remote into my AP and I'll confirm its hidden
+16:45:00 <wstephenson> thrice`, NaCl, Dominian: can i suspend the NM topic? i need to get this sorted out with davepl and tittiatcoke.
+16:45:08 <NaCl> sure
+16:45:16 <Dominian> sure, my apologies.
+16:45:21 <tittiatcoke> wstephenson: The flamewar that davepl has started has ruined my mood and I don't feel like continuing anymore with maintaining KDE:Extra nor KDE:Unstable:Playground. I just saw the last reply from davepl and that did it for me
+16:45:29 <wstephenson> tittiatcoke: can we fix this before you decide to leave?
+16:45:43 <tittiatcoke> Maybe.
+16:46:26 <remur_030> davepl: any comment on the matter?
+16:47:01 <remur_030> tittiatcoke: was it on the -kde list or somewhere else?
+16:47:08 <tittiatcoke> opensuse-kde ML
+16:47:11 <wstephenson> davepl: tittiatcoke is our most active packager. we need him around more than we need you. he doesn't do things arbitrarily so i assume this is a communication problem.
+16:47:49 <remur_030> +1, titti is doing heavy lifting
+16:48:17 <wstephenson> davepl: so i would like say please be patient while you get acclimatised to how we do things in the project.
+16:49:24 <Dominian> Well, if anyone needs help I'm sure a few of us could learn the packaging standards and lend a hand... if its needed
+16:49:33 <NaCl> Indeed.
+16:49:50 <wstephenson> davepl, tittiatcoke: i'm sure that we're all here with the goal of making openSUSE a great distro for others to enjoy
+16:50:12 <wstephenson> not as a personal ego trip or a project to be a big fish in a small pon
+16:50:13 <wstephenson> +d
+16:50:56 <wstephenson> so please take extra care in how you communicate with each other and assume good faith on the part of someone even if they reject your SRs
+16:51:00 <davepl> Well  I noticed that KTrafficAnalyzer had been stripped of it's patches and to ensure that I wasn't mistaken I installed the version from KDE:Extra and it crashed so I resorted to filing a bug. I'm only trying to ensure that a stableKTrafficAnalyzer is in KDE:Extra not trying to put anyone down although I was prety angry when I emailed last night and apologize for anything I said out of hand. And I haven't quoted any names in public
+16:51:02 <davepl> out of respect.
+16:51:29 <wstephenson> davepl: i've been there too, it's easy to get frustrated doing this
+16:51:45 <tittiatcoke> wstephenson: As you said we are a community that is working for others and not for ourselves. However we have set certain rules and regulations in the past to make things better for our users that do not have too much knowledge
+16:51:45 * wstephenson has had more SRs rejected by the autobuild team than hot dinners
+16:52:22 <wstephenson> tittiatcoke: yes and quality is as much of a priority for us as up-to-dateness
+16:52:35 <tittiatcoke> davepl: Well, you might have skipped the name but you fingerpointed that this was done by the first maintainer that rejected your initial request.
+16:52:44 <davepl> Rules sometimes cause problems when they are followed blindly
+16:53:14 <wstephenson> davepl: also please be aware that we're all from different backgrounds and our english is frequently slightly different
+16:53:21 <wstephenson> in a way that can rub people the wrong way
+16:53:27 <tittiatcoke> davepl: As bitshuffler already indicated we have plenty of examples where we go around the rules because we took the decision jointly.
+16:53:50 <davepl> Only visible to other maintainers and it was unfortunate that you missed sr no2
+16:53:54 <wstephenson> eg the default replies i got in my first 6 months at suse when i got things wrong made my toes curl
+16:54:17 <remur_030> davepl: no one wants to limit your software on purpose, keep that in mind
+16:54:34 <tittiatcoke> davepl: You assumed that I was the one who ruined the package as that I was the one rejecting it. Did you bother to look at the Package in KDE:Extra to see what happened there ?
+16:54:48 <wstephenson> davepl, tittiatcoke: i don't think we'll make it better by establishing the rights and wrongs of this ktrafficanalyzer package case
+16:55:41 <remur_030> wstephenson: it's propably a good example for bad communication...
+16:56:06 <davepl> what we need to do is forget this silly misunderstanding and move on but can I please submit the working KTrafficAnalyzer again.
+16:56:28 <tittiatcoke> wstephenson: I agree. However this might be the first package that got fired upon with the new rules, but it won't be the last. So it has to be clear to the community what the initial rules are for KDE:Extra and how a request can be made to go around the rules. I believe that the link that llunak pointed at is correctly indicating the procedure
+16:56:51 <wstephenson> it seems that both dave and titti feel upset by the interaction so can we call it quits on this one?
+16:57:07 <davepl> I'm happy
+16:57:23 <wstephenson> so the problem is that the fix is only in the svn version?
+16:57:27 <remur_030> do we have some kind of mediator in the project?
+16:57:39 <wstephenson> and it can't be backported to the release?
+16:58:42 <davepl> I've incorporated the entire fix in one patch for the released version and you can leave the follow up with the author to me.
+16:59:10 <wstephenson> tittiatcoke: just read lubos link (http://en.opensuse.org/openSUSE:KDE_Extra_repository)
+16:59:12 <wstephenson> it seems clear
+16:59:19 <wstephenson> (that was "i've just read")
+16:59:27 <tittiatcoke> wstephenson: Yup. That is what I thought too :-)
+16:59:27 <wstephenson> not an imperative :)
+17:00:13 <wstephenson> tittiatcoke: is the patched released version that dave just describe acceptable under those rules? (it sounds like it to me but i haven't seen it)
+17:00:24 <wstephenson> you can patch anything to anything with a big enough patch
+17:01:29 <davepl> I've had unstable packages from the community repo in the past so I can understand why this all happend.
+17:01:53 <tittiatcoke> wstephenson: :-) As indicated before we have plenty of examples where we discarded the rules and accepted the package in KDE:Extra. I personally have nothing against this package (even with svn version).
+17:01:56 <wstephenson> davepl: yeah we are trying to tighten up the rules so there are clear levels of quality in the different projects
+17:02:11 <wstephenson> tittiatcoke: ok so to you it's just about the way this was communicated?
+17:02:20 <tittiatcoke> wstephenson: Yup.
+17:03:16 <davepl> I'm an englishman with a cockney background so I have to think before I put things into words
+17:03:21 <wstephenson> ok, so davepl apologised.
+17:03:31 <wstephenson> and i'm a geordie, it's us should be daggers drawn ;)
+17:03:39 <thrice`> in his defense, people from the east-side of the US have a natural attitude to them ;)
+17:03:48 <davepl> LOL
+17:04:05 <tittiatcoke> Well, I am Dutch and once we ruled England :-)
+17:04:20 <davepl> You thought you did
+17:04:39 <wstephenson> so lets just fight about politics and get on with the packaging
+17:04:57 <wstephenson> i'll invite the wife and she can regale us with tales of what we've all done to the Irish.
+17:05:10 <tittiatcoke> wstephenson: As said before this is indeed a communication that went too far out of control.
+17:05:36 <wstephenson> yes. please be aware that it's awfully easy to tread on each others toes
+17:05:48 <wstephenson> peoples toes are not always where you'd think of them
+17:06:28 <davepl> One last request, I would like maintainer rights on my two critical packages, that I rely on, in KDE:Extra, KTrafficAnalyze and plasmoid-yawp.
+17:07:10 <anaumov> wstephenson, We exist without skin color, without nationality, without religious bias� :)
+17:07:23 <wstephenson> davepl: and i really can't afford to lose tittiatcoke's contributions. he's a really nice guy and well able to demonstrate good proper. please understand he's only coming from wanting good packages.
+17:07:40 <wstephenson> davepl: let's talk about that separately
+17:07:50 <wstephenson> tittiatcoke: ok?
+17:07:51 <wstephenson> davepl: ok?
+17:08:01 <davepl> ok
+17:08:18 <tittiatcoke> davepl: Ok
+17:08:26 <tittiatcoke> wstephenson: ok
+17:09:09 <wstephenson> and if anyone thinks things are getting out of hand, talk to me, or remur, or cb400f, or henne or yaloki
+17:09:46 <wstephenson> more Q&A?
+17:10:12 <wstephenson> if not i'll wind the meeting up now. and we can continue to chat
+17:11:12 <davepl> I've just read the openSUSE:KDE_Extra_repository page and wish I'd known about it before then I would have followed the correct proceedure.
+17:11:52 <wstephenson> davepl: and i'll be updating the wiki to make that easier to find and avoid similar misunderstandings
+17:12:25 <wstephenson> #endmeeting

@@ -1,0 +1,116 @@
+17:02:42 <bmwiedemann> #startmeeting
+17:02:42 <bugbot> Meeting started Mon Jun 27 17:02:42 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:02:42 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:03:05 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting - with 2 topics so far
+17:03:05 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:03:28 <bmwiedemann> #topic MS2 experience
+17:03:42 <bmwiedemann> LWFinger: do you want to start?
+17:04:47 <LWFinger> Yes.
+17:05:35 <LWFinger> I first tried the KDE Live CD on a VB VM.
+17:06:29 <LWFinger> Everything worked at first, then the network died and had to switch from NetworkManager to ifup.
+17:07:00 <LWFinger> I then use the NET Install CD to upgrade an MS1 install on that VM.
+17:08:06 <LWFinger> The first problem was a warning that "YaST was unable to find the correct control file". Ignoring that seemed to be OK.
+17:08:58 <LWFinger> Next, I got an error "Cannot read license file". Ignoring that was also OK.
+17:10:01 <LWFinger> After that, update seemed to go OK, other than the "Installing Packages" progress bar did not advance.
+17:10:42 <LWFinger> In addition, there are references to "11.4" in the slide show that need to be changed to "12.1".
+17:11:33 <LWFinger> After reboot, I got lots of oops messages from kernel 2.6.39-2-desktop.
+17:12:14 <LWFinger> In 12.1 MS2, the KDE plasmoid NetworkManager applet does not work.
+17:12:48 <LWFinger> I was agle to get both wired and wireless networking working with ifup.
+17:13:30 <LWFinger> The whode KDE desktop then failed to respond to any clicks! I do not know why.
+17:13:54 <LWFinger> Next I installed from the KDE Live CD. That went better.
+17:14:40 <LWFinger> Again the NM applet fails, but switching to NetworkManager-Gnome (aka nm-applet) fixed that.
+17:15:23 <LWFinger> The KDE shutdown/restart/logoff process fails - Bug #702220.
+17:15:43 <LWFinger> I have not filed any other bugs yet.
+17:15:48 <LWFinger> Done.
+17:17:01 <bmwiedemann> I guess, we should file something about KDE NetworkManager
+17:18:29 <LWFinger> Yes, I agree. It should also be in the most-annoying list.
+17:19:04 <bmwiedemann> LWFinger: could you manage this?
+17:19:22 <LWFinger> I also plan to see file about the license file missing and the bad control file, at least.
+17:19:28 <LWFinger> Yes.
+17:19:29 <bmwiedemann> I did a quick search on bugzilla and it did not find such a NetworkManager bug
+17:20:29 <bmwiedemann> LWFinger: I did not see the license and control things on openQA, so they might just be when updating from MS1?
+17:21:04 <LWFinger> Good point. I'll start an install from NET CD to check that.
+17:21:24 <bmwiedemann> otherwise, yast logs will be good to have
+17:22:36 <LWFinger> The original ones are gone as I blew away the original installation, but it would be easy to duplicate. Nice thing about VMs.
+17:23:50 <bmwiedemann> I did follow the openQA results prior to MS2 and filed two instsys/yast/zypper bugs: 698284 700881 (both linked on openQA)
+17:24:32 <bmwiedemann> suspected to be caused by the major rpm upgrade
+17:26:41 <bmwiedemann> I still need to make a 11.4 reference image to include in automated dist-upgrade tests. And then I want to dist-upgrade one of my laptops soon.
+17:26:54 <bmwiedemann> done.
+17:27:45 <LWFinger> I did not see 698284 and I have3 not done any DVD testing.
+17:29:04 <bmwiedemann> tigerfoot (or anyone else): do you want to share MS2 experience?
+17:30:55 <bmwiedemann> then we should move towards the second topic...
+17:31:40 <LWFinger> OK.
+17:31:55 <bmwiedemann> #topic Request to rename MS6 to Beta
+17:32:35 <LWFinger> This one was mine, so I'll start.
+17:33:25 <LWFinger> I got no suggestions for changes to my original draft. Does that mean "it was super", or "noone read it"?
+17:34:14 <bmwiedemann> I read it and thought that it is OK... just the end was a bit apprupt. could use some nice conclusive sentence.
+17:35:24 <LWFinger> Do you have a specific wording change?
+17:36:42 * cartman tries to catchup with the log
+17:36:51 <bmwiedemann> e.g. add "Thanks for considering this proposal to further enhance the user experience."
+17:37:24 <LWFinger> The test is available at http://ietherpad.com/DLUpjHL2jI.
+17:38:54 <cartman> Very good idea.
+17:40:07 <bmwiedemann> looks good.
+17:40:12 <LWFinger> I added a little more so that it reads "Thanks for considering this proposal to further enhance the user experience and the quality of the final 12.1 release.". OK?
+17:41:46 <LWFinger> I've forgotten where this should be sent.
+17:42:30 <bmwiedemann> opensuse-project ML would be good
+17:43:09 <LWFinger> One other question: Should it come from the Testing Core Team, the Team with individual names, or just names?
+17:46:11 <bmwiedemann> good question. I'd favour the second variant as we hardly ever get a majority of the Team members in IRC meetings or writing on the testing ML
+17:47:55 <LWFinger> OK. The whole team, or just the ones that show up for these meetings?
+17:49:01 <LWFinger> Holgi: Is the list of members of the TCT up to date?
+17:50:30 <bmwiedemann> hmm... we could just have a list of names of people who said, that they support this proposal. e.g. "Larry Finger, Bernhard M. Wiedemann, ... support this proposal"
+17:51:24 <bmwiedemann> or "of the Testing Core Team, Larry ... support"
+17:52:36 <LWFinger> That sounds better. I also heard from r.seete@gmail.com.
+17:53:09 <LWFinger> cartman: I don't know your other name. Are you a member of the TCT?
+17:53:22 <cartman> LWFinger: I am a bystander
+17:53:28 <LWFinger> OK.
+17:53:29 <cartman> sorry!
+17:53:35 <LWFinger> No problem.
+17:53:52 <cartman> I might be the guy fixing KDE bugs though, :)
+17:54:09 <bmwiedemann> we want anyone be able to support our proposal, though :)
+17:54:18 <LWFinger> In that case, anything I can do?
+17:54:35 <cartman> nope, I'll go over the reported bugs
+17:54:42 <cartman> and see what we can do for M3
+17:54:45 <cartman> and 12.1 in the end
+17:55:00 <bmwiedemann> cartman: great
+17:55:27 <cartman> bmwiedemann: TC Team is great :)
+17:55:45 <LWFinger> Indeed - I really want KDE to be good. I have one machine that must use Gnome, and I much prefer KDE.
+17:56:19 <cartman> Gnome is good enough for 12.1, for KDE the worst offender is NetworkManager
+17:56:22 <cartman> we'll see :(
+17:56:44 <cartman> LWFinger: if I remember right you are part of linux-wireless team right?
+17:57:03 <LWFinger> cartman: Yes.
+17:57:17 <cartman> nice :)
+17:57:45 <cartman> ok sorry for distruption, please resume
+17:57:54 <LWFinger> My parts are the RealTek and Broadcom drivers.
+17:59:00 <cartman> one of you guys should learn C++ and fix Plasma Network Applet for once and all =)
+17:59:48 <LWFinger> I think we are done with this topic. The content of the E-mail and the recipient are clear. Should I send it, or have one other cycle of review?
+18:00:16 <LWFinger> cartman: Shh, but I do know C++. I just dont like it.
+18:00:36 <bmwiedemann> we could ask for more people here to support it.
+18:01:28 <LWFinger> OK. I'll send a revised version to the testing ML and ask anyone that supports it to let me know.
+18:01:41 <bmwiedemann> Holgi, a-865, anaumov, cartman, CzP, [daemon], EGD, [jmp], Jonathan_R, tigerfoot, zaitor : do you support the rename of MS6 to Beta as detailled in  http://ietherpad.com/DLUpjHL2jI ?
+18:02:29 <cartman> I support the proposal.
+18:04:58 <bmwiedemann> I guess, email to testing ML will be better to give people time to read.
+18:05:42 <bmwiedemann> but we should give it some deadline - e.g. in 7 days
+18:06:36 <Holgi> bmwiedemann: I don't mind
+18:06:42 <LWFinger> cartman: What is your real-world name?
+18:06:48 <bmwiedemann> #topic open discussion
+18:07:21 <Holgi> LWFinger: about the list of TCT, I just know that one person resigned official
+18:07:38 <Holgi> LWFinger: about the others, I have no information
+18:07:58 <bmwiedemann> I also wanted to mention that http://connect.opensuse.org has a Testers group (currently on bottom of page 2 of groups) that you can join
+18:08:36 <cartman> LWFinger: "Ismail Donmez"
+18:11:59 <LWFinger> Holgi: Thanks. I think I'll go with the names that respond to the next E-mail.
+18:12:13 <Holgi> LWFinger: ok
+18:13:01 <bmwiedemann> and then we should schedule our next IRC meeting - e.g. 2011-07-18 17:00 UTC would be the Monday shortly after MS3 release
+18:14:02 <Holgi> sounds a reasonabkle
+18:14:08 <Holgi> sounds a reasonable date
+18:15:08 <LWFinger> OK with me.
+18:15:36 <a-865> http://ietherpad.com/DLUpjHL2jI won't open
+18:16:21 <bmwiedemann> server appears to be down atm
+18:16:36 <LWFinger> It is down from here as well.
+18:17:23 <LWFinger> I'll check it in an hour, or so.
+18:18:03 <cartman> LWFinger: did you send the email yet?
+18:18:27 <LWFinger> Not yet.
+18:18:48 <cartman> cool I just subscribed :)
+18:19:01 <LWFinger> Good.
+18:19:25 <bmwiedemann> do we have any more testing-topics to discuss?
+18:20:27 <bmwiedemann> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:20:30 <bmwiedemann> #endmeeting

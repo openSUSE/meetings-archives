@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-gnome log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">13:32:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE GNOME Meeting</span>
+<a name="l-2"></a><span class="tm">13:32:32</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Oct  7 13:32:32 2010 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">13:32:32</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">13:33:51</span><span class="nk"> &lt;vuntz&gt;</span> captain_magnus, DimStar, FunkyPenguin, fcrozat, jospoortvliet, metalgod, mrdocs, pcutler, psankar, sreeves: ping, we're having a small gnome meeting now
+<a name="l-5"></a><span class="tm">13:34:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE Conference</span>
+<a name="l-6"></a><span class="tm">13:34:08</span><span class="nk"> &lt;jospoortvliet&gt;</span> yay
+<a name="l-7"></a><span class="tm">13:34:17</span><span class="nk"> &lt;metalgod&gt;</span> hey hey
+<a name="l-8"></a><span class="tm">13:34:21</span><span class="nk"> &lt;vuntz&gt;</span> so, the main goal of the meeting is to find out what we want to do during the openSUSE conference, as a team
+<a name="l-9"></a><span class="tm">13:34:30</span><span class="nk"> &lt;vuntz&gt;</span> (of course, everybody should try to attend :-))
+<a name="l-10"></a><span class="tm">13:34:45 </span><span class="nka">* psankar</span> <span class="ac">proposes for a pet-peeves-fixing-workshop :-)</span>
+<a name="l-11"></a><span class="tm">13:35:50</span><span class="nk"> &lt;vuntz&gt;</span> I wonder
+<a name="l-12"></a><span class="tm">13:36:25</span><span class="nk"> &lt;vuntz&gt;</span> I think it'd make more to actually build a more solid list of pet peeves -- unless we have tons of time to fix things too
+<a name="l-13"></a><span class="tm">13:36:28</span><span class="nk"> &lt;vuntz&gt;</span> more sense
+<a name="l-14"></a><span class="tm">13:36:29</span><span class="nk"> &lt;FunkyPenguin&gt;</span> psankar, would your pet peeve be that you cant attend?
+<a name="l-15"></a><span class="tm">13:36:49</span><span class="nk"> &lt;psankar&gt;</span> FunkyPenguin, :-)
+<a name="l-16"></a><span class="tm">13:37:11</span><span class="nk"> &lt;metalgod&gt;</span> yeah i agree with vuntz
+<a name="l-17"></a><span class="tm">13:37:32</span><span class="nk"> &lt;metalgod&gt;</span> we don't have that much manpower and a big list
+<a name="l-18"></a><span class="tm">13:37:57</span><span class="nk"> &lt;metalgod&gt;</span> this is a kind of work that should be done also with upstream
+<a name="l-19"></a><span class="tm">13:38:09</span><span class="nk"> &lt;vuntz&gt;</span> so, fwiw, we have a "What annoys you in GNOME?" BoF on Friday morning, iirc
+<a name="l-20"></a><span class="tm">13:38:33</span><span class="nk"> &lt;psankar&gt;</span> vuntz, so will that be a discussion session or a hacking session ?
+<a name="l-21"></a><span class="tm">13:38:38</span><span class="nk"> &lt;vuntz&gt;</span> discussion
+<a name="l-22"></a><span class="tm">13:38:51</span><span class="nk"> &lt;vuntz&gt;</span> the goal is to get feedback from people who are not necessarily in the team
+<a name="l-23"></a><span class="tm">13:38:59</span><span class="nk"> &lt;psankar&gt;</span> okay
+<a name="l-24"></a><span class="tm">13:39:01</span><span class="nk"> &lt;vuntz&gt;</span> because they might see things we don't see :-)
+<a name="l-25"></a><span class="tm">13:39:12</span><span class="nk"> &lt;vuntz&gt;</span> and it's only one hour, so it's be short to hack :-)
+<a name="l-26"></a><span class="tm">13:39:21</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> the point is to get that reports, discuss and send to upstream ?
+<a name="l-27"></a><span class="tm">13:39:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> send upstream when it makes sense, or fix it ourselves when we can
+<a name="l-28"></a><span class="tm">13:40:00</span><span class="nk"> &lt;psankar&gt;</span> I ask for having one hacking session so that we could send some fixes for upstream from GNOME. simple things such as: "calendar launcher from keyboard"  "gdm screen customizer" etc.
+<a name="l-29"></a><span class="tm">13:40:04</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> but yeah, get reports and discuss
+<a name="l-30"></a><span class="tm">13:40:11</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> right... my point
+<a name="l-31"></a><span class="tm">13:40:13</span><span class="nk"> &lt;metalgod&gt;</span> makes sense yes
+<a name="l-32"></a><span class="tm">13:40:22</span><span class="nk"> &lt;metalgod&gt;</span> got a few ones for 3.0 would be nice
+<a name="l-33"></a><span class="tm">13:40:34</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> the issue is that a hacking session would require at least one day. But there are talks every day
+<a name="l-34"></a><span class="tm">13:41:10</span><span class="nk"> &lt;psankar&gt;</span> vuntz, hmm agreed. also there is this issue of people getting tired of travel and the need for socializing
+<a name="l-35"></a><span class="tm">13:41:50</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> that's an idea i had a couple of months/years ago that we should do a hack week
+<a name="l-36"></a><span class="tm">13:42:13</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> i.e. writing a gtk smolt client, upstreaming some patches etc...
+<a name="l-37"></a><span class="tm">13:42:25</span><span class="nk"> &lt;psankar&gt;</span> metalgod, that will be cool. may be we can plan for how to organize one such,, during the conf.
+<a name="l-38"></a><span class="tm">13:42:25</span><span class="nk"> &lt;vuntz&gt;</span> fwiw, if we can get people to go to Nürnberg, I'm sure we could host a hackfest there
+<a name="l-39"></a><span class="tm">13:42:44</span><span class="nk"> &lt;vuntz&gt;</span> the issue is finding sponsorship money...
+<a name="l-40"></a><span class="tm">13:42:47</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> but i think we shouldn't do it on a conference
+<a name="l-41"></a><span class="tm">13:42:54</span><span class="nk"> &lt;psankar&gt;</span> metalgod, okay
+<a name="l-42"></a><span class="tm">13:43:12</span><span class="nk"> &lt;psankar&gt;</span> vuntz, may be during the next desktop summit , after the desktop summit we can have a hacking session
+<a name="l-43"></a><span class="tm">13:43:26</span><span class="nk"> &lt;psankar&gt;</span> vuntz, but that is too far away to plan anything now
+<a name="l-44"></a><span class="tm">13:43:38</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> when it's novell hackweek ?
+<a name="l-45"></a><span class="tm">13:43:51</span><span class="nk"> &lt;psankar&gt;</span> i mena, people will travel via their employer/ gnome foundation  to GUADEC/Akademy
+<a name="l-46"></a><span class="tm">13:44:09</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> could make sense, yes
+<a name="l-47"></a><span class="tm">13:44:13</span><span class="nk"> &lt;psankar&gt;</span> and then we can ask them to come to Nuremberg (or) have a session in Berlin itself - a NGOME track etc.
+<a name="l-48"></a><span class="tm">13:44:27</span><span class="nk"> &lt;psankar&gt;</span> metalgod, no idea. I am not in the OPS division for a long time now :(
+<a name="l-49"></a><span class="tm">13:44:27</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> I'm not sure we know when the next hackweek will be
+<a name="l-50"></a><span class="tm">13:45:30</span><span class="nk"> &lt;psankar&gt;</span> One more thing  I would liek to porpose is: We keep hearing about a11y and the importance of it. but dont have any clear idea about what we should do to improve it in openSUSE. Last year,
+<a name="l-51"></a><span class="tm">13:45:43</span><span class="nk"> &lt;psankar&gt;</span> there was a track on a11y by sshaw and suserocks but
+<a name="l-52"></a><span class="tm">13:45:52</span><span class="nk"> &lt;psankar&gt;</span> it coincided with some other talk and didnt get much reception
+<a name="l-53"></a><span class="tm">13:46:27</span><span class="nk"> &lt;psankar&gt;</span> so I propose we ask them to speak about a11y and what are the top 5-6 tasks that they would require from us GNOME for a11y
+<a name="l-54"></a><span class="tm">13:46:31</span><span class="nk"> &lt;psankar&gt;</span> sounds good ?
+<a name="l-55"></a><span class="tm">13:46:59</span><span class="nk"> &lt;vuntz&gt;</span> makes sense to me
+<a name="l-56"></a><span class="tm">13:47:05</span><span class="nk"> &lt;vuntz&gt;</span> I don't know if sshaw is coming, though
+<a name="l-57"></a><span class="tm">13:47:07</span><span class="nk"> &lt;psankar&gt;</span> may be vuntz knows it already. but I am not sure how many others know what we can do to help a11y.
+<a name="l-58"></a><span class="tm">13:47:10</span><span class="nk"> &lt;psankar&gt;</span> ah :(
+<a name="l-59"></a><span class="tm">13:47:17</span><span class="nk"> &lt;vuntz&gt;</span> I have absolutely no clue about a11y :-)
+<a name="l-60"></a><span class="tm">13:47:28</span><span class="nk"> &lt;psankar&gt;</span> i believe somoen from SLE desktop team would come.
+<a name="l-61"></a><span class="tm">13:47:49</span><span class="nk"> &lt;psankar&gt;</span> sreeves, may be ?
+<a name="l-62"></a><span class="tm">13:48:30</span><span class="nk"> &lt;vuntz&gt;</span> I think sreeves will be there, yes
+<a name="l-63"></a><span class="tm">13:48:33</span><span class="nk"> &lt;psankar&gt;</span> IIUC the SLE team was doing soething for a11y and they will have better knowledge to spoeak about a11y along with suserrocks
+<a name="l-64"></a><span class="tm">13:48:48</span><span class="nk"> &lt;vuntz&gt;</span> but I'm sure he'd prefer to have someone else talk about a11y too ;-)
+<a name="l-65"></a><span class="tm">13:49:05</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> suserocks himself ? :)
+<a name="l-66"></a><span class="tm">13:49:21</span><span class="nk"> &lt;psankar&gt;</span> vuntz, may be we can make it an #action on sreeves to find someone to speak from his team ;-)
+<a name="l-67"></a><span class="tm">13:49:27</span><span class="nk"> &lt;metalgod&gt;</span> or probably someone from mono a11y
+<a name="l-68"></a><span class="tm">13:49:43</span><span class="nk"> &lt;psankar&gt;</span> metalgod, yes suserocks for sure. we need one more person also to accompany him
+<a name="l-69"></a><span class="tm">13:49:50</span><span class="nk"> &lt;psankar&gt;</span> just like last year
+<a name="l-70"></a><span class="tm">13:50:22</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">SUSEhelp:</span> tell sshaw are you coming to the openSUSE conf? Or do you know who is coming and could talk about a11y?
+<a name="l-71"></a><span class="tm">13:50:23</span><span class="nk"> &lt;SUSEhelp&gt;</span> <span class="hi">vuntz:</span> Okay, will ask upon next speaking. (Sent to 1 person.)
+<a name="l-72"></a><span class="tm">13:50:53</span><span class="nk"> &lt;vuntz&gt;</span> so we'll see if can get such a meeting to happen. That'd be useful, indeed
+<a name="l-73"></a><span class="tm">13:51:01</span><span class="nk"> &lt;vuntz&gt;</span> any other topic we should discuss with other teams?
+<a name="l-74"></a><span class="tm">13:51:27</span><span class="nk"> &lt;psankar&gt;</span> vuntz, there is one topic that is bothering me but it is not related to opensuse directly
+<a name="l-75"></a><span class="tm">13:51:30</span><span class="nk"> &lt;sandy|lurk&gt;</span> <span class="hi">DimStar:</span> should probably wait on Snowy l10n until after the hackfest next month
+<a name="l-76"></a><span class="tm">13:51:34</span><span class="nk"> &lt;sandy|lurk&gt;</span> we may make big UI changes
+<a name="l-77"></a><span class="tm">13:51:40</span><span class="nk"> &lt;sandy|lurk&gt;</span> don't want to waste anyone's time
+<a name="l-78"></a><span class="tm">13:51:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> yes?
+<a name="l-79"></a><span class="tm">13:51:59</span><span class="nk"> &lt;psankar&gt;</span> vuntz, it is about icons and their cache , which doesnt get visible until logout in gnome bcos of caching
+<a name="l-80"></a><span class="tm">13:52:33</span><span class="nk"> &lt;sandy|lurk&gt;</span> <span class="hi">vuntz:</span> yeah, snowy packages would be welcome, but I don't see them as being as urgent for a web app as for a desktop app
+<a name="l-81"></a><span class="tm">13:52:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">sandy|lurk:</span> ok
+<a name="l-82"></a><span class="tm">13:52:55</span><span class="nk"> &lt;sandy|lurk&gt;</span> a suse studio appliance would be pretty hawt
+<a name="l-83"></a><span class="tm">13:52:59</span><span class="nk"> &lt;psankar&gt;</span> vuntz, and i was told that rpm guys will have to help . may be we can talk to some people and convince them that it is needed soonish etc. ?
+<a name="l-84"></a><span class="tm">13:53:13</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> so, we've decided to go ahead and fix it the long way
+<a name="l-85"></a><span class="tm">13:53:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> all packages installing icons in hicolor should use some macros in %post and %postun
+<a name="l-86"></a><span class="tm">13:53:49</span><span class="nk"> &lt;psankar&gt;</span> vuntz, okay. I getback that proposal :-)
+<a name="l-87"></a><span class="tm">13:53:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> %icon_theme_cache_post and %icon_theme_cache_postun
+<a name="l-88"></a><span class="tm">13:54:03</span><span class="nk"> &lt;psankar&gt;</span> vuntz, okay
+<a name="l-89"></a><span class="tm">13:54:14</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> feel free to fix a few packages ;-)
+<a name="l-90"></a><span class="tm">13:54:24</span><span class="nk"> &lt;psankar&gt;</span> vuntz, hehe sure :-)
+<a name="l-91"></a><span class="tm">13:54:41</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> ok an interesting topic: how can we get more developers to use opensuse ?
+<a name="l-92"></a><span class="tm">13:54:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> something to discuss at the conference, or now? :-)
+<a name="l-93"></a><span class="tm">13:55:00</span><span class="nk"> &lt;psankar&gt;</span> metalgod, i believe that will be gnome-agnostic
+<a name="l-94"></a><span class="tm">13:55:05</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> at the conference
+<a name="l-95"></a><span class="tm">13:55:15</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> with the marketing team
+<a name="l-96"></a><span class="tm">13:56:11</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> ok
+<a name="l-97"></a><span class="tm">13:56:25</span><span class="nk"> &lt;vuntz&gt;</span> added to my list
+<a name="l-98"></a><span class="tm">13:56:33</span><span class="nk"> &lt;metalgod&gt;</span> giving that we already ship GNOME releases at day 1
+<a name="l-99"></a><span class="tm">13:56:36</span><span class="nk"> &lt;vuntz&gt;</span> I forgot to tell what I have in my list already :-)
+<a name="l-100"></a><span class="tm">13:56:47</span><span class="nk"> &lt;metalgod&gt;</span> we have a few developers using it already
+<a name="l-101"></a><span class="tm">13:56:50</span><span class="nk"> &lt;vuntz&gt;</span> talk to the security team about gnomesu replacement (probably pkexec)
+<a name="l-102"></a><span class="tm">13:56:51</span><span class="nk"> &lt;metalgod&gt;</span> what's missing ?
+<a name="l-103"></a><span class="tm">13:57:09</span><span class="nk"> &lt;vuntz&gt;</span> talk to legal team about how to automatically configure a community repo for codecs
+<a name="l-104"></a><span class="tm">13:57:17</span><span class="nk"> &lt;vuntz&gt;</span> that's the two things I had
+<a name="l-105"></a><span class="tm">13:57:21</span><span class="nk"> &lt;metalgod&gt;</span> wonderful
+<a name="l-106"></a><span class="tm">13:57:30</span><span class="nk"> &lt;psankar&gt;</span> vuntz, one more idea i have is: we have a Kernel of the day rpms in a build-service project. I am told that kiwi can help us create KVM images. so we can try to create KVM images of he full GNOME using Kernl-of-the-day and gnome-factory-of-the-day which can be used by testers etc.
+<a name="l-107"></a><span class="tm">13:57:59</span><span class="nk"> &lt;psankar&gt;</span> I believe mmarek and some kernel people iwl come and we will have buildservice people as well in the conf
+<a name="l-108"></a><span class="tm">13:58:05</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> yeah i get your idea... it's like gnome developer kit
+<a name="l-109"></a><span class="tm">13:58:14</span><span class="nk"> &lt;psankar&gt;</span> metalgod, yeah,
+<a name="l-110"></a><span class="tm">13:58:28</span><span class="nk"> &lt;psankar&gt;</span> metalgod, but with the latest opensuse-kernel also
+<a name="l-111"></a><span class="tm">13:58:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> stupid question but... why would we need the kernel of the day on such an image?
+<a name="l-112"></a><span class="tm">13:58:56</span><span class="nk"> &lt;psankar&gt;</span> vuntz, you can test both the kernel and the desktop. (wireless/ webcam regressions etc.)
+<a name="l-113"></a><span class="tm">13:59:03</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">psankar:</span> i'm more for having a GNOME 2.32 spinoff
+<a name="l-114"></a><span class="tm">13:59:06</span><span class="nk"> &lt;metalgod&gt;</span> like the kde team did
+<a name="l-115"></a><span class="tm">13:59:29</span><span class="nk"> &lt;vuntz&gt;</span> so, anyway, creating an image based on GNOME:Factory is not hard
+<a name="l-116"></a><span class="tm">13:59:37</span><span class="nk"> &lt;vuntz&gt;</span> we do have a project in the build service for this
+<a name="l-117"></a><span class="tm">13:59:48</span><span class="nk"> &lt;psankar&gt;</span> vuntz, metalgod I believe the kernel team will also start liking gnome, if we can give them a test bed. none will test a kernel alone. but running a vm with kernel and apps. is easier
+<a name="l-118"></a><span class="tm">13:59:58</span><span class="nk"> &lt;psankar&gt;</span> vuntz, oh ? okay. didnt know that
+<a name="l-119"></a><span class="tm">14:00:10</span><span class="nk"> &lt;vuntz&gt;</span> GNOME:Medias
+<a name="l-120"></a><span class="tm">14:00:27</span><span class="nk"> &lt;vuntz&gt;</span> we just need someone to step up and take care of it
+<a name="l-121"></a><span class="tm">14:00:34</span><span class="nk"> &lt;psankar&gt;</span> vuntz, it creates preconfigured kvm images ?
+<a name="l-122"></a><span class="tm">14:00:40</span><span class="nk"> &lt;vuntz&gt;</span> it creates a livecd right now
+<a name="l-123"></a><span class="tm">14:00:47</span><span class="nk"> &lt;psankar&gt;</span> if so, we should advertise it more. so that people can download and test it.
+<a name="l-124"></a><span class="tm">14:00:49</span><span class="nk"> &lt;psankar&gt;</span> ah okay
+<a name="l-125"></a><span class="tm">14:00:59</span><span class="nk"> &lt;vuntz&gt;</span> but that's probably just a flag
+<a name="l-126"></a><span class="tm">14:01:06</span><span class="nk"> &lt;psankar&gt;</span> i believe creating kvm images is better than livecd for testers
+<a name="l-127"></a><span class="tm">14:01:21</span><span class="nk"> &lt;vuntz&gt;</span> and it'd be amazing to have someone step up and take care of GNOME:Medias
+<a name="l-128"></a><span class="tm">14:02:00</span><span class="nk"> &lt;psankar&gt;</span> hmm okay. so probably can be discussed in the gnome session about medias and how we can improve it and how we can maintian it etc.
+<a name="l-129"></a><span class="tm">14:02:12</span><span class="nk"> &lt;psankar&gt;</span> i mean in the gnome session in the conference
+<a name="l-130"></a><span class="tm">14:03:15</span><span class="nk"> &lt;vuntz&gt;</span> any other idea?
+<a name="l-131"></a><span class="tm">14:04:03</span><span class="nk"> &lt;psankar&gt;</span> nothing more from my end. apart from an ice-cream-deathmatch
+<a name="l-132"></a><span class="tm">14:04:17</span><span class="nk"> &lt;psankar&gt;</span> may be to add German-ness into the event, Beer can be mixed with the ice-cream
+<a name="l-133"></a><span class="tm">14:04:18</span><span class="nk"> &lt;vuntz&gt;</span> :-)
+<a name="l-134"></a><span class="tm">14:04:51</span><span class="nk"> &lt;vuntz&gt;</span> that's crazy ;-)
+<a name="l-135"></a><span class="tm">14:04:59</span><span class="nk"> &lt;psankar&gt;</span> :)
+<a name="l-136"></a><span class="tm">14:05:45</span><span class="nk"> &lt;psankar&gt;</span> curtains down ?
+<a name="l-137"></a><span class="tm">14:06:19</span><span class="nk"> &lt;vuntz&gt;</span> okay, so we're done, I guess
+<a name="l-138"></a><span class="tm">14:06:21</span><span class="nk"> &lt;vuntz&gt;</span> thanks all
+<a name="l-139"></a><span class="tm">14:06:37</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> quick question: do you know when the next normal meeting will be?
+<a name="l-140"></a><span class="tm">14:06:48</span><span class="nk"> &lt;psankar&gt;</span> vuntz, oh nothing planned :-)
+<a name="l-141"></a><span class="tm">14:06:54</span><span class="nk"> &lt;psankar&gt;</span> vuntz, whenever you want it ot be :-)
+<a name="l-142"></a><span class="tm">14:07:05</span><span class="nk"> &lt;psankar&gt;</span> vuntz, I thought may be after conference
+<a name="l-143"></a><span class="tm">14:07:19</span><span class="nk"> &lt;psankar&gt;</span> otherwise I would've sent one for hte mid of october
+<a name="l-144"></a><span class="tm">14:08:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> well, it's up to you
+<a name="l-145"></a><span class="tm">14:08:18</span><span class="nk"> &lt;vuntz&gt;</span> we just need to not forget about it :-)
+<a name="l-146"></a><span class="tm">14:08:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

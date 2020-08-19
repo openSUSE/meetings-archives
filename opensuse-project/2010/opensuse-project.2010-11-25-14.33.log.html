@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">14:33:27</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">Welcome to the openFATE screening Team meeting</span>
+<a name="l-2"></a><span class="tm">14:33:27</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Nov 25 14:33:27 2010 UTC.  The chair is AJaeger. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">14:33:27</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">14:33:42</span><span class="nk"> &lt;AJaeger&gt;</span> I'm very sorry that I'm 30mins late on this one ;-(
+<a name="l-5"></a><span class="tm">14:33:53</span><span class="nk"> &lt;AJaeger&gt;</span> I have written as agenda items:
+<a name="l-6"></a><span class="tm">14:34:00</span><span class="nk"> &lt;AJaeger&gt;</span> 1. How to handle openSUSE distribution (see Stano's email)?
+<a name="l-7"></a><span class="tm">14:34:01</span><span class="nk"> &lt;AJaeger&gt;</span> 2. How to handle openSUSE 11.4?
+<a name="l-8"></a><span class="tm">14:34:14</span><span class="nk"> &lt;AJaeger&gt;</span> 3. Using openFATE - questions on workflow and usage
+<a name="l-9"></a><span class="tm">14:34:23</span><span class="nk"> &lt;AJaeger&gt;</span> 4. Q&amp;A
+<a name="l-10"></a><span class="tm">14:34:38</span><span class="nk"> &lt;AJaeger&gt;</span> Anything else to add to the agenda right now?
+<a name="l-11"></a><span class="tm">14:35:05</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">How to handle openSUSE distribution?</span>
+<a name="l-12"></a><span class="tm">14:35:58</span><span class="nk"> &lt;AJaeger&gt;</span> So, should we use the Bucket idea and as such enhance openFATE that you can only create features with the generic bucket - and we then later mvoe them to e.g. openSUSE 11.4?
+<a name="l-13"></a><span class="tm">14:36:20</span><span class="nk"> &lt;AJaeger&gt;</span> Stano could you explain briefly the Bucket idea?
+<a name="l-14"></a><span class="tm">14:37:02</span><span class="nk"> &lt;Stano&gt;</span> The whole idea is to avoid 'postponing' features and better follow the real development model
+<a name="l-15"></a><span class="tm">14:37:24 </span><span class="nka">* AJaeger</span> <span class="ac">is also tired of cleaning up 11.3 features now ;)</span>
+<a name="l-16"></a><span class="tm">14:37:37</span><span class="nk"> &lt;Stano&gt;</span> This is how I see a feature lifecycle in high-level:
+<a name="l-17"></a><span class="tm">14:38:21</span><span class="nk"> &lt;Stano&gt;</span> 1) someone has a great idea - typically 2-3 sentences
+<a name="l-18"></a><span class="tm">14:38:40</span><span class="nk"> &lt;HeliosReds&gt;</span> I also think Bucket is a good idea.
+<a name="l-19"></a><span class="tm">14:38:59</span><span class="nk"> &lt;Stano&gt;</span> 2) the idea needs to be clarified, looked at from different perspectives, etc
+<a name="l-20"></a><span class="tm">14:39:18</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">digitltom:</span> can we implement in openFATE such that people request for "openSUSE distribution" and cannot add 11.4 directly?
+<a name="l-21"></a><span class="tm">14:39:58</span><span class="nk"> &lt;Stano&gt;</span> 3) it's almost clear what is needed to be done, only then we can work on the feature (in openSUSE, this is more importantnly integration)
+<a name="l-22"></a><span class="tm">14:40:39</span><span class="nk"> &lt;Stano&gt;</span> only in step 3) we can reasonably figure out which openSUSE release can have the idea implemented
+<a name="l-23"></a><span class="tm">14:40:43</span><span class="nk"> &lt;digitltom&gt;</span> <span class="hi">AJaeger:</span>  we can do this, but who should be able to add 11.4 and with which client?
+<a name="l-24"></a><span class="tm">14:41:10</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">digitltom:</span> Add it with openFATE in a second step?
+<a name="l-25"></a><span class="tm">14:41:17</span><span class="nk"> &lt;Stano&gt;</span> <span class="hi">digitltom:</span> ideally, only status Ready/Marketplace, Implementation and Done can have openSUSE 11.4
+<a name="l-26"></a><span class="tm">14:42:52</span><span class="nk"> &lt;HeliosReds&gt;</span> And there may be deadline for each release.
+<a name="l-27"></a><span class="tm">14:43:03</span><span class="nk"> &lt;digitltom&gt;</span> should be possible
+<a name="l-28"></a><span class="tm">14:43:12</span><span class="nk"> &lt;digitltom&gt;</span> deadlines are already there
+<a name="l-29"></a><span class="tm">14:45:16</span><span class="nk"> &lt;AJaeger&gt;</span> So, consensus? Then let's ask digitltom to drive implementation...
+<a name="l-30"></a><span class="tm">14:45:39</span><span class="nk"> &lt;Stano&gt;</span> yes from my side :-)
+<a name="l-31"></a><span class="tm">14:45:48</span><span class="nk"> &lt;HeliosReds&gt;</span> If the feature is just a minor enhancement, it can be for 11.4, but if it's somehow 'big', it should be for 11.5 (or 12.0?)
+<a name="l-32"></a><span class="tm">14:46:14</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">HeliosReds:</span> YEs, depending on the time we evaluate it ;)
+<a name="l-33"></a><span class="tm">14:48:23</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="cmd">#action </span><span class="cmdline">digitltom to implement product "openSUSE distribution" bucket for new features so that we do not have to postpone every feature</span>
+<a name="l-34"></a><span class="tm">14:48:35</span><span class="nk"> &lt;AJaeger&gt;</span> ok, next topic:
+<a name="l-35"></a><span class="tm">14:48:40</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">How to handle openSUSE 11.4?</span>
+<a name="l-36"></a><span class="tm">14:49:10</span><span class="nk"> &lt;AJaeger&gt;</span> WE have 200+ unconfirmed features in openSUSE 11.4 and I would like to figure out the "good" ones asap.
+<a name="l-37"></a><span class="tm">14:50:09</span><span class="nk"> &lt;Stano&gt;</span> <span class="hi">AJaeger:</span> well, we have to get our hands dirty
+<a name="l-38"></a><span class="tm">14:50:31</span><span class="nk"> &lt;AJaeger&gt;</span> My idea would be that we all go through them and get our hands dirty and - either postpone (put them into the bucket) or move them forward.
+<a name="l-39"></a><span class="tm">14:52:00</span><span class="nk"> &lt;Stano&gt;</span> <span class="hi">AJaeger:</span> can you remind me how much time we have left for features in 11.4?
+<a name="l-40"></a><span class="tm">14:52:49 </span><span class="nka">* AJaeger</span> <span class="ac">just checks http://www.suse.de/~coolo/opensuse_11.4/</span>
+<a name="l-41"></a><span class="tm">14:53:00</span><span class="nk"> &lt;digitltom&gt;</span> <span class="hi">AJaeger:</span>  the product database has no feature deadline yet, i need to set this
+<a name="l-42"></a><span class="tm">14:53:45</span><span class="nk"> &lt;AJaeger&gt;</span> Milestone5 is on 16th December and "feature complete" - so basically, we're already too late ;-(
+<a name="l-43"></a><span class="tm">14:55:46</span><span class="nk"> &lt;AJaeger&gt;</span> So, that's 3 weeks of development from now on since checkin deadline for M5 is the 13th.
+<a name="l-44"></a><span class="tm">14:58:59</span><span class="nk"> &lt;digitltom&gt;</span> <span class="hi">AJaeger:</span>  ok, i've set the feature deadline
+<a name="l-45"></a><span class="tm">15:00:00</span><span class="nk"> &lt;AJaeger&gt;</span> So, what should we do with features?
+<a name="l-46"></a><span class="tm">15:00:12</span><span class="nk"> &lt;AJaeger&gt;</span> Cleanup the list and add the generic bucket?
+<a name="l-47"></a><span class="tm">15:00:19</span><span class="nk"> &lt;Stano&gt;</span> yes, when it's ready
+<a name="l-48"></a><span class="tm">15:01:09</span><span class="nk"> &lt;AJaeger&gt;</span> There only a few we can really move forward - my proposal would be to start now the stuff for 11.5?
+<a name="l-49"></a><span class="tm">15:01:22</span><span class="nk"> &lt;Stano&gt;</span> yes, that's the only sane thing to do
+<a name="l-50"></a><span class="tm">15:01:43</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">BUT:</span> I plan to go through the complete list and cherry pick a handful that I push through for 11.4 - and if you have a handfull, add them as well..
+<a name="l-51"></a><span class="tm">15:02:24</span><span class="nk"> &lt;AJaeger&gt;</span> ok?
+<a name="l-52"></a><span class="tm">15:02:59</span><span class="nk"> &lt;HeliosReds&gt;</span> IMHO, we should review high-scored features first.
+<a name="l-53"></a><span class="tm">15:03:11 </span><span class="nka">* Spyhawk</span> <span class="ac">just realized that he's one hour late :]</span>
+<a name="l-54"></a><span class="tm">15:03:22</span><span class="nk"> &lt;AJaeger&gt;</span> Welcome Spyhawk! WE started 30mins late ;)
+<a name="l-55"></a><span class="tm">15:03:26</span><span class="nk"> &lt;Stano&gt;</span> <span class="hi">AJaeger:</span> definitely
+<a name="l-56"></a><span class="tm">15:03:32</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">Spyhawk:</span> so, you're only 30mins late..
+<a name="l-57"></a><span class="tm">15:03:36</span><span class="nk"> &lt;Spyhawk&gt;</span> so I'm only helf late :]
+<a name="l-58"></a><span class="tm">15:04:07</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">HeliosReds:</span> Yes, high-scored is something...
+<a name="l-59"></a><span class="tm">15:04:32</span><span class="nk"> &lt;AJaeger&gt;</span> ... to look at
+<a name="l-60"></a><span class="tm">15:04:56</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">digitltom:</span> Can I search for features with say more than 20 scores?
+<a name="l-61"></a><span class="tm">15:05:14</span><span class="nk"> &lt;HeliosReds&gt;</span> https://features.opensuse.org/preview/query/run?order=score&amp;search_products[]=22236&amp;type=find
+<a name="l-62"></a><span class="tm">15:05:20</span><span class="nk"> &lt;digitltom&gt;</span> <span class="hi">AJaeger:</span>  you can search for 11.4 and order by votes
+<a name="l-63"></a><span class="tm">15:05:22</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">HeliosReds:</span> Thanks!
+<a name="l-64"></a><span class="tm">15:05:37</span><span class="nk"> &lt;HeliosReds&gt;</span> Then click Score.
+<a name="l-65"></a><span class="tm">15:05:48</span><span class="nk"> &lt;AJaeger&gt;</span> Ok, so, I propose:
+<a name="l-66"></a><span class="tm">15:06:12</span><span class="nk"> &lt;AJaeger&gt;</span> We all try to push the features with  a score higher than 20 forward for 11.4.
+<a name="l-67"></a><span class="tm">15:06:44</span><span class="nk"> &lt;AJaeger&gt;</span> We go briefly through others and check for features to move forward (each of us only a few) for 11.4
+<a name="l-68"></a><span class="tm">15:06:50</span><span class="nk"> &lt;AJaeger&gt;</span> We move everythign else to the bucket
+<a name="l-69"></a><span class="tm">15:07:12</span><span class="nk"> &lt;AJaeger&gt;</span> We find experts that handle the features in the state new
+<a name="l-70"></a><span class="tm">15:07:37</span><span class="nk"> &lt;AJaeger&gt;</span> and have them evaluate and push to "Marketplace" - and we tell people about those features...
+<a name="l-71"></a><span class="tm">15:08:03</span><span class="nk"> &lt;simon123&gt;</span> https://features.opensuse.org/preview/310229
+<a name="l-72"></a><span class="tm">15:08:10</span><span class="nk"> &lt;AJaeger&gt;</span> Sound like a plan?
+<a name="l-73"></a><span class="tm">15:08:14</span><span class="nk"> &lt;simon123&gt;</span> that is below your radar
+<a name="l-74"></a><span class="tm">15:08:25</span><span class="nk"> &lt;Spyhawk&gt;</span> yup, souds good
+<a name="l-75"></a><span class="tm">15:08:34</span><span class="nk"> &lt;Spyhawk&gt;</span> <span class="hi">simon123:</span> I guess we also need to use common sense
+<a name="l-76"></a><span class="tm">15:08:47</span><span class="nk"> &lt;Spyhawk&gt;</span> or quickly find two people to vote for the feature :]
+<a name="l-77"></a><span class="tm">15:08:50</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> As I've said "Go briefly through others"
+<a name="l-78"></a><span class="tm">15:08:55</span><span class="nk"> &lt;simon123&gt;</span> ok
+<a name="l-79"></a><span class="tm">15:09:17</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> So, if you think that feature should be in 11.4, move it forward - just do so ;)
+<a name="l-80"></a><span class="tm">15:09:39</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> But for those under the radar: Select only a handful ;)
+<a name="l-81"></a><span class="tm">15:10:14</span><span class="nk"> &lt;simon123&gt;</span> where that can be published (after the meeting)
+<a name="l-82"></a><span class="tm">15:10:47</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> What do you mean?
+<a name="l-83"></a><span class="tm">15:11:13</span><span class="nk"> &lt;AJaeger&gt;</span> Anybody wants to send out a call for "domain experts" to the other teams?
+<a name="l-84"></a><span class="tm">15:13:08</span><span class="nk"> &lt;AJaeger&gt;</span> OK, then I'll do that.
+<a name="l-85"></a><span class="tm">15:13:21</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="cmd">#action </span><span class="cmdline">AJaeger to send out a call for "domain experts" to evaluate features</span>
+<a name="l-86"></a><span class="tm">15:13:41</span><span class="nk"> &lt;Stano&gt;</span> <span class="hi">AJaeger:</span> how do we find out the domains?
+<a name="l-87"></a><span class="tm">15:13:58</span><span class="nk"> &lt;HeliosReds&gt;</span> For example, who can be the "domain experts" for https://features.opensuse.org/preview/310229 ?
+<a name="l-88"></a><span class="tm">15:14:14</span><span class="nk"> &lt;simon123&gt;</span> <span class="hi">AJaeger:</span> feature 310299 is already 11.4 , but I have strong feeling that NTFS mount must be trivial task (at least) so how to give you a note, or list of features that might be overlooked and are important
+<a name="l-89"></a><span class="tm">15:14:29</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">Stano:</span> http://en.opensuse.org/openSUSE:Openfate_screening_process#Tags
+<a name="l-90"></a><span class="tm">15:14:49</span><span class="nk"> &lt;AJaeger&gt;</span> So, we add a tag to each feature - and a domain expert looks at features with a certain tag.
+<a name="l-91"></a><span class="tm">15:15:15</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">HeliosReds:</span> That one could be base_system
+<a name="l-92"></a><span class="tm">15:16:11</span><span class="nk"> &lt;HeliosReds&gt;</span> I've just added. ;-)
+<a name="l-93"></a><span class="tm">15:18:09</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> What we need is general speaking about features IMO - I don't want to push every single feature
+<a name="l-94"></a><span class="tm">15:18:37</span><span class="nk"> &lt;AJaeger&gt;</span> so, let's add further tags if we need them to the list of tags - so that we can then add "domain experts" to the tag list
+<a name="l-95"></a><span class="tm">15:18:57 </span><span class="nka">* simon123</span> <span class="ac">gives a Medal of Clear Talk to HeliosReds for http://en.opensuse.org/File:OpenFATE_feature_handling_flow.png</span>
+<a name="l-96"></a><span class="tm">15:19:27 </span><span class="nka">* AJaeger</span> <span class="ac">claps as well</span>
+<a name="l-97"></a><span class="tm">15:19:54</span><span class="nk"> &lt;simon123&gt;</span> <span class="hi">AJaeger:</span> that particular one is low hanging fruit, not much work to implement
+<a name="l-98"></a><span class="tm">15:20:50</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> Yep.
+<a name="l-99"></a><span class="tm">15:21:40</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> Also move the feature to NEW.
+<a name="l-100"></a><span class="tm">15:21:49</span><span class="nk"> &lt;AJaeger&gt;</span> (or whoever just added the tag)
+<a name="l-101"></a><span class="tm">15:22:43</span><span class="nk"> &lt;Spyhawk&gt;</span> ok, then... anything else to discuss?
+<a name="l-102"></a><span class="tm">15:23:34</span><span class="nk"> &lt;simon123&gt;</span> <span class="hi">AJaeger:</span> I'm not sure that I can change anything - never applied to be a screener
+<a name="l-103"></a><span class="tm">15:23:53</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> Everybody is allowed to change - like in Bugzilla.
+<a name="l-104"></a><span class="tm">15:23:58</span><span class="nk"> &lt;simon123&gt;</span> ok
+<a name="l-105"></a><span class="tm">15:24:19</span><span class="nk"> &lt;AJaeger&gt;</span> But I agree, the screeners should do it - so if you want to join us, just sign up ;)
+<a name="l-106"></a><span class="tm">15:24:41</span><span class="nk"> &lt;simon123&gt;</span> (where :D )
+<a name="l-107"></a><span class="tm">15:24:58</span><span class="nk"> &lt;simon123&gt;</span> I still don't see how to change status
+<a name="l-108"></a><span class="tm">15:25:05</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> http://en.opensuse.org/openSUSE:Openfate_screening#Participants
+<a name="l-109"></a><span class="tm">15:25:59</span><span class="nk"> &lt;Spyhawk&gt;</span> <span class="hi">simon123:</span> "Edit products" on features.opensuse.org/preview/&lt;number&gt;
+<a name="l-110"></a><span class="tm">15:26:37</span><span class="nk"> &lt;simon123&gt;</span> done
+<a name="l-111"></a><span class="tm">15:26:48</span><span class="nk"> &lt;simon123&gt;</span> (both)
+<a name="l-112"></a><span class="tm">15:26:49</span><span class="nk"> &lt;AJaeger&gt;</span> ok, topic closed?
+<a name="l-113"></a><span class="tm">15:27:15</span><span class="nk"> &lt;HeliosReds&gt;</span> <span class="hi">simon123:</span> Then, click left yellow box.
+<a name="l-114"></a><span class="tm">15:27:34</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">Using openFATE - questions on workflow and usage</span>
+<a name="l-115"></a><span class="tm">15:28:10</span><span class="nk"> &lt;AJaeger&gt;</span> Any questions comments on workflow and using the webui?
+<a name="l-116"></a><span class="tm">15:31:49</span><span class="nk"> &lt;simon123&gt;</span> obvious one: Can we have few more words more instead of icons +tooltips
+<a name="l-117"></a><span class="tm">15:32:26</span><span class="nk"> &lt;simon123&gt;</span> I didn't find how to edit feature status without help
+<a name="l-118"></a><span class="tm">15:34:23</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> So, a visual guide or just words in the Webui?
+<a name="l-119"></a><span class="tm">15:34:46</span><span class="nk"> &lt;simon123&gt;</span> at least word next to icon
+<a name="l-120"></a><span class="tm">15:34:49</span><span class="nk"> &lt;digitltom&gt;</span> <span class="hi">simon123:</span>  don't you have the link 'edit products'?
+<a name="l-121"></a><span class="tm">15:34:58</span><span class="nk"> &lt;digitltom&gt;</span> that's 2 words ;-)
+<a name="l-122"></a><span class="tm">15:35:22</span><span class="nk"> &lt;digitltom&gt;</span> <span class="hi">simon123:</span>  we are talking about the new client on features.opensuse.org/preview/
+<a name="l-123"></a><span class="tm">15:35:30</span><span class="nk"> &lt;simon123&gt;</span> yes
+<a name="l-124"></a><span class="tm">15:35:46</span><span class="nk"> &lt;simon123&gt;</span> I have link  'edit products' , but after that I have only two icons with tooltips
+<a name="l-125"></a><span class="tm">15:36:00</span><span class="nk"> &lt;digitltom&gt;</span> ah ok
+<a name="l-126"></a><span class="tm">15:36:40</span><span class="nk"> &lt;simon123&gt;</span> btw, can you make /preview actual default for server /
+<a name="l-127"></a><span class="tm">15:36:53</span><span class="nk"> &lt;simon123&gt;</span> to me it looks fine
+<a name="l-128"></a><span class="tm">15:37:11</span><span class="nk"> &lt;digitltom&gt;</span> that's what we want to decide in this meeting, if it's ready yet
+<a name="l-129"></a><span class="tm">15:37:18</span><span class="nk"> &lt;digitltom&gt;</span> i think so, too
+<a name="l-130"></a><span class="tm">15:37:39</span><span class="nk"> &lt;AJaeger&gt;</span> Ok, then let
+<a name="l-131"></a><span class="tm">15:37:58</span><span class="nk"> &lt;AJaeger&gt;</span> Ok, then let's ask: Should we move /preview into production? Any blockers?
+<a name="l-132"></a><span class="tm">15:38:43</span><span class="nk"> &lt;simon123&gt;</span> It looks much better then the old one
+<a name="l-133"></a><span class="tm">15:39:05</span><span class="nk"> &lt;AJaeger&gt;</span> And we can continue improving it...
+<a name="l-134"></a><span class="tm">15:39:16</span><span class="nk"> &lt;AJaeger&gt;</span> So, any body objecting?
+<a name="l-135"></a><span class="tm">15:39:44</span><span class="nk"> &lt;AJaeger&gt;</span> If not, I suggest digitltom, jos and myself write an announcement announcing the new version and we do the switch...
+<a name="l-136"></a><span class="tm">15:40:30</span><span class="nk"> &lt;HeliosReds&gt;</span> <span class="hi">AJaeger:</span> +1
+<a name="l-137"></a><span class="tm">15:40:46</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="cmd">#action </span><span class="cmdline">AJaeger, digitltom: Coordinate writing of announcement of new openFATE version and put preview into production</span>
+<a name="l-138"></a><span class="tm">15:41:07</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A</span>
+<a name="l-139"></a><span class="tm">15:41:13</span><span class="nk"> &lt;AJaeger&gt;</span> Any further questions, comments, ideas?
+<a name="l-140"></a><span class="tm">15:41:19</span><span class="nk"> &lt;AJaeger&gt;</span> If not, let's push features around ;)
+<a name="l-141"></a><span class="tm">15:42:34</span><span class="nk"> &lt;simon123&gt;</span> where do we communicate after the meeting. I have a questions about particular features
+<a name="l-142"></a><span class="tm">15:43:30</span><span class="nk"> &lt;HeliosReds&gt;</span> -project list?
+<a name="l-143"></a><span class="tm">15:43:41</span><span class="nk"> &lt;simon123&gt;</span> good for me
+<a name="l-144"></a><span class="tm">15:43:44</span><span class="nk"> &lt;AJaeger&gt;</span> Should we just use a pirate pad where people can add features they have problems with? And then others clean up...
+<a name="l-145"></a><span class="tm">15:44:29</span><span class="nk"> &lt;Spyhawk&gt;</span> fine to me.
+<a name="l-146"></a><span class="tm">15:44:38</span><span class="nk"> &lt;simon123&gt;</span> what I need right now is consent what to do - pad will not solve that
+<a name="l-147"></a><span class="tm">15:44:56</span><span class="nk"> &lt;simon123&gt;</span> besides :) https://features.opensuse.org/preview/310652
+<a name="l-148"></a><span class="tm">15:46:39</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">simon123:</span> Then let's discuss on opensuse-project.
+<a name="l-149"></a><span class="tm">15:46:47</span><span class="nk"> &lt;simon123&gt;</span> ok
+<a name="l-150"></a><span class="tm">15:46:59</span><span class="nk"> &lt;AJaeger&gt;</span> And if there's too much need for discussion, we create our own mailing list...
+<a name="l-151"></a><span class="tm">15:47:09</span><span class="nk"> &lt;Stano&gt;</span> :-D
+<a name="l-152"></a><span class="tm">15:47:18</span><span class="nk"> &lt;simon123&gt;</span> (oh no)
+<a name="l-153"></a><span class="tm">15:48:36</span><span class="nk"> &lt;simon123&gt;</span> project list is fine :)   (just no another corner where no one looks at)
+<a name="l-154"></a><span class="tm">15:49:54</span><span class="nk"> &lt;AJaeger&gt;</span> ok, can we close the meeting? I try to be available on #opensuse-project if you have any questions - and digitltom is as well ;)
+<a name="l-155"></a><span class="tm">15:50:36</span><span class="nk"> &lt;HeliosReds&gt;</span> It might be helpful to add [FATE] or [openFATE] to the subject, when we post an openFATE-related email to -project list.
+<a name="l-156"></a><span class="tm">15:50:43</span><span class="nk"> &lt;Stano&gt;</span> no furher comments or questiosn from me
+<a name="l-157"></a><span class="tm">15:51:09</span><span class="nk"> &lt;Stano&gt;</span> <span class="hi">digitltom:</span> will you send us a mail when bucket product is ready?
+<a name="l-158"></a><span class="tm">15:51:33</span><span class="nk"> &lt;simon123&gt;</span> <span class="hi">HeliosReds:</span> good idea (if not forgotten)
+<a name="l-159"></a><span class="tm">15:52:36</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="hi">HeliosReds:</span> Let'S use [openFATE]
+<a name="l-160"></a><span class="tm">15:53:10</span><span class="nk"> &lt;HeliosReds&gt;</span> OK.
+<a name="l-161"></a><span class="tm">15:53:31 </span><span class="nka">* Stano</span> <span class="ac">has to leave now</span>
+<a name="l-162"></a><span class="tm">15:53:47</span><span class="nk"> &lt;AJaeger&gt;</span> Bye STano!
+<a name="l-163"></a><span class="tm">15:53:48 </span><span class="nka">* simon123</span> <span class="ac">too (Have a fun)</span>
+<a name="l-164"></a><span class="tm">15:54:02</span><span class="nk"> &lt;Stano&gt;</span> bye all!
+<a name="l-165"></a><span class="tm">15:54:03</span><span class="nk"> &lt;AJaeger&gt;</span> Thanks a lot for the meeting - let's meet again in two weeks!
+<a name="l-166"></a><span class="tm">15:54:05</span><span class="nk"> &lt;AJaeger&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

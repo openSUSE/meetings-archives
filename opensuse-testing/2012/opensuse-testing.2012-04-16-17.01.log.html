@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:01:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:01:42</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Apr 16 17:01:42 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:01:42</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:01:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> Hello everyone
+<a name="l-5"></a><span class="tm">17:01:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-6"></a><span class="tm">17:01:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-7"></a><span class="tm">17:02:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">12.2 testing</span>
+<a name="l-8"></a><span class="tm">17:03:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> do you want to start?
+<a name="l-9"></a><span class="tm">17:03:19</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-10"></a><span class="tm">17:04:36</span><span class="nk"> &lt;LWFinger&gt;</span> I have installed the KDE Live CD Build 0318 on a VirtualBox VM. Other that the need to 'zypper in grub2' before installing, it went OK.
+<a name="l-11"></a><span class="tm">17:06:06</span><span class="nk"> &lt;LWFinger&gt;</span> I am in the process of a 'zypper dup' on a VM that had an MS2 NET install of LXDE on it. That seems to be going OK.
+<a name="l-12"></a><span class="tm">17:07:11</span><span class="nk"> &lt;LWFinger&gt;</span> I do not have any real machines running MS3, thus I have not tested graphics drivers, etc; however, kernel 3.3 and 3.4-rc2 all work OK on my hardware.
+<a name="l-13"></a><span class="tm">17:07:51</span><span class="nk"> &lt;LWFinger&gt;</span> I have not seen any problems other than what are reported in the "most annoying bugs" list.
+<a name="l-14"></a><span class="tm">17:07:55</span><span class="nk"> &lt;LWFinger&gt;</span> Done.
+<a name="l-15"></a><span class="tm">17:08:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> I saw in the Most-annoying-bugs list: su -c "zypper install grub2"
+<a name="l-16"></a><span class="tm">17:08:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> did sudo not work there?
+<a name="l-17"></a><span class="tm">17:09:27</span><span class="nk"> &lt;LWFinger&gt;</span> I forgot that one. On KDE, sudo fails. It seems that it is OK under gdm, but not kdm.
+<a name="l-18"></a><span class="tm">17:10:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> what about xdg-su ?
+<a name="l-19"></a><span class="tm">17:10:26</span><span class="nk"> &lt;LWFinger&gt;</span> I do not know.
+<a name="l-20"></a><span class="tm">17:10:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> it should map to the kdesu / gnomesu variants.
+<a name="l-21"></a><span class="tm">17:12:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> I spent little time on testing Factory. But kept openQA running
+<a name="l-22"></a><span class="tm">17:12:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> merging contributions from two people (one SUSE Maintenance QA guy)
+<a name="l-23"></a><span class="tm">17:12:54</span><span class="nk"> &lt;a-865&gt;</span> would be nice to type most annoying bugs in search box on wiki and get a most annoying bugs URL instead of hundreds of pages with only a link to a most annoying bugs page
+<a name="l-24"></a><span class="tm">17:13:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">a-865:</span> that comes from the default wiki search settings. I also don't like it
+<a name="l-25"></a><span class="tm">17:14:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> but I think, you can click "everything" on the results page
+<a name="l-26"></a><span class="tm">17:14:43</span><span class="nk"> &lt;a-865&gt;</span> none on first page of hits are about 12.2
+<a name="l-27"></a><span class="tm">17:15:32</span><span class="nk"> &lt;a-865&gt;</span> oh, there are only 6 total
+<a name="l-28"></a><span class="tm">17:16:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">a-865:</span> I just clicked "everything" and the good results were on position 2-4
+<a name="l-29"></a><span class="tm">17:16:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> but it could indeed be default
+<a name="l-30"></a><span class="tm">17:18:36</span><span class="nk"> &lt;a-865&gt;</span> easier for me to just look in browser history :-p
+<a name="l-31"></a><span class="tm">17:18:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> yep. this is what I do, too
+<a name="l-32"></a><span class="tm">17:19:21</span><span class="nk"> &lt;LWFinger&gt;</span> Mine is well trained. All I do is type Most in the address line, and it is the first offering.
+<a name="l-33"></a><span class="tm">17:19:34</span><span class="nk"> &lt;a-865&gt;</span> no one but me annoyed by bug 746595 ? Or does everyone else also install sysvinit-init?
+<a name="l-34"></a><span class="tm">17:19:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> I did not do any 12.2 testing outside of openQA, yes, but I will upgrade my fallback Laptop this month.
+<a name="l-35"></a><span class="tm">17:20:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> I just don't care about numlock
+<a name="l-36"></a><span class="tm">17:21:01</span><span class="nk"> &lt;a-865&gt;</span> there doesn't seem to be a lot of point of testing runlevel 5 until X upgrade to something non-antique is complete
+<a name="l-37"></a><span class="tm">17:21:24</span><span class="nk"> &lt;a-865&gt;</span> lots of mention on factory list, but not yet pushed to Factory
+<a name="l-38"></a><span class="tm">17:22:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> X-upgrade is non-trivial.
+<a name="l-39"></a><span class="tm">17:22:28</span><span class="nk"> &lt;a-865&gt;</span> I'm a touch typer who uses numpad about as often as the whole rest of the keyboard
+<a name="l-40"></a><span class="tm">17:22:42</span><span class="nk"> &lt;a-865&gt;</span> without NUM on not much works
+<a name="l-41"></a><span class="tm">17:23:07</span><span class="nk"> &lt;a-865&gt;</span> it was late into 12.1 as well
+<a name="l-42"></a><span class="tm">17:23:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> but you can press the num-lock key and have it working?
+<a name="l-43"></a><span class="tm">17:23:15</span><span class="nk"> &lt;LWFinger&gt;</span> My main keyboard does not have a separate numpad.
+<a name="l-44"></a><span class="tm">17:23:32</span><span class="nk"> &lt;a-865&gt;</span> of course, but remembering only happens after screwing up login
+<a name="l-45"></a><span class="tm">17:23:39</span><span class="nk"> &lt;a-865&gt;</span> i don't use laptops
+<a name="l-46"></a><span class="tm">17:23:52</span><span class="nk"> &lt;a-865&gt;</span> I do have upwards of 30 desktops
+<a name="l-47"></a><span class="tm">17:24:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> a lot... how many of those run something newer than 12.1?
+<a name="l-48"></a><span class="tm">17:25:49</span><span class="nk"> &lt;BManojlovic&gt;</span> it is annoying really so a-865 you are not alone on that one
+<a name="l-49"></a><span class="tm">17:25:52</span><span class="nk"> &lt;a-865&gt;</span> I selected openSUSE primary OS of choice (and Mandriva as secondary) because Redhat/Fedora and Debian don't have support to keep NUM on on all ttys from boot
+<a name="l-50"></a><span class="tm">17:27:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">a-865:</span> you could file a bug for the wiki search problem... it might not get far, but at least, this would raise the issue
+<a name="l-51"></a><span class="tm">17:27:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> select as component openSUSE.org
+<a name="l-52"></a><span class="tm">17:28:49</span><span class="nk"> &lt;a-865&gt;</span> <span class="hi">bmwiedemann:</span> 9 machines with at least one Factory partition, 6 of those updated or installed fresh within past 60 days, delayed others waiting on X to be non-antique
+<a name="l-53"></a><span class="tm">17:29:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> having it on a partition is a good start, but do they get actual use?
+<a name="l-54"></a><span class="tm">17:30:20</span><span class="nk"> &lt;a-865&gt;</span> mostly to see what is broken
+<a name="l-55"></a><span class="tm">17:30:38</span><span class="nk"> &lt;a-865&gt;</span> bug follow up and discovery
+<a name="l-56"></a><span class="tm">17:30:53</span><span class="nk"> &lt;a-865&gt;</span> different video chips and HD controllers
+<a name="l-57"></a><span class="tm">17:31:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> that is quite useful
+<a name="l-58"></a><span class="tm">17:32:36</span><span class="nk"> &lt;a-865&gt;</span> oh, a 10th machine waiting too on X to be non-antique
+<a name="l-59"></a><span class="tm">17:33:32</span><span class="nk"> &lt;a-865&gt;</span> and an 11th
+<a name="l-60"></a><span class="tm">17:34:02</span><span class="nk"> &lt;a-865&gt;</span> when you have a lot it's hard to keep up with everything that's different among them
+<a name="l-61"></a><span class="tm">17:35:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> hehe. would need tools to track system state
+<a name="l-62"></a><span class="tm">17:35:33</span><span class="nk"> &lt;LWFinger&gt;</span> My upgrade to MS3 failed. On reboot, it gets the GRUB printed, and then hangs. I don't know what's wrong yet.
+<a name="l-63"></a><span class="tm">17:35:54</span><span class="nk"> &lt;a-865&gt;</span> I've been running into GRUB instead of boot a lot lately
+<a name="l-64"></a><span class="tm">17:36:16</span><span class="nk"> &lt;a-865&gt;</span> like last night
+<a name="l-65"></a><span class="tm">17:37:50</span><span class="nk"> &lt;a-865&gt;</span> found pecular bug Friday, 757081
+<a name="l-66"></a><span class="tm">17:39:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> grub2 issues?
+<a name="l-67"></a><span class="tm">17:39:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> or did someone break old grub1
+<a name="l-68"></a><span class="tm">17:40:11</span><span class="nk"> &lt;LWFinger&gt;</span> Mine failure is with GRUB1, not 2.
+<a name="l-69"></a><span class="tm">17:40:14</span><span class="nk"> &lt;a-865&gt;</span> <span class="hi">bmwiedemann:</span> I use a spreadsheet to track which machine has which OS installed, last update date, and which KDE is installed
+<a name="l-70"></a><span class="tm">17:41:12</span><span class="nk"> &lt;a-865&gt;</span> as a multi multibooter, I'm putting off Grub2 until forced, having seen it on *buntu before ready like KDE4
+<a name="l-71"></a><span class="tm">17:42:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">a-865:</span> Debian provided grub2 as default one year ago and they are often more conservative than the SLES guys
+<a name="l-72"></a><span class="tm">17:42:29</span><span class="nk"> &lt;LWFinger&gt;</span> I would prefer nice graphics, but I generally plan to use GRUB2 as much as possible.
+<a name="l-73"></a><span class="tm">17:43:24</span><span class="nk"> &lt;a-865&gt;</span> I have a #3 HD with 12.1 &amp; 12.2 and by-id in device.map that Grub can't figure out how to successfully install to, claiming success, but resulting in GRUB instead of gfxmenu
+<a name="l-74"></a><span class="tm">17:43:38</span><span class="nk"> &lt;LWFinger&gt;</span> On my main machine, I will use the old version until a kernel "make install" adds the new kernel to the list the way the old version does.
+<a name="l-75"></a><span class="tm">17:44:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> which is an important feature for a kernel developer :)
+<a name="l-76"></a><span class="tm">17:44:45</span><span class="nk"> &lt;LWFinger&gt;</span> Indeed.
+<a name="l-77"></a><span class="tm">17:44:52</span><span class="nk"> &lt;a-865&gt;</span> you think :-D
+<a name="l-78"></a><span class="tm">17:46:39</span><span class="nk"> &lt;LWFinger&gt;</span> We have figured out what scripts need to be run, but it is not yet automatic.
+<a name="l-79"></a><span class="tm">17:47:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">tigerfoot:</span> has added some testing report to the Testing_meeting wiki page
+<a name="l-80"></a><span class="tm">17:48:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> about grub2 &amp; plymouth working great
+<a name="l-81"></a><span class="tm">17:50:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> is the sudo problem already filed on bnc?
+<a name="l-82"></a><span class="tm">17:51:12</span><span class="nk"> &lt;LWFinger&gt;</span> Yes, 746704. By the time I found it, it had already been reported.
+<a name="l-83"></a><span class="tm">17:53:07</span><span class="nk"> &lt;LWFinger&gt;</span> The amazing part was that I found it using search on bnc.
+<a name="l-84"></a><span class="tm">17:54:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> some month ago I had got one change done to bnc: advanced search also includes duplicates, so you have a better chance to find common bugs there
+<a name="l-85"></a><span class="tm">17:54:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> but maybe the title was just good
+<a name="l-86"></a><span class="tm">17:55:42</span><span class="nk"> &lt;LWFinger&gt;</span> The title is "sudo doesn't run commands", which is quite good.
+<a name="l-87"></a><span class="tm">17:56:29</span><span class="nk"> &lt;LWFinger&gt;</span> Of course, it was reported by Jiri Slaby.
+<a name="l-88"></a><span class="tm">17:58:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> he also does kernel development, doesn't he?
+<a name="l-89"></a><span class="tm">17:59:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> anyway... let us come to an end of this topic
+<a name="l-90"></a><span class="tm">17:59:51</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.He is the maintainer of ath5k and two other drivers.
+<a name="l-91"></a><span class="tm">18:00:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">next meeting</span>
+<a name="l-92"></a><span class="tm">18:01:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> how about 2012-05-07 which is ~10 days after MS4
+<a name="l-93"></a><span class="tm">18:01:33</span><span class="nk"> &lt;LWFinger&gt;</span> That is OK for me.
+<a name="l-94"></a><span class="tm">18:02:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> so far every milestone has been one week late (which is good because we got mostly usable milestones)
+<a name="l-95"></a><span class="tm">18:03:26</span><span class="nk"> &lt;LWFinger&gt;</span> Or in other words, the bugs have been so bad that they prevented booting! ;)
+<a name="l-96"></a><span class="tm">18:03:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> it is a good type of bug, though. perfectly reproducible etc
+<a name="l-97"></a><span class="tm">18:04:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreet </span><span class="cmdline">next meeting 2012-05-07 17:00</span>
+<a name="l-98"></a><span class="tm">18:04:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">next meeting 2012-05-07 17:00</span>
+<a name="l-99"></a><span class="tm">18:04:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-100"></a><span class="tm">18:05:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> the grub2 and usrmerge have caused quite some change and trouble in 12.2, but I hope, that things will become calmer as the Beta gets closer
+<a name="l-101"></a><span class="tm">18:06:39</span><span class="nk"> &lt;LWFinger&gt;</span> Those problems were to be expected. The transition to Plymouth seems to be fairly easy.
+<a name="l-102"></a><span class="tm">18:07:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> because tittiacoke is an experienced guy - it seems he only pushes tested code
+<a name="l-103"></a><span class="tm">18:08:35</span><span class="nk"> &lt;LWFinger&gt;</span> We need more of that kind of developer.
+<a name="l-104"></a><span class="tm">18:08:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> I saw some strange effects on openQA though. e.g. a framebuffer of 1024x767
+<a name="l-105"></a><span class="tm">18:09:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> and green color
+<a name="l-106"></a><span class="tm">18:09:20</span><span class="nk"> &lt;LWFinger&gt;</span> Was that really 767, and not 768?
+<a name="l-107"></a><span class="tm">18:09:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes. e.g. http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-NET-i586-Build0323-lxde/yast2_lan-2.png
+<a name="l-108"></a><span class="tm">18:09:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> it caused my md5sums to not match
+<a name="l-109"></a><span class="tm">18:10:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> and this only started with Build0318
+<a name="l-110"></a><span class="tm">18:10:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> the green color has been there some weeks before.
+<a name="l-111"></a><span class="tm">18:11:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> is plymouth already active by default?
+<a name="l-112"></a><span class="tm">18:12:48</span><span class="nk"> &lt;LWFinger&gt;</span> Unknown.
+<a name="l-113"></a><span class="tm">18:13:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> I guess, I'll have to find someone like AJ or coolo who knows.
+<a name="l-114"></a><span class="tm">18:13:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> or tittiacoke
+<a name="l-115"></a><span class="tm">18:14:11</span><span class="nk"> &lt;LWFinger&gt;</span> From his posting, tigerfoot should know.
+<a name="l-116"></a><span class="tm">18:14:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> right.
+<a name="l-117"></a><span class="tm">18:16:47</span><span class="nk"> &lt;tigerfoot&gt;</span> hello.... big late for me :D
+<a name="l-118"></a><span class="tm">18:17:08</span><span class="nk"> &lt;tigerfoot&gt;</span> I don't know if plymouth is already by default
+<a name="l-119"></a><span class="tm">18:17:16</span><span class="nk"> &lt;tigerfoot&gt;</span> at least not in M3 ...
+<a name="l-120"></a><span class="tm">18:18:13</span><span class="nk"> &lt;tigerfoot&gt;</span> and yes plymouth grub2 package are high quality ... we spend hours to fix completely the luks part of plymouth, we have nice patches to forward to lnussel
+<a name="l-121"></a><span class="tm">18:18:42</span><span class="nk"> &lt;tigerfoot&gt;</span> but the gitorious repo is not accepting direct pull request, then it takes more times to get fixes inside it ...
+<a name="l-122"></a><span class="tm">18:22:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. then let's close the meeting for today
+<a name="l-123"></a><span class="tm">18:23:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

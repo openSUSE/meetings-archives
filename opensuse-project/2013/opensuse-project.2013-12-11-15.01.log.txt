@@ -1,0 +1,487 @@
+15:01:54 <vuntz> #startmeeting openSUSE Project Meeting
+15:01:54 <bugbot> Meeting started Wed Dec 11 15:01:54 2013 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:01:54 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:01:54 <differentreality> hey
+15:02:39 * robjo arrived
+15:03:14 <vuntz> Ilmehtar, ilmehtar_, FunkyPenguin, awafaa: here?
+15:03:38 <Ilmehtar> vuntz: yes I'm here, but my IRC window is currently at 90 degrees
+15:03:52 * Ilmehtar has been playing with screen rotation
+15:04:00 <vuntz> iirc, we had completed all the action items, so nothing to review
+15:04:04 <vuntz> and we have two topics on the agenda:
+15:04:09 <vuntz> Q&A about openSUSE 2016
+15:04:11 <vuntz> oSC15 ideas about finding a location
+15:04:17 * vuntz double-checks for the action items
+15:04:20 <|miska|> Ilmehtar: Time to go to bed to make it better readable :-)
+15:04:51 <vuntz> right, there was nothing left
+15:05:38 <vuntz> so let's move straight to the big topic
+15:05:43 <vuntz> #topic Q&A about openSUSE 2016
+15:06:16 <vuntz> cwh: ping? :-)
+15:06:34 <cwh> I just notified tocalix ;)
+15:06:53 <cwh> Just a second
+15:07:28 * Bille waves
+15:07:37 <vuntz> ola Bille
+15:07:40 <vuntz> and toscalix_
+15:07:43 <toscalix_> hi
+15:08:28 <awafaa> vuntz sorry I'm on the school run atm
+15:08:59 <robjo> awafaa: don't run and type ;)
+15:09:04 <vuntz> so should we just have questions, or is there anyone who wants to do a quick intro?
+15:09:16 <Ilmehtar> (for those who might have missed the topic set- The current topic is "Q&A about openSUSE 2016")
+15:09:34 <toscalix_> I would like to do a short intro
+15:09:38 <toscalix_> if I can
+15:09:40 <vuntz> sure
+15:10:05 * tigerfoot highlight short :-)
+15:10:10 <|miska|> :-)
+15:10:14 <ancorgs> :-)
+15:10:19 <coolo> quite an audience today
+15:10:33 <toscalix_> first apologize for the selected approach of sending separate mails apparently unconnected in some way. Probably doing something like this: http://lizards.opensuse.org/2013/12/11/discussing-about-the-future-of-opensuse/
+15:10:43 <toscalix_> from the very beginning would have helped
+15:10:48 <Bille> coolo: there was more of a warmup act than usual
+15:10:49 <toscalix_> a lot
+15:11:55 <toscalix_> second. we are processing the feedback and we will try to summarize it and send some modified proposals when we have them
+15:12:32 <toscalix_> there is one article missing that contains some info about the effort and time we propose to put on this
+15:12:35 <toscalix_> that's all
+15:12:42 <toscalix_> done
+15:13:43 <toscalix_> thanks vuntz
+15:14:14 <tigerfoot> toscalix_: a rough estimate for the delay ? between one day, one week, one month ?
+15:14:57 <toscalix_> tigerfoot: yes, but please read it in the article ;-)
+15:15:13 <toscalix_> it will be there
+15:15:23 <toscalix_> together with other info
+15:15:42 <|miska|> tigerfoot: Aka before we publish the next thing and before we publish new mails with feedback incorporated?
+15:16:14 <|miska|> s/and/or/
+15:16:43 <ancorgs> I guess tigerfoot is asking about the delay for publishing that article
+15:16:58 <toscalix_> I know ;-)
+15:17:32 * tigerfoot see only "in three years" date/delay related things in the lizard article :-)
+15:17:59 <manugupt1> Can I ask something?
+15:18:00 <Bille> the 2016 vision is rather limited
+15:18:04 <toscalix_> I would love to send everything this week
+15:18:11 * tigerfoot can accept, when its done, that's just a debian way of doing things :-)
+15:18:21 <Bille> manugupt1: sure
+15:18:27 <Bille> don't ask to ask...
+15:18:33 <manugupt1> I see 7 proposals
+15:18:39 <coolo> tigerfoot: you're talking about 13.2 release delay?
+15:19:01 <manugupt1> While the openSUSE team asks for time to process our feedback, we are expected to give a knee jerk response, kind of unfair
+15:19:18 <tigerfoot> coolo: no no just about the feedback and future action plans summary promised mail...
+15:19:28 <manugupt1> I am not pointing fingers
+15:19:34 <manugupt1> but I am saying we also need some time
+15:19:42 <manugupt1> atleast me
+15:19:58 <toscalix_> manugupt1: I am working on the assumption that we will be talking the following weeks about all this
+15:20:07 <toscalix_> at least
+15:20:46 <manugupt1> there are few things I loved.. few things I did not like
+15:20:52 <toscalix_> obviously we want to go back to execution as soon as possible, but some things needs time to be discussed and we want to have that time
+15:21:00 <toscalix_> so we need also to provide it
+15:21:29 <Ilmehtar> I would just like to express my..discomfort, at the feeling that all of these proposals (some of which appear to be more interconnected than others) have all been pre-planned out and are being released at some predetermined schedule.
+15:21:40 <Ilmehtar> The approach feels 'alien' to me, I'm much more used to seeing new ideas be presented at that initial 'idea' stage, and then iterated, each step including feedback. This whole 'data dump' on the community, with a relatively brief window for feedback, followed by your 'analysis' and another future 'data dump' where you report on your findings seems
+15:21:40 <Ilmehtar> very..'weird' to me
+15:22:07 <Bille> my .2c: of the smaller proposals, 1-7, most are fine, common sense approaches to improving our infrastructure and process
+15:22:28 <Ilmehtar> Maybe artificial is a better word. And I see huge potential for mistakes to be made, incorrect conclusions to be made, will the community be given any opportunity to provide corrections if your analysis is wrong? ultimately I feel this whole approach doesn't seem very open for community engagement.
+15:23:00 <robjo> ilmehtar: +1
+15:23:02 <Bille> however the 2016 vision is limited, unspecific and full of 'apple pie' items that we don't need 2 years to do.
+15:23:10 <Bille> better to leave it out if you have no vision
+15:24:01 <Bille> err, i'm in my civvies aren't I?
+15:24:10 <toscalix_> Bille: can you write a mail about it? Maybe we can provide some answers to your points that clarifies something
+15:24:39 <robjo> Apparently we have reached a point where only 1 thing can be done at a time, either discuss stuff, i.e. "data dump" or "execute", i.e. don't communicate and just work
+15:25:00 <robjo> fits in the "black or white" operating mode of some people, I guess
+15:25:33 <toscalix_> robjo: that is your perception and we do not share it
+15:25:34 <wstephenson> toscalix_: what's your immediate response to this criticism?  i just don't see a need for a long range plan to have circular homilies like "attract new players by being attractive to new players"
+15:25:40 <ishwon> Hi all ...
+15:25:47 <ishwon> Sorry for dropping late :P
+15:25:56 <robjo> perception is reality!
+15:26:39 <robjo> and there is plenty of empirical evidence that supports my perception
+15:26:42 * |miska| agrees that 2016 title was unfortunate and missleading
+15:26:53 <toscalix_> My response would be: is the plan the root that leads to the proposed actions. Without the long term plan, we probably would have presented a different approach.
+15:26:55 <|miska|> But anyway, it's just title :-)
+15:27:45 <manugupt1_> I am sorry I got disconnected
+15:28:10 <wstephenson> you could have written the whole mail as as "more of teh same, but better (sic)"
+15:28:19 <robjo> SO there is a plan that is being dolled out in predetermined spoon sized portions that someone decided were good chunks for the community to swallow
+15:28:55 <toscalix_> for some, many of the exposed information is not new. But we cannot work on the assumption that everybody is in the same position.
+15:29:03 <robjo> not a very nice way to present ideas to others
+15:29:48 <toscalix_> robjo: no, there is a proposal of a plan that we are discussing that I think it can derive in linked and doable actions that can put us in a better position than we are right now
+15:30:45 <tigerfoot> toscalix_: my concern is sometimes the misused "us" words.
+15:31:07 <toscalix_> us=project in this sentence
+15:31:16 <tigerfoot> sometimes it is community in a whole, sometimes more related to "our" openSUSE Team
+15:31:17 <wstephenson> toscalix_: i don't think robjo is questioning that. i think his (and Ilmehtar's) problem is with the method of doing closed source proposal development and then tossing it over the wall
+15:31:32 <robjo> Who here believes that the proposals presented are part of a "mostly preconceived plan"?
+15:31:34 <tigerfoot> wstephenson: +1
+15:31:45 <tigerfoot> robjo: me
+15:31:47 <manugupt1_> me
+15:32:09 <wstephenson> <recuses himself/>
+15:32:20 <toscalix_> wstephenson: there are many people who disagrees with the followed method
+15:32:38 <coolo> ... including me
+15:32:43 <toscalix_> but they are proposing to use a method that already failed in the past
+15:32:50 <wstephenson> my main problem is with the content produced by this method
+15:33:08 <wstephenson> put briefly: i don't think the hooch you're brewing is strong enough to work.
+15:33:08 <toscalix_> wstephenson: that is a different problem
+15:33:58 <toscalix_> wstephenson: there are risks, I know, but there are also a strong determination and a solid group behind the proposal.
+15:34:05 <tigerfoot> toscalix_: you mean we should change the method, cause it fail once, to a new way of failing ...
+15:34:11 <Ilmehtar> toscalix_: Okay, lets flip it on it's head for a second. How pleased would you be if a Team in the openSUSE community came to you with a dramatic proposal which, if accepted, would impact the way you and your team work, why you and your team work, and the goals you and your team work towards.
+15:34:13 <tigerfoot> but that doesn't change the result.
+15:34:15 <Ilmehtar> It's clear from the way they present the plan, they've worked on it for months, and they're revealing it in a series of big chunky documents that need a lot of reading
+15:34:20 <Ilmehtar> I imagine, your initial reaction would be something along the line of "Who the heck are these people telling me how I should be doing things? Why have they kept all this secret until now? What else are they hiding? Are they actually going to listen to my feedback?"
+15:34:24 <Ilmehtar> The fact the proposals might include good stuff or not is immaterial, the process is rotten to the 'usual' way of doing business in an open project. And this is how I find myself feeling as I see these '2016 proposals' coming to light.
+15:34:42 <toscalix_> tigerfoot: no, I mean that the previous example had some risks I didn't want to assume
+15:34:59 <toscalix_> there are other ways of creating a proposal and still be open about it
+15:35:04 <tigerfoot> toscalix_: then you see, you return to I ...
+15:35:47 <tigerfoot> I mean I've a mixed feeling about who,what do openSUSE Team, it seems less clear for me compared to what was stated in old Booster's mission.
+15:35:50 <toscalix_> I see it, and we have to deal with it. But is better than reaching a pleasant result....and not being able to execute it
+15:36:11 <vuntz> it seems clear to me that many are not happy with the method; so it's something to improve in the future for sure
+15:36:18 <vuntz> but we probably shouldn't stay one full hour on this
+15:36:38 <vuntz> I know the method and the content are linked/mixed and so on, but we should probably take some time to focus on the content too :-)
+15:36:48 <wstephenson> +1
+15:36:52 <toscalix_> tigerfoot: that is a topic, the communication of our mission, that we can discuss about, yes.
+15:37:48 <robjo> problem is that the way things get presented has a big impact on how things are received and where there is too much noise in the presentation it is extremely difficult to find the signal
+15:37:57 <manugupt1_> +1
+15:37:58 <tigerfoot> toscalix_: I really believe, that I'm not alone, to want to know more about openSUSE Team, and what would be the future in terms of cooperation with the whole community.
+15:38:06 <toscalix_> Ilmehtar: this is not the usual way to get proposal out in the business world
+15:38:17 <tigerfoot> in some ways, you're still special people you know ..
+15:38:19 <robjo> one could now speculate that the noise was introduced purposefully
+15:38:36 <toscalix_> robjo: I have the feeling that in your case it wouldn't matter much. You have proved that in the past
+15:38:45 <vuntz> robjo: well, let's use the fact that we're all here to find the signal then :-)
+15:39:02 <toscalix_> tigerfoot: fair point. Maybe we can solve that in the oSC14
+15:39:16 <robjo> toscalix_: we are not in the business world, we are a community, at some point you will have to jump that hurdle
+15:39:16 <CarlosRibeiro> toscalix_,  my only .5 cents here "some approuch that had not worked  pretty well before may work nowadays, everything changes as the time comes, ppl, project... so my opinion if some method have not worked before we need to figure out why and most important in a openess way
+15:39:40 <tigerfoot> toscalix_: come on we're big boys, we can do it with a few beers at Brussel :-) no need to wait too much..
+15:40:03 <toscalix_> robjo: please stop providing lessons about community as if we were new in these area. We all have a background
+15:40:04 * manugupt1_ waits for the next topic now
+15:40:16 <Ilmehtar> toscalix_: and? openSUSE is not a business. It's an open source project. Hiding away from the *majority* of your contributors and then burying them under an avalanche of proposals isn't going to engage them to stand up and help you do the exciting things you want to do
+15:40:30 <toscalix_> I am fine with you disagreeing with me. But giving lessons is too much
+15:40:33 <tigerfoot> robjo: its true, we're a community, but the trouble also come for example for toscalix_ to be in the two places at the same time ...
+15:40:35 <toscalix_> even if I need them
+15:41:17 <vuntz> come on guys
+15:41:19 <tigerfoot> and the same apply for our beloved openSUSE Team...
+15:41:40 <vuntz> please stop for a second, take a break, and step back in by focusing on the content and not just the form
+15:41:41 <toscalix_> vuntz: I'll behave...sorry
+15:41:56 <robjo> toscalix_: I am sorry but you keep operating as if we are running a business with openSUSE, so stop behaving like a business guy that has a profit number to present and you'll see the reaction will go away
+15:42:22 <toscalix_> robjo: the proposal is mainly about opening the project
+15:42:43 <toscalix_> look at the factory proposal. Openness is the root of the proposal
+15:43:05 <wstephenson> <aside> /me counts 7 SUSE employees and ~3 community members in this discussion. a depressing balance for this topic at the project meeting. if you're not @suse and just lurking, speak up.</aside>
+15:44:09 <izabelvalverde> following the discussion and agreeing with robjo, Ilmehtar and tigerfoot points so far
+15:44:18 <toscalix_> we want to make sure that the development version is a place where everybody, no matter where it comes from, can play every role
+15:44:23 <manugupt1_> toscalix_: I really love the factory proposal, even though I do not understand a lot of it (specially the openqa one)
+15:44:26 <coolo> wstephenson: remember it's 16:43 in most of the openSUSE world ;)
+15:44:49 <vuntz> manugupt1_: is there anything you'd like clarifications on?
+15:45:22 <manugupt1_> vuntz: yes.. there are a few proposals I think like the Karma one
+15:45:26 <CarlosRibeiro> +1 for robjo, Ilmehtar and tigerfoot
+15:45:36 <wstephenson> coolo: ack, but without broad community participation gives this discussion the status of a fart resulting from indigestion in the guts of SUSE ;)
+15:45:38 <toscalix_> achieving that goal by iteration is something that would take us too long. We need to apply an intensive action to the process, to change it
+15:46:09 <vuntz> manugupt1_: feel free to ask concrete questions, then :-)
+15:46:13 <robjo> Why are we under time pressure?
+15:46:38 <coolo> robjo: there is a christmas party in NBG today ;)
+15:47:11 <manugupt1_> vuntz: then ok.. I will ask I will take the Karma one.. initially I liked it a lot. but then the excel sheet cropped up and I saw thtat it is more scarier than it seemed to be
+15:47:12 <tigerfoot> why aren't we invited there then ??? :-)
+15:47:18 <robjo> coolo: thanks for sharing, I guess we should have started iterating in January then
+15:47:36 <antlarr> hi, I just arrived. I'll try to read the comments quickly
+15:47:58 <toscalix_> vuntz: if you want to repeat this session in the future, just tell us, so instead of having one person of the team on them, as usual, we can be more, depending on the topic.
+15:47:59 <Ilmehtar> toscalix_: I disagree. Had you started iteration at the same time you started your planning, we'd probably already have results done by now. I also don't agree that any one individual/Team in the Project should have the right to arbitrarily take 'intensive action'
+15:48:00 <|miska|> manugupt1_: I hate the spreadsheet as well
+15:48:01 <manugupt1_> if you look at the sheet henne created 100 events in an year ( comeone who can do it ), prompt reviews (too difficult) on wiki, some of us work on weekends only
+15:48:05 <wstephenson> and that's the crux of my problems with the proposal: i don't see an intensive action in the plans. the factory and open governance suggestions are worthwhile refinements of existing processes, karma is window dressing, OSEP nice to have, but nothing intensive is there
+15:48:23 <coolo> manugupt1_: actually we have a pretty good idea on the work required for openqa, but we have not a good one for the whole staging thing
+15:48:23 <tigerfoot> wstephenson: there's more depressive fact 157 votes / 547 members ...
+15:48:38 <coolo> manugupt1_: if you read the threads, there are a lot of proposals and noone knows what will work
+15:48:44 <|miska|> manugupt1_: That's why I proposed different approach on mailing list
+15:48:45 <coolo> manugupt1_: but I'm certain what we do right now is madness
+15:48:55 <tigerfoot> :-)
+15:48:58 <toscalix_> Ilmehtar: that is guessing
+15:49:04 <Ilmehtar> toscalix_: and you're not? :)
+15:49:28 <wstephenson> tigerfoot: so IMO we should look those numbers in the eye and accept we are a tiny community, and start acting like a tiny startup team with lots of energy (and chaos) not more rounds of proposals and planning.
+15:49:39 <manugupt1_> |miska|: yes I saw that.. thanks.. what I would suggest is really try to subtly disrupt.. make sure that people feel that they are welcome at high standards which are achievable
+15:49:43 <tigerfoot> absolutely !!! wstephenson
+15:49:55 <toscalix_> tigerfoot: I work with wht I have. After the release is over, we have the time to do what we are doing, not before.
+15:50:24 <coolo> Ilmehtar: not guessing, proposing future. That's different :)
+15:50:43 <ancorgs> manugupt1_: the initial proposal was quite focused in OBS, the spreadsheet suggested by henne have a wider scope
+15:50:57 <manugupt1_> coolo: Thanks.. I understand that and I also understand I am not the right person for factory matters since I do not contribute there
+15:51:09 <|miska|> manugupt1_: Yep, threshold would have to be set up carefully and partially experimentally :-/
+15:51:42 <manugupt1_> ancorgs: yes and that is why I agreed to it, if you look at my mail, I think people misunderstood again for the whole process
+15:52:01 <toscalix_> tigerfoot: we have been focused the last 16 months in working. Planning is needed once in a while. You know that. wstephenson also knows that. Working for a long time without revisiting your plan is not healthy. That is compatible with our motto.
+15:52:01 <manugupt1_> I would love to have a dashboard to see the packages I contribute and stuff like that but I would love to compare myself with others
+15:52:45 <toscalix_> manugupt1_: we appreciate your comments. I disagree with many of them. But your motivations are clear. No question about it
+15:53:12 * wstephenson thinks release early, release often applies to plans as well as software, and we would have gotten more out of limited scope but more exciting plans stArted working on this time last year1
+15:53:17 <manugupt1_> toscalix_: I will like to listen to your disagreements
+15:53:21 <wstephenson> (sorry, baby typing with me)
+15:53:30 <tigerfoot> toscalix_: the timeframe choosen and the way of doing is done, so let move on ... What I draw with the election numbers, is the simple fact we're a very small tiny community.
+15:53:39 <toscalix_> wstephenson: take this as a major release in an upstream project
+15:53:54 <toscalix_> you cannot apply the same rules than in minor releases
+15:53:59 <toscalix_> you need to stop a little
+15:54:00 <wstephenson> 3
+15:54:08 <wstephenson> (baby again)
+15:54:30 <toscalix_> wstephenson: I didn't meant to offend you
+15:54:31 <wstephenson> we didn't plan for 16 months before starting KDE 4 though
+15:54:38 <wstephenson> no offense taken
+15:54:51 <robjo> there is no planning in the kernel
+15:54:56 <robjo> it just works
+15:55:10 <toscalix_> the previous state of the kernel is not our state either
+15:55:25 <coolo> so we are forced to do something that does not work?
+15:55:44 * manugupt1_ corrects himself I would not like to compare
+15:56:01 <tigerfoot> toscalix_: what is your (this time personnal) objectives, then it would be cool to have the personnal vision of all of the openSUSE Team,
+15:56:11 <coolo> manugupt1_: we can offer comparision only to those that are better than others. How does that sound? :)
+15:56:15 <tigerfoot> I've seen the Coolo's mindshare ... but the rest ?
+15:56:21 <toscalix_> I like that question
+15:56:22 <robjo> nobody said that, but the idea of stopping the wheels so we can "plan" and then letting go and "execute" is a bit old fashioned
+15:56:31 <toscalix_> motivations are relevant to understand proposals
+15:57:57 <robjo> agreed
+15:58:25 <toscalix_> Mine: 1.- we want and talk about something we cannot have. We talk about being open, sharing the work and creating community. But many of the current processes goes in the opposite direction. Once we have worked on them and understatood them, we have come to a common agreement on this idea, I hope. We need to change it to really have a chance to back up our words and wishes with our actions.
+15:58:59 <robjo> Leaves the question why inquiries that concern the motivation generally go unanswered
+15:59:13 <manugupt1_> coolo: Hmm its dicey.. it can work either ways.. actually depends on the person perceiving it.. but usually people with high standards wont bother, they contribute a lot because they already are motivated, do we actually thing comparing them would make them better motivated? that is something we need to answer
+15:59:33 <toscalix_> 2.- We all want to contribute in a successful project. Sooner or later most contributors face the same question. Am I working in the right project? If we keep loosing users we cannot expect to keep the contributors
+16:00:04 <tigerfoot> toscalix_: make me a favor please, use I for you .-), openSUSE Team (ot) when its about the team, we could be community or your team, and that's lead to confusion.
+16:00:29 <|miska|> manugupt1_: Well, coolo is not a good example, but imagine that you find out that you are just few packages/commits behind the guy you admire, wouldn't it motivate you to do more to "catch up"? :-D
+16:01:00 <robjo> |miska|: no
+16:01:07 <toscalix_> and 3.- I work for a company that really knows what free software is about. But it is small. We cannot succeed if only SUSE supports the project. Free SOftware has grown so much that our size won't allow us to stay relevant
+16:01:09 <toscalix_> done
+16:01:29 <tigerfoot> |miska|: nope I would think, he's sick, and will bring him a beer :-)
+16:01:29 <|miska|> robjo: Worked on me :-)
+16:01:40 <manugupt1_> |miska|: yes.. but then what about people who are really entering packages but may intimdiate them too
+16:01:42 <toscalix_> tigerfoot: sorry...yes, I will try
+16:01:53 <tigerfoot> toscalix_: thanks,
+16:01:56 <manugupt1_> So  we have a 50-50 % ;)
+16:02:07 <robjo> |miska|: good for you, that doesn't apply generally
+16:02:27 <|miska|> robjo: tigerfoot : Would it discourage you from contributing?
+16:02:52 <izabelvalverde> toscalix_ so to assure community decisions instead of "decision" but lead by openSUSE Team we need to find a new sponsor?
+16:02:56 <Ilmehtar> toscalix_: A few thoughts on 1) a) I believe your current processes, the way these 2016 have been put together, are the worst example of processes going in the opposite direction. Closed, opaque. I agree we should move towards openness, I don't see how long planning windows and weighty proposal documents fit into that goal.
+16:02:56 <Ilmehtar> b) you may have common agreement inside your team, but your team is just a small fraction of the ~200-300 contributors we have. I think the reaction to the 2016 proposals shows that we have some way to go before there is that common agreement. I think focusing on practical proposals (like Coolo's Factory posts) is the best way to achieve that.
+16:02:58 <tigerfoot> |miska|: I'm the leader of NOKarma for everyone :-)
+16:03:20 <robjo> Showing what people do is not discouraging, having some arbitray value system of tokens/karma/badges is
+16:03:53 <manugupt1_> +1 to Ilmehtar
+16:03:59 <vuntz> robjo: quickly interrupting you: as we're past the hour of the meeting, are you fine if we discuss "oSC15 ideas about finding a location" at a later meeting and keep the current topic going?
+16:04:23 <toscalix_> Ilmehtar: sponsors are not a goal but the consequence of having the right offer for them. In any case, I am open to have another conversation of how opaque or transparent has been our activity
+16:04:39 <ancorgs> just a clarification: is not coolo's proposal about factory or ancorgs' proposal about karma and so on
+16:04:45 <Ilmehtar> toscalix_: I don't believe I said anything about sponsors..
+16:04:58 <ancorgs> all of them are proposals from the openSUSE team
+16:05:01 <robjo> vuntz: fine
+16:05:16 <|miska|> tigerfoot, robjo: The way we did it in connect with my student is that everybody can decide for himself whether he wants to make his karma public or not
+16:05:20 <ancorgs> but somebody have to write the mails :-)
+16:05:24 <toscalix_> Ilmehtar: ups, sorry. Sponsor topic for izabelvalverde
+16:05:25 <izabelvalverde> abou sponsors I did
+16:05:31 <izabelvalverde> :)
+16:05:42 * wstephenson has to step out for a minute. my problem with the proposal content as planned is that we will end up with a plan for the best steam railway ever, by the time the rest of the world is building the internet.
+16:05:45 <toscalix_> vuntz: are we done or can I answer izabelvalverde
+16:05:47 <toscalix_> ?
+16:05:48 <Ilmehtar> ancorgs: :) I know, but there is a huge difference in tone between proposals like coolos, and other documents that are part of the 2016-pile, so it's been a lot easier for me to refer to it in that way
+16:06:03 <tigerfoot> wstephenson: :-)
+16:06:34 <toscalix_> Ilmehtar: difference in tone....because they are written by different people.
+16:06:50 <coolo> Ilmehtar: let's differentiate between "technical proposals" and "plans"
+16:06:58 <tigerfoot> toscalix_: robjo said okay to vuntz so green light
+16:07:28 <ancorgs> Ilmehtar: obviously, coolo is better than the average of us at writting right to the bone (and had some nice diagrams to rely on) :-)
+16:07:31 <vuntz> toscalix_: I think we should keep the discussion going as long as people can
+16:08:05 * manugupt1_ comes back in 10 minutes
+16:08:52 <toscalix_> izabelvalverde: we have a hard time getting sponsors despite the effort some people, like you, put, for many reasons. SOme are fixable in the current set up, but some don't. Everything is easier when you have something attractive to offer. I think that a user oriented distro, will help us a lot in this regard. This do not mean
+16:09:07 <Ilmehtar> coolo: lets call them "practical proposals" and "plans".. I like "practical proposals" .. i can like plans too, but those plans need to have some hook into reality, some attachment to "practical proposals" for them to make sense and be something actionable. Otherwise it's just endless, unproductive, waffle
+16:09:08 <toscalix_> we won't need to solve the other problems
+16:09:11 <awafaa> toscalix_: maybe in that case one should learn from the pther person, especially as their tone has received more constructive response?
+16:10:06 <toscalix_> awafaa: got lost. Can you develop further?
+16:10:39 <tigerfoot> toscalix_: I can't agree on that, the question of the budget, the money flow process etc are all in the area of gray's shadows we will have to fix this year ...
+16:10:47 <awafaa> toscalix_: to quote you "difference in tone....because they are written by different people"
+16:11:18 * tigerfoot don't say it will be easy but we will have ...
+16:11:27 <izabelvalverde> toscalix_ thank you, indeed is not easy to find sponsors besides our own community pushing their companies
+16:12:35 <tigerfoot> God thanks we have a big sponsors, sharing our values, and respecting our community, but finding a place for others sponsors can't be fixed on only one side.
+16:12:57 * tigerfoot look and see sponsors, fix sponsor
+16:13:05 <awafaa> if you want to do badges, following Mozilla's example which was adopted by Fedora is a much better one, than the Ubuntu style Karma
+16:13:15 <robjo> It's not easy to find sponsors for SUSECon either, come on does anyone really belief sponsors walk through the door and say "here take my money"?
+16:13:39 <toscalix_> awafaa: I am very glad that coolo tone received this time complements about his communication. Usually is the opposite. People tend to be hard with those who holds responsibility in this regard. It is something he has to deal with...
+16:13:39 <izabelvalverde> robjo just dreamers
+16:13:49 <tigerfoot> robjo: when did that change ? :-)
+16:14:12 <robjo> Fundraising, finding sponsors is hard work, period
+16:14:20 <coolo> toscalix_: wow, did you just diss me?
+16:14:35 <toscalix_> awafaa: tomas has the same issue. Being in the release team and being identified as the NO man is not easy
+16:14:37 <izabelvalverde> robjo totally agree
+16:14:38 <javier> robjo: http://www.42gadgets.de/wp-content/uploads/2013/08/Shut-up-and-take-my-money.jpg ;)
+16:14:50 <robjo> coolo: nope, threw you under the bus
+16:14:56 <robjo> he did yes
+16:14:56 <toscalix_> coolo: I gave you a complement, yes.
+16:15:09 <toscalix_> and to Tomas
+16:15:12 <coolo> toscalix_: aehm, google that word then
+16:15:48 <awafaa> toscalix_: coolo is normally blunt and to the point, no smoke and mirrors. he presents straight hard up facts, like it or lump it. he doesn't have time for petty word games which is why people respect his views even if they don't agree
+16:16:01 <anditosan> Question, of-topic, can we make necklaces for the conference, not just the badge?
+16:16:01 <Sleep_Walker> :D
+16:16:06 <anditosan> is that expensive?
+16:16:09 <toscalix_> awafaa: I know several dozens of people who will disagree with you.
+16:16:35 <awafaa> toscalix_: and i know several hundred that would agree with me ;)
+16:16:52 <izabelvalverde> anditosan oSC14 meeting is tomorrow :D
+16:16:58 <toscalix_> to me the point is that as part of the release team, they have a responsibility and you cannot expect them to answer with parts of nice songs every time
+16:17:04 <anditosan> izabelvalverde: yay!!! :D
+16:17:06 <|miska|> toscalix_: You are trying to say that there some people who liked the mail coolo sent the least from the pile and the big picture the most?
+16:17:32 <awafaa> toscalix_: communication has to be adjusted for the audience, it helps to learn from other speakers of the same audience. you adjust as you go along
+16:18:01 <toscalix_> |miska|: I am saying that I am glad the coolo mail got a positive feedback. It is also our mail
+16:18:31 <cboltz> toscalix_: http://paste.opensuse.org/4082047 ;-)
+16:18:52 <awafaa> toscalix_: "our" as in openSUSE team?
+16:18:53 <toscalix_> awafaa: project has all audiences. And plans are harder to digest in community projects than technical proposals. We knew that and assumed the risks derived
+16:19:14 <cboltz> my feeling is that most contributors even prefer hard facts over "politian-like" wordings ;-)
+16:19:16 * ancorgs feels that we are talking too much about writting styles
+16:19:56 <awafaa> ancorgs: you are somewhat correct, but how you convey the message is just as important as the message itself
+16:20:06 <toscalix_> awafaa: the proposal is not just coolo proposal. I think ancorgs said it before.
+16:20:18 <cwh> quite a long meeting ...
+16:20:24 <tigerfoot> we're in a loop
+16:20:29 <coolo> ancorgs: actually we're talking about not understanding the importance of it
+16:20:35 <tigerfoot> cwh: don't complain you invite us :-)
+16:20:42 <|miska|> Ok, so let's say that the way we communicated our ideas sucked, so let's talk about ideas itself :-)
+16:20:57 <vuntz> yes!
+16:21:03 <vuntz> let's discuss the ideas
+16:21:03 <antlarr> please :)
+16:21:33 <manugupt1_> Please
+16:21:35 <manugupt1_> :)
+16:21:55 <tigerfoot> I found the ideas have missed some importants points ...
+16:22:26 <toscalix_> |miska|: sometimes in order to discuss "the point", you need to throw out what you have. We are here also to receive that negative energy. Let's move on yes.
+16:22:38 <tigerfoot> the idea of we're loosing users, and then we will loose contributors is somewhat erroneous.
+16:23:10 <tigerfoot> The users ( end user, grandma paradigm) are only followers, they don't create value,
+16:23:22 <tigerfoot> What we're missing is
+16:24:07 <tigerfoot> From dreams, come a vision, then a plan and values (we have them in our statement), then contributors get motivated to make them real
+16:24:21 <tigerfoot> then users follow, as they always do.
+16:24:36 <tigerfoot> Where are and What are our dreams?
+16:26:01 <awafaa> tigerfoot: well it depends on how toscalix_ defines users
+16:26:17 <toscalix_> tigerfoot: the big picture is not a reset of the project. It is a attempt to provide more focus, not to change the scope of the project
+16:26:18 <tigerfoot> awafaa: why toscalix_, WE define
+16:26:50 <tigerfoot> toscalix_: then make me dream, the 2016 thread doesn't yet
+16:27:00 <toscalix_> that focus will help us to better define the actions we can achieve to accomplsh the goals
+16:27:03 <awafaa> tigerfoot: because HE is the one claiming we are losing users, even after we (the Board) tried to explain to him in Greece
+16:27:12 <tigerfoot> the factory approach is like a old dream we have, make it stable .. you feel the difference
+16:27:19 <anditosan> I feel that thre is always potential on each person to contribute in any way. Obviously we cannot expect grandma X to do programming. But can she be a satisfied user who passes the voice around about our distribution, yes. So we cannot discard people for not being what we think we want. Maybe a focus is being taken as exclusionary when it is not.
+16:27:23 <toscalix_> splitting the distro will allow us to focus more on the devs and the end users
+16:27:23 <robjo> there is no room for dreaming when you're focused ;)
+16:27:27 <toscalix_> for instance
+16:27:37 <robjo> and focus and execution is what this appears to be all about
+16:27:55 <awafaa> toscalix_: but why should we split the two?
+16:28:31 <toscalix_> free software have grown so much that you cannot reach everybody with one offer
+16:28:53 <Ilmehtar> toscalix_: why do we need to reach everybody?
+16:29:07 <toscalix_> no matter how flexible you are, that is no longer true.
+16:29:10 <anditosan> exactly my point Ilmehtar
+16:29:24 <toscalix_> we don't, we need only to select who do we want to reach
+16:29:28 <anditosan> we cannot be everybody's everything in a linux distro
+16:29:29 <awafaa> Ilmehtar: well said
+16:30:07 <robjo> why do we need to choose?
+16:30:09 <awafaa> well if we can get more software developers, users of their products will naturally adopt whatever platform the developers prefer
+16:30:15 <toscalix_> and make sure we are the first or second choice for those selected
+16:30:21 <awafaa> that is how Ubuntu managed to get so much mind share
+16:30:48 <awafaa> toscalix_: we shouldn't aim for second - *ever*
+16:31:26 <tigerfoot> awafaa: +1
+16:31:29 <Ilmehtar> toscalix_: okay, so, when should we start the discussion to choose? but wouldn't that discussion totally invalidate your teams decisions and current plans? It seems to me you're quite set on the idea of 2 versions
+16:32:01 <toscalix_> the proposal is clear about this point yes. We clearly propose to split the distribution in two parts
+16:32:28 <|miska|> I would say split
+16:32:29 <ishwon> I don't find the comparison with Ubuntu a nice thing. Wherever I do openSUSE presentation people like it, like the features & facilities. I even have people moving from Ubuntu to openSUSE.
+16:32:30 <toscalix_> a development version based on an enhaced factory and a user centric version
+16:32:36 * tigerfoot is looking around to find his left part, just splitted
+16:33:02 <|miska|> Let existing focus of Factory and Release diverge a little further
+16:33:28 <awafaa> but what is the difference from factory and "user" versions?
+16:33:34 <toscalix_> can we finish at 17:45
+16:33:41 <toscalix_> we need to go.
+16:33:43 <toscalix_> ?
+16:34:08 <robjo> I don't recall anyone outlining a rough frame work of pros and cons for a split
+16:34:09 * tigerfoot think no way :-) the meeting end has been delayed until 19h45
+16:34:21 <anditosan> awafaa: This question is something we will talk far and long for lol :)
+16:34:21 <tigerfoot> robjo: +1
+16:34:56 <toscalix_> awafaa: the user centric apporach is more like todays approach, based on a "product like" release. The dev version is a rolling distribution approach
+16:35:04 <anditosan> Can toscalix_ explain the ins and outs of this split in the ML?
+16:35:05 <|miska|> awafaa: Factory is development version - less qa and stability and more bleeding edge and cool, release - stable and tested for people who don't want cool new things everyday and want just to "work"
+16:35:09 <vuntz> toscalix_: sure, we can end in 10 minutes
+16:35:47 <toscalix_> anditosan: ot will try if you think it is needed, yes.
+16:35:49 * tigerfoot think we can also continue with our without you too :-)
+16:36:06 <|miska|> :-)
+16:36:06 <toscalix_> we have the Xmas party, that's all
+16:36:27 <anditosan> toscalix_: I feel a few of us here want to here more detail specifically about your idea to split development for the distribution
+16:36:38 <anditosan> hear*
+16:36:39 <robjo> go and be merry, that doesn't mean the meeting has to end
+16:36:40 * tigerfoot waves goods, foods, beers to all Xmas P
+16:36:45 * awafaa actually thinks there is more likely to be a preference for developers to use rolling releases and as such their users will want to do the same, almost negating the product
+16:37:00 <toscalix_> vuntz: we can come again if you guys want
+16:37:03 <robjo> last time I checked we did OK even if not all of the oenSUSE team members were in the meeting
+16:37:39 <awafaa> robjo: yup, i have the same recollection
+16:37:47 <anditosan> awafaa: I agree. They will have to define this one to understand more
+16:37:56 <robjo> toscalix_: you are welcome anytime, I don't think a special inivation needs to be issued
+16:38:09 <coolo> robjo: "we" is not plural for everyone
+16:38:11 <tigerfoot> :-)
+16:38:30 <toscalix_> we need to make sure this fit in the agenda. We have eaten most of the time
+16:38:40 <awafaa> actually one would have thought that the openSUSE team would always be in -project seeing as what the do directly affects the openSUSE Project
+16:38:42 <robjo> coolo: thanks "we" as in "we" the king, got it
+16:38:56 <Ilmehtar> my opinion - I love the proposed changes for Factory - I think we should do them. I don't understand/haven't seen the justification for a 'user centric' release. I think we should do the Factory changes now. The rest can still be discussed. And this is why I like iterative processes - making Factory better doesn't need Misc. Planning Point 452 to be fully
+16:38:56 <Ilmehtar> fleshed out.
+16:39:23 <awafaa> Ilmehtar: +1
+16:39:32 <|miska|> Ilmehtar: +1
+16:39:50 <toscalix_> awafaa: as |miska| said in the ML a member of the team is always present in these meetings , make a summary in our team meetings and we provide the info in the report that circulates internally in SUSE, so other employees have access to what's happening in the project
+16:39:51 <manugupt1_> Ilmehtar: +1
+16:39:59 <tigerfoot> Ilmehtar: +1.5
+16:40:47 <tigerfoot> toscalix_: aie ... you mean otherwise people at SUSE doesn't have access to openSUSE project stuff ?
+16:40:48 <|miska|> We are just mostly not visible, but we are always spying on you :-P
+16:40:58 <Ilmehtar> toscalix_: .... why dont you just encorage the other SUSE employees to read the minutes/report that we publish openly for the whole community?
+16:41:25 <anditosan> Ilmehtar: that is probably because for us it is easier to understand what development changes mean. Now they will need to explore the changes needed for a "user centric" distro. Which is an area that we do not dive into as much. The need for is another thing that we need to explore. How are we closer to an everyday non-programmer? Food for thought
+16:41:37 <AlbertoP> Ilmehtar, reason 1 for a "user-centric" release -> "you want users", and I am unsure about how many we are attracting and how many we are keeping far due to the usual unresolved issues :-)
+16:42:05 <Sleep_Walker> Ilmehtar: I'm not sure other SUSE employees have already read all the e-mails toscalix_ and openSUSE team is producing...
+16:42:10 <ancorgs> Ilmehtar: there is always a link in the minutes, but lazy people that reads our meeting minutes gets the project's ones for free
+16:42:15 <antlarr> Ilmehtar: that's exactly what is done, we put a link to the official logs
+16:42:16 <|miska|> Well, user centric distro is not on the plate right now
+16:42:28 <|miska|> And we have enough flames with Factory now ;-)
+16:42:33 <toscalix_> Ilmehtar: we play our role as link everyday. But people is used to reading some newsletters and not others, so we try to at least put a openSUSE goody in all of them
+16:42:53 <manugupt1_> |miska|: is a stable developer centric distro on the plate :P one which we can say we wont change it for next 6 months
+16:43:05 <toscalix_> Sleep_Walker: I guarantee you that they haven't
+16:43:14 <toscalix_> even if we pay for it ;-)
+16:43:21 <|miska|> manugupt1_: Factory changes everyday
+16:43:23 <robjo> |miska|: flamewars are different, I am actually very positive about the factual tone of voice in the factory discussion
+16:43:30 <robjo> much better than we have done in the past
+16:44:00 <plinnell> yup
+16:44:03 <tigerfoot> robjo: we grow, (mature?)
+16:44:16 <AlbertoP> tigerfoot, no, someone left :)
+16:44:29 <|miska|> Well, my point was, there is no point in duscising what we might do with stable release when we have plenty Factory ideas on our plate and world could end before we finish them
+16:44:44 <plinnell> |miska|: exactly
+16:44:52 <Ilmehtar> |miska|: we agree
+16:45:02 <toscalix_> I have to leave. I enjoyed. Thanks.
+16:45:04 <tigerfoot> AlbertoP: just on the tone we use on factory thread ml, this doesn't mean we fixed all what we have to :-)
+16:45:11 <vuntz> toscalix_: thanks for your time
+16:45:21 <plinnell> this has been good
+16:45:47 <tigerfoot> vuntz: next topic? :-)
+16:45:53 <robjo> One thing that is being neglected in all of this is that the impact of implementing the changes has not been made public
+16:46:02 <AlbertoP> tigerfoot, my answer was to your "grow/mature" statement. The tone changed because people changed (meaning they are other individuals)
+16:46:04 <tigerfoot> thanks toscalix_ & the whole team.
+16:46:17 <tigerfoot> AlbertoP: omg we agree :-)
+16:46:25 <plinnell> one thing we sometimes forget is not everyone is a native English speaker, so written communication sometime lacks nuances
+16:46:34 <robjo> the openSUSE team appears to operate as whole on an "either or" basis.
+16:46:37 <Ilmehtar> plinnell: we know peter, it's okay, we forgive you
+16:46:46 <izabelvalverde> :P
+16:46:50 <vuntz> tigerfoot: well, we can go on a bit if people still want to discuss, but I suggest to conclude in the next 10 minutes (at least, for the official meeting part, discussion can go on afterwards)
+16:46:55 <plinnell> lol :d
+16:47:03 <AlbertoP> My main concern is that you talk too much about Factory, which is of no interest in terms of gaining share, and very very little about products and releases that a user might want to use.
+16:47:14 <robjo> thus if the whole openSUSE team works on fiddling with OBS and the new factory model it will have an effect on other work they have been doing that leads toward a release
+16:48:14 <robjo> as of know most of the world, that includes openSUSE contributors, is probably under the assumption that 13.2 is due in July or so next year (8 month cycle)
+16:48:41 <tigerfoot> vuntz: so we drop the other questons to next meeting. Sounds good for me.
+16:48:45 <robjo> considering the current mode of operation there is a lot of work that will need to be picked up by others to get there
+16:48:47 <AlbertoP> Factory is nice and all, but from my perspective there is way too much focus on the process, and very little on fixing "practical problems" that keep users away (see very stupid technical issues that have been affecting us forever)
+16:48:59 <vuntz> tigerfoot: yeah, there was only one other topic and we postpone it
+16:49:11 <robjo> thus there is an effect that is currently be ignored/swept under the rug
+16:49:40 * AlbertoP goes back in silent mode :)
+16:49:48 <coolo> AlbertoP: you figure that "factory" is our development process?
+16:49:54 <wstephenson> where is 'user-centric distro' actually proposed?
+16:50:08 <|miska|> AlbertoP: The tricky part is, that that one "practical problem" that keep users away is different for every user :-)
+16:50:13 <coolo> AlbertoP: you can't fix technical problems without working on the process too
+16:50:14 * tigerfoot look in /dev/null and found an awnser for wstephenson
+16:50:26 <ancorgs> robjo: yes, the openSUSE team would like to concentrate efforts in improving factory (after reaching agreements on how to do it), and that means that we will appreciate people stepping into the release process
+16:50:31 <|miska|> And most people "in" are not affected otherwise they would have fixed it already
+16:51:08 <AlbertoP> coolo, my point is that the process is the only discussed aspect. There is no plan to address practical problems at the moment, at least not practical problems that have affected users for a long time. Then well, I certainly do not have the view of someone working at suse :)
+16:51:19 <Sleep_Walker> |miska|: ahem
+16:51:37 <|miska|> AlbertoP: There is bugzilla for those :-)
+16:51:41 <ancorgs> wstephenson: here http://lists.opensuse.org/opensuse-project/2013-11/msg00118.html
+16:51:53 <ancorgs> wstephenson: "overhauled openSUSE release"
+16:51:53 <tigerfoot> AlbertoP: the proposed plan will not hit users, before a certain amount of time (and effort)
+16:52:08 <AlbertoP> to say it frankly, I heard of "factory process" for years, and |miska| bugzilla is a place where most users won't go due to the attitude :-\
+16:52:32 * tigerfoot warn |miska| about the plethora of numbers AlbertoP can throw to you :-)
+16:52:34 <robjo> ancorgs: so why is that so hard to put in a mail message, and skip all the fluff and political BS
+16:52:47 <wstephenson> ancorgs: thanks - i had read that but not seen that as a call for a "user centred release" a la ubuntu/mint/blue thingy linux
+16:52:48 <robjo> ancorgs: I know that's not your idea
+16:52:51 <AlbertoP> tigerfoot, ok. Fine. Thanks for clarifying. Then it benefit suse only, not the community of its users though.
+16:53:23 <tigerfoot> AlbertoP: nope, from my point of view, if I'm, able as contributor to return to factory daily usage, then
+16:53:26 <AlbertoP> not saying it's bad, but it will have probably an effect on delaying the perception of improvements...
+16:53:41 <manugupt1_> AlbertoP: I wont bother updating my relaese.. simple
+16:53:45 <|miska|> robjo: You mean differnet communication tones that are caused by different people writing the mails?
+16:53:48 <tigerfoot> later end user's grandma will not have to fight with certain things, cause I will be able to fix more ...
+16:53:51 <manugupt1_> I will start cherry picking stuff for myself
+16:53:52 <AlbertoP> tigerfoot, that would make me a non-user if I have to use factory to have something decent though, for example.
+16:54:32 <tigerfoot> AlbertoP: depend of WE define what factory should be and how WE will handle its process and life.
+16:55:00 <|miska|> AlbertoP: If we fix&test stuff in Factory more, it will not end up in release
+16:55:03 <tigerfoot> then we come back to some offers made by openSUSE Team and drawn by coolo.
+16:55:11 <robjo> |miska|: no I mean express what you really want in a clear concise non offending way
+16:55:19 <AlbertoP> tigerfoot, my point is opensuse desperately needs a *user perspective* of some sort, not a technical perspective, which it had forever (good or bad). All the talks about process led to make things more abstract and obscure in the past, and I don't see why it should be much different now. But then again, my 2 cents :)
+16:55:27 <vuntz> so, guys
+16:55:33 <vuntz> interrupting all of you a bit
+16:55:42 <vuntz> I'll stop the meeting now, but feel free to go on afterwards
+16:55:47 <vuntz> just one quick unrelated note
+16:56:04 <ancorgs> wstephenson: yes. that mail was supposed to provide "The Vision" with the split into a rolling but stabilized Factory ("enhaced factory") and a user centric release ("Overhauled openSUSE Release") with a surrounding "open governance model"
+16:56:06 <vuntz> izabelvalverde wanted to remind everyone that members can vote for the elections until the 15th
+16:56:12 <vuntz> so if you haven't voted, go do it :-)
+16:56:19 <tigerfoot> not can, HAVE TO
+16:56:28 <vuntz> #endmeeting

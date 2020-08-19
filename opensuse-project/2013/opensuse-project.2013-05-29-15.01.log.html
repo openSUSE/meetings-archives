@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:01:00</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:01:00</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed May 29 15:01:00 2013 UTC.  The chair is robjo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:01:00</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:01:18</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE project meeting</span>
+<a name="l-5"></a><span class="tm">15:01:36</span><span class="nk"> &lt;robjo&gt;</span> Hi everyone and welcome to another edition of our project meeting
+<a name="l-6"></a><span class="tm">15:02:13 </span><span class="nka">* Ilmehtar</span> <span class="ac">waves</span>
+<a name="l-7"></a><span class="tm">15:02:13</span><span class="nk"> &lt;robjo&gt;</span> Lets start with a board role call: FunkyPenguin, Ilmehtar, ping
+<a name="l-8"></a><span class="tm">15:02:19</span><span class="nk"> &lt;Ilmehtar&gt;</span> I'm here
+<a name="l-9"></a><span class="tm">15:02:34</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">vuntz:</span> is busy with some other stuff
+<a name="l-10"></a><span class="tm">15:02:59</span><span class="nk"> &lt;robjo&gt;</span> You can find the agenda for today here: http://en.opensuse.org/openSUSE:Project_meeting
+<a name="l-11"></a><span class="tm">15:03:19</span><span class="nk"> &lt;robjo&gt;</span> Anything that is not on the agenda has to wait to the end
+<a name="l-12"></a><span class="tm">15:03:26</span><span class="nk"> &lt;robjo&gt;</span> Lets get going
+<a name="l-13"></a><span class="tm">15:03:40</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">review action items from last meeting</span>
+<a name="l-14"></a><span class="tm">15:03:58</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> sent a message to the board about oSC13
+<a name="l-15"></a><span class="tm">15:04:23</span><span class="nk"> &lt;robjo&gt;</span> the board discussed the topic (we still owe meeting minutes for the last board meeting, sorry)
+<a name="l-16"></a><span class="tm">15:04:34</span><span class="nk"> &lt;warlordfff&gt;</span> hey robjo
+<a name="l-17"></a><span class="tm">15:04:35</span><span class="nk"> &lt;robjo&gt;</span> and reply was sent to warlordfff
+<a name="l-18"></a><span class="tm">15:04:36</span><span class="nk"> &lt;vuntz&gt;</span> I'll try to jump in now and then, so don't hesitate to ping me!
+<a name="l-19"></a><span class="tm">15:04:39</span><span class="nk"> &lt;warlordfff&gt;</span> what meassage?
+<a name="l-20"></a><span class="tm">15:05:13</span><span class="nk"> &lt;warlordfff&gt;</span> oh sorry do we still have a meeting or I lost it all?
+<a name="l-21"></a><span class="tm">15:05:25</span><span class="nk"> &lt;robjo&gt;</span> thus as far as I am concerned the action items from last time are complete.
+<a name="l-22"></a><span class="tm">15:05:49</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> yes we are at the beginning of the project meeting
+<a name="l-23"></a><span class="tm">15:06:02</span><span class="nk"> &lt;robjo&gt;</span> just reviewing the action items from last time
+<a name="l-24"></a><span class="tm">15:06:26</span><span class="nk"> &lt;warlordfff&gt;</span> ok thanks, I will by tommorow, sorry for the delay
+<a name="l-25"></a><span class="tm">15:07:01</span><span class="nk"> &lt;robjo&gt;</span> any action items that may not be listed or I may not be aware off?
+<a name="l-26"></a><span class="tm">15:07:21</span><span class="nk"> &lt;robjo&gt;</span> OK then, next topic
+<a name="l-27"></a><span class="tm">15:07:30</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">gsoc update</span>
+<a name="l-28"></a><span class="tm">15:07:59</span><span class="nk"> &lt;Ilmehtar&gt;</span> how's GSOC going?
+<a name="l-29"></a><span class="tm">15:08:15</span><span class="nk"> &lt;robjo&gt;</span> it appears that our administrators are not here, thus I'll give an update on what I know
+<a name="l-30"></a><span class="tm">15:08:33</span><span class="nk"> &lt;robjo&gt;</span> Students have been selected and have been notified by Google
+<a name="l-31"></a><span class="tm">15:08:48</span><span class="nk"> &lt;robjo&gt;</span> we are now in the "Community Bonding" period
+<a name="l-32"></a><span class="tm">15:09:07</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> hi all. Meeting is over?
+<a name="l-33"></a><span class="tm">15:09:13</span><span class="nk"> &lt;warlordfff&gt;</span> well we have some already bonded, right differentreality?
+<a name="l-34"></a><span class="tm">15:09:15</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-35"></a><span class="tm">15:09:45</span><span class="nk"> &lt;robjo&gt;</span> thus all mentors are expected to have contact with their students, students should introduce themselves to the community and subscribe to appropriate MLs etc.
+<a name="l-36"></a><span class="tm">15:10:07</span><span class="nk"> &lt;robjo&gt;</span> The bonding period runs for a couple of weeks, I think
+<a name="l-37"></a><span class="tm">15:10:31</span><span class="nk"> &lt;differentreality&gt;</span> until 17th june
+<a name="l-38"></a><span class="tm">15:11:06</span><span class="nk"> &lt;robjo&gt;</span> we have 6 students for openSUSE and 2 students each for the other projects we partnered with, ownCloud etc.
+<a name="l-39"></a><span class="tm">15:12:23</span><span class="nk"> &lt;robjo&gt;</span> discussion about the partnering and its effects will be deferred to a post-postmortem after GSoC is over
+<a name="l-40"></a><span class="tm">15:12:41</span><span class="nk"> &lt;robjo&gt;</span> that's about all I have on GSoC, anything anyone has to add?
+<a name="l-41"></a><span class="tm">15:13:16</span><span class="nk"> &lt;robjo&gt;</span> OK, moving on
+<a name="l-42"></a><span class="tm">15:13:24</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">oSC13</span>
+<a name="l-43"></a><span class="tm">15:13:36</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> differentreality your turn ;)
+<a name="l-44"></a><span class="tm">15:13:45</span><span class="nk"> &lt;warlordfff&gt;</span> ok
+<a name="l-45"></a><span class="tm">15:13:59</span><span class="nk"> &lt;warlordfff&gt;</span> so we seem to have found a keynote speaker
+<a name="l-46"></a><span class="tm">15:14:05</span><span class="nk"> &lt;warlordfff&gt;</span> Georg Greeves
+<a name="l-47"></a><span class="tm">15:14:30</span><span class="nk"> &lt;robjo&gt;</span> Hurray, when will there be an announcement?
+<a name="l-48"></a><span class="tm">15:14:55</span><span class="nk"> &lt;warlordfff&gt;</span> Just waiting from him to officially accept and we will the next day :D
+<a name="l-49"></a><span class="tm">15:15:09</span><span class="nk"> &lt;warlordfff&gt;</span> we just had a meeting with Agustin and we have a lot things done
+<a name="l-50"></a><span class="tm">15:15:28</span><span class="nk"> &lt;warlordfff&gt;</span> we have most things almost ready
+<a name="l-51"></a><span class="tm">15:15:41</span><span class="nk"> &lt;warlordfff&gt;</span> like the decoration of the venue
+<a name="l-52"></a><span class="tm">15:15:49</span><span class="nk"> &lt;warlordfff&gt;</span> The Party
+<a name="l-53"></a><span class="tm">15:15:53</span><span class="nk"> &lt;warlordfff&gt;</span> and the BBQ
+<a name="l-54"></a><span class="tm">15:16:33</span><span class="nk"> &lt;warlordfff&gt;</span> what else? differentreality anything else I might forgot?
+<a name="l-55"></a><span class="tm">15:16:43</span><span class="nk"> &lt;differentreality&gt;</span> we are waiting on confirmation about community keynotes
+<a name="l-56"></a><span class="tm">15:16:59</span><span class="nk"> &lt;robjo&gt;</span> We have Jos confirmed to talk about community
+<a name="l-57"></a><span class="tm">15:17:17</span><span class="nk"> &lt;robjo&gt;</span> I am looking for 2 additional candidates
+<a name="l-58"></a><span class="tm">15:17:28</span><span class="nk"> &lt;differentreality&gt;</span> Good
+<a name="l-59"></a><span class="tm">15:17:31</span><span class="nk"> &lt;differentreality&gt;</span> As far as the program goes
+<a name="l-60"></a><span class="tm">15:17:49</span><span class="nk"> &lt;differentreality&gt;</span> waiting for some confirmation, before we start building it up
+<a name="l-61"></a><span class="tm">15:17:55</span><span class="nk"> &lt;warlordfff&gt;</span> oh there is also a strong possibility for FSFE to join as conference Partner
+<a name="l-62"></a><span class="tm">15:18:53</span><span class="nk"> &lt;differentreality&gt;</span> One more thing
+<a name="l-63"></a><span class="tm">15:19:28</span><span class="nk"> &lt;differentreality&gt;</span> We still have on hold the issue about informing speakers and attendees about recording and stuff. There is a relevant thread in the mailing list and it is also tracked on trello https://trello.com/card/inform-speakers-and-attendees-about-video-recording-photos-which-are-publicly-distributed/50c9f6580355c5430700875a/18
+<a name="l-64"></a><span class="tm">15:19:38</span><span class="nk"> &lt;differentreality&gt;</span> help from people with past experience would be highly appreciated on this.
+<a name="l-65"></a><span class="tm">15:20:47</span><span class="nk"> &lt;robjo&gt;</span> Shouldn't we have a pre defined text for this?
+<a name="l-66"></a><span class="tm">15:21:08</span><span class="nk"> &lt;warlordfff&gt;</span> we found no feedback for that
+<a name="l-67"></a><span class="tm">15:21:20</span><span class="nk"> &lt;differentreality&gt;</span> there are relevant replies in the mailing list, juergen is involved and we got also advice from legal but nothing has been finalized or done yet
+<a name="l-68"></a><span class="tm">15:22:00</span><span class="nk"> &lt;robjo&gt;</span> How did we deal with this last year, and the year before, and ....?
+<a name="l-69"></a><span class="tm">15:22:22</span><span class="nk"> &lt;differentreality&gt;</span> I don't know
+<a name="l-70"></a><span class="tm">15:23:43</span><span class="nk"> &lt;robjo&gt;</span> OK, rather than waiting please send a direct e-mail to Michal, he was involved in the conference org last year, he will probebly know. If you need his e-mail get a hold of me off line
+<a name="l-71"></a><span class="tm">15:24:10</span><span class="nk"> &lt;differentreality&gt;</span> ok I will contact michal personally
+<a name="l-72"></a><span class="tm">15:24:22</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">differentreality:</span> thanks
+<a name="l-73"></a><span class="tm">15:24:32</span><span class="nk"> &lt;robjo&gt;</span> anything else on oSC13?
+<a name="l-74"></a><span class="tm">15:24:45</span><span class="nk"> &lt;warlordfff&gt;</span> well you are free to ask anything  :D
+<a name="l-75"></a><span class="tm">15:25:07</span><span class="nk"> &lt;robjo&gt;</span> any questions from anyone?
+<a name="l-76"></a><span class="tm">15:25:09</span><span class="nk"> &lt;warlordfff&gt;</span> any questions?
+<a name="l-77"></a><span class="tm">15:26:01</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> differentreality thanks for all the effort so far and for keeping things moving along
+<a name="l-78"></a><span class="tm">15:26:10</span><span class="nk"> &lt;differentreality&gt;</span> :)
+<a name="l-79"></a><span class="tm">15:26:13</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-80"></a><span class="tm">15:26:18</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">anything else</span>
+<a name="l-81"></a><span class="tm">15:26:32</span><span class="nk"> &lt;robjo&gt;</span> OK, anything else we need to discuss today?
+<a name="l-82"></a><span class="tm">15:26:37</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> Ambassador/Advocate  any update?
+<a name="l-83"></a><span class="tm">15:26:53</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">Ilmehtar:</span> you're up ;)
+<a name="l-84"></a><span class="tm">15:27:12</span><span class="nk"> &lt;Ilmehtar&gt;</span> sorry! I got dragged into a meeting at work
+<a name="l-85"></a><span class="tm">15:27:36</span><span class="nk"> &lt;Ilmehtar&gt;</span> the Advocate Update - I've had little time but we've had more volenteers, and I hope to be responding to them over the next 24 hours to keep the ball rolling
+<a name="l-86"></a><span class="tm">15:28:05</span><span class="nk"> &lt;Ilmehtar&gt;</span> I'm also planning on fixing the wiki so references to Ambassador now read Advocate, though if someone beats me to it, it will be appriciated
+<a name="l-87"></a><span class="tm">15:28:41</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> so the next #action could could be Illmehtar to send update about Ambassador/Advocate to the ml?
+<a name="l-88"></a><span class="tm">15:28:55</span><span class="nk"> &lt;Ilmehtar&gt;</span> If you think it's necessary, sure
+<a name="l-89"></a><span class="tm">15:29:29</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-90"></a><span class="tm">15:29:50</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> i think :D
+<a name="l-91"></a><span class="tm">15:30:09</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">Ilmehtar send status update about new Advocate program to project ML</span>
+<a name="l-92"></a><span class="tm">15:30:15</span><span class="nk"> &lt;Ilmehtar&gt;</span> thanks :)
+<a name="l-93"></a><span class="tm">15:30:55</span><span class="nk"> &lt;robjo&gt;</span> always happy to hand out action items to other people ;)
+<a name="l-94"></a><span class="tm">15:31:23</span><span class="nk"> &lt;warlordfff&gt;</span> robjo hanging out with jospoortvliet a lot?
+<a name="l-95"></a><span class="tm">15:31:25</span><span class="nk"> &lt;warlordfff&gt;</span> lol
+<a name="l-96"></a><span class="tm">15:31:45</span><span class="nk"> &lt;robjo&gt;</span> the board meeting minutes are a bit late, sorry
+<a name="l-97"></a><span class="tm">15:32:11</span><span class="nk"> &lt;robjo&gt;</span> I continue to be swamped and am on the road this week
+<a name="l-98"></a><span class="tm">15:32:30</span><span class="nk"> &lt;robjo&gt;</span> will try and get them out in the next couple of days
+<a name="l-99"></a><span class="tm">15:32:46</span><span class="nk"> &lt;robjo&gt;</span> any other items?
+<a name="l-100"></a><span class="tm">15:33:19</span><span class="nk"> &lt;warlordfff&gt;</span> can we talk about oSC14? I wanted to add this to the agenta but life happened :)
+<a name="l-101"></a><span class="tm">15:33:19</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">robjo:</span> if it was productive and as I see it is. no worries about to extend a little bit the over the time ;-)
+<a name="l-102"></a><span class="tm">15:33:55</span><span class="nk"> &lt;robjo&gt;</span> we can certainly talk about oSC14
+<a name="l-103"></a><span class="tm">15:33:59</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> go
+<a name="l-104"></a><span class="tm">15:34:20</span><span class="nk"> &lt;warlordfff&gt;</span> other than Croatia , did the French contacted?
+<a name="l-105"></a><span class="tm">15:34:49</span><span class="nk"> &lt;robjo&gt;</span> The team in France have not sent a message to -project or the board
+<a name="l-106"></a><span class="tm">15:34:54</span><span class="nk"> &lt;warlordfff&gt;</span> or do we have any other proposals?
+<a name="l-107"></a><span class="tm">15:35:08</span><span class="nk"> &lt;robjo&gt;</span> although they have been encouraged to do so a number of times
+<a name="l-108"></a><span class="tm">15:35:15</span><span class="nk"> &lt;warlordfff&gt;</span> ok
+<a name="l-109"></a><span class="tm">15:35:36</span><span class="nk"> &lt;robjo&gt;</span> thus the semi-proposal received this week on -project is the only "official" proposal we have at this point
+<a name="l-110"></a><span class="tm">15:36:17</span><span class="nk"> &lt;warlordfff&gt;</span> now from what I learned so far is  that is important people from potential organizing countries should attend to the conference this year so that they know how we do things (we = openSUSE)
+<a name="l-111"></a><span class="tm">15:36:45</span><span class="nk"> &lt;robjo&gt;</span> Our (board) goal still is to have one of the oSC14 organizing members attend oSc13 and make an announcement at oSC13 where oSC14 will be held
+<a name="l-112"></a><span class="tm">15:37:04</span><span class="nk"> &lt;warlordfff&gt;</span> also if by oSC13 we have proposals I tthink it would be Great to have presentation of those proposals
+<a name="l-113"></a><span class="tm">15:37:26</span><span class="nk"> &lt;robjo&gt;</span> agreed
+<a name="l-114"></a><span class="tm">15:37:58</span><span class="nk"> &lt;robjo&gt;</span> there should be plenty of time in the schedule to slide in a "last minute" addition
+<a name="l-115"></a><span class="tm">15:38:05</span><span class="nk"> &lt;warlordfff&gt;</span> so if there are any more contacts please let them know that
+<a name="l-116"></a><span class="tm">15:38:57</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> yes, the board is interested to have as much knowledge transferred from your experience this year to next years committee
+<a name="l-117"></a><span class="tm">15:39:26</span><span class="nk"> &lt;warlordfff&gt;</span> and it would be great if the other people meet them in person
+<a name="l-118"></a><span class="tm">15:39:44</span><span class="nk"> &lt;warlordfff&gt;</span> people who will actually work with those people
+<a name="l-119"></a><span class="tm">15:39:48</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> and differentreality will be called upon ;) to do a postmortem
+<a name="l-120"></a><span class="tm">15:40:03</span><span class="nk"> &lt;warlordfff&gt;</span> lol
+<a name="l-121"></a><span class="tm">15:40:28</span><span class="nk"> &lt;differentreality&gt;</span> yes, we expect to share the experience
+<a name="l-122"></a><span class="tm">15:41:01</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> my suggestion is to the next org ppl, keep a closer look at trello too
+<a name="l-123"></a><span class="tm">15:41:20</span><span class="nk"> &lt;differentreality&gt;</span> +1
+<a name="l-124"></a><span class="tm">15:41:30</span><span class="nk"> &lt;warlordfff&gt;</span> yeap that is REALLY important too
+<a name="l-125"></a><span class="tm">15:41:42</span><span class="nk"> &lt;robjo&gt;</span> we should also have a "Organizing oSC13" presentation at this years conference ;)
+<a name="l-126"></a><span class="tm">15:41:57</span><span class="nk"> &lt;warlordfff&gt;</span> we will
+<a name="l-127"></a><span class="tm">15:42:16</span><span class="nk"> &lt;robjo&gt;</span> well, we do not yet know who will organize oSC14, thus there is no one to ask to watch trello ;)
+<a name="l-128"></a><span class="tm">15:42:18</span><span class="nk"> &lt;warlordfff&gt;</span> I am still writing the draft and struggling with a title :D
+<a name="l-129"></a><span class="tm">15:43:17</span><span class="nk"> &lt;robjo&gt;</span> OK, does that cover the oSC14 topic?
+<a name="l-130"></a><span class="tm">15:43:25</span><span class="nk"> &lt;warlordfff&gt;</span> I think so
+<a name="l-131"></a><span class="tm">15:43:35</span><span class="nk"> &lt;robjo&gt;</span> what else?
+<a name="l-132"></a><span class="tm">15:44:01</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> <span class="hi">robjo:</span> yes we have someone to invite to trello, that guy that has sent the proposal to the ml
+<a name="l-133"></a><span class="tm">15:44:21</span><span class="nk"> &lt;differentreality&gt;</span> ?
+<a name="l-134"></a><span class="tm">15:44:26</span><span class="nk"> &lt;differentreality&gt;</span> osc14 proposal ?
+<a name="l-135"></a><span class="tm">15:44:29</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> yes
+<a name="l-136"></a><span class="tm">15:44:50</span><span class="nk"> &lt;differentreality&gt;</span> you are saying we should invite him to trello ?
+<a name="l-137"></a><span class="tm">15:44:59</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">differentreality:</span> there was an "we may be interested" mail to -project regarding the location for oSC14
+<a name="l-138"></a><span class="tm">15:45:09</span><span class="nk"> &lt;differentreality&gt;</span> yes I have read the email
+<a name="l-139"></a><span class="tm">15:45:11</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> I think will be good for him
+<a name="l-140"></a><span class="tm">15:45:15</span><span class="nk"> &lt;differentreality&gt;</span> I just didnt understand fully carlos point
+<a name="l-141"></a><span class="tm">15:45:28</span><span class="nk"> &lt;robjo&gt;</span> inviting him to trello may be a bit pre-mature
+<a name="l-142"></a><span class="tm">15:45:53</span><span class="nk"> &lt;warlordfff&gt;</span> +0.8
+<a name="l-143"></a><span class="tm">15:45:53</span><span class="nk"> &lt;differentreality&gt;</span> well I am happy to reply to inform him that he can check out our organization in trello and that they can join us volunteers
+<a name="l-144"></a><span class="tm">15:45:54</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> to learn how things go is never pre-mature imho
+<a name="l-145"></a><span class="tm">15:46:32</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> +1
+<a name="l-146"></a><span class="tm">15:46:46</span><span class="nk"> &lt;warlordfff&gt;</span> let us not run into things I think is what robjo is trying to say
+<a name="l-147"></a><span class="tm">15:47:09</span><span class="nk"> &lt;robjo&gt;</span> yup
+<a name="l-148"></a><span class="tm">15:47:36</span><span class="nk"> &lt;robjo&gt;</span> well, I would say "rush" rather than "run" but.... ;)
+<a name="l-149"></a><span class="tm">15:47:41</span><span class="nk"> &lt;warlordfff&gt;</span> afterall that kind of things is what shows if they are serious about this
+<a name="l-150"></a><span class="tm">15:48:04</span><span class="nk"> &lt;robjo&gt;</span> Anyway, other topics?
+<a name="l-151"></a><span class="tm">15:48:12</span><span class="nk"> &lt;differentreality&gt;</span> actually robert has replied to that email alraedy I think he covered the issue
+<a name="l-152"></a><span class="tm">15:49:00</span><span class="nk"> &lt;robjo&gt;</span> thanks, last call, anything else?
+<a name="l-153"></a><span class="tm">15:49:09</span><span class="nk"> &lt;CarlosRibeiro&gt;</span> no
+<a name="l-154"></a><span class="tm">15:49:26</span><span class="nk"> &lt;jospoortvliet&gt;</span> <span class="hi">warlordfff:</span> where, invite me pls
+<a name="l-155"></a><span class="tm">15:49:41</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

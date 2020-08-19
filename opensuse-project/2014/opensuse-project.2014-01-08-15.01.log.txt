@@ -1,0 +1,194 @@
+15:01:14 <vuntz> #startmeeting openSUSE Project Meeting
+15:01:14 <bugbot> Meeting started Wed Jan  8 15:01:14 2014 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:01:14 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:01:15 <vuntz> who else is here?
+15:01:39 * manugupt1 is here
+15:02:50 <vuntz> so, it seems I forgot to update the agenda after the last meeting and we still have the old items
+15:02:59 <vuntz> but we still have this on the agenda:
+15:03:00 <vuntz> oSC15 ideas about finding a location
+15:03:08 <vuntz> New TSP Team
+15:03:28 <vuntz> (and we can discuss again openSUSE in 2016 if wanted)
+15:04:39 <robjo> brb
+15:04:59 <vuntz> anything else?
+15:05:44 <ilmehtar_> vuntz: I can probably say a few things about the situation with the forums
+15:06:02 <vuntz> ah, that'd be good
+15:06:08 <vuntz> let's start with that, actually
+15:06:15 <vuntz> #topic Situation with the forums
+15:06:26 <kigurame> Oh yeah that was mildly disturbing but nit really anything to worry about.
+15:06:35 <kigurame> not even
+15:07:16 <ilmehtar_> Okay, so the forums were 'hacked', though I'm informed that technically it was only a breach of a single plugin (the one used for Search Engine Optimisation, SEO)
+15:08:14 <ilmehtar_> the hacker was not able to modify anything outside of that single plugin directory, the database was not accessed, no user credentials passwords were breached, though apparently they may have been able to get a list of email addresses
+15:08:41 * warlordfff here
+15:09:17 <ilmehtar_> The forums are down while the admins tidy everything up, and our friends at suse.com and novell.com who also used the same plugin on their forums have disabled it to protect themselves
+15:09:38 <ilmehtar_> That's all I know at the moment
+15:09:43 <kigurame> unfortunate but hardly life threatening. I will say however that vbulletin has a long history of weakness esp with the plugin system.
+15:10:33 <ilmehtar_> Even if they were able to get into the database, because of our use of an SSO solution, the vBulletin database doesn't have our openSUSE.org passwords in it, so that's a relief
+15:11:03 <kigurame> One might consider migrating to a more hardy solution somewhere in the future.
+15:11:07 <warlordfff> ilmehtar_:  sorry butI was not here intthe beggining, are there any accounts hacked?
+15:11:36 <ilmehtar_> warlordfff: the answer to that question appears to be a pretty firm 'no'
+15:11:46 <warlordfff> cool, thanks
+15:11:54 <kigurame> ilmehtar_: Only real effect of it is the rather nasty PR it generates
+15:12:19 <ilmehtar_> kigurame: true, but even that has its positives..who'd have thought we had 79,000+ user accounts in our forums, that's awesome :)
+15:12:45 * ilmehtar_ always looking on the bright side..
+15:12:50 <kigurame> Heh the timing was real unfortunaty with suse's keeping servers secure campaign
+15:13:04 <warlordfff> lol
+15:13:36 <vuntz> thanks for the report, ilmehtar_
+15:13:43 <vuntz> any additional question on the topic?
+15:15:48 <vuntz> ok
+15:15:50 <vuntz> next one, then
+15:16:00 <vuntz> #topic oSC15 ideas about finding a location
+15:16:03 <vuntz> robjo: are you back? :-)
+15:16:09 <robjo> yes
+15:16:44 <robjo> #topic oSC15
+15:17:06 <robjo> vuntz:  please echo that ;)
+15:17:36 <vuntz> robjo: that's already the topic :-)
+15:17:49 <robjo> missed that, sorry
+15:17:50 <vuntz> at least, here
+15:17:51 <kigurame> I vote Seattle so i can walk there !
+15:19:20 <robjo> As those that follow -project know we have received a last minute proposal from La Laguna on the Canary Islands
+15:19:31 <kigurame> But in all seriousness i missed the previous meeting on this so ihave no idea where the discussion stands
+15:19:45 <kigurame> thanks robjo
+15:19:57 <robjo> The board has concerns with the location due costs of getting there etc
+15:20:09 <robjo> and everything is more expensive on an Island ;)
+15:20:21 <tigerfoot> except sea & sun :-)
+15:20:37 <robjo> we have not received any other proposals meeting the deadline
+15:20:59 <kigurame> definitly a cost hurdle for attenders too
+15:21:00 <robjo> Thus by default this would be the location for oSC15, but....
+15:21:39 <kigurame> I'd have to roll it into the family vacation
+15:21:39 <robjo> so what are we to do?
+15:22:07 <robjo> from the boards perspective we basically have 3 options
+15:22:38 <robjo> 1.) stick with the plan, i.e. La Laguna is the location and we move forward from there and see what happens
+15:23:08 <robjo> 2.) poke people and try to find another location, this will bend the rules and we might not end up with anything
+15:23:52 <robjo> 3.) consider a co-location with another event, such as Linux-Tag, this also bents the rules but with a higher likely hood of having an oSC15 event
+15:24:44 <robjo> The decision ultimately rests with the board, but we are quite uncertain about the direction in this case and would like to get more input from the community at large
+15:25:26 * coolo has not seen any news about that - you said "as those that follow -project know". What was the subject of the mail I missed?
+15:26:25 <ilmehtar_> coolo: "University of La Laguna (oSC15)"
+15:26:42 <ilmehtar_> coolo: From: eduardo@osl.ull.es
+15:27:01 <kigurame> As nice as La Laguna sounds i honestly can't see people overcoming the cost hurdle the third option takes away from the identity of oSC imho so i think the second option would be the way to go
+15:27:28 <coolo> ilmehtar_: http://lists.opensuse.org/cgi-bin/search.cgi?query=Laguna&advanced.x=-102&advanced.y=-116&advanced=yes&list=opensuse-project -> empty
+15:28:29 <tigerfoot> kigurame: option 2 is only valid if any answer is coming for a real
+15:28:32 <warlordfff> try oSC15
+15:28:42 <warlordfff> coolo: try osc15
+15:28:55 <cwh_> On the other hand such places where you usually spend your holidays are maybe reachable easier and cheaper than others
+15:29:05 <robjo> The message is not in the archive :(
+15:29:07 <ilmehtar_> coolo: interesting..it was sent to opensuse-project and board@ at the same time..looks like it might have just gotten through to the board and not -project for some reason
+15:29:17 <robjo> but it was sent to both the board and the -project list
+15:29:36 <coolo> ilmehtar_: it's not in my inbox either
+15:29:43 <coolo> so it's in henne's spam filter :)
+15:29:47 <robjo> maybe is was dopped from -project because of the attachement, 103 KB pdf file
+15:29:49 <tigerfoot> yeah but attachement could have been the blocker in -project
+15:29:51 <coolo> good thing we have these meetings then ;)
+15:30:29 <vuntz> cwh_: unfortunately, for the canary islands, "cheaper" is not true :/
+15:30:33 <robjo> Sorry for not checking ahead of time about the availability of the message in the archive
+15:31:03 <cwh_> maybe somebody volunteers for Mallorca, then ;)
+15:31:10 * tigerfoot think time to create a osc15 wiki draft page and dump information there <- vuntz as todo for one of us who have all the data
+15:31:22 <robjo> Anyway, the proposal is solid and the team has experience in organizing events having done a KDE event in the past
+15:31:33 <coolo> just checking nürnberg flights - Thessaloniki in mai is 153€, Santa Cruz 397€
+15:31:35 <robjo> the biggest problem is location and accessibility
+15:31:58 <coolo> so indeed quite a bit more expensive
+15:32:17 <tigerfoot> cwh_: we could rent a boat during one week :-)
+15:32:25 <kigurame> not to mention the price of food transportation and lodging
+15:32:42 <coolo> kigurame: you can buy food on canary island too - most people living there do ;)
+15:32:44 <warlordfff> tigerfoot:  nice idea, the geecko boat, carlos will get crazy...
+15:32:45 <kigurame> I've been there before
+15:33:32 <kigurame> coolo: going local check !
+15:33:39 <coolo> robjo: anyway, the board needs to decide what it wants from the OSC. If it's a come together for those that can afford it, go La Laguna. If it's students learning about openSUSE, LinuxTag sounds more feasible
+15:34:05 <coolo> option 2 sounds like a kick in the back of those proposing La Laguna. If you go that route, you have to decline Laguna right away
+15:34:20 <kigurame> agreed
+15:34:33 <kigurame> it's quite a pinch
+15:34:54 <warlordfff> we can also 'rephrase' option 2
+15:35:24 <warlordfff> I mean maybe instead of making a co-host maybe we could make an expand of the event
+15:35:29 <robjo> even if we co-locate with another event we still need a team to do some leg work
+15:35:39 <warlordfff> what do you think?
+15:35:47 <kigurame> Maybe if a discount in lodging can be negotiated to offset the higher travel cost ?
+15:36:49 <kigurame> I've done similar with hotels here in seattle.
+15:36:56 <robjo> kigurame: discount in lodging compared to what?
+15:37:05 <coolo> kigurame: http://upload.wikimedia.org/wikipedia/commons/9/9e/La_Laguna.jpg - there is a lot of space for camping :)
+15:37:18 <robjo> lodging in Thessaloniki was cheap and it will be cheap in Dubrovnik as well
+15:37:59 <coolo> ah, btw. Dubrovnik is 291€ for the same flight options
+15:38:12 <coolo> so we'd get +100€ every year
+15:38:26 <coolo> (and La Laguna needs bus transfer too, so even more expensive)
+15:38:38 <robjo> even if we could reach the lodging prices at La Laguna we have this year and had last year getting there is still significantly more expensive
+15:38:44 <warlordfff> dubrovnic is higher than going to Nurnberg for us
+15:39:16 <robjo> the only thing we can count on with flight prices is that they will always go up ;)
+15:39:19 <tigerfoot> coolo: linuxTag is already merging with other this year no?
+15:39:36 <warlordfff> ?
+15:39:42 <coolo> tigerfoot: linuxtag always hosted other meetings
+15:39:43 <robjo> but for the Cannaries there are no other options
+15:39:55 <coolo> tigerfoot: we would be just another subevent for linuxtag
+15:40:06 <tigerfoot> coolo: okay in that sense, make it clear...
+15:40:16 <warlordfff> how about co-hosting with something that changes location every year, like the libre office thing
+15:40:17 <warlordfff> ?
+15:40:21 <kigurame> coolo: agreed and we really don't want that.
+15:40:26 <tigerfoot> then we need to find motivated german's geeko ...
+15:40:38 <robjo> I just threw Linux-Tag out as an example, it could be some other event in Europe, we could do CLT
+15:41:46 <robjo> In the end we have to make a decision soon and the board would like to have more feedback from everyone
+15:42:01 <kigurame> I say we inform the board of our cost concerns and see what happens it's their decision ultimatley.
+15:42:15 <robjo> Our biggest concern is the cost and accessibility restrictions
+15:42:38 <vuntz> kigurame: I think the board is aware of the cost concerns :-)
+15:42:40 <kigurame> agreed
+15:42:41 <vuntz> the main question is whether we all believe it's a blocker or not
+15:42:51 <kigurame> I certainly do
+15:42:53 <vuntz> (my opinion is that it is)
+15:43:18 <vuntz> and then the followup question is which is our next step between options 2 and 3 that robjo mentioned
+15:43:57 <coolo> vuntz: I think SUSE would send only very few employees. The concerns about Thessaloniki were already high and Teneriffa sounds even more like vacation trip to the manager's ear
+15:44:09 <ilmehtar_> coolo: that's a good point too
+15:44:13 <warlordfff> well I certainly think that this is worth searching for a while
+15:44:24 <robjo> Sounds like we (the board) need to take this to the -project list to get more input
+15:44:46 <vuntz> robjo: yeah; it's unfortunate we didn't notice the mail didn't reach the public list :/
+15:44:53 <robjo> I'll send a message today
+15:45:29 <ancorgs> do it in september and most German and British people will be the island already :-)
+15:46:14 <vuntz> #action robjo to take this topic to the opensuse-project mailing list to get more feedback
+15:46:24 <vuntz> robjo: anything else you'd like to add?
+15:46:45 <robjo> nope that's it from my side
+15:47:35 <vuntz> anyone else?
+15:48:36 <vuntz> nope, then last topic
+15:48:40 <vuntz> #topic New TSP Team
+15:48:50 <vuntz> warlordfff: want to say a few words about that? :-)
+15:48:55 <warlordfff> yeap
+15:49:02 <coolo> TSP = Topic Selection Protocol?
+15:49:04 <warlordfff> well
+15:49:21 <warlordfff> Travel Support Program
+15:49:27 <warlordfff> :)
+15:49:54 <warlordfff> Now we had to choose some people to replace me
+15:50:07 <warlordfff> and because we needed more help anyway
+15:50:09 <warlordfff> so
+15:50:19 <warlordfff> we chose tux93
+15:50:27 <warlordfff> and Diamond_gr
+15:50:45 <warlordfff> Both of them are pretty experienced with the community
+15:51:05 <warlordfff> and of course they know the TSP more than good
+15:51:37 <vuntz> warlordfff: might be good to give their full name ;-)
+15:51:44 <warlordfff> and of course they are people that are independent and trustfull
+15:51:56 <warlordfff> ok I suck on that
+15:52:04 <warlordfff> Marcell kullhorn
+15:52:12 <warlordfff> I hope this is correct
+15:52:14 * tux93 is Marcel Kühlhorn
+15:52:24 <warlordfff> yeap that :D
+15:52:33 <warlordfff> and Stathis Iosifidis
+15:52:52 <warlordfff> tux93:  want to say a few words?
+15:53:50 <warlordfff> I have nothing else to add, Izabel said it all in the announcement she wrote in news
+15:53:53 <tux93> well what do you want to hear? aside from thanks for trusting me :D
+15:54:20 <warlordfff> :D
+15:54:36 <tux93> kick off meeting will be this saturday
+15:54:37 <vuntz> :-)
+15:54:59 <vuntz> a big thanks to warlordfff for his time on the TSP!
+15:55:21 <warlordfff> thanks
+15:55:25 <vuntz> okay, we're done with the topics, then
+15:55:30 <vuntz> #topic Any other topic?
+15:55:37 <warlordfff> yeap
+15:55:40 <vuntz> any quick question, comment, etc.?
+15:56:14 <warlordfff> we are thinking in resurecting weekly news, only that this time it will be different and not weekly but monthly
+15:56:36 <warlordfff> anyone who wants to volunteer just have an eye in Marketing ML
+15:56:59 <warlordfff> in a few days there will be an announcement
+15:57:12 <warlordfff> thats it
+15:57:21 <vuntz> nice
+15:57:26 <tigerfoot> vuntz: is it possible to integrate the ping in irc ...
+15:57:26 <vuntz> anyone else?
+15:57:37 <vuntz> tigerfoot: what do you mean?
+15:58:02 <tigerfoot> vuntz: kde team have a way to ping a list of people when the meeting start
+15:58:28 <tigerfoot> but I will ask ..
+15:58:54 <vuntz> ah, sure, feel free to ask for that
+16:00:54 <vuntz> ok, we're done, then
+16:01:01 <vuntz> thanks everyone
+16:01:05 <vuntz> I'll share minutes with the list
+16:01:08 <vuntz> #endmeeting

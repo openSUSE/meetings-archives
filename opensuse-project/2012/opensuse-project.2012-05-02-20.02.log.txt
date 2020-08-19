@@ -1,0 +1,173 @@
+20:02:06 <mrdocs> #startmeeting Opensuse Project Meeting
+20:02:06 <bugbot> Meeting started Wed May  2 20:02:06 2012 UTC.  The chair is mrdocs. Information about MeetBot at http://wiki.debian.org/MeetBot.
+20:02:06 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+20:02:08 <yaloki> but then again, if no one is there to discuss it in detail …
+20:02:29 <mrdocs> #chair yaloki FunkyPenguin _wstephenson henne
+20:02:29 <bugbot> Current chairs: FunkyPenguin _wstephenson henne mrdocs yaloki
+20:02:48 <ivarun> The updated outage news states "The outage is to be discussed at today’s openSUSE Project Meeting."
+20:03:13 <yaloki> ivarun: oh right, that's where
+20:03:38 <yaloki> but it's not on the agenda, and I doubt there is much more to discuss (or is there)
+20:03:57 <mrdocs> well status would be useful, if someone has news
+20:04:09 <robjo> still appears to be flaky, I just had some failures that were triggered by network issues
+20:04:14 <mrdocs> and perhaps discuss meeting time ?
+20:04:20 <yaloki> henne: any progress on the ticketing system?
+20:04:38 <mrdocs> malcolmlewis: can you address the forums infra ? I do not see Jim here
+20:04:51 <robjo> darix and coolo were just in -buildservice channel
+20:05:09 <mrdocs> ok let's start
+20:05:20 <mrdocs> #topic Forums Infrastructure
+20:05:40 <yaloki> well, not sure what we can discuss
+20:05:57 <yaloki> there have been numerous issues with forums.o.o in the past months
+20:06:08 <mrdocs> Well Jim has advised us some issues are resolved, but not clear what remains
+20:06:10 <yaloki> (couldn't connect to the site, plain simply)
+20:06:19 <mrdocs> I know some bits were changed/upgraded
+20:06:24 <yaloki> right
+20:06:33 <mrdocs> #chair Bille_
+20:06:33 <bugbot> Current chairs: Bille_ FunkyPenguin _wstephenson henne mrdocs yaloki
+20:06:39 <Bille_> hi
+20:06:44 <yaloki> Bille_: moin :)
+20:06:46 <robjo> There have been a number of issues with Access amanager that I have run into recently
+20:07:01 <robjo> Bugzilla was also effected a few days back
+20:07:28 <yaloki> apparently most of the IT infrastructure has been outsourced by novell to some external service provider in india a couple of years ago
+20:07:36 <yaloki> and there are recurrent issues with the quality of service there
+20:07:39 <yaloki> (surprise, surprise)
+20:07:48 <robjo> The company is ACS
+20:08:03 <yaloki> some of the infrastructure is still in provo, I've been told, and the few people who can get their hands on stuff over there do the best they can
+20:08:19 <yaloki> but they often depend on ACS doing their part, and that sometimes takes months, or is even simply not done at all
+20:08:22 <darix> yaloki: the applications team (which includes the forums) are moved back
+20:08:22 <yaloki> (surprise, surprise)
+20:08:26 <darix> jfyi
+20:08:33 <yaloki> oh goodie
+20:08:38 <yaloki> darix: to provo then?
+20:08:41 <robjo> Infrastructure was not relocated as part of this deal, when it happened, only people
+20:08:46 <darix> they always have been in provo
+20:08:50 <darix> just different comapny
+20:08:52 <darix> company
+20:09:19 <yaloki> robjo: right, but that doesn't change much to the situation, unfortunately
+20:09:41 <yaloki> so finally an important change was made on one of the proxies (so we've been told), which should now improve the situation considerably
+20:09:46 <yaloki> but well
+20:09:47 <darix> sadly matthew isnt on
+20:09:53 <robjo> yaloki: correct, the result is the same, just need to be accurate with statements
+20:10:02 <yaloki> robjo: indeed, thanks :)
+20:10:21 <darix> yaloki: i didnt follow the forum  problems much.
+20:10:23 <yaloki> the board has been approached with this
+20:10:25 <darix> what was the problem exactly?
+20:10:32 <yaloki> but IMHO there isn't all that much we can do with the current situation
+20:10:49 <darix> and i didnt see many mails to admin about the forum either.
+20:10:52 <yaloki> except moving the forums to another provider (either sponsor or rent)
+20:10:59 <darix> except for the one nntp mail and the one with the login problem
+20:11:09 <yaloki> darix: apparently, the site was simply not reachable at all very frequently in the past few months
+20:11:32 <yaloki> "caused by proxy servers", we've been told
+20:11:34 <darix> for that admin@ was pretty quiet
+20:11:38 <yaloki> but the technical aspects don't really matter
+20:11:44 <yaloki> darix: yeah indeed, that's odd
+20:11:49 <Bille_> yaloki: is the forum problem the same as the wiki login problem? login slow, frequently redirect fails, broken socket etc?
+20:12:12 <yaloki> either people don't know that they can contact support there, or they had jim or matthew jump in quickly (although they couldn't do much on their side of things anyway)
+20:12:21 <darix> just wanted to mention ... the nntp outage was announced at the novell side ... but they forgot the opensuse part... which we already started complaining about
+20:12:21 <yaloki> Bille_: I have no idea
+20:12:21 <robjo> Bille_:  They should all be related, yes
+20:12:43 <yaloki> the hosting infrastructure is still partly a mystery to me :)
+20:13:02 <darix> the login part saw some major changes lately
+20:13:04 <yaloki> so, as said, the situation should improve now, hopefully
+20:13:22 <darix> and matthew did some work to tune all the things to work better last week
+20:13:29 <robjo> Hey we wanted to get rid of iChain ;)
+20:13:35 <mrdocs> cool :)
+20:13:39 <robjo> now we have to deal with AccessManager
+20:13:46 <darix> robjo: yeah
+20:13:48 <yaloki> but if not, and if the situation cannot be improved by some measures inside of SUSE or Novell, there are only two options: 1) find a sponsor who'd host it, 2) rent hardware and host it ourselves (including trustworthy admins in our community)
+20:13:52 <mrdocs> so since these changes are things indeed better ?
+20:14:25 <yaloki> mrdocs: that's what jim said, iirc
+20:14:37 <robjo> Well AccessManager is at least an actively developed product and bugs will get fixed
+20:14:46 <mrdocs> yes, that's what I understood as well
+20:15:03 <yaloki> anyway, there isn't all that much to discuss afaics
+20:15:05 <robjo> But as yaloki pointed out we have little control over all of this and the only option would be to move
+20:15:08 <yaloki> let's see how the situation evolves
+20:15:15 <mrdocs> i agree
+20:15:29 <Bille_> darix: so the correct approach in the short term is to report issues to matthew via admin@?
+20:15:36 <yaloki> there's no point hunting for alternatives or funds right now, as there is a chance that the situation does indeed improve
+20:15:45 <Bille_> so things like the misconfigured switch get fixed?
+20:15:48 <darix> Bille_: *all* opensuse infrastructure problems should hit that ML
+20:16:09 <darix> because in doubt adrian or someone from the ops team will see it and open tickets
+20:16:16 <yaloki> darix: okay
+20:16:28 <yaloki> we should prolly broadcast that information again and again :)
+20:16:33 <Bille_> yeah
+20:16:42 <darix> there is even a wiki page that explains it
+20:16:48 <robjo> yes, even -project list, someone who can file a ticket will pick it up
+20:17:03 <yaloki> darix: yes, I know, but still, those are things one has to repeat on a regular basis
+20:17:30 <darix> http://en.opensuse.org/openSUSE:Services_help
+20:17:44 <darix> robjo: please not -project ml
+20:17:46 <darix> admin@o.o
+20:17:59 <robjo> Of course that's not helpful when you cannot get to the wiki ;)
+20:18:40 <yaloki> okay, anything else on the subject?
+20:19:07 <mrdocs> Next topic ?
+20:19:16 <yaloki> yup, seems so :)
+20:20:23 <yaloki> mrdocs: hammer time
+20:20:34 <yaloki> oh, there is no "next topic" :D
+20:20:37 <robjo> outage report?
+20:20:38 <darix> *holds hammer over yaloki's thumb*
+20:20:59 <yaloki> afaics there isn't much more to say than what has already been blogged on news.o.o
+20:21:00 <darix> robjo: not much to tell about
+20:21:10 <darix> raid 5 lost 2 disks
+20:21:13 <yaloki> darix: get some more hosts and hdfs already ;D
+20:21:32 <Bille_> some people complained that we've had 2x 2 disk outages in a year
+20:21:46 <yaloki> Bille_: myeah, well, murphy...
+20:21:46 <darix> Bille_: the current array is quite new
+20:21:54 <Bille_> i guess the response is that 9TB of 3-disk redundant storage doesn't come cheap?
+20:21:54 <coolo> Bille_: yeah, for all the money they pay it's horrible support
+20:21:56 <darix> so we were surprised it lost 2 disks
+20:21:57 <yaloki> I don't see how anyone would be to blame about this
+20:22:14 <yaloki> (except the vendor, maybe ^^)
+20:22:15 <Bille_> coolo: ;)
+20:22:17 <tacit> Maybe not for the outage, but for lack of HA?
+20:22:33 <darix> tacit: we have enough hosts to do the HA stuff no problem
+20:22:34 <yaloki> tacit: you mean monies
+20:22:45 <darix> real fun starts with duplicating 4.5 TB of data
+20:22:46 <yaloki> even more redundancy
+20:22:50 <darix> and keeping that in sync
+20:22:57 <yaloki> yeah
+20:23:07 <tacit> Or commitment. It all depends should be achieved.
+20:23:12 <yaloki> that can get quite horribly expensive
+20:23:33 <yaloki> tbh, I'm personally more concerned about the QoS of build.o.o than download.o.o
+20:23:36 <yaloki> but that's another story
+20:23:37 <BManojlovic> ceph or like really should be looked into
+20:23:46 <darix> tacit: we are discussing ways to improve the situation... but all comes down to get 5-6TB of FC storage
+20:23:57 <darix> BManojlovic: we tried ocfs once
+20:24:19 <yaloki> but ocfs isn't replication
+20:24:19 <darix> BManojlovic: besides cluster FS also dont help to recover from storage problems like that
+20:24:25 <darix> you couldnt mount it on 2 hosts
+20:24:30 <darix> but the data is still only stored once
+20:24:41 <darix> and we mostly had storage problems and not host problems
+20:24:46 <BManojlovic> on ceph or like it isn't or depends how you set it up
+20:24:48 <yaloki> no, some cluster storages duplicate files at least three times
+20:24:56 <BManojlovic> or like yaloki said hdfs
+20:24:56 <darix> yaloki: sure
+20:24:59 <yaloki> but you need quite a few hosts and storage to implement that
+20:25:02 <yaloki> anyway
+20:25:19 <yaloki> they know what they're doing, I don't think we should get into a technical discussion here :)
+20:25:38 <mrdocs> no agreed
+20:25:39 <BManojlovic> not saying anyone is bad at tech :)
+20:25:53 <Bille_> so, basically, shit happened, and no amount of armchair IT provisioning is going to help now?
+20:26:01 <mrdocs> exactly :)
+20:26:13 <mrdocs> anything else on the topic ?
+20:26:36 <robjo> If we had a list of things that are needed maybe we could "shop" for sponsors?
+20:26:58 <mrdocs> brb phone
+20:26:59 <BManojlovic> for start what exactly is needed is question
+20:27:22 <yaloki> robjo: sounds doable for the forums, but for big storage, it's quite a bit more complicated
+20:27:32 <darix> yaloki: it isnt all that difficult
+20:27:38 <darix> as i just said to Andrew
+20:27:44 <darix> we are thinking of how to solve it
+20:27:56 <yaloki> okay
+20:27:58 <darix> and then i can also post a list of things that might help
+20:28:10 <darix> but most of us came back from a long weekend today :)
+20:28:40 <robjo> that was probably rudely interrupted
+20:29:07 <darix> rudi was on duty on monday yes
+20:29:17 <robjo> lol
+20:29:19 <yaloki> okay, anything else?
+20:29:20 <darix> i was flying helis and didnt hear of it until monday night
+20:29:27 <yaloki> if not I believe we're done with the meeting
+20:29:46 <mrdocs> anything else ? one..
+20:29:48 <mrdocs> two...
+20:29:50 <robjo> darix: good for you, sounds like fun
+20:29:53 <mrdocs> three...
+20:29:58 <darix> robjo: it is
+20:29:59 <darix> ^^
+20:30:00 <yaloki> #endmeeting

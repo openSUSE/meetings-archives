@@ -1,0 +1,212 @@
+18:01:58 <bmwiedemann> #startmeeting
+18:01:58 <bugbot> Meeting started Mon Feb 14 18:01:58 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:01:58 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:02:49 <bmwiedemann> if you have additional items to discuss, just add them to the wiki page
+18:03:50 <bmwiedemann> #topic Experience with 11.4 RC1
+18:04:44 <bmwiedemann> So far, I have been running RC1 on my netbook without major trouble, but found a yast2-gtk bug late (already fixed)
+18:05:10 <bmwiedemann> openqa also lists some open issues. but few major or new
+18:05:15 <Holgi> I'm also using RC1 with my workstation and my laptop with LXDE
+18:05:21 <Holgi> and found some minor issues
+18:06:23 <LWFinger> I have 2 instances, one 32 bit and one 64 running regularly with KDE - only small problems
+18:07:12 <bmwiedemann> btw: would be nice to say when one is done, so that the next one can report on RC1 testing
+18:07:46 * bmwiedemann done
+18:08:09 * Holgi also done with experiences
+18:08:16 <LWFinger> Intermittently, NetworkManager fails to start on boot. No bug filed yet.
+18:08:22 <LWFinger> Done
+18:08:24 <ReferenceSeete> Similar experience here KDE RC1, promising so far - nothing deadly.
+18:08:27 <ReferenceSeete> *done
+18:08:46 <LWFinger> RC1 looks pretty good.
+18:09:07 <Holgi> I checked bugzilla
+18:09:18 <Holgi> and found that the status of it is quite bad
+18:09:33 <Holgi> there are a lot of old bugs still open even they are fixed
+18:09:45 <Holgi> talking about Milestone 1-5 issues
+18:10:10 <Holgi> not sure if this is something to talk about for us
+18:10:21 <Holgi> but it does not make our work easier
+18:10:30 <bmwiedemann> so we could have an open-bugs day soonish to coordinate people trying to reproduce + update bugs?
+18:10:37 <Holgi> when we have huge bug lists to monitor
+18:11:22 <Holgi> bmwiedemann: maybe yes - but I would prefer developers to set their bugs to fixed
+18:11:23 <tertitten> Holgi: you say that bugreports for fixed issues are open, can't you just close them ?
+18:11:52 <Holgi> tertitten: in general yes - if I had the same issue
+18:12:03 <tertitten> OK, I see
+18:12:11 <Holgi> tertitten: but I'm wondering why developers don't do if the submit a fix
+18:12:13 <bmwiedemann> tertitten: it is good to be able to reproduce the bugs before
+18:12:34 <tertitten> got it :)
+18:12:40 <Holgi> s/the/they/
+18:13:29 <bmwiedemann> I added the bugzilla cleanup to our agenda, but let's stay with RC1 experience for some longer. jradzuweit or anyone else have experience to share?
+18:14:13 <Holgi> thx
+18:16:26 <LWFinger> One nice feature I forgot earlier is that I was able to disable tapping on my touchpad from the GUI - first time ever.
+18:17:37 <bmwiedemann> LWFinger: on icewm I usually have no tapping by default, but now can enable it by adding Option "TapButton1" "1" to /etc/X11/xorg.conf.d/50-synaptics.conf
+18:17:50 <Holgi> my issues are: PIN for 3G card #668838, problems with ttyUSB #670959, stutdown of laptop #671183 and, sound after suspend #671689
+18:18:59 <LWFinger> bmwiedemann: With KDE, it was on by default, but I did not need to touch xorg.conf.d.
+18:20:30 <bmwiedemann> OK, I suppose, that's it for RC1 experience
+18:21:27 <bmwiedemann> should we add any of the bugs to the most-annoying list?
+18:21:41 <bmwiedemann> the yast2-gtk one already had a dup, so that might be good to add
+18:21:43 <Holgi> not out of mine
+18:23:20 <bmwiedemann> that is bug 670625
+18:23:49 <bmwiedemann> #topic open-bugs bugzilla cleanup day planning
+18:25:00 <bmwiedemann> That open-bugs day could help to get a better overview of bugs that are really still in openSUSE and those that have just been forgotten
+18:25:28 <bmwiedemann> this should involve the wider community and should thus include some announcement and preparation
+18:25:43 <LWFinger> Would this be general, or just 11.4
+18:26:06 <bmwiedemann> I think, concentrating on 11.4 would be good. next sunday might be good, as we have one weekly news before
+18:26:10 <ReferenceSeete> We could always test old bugs against 11.4
+18:26:23 <ReferenceSeete> ...then close or update as applicable.
+18:26:28 <bmwiedemann> yes. but there are plenty old bugs, too
+18:27:31 <LWFinger> bmwiedemann: Would the new item be my regular weekly column, or a special?
+18:27:47 <LWFinger> s/new/news/
+18:27:48 <bmwiedemann> either would help.
+18:28:05 <bmwiedemann> we could talk/email to saigkill of the news team
+18:28:36 <LWFinger> OK, I'll get a draft on the testing ML and I'll communicate with Sasha.
+18:28:57 <bmwiedemann> we must make a wiki page for the coordination
+18:29:22 <bmwiedemann> so we can refer everyone to the page and update the planning, preparation, status etc.
+18:29:30 <Holgi> bmwiedemann: we should talk to boosters team to get their help
+18:29:42 <bmwiedemann> Holgi: good idea.
+18:29:48 <bmwiedemann> do you?
+18:29:51 <Holgi> bmwiedemann: they do have experience with organizing events like this
+18:30:19 <LWFinger> I'll also post to the Beta Forum once we have details. Good people there.
+18:30:21 <Holgi> bmwiedemann: I'm flying out to beijing on Wednesday - not sure if I'm able to do that tomorrow
+18:30:28 <bmwiedemann> KDE team did some bug event like this, too... and vuntz coordinated one for obsolete SUSE releases
+18:30:28 <Holgi> bmwiedemann: can you take that AI?
+18:31:29 <bmwiedemann> yes, of course.
+18:32:09 <bmwiedemann> #action bmwiedemann talks to boosters for help with open-bugs cleanup day
+18:32:53 <bmwiedemann> who creates the wiki page?
+18:34:11 <bmwiedemann> well... then I will.
+18:34:42 <Holgi> bmwiedemann: maybe there is old stuff you can use
+18:35:05 <Holgi> LWFinger: can you make sure it is part of the next news?
+18:35:13 <LWFinger> Yes.
+18:35:24 <bmwiedemann> we need some nice canned responses for handling bugs... do we have such already? like "this bug is believed to be fixed in the current version. Please reopen it, if you can still reproduce it"
+18:36:19 <bmwiedemann> #action LWFinger adds open-bugs cleanup day info to next news
+18:36:55 <LWFinger> I've not been part of such activity. How is it done?
+18:37:02 <Holgi> bmwiedemann: I'm not sure if there is a good term already
+18:37:33 <Holgi> LWFinger: go to bugzilla and do a search about open bugs for 11.4
+18:37:44 <bmwiedemann> LWFinger: I will add some HowTo to the wiki page
+18:38:00 <Holgi> LWFinger: then check if you find bugs you know how to reproduce
+18:38:03 <LWFinger> Holgi: I meant the copperation/mass activity part.
+18:38:25 <bmwiedemann> is http://en.opensuse.org/openSUSE:Open-Bugs-Day a good URL?
+18:38:32 <Holgi> LWFinger: ahh, it's just staying together in a irc channel
+18:38:42 <bmwiedemann> e.g. this one
+18:38:44 <Holgi> LWFinger: and coordinating
+18:38:54 <Holgi> LWFinger: but testing will be done individually
+18:38:56 <bmwiedemann> and helping each other
+18:39:17 <Holgi> bmwiedemann: we should also check if we will offer t-shirts for those that close a huge number of bugs
+18:39:30 <Holgi> bmwiedemann: maybe boosters team can sponsor us some
+18:39:57 <bmwiedemann> t-shirts for top 5 bug-handlers sounds like a nice incentive
+18:40:02 <bmwiedemann> or top10?
+18:40:04 <bmwiedemann> whatever
+18:40:25 <Holgi> bmwiedemann: depends on how much they sponsor us
+18:41:21 <bmwiedemann> #action bmwiedemann will check with boosters about t-shirts for top bug-handlers on open-bugs day
+18:42:37 <LWFinger> Next Sunday was mentioned as a date. Is that good? Time?
+18:42:43 <bmwiedemann> any comments on the URL? shall we give the event some more google-able name?
+18:42:53 <Holgi> LWFinger: isn't that to early
+18:43:08 <Holgi> LWFinger: I don't think we can widespread the information before
+18:43:12 <LWFinger> Probably.
+18:43:34 <Holgi> I guess next news will be available on next saturday
+18:43:40 <bmwiedemann> it must be soonish to have a chance to use cleaned-up bugzilla info for RC2, but not too soon to get the news out to people
+18:44:04 <LWFinger> Holgi: The next news will be Saturday.
+18:44:27 <Holgi> ok, so either the weekend after or during the week
+18:44:30 <bmwiedemann> 2011-02-20 00:00 to 23:59 UTC is good?
+18:45:06 <Holgi> bmwiedemann: to early I think
+18:45:25 <ReferenceSeete> 27th?
+18:45:33 <ReferenceSeete> Or 26th?
+18:46:16 <bmwiedemann> RC2 is 2011-02-25
+18:46:47 <bmwiedemann> and afterwards only the most critical bugs will be adressed
+18:47:28 <Holgi> bmwiedemann: but 23th would also be to late then
+18:47:43 <ReferenceSeete> We're so late in the process it may be better to think of this as more of a forward-looking project (11.5)
+18:47:45 <bmwiedemann> this is why 20th would be good.
+18:48:26 <Holgi> ok, I leave it up to you
+18:48:36 <Holgi> maybe you want to talk to coolo before?
+18:48:39 <bmwiedemann> ReferenceSeete: would still be a good idea to do it once and re-do it later for 11.5
+18:49:32 <ReferenceSeete> Ok, how about this as a plan.  TCT does this on the 20th.  Whoever else we can bring on in time is a bonus, but not a priority
+18:49:54 <ReferenceSeete> Then we galvanize a larger group later.
+18:49:58 <bmwiedemann> ReferenceSeete: that is good
+18:50:40 <bmwiedemann> with this being fresh in the next saturday openSUSE-news, there will hopefully be more people around to help
+18:50:59 <LWFinger> I agree. For 11.5, we can be better organized.
+18:51:23 <ReferenceSeete> More people would be great.  Between the news and getting volunteers out of the forums we may end up with a sizable group.
+18:51:26 <bmwiedemann> maybe I even put together some tool to make the process more streamlined
+18:51:53 <ReferenceSeete> I'm just proposing that we make the commitment for the 20th no matter who else shows up.
+18:51:55 <bmwiedemann> apropos forums... who will announce the event there?
+18:52:02 <bmwiedemann> ReferenceSeete: will you?
+18:52:05 <ReferenceSeete> Sure.
+18:52:38 <bmwiedemann> #action ReferenceSeete will announce open-bugs day on openSUSE forums
+18:53:06 <ReferenceSeete> Are we settled on 24hrs (as per UTC)?
+18:53:48 <Holgi> ReferenceSeete: we could mention saturday 0-23:59 local time
+18:54:06 <ReferenceSeete> Ok.  And we'll use this IRC channel as a coordination point?
+18:54:21 <Holgi> ReferenceSeete: ours?
+18:54:42 <bmwiedemann> just created http://en.opensuse.org/openSUSE:Open-Bugs-Day which will also serve as coordination point
+18:54:57 <Holgi> bmwiedemann: very good
+18:55:21 <ReferenceSeete> Holgi: yes opensuse-testing
+18:55:21 <bmwiedemann> and yes, IRC is also good, but has a very limited audience
+18:55:59 <bmwiedemann> so use it for some quick tips, but all the interesting stuff must end up on the wiki page
+18:56:14 <ReferenceSeete> bmwiedemann: True, I'll just mention IRC as a bonus avenue.
+18:56:39 <Holgi> bmwiedemann: right - but it's good if people can have the feeling - they are not alone
+18:56:45 <LWFinger> I'll get both in the news item.
+18:57:19 <bmwiedemann> I will add mention of #opensuse-testing on the wiki... so the wiki link would suffice in most places
+18:58:06 <Holgi> we need to be around in the irc channel
+18:58:15 <bmwiedemann> I always am
+18:58:17 <Holgi> unfortunately I'm in china at that date
+18:58:25 <Holgi> so I guess I'm not
+18:59:01 <Holgi> bmwiedemann: also consider announcement on opensuse-announcement@opensuse.org
+18:59:20 <Holgi> bmwiedemann: and ask news team to add the date on news.opensuse.org
+18:59:26 <Holgi> blogging is also a good idea
+18:59:36 <LWFinger> I will be live on IRC from 0:00-6:00 and 16:00-23:59.
+18:59:56 <bmwiedemann> OK. I can be here 06:00-22:00
+19:02:14 <bmwiedemann> #decided Open-Bugs-Day to be 2011-02-20 00:00-23:59 UTC with testing-core-team supporting all volunteers
+19:02:36 <bmwiedemann> #action bmwiedemann will write more why+how on the wiki page
+19:02:59 <Holgi> sounds like a good plan :-)
+19:03:04 <bmwiedemann> any more action items?
+19:03:49 <bmwiedemann> who does the news.o.o contact?
+19:04:09 <Holgi> bmwiedemann: it's just a mail to news.opensuse.org
+19:04:15 <Holgi> bmwiedemann: it's just a mail to news@opensuse.org
+19:04:47 <bmwiedemann> yes. but it should be ONE mail. not zero, not two.
+19:05:09 <bmwiedemann> five is out of the question
+19:05:27 <Holgi> bmwiedemann: right - but I don't want to volunteer
+19:05:38 <bmwiedemann> LWFinger ?
+19:05:56 <Holgi> bmwiedemann: because tomorrow is my last day in office
+19:05:58 <LWFinger> My plan was to consult with my usual contact and get his input. Yes, I will handle it.
+19:06:42 <bmwiedemann> #action LWFinger handles news.o.o entry about Open-Bugs-Day
+19:07:06 <bmwiedemann> OK. any more things to discuss on that topic?
+19:07:52 <Holgi> not for me
+19:08:02 <LWFinger> None here.
+19:08:06 <bmwiedemann> #topic openQA report about mozmill testing & FOSDEM
+19:08:20 <bmwiedemann> I added that topic
+19:08:52 <LWFinger> Is mozmill really mozilla?
+19:09:05 <bmwiedemann> On FOSDEM I met with Henrik Skupin who leads the "mozmill" mozilla automated testing efforts
+19:09:48 <bmwiedemann> they have a mercurial repo with javascript tests
+19:10:39 <bmwiedemann> I added running their daily tests to some openQA runs (gnome only, one daily per arch)
+19:11:53 <bmwiedemann> automatically uploading results into their DB on http://mozmill-crowd.brasstacks.mozilla.com/#/general/reports for mozilla's nightly firefox
+19:11:56 <a-865> anyone know how to escape this error?
+19:11:58 <a-865> # osc getbinaries home:/sndirsch:/branches:/X11:/Xorg:/openSUSE_Factory
+19:12:00 <a-865> Need either 1, 2 or 4 arguments
+19:12:31 <bmwiedemann> a-865: you are off-topic right now. please wait a bit
+19:13:01 <a-865> bmwiedemann: I'm trying to test latest Dirsch build ;-)
+19:13:50 <bmwiedemann> however, since openSUSE's firefox comes with some adaptions (no auto-updates, altered default bookmarks), I agreed with Henrik to use their test DB for uploading results for our build at http://mozmill-archive.brasstacks.mozilla.com/#/general/reports
+19:14:15 <bmwiedemann> which they use to upload their testing/playgroud results
+19:14:27 <Holgi> bmwiedemann: sounds promising
+19:15:01 <bmwiedemann> on FOSDEM I also talked to Mechtilde from openOffice.org QA and was pointed to their "test-tool"
+19:15:32 <bmwiedemann> which I will look into integrating with some testruns as well
+19:16:52 <bmwiedemann> and I thought, that yast needs more testing. talked to kkaempf, that they have good success with auto-testing for modern stuff like WebYaST, but dont have that yet for classic YaST2
+19:17:20 <bmwiedemann> most other software has an upstream and more users outside of openSUSE - but not YaST
+19:18:21 <bmwiedemann> I think, sikuli (packaged in a extra repo) comes in handy for such automated testing, as I do not want to do everything of that just for the openQA framework
+19:19:39 <bmwiedemann> I also held my talk about "How to make QA engineers start drooling" which was recorded and uploaded to http://tinyurl.com/crossdistro
+19:21:20 <bmwiedemann> that's it so far for testing-related FOSDEM experience from me. comments? further thoughts? agenda additions?
+19:22:07 <Holgi> comment: sounds promising - good work
+19:23:42 <ReferenceSeete> That's awesome stuff.
+19:24:05 <ReferenceSeete> I thought being replaced by machines would be painful, but it's somewhat pleasant actually.
+19:24:05 <LWFinger> I assume that the OOo tests also work with LibreOffice.
+19:24:17 <bmwiedemann> #action bmwiedemann will look into integrating openOffice.org QA's "test-tool" with openQA testruns
+19:24:28 <bmwiedemann> I hope so.
+19:24:59 <ReferenceSeete> Forum Thread is up: http://forums.opensuse.org/english/get-technical-help-here/pre-release-beta/454140-open-bugs-day-feb-20th.html
+19:25:39 <bmwiedemann> ReferenceSeete: that is quick... now I will have to get the wiki page into shape soon :)
+19:26:09 <ReferenceSeete> Suggestions / Additions / Modifications welcome
+19:27:10 <bmwiedemann> #topic open testing meeting discussion
+19:28:34 <ReferenceSeete> bmwiedemann: I didn't mean to rush you, I can delete/repost tomorrow if you need time.
+19:29:07 <bmwiedemann> nay. it's fine as you added the interesting stuff in your post. so I can even copy&paste a lot
+19:32:47 <bmwiedemann> #info firefox mozmill test results for our build at http://mozmill-archive.brasstacks.mozilla.com/#/general/reports
+19:33:20 <LWFinger> I just posted to the prerelease-beta forum describing the effort and referencing ReferenceSeete's announcement.
+19:33:38 <bmwiedemann> #info firefox mozmill test results for upstream nightly builds at http://mozmill-crowd.brasstacks.mozilla.com/#/general/reports
+19:35:29 <bmwiedemann> any more important bits that need highlighting in today's meeting logs?
+19:37:03 <bmwiedemann> don't be shy
+19:37:20 <LWFinger> None for me.
+19:37:54 <Holgi> also not for me
+19:37:59 <ReferenceSeete> Nothing here.
+19:38:23 <bmwiedemann> very well. Then I will close today's meeting. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+19:38:35 <bmwiedemann> #endmeeting

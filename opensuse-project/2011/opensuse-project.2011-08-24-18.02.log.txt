@@ -1,0 +1,372 @@
+18:02:30 <prusnak> #startmeeting openSUSE Project Meeting
+18:02:30 <bugbot> Meeting started Wed Aug 24 18:02:30 2011 UTC.  The chair is prusnak. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:02:30 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:02:44 <prusnak> #meetingtopic openSUSE Project Meeting
+18:02:47 <suseROCKs> prusnak,    you need to op bugbot before you @startmeeting
+18:02:54 <prusnak> suseROCKs: i did
+18:03:03 <suseROCKs> oh  opps  never mind   :-_
+18:03:13 <prusnak> The agenda for today's meeting is:
+18:03:20 <prusnak> 1. Old Action Items
+18:03:23 <izabelvalverde> I'm following too
+18:03:26 <prusnak> 2. Status Reports
+18:03:32 <prusnak> 2.1 openSUSE Conference Planning Update
+18:03:38 <prusnak> 2.2 openSUSE Foundation Status Update
+18:03:40 <suseROCKs> prusnak,   more chairs please
+18:03:47 <prusnak> 2.3 GSoC Status Update
+18:03:55 <prusnak> 3. Proposal from Manu Gupta on Google Code-In
+18:04:00 <prusnak> 4. Board F2F at the openSUSE Conference?
+18:04:05 <prusnak> 5. permission@ requests
+18:04:11 <prusnak> 6. Where do we need to improve?
+18:04:19 <prusnak> 7. Questions & Answers
+18:04:27 <prusnak> #chair suseROCKs AlanClark mrdocs
+18:04:27 <bugbot> Current chairs: AlanClark mrdocs prusnak suseROCKs
+18:05:00 <prusnak> okay
+18:05:01 <prusnak> first topic
+18:05:09 <suseROCKs> FYI:   I was expecting a service technician to come to the house an hour ago but hasn't shown up yet.  So I might have to step away unexpectedly for a moment
+18:05:13 <prusnak> #topic Old Action Items
+18:05:38 <prusnak> board items are at http://bit.ly/opensuse_board_ais
+18:06:03 <prusnak> there are two items - one mine - there is no progress whatsoever on user search in bugzilla
+18:06:22 <prusnak> another is assigned to AlanClark - any news?
+18:06:30 <AlanClark> We can cover a bit on the Foundation here.
+18:06:57 <prusnak> okay, please go on
+18:07:12 <AlanClark> I am rapidly working with Attachmate Executive Mgt and Legal teams.
+18:07:58 <AlanClark> With new management and legal team members, we are going through some education cycles.  The SUSE management is supportive of the Foundation.
+18:08:11 <AlanClark> It is a matter of some internal work.
+18:08:42 <AlanClark> I am aiming for us to have much to talk about at osc and the board F2F.
+18:08:58 <mrdocs> great.. sounds like a plan
+18:10:08 <prusnak> #info Alan working with Attachmate Executive Mgt and Legal teams, SUSE management is supportive of the Foundation.
+18:10:09 <AlanClark> For this bug, we aren't quite ready yet to write an announcement.  We're getting closer, but we leave the bug as is for the moment
+18:10:41 <prusnak> do you think there will be an announcement before the conference?
+18:11:15 <prusnak> so people can read it before face to face discussion?
+18:11:40 <AlanClark> I don't know yet
+18:11:48 <prusnak> okay, thanks
+18:12:11 <prusnak> Project AIs are at http://bit.ly/opensuse_action_items
+18:12:21 <prusnak> currently we have 4 open items
+18:12:51 <prusnak> as adrianS, henne and cboltz are not here we skip the first 3
+18:13:10 <prusnak> suseROCKs: can you tell us about the 4th one?
+18:13:42 <suseROCKs> anything more?
+18:13:42 <suseROCKs> prusnak,   question for you
+18:13:43 <suseROCKs> on your AI
+18:13:44 <suseROCKs> as your AI pertains to bugzilla issues there's the oft-repeated discussion about whether we should get away from Novell Bugzilla.
+18:13:59 <suseROCKs> Quesiton is,  do we want to come up with some statement on this, or come up with a more indepth discussion... or what?    Does anyone have some inking of a plan one way or the other?
+18:14:05 <suseROCKs> err... is there a lag here?
+18:14:51 <prusnak> there was a discussion about moving away from the novell bugzilla some time ago (months, even before acquisition)
+18:15:04 <prusnak> but there was not a clear outcome
+18:15:16 <prusnak> i think we should make this a topic for a discussion on the conference
+18:15:25 <suseROCKs> well the discussion has reared its head again on our mailing list this past week.
+18:15:39 <AlanClark> +1 for conference discussion
+18:15:41 <prusnak> which mailinglist?
+18:16:02 <suseROCKs> I agree but I would much rather see a discussion centered around specific ideas rather than another session bellyaching about "I don't like this or that"
+18:16:14 <prusnak> sure
+18:16:23 <prusnak> we need to agree if we want to depart or not
+18:16:34 <prusnak> and if yes who'll maintain the instance
+18:16:35 <suseROCKs> prusnak,   bugzilla vs fate is the subject line and its on factory ML
+18:17:36 <prusnak> i think this is conference material
+18:17:59 <suseROCKs> should it be part of the general meeting topic?
+18:18:09 <prusnak> greg and pascal will be there and they both wanted to the current bugzilla situation
+18:18:16 <prusnak> ...wanted to change....
+18:18:55 <prusnak> suseROCKs: i don't know, maybe have a separate BoF about that
+18:19:14 <suseROCKs> prusnak,   ok
+18:19:21 <AlanClark> Let's BoF it
+18:19:28 <suseROCKs> AlanClark,   thoughts on that?  (regarding when in conference to discuss)
+18:19:39 <suseROCKs> Thought expressed.  :-)
+18:20:08 <prusnak> #info we agreed we need a session (probably BoF) about novell vs. (open)suse bugzilla and bugzilla vs. fate discussion
+18:20:24 <suseROCKs> ok I'm done asking questions on this specific topic
+18:21:12 <suseROCKs> now prusnak had a question on my bug #711572
+18:21:15 <bugbot> openSUSE bug 711572 in openSUSE.org (Action Items) "[AI] Google Code-in" [Normal,Needinfo] https://bugzilla.novell.com/711572
+18:21:38 <AlanClark> I received a reply from Google
+18:21:43 <suseROCKs> This one is actually also listed as Topic #3 in today's agenda.   Shall we wait to Topic 3 to discuss or go ahead now?
+18:22:00 <prusnak> let's discuss it now
+18:22:05 <suseROCKs> ok
+18:22:22 <suseROCKs> the summary of my investigation is detailed in the bug report regarding Manu's proposal for a Google Code-In
+18:22:46 <suseROCKs> There were some questions in the investigation about whether GCI will be held again this year and the timing of the GCI contest
+18:22:55 <suseROCKs> AlanClark,   You say now you have word from Google?
+18:23:20 <AlanClark> I received a reply email from them this morning.  "
+18:23:21 <AlanClark> We're not sure yet. Last year we announced around the first week of October.
+18:23:21 <mrdocs> back sorry plasma misbehaving
+18:23:22 <AlanClark> If we choose to do the program again we'll announce this year's program
+18:23:24 <AlanClark> around the same time.
+18:24:00 <prusnak> thanks for the info
+18:24:06 <prusnak> i also tried to reach folks from google but failed
+18:24:18 <suseROCKs> ok so there's really nothing we can/should do now
+18:24:19 <AlanClark> I just added a comment to the bug.
+18:24:40 <AlanClark> Looks like we need to check in October
+18:25:00 <suseROCKs> ok so we have a 6 week reprieve then  :-)
+18:25:05 <suseROCKs> assuming we actually want to do this.
+18:25:25 <prusnak> #info folks at Google don't know whether there will be Google Code-In this year. if yes, they'll announce it sometime around the first week of October
+18:25:40 <suseROCKs> I dislike the timing of last year's contest  (Nov 22 - Jan 10)  and I wonder how we can recruit >18 year old students
+18:25:58 <AlanClark> Is there a way to set a date on this bugg in bugzilla so that we can ignore it until October 1?
+18:26:20 <suseROCKs> I was wondering the same thing
+18:26:22 <prusnak> i don't know about such feature
+18:26:45 <prusnak> the last comment mentions the date explicitely though
+18:27:02 <prusnak> should we move on?
+18:27:05 <suseROCKs> yeah
+18:27:12 <AlanClark> yes, next
+18:27:29 <prusnak> #topic Status Reports
+18:27:40 <prusnak> ++ openSUSE Conference Planning Update
+18:28:05 <prusnak> anyone wants to take this one?
+18:28:39 <prusnak> there is a lot of activity going on, i'm not sure who should i pick :)
+18:28:55 <AlanClark> lots of actvity.
+18:29:05 <AlanClark> Looks like it's coming together
+18:29:31 <suseROCKs> Agreed and whenever there's something worthy we try to publish it on news.o.o
+18:29:52 <suseROCKs> prusnak, and I are about to publish the announcement of the android app
+18:30:29 <suseROCKs> I think he and digitltom did a great job on the app
+18:30:36 <prusnak> yes, i saw announcements on news.o.o and i think we should continue using that
+18:31:15 <AlanClark> I missed that. Way cool!
+18:32:24 <prusnak> #info lots of buzz going on about the conference, follow news.opensuse.org to get it all!
+18:32:34 <AlanClark> sshaw and I are working on an additional "fun activity" that will entice people to register and attend the conference.
+18:33:16 <prusnak> great!
+18:33:25 <suseROCKs> I hope you're not telling people "Register and get a belly dance with suseROCKs"
+18:33:27 <prusnak> when are you going to announce it? or is it a local one?
+18:34:15 <AlanClark> We have a bit more to figure out, then we can announce.  We're working on a 'giveaway' for the conference.
+18:34:38 <prusnak> nice :)
+18:35:05 <AlanClark> We have to get it to work first ;-)  sshaw keeps saying something about his day job getting in the way ;-)
+18:35:27 <prusnak> #info alan and sshaw working on (secret for now) fun activity that will entice people to register and attend the conference.
+18:35:30 <suseROCKs> yeah those ferrari's are always trouble to get working
+18:35:59 <prusnak> next subtopic
+18:36:16 <AlanClark> next
+18:36:18 <prusnak> openSUSE Foundation Status Update - we already dealt with that in the beginning of the meeting
+18:36:22 <prusnak> next
+18:36:32 <prusnak> GSoC Status Update
+18:36:44 <suseROCKs> prusnak, is an wesome meeting moderator.  He gets the topics talked about before the topic s  :-)
+18:36:47 <prusnak> i'll take this one
+18:37:05 <prusnak> this monday was the firm "pencils down" for students
+18:37:09 * sshaw blames it on his day job
+18:37:26 * sshaw is however very excited about it if it works :)
+18:37:30 <prusnak> during this week mentors have to fill in final evaluations (until friday)
+18:37:51 <prusnak> some of them already did so, we are still waiting for 7 mentors
+18:38:08 <suseROCKs> and to refresh my memory, how many projects did we have?
+18:38:11 <prusnak> out of the other 7 mentors who filled in evaluations already - only 1 was fail
+18:38:23 <prusnak> 6 were successful
+18:38:32 <prusnak> right now we have 14 projects in total
+18:38:41 <prusnak> 1 or 2 failed at the midterm
+18:38:51 <suseROCKs> ouch on the fails
+18:39:19 <prusnak> still i think this is good, let's wait for the last 7 evaluations
+18:39:24 <AlanClark> good success ratio
+18:39:34 <prusnak> i will poke the mentors again tomorrow
+18:39:37 <mrdocs> true  one or two fails in 14 is quite good actually
+18:39:46 <mrdocs> and i have seen a couple which are excellent
+18:40:05 <suseROCKs> out of curiosity, was there ever a decisiona bout what to do with the openSUSE portion of the contest funds?
+18:40:10 <AlanClark> prusnak - I recieved the PO from google.
+18:40:43 <prusnak> #info GSoC results will be closed this Friday, 7 mentors have already submitted their evaluations, only 1 of them was FAIL, we are still waiting for the other 7 evaluations
+18:41:23 <AlanClark> monies are being used to send to the google mtg (I don't remember the name); also some to bring them to osc
+18:41:36 <prusnak> AlanClark: good, do you need help with that (the PO)?
+18:42:05 <suseROCKs> Will one of you be accompanying the students to Mountain View for the Google event?
+18:42:18 <AlanClark> That's why I was looking for vincent earlier, to make sure it is inline with our expations.
+18:42:33 <suseROCKs> Which I believe is in October.
+18:42:47 <prusnak> suseROCKs: students are not going to mountain view, 2 of the mentors are - Tom Schmidt and Michal Hrusecky
+18:43:02 <suseROCKs> Good.   Good to have representation there
+18:43:15 <prusnak> AlanClark: i read the PO and it seems right
+18:43:57 <AlanClark> I was in a rush when it arrived. I haven't been back to read it again.  Did they give us funds for 2 mentors?
+18:44:12 <prusnak> yes, $2000
+18:44:43 <AlanClark> Guess I was expecting to see 2*$2000
+18:45:00 <prusnak> no, it is $1000 per mentor
+18:45:17 <suseROCKs> That's gonna be a tight fit
+18:45:20 <prusnak> tom and michal know that if they go above the limit, they have to pay themselves
+18:45:50 <prusnak> (i already talk with them and it is around $60 above)
+18:46:38 <AlanClark> Sounds like we should cover that with the other Gsoc monies
+18:47:08 <suseROCKs> Only $1060 to mountain view  including hotel??   That's cheap
+18:47:30 <prusnak> suseROCKs: no, hotel is paid by google, you pay only for the flight and then get it reimbursed
+18:47:42 <suseROCKs> ahhhh
+18:47:49 <suseROCKs> then that's a close enough amount  sure
+18:48:03 <prusnak> AlanClark: that is open to discussion i guess, i have no problem with that
+18:48:53 <suseROCKs> yeah let's not quibble over a few dollars.
+18:49:24 <prusnak> next topic?
+18:49:33 <suseROCKs> However I'd like to propose if they have time to meet with any local openSUSE folks in the Bay Area
+18:50:01 <prusnak> good idea :)
+18:50:36 <mrdocs> i might be there as well
+18:50:47 <mrdocs> depending on family visa situation
+18:51:04 <prusnak> :)
+18:51:32 <suseROCKs> Do you know the actual date of the Google Gthering?
+18:52:06 <prusnak> 22-23 Oct
+18:52:14 <suseROCKs> ok
+18:52:20 <prusnak> okay, let's go - we skip topic #3 because we already handled Google Code In issue during the Action Item
+18:52:44 <suseROCKs> i would propose to remove that from the agenda permanently since its now an AI
+18:52:52 <prusnak> okay
+18:52:56 <prusnak> #topic Board F2F at the openSUSE Conference
+18:53:23 <prusnak> we discussed a little on the mailing list
+18:53:32 <suseROCKs> are we confirmed for the 9th?
+18:53:37 <AlanClark> yes.
+18:53:42 <prusnak> i'll be in NBG 2 days prior the conference
+18:53:53 <prusnak> so i can attend f2f on 9th and 10th
+18:54:23 <prusnak> henne probably won't join us because of the conference duties, but this can change
+18:54:26 <suseROCKs> 9th is definite and 10th is as-needed,  right?
+18:54:41 <prusnak> we'll see how much time we'll need
+18:54:55 <mrdocs> im going to arrive the 8th
+18:54:55 <AlanClark> We need to work on the agenda.
+18:55:00 <suseROCKs> ok I like that.   Last few times we were so rushed with tiny time spent
+18:55:13 <prusnak> i also arrive 8th evening
+18:55:30 <suseROCKs> nd I arrive on 8th too.   Arriving at 4 p.m. via train and heading over to EuroHotel
+18:55:32 <AlanClark> I arrive on the 8th as well.  I think we will be recruited to help with osc setup on the 8th
+18:55:43 <prusnak> so we only don't know about rupert
+18:55:49 <prusnak> iirc
+18:55:58 <suseROCKs> AlanClark,   seriously?   8th?   After all that traveling?  :-)
+18:56:12 <AlanClark> suseROCKS - best to stay awake
+18:56:23 <suseROCKs> yeah....
+18:56:43 <prusnak> #info most of the Board members will arrive on 8th Sept and will have a F2F meeting on 9th and 10th, just prior the conference
+18:56:51 <suseROCKs> ok so we meet for sure on 9th at 10:00 a.m.?
+18:57:09 <AlanClark> at a conference room at the SUSE office
+18:57:20 <mrdocs> sounds good to me
+18:57:25 <prusnak> alright
+18:57:37 <suseROCKs> I'd like to emphasize to folks here that as always our face to face board meetings are not closed meetings
+18:57:40 <prusnak> i might come sooner (9:30) to arrange the stuff
+18:58:05 <prusnak> so we can actually start at 10:00
+18:58:07 <suseROCKs> simply usually too boring for non board members to come to.  :-)
+18:58:23 <AlanClark> suseROCKS, if so boring what are we doing there?
+18:58:40 <suseROCKs> AlanClark,   Its our opportunity to tell each other what we really think of each other face to face  :-)
+18:59:02 * mrdocs grins
+18:59:14 <AlanClark> suseROCKS and you think that will be boring?
+18:59:21 <suseROCKs> LOL
+18:59:48 <AlanClark> Next stepis to work on the agenda.
+19:00:11 <suseROCKs> I have invited Jos to attend as a guest and he has agreed
+19:00:31 <prusnak> fine, i'm sure AJ will join as well if he has time
+19:00:32 <AlanClark> How about we form it on the project/board meeting wiki page?
+19:00:34 <suseROCKs> and we should invite (why do I keep forgetting his name?!?) that is heading the SUSE offices
+19:01:10 <AlanClark> suseROCKS, you thinking of Nils?
+19:01:17 <suseROCKs> AlanClark,   i sure am!  :-)
+19:01:33 <AlanClark> Good idea. I'll invite him to come meet us.
+19:01:54 <AlanClark> and MM as well.
+19:02:22 <suseROCKs> And in the past, we set up a time slot for these guests to come to our meeting.   Do we want to do that as well this time or just invite them to sit in with us the whole time?
+19:02:30 <AlanClark> timeslot
+19:02:39 <prusnak> timeslot +1
+19:02:51 <suseROCKs> I +1 that too   much easier on them
+19:03:00 <prusnak> and us too :)
+19:03:07 <suseROCKs> and then the other question is do we want to meet them as a group or one on one or.... some as a group and others as one...
+19:03:43 <AlanClark> Group - depending upon their schedule
+19:04:29 <suseROCKs> ok
+19:04:47 <suseROCKs> so I also agree we should just all go to the wiki and add our suggested topics and be done with it
+19:05:13 <prusnak> sounds reasonable
+19:05:22 * AlanClark is editing the wiki
+19:07:02 <suseROCKs> ok what's next?
+19:08:16 <prusnak> AlanClark: could you please send URL of the page to board@ ML ?
+19:08:28 <prusnak> next topic
+19:08:36 <prusnak> #topic permission@ requests
+19:08:45 <prusnak> there are two requests
+19:08:48 <AlanClark> it's the same page that we use for these meetings
+19:09:03 <prusnak> AlanClark: ah thanks, i thought there was a separate one
+19:09:11 <prusnak> a) http://www.linux-pratique.com, would like to use the OpenSUSE logo in upcoming issue
+19:09:14 <suseROCKs> I already voted +1 on them and both have marketing benefits so I will be further investigating how we cn collaborate together.
+19:09:16 <prusnak> b) Logo on SuperTuxCart
+19:09:47 <suseROCKs> err  i mean I will be passing it along to marketing team to further investigate
+19:09:50 <prusnak> we have 4 out of 6 members present so we can vote
+19:10:06 <suseROCKs> a) +1
+19:10:09 <suseROCKs> b) +1
+19:10:19 <prusnak> a) +1
+19:10:21 <prusnak> b) +1
+19:10:31 <AlanClark> a) +1
+19:10:33 <AlanClark> b) +1
+19:10:41 <suseROCKs> That was easy  :-)
+19:10:53 <AlanClark> rupert voted by email +1 on both
+19:10:54 <suseROCKs> I do have a question before we close the topic
+19:11:11 <suseROCKs> 2 actually
+19:11:17 <mrdocs> i voted +1 for both by mail
+19:11:17 <AlanClark> I do have a question as well
+19:11:22 <prusnak> mrdocs voted on both +1 as well
+19:11:36 <AlanClark> mrdocs - is it a reputable magazine?
+19:11:44 <mrdocs> AlanClark: very
+19:11:53 <prusnak> web is down atm, which kinda sucks
+19:11:55 <mrdocs> they have sponsored FOSS events
+19:11:57 <suseROCKs> Question #1.   Currently requests are sent to permissions@novell   is this going to change in the new structure?
+19:12:29 <mrdocs> AlanClark: nationwide distribution in France, many authors are foss developers
+19:12:42 <mrdocs> suseROCKs: good topic for f2f
+19:13:04 * AlanClark adds it as a topic
+19:13:28 <suseROCKs> mrdocs,   well its something we need to clarify fairly quickly imo or it becomes misleading to get suse permissions from novell int he current state
+19:13:40 <mrdocs> exactly
+19:13:42 <suseROCKs> a topic for F2F yes but also a topic that needs to be discussed internally by the company
+19:13:54 <suseROCKs> and they need to discuss it before we can discuss it, I think
+19:14:52 <suseROCKs> the second question I have is that we're starting to get non-openSUSE requests forwarded to us.    I'm unsure if its just  coincidence or if the forwarder is just bulking it all together for everyone on the ML
+19:15:04 <AlanClark> I'll take that action item
+19:15:55 <AlanClark> I'll follow up with Sue on the second question.
+19:16:33 <suseROCKs> AlanClark,   also, in light of the last two requests, we need Jos to be on that ML too
+19:16:54 <AlanClark> why? the decision is the Boards
+19:17:09 <suseROCKs> AlanClark,   not in terms of decision but in terms of being aware of stuff
+19:17:19 <suseROCKs> He usually handles press relations (such as the one from the French magazine)
+19:17:33 <AlanClark> I agree.  We should be leveraging these much more.
+19:18:05 <suseROCKs> and if you noticed   in one reply by someone on the corporate side, they said to refer it to some marketing person over at Novell.  and i wanted to jump in and say "Nuh uh!  This is openSUSE territory!"  :-)
+19:19:04 <suseROCKs> And last question I have:  How quickly do we reply to requestors when its voted yes by the board?
+19:19:11 <AlanClark> Let's talk about that at the F2F
+19:19:21 <suseROCKs> I'd like to reach out to the TuxRacer guy and see if we can demo it during Conference
+19:19:57 <prusnak> suseROCKs: please do
+19:19:59 <AlanClark> I've been taking the action to reply to these requests.
+19:20:25 <suseROCKs> ok
+19:20:32 <AlanClark> Part of the reason is that I send the reply to Legal so that they can file the response for any future reference
+19:21:00 <suseROCKs> I only want to reach out to the guy after you've done that step
+19:21:06 <AlanClark> suseROCKS.  Why don't you reply to the TuxRacer and include a reply to permissions@
+19:21:25 <suseROCKs> ok
+19:21:29 <AlanClark> That way Sue(Legal) will get the response
+19:21:39 <suseROCKs> can you forward me a copy of a past reply you've sent so I can keep the language similar?
+19:22:01 <AlanClark> yes.
+19:22:11 <suseROCKs> Ok I'm done with my permissions questions  :-)
+19:22:24 <prusnak> next topic then?
+19:22:24 <suseROCKs> Please let me know if I'm not asking enough questions today
+19:22:26 <AlanClark> I'll take the AI to respond to the French Magazine
+19:22:38 <AlanClark> I'll include Jos on the response
+19:22:49 <suseROCKs> Perfect
+19:23:25 <suseROCKs> yes prusnak
+19:23:40 <AlanClark> next
+19:23:58 <prusnak> #topic Where do we need to improve?
+19:24:34 <suseROCKs> Since this topic is about immediately-fixable things, I'll just inject here something I just created today
+19:24:38 <suseROCKs> new factoid
+19:24:44 <suseROCKs> !projectmeeting
+19:24:44 <SUSEhelp> Folks, the openSUSE Project and Board Meeting is about to begin.  We invite you to join us at /join #opensuse-project.
+19:25:03 <suseROCKs> you can use this in any room where SUSEhelp is logged in and encourage more people to joiin
+19:25:13 <AlanClark> what no brush your teeth jokes?
+19:25:27 <mrdocs> AlanClark: I can take the Fr magazine from your pile
+19:25:29 <suseROCKs> don't make me come up with an AlanClark factoid!
+19:25:58 <AlanClark> mrdocs.  Great. It yours.  be sure to include to permission@
+19:26:10 <mrdocs> of course
+19:26:19 <suseROCKs> mrdocs,   and include Jos  because we want to be sure we can leverge this as much as possible
+19:26:24 <mrdocs> exactly
+19:26:37 <mrdocs> AlanClark: is there some sort of template people use ?
+19:26:49 <mrdocs> and I will start in French to make them feel at home :)
+19:26:55 <AlanClark> mrdocs.  I'll send you the text
+19:27:04 <mrdocs> great
+19:27:18 <AlanClark> I'll send it to board@
+19:27:22 <mrdocs> im back in france until the end of sept
+19:27:38 <mrdocs> *roughly*
+19:27:48 <suseROCKs> mrdocs,  just be back in time for Brainshare
+19:28:02 <mrdocs> suseROCKs: yes sir..
+19:28:26 <suseROCKs> I'm guessing we have no actual "need to fix" topics today  :-)
+19:28:38 * AlanClark looks forward to seeing mrdocs at Brainshare
+19:28:58 <AlanClark> I don't have anything for the "need to fix" topic today
+19:29:03 <mrdocs> same
+19:29:12 <mrdocs> AlanClark: ill be at OSC too
+19:29:26 <mrdocs> but im not shy in a booth either
+19:29:28 <suseROCKs> there goes the neighborhood
+19:29:39 <mrdocs> suseROCKs: i know i know...
+19:29:47 <AlanClark> openSUSE storms the conference, headline at 10 lol
+19:29:57 <suseROCKs> hehe
+19:29:59 * mrdocs runs for a fresh diet coke
+19:30:20 <AlanClark> next
+19:30:20 <suseROCKs> ok folks....  I'd like everyone to be aware that while we normally have board meetings online every two weeks, we won't have one two weeks from today
+19:30:34 <AlanClark> wait we have a question posted
+19:30:41 <suseROCKs> in lieu, we will have a general meeting at the conference on the 14th
+19:30:44 <prusnak> yep
+19:30:54 <prusnak> let's move to Q&A
+19:31:03 <prusnak> #topic Questions & Answers
+19:31:14 <prusnak> there is a question by Jedibeeftrix
+19:31:19 <prusnak> GSoC - Software Centre is coming along nicely, but what is the status of Appstream and Bretzn for opensuse 12.1?
+19:31:53 <suseROCKs> Good Question
+19:32:02 <prusnak> although i was involved in appstream project in its beginning, unfortunately, i don't know the current state of it
+19:32:19 <prusnak> vincent untz and frank karlitschek would now more
+19:32:26 <suseROCKs> it definitely seems to have disappeared from main conversation these days
+19:32:59 <mrdocs> vuntz|IS: you there ?
+19:33:35 <prusnak> vuntz is on vacation in iceland till the end of the week
+19:33:58 <AlanClark> best we save this question for the next meeting
+19:34:32 <suseROCKs> so we're done?
+19:34:45 <prusnak> i guess so
+19:35:03 <suseROCKs> I think we had a pretty good meeting today.  Good job guys!
+19:35:04 <prusnak> 5
+19:35:06 <prusnak> 4
+19:35:07 <prusnak> 3
+19:35:09 <prusnak> 2
+19:35:10 <prusnak> 1
+19:35:12 <AlanClark> good meeting.  Thanks all
+19:35:13 <prusnak> 0
+19:35:16 <prusnak> -1
+19:35:22 <prusnak> :)
+19:35:33 <suseROCKs> See you all in two weeks.  last one to Nuremberg is a rotten egg!
+19:35:35 <prusnak> thanks all for joining us
+19:35:36 * AlanClark didn't know atomic clocks could go negative
+19:35:58 <prusnak> they can't, they go 255 after 0 :-)
+19:36:03 <prusnak> #endmeeting

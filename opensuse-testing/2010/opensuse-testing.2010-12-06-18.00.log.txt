@@ -1,0 +1,173 @@
+18:00:16 <HolgiDE> #startmeeting openSUSE Testing Core Team
+18:00:16 <bugbot> Meeting started Mon Dec  6 18:00:16 2010 UTC.  The chair is HolgiDE. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:00:16 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:00:27 <HolgiDE> #chair bmwiedemann
+18:00:27 <bugbot> Current chairs: HolgiDE bmwiedemann
+18:02:34 <bmwiedemann> #topic Experience with 11.4-MS4 and/or factory-tested
+18:03:38 <ReferenceSeete> Seems to be shaping up nicely.  Nouveau has made a solid improvement since 11.3
+18:04:15 <bmwiedemann> ReferenceSeete: in terms of performance or stability?
+18:04:50 <ReferenceSeete> Both.  I haven't had a crash or screen corruption so far.  Additionally the system moves at a usable pace.
+18:04:54 <LWFinger> I still have an i915 problem with drm in 2.6.37, but that is upstream.
+18:06:02 <bmwiedemann> I had installed Factory-tested on my old Via-based laptop and fbdev graphics are sometimes awfully slow.
+18:06:18 <LWFinger> I agree, 11.4M4 looks pretty good. Cannot burn CDs due to k3b problem.
+18:06:58 <HolgiDE> LWFinger: I succeeded doing that als root :->
+18:07:28 <LWFinger> bmwiedemann: Kodos for factory-testing. It is good to do a rolling update without woryy that system will boot.
+18:07:36 * HolgiDE I'm using M4 on my workstation without major problems
+18:08:00 <bmwiedemann> LWFinger: the burning is like https://bugzilla.novell.com/show_bug.cgi?id=656502
+18:08:03 <bugbot> openSUSE bug 656502 in openSUSE 11.3 (KDE4 Applications) "K3b input/output error burning bluray BD-R" [Critical,New]
+18:08:54 <bmwiedemann> and yes, factory-testing is a nice thing to have :) they broke factory twice during the first 36h after I published factory-testing :D
+18:09:09 <bmwiedemann> err. "factory-tested"
+18:10:17 <bmwiedemann> I also had problems with sntp on factory after MS4
+18:10:35 <LWFinger> bmwiedemann: I need to read that bug report carefully. I'm not sure it is the same as mine fails on startup.
+18:11:36 <LWFinger> HolgiDE: I really hate to log into a GUI as root. I also have 11.3 on that box and can burn from it.
+18:11:57 <HolgiDE> LWFinger: that absolute correct to not use it as root
+18:11:58 <bmwiedemann> which bugs should we put on the most-annoying list? the k3b one and the zypper one?
+18:12:24 <bmwiedemann> kdesu k3b could work
+18:14:07 <HolgiDE> bug #656060 from M3 is still open
+18:14:31 <HolgiDE> bug 656060 from M3 is still open
+18:14:33 <LWFinger> bmwiedemann: I get an error box saying a configuration file now writable, but that should be fixable.
+18:15:01 <LWFinger> Edit /now/not/
+18:18:02 <HolgiDE> otherwise no additional big issues from my point of view
+18:18:44 <bmwiedemann> next topic would be "GNOME 3.0 Redux" - whose is that?
+18:18:49 <LWFinger> None for me either. I had a small one with Build 0908 that was fixed on 0909.
+18:19:08 <ReferenceSeete> That topic is mine.
+18:19:31 <ReferenceSeete> I spoke with Vincent Untz "vuntz" about GNOME 3
+18:19:31 <HolgiDE> bmwiedemann: maybe you want to add bug# ti minutes with #info
+18:19:41 <HolgiDE> s/ti/to/
+18:20:11 <ReferenceSeete> I was just looking for claification.  First about openQA's capability and second about what sort of commitment is possible from the team itself
+18:20:19 <bmwiedemann> LWFinger: do you have filed your k3b issue on bugzilla?
+18:20:34 <LWFinger> bmwiedemann: not yet
+18:23:09 <bmwiedemann> #info discussed bug 657605, bug 656060 and an unfiled k3b bug as most prominent issues with M4
+18:24:29 <bmwiedemann> #topic GNOME 3.0 Redux
+18:24:56 <bmwiedemann> so the idea with GNOME 3.0 is to have automated testing for it on the openQA system?
+18:25:19 <ReferenceSeete> Well that's one idea.  But i'd like to know if it's even possible.
+18:25:34 <ReferenceSeete> G3 uses openGL and I'm not sure how far along that is in KVM.
+18:25:46 <bmwiedemann> Mesa can do openGL
+18:25:52 <bmwiedemann> in pure software
+18:26:09 <ReferenceSeete> So I'm asking before this goes to far and expectations develop.
+18:26:20 <ReferenceSeete> Software raster, yes?
+18:26:48 <bmwiedemann> yes. I suppose I should give it a try when I have some spare hour.
+18:27:37 <HolgiDE> ReferenceSeete: what info could you collect from vuntz
+18:27:41 <ReferenceSeete> Ok, I told Vincent I would ask about this because I was unsure and some online reports on OpenGL + Virt weren't too encouraging.
+18:27:46 <bmwiedemann> I recently learned that you can use the "Add On Product" checkbox on the second installer screen to use extra repos
+18:28:28 <ReferenceSeete> Vuntz was A) excited that we were talking about testing it B) unsure if automated testing would work due to openGL being needed.
+18:28:41 <HolgiDE> ReferenceSeete: I see
+18:29:21 <ReferenceSeete> Additionally he mentioned that they are still looking at bringing a G3 liveCD online, but it isn't high priority at this moment.
+18:29:55 <ReferenceSeete> Since the GNOME Team's respin is due after 11.4 is out, we can help them test much closer to GM.
+18:29:58 <bmwiedemann> I am not sure how much openGL they use, because Mesa is often lacking behind the standard
+18:31:20 <ReferenceSeete> Right now it's not critical and it may not be feasible, but I just wanted to have accurate information.
+18:31:42 <ReferenceSeete> My other question was if people are available to looking at the G3 respin when the time comes.
+18:31:53 <bmwiedemann> #action bmwiedemann will evaluate feasability of automated GNOME 3 testing on openQA
+18:32:27 <ReferenceSeete> Seeing as this would take us in the "break period" I didn't want to over commit the Team.
+18:32:54 <ReferenceSeete> Still, it would be good to be able to tell the GNOME Team "look we've got a sub-team of 4 who can help you on this" or whatever the number is.
+18:33:23 <HolgiDE> as long as openqa does the work ...
+18:33:45 <ReferenceSeete> Hehehe, well yest openqa would be a massive help.  But that's up in the air right now.
+18:34:24 <HolgiDE> :-)
+18:34:33 <ReferenceSeete> Think about it, and we can look into solid commitments at the next meeting.
+18:34:46 <ReferenceSeete> That way people can get a good look at schedules and whatnot.
+18:35:03 <bmwiedemann> ReferenceSeete: I only have two laptops here, one with fbdev which will be too slow and one with intel that I would prefer to not break, so I will mostly do VM-testing of GNOME3
+18:35:30 <LWFinger> ReferenceSeete: If you notify the testing ML when you would like testing, I'll spread the word on the forum.
+18:35:52 <ReferenceSeete> Sounds great.  Any testing will help.
+18:36:52 <ReferenceSeete> I'll let vuntz know where things stand for now and hopefully things will continue to take shape as we approach release.
+18:36:55 <HolgiDE> ReferenceSeete: but that will not start before we get the gnome3.0 live dvd?
+18:37:25 <bmwiedemann> HolgiDE: there are repos for that, that could work, too...
+18:37:30 <ReferenceSeete> Right.   Of couse we could test the preview packages and report upstream.
+18:37:45 <ReferenceSeete> But I know that right now the focus is on 11.4
+18:37:47 <HolgiDE> ok
+18:38:21 <ReferenceSeete> I was just curious about our capacity to help out a fellow team with their side-project.
+18:39:34 <ReferenceSeete> It's sort of funny for me because I'm a KDE guy, but I like that as a project all the desktops get love.  So I'm trying to help us make a good first impression, like with Smeegol.
+18:39:58 <HolgiDE> ReferenceSeete: wow
+18:40:03 <bmwiedemann> #info ReferenceSeete will notify opensuse-testing ML when GNOME3 needs testing
+18:40:39 <bmwiedemann> I like helping things look good :)
+18:40:50 <LWFinger> ReferenceSeete: Include repo info as well.
+18:41:04 <ReferenceSeete> LWFinger: Ok, I'll do that.
+18:41:42 <bmwiedemann> and pointers on how to setup, how to use the cool new features etc
+18:42:18 <bmwiedemann> #topic Transcripts of past meetings
+18:42:25 <ReferenceSeete> Sure thing.
+18:42:27 <bmwiedemann> last topic on prepared agenda
+18:42:35 <ReferenceSeete> This topic is mine as well.
+18:43:28 <ReferenceSeete> When I got around to put up the last meeting's minutes, bmwiedemann had already slept, ate, and posted them.  So I put up the archive minutes I had on file.
+18:43:50 <ReferenceSeete> The problem is a number of the meetings I attended were from Web-clients and I didn't save the output.
+18:44:20 <ReferenceSeete> So it's just a call for anyone who happens to still have those transcripts to either post them or e-mail them to me so I can post them.
+18:45:23 <ReferenceSeete> r.seete AT googles-email-service .com
+18:45:31 <bmwiedemann> I thought, we posted most of them on the old wiki
+18:46:01 <HolgiDE> ReferenceSeete: which transcripts are missing?
+18:46:45 <ReferenceSeete> Many of them.
+18:46:46 <bmwiedemann> http://old-en.opensuse.org/Special:Search?search=testing+meeting&go.x=0&go.y=0
+18:46:57 <ReferenceSeete> Although I do need to look at the old wiki.
+18:47:48 <ReferenceSeete> From this link however bmwiedemann is right that quite a number are archived.
+18:47:57 <ReferenceSeete> I'll make new pages for them.
+18:48:31 <bmwiedemann> very good :)
+18:49:10 <bmwiedemann> #action ReferenceSeete will make new pages from old-en testing meeting transcripts
+18:49:13 <HolgiDE> ReferenceSeete: http://old-en.opensuse.org/OpenSUSE_Testing_Core_Team/Meetings
+18:50:22 <ReferenceSeete> I guess that closes the prepared agenda.
+18:50:53 <bmwiedemann> yes. you can come up with more topics now.
+18:51:54 <ReferenceSeete> Actually I have a question.  Not sure if this has been addressed before.
+18:52:45 <LWFinger> I still need to de extensive wireless testing. No problems with quick test, but not ready for discussion.
+18:52:49 <bmwiedemann> so ask it :)
+18:53:27 <ReferenceSeete> It looks like I may have an interview for a position here but I'm a recent graduate and don't have many references (yes, yes, irony).
+18:53:38 <ReferenceSeete> So I was curious if A) it's possible to get a reference from volunteering in the oS Project and,
+18:53:53 <ReferenceSeete> B) who would give it if it was possible?
+18:54:23 <LWFinger> For B), I think Holgi.
+18:54:42 <HolgiDE> ReferenceSeete: I'm not familiar with the reference stuff because we don't use that in Germany
+18:55:16 <HolgiDE> ReferenceSeete: what would that mean if someone is getting in touch with me?
+18:55:19 <bmwiedemann> of course, quite a lot of your work will be visible publicly online. from meeting transcripts to git-commits.
+18:55:24 <ReferenceSeete> A reference is basically a social stopgap for employers to avoid heavy research.
+18:55:49 <ReferenceSeete> But yes, they would e-mail you and say "do you know this person?  In what capacity have you worked together?"
+18:56:05 <ReferenceSeete> "have they done A or B"
+18:56:50 <HolgiDE> ReferenceSeete: ok, I'm willing to do - but I would like to discuss this further by e-mail, e.a. learn what you want me to answer
+18:57:15 <HolgiDE> ReferenceSeete: if someone really get's in touch with me
+18:57:20 <ReferenceSeete> Well I don't want you to answer anything special.
+18:57:40 <HolgiDE> ReferenceSeete: I also give you my contact details in e-mail if necessary
+18:57:41 <ReferenceSeete> Just that I volunteer with you and such.  But yes, we'll talk through e-mail.
+18:58:04 <HolgiDE> ReferenceSeete: ok
+18:58:31 <ReferenceSeete> Thank you.
+18:58:38 <HolgiDE> welcome
+18:58:42 <LWFinger> ReferenceSeete: Best of luck with the interview.
+18:59:11 * bmwiedemann hopes that Luck will not be needed
+18:59:28 <ReferenceSeete> Thanks.  I still have to get a call back to schedule a time.  Should be next week though.
+18:59:51 <HolgiDE> bmwiedemann: next topic - next meeting?
+18:59:53 <bmwiedemann> LWFinger: do you want to discuss the wireless testing some more? or do you need any help?
+19:00:00 <ReferenceSeete> I hope luck isn't needed either, the testing round went quite well, but interviews are less objective..
+19:00:11 <ReferenceSeete> Yes, need any help wireless testing?
+19:00:49 <LWFinger> bmwiedemann: Not ready yet. As to help, if anyone has a problem, let me know.
+19:01:26 <bmwiedemann> OK.
+19:01:38 <LWFinger> I have not had any problems yet. In addition, I have seen nothing from the forums. Looks good.
+19:01:49 <bmwiedemann> #info report wireless issues to LWFinger
+19:02:14 <LWFinger> Actually, I take any networking issues as well.
+19:02:30 <bmwiedemann> #topic next Testing Core Team Meeting
+19:02:43 <HolgiDE> Thu, Dec 16, openSUSE 11.4 Milestone 5 release
+19:02:51 <HolgiDE> not sure if that's the final date
+19:03:21 <HolgiDE> but my recommendation would be to have no meeting before x-mas
+19:03:24 <bmwiedemann> last two milestones were 3-7 days late
+19:04:05 <bmwiedemann> 2010-12-27 would be first Monday after x-mas
+19:04:26 <HolgiDE> most people are probably on vacation
+19:04:50 <HolgiDE> what about 2011-01-09 ?
+19:04:53 <bmwiedemann> HolgiDE: vacation could mean that they have time for a chat ;)
+19:05:11 <HolgiDE> bmwiedemann: not if you won't spent your vacation at home
+19:05:26 <ReferenceSeete> Could do both...
+19:05:54 <ReferenceSeete> Have an 'informal' meeting for those who can come in December and a 'full' meeting early/mid January.
+19:06:00 <LWFinger> 2011-01-09 is a Sunday.
+19:06:23 <HolgiDE> LWFinger: you are right - correct date 2011-01-10
+19:06:48 <bmwiedemann> that is already quite close to Milestone 6 of 6
+19:06:53 <HolgiDE> ok, who thinks that he would be attending on 2010-12-27?
+19:06:57 * HolgiDE can not
+19:07:00 <bmwiedemann> (2011-01-20)
+19:07:21 <ReferenceSeete> I should be able to, family commitments should end the 26th.
+19:07:22 <LWFinger> I could be here on 12-27.
+19:07:23 * bmwiedemann could probably
+19:07:49 <HolgiDE> ok, then go ahead
+19:07:57 <bmwiedemann> we could also create a doodle
+19:08:13 <HolgiDE> then let's schedule january meeting after M6
+19:08:39 <bmwiedemann> 2010-11-24 or 31?
+19:08:56 <bmwiedemann> err 2011-01-24 or 31?
+19:08:57 <HolgiDE> I don't mind
+19:09:33 <bmwiedemann> the latter is better to compensate for slipped releases and give some time to test
+19:09:39 <HolgiDE> ok
+19:10:19 <HolgiDE> so 2011-01-31 then?
+19:10:31 <ReferenceSeete> Sounds fine.
+19:10:36 <LWFinger> OK.
+19:10:58 <HolgiDE> fine
+19:11:09 <bmwiedemann> #agreed next meetings on 2010-12-27 18:00 (optional) and 2011-01-31 18:00 UTC
+19:11:43 <HolgiDE> fine
+19:13:04 <HolgiDE> #endmeeting

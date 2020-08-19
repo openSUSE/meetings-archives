@@ -1,0 +1,257 @@
+17:23:59 <bmwiedemann> #startmeeting
+17:23:59 <bugbot> Meeting started Tue May 29 17:23:59 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:23:59 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:24:05 <bmwiedemann> Hello everyone
+17:24:05 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:24:05 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:24:20 <Creatura85> hello bmwiedemann
+17:24:32 <bmwiedemann> hello Creatura85
+17:24:38 <Creatura85> i have missed several meetings due to personal issues :(
+17:24:40 <Creatura85> sorry about that
+17:24:48 <bmwiedemann> #topic 12.2 testing
+17:25:19 <bmwiedemann> yesterday was holiday in Germany, so I had time to file 5 new bugs for Factory
+17:25:35 <Creatura85> bmwiedemann: i have opensuse 12.2 M4 with kde 4, as far as i can spot, only zypper has issues
+17:25:46 <bmwiedemann> there was no real M4
+17:25:57 <Creatura85> keeps crashing when removing packages with dependencies
+17:26:14 <bmwiedemann> libzypp is still crashing yast -i as well
+17:26:16 <Creatura85> well that what cat /etc/SuSE-release show`s up :)
+17:26:51 <bmwiedemann> then you have some factory state, which could be different from others that also have M4 there
+17:27:17 <LWFinger> Yes, libzypp is a problem. I have only seen the problem with osc builds.
+17:27:19 <Creatura85> one thing is funny, latest flash with firefox have no issues unde vbox :)
+17:27:28 <Creatura85> *under
+17:27:45 <bmwiedemann> Flash is crashing in my 12.1 firefox12 a lot recently
+17:28:04 <Creatura85> bmwiedemann: disable hardware acceleration from within the browser
+17:28:16 <Creatura85> and it fixes the problem for the moment
+17:28:25 <Creatura85> or downgrade to 11.1 :)
+17:28:36 <LWFinger> On the libzypper problem, Coolo suggests "
+17:28:37 <LWFinger> I suggest to run the same zypper command under valgrind with debuginfos
+17:28:38 <LWFinger> installed and then file it into bugzilla. I already told Michael about
+17:28:40 <LWFinger> these crashes, but it seems not to affect all commands - at least on my
+17:28:41 <LWFinger> machine it never crashed.
+17:29:28 <Creatura85> LWFinger: that sounds good i guess, but the bug must be solved in the end
+17:30:14 <bmwiedemann> got http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-NET-x86_64-Build0386-11.4kde64zdup/yast2_i-1.png
+17:30:42 <Creatura85> bmwiedemann: i get that using yast too
+17:30:44 <bmwiedemann> I heard, libzypp also triggered compiler-bugs in gcc-4.7
+17:31:17 <LWFinger> AFAIK, the zypper problems are all gcc 4.7 related.
+17:32:47 <bmwiedemann> I also always got a message box about mdadm not installing properly
+17:33:52 <Creatura85> here is the bug report about yast crashing https://bugzilla.novell.com/show_bug.cgi?id=759433
+17:34:01 <bugbot> openSUSE bug 759433 in openSUSE 12.2 (YaST2) "Yast crashes when doing a search or installing software" [Major,Reopened]
+17:34:06 <bmwiedemann> which is bad, because it hinders most openQA tests
+17:34:50 * Creatura85 login.novell.com is working so slow...
+17:35:19 <bmwiedemann> there was also bnc#764397 with a yast segfault happening on dist-upgrade from DVD
+17:36:49 <bmwiedemann> and I'm sure there are more issues waiting, once the big blocks are out of the way
+17:37:26 <Creatura85> bmwiedemann: since gcc 4.7 is the main problem why dont they use an olderv revision of 4.7 ? or even gcc 4.6 ?
+17:39:45 <bmwiedemann> I think, they would rather get 4.7 stable
+17:39:55 <bmwiedemann> to not always stay with old versions
+17:40:14 <Creatura85> ok, i understand
+17:40:18 <Creatura85> hello bmwiedemann
+17:40:22 <Creatura85> hello BManojlovic
+17:40:25 <Creatura85> :)
+17:40:26 <BManojlovic> hello Creatura85
+17:41:40 <bmwiedemann> any more big bugs in current Factory?
+17:42:23 <BManojlovic> is blocxx fixed ?
+17:42:24 <Creatura85> we have one solved at point 3 of this meeting by tigerfoot https://bugzilla.novell.com/show_bug.cgi?id=763262
+17:42:28 <bugbot> openSUSE bug 763262 in openSUSE 12.2 (Basesystem) "KDM openSUSE branding theme ratio used are not correct" [Normal,Resolved: fixed]
+17:42:51 <LWFinger> The live CDs still have the 64-bit problem with expr when running under qemu-kvm, but a fix is available.
+17:42:53 <BManojlovic> blocxx was broken on 4.7 - as yast then too
+17:43:36 <BManojlovic> meaning it has to be built with gcc 4.6
+17:43:40 <BManojlovic> so is that bug fixed
+17:43:53 <bmwiedemann> is gcc4.6 available for 12.2?
+17:43:58 <BManojlovic> i really did not follow up on it as i had not have enough time
+17:44:09 <BManojlovic> yes it should be
+17:45:25 <bmwiedemann> so we could build it with gcc4.6 until upstream or mt@suse or dimstar (hope they are CCed in the bug) find some better solution
+17:45:51 <BManojlovic> https://bugzilla.novell.com/show_bug.cgi?id=759310
+17:45:55 <bugbot> openSUSE bug 759310 in openSUSE 12.2 (YaST2) "libblocxx fails with gcc 4.7" [Major,New]
+17:46:10 <BManojlovic> sorry really no time :\
+17:46:27 <bmwiedemann> yes, looks good
+17:47:32 <BManojlovic> trust me that bug is not good :]
+17:49:53 <bmwiedemann> next topic?
+17:49:55 <Creatura85> i dont want to be a pesimist here but if the bugs are not fixed opensuse 12.2 could be delayed imho
+17:50:17 <Creatura85> bmwiedemann: i guess so
+17:50:22 <bmwiedemann> better delayed than over-buggy
+17:50:30 <Creatura85> indeed
+17:50:34 <BManojlovic> i agree
+17:50:51 <BManojlovic> one kde 4.0 is enough...
+17:51:01 <Creatura85> :)
+17:51:35 <LWFinger> without releases, no testing. :)
+17:51:49 <BManojlovic> that is true too :)
+17:51:58 <Creatura85> i`m waiting for the beta :)
+17:52:09 <bmwiedemann> it really needs someone to file bugs and kick developers for a release to become good
+17:52:28 <bmwiedemann> Beta is getting nearer, though
+17:52:55 <LWFinger> I have one real machine that has been running from factory since Build 0318 with updates from the Factory repo. It works OK.
+17:53:14 <Creatura85> bmwiedemann: do you if are problems with login.novell.com, i`m getting connection timed out...
+17:53:29 <Creatura85> *do you know
+17:53:30 <bmwiedemann> I also updated my Laptop with MS3 and beyond. so it sort of works
+17:53:59 <BManojlovic> i  have tested in vbox lvm on top of crypted volume works fine
+17:54:12 <bmwiedemann> login.novell.com works here atm. but I would not be surprised, if it was slow/failing sometimes/somewhere
+17:54:14 <BManojlovic> so i presume it would work with my laptop too
+17:54:36 <Creatura85> BManojlovic: try and see :)
+17:54:40 <LWFinger> I run regular tests with VB VMs, but I don't do much testing there.
+17:54:45 <bmwiedemann> there had been some trouble with this and systemd in the past
+17:54:54 <BManojlovic> Creatura85: work laptop :] so nope :)
+17:55:05 <BManojlovic> now it works just fine
+17:55:09 <Creatura85> BManojlovic: i have belived that you have a second one
+17:55:17 <BManojlovic> tigerfoot was complaining but it was tested and works
+17:55:28 <BManojlovic> with /boot on sda1 of course
+17:55:46 <bmwiedemann> anyone installed a system with separate /usr recently?
+17:55:51 <BManojlovic> Creatura85: yes but ssshhh not important
+17:56:05 <Creatura85> oky doky
+17:56:29 <BManojlovic> i think this was already with /usr
+17:56:33 <BManojlovic> just a sec to boot it up
+17:56:51 <LWFinger> Systemd is working for me. I mainly use legacy grub as the boot structures are complicated, and I don't have time to learn grub2.
+17:57:43 <bmwiedemann> it is not too hard
+17:58:07 <bmwiedemann> even Debian has it as default for a year now
+17:58:42 <LWFinger> Do the scripts now add the new kernel using only 'sudo make install'? I don't have time to create a deb and install it.
+17:58:44 <Creatura85> LWFinger: systemd is working fine for my 12.2 as well, using grub2
+17:59:47 <Creatura85> hope that the interface to it from yast gets completed
+18:00:03 <Creatura85> if not i will use grub legacy
+18:00:40 <bmwiedemann> it better be, as grub2 is now default
+18:00:46 <BManojlovic> my virt machine with crypted disk is old /bin and /usr/bin so relatively old
+18:00:57 <BManojlovic> m4
+18:01:26 <Creatura85> bmwiedemann: yeah, but still one can adjust it using a terminal and logged as root
+18:01:48 <bmwiedemann> as you can with most things in Linux
+18:02:41 <bmwiedemann> let's move on
+18:02:45 <bmwiedemann> #topic next meeting
+18:02:53 <bmwiedemann> when shall we meet again?
+18:03:11 <bmwiedemann> with development now getting more interesting and important. in 2 weeks?
+18:03:16 <BManojlovic> when is beta + 1.5 week?
+18:03:23 <BManojlovic> maybe?
+18:03:48 <bmwiedemann> I'd guess Thursday... either this week or next one
+18:04:06 <bmwiedemann> so we should have a Beta in 2 weeks
+18:04:11 <LWFinger> I expect Beta this week given the improvements of the past 4 days.
+18:04:11 <bmwiedemann> and some days to test it
+18:04:38 <Creatura85> so in 2 weeks sounds good to me :)
+18:04:40 <bmwiedemann> if it comes this week, we could meet next week already
+18:05:18 <BManojlovic> yes but need more people this is too small quorum really...
+18:05:21 <bmwiedemann> 2012-06-04 17:00 UTC (Monday again)
+18:05:41 <bmwiedemann> there are more people doing testing
+18:05:59 <bmwiedemann> which is the important part
+18:06:01 <LWFinger> That works for me, but June 11 does not. I'm going fishing!
+18:06:09 <BManojlovic> ok
+18:06:46 <Creatura85> LWFinger: good hunting :D
+18:06:49 <bmwiedemann> LWFinger: how about June 12?
+18:07:14 <LWFinger> I'm not back until the 15th.
+18:07:23 <bmwiedemann> OK.
+18:08:08 <bmwiedemann> so I say, we schedule next meeting for 2012-06-04 17:00 UTC but postpone it by 1 week, if no Beta appears this week
+18:08:08 <Creatura85> bmwiedemann: dont forget to adjust the topic with the new date after this meeting
+18:08:18 <bmwiedemann> ah, OK
+18:08:44 <bmwiedemann> any objections to this?
+18:08:51 <LWFinger> I am OK with June 4..
+18:09:19 <BManojlovic> no rights for vote not regular :) ... (work....)
+18:09:49 <Creatura85> june 4, me too
+18:09:55 <bmwiedemann> #agreed next meeting for 2012-06-04 17:00 UTC but postpone it by 1 week, if no Beta appears this week
+18:10:02 <bmwiedemann> #topic open discussion
+18:10:19 <bmwiedemann> I was wondering, if we should do an Open Bugs Day again for 12.2
+18:10:55 <bmwiedemann> at this stage, it would make most sense to find&fix bugs
+18:11:07 <Creatura85> bmwiedemann: i have seen that tigerfoot wrote his report on the wiki, can i paste it for the logs and delete it after? or i just delete it ?
+18:11:11 <bmwiedemann> re-testing open 12.1 bugs on 12.2 could also help
+18:11:23 <Creatura85> bmwiedemann: good ideas
+18:11:53 <LWFinger> I agree that we need to find any long-term bugs and make them active again.
+18:12:09 <bmwiedemann> please paste
+18:12:50 <LWFinger> I want to work on the libzypper problem. What specific zypper command causes it to crash?
+18:13:15 <Creatura85> bmwiedemann: OK, the report goes like this
+18:13:20 <Creatura85> tigerfoot's report (in case I can't attempt) Artwork final 12.2 with new kdm theme is pending https://build.opensuse.org/request/show/116505 KDM theme should now restore all bells & whistles we had previously (11.3/11.4). Most of the boxes are now % of screen, so testing in all kind of resolution would be greatly appreciate, report/screenshots can be reported to -factory, -testing, -artwork ml (I follow all of them).
+18:13:32 <bmwiedemann> LWFinger: I only saw it in yast -i (with searching for gvim) - it uses libzypp , but zypper itself worked for me
+18:13:39 <Creatura85> I'm in contact with Michael Chang about grub2 branding, he finish last week the Yast2 Grub2 part, and grub2 could choose a background. I've now to build the new branding package about it. But having factory not installable from the last 10 days start to be really painful for testing.
+18:14:01 <Creatura85> One of my factory crash due to btrfs error (full /) even if 1.5Gb is free, and unable to remove snapper snapshots (bad inode etc..) The other one full / encrypted is stuck now with a bad initrd ( vol_id output and missing part in /lib )
+18:14:03 <Creatura85> That's all for me.
+18:14:29 <Creatura85> this is tigerfoot`s raport for this meeting
+18:14:38 <bmwiedemann> the magic saviour for btrfs full trouble is: for s in /.snapshots/*/snapshot ; do btrfs subvolume delete $s ; done
+18:15:11 <Creatura85> bmwiedemann: i guess you will have to tell him that when you see him around :)
+18:15:25 <bmwiedemann> maybe he reads the log ;)
+18:15:37 <Creatura85> hmmm, maybe
+18:15:46 <bmwiedemann> or others who run into this btrfs/snapper trouble like I did
+18:16:02 <LWFinger> On a VB VM installed today from KDE Live CD Build 0391, YaST does not run from the GUI. Starting it with kdesu fails silently.
+18:16:38 <Creatura85> since this is open discussion i have a question
+18:16:56 <bmwiedemann> Creatura85: sure. ask
+18:17:00 <Creatura85> what do you think about fedora 17? and most important about the usr merge think ?
+18:17:07 <Creatura85> *thing
+18:17:12 <bmwiedemann> did they do the usrmerge ?
+18:18:00 <Creatura85> http://www.h-online.com/open/news/item/Fedora-17-Beefy-Miracle-released-1585486.html
+18:18:09 <LWFinger> The last Fedora I installed was 15, and that was only to debug a specific kernel issue that they had.
+18:18:19 <Creatura85> -> ... "The latest version of the Linux distribution also implements much-discussed changes to the filesystem structure involving the removal of the /bin/, /sbin/, /lib/ and /lib64/ directories "
+18:18:22 <bmwiedemann> I myself don't have time to look for many other distris. Just openSUSE and Debian for my servers and armv5 devices
+18:19:01 <Creatura85> more details here http://www.h-online.com/open/features/What-s-new-in-Fedora-17-1585254.html
+18:19:07 <bmwiedemann> in my feeling, usrmerge caused half of the bugs we had with 12.2
+18:19:35 <bmwiedemann> because mkinitrd and kiwi would then only grab symlinks from /bin/
+18:19:38 <Creatura85> imho i dont undertand why do opensuse follows fedora in some ways ?
+18:19:55 <Creatura85> *understand
+18:19:56 <bmwiedemann> because some people think, it is the future
+18:20:15 <bmwiedemann> more modern.
+18:20:25 <Creatura85> bmwiedemann: and what do you think about it? is really the future ?
+18:20:39 <bmwiedemann> usrmerge does not really matter.
+18:20:46 <LWFinger> In addition, openSUSE does not have the manpower to support a major system on its own.
+18:20:47 <bmwiedemann> systemd is a different beast
+18:20:47 <Creatura85> bmwiedemann: in general
+18:21:29 <Creatura85> LWFinger: sorry to hear that :)
+18:21:51 <bmwiedemann> well. we do OBS, LibreOffice, KDE
+18:22:33 <bmwiedemann> well... the last two have a big upstream of course
+18:22:49 <Creatura85> bmwiedemann: talking about KDE, the but with event sounds from the desktop seemed to be working again in 12.2 M4
+18:22:57 <Creatura85> i guess the bug was fixed
+18:23:06 <bmwiedemann> good
+18:23:45 <Creatura85> before that users had to put in manually the full path to the file that had the event associated
+18:23:47 <LWFinger> I was about to mention upstream. Yes, we have the support to brand things, but not to support SystemV, for example.
+18:24:11 <Creatura85> so in the end, sort of, opensuse is somewhere in the middle
+18:24:30 <Creatura85> it has thing from fedora, since is the future, but it has his own things too
+18:24:40 <Creatura85> and boy do i like yast for that matter :D
+18:24:48 <bmwiedemann> LWFinger: I would not want SystemV dropped soon
+18:24:54 <LWFinger> We still have the best KDE-based distro.
+18:24:58 <bmwiedemann> and don't think, the effort is really so big
+18:25:41 <LWFinger> Probably not at the moment, but I think SystemV will be gone by openSUSE 14.1, if not before.
+18:26:07 <bmwiedemann> in 3 years... could be.
+18:26:43 <LWFinger> Of course, by then, systemd will be nearly flawless. :)
+18:26:47 <bmwiedemann> systemd in 12.1 really had a lot of problems
+18:26:58 <bmwiedemann> and it is getting smoother now
+18:27:11 <Creatura85> LWFinger: i hope that systemd is as you said
+18:27:13 <bmwiedemann> so in 1 or 2 years, it should be pretty mature
+18:27:21 <Creatura85> and yeah i think that opensuse is the best kde distro
+18:27:55 <LWFinger> If you look at the improvement is systemd in 8 months, it really is remarkable.
+18:27:57 <bmwiedemann> but I still do not like systemd for coding into C what was in /etc/init.d/boot* before
+18:28:15 <bmwiedemann> so you can not easily tinker with your system
+18:28:43 <bmwiedemann> and I do not expect this to change over time
+18:29:10 <LWFinger> No, that seems to be a permanent change.
+18:30:10 <bmwiedemann> the other problem I see is that they are integrating functions of formerly separate projects. like xinetd and xdm
+18:30:42 <bmwiedemann> so it could create some unmaintainable monster-software no-one wants to touch
+18:31:57 <LWFinger> I expect that will be self regulating. Too far along that line and "systeme" will rule.
+18:33:30 <Creatura85> in the same array wi th open discussion i would like to add that this is my 3rd week without windows, only opensuse on my pc
+18:33:47 <bmwiedemann> congrats :)
+18:34:06 <Creatura85> i dont understand why some users complain is not hard/impossible to live without windows
+18:34:14 <Creatura85> *that is
+18:34:17 <bmwiedemann> http://www.linuxrsp.ru/win-lin-soft/table-eng.html helps
+18:34:20 <Creatura85> bmwiedemann: thanks
+18:34:35 <LWFinger> Yes, congrats. For the past 3 years, Windows has only existed on my machine as XP in a VM. I still have 1 app that needs it.
+18:35:06 <bmwiedemann> one that does not work with wine?
+18:35:09 <Creatura85> i have discovered that linux games like torcs make my gpu even hotter that windows games do :)
+18:35:27 <Creatura85> thanks LWFinger
+18:35:27 <LWFinger> bmwiedemann: Not yet.
+18:35:46 <bmwiedemann> Creatura85: try tuxracer and supertux and smc and asc and... widelands
+18:36:06 <LWFinger> I wish I had time for games. :(
+18:36:07 <bmwiedemann> (from opensuse's games project/repo)
+18:36:45 <bmwiedemann> oh and frozen-bubble is very small, simple and addictive
+18:37:21 <Creatura85> bmwiedemann: i have completed supertux in the past :D
+18:37:28 <Creatura85> tuxkart is funny too
+18:37:44 <Creatura85> torcs got my gpu at 101 degrees celsius
+18:38:02 <Creatura85> but still runned at 80-90 fps :)
+18:38:04 <bmwiedemann> I once got a chip to 110
+18:38:15 <Creatura85> for nvidia gpu 110 is the limit
+18:38:17 <bmwiedemann> which is close to what silicium can survive
+18:38:24 <LWFinger> Are you guys trying to boil water?
+18:38:51 <bmwiedemann> someone mis-placed the cooler on mine
+18:38:55 <Creatura85> here is my pc: http://creatura.dlinkddns.com/~creatura/sysinfo/
+18:39:35 <LWFinger> At 110, I would think that the dopants would be quite mobile. The silicon itself would still be OK, but the active parts might get disrupted.
+18:39:42 <Creatura85> mine uses a radiot not a coller...
+18:39:54 <Creatura85> *radiator
+18:40:16 * Creatura85 my keyboard is gone wild :)
+18:40:53 <Creatura85> current temperature is 73 degrees celsius
+18:40:56 <LWFinger> I always blame the keyboard, too. :)
+18:41:17 <bmwiedemann> when the problem exists between keyboard and chair :P
+18:41:21 <Creatura85> LWFinger: i guess Geeko is having a party :D
+18:41:45 <LWFinger> bmwiedemann: Yes, the weak link.
+18:41:56 <bmwiedemann> got to leave soon. anything important left to tell?
+18:42:01 <Creatura85> bmwiedemann: yeah, trying to be good at english even if is not my native language
+18:42:17 <LWFinger> You are doing quite well.
+18:42:29 <Creatura85> LWFinger: if you say so :)
+18:42:42 <Creatura85> bmwiedemann: nothing from me
+18:43:07 <LWFinger> Nothing more from me either. See you next week, I hope.
+18:43:10 <bmwiedemann> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:43:14 <bmwiedemann> #endmeeting

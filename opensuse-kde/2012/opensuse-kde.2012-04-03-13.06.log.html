@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">13:06:38</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">13:06:38</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Tue Apr  3 13:06:38 2012 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">13:06:38</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">13:07:10</span><span class="nk"> &lt;wstephenson&gt;</span> llunak,llunak_,cb400f, sebas,tigerfoot,tittiatcoke, javier,javier_, remur_030,mrdocs, Abhish, alin, ctrippe, maxlin: meeting
+<a name="l-5"></a><span class="tm">13:09:52</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">agenda:</span> status report, plasma-media-center, Q&amp;A + misc
+<a name="l-6"></a><span class="tm">13:09:53</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Linuxsusefan:</span> meeting
+<a name="l-7"></a><span class="tm">13:09:53</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.</span>
+<a name="l-8"></a><span class="tm">13:09:53</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">status reports</span>
+<a name="l-9"></a><span class="tm">13:09:53</span><span class="nk"> &lt;wstephenson&gt;</span> so, where are we?
+<a name="l-10"></a><span class="tm">13:09:53</span><span class="nk"> &lt;wstephenson&gt;</span> 4.8.2 is ready to go
+<a name="l-11"></a><span class="tm">13:09:55</span><span class="nk"> &lt;wstephenson&gt;</span> Factory, and Tumbleweed, have 4.8.1
+<a name="l-12"></a><span class="tm">13:09:56</span><span class="nk"> &lt;wstephenson&gt;</span> i think overall we're in a pretty good state
+<a name="l-13"></a><span class="tm">13:09:58</span><span class="nk"> &lt;wstephenson&gt;</span> I have been working on Klyde as I mentioned last meeting
+<a name="l-14"></a><span class="tm">13:09:58</span><span class="nk"> &lt;wstephenson&gt;</span> I have also been very lazy in documenting last meeting's progress
+<a name="l-15"></a><span class="tm">13:09:58</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson blog about last meeting's decisions</span>
+<a name="l-16"></a><span class="tm">13:10:31</span><span class="nk"> &lt;wstephenson&gt;</span> basically for Klyde I have been doing some finer package splitting to allow a really basic install
+<a name="l-17"></a><span class="tm">13:10:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> is it the intention to push this into KDF ?
+<a name="l-18"></a><span class="tm">13:11:01</span><span class="nk"> &lt;wstephenson&gt;</span> you can still install eg kmail, which will pull in akonadi and nepomuk and you are back to where we started with KDF
+<a name="l-19"></a><span class="tm">13:11:02</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">wstephenson:</span> yeah, 'm here
+<a name="l-20"></a><span class="tm">13:11:18</span><span class="nk"> &lt;wstephenson&gt;</span> yes, that means we can push it into KDF, the updated dependencies will keep the default installation the same.
+<a name="l-21"></a><span class="tm">13:11:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok
+<a name="l-22"></a><span class="tm">13:11:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> Sounds good.
+<a name="l-23"></a><span class="tm">13:11:58</span><span class="nk"> &lt;wstephenson&gt;</span> the result so far is that a minimal default install consumes about 120MB of ram and starts in 4 seconds here (warm)
+<a name="l-24"></a><span class="tm">13:12:07</span><span class="nk"> &lt;wstephenson&gt;</span> which is less than XFCE (but not faster)
+<a name="l-25"></a><span class="tm">13:12:44</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">wstephenson:</span> if you can not because anna, then the next time I ask for plasma-mediacenter ... no problem :-)
+<a name="l-26"></a><span class="tm">13:12:44</span><span class="nk"> &lt;wstephenson&gt;</span> IMO this is mainly performance pornography so far, not a real improvement
+<a name="l-27"></a><span class="tm">13:12:52</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> what's in the minimal default?
+<a name="l-28"></a><span class="tm">13:12:53</span><span class="nk"> &lt;wstephenson&gt;</span> for that i would like more speed
+<a name="l-29"></a><span class="tm">13:13:12</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">einar77:</span> no compositing, no oxygen, no PNM, otherwise default widgets
+<a name="l-30"></a><span class="tm">13:13:43</span><span class="nk"> &lt;wstephenson&gt;</span> having said that i am only testing on a 2MB VM in a core i7
+<a name="l-31"></a><span class="tm">13:13:48</span><span class="nk"> &lt;wstephenson&gt;</span> 2GB
+<a name="l-32"></a><span class="tm">13:14:03</span><span class="nk"> &lt;wstephenson&gt;</span> i suspect that on a smaller machine the smaller footprint will make more difference
+<a name="l-33"></a><span class="tm">13:14:22</span><span class="nk"> &lt;wstephenson&gt;</span> the packages are in home:wstephenson:branches:klyde
+<a name="l-34"></a><span class="tm">13:14:29</span><span class="nk"> &lt;wstephenson&gt;</span> which also contains a pattern KDE4-KLYDE
+<a name="l-35"></a><span class="tm">13:14:44</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> I have a very low end machine, if I bring myself to reinstall it (again!) I coult see if it makes a difference
+<a name="l-36"></a><span class="tm">13:14:52</span><span class="nk"> &lt;wstephenson&gt;</span> and these can be installed on top of 12.1's minimal x server pattern to get the basic desktop
+<a name="l-37"></a><span class="tm">13:15:01</span><span class="nk"> &lt;wstephenson&gt;</span> (use zypper in -t package --no-recommends)
+<a name="l-38"></a><span class="tm">13:15:12</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">einar77:</span> i have some HP netbooks with stoneage SSDs
+<a name="l-39"></a><span class="tm">13:15:29</span><span class="nk"> &lt;wstephenson&gt;</span> EOT from me
+<a name="l-40"></a><span class="tm">13:15:31</span><span class="nk"> &lt;wstephenson&gt;</span> more status
+<a name="l-41"></a><span class="tm">13:15:33</span><span class="nk"> &lt;wstephenson&gt;</span> ?
+<a name="l-42"></a><span class="tm">13:16:10</span><span class="nk"> &lt;rabauke&gt;</span> findings from last time action items?
+<a name="l-43"></a><span class="tm">13:16:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> I still have to find the time to copy the KDF packages over to KUSC, so that dirk can start with the snapshots. Hopefully I will find some time this week. I have been more working on plymouth.
+<a name="l-44"></a><span class="tm">13:16:20</span><span class="nk"> &lt;wstephenson&gt;</span> oh BTW: ismael and I are travelling to "more interesting and innovative events" this year, and not going to linuxtag
+<a name="l-45"></a><span class="tm">13:17:28</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> i still need to ping the data collectors on 12.2
+<a name="l-46"></a><span class="tm">13:17:34</span><span class="nk"> &lt;wstephenson&gt;</span> will do that today and report tomorrow
+<a name="l-47"></a><span class="tm">13:18:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#chair </span><span class="cmdline">tittiatcoke</span>
+<a name="l-48"></a><span class="tm">13:18:17</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: tittiatcoke wstephenson
+<a name="l-49"></a><span class="tm">13:18:23 </span><span class="nka">* wstephenson</span> <span class="ac">has to step out for a child related minute</span>
+<a name="l-50"></a><span class="tm">13:18:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-51"></a><span class="tm">13:18:29</span><span class="nk"> &lt;wstephenson&gt;</span> tittiatcoke, pls continue
+<a name="l-52"></a><span class="tm">13:18:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok
+<a name="l-53"></a><span class="tm">13:19:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> any more status reports ?  einar77, cartman ?
+<a name="l-54"></a><span class="tm">13:19:54</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> I tried to dig in the
+<a name="l-55"></a><span class="tm">13:20:01</span><span class="nk"> &lt;einar77&gt;</span> issue wrt LD_BIND_NOW and startkde crashing
+<a name="l-56"></a><span class="tm">13:20:18</span><span class="nk"> &lt;einar77&gt;</span> so far the current glibc (AJaeger is testing a few things) doesn't solve the issue for me
+<a name="l-57"></a><span class="tm">13:20:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> I saw cartman's report on the new glibc and it seems to have some more issues as well
+<a name="l-58"></a><span class="tm">13:20:59</span><span class="nk"> &lt;cartman&gt;</span> yeah aj is debugging it
+<a name="l-59"></a><span class="tm">13:21:06</span><span class="nk"> &lt;einar77&gt;</span> from what I read on the KDE forums, it's very oS specific
+<a name="l-60"></a><span class="tm">13:21:11</span><span class="nk"> &lt;einar77&gt;</span> (the current issue, at least)
+<a name="l-61"></a><span class="tm">13:21:31</span><span class="nk"> &lt;einar77&gt;</span> I recommend the interested parties to
+<a name="l-62"></a><span class="tm">13:21:45</span><span class="nk"> &lt;rabauke&gt;</span> I looked through the mailing list archives and found the following issues people had: not being able to set privileges, how to kedpim from scratch, unresponsiveness due to pnm+apper, mail search not working, no clue how to search with nepomuk, repo updates not working, i.e. deps or "cannot login", python plasmoids not working because python.-devel has to be installed, kmail autocompletion not working, how do I sync google calendar,
+<a name="l-63"></a><span class="tm">13:21:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> But do other distro's also use that particular setting for LD_BIND_NOW ?
+<a name="l-64"></a><span class="tm">13:21:46</span><span class="nk"> &lt;rabauke&gt;</span> passwordless updates, gtk apps look bad.
+<a name="l-65"></a><span class="tm">13:22:09</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> it's upstream, it's our glibc that makes kdeinit crash
+<a name="l-66"></a><span class="tm">13:22:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">einar77:</span> has ajaeger got a way to reproduce it locally?
+<a name="l-67"></a><span class="tm">13:22:29</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> so far no, the only clue is that the machines here have less than sse3
+<a name="l-68"></a><span class="tm">13:22:33</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> LD_BIND_NOW=1 is the upstream default
+<a name="l-69"></a><span class="tm">13:22:33</span><span class="nk"> &lt;einar77&gt;</span> as cpu instruction set
+<a name="l-70"></a><span class="tm">13:22:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> it enabled kdeinit's performance boost
+<a name="l-71"></a><span class="tm">13:22:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok.
+<a name="l-72"></a><span class="tm">13:22:53</span><span class="nk"> &lt;einar77&gt;</span> I see it here on 2 intel core 2 duo, but not at work where I have an i7
+<a name="l-73"></a><span class="tm">13:22:59</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> and it typically exposes glibc bugs because it links everything and shows up symbol clashes
+<a name="l-74"></a><span class="tm">13:23:08</span><span class="nk"> &lt;wstephenson&gt;</span> s/enabled/enables/
+<a name="l-75"></a><span class="tm">13:23:35</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">rabauke:</span> most of the unresponsivenesss in pnm/apper was already fixed upstream, though (not sure if it trickled down to us yet)
+<a name="l-76"></a><span class="tm">13:23:39</span><span class="nk"> &lt;krop&gt;</span> <span class="hi">status:</span> koffice is gone, calligra was accepted in O:F, akonadi-google is in KDF (akonadi-googledata will be gone soon®)
+<a name="l-77"></a><span class="tm">13:23:56</span><span class="nk"> &lt;wstephenson&gt;</span> rabauke, krop: good work. i'll write that up
+<a name="l-78"></a><span class="tm">13:25:24</span><span class="nk"> &lt;krop&gt;</span> and we got our first calligra bug report
+<a name="l-79"></a><span class="tm">13:25:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> I will update apper to the latest git snapshot ?
+<a name="l-80"></a><span class="tm">13:25:48</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> yes please
+<a name="l-81"></a><span class="tm">13:26:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke to update apper to the latest version</span>
+<a name="l-82"></a><span class="tm">13:26:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> is anybody running PNM from git ?
+<a name="l-83"></a><span class="tm">13:26:55</span><span class="nk"> &lt;einar77&gt;</span> I am
+<a name="l-84"></a><span class="tm">13:27:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> from my repo, I guess ?
+<a name="l-85"></a><span class="tm">13:27:12</span><span class="nk"> &lt;einar77&gt;</span> correct
+<a name="l-86"></a><span class="tm">13:27:21</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">einar77:</span> any kded/plasma slowdowns
+<a name="l-87"></a><span class="tm">13:27:23</span><span class="nk"> &lt;wstephenson&gt;</span> ?
+<a name="l-88"></a><span class="tm">13:27:28</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> not in al ong time
+<a name="l-89"></a><span class="tm">13:27:48</span><span class="nk"> &lt;wstephenson&gt;</span> cool
+<a name="l-90"></a><span class="tm">13:27:59</span><span class="nk"> &lt;wstephenson&gt;</span> cartman, what have you been up to?
+<a name="l-91"></a><span class="tm">13:28:05</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">maxlin:</span> same question
+<a name="l-92"></a><span class="tm">13:28:20</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> to be more precise, in the past 3 months, I think once, in a very non-reproducible way
+<a name="l-93"></a><span class="tm">13:28:29</span><span class="nk"> &lt;einar77&gt;</span> (i.e. I cannot be sure it was kded)
+<a name="l-94"></a><span class="tm">13:28:31</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">wstephenson:</span> got apper working with appdata.xml stuff, screenshots done, description is done, working on getting categories
+<a name="l-95"></a><span class="tm">13:28:43</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">einar77:</span> are you switching wlans, using 3G?
+<a name="l-96"></a><span class="tm">13:29:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> the latest PNM has a bug with regards ot Qt 4.8. However seems not 100% reproducable:  https://bugs.kde.org/show_bug.cgi?id=293731.
+<a name="l-97"></a><span class="tm">13:29:03</span><span class="nk"> &lt;bugbot&gt;</span> KDE bug 293731 in Network Management (KDED Module) "NetworkManagement plasmoid causes kded4 crashes when activating network" [Crash,Assigned: ]
+<a name="l-98"></a><span class="tm">13:29:04</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> sadly I'm on wired ;) I did need to switch over alternative IPs to fix a router, though
+<a name="l-99"></a><span class="tm">13:29:25</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">einar77:</span> ok. we'll need more thorough testing to be sure it's fixed
+<a name="l-100"></a><span class="tm">13:29:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> I am using the latest PNM with WLAN's, 3G usb stick.
+<a name="l-101"></a><span class="tm">13:29:43</span><span class="nk"> &lt;wstephenson&gt;</span> under non-deterministic in the dictionary it says "See NetworkManager"
+<a name="l-102"></a><span class="tm">13:30:37</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cartman:</span> assuming i can pull myself away from my kdieting addiction, i'll look at reintegrating the OCS stuff that mateu batle did at the sprint
+<a name="l-103"></a><span class="tm">13:31:47</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">wstephenson:</span> except work on KDF, didn't do much things relate to KDE, sorry
+<a name="l-104"></a><span class="tm">13:31:52</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">wstephenson:</span> cool, we'll have to redesign the frontpage I guess though.
+<a name="l-105"></a><span class="tm">13:32:08</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">wstephenson:</span> but I have following cartman's apper branch
+<a name="l-106"></a><span class="tm">13:32:12</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">maxlin:</span> ok
+<a name="l-107"></a><span class="tm">13:32:30</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cartman:</span> yes, the frontpage of the brezn client was ugly QML and not really usable
+<a name="l-108"></a><span class="tm">13:33:00</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">cartman:</span> a question, in package details page, when you click thumbnail then screenshot window pop-up?
+<a name="l-109"></a><span class="tm">13:35:08</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">maxlin:</span> can you sort that out with cartman offline?
+<a name="l-110"></a><span class="tm">13:35:09</span><span class="nk"> &lt;rabauke&gt;</span> what about the mail loss bugs. did anyone try to reproduce?
+<a name="l-111"></a><span class="tm">13:35:15</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> not yet
+<a name="l-112"></a><span class="tm">13:35:22</span><span class="nk"> &lt;wstephenson&gt;</span> enough status then
+<a name="l-113"></a><span class="tm">13:35:37</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">wstephenson:</span> sure, sorry ;p
+<a name="l-114"></a><span class="tm">13:35:37</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">plasma-media-center</span>
+<a name="l-115"></a><span class="tm">13:35:43</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Linuxsusefan:</span> your turn
+<a name="l-116"></a><span class="tm">13:35:48</span><span class="nk"> &lt;Linuxsusefan&gt;</span> Bille said yesterday, I should ask at the meeting: I wanted to know if the person Package: plasma-media center in K: U: P can update? has appeared for the beta. Perhaps there is even the chance the plasma-media center in the factory and 12.2 emigrated?
+<a name="l-117"></a><span class="tm">13:36:25</span><span class="nk"> &lt;Linuxsusefan&gt;</span> see here the link from project: http://www.sinny.in/node/18
+<a name="l-118"></a><span class="tm">13:36:52</span><span class="nk"> &lt;einar77&gt;</span> IIRC, it depends on qtmobility or something, am I mistaken?
+<a name="l-119"></a><span class="tm">13:37:12 </span><span class="nka">* krop</span> <span class="ac">doesn't understand the question</span>
+<a name="l-120"></a><span class="tm">13:37:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> As far as I can tell from the specfile in KUP, it has normal dependencies
+<a name="l-121"></a><span class="tm">13:37:29</span><span class="nk"> &lt;einar77&gt;</span> let me reword, are the dependencies for PMC already in?
+<a name="l-122"></a><span class="tm">13:37:30</span><span class="nk"> &lt;Linuxsusefan&gt;</span> desktop or laptop is also running
+<a name="l-123"></a><span class="tm">13:37:49</span><span class="nk"> &lt;krop&gt;</span> <span class="hi">einar77:</span> I've no idea who added it
+<a name="l-124"></a><span class="tm">13:37:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Just workspace, taglib, phonon and gstreamer
+<a name="l-125"></a><span class="tm">13:38:21</span><span class="nk"> &lt;wstephenson&gt;</span> i thought it had Active dependencies?
+<a name="l-126"></a><span class="tm">13:38:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> it is maintained by TheBlackCat.  I just triggered a source update.
+<a name="l-127"></a><span class="tm">13:38:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> Not seen from the spec-file.
+<a name="l-128"></a><span class="tm">13:38:59</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> at best it would use components, I think, but I haven't looked
+<a name="l-129"></a><span class="tm">13:39:11</span><span class="nk"> &lt;einar77&gt;</span> (as in plasma components)
+<a name="l-130"></a><span class="tm">13:39:25</span><span class="nk"> &lt;wstephenson&gt;</span> gotcha
+<a name="l-131"></a><span class="tm">13:39:33</span><span class="nk"> &lt;tittiatcoke&gt;</span> checking the indicated link now.
+<a name="l-132"></a><span class="tm">13:39:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Linuxsusefan:</span> we'll find out if the latest version builds
+<a name="l-133"></a><span class="tm">13:40:00</span><span class="nk"> &lt;einar77&gt;</span> I wasn't mistaken
+<a name="l-134"></a><span class="tm">13:40:06</span><span class="nk"> &lt;einar77&gt;</span> it requries qtmultimediakit
+<a name="l-135"></a><span class="tm">13:40:11</span><span class="nk"> &lt;einar77&gt;</span> hence qt-mobility
+<a name="l-136"></a><span class="tm">13:40:12</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span>  PMC relies on Plasma Active’s Metadata Models
+<a name="l-137"></a><span class="tm">13:40:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Linuxsusefan:</span> if it has dependencies on plasma active, we would have to package those packages separately
+<a name="l-138"></a><span class="tm">13:40:17</span><span class="nk"> &lt;einar77&gt;</span> and also wstephenson was right
+<a name="l-139"></a><span class="tm">13:40:23</span><span class="nk"> &lt;einar77&gt;</span> I just checked their README
+<a name="l-140"></a><span class="tm">13:40:24</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">wstephenson:</span> I will ask blackcat?
+<a name="l-141"></a><span class="tm">13:40:40</span><span class="nk"> &lt;einar77&gt;</span> for reference: https://projects.kde.org/projects/playground/multimedia/plasma-mediacenter/repository/revisions/master/entry/README
+<a name="l-142"></a><span class="tm">13:40:42</span><span class="nk"> &lt;wstephenson&gt;</span> and because those are not compatible with our normal KDE packages, we would have to do a separate image with them
+<a name="l-143"></a><span class="tm">13:40:47</span><span class="nk"> &lt;wstephenson&gt;</span> (what kubuntu are doing for PA)
+<a name="l-144"></a><span class="tm">13:41:04</span><span class="nk"> &lt;wstephenson&gt;</span> I'm not sure if that is useful except as a PR exercise
+<a name="l-145"></a><span class="tm">13:41:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Linuxsusefan:</span> I will track the build and see how I can resolve it :-)
+<a name="l-146"></a><span class="tm">13:41:28</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> more bleeding edge stuff
+<a name="l-147"></a><span class="tm">13:41:40</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">tittiatcoke:</span> OK, very thanks
+<a name="l-148"></a><span class="tm">13:41:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> You know that I love bleeding edge stuff :-)
+<a name="l-149"></a><span class="tm">13:42:08</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cartman:</span> OT: can you try and ping dirk again so the release can happen?
+<a name="l-150"></a><span class="tm">13:42:31</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">tittiatcoke:</span> many, very thanks .... sorry, english is not my best ;-)
+<a name="l-151"></a><span class="tm">13:42:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Linuxsusefan:</span> No problem.
+<a name="l-152"></a><span class="tm">13:43:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Seems that the source is building fine without qt-mobility, qtmultimedia and Active.
+<a name="l-153"></a><span class="tm">13:43:47</span><span class="nk"> &lt;wstephenson&gt;</span> i wonder if it's functional
+<a name="l-154"></a><span class="tm">13:44:14</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Linuxsusefan:</span> can you work with titti, theblackcat etc to test it? run it in a vm and see what it does
+<a name="l-155"></a><span class="tm">13:44:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> Me too :-) Unfortunately the build complains about a missing icon in the desktopfile, but I will check it
+<a name="l-156"></a><span class="tm">13:44:26</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">wstephenson:</span> yep
+<a name="l-157"></a><span class="tm">13:44:35</span><span class="nk"> &lt;wstephenson&gt;</span> ok, topic finished?
+<a name="l-158"></a><span class="tm">13:44:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> guess so :-)
+<a name="l-159"></a><span class="tm">13:45:06</span><span class="nk"> &lt;wstephenson&gt;</span> any more topics?
+<a name="l-160"></a><span class="tm">13:45:13</span><span class="nk"> &lt;wstephenson&gt;</span> (not on the agenda?)
+<a name="l-161"></a><span class="tm">13:45:29</span><span class="nk"> &lt;rabauke&gt;</span> shall we have HUD as a showoff in 12.2?
+<a name="l-162"></a><span class="tm">13:45:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> HUD ?
+<a name="l-163"></a><span class="tm">13:45:39</span><span class="nk"> &lt;rabauke&gt;</span> aka appmenu
+<a name="l-164"></a><span class="tm">13:45:54</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> which appmenu ? The appmenu-qml from kde-looks.org ?
+<a name="l-165"></a><span class="tm">13:46:05</span><span class="nk"> &lt;rabauke&gt;</span> type "save" in krunner and it shows you all actions with "save" from opened apps.
+<a name="l-166"></a><span class="tm">13:46:34</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">wstephenson:</span> ok Dirk will review the last minute patches and will release tomorrow
+<a name="l-167"></a><span class="tm">13:46:43</span><span class="nk"> &lt;wstephenson&gt;</span> bah, wrong answer!
+<a name="l-168"></a><span class="tm">13:46:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-169"></a><span class="tm">13:46:49</span><span class="nk"> &lt;cartman&gt;</span> he might re-roll tarballs.
+<a name="l-170"></a><span class="tm">13:46:50</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> i like appmenu
+<a name="l-171"></a><span class="tm">13:47:11</span><span class="nk"> &lt;rabauke&gt;</span> http://www.afiestas.org/appmenu-runner-meet-the-kde-hud/
+<a name="l-172"></a><span class="tm">13:47:14</span><span class="nk"> &lt;krop&gt;</span> <span class="hi">rabauke:</span> the appmenu code is not even in playground
+<a name="l-173"></a><span class="tm">13:47:22</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> not sure about the HUD runner though
+<a name="l-174"></a><span class="tm">13:47:28</span><span class="nk"> &lt;wstephenson&gt;</span> it's a nice toy to have
+<a name="l-175"></a><span class="tm">13:47:41</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A, Misc</span>
+<a name="l-176"></a><span class="tm">13:48:07</span><span class="nk"> &lt;rabauke&gt;</span> I could not get it to run, i.e. it did not show anything in krunner. but if it worked it would be something special
+<a name="l-177"></a><span class="tm">13:48:24</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> i'd like to be able to have the menubar applet and appmenu as an activity template in 12.1
+<a name="l-178"></a><span class="tm">13:48:26</span><span class="nk"> &lt;wstephenson&gt;</span> 12.2
+<a name="l-179"></a><span class="tm">13:48:30</span><span class="nk"> &lt;wstephenson&gt;</span> it's not hard to do
+<a name="l-180"></a><span class="tm">13:49:03</span><span class="nk"> &lt;rabauke&gt;</span> sounds like soemthing which people might like
+<a name="l-181"></a><span class="tm">13:50:01</span><span class="nk"> &lt;rabauke&gt;</span> also, beclock by default to show off? with the right defaults it even fades way if the mouse moves towards it and it looks kool + is useful
+<a name="l-182"></a><span class="tm">13:50:42</span><span class="nk"> &lt;rabauke&gt;</span> since it's an effect it can easily be switched off
+<a name="l-183"></a><span class="tm">13:50:58</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> in general i'm conservative about tweaking the defaults, unless we do a big design job and change them all
+<a name="l-184"></a><span class="tm">13:51:11</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> we have it-s on the team @suse to consult on things like that though
+<a name="l-185"></a><span class="tm">13:52:22</span><span class="nk"> &lt;rabauke&gt;</span> it's only one change to make the clock disappear if one wants to click on something it covers.
+<a name="l-186"></a><span class="tm">13:53:10</span><span class="nk"> &lt;rabauke&gt;</span> imho it is something unique to kde, useful, easy to disable and does not add much baggage to the kde repo.
+<a name="l-187"></a><span class="tm">13:53:12</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">tittiatcoke:</span> wow, you're fast .... the spec is already there. Hats off!
+<a name="l-188"></a><span class="tm">13:53:17</span><span class="nk"> &lt;wstephenson&gt;</span> i haven't seen it first hand
+<a name="l-189"></a><span class="tm">13:53:36</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> you can install it from extra. I've been using it for some months now.
+<a name="l-190"></a><span class="tm">13:53:42</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Linuxsusefan:</span> But it will not work. QtMultiMedia is a runtime requirement
+<a name="l-191"></a><span class="tm">13:53:55</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">tittiatcoke:</span> ok ...
+<a name="l-192"></a><span class="tm">13:54:00</span><span class="nk"> &lt;rabauke&gt;</span> onyl thing I would change (default) is the mentioned "fade away on mouse over".
+<a name="l-193"></a><span class="tm">13:55:29</span><span class="nk"> &lt;rabauke&gt;</span> another thing for 12.2. the greeter. I think it should have some useful docu for kdepim from scratch etc.
+<a name="l-194"></a><span class="tm">13:56:01</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> the greeter needs a proper rework
+<a name="l-195"></a><span class="tm">13:56:19</span><span class="nk"> &lt;wstephenson&gt;</span> and as usual it will get ignored until it's too late
+<a name="l-196"></a><span class="tm">13:56:24</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> only if that does not hinder putting some content on the desktop. :)
+<a name="l-197"></a><span class="tm">13:56:27</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">add greeter to 12.2 features</span>
+<a name="l-198"></a><span class="tm">13:56:40</span><span class="nk"> &lt;rabauke&gt;</span> better to have some dimple "text" than the old useless greeter
+<a name="l-199"></a><span class="tm">13:56:41</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson evaluate beclock</span>
+<a name="l-200"></a><span class="tm">13:57:52</span><span class="nk"> &lt;rabauke&gt;</span> and if not within the greeter, put a link into the release notes that points to the wiki and we put the info on how to get started/migrate kmail there
+<a name="l-201"></a><span class="tm">13:58:31</span><span class="nk"> &lt;wstephenson&gt;</span> nice effect...
+<a name="l-202"></a><span class="tm">13:58:36</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> yes
+<a name="l-203"></a><span class="tm">13:58:46</span><span class="nk"> &lt;rabauke&gt;</span> and is google data installed by default?
+<a name="l-204"></a><span class="tm">13:59:05</span><span class="nk"> &lt;rabauke&gt;</span> maybe it should, i.e. people see it while browsing the lsit of available resources
+<a name="l-205"></a><span class="tm">13:59:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> perhaps
+<a name="l-206"></a><span class="tm">13:59:57</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">rabauke evaluate akonadi-google (not -googledata) for default install</span>
+<a name="l-207"></a><span class="tm">14:00:00</span><span class="nk"> &lt;wstephenson&gt;</span> so
+<a name="l-208"></a><span class="tm">14:00:09</span><span class="nk"> &lt;wstephenson&gt;</span> what else did i want to discuss
+<a name="l-209"></a><span class="tm">14:00:43</span><span class="nk"> &lt;wstephenson&gt;</span> can't remember now
+<a name="l-210"></a><span class="tm">14:01:06</span><span class="nk"> &lt;wstephenson&gt;</span> ok to wrap up?
+<a name="l-211"></a><span class="tm">14:01:31</span><span class="nk"> &lt;Fisiu&gt;</span> Hi, I just joined few minutes ago, I don't know agenda, Q/A time will be soon? :)
+<a name="l-212"></a><span class="tm">14:01:40</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">Fisiu:</span> it is now I think
+<a name="l-213"></a><span class="tm">14:02:31</span><span class="nk"> &lt;Fisiu&gt;</span> if so, I'd like to ask about subpixel hinting in KDE/Qt 4.8
+<a name="l-214"></a><span class="tm">14:02:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Fisiu:</span> go ahead
+<a name="l-215"></a><span class="tm">14:03:11</span><span class="nk"> &lt;Fisiu&gt;</span> because there is a huge difference in look between KDE/Qt 4.7 and 4.8
+<a name="l-216"></a><span class="tm">14:03:43</span><span class="nk"> &lt;Fisiu&gt;</span> not sure, it's a bug or a feature
+<a name="l-217"></a><span class="tm">14:03:51</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">Fisiu:</span> Qt 4.8 introduced subpixel positioning
+<a name="l-218"></a><span class="tm">14:04:09 </span><span class="nka">* wstephenson</span> <span class="ac">did not know that</span>
+<a name="l-219"></a><span class="tm">14:04:21 </span><span class="nka">* cartman</span> <span class="ac">loves good fonts</span>
+<a name="l-220"></a><span class="tm">14:04:55</span><span class="nk"> &lt;Fisiu&gt;</span> <span class="hi">cartman:</span> do You also use freetype with subpixel enabled?
+<a name="l-221"></a><span class="tm">14:05:40</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">Fisiu:</span> home:namtrac:subpixel
+<a name="l-222"></a><span class="tm">14:05:44</span><span class="nk"> &lt;wstephenson&gt;</span> is that the freetype with subpixel from the opensuse communities repo? or is that in upstream now?
+<a name="l-223"></a><span class="tm">14:05:49</span><span class="nk"> &lt;wstephenson&gt;</span> what's the difference?
+<a name="l-224"></a><span class="tm">14:05:57</span><span class="nk"> &lt;rigo&gt;</span> I wanted to ask about the broken address completion in kmail2/akonadi and whether there are plans to backport the fix
+<a name="l-225"></a><span class="tm">14:06:12</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">rigo:</span> as I said, it's already fixed in 4.9
+<a name="l-226"></a><span class="tm">14:06:24</span><span class="nk"> &lt;einar77&gt;</span> (to-be-4.9 rather)
+<a name="l-227"></a><span class="tm">14:06:41</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">wstephenson:</span> well you could just enable subpixel rendering in Freetype and it would improve much but home:namtrac:subpixel includes "infinality" patches, see http://www.infinality.net/blog/
+<a name="l-228"></a><span class="tm">14:06:43</span><span class="nk"> &lt;wstephenson&gt;</span> einar77, krop: probably backportable?
+<a name="l-229"></a><span class="tm">14:06:55</span><span class="nk"> &lt;wstephenson&gt;</span> okay, will check out
+<a name="l-230"></a><span class="tm">14:07:03</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> I am not sure it is backportable, that's the issue, I have no idea how invasive the change is
+<a name="l-231"></a><span class="tm">14:07:08</span><span class="nk"> &lt;rigo&gt;</span> einar77, yes, exactly, that's why I asked for "backports" to the things that will be used for 12.2 or KR48 or something that I can upgrade to
+<a name="l-232"></a><span class="tm">14:07:12</span><span class="nk"> &lt;krop&gt;</span> <span class="hi">wstephenson:</span> I think
+<a name="l-233"></a><span class="tm">14:07:22</span><span class="nk"> &lt;Fisiu&gt;</span> community repo with subpixel doesn't use "infinality" patches
+<a name="l-234"></a><span class="tm">14:07:24</span><span class="nk"> &lt;wstephenson&gt;</span> oh, news item, i'll be offline from this thursday to monday, easter you know.
+<a name="l-235"></a><span class="tm">14:07:29</span><span class="nk"> &lt;wstephenson&gt;</span> ic
+<a name="l-236"></a><span class="tm">14:08:02</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">Fisiu:</span> infinality works best with non-Free fonts though
+<a name="l-237"></a><span class="tm">14:08:12</span><span class="nk"> &lt;Fisiu&gt;</span> I thing "infinality" patches require additional fontconfig setup
+<a name="l-238"></a><span class="tm">14:08:19</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">Fisiu:</span> just install :)
+<a name="l-239"></a><span class="tm">14:08:32 </span><span class="nka">* rigo</span> <span class="ac">uses subpixel hinting with no trouble so far, but also with not really visible improvement</span>
+<a name="l-240"></a><span class="tm">14:09:01</span><span class="nk"> &lt;Fisiu&gt;</span> <span class="hi">cartman:</span> which packages should I update from home:namtrac:subpixel?
+<a name="l-241"></a><span class="tm">14:09:27</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">wstephenson:</span> about the completion, I tihnk it needs a newer akonadi release
+<a name="l-242"></a><span class="tm">14:09:47</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">Fisiu:</span> dup --from subpixel
+<a name="l-243"></a><span class="tm">14:10:10</span><span class="nk"> &lt;wstephenson&gt;</span> ok, not really OT for the meeting
+<a name="l-244"></a><span class="tm">14:10:13</span><span class="nk"> &lt;wstephenson&gt;</span> so i will wrap up
+<a name="l-245"></a><span class="tm">14:10:19</span><span class="nk"> &lt;wstephenson&gt;</span> OnT ^
+<a name="l-246"></a><span class="tm">14:10:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok
+<a name="l-247"></a><span class="tm">14:10:24</span><span class="nk"> &lt;wstephenson&gt;</span> 3
+<a name="l-248"></a><span class="tm">14:10:26</span><span class="nk"> &lt;wstephenson&gt;</span> 2
+<a name="l-249"></a><span class="tm">14:10:28</span><span class="nk"> &lt;wstephenson&gt;</span> 1
+<a name="l-250"></a><span class="tm">14:10:30</span><span class="nk"> &lt;Fisiu&gt;</span> ok, I give a try with namtrac repo
+<a name="l-251"></a><span class="tm">14:10:41</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

@@ -1,0 +1,454 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:00:52</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:00:52</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Jan 12 18:00:52 2011 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:00:52</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:01:24</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">tigerfoot think about how to execute next release cycle better (calendar, task allocation)</span>
+<a name="l-5"></a><span class="tm">18:01:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke think about how to execute next release cycle better (calendar, task allocation)</span>
+<a name="l-6"></a><span class="tm">18:02:00</span><span class="nk"> &lt;wstephenson&gt;</span> ok to move on?
+<a name="l-7"></a><span class="tm">18:02:12</span><span class="nk"> &lt;tigerfoot&gt;</span> yeap
+<a name="l-8"></a><span class="tm">18:02:22</span><span class="nk"> &lt;wstephenson&gt;</span> * repo planning
+<a name="l-9"></a><span class="tm">18:02:26</span><span class="nk"> &lt;wstephenson&gt;</span> afaik this is 2 things:
+<a name="l-10"></a><span class="tm">18:02:39</span><span class="nk"> &lt;wstephenson&gt;</span> kdepim46 going forward and KR46 needed or not
+<a name="l-11"></a><span class="tm">18:03:10</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> are you ok to maintain kdepim46 until there is a release?
+<a name="l-12"></a><span class="tm">18:03:13</span><span class="nk"> &lt;cb400f&gt;</span> do we expect KDF to go to 4.7 beta?
+<a name="l-13"></a><span class="tm">18:03:14</span><span class="nk"> &lt;tittiatcoke&gt;</span> Wouldn't KR46 replace KR45 ?
+<a name="l-14"></a><span class="tm">18:03:31</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">wstephenson:</span> kr46 is in fact distro/stable after 11.4 release ?
+<a name="l-15"></a><span class="tm">18:03:32</span><span class="nk"> &lt;Linuxsusefan&gt;</span> KR46
+<a name="l-16"></a><span class="tm">18:03:42</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Yes. I am fine with it. It is running with the OBS _services, so it is just pressing a button to update :-)
+<a name="l-17"></a><span class="tm">18:03:47</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">tigerfoot:</span> +1, do we really need all the leaf updates?
+<a name="l-18"></a><span class="tm">18:03:55</span><span class="nk"> &lt;rabauke&gt;</span> people will call for KR46 as soon as there is a new minor release
+<a name="l-19"></a><span class="tm">18:03:56</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> yes, subject to javier's open-pc needs
+<a name="l-20"></a><span class="tm">18:04:04</span><span class="nk"> &lt;remur_030&gt;</span> this is up to javier though
+<a name="l-21"></a><span class="tm">18:04:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> open-pc needs ?
+<a name="l-22"></a><span class="tm">18:04:23</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">tigerfoot:</span> no, stable will be 4.6.1 or so.. the version whores will cry and yell if they can't get 4.6.2/3/4 etc., so they can complain again about the regressions
+<a name="l-23"></a><span class="tm">18:04:24</span><span class="nk"> &lt;rabauke&gt;</span> and IMHO it's better to keep KR45 users out of KDF unless os 11.5 will feature KDE 4.6
+<a name="l-24"></a><span class="tm">18:04:34</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> open-pc uses a KR45 based repo
+<a name="l-25"></a><span class="tm">18:04:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Aha. Ok
+<a name="l-26"></a><span class="tm">18:05:02</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> just pushing the 4.5.x updates into the usual update stream still is a no go?
+<a name="l-27"></a><span class="tm">18:05:11</span><span class="nk"> &lt;javier&gt;</span> all people are talking to me at the same time
+<a name="l-28"></a><span class="tm">18:05:24</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> theoretically  maintenance is open to it
+<a name="l-29"></a><span class="tm">18:05:36</span><span class="nk"> &lt;wstephenson&gt;</span> but it would be painful for people on slow connections
+<a name="l-30"></a><span class="tm">18:05:38</span><span class="nk"> &lt;javier&gt;</span> I think KR46 would be good until we have 11.4
+<a name="l-31"></a><span class="tm">18:05:43</span><span class="nk"> &lt;cb400f&gt;</span> whut? releasing 4.5 as an official update to 11.3?
+<a name="l-32"></a><span class="tm">18:05:47</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> and it would cause plasma issues
+<a name="l-33"></a><span class="tm">18:06:05</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> that'd be an update after every month, but right =/
+<a name="l-34"></a><span class="tm">18:06:05</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess here tumbleweed would help :-)
+<a name="l-35"></a><span class="tm">18:06:12</span><span class="nk"> &lt;wstephenson&gt;</span> and making it optional would be messy, we'd end up asking "are you using 4.6.1 or 4.6.x"?
+<a name="l-36"></a><span class="tm">18:06:16</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> that's another issue to make sure for 11.4, update causing plasma to crash because of 4.4 config files.
+<a name="l-37"></a><span class="tm">18:06:26</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">cb400f:</span> whops I meant 4.6.x ...
+<a name="l-38"></a><span class="tm">18:06:27</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> yes, tumbleweed's job sort of
+<a name="l-39"></a><span class="tm">18:06:36</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> not on my radar, is there a BR for it?
+<a name="l-40"></a><span class="tm">18:06:57</span><span class="nk"> &lt;cb400f&gt;</span> I protest in the strongest terms against burdening people with minor upgrades full of regressions
+<a name="l-41"></a><span class="tm">18:07:01</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> I always tell people to back up their crashing configs and submit them. not sure if they do
+<a name="l-42"></a><span class="tm">18:07:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> so against a KR46?
+<a name="l-43"></a><span class="tm">18:07:25</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">cb400f:</span> it's supposed to be only fixes, no idea if kde upstream really limits itself to that though =/
+<a name="l-44"></a><span class="tm">18:07:30</span><span class="nk"> &lt;cb400f&gt;</span> as official update, most certainly
+<a name="l-45"></a><span class="tm">18:07:31</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">wstephenson:</span> tittiatcoke: replacing KR45 with KR46 is OK for me as long as upgrade from 4.5.x to 4.6.x go OK
+<a name="l-46"></a><span class="tm">18:07:32</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> people who want 4.6 should use KDF then?
+<a name="l-47"></a><span class="tm">18:07:49</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier:</span> what would you do for open-pc then?
+<a name="l-48"></a><span class="tm">18:07:51</span><span class="nk"> &lt;cb400f&gt;</span> if someone wants to maintain it, and someone adds it as unsupported repo, that's a different matter
+<a name="l-49"></a><span class="tm">18:08:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> i tend to agree, we make it easy enough to keep up with OBS repos
+<a name="l-50"></a><span class="tm">18:08:33</span><span class="nk"> &lt;cb400f&gt;</span> but yeah, unless KDF goes to 4.7 beta I don't see much reason for KR4.6
+<a name="l-51"></a><span class="tm">18:09:00</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">wstephenson:</span> we aren't using KR45 directly, remember? Well, I would test 4.6.x first and see how it goes
+<a name="l-52"></a><span class="tm">18:09:00</span><span class="nk"> &lt;rabauke&gt;</span> I do, because people should not KDF if they do not want to test.
+<a name="l-53"></a><span class="tm">18:09:02</span><span class="nk"> &lt;tigerfoot&gt;</span> +1 for cb400f
+<a name="l-54"></a><span class="tm">18:09:08</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">cb400f:</span> 4.7beta should be about 4.6.4, people will miss out on 4.6.5
+<a name="l-55"></a><span class="tm">18:09:30</span><span class="nk"> &lt;remur_030&gt;</span> about the same time as 4.6.4
+<a name="l-56"></a><span class="tm">18:09:57</span><span class="nk"> &lt;rabauke&gt;</span> KDF should not be advertised but for testers IMO. KRx is where people who just want to update should be directed. That way they are in charge of version changes, i.e. they have to change the repo.
+<a name="l-57"></a><span class="tm">18:10:09</span><span class="nk"> &lt;cb400f&gt;</span> more importantly they'd be moved to beta ... most of them completely unprepared
+<a name="l-58"></a><span class="tm">18:10:28</span><span class="nk"> &lt;cb400f&gt;</span> but if KDF stays on 4.6 until 4.7 final, then it's a different matter
+<a name="l-59"></a><span class="tm">18:10:39</span><span class="nk"> &lt;wstephenson&gt;</span> i do think KR45 has been a success in insulating ppl from sudden betas
+<a name="l-60"></a><span class="tm">18:10:52</span><span class="nk"> &lt;rabauke&gt;</span> and KR46 would be consistent with the existence of KR45. People get confused if 4.5 is in KR45 but 4.6 will be in KDf and 4.7 maybe again in KR47 etc.
+<a name="l-61"></a><span class="tm">18:10:54</span><span class="nk"> &lt;cb400f&gt;</span> but I'm not sure what we want to do.. I guess 4.7 comes in july... 11.5 will be out in mid november
+<a name="l-62"></a><span class="tm">18:11:03</span><span class="nk"> &lt;wstephenson&gt;</span> we did get a few people complaining in surprise when 4.6 landed in KDF, but fewer than before
+<a name="l-63"></a><span class="tm">18:11:05</span><span class="nk"> &lt;rabauke&gt;</span> just add a new KRx repo for every version and everybody is happy
+<a name="l-64"></a><span class="tm">18:11:25</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">rabauke:</span> they always get confused.. they also get confused if KDF and KR46 both have the same version
+<a name="l-65"></a><span class="tm">18:11:28</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> yes, because most use KR45
+<a name="l-66"></a><span class="tm">18:11:54</span><span class="nk"> &lt;cb400f&gt;</span> and they'll get even more confused if we did KR45, KR46 and don't do KR47
+<a name="l-67"></a><span class="tm">18:11:56</span><span class="nk"> &lt;javier&gt;</span> yes, too many repos perhaps?
+<a name="l-68"></a><span class="tm">18:12:02</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> I don't think so since they can follow the same naming and KR45 -&gt; KR46 is more obvious than KDF ever will be.
+<a name="l-69"></a><span class="tm">18:12:04 </span><span class="nka">* dev001</span> <span class="ac">mumbles ... there are those of us who focus strongly on production-ready, NOT always the bleeding-edge of Factory ... the KR45 repos have been HUGELY valued!!</span>
+<a name="l-70"></a><span class="tm">18:12:22</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> that's why there should be a KR47 if KDE 4.7 is released
+<a name="l-71"></a><span class="tm">18:12:44</span><span class="nk"> &lt;cb400f&gt;</span> you want production ready.. use tested, supported stuff in the distro
+<a name="l-72"></a><span class="tm">18:12:54</span><span class="nk"> &lt;rabauke&gt;</span> It's just consistent to supply KRx repos for every KDE version.
+<a name="l-73"></a><span class="tm">18:13:09</span><span class="nk"> &lt;cb400f&gt;</span> KR45 has caused people a lot of problems with plasma nvidia crashes, and other smaller or bigger hickups
+<a name="l-74"></a><span class="tm">18:13:11</span><span class="nk"> &lt;dev001&gt;</span> <span class="hi">cb400f:</span> itired old discussion.  i  would if 'distro' had what was needed.
+<a name="l-75"></a><span class="tm">18:13:15</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> and as another data point compared to opensuse-gnome we're doing a fantastic job of offering multiple KDE versions for multiple opensuse releases.
+<a name="l-76"></a><span class="tm">18:13:22</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">rabauke:</span> +1
+<a name="l-77"></a><span class="tm">18:13:26</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> and how would that have changed if kr45 was kdf?
+<a name="l-78"></a><span class="tm">18:13:28</span><span class="nk"> &lt;javier&gt;</span> maybe we could rename KR45 to something else that doesn't need to have its name changed when a new kde version arrives
+<a name="l-79"></a><span class="tm">18:13:58</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">rabauke:</span> it's also a lot of work, and a distraction from KDF.. less people on KDF.. less testing for opensuse+1
+<a name="l-80"></a><span class="tm">18:14:05</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">javier:</span> why? the name mediates the content, that's perfect and exactly what kdf does not do
+<a name="l-81"></a><span class="tm">18:14:19</span><span class="nk"> &lt;cb400f&gt;</span> and a support mess with a friggin load of different repos with more or less the same versions
+<a name="l-82"></a><span class="tm">18:14:26</span><span class="nk"> &lt;rabauke&gt;</span> less people on kdf is good, because we do not want "casual" kdf users IMHO
+<a name="l-83"></a><span class="tm">18:14:41</span><span class="nk"> &lt;cb400f&gt;</span> casual users don't use kr45 either
+<a name="l-84"></a><span class="tm">18:14:53</span><span class="nk"> &lt;rabauke&gt;</span> IMHO KR45 was a huge success and thus this kind of naming and repo should continue.
+<a name="l-85"></a><span class="tm">18:15:03</span><span class="nk"> &lt;rabauke&gt;</span> they do
+<a name="l-86"></a><span class="tm">18:15:03</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">rabauke:</span> to have less repo... it would be less confusing I think.... KR45, KR46, ...
+<a name="l-87"></a><span class="tm">18:15:23</span><span class="nk"> &lt;cb400f&gt;</span> let's look at the numbers again.. ~250.000 people using OSS... maybe 20k, or 30k using the very most popular OBS repos
+<a name="l-88"></a><span class="tm">18:15:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">coolo:</span> got your OBS repo usage stats handy?
+<a name="l-89"></a><span class="tm">18:16:18</span><span class="nk"> &lt;dev001&gt;</span> rabauke +1.  *all* our users are on KR45 --  casual &amp; otherwise
+<a name="l-90"></a><span class="tm">18:16:28</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">javier:</span> if the repo name is mediating the content the number of repos does not confuse users. everybody knows that kr45 is kde 4.5 and if he wants kde 4.6 guess which repo he will look for.
+<a name="l-91"></a><span class="tm">18:16:39</span><span class="nk"> &lt;cb400f&gt;</span> most casual users can't even figure out how to add kde:updatedapps and kde:extra in community repos list
+<a name="l-92"></a><span class="tm">18:16:48</span><span class="nk"> &lt;cb400f&gt;</span> those repos are not even among the most popular
+<a name="l-93"></a><span class="tm">18:16:58</span><span class="nk"> &lt;rabauke&gt;</span> confusing is to have to change from KR to KD and back again, not from KRx to KRy
+<a name="l-94"></a><span class="tm">18:16:59</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">rabauke:</span> I agree on that
+<a name="l-95"></a><span class="tm">18:17:25</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">rabauke:</span> maybe we could have KR4x on the repo community list
+<a name="l-96"></a><span class="tm">18:17:30</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> kr45 is less popular than kdf?
+<a name="l-97"></a><span class="tm">18:17:41</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">javier:</span> that would be nice indeed
+<a name="l-98"></a><span class="tm">18:18:14</span><span class="nk"> &lt;cb400f&gt;</span> I don't think coolo released stats that recent.. but I wouldn't be surprised if it is
+<a name="l-99"></a><span class="tm">18:18:19</span><span class="nk"> &lt;rabauke&gt;</span> so over time more and more people will learn that KDE x.y is in KRxy which is straight forward and easy to remember.
+<a name="l-100"></a><span class="tm">18:19:00</span><span class="nk"> &lt;cb400f&gt;</span> which means, more work for us, and less people testing Factory KDE
+<a name="l-101"></a><span class="tm">18:19:08</span><span class="nk"> &lt;tigerfoot&gt;</span> especially if we communicate about that.
+<a name="l-102"></a><span class="tm">18:19:09</span><span class="nk"> &lt;cb400f&gt;</span> all in all, poorer opensuse releases
+<a name="l-103"></a><span class="tm">18:19:29</span><span class="nk"> &lt;wstephenson&gt;</span> i see your point
+<a name="l-104"></a><span class="tm">18:19:39</span><span class="nk"> &lt;rabauke&gt;</span> people using kr45 do not submit bugs.
+<a name="l-105"></a><span class="tm">18:19:49</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">rabauke:</span> not true
+<a name="l-106"></a><span class="tm">18:19:50</span><span class="nk"> &lt;rabauke&gt;</span> testers use kdf
+<a name="l-107"></a><span class="tm">18:19:53</span><span class="nk"> &lt;wstephenson&gt;</span> but i'm not sure that it's due to KR45 taking testers away from KDF
+<a name="l-108"></a><span class="tm">18:19:55</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">cb400f:</span> when it crash under KDF the bug goes upstream not Novell
+<a name="l-109"></a><span class="tm">18:20:03</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">javier:</span> bnc or bko bugs?
+<a name="l-110"></a><span class="tm">18:20:08</span><span class="nk"> &lt;javier&gt;</span> bnc
+<a name="l-111"></a><span class="tm">18:20:14</span><span class="nk"> &lt;wstephenson&gt;</span> and IIRC KDF is *the* most popular OBS repo by quite a long shot
+<a name="l-112"></a><span class="tm">18:20:17</span><span class="nk"> &lt;rabauke&gt;</span> ok.
+<a name="l-113"></a><span class="tm">18:20:19</span><span class="nk"> &lt;wstephenson&gt;</span> s/shot/way/
+<a name="l-114"></a><span class="tm">18:20:42</span><span class="nk"> &lt;javier&gt;</span> cool :-)
+<a name="l-115"></a><span class="tm">18:21:06</span><span class="nk"> &lt;rabauke&gt;</span> Given that there are people who maintain KRxy I think it is the most obvious and thus best naming scheme and should be kept for all KDE releases.
+<a name="l-116"></a><span class="tm">18:21:10</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">tigerfoot:</span> it's not just about crashes.. and drkonqi is not the only way to report bugs you know
+<a name="l-117"></a><span class="tm">18:21:23</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> how would that be if there was a KR46 repo?
+<a name="l-118"></a><span class="tm">18:21:29</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">cb400f:</span> unfortunately I know that :-)
+<a name="l-119"></a><span class="tm">18:21:29</span><span class="nk"> &lt;cb400f&gt;</span> it's also about getting the right stuff in.. default configuration... packaging errors etc.
+<a name="l-120"></a><span class="tm">18:21:34</span><span class="nk"> &lt;dev001&gt;</span> " people using kr45 do not submit bugs"  ... um, srsly?  not.
+<a name="l-121"></a><span class="tm">18:21:47</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">dev001:</span> I meant bnc bugs
+<a name="l-122"></a><span class="tm">18:21:52</span><span class="nk"> &lt;krop&gt;</span> upstream gets reports from all kinds of repo
+<a name="l-123"></a><span class="tm">18:22:04</span><span class="nk"> &lt;dev001&gt;</span> bnc being @novell?
+<a name="l-124"></a><span class="tm">18:22:08</span><span class="nk"> &lt;krop&gt;</span> (we even get some KDE 4.3.x reports)
+<a name="l-125"></a><span class="tm">18:22:11</span><span class="nk"> &lt;rabauke&gt;</span> exactly, but kdf is for novell bugs.
+<a name="l-126"></a><span class="tm">18:22:15</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">dev001:</span> yes
+<a name="l-127"></a><span class="tm">18:22:22</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">javier:</span> but the number of bnc bugs is ~10 to 1 for KDF to K45
+<a name="l-128"></a><span class="tm">18:22:33</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">ctrippe:</span> right
+<a name="l-129"></a><span class="tm">18:22:42</span><span class="nk"> &lt;cb400f&gt;</span> I wonder if we would do upstream a favour by disabling drkonqi for certain repos :-)
+<a name="l-130"></a><span class="tm">18:22:58</span><span class="nk"> &lt;javier&gt;</span> so, what to do?
+<a name="l-131"></a><span class="tm">18:23:05</span><span class="nk"> &lt;dev001&gt;</span> <span class="hi">rabauke:</span> still, disagree. we use KR45 extensively.  bugs are filed typically FIRST @ novell, and we come to opensuse* irc to annoy people -- first.  it's "our" distro.  that's where we focus resources -- first.
+<a name="l-132"></a><span class="tm">18:23:11</span><span class="nk"> &lt;rabauke&gt;</span> is there somebody willing to maintain KR46?
+<a name="l-133"></a><span class="tm">18:23:12</span><span class="nk"> &lt;javier&gt;</span> is KR45 stealing potential KDF testers?
+<a name="l-134"></a><span class="tm">18:23:18</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">dev001:</span> bko=bugs.kde.org, bnc=bugzilla.novell.com
+<a name="l-135"></a><span class="tm">18:23:18</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">rabauke:</span> o/
+<a name="l-136"></a><span class="tm">18:23:19</span><span class="nk"> &lt;krop&gt;</span> <span class="hi">cb400f:</span> upstream refuses bugs from outdated versions already
+<a name="l-137"></a><span class="tm">18:23:25</span><span class="nk"> &lt;dev001&gt;</span> <span class="hi">wstephenson:</span> ah, thx
+<a name="l-138"></a><span class="tm">18:23:42</span><span class="nk"> &lt;cb400f&gt;</span> ah, good
+<a name="l-139"></a><span class="tm">18:23:44</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">dev001:</span> since KR45 is not a suse release bugs at novell often don't make sense though
+<a name="l-140"></a><span class="tm">18:24:26</span><span class="nk"> &lt;rabauke&gt;</span> reporting bugs from kdf at bnc does make most sense.
+<a name="l-141"></a><span class="tm">18:24:46</span><span class="nk"> &lt;rabauke&gt;</span> If there is nobody willing to maintain a KR46 the question whether to create it is useless anyway.
+<a name="l-142"></a><span class="tm">18:24:58</span><span class="nk"> &lt;wstephenson&gt;</span> folks, we're heading up on the hour mark and we have a lot more ground to cover. what's the best way to proceed on this topic?
+<a name="l-143"></a><span class="tm">18:25:00</span><span class="nk"> &lt;dev001&gt;</span> <span class="hi">rabauke:</span> may be factually the case.  but, imo &amp; experience, KR45 *is* our 'release' -- distro is simply not an option for us.  as for @novell bug-reporting, and related #irc, it's where the expertise/interest lie.  mostly ...
+<a name="l-144"></a><span class="tm">18:25:01</span><span class="nk"> &lt;javier&gt;</span> btw, ctrippe thanks for the bug triaging stuff you're doing for KR45
+<a name="l-145"></a><span class="tm">18:25:03</span><span class="nk"> &lt;javier&gt;</span> :)
+<a name="l-146"></a><span class="tm">18:25:28</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">rabauke:</span> I am willing to help maintaining that repo
+<a name="l-147"></a><span class="tm">18:25:36</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">javier:</span> welcome
+<a name="l-148"></a><span class="tm">18:25:58</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">javier:</span> since you do KR45 you can judge the workload. is it doable?
+<a name="l-149"></a><span class="tm">18:26:02</span><span class="nk"> &lt;cb400f&gt;</span> maybe kr46 could just be links from KDF.. like kr45 was before KDF went 4.6beta
+<a name="l-150"></a><span class="tm">18:26:22</span><span class="nk"> &lt;rabauke&gt;</span> and of what use is kdf to 4.6 anyway after 11.4 got released?
+<a name="l-151"></a><span class="tm">18:26:28</span><span class="nk"> &lt;javier&gt;</span> <span class="hi">rabauke:</span> yes, it is. i am not the only person maintaining it
+<a name="l-152"></a><span class="tm">18:27:21</span><span class="nk"> &lt;javier&gt;</span> dirk has uploaded tarballs to KR45, others have sr'ed new versions of some packages, ...
+<a name="l-153"></a><span class="tm">18:27:49</span><span class="nk"> &lt;javier&gt;</span> and now dirk is testing tarballs in KR45 instead of home:dirkmueller:KDExy
+<a name="l-154"></a><span class="tm">18:28:08</span><span class="nk"> &lt;rabauke&gt;</span> shall we jsut do a vote on whether kr46 seems sensible to each one of us?
+<a name="l-155"></a><span class="tm">18:28:28</span><span class="nk"> &lt;javier&gt;</span> my main concern is "stealing KDF testers"
+<a name="l-156"></a><span class="tm">18:28:38</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> i think that's premature
+<a name="l-157"></a><span class="tm">18:28:45</span><span class="nk"> &lt;rabauke&gt;</span> kdf is finished as soon as 11.4 is released
+<a name="l-158"></a><span class="tm">18:28:46</span><span class="nk"> &lt;javier&gt;</span> including myself... I am not using KDF because I am maintaining KR45
+<a name="l-159"></a><span class="tm">18:28:50</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> it's javiers baby, I don't think we can tell him what to do
+<a name="l-160"></a><span class="tm">18:28:56</span><span class="nk"> &lt;wstephenson&gt;</span> let's list the issues and discuss it on list?
+<a name="l-161"></a><span class="tm">18:28:57</span><span class="nk"> &lt;cb400f&gt;</span> nope, then kdf becomes 11.5
+<a name="l-162"></a><span class="tm">18:29:04</span><span class="nk"> &lt;wstephenson&gt;</span> * stealing KDF testers
+<a name="l-163"></a><span class="tm">18:29:09</span><span class="nk"> &lt;wstephenson&gt;</span> * consuming team time
+<a name="l-164"></a><span class="tm">18:29:14</span><span class="nk"> &lt;cb400f&gt;</span> it's not like kdf will lie idle for 4 months
+<a name="l-165"></a><span class="tm">18:29:27</span><span class="nk"> &lt;rabauke&gt;</span> 11.5 is far away and will not feature whatever will be in kdf after 11.4 got released.
+<a name="l-166"></a><span class="tm">18:29:27</span><span class="nk"> &lt;wstephenson&gt;</span> * easily identifiable for version whores
+<a name="l-167"></a><span class="tm">18:29:27</span><span class="nk"> &lt;javier&gt;</span> maybe we could have a discussion on opensuse-kde ml?
+<a name="l-168"></a><span class="tm">18:29:36</span><span class="nk"> &lt;javier&gt;</span> about this KR46
+<a name="l-169"></a><span class="tm">18:29:58</span><span class="nk"> &lt;rabauke&gt;</span> 11.5 will hopefully feature KDE 4.7 :)
+<a name="l-170"></a><span class="tm">18:30:00</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">rabauke:</span> if the user does not have more in the repo to be confused jungle, it makes sense to build next to the kr45 KR46 ... otherwise look that is no longer a man who when to have kde4.x how and where
+<a name="l-171"></a><span class="tm">18:30:19</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">Linuxsusefan:</span> I agree
+<a name="l-172"></a><span class="tm">18:30:30</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">rabauke:</span> KDF will be updated with every release inbetween.. as has always been the case
+<a name="l-173"></a><span class="tm">18:30:43</span><span class="nk"> &lt;cb400f&gt;</span> only question is if it will go to 4.7beta or wait for 4.7final
+<a name="l-174"></a><span class="tm">18:30:59</span><span class="nk"> &lt;cb400f&gt;</span> and of course kdf will also be used to update all the apps, and link them to kde:updatedapps
+<a name="l-175"></a><span class="tm">18:31:07</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> if peope want to help 11.4 and hence that KDE version, they should use STABLE thouhg
+<a name="l-176"></a><span class="tm">18:31:24</span><span class="nk"> &lt;rabauke&gt;</span> so kdf steals STABLE tester! ;)
+<a name="l-177"></a><span class="tm">18:31:36</span><span class="nk"> &lt;Linuxsusefan&gt;</span> rabauke:I take care of the German wiki page kde, how can you explain that to the users what is contained where. is already difficult enough
+<a name="l-178"></a><span class="tm">18:31:53</span><span class="nk"> &lt;cb400f&gt;</span> if 11.4 was properly tested we wouldn't need to fix it afterwards
+<a name="l-179"></a><span class="tm">18:32:05</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">Linuxsusefan:</span> I know. the whole "factory" term is confusing.
+<a name="l-180"></a><span class="tm">18:32:30</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> if that was true 11.2 was properly tested because there was no KR45
+<a name="l-181"></a><span class="tm">18:32:49</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">Linuxsusefan:</span> do you know the kde_repositories wiki page?
+<a name="l-182"></a><span class="tm">18:33:27</span><span class="nk"> &lt;Linuxsusefan&gt;</span> <span class="hi">cb400f:</span> yes, the german wikipage of kde
+<a name="l-183"></a><span class="tm">18:34:19</span><span class="nk"> &lt;wstephenson&gt;</span> so
+<a name="l-184"></a><span class="tm">18:34:26</span><span class="nk"> &lt;wstephenson&gt;</span> time to move this to the list :)
+<a name="l-185"></a><span class="tm">18:34:27</span><span class="nk"> &lt;tigerfoot&gt;</span> next topic
+<a name="l-186"></a><span class="tm">18:34:32</span><span class="nk"> &lt;rabauke&gt;</span> the nice thing about KRxy is that there is no need for a wiki explanation since everybody who knows that KR45 contains KDE 4.5 will easily know where to get KDe 4.6
+<a name="l-187"></a><span class="tm">18:34:49</span><span class="nk"> &lt;wstephenson&gt;</span> *  tapping and Synaptiks - enable it and fix broken X default? (cb400f)
+<a name="l-188"></a><span class="tm">18:34:59</span><span class="nk"> &lt;cb400f&gt;</span> the list won't help... question is who will maintain it, who will support the users.. and what are the plans for KDF wrt. 4.7beta
+<a name="l-189"></a><span class="tm">18:35:12</span><span class="nk"> &lt;cb400f&gt;</span> ok, then
+<a name="l-190"></a><span class="tm">18:35:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> right, but we aren't coming to a decision here and we have other things to handle more urgently
+<a name="l-191"></a><span class="tm">18:35:20</span><span class="nk"> &lt;rabauke&gt;</span> if they are ok with it, the same people that do things for KR45
+<a name="l-192"></a><span class="tm">18:35:47 </span><span class="nka">* rabauke</span> <span class="ac">is all for changing X defaults regarding tapping!</span>
+<a name="l-193"></a><span class="tm">18:35:48</span><span class="nk"> &lt;cb400f&gt;</span> since 11.3 Xorg ships with tapping disabled cuz apparently this suits gnomers, this makes kde users annoyed, and makes them think their touchpad is not supported by suse
+<a name="l-194"></a><span class="tm">18:36:14</span><span class="nk"> &lt;rabauke&gt;</span> very annoying for users who do not have a clue where to search for it.
+<a name="l-195"></a><span class="tm">18:36:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> Is this a configuration setting or ..  ?
+<a name="l-196"></a><span class="tm">18:36:31</span><span class="nk"> &lt;cb400f&gt;</span> so I'm wondering if we couldn't/shouldn't fix this problem via synaptiks default settings
+<a name="l-197"></a><span class="tm">18:36:39</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">tittiatcoke:</span> yes
+<a name="l-198"></a><span class="tm">18:36:53</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> have you got a url for the "suits gnomers" bit?
+<a name="l-199"></a><span class="tm">18:36:56</span><span class="nk"> &lt;rabauke&gt;</span> synaptiks sticks to X's defaults
+<a name="l-200"></a><span class="tm">18:37:01</span><span class="nk"> &lt;cb400f&gt;</span> here's a mailing list link http://lists.opensuse.org/opensuse-factory/2010-06/msg00256.html|Touchpad
+<a name="l-201"></a><span class="tm">18:37:35</span><span class="nk"> &lt;cb400f&gt;</span> there's also a bugreport somewhere... with some heated discussions
+<a name="l-202"></a><span class="tm">18:37:39</span><span class="nk"> &lt;wstephenson&gt;</span> ok. i'm in favour of enabling it
+<a name="l-203"></a><span class="tm">18:37:54</span><span class="nk"> &lt;wstephenson&gt;</span> although one of my laptops is very annoying when tapping is enabled (too sensitive)
+<a name="l-204"></a><span class="tm">18:38:06</span><span class="nk"> &lt;wstephenson&gt;</span> it's worse than being used to tapping and unable to do so
+<a name="l-205"></a><span class="tm">18:38:14</span><span class="nk"> &lt;rabauke&gt;</span> maybe also enable "disable tapping while typing"?
+<a name="l-206"></a><span class="tm">18:38:17</span><span class="nk"> &lt;wstephenson&gt;</span> other way around
+<a name="l-207"></a><span class="tm">18:38:22</span><span class="nk"> &lt;cb400f&gt;</span> I was thinking that too
+<a name="l-208"></a><span class="tm">18:38:23</span><span class="nk"> &lt;wstephenson&gt;</span> it's better than...
+<a name="l-209"></a><span class="tm">18:38:29</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> +1
+<a name="l-210"></a><span class="tm">18:38:42</span><span class="nk"> &lt;rabauke&gt;</span> Then we need a good timeout. let me check mine.
+<a name="l-211"></a><span class="tm">18:39:06</span><span class="nk"> &lt;cb400f&gt;</span> yeah, iirc 1 sec is the default.. that's too long
+<a name="l-212"></a><span class="tm">18:39:34</span><span class="nk"> &lt;tigerfoot&gt;</span> I've 2.5sec
+<a name="l-213"></a><span class="tm">18:39:41</span><span class="nk"> &lt;rabauke&gt;</span> .8 seconds
+<a name="l-214"></a><span class="tm">18:39:59</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">tigerfoot:</span> that's really long! :)
+<a name="l-215"></a><span class="tm">18:40:32 </span><span class="nka">* krop</span> <span class="ac">must vanish. bbl</span>
+<a name="l-216"></a><span class="tm">18:40:34</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">cb400f:</span> one second was too long for me as well
+<a name="l-217"></a><span class="tm">18:40:44</span><span class="nk"> &lt;cb400f&gt;</span> yeah, you can go get coffee before you can use your touchpad after typing :-)
+<a name="l-218"></a><span class="tm">18:40:47</span><span class="nk"> &lt;tigerfoot&gt;</span> yeap but when you are using mainly your keyboard, and a part of your hand rip on that damned touchpad, I don't want my mouse flying around:-)
+<a name="l-219"></a><span class="tm">18:41:10 </span><span class="nka">* tigerfoot</span> <span class="ac">have also dual stick on his lappy :-)</span>
+<a name="l-220"></a><span class="tm">18:41:14</span><span class="nk"> &lt;rabauke&gt;</span> anybody else using that feature?
+<a name="l-221"></a><span class="tm">18:41:15</span><span class="nk"> &lt;javier&gt;</span> yes, please enable tapping :-)
+<a name="l-222"></a><span class="tm">18:41:35 </span><span class="nka">* mrdocs</span> <span class="ac">comes back after emergency trip to supermarket for diapers for missdocs</span>
+<a name="l-223"></a><span class="tm">18:41:43</span><span class="nk"> &lt;tigerfoot&gt;</span> and add the disable it if a mouse is plugged ...
+<a name="l-224"></a><span class="tm">18:42:07</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tigerfoot:</span> is that an option in synaptiks?
+<a name="l-225"></a><span class="tm">18:42:24</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">tigerfoot:</span> that bit is tricky since I do have to ignore some "mice" or have the touchpad disabled all the time.
+<a name="l-226"></a><span class="tm">18:42:27</span><span class="nk"> &lt;mrdocs&gt;</span> ahh well that explains why my touchpas kinda sucks... + enabled and guive synaptiks a good default
+<a name="l-227"></a><span class="tm">18:42:27</span><span class="nk"> &lt;tigerfoot&gt;</span> kcm_touchpad I thing ..
+<a name="l-228"></a><span class="tm">18:42:47</span><span class="nk"> &lt;cb400f&gt;</span> kcm_touchpad is dead, long live synaptiks
+<a name="l-229"></a><span class="tm">18:42:52</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">mrdocs:</span> i hate those trips
+<a name="l-230"></a><span class="tm">18:42:58</span><span class="nk"> &lt;tigerfoot&gt;</span> no synaptiks ..
+<a name="l-231"></a><span class="tm">18:43:06</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">wstephenson:</span> yeah sucks.. :)
+<a name="l-232"></a><span class="tm">18:43:09</span><span class="nk"> &lt;mrdocs&gt;</span> brb
+<a name="l-233"></a><span class="tm">18:43:33</span><span class="nk"> &lt;rabauke&gt;</span> I have to ignore broadcom corp device and ps/2 mouse
+<a name="l-234"></a><span class="tm">18:44:10</span><span class="nk"> &lt;tigerfoot&gt;</span> rabauke ok if that cause more trouble just forget, I've no pb to change whatever default is done ...
+<a name="l-235"></a><span class="tm">18:44:39 </span><span class="nka">* tigerfoot</span> <span class="ac">think I've change over the years, &gt;70% of default choice anyway ...</span>
+<a name="l-236"></a><span class="tm">18:45:14</span><span class="nk"> &lt;wstephenson&gt;</span> ok so summary is 'enable tapping and disable while typing with 0.8' seconds?
+<a name="l-237"></a><span class="tm">18:45:41</span><span class="nk"> &lt;tigerfoot&gt;</span> go with that ...
+<a name="l-238"></a><span class="tm">18:45:44</span><span class="nk"> &lt;tittiatcoke&gt;</span> I will take this action point, as that I have packaged synaptiks anyway :-)
+<a name="l-239"></a><span class="tm">18:46:10</span><span class="nk"> &lt;cb400f&gt;</span> who can tell that to the meetbot?
+<a name="l-240"></a><span class="tm">18:46:16</span><span class="nk"> &lt;wstephenson&gt;</span> me
+<a name="l-241"></a><span class="tm">18:46:26</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">cb400f:</span> you can if you take op
+<a name="l-242"></a><span class="tm">18:46:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke 'enable tapping and disable while typing with 0.8 seconds' for synaptiks in kdebase4-opensuse config</span>
+<a name="l-243"></a><span class="tm">18:46:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> The first testing package I will send to cb400f :-)
+<a name="l-244"></a><span class="tm">18:46:59</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> not in the synaptiks package itself, ok?
+<a name="l-245"></a><span class="tm">18:46:59 </span><span class="nka">* cb400f</span> <span class="ac">watches world dom barometer skyrocket</span>
+<a name="l-246"></a><span class="tm">18:47:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> :-)
+<a name="l-247"></a><span class="tm">18:47:30 </span><span class="nka">* tigerfoot</span> <span class="ac">have to go in 10minutes ...</span>
+<a name="l-248"></a><span class="tm">18:47:32</span><span class="nk"> &lt;wstephenson&gt;</span> * k3b 2.0.2 without hal requirement? (cb400f)
+<a name="l-249"></a><span class="tm">18:47:35 </span><span class="nka">* mrdocs</span> <span class="ac">in 5</span>
+<a name="l-250"></a><span class="tm">18:47:53</span><span class="nk"> &lt;wstephenson&gt;</span> jack be nimble, jack be quick then
+<a name="l-251"></a><span class="tm">18:48:00</span><span class="nk"> &lt;tigerfoot&gt;</span> k3b no hal work  and regonize my drive ...  thx cb400f
+<a name="l-252"></a><span class="tm">18:48:01</span><span class="nk"> &lt;cb400f&gt;</span> the guy sent a mail to the list.. I just wanted to make sure someone was on it
+<a name="l-253"></a><span class="tm">18:48:02</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> summary pls
+<a name="l-254"></a><span class="tm">18:48:09</span><span class="nk"> &lt;wstephenson&gt;</span> no
+<a name="l-255"></a><span class="tm">18:48:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson review hal k3b 2.0.2 list</span>
+<a name="l-256"></a><span class="tm">18:48:27</span><span class="nk"> &lt;mrdocs&gt;</span> we need a release  tho
+<a name="l-257"></a><span class="tm">18:48:33</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> But 2.0.1 also works without hal.
+<a name="l-258"></a><span class="tm">18:48:38</span><span class="nk"> &lt;cb400f&gt;</span> http://lists.opensuse.org/opensuse-kde/2011-01/msg00019.html
+<a name="l-259"></a><span class="tm">18:48:40</span><span class="nk"> &lt;wstephenson&gt;</span> * Akonadi and mysqld running on livecd and for fresh user (cb400f)
+<a name="l-260"></a><span class="tm">18:49:09</span><span class="nk"> &lt;cb400f&gt;</span> again, just wanted to draw attention to this bugreport which I consider quite important https://bugzilla.novell.com/show_bug.cgi?id=661844|
+<a name="l-261"></a><span class="tm">18:49:13</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 661844 in openSUSE 11.4 (KDE4 Workspace) "Akonadi starts on login" [Normal,New]
+<a name="l-262"></a><span class="tm">18:49:44</span><span class="nk"> &lt;cb400f&gt;</span> einar77 said there should be a hidden option to fix it easily but I can't get it to work.. I tried asking in #plasma but no answer
+<a name="l-263"></a><span class="tm">18:50:02</span><span class="nk"> &lt;cb400f&gt;</span> (guess they're tired of anti-akonadi whiners)
+<a name="l-264"></a><span class="tm">18:50:35</span><span class="nk"> &lt;cb400f&gt;</span> but I think it's silly to run an empty mysqld for every user.. when only a fraction is using kmail/korganizer/kaddressbook
+<a name="l-265"></a><span class="tm">18:50:47</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> i'll look at it, last time it was krunners. i guess it's the calendar integration in the clock widget now.
+<a name="l-266"></a><span class="tm">18:50:59</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson handle bnc#661844</span>
+<a name="l-267"></a><span class="tm">18:51:08</span><span class="nk"> &lt;cb400f&gt;</span> yup.. it's the clock, and the calendar events runner
+<a name="l-268"></a><span class="tm">18:51:35</span><span class="nk"> &lt;wstephenson&gt;</span> i see in the BR. good BR.
+<a name="l-269"></a><span class="tm">18:51:40</span><span class="nk"> &lt;cb400f&gt;</span> if you remove the clock and disable that runner the problem is solved, but I can't make akonadi not start by adding "showevents=false" to plasma-desktop-appletsrc
+<a name="l-270"></a><span class="tm">18:51:51</span><span class="nk"> &lt;wstephenson&gt;</span> i think i can get to the bottom of that
+<a name="l-271"></a><span class="tm">18:52:04</span><span class="nk"> &lt;wstephenson&gt;</span> * KPackageKit status and damage control
+<a name="l-272"></a><span class="tm">18:52:16</span><span class="nk"> &lt;tigerfoot&gt;</span> :-) oh that one
+<a name="l-273"></a><span class="tm">18:52:20</span><span class="nk"> &lt;wstephenson&gt;</span> who owns that?
+<a name="l-274"></a><span class="tm">18:52:23</span><span class="nk"> &lt;mrdocs&gt;</span> did packagekit get to Factory ?
+<a name="l-275"></a><span class="tm">18:52:33</span><span class="nk"> &lt;wstephenson&gt;</span> just checking
+<a name="l-276"></a><span class="tm">18:52:43</span><span class="nk"> &lt;cb400f&gt;</span> that's me too.. it was partly because I was confused if kpk intentionally replaced kupdateapplet
+<a name="l-277"></a><span class="tm">18:52:53</span><span class="nk"> &lt;mrdocs&gt;</span> i even bribed the gnome folks to get it done :)
+<a name="l-278"></a><span class="tm">18:53:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-279"></a><span class="tm">18:53:17</span><span class="nk"> &lt;cb400f&gt;</span> but also there are some critical bugs... kpk crashes if sw_single is open when it checks for updates... might be fixed in pk 0.6.11 according to dantti
+<a name="l-280"></a><span class="tm">18:53:21</span><span class="nk"> &lt;rabauke&gt;</span> PakcageKit is in G:F
+<a name="l-281"></a><span class="tm">18:53:29</span><span class="nk"> &lt;wstephenson&gt;</span> 0.6.11 is in oF and GF
+<a name="l-282"></a><span class="tm">18:53:30 </span><span class="nka">* mrdocs</span> <span class="ac">fixed a security bug for them</span>
+<a name="l-283"></a><span class="tm">18:53:35 </span><span class="nka">* mrdocs</span> <span class="ac">pats OBS</span>
+<a name="l-284"></a><span class="tm">18:53:42 </span><span class="nka">* tittiatcoke</span> <span class="ac">sees that mrdocs is practising his bribing skills already :-)</span>
+<a name="l-285"></a><span class="tm">18:53:47</span><span class="nk"> &lt;cb400f&gt;</span> and (k)pk wants to install vendor change updates.. but I think duncan is on that
+<a name="l-286"></a><span class="tm">18:54:12</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> so it dies if something else has the zypp lock?
+<a name="l-287"></a><span class="tm">18:54:12</span><span class="nk"> &lt;cb400f&gt;</span> so, actually for now there's prolly not much for us to do
+<a name="l-288"></a><span class="tm">18:54:22</span><span class="nk"> &lt;cb400f&gt;</span> in ms5 it does
+<a name="l-289"></a><span class="tm">18:54:22</span><span class="nk"> &lt;wstephenson&gt;</span> great. i like these kinds of points
+<a name="l-290"></a><span class="tm">18:54:31</span><span class="nk"> &lt;rabauke&gt;</span> there are issues witht he backend, which seem to be os's issue and some with the frontend, which is upstream
+<a name="l-291"></a><span class="tm">18:54:31</span><span class="nk"> &lt;cb400f&gt;</span> but dantti said it's a bug in pk-qt
+<a name="l-292"></a><span class="tm">18:54:38</span><span class="nk"> &lt;wstephenson&gt;</span> we do need to TEST online updates with kpk
+<a name="l-293"></a><span class="tm">18:54:45</span><span class="nk"> &lt;cb400f&gt;</span> which should be fixed in 0.6.11... ms5 had 0.6.10
+<a name="l-294"></a><span class="tm">18:54:47</span><span class="nk"> &lt;mrdocs&gt;</span> can we get it for  ?
+<a name="l-295"></a><span class="tm">18:54:51</span><span class="nk"> &lt;mrdocs&gt;</span> er
+<a name="l-296"></a><span class="tm">18:54:57</span><span class="nk"> &lt;wstephenson&gt;</span> rabauke, cb400f do we have one list of all these issues?
+<a name="l-297"></a><span class="tm">18:54:57</span><span class="nk"> &lt;mrdocs&gt;</span> can we get it for  11.3 ?
+<a name="l-298"></a><span class="tm">18:55:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> If PackageKit is in Factory, I guess we have to send the update of KPackageKit also to o:F
+<a name="l-299"></a><span class="tm">18:55:07</span><span class="nk"> &lt;cb400f&gt;</span> there are test patches for 11.4 of inkscape
+<a name="l-300"></a><span class="tm">18:55:10</span><span class="nk"> &lt;rabauke&gt;</span> I'm testing kpk on os factory
+<a name="l-301"></a><span class="tm">18:55:23</span><span class="nk"> &lt;cb400f&gt;</span> so you can test it if you install factory version of inkscape
+<a name="l-302"></a><span class="tm">18:55:45</span><span class="nk"> &lt;cb400f&gt;</span> .. or you can add KUP and watch kpk suggest to install 15-20 beta/git revisions :-)
+<a name="l-303"></a><span class="tm">18:55:48</span><span class="nk"> &lt;rabauke&gt;</span> one issue with the frontend is that it does not allow the user to add an update repo.
+<a name="l-304"></a><span class="tm">18:56:37</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> kpackagekit 0.6.3.3 is in both oF and KDF, is there a newer version?&gt;
+<a name="l-305"></a><span class="tm">18:56:50</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> is it really intended as a full featured yast/zypper alternative?
+<a name="l-306"></a><span class="tm">18:56:59</span><span class="nk"> &lt;cb400f&gt;</span> but anyway.. next item.. we need to test it with pk 0.6.11 and follow https://bugzilla.novell.com/show_bug.cgi?id=637764
+<a name="l-307"></a><span class="tm">18:57:01</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> afaik PK is not intended to handle repo add/remove/modify
+<a name="l-308"></a><span class="tm">18:57:03</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 637764 in openSUSE 11.4 (GNOME) "Packagekit updater applet in GNOME sees upgrades/updates from all repositories irrespective of vendor changes" [Major,New]
+<a name="l-309"></a><span class="tm">18:57:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Nope :-)
+<a name="l-310"></a><span class="tm">18:57:08</span><span class="nk"> &lt;rabauke&gt;</span> maybe it would be helpful to have a wiki page that helps users to debug whether it is a frontend or backend issue.
+<a name="l-311"></a><span class="tm">18:57:23</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> yes, but it could open yast
+<a name="l-312"></a><span class="tm">18:57:27</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> are you volunteering?
+<a name="l-313"></a><span class="tm">18:57:32</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> and that doesn't work for you?
+<a name="l-314"></a><span class="tm">18:57:37</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> I reported it already.
+<a name="l-315"></a><span class="tm">18:57:41</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> I think dantti wanted to add it
+<a name="l-316"></a><span class="tm">18:57:58</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> i meant for a wiki page?
+<a name="l-317"></a><span class="tm">18:58:02</span><span class="nk"> &lt;rabauke&gt;</span> within the last days there was no feedback on the bugs. We'll see
+<a name="l-318"></a><span class="tm">18:58:07</span><span class="nk"> &lt;wstephenson&gt;</span> sth like my NM page at userbase.kde.org
+<a name="l-319"></a><span class="tm">18:58:23</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> I can add my knowledge to one, yes. where should I put it in the wiki structure?
+<a name="l-320"></a><span class="tm">18:58:47</span><span class="nk"> &lt;cb400f&gt;</span> btw.. kpk also appears in systemsettings as "software management"... same as sw_single in yast... maybe a bit confusing
+<a name="l-321"></a><span class="tm">18:58:55</span><span class="nk"> &lt;mrdocs&gt;</span> eew
+<a name="l-322"></a><span class="tm">18:59:00</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> openSUSE:KDE_11.4_packagekit
+<a name="l-323"></a><span class="tm">18:59:04</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">cb400f:</span> +1
+<a name="l-324"></a><span class="tm">18:59:26</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> i can rename it if you make a bug for me to not forget it
+<a name="l-325"></a><span class="tm">18:59:41</span><span class="nk"> &lt;cb400f&gt;</span> but it creates i18n issues etc. :-|
+<a name="l-326"></a><span class="tm">18:59:46</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> ok
+<a name="l-327"></a><span class="tm">18:59:54</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> it will go through the suse i18n channel
+<a name="l-328"></a><span class="tm">19:00:02</span><span class="nk"> &lt;cb400f&gt;</span> ok, I'll create a bugreport
+<a name="l-329"></a><span class="tm">19:00:17</span><span class="nk"> &lt;cb400f&gt;</span> will you #action me ?
+<a name="l-330"></a><span class="tm">19:00:32</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">cb400f report kpk naming clash with sw_single</span>
+<a name="l-331"></a><span class="tm">19:00:45</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">rabauke write  openSUSE:KDE_11.4_packagekit</span>
+<a name="l-332"></a><span class="tm">19:00:50</span><span class="nk"> &lt;wstephenson&gt;</span> next
+<a name="l-333"></a><span class="tm">19:01:01</span><span class="nk"> &lt;wstephenson&gt;</span> * Switch off nepomuk/nepomuk+strigi by default in 11.4?
+<a name="l-334"></a><span class="tm">19:01:08</span><span class="nk"> &lt;mrdocs&gt;</span> +1
+<a name="l-335"></a><span class="tm">19:01:14 </span><span class="nka">* mrdocs</span> <span class="ac">dinner</span>
+<a name="l-336"></a><span class="tm">19:01:16</span><span class="nk"> &lt;cb400f&gt;</span> I vote nepo on, strigi off, same as 11.3
+<a name="l-337"></a><span class="tm">19:01:16</span><span class="nk"> &lt;mrdocs&gt;</span> bbiab
+<a name="l-338"></a><span class="tm">19:01:24</span><span class="nk"> &lt;rabauke&gt;</span> http://trueg.wordpress.com/2010/09/10/someone-requested-excerpts-for-query-results/ would be one useful nepomuk feature. :)
+<a name="l-339"></a><span class="tm">19:01:32</span><span class="nk"> &lt;wstephenson&gt;</span> i don't think nepo off is realistic
+<a name="l-340"></a><span class="tm">19:01:36 </span><span class="nka">* tigerfoot</span> <span class="ac">too hungry ... heard the wife cry ....</span>
+<a name="l-341"></a><span class="tm">19:01:39</span><span class="nk"> &lt;cb400f&gt;</span> exactly
+<a name="l-342"></a><span class="tm">19:01:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> was that never merged?
+<a name="l-343"></a><span class="tm">19:01:51</span><span class="nk"> &lt;tigerfoot&gt;</span> just limit the folder it has to index ...
+<a name="l-344"></a><span class="tm">19:01:55</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> at least it is not shown in kde 4.6
+<a name="l-345"></a><span class="tm">19:01:56</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> and what about strigi only on xdg-user-dirs?
+<a name="l-346"></a><span class="tm">19:02:03</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> how does that strigi only for xdg-folders working out?
+<a name="l-347"></a><span class="tm">19:02:14</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">wstephenson:</span> the trueg thing ( context is not in our build )
+<a name="l-348"></a><span class="tm">19:02:25</span><span class="nk"> &lt;cb400f&gt;</span> I think it's too risky - too heavy on resources and power... and not a very good search ui anyway
+<a name="l-349"></a><span class="tm">19:02:25</span><span class="nk"> &lt;rabauke&gt;</span> strigi si crashing dolphin etc. atm, so that one would have to be solved first
+<a name="l-350"></a><span class="tm">19:02:27</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tigerfoot:</span> i'm loath to add patches
+<a name="l-351"></a><span class="tm">19:02:36</span><span class="nk"> &lt;tigerfoot&gt;</span> :-)
+<a name="l-352"></a><span class="tm">19:02:40</span><span class="nk"> &lt;cb400f&gt;</span> better make it opt-in for the peope who actually want desktop search
+<a name="l-353"></a><span class="tm">19:02:52</span><span class="nk"> &lt;rabauke&gt;</span> another issue with nepomuk is that its db never ever decreases
+<a name="l-354"></a><span class="tm">19:03:04</span><span class="nk"> &lt;tigerfoot&gt;</span> can agree with cb400f ...
+<a name="l-355"></a><span class="tm">19:03:09</span><span class="nk"> &lt;wstephenson&gt;</span> well with the controller applet it will be easily enableable
+<a name="l-356"></a><span class="tm">19:03:10</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">rabauke:</span> you might want to explore the past? ;-)
+<a name="l-357"></a><span class="tm">19:03:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Would it be possible to add the latest patches  from Trueg ?
+<a name="l-358"></a><span class="tm">19:03:30</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">rabauke:</span> and the backup things crash ... systematic ( upstrean bug reported )
+<a name="l-359"></a><span class="tm">19:03:45</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> i am going to give him some more feedback and see what he says
+<a name="l-360"></a><span class="tm">19:04:14</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> a 30 minute hang on login while it reorganises is not acceptable
+<a name="l-361"></a><span class="tm">19:04:33</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Ok. I can indicate that since this morning, virtuoso is keeping quiet :-)  But krop indicated that with him he did not suffer from this hang on the first run
+<a name="l-362"></a><span class="tm">19:04:44</span><span class="nk"> &lt;wstephenson&gt;</span> i don't know the size of krop's db
+<a name="l-363"></a><span class="tm">19:04:50</span><span class="nk"> &lt;wstephenson&gt;</span> i assume it's proportional to that
+<a name="l-364"></a><span class="tm">19:04:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> krop ^^
+<a name="l-365"></a><span class="tm">19:05:04</span><span class="nk"> &lt;wstephenson&gt;</span> he's away
+<a name="l-366"></a><span class="tm">19:05:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> I will check with krop later.
+<a name="l-367"></a><span class="tm">19:05:16</span><span class="nk"> &lt;wstephenson&gt;</span> anyone against cb400f's "same as 11.3" suggestion?
+<a name="l-368"></a><span class="tm">19:05:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> I think this is a good default setup
+<a name="l-369"></a><span class="tm">19:05:47</span><span class="nk"> &lt;wstephenson&gt;</span> ok i hear no objections
+<a name="l-370"></a><span class="tm">19:05:49</span><span class="nk"> &lt;wstephenson&gt;</span> next
+<a name="l-371"></a><span class="tm">19:05:51</span><span class="nk"> &lt;wstephenson&gt;</span> * Q&amp;A, misc
+<a name="l-372"></a><span class="tm">19:06:33</span><span class="nk"> &lt;wstephenson&gt;</span> any takers?
+<a name="l-373"></a><span class="tm">19:06:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> I have one question with regards to versioning packages come from git
+<a name="l-374"></a><span class="tm">19:06:44</span><span class="nk"> &lt;wstephenson&gt;</span> oh yeah, i saw your mail
+<a name="l-375"></a><span class="tm">19:07:00</span><span class="nk"> &lt;tittiatcoke&gt;</span> KDE itself is slowly moving to git (kdebindings has moved today) and the question is now how to versioning this ?
+<a name="l-376"></a><span class="tm">19:07:10</span><span class="nk"> &lt;wstephenson&gt;</span> unix timestamp seems more exact than just the date
+<a name="l-377"></a><span class="tm">19:07:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> dirk packages Unstable using YYYYMMDD, but the _obs services is using the timestamp of the last commit.
+<a name="l-378"></a><span class="tm">19:07:41</span><span class="nk"> &lt;wstephenson&gt;</span> i guess dirk didn't respond to your mail?
+<a name="l-379"></a><span class="tm">19:07:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> nope :-)
+<a name="l-380"></a><span class="tm">19:08:13</span><span class="nk"> &lt;wstephenson&gt;</span> i'll poke
+<a name="l-381"></a><span class="tm">19:08:29</span><span class="nk"> &lt;wstephenson&gt;</span> do you have strong feelings either way?
+<a name="l-382"></a><span class="tm">19:08:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> Thanks :-)
+<a name="l-383"></a><span class="tm">19:08:54</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Well, as said using the unix timestamp would be confirm the current obs _service services
+<a name="l-384"></a><span class="tm">19:09:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> adrianS chose for that one :-
+<a name="l-385"></a><span class="tm">19:09:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-386"></a><span class="tm">19:09:51</span><span class="nk"> &lt;javier&gt;</span> is this the largest kde meeting ever? :p
+<a name="l-387"></a><span class="tm">19:09:56</span><span class="nk"> &lt;javier&gt;</span> I mean longest
+<a name="l-388"></a><span class="tm">19:10:01</span><span class="nk"> &lt;wstephenson&gt;</span> no, we started late
+<a name="l-389"></a><span class="tm">19:10:08</span><span class="nk"> &lt;wstephenson&gt;</span> we've gone over 120 minutes before :)
+<a name="l-390"></a><span class="tm">19:10:16</span><span class="nk"> &lt;wstephenson&gt;</span> any more Q&amp;A?
+<a name="l-391"></a><span class="tm">19:10:20</span><span class="nk"> &lt;wstephenson&gt;</span> because i'm hungry
+<a name="l-392"></a><span class="tm">19:10:32</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">wstephenson:</span> no excuse :)
+<a name="l-393"></a><span class="tm">19:10:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> Nothing from me
+<a name="l-394"></a><span class="tm">19:10:55 </span><span class="nka">* cb400f</span> <span class="ac">wants to know more about that work permit :-)</span>
+<a name="l-395"></a><span class="tm">19:10:57</span><span class="nk"> &lt;mrdocs&gt;</span> btw, would 1600 CET be a possible alternative time ?
+<a name="l-396"></a><span class="tm">19:11:07</span><span class="nk"> &lt;mrdocs&gt;</span> for meeting ?
+<a name="l-397"></a><span class="tm">19:11:28</span><span class="nk"> &lt;wstephenson&gt;</span> so an hour earlier?
+<a name="l-398"></a><span class="tm">19:11:29</span><span class="nk"> &lt;mrdocs&gt;</span> i know its awkward for dads :)
+<a name="l-399"></a><span class="tm">19:11:37</span><span class="nk"> &lt;cb400f&gt;</span> bit early for me.. maybe 16.30?
+<a name="l-400"></a><span class="tm">19:11:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> That would be 2 hrs earlier
+<a name="l-401"></a><span class="tm">19:11:50</span><span class="nk"> &lt;wstephenson&gt;</span> doh
+<a name="l-402"></a><span class="tm">19:12:05 </span><span class="nka">* wstephenson</span> <span class="ac">is fine either way</span>
+<a name="l-403"></a><span class="tm">19:12:31</span><span class="nk"> &lt;mrdocs&gt;</span> can we try it next meet and if attendance drops i will shut up :)
+<a name="l-404"></a><span class="tm">19:13:47</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">mrdocs:</span> suggest it on list please, too many people have had to leave by now
+<a name="l-405"></a><span class="tm">19:13:57</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">wstephenson:</span> will do
+<a name="l-406"></a><span class="tm">19:14:07</span><span class="nk"> &lt;wstephenson&gt;</span> ok so that's it
+<a name="l-407"></a><span class="tm">19:14:15</span><span class="nk"> &lt;wstephenson&gt;</span> thanks for coming, it's been a great meeting
+<a name="l-408"></a><span class="tm">19:14:21</span><span class="nk"> &lt;mrdocs&gt;</span> exactly
+<a name="l-409"></a><span class="tm">19:14:23</span><span class="nk"> &lt;wstephenson&gt;</span> we had enough stored up since our last full meeting :)
+<a name="l-410"></a><span class="tm">19:14:26 </span><span class="nka">* mrdocs</span> <span class="ac">dinner for real</span>
+<a name="l-411"></a><span class="tm">19:14:31</span><span class="nk"> &lt;wstephenson&gt;</span> best of luck for 2011
+<a name="l-412"></a><span class="tm">19:14:43</span><span class="nk"> &lt;wstephenson&gt;</span> let's make kde on suse rock
+<a name="l-413"></a><span class="tm">19:14:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> Yeah
+<a name="l-414"></a><span class="tm">19:14:56</span><span class="nk"> &lt;wstephenson&gt;</span> and thanks for all your commitment and hard work in 2010
+<a name="l-415"></a><span class="tm">19:15:08</span><span class="nk"> &lt;javier&gt;</span> well, I want to use that I've been translating the kde quick guide into Spanish... 40% is done so far :)
+<a name="l-416"></a><span class="tm">19:15:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> and let's go to the moon with KDE Unstable :-)
+<a name="l-417"></a><span class="tm">19:15:12</span><span class="nk"> &lt;javier&gt;</span> say
+<a name="l-418"></a><span class="tm">19:15:18</span><span class="nk"> &lt;javier&gt;</span> not use
+<a name="l-419"></a><span class="tm">19:15:27</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier:</span> cool!
+<a name="l-420"></a><span class="tm">19:15:44</span><span class="nk"> &lt;javier&gt;</span> and I want to motivate other to do the same ;-)
+<a name="l-421"></a><span class="tm">19:15:47</span><span class="nk"> &lt;javier&gt;</span> *others
+<a name="l-422"></a><span class="tm">19:15:53</span><span class="nk"> &lt;wstephenson&gt;</span> get duncanmv to help maybe
+<a name="l-423"></a><span class="tm">19:16:10</span><span class="nk"> &lt;javier&gt;</span> I mean translating to other languages
+<a name="l-424"></a><span class="tm">19:16:14</span><span class="nk"> &lt;javier&gt;</span> not just es
+<a name="l-425"></a><span class="tm">19:16:17</span><span class="nk"> &lt;javier&gt;</span> ok
+<a name="l-426"></a><span class="tm">19:17:14</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">wstephenson:</span> #endmeeting
+<a name="l-427"></a><span class="tm">19:17:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

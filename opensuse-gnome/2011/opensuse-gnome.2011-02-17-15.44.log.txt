@@ -1,0 +1,367 @@
+15:44:27 <sreeves> #startmeeting
+15:44:27 <bugbot> Meeting started Thu Feb 17 15:44:27 2011 UTC.  The chair is sreeves. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:44:27 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:44:35 <sreeves> ok let do this
+15:44:50 <sreeves> welcome to the opensuse-gnome meeting
+15:45:12 <sreeves> see the meeting page at - http://en.opensuse.org/openSUSE:GNOME_meeting
+15:45:54 <sreeves> anyone have any intro stuff or can we move to the first topic ?
+15:46:08 <sshaw> vuntz: thought so ;)
+15:46:12 <sreeves> vuntz: you want to sing an opening song ?
+15:46:14 <vuntz> sreeves: I want to say I love you for chairing this meeting :-)
+15:46:35 * DimStar cheers the chair
+15:46:37 <sshaw> vuntz: I'm the only one that would suffer from the singing.... not fair
+15:46:46 <sreeves> #topic 11.4 status and blockers
+15:47:02 <sreeves> as you know we are at RC1
+15:47:36 <sreeves> there are a few very visible bugs in RC1 that are now fixed such as the missing icons
+15:47:41 <sreeves> thanks vuntz
+15:47:56 * sreeves checks the most annoying page quickly
+15:48:42 * vuntz has a list of blockers he'll share afterwards
+15:49:36 <sreeves> looks like the other gnome issues on that page are fixed as well
+15:50:03 <sreeves> share your list vuntz
+15:50:18 <vuntz> I have 4 things
+15:50:20 <vuntz> https://bugzilla.novell.com/show_bug.cgi?id=671844
+15:50:24 <bugbot> openSUSE bug 671844 in openSUSE 11.4 (GNOME) "Mono-based applications (banshee, gnome-do, f-spot) missing from GNOME LiveCD" [Major,New]
+15:50:39 <vuntz> no idea what's going on there, waiting for a new gnome livecd to be built
+15:50:43 <vuntz> https://bugzilla.novell.com/show_bug.cgi?id=667873
+15:50:47 <bugbot> openSUSE bug 667873 in openSUSE 11.4 (GNOME) "gnome-panel crashes for all old users after an update" [Critical,New]
+15:50:51 <vuntz> need to investigate this
+15:51:31 <vuntz> 3rd: yelp is using xulrunner192. That's bad because it's old and because this brings xulrunner192 on the livecd. Just for yelp.
+15:52:32 <vuntz> 4th: some accessibility-related issue in gnome-panel, that mgorse pointed out earlier today. If accessibility is enabled, bad stuff happens because old & new applets both share the PanelApplet GType, but it's two different types
+15:53:08 <vuntz> and that's it
+15:53:28 <vuntz> hopefully, I should be able to get the two panel bugs fixed
+15:53:32 <sreeves> for the 3'rd item - you said it only pulls xulrunner192 in for printing correct ?
+15:53:41 <sreeves> and thats currently broken anyway ?
+15:53:44 <vuntz> hrm, no :-)
+15:54:03 <vuntz> I "ported" yelp to xulrunner20, and it broke printing, among other things
+15:54:28 <sreeves> ah - I misread your comments
+15:54:37 <vuntz> it felt to me like all the broken things were actually pointing to one unique issue
+15:54:47 <vuntz> some functions returning NULL, while we expect something else
+15:55:35 <vuntz> so yeah
+15:55:48 <vuntz> I guess we need to dive deeper in the yelp & xulrunner192 codes
+15:56:03 <vuntz> apart from that, we fixed quite a few bugs in the last few days
+15:56:24 <sshaw> vuntz: isn't fedora and ubuntu running into this issue?
+15:57:14 <vuntz> sshaw: fedora 14 wasn't using xulrunner20, fedora 15 will have new yelp (webkit-based)
+15:57:14 <bugbot> Fedora bug 14 in Red Hat Linux (kernel) "Sound Modules Appear to be missing" [Medium,Closed: currentrelease] https://bugzilla.redhat.com/14
+15:57:15 <bugbot> Fedora bug 15 in Red Hat Linux (installer) "Install is dying on package selection" [High,Closed: currentrelease] https://bugzilla.redhat.com/15
+15:57:18 <vuntz> good point about ubuntu, though
+15:57:34 <vuntz> I'll ask
+15:57:57 <DimStar> natty is on yelp 2.91.3
+15:58:00 * badshah400 has to leave for a few minutes on an urgent issue
+15:58:21 <DimStar> err.. 2.91.10 even
+15:58:43 <vuntz> ah
+15:59:28 <vuntz> we can't do that, it's too late for us
+15:59:41 <vuntz> (especially as it requires at least one new package)
+16:00:22 <vuntz> do other people have blockers?
+16:00:38 <sshaw> I'm running into an issue
+16:00:40 <metalgod> sorry power down here
+16:01:04 <sshaw> after resuming my laptop I almost always have to run rcnetwork restart
+16:01:22 <DimStar> as per Coolo's last mail, we really need goo dreasons to get any change in now.. as 11.4 seems to be split off now.
+16:01:22 <sshaw> it almost reconnect on resume, but seems to fail to update /etc/resolv.conf
+16:03:41 <sreeves> sshaw: this just started with rc1 ?
+16:03:50 <sshaw> no
+16:03:59 <sshaw> I think I have mentioned it in here before
+16:04:29 <sshaw> oh, and this really only happens when changing networks
+16:04:39 <sshaw> maybe just the networks I'm connecting to?
+16:05:57 <sreeves> my 11.4 box is a desktop machine so I can't test that
+16:06:10 <sreeves> anyone else see that ?
+16:06:15 <sshaw> sreeves: I have an extra laptop you can test with ;)
+16:06:20 <sreeves> sshaw: probably better file a bug
+16:06:26 <sshaw> sreeves: maybe its a hard drive space issue ;)
+16:06:47 * sshaw will file one later
+16:07:02 <sreeves> badshah400: do we know if the missing mono stack is new for RC1 ?
+16:07:17 <metalgod> vuntz, the artwork situation is solved ?
+16:07:40 <sreeves> metalgod: thats the next topic
+16:07:44 <metalgod> ok
+16:07:47 <metalgod> packagekit ?
+16:09:06 <sreeves> duncan updated the zypp backend to use the satsolver directly so it now honors vendor change, locked packages ...
+16:09:17 <vuntz> it wasn't submitted yet, though
+16:09:53 <sreeves> my vote would be that we should have the conf file setting only do patch updates by default
+16:10:11 <sreeves> other opinions ?
+16:10:21 <vuntz> makes sense to me
+16:10:47 <DimStar> same here...
+16:10:53 <sreeves> that would maintain existing behavior but make it easy for people that want to switch
+16:11:21 <metalgod> i agree
+16:11:41 <metalgod> by default it should use the old behavior
+16:11:41 <sreeves> I'll will post a comment in the bug with our unanimous approval :)
+16:11:57 <sreeves> s/I'll/I
+16:11:57 <vuntz> can you also push duncan to submit his changes asap? :-)
+16:12:13 <sreeves> #action sreeves to push on packagekit bug
+16:12:20 <sreeves> hrmm
+16:12:46 <sreeves> vuntz: metalgod - I forget, is that the way to do an action item ?
+16:12:54 <metalgod> sreeves, yes
+16:13:16 <sreeves> ah thats right - the bot does not give feedback
+16:13:30 <sreeves> anything else before we move to the next topic ?
+16:13:34 <badshah400> sreeves: I am not sure, but I think it was also an issue with M6
+16:14:27 <sreeves> badshah400: do we know if it's a problem with something not building or a space on the live CD issue ?
+16:14:51 <badshah400> sreeves: I don't actually
+16:15:18 <sreeves> ok
+16:15:38 <sreeves> #topic 11.4 wallpaper and GDM theme
+16:15:47 <badshah400> sreeves: I don't know how to find that out either
+16:16:24 <sreeves> we would need to check the pattern and see if it is intentionally left out
+16:16:33 <sreeves> or ping coolo :)
+16:16:42 <sreeves> metalgod: now ask your question
+16:17:06 <metalgod> ok
+16:17:11 <vuntz> it's solved, yes :-)
+16:17:28 <metalgod> vuntz, we will use an old wallpaper from what i understand
+16:17:33 <vuntz> nope
+16:17:37 <vuntz> we use the 11.4 wallpaper
+16:17:44 <vuntz> we have a dynamic version
+16:17:47 <vuntz> it's okay
+16:17:50 <metalgod> vuntz, it's the same of grub ?
+16:17:54 <metalgod> and splash ?
+16:17:56 <vuntz> yes
+16:17:59 <metalgod> ok
+16:18:00 <metalgod> perfect
+16:18:09 <vuntz> I'm not a big fan of it, but that's a matter of taste
+16:18:19 <metalgod> we should start thinking on gnome3 branding also
+16:18:20 <Ilmehtar> where can I see an example of it?
+16:18:25 <vuntz> and I encourage everyone to try tennebon-dynamic-wallpaper from GNOME:Apps
+16:18:36 <vuntz> it's full of jimmac love
+16:18:43 <badshah400> vuntz: tennebon looks better definitely
+16:18:51 <vuntz> Ilmehtar: http://openqa.opensuse.org/opensuse/testresults/openSUSE-NET-i586-Build1079-gnome/ooffice-2.jpg
+16:19:04 <metalgod> pretty nice that one ^
+16:19:07 <Ilmehtar> vuntz love it
+16:19:10 <badshah400> vuntz: its not in factory/11.4 though, is it?
+16:19:22 <vuntz> badshah400: tennebon? Not yet
+16:19:27 <vuntz> badshah400: I guess it won't make it in 11.4
+16:19:35 <badshah400> vuntz: that's a pity
+16:19:38 <vuntz> well
+16:19:42 <vuntz> yes
+16:20:53 <vuntz> anyway
+16:20:58 <sreeves> we still have a few days before the RC2 deadline :-D
+16:21:08 <sshaw> vuntz: do you have a link to the wallpaper so I can change it on my machine :)
+16:21:09 <vuntz> sreeves: tennebon is a new package, though
+16:21:22 <vuntz> sreeves: so it's likely blocking on legal
+16:21:25 <DimStar> sreeves: yes.. but if you read coolo's mail, you won't get much change in :)
+16:22:06 <vuntz> sshaw: http://download.opensuse.org/repositories/GNOME:/Apps/openSUSE_Factory/noarch/tennebon-dynamic-wallpaper-1-1.1.noarch.rpm
+16:22:07 <badshah400> for the millionth time: i don't like the default wallpaper this time around :(
+16:22:41 <badshah400> but I am happy there at least is a default after all that happened
+16:22:54 <metalgod> sreeves, i think you should include G:N status for the next topic
+16:23:38 <sreeves> well if it is blocked on legal there is not much hope so I guess we just move on
+16:23:43 <sreeves> metalgod: your wish is my command
+16:23:51 <sreeves> #topic G:N status
+16:24:05 <metalgod> i have a word here before the rest of the team
+16:24:15 <metalgod> i participated on gnome3 user day
+16:24:39 <metalgod> and looks like opensuse and fedora are the distros that people can use to start using gnome3 right after it comes out
+16:24:55 <metalgod> so we have a good oportunity to spread even more
+16:25:08 <fcrozat> I haven't finished pushing all my changes from my gnome3 repo to G:N, but a lot of rq are already pending in G:N for review
+16:25:13 <metalgod> fcrozat live image is used by lot's of users
+16:25:25 <fcrozat> metalgod: next release today :)
+16:25:50 <metalgod> fcrozat, awesome we on marketing are suggesting the live image to everyone to try out gnome3
+16:26:09 <metalgod> fedora doesn't even an alpha iso had released
+16:26:17 <fcrozat> they do
+16:26:17 <metalgod> so it makes opensuse a good option to try gnome3
+16:26:30 <sshaw> would it be possible to have a good solid live image by next wednesday?
+16:26:38 <sshaw> something we could give out at scale9x?
+16:26:49 <fcrozat> sshaw: depends what you call "solid" :)
+16:27:06 <metalgod> fcrozat, so we can point that after 3.0 release we can have a repo for 11.4 ready to be installed ?
+16:27:07 <sshaw> fcrozat: won't scare users away...  More or less works on boot, no messing with stuff
+16:27:09 <fcrozat> current one (or the next one today) should be even more :)
+16:27:21 <fcrozat> sshaw: it is already the case
+16:27:40 <fcrozat> metalgod: well, I plan to move live image to 11.4 when it is released
+16:27:50 <sshaw> fcrozat: I've started to download it a few times, but my downloads keep getting interrupted so I haven't had a chance to try it yet
+16:27:55 <fcrozat> so it should help us getting 3.0 in shape when it is ready
+16:28:11 <metalgod> awesome
+16:28:13 <sshaw> since coolo just added openSUSE:11.4, can you do that now?
+16:28:35 <fcrozat> sshaw: it is mirrored all over the world, thanks to opensuse mirrors :)
+16:28:40 <metalgod> this is a good marketing oportunity from opensuse perspective
+16:28:44 <metalgod> also from gnome upstream too
+16:28:49 <fcrozat> sshaw: we will either do that in my own repo or in G:N
+16:28:56 <fcrozat> but yes, it is the idea, don't worry :)
+16:29:00 <badshah400> our plans for G3 remains as in http://en.opensuse.org/openSUSE:GNOME_features#openSUSE_GNOME_3_respin ?
+16:29:14 <fcrozat> now, I give back the mic to people in charge of G:N, like vuntz :)
+16:29:21 <metalgod> badshah400, i think as soon as fcrozat rebase his image we can do it
+16:29:40 <badshah400> great!
+16:29:54 <metalgod> badshah400, even if it's an unofficial way
+16:29:56 <vuntz> fcrozat: me, in charge?
+16:30:08 <fcrozat> vuntz: you are approving stuff for G:N, right ? :)
+16:30:16 <fcrozat> or is it DimStar ? :)
+16:30:16 <vuntz> well, I'm actually not ;-)
+16:30:20 * sshaw just saw the bus go over vuntz ;)
+16:30:21 <vuntz> but I'm supposed to, yes
+16:30:24 <fcrozat> hehe
+16:30:29 <badshah400> metalgod: the official tag sure does not matter for me :)
+16:30:55 <vuntz> I wanted to start approving stuff in G:N today, but got stuck with 11.4 + security issues
+16:31:57 <nmarques> vuntz, hi
+16:32:13 <metalgod> ok
+16:32:27 <metalgod> so we will have gnome3.0 on a repo ready for 11.4
+16:32:29 <sreeves> nmarques: meeting going on right now. join with us
+16:32:36 <metalgod> and probably an unofficial respin
+16:34:12 <metalgod> sreeves, move to the next topic ?
+16:34:30 <sreeves> DimStar: you have anything else to add to the gnome:next status ?
+16:34:44 <DimStar> sreeves: nope... I have not been much involved in it...
+16:34:49 <sreeves> ok
+16:35:05 <sreeves> #topic previous action items status
+16:35:20 <sreeves> metalgod: this topic is listed as yours
+16:35:26 <metalgod> ok so psankar had a bug with wrong action taken when clicking link
+16:35:53 <metalgod> he reported a bug but no idea if it's critical
+16:36:22 <metalgod> about porting sonar to gtk3 he also did a few tweets and posts but so far nobody jumped
+16:36:42 <metalgod> i think we should have this done before gnome3
+16:37:06 <metalgod> otherwise we will end up with different themes on a gnome3 environment
+16:37:19 <metalgod> also fcrozat  to check on driver for r600 in xorg
+16:37:27 <metalgod> any news fcrozat ?
+16:37:50 <fcrozat> metalgod: didn't had time to try to build it for the image. I know we don't have it enabled in factory
+16:37:56 <badshah400> I thought that upstream wanted GNOME3 to be themed by them as vuntz mentioned a while back
+16:38:04 <fcrozat> put it back for next week meeting
+16:38:06 <badshah400> what would we need sonar for then?
+16:38:16 <nmarques> badshah400, for our user base ? :)
+16:38:29 <sreeves> #action fcrozat  to check on driver for r600 in xorg
+16:39:12 <metalgod> badshah400, well the problem is... if you use the default gtk3 theme (adwaita) and mix with gtk2 apps
+16:39:19 <metalgod> things will look wrong
+16:39:19 <badshah400> nmarques: distributions were supposed to use the upstream theming as far as possible right?
+16:39:43 <badshah400> metalgod: ok, that might be a problem.
+16:39:46 <metalgod> badshah400, popular distros always change themes
+16:39:48 <nmarques> badshah400, one thing is ship default, other thing is have alternatives available, that's how I see it ;)
+16:39:49 <metalgod> and branding
+16:40:12 <metalgod> openSUSE branding is very different from other distros
+16:40:15 <metalgod> we all know that :)
+16:40:18 <nmarques> badshah400, and Sonar kinda became a openSUSE 'calling card'
+16:40:35 <badshah400> metalgod: so far yes, I thought that was abt to change with G3
+16:40:37 <metalgod> sonar and gilouche before
+16:40:59 <badshah400> nmarques: yes, I agree sonar is a great theme, as was gilouche
+16:41:15 <metalgod> the default gnome3 theme is also great
+16:41:24 <metalgod> (all three from the same author)
+16:41:42 <badshah400> yep, jimmac the great :)
+16:42:05 <metalgod> the problem is
+16:42:06 <badshah400> anyway, I was just wondering; nothing specific so we can move on
+16:42:13 <metalgod> or we change to adwaita for gtk2 and gtk3
+16:42:20 <metalgod> or we port sonar to gtk3
+16:42:36 <metalgod> the first one seems bad for us
+16:43:37 <badshah400> metalgod: perhaps, but we should remember we do not have a "dedicated" designer any more
+16:43:47 <metalgod> yeah i understand
+16:43:51 <metalgod> and not everyone knows css
+16:44:15 <sreeves> sounds like we could still use psankar to spread the word about possible sonar port
+16:44:32 <sreeves> #action psankar to spread the word about needing help for port of sonar to gtk3
+16:44:33 <metalgod> ehehe right
+16:44:45 <sreeves> since he is not here he gets it again :)
+16:45:22 <vuntz> I wonder if it's really hard to port it to css, btw
+16:45:22 <vuntz> it might not be that hard
+16:45:23 <badshah400> metalgod: I don't know how complicated option 2 is, but if upstream already is ready with adwaita for gtk3 and 2, we could use that too in the future; i wouild not think that would be a bad thing to do necessarily
+16:45:57 <metalgod> badshah400, we will look like fedora and other distros that don't use custom branding
+16:46:10 <metalgod> vuntz, yeah it could be easy
+16:46:59 <nmarques> metalgod, maybe ask someone from the wiki team? They should be proficient with css ;)
+16:48:17 <sreeves> I think that does it for the previous action items
+16:48:25 <badshah400> hope someone does the option 2 well, but I am sceptical due to lack of the one "designer" guy :)
+16:48:28 <metalgod> honestly i've done a gnome theme based on a known engine
+16:48:31 <metalgod> it wasn't hard
+16:48:39 <badshah400> ok, that's good then
+16:48:44 <metalgod> but i don't have much time to dive on css now
+16:48:46 <metalgod> :(
+16:49:07 <metalgod> badshah400, also a gnome-shell theme would be wonderful
+16:49:10 <metalgod> but thats another call
+16:49:23 <nmarques> metalgod, there is a Sonar theme for gnome-shell
+16:49:44 <metalgod> nmarques, yes there is but i'm not sure if it isn't already outdated
+16:50:18 <metalgod> we have also to see if the current sonar icons fit well with gnome3 icons
+16:50:22 <metalgod> symbolic etc...
+16:50:38 <metalgod> that's a month job for a designer ehehe
+16:51:25 <sreeves> ok should we move on and we will hit this again in next meeting ?
+16:51:44 <badshah400> sreeves: yes
+16:51:48 <sreeves> #topic project update
+16:52:03 <metalgod> sure
+16:52:34 <sreeves> we have kind of covered this in previous topics but any general project updates ?
+16:52:40 <sreeves> vuntz: metalgod DimStar ^^
+16:53:32 <vuntz> hrm
+16:53:49 <vuntz> I think we covered everything already
+16:53:53 <metalgod> yeah
+16:54:22 <sreeves> #topic QA
+16:54:40 <sreeves> when is the submission deadline for RC2 ?
+16:54:45 <badshah400> vuntz: i have a question relating to this: is GNOME going to release incremental 2.x versions any more after 3.0 releases?
+16:54:59 <vuntz> RC2 is next Friday, so deadline is tomorrow/monday
+16:55:00 <badshah400> sreeves: I believe this Friday, that's tomorrow
+16:55:10 <metalgod> badshah400, no 2.32 is the last one
+16:55:14 <vuntz> badshah400: no more 2.x release
+16:55:26 <vuntz> badshah400: some modules might release some 2.x versions, though
+16:55:34 <vuntz> for example, there'll be empathy 2.34
+16:55:56 <vuntz> but that's because empathy people are nice people :-)
+16:56:03 <badshah400> vuntz: okay: for future versions of openSUSE do we plan to have G:2.x repos for those who intend to stick to the classical gnome?
+16:56:21 <metalgod> badshah400, gnome3 provides a fallback to gnome-panel
+16:56:32 <metalgod> so you don't need to have gnome2
+16:56:45 <badshah400> for example gnome:2.32 for the next opensuse release?
+16:57:11 <vuntz> badshah400: we might do GNOME:STABLE:2.32 for 11.4
+16:57:20 <badshah400> metalgod: still, G:3 is a fresh start; there might be prople wioth too much inertia to move on
+16:57:25 <vuntz> but I'm not completely sure about it
+16:57:43 <badshah400> vuntz: ok
+16:57:54 <vuntz> the issue is that 11.3 already uses G:S:2.32, and for 11.4, we'd need a new glib there, which would break 11.3 stuff
+16:58:07 <metalgod> badshah400, we are trying to convince people that if they don't have a 3d supported card they can still use gnome-panel as fallback
+16:58:25 <vuntz> do people think there'll be demand for G:S:2.32 for 11.4?
+16:58:28 <nmarques> metalgod, and those who have 3D enabled and still want the panel ?
+16:58:32 * vuntz would expect people to want G:S:3.0
+16:58:47 <metalgod> nmarques, it's suggested that you should use gnome-shell
+16:58:49 <FunkyPenguin> i would have it as an option if possible
+16:58:56 <badshah400> metalgod: ok, i am just worried (I worry a lot usu, so this is natural:) ) after the experience with KDE4.0 etc
+16:58:57 <metalgod> to have the full experience
+16:59:36 <vuntz> FunkyPenguin: which one? 3.0 or 2.32?
+16:59:51 <FunkyPenguin> vuntz, personally I would say both
+17:00:00 <metalgod> vuntz, we can branch 2.32 of 11.4
+17:00:10 <vuntz> we can
+17:00:10 <metalgod> and do minor bumps
+17:00:17 <vuntz> we can do many things
+17:00:42 <vuntz> but that's two projects to maintain
+17:00:42 <FunkyPenguin> vuntz, yeah, but we only have limited resources so we need to make sure they are used correctly
+17:00:43 <metalgod> not available for 11.3
+17:00:48 <badshah400> I guess it is a question of manpower actually, so maintaining both might not be possible
+17:01:07 <FunkyPenguin> vuntz, what is the roadmap upstream for 2.xx
+17:01:11 <vuntz> I think it's worth pointing out here that anybody can help maintain G:S:*
+17:01:12 <metalgod> i wouldn't mind of not having 2.32
+17:01:18 <metalgod> since it's already on 11.4
+17:01:22 <vuntz> with more help, we could do both
+17:01:27 <vuntz> FunkyPenguin: it's dead
+17:01:30 <badshah400> ok
+17:01:35 <nmarques> vuntz, do you think I can help with some guidance?
+17:01:45 <FunkyPenguin> vuntz, ok that's much simpler then - we have G:S:3
+17:02:19 <vuntz> nmarques: I don't think the issue is guidance. We just need people to actually check if there are updates (osc collab todo), and package the updates
+17:02:32 <vuntz> and we need people to test things, obviously
+17:02:32 <FunkyPenguin> why work on something that upstream isnt working on?
+17:02:44 <metalgod> FunkyPenguin, that's my point
+17:02:47 <nmarques> vuntz, I'm planning to stay GNOME2 for at least one more cycle
+17:02:58 <nmarques> vuntz, so I can probably help if it's only updating/testing
+17:03:13 <FunkyPenguin> metalgod, in that case i whole heartedly agree
+17:03:18 <nmarques> vuntz, so you got one extra hand within limited knowledge
+17:03:35 <metalgod> FunkyPenguin, gnome3 is much more important from marketing point of view
+17:03:48 <vuntz> FunkyPenguin: well, it's dead officially, but, for example, there's evo 2.32.2 while we'll ship evo 2.32.1
+17:04:08 <metalgod> i already mentioned some reasons that could get more userbase for opensuse
+17:04:34 <nmarques> metalgod, have you seen any marketing on GNOME3 by openSUSE ? :)
+17:05:12 <FunkyPenguin> nmarques, the gnome3 live image is on opensuse thanks to fcrozat ;)
+17:05:21 <FunkyPenguin> it was being dished out at fosdem
+17:05:21 <metalgod> nmarques, no... i only participate on marketing upstream
+17:05:24 <metalgod> not opensuse
+17:05:26 <nmarques> FunkyPenguin, key word: MARKETING ;)
+17:05:35 <FunkyPenguin> and we had gnome3 on display at our booth
+17:05:51 <metalgod> not only the live image but also packages for a stable release
+17:06:01 <metalgod> something that people can actually install and use
+17:06:12 <nmarques> metalgod, doesnt matter if they don't know it exists
+17:06:14 <metalgod> and opensuse could be the first one
+17:06:48 <sshaw> nmarques: I'm hoping to market/display/talk about it at scale9x next week
+17:06:59 <nmarques> the problem with openSUSE Marketing is that they are turning into a commercial division and not into a Marketing group ;)
+17:07:05 <sshaw> there is also a marketing hackfest, so, I'm hoping to get them on board too
+17:07:38 <sshaw> nmarques: its still a young group.  We'll see what happens
+17:07:56 <nmarques> sshaw, I've jumped that ship some time ago, I don't care ;)
+17:08:10 <sreeves> any other questions before we close out the meeting ?
+17:08:14 <sshaw> nmarques: I'm not a marketing person by any means.
+17:08:24 <badshah400> one question:
+17:08:35 <nmarques> sshaw, we are all marketeers ;) either you like it or not
+17:08:35 <badshah400> regarding status of http://en.opensuse.org/openSUSE:GNOME_features#Automatic_installation_of_gstreamer_codecs
+17:09:08 <vuntz> badshah400: wasn't fully completed
+17:09:27 <vuntz> badshah400: but if you have the right repos configured, it will work
+17:09:32 <badshah400> is it worth beating the drums about? I am writing down a list of cool stuff we have finally managed to implement and I was thinking of this
+17:10:08 <nmarques> vuntz, add packman: zypper in `zypper se ffmpeg`, usually does the trick
+17:10:31 <badshah400> vuntz: i tried to play mp3 before fluendo-mp3 was pulled in, but though that package was in the factory-oss repo or non-oss repo, the dialog said "cannot find package" that provides the required codec
+17:10:33 <vuntz> nmarques: with the automatic stuff, no need for "zypper in"
+17:11:01 <vuntz> badshah400: ah?
+17:11:10 <vuntz> hrm, maybe it broke
+17:11:13 <vuntz> DimStar: any idea?
+17:11:14 <nmarques> vuntz, automatic is weird taking the flash example ;)
+17:11:45 <badshah400> vuntz: I know the ability to add a repo is not in; but this is something I expect to work; and it was afaik with M3
+17:12:09 <badshah400> this meaning installing fluendo-mp3 when I try to play mp3
+17:12:12 <vuntz> badshah400: anyway, without the repo part, I wouldn't advertize it too much
+17:12:46 <badshah400> vuntz: ok
+17:12:55 <nmarques> vuntz, changing the topic a bit
+17:13:21 <nmarques> vuntz, I've tinkered gnome-session, it's not perfect, but it's there... I wonder if you could have a look when you have some time
+17:13:49 <vuntz> nmarques: how urgent is it, compared to approving packages in G:Ayatana?
+17:13:51 <vuntz> :-)
+17:14:04 <nmarques> vuntz, not urgent, but there's one higher priority
+17:14:24 <DimStar> vuntz: will have to check the auto pullin...
+17:14:46 <nmarques> vuntz, SR 60107 ;)
+17:15:24 <sreeves> any other QA questions ?
+17:15:54 <sreeves> thanks everyone for the participation.  Good meeting.
+17:15:57 <sreeves> #endmeeting

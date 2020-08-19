@@ -1,0 +1,550 @@
+15:06:16 <robjo> #startmeeting
+15:06:16 <bugbot> Meeting started Thu Dec 20 15:06:16 2012 UTC.  The chair is robjo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:06:16 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:06:30 <robjo> #topic oSC13 Program Comittee meeting
+15:07:37 <robjo> #info present: Alberto (aplanas), Matt (znggo), Michal (miska), Stella (differentreality), Robert (robjo)
+15:07:51 <robjo> #info missing Henne (henne), Luiz
+15:08:38 <differentreality> Before we get started I just want to say that Nikos (nloukidis) is a local volunteer and is also here to attend the  meeting
+15:09:04 <robjo> OK
+15:09:28 <robjo> Anyone in the channel is welcome to listen in of course, it is a public meeting.
+15:09:34 <differentreality> yeah :)
+15:09:40 <differentreality> topic is not set though, is it ?
+15:09:56 <robjo> However, most of the conversation should take place between those that have volunteered to be on the committee
+15:10:24 <robjo> I did set the topic and was about to change it to intro, did it not work?
+15:10:26 <darix> robjo: permissions fixed
+15:10:37 <robjo> darix: thanks
+15:10:52 <robjo> OK, lets try that again.
+15:10:56 <differentreality> robjo: as far as I am concerned I don't see the topic changed, my concern being that maybe also other commands like # info did not reallyw ork
+15:11:06 <robjo> #topic oSC13 Program Comittee meeting
+15:11:12 <robjo> #info present: Alberto (aplanas), Matt (znggo), Michal (miska), Stella (differentreality), Robert (robjo)
+15:11:16 <robjo> #info missing Henne (henne), Luiz
+15:11:39 <differentreality> bugbot needs to be op ?
+15:11:48 <robjo> The agenda is as follows:
+15:11:50 <robjo> - Brief intro (everyone can introduce themselves to the group)
+15:11:51 <robjo> - Decide on the tool to use
+15:11:51 <robjo> - who is going to administer the tool
+15:11:51 <robjo> - options:
+15:11:51 <robjo> ~ Indico: http://indico-software.org/
+15:11:51 <robjo> ~ Pentabarf: http://pentabarf.org/Main_Page
+15:11:51 <robjo> ~ OpenConferenceWare: https://github.com/igal/openconferenceware#readme
+15:11:52 <robjo> ~ Open Conference Systems: http://pkp.sfu.ca/?q=ocs
+15:11:52 <robjo> ~ others?
+15:11:53 <robjo> - Decide on the tracks
+15:11:53 <robjo> - Decide on the dates
+15:11:54 <robjo> - open paper submission
+15:11:54 <robjo> - close submission
+15:11:55 <robjo> - date of notification
+15:13:00 <differentreality> AJaeger: does bugbot need to be op ?
+15:13:06 <robjo> If it's not working I'll try to extract the minutes from my logs. Lets just move on and not worry too much about bugbot.
+15:13:20 <robjo> I'll start with the into.
+15:13:50 <AJaeger> differentreality: might be - let's give...
+15:13:58 <AJaeger> rl
+15:13:59 <AJaeger> lb
+15:14:13 <AJaeger> robjo: take op back at the end - I need to leave soon....
+15:14:24 <robjo> Robert Schweikert, work at SUSE in ISV Engineering. I've helped with the program for the Summit last year and am looking forward to have another great program for oSC13
+15:14:53 <robjo> AJaeger: have no idea how to do that and what you mean.
+15:15:02 <robjo> Lets sort bugbot out another time.
+15:15:02 <AJaeger> #topic test
+15:15:20 <znggo> yes, I'd like to leave in 45 minutes :-)
+15:15:30 <znggo> Anyway - Matt Barringer, SUSE employee, wrote the android schedule
+15:15:36 <AJaeger> robjo: ok
+15:16:30 <robjo> aplanas: intro?
+15:16:40 * |miska| is suse employee, openSUSE team member, was heavilly involvolved in last years conference
+15:16:44 <aplanas> Alberto Planas. Work at SUSE NUE, in the openSUSE team. New here in SUSE but long time Linux user.
+15:17:07 <robjo> differentreality: ?
+15:17:15 <differentreality> Stella Rouzi, local organizer in Thessaloniki, Greece, I have a degree in informatics & communications, I help in the organization of several greek FOSS conferences/events
+15:17:40 <robjo> Great thanks, next
+15:17:54 <robjo> #topic What tool should we use
+15:18:06 <robjo> now it works, nice
+15:18:29 <robjo> Matt has already volunteered to set up the tool and fix any exporting issues, if needed.
+15:18:32 <robjo> Thanks Matt
+15:19:01 <znggo> I vote for openconferenceware.  It has nearly all of what we would need, and it's a rails app, so it's easy enough to extend it if we run into trouble
+15:19:23 <robjo> In my mind the only thing that speaks for Indico is that we have used it in the past. i.e. people already have accounts and the tool is already set up.
+15:19:47 <robjo> Other than that I see no "restrictirons" on switching
+15:19:56 <znggo> accounts isn't much of an issue with openconferenceware, as it's all openid based
+15:20:33 <differentreality> seeing also the pros/cons here http://paste.opensuse.org/1993967  I am between openconferenceware and penta
+15:20:42 <aplanas> openconferenceware have a +1 for me if one user know how to taylor the tool
+15:20:52 <differentreality> I know to use penta as a user
+15:20:59 <robjo> I have no experience with Ruby & Rails other than that all Ruby packages that I depend on in OBS are broken more often than not and that Ruby itself has issues with compatibility behavior IMHO
+15:21:20 <|miska|> penta is rails as well I think
+15:21:21 <differentreality> FOSDEM uses penta for sometime now
+15:21:49 <aplanas> |miska| yes is rails
+15:21:59 <differentreality> I guess Pascal could answer if we have some questions about how it works
+15:22:11 <aplanas> OCS is PHP
+15:22:21 <|miska|> And is confusing as hell
+15:22:24 <znggo> one thing i can't see is if pentabarf has a usable export API.  it exports XML, but that doesn't tell me if the export is *useful*
+15:22:26 <|miska|> OCS
+15:22:52 <|miska|> znggo: export of penta is meant to be used with fahrplan
+15:22:56 <|miska|> I beleive
+15:23:10 <|miska|> Which is Android app we used in 2011
+15:23:39 <znggo> i assume so as well, but the schedule i wrote needs more data than fahrplan exposes IIRC
+15:24:10 <znggo> although, worst case would be to do a database scrape, so that's not really such a huge issue
+15:24:26 <|miska|> Or patch it to export more data
+15:24:53 <robjo> While I like the "patch it" idea
+15:25:10 <robjo> from the looks of it many of these tools are at a relative stand still
+15:25:33 <robjo> and having patches we cannot push upstream and have to maintain for the future is something I would not recommend we get into
+15:25:49 <|miska|> Well, personaly from descriptions, screenshots and some playing around, I liked penta the most, but my opinion is that we should go for whatever is the most confortable for znggo as he will maintain/setup it
+15:26:21 <robjo> |miska|: #agree
+15:26:29 <|miska|> robjo: Well, if they are still, there is low maintenance of patches
+15:26:59 <differentreality> I am pretty much towards what miska just said. I would go for penta but ultimately matt has to be able to work with it in the most effective way possible
+15:27:36 <znggo> well, if people are comfortable with me making the decision, i'll install pentabarf this weekend and give them a good comparison before deciding
+15:27:47 <robjo> znggo: you still favor OCW (OpenConferenceWare) ?
+15:28:15 <robjo> I am good with that approach
+15:28:17 <robjo> others?
+15:28:31 <|miska|> Fine with me
+15:28:44 <differentreality> if znggo can get things running as we need them, no prob from me
+15:28:49 <|miska|> Actually awesome, kudos to znggo
+15:29:44 <robjo> #action Matt to setup pentabarf and OpenConferenceWare and decide by 12/27 which tool we will use
+15:29:49 <differentreality> one question
+15:30:00 <znggo> |miska|: i never want to have to copy and paste from a Google Docs spreadsheet into JSON ever again ;-)
+15:30:07 <differentreality> except for talk submissions does ocw support user registration too?
+15:30:15 <znggo> yes
+15:30:25 <differentreality> nice :)
+15:30:33 <|miska|> znggo: :-D It had tsb/csv export :-D
+15:30:37 <znggo> the login is done with openid, but the user can set their biography, upload a photo, etc
+15:30:50 <|miska|> But I totally unbderstand
+15:30:57 <robjo> #info Tool must support user registration, talk submission, schedule creation and schedule export
+15:31:38 <aplanas> the CFP workflow is less important here, isn't?
+15:31:57 <robjo> aplanas: Yes, I think so
+15:32:02 <aplanas> ok
+15:32:11 <robjo> Can I summarize real quick?
+15:32:23 <differentreality> yeah
+15:32:26 <robjo> Tool is either penta or OCW
+15:32:41 <robjo> Matt will set up both and decide which one by 12/27
+15:33:17 <robjo> We will announce on the list (project & conference) after Matt has come to a decision
+15:33:22 <robjo> end summary
+15:33:32 <robjo> Everyone OK with this?
+15:33:37 <|miska|> yes
+15:33:39 <differentreality> yes
+15:33:40 <znggo> i don't know if -project needs to be informed, does it?
+15:34:04 <differentreality> wouldn't hurt to send a couple of announcements to project as well
+15:34:04 <nloukidis> yes
+15:34:17 <robjo> znggo: I would like to keep people that are no on -conference in the loop as much as possible to keep excitment for oSC13 high
+15:34:23 <znggo> ok
+15:34:38 <differentreality> robjo: i m happy you got a plan going :)
+15:35:04 <robjo> differentreality: thanks :)
+15:35:12 <robjo> OK next topic
+15:35:31 <robjo> #topic What tracks should we have at oSC13?
+15:36:07 <robjo> In the past we had a community track and a technical track, plus a "whatever track"
+15:36:21 <differentreality> I believe that even if we pre-decide some tracks, we should leave space for submissions to form tracks and not limit people since the beginning
+15:36:31 <robjo> I think this has worked well and do not really see a need to change this
+15:37:09 <robjo> differentreality: The tracks do not limit the submission, in the we as the comittee decide where talks fit in the best
+15:37:10 <znggo> I would suggest leaving those three as a starting point, since tracks can be fairly easily changed later
+15:37:29 <differentreality> so we won't publish the tracks, we just keep them in mind ourselves ?
+15:37:49 <|miska|> hmm
+15:37:58 <robjo> tracks encourage people to submit in certain areas, thus they are a guidance, not a mandate
+15:38:05 <|miska|> I think that posting some sugestions for tracks makes sense
+15:38:13 <|miska|> Exactly
+15:38:16 <robjo> Nope, we want to publish the tracks in the CfP announcement
+15:38:39 <differentreality> so we could say main tracks these 3 and see how it goes afterwards?
+15:38:47 <|miska|> If I can speak about ten topics, having predefined tracks will help me to decide
+15:38:48 <robjo> If we announce no tracks we are no likely to get submissions focused on what we are after
+15:39:07 <robjo> |miska|: exactly the points of the tracks
+15:39:27 <robjo> We want to guide the content of the conference, not dictate
+15:39:27 <differentreality> well these 3 tracks cover pretty much everything that could be submitted
+15:40:11 <robjo> differentreality: Yes, that's why we adde the "whatever" track a while back to give us room to accept talks about well, "whatever"
+15:40:11 <differentreality> ok, I basically agree with Matt, let's announce these 3 tracks and if we need to adapt we will do so later on
+15:40:35 <robjo> Thus we need a name for the "whatever" track
+15:40:37 <znggo> it might even be good marketing to announce a new track later
+15:41:07 <robjo> If I recall correctly we called it "openWorld" or something like that for the summit
+15:41:41 <aplanas> openWorld sounds good
+15:41:47 <znggo> +1
+15:42:01 <nloukidis> I think this coud be to “general”
+15:42:25 <differentreality> openworld sounds nice to me
+15:42:48 <nloukidis> If you say oppen world it means almost evrything
+15:42:56 <differentreality> that's the point to be generic and include everything else except for strictly community and technical talks
+15:42:57 <|miska|> Henne had proposal to have distribution, infrastructure and project tracs
+15:42:58 <robjo> ideas how we should name the child?
+15:43:42 * |miska| was just searching in mailbox as he recalled some proposal for tracks
+15:43:51 <robjo> |miska|: Henne's proposal are more about organization of the schedule than tracks
+15:43:59 <differentreality> yes I think so too
+15:44:04 <differentreality> and I like a lot henne's approach
+15:44:17 <differentreality> besides distro and infra are generally technical stuff
+15:44:18 <robjo> distribution, infrastructure and bothe technical and would fall into the technical track
+15:44:42 <robjo> we would just group the talks such that on one day all talks are bout infrastructure
+15:44:57 <differentreality> yes
+15:45:00 <robjo> I think that is a great idea, but we are not there yet.
+15:45:08 <robjo> After all we are just deciding on the tracks
+15:45:09 <differentreality> so we all agree we would like to go for such coherence in the topics ?
+15:45:35 <robjo> differentreality: possibly, but this decision is pre-mature
+15:45:45 <robjo> lets stick with the topic at hand
+15:45:56 <robjo> lets name the "whatever" track
+15:45:59 <|miska|> Well, if we want to group them that way, we can as well say four tracks and use these three and whatever
+15:46:45 <differentreality> miska your poing is to have: distro track, infra track, project/community track, "other things" track ?
+15:46:45 <|miska|> To give people better idea than technical
+15:46:49 <robjo> |miska|: Again, Hene's proposals are not tracks, both distribution, infrastructure are technical
+15:47:02 <znggo> they're themes
+15:47:12 <|miska|> Well, they are topics
+15:47:20 <robjo> |miska|: There will be a description that goes along with the track on the web and in the CfP anouncement
+15:47:29 <differentreality> true Henne's proposal was not about tracks, but maybe we could form them into tracks, so as to motivate people to start thinking what they can present and what they can attend
+15:47:46 <robjo> Thus we are not going to just throw out "We are having a technical track"
+15:48:32 <robjo> It would say "The technical track covers......distribution, infrastructure....and we will group submissions such that infra and distro talks fall on one day respectively"
+15:48:56 <differentreality> we also do not want too many tracks... so perpahs instead of "technical track" we could give a fancier name?
+15:49:03 <|miska|> Well, if we are going to say that we are going to have technical track that will consist from infrastructure part and distribution part, we can as well say that we will have infrastructure track and distribution track
+15:49:05 <robjo> Anyway, those are details that we'll need to work out as we work on the CfP and the presentation of things on the web
+15:49:15 <|miska|> That was the point I was trying to make
+15:50:14 <differentreality> do we agree that we don't need too may tracks - let's say no more than 5 ?
+15:50:17 <robjo> |miska|: But it makes little sense for use to run two "technical" tracks we do not want to dilute the audience
+15:50:20 <differentreality> *many
+15:50:34 <robjo> No more than 4 tracks
+15:50:41 <differentreality> it would though make sense if one day we only had technical track No1 and the next day technical track No 2
+15:50:50 <robjo> By definition events in different tracks run in parallel.
+15:50:50 <|miska|> tracks doesn't have to run in paralel
+15:51:05 <differentreality> that's true
+15:51:15 <nloukidis> Ok why just say send your proposals and the board just catgorize them in traks
+15:51:21 <differentreality> and we will have another 2 tracks to cover that parallel time
+15:51:53 <|miska|> I wouldn't go for more than two talks in paralel
+15:51:56 <nloukidis> And I strongly belive in the end we will have more than 3 categories
+15:52:01 <differentreality> +1 miska
+15:52:16 <robjo> If we are different from every other conference in the way we organize things then you can expect people to be confused and you can expect submissions to be "confused" as well
+15:52:37 <differentreality> do we agree at least that one track will be community / project & friends sth track ?
+15:53:11 <|miska|> yes
+15:53:28 <robjo> The community track should cover governance issues, talks about ambassadors etc.
+15:53:30 <nloukidis> +1
+15:53:54 <differentreality> yes I think it will they are all about the community and the project
+15:54:02 <znggo> i need to head out now.  have fun!
+15:54:05 <differentreality> maybe we can call it, Project & Community Track
+15:54:16 <differentreality> bye znggo thank you
+15:54:30 <|miska|> Tracks doesn't have to last whole conference, FOSDEM also one day tracks
+15:54:36 <|miska|> znggo: bye and thanks
+15:54:47 <|miska|> differentreality: Good name
+15:55:04 <differentreality> :) how do others feel about that ?
+15:55:12 <aplanas> I like the name
+15:55:29 <aplanas> but I think that the technical part must be here to
+15:55:43 <robjo> +1 Project & Community Track
+15:55:56 <differentreality> well the idea is to have a non technical track
+15:56:00 <differentreality> which will focus on community issues
+15:56:08 <differentreality> (other than community issues with technical stuff that is)
+15:56:19 <robjo> |miska|: Correct, a track does not have to run the whole conference, however....
+15:56:24 <aplanas> yes of course
+15:56:45 <robjo> it is difficult to channel things exactly by days
+15:57:05 <differentreality> aplanas:  we will have people that want to go to community tracks (that are not technical ones) so I think this is a good way to separate things for these people
+15:57:11 <robjo> if you have a broader "technical" track and then group within that gives us mor flexibility when it comes to scheduling
+15:58:02 <differentreality> what about announcing categories instead of naming tracks in the cfp announcement?
+15:58:06 <|miska|> Ok, that is an argument I understand and agree on
+15:58:15 <differentreality> that way we give the guidelines to people in order for us to ge tthe proposals we want
+15:58:17 <robjo> if you have a track, distribution" for example and  we have enough talks for 1 & 1/2 days and we have infra that runs in parallel at teh time because of the amount of talks we have, then we do ourselves a disservice in diluting the audience
+15:58:41 <differentreality> but we are totally flexible to make the tracks we want at the end based on actual submissions and announcing exact track names later on will be a nice promo thingie
+15:59:17 <robjo> OK, lets step back for a moment
+15:59:22 <nloukidis> Desiding the structure of the program right now ??? it's to early because there are no speaches yet!
+15:59:36 <|miska|> differentreality: Like the idea
+16:00:13 <robjo> Again, the tracks are guidelines for people that submit talks to think about topics when they submit
+16:00:35 <nloukidis> Just say that we are oppen in speachess. And let the people to deside wat to send.
+16:00:53 <|miska|> robjo: And if we give them just topics and form tracks based on what they will give us
+16:00:58 <differentreality> ok, I agree we need to "push" people towards directions of what to submit
+16:01:00 <robjo> In the CfP we should give general outlines of what type of talks we expect in each "track" or call it "category"
+16:01:05 <differentreality> get people thinking
+16:01:30 <nloukidis> With a small meno as a discription
+16:01:33 <robjo> |miska|: Again, if we step outside of the "norm" for this then we are likely to step of the edge
+16:01:35 <differentreality> I agree to call 3 categories in CFP (technical stuff, community stuff, other stuff)
+16:02:06 <nloukidis> Then we can categorise them in many tracks
+16:02:09 <robjo> There is a general way these things are handled across most conferences in the technical realm.
+16:02:19 <robjo> Thus people have certain expectations.
+16:02:53 <|miska|> robjo: I saw many conferences that had just topics and formed tracks later
+16:03:01 <robjo> If you break those expectations people may not act, i.e. no submissions, be confused
+16:03:10 <|miska|> And having topics instead of tracks wouldn't confused anybody
+16:03:25 <robjo> |miska|: OK, apparently we are getting hung up on a word.
+16:04:03 <|miska|> track - talks with similar topic that run one after each other in same room
+16:04:23 <nloukidis> Ok but, if few people aplie in 1 category what will happen???
+16:04:31 <|miska|> topic - idea what to talk about, may be sheduled in paralel, but probably not
+16:05:08 <differentreality> nloukidis: that's not a realistic problem, specially between technical stuff and community stuff
+16:05:20 <robjo> |miska|: Thus, if we talk about a "technical track" at this point === "technical topic"
+16:05:23 <nloukidis> ok
+16:05:27 <nloukidis> Idea make speaches and categorised them in levels....
+16:05:39 <robjo> we are still in the very abstract planning phase
+16:05:58 <differentreality> I would still go with announcing tha tpeople can submit their talks into 3 categories (technical stuff, community stuff, other stuff) and that we later on shape real tracks and announce them with the program
+16:06:52 <robjo> differentreality: Yes, but we cannot just say stuff, we have "Project & Community"
+16:07:12 <robjo> This can be easily described in a CfP
+16:07:25 <robjo> We can use "technical" or other name
+16:07:36 <|miska|> robjo: Well, the argument against using topics that Henne proposed was that if we would call it tracks, we will be too tight in scheduling
+16:07:39 <robjo> that we can also relatively easily describe in Cfp
+16:07:51 <differentreality> we can say submit talks related to technical issues or community issues. If they don't fall into these 2 categories, they go in "General". I would like to keep the fancy track names for later on (maybe even midle submission time)
+16:08:40 <robjo> Can we just stick to the naming please?
+16:08:56 <robjo> Why are we agruing about where what goes when we have not yet had one submission?
+16:09:55 <differentreality> not really what goes where, just how we will present that to people so that it builds up excitement (as you mentioned before)
+16:10:12 <differentreality> track project and friends for community stuff, I agree
+16:10:18 <differentreality> track openworld for other stuf, I also agree
+16:11:21 <aplanas> Distribution track for the technical one?
+16:11:25 <robjo> I will write up a draft CfP and we can then argue some more about the wording, which we are doing already IMHO,
+16:11:39 <differentreality> agreed
+16:11:53 <robjo> aplanas: Distribution is to narrow, it leaves out awhole bunch of related topics
+16:12:00 <differentreality> true
+16:12:01 <aplanas> true
+16:12:11 <|miska|> And the only thing left is technical stuff and I would prefer to have both topics we want to concentrate as different topics, while you are saying that it should be one and just stressed
+16:12:22 <robjo> Distribution would set the focus on the product, but what about OBS, infrastrcuture etc
+16:12:35 <|miska|> obs is infra
+16:12:57 <robjo> |miska|: yes, OBs is infra but infra is more than OBS
+16:13:10 <|miska|> yes
+16:13:51 <robjo> We could call it "Geeko track"
+16:13:59 <differentreality> ok so we do not agree on how many technical tracks we will have, if more than one and how to name them
+16:14:01 <aplanas> cool names are hard: Mechanical Track ?
+16:14:07 <differentreality> and I like geeko track ver ymuch :D
+16:14:12 <robjo> in the end the technical stuff is suppossed to be focused around openSUSE technology
+16:14:52 <aplanas> I like Geeko
+16:15:08 <|miska|> Ok, I think we generally agree except some wording and number of checkboxes in CfP
+16:15:19 <differentreality> but maybe "geek track" makes me think of community more than infra/distro/etc
+16:15:27 <differentreality> heh yes miska
+16:15:36 <nloukidis> And the name is..........GEEKO
+16:15:43 <aplanas> yuhuu
+16:15:46 <aplanas> next item
+16:15:59 <robjo> #info we will announce 3 "tracks" in CfP (wording in CfP to be decided)
+16:16:08 <robjo> #info Project & Community track
+16:16:28 <robjo> #info Geeko track (technical)
+16:16:39 <robjo> #info openWorld (general)
+16:17:07 <robjo> #action robjo to write proposal for CfP and send to group for input
+16:17:14 <robjo> This work for everyone?
+16:17:22 <aplanas> yes
+16:17:25 <differentreality> yes, robjo I guess you will write it on gdocs or etherpad or sth
+16:17:33 <differentreality> so that we can all see and edit?
+16:17:35 <nloukidis> ok for me
+16:18:09 <robjo> differentreality: yes
+16:18:22 <differentreality> perfect
+16:18:35 <robjo> OK next topic then?
+16:18:43 <differentreality> yeap
+16:18:57 <robjo> #topic Dates
+16:19:25 <robjo> I sent a proposal via e-mail, here is a short summary:
+16:19:31 <robjo> - schedule announcement June 25, 2013
+16:19:38 <robjo> - notify speakers June 3, 2013
+16:19:42 <robjo> - close talk submission May 13, 2013
+16:19:48 <robjo> - open talk submissions February 18, 2013
+16:20:15 <robjo> CfP a few days before talk submission opening
+16:20:26 <robjo> What do people think about this?
+16:20:41 <differentreality> I first want to talk about what miska said about fosdem promo
+16:20:46 <differentreality> or maybe miska wants to present this again
+16:20:57 <differentreality> Fosdem dates 2&3 February
+16:21:25 <nloukidis> The open and the close 15 days erlier so we will have plenty of time...
+16:21:28 <differentreality> do you think it will be nice to have a CFP out (and open submissions) during fosdem so that we can further promote the event & CFP during fosdem ?
+16:21:57 <robjo> I think we can promote without having CFP out
+16:22:11 <differentreality> well that we will do anyway :)
+16:22:13 <nloukidis> open talk submissions February 1, 2013
+16:22:28 <robjo> I think at FOSDEM promotion should be focused on the event, i.e. the conference and not so much the details
+16:22:31 <nloukidis> close talk submission May 1, 2013
+16:23:18 <|miska|> Well, the idea was, that on FOSDEM we can persuade some interesting people to submit talks
+16:23:32 <robjo> I am fine with moving the dates, but consider that in reality we are not going to get much done next week
+16:23:35 <|miska|> Meaning non-openSUSE people
+16:24:04 <differentreality> next week... true. It really depends a lot of setting up the submissions system in time. But it is doable
+16:24:06 <robjo> and we have a boatload of work to get done before CfP
+16:24:11 <|miska|> Not sure if it will work out
+16:24:41 <differentreality> Do you think we should try? and if we are not ready on time, then ok, we will go for mid February
+16:24:46 <|miska|> And yes, there is a lot of work to be done by then
+16:24:59 <robjo> Thus if you open submission Feb. 1 everything would have to be ready in 3 weeks
+16:25:14 <robjo> we need to not plan on being ready the day before, but rather a week before
+16:25:19 <robjo> I hate firedrills
+16:25:24 <differentreality> yes i agree with robjo
+16:25:35 * |miska| as well
+16:25:50 <robjo> Also consider that in Nuremberg many people are off the first week of January
+16:26:03 <robjo> This comes into play when we need infrastructure stuff done.
+16:26:27 <differentreality> Matt will also be away 21-29 Jan
+16:26:43 <robjo> Therefore for a Feb 1 opening we would really be looking at 2 weeks or 1 1/2 week
+16:26:53 <robjo> plus considering Matt's schedule
+16:26:55 <|miska|> But he thought that he might get it set up before that
+16:27:06 <robjo> Therefore I just do not see a Feb 1 date as realistic
+16:27:06 <differentreality> yes that's right
+16:27:27 <robjo> |miska|: Might is not good enough for me, sorry
+16:27:49 <differentreality> well we can never be sure before we actuallly see the system running :)
+16:27:56 <robjo> If we announce and we're not ready we look like idiots
+16:27:59 <|miska|> I would say, we can decide whether we can make it or not during January
+16:28:01 <differentreality> from today it is one month until Matt's holiday
+16:28:21 <differentreality> Ah, I don't think we should announce CFP before the system is ready!
+16:28:31 <differentreality> But if the system is up & running by 20 Jan
+16:28:33 <robjo> If we prepare the CfP we can send it out any time and dates in the CfP can be changes easily
+16:28:38 <|miska|> I totaly agree with that
+16:28:43 <differentreality> we can announce 20-25 Jan CFP and open submissions on 1 Feb
+16:28:54 <robjo> I would rather plan it safe and if we happen to beat the date then that's grate
+16:29:07 <robjo> s/grate/great/
+16:29:32 <|miska|> I would say, we can decide based on state of things around mid January
+16:29:48 <differentreality> so we try for 1 Feb but we absolutely make it happen by 18th Feb (or even 11th Feb as far as I am concerned) ?
+16:30:15 <differentreality> there already is a conf meeting in january so we can see where we stand then
+16:31:05 <differentreality> (14 Jan being the date of conf meeting scheduled)
+16:31:11 <|miska|> Yes and as it's just week or two difference, in doesn't matter that much in overall schedule if CfP will be open for two more weeks or not
+16:31:14 <robjo> I think more important than the dates is the time frame for getting stuff done
+16:31:22 <robjo> Mondays are "bad announcement" days if I recall correctly
+16:31:39 <differentreality> news team could help with that
+16:31:50 <differentreality> I agree we need to pay attention to the days we launch the important announcements
+16:32:25 <robjo> Yes, we need to let "marketing/news" handle the "announcement to the world"
+16:32:48 <robjo> We as a team can just focus on getting this ready and sed to @o.o lists
+16:33:00 <robjo> outside of that it is someone elses job ;)
+16:33:01 <aplanas> Middle of the week, Wed Thur are the best
+16:33:08 <differentreality> yes
+16:33:23 <differentreality> if monday is a "bad day" we can send our final announcements to news team on monday
+16:33:34 <differentreality> and they can put them into the schedule for actual announcement later in the week
+16:34:01 <differentreality> but we probably should inform them about our rough dates in advance so that they handle the other important announcements
+16:34:03 <nloukidis> Give the work to the marketing people...:)
+16:34:08 <robjo> Thus, do we agree on 12 week submission period, 3 weeks for use to read all the abstracts and create a preliminary schedule, 3 weeks for speaker notification and schedule finalization?
+16:34:27 <differentreality> I still believe that we need to have a program 2-2.5 months before the event
+16:34:36 <differentreality> inevitably this means less time for submissions
+16:34:57 <differentreality> and I don't have any problem with having less time for submissions, 3 months is too much time
+16:35:12 <differentreality> I am afraid that people will see the announcement, they will think they have 3 months tos end proposal and then forget about it
+16:35:12 * |miska| agrees with differentreality
+16:35:43 <aplanas> 10 weeks is better?
+16:36:00 <differentreality> I think a program around 15th May is realistically doable
+16:36:01 <robjo> That would imply that CfP close at the beginning of aApril
+16:36:11 <differentreality> late april I think
+16:36:19 <robjo> s/aApril/April/
+16:36:24 <differentreality> around 20ish April perhaps ?
+16:36:50 <robjo> differentreality: Then you will not get you 2 -2.5 month prior to conf with the final schedule
+16:37:23 <robjo> It is not realistic to have less than 6 weeks for reading all abstracts, creating a preliminary schedule and following up with all the speakers
+16:37:24 <differentreality> program at 15 May is 2 months and a bit until 20 july
+16:38:00 <robjo> May 15 - 6 weeks is beginning of April ;)
+16:38:54 <differentreality> then let's make open before mid Febuary, close before mid
+16:38:56 <differentreality> April
+16:39:13 <differentreality> give 1.5 month for submissions?
+16:40:03 <nloukidis> Maby a litle more.
+16:40:08 <robjo> 6 weeks for submission appears very short to me.
+16:40:41 <differentreality> for me the most important issue is the day of final program launch
+16:40:43 <|miska|> I think it's more than enough
+16:40:55 <differentreality> I insist we need 2months ++ before the event
+16:41:06 <|miska|> And might still make it before the FOSDEM
+16:41:20 <differentreality> yes if we go 1 Feb
+16:41:27 <differentreality> we can give 2 full months for submissions easily
+16:41:32 <nloukidis> I agree with Stella.
+16:41:37 <robjo> differentreality: fine, but we also have to be realistic about things
+16:41:38 * |miska| as well
+16:41:41 <aplanas> depending, for an abstract 6 weeks is enough but for detailed papers ... not so
+16:42:01 <|miska|> aplanas: This is not scientific conference :-D
+16:42:04 <differentreality> ah, that's a good point. Do we really need deatiled papers before program ?
+16:42:07 <aplanas> yep
+16:42:08 <|miska|> No papers, just talks
+16:42:20 <differentreality> actual presentations anyway
+16:42:27 <robjo> yes, just abstracts before close of CfP
+16:42:28 <|miska|> no
+16:42:33 <differentreality> ok
+16:42:37 <aplanas> so 6 weeks is reasolable
+16:42:57 <differentreality> btw I think we should be flexible +10 days for possible needed extension of submission period
+16:43:25 <differentreality> sometimes this works not just if you don't have submissions. you might have plenty but you know some important people have not yet submitted
+16:43:33 <nloukidis> 6 weaks it's more tha enouf time to prepeare
+16:44:11 <robjo> It is not about the time to prepare, it is about the time given to people to get their but in gear
+16:44:12 <differentreality> I think (and hope) that people already have somewhere in the back of their mind the fact that on July we have the conf and what they would like to present
+16:44:26 <robjo> The shorter you make the time the fewer submission you will get
+16:44:41 <robjo> and then you are going to run after people, that just doesn't make sense to me, sorry
+16:44:47 <|miska|> You'll get most of them last day anyway :-D
+16:45:34 <robjo> |miska|: following that theory CfP would only need to be 1 week long, this is flawed
+16:45:39 <differentreality> what if we go, open 1 Feb, finis 31 March, extend to 10 April ?
+16:45:55 <robjo> Lets not plan on the extension stuff.
+16:46:14 <robjo> Lets have a close date and be done
+16:46:28 <differentreality> you disagree that we might want to extend for the reasons I mentioned above ?
+16:46:37 <robjo> If someone approaches after the close date and we have room on the schedule we'll take it. If not too bad.
+16:46:52 <differentreality> ok so we are flexible for 2-3 days after
+16:46:54 <differentreality> ok fair enough
+16:47:22 <|miska|> I agree to have a a time to be able to do the extension, but deffinitelly not announce it
+16:47:28 <robjo> Yes, whenever I see a "but the CfP has been extended" announcement I immediately think, there are not enough papers the conf is going to be "crap"
+16:47:53 <differentreality> heh
+16:47:55 <differentreality> ok agreed
+16:48:03 <differentreality> even though that's not true sometimes
+16:48:08 <differentreality> it could bring that idea to people
+16:48:14 <differentreality> so no announced extension agreed ?
+16:48:20 <robjo> As long as there is room on the schedule we can be flexible up to the very last day
+16:48:27 <|miska|> Whenever I see it I think yes, I can submit the talk to the conference although I forgot about the deadline
+16:48:29 <robjo> Yes, no announced extension
+16:48:37 <differentreality> we can close 8 April (monday), 2-3 days are in the middle of week so we might get some fancy talks and we have later the weekend to further look into the proposals
+16:48:52 <robjo> I do not want to turn down talks unless we absolutely have to
+16:49:20 * aplanas have to part. Ill read the minutes and conclusions
+16:49:22 <differentreality> well no reason to turn down talks as long as they are valid talks/workshops and fit into the program
+16:50:02 <robjo> Again, if someone shows up at the end of May and they promises to be there and talk, and the abstract fits well, and we have room on the schedule why turn them away
+16:50:15 <differentreality> yes I agree
+16:50:28 <robjo> We just do not want to do this for everyone, thus the deadline for CfP
+16:50:47 <differentreality> exactly and the goal is to have some fancy talks /workshops lined up
+16:51:02 <differentreality> so that we have a nice attractive program
+16:51:08 <robjo> Ok, lets look at the calendar again
+16:51:24 <robjo> Conf begins Jul 18
+16:51:48 <robjo> - 2 month => May 18
+16:52:18 <robjo> - 6 weeks => April 6 (processing time)
+16:52:18 <differentreality> (May 18 Saturday, probably announce may 15 depending on news team advice)
+16:52:32 <robjo> Lets not worry about the days of week
+16:52:41 <robjo> just see if ithings work out roughly
+16:53:52 <robjo> Therefore CfP period would be ~ 8 weeks if we start Feb 13
+16:54:06 <differentreality> that sounds about right
+16:54:07 <robjo> again, we can start earlier if we can get things set up on time
+16:54:15 <differentreality> how do you feel about this planning ?
+16:54:49 <robjo> I would rather plan for a longer CfP period and take one week at the beginning of the schedule, and 1 week at the end
+16:55:35 <robjo> Thus final schedule would be last week of May instead of mid May
+16:55:53 <differentreality> I wouldn't want to announce program any later than this. But I am ok to work harder to open submissions 1 week earlier in Feb
+16:56:17 * |miska| agrees with differentreality
+16:56:35 <robjo> Just as something to consider.
+16:56:38 <differentreality> ideally in fact I want program announce a couple of days earlier so that people have an extra weekend to make travelling plans :)
+16:57:24 <robjo> For those traveling from far away (me for example) the fares to get to Greece are pretty much the same whether I book * weeks in advance or 6 weeks in advance
+16:57:50 <robjo> s/*/8/
+16:58:24 <robjo> It is much more important that we get accommodations lined up and announced.
+16:58:34 <robjo> People can book and cancel
+16:59:08 <robjo> for example, this year at oSC, by the time the hotels were announced I had made my arrangements already, because the announcement came "too late"
+16:59:18 <differentreality> the thing is that people need to arrange/plan and that takes some time. If they only have 8 weeks, they spend 2 planning, almost 1 month before during July getting tickets for Greece is highly diffficult (in a reasonable price always, let alone taking advantage of some offer)
+16:59:54 <differentreality> the goal is to announce accommodation options soon enough as well
+17:00:07 <differentreality> however this is a task we will look into in January
+17:00:22 <differentreality> we already know roughly what we want to do with hotels from past conferences in Thessaloniki
+17:00:28 <robjo> differentreality: yes, but. I doubt that the final program has much bearing on people's decision on whether to go or not.
+17:00:38 <robjo> Maybe for 10 or 20 percent
+17:00:59 <robjo> but the majority of people have probably already decided whether they are going to oSC13 or not
+17:01:35 <differentreality> dunno about that, I wouldn't have decided that before I saw some info on the website about where I am going and what I roughly doing (for example see categories of talks announced in cfp)
+17:02:33 <robjo> So the where question is the Location => already announced, and the accommodation (not our job)
+17:02:54 <robjo> The what question is really mostly the CfP, and yes partially the final program
+17:03:04 <differentreality> by where I mean extra info, not just name of city, but anyway
+17:03:23 <differentreality> I really insist we need minimum 4 weeks, ideally 6 full weeks before the conf for program announcement
+17:03:29 <robjo> Therefore I do not believe an announcement at the end of May vs. the middle of May will have a bearing on the attendance
+17:03:41 <differentreality> at least unless sth terrible happens within submission period
+17:03:51 <robjo> 6 weeks is different than 8
+17:03:58 <|miska|> And program decides whether you are ok with booking flight at 5 or you have to go for 8
+17:04:05 <differentreality> sorry bad typing. damn
+17:04:18 <differentreality> 8 weeks min, 10 weeks ideally (2-2.5 months anyway)
+17:04:23 <robjo> With end of May we would be at 7, which is what I was gunning for ;)
+17:05:40 <differentreality> the question is, this 10-20% you say will make a decision upon program
+17:05:46 <differentreality> do we want to lose it?
+17:06:06 <differentreality> it's hard to book for greece for july 1 month before
+17:06:25 <differentreality> planes will probably be full by then
+17:06:30 <robjo> No, but what I am saying their cost will not be that mauch different between booking on May 15 or May 22nd
+17:07:02 <robjo> Well if you consider the plane load we'd probably all have to book in January ;)
+17:07:15 <differentreality> an announcemen ton 22nd May means they will book beginning of June, which is a bad plan when travelling to greece during summer
+17:07:39 <robjo> I am not certain there is a good plan to travel to Greece in July, sorry
+17:07:55 <|miska|> So sooner the better
+17:08:05 <differentreality> this rule always apply
+17:08:16 <|miska|> And 6 weeks CfP is long enough
+17:08:26 <robjo> Anyway, people that are on the fence will hopefully plan ahead, such that they can just "push the button" and book when announced and not start the planing process
+17:08:39 <robjo> Whatever
+17:08:44 <differentreality> and greece might be a hot destination for summertime but still it is a hot destination. Let's make the most out of the conf dates
+17:09:03 <|miska|> So mid May?
+17:09:04 <robjo> Lets nail final announcement to May 15 then
+17:09:12 <differentreality> 1.5 month for submissions is quite enough I would agree
+17:09:46 <differentreality> agree
+17:10:12 <|miska|> Great!
+17:10:19 <robjo> 6 weeks for schedule creation, speaker notification etc.
+17:10:32 <robjo> That puts CfP close to April 3rd
+17:10:58 <differentreality> ok
+17:11:13 <differentreality> brb in a min
+17:11:22 <robjo> And then we go with CfP open no later than Feb 13
+17:11:47 <robjo> preferably earlier, but that will depend on when we can get the tool working and the CfP text ready
+17:12:29 <differentreality> agreed
+17:12:35 <robjo> And CfP announce no later than Feb 6
+17:13:08 <differentreality> sounds good to me
+17:13:14 <robjo> Than we can have to announcements, one "pre announcement", and one on the day we openCfP
+17:13:28 <differentreality> that's right
+17:13:35 <robjo> OK
+17:13:45 <robjo> I will add these target dates to the wiki
+17:13:55 <robjo> That's the end of the agenda
+17:13:59 <robjo> Yeah
+17:14:09 <differentreality> awesome and thanks for putting them up in wiki :)
+17:14:24 <differentreality> so we are done? :D
+17:14:25 <robjo> We should meet in early January and talk about Keynotes
+17:14:34 <robjo> Yes, we are done for today
+17:14:54 <differentreality> do you think that keynotes could go into the agenda for conf meetin on 14 Jan ?
+17:14:54 <robjo> For keynotes we need to think about the topic we want and then find a speaker
+17:15:05 <differentreality> and perhaps we can have our own meeting a couple of days after?
+17:15:26 <differentreality> community could pitch us some ideas on that
+17:15:35 <robjo> Yes, the keynote should be in the conf meeting.
+17:16:06 <robjo> The orga group needs to decide whether they will leave the keynot organization to this group or handle it separately from the program
+17:16:26 <differentreality> or a combination of us with sb else at least
+17:16:54 <robjo> Personally I would prefer not having to find and run after a keynote speaker ;)
+17:17:08 <differentreality> so 1 thing if program committee chooses keynote, 2nd thing proposals for keynotes from the community
+17:17:25 <robjo> Thus if the orga team would decide to handle the keynote outside of the program team I would not be disappointed ;)
+17:17:32 <differentreality> ok so we prefer to delegate keynote
+17:17:42 <robjo> yes, very much
+17:17:56 <differentreality> alright (I *think* kostas would like to deal with that)
+17:18:08 <differentreality> but we put it up in the agenda and discuss it on the conf meeting
+17:18:09 <robjo> we have more than enough to do and running after a keynote speaker is very time consuming
+17:18:21 <differentreality> you have a point on that
+17:18:35 <robjo> differentreality: yes, please make certain it is on the agenda for the 14th
+17:18:44 <differentreality> noted, I will
+17:19:05 <robjo> #action keynote speaker issue to be discussed in Jan 14 conf meeting
+17:19:45 <robjo> Done for today, I will handle the minutes in some way since we had issues with bugbot. We;ll do better next time
+17:19:58 <differentreality> for sure :)
+17:20:01 <robjo> Thanks everyone for attending.
+17:20:06 <differentreality> I assume we will create a meeting page in wiki ?
+17:20:06 <robjo> #endmeeting

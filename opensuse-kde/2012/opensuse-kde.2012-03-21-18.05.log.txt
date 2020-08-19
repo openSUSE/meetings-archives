@@ -1,0 +1,533 @@
+18:05:34 <wstephenson> #startmeeting
+18:05:34 <bugbot> Meeting started Wed Mar 21 18:05:34 2012 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:05:34 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:05:44 <wstephenson> #meetingtopic Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.
+18:06:19 <wstephenson> hello everybody and welcome to the second instance of our team meeting this week
+18:06:30 <wstephenson> we thought we hadn't had one for so long that we should have 2 at the same tmie
+18:06:39 <wstephenson> bit like buses in england
+18:07:08 <toothpik> we going to have double-decker mtgs next?
+18:07:08 <wstephenson> today's agenda
+18:07:24 <wstephenson> toothpik: yeah, half of us have to write in superscript, the other in subscript
+18:07:32 <wstephenson> this week's agenda
+18:07:37 <wstephenson> * Rebooting the team
+18:07:43 <wstephenson> * 12.2 Focus and features
+18:07:51 <mrdocs> /me waves
+18:08:00 <wstephenson> * Ensure that patches to KDF, KR48 are delivered to the user within 24 hours
+18:08:08 <wstephenson> * Rename Repo KDE 3 in trinity
+18:08:12 <wstephenson> * status report
+18:08:16 <wstephenson> * Q&A, misc
+18:08:40 <wstephenson> anything else?
+18:09:07 <alin> wstephenson: Rename maybe shall be delete....
+18:09:22 <rabauke> alin: why?
+18:09:26 <cartman> s/Rename/Move it is actually, well. Lets wait for its turn.
+18:09:26 <wstephenson> alin: miaow!
+18:09:31 <javier> http://home.kde.org/~kdelive/ needs to be overhauled
+18:09:55 <javier> KDE-* Live CDs aren't based on 11.3 :-P
+18:10:10 <wstephenson> yeah yeah :)
+18:10:17 <rabauke> that would be misc
+18:10:21 <wstephenson> it's cause all our good people get hired away :P
+18:10:27 <wstephenson> so
+18:10:33 <wstephenson> #topic status report
+18:10:47 <wstephenson> i'll start
+18:11:05 * wstephenson has been literally beating the shit out of akonadi to make it tolerably good
+18:11:34 <rabauke> bravo!
+18:11:37 <wstephenson> this enables 12.2 to not suck and enables us to update 12.1 pim to 4.8.2 or so.
+18:11:42 <Linuxsusefan> hehe
+18:12:14 <wstephenson> i haven't been doing that much coding yet, just repeatedly testing and rubbing upstream's nose in it until they fix things.
+18:12:20 <wstephenson> (which works quite well)
+18:12:42 <cartman> krop confirmed its much better, so good job ;)
+18:13:07 <wstephenson> anyway. am doing less of that now, so i can contribute to the next boosters' sprint, which is appstore support for 12.2 (on Apper)
+18:13:13 <wstephenson> EOT, who's next? cartman?
+18:13:40 <cartman> Helped with delivering 4.8.1 in KDF, submitting to O:F and taking care of some dependencies in KDF
+18:13:51 <cartman> blocked by Boosters sprint & SLE/openSUSE bugs atm.
+18:14:01 <cartman> if your Xorg crashes I might be the one to blame :P
+18:14:22 <wstephenson> cartman: thanks for carrying the maintenance burden for us for a bit
+18:14:28 <cartman> my pleasure
+18:14:43 <cartman> s/pleasure/job actually =)
+18:15:00 <cartman> anyhow I don't see any urgent tasks for 12.2
+18:15:23 <wstephenson> cartman: let's change that shall we?
+18:15:26 <cartman> sure
+18:15:37 <wstephenson> maxlin: what have you been up to?
+18:16:01 <maxlin> help packages update in KDF
+18:16:17 <maxlin> survey what we can do for next Boosters sprint
+18:16:31 <maxlin> SLE/openSUSE bugs atm
+18:16:42 <wstephenson> cool
+18:17:12 <wstephenson> who wants to be next?
+18:17:28 <wstephenson> javier: what's happening at open-slx, anything relevant for the mothership?
+18:19:03 <wstephenson> krop: status?
+18:19:15 <wstephenson> cb400f: status?
+18:19:18 <wstephenson> rabauke: status?
+18:19:20 <krop> calligra submitted to OF
+18:19:24 <cartman> krop: awesome!
+18:19:30 <wstephenson> that was quick!
+18:19:34 <cartman> I disabled build of koffice2 in KDF
+18:19:45 <cartman> it was failing to build anyway
+18:19:49 <krop> (submitted, not accepted)
+18:19:49 <rabauke> announcing 4.8.1 packages, trying to get feedback on kdepim data loss bugs
+18:20:16 <wstephenson> rabauke: thanks for doing the announce there
+18:20:17 <cartman> krop: we'll make them accept it :P
+18:20:24 <cb400f> keeping linkrevs in kua current
+18:20:44 <wstephenson> ctrippe: got status for us?
+18:20:56 <ctrippe> I went through roughly 100 old KDE bugs on 11.3 and checked/asked if they are still valid or moved/closed them if I knew the answer but still ~50 to go. Not speaking about the other 550 open bugs.
+18:21:03 <krop> cartman: saschpe seems to want a dozen more packages from the same tarball
+18:21:08 <cartman> ctrippe: uh oh very nice
+18:21:19 <cartman> krop: I don't agree with that, those shared libs are not really shared
+18:21:36 <cartman> shouldn't block for M^3
+18:22:00 <javier> wstephenson: open-slx? no idea
+18:22:17 <wstephenson> javier: just doing basyskom stuff atm?
+18:22:32 <javier> I think you meant open-pc
+18:22:46 <javier> I've never worked (yet) for open-slx
+18:22:46 <wstephenson> oh i thought you had joined the merry bunch in darmstadt...
+18:22:55 <wstephenson> maybe i'm psychic
+18:23:04 <cartman> :D
+18:23:11 <wstephenson> so you're back doing studies, or working for frank?
+18:23:17 <cartman> wstephenson senses upcoming job offers ;P
+18:23:21 <wstephenson> tell me to stop being nosy if you like
+18:23:25 <javier> hehe
+18:23:30 <javier> no, it's perfectly fine
+18:23:38 <javier> I'm working for basyskom atm
+18:23:55 <wstephenson> ah bingo, i was nearly right
+18:24:00 <javier> yeah
+18:24:23 <wstephenson> ok, no more status?
+18:24:56 <javier> not really
+18:25:17 <javier> I did some work on the kde live cds but they need to do some exercise, as always
+18:25:18 <wstephenson> thanks everyone for your contributions!
+18:25:33 <wstephenson> #topic Rebooting the team
+18:26:07 <wstephenson> so since we have been doing as the proverb says, good work, quietly
+18:26:13 <wstephenson> people started to worry if we were dead.
+18:26:30 * cartman nods
+18:26:36 * wstephenson thinks we should all go hack on fvwm2 for 3 months and then see what people think happened to us....
+18:27:19 <cartman> We need more status reports to mailing list I guess.
+18:27:33 <wstephenson> the status at suse is, we have 2.5 full time resources in the boosters team
+18:27:38 <wstephenson> me, cartman and maxlin
+18:27:45 <wstephenson> "in the boosters team"
+18:28:11 <wstephenson> is a bit of a slippery definition since we have boosters sprints that are supposed to find time besides our topic (KDE) work
+18:28:46 <wstephenson> however i think we have been punching below our weight for 2.5 people
+18:29:14 <wstephenson> some of that is unavoidable money-earning BS like fixing KDE 4.3 stuff for SLE11SP2
+18:29:15 <javier> less people than before?
+18:29:24 <wstephenson> depends how you define before
+18:29:33 <javier> right :)
+18:29:41 <wstephenson> if before == 2004, we have .5 more
+18:29:50 <wstephenson> if 2006, we have 3 less
+18:30:09 <javier> it goes like a W
+18:30:10 <wstephenson> anyway not really useful to compare because we do a lot more things at once than we used to do, and the tools are better
+18:30:12 <rabauke> isn't KDe-hours all that matters?
+18:30:29 <rabauke> to KDE
+18:30:44 <wstephenson> rabauke: not really, SLE stuff on 4.3 doesn't help opensuse much
+18:31:21 <wstephenson> so me, cartman and maxlin have to get our shit more together IMO and spend less time on My Little Pony Online
+18:31:49 <Linuxsusefan> wow, I never complain again *seufz*
+18:32:11 <cartman> Wherever there is VPN access there is KDE work possible for me :P
+18:32:11 <javier> what about the facebook farm, no more crops?
+18:32:12 <wstephenson> generally decide what we have to do and execute it
+18:32:26 <wstephenson> javier: we have to burn the fields and sow them with salt.
+18:32:32 <javier> ;D
+18:33:03 <wstephenson> part of that is being disciplined into not jumping on people's pet issues to help them when i've got other things going on
+18:33:32 <wstephenson> and other parts are recognising what problems the non-employed parts of the team can solve and making them clearly available for action
+18:34:02 <wstephenson> and, as was said yesterday, more status reports so ppl do know about all the things we are doing
+18:34:03 <rabauke> yep. a jobs list would help people who want to contribute in a way they can
+18:34:13 <cartman> agreed.
+18:34:14 <javier> tweeting?
+18:34:22 <javier> :P
+18:35:03 <wstephenson> also not just noddy jobs, but the difficult things too, that are not currently on our compilers, you never know, perhaps someone from upstream comes and helps or someone else fancies improving his Qt/c++/packaging skills.
+18:35:41 <wstephenson> so that's my view of the suse side. cartman, maxlin, your thoughts?
+18:35:46 <rabauke> keeping track of tasks is either way a good idea.
+18:36:10 <wstephenson> oh 1 more thing, i'm back fulltime as of September
+18:36:27 <cartman> Well surely a clear list of tasks would help
+18:36:29 <cb400f> sweet
+18:36:34 <javier> +1
+18:36:42 <Linuxsusefan> this would be for others to read the prubliziert and to help consider
+18:37:27 <javier> you mean the mailing list?
+18:37:32 <Linuxsusefan> it's not bad to look helpers to public .....
+18:37:47 <Linuxsusefan> yes
+18:37:55 <rabauke> a list where people can see how they can help
+18:38:08 <Linuxsusefan> rabauke: +1
+18:38:33 <wstephenson> are we trying to do too much?
+18:38:39 <javier> they can help in so many ways... the response is in themselves
+18:38:42 <rabauke> from editing the wiki before new kde releases to packaging, patching and bug triages. maybe also forum watching as they get more popular
+18:38:51 <wstephenson> i sometimes wonder that KR48 eats more of my time than I expected it to.
+18:39:02 <cartman> KRXX is important
+18:39:29 <wstephenson> i think it's a success
+18:39:41 <cartman> yeah especially 4.8.1 was a good release timing wise
+18:39:45 <cartman> we delivered in time
+18:39:50 <javier> what could we do about little packages not being up-to-date on KR48?
+18:40:24 <cartman> javier: good question :/
+18:40:28 <wstephenson> javier: script a diff of all packages to KDF ?
+18:40:50 <javier> I was thinking about diff'ing and if it's not an alpha/beta, update it
+18:41:11 <cartman> makes sense for me
+18:41:38 <wstephenson> but updating linkrevs takes more time than i expected it to
+18:41:57 <cartman> osc setlinkrev <-- updates to latest revision
+18:42:08 <wstephenson> eg you update something in KDF (say 3-4 packages belonging together)
+18:42:39 <rabauke> can't you just issue setlinkrev for a whole repo?
+18:42:40 <wstephenson> then you need to wait until they all built cleanly before you can setlinkrev in KR48, otherwise you publish multiple times
+18:42:56 <javier> we could have a script that diff's the whole thing, and update KR48 packages if necessary
+18:43:09 <cartman> can be easily scripted I think.
+18:43:56 <javier> rabauke: martin (obs guy) told me once that you can link a whole repo but I think it doesn't make sense in this case
+18:45:09 <wstephenson> ok, probably enough on KR48
+18:45:27 <wstephenson> summary: we need it but need scripts to enable us to concentrate on the work work
+18:45:43 <javier> I also think it doesn't make sense to build a new live cd every time we update some little package in KR48
+18:45:48 <wstephenson> sure
+18:46:08 <javier> but when it's good to build one, that's another question
+18:46:12 <wstephenson> one thing that costs me a lot of time is finding out why something is build-disabled or publish-disabled
+18:46:34 <wstephenson> especially if the question can only be answered by someone who is not very responsive
+18:46:43 <cartman> OBS needs notes.
+18:47:07 <javier> and a publish enable-disable history perhaps?
+18:47:07 <cartman> but an unresponsive guy won't fill that out ;)
+18:47:21 <javier> yep ;(
+18:47:37 <cb400f> unless a comment is required for certain operations
+18:47:40 <rabauke> javier: I thought that e.g. osc setlinkrev openSUSE:Tumbleweed would update all links
+18:48:29 <javier> hmm, I don't know
+18:48:48 <javier> I work on updating specific packages
+18:48:52 <cb400f> but then kr4x would have almost as many full rebuilds as kdf
+18:49:08 <cartman> which is evil
+18:49:08 <javier> tweeting your obs changes, to tell the people you disabled publish
+18:49:45 <wstephenson> javier: too lossy
+18:49:54 <rabauke> javier: man osc states so [PACKAGE] is optional. so it should be an easy way to make kr48 links update to their latest source revision
+18:50:43 <javier> j/k
+18:50:49 <wstephenson> our scripts should also take care of disabling publish in all dependent repos before updating versions/links
+18:50:53 <wstephenson> javier: haha
+18:51:10 <cartman> maybe auto-poke on Facebook
+18:51:11 <cartman> :P
+18:51:15 <javier> :D
+18:51:18 <wstephenson> that would save the problem of publishing eg KUP built vs unpublished version in KDF
+18:52:29 * cartman dreams of a graph visualization of inter-repo dependencies
+18:53:54 <wstephenson> cartman: suggest a sprint
+18:53:56 <wstephenson> or a gsoc
+18:54:06 <maxlin> cartman: your topic for nex hackweek?
+18:54:08 <rabauke> put this on the mailinglist for discussion, maybe others have an idea where to place the notes.
+18:54:23 <cartman> heheh
+18:55:00 <wstephenson> ok, anything else on rebooting the team?
+18:55:07 <cartman> We are alive!!!111!
+18:55:51 <Linuxsusefan> it lives, it lives ....
+18:56:00 <alin> who?
+18:56:09 <rabauke> yesterday status reports to the mailinglist were mentioned. so nothing to add regarding that.
+18:56:40 <cartman> rabauke: yup.
+18:57:19 <wstephenson> ok
+18:57:26 <wstephenson> #topic 12.2 focus
+18:58:31 <wstephenson> so basically i think the last time we discussed this we were all agreed on stability and polish being the main focus?
+18:59:02 <wstephenson> and yesterday we talked about getting Calligra and KDE-Telepathy into 12.2, right?
+18:59:13 <rabauke> yes
+18:59:19 <cartman> yes
+18:59:22 <Linuxsusefan> yes
+19:00:17 <rabauke> and kdepim having the highest priority of everything done for 12.2.
+19:00:29 <wstephenson> i think that's very important
+19:00:44 <wstephenson> but not the only thing, because not everyone using kde uses kdepim
+19:01:01 <rabauke> sure, but even less calligra or tlepathy
+19:01:02 <wstephenson> i particularly do not want kdepim to have any impact on people who do not use it
+19:01:21 <wstephenson> right
+19:01:43 <wstephenson> so i'd like to try and work out what stability and polish actually means as priority #1
+19:01:58 <rabauke> no data loss.
+19:01:59 <wstephenson> there are a lot of areas outside pim that need it
+19:02:01 <wstephenson> eg
+19:02:10 <wstephenson> Activities make-it-cool effort
+19:02:42 <cartman> Plasma crashes discussed in kde-devel looks ugly too.
+19:02:46 <wstephenson> (in case you don't know, back in the day when we needed to fix somethign we made a branch in svn called eg kmail-make-it-cool
+19:03:03 <wstephenson> )
+19:03:18 <wstephenson> Apper bugs
+19:03:35 <wstephenson> kickoff app menu hierarchy
+19:03:47 <wstephenson> default package selections (part of the above)
+19:03:55 <cb400f> touchpad tapping :-|
+19:04:18 <rabauke> regarding activities: activities lack a useful switcher for the panel.
+19:04:20 <wstephenson> splitting plasma-addons so not so much useless playground-level cruft is installed by default with it
+19:04:20 <cb400f> kmix/pulseaudio stuff
+19:04:49 <wstephenson> multimedia keys - eg launching kamoso from the webcam key
+19:04:54 * cb400f thinks stuff running in the default session should automatically have highest priority
+19:05:46 <rabauke> would it not make sense to check what people complained about in order to set priorities?
+19:06:06 <wstephenson> fixing kwallet to setup automatically without a password in a default login
+19:06:06 <rabauke> kdepim + migration was a big complaint
+19:06:25 <rabauke> not being able to change user permissions to one needs was another.
+19:06:33 <wstephenson> in fact default OOTB experience, ktip popups, default window sizes, etc
+19:06:49 <Linuxsusefan> rabauke: not a bad idea
+19:06:56 <cb400f> loud minority
+19:06:59 <wstephenson> rabauke: it's worth looking at, but shouldnt' be the only thing, people complain about everything at some point
+19:07:05 <rabauke> cb400f: says who?
+19:07:15 <wstephenson> our common sense and experience is just as important
+19:07:26 * tigerfoot sorry a bit late, picking backlog
+19:08:12 <cb400f> also we should consider the cost/benefit
+19:08:25 <wstephenson> yes, eg fixing kdepim migration would probably take me until 12.3
+19:08:33 <cartman> if we could list/prioritize this, people could give it a helping hand.
+19:08:45 <cb400f> making a noticable difference with kdepim quality is a huge job
+19:08:47 <rabauke> wstephenson: sure, but a documentations placed on the desktop and a link in the release notes not
+19:09:06 <cb400f> fixing touchpad tapping disabledness is prolly a 5 minute job
+19:09:21 <cartman> cb400f: indeed :(
+19:09:30 <wstephenson> so what do we review to see what ppl complained about?
+19:09:35 <wstephenson> 12.1 reviews
+19:09:38 <wstephenson> mailing list
+19:09:40 <wstephenson> bugs
+19:09:42 <wstephenson> forums
+19:09:51 <wstephenson> javier can do twitter
+19:09:57 <cb400f> ;-)
+19:10:03 <javier> ;-)
+19:10:08 <cartman> :D
+19:10:10 <cartman> hahaha
+19:10:15 <javier> hehe
+19:10:25 <rabauke> I think people still remember what caused trouble.
+19:10:37 <wstephenson> your memory may be in better shape than mine
+19:10:45 <rabauke> but reading a few reviews might help as well. some read forums and remember those issues etc.
+19:10:47 <wstephenson> i have a noise filter to keep me sane
+19:11:01 * cartman has his delete key handy
+19:11:11 <wstephenson> einar77_work should have an idea what gave the forums indigestion
+19:12:14 <tigerfoot> for me the lack of smooth upgrade for nepomuk/akonadi/search capabilities ruins somewhat the promise of semantic desktop
+19:12:26 <cb400f> I read #suse and #kde a lot
+19:12:46 <rabauke> tigerfoot: what do you mean by upgrade?
+19:12:49 <tigerfoot> for example until a few days I've virtuozo-t eating 4 cores / 8 at 100% just trying to get files and mail indexed ...
+19:13:01 <wstephenson> tigerfoot: that's in hand
+19:13:13 * rabauke fingers crossed
+19:13:15 <tigerfoot> the solution was kill every akonadi cash db/table and all nepomuk stuff. and restart from blank
+19:13:46 <wstephenson> i don't want to discuss that one now, since i know enough about it
+19:14:01 <rabauke> indeed there are things in akonadi which have to be removed manually because akonadictl fsck etc. can't handle them.
+19:14:21 <tigerfoot> but the bad side, was surprised to not see a backup of nepomuk available, the last 10 have only a few kb ... compared to a db that was someting like 3.6GB
+19:14:29 <wstephenson> anyone want to volunteer to scan our list and opensuse@ since 12.1 came out for red flag issues for 12.2? needs to be done quick, in a week.
+19:14:45 <rabauke> I think that data loss has to have highest priority, no matter what app.
+19:15:05 <rabauke> I can try that. Linuxsusefan reads forums as well, so he can contribute too.
+19:15:40 <wstephenson> what about bugs? ctrippe?
+19:15:45 <wstephenson> maxlin? ^
+19:15:45 <rabauke> who of the KDE devs at openSUSE uses kdepim?
+19:16:10 <krop> dfaure :)
+19:16:14 <wstephenson> me...
+19:16:27 <cb400f> dfaure is @opensuse ? ;-)
+19:16:39 <krop> ah
+19:16:46 <krop> I missed the "at opensuse"
+19:16:52 <krop> anyway, dinner, bbl
+19:17:09 * tigerfoot send sandwiches to krop so he can stay :D
+19:17:32 <rabauke> that's .5 of the team. so you are on your own regarding kdepim, which seems bad.
+19:17:44 <wstephenson> rabauke: otoh its something i know relatively well
+19:17:49 <rabauke> I guess it'S the same for nepomuk.
+19:17:55 <tigerfoot> wstephenson: krop do a very excellent job on bug triage in kde
+19:17:56 <wstephenson> and i'm putting a lot of free time into it atm
+19:18:13 <wstephenson> krop: you want to summarize issues seen in bnc?
+19:18:38 <tigerfoot> rabauke: I'm not kde dev, just a user of kdepim now (after living 17 years in Mozilla)
+19:18:58 <wstephenson> i'll go through kdepim-users@
+19:19:26 <rabauke> wstephenson: sure, but more people is better and maybe you are needeed on other bits a well.
+19:19:55 <maxlin> wstephenson: I have no my working machine around atm, so cannot remember any important bugs
+19:20:02 <rabauke> and if kde devs don't use it…maybe we should use thunderbird as default mail client ;)
+19:20:34 <wstephenson> maxlin: not tonight, just in the next week
+19:20:43 <wstephenson> rabauke: noo!
+19:20:47 <wstephenson> we've come too far
+19:20:50 <maxlin> wstephenson: l
+19:20:53 <maxlin> k
+19:21:00 <rabauke> ok, so we should get a summary of issues.
+19:21:09 * wstephenson realized he's been using kmail for ~12 years now
+19:21:10 <ctrippe> wstephenson: I will also try to collect important bugs
+19:21:14 * tigerfoot now have 303913 files for6.4GB in the same folder .local/share/akonadi/file_db_data ( not the most recommended arch in filesystem)
+19:21:32 <wstephenson> tigerfoot: known issue, on my pester list
+19:21:35 <tigerfoot> ls -l doesn't work anymore ...
+19:21:40 <wstephenson> they should not be cached so long there
+19:21:52 <cartman> sorry, dsl rebooted itself.
+19:21:54 <rabauke> tigerfoot: https://bugs.kde.org/show_bug.cgi?id=282160
+19:21:56 <bugbot> KDE bug 282160 in Akonadi (Maildir Resource) "akoandi does not delete mails from .local/share/akonadi/file_db_data" [Normal,New: ]
+19:21:57 * cartman reads backlog
+19:22:21 <rabauke> and we should create a list of "nice to have" polish
+19:22:23 <wstephenson> #action wstephenson ping data collectors for important issues on Monday next week, to report by wednesday
+19:22:26 <cb400f> tigerfoot: you chose an interesting time to move to kdepim ;-)
+19:22:33 <wstephenson> rabauke: yes, like kubuntu's paperkuts
+19:22:44 <rabauke> should I ask for people's input on a blog and forum?
+19:23:04 <wstephenson> rabauke: asking for new input will just generate a lot of noise and loud minorities
+19:23:06 <tigerfoot> wstephenson: I can go to Randa in september with a big whip ...
+19:23:12 <wstephenson> hehe
+19:23:13 <rabauke> wstephenson: ok
+19:23:15 <tigerfoot> cb400f: I've wait 4.8.1
+19:23:23 <wstephenson> so other things for 12.2
+19:23:27 <tigerfoot> but get kdepim 4.8.0 :-(
+19:23:30 <wstephenson> make activities not suck
+19:23:42 <wstephenson> ie make activities sortable in the switcher
+19:23:49 <tigerfoot> cause we miss some flags in our build ... < maxlin
+19:23:55 <wstephenson> some kind of OSD when activating an activity
+19:24:04 <wstephenson> hotkeys for next/prev activity
+19:24:07 <rabauke> make the switcher as space efficient as the virtual desktop one
+19:24:25 <wstephenson> basically nearly the same features as virtual desktops so the similarities exploit people's experience
+19:24:40 * tigerfoot has tried activities and not convinced about them actually ... compared to sticked windows on a 8 virtuals desktop ...
+19:24:49 <rabauke> we could create default activities that start applications
+19:25:02 <cb400f> if apper can reliably install updates and local rpms, and kmix doesn't behave weird with pulseaudio running, and touchpad tapping is enabled by default 12.2 would have a good chance to shine
+19:25:05 <wstephenson> a Contribute to openSUSE activity for example
+19:25:05 <tigerfoot> rabauke: doesn't work that well
+19:25:17 <wstephenson> cb400f: you're a loud minority :P
+19:25:25 <cb400f> making people not complain about kdepim and nepomuk doesn't seem a realistic goal imo
+19:25:31 <tigerfoot> rabauke: you need rekonq and all software able to restore a kind of context linked to the activity to be usefull
+19:26:04 <tigerfoot> cb400f: if pulseaudio work, we can for pim stack
+19:26:23 <wstephenson> kdm: make the userlist part of the theme
+19:26:24 * tigerfoot not sure about *kit things :-)
+19:26:34 <wstephenson> or make a version of the theme with a userlist
+19:26:45 <tigerfoot> wstephenson: normally that should be already handle by EugeneA
+19:27:18 <tigerfoot> its_pc is his nickname ...
+19:27:23 <wstephenson> i would love a kxrandr that remembers settings for each external monitor we use
+19:27:34 <rabauke> would installing and using beclock by default makes us cool?
+19:27:46 <cb400f> great idea.. and prolly realistic too
+19:28:10 * tigerfoot have a request can we osc dr kde3* in oss ?
+19:28:13 <wstephenson> rabauke: i would like a showoff set of branding packages that show what kde is really capable of
+19:28:16 <rabauke> wstephenson: what about switching back to normal when unplugging the external monitor first. :)
+19:28:28 <wstephenson> rabauke: that's a setting to remember too :)
+19:28:33 <rabauke> ok
+19:28:35 <tigerfoot> or should we deliver a package that automatically zypper lock out those crap
+19:28:56 <wstephenson> rabauke: eg that use beclock, non upstream default colours/fonts/icons, radical layout
+19:29:07 <wstephenson> takeoff widget
+19:29:20 <rabauke> oh, and for the task list, nice screenshots and screencast tutorials. everybody can do that and it helps to mediate features etc.
+19:29:23 <wstephenson> the appmenu external menubar...
+19:29:31 <tigerfoot> wstephenson: how hard is it ( tech & time consuming to create that?)
+19:29:48 <wstephenson> tigerfoot: not hard, you work out a well designed desktop
+19:29:52 <wstephenson> then codify it as -branding packages
+19:30:28 <rabauke> there is a package with lots of panel defaults, mimicking unity etc.
+19:30:28 <wstephenson> it basically comes down to copying the relevant bits of -rc files into the default desktop's config
+19:30:35 <wstephenson> rabauke: where?
+19:30:37 <tigerfoot> wstephenson: sound easy, but I believe there's a lot of design and important details to create/fix/package
+19:30:45 <rabauke> wstephenson: I'll have to look it up
+19:30:57 <wstephenson> tigerfoot: there is work there
+19:31:25 <wstephenson> but other kde distros manage it (pardus/arch/chakra for example)
+19:31:26 * tigerfoot saw also that the default ksplash with qml is great for theming (already talk with eugene about it too)
+19:31:37 <wstephenson> i think it's mostly down to having the balls to try it
+19:31:47 <wstephenson> tigerfoot: +1
+19:32:03 <tigerfoot> wstephenson: I'm looking for a good excuse to go to akademy :-) even if it's short
+19:32:16 <rabauke> wstephenson: http://kde-apps.org/content/show.php/Plasma+Panels+Collection+?content=147589
+19:32:23 <tigerfoot> we should create crappy package, place them in factory, then send updates :D
+19:32:29 <wstephenson> if we do this, we need to make sure that whoever takes the task can take criticism
+19:32:37 <javier> it seems to me that there's a trend to convert kde apps from qt/c++ to qml
+19:32:49 <wstephenson> because if i see a gold text on black background + celtic font david c rankin masterpiece I will kill it with fire.
+19:33:19 <wstephenson> javier: stated goal for KDE 5, this is just the beginning
+19:33:19 * tigerfoot knows (like any artist) he can't do it wrong :-)
+19:33:30 <wstephenson> tigerfoot: well, i like your car
+19:33:42 <wstephenson> it's a bit like the aesthetic of Portal
+19:33:56 <rabauke> wstephenson: what about removing stuff, is that polishing as well? grouping desktop/panel creates lots of crashes and the maintainer is unresponsive, so maybe we should also collect htings to remove.
+19:33:58 <wstephenson> classic science fiction
+19:34:08 <javier> meaning qml as much as possible?
+19:34:11 <wstephenson> rabauke: i mentioned that above about plasma-addons crap
+19:34:16 * tigerfoot dream about a really funcky white/green tuning design ... but well it's a lot of work and need time (money) to realize that
+19:34:25 <wstephenson> javier: where practical
+19:34:30 <rabauke> wstephenson: I did not know it was an addon
+19:34:32 <javier> ok
+19:34:58 <wstephenson> javier: i don't think kmail will be rewritten in qml, but lots of other applets will be
+19:35:02 <wstephenson> err apps
+19:35:10 <wstephenson> javier: eg KTP
+19:35:14 <cartman> kmail in qmail with new regressions :D
+19:35:16 <cartman> qml*
+19:35:19 <cb400f> no more rewrites, please ;-)
+19:35:20 <wstephenson> rabauke: you get my drift though
+19:35:21 <javier> ;)
+19:35:25 <rabauke> yes
+19:35:39 <wstephenson> speaking of removing stuff
+19:35:52 <javier> qml seems to be fancy but I'm not sure about its security
+19:36:03 <wstephenson> does anyone with a hardon for taking the shears to packages feel like doing a usable minimal-kde pattern?
+19:36:10 <wstephenson> javier: OT
+19:36:23 <wstephenson> i have a fantasy of something called KLyDE
+19:36:25 <javier> indeed
+19:36:30 <wstephenson> K Lightweight Desktop Environment
+19:36:31 <tigerfoot> :d
+19:36:33 <javier> oops 0:-)
+19:36:39 <wstephenson> to Kompete with xfce etc
+19:36:41 <cb400f> with razor-qt as the desktop?
+19:36:43 <wstephenson> nah
+19:36:47 <wstephenson> not that radical
+19:37:00 <javier> I think there was some kind of light kde project
+19:37:15 <javier> kde 3.x based perhaps?
+19:37:15 <wstephenson> just take our basic components and reduce them to a minimum, make it easily installable
+19:37:24 <tigerfoot> javier: I take a plane and come to kick your ass :-)
+19:37:38 <javier> hehe
+19:37:40 <wstephenson> disabled akonadi and nepomuk, bare minimum set of applets, styles, windecos, wallpapers installed
+19:37:59 <cb400f> disable oxygen animations? and effects?
+19:38:01 <tigerfoot> wstephenson: so you forbid usage of pim stack then
+19:38:01 <wstephenson> so it feels like when you get into a fast car
+19:38:10 <wstephenson> tigerfoot: by default yes.
+19:38:25 <tigerfoot> nepomuk alone is not that bad ...
+19:38:35 <wstephenson> cb400f: not sure, possibly don't even use oxygen
+19:38:46 <tigerfoot> and deeply integrated in dolphin etc ... and crash all when not running ...
+19:39:15 <wstephenson> tigerfoot: it's not, but some people are allergic
+19:39:28 <tigerfoot> wstephenson: oh that called kde Klassik like the gnome classic
+19:40:04 * tigerfoot send medecine to allergic
+19:40:08 <wstephenson> cb400f: the idea is not to make something radically new (we have Kor and razor-qt for that) but something that feels as stripped down for speed as possible
+19:40:20 <wstephenson> without sacrificing the ability to add the features back that people need
+19:40:39 <wstephenson> THAT is the distinction between KDE and these lightweight toy DEs
+19:40:43 <tigerfoot> wstephenson: what would be a plan for that ?
+19:41:17 <wstephenson> tigerfoot: what i said already is all i have so far
+19:41:24 <tigerfoot> inventory lightweight component? (kwin/decoration/plasmoid/theme)
+19:41:36 <cb400f> but it's also about feel and appearance/perception.. so every darn tooltip and pop-up etc. should be turned off too then
+19:41:41 <wstephenson> cb400f: sure
+19:41:45 <tigerfoot> make them as default in kde4-desktop pattern ?
+19:41:47 <wstephenson> cb400f: a lot of it is about feel
+19:42:17 <toothpik> you could leave activities out of it too as far as i'm concerned
+19:42:18 <wstephenson> cb400f: like when you sit in a stock car and someone removed the inner door handles and replaced them with loops of tape.
+19:42:32 <wstephenson> toothpik: yeah
+19:42:33 * tigerfoot just hope a polishing systemsettings ... with all settings there and not spread around
+19:42:54 <wstephenson> tigerfoot: also a good place to start tossing stuff over the side
+19:43:09 <wstephenson> tigerfoot: also split packages so you can then...
+19:43:18 <wstephenson> make a kde-minimal pattern that only includes the base packages
+19:43:32 <wstephenson> for kde-desktop pattern we then pull in the base + the splits
+19:44:11 <wstephenson> the reality check is, is this really a strategy that would win us users/recognition/contributors
+19:44:15 * tigerfoot not that well experienced as packager ... (especially the kde stack which look like a babylon tower)
+19:44:17 <wstephenson> or is it just chasing after the grumpy old men
+19:44:44 <cartman> a slim desktop makes sense
+19:44:49 <wstephenson> tigerfoot: if you identify the stuff to split out, we can do the work
+19:44:51 <toothpik> aren't we the important ones?
+19:44:54 <tigerfoot> wstephenson: I think if we can make kde4 faster than ever on openSUSE (the fastest distribution around)  it make sense everywhere
+19:45:22 <tigerfoot> then Linus will not have the choice to quit :D
+19:45:52 <tigerfoot> and will remove old unmaintained DE ...
+19:45:55 <wstephenson> toothpik: depends if we are bigger and better after we make you happy
+19:46:05 <tigerfoot> 12.2 feel the speed should be our moto
+19:47:04 <wstephenson> toothpik: there are too many grumpy old men who do nothing but complain and never say thanks when things work, nor bring new people to opensuse, nor contribute themselves. so i'm swearing off helping them any more :P
+19:47:18 <tigerfoot> wstephenson: there's just one trouble about 12.2 objective, actually factory is really in a bad state ... and will not be quite cool before some time it seems
+19:47:52 <wstephenson> tigerfoot: if this reduction helps speed so be it, but i think feeling minimal and light is as important as being faster on the clock
+19:47:59 <tigerfoot> so will be hard to work with it to find the issues.
+19:48:04 <toothpik> from all the noise on the mailing list i can imagine KLyDE will have a big following
+19:48:22 <tigerfoot> wstephenson: they will get the two for the same price ...
+19:48:28 <wstephenson> of course not starting nepomuk and akonadi on login will help speed up the rest. as will not having to setup structures and instances for plugins that are no longer installed
+19:48:51 <wstephenson> tigerfoot: i think you could do all the work with 12.1 already and then forward port it
+19:49:10 <tigerfoot> wstephenson: I've not a cloud at home :-)
+19:49:29 <tigerfoot> wstephenson: with kdf or kusc
+19:49:33 <wstephenson> toothpik: i think so, i think it's light is not just in fashion with the grumpy guys
+19:49:39 <wstephenson> tigerfoot: you mean to build it?
+19:50:04 <wstephenson> s/it's light/light/
+19:50:38 * wstephenson would like to hear from the rest of the team about this harebrained scheme, not just tigerfoot cb400f and toothpik
+19:51:17 * toothpik sits on his hands
+19:51:18 <cartman> I agree that a lightweight setup makes sense.
+19:51:26 <maxlin> +1
+19:51:30 <cartman> And my stomach is burning, sorry.
+19:51:32 <wstephenson> cartman: you don't think it's just chasing the long tail of our userbase?
+19:51:46 <wstephenson> cartman: rennies
+19:51:46 <cartman> actually no, people seem to switch to XFCE en masse
+19:51:49 <rabauke_> I noticed that starting apps on other desktops is a lot faster, so anything improving speed is good.
+19:51:53 <cartman> because its lightweight
+19:52:13 <cartman> if we can trim the fat I would welcome it
+19:52:30 <wstephenson> rabauke_: starting xfce apps on xfce, or starting firefox/chromium/oo.o on xfce?
+19:52:48 <rabauke> wstephenson: firefox in icewm for example
+19:52:59 <tigerfoot> all gtk crap start quicker on xfce/gnome that on kde ... true ...
+19:53:13 <wstephenson> then we should check why that is, must be the kde integration
+19:53:26 <cartman> Might be oxygen-gtk
+19:53:36 <cb400f> cold-starting firefox on suse is definitely dog slow
+19:53:43 <wstephenson> or gconf, gnome-settings-daemon and other gnome runtime stuff
+19:53:51 * cb400f will test in icewm if it's really faster there one of these days
+19:53:57 <cartman> cb400f: chromium is preferred :)
+19:53:58 <wstephenson> anyway, fringe issue
+19:55:53 * tigerfoot look to  gconf, gnome-settings-daemon and other gnome runtime stuff
+19:56:43 <wstephenson> tigerfoot: re not a cloud at home
+19:56:46 <wstephenson> you mean to build stuff?
+19:57:50 <tigerfoot> wstephenson: if I've to test of to slick down kde package, and pattern I need another computer, the spare is already fully dedicated to factory/plymouth/grub2 tasks :D
+19:58:14 <tigerfoot> but well I should find a bit of place and run a vm
+19:59:05 <wstephenson> tigerfoot: ah ic
+20:01:35 <tigerfoot> wstephenson: you make a recapitulation about important point of the meeting ?
+20:01:48 <tigerfoot> we need to switch to project:-)
+20:01:52 <tigerfoot> -project
+20:03:12 <wstephenson> #action wstephenson summarize 12.2 feature discussion on list, then blog
+20:03:21 <wstephenson> #topic Q&A, misc
+20:03:57 <cartman> no q. from my side.
+20:04:43 * tigerfoot one ... wstephenson if you can put back snafu on in the topic and add the link to the article :-)
+20:05:19 <wstephenson> tigerfoot: i don't understand
+20:05:59 <cb400f> hm.. wrong channel I guess
+20:06:07 <tigerfoot> wstephenson: normally on this channel topic there was SNAFU SNAPU ? didn't remember, your article about how to contribute with obs ...
+20:06:20 <wstephenson> cb400f: thanks...
+20:07:18 <rabauke> wstephenson: what about a blog about "adopt a kde package"? e.g. for extra packages
+20:08:03 <cb400f> or maybe we should just have a bi-yearly cleanup of kde:extra and kup
+20:08:31 <cb400f> e.g. icontasks plasmoid was still in kde:extra for kde 4.8 repos... leading to mucho trouble
+20:08:38 <wstephenson> cb400f: not a bad idea
+20:08:40 <cb400f> not sure if it's still there
+20:09:19 <wstephenson> tigerfoot: BURP
+20:10:02 <tigerfoot> wstephenson: !!!! yes ... !!!!!
+20:10:07 <wstephenson> tigerfoot: "De faire un rot" no?
+20:10:13 <tigerfoot> brup
+20:10:19 <tigerfoot> for the rooo :D
+20:10:38 <tigerfoot> should depend if you drink wine or beer :D
+20:11:16 <krop> that will be part of the meeting log ?
+20:13:06 <wstephenson> i'll add the link back to that article
+20:14:16 * krop reads the backlog
+20:14:31 <tigerfoot> wstephenson: thx ..
+20:14:32 <cartman> wstephenson: #endmeeting? :)
+20:14:39 <krop> wstephenson: I don't use bnc. it gives me headaches each time I try to find something there
+20:14:50 <wstephenson> cartman: yes
+20:14:54 <wstephenson> thanks everyone for coming
+20:15:02 <wstephenson> #endmeeting

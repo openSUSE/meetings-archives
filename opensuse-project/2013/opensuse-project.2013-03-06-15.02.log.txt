@@ -1,0 +1,134 @@
+15:02:01 <robjo> #startmeeting openSUSE project meeting
+15:02:01 <bugbot> Meeting started Wed Mar  6 15:02:01 2013 UTC.  The chair is robjo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:02:01 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:02:12 <robjo> Hi everyone
+15:02:25 <robjo> can we get a role call from board members please
+15:02:55 <wstephenson__> present!
+15:03:16 <robjo> Ilmehtar: was here a few minutes ago
+15:03:50 <robjo> FunkyPenguin: ping
+15:04:36 <robjo> OK, that makes two of us, an improvement over last week, we'll see if we can keep the trend going
+15:04:39 <wstephenson__> isn't he in HK today?
+15:05:10 <robjo> could be, not my day to keep track of FunkyPenguin ;)
+15:05:16 <wstephenson__> either he's 6 hours ahead or on a plane home: https://twitter.com/awafaa/status/308788169787203584
+15:06:00 <robjo> Let me start by welcoming Ilmehtar to the openSUSE Board, hopefully everyone saw the announcement on the -project list
+15:06:41 <robjo> Lets get to the action items form the last meeting
+15:06:55 <robjo> #topic review AIs from last meeting
+15:07:20 <robjo> darix: Ilmehtar did you guys sort out the cloak setup stuff?
+15:08:09 <darix> robjo: he tried to ping me once yesterday
+15:08:17 <darix> but i was too busy with getting widehat ready for release
+15:08:19 <Ilmehtar> indeed I did
+15:08:35 <FunkyPenguin> robjo I am indeed in Hong Kong, just heading to bed after a long day in China, sorry
+15:08:40 <Ilmehtar> we'll get our act together, are you going to be free after this meeting darix?
+15:08:48 <darix> robjo: see query
+15:08:57 <Ilmehtar> (Sorry for missing the first 5 minutes.. my boss was talking to me)
+15:08:57 <darix> Ilmehtar: more or less
+15:09:05 <darix> FunkyPenguin: weak :p
+15:09:18 <robjo> FunkyPenguin: needs to stay up another hour ;)
+15:09:38 <robjo> OK, lets carry that topic for another couple of weeks
+15:09:56 <robjo> #action Ilmehtar and darix work out the cloaking thingy
+15:10:54 <robjo> vuntz is working on the admin access topic for planet.o.o thus this remains open
+15:11:10 <robjo> #action vuntz continue to work on access for planet.o.o
+15:11:38 <zoumpis> hey Ilmehtar, congrats!
+15:11:46 <robjo> Neither CarlosRibeiro nor Roguehorse appear to be here
+15:12:46 <victorhck> "vuntz continue to work on access for planet.o.o" good news!!
+15:13:04 <robjo> and that'll do for the action items from last meeting, any questions?
+15:13:45 <darix> can i have a chocolate cookie?
+15:14:13 <robjo> dispense cookie for darix
+15:14:38 <robjo> the agenda is pretty barren: https://en.opensuse.org/openSUSE:Project_meeting
+15:14:44 <robjo> thus on to GSoC
+15:14:48 <wstephenson__> well, it's nearly release time
+15:14:52 <robjo> #topic GSoC update
+15:14:57 * saurabhsood91 is here
+15:15:16 <robjo> saurabhsood91: anything new to report?
+15:15:18 <saurabhsood91> got some activity for gsoc. we got the announcement on the news page
+15:15:37 <saurabhsood91> robjo: got a reply from syslog. they will be in if they dont get on their own
+15:16:26 <robjo> sounds good, anything else on GSoC?
+15:16:32 <saurabhsood91> i also added ideas from last year's ideas page to this year's page. I have left out mentor names, as I havent got replies about whether they are interested or not
+15:16:40 <saurabhsood91> we can count these ideas open for mentoring
+15:17:13 <saurabhsood91> thats all for status. we still have about 10 days to work on the ideas page
+15:17:14 <wstephenson__> i think some mentors are waiting to see if there are interesting project proposals
+15:17:50 <saurabhsood91> wstephenson__: i think we have quite a lot of unimplemented stuff from last year
+15:18:13 <robjo> saurabhsood91: can you send another message to -project and maybe -factory when we have about 5 days left to fill the ideas page, as a "finally drive"?
+15:18:43 <saurabhsood91> robjo: sure. i will do that. i was thinking of sending one today itself
+15:18:58 * vuntz is joining for a few minutes
+15:19:24 <robjo> Anything else on GSoC?
+15:19:43 <saurabhsood91> no
+15:19:49 <robjo> #topic What else?
+15:20:03 <wstephenson__> anyone interested in hearing about 12.3?
+15:20:14 <robjo> Certainly
+15:20:26 <Ilmehtar> I am, what's the news?
+15:20:31 <saurabhsood91> all ears ;)
+15:20:32 <wstephenson__> there has been lots of last minute work to get Secure Boot working, without breaking Insecure Boot ;)
+15:21:05 <wstephenson__> basically shuffling different combinations of MBR, GPT EFI partitions, and signed bootloaders so they all work
+15:21:21 <Ilmehtar> I noticed the 'shim' being pulled down last time I did a dup, is that meant to be on every machine even if there is no grub-efi?
+15:22:02 <wstephenson__> so far so good, unless you do something weird like install 12.2 in legacy mode, switch the bios to UEFI, and try to do a dual boot from the legacy bootloader
+15:22:06 <wstephenson__> Ilmehtar: dunno, will check
+15:22:41 <wstephenson__> also there has been a flurry of activity on bug 798348, which concerns yast/systemd/networkmanager/ifup
+15:22:45 <bugbot> openSUSE bug 798348 in openSUSE Factory (Network) "No network without networkmanager" [Major,Assigned] https://bugzilla.novell.com/798348
+15:23:02 <wstephenson__> if that is fixed we have no more blockers
+15:23:37 <wstephenson__> a large part of the opensuse team have been mostly doing QA this last couple of weeks
+15:24:01 <wstephenson__> fixing up openqa for 12.3 and doing manual testing of non-virtual hardware features
+15:24:49 <wstephenson__> so if all goes according to plan we will have a gold master image in the next couple of days, and then it's in the hands of darix and colleagues to make the download magic happen next week
+15:25:14 <wstephenson__> at the same time, jospoortvliet has been working on the release annoucement, sneak peeks, etc
+15:25:27 <Ilmehtar> do you think if any of the team will have any ideas on how we can get more contributors involved in QA for 13.1?
+15:25:48 <wstephenson__> i think all that is in hand, but you might notice more focus on engineering and less on press work than with 12.3
+15:26:03 <wstephenson__> we were looking at a new Testopia QA effort
+15:26:47 <wstephenson__> but we shelved it for 12.3 as the existing test suites were too outdated to use, and we didn't have time to update them by a useful point in time
+15:27:25 <wstephenson__> and the question stands whether the community has any interest in plugging through Testopia test runs
+15:27:40 <wstephenson__> we may set up a model QA project early next release to test that
+15:27:57 <robjo> my impression is that Secure Boot is possibly the biggest issue, and the issue is that not a lot of people have hardware with UEFI
+15:28:34 <wstephenson__> yup, and the problem is that those who do are mostly likely new opensuse users
+15:29:00 <wstephenson__> we'll see
+15:29:03 <Ilmehtar> ick, I hadn't thought of it like that
+15:29:07 <darix> and how many users want to find out if you can brick their system with using uefi ;)
+15:29:25 <wstephenson__> we have 3 secure boot machines here on the floor and they are constantly being reinstalled to test
+15:29:30 <robjo> yep, turn the crap off ;)
+15:29:53 <Ilmehtar> IIRC, it's only specific samsung uefi implimentations that are brickable - I guess we're at that stage where even the OEM's dont quite know what they're doing yet
+15:30:25 <wstephenson__> we don't know how bad it is
+15:30:35 <robjo> Ilmehtar: yes, OEMs are in for a rude awakening as well
+15:30:37 <wstephenson__> at least we have a kernel with the mitigation patches in
+15:30:46 <Ilmehtar> my laptop has a uefi (not secure boot) mode.. and every time I've tested it, it's been a comedy of errors - it doesn't even look for its boot files in the right place
+15:30:52 <wstephenson__> but afaics all are using some derivative of the tianocore uefi firmware
+15:31:11 <wstephenson__> having said that, a bios update is strongly recommended if you want to use uefi
+15:32:22 <robjo> wstephenson__ thanks for the update
+15:32:36 <wstephenson__> yw
+15:32:41 <robjo> Anything else, or are we done early today?
+15:33:35 <ancor> hello everybody
+15:33:42 <ancor> I'm new here.
+15:34:07 <wstephenson__> i should point out that ancor is specifically new in the opensuse team ;)
+15:34:08 <ancor> I'm a new member of the openSUSE Team at Suse offices in Nuremberg
+15:34:27 <robjo> That's it then. Thanks everyone for attending. The next project meeting will be in two weeks at the same time
+15:34:55 <robjo> Please note that the US is changing to Summer time this coming weekend
+15:34:55 <Ilmehtar> ancor: oh welcome!
+15:35:22 <wstephenson__> ancor: tell us what you'll be doing for the project
+15:35:33 <ancor> I'm mainly a Ruby on Rails developer and this week
+15:35:55 <ancor> I started the development of an application for managing the openSUSE Travel Support Program
+15:36:51 <ancor> It will be published (as a work in progress) this week on github
+15:36:56 <victorhck> Hi ancor
+15:37:03 <Ilmehtar> oh that'll be nice! so people applying will be able to check their status of their requests and such?
+15:37:28 <ancor> yes, this kind of things
+15:38:32 <ancor> we are developing a generic travel support program application that can be used in other upstreams projects alike
+15:38:37 <ancor> like gnome or kde
+15:38:52 <ancor> and then, we will adapt the application to openSUSE
+15:39:16 <ancor> integrating it with the rest of the infrastructure
+15:39:31 <Ilmehtar> great!..hmm.. how's your javascript?
+15:39:43 <ancor> I hope that it would be the first project of a large list
+15:39:51 <coolo> Ilmehtar: in rails you don't javascript, you jquery
+15:40:02 <coolo> or even worse, you coffee
+15:40:43 <ancor> Ilmehtar: coolo is right. I always use jquery
+15:41:01 <ancor> but I'm not still used to coffee
+15:41:08 <vad> tea, then?
+15:41:10 <coolo> ancor: oh, sorry. you can't know yet: coolo is always right
+15:41:17 <Ilmehtar> I ask because one of the things on my list was looking into the possibility of using something like LO's 'Bug Submission Assistant' against our bugzilla
+15:41:58 <Ilmehtar> nice 'end user friendly' bug submission interface, a bit like those guided forms we already have in our bugzilla, just even less scary looking for userrs
+15:41:58 <ancor> I suppose I can add it to my list too
+15:42:01 <Ilmehtar> https://wiki.documentfoundation.org/Bug_Submission_Assistant
+15:43:00 <ancor> Ilmehtar: I'll take a look
+15:43:12 <Ilmehtar> ahh, and it uses JQuery ;-) .. I haven't really had any time to look at it yet, but its one of those things I saw at FOSDEM and thought "Wow, that could be really useful for the project"
+15:43:24 <Ilmehtar> ancor: thank you
+15:43:46 <wstephenson__> ancor: thanks for presenting yourself
+15:44:07 <wstephenson__> i guess you can find him here or at opensuse-web@opensuse.org
+15:45:26 <robjo> 15 minutes left, anything else?
+15:45:50 <wstephenson__> i'd like to wrap so i can reboot and test more stuff ;)
+15:46:08 <robjo> That's good enough for me
+15:46:20 <robjo> #endmeeting

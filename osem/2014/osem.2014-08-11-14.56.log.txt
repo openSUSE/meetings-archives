@@ -1,0 +1,235 @@
+14:56:51 <KalabiYau> #startmeeting
+14:56:51 <bugbot> Meeting started Mon Aug 11 14:56:51 2014 UTC.  The chair is KalabiYau. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:56:51 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+14:57:03 <KalabiYau> Hi everyone!
+14:57:13 <KalabiYau> Hope you had nice time recently. Shall we start?
+14:58:45 <henne> let's roll
+14:58:47 <KalabiYau> #topic Retrospective Milestone Quacamole
+14:59:13 <KalabiYau> so - currently we are at 34% of what was committed to first MS
+14:59:15 <henne> let's do a round call
+14:59:25 <KalabiYau> henne, - then you start :)
+14:59:43 <henne> Who's here?
+14:59:47 * henne is here
+14:59:51 * KalabiYau is here
+15:00:29 <henne> that's what I thought ;)
+15:00:34 <KalabiYau> Based on doodle we agreed on today 17-00 :)
+15:00:36 * differentreality here
+15:00:39 <KalabiYau> cool
+15:00:43 <KalabiYau> gopesh, around?
+15:01:17 <henne> erm
+15:01:27 <henne> this channel requires invitation?
+15:01:28 <henne> why?
+15:01:35 <differentreality> ?!
+15:01:38 <KalabiYau> not sure
+15:01:40 <differentreality> it shouldnt
+15:01:40 <differentreality> let me check
+15:03:54 <ChrisBr> hello
+15:04:04 <differentreality> hey
+15:04:11 <KalabiYau> howdy, seems that was my bad to mess around with chanserv :)
+15:04:15 <KalabiYau> ok, let's move
+15:04:19 <KalabiYau> status round
+15:04:25 <KalabiYau> what is done since last meeting
+15:05:03 <henne> well
+15:05:23 <henne> ChrisBr and I had to push back the re-work of the admin interface
+15:05:39 <henne> Because we first had to refactor Conference
+15:05:57 <KalabiYau> #info KalabiYau fixed deployment notification, added Sprint discipline to readme, worked on osem deployer app (https://github.com/openSUSE/epiphyte)
+15:06:22 <KalabiYau> i believe that way we got a lot of card on top for ChrisBr ?
+15:06:28 <ChrisBr> Yes
+15:06:31 <henne> yeah
+15:06:34 <ChrisBr> Ok I started with the refactoring of the admin menu. Unfortunately I have the tickets 384 - 389 left. The main reason was that we decided to do a refactoring of the conference model before continuing on this during the sprint and that a course at university took more time than expected. Additional I have left 416 & 419 of the refactoring.
+15:06:54 <ChrisBr> So I woult take these tickets to the next sprint ...
+15:07:05 <KalabiYau> #info Chris - "Ok I started with the refactoring of the admin menu. Unfortunately I have the tickets 384 - 389 left. The main reason was that we decided to do a refactoring of the conference model before continuing on this during the sprint and that a course at university took more time than expected. Additional I have left 416 & 419 of the refactoring."
+15:07:42 <KalabiYau> i still have js issue bug and deployer app is not fully done, but close to it
+15:07:47 <henne> #info henne refactored Conference/Contact. Still needs to refactor Program, Splash and some drops
+15:08:06 <KalabiYau> it looks generally that we need additional time - whole sprint i would say to finish things
+15:08:17 <KalabiYau> other way we will pile up more and more
+15:08:22 <henne> yeah
+15:08:40 <ChrisBr> yes
+15:08:42 <KalabiYau> what about if we pick new MS name, and move what is not done to new MS ?
+15:09:08 <KalabiYau> plus we need to review what is left to ensure we will end with two empty columns Ready and  In Progress
+15:09:31 <henne> well
+15:09:40 <henne> whats in read can just stay in ready :)
+15:10:06 <KalabiYau> i thought that Ready is kinda Plan for Sprint
+15:10:09 <KalabiYau> i am wrong?
+15:10:32 <KalabiYau> differentreality, could you please bring you status?
+15:10:38 <henne> ready is the content of the sprint
+15:10:51 <henne> sprint/milestone
+15:10:52 <KalabiYau> sure, we just need new label
+15:10:56 <differentreality> yes
+15:11:05 <differentreality> Waiting for feedback on https://github.com/openSUSE/osem/pull/333
+15:11:09 <henne> new label=?
+15:11:39 <KalabiYau> borsch
+15:11:40 <KalabiYau> )))
+15:11:47 <differentreality> I am in a very good result with roles and authorization (I will rebase and send PR within the day). I think I need a bit of help with 2 failing tests I can't figure out. Other than that, other things can come later.
+15:11:50 <henne> ah new milestone name
+15:12:07 <henne> KalabiYau: is that the correct writing? ;)
+15:12:11 <henne> spelling
+15:12:15 <KalabiYau> best i can guess
+15:12:20 <differentreality> and I was also supposed to work on user deletion but gopesh un-assigned me and assigned himself, so... I am not sure what's going on with that one. Until that happened this is how far I was: https://github.com/differentreality/osem/tree/user_deletion
+15:12:20 <KalabiYau> nothing closer
+15:12:44 <KalabiYau> differentreality, could you please catch up with gopesh tomorrow and clarify on that?
+15:12:51 <henne> i thought it's Borscht ;)
+15:13:00 <KalabiYau> as we still have a lot of open PRs at the end of sprint
+15:13:13 <differentreality> I kinda did that, he said he will do it but he will obviously not have it ready for today.
+15:13:14 <KalabiYau> henne, there is no 't' in the end
+15:13:23 <KalabiYau> differentreality, i see
+15:13:30 <KalabiYau> i will ask him
+15:13:32 <henne> KalabiYau: according to wikipedia there is :P
+15:13:40 <henne> https://en.wikipedia.org/wiki/Borscht
+15:13:47 <KalabiYau> henne, if wikipedia told so , sure it is  )))
+15:13:53 <differentreality> ukranian soup?
+15:14:01 <KalabiYau> yeah
+15:14:02 <differentreality> r all our milestone names gonna be related to food?
+15:14:08 <KalabiYau> we also eat it a lot in Russia
+15:14:14 <differentreality> ah i c :)
+15:14:22 <differentreality> these sprints make me really hungry
+15:14:29 <henne> differentreality: our milestone names will be related to Universe
+15:15:12 <KalabiYau> that way we can familiarize ourselves  with other `cuisine` out there
+15:15:20 <henne> hehe
+15:15:20 <KalabiYau> :)
+15:15:24 <KalabiYau> ok
+15:15:30 <KalabiYau> so, status is there?
+15:15:45 <henne> status?
+15:15:56 <KalabiYau> round status i mean
+15:16:06 <henne> let's add more info's
+15:16:24 <henne> for people who will read the log
+15:16:28 <KalabiYau> i've added for ChrisBr
+15:16:43 <KalabiYau> henne, you did it, i did it myself
+15:16:47 <KalabiYau> can do for differentreality
+15:17:24 <henne> please do
+15:17:34 <KalabiYau> #info differentreality  #333 is in review, Roles and Auth mostly done, but needs some polishing, user deletion is questionable and needs clarification with gopesh
+15:17:43 <KalabiYau> now i think it is done
+15:18:11 <KalabiYau> so, i believe result of this Sprint been expected - we just learning about our abilities and speed
+15:18:24 <KalabiYau> but generally, we done awesome job for those two weeks, i think
+15:18:31 <KalabiYau> you guys rock!
+15:18:47 <henne> ChrisBr: do you really think we can finish both tasks in the next two weeks?
+15:19:04 <henne> refactoringand re-designing the interface?
+15:19:19 <henne> I doubt it
+15:19:42 <ChrisBr> Hm, I'm not sure
+15:19:49 <KalabiYau> differentreality, what are you expectations time-wise on tasks which are open and assigned to you? #372, #376, #374, ?
+15:19:57 <henne> i would like to move 386-389 into the backlog again
+15:20:01 <ChrisBr> I already started with 416
+15:20:30 <KalabiYau> #agreed on name for MS#2 - Borscht
+15:20:34 <KalabiYau> #topic Sprint Borscht planning
+15:20:47 <henne> ChrisBr: why don't you move it to progress then? :)
+15:20:55 <differentreality> KalabiYau: #372 is part of roles authorization, so will close as soon as roles do. #376 I am waiting for feedback. #374 waiting for feedback too
+15:20:56 <ChrisBr> and I believe 419 is not a big thing ...
+15:20:59 <ChrisBr> I did it :)
+15:21:10 <henne> good
+15:21:21 <KalabiYau> #info KalabiYau can deliver deployer app and cleanup of JS bundle until next two week sprint
+15:21:32 <KalabiYau> differentreality, could you put that in info?
+15:21:52 <differentreality> #info #372 is part of roles authorization, so will close as soon as roles do. #376 I am waiting for feedback. #374 waiting for feedback too
+15:21:58 <KalabiYau> differentreality, thx ^_^
+15:22:01 <differentreality> np
+15:22:24 <KalabiYau> also we have a lot of cards with no assignee on In Progress column
+15:22:28 <KalabiYau> that is weird ;)
+15:22:34 <KalabiYau> i think waffle issue
+15:22:39 <KalabiYau> or feature :)
+15:22:42 <henne> no
+15:23:12 <henne> pull requests don't have people assigned automatically
+15:23:28 <henne> because people usually use this as indicator who is reviewing them
+15:23:33 <KalabiYau> so i think in our flow we can asssume that who opened is owner of it
+15:23:39 <KalabiYau> ah
+15:23:54 <KalabiYau> for us - i think what i stated above could work?
+15:24:06 <henne> sure
+15:24:12 <KalabiYau> ok, i will assign missing
+15:24:15 <differentreality> I am not sure I am able to close all issues I can report..
+15:24:29 <gopesh> hello
+15:24:43 <gopesh> sorry I am late
+15:24:46 <KalabiYau> #action KalabiYau will update all cards in waffle to assign owner to PRs
+15:24:51 <KalabiYau> gopesh, hi, that's is ok
+15:25:01 <KalabiYau> gopesh, hope you are cool and ready :)
+15:25:03 <henne> ChrisBr: I'm probably not going to be able to finish 417, 418, 421 early
+15:25:13 <KalabiYau> differentreality, which cards then we should put aside?
+15:25:14 <henne> ChrisBr: if at all..
+15:25:17 <gopesh> yes I am
+15:25:32 <differentreality> KalabiYau: I will have to look over issues again
+15:25:39 <KalabiYau> gopesh, you could write a status then
+15:25:50 <KalabiYau> gopesh, like what is done, what is not, why and so on
+15:25:54 <KalabiYau> like a standup
+15:26:09 <ChrisBr> henne: Ok, so I will move on with #416, #419. After that I can talk about taking yours!
+15:26:24 <KalabiYau> gopesh, differentreality has a question for you about user deletion
+15:26:30 <KalabiYau> who is working on that?
+15:26:34 <henne> alright. I removed myself from the Cards
+15:26:44 <ChrisBr> henne: Ok
+15:27:09 <gopesh> well i am working on that
+15:27:37 <ChrisBr> #info ChrisBr commits #416, #419. After that I will taking some of Henne refactoring issues. Waiting for review of 384
+15:28:18 <KalabiYau> differentreality, gopesh https://github.com/openSUSE/osem/pull/333 what shall we do with that PR?
+15:28:41 <differentreality> KalabiYau: that's irrelevant to user deletion
+15:28:46 <differentreality> that's my PR and is ready for review
+15:29:06 <gopesh> and this is how far i reached https://github.com/gopesht/osem/compare/user_deletion
+15:29:56 <differentreality> PR #333 is there to fix our current database state, after "wrong" user deletions
+15:29:57 <KalabiYau> differentreality, ok, got you. Then 333 will be reviewed and gopesh will independently provide his PR for user_deletion if you both fine with that
+15:30:08 <gopesh> well I am confused about the part when the event is scheduled and the only user is the submitter
+15:30:38 <gopesh> then in that case what shall we do
+15:30:54 <KalabiYau> #agreed that PR submitter should assign himself to PR for cleaner waffle.io output
+15:31:11 <gopesh> well if there are many users as speakers then we can just delete the submitter and move forth
+15:31:15 <KalabiYau> gopesh, i presume we can discuss tech. details outside of meeting. OK?
+15:31:26 <gopesh> KalabiYau: OK :)
+15:31:39 <KalabiYau> as we definitely trying to make this meeting more of planning/retrospective, and tech details - any other time :)
+15:31:45 <gopesh> if differentreality has a better approach then she can discuss
+15:31:56 <gopesh> cool :)
+15:31:58 <henne> ChrisBr: okay given that, let's move the redesign cards back to the backlog
+15:32:07 <KalabiYau> you guys just need to talk it through, no big deal
+15:32:11 <differentreality> gopesh: well that's why I had commented in the issue :) Waiting for ur reply really..
+15:32:31 <KalabiYau> ok, i see here a place for question
+15:32:43 <KalabiYau> who has which settings on GH to be notified?
+15:33:34 <KalabiYau> e.g. i set it to only notify me if i've been mentioned explicitly or something is happening in assigned to me issue or PR
+15:33:39 <gopesh> differentreality: where did you comment ??
+15:33:48 <differentreality> I receive everything
+15:33:55 <differentreality> (and I am fine with that)
+15:33:57 <KalabiYau> that way - no noise, only focused
+15:33:59 <KalabiYau> ok
+15:34:00 * henne watches the whole repo
+15:34:48 <KalabiYau> that's more about your personal preferences, but it is happening all the time that on top of a lot of emails - most important are just missed or ignored
+15:34:51 <KalabiYau> anyway
+15:34:57 <KalabiYau> we agreed on new sprint
+15:35:05 <KalabiYau> name Borscht :)) hehe
+15:35:19 <differentreality> gopesh: in the relevant issue, https://github.com/openSUSE/osem/issues/383, differentreality commented 10 days ago And which are those implementation steps you are following?
+15:35:28 <KalabiYau> and everything which is not done yet - goes there
+15:35:40 <gopesh> well about the PR with email settings as james is sick he said he'll review it ASAP
+15:35:42 <KalabiYau> but that mean that we CAN't take anything else additionally
+15:36:05 <KalabiYau> everyone is fine with last statement?
+15:36:37 <gopesh> differentreality: okay so I'll mention in the comment what I have done till now so that everyone can see :)
+15:36:40 <henne> hm
+15:37:22 <KalabiYau> i am asking each of us to review current state of Ready and In Progress columns - and drop with no mercy - everything on what you are in doubt
+15:38:10 <ChrisBr> KalabiYau: Ready is only for tickets we will take in our next sprint, right?
+15:38:36 <KalabiYau> ChrisBr, yeah
+15:38:43 <ChrisBr> okay
+15:38:45 <KalabiYau> everything else is left aside
+15:39:34 <KalabiYau> basically two mentioned columns represents what is our debt to ourself, and we can't move on whilst it is there :)
+15:40:11 <KalabiYau> so, tomorrow i will confirm with everyone that you reviewed you part of sprint and ready to deliver it
+15:40:14 <KalabiYau> ok?
+15:40:19 <ChrisBr> henne: We will labe #417, #418, #421 as ready but without assigne so far, right?
+15:40:35 <KalabiYau> seems ok
+15:40:52 <KalabiYau> any other topics guys?
+15:40:53 <henne> stuff in ready doesn't have to have an assignee
+15:41:03 <ChrisBr> henne: okay
+15:41:09 <henne> only stuff in 'in progress'
+15:41:30 <KalabiYau> henne, why?
+15:41:49 <henne> because ready is the backlog of the sprint? :)
+15:42:16 <KalabiYau> henne, true
+15:42:28 <KalabiYau> henne, as you like - no strong preferences from my side
+15:42:28 <henne> you think it isn't a good idea?
+15:42:34 <henne> I could understand
+15:42:56 <KalabiYau> henne, that is usual agile workflow
+15:43:08 <KalabiYau> FIFO - first took a card from top, assigned and so on
+15:43:18 <henne> yeah
+15:43:24 <KalabiYau> but here we have a privilege to choose what you want to work
+15:43:32 <KalabiYau> *to work on
+15:43:44 <KalabiYau> but as i said - i am fine with that
+15:44:15 <henne> okay, let's live with un-assigned cards in ready :)
+15:44:24 <KalabiYau> ok, no probs
+15:44:33 <henne> anything else we need to discuss?
+15:44:39 <KalabiYau> any objections from you guys?
+15:44:44 <ChrisBr> nope
+15:44:50 <KalabiYau> not from side
+15:45:05 <differentreality> I am good
+15:45:08 <KalabiYau> cool
+15:45:12 <KalabiYau> wrapping up
+15:45:26 <gopesh> cool
+15:45:39 <KalabiYau> so, meeting is over, thank you again for you hard work guys
+15:45:49 <differentreality> thanks!
+15:45:59 <KalabiYau> that is really a pleasure to work with bright minds, feel myself young again :))
+15:45:59 <KalabiYau> endmeeting
+15:46:01 <KalabiYau> #endmeeting

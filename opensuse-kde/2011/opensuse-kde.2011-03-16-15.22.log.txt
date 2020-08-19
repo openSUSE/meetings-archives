@@ -1,0 +1,392 @@
+15:22:46 <Bille> #startmeeting
+15:22:46 <bugbot> Meeting started Wed Mar 16 15:22:46 2011 UTC.  The chair is Bille. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:22:46 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:23:10 <Bille> so
+15:23:15 <Bille> Welcome everybody :D
+15:23:29 <Bille> For discussion this week:
+15:23:30 * mrdocs waves
+15:23:31 <krop> op bugbot ?
+15:23:40 <mrdocs> and it glad to be back on CET
+15:23:50 <Bille> krop: i'll leave it, its topic changes are useless
+15:23:54 <Bille> * old action items
+15:23:58 <Bille> * status report
+15:24:03 <Bille> * announcement and marketing rally for 11.4 (remur_030)
+15:24:14 <Bille> * Going forward with KDE:Unstable:SC (tittiatcoke)
+15:24:26 * sebas is there now, got coffee :)
+15:24:30 <Bille> * when to start 11.5 stuff (wstephenson,sebas)
+15:24:34 <Bille> * Q&A, misc
+15:24:48 <Bille> anything last minute?
+15:25:10 <tittiatcoke> not from me
+15:25:16 <Bille> ok
+15:25:22 <Bille> #topic old action items
+15:25:44 <Bille> wstephenson - to contact i18n team with regards to openSUSE guides -  not done
+15:25:53 <Bille> wstephenson, duncanmv fix packagekit-zypp some more - done
+15:26:03 <Bille> anaumov - study packagekit-zypp
+15:26:11 <Bille> cb400f - patch in icons from kupdateapplet
+15:26:16 * Bille is multithreading :)
+15:26:22 <Bille> all test phonon-gstreamer + pulseaudio combo
+15:26:31 <Bille> remur_030 - bring up triage strategy on list - done
+15:26:34 <remur_030> could have turned out better I guess
+15:26:38 <Bille> discussion - on repo naming etc to deferred to next meeting
+15:26:43 <remur_030> (phonon-gstreamer stuff)
+15:26:53 <Bille> if you see your name mentioned, please report
+15:26:55 <remur_030> or rather pulseaudio
+15:27:23 <cb400f> I started a thread on the ML regarding kpk icons.. I think the decision is we stick with upstream icons ;-) .. so done
+15:27:30 <Bille> cb400f: thanks
+15:27:48 <remur_030> I talked with bwiedemann about using 'themed' queries for next bug hunts, he likes the idea
+15:28:02 <Bille> remur_030: define 'themed'
+15:28:43 <remur_030> instead of searching for open 11.4 bugs like last time search for kde or gnome I guess, the granularity isn't clear yet
+15:29:00 <remur_030> problem is to cover all bug still =/
+15:29:51 <remur_030> for our own bug team, well we are getting more reports after the release as usual and are not very fast in handling them
+15:30:08 <remur_030> nothing major though
+15:31:06 <Bille> ok
+15:31:14 <Bille> i haven't been tracking the bugs yet i admit
+15:31:38 <Bille> the connections in india were poor to awful
+15:31:38 <javier> Bille: talking of bugs, I think kdebase4-openSUSE comes with the same background twice but doesn't use the one in the tarball but rather the one that Source points at
+15:31:44 <Bille> javier: it's reported?
+15:32:03 <javier> so kdebase4-openSUSE ships on 11.4 with the background for 11.3
+15:32:23 <javier> it'll be fixed on an update (almost done)
+15:32:24 <remur_030> hm yeah I am also lacking time besides commenting on the ones where I have an awnser right out of the head
+15:32:38 <javier> Bille: I think it isn't
+15:32:59 <javier> I suppose it should use the one in the tarball, to avoid confusion
+15:33:06 <Bille> yes
+15:33:20 <Bille> but if it's the same background it's not worth discussing here
+15:33:39 <Bille> i'll be back in the office tomorrow
+15:33:46 <Bille> and will start doing triage
+15:33:52 <Bille> are any trends apparent?
+15:34:26 <javier> sure. I just wanted to point out that there's going to be an update fixing it
+15:34:52 <remur_030> pulseaudio with kmix doesn't seem to well off, I don't know if we lack anything here, it seems to work with kubuntu and kde4.5
+15:35:09 <Bille> javier: update? maintenance update? i don't think i understand the problem.
+15:35:30 <Bille> if it's the same bg, it doesn't matter whether it comes out of the Sources: or out of the tarball.
+15:36:03 <Bille> remur_030: i saw one bug where people missed the kmix-pulse backport
+15:36:15 <tittiatcoke> Bille: I guess that javier tries to indicate that we are shipping the 11.3 background in kdebase-openSUSE-11.4
+15:36:29 <javier> Bille: yes, maintenance update
+15:36:56 <javier> tittiatcoke: right. and besides that, there's something to be fixed in kdebase4-openSUSE
+15:37:23 <javier> background from Source vs background from tarball
+15:37:41 <javier> we have it twice
+15:37:55 <javier> and if you don't update the Source one, you get the old background
+15:38:14 <Bille> i see. bad packaging
+15:38:21 <javier> whatever background is in Source I mean
+15:38:22 <javier> ok
+15:38:27 <Bille> yeah i see how it works now
+15:38:36 <Bille> the tarball has distro specific branding too
+15:38:44 <Bille> please report as a bug and cc me
+15:38:53 <javier> will do
+15:38:59 <Bille> ok, so we started status report too
+15:39:21 <Bille> i'd like to personally congratulate everyone for his/her hard work
+15:39:33 <Bille> the feedback on 11.4 in the press is almost all good
+15:39:42 <javier> +1
+15:39:46 <javier> me too
+15:39:47 <dragotin> +1
+15:39:51 <tittiatcoke> +1
+15:40:00 <remur_030> +1, pretty impressive release over all
+15:40:10 <Bille> so even if we as the team are aware of all the ugly spots, nobody else noticed - we can feel good :)
+15:40:22 <cb400f> :-)
+15:40:32 * tittiatcoke seems to be good at covering things up :-)
+15:40:33 <dragotin> Bille adopted too much to german engineering ;-)
+15:40:52 <remur_030> how did the nvidia bug turn out btw, nobody replying or is it really fixed?
+15:40:58 <remur_030> or fixed for some?
+15:41:13 <Bille> dragotin: well the british engineering way would be to fire the guy who knew about the ugly spots as soon as the work was done
+15:41:22 <tittiatcoke> I guess the same goes for the ugly Intel driver
+15:41:24 <Bille> afaics fixed by the newer driver only
+15:41:26 <cb400f> plasma and amarok in default config didn't crash for me.. some report amarok still crashing... it's very muddy
+15:41:39 <Bille> yeah, amarok is not good
+15:41:40 <cb400f> but it seems fixed for everyone with >=270.29
+15:41:52 <Bille> i've heard of amarok indexer problems too
+15:41:59 <cb400f> so we just have to hope it'll be out soon.. and that sndirsch will package it
+15:42:10 <remur_030> Bille: report? you mean that it crashes while indexing?
+15:42:30 <Bille> remur_030: no, just that it doesn't see any files while indexing
+15:42:31 <remur_030> and starts all over again all the time?
+15:42:33 <Bille> was some irc chatter
+15:43:01 <Bille> anyway that's not status either
+15:43:04 <remur_030> hmm ok, because I remember strigi crashing on some mp3 file, maybe amarok uses libstrigi these days too
+15:43:19 <Bille> there is a nice fix to strigi in the most recent commit digest
+15:43:29 <remur_030> the dolphin fix by peter?
+15:43:31 <Bille> out of process indexing so it can't crash dolphin etc
+15:43:33 <Bille> yes
+15:43:43 <Bille> 4.7 stuff
+15:43:53 <Bille> what else
+15:43:58 <remur_030> yeah we had that discussion because I wanted something like this for strigi too, tracker has it for quite some time
+15:44:08 <Bille> so does amarok, even ;)
+15:44:18 <Bille> it just still manages to crash, apparently
+15:44:19 <cb400f> do we have an ETA on pnm update?
+15:44:22 <remur_030> jos said it takes too much work and peter just fixed it quickly in dolphin =/
+15:44:35 <tittiatcoke> cb400f: to resolve which issue ?
+15:44:43 <remur_030> 3g connectivity
+15:44:54 <cb400f> I understood the shipped version is outdated
+15:45:02 <cb400f> also apparently dvd installs get knm.. not pnm
+15:45:03 <tittiatcoke> The pnm in playground fixed that issue.
+15:45:12 <Bille> cb400f: yes, not sure how to fix that in an update
+15:45:19 <remur_030> tittiatcoke: that's why we were asking for an update
+15:45:26 <cb400f> yep, but playground is used by ~1-2%
+15:45:32 <Bille> #action wstephenson ask maintenance team how to replace knm with pnm
+15:45:44 <remur_030> just push it into kdf at least to get some test coverage
+15:45:50 <tittiatcoke> remur_030: I asked Bille if I should move it to KDF, but he wanted to double check if certain bugs were resolved
+15:45:55 <cb400f> and kua
+15:46:00 <remur_030> it's one of the bigger reports on bnc
+15:46:11 <Bille> actually push to KDF now
+15:46:20 <Bille> and i'll do the diligence before i pull to KDS
+15:46:28 <remur_030> well kdf is our testbed, do we really want people to use kup?
+15:46:29 <tittiatcoke> :-)
+15:46:30 <remur_030> ah
+15:46:43 <tittiatcoke> Bille: thanks
+15:46:48 <Bille> * Bille moved 4.6.0 to KDS, tittiatcoke helped clean up the resulting mess
+15:47:09 * tittiatcoke was glad he could help out in times of need :-)
+15:47:34 <remur_030> i still have that annoying list open and 2 bug reports with known patches I wanted to submit
+15:47:43 <remur_030> but not until the weekend I guess =/
+15:47:55 <krop> * The akonadi-facebook resource is available in K:U:P
+15:48:07 <Bille> krop: 4.6 dependent?
+15:48:40 * tittiatcoke updated kdepim46 to the latest status
+15:48:52 <krop> Bille: yes
+15:49:08 <Bille> so is it in KUSC:kdepim46 or vanilla KUSC?
+15:49:23 <krop> so, KDF and KR46 users can test it
+15:49:40 <krop> (even the KDS ones)
+15:49:43 <remur_030> does upstream have any plans for a kdepim release?
+15:49:58 <tittiatcoke> Bille: the akonadi-facebook resource is in KUP
+15:50:24 <Bille> sorry, konvi emoticons butchered krop's line
+15:50:25 <Bille> ok
+15:50:36 <Bille> remur_030: see dot today, apparently there will be a 4.6 kdepim
+15:51:58 <sebas> I've heard rumours from the last meeting that 4.6.2 is the idea
+15:52:08 <Bille> that's very close
+15:52:08 <sebas> the dot story is more vague though, so not quite sure
+15:52:15 <sebas> indeed
+15:52:19 <Bille> krop: your take?
+15:52:28 <krop> take what ?
+15:52:38 <tittiatcoke> krop: kdepim 4.6 release with KDE 4.6.2 ?
+15:52:39 <sebas> on the pim-akonadi release
+15:52:46 <krop> ah no, I don't take
+15:52:57 <Bille> krop: take == opinion, on when pim will be released?
+15:52:59 <cb400f> btw, is it possible to build kdepim46 for plain 11.4?
+15:53:09 <sebas> cb400f: should be, yes
+15:53:16 <krop> Bille: not many bugfixes lately
+15:53:21 <sebas> they both use up to date kdepimlibs
+15:53:37 <sebas> krop: so no bugs left? ;-)
+15:53:38 <Bille> ok
+15:53:41 <krop> if something gets released with 4.6.2, it will most likely be a rc
+15:53:51 <krop> sebas: if only..
+15:53:53 <cb400f> then we should prolly do it.. so people can play with pim46 without having to use KDF
+15:53:53 <sebas> good call I guess
+15:54:02 <tittiatcoke> Should I active kdepim46 to build against plain 11.4 ?
+15:54:15 <Bille> volker told me they found and fixed a lot of performance problems in the indexing
+15:54:35 <krop> and migration bugs are almost all solved now
+15:54:40 <sebas> why not, it's already quite usable and as long as we don't push it into stable automatically and only people who know what they're doing update ... ;)
+15:55:19 <remur_030> please warn before putting it into kdf though
+15:55:32 <Bille> yeah
+15:55:55 <jospoortvliet> slightly related - are there or will be there KDE and (once it is stable) KDE PIM packages in Tumbleweed?
+15:55:59 <remur_030> unless both versions can live happily on the same system, doubt it though
+15:56:18 * tittiatcoke just activated kdepim46 build for plain 11.4 including an update to latest kdepim and kdepim-runtime
+15:56:27 <remur_030> jospoortvliet: not yet, greg wanted to have the process settle first before tackling such big pulls
+15:56:29 <cb400f> sweetness
+15:56:36 <sebas> remur_030: kmail2 migrates kmail1's config once, and then doesn't touch it anymore, so setting-wise they can
+15:56:42 <sebas> just replace packages, done
+15:56:52 <jospoortvliet> remur_030: tnx!
+15:57:26 <jospoortvliet> remur_030: yes, kdepim 4.4 and 4.6 live together on the system just fine, tested that
+15:57:30 <jospoortvliet> including going back to 4.4
+15:57:33 <jospoortvliet> no issues
+15:57:35 <sebas> I'm building kdelibs and kde-runtime packages right now, btw. They're from titti's master packages and have the plasma declarative stuff merged
+15:57:51 <jospoortvliet> other than a huge folder with 4.6 database stuff, painful on my 30GB drive  :D
+15:57:53 <sebas> i.e. more QML fun, as base for the plasma team to work off
+15:58:04 <remur_030> that's nice, so it wouldn't be worst case if kdepim2 fails at some important point for people
+15:58:14 <sebas> remur_030: that's the idea
+15:58:20 <sebas> being able to try it, and rollback
+15:58:25 <krop> mmh we're still on the status reports ? :)
+15:59:10 <Bille> krop: yes
+15:59:24 <Bille> any more status?
+15:59:32 <Bille> remur_030: you're on:
+15:59:55 <Bille> #topic 11.4 marketing rally and announcement
+16:00:15 <jospoortvliet> Bille: I would love to know who the clown was that set paste.ubuntu.com as default instead of paste.opensuse.org - seeing some comments about that here and there :d
+16:00:18 <krop> * small cleanup in the KUP packages. Some were abandoned since ages. I'll update kdevelop, add the new plugins and also massif-visualizer this week end
+16:01:01 <remur_030> Bille: it's a bit too late now =)
+16:01:08 <jospoortvliet> Bille: counts as a easter egg I guess
+16:01:15 <tittiatcoke> jospoortvliet: I believe that this was done upstream
+16:01:17 <remur_030> but jos took care of that
+16:01:17 <Bille> jospoortvliet: git blame?
+16:01:29 <Bille> ok
+16:01:32 <jospoortvliet> remur_030: Bille you want to work on marketing for the 11.4 release now? ;-)
+16:01:41 <jospoortvliet> Bille: tittiatcoke ok... fun...
+16:01:46 <Bille> #topic Going forward with KDE:Unstable:SC (tittiatcoke)
+16:01:48 <cb400f> we missed a couple of meetings.. so.. ;-)
+16:01:54 <remur_030> jospoortvliet: we skipped quite some meetings so the items weren't updated
+16:02:00 <jospoortvliet> remur_030: ok ;-)
+16:02:13 <Bille> i wonder if we can use the OBS status page to warn about outdated stuff in KUP?
+16:02:24 <Bille> remur_030: ah, i see where it came from.
+16:03:03 <tittiatcoke> Ok. My favorite topic: KDE:Unstable
+16:03:42 <remur_030> Bille: I'd be also interested in outdated stuff in kdf, maybe a red light if the stuff is older then 1 month
+16:04:33 <remur_030> so we would have cought pnm not beeing updated for example
+16:05:00 <remur_030> in archlinux users can 'flag' packets as outdated, but that makes most sense because of their rolling release way
+16:05:19 <Bille> remur_030: sounds useful for TW
+16:06:00 <tittiatcoke> The main item with Unstable is that lately we haven't seen any weekly update there. afaik Unstable:SC was created by dirk to test his weekly tarballs, but we have noticed that a lot more people are using Unstable for testing purposes, etc. The question is now if we want to continue providing a weekly update there or that we leave this up to dirk to decide when to update.
+16:06:31 <Bille> is that because dirk's scripts are stale since the git move?
+16:06:32 <remur_030> would be helping if dirk were here I guess
+16:07:03 <tittiatcoke> Bille: I don't know. After my changes he indicated that he would adjust the scripts, but that is already 1 month ago.
+16:08:04 <sebas> well, he built 4.6.1 packages, which were done from git
+16:08:20 <Bille> i'll try to talk to him about it tomorrow
+16:08:21 <sebas> so the scripts have to be at least "kind of uptodate"
+16:08:24 <sebas> cool
+16:08:34 <Bille> #action wstephenson talk to dirk about KUSC updating scripts
+16:08:41 <tittiatcoke> the move to git introduced two issues. The first one is that some modules are being split out in separate packages. Question here would be if the KDE release team will follow that strategy or that they will follow the approach of 4.6.1 (creating new tarballs )
+16:08:41 <Bille> unless he did it manually this time
+16:08:50 <sebas> I'm building test packages for plasma-tablet, and for that we need regularly updated unstable packages as well
+16:08:59 <tittiatcoke> I know with 4.6.1 he had a lot of issues to recreate the tarballs equal to the 4.6.0 (svn) ones
+16:09:17 <cb400f> it's also cool to be able to say "we have a repo with weekly trunk builds"
+16:09:19 <sebas> yeah, 4.6.1 was the disruptive kde release wrt tarball creation
+16:09:24 <sebas> from here on, it's downhill ;)
+16:09:33 <Bille> so Rohan from ubuntu talked to me about Project Neon
+16:09:38 <Bille> they would like to move it to OBS
+16:09:38 <sebas> ah
+16:09:43 <tittiatcoke> As that I am building KDE trunk on a daily basis, I have scripts that can be used easily to keep Unstable:SC up-to-date, but I guess this depends on what strategy the release team will follow
+16:10:18 <Bille> (Project Neon makes ubuntu packages from daily git snapshots)
+16:10:35 <tittiatcoke> Bille: I guess we also have this :-)
+16:10:40 <Bille> afaics the project keeps running out of gas so they reannounce it every few months
+16:10:46 <Bille> tittiatcoke: in your home?
+16:10:51 <tittiatcoke> Bille: Yup.
+16:11:21 <Bille> it would be interesting technically
+16:11:28 <Bille> to build snapshots for all distributions
+16:11:39 <remur_030> ubuntu wants to move it to obs??
+16:11:43 <tittiatcoke> I can easily push that to Unstable:SC and we have daily updated packages. The only question would be if we have enough buildpower :-)
+16:11:50 <cb400f> is it just amarok? .. or entire SC?
+16:12:03 <tittiatcoke> cb400f: In my home ?
+16:12:05 <Bille> but i think that adrianS might come and beat me to death with a 1U rackmount if i started building daily KDE git for 10 distributions, for the load it would cause
+16:12:08 <cb400f> neon
+16:12:14 <sebas> tittiatcoke: entirely depends on how often you push
+16:12:26 <remur_030> ah, so they are also interested in building the ubuntu packages
+16:12:30 <adrianS> Bille: we would be able to handle that via prios ...
+16:12:31 <tittiatcoke> sebas: That is why I want to keep Unstable:SC on a weekly basis :-)
+16:12:38 <sebas> weekly should be fine IMO
+16:12:45 <adrianS> as long the diskspace would not exceed our limits
+16:13:00 <Bille> cb400f: everything now
+16:13:16 <remur_030> maybe stuff like that would make sense on a seperate obs instance?
+16:13:27 <tittiatcoke> Bille: We could have a look on expanding Unstable:SC and building it also for other distro's
+16:13:40 <remur_030> could be sponsored/hosted by kde e.v.?
+16:13:42 <Bille> they already do the separate prefix stuff lubos wanted to do for 11.4
+16:13:50 <tittiatcoke> Bille: I see.
+16:13:56 <cb400f> sounds a bit crazy imo :-) .. do developers really need this? or is it just for super-enthusiastic users?
+16:14:21 <Bille> jospoortvliet: asked aaron, the default dataengine chosen is mostly random
+16:15:07 <Bille> cb400f: it's for your worst nightmare kind of version whores
+16:15:18 <cb400f> ah, thought so :-)
+16:15:28 <Bille> the other thing that gives me cause for concern is that they don't want any patches
+16:15:44 <Bille> which would remove the 'get our patches tested early' role of KUSC
+16:16:24 <Bille> so i don't know about it yet
+16:16:46 <Bille> i gave the OBS + studio (but studio's bandwidth requirements make it work very badly in india) talk
+16:16:52 <Bille> and they were extremely enthusiastic
+16:17:24 <Bille> i also gave Riddell a personal tutorial, he's packaging ubuntu-disk-creator or something for other distros in OBS
+16:17:44 <Bille> so we can say that the future adoption of ubuntu is dependent on the OBS now :P
+16:18:21 <jospoortvliet> lol
+16:18:38 <Bille> tittiatcoke: so. the issues are frequency and package layout
+16:19:00 <jospoortvliet> Bille: if you think it would be good for PR if we build KDE GIT for 10 distro's, talk to me about resources - marketing has $$ too you know ;-)
+16:19:15 <jospoortvliet> if we can counter project neon that way - awesome...
+16:19:42 <jospoortvliet> I might be able to convince my boss it is worth buying additional hardware for :D
+16:19:50 <alin> I am in
+16:19:51 <Bille> jospoortvliet: i don't think you have the $$ to give KDE a dedicated build server and the bandwidth it would require, do you?
+16:20:03 <jospoortvliet> Bille: depends, how expensive is that?
+16:20:13 <Bille> adrianS: ballpark figure?
+16:20:21 <cartman> Bille: isn't OBS powerful enough for that though? /me wonders
+16:20:49 <Bille> cartman: so a complete set of packages in KUSC is what, 150 packages?
+16:21:03 <cartman> times 10
+16:21:06 <Bille> so 10 distros x 2 arches is 3000 extra builds, every day
+16:21:13 <cartman> right
+16:21:43 <jospoortvliet> adrianS: can you give me a rough guestimate? that'd be really interesting...
+16:21:49 <Bille> build.opensuse.org does have the power for it, but it would make itself noticed
+16:21:54 <cartman> I see 250 active works atm. :) OBS is flooded!
+16:22:19 <Bille> jospoortvliet: we could share it with the gnomies, after all gcc compiles C really fast, and JS doesn't need compiling, it would just eat IO bandwidth :)
+16:22:44 <remur_030> build.opensuse.org does have more marketing value then build.kde.org though I guess ;-)
+16:23:37 <Bille> cartman: yeah, we have 265 workers max atm
+16:23:51 <Bille> anyway, this is titti's topic
+16:23:53 <cb400f> and the neon dudes would maintain the packages for all those distros?
+16:23:56 * Bille feels bad for stealing it
+16:24:15 <cb400f> so what happens when they lose interest again next month
+16:24:50 <Bille> i guess it would attract a lot of other upstream packagers
+16:25:07 <krop> better promote KUSC than building ubuntu based packages which do the same thing imo
+16:25:50 <alin> krop: agree
+16:25:51 <jospoortvliet> Bille: interesting
+16:26:09 <Bille> well, KUSC is kinda different
+16:26:13 <Bille> tittiatcoke: still there?
+16:26:19 <tittiatcoke> Bille: Yup. I am here.
+16:26:33 <tittiatcoke> Bille: You got it correctly.
+16:26:39 <krop> the target users are the same as the neon ones
+16:26:53 <krop> bleeding edge stuff for developers and crazy users
+16:27:04 <Bille> tittiatcoke: re frequency i'll talk to dirk and see how the scripts are at now
+16:27:19 <Bille> #action wstephenson talk to dirk about KUSC scripts
+16:27:24 <tittiatcoke> Bille: Ok. I guess that dirk can also answer the tarball layout for 4.7
+16:27:47 <Bille> i doubt he knows
+16:27:58 <Bille> kde release team and the git transition team might have an idea
+16:29:40 <tittiatcoke> isn't dirk part of the kde release team ?
+16:30:10 <sebas> he is
+16:30:46 <Bille> he is, but he's doing the work, not really discussing it
+16:30:51 <tittiatcoke> I see.
+16:30:55 <siddharths> is here anyone who compiles kde trunk and runs manually
+16:30:57 <siddharths> ?
+16:31:15 <alin> siddharths: meeting.. ask later...
+16:31:15 <sebas> siddharths: yes, but we're in the middle of an irc meeting
+16:31:27 * sebas high-fives alin :)
+16:31:28 <siddharths> oh after :)
+16:31:50 * Bille met siddharths in india, he is an artist and an experienced rpm packager :)
+16:32:12 <remur_030> and has a fedora cloak! *cough*
+16:32:17 <remur_030> ;-)
+16:32:19 <alin> Bille stop showing off...
+16:32:30 <Bille> remur_030: ssh, don't let it get out i'm poaching contributors
+16:32:53 <Bille> sebas: you want to ask r-t about future tarball layouts?
+16:32:57 <siddharths> Bille: i do little artist stuff but mainly do Plasma C++  contibutor
+16:32:58 <siddharths> :)
+16:32:58 <Bille> sebas: tittiatcoke can brief you
+16:33:22 <Bille> * when to start 11.5 stuff (wstephenson,sebas)
+16:33:26 <Bille> #topic when to start 11.5 stuff (wstephenson,sebas)
+16:33:38 * siddharths met Bille and its was nice to meet him :) very kind of you
+16:33:40 <Bille> IMO the right time was 2 weeks ago
+16:33:41 <alin> thought it started already...
+16:33:41 <remur_030> so, gotta run, see you later
+16:33:44 <Bille> so we should start right now
+16:33:58 <Bille> i want to organise another meeting for this
+16:34:00 <tittiatcoke> Do we know what we want for 11.5 ?
+16:34:02 <sebas> Bille: yeah, we can do that
+16:34:03 <Bille> no
+16:34:09 <Bille> this week good for everyone?
+16:34:12 <tittiatcoke> :-)
+16:34:28 <Bille> the old meeting time, Thu 1700UTC?
+16:34:38 <sebas> that's tomorrow
+16:34:41 <sebas> :)
+16:34:43 <Bille> too soon?
+16:34:47 <tittiatcoke> Bille: I might not be able to make it.
+16:34:58 <Bille> i'm aware of that, do you really want to make it?
+16:35:01 <sebas> I'm quite stuffed right now, and in high-production mode
+16:35:16 <sebas> I'd prefer to delay it for two weeks actually
+16:35:40 <sebas> or maybe ... won't make much difference
+16:35:43 <sebas> don't listen to me :D
+16:35:45 <siddharths> Bille: thnx man :) you opensuse usb worked fine for me thnx for the help
+16:35:46 <Bille> i was about to say that
+16:36:02 <sebas> :>
+16:36:16 <Bille> so how about we do 30 minutes tomorrow at 17UTC and see what we come up with?
+16:36:25 <sebas> sure
+16:36:31 <Bille> i'll announce
+16:36:38 <sebas> can you ping me? I tend to forget irc meetings
+16:37:04 * krop installs korganizer on sebas' machine
+16:37:29 <sebas> hehe, I could indeed just put it in my agenda :)
+16:38:02 <sebas> Bille: earlier would suit me better, Kim usually comes back between 17:30 and 1800
+16:38:11 <sebas> 1700 CET would be fine
+16:38:39 <Bille> i just sent the mail
+16:38:51 <sebas> heh, okay. No problem
+16:38:55 <Bille> we can start talking earlier
+16:39:01 <Bille> it will warm things up nicely
+16:39:05 <Bille> if you have to shoot, fine
+16:39:16 <Bille> /endtopic
+16:39:26 <Bille> #topic Q&A, Misc
+16:39:35 <Bille> siddharths: your turn
+16:40:07 <tittiatcoke> Have to run guys. Thanks for the meeting
+16:40:17 <javier> ciao tittiatcoke
+16:40:18 <sebas> cheers tittiatcoke
+16:40:29 <tittiatcoke> sebas: I will drop you an email regarding the unstable packaging issue :-)
+16:40:51 * krop vanishes for 15 mn
+16:41:00 <siddharths> okay let me introduce myself here first
+16:41:29 <siddharths> i am Siddharth Sharma from India, I met Bille in Bangalore at KDE Conf In
+16:41:35 <Bille> siddharths: http://en.opensuse.org/openSUSE:KDE_developers_guide for a start
+16:42:12 <siddharths> I am Plasma KDE C++ Contributor , ido some art for fun and i know rpm packaging :)
+16:42:31 <Bille> siddharths: also zypper source-install -d kdebase4-workspace will install every dependency needed for building that package, and hence for plasma c++ work
+16:42:32 <siddharths> thats it anything else some one wants to know about me
+16:42:38 <Bille> siddharths: shoe size?
+16:42:40 <Bille> :P
+16:42:52 <siddharths> i know anaumov also :) he is my very good friend
+16:42:56 <siddharths> Bille: 8 :P
+16:43:36 <Bille> and siddharths offered to help us out
+16:44:16 * Bille has to leave
+16:44:21 <Bille> so i'm going to #endmeeting now
+16:44:23 <Bille> #endmeeting

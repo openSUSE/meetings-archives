@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:05:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:05:23</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Jun  6 17:05:23 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:05:23</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:05:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-5"></a><span class="tm">17:05:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">MS1 experience</span>
+<a name="l-6"></a><span class="tm">17:06:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> first (and so far only) topic on the list
+<a name="l-7"></a><span class="tm">17:06:34</span><span class="nk"> &lt;LWFinger&gt;</span> Should we go in turn?
+<a name="l-8"></a><span class="tm">17:06:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> we had 5-6 days to have a good look at MS1. I mostly looked at openqa
+<a name="l-9"></a><span class="tm">17:06:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> filing some bugs in the process (linked on openqa.o.o)
+<a name="l-10"></a><span class="tm">17:07:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> and I hope to get MS2 into a better shape than MS1.
+<a name="l-11"></a><span class="tm">17:07:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> done
+<a name="l-12"></a><span class="tm">17:08:19</span><span class="nk"> &lt;tigerfoot&gt;</span> for me factory during the M1 stage was really awfull ...
+<a name="l-13"></a><span class="tm">17:08:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> what broke?
+<a name="l-14"></a><span class="tm">17:08:44</span><span class="nk"> &lt;tigerfoot&gt;</span> Now everything start to become better ... even if some SR make more than 7 days to be accepted
+<a name="l-15"></a><span class="tm">17:09:05</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> mainly the gcc46 integration
+<a name="l-16"></a><span class="tm">17:09:16</span><span class="nk"> &lt;tigerfoot&gt;</span> and the whole stack of dependencies
+<a name="l-17"></a><span class="tm">17:09:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> I know cartman worked a long time on fixing build failures from gcc46
+<a name="l-18"></a><span class="tm">17:10:11 </span><span class="nka">* tigerfoot</span> <span class="ac">expect next break in KDF ( so not immediately in Factory ) with the introduction of KDE-4.7 even if it's called a boring release :-)</span>
+<a name="l-19"></a><span class="tm">17:10:54</span><span class="nk"> &lt;tigerfoot&gt;</span> But I didn't retest full installation of factory with M1 so I can tell what's wrong on that side ...
+<a name="l-20"></a><span class="tm">17:11:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> openqa also tests KDF (named kde-devel there) - so we might get it working before it goes into factory
+<a name="l-21"></a><span class="tm">17:11:53</span><span class="nk"> &lt;tigerfoot&gt;</span> I've tested systemd but get total fail on my main installation ... need more tests on proper install ... and we have a long way to get it ready for 12.1 if we want it
+<a name="l-22"></a><span class="tm">17:12:27</span><span class="nk"> &lt;tigerfoot&gt;</span> will see result in July/August when fcrozat will work on it ...
+<a name="l-23"></a><span class="tm">17:13:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> will be around MS4 then. I would not like systemd to enter factory after MS6, so it might work
+<a name="l-24"></a><span class="tm">17:13:56</span><span class="nk"> &lt;LWFinger&gt;</span> Agreed on that point.
+<a name="l-25"></a><span class="tm">17:14:50</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Yes, MS6 is basically RC0
+<a name="l-26"></a><span class="tm">17:15:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> or "beta" - meaning feature-complete
+<a name="l-27"></a><span class="tm">17:15:57</span><span class="nk"> &lt;ReferenceSeete&gt;</span> You mean Google's definition of "beta" meaning "finished but no promises from us" hasn't caught on?
+<a name="l-28"></a><span class="tm">17:16:06</span><span class="nk"> &lt;ReferenceSeete&gt;</span> :)
+<a name="l-29"></a><span class="tm">17:16:09</span><span class="nk"> &lt;tigerfoot&gt;</span> on another side I'm trying to convince more users to start testing factory now, explaining the bugs we can get out now will not be in M6 or more ...
+<a name="l-30"></a><span class="tm">17:16:31</span><span class="nk"> &lt;LWFinger&gt;</span> Good luck with that.
+<a name="l-31"></a><span class="tm">17:16:38</span><span class="nk"> &lt;tigerfoot&gt;</span> some have accepted to start at M2/3 which is good
+<a name="l-32"></a><span class="tm">17:16:53</span><span class="nk"> &lt;tigerfoot&gt;</span> most of them doing that on virtualbox or kvm ...
+<a name="l-33"></a><span class="tm">17:17:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> that is safe at least. but IMHO most testing is needed after MS4
+<a name="l-34"></a><span class="tm">17:17:16</span><span class="nk"> &lt;tigerfoot&gt;</span> Did we have made any progress to our Testing USB key project ? bmwiedemann
+<a name="l-35"></a><span class="tm">17:17:23</span><span class="nk"> &lt;LWFinger&gt;</span> I needle people on the Forums with a "Did you test?" Doesn't seem to help.
+<a name="l-36"></a><span class="tm">17:17:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">tigerfoot:</span> not yet
+<a name="l-37"></a><span class="tm">17:18:15</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">LWFinger:</span> I'm so sorry to not be in forums ... promise once my mail will be unified under kontact, I will activate the nntp ...
+<a name="l-38"></a><span class="tm">17:18:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://www.suse.de/~coolo/opensuse_12.1/ lists 2011-08-08 for "Feature and version freeze for the base system"
+<a name="l-39"></a><span class="tm">17:18:59</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">tigerfoot:</span> Good.
+<a name="l-40"></a><span class="tm">17:19:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> so systemd would best be working then
+<a name="l-41"></a><span class="tm">17:19:21</span><span class="nk"> &lt;tigerfoot&gt;</span> Testing after M4 is short , as the delay that Coolo has made between release are really short to have people awake to download the iso, then put that on usb, then test full hardware, get some help, push bugs
+<a name="l-42"></a><span class="tm">17:20:18</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> systemd is really complex as we have to replace all the server stack used in /etc/init.d/ by native script, some exist, most of them are in alpha/beta stage
+<a name="l-43"></a><span class="tm">17:20:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">tigerfoot:</span> right. but there are just so many things changing before MS4 that chances are high for your bugs to be resolved without you even testing and hitting them
+<a name="l-44"></a><span class="tm">17:21:07</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> should be ask for 12.2 and longer delay between M4 and M6 for tests purpose to our beloved release manager ?
+<a name="l-45"></a><span class="tm">17:21:13</span><span class="nk"> &lt;tigerfoot&gt;</span> should we
+<a name="l-46"></a><span class="tm">17:21:29 </span><span class="nka">* tigerfoot</span> <span class="ac">thing 12.1 is already in the box :-)</span>
+<a name="l-47"></a><span class="tm">17:22:00</span><span class="nk"> &lt;ReferenceSeete&gt;</span> In the end would a longer period between M4 &amp; M6 make a difference?
+<a name="l-48"></a><span class="tm">17:22:09</span><span class="nk"> &lt;tigerfoot&gt;</span> but in case of trouble the number permit a release on 1st december or 12th January ...
+<a name="l-49"></a><span class="tm">17:22:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> I once calced that 3 weeks between releases is minimum for a useful download+test+report+build+retest+publish cycle
+<a name="l-50"></a><span class="tm">17:22:48</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">ReferenceSeete:</span> I saw last time a full of thing coming into the M6, and none have been tested a lot ...
+<a name="l-51"></a><span class="tm">17:22:57</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> I agree with that .
+<a name="l-52"></a><span class="tm">17:23:07</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Given that that the final release date is fixed...making the gap between some milestones means shorter gaps between others.
+<a name="l-53"></a><span class="tm">17:23:20</span><span class="nk"> &lt;ReferenceSeete&gt;</span> I guess the advantage is on the side of 'social engineering'
+<a name="l-54"></a><span class="tm">17:23:29</span><span class="nk"> &lt;tigerfoot&gt;</span> And if you follow the bug list, a lot lot of bug hitting 11.4 should have been avoid
+<a name="l-55"></a><span class="tm">17:23:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">ReferenceSeete:</span> we could have 5 Milestones instead of 6
+<a name="l-56"></a><span class="tm">17:24:24</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> we already have M1 is not that welll with all the not loading system saw around.
+<a name="l-57"></a><span class="tm">17:24:29</span><span class="nk"> &lt;ReferenceSeete&gt;</span> <span class="hi">bmweidemann:</span> Yes, I suppose we could consider Factory to be a perpetual "MS1" and see how long that works in promoting testing..
+<a name="l-58"></a><span class="tm">17:24:50</span><span class="nk"> &lt;ReferenceSeete&gt;</span> So the first 'proper' milestone would be labeled "2"
+<a name="l-59"></a><span class="tm">17:25:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> factory could be MS0 for 3 months, too
+<a name="l-60"></a><span class="tm">17:25:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> with factory-tested snapshots marking usable states
+<a name="l-61"></a><span class="tm">17:25:52</span><span class="nk"> &lt;LWFinger&gt;</span> At what stage is there a "feature freeze"?
+<a name="l-62"></a><span class="tm">17:26:16</span><span class="nk"> &lt;ReferenceSeete&gt;</span> I agree, it is MS0.  I'm just thinking how we can avoid the learning curve of "there's no more MS6".
+<a name="l-63"></a><span class="tm">17:26:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> MS4-MS6 - depending if you have  core/leaf packages
+<a name="l-64"></a><span class="tm">17:26:41</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">LWFinger:</span> Like just before introducing gcc46 factory was really stable ...
+<a name="l-65"></a><span class="tm">17:27:15</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> good point on core/leaf ..
+<a name="l-66"></a><span class="tm">17:27:54</span><span class="nk"> &lt;LWFinger&gt;</span> I know only part of the gcc46 story. Is it more than new warnings?
+<a name="l-67"></a><span class="tm">17:27:55</span><span class="nk"> &lt;ReferenceSeete&gt;</span> If people feel more comfortable with MS6 than 5, MS5 than 4...and there's a real difference in testing contributions...that's an incentive to keep the name "Milestone 6".
+<a name="l-68"></a><span class="tm">17:28:02 </span><span class="nka">* tigerfoot</span> <span class="ac">will have to good in 18 minutes ...</span>
+<a name="l-69"></a><span class="tm">17:28:38</span><span class="nk"> &lt;tigerfoot&gt;</span> keep M6, but allow a bigger time frame before RC
+<a name="l-70"></a><span class="tm">17:29:20</span><span class="nk"> &lt;LWFinger&gt;</span> Ready for my experiences with MS1?
+<a name="l-71"></a><span class="tm">17:29:24 </span><span class="nka">* tigerfoot</span> <span class="ac">%s/good/go/p</span>
+<a name="l-72"></a><span class="tm">17:29:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">ReferenceSeete:</span> we might as well propose to rename the last MS to "beta" so that people will have a better idea of it's higher importance
+<a name="l-73"></a><span class="tm">17:30:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> OK, your turn :)
+<a name="l-74"></a><span class="tm">17:30:25</span><span class="nk"> &lt;ReferenceSeete&gt;</span> <span class="hi">bmwiedemann:</span> I agree with just naming it beta.  Unfortunately I thought "milestone" was being used to avoid the term "beta"
+<a name="l-75"></a><span class="tm">17:30:26</span><span class="nk"> &lt;LWFinger&gt;</span> I was traveling, thus limited testing.
+<a name="l-76"></a><span class="tm">17:31:04</span><span class="nk"> &lt;LWFinger&gt;</span> I tried KDE Live on a VB VM and hit the login problem.
+<a name="l-77"></a><span class="tm">17:31:51</span><span class="nk"> &lt;LWFinger&gt;</span> I then loaded the Gnome Live CD. When it seemed to boot, then I installed from that.
+<a name="l-78"></a><span class="tm">17:32:10</span><span class="nk"> &lt;tigerfoot&gt;</span> classical one, which hit KDF weeks ago unfortunately
+<a name="l-79"></a><span class="tm">17:32:27</span><span class="nk"> &lt;LWFinger&gt;</span> After installation, I added the KDE desktop and everything seems OK.
+<a name="l-80"></a><span class="tm">17:33:00</span><span class="nk"> &lt;LWFinger&gt;</span> I need to do more testing, but so fay no major killers for me.
+<a name="l-81"></a><span class="tm">17:33:06</span><span class="nk"> &lt;LWFinger&gt;</span> done.
+<a name="l-82"></a><span class="tm">17:34:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> IMHO there were some easily avoidable bugs left in (possibly because we did not look at openqa the week before MS1)
+<a name="l-83"></a><span class="tm">17:35:15</span><span class="nk"> &lt;LWFinger&gt;</span> Was there a full week between factory again building and MS1?
+<a name="l-84"></a><span class="tm">17:35:29</span><span class="nk"> &lt;tigerfoot&gt;</span> openqa need a week of promotion before M2 :-)
+<a name="l-85"></a><span class="tm">17:36:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> it also needs some overhaul for GNOME3/fallback mode
+<a name="l-86"></a><span class="tm">17:36:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> how do you want to promote it?
+<a name="l-87"></a><span class="tm">17:36:40 </span><span class="nka">* tigerfoot</span> <span class="ac">sorry have to go, but reside here like a zombie</span>
+<a name="l-88"></a><span class="tm">17:37:09</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> making some more articles, and try to get developpers awake about it and the result
+<a name="l-89"></a><span class="tm">17:37:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK
+<a name="l-90"></a><span class="tm">17:37:23</span><span class="nk"> &lt;tigerfoot&gt;</span> in ml and lizard
+<a name="l-91"></a><span class="tm">17:38:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">discussed issues with MS1: among those the KDE login problem = bug 687781</span>
+<a name="l-92"></a><span class="tm">17:39:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-93"></a><span class="tm">17:39:33</span><span class="nk"> &lt;bmwiedemann&gt;</span> there was a question from jdd on the meeting wiki page about how to use packman on Factory
+<a name="l-94"></a><span class="tm">17:40:51</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Packman/Factory is pretty minimalist.
+<a name="l-95"></a><span class="tm">17:41:14</span><span class="nk"> &lt;LWFinger&gt;</span> AFAIK, packman does not try to build until late in the MS stage.
+<a name="l-96"></a><span class="tm">17:41:14</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Was there a breakage issue?
+<a name="l-97"></a><span class="tm">17:41:31</span><span class="nk"> &lt;ReferenceSeete&gt;</span> No, Packman builds along side Factory now.
+<a name="l-98"></a><span class="tm">17:41:43</span><span class="nk"> &lt;ReferenceSeete&gt;</span> At least they try.
+<a name="l-99"></a><span class="tm">17:42:00</span><span class="nk"> &lt;ReferenceSeete&gt;</span> The most recent builds I see in the mirror I use are from June 1st.
+<a name="l-100"></a><span class="tm">17:42:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think the problem is that  yast2 community repos get pulled from http://opensuse-community.org/openSUSE_114_Community_Additional.xml
+<a name="l-101"></a><span class="tm">17:42:18</span><span class="nk"> &lt;LWFinger&gt;</span> They may still be working through the gcc46 issues.
+<a name="l-102"></a><span class="tm">17:42:54</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Sorry June 2nd
+<a name="l-103"></a><span class="tm">17:43:28</span><span class="nk"> &lt;ReferenceSeete&gt;</span> They only maintain their "Essentials" sub-repo for Factory.
+<a name="l-104"></a><span class="tm">17:43:47</span><span class="nk"> &lt;ReferenceSeete&gt;</span> If you want the other software, you need to wait for a final release or build it yourself.
+<a name="l-105"></a><span class="tm">17:44:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> even getting the essentials would be nice
+<a name="l-106"></a><span class="tm">17:45:25</span><span class="nk"> &lt;ReferenceSeete&gt;</span> I don't know what the exact problem was, but bmwiedemann is probably right - the person may be using the community repos list and not the Packman Factory build
+<a name="l-107"></a><span class="tm">17:47:13</span><span class="nk"> &lt;ReferenceSeete&gt;</span> The mirror I use is: http://anorien.csc.warwick.ac.uk/mirrors/packman/suse/Factory/Essentials/
+<a name="l-108"></a><span class="tm">17:47:38</span><span class="nk"> &lt;ReferenceSeete&gt;</span> The person having troubles could try that and then report success/failure
+<a name="l-109"></a><span class="tm">17:48:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK
+<a name="l-110"></a><span class="tm">17:48:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> I will email him
+<a name="l-111"></a><span class="tm">17:49:26</span><span class="nk"> &lt;LWFinger&gt;</span> The description of what to do is at http://en.opensuse.org/Additional_package_repositories#Packman.
+<a name="l-112"></a><span class="tm">17:54:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> shall we propose the MS6=&gt;Beta rename somewhere? on opensuse-project ML?
+<a name="l-113"></a><span class="tm">17:55:28</span><span class="nk"> &lt;LWFinger&gt;</span> I think that would be a good idea.
+<a name="l-114"></a><span class="tm">17:55:46</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Agreed
+<a name="l-115"></a><span class="tm">17:57:46</span><span class="nk"> &lt;bmwiedemann&gt;</span> who volunteers to write the email with our reasoning?
+<a name="l-116"></a><span class="tm">17:58:12</span><span class="nk"> &lt;LWFinger&gt;</span> I'll draft it.
+<a name="l-117"></a><span class="tm">17:58:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">btw:</span> ietherpad.com is a nice place to write texts collaboratively
+<a name="l-118"></a><span class="tm">17:59:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> any more topics for today?
+<a name="l-119"></a><span class="tm">18:00:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">LWFinger drafts proposal email for MS6=&gt;Beta rename</span>
+<a name="l-120"></a><span class="tm">18:00:38</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Looks like the end for today.
+<a name="l-121"></a><span class="tm">18:01:06</span><span class="nk"> &lt;LWFinger&gt;</span> I'll do a draft, email it, and create a public pad at ietherpad.com.
+<a name="l-122"></a><span class="tm">18:01:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> Then this is the end. for today.
+<a name="l-123"></a><span class="tm">18:01:23</span><span class="nk"> &lt;LWFinger&gt;</span> I have no more.
+<a name="l-124"></a><span class="tm">18:01:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-125"></a><span class="tm">18:01:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

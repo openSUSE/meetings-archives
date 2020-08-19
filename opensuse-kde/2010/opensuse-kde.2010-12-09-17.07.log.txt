@@ -1,0 +1,264 @@
+17:07:12 <wstephenson> #startmeeting
+17:07:12 <bugbot> Meeting started Thu Dec  9 17:07:12 2010 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:07:12 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:07:36 <wstephenson> MystKid: pulseaudio-module-x11 or similar
+17:07:46 <wstephenson> MystKid: but now we're in a meeting, feel free to listen in.
+17:07:59 * tittiatcoke reporting for the meeting
+17:08:08 <wstephenson> who wants to take minutes?
+17:08:30 <tittiatcoke> maybe next time. I am also preparing dinner atm
+17:09:02 * wstephenson is making slow cooked bolognese sauce, all the work is done and it just needs another 2 hours in the oven
+17:09:05 <tittiatcoke> Hmm. I can let the logging run and then do the minutes from there
+17:09:13 <wstephenson> thanks
+17:09:24 <tittiatcoke> I guess the meetingbot can also help ?
+17:09:29 <wstephenson> yes
+17:09:33 <wstephenson> so we have 3 topics
+17:09:46 <wstephenson> * old AIs
+17:09:50 <wstephenson> * status
+17:09:52 <wstephenson> * getting rid of help.o.o/kde4?
+17:09:57 <wstephenson> * making openSUSE/KDE manuals easier to reach on 11.4 (SUSE greeter?)
+17:10:03 <wstephenson> * having KDE Four Live homepage and KDE Four Live on kde-apps.org up-to-date. It seems KDE-Four-Live is a popular Live CD :-)
+17:10:18 <wstephenson> * Q&A, misc
+17:10:30 <wstephenson> #topic old AIs
+17:10:42 <remur_030> i think mrdocs already said these haven't been taken down after the last meeting
+17:11:12 <wstephenson> we'll live :)
+17:11:21 <wstephenson> #topic status
+17:12:00 * wstephenson has preparing 4.6beta2 release and testing/fixing PIM 4.6
+17:12:52 <wstephenson> just took delivery of a new core i7 workstation to let me do more things at once
+17:12:59 * tittiatcoke fixed ktorrent to work with the new KDE powermanagement.
+17:13:26 * wstephenson also packaged koffice 2.3rc1 with titti's help
+17:13:42 <remur_030> tittiatcoke: what does ktorrent have to do with powermanagment?
+17:13:55 <wstephenson> it has a power off when download complete feature
+17:14:13 <wstephenson> any more status? javier_ around?
+17:14:35 <remur_030> ah ok, I thought that'd be a solid task, because gnome users might not run powerdevil
+17:14:42 <javier_> yes, I'm here
+17:15:13 <tittiatcoke> remur_030: Correct, but solid switched to the new powermanagement backend (PowerDevil v2)
+17:15:15 <wstephenson> it is a solid::control task, but using some private api that changed
+17:15:34 <tittiatcoke> Well, actually it is no longer solid::control :-)
+17:15:35 * wstephenson has also been working on KNM's solid::control refactoring and integrating patches from pardus.
+17:15:45 <wstephenson> true
+17:16:13 * javier_ is working on having an openSUSE KDE Live CD, Iberian edition
+17:17:28 <remur_030> javier_: is this about more then a language specific spin? because the gnome side plans on integrating ubuntu style indicators afaik
+17:17:58 <wstephenson> the gnome side seems like it's nmarques' subuntu project
+17:18:19 <remur_030> btw i really like the idea of regional spins, at least for the languages, the build service sounds perfect for this
+17:18:50 <javier_> remur_030: yepp. well we are discussing that. my idea is to have official live cds
+17:18:56 <remur_030> wstephenson: yes that was what I was wondering about, why integrate it in opensuse iberia instead of just a plain extra spin
+17:19:57 <remur_030> still a bit sad how people seem to be forced to defend packaging ubuntu stuff on another distribution...
+17:20:22 <remur_030> anyways, ot, don't let me distract the meeting ;-)
+17:20:31 <javier_> I don't know, maybe he just likes feature x so he packages it
+17:20:31 <wstephenson> anyway, let's discuss after. it's good to have stronger devolution of activity
+17:20:46 <wstephenson> there's enough suse in nuremberg already, let's spread it around.
+17:21:07 <wstephenson> #topic getting rid of http://help.o.o/kde4
+17:21:12 <wstephenson> javier_ suggested this
+17:21:37 <javier_> yepp. I find the opensuse-guides more useful
+17:22:00 <javier_> the drawback is that they aren't translated into languages (except for de)
+17:22:09 <javier_> *into other
+17:22:48 <wstephenson> what do you suggest doing about that?
+17:22:51 <wstephenson> community l10n?
+17:23:04 <wstephenson> asking if we can add them to the official l10n runs?
+17:23:49 <remur_030> might i ask where I can find the opensuse-guides?
+17:23:50 <javier_> they already in vertaal.com.ar
+17:23:55 <javier_> *are
+17:23:55 <remur_030> http://opensuse-guide.org/ that one?
+17:24:05 <javier_> nop
+17:24:13 <javier_> look for the opensuse-guide packages ;)
+17:24:14 <remur_030> sound 'illegal' due to the multimedia stuff
+17:24:30 <wstephenson> cb400f: any ideas?
+17:24:42 * wstephenson waves at initialZero and saschpe
+17:25:11 <initialZero> hi
+17:25:12 <javier_> opensuse-kdeuser_en-pdf-11.3-6.1.1.noarch
+17:25:14 <javier_> opensuse-kdequick_en-pdf-11.3-6.1.1.noarch
+17:25:30 <wstephenson> i'll ask our i18n team what they think
+17:25:37 <wstephenson> #action wstephenson contact i18n team about quick manuals
+17:25:40 <saschpe> hi
+17:26:02 <javier_> wstephenson: I talked about this with the docs team at oSC10 and they liked the idea :-)
+17:26:31 <javier_> adding a link to pdf(s) in SUSE greeter I mean
+17:27:44 <wstephenson> javier_: so we'd need a i18n'ed link to the right path in the greeter
+17:28:22 <wstephenson> and a Recommends dependency on the package in the lang package
+17:28:50 <wstephenson> but i'd liek to know how to get it translated best, and maybe integrate the -guide stuff somehow
+17:29:09 <javier_> right
+17:29:21 <wstephenson> maybe get that in packman and have a soft dep on opensuse-manual-kde-community that would pull it in
+17:30:00 <javier_> well, I didn't say anything about adding opensuse-guide.org (I meant the pdfs)
+17:30:07 <wstephenson> just an idea :)
+17:30:18 <wstephenson> i mean making pdfs from -guide.org
+17:30:28 <javier_> also, we would have to fallback to English in case it's not translated
+17:30:47 <javier_> another idea :)
+17:31:29 <javier_> so that we get the quick guide + manual saying how to add codecs?
+17:31:47 <wstephenson> #topic updating kde-apps.org live cd listings
+17:31:53 <wstephenson> javier_: yes
+17:32:00 <javier_> good idea :)
+17:33:05 <wstephenson> anyone want to take that? involves getting in touch with whoever owns the listing, Beineri i think
+17:33:06 <javier_> regarding updating the live cd listing... I've seen more than one person saying that the links were broken, in mailing lists and irc
+17:33:31 <javier_> yes, afaik Beiniri owns the kde-apps thingy
+17:33:37 <javier_> *Beineri
+17:34:15 <initialZero> that should just point to the opensuse.org page
+17:34:19 <javier_> in fact, if you type kde live cd in google, what do you get? ;-)
+17:35:48 <wstephenson> to avoid broken links on rebuild, either we link to the download folder, or we manually copy the isos elsewhere (breaking the mirror system) or we think of something else
+17:36:18 <remur_030> wstephenson: wasn't there supposed to be fixed links for the obs?
+17:36:40 <remur_030> nvm fixed links is the opposite of what we want
+17:38:07 <wstephenson> remur_030: fixed filenames would be great
+17:38:34 <wstephenson> or a cronjob on home.kde.org that fetches the latest filenames and updates the page
+17:38:41 <remur_030> wstephenson: the obs guys wanted to implement something called service which was supposed to do that
+17:39:03 <remur_030> but that'd be for repositories, no idea if that could be used for built media as well
+17:39:17 <wstephenson> i don't think so, unfortunately :/
+17:39:21 <wstephenson> although i'll ask adrianS
+17:40:23 <wstephenson> javier_: will you take the contact Beineri AI?
+17:40:40 <javier_> wstephenson: sure
+17:41:11 <wstephenson> ok
+17:41:23 <wstephenson> #topic Q&A, misc
+17:41:35 <wstephenson> i have a thing:
+17:41:56 <wstephenson> i'm a bit busy, and i'm worried that i'm not doing enough with you guys. is it a problem or am i just being a worrier?
+17:43:01 <remur_030> Well meetings have been dropped without any notice, that is annoying
+17:43:25 <wstephenson> yeah, maybe i can delegate the announcing meetings task then?
+17:44:01 <remur_030> but otherwise you beeing busy with family and/or work is nothing anybody is worried about i think
+17:44:52 <javier_> +1
+17:45:00 <remur_030> to be frank last meetings have been rather short, should we really keep up with biweekly meetings?
+17:45:22 <remur_030> hm ok 11.4 is comming up so timely response is somewhat important
+17:45:29 <wstephenson> i think so,  or we'll lose energy
+17:45:38 <initialZero> logging in and taking time for meetings that are not happening is all
+17:45:41 <remur_030> btw adrian sent a mail to us about skimming openfate
+17:45:44 <wstephenson> last time i was off sick
+17:46:10 <wstephenson> argh, i was supposed to discuss that too, aj asked me to bring it up
+17:46:23 <remur_030> I don't consider myself very reliable for this, we should avoid having a single person responsible for the meetings
+17:47:04 <remur_030> otherwise I can try making sure the meeting takes place
+17:47:04 <wstephenson> maybe assign at the end of each meeting for the next one?
+17:47:29 <remur_030> well as you said you've been sick, hard to predict these cases
+17:47:57 <wstephenson> yeah. anyway as long as you don't think we have a Community problem
+17:48:15 <wstephenson> it's just a consequence of us not having a new booster in post yet
+17:48:29 <tittiatcoke> I don't see any problem at the moment:-)
+17:48:40 <wstephenson> ok good
+17:48:46 <remur_030> i am actually pretty impressed how much is happening with opensuse right now
+17:49:04 <initialZero> me too
+17:49:09 <wstephenson> i'm glad. maybe i'm so busy and close to everything i can't see it happening around me :)
+17:49:10 <remur_030> os-kde is churning along pretty nicely
+17:49:37 <remur_030> without making much fuzz about it though, the marketing initiative seems to struggle
+17:50:56 <wstephenson> of os-kde or generally?
+17:51:15 <remur_030> ah, os-kde, otherwise -project seems to be buzzing with life
+17:51:38 <remur_030> well os-gnome ain't very noisy about their stuff either, I guess it's a sign of solid work
+17:51:38 <wstephenson> rabauke: would you be able to restart the blogs?
+17:51:50 <wstephenson> they are also working very hard just doing stuff.
+17:52:03 <wstephenson> but it's not good for either team long term if nobody knows about it
+17:52:20 <wstephenson> i need to get rid of the milestone story writing, it takes me far too long to switch contexts
+17:52:21 <rabauke> wstephenson: if i get some input. what doyou want me to blog about?
+17:52:23 <wstephenson> although it's fun
+17:53:00 <wstephenson> the usual, what we've been doing. i guess when the meeting is short and to the point it's hard to write on it...
+17:53:56 <initialZero> has 11.4 look and feel been discussed yet? theme and such?
+17:53:59 <rabauke> ok, I'll look out for the summaries. I can add as a personal note that I am using 4.6 beta2
+17:54:21 <wstephenson> initialZero: nope
+17:54:23 <remur_030> initialZero: there is a small thread on -factory or -project, nothing major though
+17:54:51 <wstephenson> not sure who's doing the artwork
+17:54:53 <initialZero> usually there is an ideas page and discussion
+17:55:07 <wstephenson> although it-s from upstream just started helping out the studio team, maybe we can get him to do something
+17:55:15 <initialZero> I'm having lots of checksum errors in KDF for factory
+17:55:23 <wstephenson> i think gnokii scared away the rest :P
+17:55:25 <remur_030> looks like totally low priority, after jimmacs departure =/
+17:55:33 <initialZero> yeah
+17:55:59 <wstephenson> initialZero: it was lagging on the rebuild for beta2 for factory
+17:56:05 <wstephenson> yeah still building
+17:56:18 <remur_030> rabauke: kdepim working good? i am still afraid of losing my mail access =/
+17:56:18 <wstephenson> wait till you see the truck next to factory repos at https://build.opensuse.org/project/show?project=KDE:Distro:Factory
+17:56:21 <rabauke> initialZero: worked for me a few minutes ago
+17:56:45 <rabauke> remur_030: seems to. I'll have to test though how it behaves when suspending.
+17:56:47 <wstephenson> rabauke: but only 4.5.80?
+17:57:10 <rabauke> wstephenson: no, .85. let me check
+17:57:33 <wstephenson> remur_030: i haven't lost any mail yet, but i've had a lot of glitches, like not showing a mail on select, eating lots of cpus, and of course slow folder listing
+17:57:46 <rabauke> kdebase4-4.5.85-193.3.i586
+17:58:00 <wstephenson> right now i'm considering shipping the 4.4 pim as well as 4.6
+17:58:10 <remur_030> that doesn't sound overly promising =/
+17:59:06 <wstephenson> i'm afraid 4.6 will be a kde 4.0 for pim :)
+17:59:16 <wstephenson> s/for pim/for kmail/
+17:59:21 <wstephenson> korganizer is good so far
+17:59:53 <alin> wstephenson: I play the pessimist here...
+18:00:04 <wstephenson> well i'm being careful.
+18:00:07 <rabauke> what does not work?
+18:00:17 <wstephenson> it all works, but badly
+18:00:18 <alin> wstephenson: now seriously... I think is not so bad, kdepim 4.6
+18:00:19 <rabauke> imap is a lot faster than in kde 4.4
+18:00:31 <rabauke> first impression though
+18:00:50 <alin> wstephenson: the biggest troubles come from the nepomuk integration in my opinion
+18:00:52 <wstephenson> faster on fetch, but you don't notice when kmail2 takes 10x as long to open a folder as kmail1
+18:00:56 <wstephenson> alin: right
+18:01:09 <wstephenson> upstream are playing with using a fixed function clucene indexer instead
+18:01:15 <wstephenson> that's what they have been doing with the wince port
+18:01:21 <rabauke> wstephenson: on the kde 4.6 computer I only have imap so only inboxes
+18:01:41 <einar77> wstephenson: AFAICS some queries trash virtuoso
+18:02:04 <wstephenson> einar77: yes
+18:02:07 <einar77> I noticed because if you kill it it spews the query to stdout
+18:02:23 <wstephenson> rabauke: you don't have other imap folders?
+18:02:28 <einar77> wstephenson: rather than -pim I think you should be off asking trueg about it, I think
+18:02:54 <wstephenson> einar77: actually i'm going to fix the virtuoso packaging so i have the isql tool to debug virtuoso.  i have 2 threads running with trueg about it atm.
+18:02:54 <alin> wstephenson: indeed fetching is slow... but at least does not delete messages anymore
+18:03:01 <einar77> my (trollish) view is that the kolab consortium does not particularly care about desktop kontact
+18:03:24 <rabauke> wstephenson: no, the kde 4.6 computer is just to read emails and the desktop then fetches them and sorts them into folders, bu that's kde 4.5 and pop3
+18:03:49 <remur_030> einar77: i thought kdab earns it's money with desktop kontact?
+18:03:52 <wstephenson> einar77: i disagree. they have a deadline on the mobile kontact this week and are coming back to desktop next week
+18:03:55 <einar77> remur_030: the enterprise version
+18:04:07 <einar77> wstephenson: I'm glad you corrected me, actually
+18:04:09 <wstephenson> err "Kontact Touch"
+18:04:17 <remur_030> einar77: well the enterprise version sure isn't supposed to suck either right?
+18:04:23 <einar77> I'm happy to be prven wrong  in this case
+18:04:44 <einar77> remur_030: that's 4.4.x plus some adjustments
+18:04:55 <einar77> at least so far
+18:04:56 <remur_030> I thought all their enterprise stuff got merged into kdepim?
+18:05:01 <wstephenson> i hope so too. but i'd like to see a bit more evidence of a plan to fix the suck. i dunno what is discussed on kdab irc though, and they employ the whole active pim team.
+18:05:03 <einar77> that's 3.5.x
+18:05:23 <einar77> wstephenson: that's the main problem, communication is lim (x->-Inf) 1/x
+18:05:32 <wstephenson> remur_030: it does. the difference is they are writing a mobile frontend as well as the desktop one, and for wince as well as maemo.
+18:05:43 <wstephenson> now see where the dev time goes
+18:05:56 <einar77> the good thing is that they modularized kmail
+18:06:08 <einar77> so fixes in the common parts also affect kmail itself
+18:06:41 <wstephenson> yes, that's true
+18:07:03 <wstephenson> and there have been some awesome optimisations going into the lower level stuff
+18:07:07 <einar77> wstephenson: to be honest, PIM 4.6 works OK for me on my desktops
+18:07:13 <einar77> where it *sucks*, it's my netbook
+18:07:18 <wstephenson> however thing like virtuoso and the messagelist spoil that
+18:07:23 <wstephenson> *things
+18:08:07 <wstephenson> einar77: i think it can work fine for individuals atm. tittiatcoke has been using it for ages, and alin.
+18:08:14 <einar77> wstephenson: sometimes virtuoso ramps up but ends
+18:08:17 <einar77> after a bit
+18:08:29 <tittiatcoke> I see the same virtuoso problem.
+18:08:35 <einar77> but on my netbook the performance is abysmal (also thanks to a very slow SSD)
+18:08:36 <wstephenson> einar77: i just fear that the joe sixpack class of user will not get that far. migration might fail and scare them off
+18:08:56 <einar77> wstephenson: I'm afraid of that myself since I can envision the "masses" shouting in front of the forums
+18:09:01 <tittiatcoke> Sometimes it is funny to mark the unread emails as read and still see the unread mark behind the folder
+18:09:03 <einar77> we'll be the first to witness the Rage (TM)
+18:09:24 <alin> tittiatcoke: einar77 wstephenson virtuoso going mad only when I am on a slow connection...
+18:09:25 <wstephenson> "Don't take my kmail1 away from me!!!"
+18:09:27 <einar77> tittiatcoke: I saw those collection sync problems there
+18:09:41 <alin> it may be just a coincidence but I do not know
+18:09:41 <remur_030_v2> wstephenson: well if migration fails you can't really blame the user...
+18:09:56 <einar77> is there a list of issues people encounter regularly?
+18:10:01 <wstephenson> einar77: do you think the netbook performance is due to the cpu overhead of threading the folder on open?
+18:10:01 <einar77> would it be worth making one?
+18:10:01 <alin> remur_030_v2: why not? users are guilty...
+18:10:06 <remur_030_v2> no matter how proficient he is with kde
+18:10:06 <wstephenson> i'm making one
+18:10:13 <wstephenson> remur_030_v2: agreed
+18:10:15 <einar77> wstephenson: I can echo it on the KDE forums if you want
+18:10:24 <wstephenson> atm the migration is mandatory on first kmail run
+18:10:37 <wstephenson> even if it's a bad time (on battery, about to go offline)
+18:10:41 <wstephenson> and it takes forever
+18:10:48 <einar77> wstephenson: it may be as well, I have a a measly Celeron ULV
+18:10:56 <einar77> and /home is on a (slow) SDHC
+18:11:17 <wstephenson> SDHC? that should not be allowed :P
+18:11:20 <tittiatcoke> What is noticed is that virtuoso starts behaving a little better with the amount of memory you assign to it.
+18:11:21 <wstephenson> http://ktown.kde.org/~wstephenson/core-i7-spaghetti.png
+18:11:29 <wstephenson> it's still slow with a beast ^
+18:11:40 <einar77> wstephenson: my old SSD died end before I revived it I moved /home elsewhere
+18:12:06 <remur_030_v2> wstephenson: pfft, my server runs of an sd and all the storage is attached by gbethernet to the system with nfs ;-)
+18:12:06 <einar77> s/end/and/
+18:12:26 <wstephenson> remur_030_v2: and everything is in cache all the time
+18:12:40 <wstephenson> i suspect akonadi is a good cache trasher
+18:13:12 <wstephenson> i tried installing suse on a 30MB/s 'Extreme III' SDHC and it was painfully slow to boot.
+18:13:13 <wstephenson> anyway
+18:13:32 <wstephenson> tittiatcoke: how much ram do you give virtuoso?
+18:13:45 <wstephenson> i wonder if mine is thrashing with 50MB
+18:14:22 <wstephenson> oh i said i'd ask - dannyA is really dying looking for people to help write kde-commits
+18:14:51 <wstephenson> alin, anaumov, initialZero: feel like helping produce the kde commit-digest?
+18:15:09 <wstephenson> he's dividing the work so it's not a big commitment but people seem to be shy
+18:17:12 <alin> wstephenson: 128 from me
+18:17:43 <remur_030_v2> 7F?
+18:17:45 <alin> wstephenson: when is the deadline? I can put some hours in on saturday night... and sunday
+18:18:02 <remur_030_v2> ugh, 0x80 ;-)
+18:18:53 <wstephenson> alin: it's not for a particular issue, just if you can spare an hour a week or so to help
+18:19:00 <wstephenson> anyway
+18:19:05 <wstephenson> #endmeeting

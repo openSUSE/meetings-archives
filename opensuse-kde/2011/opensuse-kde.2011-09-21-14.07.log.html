@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">14:07:13</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">14:07:13</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Sep 21 14:07:13 2011 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">14:07:13</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">14:07:32</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.</span>
+<a name="l-5"></a><span class="tm">14:08:02</span><span class="nk"> &lt;wstephenson&gt;</span> so there are a couple of agenda items that might have been discussed already
+<a name="l-6"></a><span class="tm">14:08:13</span><span class="nk"> &lt;wstephenson&gt;</span> tell me if they are old...
+<a name="l-7"></a><span class="tm">14:08:17</span><span class="nk"> &lt;wstephenson&gt;</span> agenda:
+<a name="l-8"></a><span class="tm">14:08:19</span><span class="nk"> &lt;wstephenson&gt;</span> status update
+<a name="l-9"></a><span class="tm">14:08:39</span><span class="nk"> &lt;wstephenson&gt;</span> * include QuickFormat disk utility in default installation
+<a name="l-10"></a><span class="tm">14:08:44</span><span class="nk"> &lt;wstephenson&gt;</span> * online update of PNM
+<a name="l-11"></a><span class="tm">14:08:54</span><span class="nk"> &lt;wstephenson&gt;</span> * update bluedevil to 1.2.1
+<a name="l-12"></a><span class="tm">14:09:00</span><span class="nk"> &lt;wstephenson&gt;</span> * misc
+<a name="l-13"></a><span class="tm">14:09:11</span><span class="nk"> &lt;wstephenson&gt;</span> i'll leave out old action items for a fresh start
+<a name="l-14"></a><span class="tm">14:09:33</span><span class="nk"> &lt;wstephenson&gt;</span> anything else?
+<a name="l-15"></a><span class="tm">14:09:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> please also add the topic about removal of empty basepackages
+<a name="l-16"></a><span class="tm">14:10:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> or obsoleting of them
+<a name="l-17"></a><span class="tm">14:10:18</span><span class="nk"> &lt;wstephenson&gt;</span> * dropping/obsoleting empty base packages
+<a name="l-18"></a><span class="tm">14:10:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> thanks
+<a name="l-19"></a><span class="tm">14:10:42</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">status report</span>
+<a name="l-20"></a><span class="tm">14:11:00</span><span class="nk"> &lt;wstephenson&gt;</span> i'm back, working 50%
+<a name="l-21"></a><span class="tm">14:11:07</span><span class="nk"> &lt;wstephenson&gt;</span> that means 9 - 13 mon to friday
+<a name="l-22"></a><span class="tm">14:11:37</span><span class="nk"> &lt;wstephenson&gt;</span> after that i will probably be around more than i was during the summer but i have Anna to look after so no guarantees of a quick response.
+<a name="l-23"></a><span class="tm">14:12:16</span><span class="nk"> &lt;wstephenson&gt;</span> i won't be travelling as much for that reason, so i will be blogging etc more
+<a name="l-24"></a><span class="tm">14:12:33</span><span class="nk"> &lt;wstephenson&gt;</span> cartman and maxlin are going to continue to help SUSE GmbH side
+<a name="l-25"></a><span class="tm">14:12:37</span><span class="nk"> &lt;wstephenson&gt;</span> other status?
+<a name="l-26"></a><span class="tm">14:13:20</span><span class="nk"> &lt;tittiatcoke&gt;</span> :I guess we can report that 4.7.1 is in KDF and in KR47.  KDF and Factory have been updated to soprano 2.7.0 and the latest versions of raptor v2, rasqal and redland.
+<a name="l-27"></a><span class="tm">14:13:53</span><span class="nk"> &lt;wstephenson&gt;</span> cool
+<a name="l-28"></a><span class="tm">14:14:46</span><span class="nk"> &lt;wstephenson&gt;</span> * include QuickFormat disk util
+<a name="l-29"></a><span class="tm">14:14:54</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> know if this was discussed?
+<a name="l-30"></a><span class="tm">14:15:03</span><span class="nk"> &lt;krop&gt;</span> doesn't ring a bell
+<a name="l-31"></a><span class="tm">14:15:16</span><span class="nk"> &lt;wstephenson&gt;</span> o hai, krop.
+<a name="l-32"></a><span class="tm">14:15:21</span><span class="nk"> &lt;tittiatcoke&gt;</span> To be honest I don't know. My last meeting was sometime in June :-)
+<a name="l-33"></a><span class="tm">14:15:22</span><span class="nk"> &lt;krop&gt;</span> Hoi!
+<a name="l-34"></a><span class="tm">14:15:31</span><span class="nk"> &lt;Abhish&gt;</span> It was only mentioned briefly in Factory Mailing list.
+<a name="l-35"></a><span class="tm">14:15:32</span><span class="nk"> &lt;wstephenson&gt;</span> were there any meetings that weren't minuted in my absence
+<a name="l-36"></a><span class="tm">14:15:37</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> same here ;)
+<a name="l-37"></a><span class="tm">14:16:13</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Abhish:</span> ok
+<a name="l-38"></a><span class="tm">14:16:23</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson investigate quickformat disk util</span>
+<a name="l-39"></a><span class="tm">14:16:28</span><span class="nk"> &lt;wstephenson&gt;</span> * online update of PNM
+<a name="l-40"></a><span class="tm">14:16:36</span><span class="nk"> &lt;wstephenson&gt;</span> did this happen?
+<a name="l-41"></a><span class="tm">14:17:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> I believe so. At least I took the NM09 branch and make it work for Factory and KDF. But maybe we can update it again in time for Factory Beta
+<a name="l-42"></a><span class="tm">14:17:19</span><span class="nk"> &lt;javier_&gt;</span> hola
+<a name="l-43"></a><span class="tm">14:17:22 </span><span class="nka">* javier_</span> <span class="ac">is back</span>
+<a name="l-44"></a><span class="tm">14:17:28</span><span class="nk"> &lt;wstephenson&gt;</span> from where?
+<a name="l-45"></a><span class="tm">14:17:33</span><span class="nk"> &lt;EagleScreen&gt;</span> hello
+<a name="l-46"></a><span class="tm">14:17:43</span><span class="nk"> &lt;javier_&gt;</span> i wasn't at my desk ;)
+<a name="l-47"></a><span class="tm">14:17:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> That question was for me ?
+<a name="l-48"></a><span class="tm">14:17:58</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> a 11.4 online update wouldn't be NM09 branch though, right?
+<a name="l-49"></a><span class="tm">14:18:14</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> "from where?" was to javier_
+<a name="l-50"></a><span class="tm">14:18:24</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> bah i thought something interesting like a trip to the ISS;
+<a name="l-51"></a><span class="tm">14:18:29</span><span class="nk"> &lt;wstephenson&gt;</span> you never know ;)
+<a name="l-52"></a><span class="tm">14:18:34</span><span class="nk"> &lt;javier_&gt;</span> :)
+<a name="l-53"></a><span class="tm">14:18:41</span><span class="nk"> &lt;javier_&gt;</span> not yet ;)
+<a name="l-54"></a><span class="tm">14:18:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> What I did is to take the whole git repo for PNM and then to take the master branch for 11.3 and 11.4. Factory however uses a git branch nm09 to compile the nm09 branch :-)
+<a name="l-55"></a><span class="tm">14:19:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> This all with a single tarball and a few %if statements :-)
+<a name="l-56"></a><span class="tm">14:19:39</span><span class="nk"> &lt;wstephenson&gt;</span> ok
+<a name="l-57"></a><span class="tm">14:20:04</span><span class="nk"> &lt;wstephenson&gt;</span> interesting technique, nobody complained?
+<a name="l-58"></a><span class="tm">14:20:20</span><span class="nk"> &lt;krop&gt;</span> nobody noticed :)
+<a name="l-59"></a><span class="tm">14:20:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> Nope.
+<a name="l-60"></a><span class="tm">14:21:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> cartman was happy about it and he was the one submitting it to Factory.
+<a name="l-61"></a><span class="tm">14:22:32</span><span class="nk"> &lt;wstephenson&gt;</span> looks like the one in KUA needs updating, then i'll push to update
+<a name="l-62"></a><span class="tm">14:22:38</span><span class="nk"> &lt;wstephenson&gt;</span> Update:Test
+<a name="l-63"></a><span class="tm">14:22:47</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke update KUA/KDF snapshot</span>
+<a name="l-64"></a><span class="tm">14:22:55</span><span class="nk"> &lt;tittiatcoke&gt;</span> Oki
+<a name="l-65"></a><span class="tm">14:23:16</span><span class="nk"> &lt;wstephenson&gt;</span> * update bluedevil to 1.2.1 in Factory
+<a name="l-66"></a><span class="tm">14:23:18</span><span class="nk"> &lt;wstephenson&gt;</span> no brainer
+<a name="l-67"></a><span class="tm">14:23:34</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson update bluedevil to 1.2.1</span>
+<a name="l-68"></a><span class="tm">14:24:06</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">dropping/obsoleting empty base packages (binary pkgs with same name as src package)</span>
+<a name="l-69"></a><span class="tm">14:24:12</span><span class="nk"> &lt;EagleScreen&gt;</span> some people has been testing new bluedevil (like me) it hasn't regressions, and it has some new interesting fearures
+<a name="l-70"></a><span class="tm">14:24:23</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> what's to discuss?
+<a name="l-71"></a><span class="tm">14:24:40</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">EagleScreen:</span> yes, afiestas delivers solid code there
+<a name="l-72"></a><span class="tm">14:24:51</span><span class="nk"> &lt;wstephenson&gt;</span> i noticed phonon.rpm went away
+<a name="l-73"></a><span class="tm">14:25:02</span><span class="nk"> &lt;wstephenson&gt;</span> what files went into libphonon?
+<a name="l-74"></a><span class="tm">14:25:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess that it was noticable that we have somebody who took as a target to resolve every single rpmlint error that the KDE packages have.
+<a name="l-75"></a><span class="tm">14:26:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> One of the topics he claims that have been discussed on the mailing list is that when a package has an empty base package (e.g. kdesdk4 ), that these packages should be removed. This on it self is not the issue, but the question is where do we put the obsoletes/provides for this.
+<a name="l-76"></a><span class="tm">14:27:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> especially if we have the situation that a new package is replacing the base package (e.g. like what happened with phonon).
+<a name="l-77"></a><span class="tm">14:27:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> cartman and I have been discussing some possiblities, but I guess we both wanted to have two things agreed here in the meeting.
+<a name="l-78"></a><span class="tm">14:28:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> the first thing being that we are indeed all agreeing to remove those base packages and the second thing where are we putting the provides/obsoletes. kde4-filesystem could be a good package, or maybe some other
+<a name="l-79"></a><span class="tm">14:29:10</span><span class="nk"> &lt;wstephenson&gt;</span> sec, crying baby
+<a name="l-80"></a><span class="tm">14:29:14</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-81"></a><span class="tm">14:30:06</span><span class="nk"> &lt;EagleScreen&gt;</span> I don't want to be a jerk, but don't forget to update kdbg to 2.5
+<a name="l-82"></a><span class="tm">14:30:48</span><span class="nk"> &lt;wstephenson&gt;</span> i don't think all in kde4-fs is right
+<a name="l-83"></a><span class="tm">14:31:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke update kdbg to 2.5.0</span>
+<a name="l-84"></a><span class="tm">14:31:11</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#chair </span><span class="cmdline">tittiatcoke</span>
+<a name="l-85"></a><span class="tm">14:31:11</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: tittiatcoke wstephenson
+<a name="l-86"></a><span class="tm">14:31:16</span><span class="nk"> &lt;wstephenson&gt;</span> redo
+<a name="l-87"></a><span class="tm">14:31:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke update kdbg to 2.5.0</span>
+<a name="l-88"></a><span class="tm">14:31:48</span><span class="nk"> &lt;wstephenson&gt;</span> eg phonon is a kde dep
+<a name="l-89"></a><span class="tm">14:32:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> to be honest I didn't noticed phonon, yet
+<a name="l-90"></a><span class="tm">14:32:27</span><span class="nk"> &lt;wstephenson&gt;</span> are these really only empty basepackages? i guess so because of the error
+<a name="l-91"></a><span class="tm">14:32:50</span><span class="nk"> &lt;wstephenson&gt;</span> if so there should be a main subpackage like libXXXn that can be used as the replacement
+<a name="l-92"></a><span class="tm">14:33:12</span><span class="nk"> &lt;tittiatcoke&gt;</span> Well, not all of them are empty. e.g. kdebase4 got removed and replaced by plasmoid-folderview.
+<a name="l-93"></a><span class="tm">14:33:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> The question is now however will zypper automatically update kdebase4 with plasmoid-folderview or is this an action that needs to be performed by the user ?
+<a name="l-94"></a><span class="tm">14:34:59</span><span class="nk"> &lt;tittiatcoke&gt;</span> for the kdebase4 change, we resolved it by putting a require for plasmoid-folderview in kdebase4-openSUSE
+<a name="l-95"></a><span class="tm">14:35:19</span><span class="nk"> &lt;wstephenson&gt;</span> given the Provides/Obsoletes pair in plasmoid-folderview, it would
+<a name="l-96"></a><span class="tm">14:35:29</span><span class="nk"> &lt;wstephenson&gt;</span> it's effectively a package rename
+<a name="l-97"></a><span class="tm">14:35:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok.
+<a name="l-98"></a><span class="tm">14:35:45</span><span class="nk"> &lt;cb400f&gt;</span> I think kdesdk4 includes 2-3 files or so.. at least it used to
+<a name="l-99"></a><span class="tm">14:35:58</span><span class="nk"> &lt;cb400f&gt;</span> some ontology stuff or so
+<a name="l-100"></a><span class="tm">14:35:59</span><span class="nk"> &lt;wstephenson&gt;</span> hi cb400f
+<a name="l-101"></a><span class="tm">14:36:03</span><span class="nk"> &lt;cb400f&gt;</span> o/
+<a name="l-102"></a><span class="tm">14:36:34</span><span class="nk"> &lt;tittiatcoke&gt;</span> for the kdebase4 change, we resolved it by putting a require for plasmoid-folderview in kdebase4-openSUSE
+<a name="l-103"></a><span class="tm">14:36:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> I mean the kdesdk4 change
+<a name="l-104"></a><span class="tm">14:37:04 </span><span class="nka">* tittiatcoke</span> <span class="ac">cleans his keyboard and tries it again :-)</span>
+<a name="l-105"></a><span class="tm">14:37:11</span><span class="nk"> &lt;wstephenson&gt;</span> take your time ;)
+<a name="l-106"></a><span class="tm">14:38:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> for kdesdk4 he renamed the base package into kdesdk-strigi and created two new packages as well. the strigi package is now obsoleting the kdesdk4 package, but part of it is not also in a package called kdesdk4-kprofilemethog
+<a name="l-107"></a><span class="tm">14:38:21</span><span class="nk"> &lt;tittiatcoke&gt;</span> *kdesdk4-kprofilemethod
+<a name="l-108"></a><span class="tm">14:38:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> So it is getting a little confusing for people that used to have something installed and suddenly finding out that they have to install a new package
+<a name="l-109"></a><span class="tm">14:39:24</span><span class="nk"> &lt;wstephenson&gt;</span> users should not have to manually select the replacement package
+<a name="l-110"></a><span class="tm">14:40:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> but what if 1 package is splitted out in two packages ? Should one of the replacement packages have a Require to the other ?
+<a name="l-111"></a><span class="tm">14:40:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess this has become quite a hot topic as that the person is rapidly sending requests to KDF to resolve all kind of rpmlint errors
+<a name="l-112"></a><span class="tm">14:40:42</span><span class="nk"> &lt;wstephenson&gt;</span> no, i'm not sure
+<a name="l-113"></a><span class="tm">14:41:03</span><span class="nk"> &lt;wstephenson&gt;</span> i'd ask on -packaging about that scenario
+<a name="l-114"></a><span class="tm">14:41:32</span><span class="nk"> &lt;wstephenson&gt;</span> we should have a list of techniques to resolve the most common cases
+<a name="l-115"></a><span class="tm">14:41:42</span><span class="nk"> &lt;tittiatcoke&gt;</span> That is the reaons why there are a couple of SR's still waiting for approval/Rejection as that things are not 100% clear.
+<a name="l-116"></a><span class="tm">14:42:15</span><span class="nk"> &lt;wstephenson&gt;</span> ok, let's look at those and clear them up
+<a name="l-117"></a><span class="tm">14:42:31</span><span class="nk"> &lt;javier_&gt;</span> yes, Todd is working like crazy on improving KDF
+<a name="l-118"></a><span class="tm">14:42:40</span><span class="nk"> &lt;wstephenson&gt;</span> do you have enough overview to write a mail to -packaging summarising the cases?
+<a name="l-119"></a><span class="tm">14:43:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-) But we have to prepare outselves, because with KDE moving to GIT more and more, we are ending up with separate packages which have to replace certain existing packages.
+<a name="l-120"></a><span class="tm">14:43:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> I guess I can create such email
+<a name="l-121"></a><span class="tm">14:43:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> at least I can sum up all the possibilities
+<a name="l-122"></a><span class="tm">14:44:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke create email to -packaging to validate package obsoleting/removal</span>
+<a name="l-123"></a><span class="tm">14:45:09</span><span class="nk"> &lt;wstephenson&gt;</span> ok
+<a name="l-124"></a><span class="tm">14:45:19</span><span class="nk"> &lt;wstephenson&gt;</span> next topic is...
+<a name="l-125"></a><span class="tm">14:45:30</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">misc, Q&amp;A</span>
+<a name="l-126"></a><span class="tm">14:45:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> I have a question about KDE:Unstable:SC.
+<a name="l-127"></a><span class="tm">14:47:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> I know my favorite topic, but since the release of 4.7.0, KUSC has seen two updates and somehow it seems dead :-) A bug was even created by jobermayr to complain that KUSC doesn't contain weekly snapshot updates, which I resolved by changing the wiki. But the truth is that we are far far away from weekly updates.
+<a name="l-128"></a><span class="tm">14:47:30</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> and you were doing the updates, or is dirk?
+<a name="l-129"></a><span class="tm">14:48:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> dirk is the one that does the updates. I can easily take this over, but I am not sure if dirk is going to be happy with it. It was his playground to test tarball snapshots. But he is not even updating kdelibs4 with a newer version number (But I guess this might be difficult as that kdelibs master is frozen)
+<a name="l-130"></a><span class="tm">14:49:43</span><span class="nk"> &lt;wstephenson&gt;</span> i think we should arrange a separate meeting with dirk
+<a name="l-131"></a><span class="tm">14:49:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> My idea exactly
+<a name="l-132"></a><span class="tm">14:50:22</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson arrange KUSC future meeting with dirk</span>
+<a name="l-133"></a><span class="tm">14:50:37</span><span class="nk"> &lt;wstephenson&gt;</span> ok?
+<a name="l-134"></a><span class="tm">14:50:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> yup
+<a name="l-135"></a><span class="tm">14:50:51</span><span class="nk"> &lt;wstephenson&gt;</span> any more misc?
+<a name="l-136"></a><span class="tm">14:51:06</span><span class="nk"> &lt;javier_&gt;</span> I have asked darix to delete the openSUSE_Factory target for KR47
+<a name="l-137"></a><span class="tm">14:51:13</span><span class="nk"> &lt;krop&gt;</span> I have one question about KDE:Unstable:Playground
+<a name="l-138"></a><span class="tm">14:51:35</span><span class="nk"> &lt;javier_&gt;</span> we already have KDF for factory stuff :)
+<a name="l-139"></a><span class="tm">14:52:22</span><span class="nk"> &lt;krop&gt;</span> We have ~10-20 packages that are either prehistoric and/or don't fit the KUP description
+<a name="l-140"></a><span class="tm">14:53:24</span><span class="nk"> &lt;wstephenson&gt;</span> what is the question?
+<a name="l-141"></a><span class="tm">14:53:38</span><span class="nk"> &lt;krop&gt;</span> what to do with these packages ?
+<a name="l-142"></a><span class="tm">14:53:43</span><span class="nk"> &lt;krop&gt;</span> examples:
+<a name="l-143"></a><span class="tm">14:53:56</span><span class="nk"> &lt;cb400f&gt;</span> kamoso! :-)
+<a name="l-144"></a><span class="tm">14:54:18</span><span class="nk"> &lt;krop&gt;</span> scribus-unstable (not updated for 8 months, simon, tristan, a few plasmoids from an antique era...
+<a name="l-145"></a><span class="tm">14:54:43</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">mrdocs:</span> scribus?
+<a name="l-146"></a><span class="tm">14:55:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> I would vote for deletion of those packages. Also a playground needs cleaning from time to time :-)
+<a name="l-147"></a><span class="tm">14:55:05</span><span class="nk"> &lt;wstephenson&gt;</span> i'd wipebinaries scribus and disable build until mrdocs needs to preview another scribus beta
+<a name="l-148"></a><span class="tm">14:55:09</span><span class="nk"> &lt;wstephenson&gt;</span> drop the plasmoids
+<a name="l-149"></a><span class="tm">14:55:33</span><span class="nk"> &lt;cb400f&gt;</span> oops.. I'm outdated again.. kamoso now exists in kde:extra... should be in kdf though :-)
+<a name="l-150"></a><span class="tm">14:55:54</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess that scribus was the initial version that mrdocs created in Playground, which later got submitted to KDF with the released version of scribus
+<a name="l-151"></a><span class="tm">14:56:06</span><span class="nk"> &lt;krop&gt;</span> <span class="hi">cb400f:</span> kamoso is maintained in kup
+<a name="l-152"></a><span class="tm">14:57:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> As indicated if packages are no longer maintained for a couple of months, we should delete them
+<a name="l-153"></a><span class="tm">14:57:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> at least imo
+<a name="l-154"></a><span class="tm">14:58:23</span><span class="nk"> &lt;krop&gt;</span> I'll proceed in two steps: send a mail to the list asking the respective maintainers to move the released versions to an appropriate repo
+<a name="l-155"></a><span class="tm">14:58:26</span><span class="nk"> &lt;javier_&gt;</span> I would ping the last contributors of those packages before deleting anything
+<a name="l-156"></a><span class="tm">14:58:26</span><span class="nk"> &lt;cb400f&gt;</span> maybe say 6 months? ... 2 months is not that long
+<a name="l-157"></a><span class="tm">14:58:29</span><span class="nk"> &lt;krop&gt;</span> then delete the obsolete stuff
+<a name="l-158"></a><span class="tm">14:58:33</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> +1
+<a name="l-159"></a><span class="tm">14:58:35</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">krop:</span> +1
+<a name="l-160"></a><span class="tm">14:59:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> If I may add another little topic ?
+<a name="l-161"></a><span class="tm">14:59:02</span><span class="nk"> &lt;cb400f&gt;</span> do we still have that graveyard somewhere for unmaintained packages?
+<a name="l-162"></a><span class="tm">14:59:25</span><span class="nk"> &lt;wstephenson&gt;</span> under home:llunak iirc
+<a name="l-163"></a><span class="tm">14:59:26</span><span class="nk"> &lt;javier_&gt;</span> afaik, no
+<a name="l-164"></a><span class="tm">14:59:27</span><span class="nk"> &lt;krop&gt;</span> llunak's attic ?
+<a name="l-165"></a><span class="tm">14:59:36</span><span class="nk"> &lt;javier_&gt;</span> ah there
+<a name="l-166"></a><span class="tm">14:59:50</span><span class="nk"> &lt;cb400f&gt;</span> right.. graveyard was a bit dramatic
+<a name="l-167"></a><span class="tm">15:00:20</span><span class="nk"> &lt;tittiatcoke&gt;</span> graveyard would have been created of llunak would have started to clean his attic :-)
+<a name="l-168"></a><span class="tm">15:00:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> s/of/if/
+<a name="l-169"></a><span class="tm">15:00:33</span><span class="nk"> &lt;wstephenson&gt;</span> home:llunak:attic
+<a name="l-170"></a><span class="tm">15:00:40 </span><span class="nka">* wstephenson</span> <span class="ac">needs to go</span>
+<a name="l-171"></a><span class="tm">15:01:10</span><span class="nk"> &lt;elchevive1968_&gt;</span> someone ask on ml right now about the packagekit frontend to be used on 12.1 (if it will be updated to Apper)
+<a name="l-172"></a><span class="tm">15:01:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> I wanted to bring that one up also :-)   I have spoken with danntti in the past and he would do his best to create an official release for apper, but this never happened
+<a name="l-173"></a><span class="tm">15:01:49</span><span class="nk"> &lt;wstephenson&gt;</span> i have a todo to investigate
+<a name="l-174"></a><span class="tm">15:01:55</span><span class="nk"> &lt;wstephenson&gt;</span> i don't think apper is mature yet
+<a name="l-175"></a><span class="tm">15:02:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> I am using apper from git and that works fine :-)
+<a name="l-176"></a><span class="tm">15:02:44</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> can you endmeeting when ready?
+<a name="l-177"></a><span class="tm">15:02:48</span><span class="nk"> &lt;wstephenson&gt;</span> bored 1 year old here
+<a name="l-178"></a><span class="tm">15:02:56</span><span class="nk"> &lt;javier_&gt;</span> time flies
+<a name="l-179"></a><span class="tm">15:02:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> A lot has changed in Apper during your absence. danntti really pushed a lot of stuff so that he could make an official release so that we could include it in 12.1
+<a name="l-180"></a><span class="tm">15:03:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Sure
+<a name="l-181"></a><span class="tm">15:04:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson investigate apper</span>
+<a name="l-182"></a><span class="tm">15:04:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> anything else ?
+<a name="l-183"></a><span class="tm">15:04:29</span><span class="nk"> &lt;wstephenson&gt;</span> not from me
+<a name="l-184"></a><span class="tm">15:04:42</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">javier_:</span>  ?
+<a name="l-185"></a><span class="tm">15:04:43</span><span class="nk"> &lt;wstephenson&gt;</span> thanks everyone for your contributions
+<a name="l-186"></a><span class="tm">15:04:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> ?
+<a name="l-187"></a><span class="tm">15:05:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> Thanks wstephenson and welcome back :-)
+<a name="l-188"></a><span class="tm">15:05:03</span><span class="nk"> &lt;javier_&gt;</span> not really
+<a name="l-189"></a><span class="tm">15:05:08</span><span class="nk"> &lt;cb400f&gt;</span> hm?
+<a name="l-190"></a><span class="tm">15:05:09</span><span class="nk"> &lt;javier_&gt;</span> +1
+<a name="l-191"></a><span class="tm">15:05:12</span><span class="nk"> &lt;wstephenson&gt;</span> it's like i was never away
+<a name="l-192"></a><span class="tm">15:05:36</span><span class="nk"> &lt;cb400f&gt;</span> it felt like ages for the rest of us ;-)
+<a name="l-193"></a><span class="tm">15:05:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> elchevive1968_: anything else from your side ?
+<a name="l-194"></a><span class="tm">15:06:20</span><span class="nk"> &lt;cb400f&gt;</span> I wasn't here for the start of the meeting
+<a name="l-195"></a><span class="tm">15:06:28</span><span class="nk"> &lt;cb400f&gt;</span> but I'm quite concerned about the default desktop
+<a name="l-196"></a><span class="tm">15:06:51</span><span class="nk"> &lt;krop&gt;</span> Ah yes
+<a name="l-197"></a><span class="tm">15:06:57 </span><span class="nka">* krop</span> <span class="ac">has something</span>
+<a name="l-198"></a><span class="tm">15:07:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span>  what are your concerns ?
+<a name="l-199"></a><span class="tm">15:07:06</span><span class="nk"> &lt;cb400f&gt;</span> no folderview... pushing activities on people.. "dropping" virtual desktops.. messed up icons for "Documents" and "public_html" in dolphin
+<a name="l-200"></a><span class="tm">15:07:35</span><span class="nk"> &lt;cb400f&gt;</span> and the duplicated launchers/icons things for FF and dolphin.. but sebaz says that's fixed in 4.7.2 though
+<a name="l-201"></a><span class="tm">15:07:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> I saw an email on those launchers.
+<a name="l-202"></a><span class="tm">15:08:21</span><span class="nk"> &lt;elchevive1968_&gt;</span> no
+<a name="l-203"></a><span class="tm">15:09:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> I guess that the activities and dropping virtual desktops is something from upstream ?
+<a name="l-204"></a><span class="tm">15:10:02</span><span class="nk"> &lt;cb400f&gt;</span> yes, I think so too.. doesn't mean we should accept it :-)
+<a name="l-205"></a><span class="tm">15:10:29</span><span class="nk"> &lt;cb400f&gt;</span> I thought they were going conservative in 4.7 to pick up all the gnome run-aways... but clearly not :-)
+<a name="l-206"></a><span class="tm">15:11:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> Activities is something that is heavily developed in 4.8
+<a name="l-207"></a><span class="tm">15:12:02</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> What was your something ? :-)
+<a name="l-208"></a><span class="tm">15:12:09</span><span class="nk"> &lt;krop&gt;</span> for O:F users, please check whether opening your KDE session and/or opening the file dialog takes longer when using systemd
+<a name="l-209"></a><span class="tm">15:13:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> Is that still the case with the latest Factory update ?
+<a name="l-210"></a><span class="tm">15:13:40</span><span class="nk"> &lt;krop&gt;</span> define latest
+<a name="l-211"></a><span class="tm">15:13:59</span><span class="nk"> &lt;tittiatcoke&gt;</span> this morning :-)
+<a name="l-212"></a><span class="tm">15:14:10</span><span class="nk"> &lt;EagleScreen&gt;</span> I personally find activities very unuseful for most of the users, but I find the new small launchers for Dolphin and Firefox a total good decision
+<a name="l-213"></a><span class="tm">15:14:12</span><span class="nk"> &lt;krop&gt;</span> I didn't update yet
+<a name="l-214"></a><span class="tm">15:14:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">krop:</span> Ok. Was just wondering
+<a name="l-215"></a><span class="tm">15:15:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> Anything else ?
+<a name="l-216"></a><span class="tm">15:16:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok, then I will close the meeting. Thanks everyone
+<a name="l-217"></a><span class="tm">15:16:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

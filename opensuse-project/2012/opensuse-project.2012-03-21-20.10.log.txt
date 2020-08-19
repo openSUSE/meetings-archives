@@ -1,0 +1,102 @@
+20:10:48 <wstephenson> #startmeeting
+20:10:48 <bugbot> Meeting started Wed Mar 21 20:10:48 2012 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+20:10:48 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+20:11:14 <wstephenson> #meetingtopic Welcome to the openSUSE Project meeting. Please wait with random questions until the end.
+20:11:29 <wstephenson> #meetingtopic Welcome to the openSUSE Project meeting. Please wait with random questions until the end.
+20:12:06 <wstephenson> Agenda:
+20:12:09 <wstephenson> * openSUSE conference proposed dates
+20:12:19 <wstephenson> * SuseStudio Command Line Client (ssc) discussions / ideas (if there is time). [Andrei Petre, 2nd year student, applying for GSoC]
+20:12:26 <wstephenson> * Q&A Misc
+20:12:29 <wstephenson> not forgetting #1
+20:12:33 <wstephenson> * status reports
+20:12:41 <wstephenson> #topic status reports
+20:12:47 <wstephenson> anything to report?
+20:13:31 * tigerfoot sorry, has started a draft locally about infrastructure and QOS discussed here last time, but didn't formalize yet on openFATE
+20:14:00 * wstephenson finally mailed the membership team about the discussion, but only today
+20:15:30 <wstephenson> no other status? ou est mrdocs?
+20:15:42 <AlanClark> tigerfoot:  are you planning to post an update on -project?
+20:15:48 <wstephenson> AlanClark, henne, FunkyPenguin?
+20:17:04 <AlanClark> so quiet - let's go to next topic
+20:17:29 <wstephenson> yep
+20:17:40 <wstephenson> #topic openSUSE conference proposed dates
+20:17:41 <tigerfoot> AlanClark: that was the plan .
+20:17:48 <wstephenson> AlanClark: that's yours?
+20:17:56 <AlanClark> yes
+20:18:09 <wstephenson> go
+20:18:43 <AlanClark> the team was able to visit the propose osc12 venues this week
+20:19:16 <AlanClark> One site looks very probable.  Before we create a contract with them
+20:19:24 <wstephenson> did we get over the too small/too limiting constraints discussed last time?
+20:19:58 <AlanClark> They feel that the rooms will be big enough.  And that there is space for lunch
+20:20:13 <AlanClark> They also checked on area restaraunts, hotels, etc
+20:20:35 <AlanClark> The question I wanted to toss out is regarding the dates of the conference
+20:21:12 <AlanClark> The venue works best if we hold it over a weekend, so we'd like to propose October 26,27,28 as the conference dates
+20:21:34 <AlanClark> and ask that everyone check for conflicts with other opensource events.
+20:21:46 <wstephenson> can do
+20:21:50 <tigerfoot> AlanClark: someone check that there's no other major event worldwide ?
+20:22:00 * tigerfoot too late :-(
+20:22:02 <AlanClark> If we don't hear of any conflicts, we'd like to move ahead and solidify the venue and dates
+20:23:07 <AlanClark> tigerfoot, you know of a conflict?
+20:23:32 <AlanClark> or if anyone knows of a conflict please post to the conference mailing list
+20:23:40 <tigerfoot> there's should be postgresql event around that period and some php conf too
+20:24:01 * tigerfoot will check if they have published something already
+20:24:08 <AlanClark> php I thought was earlier - around the 18th?.  but I may be wrong
+20:24:30 <wstephenson> i'm just looking
+20:25:05 <wstephenson> t-dose in the netherlands is that weekend
+20:25:16 <wstephenson> but it's a while since anyone i know mentioned it
+20:25:20 <AlanClark> I suspect we'll run into conflicts for any date that we pick.
+20:25:42 <wstephenson> of course
+20:26:06 <AlanClark> that's it for this topic
+20:26:33 <tigerfoot> sure .. just go.. and ask if the weather is absolutely awesome on that date, and everything would be fine :D
+20:26:49 <wstephenson> AlanClark: thanks
+20:26:57 <AlanClark> tigerfoot - would you please order warm weather and sunshine for those dates
+20:27:27 <wstephenson> #topic SuseStudio Command Line Client
+20:27:50 <wstephenson> andreip: is that you?
+20:27:50 <andreip> Hello, my name is Andrei Petre, I'm a 2nd year CS student at Politehnica Univ of Bucharest, and would like to ask about your oppinion and maybe gather some more ideas for the ssc gsoc project
+20:27:56 <andreip> yes
+20:28:33 <andreip> The main reasons for using ssc is that
+20:29:06 <wstephenson> who proposed the project, btw? are they here?
+20:29:26 <tigerfoot> is the idea is to have a complement of Yast Kiwi
+20:29:27 <andreip> Cristian Mircea Messel http://en.opensuse.org/openSUSE:GSOC_ideas#SUSE_Studio_Command_Line_Client_.28ssc.29
+20:29:47 <andreip> I think he is not here now
+20:30:27 <AlanClark> cool feature idea
+20:30:30 <andreip> currently the browser is the only way of interacting with SuseStudio; a CLI would help in scripting; it needs to be extended further and tested (checkout, commit, status, appliance, build, template, repository, package, file)
+20:30:36 <wstephenson> tigerfoot: sounds more like a complement to osc
+20:30:57 <tigerfoot> wstephenson: yeap and the idea is really cool !
+20:31:10 <andreip> also, it would be nice to build an appliance, run it on a live cd/usb, and after installing ssc, to somehow commit any changes you've ("lively") made to the remote appliance. It would have a staging area and a commit one, like git.
+20:31:33 <andreip> but for the latter, the former one must be met imo
+20:31:53 <wstephenson> andreip: agree that it sounds cool to have, what can the project/board do to help?
+20:32:09 <wstephenson> i think at this time you need to be talking to the mentor and other ppl in the studio team
+20:32:21 <andreip> Any comments, questions, ideas, critics, anything at all ? :)
+20:32:51 <andreip> maybe extension ideas? I guess it would be more appropriate to post it in the mailing list?
+20:33:24 <wstephenson> my experience as a gsoc mentor (several times) says the thing to do right now is talk a lot with possible mentors and developers around the project
+20:33:33 <AlanClark> I would only be able to give general ideas, as wstephenson pointed out, best to talk to the mentor
+20:33:41 <andreip> i talked with the mentor :)
+20:33:43 <tigerfoot> andreip: if you know osc, we can build locally on vm, and then could be nice and cool to build and chroot (ala) the appliance ...
+20:33:47 <wstephenson> given that studio is closed source, you have to have buy in from the studio team to provide the interfaces you would need
+20:34:53 <andreip> tigerfoot: so it would somehow be nice to use ssc with osc?
+20:35:36 <tigerfoot> andreip: not directly but like osc build could build locally, have ssc build able to build the appliance locally
+20:35:51 <andreip> i would use a studio_api from github, that uses the GET http requests
+20:36:06 <andreip> it's already been shaped by Cristian, the mentor
+20:36:10 * tigerfoot don't know if that's possible or really useful compared to the qty of package to download ...
+20:36:26 <tigerfoot> but then if they share the same local cache for package
+20:36:39 <tigerfoot> that would be a big +
+20:36:57 <wstephenson> mrdocs. /me looks at watch
+20:37:23 <wstephenson> only joking, henne and FunkyPenguin are in a zombie state anyway.
+20:37:46 <wstephenson> andreip: i'd suggest starting a blog now and getting a dialogue going with studio users there.
+20:38:20 <andreip> is there a mailing list I can ask ?
+20:39:35 <wstephenson> andreip: google says studio-users@suse.de
+20:39:35 <tigerfoot> andreip: there's on irc #susestudio and studio-users@suse.de
+20:39:56 <tigerfoot> wstephenson: you have the same info dealer ;-)
+20:40:05 <wstephenson> andreip: there is also blog.susestudio.com - perhaps you could write a guest article there?
+20:40:08 <andreip> i hope english is spoken there :). thank you
+20:40:43 <wstephenson> any more on this topic?
+20:40:58 <andreip> no. thanks
+20:42:04 <wstephenson> #topic Q&A, Misc
+20:42:11 <wstephenson> andreip: thanks for coming
+20:42:32 <andreip> thanks for the friendly env :). will stay around
+20:43:12 <tigerfoot> andreip: welcome on board, (not the Board) and have fun !
+20:43:39 <andreip> :)) ty
+20:43:49 <wstephenson> if there is no Q&A then I will close the meeting
+20:44:09 <wstephenson> i guess people decided it has already been disbanded, from the discussion on the list...
+20:44:16 <AlanClark> I think we close.  Thanks wstephenson for leading the meeting.
+20:44:50 <wstephenson> #endmeeting

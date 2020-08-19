@@ -1,0 +1,250 @@
+15:34:39 <vuntz> #startmeeting openSUSE GNOME Meeting
+15:34:39 <bugbot> Meeting started Thu May  5 15:34:39 2011 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:34:39 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:34:49 <vuntz> nmarques: sure
+15:35:00 <vuntz> #topic SONAR theme for gnome-shell
+15:35:17 <vuntz> nmarques: go ahead
+15:35:40 <nmarques> hi
+15:36:21 <nmarques> I was wondering if we want a Sonar/GTK3+ theme, and if I should look for an artist to do them. In case I find one, what should be the requirements we should ask for ?
+15:36:45 <nmarques> currently there are artists looking for ideas in deviant-art, I would consider taking that opportunity to have them done
+15:37:15 <nmarques> this doesn't cover the icons part (be mindful of that, though I can ask for it also, but would probably become less atractive)
+15:37:24 <nmarques> that's pretty much it :)
+15:37:43 <vuntz> can you define "Sonar/GTK3+"?
+15:37:51 <vuntz> do you mean "Sonar ported to GTK+ 3"?
+15:37:55 <nmarques> gnome-shell theme and GTK3+ theme
+15:37:57 <vuntz> or "openSUSE-specific theme"?
+15:38:16 <DimStar> hmm.. didn't we already have a gtk3-metatheme-sonar (built by gtk2-metatheme-sonar)? At least that's what I'm running (and I for one feel more comfortable with it than adwaita)
+15:38:27 <vuntz> and is the goal to have that theme used by default in openSUSE?
+15:38:47 <nmarques> vuntz, if you guys want it, else maybe distribute it as alternative for people like you who love it :)
+15:38:55 <nmarques> vuntz, though defaulting it would probably be more attractive
+15:39:12 <nmarques> and given the current state of the artwork team and the fact that Robert is probably burried in work
+15:39:16 <vuntz> DimStar: hrm, I think the gtk3-metatheme-sonar hack got dropped for now, wasn't it?
+15:39:34 <nmarques> it would be nice to try and bring new people aboard :)
+15:39:38 <DimStar> vuntz: yes.. looks like... the package is no longer in the repos... what a luck I still have it :) )
+15:40:46 <vuntz> so my main worry about a gnome-shell theme is that it can break at any time (since it's not officially supported)
+15:42:15 <nmarques> vuntz, maybe a supplement to user theme extension? (though it won't actually ensure that it won't break)
+15:43:03 <vuntz> anybody with an opinion on this topic?
+15:43:51 <vuntz> malcolmlewis: any opinion on that? (since you've been looking at gnome-shell themes, iirc)
+15:43:56 <nmarques> vuntz, my opinion is that we should keep the diferentiation and continue the 'tradition', but I have to say it's a bit of a risk to enroll a new contributor and keep it to maintain it
+15:43:57 <DimStar> I for one like the sonar hack style (which of course should be nicely / completely done). If we can get an artist / art team on board with some commitment to maintain it should it break, I'm all for it.
+15:45:18 <nmarques> vuntz, I'll gladly do the packaging for it and cover that part, and I'm sure the artwork work team will help with gitorious
+15:45:28 <nmarques> vuntz, I can ping javier about it
+15:45:36 <vuntz> oh, packaging and using git isn't the hard part
+15:45:57 <Ilmehtar> darkmatter has been working on a rather nice looking theme
+15:46:36 <vuntz> so, I guess it doesn't harm to ask people to work on that
+15:46:50 <vuntz> but I guess we can't commit to using the result as default until, well, we see the result :-)
+15:47:27 <DimStar> but we can commit to the goal of using it.
+15:47:37 <nmarques> vuntz, that's pretty fair ;) so in the request I'll say that the GNOME Team will decide it if it fits the conditions ?
+15:47:42 <vuntz> DimStar: as in "packaging it"?
+15:48:09 <nmarques> vuntz, I'll work on a document for review and mail it to the gnome-list so people can improve the ideas and we do it the right way ?
+15:48:15 <DimStar> vuntz: as in "if there is nothing wrong with it we will want to use it" I'm sure that's more motivational than 'just doing it for the sake of doing it'
+15:48:47 <vuntz> #info nmarques suggests to reach out to deviant-art artists to write a new gnome-shell/gtk+3 theme (possibly based on the sonar gtk+2 theme)
+15:48:52 <nmarques> DimStar, if we get a go from the artists commitment to maintain it, I would like it
+15:49:01 <DimStar> the wording "if it fits the conditions" is very vague, especially when the conditions are not known to the artists.
+15:49:03 <vuntz> DimStar: I'm not even sure we can commit to that
+15:49:31 <nmarques> DimStar, that's why I can run a document though the list before making it public ;)
+15:49:36 <vuntz> DimStar: unless it's really really really good, I'd vote for sticking with upstream. And if it's really really really good, then it should be moved upstream :-)
+15:49:37 <DimStar> vuntz: why not? It would be bringing back the openSUSE branding / styling.
+15:50:18 <nmarques> vuntz, that of moving upstream would bring added motivation ;P
+15:50:29 <DimStar> style / colors are always personal preference and help a lot with recognition. Are you planning on 'upstreaming' all styles?
+15:50:52 <nmarques> DimStar, at this point there are not much GTK3+ stuff
+15:51:05 <vuntz> DimStar: if the style is there to stay, yes
+15:51:06 <nmarques> DimStar, so it's not really a bad idea to have it upstreamed also ;)
+15:51:17 <vuntz> DimStar: that's the only way to ensure it will have real chances to stay maintained
+15:52:04 <vuntz> there's also the whole topic of whether we want our GNOME to be branded openSUSE, and if yes, in which ways
+15:52:43 <DimStar> true... but that's a much longer topic :)
+15:52:48 <vuntz> heh
+15:53:21 <vuntz> it's just that I'm not sure we can say at this point that we will use the result, even if good, as default
+15:53:49 <nmarques> vuntz, we could always trim that to user choice ;)
+15:53:54 <vuntz> but we can surely say that it can be evaluated in the context of "do we want to move away from upstream's default?"
+15:54:01 <nmarques> vuntz, just making it available as optional would be a good start for 12.1
+15:54:22 <DimStar> ok. we commit to package and ship it, and based on further discussions and quality of the style might consider using it as the default
+15:55:02 <vuntz> okay, let's do this
+15:55:04 <malcolmlewis> I tend to agree with nmarques on having some options
+15:55:18 <nmarques> vuntz, we're beatin' virgin territory :)
+15:55:29 <vuntz> #agreed we commit to package and ship the resulting theme, and based on further discussions and quality of the style we might consider using it as the default
+15:55:48 <nmarques> vuntz, I'll still run the document through the list before making it public ;)
+15:55:49 <vuntz> #action nmarques to contact deviant(art artists
+15:55:57 <vuntz> #undo
+15:55:57 <bugbot> Removing item from minutes: <MeetBot.items.Action object at 0x13f5d50>
+15:56:01 <vuntz> #action nmarques to contact deviant-art artists
+15:56:11 <vuntz> sounds good
+15:56:13 <vuntz> anything else?
+15:56:29 <nmarques> cool with me, please carry on tonext topic
+15:56:53 <vuntz> thanks nmarques
+15:57:03 <vuntz> err
+15:57:04 <vuntz> #topic Project Update
+15:57:12 <vuntz> sooo
+15:57:20 <vuntz> current status
+15:57:26 <vuntz> we have GNOME 3.0.1 in G:F
+15:57:30 <vuntz> and also in G:S:3.0
+15:57:41 <vuntz> G:N will disappear after this meeting
+15:58:02 <vuntz> and home:fcrozat:gnome3 should disappear soon too
+15:58:14 <vuntz> and most of GNOME 3 is now in Factory itself
+15:58:27 <vuntz> a few packages are still being reviewed (mostly by legal team)
+15:58:43 <vuntz> we have a good number of build failures caused by GNOME 3, though
+15:58:55 <vuntz> that should be our main focus for the next few weeks
+15:59:12 <DimStar> build failures in G:* or oS:F?
+15:59:28 <vuntz> and then we can focus on the bugs we filed when reviewing GNOME 3 for Factory (patches needing rebase, for instance)
+15:59:30 <vuntz> DimStar: G:*
+15:59:52 <vuntz> DimStar: when I checked the G:A repo that is built against G:F, there were something like 20+ failures
+16:00:12 <vuntz> the difficult parts are:
+16:00:26 <DimStar> ok... I think it's safe to say: for G:F we do _not_ care for any other target than Factory. For G:A we try to build down to 11.3 and SLE11SP1
+16:00:28 <vuntz> - panel applets (I might write a bridge to make new gnome-panel understand old panel applets)
+16:00:38 <vuntz> - nautilus extensions (especially python ones)
+16:01:02 <vuntz> and similar stuff
+16:01:49 <vuntz> also, gcc 4.6 will be the default soon
+16:01:56 <vuntz> this might cause additonial failures
+16:02:42 <vuntz> else, we're relatively up-to-date for other packages, version-wise
+16:02:57 <DimStar> probably wil...gcc 4.5 introduce: return value of function ignored => error / gcc 4.6 says: you ignore the variable you stored the return value to => error
+16:03:03 <vuntz> and we don't have too many pending sr (a few ones are old, and need to be discussed)
+16:03:11 <vuntz> that's it from me, I guess
+16:03:26 <vuntz> #info GNOME 3.0.1 is in G:F/G:S:3.0 and will enter Factory soon
+16:03:41 <vuntz> #info G:N and home:fcrozat:gnome3 will disappear really soon
+16:04:02 <vuntz> #info we will have some build failures to fix in the next few weeks (for instance: old panel applets, old nautilus extensions, etc.)
+16:04:25 <vuntz> DimStar: anything else you can think of?
+16:05:03 <DimStar> only the entering factory 'pain' we had this time... which we hopefully won't run into that quick again, as we have minor updates coming in again.
+16:05:17 <vuntz> yeah
+16:05:20 <DimStar> (and a few external missing dependencies which might cause headaches)
+16:05:35 <vuntz> even when we'll move to 3.2 and later, I don't expect that much pain
+16:05:49 <vuntz> this was really a big switch this time, and it probably won't happen before a few years
+16:05:55 <DimStar> no, they are much closer (no librenames and the like)
+16:06:13 <vuntz> this time, it's really a combination of two things:
+16:06:23 <vuntz> a) GNOME 2 -> GNOME 3
+16:06:23 <DimStar> on the other hand this new 'submit package xy when all deps are built in snapshot' is rather annoying.
+16:06:40 <vuntz> b) we were not able to push 2.91.x to Factory, so it couldn't be done in small steps
+16:07:32 <vuntz> DimStar: maybe. I prefer to evaluate how annoying it is after GNOME 3 is in Factory
+16:07:44 <vuntz> right now, our view is pretty biased ("everything that slows us down is bad" :-))
+16:08:17 <DimStar> of course :)
+16:08:47 <vuntz> oh
+16:08:50 <vuntz> one other thing
+16:09:05 <vuntz> we now have the schedule for 12.1
+16:09:20 <vuntz> our goal is to release 12.1 with GNOME 3.2
+16:09:52 <vuntz> 3.2.0 will be out on Sep 28
+16:10:05 <DimStar> that should be fine. G3.2 is 09.11 (or so) and we should be done 11.11...
+16:10:16 <vuntz> this means we'll be able to push it for 12.1 RC1
+16:10:31 <vuntz> 3.2.1 will be out on Oct 19
+16:10:38 <DimStar> we should try to keep as close as we can to 3.2 from early on (maybe on cost of stability at the early days... but better like that)
+16:11:03 <vuntz> we could possibly push 3.2.1 for RC2, but I think that might be a bit risky
+16:11:17 <vuntz> so we should possibly ask if we can do an online update to 3.2.1
+16:11:48 <DimStar> yes, something to discuss with coolo. I remember in the past a x.x.1 update was considered 'patch update with low risk' and he did take them in.
+16:11:54 <vuntz> #info openSUSE 12.1 will release with GNOME 3.2 (3.2.0 for sure, 3.2.1 maybe or as online update?)
+16:12:29 <vuntz> DimStar: so you think we should move to 3.1.1 next week?
+16:13:10 <vuntz> I'd consider skipping 3.1.1 on our end, to make sure we fix build failures and possibly rebase patches. And then do 3.1.1 or wait for 3.1.2 (Jun 15)
+16:13:28 <DimStar> vuntz: for G:F I'd say so... there is not much reason to keep 3.0 around if we don't actually want to ship it. Moving gives us the time to fix fallouts early (maybe not next week: we really should settle 3.0.1 first)
+16:13:42 <vuntz> yeah
+16:14:06 <vuntz> (note that I'm at two conferences next week, so, hrm, yeah, 3.0.1 will settle without me ;-))
+16:14:22 <DimStar> hehe... i'll just accept my own SRs then.
+16:14:53 <DimStar> oh: and please no more GNOME:Next... that cycle took way too long and is frustrating for the not directly involved, as we had to decline most of their SRs at one point.
+16:14:58 <vuntz> okay, what about this: before Milestone 1, fix build failures. Then, we can do whatever we want
+16:15:20 <DimStar> good target: 3.0.1 stable for M1. The move on
+16:15:30 <vuntz> DimStar: GNOME:Next won't be needed for the next two cycles. But it might be needed for 12.3
+16:15:58 <vuntz> DimStar: (since 12.3 will be like 11.4: we'll release openSUSE with an old GNOME, and completely skip a GNOME development cycle)
+16:16:00 <DimStar> that's in two years.. we'll see :)
+16:16:03 <vuntz> heh
+16:16:06 <vuntz> ok
+16:16:29 <vuntz> #agreed we focus on fixing build failures and making sure 3.0.1 rocks for M1, and then we move to 3.1.x for M2
+16:16:32 <vuntz> cool
+16:16:48 <vuntz> next topic, I guess?
+16:17:05 <vuntz> #topic GNOME 3 News, Feedback, Q&A
+16:17:23 <vuntz> hrm, so, we covered the news already, I guess
+16:17:28 <vuntz> any feedback or Q&A?
+16:17:36 <vuntz> malcolmlewis: anything to report from forums?
+16:18:08 <malcolmlewis> It's been very quiet on GNOME 3.0 issues, all complements to you guys :)
+16:18:27 <vuntz> cool
+16:18:32 <vuntz> oh, one news item:
+16:18:45 <vuntz> we got GNOME 3 DVDs produced
+16:19:00 <vuntz> they're going to be used at events, like next week at linuxtag
+16:19:07 <malcolmlewis> shell extensions seem to be the buzz for people, user-themes and notifications
+16:20:48 <vuntz> okay
+16:21:13 <vuntz> #info People are happy, and are starting to play with extensions/themes
+16:21:21 <vuntz> anything else on this topic?
+16:21:54 <Ilmehtar> vuntz: one question - will GNOME 3 DVD's be an option alongside the typical openSUSE Promo DVD's for events and such?
+16:22:37 <vuntz> Ilmehtar: at Linuxtag, yes
+16:22:45 <vuntz> after that, it will depend on the event
+16:22:52 <Ilmehtar> nifty
+16:23:03 <vuntz> we don't know if we'll have DVDs after this round (for 3.2, eg)
+16:24:28 <vuntz> let's move to general Q&1
+16:24:33 <vuntz> #topic Q & 1
+16:24:35 <vuntz> rah
+16:24:36 <vuntz> #topic Q & A
+16:24:52 <vuntz> any question?
+16:26:04 <malcolmlewis> YaST in the user menu by default?
+16:26:19 <nmarques> malcolmlewis, yeah, that would be awesome
+16:27:03 <vuntz> malcolmlewis: below System Settings?
+16:27:08 <nmarques> vuntz, I do subscribe the importance of exploring the best possibility of integrating it with the menu
+16:27:25 <malcolmlewis> vuntz, yes
+16:28:18 <vuntz> so we'd need to find a solution to fix the confusion that could exist between "System Settings" and "YaST" or "Administrator Settings" or "System Administration"
+16:28:59 <malcolmlewis> Desktop Settings rather than System
+16:28:59 <DimStar> Control Panel vs System Settings? (most things there don't really affect 'system'
+16:29:11 <darkmatter> yes. and (although it's asking a lot), a new yast shell similar to that of system setting to make yast "fit". though that may be more realistic for after 12.1
+16:29:35 <vuntz> malcolmlewis, DimStar: this string change would need to occur upstream
+16:29:50 <vuntz> malcolmlewis, DimStar: I wouldn't want to have to fix all the docs because we change the string...
+16:30:25 <DimStar> of coruse... but it might be negotiatable with upstream...
+16:33:04 <malcolmlewis> so we could still patch in a System Admin or similar to activate YaST, if we want System Settings changed, we need to go upstream?
+16:33:25 <vuntz> malcolmlewis: yes
+16:34:04 <prusnak> currently my patch uses System Settings (unchanged) and YaST Control Center (new item)
+16:34:13 <nmarques> vuntz, a code change with a switch on build time? Something like --enable-yast ?
+16:34:59 <vuntz> darkmatter: I just tried the system settings shell filled with yast item and... it's ugly
+16:35:10 <vuntz> there are way too many yast items, and the shell doesn't scale well
+16:36:24 <prusnak> i think there are two options - a) adding yast to status menu b) adding yast icon to system settings (category System)
+16:36:37 <badshah400> One could perhaps rename YaST to Administrator settings, and then put it in the system settings shell?
+16:36:37 <prusnak> all others don't fit imho
+16:37:45 <badshah400> the name "system settings" would also not cause any confusion then, i would think
+16:38:55 <malcolmlewis> Seems to me the two most command are YaST itself and the sw_single option
+16:39:07 <malcolmlewis> command =common
+16:40:01 <vuntz> fwiw, adding yast to the current system settings don't work right now (ie: icon appears, but clicking on it does nothing)
+16:40:49 <prusnak> isn't it the same issue that FunkyPenguin had (installing gnome-menus-branding-openSUSE helped)
+16:40:58 <prusnak> ?
+16:41:00 <vuntz> prusnak: I doubt so
+16:43:02 <darkmatter> vuntz: I never meant "use the system settings shell". I meant "change the layout of the existing yast shell to fit better with the system settings" basically. move the filter to the top in a toolbar, change the content layout with text under icons and a more compact grid, etc. just make it look less out of place :)
+16:43:56 <vuntz> darkmatter: it's really simpler to just use the same code
+16:43:59 <prusnak> i guess that's what will happen if we port yast-gtk from gtk2 to gtk3
+16:44:16 <vuntz> anyway
+16:44:30 <vuntz> the yast integration is an open topic
+16:44:53 <vuntz> ideally, we'd get some people to drive it (ie, discuss with various people and propose a way forward)
+16:45:12 <vuntz> any volunteer?
+16:45:28 <vuntz> (it doesn't involve coding, packaging, etc. -- just talking to people)
+16:45:49 <prusnak> i can try it if nmarques doesn't want to
+16:46:54 <badshah400> vuntz: i can talk to Ricardo (current yast2-gtk maintainer) and see if he is willing to do this (yast-gtk2 -> yast-gtk3) and some integration issues as well
+16:47:31 <badshah400> we do have a mailing list exclusively for yast2-gtk too []
+16:47:34 <badshah400> http://groups.google.com/group/yast2-gtk/
+16:47:46 <vuntz> ah, yast-gtk3 is something a bit different. But that needs to be done too
+16:47:57 <vuntz> #info lots of discussion about how to best integrate yast in GNOME 3
+16:48:16 <vuntz> #action badshah400 to discuss yast-gtk2 -> yast-gtk3 migration with ricardo
+16:48:44 <prusnak> yep, integration and yast-gtk3 are separate issues, unless we decide we want to have 100 yast icons in system settings (which we probably don't) :)
+16:48:45 <badshah400> vuntz: thanks
+16:48:55 <vuntz> #action prusnak to lead discussion and propose resolution on how to integrate yast in GNOME 3
+16:49:06 <nmarques> prusnak, you probably should do this
+16:49:09 <vuntz> prusnak: you won it :-)
+16:49:13 * prusnak subscribes to opensuse-gnome
+16:49:19 <prusnak> nmarques: okay :)
+16:49:31 <nmarques> prusnak, I'm buried with 3 interviews and SONAR :/
+16:49:37 <vuntz> anything other Q&A?
+16:50:10 <prusnak> nmarques: i'll gladly help, i just didn't want to take the topic away from you in case you wanted to have it
+16:50:11 <badshah400> sorry if it has been discussed before and I missed it, but compiz for failback session?
+16:50:29 <vuntz> it wasn't discussed
+16:50:35 <vuntz> DimStar, nmarques: any opinion?
+16:50:38 <badshah400> s/failback/fallback/
+16:51:08 <DimStar> badshah400: wanna maintain it? :P
+16:51:40 <badshah400> DimStar: I am very interested in doing so, but how hard would that be?
+16:52:01 <DimStar> not sure it's good as an automatic fallback to compiz. i'd more see something like a 'compiz' in GDM which runs a 'fallback' gnome3 / compiz.
+16:53:18 <vuntz> we can do any of those
+16:53:21 <vuntz> it's not really difficult
+16:53:44 <vuntz> but starting with the compiz session in gdm picker is a good start, I guess :-)
+16:53:57 <DimStar> I tihnk in most cases when compiz can run, gnome should be able to do so too
+16:54:36 <DimStar> it would just come down to 'sync' the way they decide that the hardware is suitable to do so.
+16:56:06 * darkmatter naps. will read logs later.
+16:57:31 <vuntz> badshah400: do you want to work on creating a compiz session for the gdm picker?
+16:57:36 <badshah400> DimStar: i guess i could do the maintenance of compiz with some help from the pros :)
+16:57:39 <vuntz> badshah400: it's really mostly writing a small text file :-)
+16:57:42 <badshah400> vuntz: yes,
+16:58:00 <vuntz> cool
+16:58:10 <vuntz> feel free to ping me about this, I can show you how this works
+16:58:24 <badshah400> vuntz: thanks, would have done so anyways :)
+16:58:25 <vuntz> #action badshah400 to write a .session file for compiz to appear in gdm
+16:58:33 <vuntz> any other q&a?
+16:59:42 <vuntz> okay
+16:59:44 <vuntz> let's call it a day
+16:59:49 <vuntz> thanks all for the meeting
+16:59:55 <vuntz> #endmeeting

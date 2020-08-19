@@ -1,0 +1,318 @@
+14:06:42 <vuntz> #startmeeting
+14:06:45 <vuntz> bah
+14:06:51 <apokryphos> my bad, I reloaded the plugin
+14:06:55 <vuntz> #topic openSUSE GNOME Status - Packaging
+14:07:11 <vuntz> DimStar: do you want to give an overview for this?
+14:07:22 <vuntz> since you're the one with all the latest knowledge :-)
+14:08:04 <DimStar> sure...
+14:08:23 <DimStar> well: we did keep up with packaging to get to GNOME 2.30.1, which has been pushed (and accepted) to Factory during the last weekend.
+14:08:50 <DimStar> as per current factory status, none of the gnome:* packages is failing (the latest ones were pidgin and totem, which are solved again)
+14:09:04 <FunkyPenguin> yay
+14:09:19 <metalgod> DimStar: what about new apps on gnome livecd ?
+14:09:31 <metalgod> i installed 11.3 last week and i still got pidgin
+14:09:46 <vuntz> metalgod: the change just got pushed today
+14:09:51 <DimStar> metalgod: vuntz just fixed the patterns today, so this should be resolved if I understood this right
+14:09:54 <metalgod> great news
+14:10:05 <metalgod> vuntz: tracker pushed too ?
+14:10:18 <FunkyPenguin> does this mean that 2.30.1 will be available for 11.2 as well?
+14:10:23 <DimStar> tracker 0.8.5 is in Factory
+14:10:35 <metalgod> DimStar: i meant replacing beagle
+14:10:43 <DimStar> FunkyPenguin: we did not branch G:S:2.30 out yet, but this is probably one of the next things to do.
+14:11:09 <vuntz> metalgod: we still need to do a few changes to replace beagle, but that should happen this week
+14:11:23 <metalgod> nice
+14:11:25 <DimStar> metalgod: ah: well, there are some packages n G:F that have been switched to tracker (brasero is switched, nautilus has an SR), but that's about it from the switch.... there is certainly stuff we can discuss here today
+14:12:35 <DimStar> otherwise, regarding packaging, I think that's about it... we kept up with upstream releases quiet well this time.
+14:13:12 <FunkyPenguin> somewhat related to GNOME, the moblin packages are all but done
+14:13:17 <vuntz> nod, we did a good job at making sure we were up-to-date most of the time during this cycle, so that helped a lot
+14:13:32 <sreeves1> sandy___: any update from a week or two ago about the cert issue and gwim when switching away from pidgin as the default
+14:14:07 <vuntz> FunkyPenguin: what kind of help is needed?
+14:15:07 <vuntz> DimStar: re branching to G:S:2.30: I guess we should do it once 2.30.2 gets released. Not sure it's worth doing it before
+14:15:11 <FunkyPenguin> vuntz, i have two issues - the install pattern needs sorting, i kind of have something in a gitorious branch but im not 100% sure if it is correct
+14:15:53 <FunkyPenguin> as for packaging atm moblin-panel-web requires moblin-internet-browser at build time
+14:16:12 <DimStar> vuntz: well: we have 2.30.1 packaged now.. .2 will probably not fly in G:F too quick (as we're slowing down with updates due to the freeze)
+14:16:18 <FunkyPenguin> ideally i dont want to have moblin-internet-browser due to security issues etc
+14:16:32 <FunkyPenguin> so i need to try and get the panel app to build using stock firefox
+14:16:32 * vuntz isn't sure who can help with patterns
+14:16:42 <vuntz> ah, sounds like fun :/
+14:16:57 <FunkyPenguin> im fairly sure the pattern is OK but i'll run it by coolo
+14:17:08 <FunkyPenguin> i need to get hold of abock re the firefox fun
+14:17:09 <vuntz> DimStar: oh, I was saying we will only need to branch to package 2.30.2. Since G:F will switch directly to 2.31 once we're unfrozen, I guess
+14:17:46 <DimStar> ah :) I meant creating the G:S:2.30 branch somwwhat now and copying the packages from G:F over...
+14:17:49 <DimStar> (thus branching)
+14:18:02 <vuntz> DimStar: that would mean keeping the packages in sync, though
+14:18:13 <vuntz> since G:S:2.30 will also be used for 11.3 later on
+14:18:24 <vuntz> DimStar: I'm not against it, but that requires a bit more work
+14:19:36 <DimStar> vuntz: true; I'd say branching just before unfreezing then will be the best.
+14:20:09 <vuntz> okay
+14:20:38 <vuntz> of course, if someone volunteers to do the work earlier, that would work too :-)
+14:21:01 <vuntz> one last thing about packaging: on http://en.opensuse.org/Wishlist_Gnome, I added a list of apps we could package
+14:21:38 <vuntz> this is not going to happen for 11.3 obviously, but it's probably a good pointer for potential contributors
+14:21:50 <vuntz> (my list is after the big table)
+14:21:51 <henne> vuntz: can you move that to openfate? :)
+14:22:14 <psankar> vuntz, that is a nice list. some people asked me for a list of new packages to package. I will use this link.
+14:22:23 <vuntz> henne: I don't see myself opening 35 requests
+14:23:05 <vuntz> henne: any suggestion on how to handle this in openfate?
+14:23:14 <DimStar> AI: henne volunteered to transfer the requests to fate ? :)
+14:23:21 <vuntz> (I understand openfate makes it easier to write release notes, for example)
+14:23:23 <henne> vuntz: see someone else opening 35 requests? :)
+14:23:32 <vuntz> heh
+14:23:46 <vuntz> DimStar: http://en.opensuse.org/Meetings/About#Minutes.2FTranscript.2FMeetBot :-)
+14:23:54 <vuntz> okay
+14:23:57 <vuntz> anything else on packaging?
+14:24:29 <vuntz> #action vincent to migrate the list of apps to package to openfate
+14:24:53 <vuntz> let's move to the bugs, then
+14:25:02 <vuntz> #topic openSUSE GNOME Status - Bugs
+14:25:36 <vuntz> we have an easy link for 11.3 bugs
+14:25:41 <vuntz> #info https://bugzilla.novell.com/buglist.cgi?cmdtype=runnamed&namedcmd=GNOME%2011.3
+14:26:25 <vuntz> so far, there's nothing critical for 11.3, as far as I know
+14:26:28 <psankar> vuntz, it says GNOME11.3 doesnt exist . I think it could be user-specific.
+14:26:53 <DimStar> psankar: are you logged in?
+14:27:03 <psankar> DimStar, yes
+14:27:28 <vuntz> hrm
+14:27:30 <psankar> DimStar, i should not ?
+14:27:46 <sreeves1> does not work for me either. same error
+14:27:56 <vuntz> ah, it needs a sharer_id
+14:27:59 <vuntz> I can't see it
+14:28:04 <vuntz> go to https://bugzilla.novell.com/userprefs.cgi?tab=saved-searches
+14:28:05 <DimStar> you should... but yes, the saved searches are user specified.. it works for me coz I have such a saved search in my list too :)
+14:28:07 <vuntz> and look for 11.3
+14:28:42 <vuntz> or try again (I wasn't sharing it before ;-))
+14:29:51 <henne> vuntz: https://features.opensuse.org/query/tag?tag=gnome-wishlist-packages
+14:30:06 <psankar> I could see it in the saved-searches list and could run from it
+14:30:11 <vuntz> henne: ah, nice
+14:30:27 <vuntz> so, is there any bug (11.3 or earlier) people want to discuss?
+14:30:41 <psankar> henne, is there a cli for openfate ?
+14:31:00 <metalgod> i would like to package pygi
+14:31:11 <metalgod> (off topic sorry)
+14:31:59 <vuntz> I'd like to discuss security bugs a bit
+14:32:02 <henne> psankar: no
+14:32:14 <psankar> henne, ah okay. thanks.
+14:32:15 <vuntz> right now, since the security bugs are private, only one or two people are aware of them
+14:32:23 <vuntz> which makes us a bit slow to push the fixes
+14:32:43 <vuntz> should we cc a small group of people all the time?
+14:33:30 <FunkyPenguin> vuntz, sorry for the delay in answering about bugs, but ra100 has a couple on the wiki
+14:33:47 <psankar> for some reason I thought security bug fixes are pushed by the security team and we just have to attach the patches in bugzilla (may be I am wrong)
+14:33:57 <darix> psankar: you are wrong :)
+14:34:10 <vuntz> psankar: I wish it worked this way ;-)
+14:34:13 <darix> you submit ready made packages and tell the security team when you are done
+14:34:20 <psankar> darix, ah okay. thanks. May be I got confused with some SLE processes :-)
+14:34:26 <darix> by reassigning the bug to them
+14:34:37 <psankar> darix, ah okay.
+14:34:42 <vuntz> FunkyPenguin: which page on the wiki?
+14:35:11 <FunkyPenguin> http://en.opensuse.org/GNOME/Meetings/Current
+14:36:38 <vuntz> so the bugs mentioned in there (ignoring the boot time, that we can discuss afterwards) are relatively easy to fix, but it just takes time to do
+14:36:45 <vuntz> so anyobody could help
+14:37:44 <DimStar> well, the 'private bugs' are always setting me off a bit too, I'd say they are somewhat a pain for an open project.
+14:37:49 <vuntz> of course, the big issue behind those bugs is that we have an applications.menu that is weird in openSUSE
+14:38:02 <metalgod> vuntz: what about removing HAL from the livecd ? according to kay isn't very far
+14:38:24 <vuntz> metalgod: let's talk about that in the Q&A, after bugs
+14:38:29 <DimStar> metalgod: I think I have 2 bnc entries left to get rid of hal... gvfs beings the 'bigger' one of them.
+14:38:30 <henne> DimStar: most security bugs have a coordinated release date.
+14:38:43 <henne> DimStar: between other vendors, distros and the like
+14:38:44 <vuntz> DimStar: we cannot make security bugs public, unfortunately
+14:38:54 <henne> fortunately you mean :)
+14:38:57 <kay> metalgod: evolution, gnome-vfs2, gimp are the only things left
+14:38:59 <vuntz> that's just the way this is handled (not specific to openSUSE)
+14:39:02 <DimStar> henne: sec yes, but the last times I ran into 'license questions for newly pushed packages' which I just get a permission denied (granted, I always got a CC after inquiring it.. but still)
+14:39:57 <henne> DimStar: that i don't know of :)
+14:40:28 <vuntz> DimStar: want us to ask the legal team to try to handle things differently?
+14:40:48 <vuntz> at least when it's the "GPLv2 or GPLv3" kind of bugs
+14:41:03 <DimStar> vuntz: I think it would be great if that can be adressed in a different way... or it will always remain with you.
+14:41:26 <vuntz> okay
+14:41:52 <vuntz> #action vincent to discuss with legal team how to make the licensing-related bugs open by default
+14:42:17 <vuntz> any idea how to improve this for security bugs, though?
+14:42:45 <darix> vuntz: open by default wont work
+14:43:00 <vuntz> sure
+14:43:03 <darix> what might work is ... CCing the external package maintainer by default
+14:44:07 <vuntz> darix: we're maintaining the packages as a team, though
+14:44:20 <vuntz> darix: so there's not one clearly identified person, but a group of people
+14:44:44 <vuntz> maybe we should have some private gnome-security mailing list?
+14:44:44 <darix> vuntz: is dimstar in the gnome-maintainers@ group?
+14:45:04 <vuntz> darix: gnome-maintainers is novell stuff. It's used for non-openSUSE products too, so can't work
+14:45:09 <darix> hrm
+14:45:30 <DimStar> vuntz: simple: hire me :)
+14:45:34 <vuntz> heh
+14:45:44 <darix> ohnoes!
+14:45:51 <suseROCKs> yes, please hire DimStar so he can buy more pizzas.
+14:46:04 <darix> DimStar: and what about captain_magnus and metalgod?:p
+14:46:34 <psankar> vuntz, may be we can just create a new opensuse-gnome alias ? if gnome-maintainers is used by SLE people etc. ?
+14:47:00 <vuntz> captain_magnus: here?
+14:47:09 <metalgod> i already asked that alias before
+14:47:17 <sreeves1> vuntz: I like your idea of a small core opensuse gnome security team that is always cc'd on security bugs
+14:47:28 <sreeves1> rather than another mailing list
+14:47:29 <vuntz> we actually have a os.gnome.maintainers novell account now
+14:47:30 <metalgod> currently i'm following the gnome-maintainers alias
+14:47:45 <vuntz> (it's using a gmail address)
+14:48:23 * metalgod votes to hire DimStar
+14:48:27 <vuntz> darix: do we have private mailing lists?
+14:48:38 <metalgod> DimStar: kde team have 2 people why gnome only have 1 ?
+14:49:09 <DimStar> metalgod: ew have a smaller userbase is probably the official statement.
+14:49:11 <psankar> metalgod, i think federico1 is part of gnome team
+14:49:14 <darix> metalgod: well ... there are way more gnome related people in novell/opensuse if you look at the other teams
+14:49:20 <darix> like federico
+14:49:25 <darix> all the evolution devs ;)
+14:49:34 <metalgod> darix: yes but not directly involved in gnome packaging like kde
+14:49:34 <darix> and suddenly you notice the kde team is much smaller
+14:49:47 <vuntz> psankar: federico moved to another team, actually (he's not in the boosters team anymore)
+14:50:07 <psankar> darix, there are only 2 (evolution) and they are not involved in gnome packaging etc. (just like sled team) :-)
+14:50:08 <darix> metalgod: well ... that is actually a bad development ... that the folks stop contributing to the opensuse development
+14:50:11 <suseROCKs> so its just you now, vuntz?
+14:50:12 <darix> and something we should work on
+14:50:33 <wstephenson> metalgod: right, hiring devs is so not openSUSE's style
+14:50:46 <wstephenson> we are all community multipliers now.
+14:51:08 <psankar> metalgod, however you have my +1 for DimStar :-)
+14:51:11 <vuntz> suseROCKs: well, depends what you mean with "just me now" :-)
+14:51:19 <metalgod> darix: the problem is that we are all the same and people have other jobs/lifes
+14:51:27 <metalgod> i already spend my free time on gnome
+14:51:49 <darix> metalgod: i am not blaming you :)
+14:51:53 <suseROCKs> vuntz,  just you on the booster team reprasentnin' GNOME?
+14:52:12 <metalgod> the distro would be much better than it is if have more people from novell working
+14:52:13 <henne> everybody is representing GNOME :)
+14:52:16 <metalgod> like fedora
+14:52:30 <suseROCKs> henne,   In theory, yes
+14:52:48 <suseROCKs> but I'm referring to those with more intricate knowledge.
+14:52:53 <henne> suseROCKs: nope also in practice
+14:53:08 <vuntz> suseROCKs: I'm the only booster using a lot of work time to work on GNOME in openSUSE, I guess
+14:53:27 <vuntz> suseROCKs: but coolo also fixes stuff for GNOME from time to time, for example
+14:53:35 <wstephenson> metalgod: give us redhat's market share and we can hire a lot more gnome people
+14:53:50 <darix> vuntz: and dont forget me reviewing everything :p
+14:54:01 <metalgod> wstephenson: isn't novell that claims it have the coorporate desktop market ? :)
+14:54:02 <vuntz> darix: you left the boosters team, so you don't exist anymore for me ;-)
+14:54:18 * darix disappears
+14:54:22 <psankar> oh /me didnt knew that as well.
+14:54:47 <vuntz> so, hrm, I guess we moved out from the bugs topic to q&a
+14:54:56 <darix> imho it would help a lot of all the "former" gnome devs in novell/suse would just dedicate 4-8hours per week for opensuse stuff
+14:54:58 <vuntz> #topic openSUSE GNOME Status - Q & A
+14:55:06 <darix> and suddenly it might happen that vuntz can twist thumbs again
+14:55:10 <darix> for a few minutes^^
+14:55:29 <vuntz> let's try to get back on track
+14:55:48 <wstephenson> darix: it would also help if all the @kde.org people did the same for opensuse too. but that's a digression.
+14:55:50 <vuntz> metalgod: I think the hal topic already got discussed, in the end
+14:56:02 <vuntz> metalgod: anything else you want to add there?
+14:56:05 <wstephenson> vuntz: so you are dropping hal for the gnome cd?
+14:56:32 <darix> wstephenson: i am not talking about @kde.org/@gnome.org ... i talk about people in the folks in preload :p
+14:56:37 <vuntz> wstephenson: I guess firefox will still require it
+14:56:40 <darix> preload department (that is)
+14:56:47 <psankar> wstephenson, i dont think that would be possible until atleast evo/ff gets rid of the dependancy
+14:56:48 <vuntz> wstephenson: but it shouldn't be needed on boot anymore
+14:56:57 <metalgod> after all so many flames on kde move on 11.2 and nobody gain anything
+14:57:07 <kay> vuntz: firefox uses the old gnome-vfs2, and that could be build without hal
+14:57:27 <vuntz> kay: oh, true. What about OOo?
+14:57:28 <kay> vuntz: we still start it on every boot
+14:57:38 <kay> vuntz: i guess its the same
+14:57:42 <wstephenson> darix: and i'm talking about the kde people in the studio team, for example.
+14:58:06 <vuntz> kay: hmm. Any idea what we need to do to not start it on boot?
+14:58:30 <kay> vuntz: i have only this left from "rpm -e hal" gnome-vfs2-2.24.3-1.7.x86_64 hal-palm-0.12.5-1.8.x86_64 gimp-2.6.8-3.6.x86_64
+14:58:34 <FunkyPenguin> ive got a question for all here
+14:58:56 <FunkyPenguin> actually im stealing it from suseROCKs but who's checking :)
+14:58:57 <kay> vuntz: dbus autostart, but i rather see it not installed at all
+14:59:20 <wstephenson> kay: could it be autostarted on demand if someone runs a kde app that needs it?
+14:59:27 * suseROCKs fails his check system on FunkyPenguin
+14:59:31 <FunkyPenguin> how do we engage the wider community to use opensuse for all their gnome needs?
+14:59:33 <darix> wstephenson: :)
+14:59:35 <vuntz> kay: is it reasonable to remove the vfs part of OOo, though?
+14:59:44 <kay> wstephenson: it could
+14:59:59 <metalgod> FunkyPenguin: i guess 11.3 will be a start since it will be a bleeding edge release :)
+15:00:02 <kay> vuntz: it's not to be removed, it's g-vfs2 to be compile without hal, i guess
+15:00:10 <vuntz> kay: I mean, doesn't that mean it won't be able to access documents on usb keys?
+15:00:23 <kay> vuntz: and it will fall back to the old behavior, like parsing mtab and such
+15:00:44 <henne> uhaaa
+15:00:54 <kay> vuntz: i don't really know about the details, what exactly hooks into the stuff
+15:00:59 * henne pretends he didnt hear that
+15:01:05 * vuntz looks at mmeeks
+15:01:21 * suseROCKs never has to "pretend he didn't hear that"
+15:01:30 <henne> lol
+15:02:05 <metalgod> i guess the "ubuntu way" is to trigger hal via dbus when firefox/Ooo is started
+15:02:28 <kay> vuntz: i guess it's some magic auto-mount handling, not sure if that is needed. i have killed hal since long, and not started and can access all volumes just fine from firefox
+15:03:01 <kay> vuntz: same for Ooo
+15:03:10 <DimStar> kay: well, udev is auto mounting now... so this should not be a need anymore.
+15:03:14 <kay> metalgod: i doubt it's even started, it wasn't when i tried
+15:03:24 <vuntz> ok, so, we'll push things anyway
+15:03:34 <vuntz> and we'll see what happens :-)
+15:03:36 <kay> DimStar: it's udisks and nautilus, yes
+15:04:01 <kay> DimStar: udisks does the stuff, nautilus triggers it
+15:04:27 <kay> vuntz: i guess, that's the only real way to find out :)
+15:04:52 <kay> vuntz: we could do a gnome-vfs2-hal package if stuff goes wrong :)
+15:05:14 <vuntz> kay: not sure; it's gnome-vfs-daemon that links to it, and it's likely needed at runtime for apps
+15:05:27 <vuntz> or, well, I guess we could compile two different versions
+15:05:39 <vuntz> and have conflicting packages
+15:05:44 <vuntz> but that's an horrible thought
+15:05:52 <kay> vuntz: yeah, but what does it do? hal wasn't autostarted by Ooo or firefox here
+15:05:58 <vuntz> no idea
+15:06:09 <vuntz> let's just go the simple way :-)
+15:06:21 <kay> vuntz: but other stuff like dbus-send starts it, if i call into it
+15:06:27 <vuntz> DimStar: do you know why the evo change for hal was rejected?
+15:06:48 <suseROCKs> well thanks all for letting me peek at you all.   Time for me to head over to the marketing channel for our meeting.  Bye all.
+15:06:48 <kay> vuntz: i guess it was just not done properly?
+15:07:05 <kay> vuntz: the evo change, i mean
+15:07:43 <kay> vuntz: it's still open: https://bugzilla.novell.com/show_bug.cgi?id=580612
+15:07:47 <vuntz> I guess
+15:07:51 <vuntz> would need to investigate
+15:08:01 <vuntz> anything else on hal?
+15:08:26 <kay> https://bugzilla.novell.com/show_bug.cgi?id=601947
+15:08:36 <kay> https://bugzilla.novell.com/show_bug.cgi?id=601954
+15:08:51 <kay> vuntz: that's all i have
+15:08:51 <metalgod> gimp upstream hasn't fixed hal->udisks
+15:09:00 <metalgod> :/
+15:09:13 <kay> metalgod: but we can sub-package it, it's not needed the module usually
+15:09:33 <DimStar> vuntz: was that the one I rejected for evo?
+15:09:35 <kay> metalgod: will still have the build-dep but not on the CD
+15:10:07 <vuntz> DimStar: maybe
+15:10:33 <DimStar> vuntz: ah yes... remember that one... the only thing he did was putting #%package and #%description, which leaves all the trailing rest in the description of the previous package...
+15:10:46 <vuntz> ah, ok
+15:10:49 <vuntz> so wrong
+15:10:59 <vuntz> and that's not what we agreed to do :/
+15:11:05 <DimStar> (AJ copied my decline message to comment#3 on the bug)
+15:11:05 <vuntz> anyway
+15:11:13 <vuntz> okay
+15:11:19 <vuntz> let's talk a bit about boot time
+15:11:57 <vuntz> last week, I booted the livecd in my vm, and this was not as bad as I had expected after reading the mail on opensuse-factory
+15:12:09 <metalgod> vuntz: about upstart ?
+15:12:15 <vuntz> metalgod: no
+15:12:31 <DimStar> metalgod: there was an empirical statistic about boot times posted on -factory
+15:12:35 <vuntz> metalgod: about the fact that the gnome livecd seems to be much slower than all other livecd out there
+15:12:41 <metalgod> ouch
+15:12:49 <metalgod> i passed that thread for sure
+15:12:51 <vuntz> that said, it felt like something was slow on login
+15:13:13 <metalgod> well i have to agree with the login part
+15:13:16 <vuntz> I couldn't investigate since, hrm, VirtualBox enjoyed making my life hard
+15:13:35 <metalgod> opensuse gdm is slower than mandriva and fedora
+15:13:43 <metalgod> at least i feel that on VB
+15:13:49 <vuntz> it'd be great to have someone play with bootchart and a default install of opensuse
+15:13:57 <vuntz> any volunteer for that?
+15:14:12 <metalgod> vuntz: i'm doing bootcharts for mandriva/caixamagica atm
+15:14:26 <vuntz> metalgod: so can you also do some for opensuse?
+15:14:28 <metalgod> i can share some stuff but i can't volunteer sorry
+15:14:47 <metalgod> vuntz: i have to deliver the next netbook edition fast :/
+15:15:00 <vuntz> metalgod: we need opensuse ones, really, since it seems we have something wrong in our distro that is not elsewhere
+15:15:05 <vuntz> anybody else?
+15:15:40 <metalgod> vuntz: http://people.caixamagica.pt/lmedinas/Magalhaes/bootchart_sem_mysql.png
+15:15:42 <FunkyPenguin> um what's needed? and is there a howto?
+15:15:53 <metalgod> pretty fast for a netbook loaded with server stuff
+15:15:58 <metalgod> and kde4 :)
+15:16:56 <vuntz> FunkyPenguin: I'm sure mmeeks can give a crash course about how to use bootchart
+15:17:07 <metalgod> bootchart1 is pretty easy
+15:17:19 <metalgod> mmeeks bootchart2 i've never played with it
+15:17:39 <metalgod> i plan to do some tests this week
+15:18:02 <FunkyPenguin> vuntz, im not guaranteeing anything, but i will try
+15:18:39 <vuntz> ok
+15:18:45 <vuntz> thanks
+15:19:26 <vuntz> so, we still have the upstream stuff on the agenda to discuss, but I suggest we skip it this time since the meeting was already long
+15:20:21 <vuntz> #action andrew to play with bootchart to help investigation of slow boot
+15:20:32 <vuntz> any other topic for Q & A?
+15:20:38 <vuntz> or shall we close the meeting?
+15:21:10 <sreeves1> vuntz: maybe have another meeting in 2 weeks rather than a month since we still have agenda item left ?
+15:22:07 <vuntz> FunkyPenguin: opinion on that?
+15:23:23 <FunkyPenguin> im happy with that. i just quickly came up with the idea so it is open to modification :)
+15:24:01 <vuntz> any objection about doing a meeting in two weeks?
+15:24:31 <vuntz> actually, let's just assume we'll do it and see if there'll be objections on the mailing list
+15:24:57 <vuntz> FunkyPenguin: do you think you could send a mail to announce the next meeting?
+15:25:27 <FunkyPenguin> vuntz, sure - just to confirm we are going to cover upstream only?
+15:25:56 <mmeeks> metalgod: ah - yes, you need to use bootchart2 I guess ;-)
+15:25:59 <mmeeks> which is the same story really.
+15:26:04 <vuntz> main topic will be upstream, but I guess we can have a Q&A about the status in openSUSE too
+15:26:08 <mmeeks> but just read the README, it's pretty self explanatory.
+15:27:10 <metalgod> mmeeks: i plan to test it this week because it feels more accurate than bootchart1
+15:27:14 <vuntz> ok
+15:27:18 <vuntz> thanks all for the meeting!
+15:27:20 <vuntz> #endmeeting

@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:01:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:01:58</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Feb 14 18:01:58 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:01:58</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:02:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> if you have additional items to discuss, just add them to the wiki page
+<a name="l-5"></a><span class="tm">18:03:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Experience with 11.4 RC1</span>
+<a name="l-6"></a><span class="tm">18:04:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> So far, I have been running RC1 on my netbook without major trouble, but found a yast2-gtk bug late (already fixed)
+<a name="l-7"></a><span class="tm">18:05:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> openqa also lists some open issues. but few major or new
+<a name="l-8"></a><span class="tm">18:05:15</span><span class="nk"> &lt;Holgi&gt;</span> I'm also using RC1 with my workstation and my laptop with LXDE
+<a name="l-9"></a><span class="tm">18:05:21</span><span class="nk"> &lt;Holgi&gt;</span> and found some minor issues
+<a name="l-10"></a><span class="tm">18:06:23</span><span class="nk"> &lt;LWFinger&gt;</span> I have 2 instances, one 32 bit and one 64 running regularly with KDE - only small problems
+<a name="l-11"></a><span class="tm">18:07:12</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">btw:</span> would be nice to say when one is done, so that the next one can report on RC1 testing
+<a name="l-12"></a><span class="tm">18:07:46 </span><span class="nka">* bmwiedemann</span> <span class="ac">done</span>
+<a name="l-13"></a><span class="tm">18:08:09 </span><span class="nka">* Holgi</span> <span class="ac">also done with experiences</span>
+<a name="l-14"></a><span class="tm">18:08:16</span><span class="nk"> &lt;LWFinger&gt;</span> Intermittently, NetworkManager fails to start on boot. No bug filed yet.
+<a name="l-15"></a><span class="tm">18:08:22</span><span class="nk"> &lt;LWFinger&gt;</span> Done
+<a name="l-16"></a><span class="tm">18:08:24</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Similar experience here KDE RC1, promising so far - nothing deadly.
+<a name="l-17"></a><span class="tm">18:08:27</span><span class="nk"> &lt;ReferenceSeete&gt;</span> *done
+<a name="l-18"></a><span class="tm">18:08:46</span><span class="nk"> &lt;LWFinger&gt;</span> RC1 looks pretty good.
+<a name="l-19"></a><span class="tm">18:09:07</span><span class="nk"> &lt;Holgi&gt;</span> I checked bugzilla
+<a name="l-20"></a><span class="tm">18:09:18</span><span class="nk"> &lt;Holgi&gt;</span> and found that the status of it is quite bad
+<a name="l-21"></a><span class="tm">18:09:33</span><span class="nk"> &lt;Holgi&gt;</span> there are a lot of old bugs still open even they are fixed
+<a name="l-22"></a><span class="tm">18:09:45</span><span class="nk"> &lt;Holgi&gt;</span> talking about Milestone 1-5 issues
+<a name="l-23"></a><span class="tm">18:10:10</span><span class="nk"> &lt;Holgi&gt;</span> not sure if this is something to talk about for us
+<a name="l-24"></a><span class="tm">18:10:21</span><span class="nk"> &lt;Holgi&gt;</span> but it does not make our work easier
+<a name="l-25"></a><span class="tm">18:10:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> so we could have an open-bugs day soonish to coordinate people trying to reproduce + update bugs?
+<a name="l-26"></a><span class="tm">18:10:37</span><span class="nk"> &lt;Holgi&gt;</span> when we have huge bug lists to monitor
+<a name="l-27"></a><span class="tm">18:11:22</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> maybe yes - but I would prefer developers to set their bugs to fixed
+<a name="l-28"></a><span class="tm">18:11:23</span><span class="nk"> &lt;tertitten&gt;</span> <span class="hi">Holgi:</span> you say that bugreports for fixed issues are open, can't you just close them ?
+<a name="l-29"></a><span class="tm">18:11:52</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">tertitten:</span> in general yes - if I had the same issue
+<a name="l-30"></a><span class="tm">18:12:03</span><span class="nk"> &lt;tertitten&gt;</span> OK, I see
+<a name="l-31"></a><span class="tm">18:12:11</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">tertitten:</span> but I'm wondering why developers don't do if the submit a fix
+<a name="l-32"></a><span class="tm">18:12:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">tertitten:</span> it is good to be able to reproduce the bugs before
+<a name="l-33"></a><span class="tm">18:12:34</span><span class="nk"> &lt;tertitten&gt;</span> got it :)
+<a name="l-34"></a><span class="tm">18:12:40</span><span class="nk"> &lt;Holgi&gt;</span> s/the/they/
+<a name="l-35"></a><span class="tm">18:13:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> I added the bugzilla cleanup to our agenda, but let's stay with RC1 experience for some longer. jradzuweit or anyone else have experience to share?
+<a name="l-36"></a><span class="tm">18:14:13</span><span class="nk"> &lt;Holgi&gt;</span> thx
+<a name="l-37"></a><span class="tm">18:16:26</span><span class="nk"> &lt;LWFinger&gt;</span> One nice feature I forgot earlier is that I was able to disable tapping on my touchpad from the GUI - first time ever.
+<a name="l-38"></a><span class="tm">18:17:37</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> on icewm I usually have no tapping by default, but now can enable it by adding Option "TapButton1" "1" to /etc/X11/xorg.conf.d/50-synaptics.conf
+<a name="l-39"></a><span class="tm">18:17:50</span><span class="nk"> &lt;Holgi&gt;</span> my issues are: PIN for 3G card #668838, problems with ttyUSB #670959, stutdown of laptop #671183 and, sound after suspend #671689
+<a name="l-40"></a><span class="tm">18:18:59</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> With KDE, it was on by default, but I did not need to touch xorg.conf.d.
+<a name="l-41"></a><span class="tm">18:20:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK, I suppose, that's it for RC1 experience
+<a name="l-42"></a><span class="tm">18:21:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> should we add any of the bugs to the most-annoying list?
+<a name="l-43"></a><span class="tm">18:21:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> the yast2-gtk one already had a dup, so that might be good to add
+<a name="l-44"></a><span class="tm">18:21:43</span><span class="nk"> &lt;Holgi&gt;</span> not out of mine
+<a name="l-45"></a><span class="tm">18:23:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> that is bug 670625
+<a name="l-46"></a><span class="tm">18:23:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open-bugs bugzilla cleanup day planning</span>
+<a name="l-47"></a><span class="tm">18:25:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> That open-bugs day could help to get a better overview of bugs that are really still in openSUSE and those that have just been forgotten
+<a name="l-48"></a><span class="tm">18:25:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> this should involve the wider community and should thus include some announcement and preparation
+<a name="l-49"></a><span class="tm">18:25:43</span><span class="nk"> &lt;LWFinger&gt;</span> Would this be general, or just 11.4
+<a name="l-50"></a><span class="tm">18:26:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, concentrating on 11.4 would be good. next sunday might be good, as we have one weekly news before
+<a name="l-51"></a><span class="tm">18:26:10</span><span class="nk"> &lt;ReferenceSeete&gt;</span> We could always test old bugs against 11.4
+<a name="l-52"></a><span class="tm">18:26:23</span><span class="nk"> &lt;ReferenceSeete&gt;</span> ...then close or update as applicable.
+<a name="l-53"></a><span class="tm">18:26:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes. but there are plenty old bugs, too
+<a name="l-54"></a><span class="tm">18:27:31</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">bmwiedemann:</span> Would the new item be my regular weekly column, or a special?
+<a name="l-55"></a><span class="tm">18:27:47</span><span class="nk"> &lt;LWFinger&gt;</span> s/new/news/
+<a name="l-56"></a><span class="tm">18:27:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> either would help.
+<a name="l-57"></a><span class="tm">18:28:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> we could talk/email to saigkill of the news team
+<a name="l-58"></a><span class="tm">18:28:36</span><span class="nk"> &lt;LWFinger&gt;</span> OK, I'll get a draft on the testing ML and I'll communicate with Sasha.
+<a name="l-59"></a><span class="tm">18:28:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> we must make a wiki page for the coordination
+<a name="l-60"></a><span class="tm">18:29:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> so we can refer everyone to the page and update the planning, preparation, status etc.
+<a name="l-61"></a><span class="tm">18:29:30</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> we should talk to boosters team to get their help
+<a name="l-62"></a><span class="tm">18:29:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">Holgi:</span> good idea.
+<a name="l-63"></a><span class="tm">18:29:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> do you?
+<a name="l-64"></a><span class="tm">18:29:51</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> they do have experience with organizing events like this
+<a name="l-65"></a><span class="tm">18:30:19</span><span class="nk"> &lt;LWFinger&gt;</span> I'll also post to the Beta Forum once we have details. Good people there.
+<a name="l-66"></a><span class="tm">18:30:21</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> I'm flying out to beijing on Wednesday - not sure if I'm able to do that tomorrow
+<a name="l-67"></a><span class="tm">18:30:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> KDE team did some bug event like this, too... and vuntz coordinated one for obsolete SUSE releases
+<a name="l-68"></a><span class="tm">18:30:28</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> can you take that AI?
+<a name="l-69"></a><span class="tm">18:31:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes, of course.
+<a name="l-70"></a><span class="tm">18:32:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">bmwiedemann talks to boosters for help with open-bugs cleanup day</span>
+<a name="l-71"></a><span class="tm">18:32:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> who creates the wiki page?
+<a name="l-72"></a><span class="tm">18:34:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> well... then I will.
+<a name="l-73"></a><span class="tm">18:34:42</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> maybe there is old stuff you can use
+<a name="l-74"></a><span class="tm">18:35:05</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> can you make sure it is part of the next news?
+<a name="l-75"></a><span class="tm">18:35:13</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-76"></a><span class="tm">18:35:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> we need some nice canned responses for handling bugs... do we have such already? like "this bug is believed to be fixed in the current version. Please reopen it, if you can still reproduce it"
+<a name="l-77"></a><span class="tm">18:36:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">LWFinger adds open-bugs cleanup day info to next news</span>
+<a name="l-78"></a><span class="tm">18:36:55</span><span class="nk"> &lt;LWFinger&gt;</span> I've not been part of such activity. How is it done?
+<a name="l-79"></a><span class="tm">18:37:02</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> I'm not sure if there is a good term already
+<a name="l-80"></a><span class="tm">18:37:33</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> go to bugzilla and do a search about open bugs for 11.4
+<a name="l-81"></a><span class="tm">18:37:44</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> I will add some HowTo to the wiki page
+<a name="l-82"></a><span class="tm">18:38:00</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> then check if you find bugs you know how to reproduce
+<a name="l-83"></a><span class="tm">18:38:03</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">Holgi:</span> I meant the copperation/mass activity part.
+<a name="l-84"></a><span class="tm">18:38:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> is http://en.opensuse.org/openSUSE:Open-Bugs-Day a good URL?
+<a name="l-85"></a><span class="tm">18:38:32</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> ahh, it's just staying together in a irc channel
+<a name="l-86"></a><span class="tm">18:38:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. this one
+<a name="l-87"></a><span class="tm">18:38:44</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> and coordinating
+<a name="l-88"></a><span class="tm">18:38:54</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> but testing will be done individually
+<a name="l-89"></a><span class="tm">18:38:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> and helping each other
+<a name="l-90"></a><span class="tm">18:39:17</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> we should also check if we will offer t-shirts for those that close a huge number of bugs
+<a name="l-91"></a><span class="tm">18:39:30</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> maybe boosters team can sponsor us some
+<a name="l-92"></a><span class="tm">18:39:57</span><span class="nk"> &lt;bmwiedemann&gt;</span> t-shirts for top 5 bug-handlers sounds like a nice incentive
+<a name="l-93"></a><span class="tm">18:40:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> or top10?
+<a name="l-94"></a><span class="tm">18:40:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> whatever
+<a name="l-95"></a><span class="tm">18:40:25</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> depends on how much they sponsor us
+<a name="l-96"></a><span class="tm">18:41:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">bmwiedemann will check with boosters about t-shirts for top bug-handlers on open-bugs day</span>
+<a name="l-97"></a><span class="tm">18:42:37</span><span class="nk"> &lt;LWFinger&gt;</span> Next Sunday was mentioned as a date. Is that good? Time?
+<a name="l-98"></a><span class="tm">18:42:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> any comments on the URL? shall we give the event some more google-able name?
+<a name="l-99"></a><span class="tm">18:42:53</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> isn't that to early
+<a name="l-100"></a><span class="tm">18:43:08</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> I don't think we can widespread the information before
+<a name="l-101"></a><span class="tm">18:43:12</span><span class="nk"> &lt;LWFinger&gt;</span> Probably.
+<a name="l-102"></a><span class="tm">18:43:34</span><span class="nk"> &lt;Holgi&gt;</span> I guess next news will be available on next saturday
+<a name="l-103"></a><span class="tm">18:43:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> it must be soonish to have a chance to use cleaned-up bugzilla info for RC2, but not too soon to get the news out to people
+<a name="l-104"></a><span class="tm">18:44:04</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">Holgi:</span> The next news will be Saturday.
+<a name="l-105"></a><span class="tm">18:44:27</span><span class="nk"> &lt;Holgi&gt;</span> ok, so either the weekend after or during the week
+<a name="l-106"></a><span class="tm">18:44:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> 2011-02-20 00:00 to 23:59 UTC is good?
+<a name="l-107"></a><span class="tm">18:45:06</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> to early I think
+<a name="l-108"></a><span class="tm">18:45:25</span><span class="nk"> &lt;ReferenceSeete&gt;</span> 27th?
+<a name="l-109"></a><span class="tm">18:45:33</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Or 26th?
+<a name="l-110"></a><span class="tm">18:46:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> RC2 is 2011-02-25
+<a name="l-111"></a><span class="tm">18:46:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> and afterwards only the most critical bugs will be adressed
+<a name="l-112"></a><span class="tm">18:47:28</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> but 23th would also be to late then
+<a name="l-113"></a><span class="tm">18:47:43</span><span class="nk"> &lt;ReferenceSeete&gt;</span> We're so late in the process it may be better to think of this as more of a forward-looking project (11.5)
+<a name="l-114"></a><span class="tm">18:47:45</span><span class="nk"> &lt;bmwiedemann&gt;</span> this is why 20th would be good.
+<a name="l-115"></a><span class="tm">18:48:26</span><span class="nk"> &lt;Holgi&gt;</span> ok, I leave it up to you
+<a name="l-116"></a><span class="tm">18:48:36</span><span class="nk"> &lt;Holgi&gt;</span> maybe you want to talk to coolo before?
+<a name="l-117"></a><span class="tm">18:48:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">ReferenceSeete:</span> would still be a good idea to do it once and re-do it later for 11.5
+<a name="l-118"></a><span class="tm">18:49:32</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Ok, how about this as a plan.  TCT does this on the 20th.  Whoever else we can bring on in time is a bonus, but not a priority
+<a name="l-119"></a><span class="tm">18:49:54</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Then we galvanize a larger group later.
+<a name="l-120"></a><span class="tm">18:49:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">ReferenceSeete:</span> that is good
+<a name="l-121"></a><span class="tm">18:50:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> with this being fresh in the next saturday openSUSE-news, there will hopefully be more people around to help
+<a name="l-122"></a><span class="tm">18:50:59</span><span class="nk"> &lt;LWFinger&gt;</span> I agree. For 11.5, we can be better organized.
+<a name="l-123"></a><span class="tm">18:51:23</span><span class="nk"> &lt;ReferenceSeete&gt;</span> More people would be great.  Between the news and getting volunteers out of the forums we may end up with a sizable group.
+<a name="l-124"></a><span class="tm">18:51:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe I even put together some tool to make the process more streamlined
+<a name="l-125"></a><span class="tm">18:51:53</span><span class="nk"> &lt;ReferenceSeete&gt;</span> I'm just proposing that we make the commitment for the 20th no matter who else shows up.
+<a name="l-126"></a><span class="tm">18:51:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> apropos forums... who will announce the event there?
+<a name="l-127"></a><span class="tm">18:52:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">ReferenceSeete:</span> will you?
+<a name="l-128"></a><span class="tm">18:52:05</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Sure.
+<a name="l-129"></a><span class="tm">18:52:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">ReferenceSeete will announce open-bugs day on openSUSE forums</span>
+<a name="l-130"></a><span class="tm">18:53:06</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Are we settled on 24hrs (as per UTC)?
+<a name="l-131"></a><span class="tm">18:53:48</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">ReferenceSeete:</span> we could mention saturday 0-23:59 local time
+<a name="l-132"></a><span class="tm">18:54:06</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Ok.  And we'll use this IRC channel as a coordination point?
+<a name="l-133"></a><span class="tm">18:54:21</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">ReferenceSeete:</span> ours?
+<a name="l-134"></a><span class="tm">18:54:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> just created http://en.opensuse.org/openSUSE:Open-Bugs-Day which will also serve as coordination point
+<a name="l-135"></a><span class="tm">18:54:57</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> very good
+<a name="l-136"></a><span class="tm">18:55:21</span><span class="nk"> &lt;ReferenceSeete&gt;</span> <span class="hi">Holgi:</span> yes opensuse-testing
+<a name="l-137"></a><span class="tm">18:55:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> and yes, IRC is also good, but has a very limited audience
+<a name="l-138"></a><span class="tm">18:55:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> so use it for some quick tips, but all the interesting stuff must end up on the wiki page
+<a name="l-139"></a><span class="tm">18:56:14</span><span class="nk"> &lt;ReferenceSeete&gt;</span> <span class="hi">bmwiedemann:</span> True, I'll just mention IRC as a bonus avenue.
+<a name="l-140"></a><span class="tm">18:56:39</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> right - but it's good if people can have the feeling - they are not alone
+<a name="l-141"></a><span class="tm">18:56:45</span><span class="nk"> &lt;LWFinger&gt;</span> I'll get both in the news item.
+<a name="l-142"></a><span class="tm">18:57:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> I will add mention of #opensuse-testing on the wiki... so the wiki link would suffice in most places
+<a name="l-143"></a><span class="tm">18:58:06</span><span class="nk"> &lt;Holgi&gt;</span> we need to be around in the irc channel
+<a name="l-144"></a><span class="tm">18:58:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> I always am
+<a name="l-145"></a><span class="tm">18:58:17</span><span class="nk"> &lt;Holgi&gt;</span> unfortunately I'm in china at that date
+<a name="l-146"></a><span class="tm">18:58:25</span><span class="nk"> &lt;Holgi&gt;</span> so I guess I'm not
+<a name="l-147"></a><span class="tm">18:59:01</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> also consider announcement on opensuse-announcement@opensuse.org
+<a name="l-148"></a><span class="tm">18:59:20</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> and ask news team to add the date on news.opensuse.org
+<a name="l-149"></a><span class="tm">18:59:26</span><span class="nk"> &lt;Holgi&gt;</span> blogging is also a good idea
+<a name="l-150"></a><span class="tm">18:59:36</span><span class="nk"> &lt;LWFinger&gt;</span> I will be live on IRC from 0:00-6:00 and 16:00-23:59.
+<a name="l-151"></a><span class="tm">18:59:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. I can be here 06:00-22:00
+<a name="l-152"></a><span class="tm">19:02:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#decided </span><span class="cmdline">Open-Bugs-Day to be 2011-02-20 00:00-23:59 UTC with testing-core-team supporting all volunteers</span>
+<a name="l-153"></a><span class="tm">19:02:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">bmwiedemann will write more why+how on the wiki page</span>
+<a name="l-154"></a><span class="tm">19:02:59</span><span class="nk"> &lt;Holgi&gt;</span> sounds like a good plan :-)
+<a name="l-155"></a><span class="tm">19:03:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> any more action items?
+<a name="l-156"></a><span class="tm">19:03:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> who does the news.o.o contact?
+<a name="l-157"></a><span class="tm">19:04:09</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> it's just a mail to news.opensuse.org
+<a name="l-158"></a><span class="tm">19:04:15</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> it's just a mail to news@opensuse.org
+<a name="l-159"></a><span class="tm">19:04:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes. but it should be ONE mail. not zero, not two.
+<a name="l-160"></a><span class="tm">19:05:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> five is out of the question
+<a name="l-161"></a><span class="tm">19:05:27</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> right - but I don't want to volunteer
+<a name="l-162"></a><span class="tm">19:05:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> LWFinger ?
+<a name="l-163"></a><span class="tm">19:05:56</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> because tomorrow is my last day in office
+<a name="l-164"></a><span class="tm">19:05:58</span><span class="nk"> &lt;LWFinger&gt;</span> My plan was to consult with my usual contact and get his input. Yes, I will handle it.
+<a name="l-165"></a><span class="tm">19:06:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">LWFinger handles news.o.o entry about Open-Bugs-Day</span>
+<a name="l-166"></a><span class="tm">19:07:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. any more things to discuss on that topic?
+<a name="l-167"></a><span class="tm">19:07:52</span><span class="nk"> &lt;Holgi&gt;</span> not for me
+<a name="l-168"></a><span class="tm">19:08:02</span><span class="nk"> &lt;LWFinger&gt;</span> None here.
+<a name="l-169"></a><span class="tm">19:08:06</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">openQA report about mozmill testing &amp; FOSDEM</span>
+<a name="l-170"></a><span class="tm">19:08:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> I added that topic
+<a name="l-171"></a><span class="tm">19:08:52</span><span class="nk"> &lt;LWFinger&gt;</span> Is mozmill really mozilla?
+<a name="l-172"></a><span class="tm">19:09:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> On FOSDEM I met with Henrik Skupin who leads the "mozmill" mozilla automated testing efforts
+<a name="l-173"></a><span class="tm">19:09:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> they have a mercurial repo with javascript tests
+<a name="l-174"></a><span class="tm">19:10:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> I added running their daily tests to some openQA runs (gnome only, one daily per arch)
+<a name="l-175"></a><span class="tm">19:11:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> automatically uploading results into their DB on http://mozmill-crowd.brasstacks.mozilla.com/#/general/reports for mozilla's nightly firefox
+<a name="l-176"></a><span class="tm">19:11:56</span><span class="nk"> &lt;a-865&gt;</span> anyone know how to escape this error?
+<a name="l-177"></a><span class="tm">19:11:58</span><span class="nk"> &lt;a-865&gt;</span> # osc getbinaries home:/sndirsch:/branches:/X11:/Xorg:/openSUSE_Factory
+<a name="l-178"></a><span class="tm">19:12:00</span><span class="nk"> &lt;a-865&gt;</span> Need either 1, 2 or 4 arguments
+<a name="l-179"></a><span class="tm">19:12:31</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">a-865:</span> you are off-topic right now. please wait a bit
+<a name="l-180"></a><span class="tm">19:13:01</span><span class="nk"> &lt;a-865&gt;</span> <span class="hi">bmwiedemann:</span> I'm trying to test latest Dirsch build ;-)
+<a name="l-181"></a><span class="tm">19:13:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> however, since openSUSE's firefox comes with some adaptions (no auto-updates, altered default bookmarks), I agreed with Henrik to use their test DB for uploading results for our build at http://mozmill-archive.brasstacks.mozilla.com/#/general/reports
+<a name="l-182"></a><span class="tm">19:14:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> which they use to upload their testing/playgroud results
+<a name="l-183"></a><span class="tm">19:14:27</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> sounds promising
+<a name="l-184"></a><span class="tm">19:15:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> on FOSDEM I also talked to Mechtilde from openOffice.org QA and was pointed to their "test-tool"
+<a name="l-185"></a><span class="tm">19:15:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> which I will look into integrating with some testruns as well
+<a name="l-186"></a><span class="tm">19:16:52</span><span class="nk"> &lt;bmwiedemann&gt;</span> and I thought, that yast needs more testing. talked to kkaempf, that they have good success with auto-testing for modern stuff like WebYaST, but dont have that yet for classic YaST2
+<a name="l-187"></a><span class="tm">19:17:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> most other software has an upstream and more users outside of openSUSE - but not YaST
+<a name="l-188"></a><span class="tm">19:18:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, sikuli (packaged in a extra repo) comes in handy for such automated testing, as I do not want to do everything of that just for the openQA framework
+<a name="l-189"></a><span class="tm">19:19:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> I also held my talk about "How to make QA engineers start drooling" which was recorded and uploaded to http://tinyurl.com/crossdistro
+<a name="l-190"></a><span class="tm">19:21:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> that's it so far for testing-related FOSDEM experience from me. comments? further thoughts? agenda additions?
+<a name="l-191"></a><span class="tm">19:22:07</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">comment:</span> sounds promising - good work
+<a name="l-192"></a><span class="tm">19:23:42</span><span class="nk"> &lt;ReferenceSeete&gt;</span> That's awesome stuff.
+<a name="l-193"></a><span class="tm">19:24:05</span><span class="nk"> &lt;ReferenceSeete&gt;</span> I thought being replaced by machines would be painful, but it's somewhat pleasant actually.
+<a name="l-194"></a><span class="tm">19:24:05</span><span class="nk"> &lt;LWFinger&gt;</span> I assume that the OOo tests also work with LibreOffice.
+<a name="l-195"></a><span class="tm">19:24:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#action </span><span class="cmdline">bmwiedemann will look into integrating openOffice.org QA's "test-tool" with openQA testruns</span>
+<a name="l-196"></a><span class="tm">19:24:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> I hope so.
+<a name="l-197"></a><span class="tm">19:24:59</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Forum Thread is up: http://forums.opensuse.org/english/get-technical-help-here/pre-release-beta/454140-open-bugs-day-feb-20th.html
+<a name="l-198"></a><span class="tm">19:25:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">ReferenceSeete:</span> that is quick... now I will have to get the wiki page into shape soon :)
+<a name="l-199"></a><span class="tm">19:26:09</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Suggestions / Additions / Modifications welcome
+<a name="l-200"></a><span class="tm">19:27:10</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open testing meeting discussion</span>
+<a name="l-201"></a><span class="tm">19:28:34</span><span class="nk"> &lt;ReferenceSeete&gt;</span> <span class="hi">bmwiedemann:</span> I didn't mean to rush you, I can delete/repost tomorrow if you need time.
+<a name="l-202"></a><span class="tm">19:29:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> nay. it's fine as you added the interesting stuff in your post. so I can even copy&amp;paste a lot
+<a name="l-203"></a><span class="tm">19:32:47</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">firefox mozmill test results for our build at http://mozmill-archive.brasstacks.mozilla.com/#/general/reports</span>
+<a name="l-204"></a><span class="tm">19:33:20</span><span class="nk"> &lt;LWFinger&gt;</span> I just posted to the prerelease-beta forum describing the effort and referencing ReferenceSeete's announcement.
+<a name="l-205"></a><span class="tm">19:33:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#info </span><span class="cmdline">firefox mozmill test results for upstream nightly builds at http://mozmill-crowd.brasstacks.mozilla.com/#/general/reports</span>
+<a name="l-206"></a><span class="tm">19:35:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> any more important bits that need highlighting in today's meeting logs?
+<a name="l-207"></a><span class="tm">19:37:03</span><span class="nk"> &lt;bmwiedemann&gt;</span> don't be shy
+<a name="l-208"></a><span class="tm">19:37:20</span><span class="nk"> &lt;LWFinger&gt;</span> None for me.
+<a name="l-209"></a><span class="tm">19:37:54</span><span class="nk"> &lt;Holgi&gt;</span> also not for me
+<a name="l-210"></a><span class="tm">19:37:59</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Nothing here.
+<a name="l-211"></a><span class="tm">19:38:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> very well. Then I will close today's meeting. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-212"></a><span class="tm">19:38:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

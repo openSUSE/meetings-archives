@@ -1,0 +1,203 @@
+17:00:59 <bmwiedemann> #startmeeting
+17:00:59 <bugbot> Meeting started Mon Apr 11 17:00:59 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:00:59 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:01:17 <bmwiedemann> Hello everyone
+17:01:24 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:01:24 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:01:24 <Holgi> hi
+17:01:37 <LWFinger> Hi.
+17:02:42 <bmwiedemann> #topic Review Open-Bugs Day
+17:03:43 <iznogood> Well - we were way to few people this time
+17:04:41 <bmwiedemann> still, quite a number of updates.
+17:05:14 <iznogood> oh yes - and even if we got some "flak" about closing bugs as obsolete it was a good round
+17:05:29 <bmwiedemann> but re-testing on current versions would be good
+17:06:12 <LWFinger> I still think closing them was the right thing to do.
+17:06:38 <Holgi> it's just one person complaining
+17:06:42 <bmwiedemann> because just blindly closing anything is as nearly good as ignoring all the old stuff
+17:06:44 <iznogood> in many cases its not even possible
+17:07:05 <LWFinger> If a bug hasn't been touched since 2007 or 8, then it is not viable.
+17:07:14 <iznogood> have anyone seen any of the bugs closed get reopend?
+17:07:34 <iznogood> and if reopend did the bug get moved to a current target?
+17:07:49 <bmwiedemann> not mine. but I moved some of them to 11.4/5
+17:09:39 <LWFinger> I pushed the wrong button and may have missed something, but a few bugs were reopened.
+17:09:58 <iznogood> I haven't seen any of mine reopend either - and from my quick scan of the bugs@os list it can't have been many
+17:10:27 <iznogood> In my view its better to close a bug to many than letting them bitrot
+17:10:54 <bmwiedemann> it has potential to driver bug-reporters away
+17:11:08 <bmwiedemann> and miss bugs that are still in there
+17:11:46 <LWFinger> iznogood: I agree. The ones that were reopened were switched to 11.4 as they should have been.
+17:12:35 <LWFinger> Is closing an obsolete bug any worse than ignoring it?
+17:12:55 <iznogood> ok - how about a comprimize - if the "tester" is unable to test the bug on his/her system  - set the bug to needinfo -> to the original reporter - no comment in 30 days after bugday close it
+17:13:13 <bmwiedemann> iznogood: would be very good
+17:13:44 <LWFinger> I did run into a number of bugs where the needinfo request was two years old!
+17:13:45 <iznogood> I recomend entomologist for everyone as a tool to follow up on bugs
+17:14:01 <iznogood> LWFinger: in those cases - close it
+17:14:06 <bmwiedemann> just closing everything could be done by a script, so we would not need an Open-Bugs-Day for that
+17:15:29 <LWFinger> iznogood: I did.
+17:15:34 <bmwiedemann> good
+17:16:47 <iznogood> bmwiedemann: the bugdaytool - I kinda felt it kept sending the same bugs my way - bug? :-)
+17:17:23 <iznogood> http://tinyurl.com/392jnb - take a look here - there is still a few bugs from 10.0 and 10.1 left
+17:17:55 <bmwiedemann> iznogood: it is designed to be simple and to work with 100+bugs. so it does not work well when you use the new filter feature
+17:17:59 <iznogood> I was able to close the last 4 from opensuse 10.2 yesterday, but we should make an effort to close the remaing ones
+17:19:43 <iznogood> btw - what should we do with enhancments bugs? - I often was unsure if the bug were fixed or not
+17:20:10 <bmwiedemann> moving to features.o.o might be an option
+17:20:24 <iznogood> just move the bugs in such cases, and hope that the asignee ( or list) that gets it sees if its fixed or not?
+17:20:28 <Holgi> in fact - feature requests needs to be created out of them if they are not implemented yet
+17:21:07 <Holgi> but the questions is if this does make sense for really old bugs
+17:21:26 <iznogood> should we do that? - what if the requester has long gone away / dead / distrochange
+17:22:03 <bmwiedemann> I'd look if it seems still to be a useful feature
+17:22:07 <Holgi> I would not do this for enhancement bugs prior to 11.3
+17:23:11 <bmwiedemann> IMHO missing features don't magically vanish like bugs
+17:23:29 <bmwiedemann> so there are plenty >2 year old good ones
+17:24:03 <LWFinger> But they still need to be kicked one way or another.
+17:25:19 <bmwiedemann> yep
+17:26:29 <LWFinger> With the 10.X enhancement requests, I said "If still needed, take it to openFATE".
+17:26:51 <bmwiedemann> if people know where to find that?
+17:26:59 <Holgi> I would consider it much more important to push enhancement bugs of 11.3 and 11.4 to fate if they are not there or implemented yet
+17:27:15 <iznogood> I for one don't feel like making req at openfate for other people
+17:27:55 <bmwiedemann> OK. having your name there as "Requester" might not be right.
+17:28:15 <LWFinger> Agreed.
+17:28:18 <bmwiedemann> but linking to https://features.opensuse.org/ might be good
+17:28:23 <iznogood> indeed
+17:28:25 <Holgi> but you should mention "...from bug report #123456"
+17:29:18 <bmwiedemann> Holgi: we should have a wiki page describing that procedure
+17:29:48 <Holgi> bmwiedemann: do you think that
+17:29:52 <Holgi> ?
+17:30:13 <bmwiedemann> there are 163 open enhancement bugs for 11.3+
+17:30:28 <Holgi> ok
+17:31:54 <bmwiedemann> the wiki page could describe why openFATE is better to track those, too
+17:32:11 <bmwiedemann> so we only need to link there
+17:32:18 <Holgi> I agree
+17:32:41 * iznogood hides from AI to create a wiki
+17:34:00 <bmwiedemann> shall we move to the next topic?
+17:34:09 <Holgi> I want to mention
+17:34:25 <Holgi> that we need to do more advertising of such an event next time
+17:34:45 <Holgi> news.opesuse.org, opensuse-announcement@os.o etc.
+17:35:01 <iznogood> how about sending out an ical with the mail aswell - easy import into calender
+17:35:05 <Holgi> just the date in the calendar is not enough
+17:35:06 <bmwiedemann> we did for the first one - which might be why there were more people
+17:35:32 <bmwiedemann> iznogood: attachments are not liked. but URLs should work.
+17:36:32 <LWFinger> Saturday is bad for the Newsletter as if comes out late on that day.
+17:36:39 <Holgi> just what I think - no bashing at all
+17:37:06 <Holgi> it went wll from my point of view since it was for the first time
+17:37:07 <bmwiedemann> so better plan a Sunday next time?
+17:37:13 <iznogood> so we learned that saturdays are out
+17:37:15 <LWFinger> I think so.
+17:37:48 <iznogood> but even if we "start" on sunday, how about opening the bugday tool on friday already
+17:38:01 <bmwiedemann> sure
+17:38:15 <LWFinger> Yes.
+17:39:54 <LWFinger> Next topic?
+17:40:00 <bmwiedemann> the detailed roadmap for 12.1 is not yet there, so we don't know yet when the last Milestone (MS6?) will be out.
+17:40:15 <bmwiedemann> we will schedule that bugsquashing later then.
+17:40:30 <bmwiedemann> #topic Post-release analysis of 11.4 - What was Good or Bad
+17:40:48 <LWFinger> This one is mine.
+17:41:27 <LWFinger> I thought the best thing about our cycle was openQA.
+17:41:36 <bmwiedemann> :)
+17:41:57 * iznogood had  2 whole weeks on 11.4 before returning to factory, so I can't input much here
+17:42:31 <LWFinger> You deserve much credit. The worst thing was that we still got bugs added betweem RC2 and GM.
+17:42:44 <bmwiedemann> I wonder how many people used factory-tested
+17:43:04 <bmwiedemann> apart from me
+17:43:29 <iznogood> Ping someone from obs-chan, they might be able to pull out download stats
+17:43:39 <bmwiedemann> I uploaded the RC2.1 to have it better tested before GM
+17:43:44 <LWFinger> I did. On this point, 11.4 was better than 11.3 where networking was broken. The forums are still dealing with that.
+17:45:03 <LWFinger> I guess my question is "How do we get more time between the last RC and GM?"
+17:45:15 <iznogood> if we want a (close to) bugfree release we need more testing before the last milestones
+17:46:07 <iznogood> ie - all blocker bugs should be fixed before last milestone / or at least before rc1
+17:46:17 <bmwiedemann> I talked to coolo about more/longer freeze and he said that it could make people move to Factory instead of stabilizing the current release
+17:47:08 <bmwiedemann> and that people wanting a solid openSUSE could use the 11.3+updates which has seen 8 months of intense testing+bugfixing
+17:48:20 * iznogood thinks factory has been more or less stable last year atleast
+17:48:21 <LWFinger> Of course, there are some things that cannot even be tested with milestones if you need Packman support.
+17:48:42 <iznogood> packman has a essential repo for codecs now - that helps a lot
+17:49:04 <bmwiedemann> doesn't packman build for milestones?
+17:49:08 <LWFinger> iznogood: Are those release agnostic?
+17:49:30 <iznogood> no not totally - it lags somewhat behind
+17:49:43 <LWFinger> bmwiedemann: I don't think so.
+17:50:06 <iznogood> or one could just by gstreamercodecs from fluendo, works for me
+17:52:56 <iznogood> but lets get back on topic
+17:53:44 <LWFinger> For me, 11.4 has been good from the start, but I never run the standard kernel.
+17:54:36 <bmwiedemann> I had some trouble with pulseaudio, causing trouble with skype after some minutes. disabled it manually and everything is now working
+17:55:30 <LWFinger> PA is always trouble, but my audio requirements are minimal. I also use a limited set of apps.
+17:55:45 <a-865> anyone here run KDE3 on 11.4/tumbleweed, or seen my opensuse-kde thread about small Konq4 menu fonts?
+17:55:52 <bmwiedemann> if it is used by default, it should be make working
+17:56:04 <bmwiedemann> a-865: no
+17:56:27 <LWFinger> No, I'm on KDE4.
+17:56:42 <iznogood> bmwiedemann: works for me, so get bugfiling
+17:57:03 * iznogood thinks PA is the next best thing since sliced bread
+17:57:30 <a-865> Until last night, I had no idea the opensuse repositories for 11.4 had KDE3 in them
+17:57:47 <Holgi> iznogood: with PA mono sound comes out on the internal speaker only here :-/
+18:00:15 <iznogood> Holgi: do you have pavucontrol installed? ( or whatever the kde version is called)
+18:01:28 <Holgi> iznogood: I use the (gnome?) mixer with lxde
+18:01:43 <Holgi> iznogood: tired to set all accordingly, but not able to change
+18:01:53 <Holgi> but I did not create a bug report as well
+18:01:58 <Holgi> so far
+18:01:58 <iznogood> ok - lets look into this after the meeting
+18:02:15 <iznogood> any other opinions on 11.4
+18:02:16 <Holgi> iznogood: it's my work station at work - I'm at home now
+18:02:30 <iznogood> Holgi: an other time then
+18:02:34 <Holgi> iznogood: so no way to debaug now
+18:02:40 <Holgi> debug
+18:04:02 <iznogood> I'll repeat : any other opinions on 11.4
+18:04:23 <a-865> bettern 11.3, not bettern 11.2
+18:04:56 <iznogood> so a-865 whats broken for you out of the box?
+18:05:15 <iznogood> ie - what did we miss as in bugs for that release?
+18:05:37 <a-865> bug 584493
+18:05:46 <a-865> same as 11.3
+18:06:15 <a-865> and the parallel boot thing
+18:07:16 <a-865> stock kernel will not cause init 0 to complete on old Piii
+18:07:30 <a-865> just sits there after umounting everything
+18:08:03 <bmwiedemann> and it work with non-parallel boot?
+18:08:20 <a-865> yup
+18:08:48 <LWFinger> Can that be changed from the GRUP options line?
+18:08:58 <LWFinger> s/GRUP/GRUB/
+18:09:06 <a-865> bug 683476
+18:09:14 <a-865> I don't think so
+18:09:44 <a-865> bug 675793
+18:10:04 <a-865> oops, I meant bug 675370
+18:10:30 <a-865> bug 674919
+18:11:21 <a-865> parallel boot here bug 665720
+18:12:33 <LWFinger> KMS is certainly a problem. For me, the one machine that uses i915 is OK, but all my nVidia cards are broken in 2.6.37 - some fixed in 2.6.38.
+18:13:22 <a-865> KMS is why I refuse to suggest 11.3 to anyone
+18:13:24 <bmwiedemann> someone reported graphics problems with a Lenovo notebook
+18:13:56 <a-865> was much too green at release time
+18:14:05 <a-865> green=immature
+18:14:15 <LWFinger> "nomodeset" is not that hard to put in the GRUB line.
+18:14:50 <LWFinger> Those devs have a really tough job.
+18:14:56 <a-865> nomodeset disables intel driver
+18:15:27 <a-865> unless maybe it shifts to intellegacy driver
+18:15:29 <LWFinger> Yes - it reverts to the framebuffer driver - just like 11.2.
+18:15:50 <a-865> framebuffer limited to 1024x768, right?
+18:16:07 <a-865> so nomodeset is no option here
+18:16:29 <LWFinger> No. I'm using the nv version at 1280x800 - the native res for my screen.
+18:16:40 <a-865> 665720 had been duped, but werner reopened it
+18:16:49 <a-865> now I have to figure out how to respond
+18:16:54 <a-865> big time consumer
+18:20:44 <bmwiedemann> that reminds me: anyone else having problems to play an .ogv in firefox4? it seems to only fail on one of my machines.
+18:22:19 <iznogood> bmwiedemann: link to test?
+18:22:21 <LWFinger> I just tested on openQA. Worked fine.
+18:22:45 <bmwiedemann> iznogood: http://openqa.opensuse.org/ has one on the lower part
+18:24:47 <iznogood> bmwiedemann: works here
+18:25:07 <bmwiedemann> OK. then my install is somehow borked
+18:25:42 <iznogood> btw - yast says your password is to simple for the testmaschine
+18:26:08 <bmwiedemann> yep. it is "nots3cr3t"
+18:26:57 <bmwiedemann> but does not really matter as KVM there runs in NAT mode - not reachable from outside
+18:27:47 <LWFinger> That one doesn't look that simple to me. It must be that all the letters are lower case.
+18:28:44 <bmwiedemann> it is also that it contains a dictionary word
+18:30:12 <iznogood> But the topic at hand - a-865 had some bugs that did not get fixed in time, but there is an assingned person looking into the bugs atleast. - Do we have more to discuss, or should we call it quits for this one?
+18:30:58 <bmwiedemann> we need to schedule next meeting
+18:31:23 <iznogood> + one month - isn't that good enoght?
+18:32:14 <LWFinger> Certainly no sooner than that.
+18:32:45 <iznogood> If we have milestone 1 we should have one right after ?
+18:33:04 <LWFinger> Yes.
+18:33:24 <bmwiedemann> 2011-05-09 might work then?
+18:34:09 <LWFinger> OK.
+18:34:13 <iznogood> Sure - Is the timeslot ok for everyone? - ie noone that needs to get up in the middle of the night to attend?
+18:34:15 <bmwiedemann> roughly two months after 11.4
+18:34:47 <LWFinger> It starts at noon for me.
+18:35:13 <bmwiedemann> so 17:00 UTC again
+18:35:24 <iznogood> great - voted
+18:36:03 <bmwiedemann> #topic next meeting
+18:36:16 <bmwiedemann> #agreed next meeting will be 2011-05-09 17:00 UTC
+18:37:13 <bmwiedemann> any more topics to discuss?
+18:37:25 <LWFinger> None here.
+18:37:38 <iznogood> nope
+18:38:09 <bmwiedemann> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+18:38:14 <bmwiedemann> #endmeeting

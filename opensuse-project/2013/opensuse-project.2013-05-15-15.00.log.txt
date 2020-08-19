@@ -1,0 +1,401 @@
+15:00:06 <vuntz> #startmeeting openSUSE project
+15:00:06 <bugbot> Meeting started Wed May 15 15:00:06 2013 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:00:06 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:00:31 <vuntz> so so so, who's here for the meeting?
+15:00:32 * manugupt1 is right on time :)
+15:00:38 <vuntz> hey manugupt1!
+15:00:41 * warlordfff here too
+15:00:44 * differentreality me
+15:00:44 <manugupt1> hey vuntz :)
+15:01:07 <vuntz> robjo, FunkyPenguin, tittiatcoke, wstephenson__, Ilmehtar: any of you here?
+15:01:19 <robjo> mostly
+15:01:30 <Ilmehtar> about 60% here
+15:01:34 * victorhck listening...
+15:01:36 <Ilmehtar> (at the computer, but the office is busy)
+15:02:08 <vuntz> the agenda for today is available at https://en.opensuse.org/openSUSE:Project_meeting
+15:02:16 <vuntz> I can see the following topics:
+15:02:19 <vuntz> 1) GSoC Status
+15:02:25 <vuntz> 2) oSC13 progress/issues
+15:02:31 <vuntz> 3) New Ideas & initiatives for the project?
+15:02:38 <vuntz> 4) Questions
+15:02:45 <vuntz> any other topic?
+15:02:55 * zimba12 is here to represent owncloud for GSoC
+15:03:30 <manugupt1> vuntz: zimba12 Could u give me 2 minutes please I will be afk
+15:03:38 <vuntz> sure
+15:03:54 <manugupt1> vuntz: till then you can discuss oSC13
+15:04:09 <vuntz> usually, we start with action items but I don't see any in the list
+15:04:21 <zimba12> manugupt1: sure
+15:04:25 <vuntz> warlordfff, differentreality: want to start with oSC13?
+15:04:35 <warlordfff> well no problem here
+15:04:37 <zimba12> manugupt1: actually i need 5 mins :)
+15:04:37 <vuntz> #topic oSC13 progress/issues
+15:04:40 <warlordfff> now
+15:04:48 <manugupt1> zimba12: great then :)
+15:04:53 <warlordfff> a small report
+15:05:14 <warlordfff> until now we are doing quite well but we need more help
+15:05:31 <warlordfff> epsecially when it comes to press
+15:05:36 <warlordfff> is jospoortvliet around?
+15:05:41 <warlordfff> anyway
+15:05:57 <warlordfff> we also need the board to be more supportive
+15:05:58 <vuntz> to get the word out? Or to invite press people at the event?
+15:06:04 <warlordfff> both
+15:06:16 <warlordfff> we have the word out pretty well
+15:06:26 <warlordfff> but we definattelly can do it better
+15:06:39 <vuntz> #info organization is doing rather well
+15:06:50 <vuntz> #info help is still needed, though
+15:06:58 <Ilmehtar> warlordfff: I had an issue trying to use the 'openSUSE' hotel booking code mentioned on http://conference.opensuse.org/#location for any hotel apart from Nea Metropolis
+15:07:06 <warlordfff> so basically I have some questions for you vuntz
+15:07:10 <vuntz> warlordfff: sure
+15:07:23 <warlordfff> Ilmehtar:  can we talk about this later?
+15:07:28 <warlordfff> so
+15:07:32 <vuntz> #info one area for help: press (to get the word out, and to invite press people to the event)
+15:07:34 <Ilmehtar> warlordfff: sure
+15:08:06 <warlordfff> we did not saw any posts or anything related to the oSC13 comming from the board side
+15:08:12 <warlordfff> why is that
+15:08:15 <warlordfff> ?
+15:08:23 <warlordfff> I mean this is a communitty thing
+15:08:39 <warlordfff> also no help came from there
+15:08:55 <warlordfff> not even a single comment or a task taken in Trello
+15:09:20 <warlordfff> don't get me wrong but I find this not good
+15:09:21 <vuntz> is your expectation that the board actively contributes to the organization?
+15:09:29 <warlordfff> of course
+15:09:42 <wstephenson__> vuntz: here
+15:09:52 <warlordfff> I thought that this was something that was expected
+15:10:21 <warlordfff> but unfortunatelly nothing
+15:10:36 <warlordfff> I mean not even a tweet from personal accounts
+15:10:45 <vuntz> fwiw, we're talkign about https://trello.com/osc13
+15:10:47 <warlordfff> how do you see this?
+15:10:53 <warlordfff> yeap
+15:11:14 <warlordfff> we would like your opinion on this
+15:11:17 <Ilmehtar> warlordfff: I think that's a little unfair. The role of the board is to facilitate communication within the community, facilitate decision making, help resolve contacts, etc. We're not able to involve ourselves in the day-to-day operation every single part of the project
+15:11:32 <warlordfff> a day to day ok
+15:11:39 <warlordfff> but not even once?
+15:11:50 <warlordfff> I mean people look at the board
+15:11:57 <warlordfff> right?
+15:12:10 <warlordfff> the feedback I got from people is
+15:12:18 <warlordfff> how come the board is not there
+15:12:48 <vuntz> interesting, I think the expectations are not the same on the two sides
+15:13:02 <warlordfff> that is why I sent an e-mail
+15:13:18 <warlordfff> but not a single board member answered
+15:13:28 <vuntz> warlordfff: robjo did reply
+15:13:37 <warlordfff> ok
+15:13:42 <vuntz> asking "What can we do?"
+15:14:01 <differentreality> ok maybe "nothing" was a strong word
+15:14:32 <differentreality> what Kostas means is that we would like a bit more help - that can be actually doing tasks, or coordinating them so that another member can do them properly or helping in decision making as Ilmehtar said
+15:14:56 <warlordfff> anyway
+15:15:05 <robjo> I have to apologize, have a customer issue I am chasing and cannot concentrate on the meeting. If there is anything needed from me please ping me
+15:15:11 <warlordfff> I am not bringing this up to argue
+15:15:15 <vuntz> sure
+15:15:27 <vuntz> I think what might be missing is having someone from the board closely following this topic
+15:15:32 <warlordfff> I just want to know if you can do something to help
+15:15:37 <differentreality> vuntz: btw 99% of tasks are on trello, I am making sure of it
+15:15:38 <warlordfff> yeap
+15:15:56 <differentreality> and we could use the expertise and experience on some of them from people like board members
+15:16:07 <differentreality> but if it helps we can send you some more specific tasks
+15:16:10 <vuntz> differentreality: but 99% of the tasks don't require a board member, but anybody (and that could be a board member, I don't disagree)
+15:16:43 <differentreality> that's true, but still we would like to see some more active support of the board :)
+15:16:52 <vuntz> understood
+15:17:07 <warlordfff> if the board comes, for sure othes will follow too
+15:17:17 <warlordfff> others
+15:17:34 <warlordfff> it would be inspirational and motivating to a lot of people
+15:17:48 <zoumpis> +1 warlordfff
+15:17:53 <warlordfff> also
+15:17:58 <Ilmehtar> I think that opinion misrepresents the role of the board
+15:18:11 <warlordfff> ok, why?
+15:18:19 <warlordfff> I mean
+15:18:34 <warlordfff> the board are people important for the community
+15:18:39 <manugupt1> Can I say something?
+15:18:49 <vuntz> manugupt1: no need to ask :-)
+15:18:50 <warlordfff> that means that are people who can give a better motivation
+15:19:03 <Ilmehtar> if we follow your opinion to your logical community, then it would require the board to be involved in every aspect of the projects work
+15:19:06 <warlordfff> manugupt1: please
+15:19:08 <manugupt1> I mean Board can give a public face to oSC and congratulate on news
+15:19:08 <warlordfff> say
+15:19:25 <manugupt1> That will mean Board is helping a bit and also people perceive the Board is interested
+15:19:49 <warlordfff> well it is not congratulations that we need right now, but this is also an idea
+15:19:52 <manugupt1> I think the problem is people do not perceive Board not being helpful but dont realise that they too have lifes and are busy in other things also
+15:20:01 <Ilmehtar> I believe that's infeasible for a project this size with a board of 6, who already get a fair amount of work from the boards defined role as on the wiki http://en.opensuse.org/openSUSE:Board
+15:20:03 <manugupt1> Like invitation to oSC in news :) from the board
+15:20:32 <vuntz> Ilmehtar: I think it's relatively fair to ask that the board at least more actively follows the conf organization, as it's an important event for the community
+15:20:41 <manugupt1> Ilmehtar: A news article calling for everyone is not infeasible I believe but helping out in each and everything is surely
+15:20:47 <differentreality> yeah... or board members could extend this invitation to oSC in their social media accounts (btw we have the messages ready in trello, people (any people) just need to copy paste them ;) )
+15:21:00 <Ilmehtar> the Project have a team to provide news and marketing, we have a team to organise the conference, we have teams doing KDE, GNOME, what have you, I think its unfair to expect the Board the board to be an componant of all these activities of the project
+15:21:01 <vuntz> Ilmehtar: but I agree it's hard to have the board be more involved in general
+15:21:27 <warlordfff> Ilmehtar:  I thing you are a bit wrong here
+15:21:52 <warlordfff> I mean making a tweet is not that time consuming
+15:22:05 <manugupt1> Ilmehtar: not in general but once is ok :) and an official invite from the board is also good
+15:22:24 <warlordfff> lets clear something here
+15:22:33 <warlordfff> do you think we are wrong?
+15:22:48 <manugupt1> warlordfff: Well I think we can strike a balance
+15:22:55 <Ilmehtar> warlordfff: if that's all you want is the odd tweet from a board member - I'd like to direct you to the one I made on the 4th of May inviting people to sign up for travel support ;-)
+15:22:56 <warlordfff> my case exactly
+15:23:08 <vuntz> warlordfff: I think it's wrong to expect the board to be heavily involved
+15:23:12 <Ilmehtar> warlordfff: I'm a little confused - I'm either doing what you're saying is expected of the board, or I think you're expecting too much from us
+15:23:27 <vuntz> warlordfff: but I think it's right to expect the board to follow this more closely
+15:23:45 <warlordfff> vuntz:  I expect exactly that
+15:23:58 <warlordfff> and actually this is what we are asking here
+15:24:18 <warlordfff> not necessary to take tasks and stuff
+15:24:23 <vuntz> are there still conf team meetings? On irc or by phone?
+15:24:32 <warlordfff> although it would be nice if you have some time
+15:24:50 <warlordfff> well we resolve everything in trello
+15:25:04 <warlordfff> so far its going well
+15:25:10 <vuntz> well, trello is good for tracking tasks, but it's pretty bad for communication :-)
+15:25:26 <warlordfff> I agree on that
+15:25:42 <warlordfff> but so far it works better than expected
+15:26:18 <warlordfff> anyway
+15:26:26 <vuntz> would having some phone chat, or irc chat with a board member (or more) every week or every two weeks help?
+15:26:30 <warlordfff> we have some specific things to ask
+15:26:49 <vuntz> or would you prefer some other ways to have the board follow the work?
+15:26:54 <vuntz> (like, just trello)
+15:27:00 <warlordfff> we need some people to get contacted by you
+15:27:17 <warlordfff> and we need some press releases on your side
+15:27:52 <warlordfff> we will send you a precise mail with some tasks that you might be able to do it, how does that sound?
+15:28:00 <vuntz> sure, a mail is fine
+15:28:07 <warlordfff> ok
+15:28:21 <vuntz> (fwiw, I would expect the marketing team to write press releases, but well, let's discuss that in the mail)
+15:28:34 <warlordfff> well I expected that too
+15:28:46 <warlordfff> and Jos made one or two to be honest
+15:28:52 <warlordfff> a lot of people worked
+15:28:55 <vuntz> warlordfff: I'll try to get all this discussed in the next board meeting (next monday)
+15:29:05 <warlordfff> this would be perfect
+15:29:08 <warlordfff> thank you
+15:29:22 <vuntz> #info organization team would like to see more involvement from the board
+15:29:26 <warlordfff> so lets go to the next one
+15:29:42 <warlordfff> how do you see the organization of oSC13
+15:29:55 <manugupt1> Excellent Awesome Fantabulous so far
+15:29:55 <warlordfff> I mean if you have any feedback on what we are doing
+15:30:00 <vuntz> #info there's a balance to be found about involvement from the board (board cannot be involved everywhere, but oSC is important)
+15:30:15 <vuntz> #action warlordfff to send mail to board about concrete tasks board can help with
+15:30:33 <vuntz> #action vuntz to make sure the whole topic is discussed in next board meeting
+15:30:44 <warlordfff> We really value feedback but so far we don't feel we have enough
+15:31:19 <Ilmehtar> no news is good news?
+15:31:23 <warlordfff> please feel free to put ideas on trello or send an e-mail if you don't like or like something to be done
+15:31:36 <warlordfff> well Ilmehtar it goes both ways
+15:31:55 <warlordfff> either is good news or noone is giving a cent about it
+15:31:57 <vuntz> I think what will help is to have the program out, but we have to wait for that :-)
+15:32:31 <differentreality> we are very close on the program, however there is an issue (posted just today in conf ML) that needs to be resolved first and rather fast.
+15:33:00 <vuntz> warlordfff: one question I got asked, and I don't know the answer, is when the core days will be (ie, days with talks)
+15:33:02 <differentreality> that's how we communicate to people (speakers and attendees but first of all speakers) the fact that they will be photographed/video recorded and they will appear on live streaming
+15:33:25 <warlordfff> I have to tell you that a lot of never seen ideas are landing on this conference
+15:33:26 <differentreality> we have some nice and most important concrete ideas on how to do it, however that involves some changes in OSEM
+15:33:38 <differentreality> and I have no idea who will do that. Matt is not around and I am not sure if Henne can take care of that on top of everything else
+15:33:52 <warlordfff> friday-saturday and sunday
+15:34:43 <warlordfff> monday is more communitty stuff
+15:34:43 <warlordfff> meaning 'hard core' opensuse meetings and stuff
+15:34:43 <CarlosRibeiro> maybe my question is quite late but the point is... the board had not involved more deeply in the previous conferences? I mean, more involvement and participation then now. I agree with kostas that more involvment of board could be quite better. But i will understand if i got not reply on this, specially because I'm late with my question
+15:34:43 <differentreality> Friday - Monday that is, Thursday is preparations / decorations + volunteers training at the afternoon (which is mandatory for all volunteers) + pre-registration party
+15:35:24 <vuntz> CarlosRibeiro: I don't think the board was heavily involved in previous years, but I can't tell for sure as I wasn't on the board
+15:35:27 <warlordfff> BTW you will be surprised but the volunteer traning, it will be like nothing you ever saw :D
+15:35:49 <CarlosRibeiro> vuntz: thanks for your reply
+15:36:03 <tampakrap> last year the board was not involved at all, and the onsite presence was depressing, and it was even raised during the onsite project meeting
+15:36:09 <vuntz> Ilmehtar: time to ask your first question again? ;-)
+15:36:21 <warlordfff> ?
+15:36:30 <Ilmehtar> warlordfff: I had an issue trying to use the 'openSUSE' hotel booking code mentioned on http://conference.opensuse.org/#location for any hotel apart from Nea Metropolis
+15:36:41 <warlordfff> differentreality: you?
+15:37:01 <differentreality> Please offer me some details because so far no one ever told me about any problems and I can only assume everything works ok :/
+15:37:30 <Ilmehtar> differentreality: basically, on the websites of all the other hotels I tried, i only got the discount when I went to the Nea Metropolis
+15:37:54 <differentreality> Ilmehtar: that's because the discount does not work on the online system of the other hotels, you have to email them
+15:38:28 <Ilmehtar> differentreality: the website might need to be a little clearer then, as it only states "use the code "openSUSE" when registering"
+15:38:37 <Ilmehtar> thanks for clearing that up :)
+15:38:59 <differentreality> yes that's true... we do give the emails but we don't explicitely say that you should contact them by email unless otherwise mentioned
+15:39:06 <differentreality> henne: can we make that change asap plz ?
+15:39:11 <vuntz> #info discount for hotels only work when reserving by mail (except for Nea Metropolis, where online system works too)
+15:39:28 <warlordfff> oh Saint henne is around?
+15:39:30 <warlordfff> :D
+15:39:47 <vuntz> okay, unless there's a last comment/question, we should switch to the next topic
+15:39:54 <differentreality> truth be told at least a couple said they will configure their online systems but that obviously hasn't happened (I check about that myself from time to time)
+15:39:59 <vuntz> any last comment/question?
+15:40:10 <warlordfff> well we have a lot to go
+15:40:20 <warlordfff> but again please send us feedback
+15:40:29 <warlordfff> nothing else on my side
+15:40:53 <vuntz> moving on, then
+15:40:56 <vuntz> thanks  warlordfff and differentreality!
+15:40:59 <vuntz> #topic GSoC Status
+15:41:09 <vuntz> manugupt1: here you go!
+15:41:19 <manugupt1> vuntz: hey
+15:41:23 <manugupt1> Ok.. Status is so far
+15:41:30 <manugupt1> Everything is good so far
+15:41:51 <vuntz> #info everything is good so far!
+15:42:01 <tampakrap> i've got a bunch of questions
+15:42:04 <manugupt1> I am disappointed with Google we got less spots we could have done with a few more
+15:42:09 <manugupt1> tampakrap: yes please
+15:42:25 <tampakrap> so, I noticed very little activity on voting
+15:42:31 <vuntz> manugupt1: how many slots?
+15:42:34 <manugupt1> vuntz: 12
+15:42:39 <vuntz> #info we got 12 slots
+15:42:43 <zimba12> manugupt1: did you try to trade for more?
+15:42:44 <tampakrap> are we going to vote on the proposals? and how about the proposals that are not opensuse ones? (syslog-ng etc)
+15:43:03 <tampakrap> or are we going to count only on an irc meeting to select the students
+15:43:05 <manugupt1> zimba12: yes.. I am talking with KDE ( they denied) I have mailed Cat @Google
+15:43:43 <manugupt1> tampakrap: that was something I wanted to discuss too..
+15:44:07 <manugupt1> nemo: koda ping
+15:44:11 <nemo> pong
+15:44:13 <tampakrap> i raised the issue in the mailing list with no reply, did it even hit the mailing list?
+15:44:18 <tampakrap> the opensuse mentors one
+15:44:24 <manugupt1> tampakrap: is theo right
+15:44:29 <nemo> sheepluva also ping
+15:44:41 <tampakrap> yep
+15:44:47 * sheepluva falls off his chair
+15:44:49 <manugupt1> tampakrap: none I can see :/
+15:44:53 <sheepluva> I'm here I'm here
+15:45:14 <manugupt1> hey sheepluva
+15:45:25 <jospoortvliet> sorry for being late, I managed to lock myself out of my house and had to travel to my wife's work to get the key. You can laugh now.
+15:45:27 <vuntz> tampakrap: are you subscribed to the list?
+15:45:29 <tampakrap> probably I was subscribed with my gmail account then instead of my opensuse one
+15:45:36 * vuntz laughs at jospoortvliet
+15:45:41 * vuntz gives a cookie to jospoortvliet
+15:45:54 <manugupt1> hey jospoortvliet
+15:46:03 <manugupt1> Ok.. I have a proposal ( and a problem at hand later)
+15:46:06 <warlordfff> jospoortvliet:  did you call the firefighters?
+15:46:16 * jospoortvliet reads up on the log
+15:46:33 <manugupt1> I think all the orgs can decide their best proposals themselves since they are the ones who can judge them the best
+15:46:56 <manugupt1> and then the next question is since we have less slots and I am hoping to get more before next week, how do we rank them
+15:47:11 <manugupt1> One of the suggestions was use a round robin method between orgs
+15:47:21 <sheepluva> ( manugupt1: I haven't gotten any mail from the mailing list since my Welcome mail actually )
+15:47:51 <manugupt1> sheepluva: you joined  bit late I guess I did not mail after that .. also this was discussed earlier koda was on the ML I believe
+15:48:15 <sheepluva> okidoki
+15:48:54 <manugupt1> I am not sure if round robin could entirely be a great idea, I would like to know vuntz opinion on it
+15:48:55 <zimba12> manugupt1: I agree with your proposal. I looked at other orgs proposals, but I feel confident only to score the owncloud ones
+15:49:32 <tampakrap> my proposal would be to push mentors to vote on ALL the listed proposals, then we take the highest ranked ones, and we have an IRC meeting to clean up the duplicated ones if any
+15:49:44 <zimba12> manugupt1: another easy thing would be: suborgs admin (yeah, i gave myself a title!) can ask for a number of spots
+15:49:46 <tampakrap> that would need the less real time interaction between us
+15:49:53 <zimba12> and see if that's compatible with everyone
+15:50:37 <manugupt1> tampakrap: Actually many mentors have said they would be less comfortable with voting on all the ideas :/ thats why I am not sure
+15:50:39 <vuntz> manugupt1: I'd go with zimba12's way first; if that just works, then it's the easiest way. If it doesn't, then you know how many slots are missing and can use another method
+15:50:53 <manugupt1> nemo: and sheepluva what is your opinion
+15:50:56 <tampakrap> what is the reason behind that?
+15:51:06 <zimba12> manugupt1: vuntz: great. for instance, owncloud needs 2 spots, that's it
+15:51:17 <zimba12> (ok, ideally 3, but we will be happy with 2)
+15:51:33 <zimba12> how many suborgs do we have?
+15:51:49 <manugupt1> zimba12: I think we have 4 orgs in all
+15:52:10 <zimba12> manugupt1: btw, asking KDE for extraspots it's not the best ideas, i was with them last year and they have a lot of proposals
+15:52:22 <zimba12> manugupt1: I wouldn't take spots from them
+15:52:43 <manugupt1> zimba12: yes.. I mailed Cat and she asked me for the orgs which are umbrellaed under us so I guess Google forgot
+15:52:51 <manugupt1> let me see what reply do I get from her
+15:53:03 <zimba12> good, so there is hope
+15:53:17 <manugupt1> yes I am really hoping that we get atleast 3
+15:53:23 <zimba12> ok, owncloud wants 2 if opensuse has 12 or 3 if Cat gives more
+15:53:40 <zimba12> how about syslog-ng?
+15:53:40 <manugupt1> nemo: sheepluva ?
+15:53:48 <manugupt1> sheepluva: they mailed me 4 I believe
+15:53:55 <manugupt1> zimba12: they mailed me 4 I believe
+15:54:17 <manugupt1> But I think we can ask them for 2
+15:54:17 <zimba12> too many :)
+15:54:25 * manugupt1 checks
+15:54:39 <manugupt1> preference is 4
+15:55:01 <manugupt1> zimba12: ideally if we have 12 now I think 2+2+2+6
+15:55:07 <cboltz> for AppArmor, 1 slot would be nice
+15:55:14 <manugupt1> cboltz: yes :)
+15:55:21 <manugupt1> and if we get upto 15
+15:55:24 <nemo> manugupt1: sorry. was answering hedgewars bugs :)
+15:55:32 <nemo> manugupt1: I agree we should select the ones we'd like you guys to vote on
+15:55:53 <zimba12> nemo: are you hedgewars?
+15:56:01 <manugupt1> nemo: Question here is how many slots would hedgewars want
+15:56:02 <nemo> manugupt1: I don't mind the idea of voting on slot allocation although obviously all orgs would request at least a couple of slots for theirs ;)
+15:56:18 <zimba12> 2+2+2+6 sounds good
+15:56:19 <nemo> manugupt1: I was trying to catch up on all channel discussion :-p  wasn't sure what you wanted an opinion on :)
+15:56:22 <nemo> fine
+15:56:28 <zimba12> unless opensuse doesn't know what to do with 6 :)
+15:56:42 <nemo> manugupt1: um. last I checked, we had the AI task which looks good, and one of the campaign tasks, assuming the person submits a bit more code to prove themselves
+15:56:47 <manugupt1> zimba12: openSUSE knows :) we could do more with a few more though :P
+15:56:51 <nemo> manugupt1: and the UI integration which is ambitious but cool
+15:57:00 <vuntz> manugupt1: just wondering, is there any other comment/question about gsoc?
+15:57:03 <nemo> I have some misgivings about the UI task, so, koda and sheepluva, I'd be fine w/ 2 personally
+15:57:09 <vuntz> if yes we should move on to them ;-)
+15:57:14 <nemo> I dearly wish someone had applied for the GLES2/HTML5 task, but what can you do...
+15:57:27 <vuntz> (just to not eat too much time of the project meeting)
+15:57:29 <tampakrap> first of all, it's not even clear to me on how we're going to vote/select the best proposals
+15:57:39 <nemo> so my personal vote would be 2 slots out of my concerns about the frontend stuff.  but we could handle 3 and might like to try it.
+15:57:45 <nemo> if you can spare them
+15:57:53 <vuntz> #info lots of discussion about how to select the best proposals and how to split the slots among suborgs
+15:58:30 <manugupt1> tampakrap: Well if just give slots (that sounds good to me, and if everyone agrees) then openSUSE votes only on openSUSE ideas
+15:58:39 <zimba12> and about who decides the students to assign to the slots, i think it's up to the suborgs first
+15:58:47 <manugupt1> and hedgewars only on hedgewars and ownCloud on ownCloud and so on..
+15:58:49 <zimba12> (we have already decided)
+15:58:55 <tampakrap> ok but vote HOW? through the webapp? through some meeting?
+15:59:06 <vuntz> guys, may I ask you to take a break on this topic and go on with it in 10 minutes?
+15:59:14 <vuntz> just so that we wrap up the opensuse project meeting :-)
+15:59:27 * manugupt1 thinks the meeting will wrap in 2 minutes so we can wait :P
+15:59:33 <vuntz> heh
+15:59:46 <vuntz> manugupt1: any other news about gsoc you want to share, or shall we move on?
+16:00:00 <manugupt1> vuntz: I think I can only answer questions
+16:00:01 <zimba12> last thing: let's create a spreadsheet where we make things clear
+16:00:21 <manugupt1> zimba12: Ok.. I will put all the proposals there.. on a google drive
+16:00:24 <vuntz> manugupt1: okay, I'll assume there's no question :-P
+16:00:32 <manugupt1> vuntz: :P
+16:00:37 <vuntz> I'll skip the " New Ideas & initiatives for the project?" topic since we're short in time
+16:00:45 <vuntz> #topic Any other question?
+16:01:07 <warlordfff> yeap
+16:01:12 <vuntz> for the record, darix told me that the ticket system for the infrastructure is almost ready
+16:01:12 <warlordfff> one more from me
+16:01:23 <Ilmehtar> vuntz: nice!
+16:01:24 <vuntz> (which means that many things will be unblocked)
+16:01:35 <vuntz> warlordfff: fire!
+16:01:37 <vuntz> (ahah)
+16:01:44 <CarlosRibeiro> openSUSE Adovocate. Any news, updates?
+16:01:51 <warlordfff> can we have an oSC13 meeting here next Thursday? At 23?
+16:01:51 <vuntz> #info ticket system for the infrastructure is almost ready
+16:02:06 <warlordfff> ping robjo
+16:02:07 <warlordfff> henne:
+16:02:07 <vuntz> warlordfff: you always can :-)
+16:02:08 <warlordfff> joss
+16:02:12 <warlordfff> jospoortvliet:
+16:02:17 <vuntz> warlordfff: (as long as it works for people)
+16:02:28 <vuntz> Ilmehtar: any answer for CarlosRibeiro?
+16:02:50 <jospoortvliet> warlordfff: yeap
+16:02:52 <warlordfff> yeap that is why I am asking
+16:02:56 <Ilmehtar> CarlosRibeiro: yup! so, the change to the Ambassador Programme and its renaming to Advocates has been really well recieved.
+16:02:58 <differentreality> and it would make sense to have a couple of people from artwork team during that meeting too
+16:03:07 <warlordfff> but none seems to be around today
+16:03:08 <Ilmehtar> all the feedback I've recieved has been positive
+16:03:08 <CarlosRibeiro> differentreality: +1
+16:03:14 <jospoortvliet> Ilmehtar: that is good news
+16:03:18 <warlordfff> cool
+16:03:19 <jospoortvliet> +1 on that note :D
+16:03:23 <anditosan> differentreality: what meeting is this? I would love to participate
+16:03:39 <Ilmehtar> there has been a few concerns about the changes to the event merch, but when its explained to them, the concensus seems to be that it's a 'good thing' (tm)
+16:03:57 <differentreality> anditosan: warlordfff just asked if we can do an oSC13 meeting next Thursday (the 23rd)
+16:03:57 <warlordfff> all around oSC13 anditosan
+16:04:15 <jospoortvliet> Ilmehtar: I also received some slightly less positive stuff, mostly due to the fact that we simply don't cover some cases that the old merch program DID cover. Like somebody just handing out things to friends...
+16:04:26 <warlordfff> and anditosan we would love if you do participate :D
+16:04:26 <jospoortvliet> we'll hopefully find solutions for that in the future
+16:04:29 <anditosan> thanks guys, I can participate :D
+16:04:43 <Ilmehtar> jospoortvliet: that's true..but when I've explained the full story to people, they seem to accept the new changes
+16:04:49 <anditosan> let's just set the time
+16:05:23 <warlordfff> jospoortvliet:  Ilmehtar people don't like changes generally :D
+16:05:33 <Ilmehtar> in terms of the Local Coordinators, I currently have 10 volunteers, including some really great candidates - a few of them are unlikely to become Local Coordinators right now as they're not established community people. I'm waiting to see over the next few days before deciding how many Local Coordinators and how big the various localities are going to be
+16:05:51 <jospoortvliet> Ilmehtar: +1000 on that good to hear
+16:05:54 <Ilmehtar> I'm a little concerned that, for example, I haven't recieved a volenteer for Greece yet, but I do realise most of them are probably busy with oSC 13 ;-)
+16:05:55 <warlordfff> Ilmehtar:  should I apply?
+16:06:04 <Ilmehtar> ^^
+16:06:18 <warlordfff> really
+16:06:19 <CarlosRibeiro> warlordfff: sure you must apply
+16:06:19 <Ilmehtar> warlordfff: probably :-p
+16:06:35 <warlordfff> oh
+16:06:35 <vuntz> any other question?
+16:06:37 <warlordfff> BTW
+16:06:50 <victorhck> there's something new about planet.o.o ??
+16:06:59 <Ilmehtar> a few of our Local Coordinator volenteers have great experience with the project, but weren't openSUSE members, so I used that as an excuse to get them to apply for membership
+16:06:59 <warlordfff> Ilmehtar:  I got a mail that I must forward to you related to local coordinators
+16:07:10 <victorhck> is planet.o.o on-line again ??
+16:07:32 <vuntz> victorhck: not yet, but the ticket system for infrastructure was blocking most infrastructure things, including this, I think
+16:07:37 <Ilmehtar> which has also given me an excuse to poke the rest of my colleagues on the Membership approval team - we now have the queue down to only 4 down from 11 membership candidates
+16:07:48 <warlordfff> anyway Ilmehtar consider me applied for thejob, can you?
+16:07:49 <vuntz> victorhck: it is online here
+16:08:02 <Ilmehtar> there..I think that's the story of Advocates/Local Coordinators/Event Merch. so far, pretty good all round
+16:08:04 <vuntz> victorhck: doesn't work for you?
+16:08:11 <Ilmehtar> warlordfff: :) really happy to hear that man
+16:08:14 <victorhck> yep, I mean if some new geekos can sindicate thirs blogs...
+16:08:16 <warlordfff> :D
+16:08:34 <vuntz> victorhck: yeah, that's blocking on the ticket system, I think
+16:09:08 <vuntz> okay, I guess we're over-time, let's end the meeting here
+16:09:12 <vuntz> but we can keep chatting
+16:09:12 <warlordfff> BTW another one comming from me
+16:09:22 <warlordfff> any candidates for oSC14?
+16:09:24 <vuntz> (and I expect some gsoc noise starting again ;-))
+16:09:36 <warlordfff> I read something about France
+16:09:36 <Ilmehtar> warlordfff: last I heard, the French were considering..
+16:09:44 <vuntz> warlordfff: not officially yet, people investigating
+16:09:50 <warlordfff> ok
+16:09:53 <vuntz> thanks all!
+16:09:56 <vuntz> #endmeeting

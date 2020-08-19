@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:02:01</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE project meeting</span>
+<a name="l-2"></a><span class="tm">15:02:01</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Mar  6 15:02:01 2013 UTC.  The chair is robjo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:02:01</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:02:12</span><span class="nk"> &lt;robjo&gt;</span> Hi everyone
+<a name="l-5"></a><span class="tm">15:02:25</span><span class="nk"> &lt;robjo&gt;</span> can we get a role call from board members please
+<a name="l-6"></a><span class="tm">15:02:55</span><span class="nk"> &lt;wstephenson__&gt;</span> present!
+<a name="l-7"></a><span class="tm">15:03:16</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">Ilmehtar:</span> was here a few minutes ago
+<a name="l-8"></a><span class="tm">15:03:50</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">FunkyPenguin:</span> ping
+<a name="l-9"></a><span class="tm">15:04:36</span><span class="nk"> &lt;robjo&gt;</span> OK, that makes two of us, an improvement over last week, we'll see if we can keep the trend going
+<a name="l-10"></a><span class="tm">15:04:39</span><span class="nk"> &lt;wstephenson__&gt;</span> isn't he in HK today?
+<a name="l-11"></a><span class="tm">15:05:10</span><span class="nk"> &lt;robjo&gt;</span> could be, not my day to keep track of FunkyPenguin ;)
+<a name="l-12"></a><span class="tm">15:05:16</span><span class="nk"> &lt;wstephenson__&gt;</span> either he's 6 hours ahead or on a plane home: https://twitter.com/awafaa/status/308788169787203584
+<a name="l-13"></a><span class="tm">15:06:00</span><span class="nk"> &lt;robjo&gt;</span> Let me start by welcoming Ilmehtar to the openSUSE Board, hopefully everyone saw the announcement on the -project list
+<a name="l-14"></a><span class="tm">15:06:41</span><span class="nk"> &lt;robjo&gt;</span> Lets get to the action items form the last meeting
+<a name="l-15"></a><span class="tm">15:06:55</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">review AIs from last meeting</span>
+<a name="l-16"></a><span class="tm">15:07:20</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">darix:</span> Ilmehtar did you guys sort out the cloak setup stuff?
+<a name="l-17"></a><span class="tm">15:08:09</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">robjo:</span> he tried to ping me once yesterday
+<a name="l-18"></a><span class="tm">15:08:17</span><span class="nk"> &lt;darix&gt;</span> but i was too busy with getting widehat ready for release
+<a name="l-19"></a><span class="tm">15:08:19</span><span class="nk"> &lt;Ilmehtar&gt;</span> indeed I did
+<a name="l-20"></a><span class="tm">15:08:35</span><span class="nk"> &lt;FunkyPenguin&gt;</span> robjo I am indeed in Hong Kong, just heading to bed after a long day in China, sorry
+<a name="l-21"></a><span class="tm">15:08:40</span><span class="nk"> &lt;Ilmehtar&gt;</span> we'll get our act together, are you going to be free after this meeting darix?
+<a name="l-22"></a><span class="tm">15:08:48</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">robjo:</span> see query
+<a name="l-23"></a><span class="tm">15:08:57</span><span class="nk"> &lt;Ilmehtar&gt;</span> (Sorry for missing the first 5 minutes.. my boss was talking to me)
+<a name="l-24"></a><span class="tm">15:08:57</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">Ilmehtar:</span> more or less
+<a name="l-25"></a><span class="tm">15:09:05</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">FunkyPenguin:</span> weak :p
+<a name="l-26"></a><span class="tm">15:09:18</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">FunkyPenguin:</span> needs to stay up another hour ;)
+<a name="l-27"></a><span class="tm">15:09:38</span><span class="nk"> &lt;robjo&gt;</span> OK, lets carry that topic for another couple of weeks
+<a name="l-28"></a><span class="tm">15:09:56</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">Ilmehtar and darix work out the cloaking thingy</span>
+<a name="l-29"></a><span class="tm">15:10:54</span><span class="nk"> &lt;robjo&gt;</span> vuntz is working on the admin access topic for planet.o.o thus this remains open
+<a name="l-30"></a><span class="tm">15:11:10</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz continue to work on access for planet.o.o</span>
+<a name="l-31"></a><span class="tm">15:11:38</span><span class="nk"> &lt;zoumpis&gt;</span> hey Ilmehtar, congrats!
+<a name="l-32"></a><span class="tm">15:11:46</span><span class="nk"> &lt;robjo&gt;</span> Neither CarlosRibeiro nor Roguehorse appear to be here
+<a name="l-33"></a><span class="tm">15:12:46</span><span class="nk"> &lt;victorhck&gt;</span> "vuntz continue to work on access for planet.o.o" good news!!
+<a name="l-34"></a><span class="tm">15:13:04</span><span class="nk"> &lt;robjo&gt;</span> and that'll do for the action items from last meeting, any questions?
+<a name="l-35"></a><span class="tm">15:13:45</span><span class="nk"> &lt;darix&gt;</span> can i have a chocolate cookie?
+<a name="l-36"></a><span class="tm">15:14:13</span><span class="nk"> &lt;robjo&gt;</span> dispense cookie for darix
+<a name="l-37"></a><span class="tm">15:14:38</span><span class="nk"> &lt;robjo&gt;</span> the agenda is pretty barren: https://en.opensuse.org/openSUSE:Project_meeting
+<a name="l-38"></a><span class="tm">15:14:44</span><span class="nk"> &lt;robjo&gt;</span> thus on to GSoC
+<a name="l-39"></a><span class="tm">15:14:48</span><span class="nk"> &lt;wstephenson__&gt;</span> well, it's nearly release time
+<a name="l-40"></a><span class="tm">15:14:52</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">GSoC update</span>
+<a name="l-41"></a><span class="tm">15:14:57 </span><span class="nka">* saurabhsood91</span> <span class="ac">is here</span>
+<a name="l-42"></a><span class="tm">15:15:16</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">saurabhsood91:</span> anything new to report?
+<a name="l-43"></a><span class="tm">15:15:18</span><span class="nk"> &lt;saurabhsood91&gt;</span> got some activity for gsoc. we got the announcement on the news page
+<a name="l-44"></a><span class="tm">15:15:37</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">robjo:</span> got a reply from syslog. they will be in if they dont get on their own
+<a name="l-45"></a><span class="tm">15:16:26</span><span class="nk"> &lt;robjo&gt;</span> sounds good, anything else on GSoC?
+<a name="l-46"></a><span class="tm">15:16:32</span><span class="nk"> &lt;saurabhsood91&gt;</span> i also added ideas from last year's ideas page to this year's page. I have left out mentor names, as I havent got replies about whether they are interested or not
+<a name="l-47"></a><span class="tm">15:16:40</span><span class="nk"> &lt;saurabhsood91&gt;</span> we can count these ideas open for mentoring
+<a name="l-48"></a><span class="tm">15:17:13</span><span class="nk"> &lt;saurabhsood91&gt;</span> thats all for status. we still have about 10 days to work on the ideas page
+<a name="l-49"></a><span class="tm">15:17:14</span><span class="nk"> &lt;wstephenson__&gt;</span> i think some mentors are waiting to see if there are interesting project proposals
+<a name="l-50"></a><span class="tm">15:17:50</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">wstephenson__:</span> i think we have quite a lot of unimplemented stuff from last year
+<a name="l-51"></a><span class="tm">15:18:13</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">saurabhsood91:</span> can you send another message to -project and maybe -factory when we have about 5 days left to fill the ideas page, as a "finally drive"?
+<a name="l-52"></a><span class="tm">15:18:43</span><span class="nk"> &lt;saurabhsood91&gt;</span> <span class="hi">robjo:</span> sure. i will do that. i was thinking of sending one today itself
+<a name="l-53"></a><span class="tm">15:18:58 </span><span class="nka">* vuntz</span> <span class="ac">is joining for a few minutes</span>
+<a name="l-54"></a><span class="tm">15:19:24</span><span class="nk"> &lt;robjo&gt;</span> Anything else on GSoC?
+<a name="l-55"></a><span class="tm">15:19:43</span><span class="nk"> &lt;saurabhsood91&gt;</span> no
+<a name="l-56"></a><span class="tm">15:19:49</span><span class="nk"> &lt;robjo&gt;</span> <span class="topic">#topic </span><span class="topicline">What else?</span>
+<a name="l-57"></a><span class="tm">15:20:03</span><span class="nk"> &lt;wstephenson__&gt;</span> anyone interested in hearing about 12.3?
+<a name="l-58"></a><span class="tm">15:20:14</span><span class="nk"> &lt;robjo&gt;</span> Certainly
+<a name="l-59"></a><span class="tm">15:20:26</span><span class="nk"> &lt;Ilmehtar&gt;</span> I am, what's the news?
+<a name="l-60"></a><span class="tm">15:20:31</span><span class="nk"> &lt;saurabhsood91&gt;</span> all ears ;)
+<a name="l-61"></a><span class="tm">15:20:32</span><span class="nk"> &lt;wstephenson__&gt;</span> there has been lots of last minute work to get Secure Boot working, without breaking Insecure Boot ;)
+<a name="l-62"></a><span class="tm">15:21:05</span><span class="nk"> &lt;wstephenson__&gt;</span> basically shuffling different combinations of MBR, GPT EFI partitions, and signed bootloaders so they all work
+<a name="l-63"></a><span class="tm">15:21:21</span><span class="nk"> &lt;Ilmehtar&gt;</span> I noticed the 'shim' being pulled down last time I did a dup, is that meant to be on every machine even if there is no grub-efi?
+<a name="l-64"></a><span class="tm">15:22:02</span><span class="nk"> &lt;wstephenson__&gt;</span> so far so good, unless you do something weird like install 12.2 in legacy mode, switch the bios to UEFI, and try to do a dual boot from the legacy bootloader
+<a name="l-65"></a><span class="tm">15:22:06</span><span class="nk"> &lt;wstephenson__&gt;</span> <span class="hi">Ilmehtar:</span> dunno, will check
+<a name="l-66"></a><span class="tm">15:22:41</span><span class="nk"> &lt;wstephenson__&gt;</span> also there has been a flurry of activity on bug 798348, which concerns yast/systemd/networkmanager/ifup
+<a name="l-67"></a><span class="tm">15:22:45</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 798348 in openSUSE Factory (Network) "No network without networkmanager" [Major,Assigned] https://bugzilla.novell.com/798348
+<a name="l-68"></a><span class="tm">15:23:02</span><span class="nk"> &lt;wstephenson__&gt;</span> if that is fixed we have no more blockers
+<a name="l-69"></a><span class="tm">15:23:37</span><span class="nk"> &lt;wstephenson__&gt;</span> a large part of the opensuse team have been mostly doing QA this last couple of weeks
+<a name="l-70"></a><span class="tm">15:24:01</span><span class="nk"> &lt;wstephenson__&gt;</span> fixing up openqa for 12.3 and doing manual testing of non-virtual hardware features
+<a name="l-71"></a><span class="tm">15:24:49</span><span class="nk"> &lt;wstephenson__&gt;</span> so if all goes according to plan we will have a gold master image in the next couple of days, and then it's in the hands of darix and colleagues to make the download magic happen next week
+<a name="l-72"></a><span class="tm">15:25:14</span><span class="nk"> &lt;wstephenson__&gt;</span> at the same time, jospoortvliet has been working on the release annoucement, sneak peeks, etc
+<a name="l-73"></a><span class="tm">15:25:27</span><span class="nk"> &lt;Ilmehtar&gt;</span> do you think if any of the team will have any ideas on how we can get more contributors involved in QA for 13.1?
+<a name="l-74"></a><span class="tm">15:25:48</span><span class="nk"> &lt;wstephenson__&gt;</span> i think all that is in hand, but you might notice more focus on engineering and less on press work than with 12.3
+<a name="l-75"></a><span class="tm">15:26:03</span><span class="nk"> &lt;wstephenson__&gt;</span> we were looking at a new Testopia QA effort
+<a name="l-76"></a><span class="tm">15:26:47</span><span class="nk"> &lt;wstephenson__&gt;</span> but we shelved it for 12.3 as the existing test suites were too outdated to use, and we didn't have time to update them by a useful point in time
+<a name="l-77"></a><span class="tm">15:27:25</span><span class="nk"> &lt;wstephenson__&gt;</span> and the question stands whether the community has any interest in plugging through Testopia test runs
+<a name="l-78"></a><span class="tm">15:27:40</span><span class="nk"> &lt;wstephenson__&gt;</span> we may set up a model QA project early next release to test that
+<a name="l-79"></a><span class="tm">15:27:57</span><span class="nk"> &lt;robjo&gt;</span> my impression is that Secure Boot is possibly the biggest issue, and the issue is that not a lot of people have hardware with UEFI
+<a name="l-80"></a><span class="tm">15:28:34</span><span class="nk"> &lt;wstephenson__&gt;</span> yup, and the problem is that those who do are mostly likely new opensuse users
+<a name="l-81"></a><span class="tm">15:29:00</span><span class="nk"> &lt;wstephenson__&gt;</span> we'll see
+<a name="l-82"></a><span class="tm">15:29:03</span><span class="nk"> &lt;Ilmehtar&gt;</span> ick, I hadn't thought of it like that
+<a name="l-83"></a><span class="tm">15:29:07</span><span class="nk"> &lt;darix&gt;</span> and how many users want to find out if you can brick their system with using uefi ;)
+<a name="l-84"></a><span class="tm">15:29:25</span><span class="nk"> &lt;wstephenson__&gt;</span> we have 3 secure boot machines here on the floor and they are constantly being reinstalled to test
+<a name="l-85"></a><span class="tm">15:29:30</span><span class="nk"> &lt;robjo&gt;</span> yep, turn the crap off ;)
+<a name="l-86"></a><span class="tm">15:29:53</span><span class="nk"> &lt;Ilmehtar&gt;</span> IIRC, it's only specific samsung uefi implimentations that are brickable - I guess we're at that stage where even the OEM's dont quite know what they're doing yet
+<a name="l-87"></a><span class="tm">15:30:25</span><span class="nk"> &lt;wstephenson__&gt;</span> we don't know how bad it is
+<a name="l-88"></a><span class="tm">15:30:35</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">Ilmehtar:</span> yes, OEMs are in for a rude awakening as well
+<a name="l-89"></a><span class="tm">15:30:37</span><span class="nk"> &lt;wstephenson__&gt;</span> at least we have a kernel with the mitigation patches in
+<a name="l-90"></a><span class="tm">15:30:46</span><span class="nk"> &lt;Ilmehtar&gt;</span> my laptop has a uefi (not secure boot) mode.. and every time I've tested it, it's been a comedy of errors - it doesn't even look for its boot files in the right place
+<a name="l-91"></a><span class="tm">15:30:52</span><span class="nk"> &lt;wstephenson__&gt;</span> but afaics all are using some derivative of the tianocore uefi firmware
+<a name="l-92"></a><span class="tm">15:31:11</span><span class="nk"> &lt;wstephenson__&gt;</span> having said that, a bios update is strongly recommended if you want to use uefi
+<a name="l-93"></a><span class="tm">15:32:22</span><span class="nk"> &lt;robjo&gt;</span> wstephenson__ thanks for the update
+<a name="l-94"></a><span class="tm">15:32:36</span><span class="nk"> &lt;wstephenson__&gt;</span> yw
+<a name="l-95"></a><span class="tm">15:32:41</span><span class="nk"> &lt;robjo&gt;</span> Anything else, or are we done early today?
+<a name="l-96"></a><span class="tm">15:33:35</span><span class="nk"> &lt;ancor&gt;</span> hello everybody
+<a name="l-97"></a><span class="tm">15:33:42</span><span class="nk"> &lt;ancor&gt;</span> I'm new here.
+<a name="l-98"></a><span class="tm">15:34:07</span><span class="nk"> &lt;wstephenson__&gt;</span> i should point out that ancor is specifically new in the opensuse team ;)
+<a name="l-99"></a><span class="tm">15:34:08</span><span class="nk"> &lt;ancor&gt;</span> I'm a new member of the openSUSE Team at Suse offices in Nuremberg
+<a name="l-100"></a><span class="tm">15:34:27</span><span class="nk"> &lt;robjo&gt;</span> That's it then. Thanks everyone for attending. The next project meeting will be in two weeks at the same time
+<a name="l-101"></a><span class="tm">15:34:55</span><span class="nk"> &lt;robjo&gt;</span> Please note that the US is changing to Summer time this coming weekend
+<a name="l-102"></a><span class="tm">15:34:55</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">ancor:</span> oh welcome!
+<a name="l-103"></a><span class="tm">15:35:22</span><span class="nk"> &lt;wstephenson__&gt;</span> <span class="hi">ancor:</span> tell us what you'll be doing for the project
+<a name="l-104"></a><span class="tm">15:35:33</span><span class="nk"> &lt;ancor&gt;</span> I'm mainly a Ruby on Rails developer and this week
+<a name="l-105"></a><span class="tm">15:35:55</span><span class="nk"> &lt;ancor&gt;</span> I started the development of an application for managing the openSUSE Travel Support Program
+<a name="l-106"></a><span class="tm">15:36:51</span><span class="nk"> &lt;ancor&gt;</span> It will be published (as a work in progress) this week on github
+<a name="l-107"></a><span class="tm">15:36:56</span><span class="nk"> &lt;victorhck&gt;</span> Hi ancor
+<a name="l-108"></a><span class="tm">15:37:03</span><span class="nk"> &lt;Ilmehtar&gt;</span> oh that'll be nice! so people applying will be able to check their status of their requests and such?
+<a name="l-109"></a><span class="tm">15:37:28</span><span class="nk"> &lt;ancor&gt;</span> yes, this kind of things
+<a name="l-110"></a><span class="tm">15:38:32</span><span class="nk"> &lt;ancor&gt;</span> we are developing a generic travel support program application that can be used in other upstreams projects alike
+<a name="l-111"></a><span class="tm">15:38:37</span><span class="nk"> &lt;ancor&gt;</span> like gnome or kde
+<a name="l-112"></a><span class="tm">15:38:52</span><span class="nk"> &lt;ancor&gt;</span> and then, we will adapt the application to openSUSE
+<a name="l-113"></a><span class="tm">15:39:16</span><span class="nk"> &lt;ancor&gt;</span> integrating it with the rest of the infrastructure
+<a name="l-114"></a><span class="tm">15:39:31</span><span class="nk"> &lt;Ilmehtar&gt;</span> great!..hmm.. how's your javascript?
+<a name="l-115"></a><span class="tm">15:39:43</span><span class="nk"> &lt;ancor&gt;</span> I hope that it would be the first project of a large list
+<a name="l-116"></a><span class="tm">15:39:51</span><span class="nk"> &lt;coolo&gt;</span> <span class="hi">Ilmehtar:</span> in rails you don't javascript, you jquery
+<a name="l-117"></a><span class="tm">15:40:02</span><span class="nk"> &lt;coolo&gt;</span> or even worse, you coffee
+<a name="l-118"></a><span class="tm">15:40:43</span><span class="nk"> &lt;ancor&gt;</span> <span class="hi">Ilmehtar:</span> coolo is right. I always use jquery
+<a name="l-119"></a><span class="tm">15:41:01</span><span class="nk"> &lt;ancor&gt;</span> but I'm not still used to coffee
+<a name="l-120"></a><span class="tm">15:41:08</span><span class="nk"> &lt;vad&gt;</span> tea, then?
+<a name="l-121"></a><span class="tm">15:41:10</span><span class="nk"> &lt;coolo&gt;</span> <span class="hi">ancor:</span> oh, sorry. you can't know yet: coolo is always right
+<a name="l-122"></a><span class="tm">15:41:17</span><span class="nk"> &lt;Ilmehtar&gt;</span> I ask because one of the things on my list was looking into the possibility of using something like LO's 'Bug Submission Assistant' against our bugzilla
+<a name="l-123"></a><span class="tm">15:41:58</span><span class="nk"> &lt;Ilmehtar&gt;</span> nice 'end user friendly' bug submission interface, a bit like those guided forms we already have in our bugzilla, just even less scary looking for userrs
+<a name="l-124"></a><span class="tm">15:41:58</span><span class="nk"> &lt;ancor&gt;</span> I suppose I can add it to my list too
+<a name="l-125"></a><span class="tm">15:42:01</span><span class="nk"> &lt;Ilmehtar&gt;</span> https://wiki.documentfoundation.org/Bug_Submission_Assistant
+<a name="l-126"></a><span class="tm">15:43:00</span><span class="nk"> &lt;ancor&gt;</span> <span class="hi">Ilmehtar:</span> I'll take a look
+<a name="l-127"></a><span class="tm">15:43:12</span><span class="nk"> &lt;Ilmehtar&gt;</span> ahh, and it uses JQuery ;-) .. I haven't really had any time to look at it yet, but its one of those things I saw at FOSDEM and thought "Wow, that could be really useful for the project"
+<a name="l-128"></a><span class="tm">15:43:24</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">ancor:</span> thank you
+<a name="l-129"></a><span class="tm">15:43:46</span><span class="nk"> &lt;wstephenson__&gt;</span> <span class="hi">ancor:</span> thanks for presenting yourself
+<a name="l-130"></a><span class="tm">15:44:07</span><span class="nk"> &lt;wstephenson__&gt;</span> i guess you can find him here or at opensuse-web@opensuse.org
+<a name="l-131"></a><span class="tm">15:45:26</span><span class="nk"> &lt;robjo&gt;</span> 15 minutes left, anything else?
+<a name="l-132"></a><span class="tm">15:45:50</span><span class="nk"> &lt;wstephenson__&gt;</span> i'd like to wrap so i can reboot and test more stuff ;)
+<a name="l-133"></a><span class="tm">15:46:08</span><span class="nk"> &lt;robjo&gt;</span> That's good enough for me
+<a name="l-134"></a><span class="tm">15:46:20</span><span class="nk"> &lt;robjo&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

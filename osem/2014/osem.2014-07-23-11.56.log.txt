@@ -1,0 +1,164 @@
+11:56:46 <KalabiYau> #startmeeting OSEM status/progress meeting
+11:56:46 <bugbot> Meeting started Wed Jul 23 11:56:46 2014 UTC.  The chair is KalabiYau. Information about MeetBot at http://wiki.debian.org/MeetBot.
+11:56:46 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+11:57:28 <KalabiYau> #chair differentreality ancorgs ChrisBr gopesh henne KalabiYau
+11:57:28 <bugbot> Current chairs: ChrisBr KalabiYau ancorgs differentreality gopesh henne
+11:57:43 <gopesh> ChrisBr: you have entirely changed the mail notifications that I built :P
+11:58:03 <gopesh> I haven't completed them and the delayed jobs integration is still left
+11:59:39 <ChrisBr> Not entirely ... Henne wanted to be consistent ...
+11:59:40 <KalabiYau> #topic short standup
+11:59:57 <KalabiYau> we shall start, guys. Hi, everyone!
+12:00:04 <gopesh> hello
+12:00:08 <gopesh> everyone
+12:00:24 <ancorgs> I have half on the brain in the meeting, mention me if you really need me :-)
+12:00:34 <KalabiYau> ancorgs, sure
+12:00:45 <KalabiYau> can we share  our current status? How things are going? Any problems, achievements, things to be proud?
+12:01:28 <gopesh> Well the admin backend looks really professional great work ChrisBr
+12:01:59 <differentreality> I am working on the roles and the authorization, I am implementing tests, I stubmle upon stuff that need to be reworked and it's still a work in progress
+12:02:32 <KalabiYau> from my side, i've done some deploument and CI related tasks which are tracked in #263, removed Hound CI and replaced it with rubocop. Slowly moving towards proper style ;) Additionally we've moved production instance and now we running it on master + all the errors notifications we got via errbit
+12:02:56 <gopesh> I am currently working on email notifications, the implementation is almost over however the delayed jobs integration and some polishing is still left
+12:03:17 <KalabiYau> ancorgs, ChrisBr, henne anything to share?
+12:03:51 <ancorgs> not here
+12:03:55 <KalabiYau> oh yeah, we have some stuff around happening with travis/phantomjs, but seems temp fix is in place, done by gopesh
+12:03:58 <ChrisBr> Okay, currently I'm working on the default mail templates and fixing bugs for event update state but the this PR
+12:03:58 <ChrisBr> is already finish and I will discuss some issues with gopesh after meeting and waiting for review! The next small
+12:03:58 <ChrisBr> tasks is a bug in a migration (reported from differentreality) and the issue with js and travis :/ My next big task
+12:03:58 <ChrisBr> is the refactoring of the admin menu structure which I would like to start tomorrow
+12:04:17 <KalabiYau> cool
+12:04:32 <henne> I'm starting to work on the user onboarding
+12:04:41 <KalabiYau> #topic agile structuring
+12:04:59 <KalabiYau> Seems everyone reported, back to agenda.
+12:06:28 <KalabiYau> My idea is about to limit our focus to move with osem progress more rapidly and more fractionated. So, we can establish a milestone - it is there in fact, https://github.com/openSUSE/osem/issues?milestone=1&state=open
+12:07:38 <KalabiYau> say, we _all_ agree on some stuff we can deliver in one milestone. This example holds data of 6 Aug. With 8 issues. We all discuss should we do something or not in this milestone, assign ourself to tasks and proceed
+12:07:47 <henne> clashes a bit with my GSoC project plan for ChrisBr
+12:08:00 <KalabiYau> why it is good? It is more focused approach
+12:08:20 <KalabiYau> no worries, as tasks in GSoC project can be included
+12:08:26 <KalabiYau> as you are working on that anyway
+12:08:55 <KalabiYau> but very basic idea is to do only commited stuff. simple
+12:09:06 <KalabiYau> henne, that way it will do?
+12:09:40 <gopesh> Well we haven't confirmed on what shall we do about the user deletion
+12:09:41 <KalabiYau> GSoC is good, but OSEM should move forward as well. As at some point GSoC will end and need to move on
+12:09:50 <henne> true
+12:10:08 <henne> I of course like a more focused approach
+12:10:17 <KalabiYau> any objections from milestone approach from anyone?
+12:10:23 <henne> we just have to figure out the details with the current schedule
+12:10:35 <KalabiYau> we have time for it, no hurry
+12:10:39 <KalabiYau> just a test-drive )
+12:10:56 <KalabiYau> how it will work out, and we will decide later on
+12:11:30 <KalabiYau> no objections so far, only concerns, which can be and should be solved. Then seems we are good. Moving on.
+12:12:04 <henne> so when / how are we going to decide on milestone content?
+12:12:23 <KalabiYau> #action all agree on milestone content
+12:12:45 <ChrisBr> KalabiYau: and what happens if we are faster / slower than commited?
+12:13:23 <gopesh> ChrisBr: faster is good and slower is not an issue :)
+12:13:35 <KalabiYau> If we are faster - we just agree on something else until milestone ends, if slower, next time we will be wiser. Practice shows that it needs two-five sprints to make proper estimations
+12:13:45 <KalabiYau> gopesh, agree
+12:14:16 <ChrisBr> KalabiYau: Okay
+12:14:21 <KalabiYau> henne, each should estimate his plans, tasks he think he/she want/need to deliver until end of milestone and add em to milestone
+12:15:07 <KalabiYau> until say tomorrow evening and on friday we will COMMIT - means milestone experiment officially running
+12:15:26 <KalabiYau> any qustions/objections?
+12:15:33 <KalabiYau> s/questions/objections/
+12:15:44 <KalabiYau> :) cool
+12:15:50 <henne> I always like to do collaboratively
+12:15:50 <KalabiYau> #topic BigGoals v.1
+12:15:56 <henne> wait...
+12:16:10 <KalabiYau> #topic agile structuring
+12:16:14 <KalabiYau> #topic agile structuring
+12:16:27 <KalabiYau> waiting :)
+12:16:47 <henne> I would like to meet on Milestone.end and discuss content of the next milestone
+12:17:01 <henne> so we at least sync once per milestone...
+12:17:01 <KalabiYau> absolutely, that how it should work
+12:17:06 <henne> k
+12:17:18 <ChrisBr> KalabiYau: The sprint period is then from 25.07-06.08?
+12:17:30 <KalabiYau> ChrisBr, something like it, yes
+12:17:35 <KalabiYau> it is flexible
+12:17:55 <ChrisBr> Ah okay, so no exactly two week sprints
+12:18:03 <KalabiYau> but to get result we need some discipline
+12:18:25 <KalabiYau> i would say, each milestone catch up we do review of what is done and next plans
+12:18:34 <KalabiYau> how long should be next sprint and stuff
+12:18:44 <KalabiYau> anything else to this topic?
+12:19:13 <KalabiYau> seems not :)
+12:19:15 <KalabiYau> #topic BigGoals v.1
+12:19:25 <KalabiYau> that is more questionable topic
+12:19:47 <KalabiYau> big goals can allow us to build project work on OSEM more valuable to ourselves
+12:20:00 <KalabiYau> like we want to get 100 installations, to help guys out there
+12:20:04 <henne> I think we also need more discipline when taking on issues
+12:20:15 <KalabiYau> is it good feeling to achieve?
+12:20:20 <KalabiYau> henne, elaborate please
+12:20:57 <henne> well if we're going to work with issues in milestones we need more discipline in recording thing we're going to do
+12:21:12 <henne> and more discipline in recording when we start to work on something etc etc
+12:21:27 <KalabiYau> absolutely
+12:21:34 <henne> we have currently 2 competing implementation of cancancan and email templates for instance
+12:21:36 <KalabiYau> i would extract it to wiki somewhere
+12:21:46 <KalabiYau> ;) that should be synced
+12:22:03 <KalabiYau> as it is kinda spending time for competitors
+12:22:21 <henne> how about we use https://waffle.io/openSUSE/osem
+12:22:47 <KalabiYau> awesome
+12:22:50 <KalabiYau> we could
+12:22:53 <KalabiYau> i am on it
+12:23:18 <KalabiYau> so seems idea of big goals did not get any attention, so i would postpone it for better implementation
+12:23:21 <gopesh> this is awesome
+12:23:31 <KalabiYau> #topic tools and improvements
+12:23:40 <KalabiYau> i think waffle will help us!
+12:24:25 <KalabiYau> and let's write something in contribution.md to leverage tasks assignment?
+12:24:36 <henne> yeah
+12:24:53 <KalabiYau> that will eliminate problems like competing implementations in the same milestone
+12:25:28 <henne> and it will separate feature issues from bug issues
+12:25:36 <KalabiYau> #action KalabiYau PR with Milestone discipline + issues discipline/Codename 'RubyGrandma'
+12:26:04 <KalabiYau> yeah
+12:26:08 <differentreality> haha
+12:26:28 <KalabiYau> #topic free talk
+12:26:48 <KalabiYau> we have ton's of issues in GH and we need to clean them
+12:26:57 <henne> not back to Big Goals? :)
+12:26:58 <KalabiYau> as many of them looks abandoned
+12:27:12 <KalabiYau> we can, actually
+12:27:21 <KalabiYau> but seems i need to wrap it up better
+12:27:37 <KalabiYau> who is up to big Goals?
+12:27:45 * henne is
+12:27:46 <gopesh> I am
+12:27:57 * KalabiYau is
+12:28:08 <ChrisBr> too
+12:28:13 <KalabiYau> okay
+12:28:14 <KalabiYau> #topic BigGoals v.1
+12:28:27 <KalabiYau> so, those can drive process of milestone solving
+12:28:58 <KalabiYau> if each milestone has in a background some part of big idea called 'epic', that way we will deliver more than awesomeness
+12:29:20 <KalabiYau> self esteem, warm feeling, respect from fellow foss'ers
+12:29:21 <KalabiYau> and so on
+12:29:33 <ChrisBr> sounds great :)
+12:29:54 <KalabiYau> i presume we can collect ideas for big goals until next week and then choose 3-5 for one calendar year
+12:30:01 <KalabiYau> how is that
+12:30:02 <KalabiYau> ?
+12:30:11 <henne> where do we record those?
+12:30:15 <gopesh> that sounds great
+12:30:18 <KalabiYau> etherpad/wiki/you name it
+12:30:45 <gopesh> or maybe in GH with label BigGoals
+12:30:57 <KalabiYau> sure, when we choose
+12:31:13 <KalabiYau> when we settle goals for a year, we can put them into GH
+12:31:22 <KalabiYau> but to brainstorm we need some other place
+12:31:25 <henne> goals are not worth a penny if you don't announce them. I would put them into README.md :)
+12:31:33 <KalabiYau> henne, +1
+12:31:40 <KalabiYau> GH + readme for tracking
+12:31:41 <gopesh> for Big Goals I think we should ask people in the entire community like in the biweekly of opensuse-project
+12:31:44 <henne> move the install documentation out of there
+12:32:08 <KalabiYau> gopesh, asking is good
+12:32:20 <KalabiYau> but each of the proposal should be filtered
+12:32:33 <KalabiYau> we decide where to steer, but we listen carefully
+12:32:42 <henne> yeah and we should have an idea what we want before asking anyone
+12:32:50 <KalabiYau> :) true
+12:33:13 <differentreality> I think that BigGoals is more what we, developers of OSEM, want for the application. One of which would be to raise awareness about the existence of OSEM among FOSS communities, for instance.
+12:33:14 <henne> as a first step, let's get an idea what we, as a group, want from this
+12:33:31 <KalabiYau> differentreality, that would be super
+12:33:49 <KalabiYau> i wanna cookie !
+12:33:56 <KalabiYau> from RubyGrandma
+12:34:00 <KalabiYau> sorry :)
+12:34:26 <KalabiYau> i want our stuff to be more widely used, i want more collaborators, especially from non rails world
+12:34:34 <gopesh> One of the big goals would be to enhance the Android Application of OSEM, giving people the power to manage their stuff via mobile
+12:34:41 <KalabiYau> we are running out of time, btw
+12:35:18 <KalabiYau> i suggest we establish a plan for this BigGoals thing and move on with it in async
+12:35:23 <KalabiYau> deal?
+12:35:25 <henne> Note your awesome ideas down somewhere and let's discuss them tomorrow
+12:35:36 <gopesh> I think people will use the app more wisely and OSEM will be more popular
+12:36:00 <KalabiYau> #task KalabiYau establish a place for BigGoals sub-prj tracking and brainstorming
+12:36:08 <KalabiYau> #action KalabiYau establish a place for BigGoals sub-prj tracking and brainstorming
+12:36:15 <KalabiYau> Then we are done
+12:36:18 <KalabiYau> thanks a lot
+12:36:24 <KalabiYau> #endmeeting

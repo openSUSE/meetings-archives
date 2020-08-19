@@ -1,0 +1,594 @@
+13:04:18 <metalgod> #startmeeting openSUSE GNOME Meeting
+13:04:18 <bugbot> Meeting started Fri Aug  6 13:04:18 2010 UTC.  The chair is metalgod. Information about MeetBot at http://wiki.debian.org/MeetBot.
+13:04:18 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+13:04:39 <DimStar> well, I can give it a try...
+13:04:45 <metalgod> #action  openSUSE 11.3 Release: A summary and discussion of what went right/wrong
+13:04:58 <DimStar> interestingly enough the 'run back' on the thread was rather low. Only a handful of replies comming in.
+13:05:32 <DimStar> The general tone was rather positive, except vuntz ranting that we started too late with features. And the 2nd negative is that we get way too late serious testers / bugreportes on board
+13:05:58 <metalgod> i have to agree with the QA part
+13:06:03 <metalgod> but it's our fault
+13:06:36 <DimStar> nobody else was to be blamed... it's one of the parts we, as gnome team, did bad.. be it testing or attarcting teters
+13:06:47 <metalgod> how can we improve that for 11.4 ?
+13:06:59 <psankar> bribe badshah400 with some t-shirts ? ;-)
+13:07:17 <badshah400> psankar, :)
+13:07:38 <DimStar> that is certainly something we NEED: badshah400 did a great job and needs recognition for this job.... vuntz? anything you can do there?
+13:07:39 <captain_magnus> I did experince bugs but didn't report one single issue
+13:07:55 <DimStar> captain_magnus: that fine and valid: as long as you go on and fix the bugs
+13:07:57 <vuntz> DimStar: I need an action item to investigate this, indeed
+13:08:04 <captain_magnus> My problem was that I was too busy with other things :-(
+13:08:31 <metalgod> i think we should somewhat motivate users to use G:F a little early or test Milestones
+13:08:32 <vuntz> #action vuntz investigate how to get some goodies for highly active contributors
+13:08:34 <badshah400> DimStar, thanks
+13:09:11 <vuntz> metalgod: it's better to have people test milestones than G:F
+13:09:17 <vuntz> metalgod: G:F is moving fast at times
+13:09:20 <metalgod> yes
+13:09:26 <vuntz> so not the best option for testers
+13:09:26 <DimStar> other than that, I think we really let go on 'formal communication'. nobody cared for organized meetings.
+13:09:43 <psankar> 2.30 testing on 11.3 is a good move
+13:09:43 * vuntz wonders if bugbot took the #action he wrote
+13:09:52 <mw_> the meetings ain't run like they used to be :)
+13:09:53 <psankar> vuntz, i guess only metalgod can command it
+13:10:04 <psankar> hey mw_
+13:10:07 <wstephenson> metalgod: #chair vuntz
+13:10:08 <badshah400> one thing I believe would help testers is to have milestone to milestone goals for GNOME
+13:10:13 <metalgod> #action vuntz investigate how to get some goodies for highly active contributors
+13:10:39 <vuntz> badshah400: do you have any example of how this would work?
+13:10:46 <metalgod> well one thing i've noticed is that there's lot's of users testing fedora beta
+13:10:49 <metalgod> and ubuntu beta
+13:10:49 <vuntz> badshah400: ie, what kind of goals?
+13:10:56 <metalgod> but not many opensuse beta/milestones
+13:11:16 <badshah400> vuntz, I am sorry, I meant like having a summary of changes
+13:11:19 <metalgod> i'm not saying that opensuse milestones are broken because as you know are not :)
+13:11:19 <vuntz> psankar: are you okay to make the meetings happen during this cycle?
+13:11:30 <psankar> vuntz, yes. I am ready to.
+13:11:37 <captain_magnus> metalgod: Do you actually run with the milestones/betas?
+13:11:40 <vuntz> psankar: sweet. DimStar will be happy :-)
+13:11:43 <badshah400> I think the thing missing is developer-tester synchronisation or something like it, perhaps I cant explain clearly
+13:11:50 <metalgod> i think we should really highlight some features to motive users to test it
+13:11:51 <vuntz> badshah400: that's a good point. Summary of changes.
+13:11:52 <metalgod> captain_magnus: yes
+13:11:54 <captain_magnus> metalgod: Or upgrade from factory as I do?
+13:12:11 <metalgod> captain_magnus: usually i do a clean install around M6
+13:12:20 <metalgod> that's why i'm using upstart :)
+13:12:33 <vuntz> badshah400: I would expect that having regular meetings to explain what's going on would actually help for this. What do you think?
+13:12:34 <badshah400> but suppose a developer points out a important changes [and makes it verbose], then that would help testers see if those changes break things or not
+13:12:51 <badshah400> vuntz, yes that would definitely help
+13:12:52 <metalgod> i have to agree with badshah400 on that
+13:13:07 <vuntz> badshah400: I think it's the best way to "force" ourselves to summarize changes
+13:13:11 <metalgod> highlight features motivates users to install a milestone
+13:13:21 <badshah400> but having a thread on the mailing-list would too
+13:13:26 <metalgod> like "GNOME ships blah for the first time... please test"
+13:13:28 <vuntz> I don't think we're good at documenting stuff with no social pressure ;-)
+13:13:28 <henne> i would say: invest into the milestone announcements
+13:13:29 <badshah400> metalgod, right
+13:13:35 <psankar> metalgod, so you can add a #action on me to schedule meetings regularly (/me grins at FunkyPenguin who said it will be only once ;-0 )
+13:13:49 <metalgod> #action on me to schedule meetings regularly
+13:13:58 <DimStar> agreed on that: we should also all blog more about things we did like that... the NM0.8.1 update for example got quiet some users as I've seen... new features are attracting.
+13:14:03 <metalgod> psankar: ;)
+13:14:07 <psankar> metalgod, ;-)
+13:14:17 <captain_magnus> DimStar: +1
+13:14:18 <henne> great milestone announcements will attract testers. more than meetings i bet :)
+13:14:21 <metalgod> DimStar: yeah agreed... too bad i'm too lazy
+13:14:26 <metalgod> tweeting too
+13:14:29 <captain_magnus> DimStar: i'm using your branch
+13:14:36 <metalgod> (we have a opensuse-gnome account on tweeter)
+13:14:38 <FunkyPenguin> psankar, i dont recall saying that ;)
+13:14:41 <vuntz> henne: oh, the meetings is the place where we can collect the list of changes. And then we can put that in announcements
+13:14:58 <henne> vuntz: sure :)
+13:14:58 <metalgod> henne: i loved your announcement on M2 or M3
+13:15:21 <metalgod> ok people can we move to the next topic ?
+13:15:39 <vuntz> oh, we can abuse the opensuse-gnome account. Could we maybe have a bot here that would be able to post tweets when we ask it to do so?
+13:15:39 <badshah400> metalgod: ok with me
+13:15:44 <metalgod> so we need to find a way to attract more powerusers to test Milestones and GNOME:Factory
+13:15:45 <henne> metalgod: thanks. they did cost me half a day to day. so shouldnt take you guys more then 2 hours to have a great GNOME paragraph
+13:15:59 <metalgod> to avoid bugs on final
+13:16:39 <metalgod> about late features DimStar... anything to say ?
+13:16:43 <psankar> metalgod, just one more comment.
+13:16:48 <metalgod> go ahead
+13:17:23 <psankar> metalgod, if we have a wiki page explaining how to test gnome:factory in a vm, it will be good. During 11.2, I could never get vmware working, kvm was cmdline driven - didnt want to learn etc,
+13:17:36 <DimStar> late features: well: I can only agree with vuntz. There was no clear distrinctions what we want to do besides getting the latest version of every gnome package in.
+13:17:57 <metalgod> psankar: sounds great... also building G:F on susestudio
+13:18:15 <metalgod> volunteers for psankar proposal ?
+13:18:27 <badshah400> DimStar: I guess we can discuss how to improve that significantly when we discuss point 5 today :)
+13:18:33 <vuntz> wait, wait. I feel we have many good points that should be recorded in the minutes with #info :-)
+13:18:47 <vuntz> metalgod: can you do #chair joe
+13:18:51 <metalgod> sure
+13:18:52 <DimStar> metalgod: I think I can have a look at SuSE studio... but we better get a kiwi config inside OBS... (studio is too manual for this)
+13:18:53 <vuntz> err, #chair vuntz
+13:18:59 <metalgod> #chair vuntz
+13:18:59 <bugbot> Current chairs: metalgod vuntz
+13:19:20 <metalgod> DimStar: i guess we need to start packaging new stuff early
+13:19:34 <psankar> Now is the time everyone waits eagerly to see what vuntz will say to himself ;-)
+13:19:35 <metalgod> deja-dup and rygel could be packaged a few months ago
+13:19:37 <vuntz> #info we should use meetings to collect list of changes in GNOME, as a basis for GNOME paragraph in milestones announcements
+13:19:46 <DimStar> metalgod: I actually believe we did a good job with keeping up-to-date with packages...
+13:19:57 <metalgod> yes we did thanks to you DimStar
+13:19:59 <DimStar> but NEW things also need to be brought to attention.
+13:20:05 <vuntz> #info we should be more active in promoting our work, via the opensuse-gnome identi.ca/twitter account and blogs
+13:20:36 <metalgod> ok so what if we do a research and find a few packages to package for 11.4 ?
+13:20:53 <metalgod> what people want and what is useful and what we can remove ?
+13:21:04 <vuntz> metalgod: I have a list of stuff to packages on the old wiki...
+13:21:05 <badshah400> metalgod: good idea
+13:21:15 <metalgod> vuntz: i'll take that action if you don't mind
+13:21:27 <DimStar> vuntz: I think you brought most of this in 'features' already?
+13:21:31 <metalgod> #action metalgod find new packages for 11.4, remove old
+13:21:40 * DimStar is ashamed for not looking regularly into openfate
+13:21:50 <vuntz> fwiw, since 11.4 will go with 2.32, we'll have quite a few months where things will be quieter than usual, packaging-wise. So it's a good opportunity to add missing apps
+13:21:50 <metalgod> ok
+13:22:04 <metalgod> can we move to next topic ?
+13:22:07 <metalgod> vuntz: anything to say ?
+13:22:46 <vuntz> nothing more to add (I feel we said too much at the same time, so we need good minutes to capture all this)
+13:22:56 <metalgod> ok
+13:23:16 <metalgod> #topic GUADEC Update (Vuntz and DimStar)
+13:23:27 <metalgod> i'm missing someone ?
+13:23:43 <psankar> metalgod, I guess it is fine
+13:24:08 <metalgod> so what guadec brought to us except we won't have GNOME 3.0 in September ?
+13:24:13 <metalgod> :)
+13:24:30 <vuntz> well, I guess it was useful to see what's going to happen...
+13:24:34 <vuntz> is there any specific question?
+13:24:37 <psankar> metalgod, that is the big news :-)
+13:25:00 <metalgod> vuntz: anyone interested in opensuse or questions about OBS ?
+13:25:18 <DimStar> guadec was a good opportunity to see a bit 'behind' the scenes and I think / hope that we managed to strengthen our links also inside opensuse-gnome a little bit, as we had several people from our team there.
+13:25:26 <vuntz> I felt opensuse was more visible than in the past, so that was good
+13:25:43 <vuntz> and we had stuffed geekos to give away. People loved them
+13:25:44 <metalgod> i haven't quit about bringing opensuse to gnome developers
+13:26:09 <metalgod> we should blog more about jhbuild experience and general package manager stuff
+13:26:17 <psankar> was there a openSUSE talk of somekind ?
+13:26:36 <captain_magnus> metalgod: Yes I agree.... Too bad vuntz doesn't :-/
+13:26:49 <metalgod> yes
+13:27:10 <metalgod> our package manager is top quality but people still thinks apt is the best
+13:27:12 <metalgod> same for yum
+13:27:15 <vuntz> psankar: there's no real downstream talk at guadec
+13:27:23 <psankar> vuntz, okay.
+13:27:32 <vuntz> although I think BinLi1 mentioned obs in some slides
+13:27:37 <mmeeks> vuntz: argh - I am fixing bugs from time to time,
+13:27:42 <metalgod> if people realize that we removed most of the susisms from the GNOME livecd
+13:27:44 <mmeeks> vuntz: I just committed another set of fixes yesterday
+13:27:49 <mmeeks> vuntz: OTOH - that thing is a huge time-sink.
+13:27:54 <vuntz> captain_magnus: nod. I'm not a good blogger. I hate that :-)
+13:27:58 <badshah400> vuntz: i read jimmac's post about GUADEC http://jimmac.musichall.cz/log/?p=1035
+13:27:58 <mmeeks> vuntz: what do you want from me - blood ? :-)
+13:28:27 <badshah400> is there some benefit from the 3.0 design that could be put in for 2.32 or is it really too different/drastic?
+13:28:35 <vuntz> mmeeks: dude, you're still the bonobo maintainer. You're a superhero! PK has to be easy! ;-)
+13:28:43 <mmeeks> hah
+13:28:45 <captain_magnus> vuntz: It's not about many blog posts... It's about you talking about openSUSE
+13:28:46 <metalgod> badshah400: that's the next topic
+13:29:00 <vuntz> ah, so I'll wait for the next topic, then :-)
+13:29:00 <metalgod> mmeeks: i'm loosing my head with PK too
+13:29:01 <mmeeks> The PK daemon is even more 'optimistic' about threading than bonobo was (sad to say)
+13:29:06 <metalgod> i share your pain
+13:29:08 <badshah400> metalgod: ok
+13:29:30 <mmeeks> metalgod: sure, OTOH - it's an awesome concept & wonderful to have so ... ;-)
+13:29:42 <metalgod> mmeeks: doing apt-rpm backend isn't trust me ;)
+13:29:44 <mmeeks> metalgod: if you are getting a series of crashers; try master ...
+13:30:06 <metalgod> ok sorry
+13:30:07 <mmeeks> metalgod: interesting ! why're you working on that ? :-)
+13:30:09 <metalgod> next topic
+13:30:17 <metalgod> mmeeks: the distro i work for uses apt-rpm
+13:30:36 <metalgod> API is horrible (c++) and uses lua embedded bindings
+13:31:20 <metalgod> ok vuntz and DimStar can we move ?
+13:31:22 <psankar> i think we are getting a little distracted.
+13:31:45 <metalgod> #topic Current Repositories organization (Vuntz) (how to get GNOME 2.30 packages in 11.2, 11.3 etc.)
+13:31:51 <vuntz> metalgod: I'm not sure what kind of really relevant things I can say about guadec, so moving on is good
+13:32:01 <vuntz> this one is easy
+13:32:04 <metalgod> i think captain_magnus and DimStar can also talk about this one
+13:32:26 <vuntz> we have GNOME:STABLE:2.30 for 11.2 and 11.3
+13:32:36 <vuntz> and 11.2 users should make sure to also use GNOME:Backports:2.30
+13:33:28 <vuntz> the only feedback I remember about G:S:2.30 is a gdm issue
+13:33:30 <metalgod> vuntz: GNOME:STABLE:3.0 is too much for 11.2 users ? :)
+13:33:37 <DimStar> is tehre any way to 'enforce' such repo dependenices? Most issues we see are from missing / old pakcages
+13:33:57 <metalgod> i also think we should update telepathy packages on G:F
+13:34:12 <vuntz> wait, wait. Let's stay on 2.30 for now
+13:34:14 <metalgod> it brings new features and doesn't mess with empathy
+13:34:16 <DimStar> metalgod: G:F is catching up... vuntz was reviewinng most of my SRs last night
+13:34:32 <vuntz> did someone fix the gdm issue?
+13:34:44 <vuntz> (I posted instructions in a mail, iirc)
+13:34:46 <metalgod> s/G:F/G:S:2.30\g
+13:35:07 <metalgod> psankar: want to fix gdm issue ? :)
+13:35:09 <psankar> vuntz, if none has looked into it. I can take it up over the weekend (gdm login err. dialog)
+13:35:17 <metalgod> yay
+13:35:18 <psankar> metalgod, yes . action me ;-)
+13:35:31 <vuntz> see http://lists.opensuse.org/opensuse-gnome/2010-07/msg00075.html
+13:35:32 <metalgod> #action psankar take care of gdm 2.30 on GNOME:STABLE:2.30
+13:36:06 <vuntz> except for the gdm issue, it seems G:S:2.30 is working relatively well, so I guess we could advertize it a bit more?
+13:36:09 <metalgod> DimStar: you mind if i update telepathy for 2.30 ?
+13:36:22 <vuntz> metalgod: re telepathy in G:S:2.30
+13:36:34 <vuntz> metalgod: why do you want to update the telepathy stack there?
+13:36:46 <vuntz> (ie, for which features
+13:36:51 <mmeeks> metalgod: I believe rpm itself is getting a chunk of lua stuff inside itself - at least librpm now depends on lua on some of my systems ;-)
+13:36:55 <metalgod> vuntz: easy... because i use protocols that usually gets new features and fixes
+13:37:05 * mmeeks wonders how the madness infected the lower levels of the system ...
+13:37:10 <vuntz> #info except for a gdm issue, G:S:2.30 is working relatively well and can be more widely advertized
+13:37:24 <vuntz> metalgod: examples?
+13:37:32 <mmeeks> "using mostly spoons - we dig a tunnel out of the city - and abandon RPM there ... ;-)"
+13:37:50 <metalgod> vuntz: well msn (yeah i know it sucks) got connection fixes and file transfers (same for gtalk)
+13:37:51 <vuntz> metalgod: generally, I think G:S:* should be about official GNOME only. We can have a few exceptions, but we're careful about them
+13:38:00 <darix> mmeeks: not the poor rpm!
+13:38:11 <metalgod> mmeeks: not sure if our rpm uses it.. it's 4.6.0
+13:38:21 <metalgod> apt-rpm sucks point.
+13:38:29 <FunkyPenguin> vuntz, could that gdm issue be what is causing my pain?
+13:38:39 <mmeeks> darix: speaking of which - I need a SUSE-ist volunteer to come and talk about RPM at the MeeGo conference in Ireland - who is my man ? :-)
+13:38:43 <vuntz> metalgod: except that some of those might require a newer telepathy-glib, and this gets a bit more complex
+13:38:49 <vuntz> FunkyPenguin: for meego? I doubt so
+13:39:05 <darix> mmeeks: rudi
+13:39:51 <FunkyPenguin> vuntz, but my machine is upgraded from 11.2 and using G:S:2.30
+13:40:13 <metalgod> vuntz: so if there isn't any newer telepathy-glib dependency can i start bumping telepathy-* ? i always build telepathy-butterfly for me
+13:41:09 <metalgod> ok
+13:41:11 <metalgod> next topic ?
+13:41:12 <vuntz> metalgod: well
+13:41:19 <vuntz> metalgod: I'd love to hear what DimStar thinks
+13:41:33 <DimStar> vuntz: making life easy for you again, huh?
+13:41:35 <vuntz> metalgod: I'm a bit reluctant to this, since then it's too easy to start updating many other things
+13:42:33 <metalgod> will discuss later then
+13:42:46 <metalgod> #topic Update about Meego (FunkyPenguin) (FCrozat will also be pulled in to
+13:42:47 <metalgod> make him feel at home ;-) )
+13:42:57 <metalgod> #topic Update about Meego (FunkyPenguin) (FCrozat will also be pulled in to make him feel at home ;-) )
+13:42:58 * fcrozat hides..
+13:43:12 <FunkyPenguin> haha, you wont hide for long
+13:43:22 * darix pushes fcrozat out into the spotlight
+13:43:42 <FunkyPenguin> ok, there are a couple of major issues - the network panel is somewhat borked
+13:43:42 <metalgod> vuntz: i moved the 11.4 thingy to the end don't worry :)
+13:43:57 <FunkyPenguin> as is the internet panel
+13:44:46 <FunkyPenguin> the network issue i think is down to a change from using the old nbtk to the newer mx
+13:45:02 <FunkyPenguin> it works in a fashion, but doesnt display properly and is painful to use
+13:45:25 <FunkyPenguin> main issue is there doesnt seem to be a maintainer anymore for network-manager-netbook
+13:45:49 <FunkyPenguin> the web panel issue i think is down to chromium which is a weird beast on its own
+13:45:52 <metalgod> FunkyPenguin: tambet or binli ?
+13:45:52 <psankar> BinLi isnt ?
+13:46:04 <BinLi1> FunkyPenguin: I'd take care of it
+13:46:14 <FunkyPenguin> BinLi1, great thanks
+13:46:22 <BinLi1> But may be next week, :)
+13:46:40 <FunkyPenguin> like i said i *think* it is down to no longer using nbtk but maybe mmeeks can confirm?
+13:47:03 <BinLi1> There are a bug for it now
+13:47:39 <FunkyPenguin> i have also had some people say that hey cant actually pull up the web services settings or emapthy settings - apparently it pulls up gnome-control-center
+13:48:36 <FunkyPenguin> once the network panel is fixed im happy to release a beta image with any known caveats
+13:49:20 <FunkyPenguin> locally i have an issue logging into meego but it appears to be unrelated as i can login fine on other machines
+13:49:49 <FunkyPenguin> any questions on the meego stuff?
+13:50:44 <metalgod> btw... everybody welcome fcrozat to opensuse-gnome and to goblin/meego team !!
+13:50:55 <FunkyPenguin> oh i need to thank DimStar for fixing a load of crud, and also anubisg1 who is going through and cleaning things up
+13:50:59 <metalgod> when you need a rpm spec and gnome guru you have him :)
+13:51:27 <FunkyPenguin> we should hopefully be able to provide both 32 & 64 bit builds now
+13:51:33 <psankar> FunkyPenguin, are you presenting about smeegol in meego conf ?
+13:52:04 <FunkyPenguin> i havent submitted a talk as i doubt i can make the conf (atm)
+13:53:11 <metalgod> ok can we move to the next topic ?
+13:53:17 <metalgod> FunkyPenguin: fcrozat anything to say ?
+13:53:23 <FunkyPenguin> not from em
+13:53:29 <FunkyPenguin> err me even
+13:53:41 <fcrozat> metalgod: nothing to say either
+13:53:55 <metalgod> ok move
+13:54:10 <metalgod> #topic - GNOME Pet Peeves summary and followup plan (Atri ?)
+13:54:16 <metalgod> badshah400: isn't you ?
+13:54:21 <badshah400> OK, right
+13:54:51 <badshah400> so I wanted to colect user-feedback on little issues with GNOME that hurt general usability
+13:55:05 <badshah400> I have listed whatever feedback I received here http://wiki.opensuse.org/User:Badshah400
+13:55:45 <badshah400> My intention is to identify corresponding upstream bugs and nudge the developers to fix them or so
+13:56:04 <badshah400> for example this icon scrambling bug in GNOME has been around for like ever
+13:56:08 <metalgod> badshah400: why don't you join GNOME usability team ?
+13:56:14 <psankar> badshah400, or get them fixed by us and push upstream :-)
+13:56:44 <badshah400> metalgod: I am a no-hope about coding :)
+13:57:10 <metalgod> badshah400: the usability team *usually* doesn't code
+13:57:16 <badshah400> so I don't think I can help much
+13:57:17 <DimStar> badshah400: so you fit in the usability team :)
+13:57:27 <badshah400> OK :)
+13:57:28 <vuntz> it's nice to have a list like this
+13:57:35 <metalgod> read HIG badshah400
+13:57:39 <metalgod> join the mailing list
+13:57:48 <badshah400> good then I will see what I need to do about it
+13:57:54 <badshah400> yes, I have read the HIG
+13:57:55 <psankar> may be during OSC10, people can solve all this in a GNOME hackroom ?
+13:57:58 <vuntz> badshah400: do you intend to keep this list up-to-date and to get more feedback from users to have more items?
+13:58:16 <vuntz> badshah400: I feel it's a bit more useful than bugzilla bugs, especially if there's someone who makes sure the list is not too long and reasonable
+13:58:32 <badshah400> just the other day, and was surprised about the conflict between "Forgive the user" and lack of undo button in nautilus
+13:59:02 <badshah400> vuntz: yes, I plan to update list as and when I receive more feedback
+13:59:30 <badshah400> and also to follow up on them and see if there is some way I can help in some way
+13:59:36 <vuntz> badshah400: sweet
+13:59:50 <vuntz> badshah400: maybe blog about it to get more feedback?
+14:00:08 <metalgod> badshah400: can i add an action to you ?
+14:00:24 <badshah400> vuntz: OK, will do, but my lizards blog is not aggregated on plantesuse yet (just mailed admin)
+14:00:26 <vuntz> badshah400: I can't stress that it's important to keep the list relatively short (even if you add a new item when another is removed)
+14:00:27 <psankar> I remember abock making some blog about making the notification dialog more attractive, colourful, configurable etc. but dont know if it was pushed upstream
+14:00:31 <vuntz> stress enough
+14:00:36 <badshah400> metalgod: sure do :)
+14:00:38 <DimStar> we might also want to promote the list the our 'official' list of pet peeves (meaning out of the User: namespace in GNOME: namespace?)
+14:00:58 <vuntz> yeah
+14:01:07 <vuntz> as long as there's someone to maintain it :-)
+14:01:18 <DimStar> sure, but I trust in Atri
+14:01:26 <badshah400> DimStar: I will do that, just have not managed to follow up on all of the points yet
+14:01:31 <metalgod> #action badshah400 convince him to join usability team and keep his list update
+14:01:36 <metalgod> next topic ?
+14:01:59 <metalgod> #topic oS-GNOME A11y goals and plans for 11.4 (decriptor/sshaw, suseROCKS?)
+14:02:10 <metalgod> i think we should move this
+14:02:13 <psankar> i guess none of them are up. so we can skip it.
+14:02:18 <metalgod> ok
+14:02:29 <metalgod> #topic 11.4 Focus and plans (The 3 champs - Vuntz, Captain_Magnus, Dimstar)
+14:02:33 <metalgod> ok the big one here
+14:02:39 <metalgod> #topic 11.4 Focus and plans (All of us)
+14:03:06 <vuntz> so
+14:03:20 <vuntz> sshaw: heh, you're two minutes late!
+14:03:38 <vuntz> upstream, the plan is to have:
+14:03:43 <vuntz> 2.32 at the end of September
+14:03:47 <vuntz> 3.0 at the end of March
+14:04:00 <vuntz> for openSUSE, the plan for 11.4 is to release mid-March
+14:04:11 <vuntz> so we can't have 3.0 ready for 11.4
+14:04:34 <vuntz> therefore, the idea is to have 11.4 ship with 2.32, and provide an additional project on the build service for 3.0
+14:04:49 <vuntz> we'll try hard to have 3.0 available as soon as it's out in this project
+14:04:50 <darix> vuntz: how hard would be it be to release 3.0 2-4 weeks earlier?
+14:04:58 <vuntz> darix: upstream?
+14:05:03 <darix> yes
+14:05:18 <metalgod> darix: ship a release candidate/beta ?
+14:05:20 <vuntz> darix: quite hard. That'd make our release cycle shorter, and we probably don't want this for 3.0
+14:05:23 <DimStar> release mid-march means freeze mid-february... so we would need G3 even 6 weeks earlier
+14:05:42 <darix> DimStar: well
+14:05:57 <darix> we would of course have all RCs/betas of 3.0 in 11.4 already
+14:06:04 <darix> so we just push in the final 3.0
+14:06:11 <darix> so 4 weeks would be fine
+14:06:44 <vuntz> darix: I think to have coolo accept this, we'd need to have 3.0 out for RC1
+14:07:00 <darix> yes
+14:07:10 <charles_> darix: pong
+14:07:22 <darix> charles_: query in a few
+14:07:25 <vuntz> darix: RC1 checkin is Feb 4th
+14:07:44 <darix> vuntz: but if you have all G3 RCs in it ... then the changes from RC to final shouldnt be that much right?
+14:08:00 <vuntz> darix: well, all packages will get updated, still
+14:08:08 <vuntz> darix: no big code change, but still a new tarball
+14:08:19 <darix> vuntz: sure
+14:08:20 <vuntz> darix: and that's a no-go for RC2
+14:08:25 <vuntz> (imho)
+14:08:50 <vuntz> but really, the thing is that I don't see 3.0 out before March 20th anyway
+14:09:11 <vuntz> and I don't feel it's reasonable for us to release 11.4 with something that is not even 3.0
+14:09:20 <vuntz> (I'd feel much more comfortable with 3.0.1)
+14:09:48 <badshah400> my personal opinion is to concentrate on making the most out of GNOME 2.32.x rather than on 3.0
+14:09:53 <psankar> we will delay 11.4 release ;-) ?
+14:10:04 <DimStar> psankar: Agree... best option there is!
+14:10:17 <darix> for gnome? never :p
+14:10:47 * darix goes back to lurk mode
+14:11:07 <vuntz> and delaying 11.4 is not really feasible
+14:11:17 <metalgod> badshah400: that's bad for marketing
+14:11:24 <badshah400> why not just focus on 2.32.x and make it more usable
+14:11:24 <metalgod> all distros will ship 3.0 on april
+14:11:27 <vuntz> we have to live with the fact that once every 3 releases, we can't have the latest GNOME
+14:11:28 <metalgod> and we don't
+14:11:37 <badshah400> I see
+14:11:42 <metalgod> but in general i agree
+14:11:47 <vuntz> metalgod: seriously. If we have a build service project ready for this, with livecd, that's really the same
+14:12:03 <vuntz> metalgod: we can even "release" before the other distros, this way
+14:12:34 <metalgod> yes i agree vuntz
+14:12:41 <badshah400> vuntz: I think we could market it kind-of flashy (like *-respin)?
+14:12:48 <metalgod> better ship stable than unstable
+14:12:49 <DimStar> good point: we should make sure to have live CD spins available shortly after release.. some, that when you install, give you the normal repos & the GNOME3 one straight enabled...
+14:13:01 <DimStar> then we can 'sell' it as an intermediate 11.4.1 release!
+14:13:15 <metalgod> the day after GNOME 3.0 we can have it available for users
+14:13:26 <DimStar> metalgod: we're not that slow! same day :)
+14:13:49 <metalgod> eheh
+14:13:55 <metalgod> right OBS rocks!!
+14:13:55 <psankar> Best Laid Plans :-) Sounds attractive.
+14:14:05 <metalgod> ok action then
+14:14:21 <vuntz> so, that's the plan for which upstream version to use
+14:14:30 <DimStar> anybody here knows how to make live cd's build in OBS? (I think kiwi needs to be enabled on a per-project bassi)
+14:14:31 <vuntz> now, there's the question of what feature we want to focus on for 11.4
+14:14:36 <badshah400> I think this can be an action item too: market and highlight 3.0 live-cd thru blogs and tweete and so on
+14:14:42 <metalgod> #action everyone get GNOME 3.0 available in the same day for opeSUSE 11.4 and try to get a respin 11.4.1
+14:15:00 <vuntz> DimStar: see GNOME:Medias
+14:15:00 <metalgod> vuntz: i think we should focus on packaging more applications
+14:15:12 <DimStar> metalgod: the 11.4.1 'version tag' probably needs some approval from the project.
+14:15:24 <metalgod> DimStar: yes that's why i added "try to get"
+14:15:57 <vuntz> so, we agree want more apps
+14:16:03 <vuntz> but that's not really a feature
+14:16:08 <metalgod> true
+14:16:13 <badshah400> what apps are we talking about? is there a voting page?
+14:16:26 <vuntz> badshah400: I have a list somewhere, and metalgod wants to collect more ideas
+14:16:32 <badshah400> ok
+14:16:34 <metalgod> badshah400: i already have that action.. research for new apps and package it
+14:17:04 <metalgod> badshah400: i can add you to that action if you want...
+14:17:10 <DimStar> we need something more suitable for the list... openfate is too cluttered for that, so is bugzilla (I'd need a quick overview of what is requested, who works on it, what are the issues with it)
+14:17:16 <badshah400> metalgod: ok that sounds good
+14:17:47 <metalgod> #action badshah400 research with metalgod for new apps to be available on 11.4
+14:17:51 <psankar> metalgod, I got 2 packagers (non-openSUSE)  asking if they can help with some packaging. I will point them to you.
+14:18:00 <vuntz> btw, I propose to have a "new app of the week" thing, where we work on packaging at least one specific new app per week
+14:18:04 <metalgod> psankar: sure me or someone from the team
+14:18:12 <badshah400> DimStar: Let us have a wiki page for that
+14:18:18 <DimStar> (in bugzilla it could be handled with whiteboard tagging... but it's bad that those requests are to be bound to a 'version' of opensuse)
+14:18:36 <metalgod> vuntz: sounds good
+14:18:44 <vuntz> badshah400: can you also create a wiki page to track 11.4 features?
+14:18:54 <badshah400> openSUSE:GNOME_Features_11.4 would do
+14:18:58 <badshah400> vuntz: yes
+14:19:00 <vuntz> #action vuntz start a "new app of the week" thing, where we work on packaging at least one specific new app per week
+14:19:05 <vuntz> badshah400: sweet, thanks!
+14:19:17 <metalgod> vuntz: any specific features like more branding ?
+14:19:20 <vuntz> fwiw, in my notes, I have a few things I want to work on:
+14:19:43 <vuntz> make sure all the PackageKit integration works well (to install codecs, mime handlers, fonts, etc.)
+14:20:07 <vuntz> work with upstream on the tracker-search-tool UI to improve it
+14:20:18 <metalgod> i.e. xchat-gnome could point to #opensuse by default
+14:20:24 <metalgod> or #opensuse-gnome
+14:20:37 <vuntz> metalgod: pet peeve, not feature :-)
+14:20:41 <vuntz> metalgod: (but good one)
+14:20:52 <metalgod> right :/
+14:20:58 <vuntz> and my third feature I want to see is "be ready for GNOME 3 in March"
+14:21:17 <metalgod> vuntz: we talked a few releases ago for a ggreeter replacement
+14:21:21 <metalgod> but we left that idea
+14:21:28 <DimStar> vuntz: that's an important one and we need the GNOME:3 repo asap to have testers capabilities...
+14:21:29 <sshaw> vuntz: I'd be nice to have some good testing/help with a11y stuff :)
+14:21:56 <vuntz> sshaw: if you can write what's needed to have a good a11y story, we can turn this into a feature
+14:22:07 <sshaw> we have potentially a rare opportunity to excel here
+14:22:20 <vuntz> sshaw: I agree, but the issue is really that we don't know what to do :-)
+14:22:32 <sshaw> vuntz: the biggest thing right now would be to test at-spi2
+14:22:33 <badshah400> feature request: have a directory Pictures/Wallpapers and patch gnome-appearance-properties to automatically add images in it to the wallpaper list
+14:22:47 <vuntz> metalgod: I'm not really a big fan of a ggreeter replacement, to be honest. I'm happy to not have this anymore...
+14:22:53 <metalgod> me too :)
+14:23:07 <vuntz> badshah400: where would this directory live?
+14:23:10 <DimStar> sshaw: do you have instructions on 'how to test' that thing? Maybe we could use testopia in bugzilla to come up with some test plans?
+14:23:29 <badshah400> vuntz: ~/Pictures/Wallpapers
+14:24:16 <psankar> badshah400, i use something called webilder that has a similar capability - http://psankar.blogspot.com/2009/10/stunning-random-wallpapers-for-your.html
+14:24:18 <vuntz> badshah400: that's already implemented in http://blogs.gnome.org/thos/2010/07/26/gnome-background-chooser-flickr/
+14:24:25 <metalgod> vuntz: *very important* we need to investigate again what apps are going to be installed by default on 11.4 livecd
+14:24:25 <sshaw> DimStar: I'll work with my team.  We already have some tests
+14:24:37 <metalgod> g-d-u wasn't installed by default *àgain* on 11.2
+14:24:40 <metalgod> err 11.3
+14:24:47 <sshaw> I want to work with the kde team as well since I think this is something that they could benefit from it
+14:24:48 <vuntz> #info feature: make sure all the PackageKit integration works well (to install codecs, mime handlers, fonts, etc.)
+14:24:57 <vuntz> #info feature: work with upstream on the tracker-search-tool UI to improve it
+14:25:15 <vuntz> #info feature: be ready for GNOME 3 in March
+14:25:27 <badshah400> vuntz: this flicr thing looks good, is it in upstream already?
+14:25:28 <vuntz> #info feature? (ask sshaw) excel in a11y
+14:25:30 <metalgod> #action everyone see what apps should be installed by default... we are missing g-d-u and g-c-m
+14:26:06 <vuntz> any other idea of features?
+14:26:14 <metalgod> vuntz: we had an old page
+14:26:18 <vuntz> any volunteer to browse openfate and make sure we find the relevant page?
+14:26:20 <metalgod> with lot's of features
+14:26:23 <vuntz> s/page/ones/
+14:26:26 <metalgod> i will
+14:26:37 <BinLi1> how about the fastboot? is it a features of GNOME?
+14:26:39 <badshah400> ever-existing feature? improve the slab experience in several ways.
+14:26:47 <metalgod> #action metalgod browse openfate for new features
+14:26:58 <psankar> badshah400, once shell comes i guess none will need slab
+14:27:00 <metalgod> BinLi1: we will have systemd so we won't need fastboot ;)
+14:27:06 <vuntz> badshah400: we probably need to find someone to work on gnome-main-menu for this, though
+14:27:20 <badshah400> like getting rid of New applications for a-b and so on
+14:27:47 <BinLi1> metalgod: fine, :D
+14:28:04 <metalgod> BinLi1: ask kay he is the guru
+14:28:16 <badshah400> vuntz: yes, not many responses to my bug-reports at bnc about main-menu/ab
+14:28:24 <metalgod> vuntz: porting yast to polkit ;)
+14:28:27 * metalgod runs
+14:28:43 <DimStar> oh.. polkit good one!
+14:28:52 <badshah400> psankar: 2.32 is in 11.4, so it is still needed though
+14:29:00 <DimStar> Have it be usable again and let it REMEMBER what I do?
+14:29:02 <sshaw> I have one for BinLi1, bridge network support in NM :)
+14:29:09 <badshah400> and if it is there, why not make it better :)
+14:29:10 <metalgod> i'm still get the feeling that our gdm is slower than fedora
+14:29:16 <vuntz> DimStar: that's by design...
+14:29:27 <psankar> badshah400, agreed. I was just trying to point out that there may not be much developer enthusiasm to fix bugs in that
+14:29:27 <DimStar> vuntz: broken by design does not make it good.
+14:29:33 <vuntz> metalgod: that's because fedora probably has patches from git that make it faster
+14:29:45 <vuntz> DimStar: sure, but we can't fix it ourselves. This has to be done upstream
+14:29:54 <DimStar> vuntz: you can for example in the updater select that you want the security updates 'automatically' installed.. daily... and then it waits daily for the root password.. --> broken by deisgn
+14:29:56 <vuntz> DimStar: and someone has to have good arguments with proper knowledge for this
+14:30:22 <vuntz> DimStar: that's a feature on its own, imho
+14:30:38 <vuntz> DimStar: want me to add it with #info? :-)
+14:30:42 <BinLi1> sshaw: yeah, it's a good feature, I wanna do it in Hackweek, but no more time for it
+14:30:43 <metalgod> another "feature" we add is to contribute more upstream
+14:30:54 <metalgod> i guess we can join redhat in this journey :)
+14:31:07 <DimStar> vuntz: I'd be happy with it :)
+14:31:17 <sshaw> BinLi1: :(  it would be a huge help with kvm/xen
+14:31:28 <kay> BinLi1: what is "fastboot"? you mean the boot option?
+14:31:39 <BinLi1> sshaw: Yeah, I know, I'll take a look the feature
+14:32:02 <vuntz> #info feature: fix 'automatically install security updates' option in updater to not ask for root password daily (PackageKit-polkit fun)
+14:32:40 <BinLi1> kay: not just boot option, like Ubuntu, make it look like faster
+14:32:51 <metalgod> vuntz: that's a danger feature ;)
+14:32:56 <darix> vuntz: JFYI: autobuild team will release a package for that soon
+14:32:59 <metalgod> fedora adopted it for a week after f12 release
+14:33:03 <darix> (something we use on our servers since years)
+14:33:20 <darix> metalgod: if you limit it to "patches"
+14:33:27 <darix> and to non interactive patches
+14:33:35 <darix> it isnt as dangerous anymore
+14:33:40 <vuntz> any other feature?
+14:34:07 <BinLi1> How about the appearance design of GNOME?
+14:34:22 <BinLi1> Or the theme
+14:34:53 <vuntz> want to change the default?
+14:34:58 <metalgod> BinLi1: sounds interesting but it has to be done with upstream
+14:35:00 <DimStar> themeing is an important thing which we also have to look at early for the gnome3 repo... we won't have time at release date for that anyhow.
+14:35:24 <sshaw> vuntz: do we need to be watching the new dconf? stuff
+14:35:35 <sshaw> or whatever the replacement for gconf is
+14:35:37 <vuntz> sshaw: define "watching"? :-)
+14:35:56 <badshah400> btw, who's theming? jimmac is not, so who is?
+14:36:06 <vuntz> badshah400: no idea :/
+14:36:10 <darix> rlihm?
+14:36:12 <psankar> we dont Own any upstream project except evo. and so we may not need to watch for dconf ;-)
+14:36:13 <sshaw> vuntz: make sure its well tested in our environment
+14:36:14 <darix> gnokii
+14:36:15 <metalgod> people i think we should discuss this topic again next week or in the next meeting
+14:36:19 <vuntz> sshaw: we'll have dconf available relatively soon
+14:36:26 * vuntz looks at DimStar who was working on it at some point
+14:36:27 <metalgod> we will have time to think
+14:36:35 <darix> i would ask those 2
+14:36:42 <darix> they are also involved in the opensuse-art team
+14:37:05 <DimStar> vuntz: ? on what?
+14:37:05 <metalgod> can we move to the last topic ?
+14:37:11 <vuntz> DimStar: dconf
+14:37:15 <psankar> darix, but afaik their work is limited to pictures and not themes. (may be i am wrong)
+14:37:24 <darix> psankar: you are
+14:37:31 <darix> gnokii was working already on the 11.4 installer
+14:37:34 <psankar> darix, i stand corrected :)
+14:37:44 <vuntz> DimStar: if you don't have dconf anymore, tell me and I'll do it
+14:37:53 <vuntz> DimStar: we really need it before we push the gsettings stuff to factory
+14:38:05 <metalgod> people
+14:38:07 <sshaw> vuntz: it would be cool to see a gtk installer (much simplified) for gnome live
+14:38:10 <DimStar> vuntz: it's in my branch... isn't it SRed?
+14:38:19 <darix> metalgod: yes sir?
+14:38:21 <vuntz> DimStar: nope
+14:38:30 <sshaw> but that might be a bit too much work and maintenance
+14:38:32 <metalgod> darix: let's move to another topic ? :)
+14:38:35 <vuntz> DimStar: do it, do it!
+14:38:44 <vuntz> DimStar: (even if it's broken; I'll fix it)
+14:38:50 <DimStar> vuntz: will check it after the meeting..
+14:39:10 <metalgod> #topic  World Domination (all of us)
+14:39:24 <psankar> metalgod, you can ignore it ;-)
+14:39:29 <DimStar> vuntz: ah.. vala newer required.. that's why I stopped (0.9.2+)
+14:39:32 <metalgod> i think we all talked about this topic a lot
+14:39:35 <metalgod> so move to the next
+14:39:38 <psankar> metalgod, we have already reached it ;-)
+14:39:46 <metalgod> #topic Q & A
+14:39:57 <metalgod> So now it's time to post your questions
+14:39:59 <metalgod> go go go
+14:40:12 <vuntz> DimStar: submit whatever you have, I'll finish it
+14:40:19 <metalgod> i have a question to everyone
+14:40:27 <metalgod> how can we improve updates ?
+14:40:38 <vuntz> metalgod: what's the issue with updates? :-)
+14:40:41 <metalgod> i mean... it takes lot's of time to reach the end users
+14:41:01 <vuntz> metalgod: maybe ask the maintenance team to document why it takes time
+14:41:06 <vuntz> metalgod: there might be good reasons for this
+14:41:13 <metalgod> sure
+14:41:20 <metalgod> yes documentation helps
+14:41:36 <metalgod> because the current doesn't explain so good how this works
+14:41:58 <metalgod> even for a developer from the community who wants to update his package
+14:42:02 <metalgod> wants/needs
+14:42:30 <metalgod> other questions ?
+14:42:34 <psankar> I have one Question. Regarding boosters. We have only vuntz now in boosters for GNOME. I saw a new booster opening but from liason officer wstephenson 's blog post it sounded like it was for KDE. Already KDE has wstephenson  lubos working on boosters. So I believe we should get a gnome based booster, so that we can spare some time for vuntz amidst his busy upstream activities.
+14:42:59 <badshah400> +1
+14:43:10 <wstephenson> psankar: we had federico in the boosters team, but preloads ate him.
+14:43:16 <DimStar> vuntz should use his powers on that one.
+14:43:22 <psankar> wstephenson, yes. I remember that :(
+14:43:32 <metalgod> well
+14:43:35 <sshaw> wstephenson: doesn't change that we are 1 short ;)
+14:43:46 <sshaw> wstephenson: I need to bug you later today about some kde stuff :)
+14:43:49 <metalgod> i would like to apply for that job
+14:44:00 <wstephenson> sshaw: how do you stop management overrides sucking everyone who can help on a preload into the abyss?
+14:44:01 <vuntz> psankar: I think if wstephenson's post lead you to think it was for KDE, then wstephenson's post was misleading :-)
+14:44:08 <vuntz> psankar: it's a booster position
+14:44:15 <psankar> metalgod, why not ? go ahead :-)
+14:44:19 <vuntz> ie, the desktops are not directly relevant to this position
+14:44:26 <sshaw> wstephenson: tis sad, but I'm a believer in back filling ;0
+14:44:27 <sshaw> ;)
+14:44:31 <metalgod> psankar: just waiting for a confirmation
+14:44:43 <sshaw> metalgod: to apply for it?
+14:44:55 <metalgod> sshaw: yes
+14:44:55 <psankar> vuntz, but i see that wstephenson or lubok or coolo working directly on gnome . so if you count the boosters working for #oS-gnome it will be only you
+14:44:59 <metalgod> sshaw: location etc..
+14:45:13 <metalgod> and of course if i can really quit my current job
+14:45:36 <DimStar> metalgod: you can ALWAYS quit your current job.... we're in the 21st century
+14:45:37 <wstephenson> psankar: coolo doesn't work on kde any more than cornelius or duncanmv do
+14:45:38 <vuntz> psankar: I'm unsure how much coolo still works on kde, but that's probably not that much -- he's a busy hero
+14:45:40 <psankar> vuntz, so if we get another person also from a KDE background, i believe you will again be overloaded.
+14:45:51 <psankar> wstephenson, vuntz oh okay.
+14:46:23 <vuntz> and of course, I'd love to have a gnome-friendly person fill that position
+14:46:41 <vuntz> but the important part is that it's a booster position
+14:46:55 <psankar> apart from that , I see boosters as a critical set of people. So I  believe having a GNOME guy will help maintain neutrality in numbers.  Just my opinion. You people know better ;-)
+14:47:30 <metalgod> psankar: yes and i think it would be important to GNOME upstream too
+14:47:35 * sshaw sadly has to go and miss the rest of the meeting :(
+14:47:51 <metalgod> not everyone has the luck to contribute to GNOME in the day job
+14:48:07 <psankar> metalgod, +1 ;-)
+14:48:45 <DimStar> vuntz: 44741
+14:48:48 <metalgod> ok
+14:48:52 <anaumov> metalgod, tja... like to KDE :)
+14:48:52 <metalgod> next question ?
+14:49:50 * pcutler thinks we should clone vuntz
+14:49:52 <psankar> i guess we are done.
+14:49:57 <metalgod> ok
+14:50:04 <vuntz> DimStar: thanks
+14:50:06 <metalgod> so thanks everyone for being in the meeting
+14:50:24 <metalgod> we will resume it soon and send it to the ML
+14:50:26 * psankar congratulates metalgod on his debut as a chair :-)
+14:50:29 <metalgod> bye bye
+14:50:33 <vuntz> thanks!
+14:50:38 <vuntz> was a good meeting
+14:50:38 <psankar> metalgod, you need to #endmeeting
+14:50:40 <metalgod> psankar: actually it's the 3 ou 4 time
+14:50:46 <metalgod> #endmeeting

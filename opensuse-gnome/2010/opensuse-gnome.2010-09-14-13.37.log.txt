@@ -1,0 +1,272 @@
+13:37:56 <metalgod_> #startmeeting openSUSE GNOME Meeting
+13:37:56 <bugbot> Meeting started Tue Sep 14 13:37:56 2010 UTC.  The chair is metalgod_. Information about MeetBot at http://wiki.debian.org/MeetBot.
+13:37:56 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+13:38:13 <metalgod_> #chair vuntz
+13:38:13 <bugbot> Current chairs: metalgod_ vuntz
+13:38:38 <metalgod_> welcome to the openSUSE GNOME team meeting
+13:38:53 <metalgod_> let's move on for the first item
+13:39:34 <metalgod_> #topic Repositories Status G:S:2.30, G:F, G:B (vuntz, DimStar)
+13:40:11 <metalgod_> any of you wants to report hows the status of GNOME:Factory ?
+13:41:28 <vuntz> sorry, just got a gnome-keyring bug that locked my whole session ;-)
+13:41:49 <vuntz> the current status of GNOME:Factory is that we're pushing GNOME 2.31.92 to it right now
+13:42:09 <vuntz> we had 2.31.91 (which is now in the standard Factory)
+13:42:28 <vuntz> and so far, it's working rather well
+13:42:28 <metalgod_> vuntz: do we have any good reports of G:F on 11.3 ?
+13:42:53 <vuntz> I don't -- I'm mostly focused on Factory
+13:43:10 <vuntz> but some people tried it, iirc
+13:43:43 <vuntz> we certainly need a few people to help test it, so we can release a GNOME:STABLE:2.32 project for 11.3 in a few weeks
+13:44:47 <badshah400> this is about GNOME:Factory+GNOME:Apps on openSUSE 11.3?
+13:45:06 <metalgod_> yes
+13:45:26 <badshah400> ok, I can get to testing it
+13:45:27 <metalgod_> maybe we need to add some packages to G:B:2.30
+13:46:09 <vuntz> possibly
+13:46:21 <vuntz> the first task is to get G:F to completely build on 11.3
+13:46:28 <vuntz> I didn't even look at that
+13:46:35 <vuntz> but I can help
+13:46:58 <metalgod_> ok
+13:47:18 <metalgod_> do we have a volunteer to make G:F build on 11.3 ?
+13:47:51 <metalgod_> badshah400: seems a good task ? :)
+13:48:26 <badshah400> metalgod_: I am still very poor at building stuff
+13:48:31 <metalgod_> ok
+13:48:41 <metalgod_> i'll probably don't have much time
+13:48:48 <metalgod_> but i'll made the action for me
+13:48:51 <badshah400> vuntz: specifically what needs to be done?
+13:49:10 <metalgod_> #action metalgod_ make GNOME:Factory build on 11.3
+13:49:19 <vuntz> badshah400: I can help. But it's mostly about looking at what doesn't build on G:F/11.3, and generally, the fixes are easy
+13:49:29 <metalgod_> #action vuntz make GNOME:Factory build on 11.3
+13:49:31 <metalgod_> :)
+13:49:47 <metalgod_> vuntz: DimStar anything more to add to this topic ?
+13:49:56 <badshah400> metalgod_: ok, add me in too
+13:50:04 <metalgod_> i guess G:S:2.30 is good atm (gdm bug is fixed)
+13:50:11 <metalgod_> #action badshah400 make GNOME:Factory build on 11.3
+13:50:18 <metalgod_> ok
+13:50:40 <metalgod_> #topic  Should we simplify our repositories structure to make it user-friendlier ? (Captain Magnus)
+13:50:52 <metalgod_> captain_magnus: you're in the spotlight :)
+13:51:53 <vuntz> captain_magnus: don't hide!
+13:51:55 <captain_magnus> metalgod_: thanks :-)   Didn't have time to look at the repo's though...
+13:52:32 <captain_magnus> We should have a look at what the KDE folks are doing (reports have it that they are making it easy for people with backports etc)
+13:52:59 <captain_magnus> We also have new capabilities with OBS, where we can link repo's together, but again, have not had time to put in any effort to that :-/
+13:53:17 <captain_magnus> vuntz: You mentioned one-click... Not sure how that would work?
+13:53:39 <vuntz> captain_magnus: I think DimStar had some magic knowledge on how to combine multiple repo in one file
+13:53:50 <vuntz> I'm not sure it was the same thing as one-click
+13:53:52 <metalgod_> captain_magnus: you mean like: "having one link and that link adds G:B, G:S:2.32 etc.. ?
+13:53:55 <captain_magnus> Sure sounds interesting...
+13:54:00 <vuntz> but that's what we should do
+13:54:06 <vuntz> I don't think our structure is wrong
+13:54:13 <vuntz> it's just hard to get if you don't know the details
+13:54:19 <vuntz> and users shouldn't hav to know the details
+13:54:46 <captain_magnus> Agree
+13:54:47 <metalgod_> vuntz: yast repos show G:A and G:S
+13:55:05 <metalgod_> but if there is a G:B i don't know how easy is for users to understand what it does
+13:55:31 <captain_magnus> metalgod_: That is the point... They shouldn't have to know
+13:56:02 <captain_magnus> They should only have to know that they want the latest GNOME on 11.3 for instance....
+13:56:09 <metalgod_> we talked for a long time that we should have a "one-click"
+13:56:15 <metalgod_> but none of us did it yet
+13:56:15 <vuntz> the yast ui is broken here. It works per-repo. Which is not what we want
+13:56:47 <metalgod_> one-click can solve that problem since it adds more than 1 repo
+13:56:55 <badshah400> One-click installs do allow combining repos though, afaik
+13:57:59 <captain_magnus> Well, guess we need to talk to DimStar about the magic
+13:58:05 <vuntz> but what dimstar proposed was different, iirc
+13:58:21 <vuntz> I think it might be something that we can update and it will reach users
+13:58:32 <vuntz> (while a one-click file won't get pushed to users who used it in the past)
+13:59:32 <metalgod_> vuntz: what about the users who don't want to update ?
+13:59:57 <badshah400> vuntz: not automatically, but if they leave the repos subscribed they can upgrade all packages from the necessary repos
+14:00:24 <vuntz> metalgod_: what do you mean?
+14:00:45 <vuntz> badshah400: that's not what I mean. If we add a new repo to this file, then users will get this new repo too
+14:00:51 <metalgod_> vuntz: from what i understand DimStar proposes a automatic updates from version to version
+14:00:58 <vuntz> at least, that's what I understood
+14:01:02 <vuntz> metalgod_: I don't think he did
+14:01:04 <badshah400> I see
+14:01:19 <metalgod_> vuntz: maybe we should leave this topic and wait for him
+14:01:25 <metalgod_> (or probably next meeting)
+14:01:32 <vuntz> maybe
+14:01:42 <metalgod_> #topic - Feature/Future plans for openSUSE 11.4 (Vuntz)
+14:01:46 <vuntz> can someone send a mail to opensuse-gnome to ask him about this,
+14:01:47 <vuntz> ?
+14:02:06 <badshah400> vuntz: ok, I will
+14:02:10 <metalgod_> i think i can talk about this too
+14:02:31 <vuntz> metalgod_: go ahead :-)
+14:02:49 <metalgod_> #action badshah400 send a mail to opensuse-gnome ML ask dimstar about update repositories
+14:02:51 <metalgod_> well
+14:03:05 <metalgod_> DimStar finished an important feature
+14:03:17 <metalgod_> it just needs testing
+14:03:32 <metalgod_> for those interesting
+14:03:52 <metalgod_> it's https://features.opensuse.org/310472
+14:04:38 <metalgod_> and we have also Develop and add a GTK smolt client to openSUSE (https://features.opensuse.org/310490)
+14:04:54 <metalgod_> i volunteered myself to work on this and vuntz helping
+14:05:02 <metalgod_> i think it's a pretty good feature for 11.4
+14:05:23 <metalgod_> i think fcrozat also volunteered to bring plymouth to opensuse 11.4
+14:05:26 <metalgod_> ;)
+14:05:42 <metalgod_> plus we have lot's of new applications on G:A
+14:05:50 <metalgod_> any feature i'm missing for 11.4 ?
+14:05:59 <vuntz> yeah, we have something like 15 or 20 new apps since 11.3
+14:06:10 <vuntz> metalgod_: you're missing webm support!
+14:06:14 <metalgod_> oh
+14:06:16 <metalgod_> yes
+14:06:23 <metalgod_> vuntz: it's ready right ?
+14:06:30 <vuntz> it's all in factory, yes
+14:06:32 <metalgod_> https://features.opensuse.org/309589
+14:06:33 <metalgod_> :)
+14:06:38 <vuntz> and if you're using G:F, you can already watch youtube with webm
+14:06:51 <metalgod_> right using gst and firefox
+14:07:03 <metalgod_> anyone have ideas for more features ?
+14:07:14 <badshah400> Do we want to get symbolic-icon-theme integration in GNOME too? I believe this might involve quite a bit of work
+14:07:22 <metalgod_> we already discussed new applications and badshah400 did a wonderful job putting on the wiki
+14:07:56 <vuntz> metalgod_: no, we need the new firefox for this. It'll go in soon, I guess
+14:08:25 <vuntz> badshah400: this should be done upstream, I think. We'll get it wrong if we do it in openSUSE.
+14:08:44 <metalgod_> what about notify-osd
+14:08:53 <metalgod_> i've seen a blog post about it on planet opensuse
+14:09:03 <metalgod_> looks like there's people interested on it
+14:09:03 <vuntz> badshah400: that being said, we can possibly backport patches from upstream
+14:09:07 <vuntz> metalgod_: it's in G:A
+14:09:20 <metalgod_> vuntz: ouch /me runs
+14:09:24 <vuntz> metalgod_: but the new notification-daemon has a nice theme, so... :-)
+14:09:37 <badshah400> vuntz: right, that may be a good idea, seeing as we will have a lot of time after the release of 2.32
+14:10:34 <badshah400> metalgod_: my experience with using notify-osd is pretty bad, I feel we better stick to upstream notification-daemon
+14:11:23 <metalgod_> badshah400: well if applications call notifications via dbus you should get a good notify-osd experience
+14:11:36 <metalgod_> but i doubt most of them do it
+14:12:11 <metalgod_> vuntz: what about a big one... replacing gnomesu by something more modern ?
+14:12:21 <metalgod_> vuntz: maybe that applies for the yast team
+14:12:24 <vuntz> metalgod_: that shouldn't change anything. If people use libnotify, it should be compatible
+14:12:30 <badshah400> hmm... well with ubuntu 10.04 those notify-osd balloons kept popping up at unusual places
+14:12:42 <vuntz> metalgod_: I've investigated various alternatives
+14:12:49 <vuntz> gksu-polkit and pkexec
+14:12:55 <vuntz> played with them
+14:12:56 <metalgod_> pkexec doesn't work
+14:13:03 <metalgod_> the same way
+14:13:06 <metalgod_> i've tried myself too
+14:13:07 <vuntz> and I'm waiting for feedback from the security team
+14:13:20 <vuntz> metalgod_: it just needs a patch to work for graphical apps
+14:13:26 <metalgod_> fedora still uses consolehelper is some places
+14:13:40 <metalgod_> which is much better than gnomesu
+14:14:52 <metalgod_> ok
+14:15:12 <metalgod_> badshah400: what do you think about we have a new feature page for 11.4 ?
+14:15:18 <metalgod_> based on the old one ?
+14:15:35 <badshah400> metalgod_: we have this http://en.opensuse.org/openSUSE:GNOME_features
+14:15:58 <metalgod_> badshah400: can you update to match the latest features ?
+14:16:05 <badshah400> metalgod_: I can add the items discussed now to this page
+14:16:09 <badshah400> metalgod_: yes
+14:16:13 <metalgod_> badshah400: thanks!!!
+14:16:21 <vuntz> I'm sure we forgot some features. We'd need to query openfate for that.
+14:16:34 <metalgod_> #action badshah400 add new features to GNOME Features page
+14:16:40 <metalgod_> yeah
+14:17:04 <metalgod_> i think next week i can have something for the smolt feature
+14:17:13 <vuntz> https://features.opensuse.org/308457
+14:17:20 <vuntz> (new notification theme)
+14:17:43 <metalgod_> we need an artist for that
+14:17:47 <metalgod_> artist and a coder
+14:18:14 <vuntz> no, it's done
+14:18:21 <badshah400> metalgod_: to my understanding a new theme is already in
+14:18:23 <vuntz> just pointing it out
+14:18:38 <metalgod_> yes it's a new theme from upstream
+14:18:50 <metalgod_> the black one (same as fedora)
+14:18:53 <badshah400> vuntz: but we can do minor modifications to the notification-theme to make it sort of fit in more?
+14:19:13 <metalgod_> badshah400: paint it green probably :P
+14:19:30 <vuntz> badshah400: it fits nicely, imho
+14:19:54 <metalgod_> ok
+14:20:00 <badshah400> vuntz: it does fit with the sonar theme, but the rounded edges are a bother
+14:20:07 <metalgod_> can we move to the next topic ? vuntz and badshah400 anything to add ?
+14:20:20 <metalgod_> badshah400: we can add the rounded tooltips patch to GTK also
+14:20:30 <metalgod_> (but still needs minor tweaks on sonar)
+14:20:46 <badshah400> and if someone changes the theme to say "gilouche", the balloons do not inherit the theme colour in anyway, that makes it look odd
+14:21:32 <badshah400> metalgod_: that is a topic for pet peeves though :), and I doubt we would want to inherit patches that upstream don't like too much
+14:22:35 <metalgod_> badshah400: ok we can move to pet peeves
+14:22:47 * vuntz is nearly sure the theme takes its color background from the gnome theme
+14:22:55 <badshah400> metalgod_: right
+14:22:56 <metalgod_> #topic - GNOME Pet peeves progress update (Atri)
+14:23:05 <metalgod_> badshah400: you have the spotlight
+14:23:09 <badshah400> vuntz: then I might be doing something wrong here, have to re-check
+14:23:12 <badshah400> metalgod_: ok
+14:23:44 <metalgod_> vuntz: you know if GTK+ git master (3.0) have that patch for rounded tooltips ?
+14:23:57 <metalgod_> brb (2 min)
+14:24:01 <badshah400> status of pet peeves project is reflected in the wiki http://en.opensuse.org/openSUSE:GNOME_Pet_Peeves_Project
+14:24:17 <vuntz> metalgod_: there's a link to the gtk bug in the wiki page :-)
+14:25:00 <badshah400> In short, a couple of reported issues have been fixed namely: nautilus window size (upstream) and the menu structuring (suse specific)
+14:25:36 <badshah400> I opened a few bugs upstream too: bgo # 628132
+14:25:53 <badshah400> and bgo #628835
+14:26:54 <badshah400> but for the meetings, I specifically wanted to discuss the points about tootltip patches from fedora, new items in app-browser and update of the murrine theme engine to version 0.91
+14:27:19 <vuntz> there's a new tarball for murrine?
+14:28:02 <badshah400> vuntz: not released as i see at the gnome ftp source, but a new version is tagged in the git tree
+14:28:33 <badshah400> and provides several improvements. I am not sure why a new tarball is not released though
+14:28:55 <badshah400> it is a while back that 0.91.0 was tagged (in fact ubuntu 10.04 uses it)
+14:29:17 <vuntz> badshah400: where's the tag? http://git.gnome.org/browse/murrine/
+14:30:58 <badshah400> vuntz: I am sorry, have to search it down again. I can let you the link in a while
+14:31:41 <badshah400> vuntz: see the NEWS file http://git.gnome.org/browse/murrine/tree/NEWS
+14:31:52 <vuntz> badshah400: ubuntu just updates to the git code
+14:31:58 <vuntz> see http://packages.ubuntu.com/search?keywords=murrine&searchon=names&suite=all&section=all
+14:33:07 <badshah400> vuntz: ok, it is not good to do that?
+14:34:11 <badshah400> vuntz: the NEWS file does talk about a version 0.91, and I thought we could use the git version which is at 0.91 currently
+14:34:34 <vuntz> badshah400: the maintainer just updates NEWS when he adds features, that's why it mentions 0.91 already
+14:34:41 <vuntz> I mailed him to see what we should do
+14:35:24 <badshah400> vuntz: ok, thanks for that. I created a package out of git sources and tried it to see how good/bad those improvements were
+14:36:17 <vuntz> badshah400: for new items in app-browser...
+14:36:27 <vuntz> didn't someone volunteer to fix that at some point?
+14:36:33 <vuntz> maybe psankar?
+14:36:46 <metalgod_> he is not here
+14:37:03 <badshah400> vuntz: yes, not that I see in the bug report so I am not sure? u mean he said it in the meeting last?
+14:37:18 <vuntz> not last time
+14:37:21 <vuntz> but before 11.3
+14:38:08 <badshah400> vuntz: then I definitely do not remember, I will poke him thought because this one is definitely on my nerves :)
+14:38:59 <badshah400> a few questions: what do we think about the gtk patches from Fedora for better positioning and appearance?
+14:39:27 <metalgod_> i think it's great looking but i'm not sure how good is it
+14:39:33 <vuntz> my position is: if they're not upstream, there's probably a good reason
+14:39:38 <metalgod_> because i know the theme needs tweaks
+14:40:14 <vuntz> badshah400: murrine release planned for next week
+14:40:20 <metalgod_> i did a gnome team a few months ago based on nodoka
+14:40:34 <badshah400> metalgod_: yes, there is a minor tweak to sonar theme needed
+14:40:36 <metalgod_> and gtk had that patch
+14:40:42 <badshah400> vuntz: that's good news then
+14:40:58 <vuntz> badshah400: so if all themes need a tweak, that's just not going to work well :/
+14:41:36 <badshah400> vuntz: theme needs to specify if it wants to use the new tooltips, otherwise it just uses the usual ones
+14:41:47 <metalgod_> right
+14:41:57 <metalgod_> i'm 100% sure about that
+14:42:07 <badshah400> I have applied the patches to a branch project and modified the sonar theme slightly so it works
+14:42:56 <badshah400> but of course if upstream does something in this regard (such as come up with a better way to do this) for GNOME 3.0, I hope we can backport that
+14:43:29 <vuntz> badshah400: we won't be able to backport that
+14:43:33 <vuntz> it'll be in gtk+3
+14:43:41 <badshah400> vuntz: okay, I see
+14:43:59 <badshah400> I guess then we can leave tooltips the way they are right now
+14:45:15 <badshah400> but then, the notification balloons look odd with their large edge-radius. It is quite easy to reduce this too and I think this we can do, what do you think?
+14:46:55 <vuntz> don't know, it feels ok to me, but if people feel strong, I don't care much. It should probably be done upstream, if possible :-)
+14:47:59 <badshah400> next question: evince has a useful patch that goes into 3.0 as far as i see, can this be backported?
+14:48:11 <metalgod_> badshah400: patch for what ?
+14:48:44 <badshah400> metalgod_: toolbar button that shows the folder containing the opened document
+14:49:14 <metalgod_> well it's interesting
+14:49:23 <metalgod_> but carry that patch can be painful
+14:49:42 <badshah400> metalgod_: already pushed to master acc. to bug report
+14:51:05 <badshah400> so that's it from my side on the pet peeves, nothing more that you don't see on the wiki page :)
+14:52:35 <metalgod_> oh it's federico patch
+14:53:23 <badshah400> metalgod_: yes, he blogged abt that one some time back
+14:53:28 <metalgod_> well the code shouldn't change much on 2.32.x
+14:53:40 <metalgod_> and it's not a huge patch
+14:53:58 <vuntz> submit it, and we'll see
+14:54:15 <vuntz> or send a mail to opensuse-gnome with the link to the commit for wider discussion :-)
+14:54:19 <vuntz> but I'm not opposed to it
+14:54:31 <metalgod_> anything mode badshah400 ?
+14:54:34 <badshah400> vuntz: ok, good then
+14:54:38 <metalgod_> s/mode/more
+14:54:59 <badshah400> o just the last thing:
+14:55:37 <badshah400> is it useful to separate the maximise button from the close button by a spacer? (I find it useful, but in general?)
+14:56:15 <badshah400> this is easily done by gconf branding, so I guess there's not much of a problem if we do this?
+14:56:38 * vuntz doesn't find it useful, but it's just his opinion
+14:58:18 <badshah400> I think it might be for the best if I send out a mail in the m-l asking for general feedback about several of these topics. I learn here that the gtk patches for tooltips are definitely out, but others we can consider
+14:58:32 <metalgod_> well badshah400 you're the usuability expert... :)
+14:58:46 <vuntz> badshah400: sure, send a mail
+14:58:50 <metalgod_> badshah400: why not send a screenshot with both to see what people think ?
+14:59:09 <badshah400> metalgod_: yes, I will do that
+14:59:18 <metalgod_> ok
+14:59:20 <metalgod_> next topic ?
+14:59:22 <badshah400> you can set me some action item for that then
+14:59:33 <metalgod_> vuntz: anyone from meego to replace funkypinguin ?
+15:00:16 <metalgod_> #action badshah400 take a screenshot of window bar and send to opensuse-gnome ml to discuss (pet peeves project)
+15:00:48 <vuntz> metalgod_: not really, I guess
+15:00:54 <badshah400> metalgod_: ok, thanks
+15:01:57 <metalgod_> #topic Q & A (everyone)
+15:02:08 <metalgod_> ok people it's your turn :)
+15:04:04 <badshah400> What is the deadline for getting new packages into factory for 11.4?
+15:07:37 <metalgod_> badshah400: before freeze (see roadmap)
+15:08:06 <badshah400> metalgod_: so that is Milestone 5, right
+15:08:12 <metalgod_> i guess so
+15:10:05 <metalgod_> ok
+15:10:18 <metalgod_> thanks everyone
+15:10:23 <metalgod_> #endmeeting

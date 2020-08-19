@@ -1,0 +1,152 @@
+16:09:56 <wstephenson> #startmeeting
+16:09:56 <bugbot> Meeting started Thu Oct 14 16:09:56 2010 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:09:56 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:10:08 <wstephenson> * old action items
+16:10:12 <wstephenson> * status reports
+16:10:22 <wstephenson> * kdereview games packaging
+16:10:26 <wstephenson> * opensuse conference
+16:10:29 <wstephenson> * Q&A, misc
+16:10:44 <wstephenson> #topic old action items
+16:11:09 <wstephenson> wstephenson - media package lists in gitorious - not done
+16:11:28 <wstephenson> #topic status reports
+16:11:55 <tittiatcoke> Unstable has a new snapshot since Tuesday
+16:12:23 <wstephenson> I was supposed to be at Dev Days this week, but couldn't make it :(
+16:12:38 <jobermayr> I am packaging kde-l10n-4.5.72 for K:U:SC ATM
+16:12:43 <wstephenson> I was at the Solid sprint 2 weekends ago, which was promising
+16:12:46 <wstephenson> jobermayr: nice, thanks!
+16:13:08 <wstephenson> we got most of the udev/udisks/upower things done in Solid for 4.6
+16:13:13 <tittiatcoke> wstephenson: Any new from that one ? I noticed that powerdevil stopped working with a couple of things.
+16:13:20 <wstephenson> and a lot more mobile broadband support done in KNM
+16:13:26 <tittiatcoke> wstephenson: e.g. sleep/hibernate, etc
+16:13:28 <wstephenson> and i met javier_
+16:13:43 <wstephenson> tittiatcoke: yes the default profiles need to be ported to the new powerdevil
+16:13:57 <tittiatcoke> wstephenson: Ok.
+16:14:07 <wstephenson> dario started by saying he wrote it when he was young and dumb
+16:14:13 <wstephenson> and proceeded to rewrite it in 48h
+16:15:03 <wstephenson> oh, javier_ won the Dev Days free ticket we discussed last time.
+16:15:08 <tittiatcoke> :-) Does this also mean that with 4.6 it will no longer depend on hal ?
+16:15:11 <wstephenson> any news from Munich?
+16:15:13 <wstephenson> tittiatcoke: yes :)
+16:15:20 <tittiatcoke> Great :-)
+16:15:21 <wstephenson> where it== KDE
+16:15:31 <tittiatcoke> yes
+16:16:20 <wstephenson> i'm preparing for next week's opensuse conf
+16:16:26 <wstephenson> 2 talks, 1 workshop
+16:16:49 <wstephenson> what else is new? sebas?
+16:17:30 <thrice`> new koffice beta, kde 4.5.2 :-)
+16:17:32 * wstephenson indirectly donated to gnome-a11y by contributing to bryen's replacement hardware fund.
+16:17:59 * wstephenson thinks the excess should have gone to Rottweilers For The Blind, but hey :)
+16:18:24 * jobermayr is annoyed because uploading l10n packages just failed after ~ 290 MB ...
+16:19:06 <wstephenson> jobermayr: after the OBS hardware failures of the last week there have been serious discussions in house. should lead to better service availability.
+16:19:36 <wstephenson> ok enough status
+16:19:49 <wstephenson> #topic kdereview games
+16:19:56 <wstephenson> whose topic?
+16:20:21 <jobermayr> Mine
+16:21:11 <wstephenson> seems pretty straightforward to me - we package them standalone for now
+16:21:22 <tittiatcoke> +1
+16:21:41 <wstephenson> when they go somewhere else, we either make them a subpackage (if kdegames) or keep them as is (extragear/games)
+16:22:09 <wstephenson> the upstream discussion is suspect - either they are abandonware or not, if they are they should go back to playground, not eg or games.
+16:22:18 <jobermayr> Shall I maintain it? I am on devel list and manage also slots on bugs.kde.org for them.
+16:22:37 <wstephenson> jobermayr: yes, that's optimal :)
+16:22:43 <cb400f> can you help the knights guy include translations in the tarballs? :-)
+16:22:48 <tittiatcoke> wstephenson: I guess the packages should be placed in K:U:Playground ?
+16:23:06 <cb400f> he didn't know how to do it, and was hoping for the kdegames maintainer to handle it for him
+16:23:06 <jobermayr> No problem. I have a full kde4-l10n checkout.
+16:23:50 <wstephenson> tittiatcoke: yes until they move
+16:24:03 <tittiatcoke> My thoughts exactly :-)
+16:25:03 <wstephenson> jobermayr: anything else to discuss?
+16:25:39 <jobermayr> wstephenson: Thanks. Don't think we have more to discuss today.
+16:25:53 <wstephenson> ok, opensuse conference. who else is going?
+16:26:00 * wstephenson and llunak will be there
+16:26:08 <wstephenson> javier_ is coming too
+16:26:12 * tittiatcoke will be in Walldorf
+16:26:48 <tittiatcoke> wstephenson: I could drop by on the Tuesday afternoon in Nurnberg just to meet up
+16:27:04 <wstephenson> there used to be a very nice mexican in the Walldorf railway station iirc.
+16:27:20 <wstephenson> tittiatcoke: that would be fun
+16:27:51 <tittiatcoke> wstephenson: Ok. I am coming with a car from Frankurt airport. Guess would be in Nurnberg around 4pm.
+16:28:30 <wstephenson> tittiatcoke: cool, i'll show you around and maybe we grab an early meal?
+16:28:36 <wstephenson> let's discuss details offline
+16:28:43 <tittiatcoke> yup
+16:29:32 <wstephenson> ok, anything anyone who is NOT coming to the conf wants me to do/raise there?
+16:29:52 <wstephenson> actions punishable by law will not be accepted, you have to attend yourselves for that.
+16:30:19 <initialZero> drink lots of beer. please.
+16:30:43 <thrice`> steal me a t-shirt
+16:30:47 <wstephenson> you don't know how easy that is with a hotel bar right in the conference foyer that stays open all night
+16:30:59 <wstephenson> noted
+16:31:09 <tittiatcoke> :-) Nothing to raise/do from my side
+16:31:31 <wstephenson> if you have a look at the schedule and see anything that we need to do, mail me about it
+16:32:03 <tittiatcoke> ok
+16:32:23 <wstephenson> #topic Q&A, Misc
+16:32:36 <wstephenson> you must have some questions, right?
+16:33:04 <wstephenson> we've been interviewing for the jobs. some good candidates there.
+16:33:14 <tittiatcoke> :-) Good to hear
+16:33:26 <cb400f> is a place reserved for a kde guy?
+16:33:34 <cb400f> or kde team guy
+16:34:02 <wstephenson> yes
+16:34:06 <initialZero> I may be out of the loop but when is factory going to pre 4.6
+16:34:24 <tittiatcoke> initialZero: I guess when the first beta comes out of 4.6
+16:34:25 <cb400f> \o/
+16:34:25 <javier_> wstephenson: it was a very intense 5 day trip
+16:34:46 <wstephenson> initialZero: beta1 or thereabouts http://techbase.kde.org/Schedules/KDE4/4.6_Release_Schedule
+16:34:51 <wstephenson> javier_: hehe
+16:34:55 <javier_> kde/ovi sprint + qt dev days
+16:35:06 <wstephenson> ah you went to the sprint too. nice.
+16:35:20 <javier_> wstephenson: I met Martin Mohring there at the qt dev days
+16:35:23 <javier_> yepp
+16:35:35 <wstephenson> Martin being the LF OBS guy
+16:35:47 <thrice`> http://lizards.opensuse.org/2010/10/12/getting-plymouth-on-opensuse/    <-- might require some KDM mods
+16:35:48 <javier_> he told me that you can actually link a whole repository (I didn't know that)
+16:36:13 <javier_> yes, an OBS guy
+16:36:19 <wstephenson> javier_: with exceptions (thinking of kde4-filesystem, for example)?
+16:36:24 <Dominian> thrice`: +1 for plymouth
+16:36:39 <wstephenson> thrice`: yeah, i have yet to investigate that
+16:36:49 <wstephenson> thrice`: unless you want to take it on?
+16:37:01 <javier_> wstephenson: I asked him about exceptions he replied that that's possible
+16:37:08 <thrice`> me neither; I tried to help with the packaging, but got scared when I noticed the ~ 10+ sub-packages / split
+16:38:04 * wstephenson 's short term plans: do the opensuse conf. make some pattern changes for 11.4 (PulseAudio on KDE medias, bluedevil, P-NM). take a week off for upstream hacking on KNM and telepathy.
+16:38:30 <thrice`> pulse being mandatory ?
+16:38:37 <wstephenson> thrice`: not mandatory, default
+16:38:54 <thrice`> interesting
+16:38:57 <wstephenson> we discussed it on the list a few weeks back
+16:39:33 <wstephenson> javier_: well if you want to experiment, just disable publish and play with KR45.
+16:40:15 <wstephenson> javier_: more status for you: i updated kdelibs in KR45 twice for 4.5.2 regression fixes (mailto and https links handling )
+16:40:16 <tittiatcoke> wstephenson: I managed to get qtgstreamer to build. Packages are in Playground.
+16:40:35 <wstephenson> tittiatcoke: i don't even know what that is, explain?
+16:40:36 <javier_> wstephenson: sure, at some point i will play with it.
+16:40:51 <javier_> wstephenson: thanks, i read something about that fixes on bugzilla
+16:41:27 <tittiatcoke> wstephenson: qtgstreamer are some dependencies for the latest kcall version. It seems that gstreamer is used for sound/video for telepathy
+16:41:39 <wstephenson> if i'd read the report properly it would have been only one update :/
+16:41:56 <tittiatcoke> it are the qt bindings for gstreamer
+16:42:12 <wstephenson> tittiatcoke: ok, instead of phonon :(
+16:42:20 <wstephenson> but i know tP is tightly integrated with gst
+16:42:21 <javier_> wstephenson: btw, this month's easylinux magazine comes with an article about kde-four-live :-)
+16:42:24 <tittiatcoke> At this moment it seems that way
+16:42:35 <wstephenson> javier_: got a link to it?
+16:43:04 <tittiatcoke> wstephenson: I can't promise anything, but I will install the plymouth packages and see what needs to be done for KDM
+16:43:15 <wstephenson> tittiatcoke: ok, but don't take too much on.
+16:43:17 <thrice`> I might play with plymouth too
+16:43:24 <javier_> wstephenson: no, I discovered it at the airport's shop
+16:43:35 <thrice`> I've already kicked bootsplash out, so there is room ;)
+16:43:40 <wstephenson> javier_: did you buy it?
+16:43:41 <tittiatcoke> wstephenson: :-) Don't worry. But I wanted to start playing with plymouth anyway
+16:43:57 <wstephenson> if not and it's in germany i'll get it and *cough* make it available in our hall of fame.
+16:44:17 * wstephenson is talking about his guest WC.... obviously.
+16:45:30 <wstephenson> nothing else to report from me
+16:45:37 <wstephenson> if that's it i'll end the formal meeting
+16:45:51 <wstephenson> not that you have to stop talking :)
+16:46:07 <javier_> wstephenson: nop, I didn't :(
+16:46:07 <tittiatcoke> Ok. :-)
+16:46:32 <wstephenson> javier_: is it a german edition?
+16:46:33 <javier_> ah it was linuxuser not easylinux
+16:46:39 <javier_> wstephenson: yes, it is
+16:46:42 <wstephenson> kk
+16:46:48 <initialZero> do they say WC in Northumbria?
+16:47:04 <wstephenson> no. they say "the bog" tehre.
+16:47:15 <initialZero> lol
+16:47:21 <javier_> wstephenson: http://www.linux-community.de/var/ezwebin_site/storage/images/medien/images/cover/linuxuser/2010/title_2010_10/1204438-1-ger-DE/title_2010_10_imagelarge.png
+16:47:25 <wstephenson> but there a lot of things i could say that would not be easy to understand
+16:47:41 <javier_> wstephenson: it was included in the dvd as well
+16:47:51 <wstephenson> initialZero: also they'd say "the netty" if outside
+16:48:34 <wstephenson> which once nearly made my wife become incontinent during a yoga class when the instructor suggested they use 'neti pots' to clean out their sinuses.
+16:49:05 <wstephenson> ok, on that bombshell
+16:49:07 <wstephenson> #endmeeting

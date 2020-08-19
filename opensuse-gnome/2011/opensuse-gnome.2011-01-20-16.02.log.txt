@@ -1,0 +1,295 @@
+16:02:04 <jpr> #startmeeting
+16:02:04 <bugbot> Meeting started Thu Jan 20 16:02:04 2011 UTC.  The chair is jpr. Information about MeetBot at http://wiki.debian.org/MeetBot.
+16:02:04 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+16:02:11 <psankar> ah neat
+16:02:18 <psankar> #chair metalgod sreeves
+16:02:28 <psankar> ah i think I cant set a chair.
+16:02:36 <FunkyPenguin> you need to be op i think
+16:02:45 <psankar> jpr, so like good old times, can you run the meeting ?
+16:03:13 <jpr> #chair sreeves1
+16:03:13 <bugbot> Current chairs: jpr sreeves1
+16:03:18 <jpr> #chair metalgod
+16:03:18 <bugbot> Current chairs: jpr metalgod sreeves1
+16:03:23 <jpr> good?
+16:03:26 <psankar> jpr, thanks :-)
+16:03:29 <jpr> np
+16:03:37 <sreeves1> #topic old action items review
+16:03:52 <sreeves1> ok let start with the old action items
+16:04:02 <sreeves1> psankar: can you post the link to the archive again
+16:04:15 <psankar> sreeves1, http://community.opensuse.org/meetings/opensuse-gnome/2010/opensuse-gnome.2010-12-16-13.44.html
+16:04:25 <psankar> I will update the AIs that I had
+16:04:43 <psankar> Firstly, I had to check tumbleweed and give a small feedback
+16:05:02 <psankar> unfortunately, tumbleweed turned out to be too non-usable in my laptop
+16:05:09 <psankar> neither wireless not suspend worked
+16:05:15 <psankar> i reported the issue to gregkh
+16:05:21 <psankar> and he asked me to test with the upstream kernel
+16:05:32 <psankar> and we have found that 2.6.37 solves most of the issues
+16:05:48 <psankar> greg told that he will be updating tumbleweed with 2.6.37 soon. so,
+16:05:59 <psankar> nohting more on tumbleweed for now
+16:06:05 <metalgod> sorry guys im at a meeting :(
+16:06:12 <psankar> so the second AI is
+16:06:22 <jpr> psankar: does your machine work in factory or 11.3?
+16:06:46 <psankar> jpr, suspend and wireless work with factory. but i have a different set of issues (X)
+16:06:56 <psankar> 11.3 works flawless
+16:07:18 <psankar> the second AI i had was to have a discussion with security team for finding an alternate to gnomesu
+16:07:30 <psankar> so, bug https://bugzilla.novell.com/show_bug.cgi?id=662076 is filed
+16:07:47 <psankar> security team is doing an audit on this bug.
+16:07:56 <psankar> sreeves1, may be you can make the above an #info
+16:08:21 <psankar> and the next action item I had was to ask ajorg to submit smuxi to GNOME:Apps
+16:08:31 <psankar> and he told he iwll be doing it. so, that is also resolved.
+16:08:45 <psankar> I missed out on one AI. I and badshah400 had to
+16:08:57 <psankar> find out a day for features analysis and we both missed it :(
+16:09:04 <psankar> that's it from my side
+16:09:07 <psankar> over to you sreeves1
+16:09:10 <sreeves1> #info bug about replacement for gnomesu - https://bugzilla.novell.com/show_bug.cgi?id=662076
+16:09:33 <sreeves1> hmm - not sure that info command worked
+16:09:48 <sreeves1> vuntz: you around to update your action items ?
+16:09:52 * psankar checks meetbot's FAQ. sreeves1 you continue iwth the rest of the items
+16:10:02 <FunkyPenguin> psankar, careful if you're that efficient all the time you'll be assigned all the AIs ;)
+16:10:13 <psankar> FunkyPenguin, hehe :-)
+16:10:26 <sreeves1> badshah400: any update on the G:S:2:32 and glib2 ?
+16:10:31 <psankar> #info bug about replacement for gnomesu - https://bugzilla.novell.com/show_bug.cgi?id=662076
+16:11:02 <psankar> sreeves1, I htink info is async and wont give feedback (unix philosophy - success on silence) . I can grep on meeitng logs and can update later if needed.
+16:11:12 <sreeves1> psankar: ok
+16:11:39 <sreeves1> last action item is for metalgod - anyone know the status of mono apps for M6
+16:11:55 <sreeves1> since metalgod is busy elsewhere right now
+16:12:18 <badshah400> sreeves1: submission of updated glib2 done to G:S:2.32
+16:12:27 <sreeves1> badshah400: excellent
+16:12:57 <sreeves1> oh - anyone know the latest status on what the background will be ?
+16:13:06 <badshah400> sreeves1: but as psankar said, I have done nothing about 2 yet :(
+16:13:18 <psankar> I am afraid only vuntz knows about it (background)
+16:13:22 <psankar> and I too wanted to ask about it.
+16:13:47 <psankar> I have a question for you all. Did anyone else find the default wallpaper and splash screen in 11.4 to be dull ?
+16:13:47 <fcrozat> I'm not sure there was a definitive decision about it :(
+16:14:02 <psankar> and we are not sure who will be doing it either :(
+16:14:09 <sreeves1> fcrozat: ok thats scary as we are at the last milestone
+16:14:43 <psankar> sreeves1, may be we can make it an AI on vuntz to decide and inform about a sane wallpaper
+16:14:53 <sreeves1> sound like that is still an outstanding action item and should have some priority
+16:15:02 <psankar> yes
+16:15:08 <sreeves1> #action vuntz and the background decision
+16:15:21 <sreeves1> #topic Project Update
+16:15:31 <sreeves1> captain_magnus: DimStar - Update ?
+16:15:32 <badshah400> indeed i found the wallpaper and boot-splash themes not very attractive
+16:15:50 <metalgod> ok back
+16:16:04 <psankar> badshah400, ah so our culturally similarly conditioined eyes dont like it ;-)
+16:16:10 <sreeves1> metalgod: cool, welcome back
+16:16:17 <badshah400> psankar: yes :)
+16:16:24 * sreeves1 hands over the chair duties to metalgod
+16:16:40 <metalgod> sreeves1: oh you are doing a great job please continue :)
+16:16:47 <sreeves1> ok
+16:16:52 <psankar> sreeves1, I believe since you have the progress context, yo ucan continue
+16:17:14 <metalgod> ok on project update
+16:17:39 <metalgod> the boys here are doing the usual bugfixing on factory
+16:17:51 <metalgod> and getting gnome3 on G:N repo
+16:18:02 <metalgod> i guess fcrozat knows better this than me
+16:18:06 <fcrozat> ;)
+16:18:22 <sreeves1> thats one of the next topics
+16:18:26 <fcrozat> ok
+16:18:58 <psankar> i think we can move to the next topic
+16:18:59 <sreeves1> I saw vuntz and DimStar did an update round and submission to Factory
+16:19:16 <sreeves1> so as far as I know we are completly up to date
+16:19:31 <sreeves1> #topic major bugs in latest milestone
+16:19:34 <psankar> yes. I can second that. DimStar told me about this today
+16:19:41 <psankar> I have some updates for this topic.
+16:19:48 <sreeves1> psankar: go
+16:19:56 <psankar> I did a zypper dup on my 11.3 box to 11.4 milestone
+16:20:04 <psankar> and since then, my gnome-panel is not working
+16:20:17 <psankar> I am not sure if it is due to the recent GSettings migration
+16:20:19 <psankar> bcos
+16:20:23 <psankar> in a new user everything works fine
+16:20:29 <badshah400> Does anyone else find latest factory iso's aborting whenever it tries to load xserver?
+16:20:36 <metalgod> sreeves1 we got the famous bug on PK
+16:20:49 <psankar> and one more really annoying issue is,
+16:20:50 <metalgod> looks like there were lot's of changes in PK zypp upstream
+16:20:50 <badshah400> on virtualbox that is
+16:20:57 <metalgod> that changed the behavior of PK on openSUSE
+16:21:00 <psankar> whenever monitor brightness changes, a dialog pops up
+16:21:08 <psankar> asking me for root password to change the monitor brightness
+16:21:20 <DimStar> psankar: the brightness is a PolicyKit config issue IIRC
+16:21:31 <psankar> DimStar, hey hey okay.
+16:21:39 <psankar> DimStar, should I report it ?
+16:21:48 <sreeves1> psankar: that was an update to M5 ?
+16:22:04 <DimStar> https://bugzilla.novell.com/show_bug.cgi?id=650401
+16:22:06 <psankar> sreeves1, I did a zypper dup from 11.3
+16:22:07 <bugbot> openSUSE bug 650401 in openSUSE 11.4 (Basesystem) "AUDIT-0: polkit-default-privs: g-p-m wants root access to change laptop brightness" [Normal,New]
+16:22:13 <psankar> DimStar, ah neat :-)
+16:22:54 <DimStar> Iy probably shoult be flagged ?blocker
+16:23:07 <psankar> +1
+16:23:09 <DimStar> and/or at least added to Most annoying bugs, if not already there
+16:23:14 <metalgod> psankar: anyone can reproduce that besides you ?
+16:23:20 <sreeves1> DimStar: are those one the most annoying list
+16:23:24 <DimStar> metalgod: yes... it's clearly there...
+16:23:24 <psankar> metalgod, the monitor one ?
+16:23:25 <sreeves1> DimStar: bah - you beat me
+16:24:08 <metalgod> ok
+16:24:30 <DimStar> seems it's not on mab yet :) (most annoying bugs)
+16:25:04 <metalgod> want to discuss the PK bug or everyone is aware of it ?
+16:25:38 <psankar> metalgod, which bug ? the same one ? monitor brightness asks for password ?
+16:25:57 <sreeves1> DimStar: did you have a discussion about that PK bug yesterday with the KDE guys ?
+16:26:21 <metalgod> psankar: PK = packagekit
+16:26:35 <psankar> metalgod, ah okay. I thought policykit
+16:26:53 <DimStar> sreeves1: we had a short discussion, but nothing really came out other than the known stuff: not everybody expects the same behaviour
+16:27:07 <sreeves1> yeah - thats the problem
+16:27:11 * psankar doesnt know about packagekit issue but that's fine to not discuss it :-)
+16:27:15 <DimStar> should it show patches only, patches & packakes without vendor change or also vendor changes...
+16:27:18 * metalgod likes the new behavior
+16:27:31 <badshah400> How about the tracker problem? https://bugzilla.gnome.org/show_bug.cgi?id=639542
+16:27:33 <bugbot> Gnome bug 639542 in tracker (Needle) "tracker-needle doesn't support any argument" [Normal,Resolved: fixed]
+16:27:36 <DimStar> I for myself prefer patches & packages, sticking to vendor
+16:27:39 <metalgod> it's the same behavior seen on fedora
+16:27:46 <badshah400> I am trying to patch it with Dimstar's patch but no luck so far
+16:28:25 <DimStar> badshah400: ? I can submit a package to my branch...
+16:28:50 <metalgod> if PK had an option to enable/disable 3rd party repo's
+16:29:05 <badshah400> DimStar: I am trying to patch tracker with the patch you submitted on the bgo report
+16:29:25 <wstephenson_> DimStar, psankar: i had a short discussion with hughsie
+16:29:26 <DimStar> badshah400: the patch is based on 0.9.34
+16:29:36 <wstephenson_> about PK
+16:29:39 <sreeves1> metalgod: yes but our behavior has always been different as we are patch based
+16:29:53 <metalgod> true
+16:29:55 <badshah400> DimStar: then it has been rebased on master branch
+16:30:05 * FunkyPenguin despises tracker
+16:30:11 <sreeves1> wstephenson_: quick summary of your discussion ?
+16:30:13 <DimStar> badshah400: hmm.. I think you're right.. the one submitted is on master :) sorry
+16:30:13 <metalgod> sreeves1: personally i like the current behavior except the part it updates 3rd party repo's
+16:30:14 <psankar> sreeves1, so shall we hear out what wstephenson_ has to say ?
+16:30:28 <psankar> bah :-)
+16:30:40 <metalgod> sreeves1: i didn't get it before... was the intel developer who made this change ?
+16:32:02 <wstephenson_> sreeves1: it would be possible to present patches as metapackages with a new enum value of type 'patch'
+16:32:29 <wstephenson_> metalgod: agreed, it is suicide if OBS repos are registered
+16:32:36 <wstephenson_> vuntz says hi
+16:33:06 <psankar> wstephenson_, tell vuntz that he will be piled up with AIs since he skipped today's meeting ;-)
+16:33:37 <psankar> sreeves1, i think we can go to the next item ?
+16:34:08 <nmarques> vuntz, ping
+16:34:24 <sreeves1> ok we may want to discuss that PK bug more later
+16:34:39 <sreeves1> #topic GNOME 3 packages
+16:34:47 <sreeves1> fcrozat: you are up
+16:35:10 <fcrozat> things are moving slowly : reviewed packages are in GNOME:Next
+16:35:22 <fcrozat> and pending in either dimstar or my own personal repositories
+16:35:33 <fcrozat> my own repo being built for 11.3
+16:35:45 <fcrozat> and is used for GNOME3 usb sticks
+16:36:04 <fcrozat> so far, autodetection of hardware requirements is working (by gnome-session)
+16:36:15 <fcrozat> so, if 3D support is working, gnome-shell is started
+16:36:21 <fcrozat> otherwise, "old" gnome-panel is started
+16:36:41 <fcrozat> (although there might be regressions in gnome-panel, compared to 2.32 panel)
+16:36:55 <sreeves1> fcrozat: is your latest image still the one out on studio, or have you moved to obs+kiwi ?
+16:37:26 <fcrozat> still on studio, next one will be on obs + kiwi after adrianS fixes regressions in obs 2.2 which are preventing me to build ;)
+16:37:37 <fcrozat> https://bugzilla.novell.com/show_bug.cgi?id=665880
+16:37:40 <bugbot> openSUSE bug 665880 in openSUSE Build Service (General) "kiwi image can't be build locally" [Major,New]
+16:37:54 <sreeves1> fcrozat: cool - and does that image now include pulseaudio :-D
+16:38:01 <fcrozat> and https://bugzilla.novell.com/show_bug.cgi?id=665184
+16:38:04 <bugbot> openSUSE bug 665184 in openSUSE Build Service (General) "requesting kiwi image creation privilege for home:fcrozat:gnome3" [Normal,New]
+16:38:17 <fcrozat> sreeves1: yes, I had forgotten about it in initial image, it has been added
+16:38:40 <fcrozat> (I tried to keep images minimal)
+16:38:48 <sreeves1> fcrozat: great work on that project
+16:38:52 <fcrozat> thanks ;)
+16:38:54 <psankar> fcrozat, I have two queries regarding GNOME shell and sorry I haven't been following it in upstream. but these are deal killers for me :(  May be I am missing something here.
+16:39:08 <psankar> fcrozat, 1) Can we not navigate between workspaces vertically ?
+16:39:13 <fcrozat> psankar: can we move that after meeting ?
+16:39:20 <psankar> fcrozat, hhm okay. sure. thanks.
+16:39:24 <fcrozat> ;)
+16:39:33 <sreeves1> #topic meego update
+16:39:39 <fcrozat> oops, 1 thing
+16:39:40 <sreeves1> FunkyPenguin: you are up
+16:39:52 <FunkyPenguin> let fcrozat go first
+16:40:00 <fcrozat> do we know why driver will be used for r600 in xorg ?
+16:40:07 <fcrozat> gallium or classic ?
+16:40:12 <metalgod> psankar: i've been on g3 bleeding edge and let me tell you that lot's of features have been removed from -shell... from 2.91.2 to current git master a lot's of things changed
+16:40:21 <fcrozat> it appears rawhide and other will be using gallium
+16:40:32 <fcrozat> so it might be a good idea to use it for 11.4 too
+16:40:35 <fcrozat> (I didn't check)
+16:40:38 <psankar> metalgod, okay
+16:40:40 <FunkyPenguin> fcrozat, confirm with coolo maybe?
+16:41:21 <FunkyPenguin> ok so meego update :)
+16:41:36 <FunkyPenguin> i will NOT be releasing 1.1
+16:41:36 <sreeves1> #action fcrozat to check on driver for r600 in xorg
+16:41:43 <fcrozat> kiwi image building fixed ;)
+16:41:49 * psankar puts a sad smiley for FunkyPenguin
+16:42:28 <FunkyPenguin> reason being is that upstream are using a horrendeous mix of versions that make packaging on opensuse a serious pita
+16:43:30 <FunkyPenguin> ive just started on building the unreleased 1.2, i'd love to have it built before fosdem but we'll see
+16:44:00 * psankar puts a happy smiley
+16:44:17 <sreeves1> FunkyPenguin: makes sense - the mix of old gtk / new gtk, gir, ... is a mess
+16:44:51 <sreeves1> I think we already covered issues with 11.4 builds
+16:45:02 <psankar> I think I missed out on 1 issue alone
+16:45:09 <psankar> shall I tell it now ?
+16:45:14 <sreeves1> sure
+16:45:18 <psankar> So the issue is,
+16:45:32 <psankar> clicking on a link in any application, say xchat
+16:45:39 <psankar> opens the link only in Firefox4
+16:45:48 <psankar> even though my default browser is set to Chrome
+16:46:01 <psankar> so probably somehting is wrong here.
+16:46:12 <FunkyPenguin> hah, i cant even open a link in firefox - i get gedit instead :(
+16:46:28 <FunkyPenguin> oh further to the meego update...
+16:46:32 <psankar> Even though I plan to swtich to FF soon, I still believe it should be fixed if it is an issue
+16:46:41 <psankar> anyone else facing that ?
+16:46:53 <FunkyPenguin> Smeegol will be changing name, but im not 100% sure what to yet
+16:47:06 <psankar> FunkyPenguin, hmm okay :(
+16:47:24 <sreeves1> FunkyPenguin: lame upstream policy
+16:47:36 <FunkyPenguin> i am also going to be discussing the current issues that opensuse/fedora have with upstream and their sponsors directly with the LF
+16:47:48 <FunkyPenguin> was supposed to be today but thats been pushed back a couple of weeks
+16:47:51 <psankar> FunkyPenguin, in FOSDEM ?
+16:48:02 <psankar> okay
+16:48:27 <sreeves1> DimStar: is psankar issue part of the conversion from preferred apps in gconf to desktop registering of mime types ?
+16:48:44 <sreeves1> s/desktop/ .desktop files
+16:49:18 <FunkyPenguin> psankar, soubt at FOSDEM, currently penciled on for a phone call
+16:49:25 <psankar> FunkyPenguin, okay.
+16:50:02 <sreeves1> psankar: talk with DimStar about your issue - I think I remember seeing an open bug about that
+16:50:04 <DimStar> sreeves1: not exactly sure.. but it surely does sound like
+16:50:15 <sreeves1> #topic Defaults in the GNOME desktop
+16:50:17 <psankar> FunkyPenguin, if they come to India from LF, I will lock them up in a room and wil lthreadten to not leave them until they allow our naming ;)
+16:50:26 <psankar> sreeves1, sure. #action it on me
+16:50:36 <psankar> if there is a fix posisble, I will provide that as well
+16:50:55 <sreeves1> #action psankar to work on wrong action taken when clicking link
+16:51:24 <sreeves1> not sure who added this item to the agenda - anyone have something to say about this item ?
+16:51:42 <badshah400> The idea for this topic was that we need to discus default applications etc. in the live-cd
+16:51:46 <psankar> Are we going to discuss about pidgin vs empathy ? didnt we settle it already ? ;-)
+16:51:57 * psankar looks at history of the wiki page
+16:52:00 <metalgod> before that i would like to discuss something related to artwork
+16:52:00 <badshah400> i added this one
+16:52:08 <metalgod> currently we need sonar theme ported to gtk3
+16:52:19 <metalgod> to make sure gtk3 and gtk2 apps looks the same
+16:52:48 <metalgod> so far nobody have the expertize to perform this task
+16:52:51 <badshah400> lots of defaults undecided (pitivi?, empathy/xchat, wallpaper (already discussed), etc)
+16:53:14 <psankar> badshah400, oh okay
+16:53:37 <psankar> badshah400, do you think it is better if you send this in a mail to opensuse-gnome ? as vuntz is also not online ?
+16:54:07 <badshah400> psankar: i think now that sending a mail out to the m-l would indeed be better
+16:54:25 <sreeves1> ok lets go to QA then
+16:54:31 <sreeves1> #topic QA
+16:54:33 <metalgod> we discussed this in the last release
+16:54:39 <psankar> sreeves1, i think we left out metalgod 's thing
+16:54:49 <psankar> sreeves1, sonar porting to gtk3
+16:54:49 <metalgod> we changed a few
+16:54:57 <sreeves1> metalgod: sorry
+16:55:01 <metalgod> np
+16:55:18 <psankar> metalgod, so you want to ask for some volunteers ? or have a wiki page with things to do for this ?
+16:55:33 <metalgod> we need volunteers
+16:55:41 <metalgod> who know css
+16:56:02 <metalgod> vuntz did a post on -gnome ML about this
+16:56:07 * psankar remembers seeing a mail on this by vuntz
+16:56:08 <psankar> ah yes
+16:56:27 <metalgod> http://lists.opensuse.org/opensuse-gnome/2011-01/msg00026.html
+16:56:38 <psankar> I dont have much knowledge about it. I can spread the word in twitter
+16:56:54 <psankar> asking for CSS knowledged contributors to help in gtk3-fying Sonar
+16:56:58 <metalgod> also there is a "unofficial" sonar theme for gnome-shell
+16:57:10 <metalgod> would be great to have it packaged
+16:57:31 <metalgod> http://www.techdrivein.com/2010/08/elementary-ambiance-sonar-most.html
+16:58:16 <metalgod> so psankar can you have this action item ? found someone with theming skills to port sonar to gtk3 and brand gnome-shell ?
+16:58:41 <psankar> ahem. I am not sure if I can find someeone. but I will try to spread the news :-)
+16:59:03 <amonthoth> not sure but maybe manugupt1 can help with css
+16:59:10 <sreeves1> mabye a follow up to vuntz email asking again for help
+16:59:32 <sreeves1> #action psankar to spread the word about needing help for port of sonar to gtk3
+16:59:41 <psankar> amonthoth, manugupt1 is having is interviews (final year in college)
+16:59:51 <metalgod> ok
+16:59:53 <metalgod> i'm done
+16:59:54 * rwobben likes this one(http://half-left.deviantart.com/journal/37636660/#/d371nhf) to try
+16:59:56 <psankar> amonthoth, so I will probably not disturb him for another few days
+17:00:23 <amonthoth> psankar, good for him
+17:00:37 <sreeves1> for QA - as we are way long for our meeting time maybe we should limit this to urgent QA items
+17:00:52 <metalgod> ok
+17:01:04 <metalgod> people any urgent question ?
+17:01:04 <sreeves1> anyone have anything ?
+17:01:05 <psankar> sreeves1, Is this time suitable for people in the far west ?
+17:01:25 <sreeves1> psankar: yeah - I think this worked pretty well
+17:01:46 <psankar> okay. We will try to have alternate times for alternate meetings in that case. Thanks.
+17:02:20 <sreeves1> thanks everyone for your participation
+17:02:31 <sreeves1> psankar: how do I end the meeting?
+17:02:35 <sreeves1> #endmeeting

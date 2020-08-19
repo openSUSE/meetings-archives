@@ -1,0 +1,612 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-gnome log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">13:44:48</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE GNOME Meeting</span>
+<a name="l-2"></a><span class="tm">13:44:48</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu Dec 16 13:44:48 2010 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">13:44:48</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">13:45:03</span><span class="nk"> &lt;psankar&gt;</span> nmarques, we will take care of it. we - I and you
+<a name="l-5"></a><span class="tm">13:45:09</span><span class="nk"> &lt;psankar&gt;</span> after the meeting
+<a name="l-6"></a><span class="tm">13:45:10</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Project Update</span>
+<a name="l-7"></a><span class="tm">13:45:17</span><span class="nk"> &lt;nmarques&gt;</span> psankar, that's  a plan +1
+<a name="l-8"></a><span class="tm">13:45:18</span><span class="nk"> &lt;vuntz&gt;</span> ok, project update
+<a name="l-9"></a><span class="tm">13:45:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> anything? :-)
+<a name="l-10"></a><span class="tm">13:45:35</span><span class="nk"> &lt;DimStar&gt;</span> project update? Hmm..
+<a name="l-11"></a><span class="tm">13:45:52</span><span class="nk"> &lt;DimStar&gt;</span> only the usual: packages are up-to-date... vuntz fixed a big bunch of build failures
+<a name="l-12"></a><span class="tm">13:46:00</span><span class="nk"> &lt;psankar&gt;</span> gnome:next ?
+<a name="l-13"></a><span class="tm">13:46:44</span><span class="nk"> &lt;vuntz&gt;</span> from my side, I see a few things:
+<a name="l-14"></a><span class="tm">13:46:46</span><span class="nk"> &lt;vuntz&gt;</span> a few new apps that were packaged and pushed to factory (waiting for legal review)
+<a name="l-15"></a><span class="tm">13:46:53</span><span class="nk"> &lt;vuntz&gt;</span> I probably need to update the wiki page for that
+<a name="l-16"></a><span class="tm">13:47:07</span><span class="nk"> &lt;vuntz&gt;</span> we're up-to-date, as DimStar said
+<a name="l-17"></a><span class="tm">13:47:26</span><span class="nk"> &lt;vuntz&gt;</span> we did a few maintenance updates for 11.3 recently, which is good
+<a name="l-18"></a><span class="tm">13:47:35</span><span class="nk"> &lt;vuntz&gt;</span> we could do more -- if people want to help, that's welcome
+<a name="l-19"></a><span class="tm">13:47:55</span><span class="nk"> &lt;vuntz&gt;</span> and we have GNOME:Next which we just started
+<a name="l-20"></a><span class="tm">13:48:04</span><span class="nk"> &lt;vuntz&gt;</span> it will contain GNOME 3 in the future
+<a name="l-21"></a><span class="tm">13:48:09</span><span class="nk"> &lt;badshah400&gt;</span> regarding gnome:next, is this the project that will be used to supply end-users with a stable 3.0 once it is released?
+<a name="l-22"></a><span class="tm">13:48:12</span><span class="nk"> &lt;vuntz&gt;</span> hopefully, it'll be ready before the end of the year
+<a name="l-23"></a><span class="tm">13:48:28</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> GNOME:Next is explicitly not for end-users -)
+<a name="l-24"></a><span class="tm">13:48:41</span><span class="nk"> &lt;vuntz&gt;</span> once 3.0 will be ready, we'll move it to G:S:3.0
+<a name="l-25"></a><span class="tm">13:48:56</span><span class="nk"> &lt;DimStar&gt;</span> I don't think we should ever have users use gnome:next.... it should more serve us our 'devel bed' while factory is closed... we will probably make a GNOME:STABLE:3.0 for the users
+<a name="l-26"></a><span class="tm">13:48:57</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> ok, so this is a test-bed sort of
+<a name="l-27"></a><span class="tm">13:49:14</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> yeah, it's for developers/packagers
+<a name="l-28"></a><span class="tm">13:49:25</span><span class="nk"> &lt;psankar&gt;</span> Do we plan to create anything for tumbleweed ? can gnome-next be used there ?
+<a name="l-29"></a><span class="tm">13:49:26</span><span class="nk"> &lt;vuntz&gt;</span> fwiw, I explicitly mentioned in the title of the project that it's not for end-users :-)
+<a name="l-30"></a><span class="tm">13:49:36</span><span class="nk"> &lt;vuntz&gt;</span> ah, tumbleweed, that's another good topic
+<a name="l-31"></a><span class="tm">13:49:45</span><span class="nk"> &lt;vuntz&gt;</span> tumbleweed should use the latest G:S:*
+<a name="l-32"></a><span class="tm">13:50:06</span><span class="nk"> &lt;DimStar&gt;</span> did we/you SR it already?
+<a name="l-33"></a><span class="tm">13:50:09</span><span class="nk"> &lt;vuntz&gt;</span> I wanted to check with DimStar, but I think we're ready to submit all of G:S:2.32
+<a name="l-34"></a><span class="tm">13:50:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> :-) If you're fine with it, we can sr it
+<a name="l-35"></a><span class="tm">13:50:37</span><span class="nk"> &lt;DimStar&gt;</span> there is a small list of packages that could get an update in G:S:2.32... volunteers? :)
+<a name="l-36"></a><span class="tm">13:50:41</span><span class="nk"> &lt;vuntz&gt;</span> I'm not aware of any issue in G:S:2.32
+<a name="l-37"></a><span class="tm">13:51:02</span><span class="nk"> &lt;DimStar&gt;</span> stability wise it seems to be fine.. I don't see much complaining about it.
+<a name="l-38"></a><span class="tm">13:51:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">DimStar:</span> good point
+<a name="l-39"></a><span class="tm">13:51:17</span><span class="nk"> &lt;vuntz&gt;</span> most of them can be taken from G:F, though ;-)
+<a name="l-40"></a><span class="tm">13:52:24</span><span class="nk"> &lt;psankar&gt;</span> DimStar, can you mail the list about the list of packages needing help ?
+<a name="l-41"></a><span class="tm">13:52:30</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">DimStar:</span> these are just minor version upgrades, nothing big right? so I can look into them
+<a name="l-42"></a><span class="tm">13:52:52</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> osc collab todo --project GNOME:STABLE:2.32
+<a name="l-43"></a><span class="tm">13:53:28</span><span class="nk"> &lt;psankar&gt;</span> vuntz, ah yes. I forgot that
+<a name="l-44"></a><span class="tm">13:53:46</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> note that for most of them, we can just take the version from G:F. It's just a matter of copying them, which I can trivially do after the meeting
+<a name="l-45"></a><span class="tm">13:53:55</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> ok then
+<a name="l-46"></a><span class="tm">13:53:59</span><span class="nk"> &lt;vuntz&gt;</span> there's just glib2 which will require manual work
+<a name="l-47"></a><span class="tm">13:54:03</span><span class="nk"> &lt;vuntz&gt;</span> as far as I can tell
+<a name="l-48"></a><span class="tm">13:54:22</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> so you can take this one, if you want
+<a name="l-49"></a><span class="tm">13:54:56</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> glib2 for G:S:2.32? ok
+<a name="l-50"></a><span class="tm">13:55:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> yep
+<a name="l-51"></a><span class="tm">13:56:55</span><span class="nk"> &lt;badshah400&gt;</span> ok
+<a name="l-52"></a><span class="tm">13:57:31</span><span class="nk"> &lt;vuntz&gt;</span> coming back to GNOME:Next and Tumbleweed:
+<a name="l-53"></a><span class="tm">13:57:45</span><span class="nk"> &lt;vuntz&gt;</span> if people want to help with either of those, you're most welcome
+<a name="l-54"></a><span class="tm">13:57:56</span><span class="nk"> &lt;vuntz&gt;</span> for Tumbleweed, especially, we'll likely need testers, I guess
+<a name="l-55"></a><span class="tm">13:58:11 </span><span class="nka">* psankar</span> <span class="ac">volunteers</span>
+<a name="l-56"></a><span class="tm">13:58:19</span><span class="nk"> &lt;psankar&gt;</span> I am very much interested in tumbleweed
+<a name="l-57"></a><span class="tm">13:58:22</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, you know my help is very limited but within the boundaries of what I can help, feel free to send some my way if you think I can handle it (no coding)
+<a name="l-58"></a><span class="tm">13:58:49</span><span class="nk"> &lt;psankar&gt;</span> I am planning to run it in my laptop also, so I will give feedback for gnome as well
+<a name="l-59"></a><span class="tm">13:59:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> that's cool
+<a name="l-60"></a><span class="tm">14:00:18</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> well, if you have time to update packages, test stuff, triage bugs, etc. you're always welcome. It's up to you to choose how you want to help :-)
+<a name="l-61"></a><span class="tm">14:00:37</span><span class="nk"> &lt;vuntz&gt;</span> ah, I forgot to take action items and info
+<a name="l-62"></a><span class="tm">14:00:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">GNOME in Factory is up-to-date and (mostly) builds fine now</span>
+<a name="l-63"></a><span class="tm">14:01:02</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">vuntz:</span> im going to be testing the graphics apps no matter what :)
+<a name="l-64"></a><span class="tm">14:01:08</span><span class="nk"> &lt;metalgod&gt;</span> sorry for taking so long
+<a name="l-65"></a><span class="tm">14:01:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we got some new apps again (most are waiting for legal review)</span>
+<a name="l-66"></a><span class="tm">14:01:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we got some maintenance releases, we could do more if people can help</span>
+<a name="l-67"></a><span class="tm">14:01:37</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, me and bugs don't work very well ;) I always end up embarassing myself when I try to help... but once I get some more 'bearing' with packages I'll help update packages
+<a name="l-68"></a><span class="tm">14:01:47</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> make me in the updates
+<a name="l-69"></a><span class="tm">14:02:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">GNOME:Next got created; it will track 3.0 for now. It's not for end-users though (it will move to G:S:3.0 when it will be ready)</span>
+<a name="l-70"></a><span class="tm">14:02:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we'll push G:S:2.32 to Tumbleweed</span>
+<a name="l-71"></a><span class="tm">14:02:48</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">psankar to install Tumbleweed and look for GNOME issues there</span>
+<a name="l-72"></a><span class="tm">14:03:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">badshah400 to update glib2 in G:S:2.32</span>
+<a name="l-73"></a><span class="tm">14:03:13</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to copy latest 2.32 versions from G:F to G:S:2.32</span>
+<a name="l-74"></a><span class="tm">14:03:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to sr G:S:2.32 to tumbleweed</span>
+<a name="l-75"></a><span class="tm">14:03:25</span><span class="nk"> &lt;vuntz&gt;</span> phew
+<a name="l-76"></a><span class="tm">14:03:30</span><span class="nk"> &lt;vuntz&gt;</span> I hope I didn't miss anything ;-)
+<a name="l-77"></a><span class="tm">14:03:37</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> any specific packages for 11.3 updates you r thinking about?
+<a name="l-78"></a><span class="tm">14:03:54</span><span class="nk"> &lt;vuntz&gt;</span> metalgod, badshah400: we need to look at the various bugs
+<a name="l-79"></a><span class="tm">14:04:10</span><span class="nk"> &lt;vuntz&gt;</span> I know there's a big libwebkit update to do (for 11.1, 11.2, 11.3), though
+<a name="l-80"></a><span class="tm">14:04:31</span><span class="nk"> &lt;vuntz&gt;</span> it's a big big task, so I'm unsure how hard it will be :/
+<a name="l-81"></a><span class="tm">14:04:35</span><span class="nk"> &lt;metalgod&gt;</span> i've been taking care of applications that loose functionality ie. empathy connection to msn, pidgin icq etc...
+<a name="l-82"></a><span class="tm">14:04:59</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> do you want to try to do a simple update next time?
+<a name="l-83"></a><span class="tm">14:05:08</span><span class="nk"> &lt;metalgod&gt;</span> it's very important to keep "stable" users with all functionality ok
+<a name="l-84"></a><span class="tm">14:05:46</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> yes, sure i can do the easy ones
+<a name="l-85"></a><span class="tm">14:05:49</span><span class="nk"> &lt;vuntz&gt;</span> cool
+<a name="l-86"></a><span class="tm">14:06:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">metalgod and badshah400 are willing to help for maintenance updates</span>
+<a name="l-87"></a><span class="tm">14:06:29</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to look for next maintenance updates to do</span>
+<a name="l-88"></a><span class="tm">14:06:31</span><span class="nk"> &lt;vuntz&gt;</span> cool
+<a name="l-89"></a><span class="tm">14:06:44</span><span class="nk"> &lt;vuntz&gt;</span> so, let's move to the next topic :-)
+<a name="l-90"></a><span class="tm">14:06:53</span><span class="nk"> &lt;metalgod&gt;</span> right on time
+<a name="l-91"></a><span class="tm">14:06:59 </span><span class="nka">* psankar</span> <span class="ac">has not done his AIs and feels shameful about it</span>
+<a name="l-92"></a><span class="tm">14:07:02</span><span class="nk"> &lt;metalgod&gt;</span> the action items are always on the topic
+<a name="l-93"></a><span class="tm">14:07:19</span><span class="nk"> &lt;vuntz&gt;</span> well, not right now :-)
+<a name="l-94"></a><span class="tm">14:07:23</span><span class="nk"> &lt;metalgod&gt;</span> eheh
+<a name="l-95"></a><span class="tm">14:07:41</span><span class="nk"> &lt;psankar&gt;</span> I shall complete my action items by this weekend for sure. was stuck in some busy things in dayjob . sorry.
+<a name="l-96"></a><span class="tm">14:07:45</span><span class="nk"> &lt;vuntz&gt;</span> last meeting: http://community.opensuse.org/meetings/opensuse-gnome/2010/opensuse-gnome.2010-11-25-13.45.html
+<a name="l-97"></a><span class="tm">14:07:51</span><span class="nk"> &lt;metalgod&gt;</span> that's right
+<a name="l-98"></a><span class="tm">14:08:08</span><span class="nk"> &lt;vuntz&gt;</span> so I did my AI, and sent the info to psankar :-)
+<a name="l-99"></a><span class="tm">14:08:12</span><span class="nk"> &lt;psankar&gt;</span> :-)
+<a name="l-100"></a><span class="tm">14:09:03</span><span class="nk"> &lt;vuntz&gt;</span> so just to keep the old AI alive:
+<a name="l-101"></a><span class="tm">14:09:11</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">psankar Talk with the security team about gnomesu replacement for Yast</span>
+<a name="l-102"></a><span class="tm">14:09:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">psankar ask ajorg (mono team) if someone can SR smuxi to G:Apps</span>
+<a name="l-103"></a><span class="tm">14:09:42</span><span class="nk"> &lt;vuntz&gt;</span> actually, looking at some old minutes...
+<a name="l-104"></a><span class="tm">14:09:46</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to discuss with legal team how to make the licensing-related bugs open by default</span>
+<a name="l-105"></a><span class="tm">14:10:23</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-106"></a><span class="tm">14:10:26</span><span class="nk"> &lt;vuntz&gt;</span> anything else on AI?
+<a name="l-107"></a><span class="tm">14:10:52</span><span class="nk"> &lt;vuntz&gt;</span> I take it as a no :-)
+<a name="l-108"></a><span class="tm">14:10:59</span><span class="nk"> &lt;psankar&gt;</span> :)
+<a name="l-109"></a><span class="tm">14:11:31</span><span class="nk"> &lt;vuntz&gt;</span> so we need to triage this:
+<a name="l-110"></a><span class="tm">14:11:33</span><span class="nk"> &lt;vuntz&gt;</span> https://features.opensuse.org/query/tag?tag=gnome
+<a name="l-111"></a><span class="tm">14:12:15</span><span class="nk"> &lt;vuntz&gt;</span> unfortunately, this lists features that are done too (?)
+<a name="l-112"></a><span class="tm">14:12:18</span><span class="nk"> &lt;vuntz&gt;</span> but yeah
+<a name="l-113"></a><span class="tm">14:12:30</span><span class="nk"> &lt;vuntz&gt;</span> ideally, I'd like some of us to do it together
+<a name="l-114"></a><span class="tm">14:12:40</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, https://features.opensuse.org/308271
+<a name="l-115"></a><span class="tm">14:12:48</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I have packaged software to do this
+<a name="l-116"></a><span class="tm">14:13:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> where is it? Did you sr it to G:A?
+<a name="l-117"></a><span class="tm">14:13:14</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, but it has 1 problem... it only works with images, not with .xml stuff like we use :(
+<a name="l-118"></a><span class="tm">14:13:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we need to triage https://features.opensuse.org/query/tag?tag=gnome</span>
+<a name="l-119"></a><span class="tm">14:13:22</span><span class="nk"> &lt;psankar&gt;</span> nmarques, that is AWESOME. it works with latest gdm ?
+<a name="l-120"></a><span class="tm">14:13:26</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I haven't submitted it because of that
+<a name="l-121"></a><span class="tm">14:13:28</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> which .xml stuff?
+<a name="l-122"></a><span class="tm">14:13:29</span><span class="nk"> &lt;nmarques&gt;</span> psankar, yes
+<a name="l-123"></a><span class="tm">14:13:45</span><span class="nk"> &lt;psankar&gt;</span> nmarques, cool. Thanks.
+<a name="l-124"></a><span class="tm">14:13:55</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, the software displays a preview of the current wallpaper... if the wallpaper is something like IK.xml
+<a name="l-125"></a><span class="tm">14:14:04</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, it blows up... that aside, it works pretty nice
+<a name="l-126"></a><span class="tm">14:14:24</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I haven't done python, but I can try to hack it ;)
+<a name="l-127"></a><span class="tm">14:14:25</span><span class="nk"> &lt;vuntz&gt;</span> ah
+<a name="l-128"></a><span class="tm">14:14:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> well, we need to fix it
+<a name="l-129"></a><span class="tm">14:14:46</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> did you file a bug for this?
+<a name="l-130"></a><span class="tm">14:14:48</span><span class="nk"> &lt;nmarques&gt;</span> it's a 10 min thingie for someone proeficient with python ;)
+<a name="l-131"></a><span class="tm">14:15:01</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, yeah... no reply... ubuntu fan stuff
+<a name="l-132"></a><span class="tm">14:15:18</span><span class="nk"> &lt;psankar&gt;</span> nmarques, that package is not in upstream git ?
+<a name="l-133"></a><span class="tm">14:15:27</span><span class="nk"> &lt;psankar&gt;</span> nmarques, but just in ubuntu's repos ?
+<a name="l-134"></a><span class="tm">14:15:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> let's talk about this after the meeting, if you don't mind
+<a name="l-135"></a><span class="tm">14:15:54</span><span class="nk"> &lt;nmarques&gt;</span> sure :)
+<a name="l-136"></a><span class="tm">14:16:01</span><span class="nk"> &lt;nmarques&gt;</span> https://bugs.launchpad.net/gdm2setup/+bug/682868
+<a name="l-137"></a><span class="tm">14:16:02</span><span class="nk"> &lt;bugbot&gt;</span> Malone bug 682868 in gdm2setup "default wallpaper, not an image..." [Undecided,New]
+<a name="l-138"></a><span class="tm">14:16:17</span><span class="nk"> &lt;vuntz&gt;</span> so, would people be available to do some feature triage day?
+<a name="l-139"></a><span class="tm">14:16:28</span><span class="nk"> &lt;psankar&gt;</span> IF it is in a weekend, I can
+<a name="l-140"></a><span class="tm">14:16:28</span><span class="nk"> &lt;nmarques&gt;</span> psankar, https://features.opensuse.org/308271
+<a name="l-141"></a><span class="tm">14:16:30</span><span class="nk"> &lt;vuntz&gt;</span> to be honest, I'd expect it to only take a few hours
+<a name="l-142"></a><span class="tm">14:16:54</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> yes, this weekend would be fine for me too
+<a name="l-143"></a><span class="tm">14:17:17</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I have one volunteer for helping with GNOME who actually is starting on GTK, anyone available to get him on the team's workflow ? :)
+<a name="l-144"></a><span class="tm">14:17:41</span><span class="nk"> &lt;vuntz&gt;</span> I probably can't help this week-end, fwiw
+<a name="l-145"></a><span class="tm">14:17:53</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> can we discuss this in Q&amp;A? :-)
+<a name="l-146"></a><span class="tm">14:18:04</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> (just trying to follow the meeting agenda)
+<a name="l-147"></a><span class="tm">14:18:37</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, sry
+<a name="l-148"></a><span class="tm">14:20:00</span><span class="nk"> &lt;psankar&gt;</span> vuntz, weekdays are ruled out for me. unless they are after 1300 UTC
+<a name="l-149"></a><span class="tm">14:20:31</span><span class="nk"> &lt;vuntz&gt;</span> is there anyone who would like to take care of the organization of such a day? :-)
+<a name="l-150"></a><span class="tm">14:20:31</span><span class="nk"> &lt;psankar&gt;</span> but after 1300 UTC any day should be fine I guess (unless there are some critsits / exceptions)
+<a name="l-151"></a><span class="tm">14:20:47</span><span class="nk"> &lt;vuntz&gt;</span> it's mostly just defining a date/time
+<a name="l-152"></a><span class="tm">14:20:57 </span><span class="nka">* psankar</span> <span class="ac">proposes badshah400</span>
+<a name="l-153"></a><span class="tm">14:21:56</span><span class="nk"> &lt;badshah400&gt;</span> i am not around next week, but if it is this weekend or something, yes I can do it I guess
+<a name="l-154"></a><span class="tm">14:22:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> oh, it's just finding date+time, no need to even be available for the day :-)
+<a name="l-155"></a><span class="tm">14:22:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">psankar &amp; badshah400 to find a date/time for the feature triage day</span>
+<a name="l-156"></a><span class="tm">14:23:02</span><span class="nk"> &lt;vuntz&gt;</span> ::-)
+<a name="l-157"></a><span class="tm">14:23:05</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> ok, then
+<a name="l-158"></a><span class="tm">14:23:06</span><span class="nk"> &lt;psankar&gt;</span> :)
+<a name="l-159"></a><span class="tm">14:23:10</span><span class="nk"> &lt;vuntz&gt;</span> ok, next
+<a name="l-160"></a><span class="tm">14:23:14</span><span class="nk"> &lt;psankar&gt;</span> vuntz, or is it a good idea
+<a name="l-161"></a><span class="tm">14:23:17</span><span class="nk"> &lt;psankar&gt;</span> vuntz, if
+<a name="l-162"></a><span class="tm">14:23:21</span><span class="nk"> &lt;vuntz&gt;</span> yes?
+<a name="l-163"></a><span class="tm">14:23:29</span><span class="nk"> &lt;nmarques&gt;</span> ok
+<a name="l-164"></a><span class="tm">14:23:34</span><span class="nk"> &lt;psankar&gt;</span> vuntz, you can propose the list of triage guideliens ? (what to pick / reject Etc.)
+<a name="l-165"></a><span class="tm">14:23:45</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> the volunteer direct him to me
+<a name="l-166"></a><span class="tm">14:23:48</span><span class="nk"> &lt;psankar&gt;</span> so that everyone can do it in their own time ?
+<a name="l-167"></a><span class="tm">14:23:58</span><span class="nk"> &lt;metalgod&gt;</span> i'll help him with packaging and gtk stuff
+<a name="l-168"></a><span class="tm">14:24:02</span><span class="nk"> &lt;psankar&gt;</span> will not be coordinated but will get some more eyeballs
+<a name="l-169"></a><span class="tm">14:24:04</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> well, I'm afraid we don't have such guidelines at the moment, that's the issue
+<a name="l-170"></a><span class="tm">14:24:21</span><span class="nk"> &lt;psankar&gt;</span> vuntz, oh okay. we will get the date and will let you know
+<a name="l-171"></a><span class="tm">14:24:30</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, will do... I'll talk to you later and I'll introduce you to him... thanks for doing it :)
+<a name="l-172"></a><span class="tm">14:24:34</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> I think we need to do a first pass together, and that will help us define guidelines to do what you propose afterwards
+<a name="l-173"></a><span class="tm">14:24:47</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> np
+<a name="l-174"></a><span class="tm">14:24:47</span><span class="nk"> &lt;psankar&gt;</span> vuntz, neat
+<a name="l-175"></a><span class="tm">14:24:48</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> so, ayatana?
+<a name="l-176"></a><span class="tm">14:25:06</span><span class="nk"> &lt;nmarques&gt;</span> about ayatana... the libs are no problem and there are 4 base libs already done
+<a name="l-177"></a><span class="tm">14:25:35</span><span class="nk"> &lt;nmarques&gt;</span> indicators, we can use a few without changes... others we shouldn't even look for them because they demand deep core patching (gnome-power-* and other wicked stuff)
+<a name="l-178"></a><span class="tm">14:25:47</span><span class="nk"> &lt;nmarques&gt;</span> I do have a couple of problems with one or another package
+<a name="l-179"></a><span class="tm">14:25:59</span><span class="nk"> &lt;nmarques&gt;</span> specially vala related, but it's on track
+<a name="l-180"></a><span class="tm">14:26:18</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">libs are no problem, and mostly done</span>
+<a name="l-181"></a><span class="tm">14:26:27</span><span class="nk"> &lt;nmarques&gt;</span> the stuff that's done, works out of the box
+<a name="l-182"></a><span class="tm">14:26:42</span><span class="nk"> &lt;nmarques&gt;</span> needs polishing most
+<a name="l-183"></a><span class="tm">14:26:53</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> what was your motivation to implement this stuff if gnome will move to 3.0
+<a name="l-184"></a><span class="tm">14:26:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">some indicators are already fine, but some should probably be ignored (require core patching)</span>
+<a name="l-185"></a><span class="tm">14:26:59</span><span class="nk"> &lt;metalgod&gt;</span> even ubuntu will abandon that design ?
+<a name="l-186"></a><span class="tm">14:27:16</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">polishing is needed</span>
+<a name="l-187"></a><span class="tm">14:27:19</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, because I staying with GNOME2 for 1 or 2 more cycles
+<a name="l-188"></a><span class="tm">14:27:52</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, old habbits die hard... panel for 12 years... hard to ditch now ;)
+<a name="l-189"></a><span class="tm">14:28:28</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> and what about unity ? you will package it too ?
+<a name="l-190"></a><span class="tm">14:28:50</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, I will try, but I will wait a bit to see what Adam will do on fedora ;)
+<a name="l-191"></a><span class="tm">14:28:57</span><span class="nk"> &lt;psankar&gt;</span> iirc yeah he offered to. but wanted some packaging help as well
+<a name="l-192"></a><span class="tm">14:29:00</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, and some of this libs will be required for it ;)
+<a name="l-193"></a><span class="tm">14:29:01</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> ok sounds good
+<a name="l-194"></a><span class="tm">14:29:07</span><span class="nk"> &lt;psankar&gt;</span> i meant nmarques not adam, btw ^
+<a name="l-195"></a><span class="tm">14:29:26</span><span class="nk"> &lt;nmarques&gt;</span> currently there's only a group of people working this out
+<a name="l-196"></a><span class="tm">14:29:29</span><span class="nk"> &lt;nmarques&gt;</span> on Arch Linux
+<a name="l-197"></a><span class="tm">14:29:43</span><span class="nk"> &lt;nmarques&gt;</span> I'm also following their advancements and checking how they are doing it :)
+<a name="l-198"></a><span class="tm">14:30:00</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I'm done, it's not much to say really :)
+<a name="l-199"></a><span class="tm">14:30:17</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, only 1 patch needed on GTK
+<a name="l-200"></a><span class="tm">14:30:21</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, the one I told you about
+<a name="l-201"></a><span class="tm">14:30:30</span><span class="nk"> &lt;vuntz&gt;</span> right
+<a name="l-202"></a><span class="tm">14:30:32</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, if that happens... then all of this will work
+<a name="l-203"></a><span class="tm">14:30:38</span><span class="nk"> &lt;vuntz&gt;</span> I want federico to look at it
+<a name="l-204"></a><span class="tm">14:30:42</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, some indicators will not work, but those we don't need them
+<a name="l-205"></a><span class="tm">14:30:47</span><span class="nk"> &lt;nmarques&gt;</span> because GNOME offers better by default
+<a name="l-206"></a><span class="tm">14:30:59</span><span class="nk"> &lt;nmarques&gt;</span> that's the case for battery indicator and nm-applet
+<a name="l-207"></a><span class="tm">14:31:19</span><span class="nk"> &lt;nmarques&gt;</span> and ubuntu's solution for nm-applet replacement does rely on Intel's Connection Manager
+<a name="l-208"></a><span class="tm">14:31:23</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> do you need any specific help?
+<a name="l-209"></a><span class="tm">14:31:49</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, just maybe a fix on the package I sent for the list, and for reviewing my packages so that I know they are properly done
+<a name="l-210"></a><span class="tm">14:32:00</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, that aside... I'm going cool :)
+<a name="l-211"></a><span class="tm">14:32:04</span><span class="nk"> &lt;vuntz&gt;</span> so, yeah, the usual stuff
+<a name="l-212"></a><span class="tm">14:32:12</span><span class="nk"> &lt;vuntz&gt;</span> okay
+<a name="l-213"></a><span class="tm">14:32:18</span><span class="nk"> &lt;vuntz&gt;</span> thanks, let's move to the next topic :-)
+<a name="l-214"></a><span class="tm">14:32:39</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> the plan is to include in G:A or stay on G:Ayatana ?
+<a name="l-215"></a><span class="tm">14:32:39 </span><span class="nka">* psankar</span> <span class="ac">sits straight</span>
+<a name="l-216"></a><span class="tm">14:32:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">fcrozat:</span> hop
+<a name="l-217"></a><span class="tm">14:33:00</span><span class="nk"> &lt;metalgod&gt;</span> i think fcrozat have some interesting news for us ;)
+<a name="l-218"></a><span class="tm">14:33:34</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, some like base libs and some apps which don't require mess up... can go to G:A, the rest of the stuff that needs patching I would rather have a separate repo so I can provide the patched apps in parallel for users who want to check that out
+<a name="l-219"></a><span class="tm">14:33:49</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, but I don't plan to merge it with openSUSE's default GNOME offer
+<a name="l-220"></a><span class="tm">14:34:00</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, just as an option for whoever wants
+<a name="l-221"></a><span class="tm">14:34:14</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> awesome :)
+<a name="l-222"></a><span class="tm">14:34:31</span><span class="nk"> &lt;fcrozat&gt;</span> so, I've started to use source services to get GNOME3 (mainly gnome-shell) working on a "stable" platform ie 11.3
+<a name="l-223"></a><span class="tm">14:34:45</span><span class="nk"> &lt;fcrozat&gt;</span> but it is still a bit problematic to get everything built
+<a name="l-224"></a><span class="tm">14:34:54</span><span class="nk"> &lt;fcrozat&gt;</span> so, I'm going to do the work in two phases
+<a name="l-225"></a><span class="tm">14:35:12</span><span class="nk"> &lt;fcrozat&gt;</span> first, branch packages from :Next to my gnome3 to get tarball release built against 11.3
+<a name="l-226"></a><span class="tm">14:35:23</span><span class="nk"> &lt;fcrozat&gt;</span> build ISO based on that
+<a name="l-227"></a><span class="tm">14:35:45</span><span class="nk"> &lt;fcrozat&gt;</span> and then, enable source service on packages, so the iso (and packages) can be update easily
+<a name="l-228"></a><span class="tm">14:36:14</span><span class="nk"> &lt;fcrozat&gt;</span> the idea is to not brand the iso too much as openSUSE, since the plan is to be used by GNOME upstream folks too
+<a name="l-229"></a><span class="tm">14:36:18</span><span class="nk"> &lt;fcrozat&gt;</span> (to test gnome3)
+<a name="l-230"></a><span class="tm">14:36:27</span><span class="nk"> &lt;metalgod&gt;</span> good news
+<a name="l-231"></a><span class="tm">14:36:49</span><span class="nk"> &lt;fcrozat&gt;</span> I'll try to merge back the source service changes needed in specfile back to next
+<a name="l-232"></a><span class="tm">14:37:12</span><span class="nk"> &lt;fcrozat&gt;</span> (additional build requirements and so on) so the work would not be lost when gnome3 is released
+<a name="l-233"></a><span class="tm">14:38:31</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">fcrozat:</span> why don't you use 11.4m5 to build gnome-shell ?
+<a name="l-234"></a><span class="tm">14:38:48</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">metalgod:</span> because too much things changed and aren't stable
+<a name="l-235"></a><span class="tm">14:39:05</span><span class="nk"> &lt;metalgod&gt;</span> it should be easier to build
+<a name="l-236"></a><span class="tm">14:39:08</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-237"></a><span class="tm">14:39:14</span><span class="nk"> &lt;psankar&gt;</span> fcrozat, IIUC, is this for using latest GNOME 3 on 11.3 ?
+<a name="l-238"></a><span class="tm">14:39:15</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">the idea is to use use source services to easily provide a live image</span>
+<a name="l-239"></a><span class="tm">14:39:18</span><span class="nk"> &lt;fcrozat&gt;</span> it isn't that difficult
+<a name="l-240"></a><span class="tm">14:39:26</span><span class="nk"> &lt;metalgod&gt;</span> good to know that we will have a openSUSE livecd to get tested by GNOME upstream
+<a name="l-241"></a><span class="tm">14:39:35</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we want the image to be usable by upstream, so it shouldn't be branded openSUSE too strongly</span>
+<a name="l-242"></a><span class="tm">14:39:41</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">psankar:</span> yep..
+<a name="l-243"></a><span class="tm">14:39:48</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">this work will be merge with the G:N work</span>
+<a name="l-244"></a><span class="tm">14:39:48</span><span class="nk"> &lt;psankar&gt;</span> fcrozat, neat okay. thanks.
+<a name="l-245"></a><span class="tm">14:39:49</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">psankar:</span> at least until 11.4 is released
+<a name="l-246"></a><span class="tm">14:39:53</span><span class="nk"> &lt;psankar&gt;</span> got it
+<a name="l-247"></a><span class="tm">14:40:06</span><span class="nk"> &lt;fcrozat&gt;</span> I might push updated drm / mesa stuff there too
+<a name="l-248"></a><span class="tm">14:40:19</span><span class="nk"> &lt;fcrozat&gt;</span> but first things first :)
+<a name="l-249"></a><span class="tm">14:40:51</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">fcrozat:</span> another question.... any plans to integrate opensuse OBS with gnome buildbots ?
+<a name="l-250"></a><span class="tm">14:41:09</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">metalgod:</span> can't be done..
+<a name="l-251"></a><span class="tm">14:41:21</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">metalgod:</span> but if you want to donate a system to run jhbuild
+<a name="l-252"></a><span class="tm">14:41:27</span><span class="nk"> &lt;fcrozat&gt;</span> there is no problem :)
+<a name="l-253"></a><span class="tm">14:41:42</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">fcrozat:</span> ehehe too much power for my machine :)
+<a name="l-254"></a><span class="tm">14:42:09</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">fcrozat:</span> similar to what people did in the past with deb's
+<a name="l-255"></a><span class="tm">14:42:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to investigate if we can find some server that can be used as build bot for build.gnome.org</span>
+<a name="l-256"></a><span class="tm">14:42:32</span><span class="nk"> &lt;fcrozat&gt;</span> gnome buildbots aren't using packages but jhbuild.. what is needed is "raw power"
+<a name="l-257"></a><span class="tm">14:43:15</span><span class="nk"> &lt;vuntz&gt;</span> anything else on the GNOME 3 git packages?
+<a name="l-258"></a><span class="tm">14:43:25</span><span class="nk"> &lt;fcrozat&gt;</span> no
+<a name="l-259"></a><span class="tm">14:43:35</span><span class="nk"> &lt;vuntz&gt;</span> good, next topic :-)
+<a name="l-260"></a><span class="tm">14:43:43</span><span class="nk"> &lt;psankar&gt;</span> fcrozat, It may be a stupid suggestion but I have heard that icecream does distributed builds and uses multiple machines cpu power etc. may be it can help ?
+<a name="l-261"></a><span class="tm">14:44:10</span><span class="nk"> &lt;fcrozat&gt;</span> <span class="hi">psankar:</span> it could.. we "just" need a "master" server somewhere
+<a name="l-262"></a><span class="tm">14:44:21</span><span class="nk"> &lt;fcrozat&gt;</span> (and the icecream nodes would need to be on the same network)
+<a name="l-263"></a><span class="tm">14:44:38</span><span class="nk"> &lt;psankar&gt;</span> fcrozat, yeah.
+<a name="l-264"></a><span class="tm">14:45:06</span><span class="nk"> &lt;badshah400&gt;</span> issue with M5: no banshee, tomboy, gnome-do; imo better coordination is required with mono repos so that such a problem can be avoided
+<a name="l-265"></a><span class="tm">14:45:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">with M5: no banshee, tomboy, gnome-do</span>
+<a name="l-266"></a><span class="tm">14:45:51</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> the gnome-keyring bug counts ? :)
+<a name="l-267"></a><span class="tm">14:45:57</span><span class="nk"> &lt;vuntz&gt;</span> that's quite a big issue
+<a name="l-268"></a><span class="tm">14:46:03</span><span class="nk"> &lt;vuntz&gt;</span> anybody willing to talk to mono people about this?
+<a name="l-269"></a><span class="tm">14:46:14</span><span class="nk"> &lt;metalgod&gt;</span> i can ask gabaug1 about banshee
+<a name="l-270"></a><span class="tm">14:46:36</span><span class="nk"> &lt;metalgod&gt;</span> and see if he want's to get 1.9.1 in factory
+<a name="l-271"></a><span class="tm">14:47:11</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> the gnome-keyring issue is quite bad, but we need to be able to reproduce it :/
+<a name="l-272"></a><span class="tm">14:47:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> re banshee: unless 1.10 is released in February, we'll have to stay with 1.8
+<a name="l-273"></a><span class="tm">14:48:16</span><span class="nk"> &lt;badshah400&gt;</span> why not have the banshee build in gnome:apps (it is our default player) instead of its own repo (which upstream can use as usual)?
+<a name="l-274"></a><span class="tm">14:48:22</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> banshee development version have been very stable and since banshee is developed "in-house"....
+<a name="l-275"></a><span class="tm">14:48:26</span><span class="nk"> &lt;metalgod&gt;</span> but yeah i agree with you
+<a name="l-276"></a><span class="tm">14:48:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> the banshee people like it this way
+<a name="l-277"></a><span class="tm">14:48:45</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> banshee is not developed "in-house"
+<a name="l-278"></a><span class="tm">14:48:46</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> that's 2.0 and not 1.10 you are talking about :)
+<a name="l-279"></a><span class="tm">14:48:57</span><span class="nk"> &lt;vuntz&gt;</span> it's a community project, with contributors from various distros :-)
+<a name="l-280"></a><span class="tm">14:49:06</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> right :)
+<a name="l-281"></a><span class="tm">14:50:22</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-282"></a><span class="tm">14:50:35</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> put the action on me
+<a name="l-283"></a><span class="tm">14:50:39</span><span class="nk"> &lt;metalgod&gt;</span> mono apps
+<a name="l-284"></a><span class="tm">14:50:43</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-285"></a><span class="tm">14:50:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">metalgod to find a solution for the mono apps not being in M5</span>
+<a name="l-286"></a><span class="tm">14:51:03</span><span class="nk"> &lt;vuntz&gt;</span> anything else?
+<a name="l-287"></a><span class="tm">14:51:16</span><span class="nk"> &lt;metalgod&gt;</span> banshee failed to build on factory last night
+<a name="l-288"></a><span class="tm">14:51:30</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> the packagekit updater applet issue
+<a name="l-289"></a><span class="tm">14:51:31</span><span class="nk"> &lt;vuntz&gt;</span> as far as I can tell, things are mostly fine. There are a few things that need to be polished, but no big issue
+<a name="l-290"></a><span class="tm">14:51:33</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> we deal with the theme too ?
+<a name="l-291"></a><span class="tm">14:51:52</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> I'd like to see if the new PackageKit helps
+<a name="l-292"></a><span class="tm">14:51:53</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> what's wrong with the updater ?
+<a name="l-293"></a><span class="tm">14:51:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> I have 0.6.11 coming soon
+<a name="l-294"></a><span class="tm">14:52:33</span><span class="nk"> &lt;metalgod&gt;</span> impressive PK from factory updates packages from all repositories
+<a name="l-295"></a><span class="tm">14:52:45</span><span class="nk"> &lt;metalgod&gt;</span> thanks for who did that
+<a name="l-296"></a><span class="tm">14:53:44</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod:</span> that's the issue; it is a BIG change from 11.3 and needs to be mentioned in the release notes in capital letters to make it clear to everyone
+<a name="l-297"></a><span class="tm">14:53:59</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, mine seems to be following the repo priority ;)
+<a name="l-298"></a><span class="tm">14:54:16</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> i think it's pretty cool
+<a name="l-299"></a><span class="tm">14:54:34</span><span class="nk"> &lt;metalgod&gt;</span> this way deals with 11.4-updates and packman packages at the same time
+<a name="l-300"></a><span class="tm">14:54:38</span><span class="nk"> &lt;metalgod&gt;</span> which makes sense
+<a name="l-301"></a><span class="tm">14:55:14</span><span class="nk"> &lt;metalgod&gt;</span> finally PK does something useful besides updates
+<a name="l-302"></a><span class="tm">14:55:34</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod:</span> it deviates from the vendor stickiness policy of openSUSE
+<a name="l-303"></a><span class="tm">14:55:40</span><span class="nk"> &lt;badshah400&gt;</span> bug 637764
+<a name="l-304"></a><span class="tm">14:55:42</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 637764 in openSUSE 11.4 (GNOME) "Packagekit updater applet in GNOME sees upgrades/updates from all repositories irrespective of vendor changes" [Major,New] https://bugzilla.novell.com/637764
+<a name="l-305"></a><span class="tm">14:56:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> I forgot. Does pkcon works correctly?
+<a name="l-306"></a><span class="tm">14:56:32</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> the old behavior was only to search for updates and perform updates
+<a name="l-307"></a><span class="tm">14:56:49</span><span class="nk"> &lt;metalgod&gt;</span> i don't think it's bad but look
+<a name="l-308"></a><span class="tm">14:56:56</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> i don't know at least with the latest mileston
+<a name="l-309"></a><span class="tm">14:57:18</span><span class="nk"> &lt;metalgod&gt;</span> if you have G:S:2.32 and packman PK will try to update your packages that have a version lower than the current repositories
+<a name="l-310"></a><span class="tm">14:57:37</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">vuntz:</span> i will get back to you with some testing later then?
+<a name="l-311"></a><span class="tm">14:57:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> cool
+<a name="l-312"></a><span class="tm">14:58:10</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> re "we deal with the theme too ?"
+<a name="l-313"></a><span class="tm">14:58:16</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> what did you ean?
+<a name="l-314"></a><span class="tm">14:58:18</span><span class="nk"> &lt;vuntz&gt;</span> mean
+<a name="l-315"></a><span class="tm">14:58:21</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">metalgod:</span> i am complaining about the fact that pk-applets behaviour has gone from doing zypper patch to zypper up
+<a name="l-316"></a><span class="tm">14:58:43</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> mean if we decide which artwork (theme and icons) goes to gnome
+<a name="l-317"></a><span class="tm">14:58:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">there's some discussion on https://bugzilla.novell.com/637764, a change in the behavior of the packagekit updater</span>
+<a name="l-318"></a><span class="tm">14:59:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">badshah400 to check if pkcon exhibits the same behavior as the updater applet</span>
+<a name="l-319"></a><span class="tm">14:59:18</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> where can we see the proposed artwork?
+<a name="l-320"></a><span class="tm">14:59:23</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, I agree with you in one way... but I also hold reservations
+<a name="l-321"></a><span class="tm">14:59:30</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, hold, I link
+<a name="l-322"></a><span class="tm">15:00:01</span><span class="nk"> &lt;nmarques&gt;</span> http://karl-tux-stadt.de/ktuxs/?p=2677
+<a name="l-323"></a><span class="tm">15:00:01</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> someone is already getting new stuff on factory
+<a name="l-324"></a><span class="tm">15:00:05</span><span class="nk"> &lt;nmarques&gt;</span> the grey one is for GNOME
+<a name="l-325"></a><span class="tm">15:00:06</span><span class="nk"> &lt;metalgod&gt;</span> but gnome stuff is still on 11.3
+<a name="l-326"></a><span class="tm">15:00:10</span><span class="nk"> &lt;nmarques&gt;</span> I find it very depressing
+<a name="l-327"></a><span class="tm">15:00:11</span><span class="nk"> &lt;nmarques&gt;</span> :(
+<a name="l-328"></a><span class="tm">15:00:30</span><span class="nk"> &lt;badshah400&gt;</span> also while we are on theming, who is maintaining sonar since jimmac left? upstream or us?
+<a name="l-329"></a><span class="tm">15:00:48</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, Gnokii also keeping sonar
+<a name="l-330"></a><span class="tm">15:01:04</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">badshah400:</span> i think mmeeks can give you a help with PK
+<a name="l-331"></a><span class="tm">15:01:06</span><span class="nk"> &lt;vuntz&gt;</span> let's move to the next topic and keep discussing this :-)
+<a name="l-332"></a><span class="tm">15:01:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">should we move to the new theme? http://karl-tux-stadt.de/ktuxs/?p=2677</span>
+<a name="l-333"></a><span class="tm">15:01:28</span><span class="nk"> &lt;psankar&gt;</span> I believe sonar is in upstream . no ?
+<a name="l-334"></a><span class="tm">15:01:35</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">badshah400:</span> we are maintaining sonar
+<a name="l-335"></a><span class="tm">15:01:44</span><span class="nk"> &lt;nmarques&gt;</span> psankar, upstream is clearlooks I think
+<a name="l-336"></a><span class="tm">15:01:46</span><span class="nk"> &lt;psankar&gt;</span> IOW, jimmac still mainains it ?
+<a name="l-337"></a><span class="tm">15:02:02</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I would suggest we upgrade default icon set to Faenza
+<a name="l-338"></a><span class="tm">15:02:09</span><span class="nk"> &lt;psankar&gt;</span> nmarques, what I mean is, the theme is not in suse repos but still maintained by jimmac
+<a name="l-339"></a><span class="tm">15:02:09</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I can maintain it if needed
+<a name="l-340"></a><span class="tm">15:02:10</span><span class="nk"> &lt;metalgod&gt;</span> well
+<a name="l-341"></a><span class="tm">15:02:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> no, jimmac doesn't maintain the opensuse theme stuff anymore
+<a name="l-342"></a><span class="tm">15:02:18</span><span class="nk"> &lt;psankar&gt;</span> vuntz, oh okay
+<a name="l-343"></a><span class="tm">15:02:25</span><span class="nk"> &lt;metalgod&gt;</span> we should stick with this theme for 11.4
+<a name="l-344"></a><span class="tm">15:02:28</span><span class="nk"> &lt;vuntz&gt;</span> so, let's first discuss the background
+<a name="l-345"></a><span class="tm">15:02:29</span><span class="nk"> &lt;metalgod&gt;</span> and get a new one for 12.0
+<a name="l-346"></a><span class="tm">15:02:33</span><span class="nk"> &lt;metalgod&gt;</span> because of GNOME 3.0
+<a name="l-347"></a><span class="tm">15:02:34</span><span class="nk"> &lt;vuntz&gt;</span> gnokii joined us for that :-)
+<a name="l-348"></a><span class="tm">15:02:44</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">nmarques:</span> to change it not has something todo with the respect of jimmacs work so plz, I also like faenza more
+<a name="l-349"></a><span class="tm">15:02:50</span><span class="nk"> &lt;metalgod&gt;</span> brb
+<a name="l-350"></a><span class="tm">15:03:02</span><span class="nk"> &lt;nmarques&gt;</span> gnokii, jimmac isn't here... we are
+<a name="l-351"></a><span class="tm">15:03:30</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">nmarques:</span> that ppl not are here have nothing to do with not respect there work!
+<a name="l-352"></a><span class="tm">15:03:35</span><span class="nk"> &lt;nmarques&gt;</span> gnokii, and blind allegiance won't take us far when our desktop is ugly as hell, specially with icon sets ;)
+<a name="l-353"></a><span class="tm">15:03:41</span><span class="nk"> &lt;vuntz&gt;</span> please please please
+<a name="l-354"></a><span class="tm">15:03:41 </span><span class="nka">* mmeeks</span> <span class="ac">emphatically can't do everything and PK/zypp was just a rescue-from-the-flames scenario I've moved on from ;-)</span>
+<a name="l-355"></a><span class="tm">15:03:51</span><span class="nk"> &lt;mmeeks&gt;</span> <span class="hi">metalgod:</span> AFAIR there was some intel-ite who was maintaining that now, cf. the git log.
+<a name="l-356"></a><span class="tm">15:03:53</span><span class="nk"> &lt;vuntz&gt;</span> can we just focus on the background right now? :-)
+<a name="l-357"></a><span class="tm">15:04:00</span><span class="nk"> &lt;gnokii&gt;</span> vuntz +1
+<a name="l-358"></a><span class="tm">15:04:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> my main worry about this background is that it's the upstream KDE one
+<a name="l-359"></a><span class="tm">15:04:51</span><span class="nk"> &lt;vuntz&gt;</span> (and well, the grey is depressing, but that's something else :-))
+<a name="l-360"></a><span class="tm">15:05:05</span><span class="nk"> &lt;gnokii&gt;</span> mmh kde has an celadon one now
+<a name="l-361"></a><span class="tm">15:05:19</span><span class="nk"> &lt;psankar&gt;</span> vuntz, gnokii nmarques : I am a bit lost. What is the proposal ? we should change the theme ? or wallpaper ? or both ?
+<a name="l-362"></a><span class="tm">15:05:33</span><span class="nk"> &lt;nmarques&gt;</span> psankar, ignore my previous remarks
+<a name="l-363"></a><span class="tm">15:05:46</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> the proposed background is http://karl-tux-stadt.de/ktuxs/?p=2677 (left one)
+<a name="l-364"></a><span class="tm">15:05:47</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">psankar:</span> the problem is the theme, sonar has a dark green in it
+<a name="l-365"></a><span class="tm">15:05:59</span><span class="nk"> &lt;gnokii&gt;</span> vuntz thas was a long time ago
+<a name="l-366"></a><span class="tm">15:06:07</span><span class="nk"> &lt;gnokii&gt;</span> give me a fe seconds
+<a name="l-367"></a><span class="tm">15:06:16 </span><span class="nka">* psankar</span> <span class="ac">waits for gnokii</span>
+<a name="l-368"></a><span class="tm">15:06:31 </span><span class="nka">* nmarques</span> <span class="ac">pulls the whip and grins</span>
+<a name="l-369"></a><span class="tm">15:07:42</span><span class="nk"> &lt;vuntz&gt;</span> fwiw, something to consider for GNOME theming:
+<a name="l-370"></a><span class="tm">15:07:49</span><span class="nk"> &lt;psankar&gt;</span> vuntz, so if there is nothing else, we can close the topic
+<a name="l-371"></a><span class="tm">15:07:50</span><span class="nk"> &lt;fcrozat&gt;</span> we could switch to gnome3 theme, for gtk2 ? (if it is fixed correctly for metacity and gtk2)
+<a name="l-372"></a><span class="tm">15:08:08</span><span class="nk"> &lt;vuntz&gt;</span> for 11.4+1, when we'll have GNOME 3, I think we should keep the upstream theme (there's a big push upstream to have one theme used in all distros)
+<a name="l-373"></a><span class="tm">15:08:33</span><span class="nk"> &lt;vuntz&gt;</span> so my personal opinion is that, except maybe for the background, we should keep the current theming for 11.4
+<a name="l-374"></a><span class="tm">15:08:38</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, there is a sonar for gnome-shell
+<a name="l-375"></a><span class="tm">15:08:48</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">psankar:</span> we're waiting for gnokii :-)
+<a name="l-376"></a><span class="tm">15:09:01</span><span class="nk"> &lt;gnokii&gt;</span> http://img.susepaste.org/59475213
+<a name="l-377"></a><span class="tm">15:09:08 </span><span class="nka">* psankar</span> <span class="ac">looks</span>
+<a name="l-378"></a><span class="tm">15:09:18</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> I know, I packaged it. But still, we should move to the upstream theming when we get GNOME 3, imho
+<a name="l-379"></a><span class="tm">15:09:40</span><span class="nk"> &lt;gnokii&gt;</span> that is what KDE wanted, so that wallpaper now contains also colors they are used in sonar
+<a name="l-380"></a><span class="tm">15:10:24</span><span class="nk"> &lt;psankar&gt;</span> vuntz, gnokii I would prefer a little more brighter wallpaper. but artists know the minds of people better than programmers. so I leave it to you :-)
+<a name="l-381"></a><span class="tm">15:10:50</span><span class="nk"> &lt;psankar&gt;</span> btw, my current wallpaper is : http://eng.hebus.com/image-208954.html (so I may be biased by my current wallpaper)
+<a name="l-382"></a><span class="tm">15:10:56</span><span class="nk"> &lt;gnokii&gt;</span> psankar the fun is the grey one was loved from many ppl its in right now
+<a name="l-383"></a><span class="tm">15:11:13</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> my issue is still that it's based on the upstream kde thing
+<a name="l-384"></a><span class="tm">15:11:27</span><span class="nk"> &lt;psankar&gt;</span> gnokii, oh okay.
+<a name="l-385"></a><span class="tm">15:11:47</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> so why couldn't we do the same thing for the upstream gnome background?
+<a name="l-386"></a><span class="tm">15:11:48</span><span class="nk"> &lt;psankar&gt;</span> may be we can have a wallpaper voting ?  ;-)
+<a name="l-387"></a><span class="tm">15:11:56</span><span class="nk"> &lt;gnokii&gt;</span> vuntz no it should not the upstream from KDE (nuno dont like them)
+<a name="l-388"></a><span class="tm">15:12:14</span><span class="nk"> &lt;gnokii&gt;</span> vuntz but for make sure its not we can ask will
+<a name="l-389"></a><span class="tm">15:12:20</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">mmeeks:</span> ok, we were talking about the current behavior which is a bit different from the behavior on 11.3
+<a name="l-390"></a><span class="tm">15:12:32</span><span class="nk"> &lt;vuntz&gt;</span> which is http://git.gnome.org/browse/gnome-themes-standard/tree/themes/Adwaita/backgrounds/stripes.jpg
+<a name="l-391"></a><span class="tm">15:12:42</span><span class="nk"> &lt;vuntz&gt;</span> err, http://git.gnome.org/browse/gnome-themes-standard/plain/themes/Adwaita/backgrounds/stripes.jpg
+<a name="l-392"></a><span class="tm">15:12:48</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">mmeeks:</span> imo makes sense the current behavior that is tracking all repos instead of tracking only the updates
+<a name="l-393"></a><span class="tm">15:13:53</span><span class="nk"> &lt;gnokii&gt;</span> vuntz who created that?
+<a name="l-394"></a><span class="tm">15:14:01</span><span class="nk"> &lt;psankar&gt;</span> vuntz, that looks better to me
+<a name="l-395"></a><span class="tm">15:14:39</span><span class="nk"> &lt;metalgod&gt;</span> i love the background http://karl-tux-stadt.de/ktuxs/?p=2677
+<a name="l-396"></a><span class="tm">15:14:41</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> jimmac
+<a name="l-397"></a><span class="tm">15:14:43</span><span class="nk"> &lt;metalgod&gt;</span> very futuristic
+<a name="l-398"></a><span class="tm">15:14:51</span><span class="nk"> &lt;metalgod&gt;</span> but it doesn't deal with sonar :/
+<a name="l-399"></a><span class="tm">15:15:12</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">psankar:</span> I also like that one more, but KDE needs for there theme more differences in the wallpaper with lights
+<a name="l-400"></a><span class="tm">15:15:14</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, I find it very depremoted of 'life', like a 'walking corpse'
+<a name="l-401"></a><span class="tm">15:15:40</span><span class="nk"> &lt;psankar&gt;</span> gnokii, oh okay
+<a name="l-402"></a><span class="tm">15:16:10</span><span class="nk"> &lt;psankar&gt;</span> nmarques, I suggest not to speak in such a way (corpse), especially when the creator is around :-) (even otherwise also)
+<a name="l-403"></a><span class="tm">15:16:11</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, my opinion is that our artwork should favor joy and fun... and not be melancholic or have a 'sick' look
+<a name="l-404"></a><span class="tm">15:16:16</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> well i see your point... live colors are much nicer
+<a name="l-405"></a><span class="tm">15:16:17</span><span class="nk"> &lt;gnokii&gt;</span> vuntz can the gnome team live with the celadon one from KDE?
+<a name="l-406"></a><span class="tm">15:16:25</span><span class="nk"> &lt;metalgod&gt;</span> but the background feels very futuristic
+<a name="l-407"></a><span class="tm">15:16:55</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> http://ivan.fomentgroup.org/blog/2010/08/12/distribution-branding-and-stripes/ indicates that the wallpaper is the kde one
+<a name="l-408"></a><span class="tm">15:17:00</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> well ubuntu artwork is dark and melancholic too... reminds me of macosx
+<a name="l-409"></a><span class="tm">15:17:02</span><span class="nk"> &lt;nmarques&gt;</span> psankar, it's a way of expressing how I feel, a metaphore or analogy ;)
+<a name="l-410"></a><span class="tm">15:17:08</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> personally, I'm not really happy about that
+<a name="l-411"></a><span class="tm">15:17:25</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, to be honest, I like more GNOME's default green wallpaper ;P
+<a name="l-412"></a><span class="tm">15:17:34</span><span class="nk"> &lt;psankar&gt;</span> nmarques, FWIW, I share the feeling that "it needs more brightness / life" but just not hte "corpse " part (may be it is just a cultural difference)
+<a name="l-413"></a><span class="tm">15:17:40</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> mostly because I can hear people saying "GNOME is slowly disappearing, openSUSE is KDE-centric, etc." again
+<a name="l-414"></a><span class="tm">15:17:47</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, one quick question
+<a name="l-415"></a><span class="tm">15:17:48</span><span class="nk"> &lt;psankar&gt;</span> vuntz, +1
+<a name="l-416"></a><span class="tm">15:17:57</span><span class="nk"> &lt;gnokii&gt;</span> vuntz me is also not so happy, but we need something what respects gnome and KDE and shows its one thing openSUSE
+<a name="l-417"></a><span class="tm">15:17:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> not because it looks bad
+<a name="l-418"></a><span class="tm">15:18:13</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, how would you face a community made wallpaper pack to be installed also ?
+<a name="l-419"></a><span class="tm">15:18:18</span><span class="nk"> &lt;gnokii&gt;</span> vuntz ok, which color wants the gnome team?
+<a name="l-420"></a><span class="tm">15:18:22</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> not sure I understand
+<a name="l-421"></a><span class="tm">15:18:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> the question is not about the color. It's the design itself
+<a name="l-422"></a><span class="tm">15:19:07</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, currently we ship stock gnome and opensuse artwork... could we add to install a small pack (4/6 wallpapers) of wallpapers submitted by the community as an option ?
+<a name="l-423"></a><span class="tm">15:19:07</span><span class="nk"> &lt;gnokii&gt;</span> vuntz u remember 11.2 sonar like bootsplash and then Nunos KDE wallpaper it looked not how one product
+<a name="l-424"></a><span class="tm">15:19:15</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> sure, we can do that
+<a name="l-425"></a><span class="tm">15:19:23</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> I agree we want one design
+<a name="l-426"></a><span class="tm">15:19:39</span><span class="nk"> &lt;gnokii&gt;</span> yeah and that is the hard part
+<a name="l-427"></a><span class="tm">15:20:12</span><span class="nk"> &lt;ReferenceSeete&gt;</span> Why not modify the 11.2 theme?
+<a name="l-428"></a><span class="tm">15:20:20</span><span class="nk"> &lt;gnokii&gt;</span> there are to solutions both bigger environments accept same color or the same "pattern"
+<a name="l-429"></a><span class="tm">15:20:21</span><span class="nk"> &lt;nmarques&gt;</span> psankar, ok... sry for the expression
+<a name="l-430"></a><span class="tm">15:20:22</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> but if the design sends the message "this is a KDE distro" or "this is a GNOME distro", then it might not be a good thing
+<a name="l-431"></a><span class="tm">15:20:39</span><span class="nk"> &lt;gnokii&gt;</span> vuntz u know me I dont like to send out that message
+<a name="l-432"></a><span class="tm">15:20:45</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">gnokii:</span> fwiw, i support vuntz abt the design of the wallpaper. It does not look original enough, and especially from the GNOME side it looks like borrowing from KDE -- ouch :)
+<a name="l-433"></a><span class="tm">15:20:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> don't get me wrong, I'm not blaming you :-)
+<a name="l-434"></a><span class="tm">15:21:02</span><span class="nk"> &lt;gnokii&gt;</span> I know
+<a name="l-435"></a><span class="tm">15:21:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> I'm just saying that the gnome team will have a hard time accepting this one
+<a name="l-436"></a><span class="tm">15:21:16</span><span class="nk"> &lt;gnokii&gt;</span> I only to make sure that I dont like borrowing also
+<a name="l-437"></a><span class="tm">15:22:02</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, I don't like either Ubuntu wallpapers... but they transmit a positive feeling... and we should go after that offer also... transmit to users a positive feeling
+<a name="l-438"></a><span class="tm">15:22:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> it's also worth pointing out that upstream GNOME will want us to use the upstream GNOME design for 11.4+1
+<a name="l-439"></a><span class="tm">15:22:23</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> so maybe we'll have to get two different designs in the future anyway
+<a name="l-440"></a><span class="tm">15:22:25</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I strongly disagree with that
+<a name="l-441"></a><span class="tm">15:22:32</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, we as a distro should have our own image
+<a name="l-442"></a><span class="tm">15:22:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> our own image doesn't have to hide the upstream image
+<a name="l-443"></a><span class="tm">15:22:55</span><span class="nk"> &lt;gnokii&gt;</span> vuntz, it would be ok with me to use the style when we try to change the color to celadon?
+<a name="l-444"></a><span class="tm">15:23:03</span><span class="nk"> &lt;badshah400&gt;</span> <span class="hi">gnokii:</span> nothing personal at all, but to someone who has had a loko at KDE's default and ours wouldn't this be the feeling getting across to him?
+<a name="l-445"></a><span class="tm">15:23:26</span><span class="nk"> &lt;psankar&gt;</span> nmarques, well, if the upstream thing is beautiful, why not ? :-)
+<a name="l-446"></a><span class="tm">15:23:29</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, it makes sense for distros like Fedora which are 'unpolished'
+<a name="l-447"></a><span class="tm">15:23:48</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">nmarques:</span> u should say that to mizmo!
+<a name="l-448"></a><span class="tm">15:23:51</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> yes i agree with you in that
+<a name="l-449"></a><span class="tm">15:23:56</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, we are associated in a way with a distro that also aims to Desktop
+<a name="l-450"></a><span class="tm">15:24:22</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-451"></a><span class="tm">15:24:24</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, we need to keep our image amongst users strong... and not be just another distro with default look of a project
+<a name="l-452"></a><span class="tm">15:24:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> so
+<a name="l-453"></a><span class="tm">15:24:40</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> let's take this: http://img.susepaste.org/59475213
+<a name="l-454"></a><span class="tm">15:24:45</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">psankar:</span> I like the upstream from gnome also, but when we would use from all the upstream is it openSUSE then?
+<a name="l-455"></a><span class="tm">15:24:55</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> this is KDE's brand + opensuse's brand
+<a name="l-456"></a><span class="tm">15:25:01</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, no
+<a name="l-457"></a><span class="tm">15:25:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> isn't this what we'd want to do (but with GNOME's brand)?
+<a name="l-458"></a><span class="tm">15:25:10</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, we give gnokii a chance to surprise us ;)
+<a name="l-459"></a><span class="tm">15:25:17</span><span class="nk"> &lt;gnokii&gt;</span> aah no
+<a name="l-460"></a><span class="tm">15:25:26</span><span class="nk"> &lt;nmarques&gt;</span> gnokii, u bailing out ?
+<a name="l-461"></a><span class="tm">15:25:31</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> i'm all for that wallpaper
+<a name="l-462"></a><span class="tm">15:25:39</span><span class="nk"> &lt;gnokii&gt;</span> the gnome team has the right for wishes and we definitly find something we can all agree with
+<a name="l-463"></a><span class="tm">15:25:45</span><span class="nk"> &lt;metalgod&gt;</span> if we need to change sonar colors a bit it won't be hard
+<a name="l-464"></a><span class="tm">15:25:55</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, I can hack it if needed
+<a name="l-465"></a><span class="tm">15:26:01</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> so you're fine using the background that upstream KDE wants distro to use?
+<a name="l-466"></a><span class="tm">15:26:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">metalgod:</span> (to make sure that all KDE distros have the same feeling)
+<a name="l-467"></a><span class="tm">15:26:23</span><span class="nk"> &lt;gnokii&gt;</span> vuntz we dont use the upstream
+<a name="l-468"></a><span class="tm">15:26:33</span><span class="nk"> &lt;badshah400&gt;</span> i am all against using brand KDE + * on a gnome desktop
+<a name="l-469"></a><span class="tm">15:26:33</span><span class="nk"> &lt;gnokii&gt;</span> we use a design from a KDE guy
+<a name="l-470"></a><span class="tm">15:27:08</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> i'm not fine... but it's almost the same wallpaper gnome upstream have
+<a name="l-471"></a><span class="tm">15:27:24</span><span class="nk"> &lt;fcrozat&gt;</span> then let's use the one from upstream then
+<a name="l-472"></a><span class="tm">15:27:41</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> it is the one that KDE recommends, as far as I know
+<a name="l-473"></a><span class="tm">15:27:48</span><span class="nk"> &lt;psankar&gt;</span> I wont be bothered too much about using a image from KDE desktop if it is beautiful. but I am not impressed with this wallpaper. sorry. It doesnt look good for my eyes.
+<a name="l-474"></a><span class="tm">15:27:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> it's not just designed by a KDE guy
+<a name="l-475"></a><span class="tm">15:28:05</span><span class="nk"> &lt;nmarques&gt;</span> anyone up for a bit of humor to distress the tension ?
+<a name="l-476"></a><span class="tm">15:28:45</span><span class="nk"> &lt;gnokii&gt;</span> u sure it becomes the upstream default?
+<a name="l-477"></a><span class="tm">15:28:48 </span><span class="nka">* nmarques</span> <span class="ac">wonders about ignoring all the cultural issues and: http://wallpampers.com/pictures/3723/opensuse.png</span>
+<a name="l-478"></a><span class="tm">15:28:48</span><span class="nk"> &lt;wstephenson&gt;</span> fyi stripes isn't the upstream theme by kde, it's just by a KDE guy.
+<a name="l-479"></a><span class="tm">15:29:02</span><span class="nk"> &lt;gnokii&gt;</span> thx will
+<a name="l-480"></a><span class="tm">15:29:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">wstephenson:</span> so my understanding from http://ivan.fomentgroup.org/blog/2010/08/12/distribution-branding-and-stripes/ is that this wallpaper is designed to be used by upstream and downstreams
+<a name="l-481"></a><span class="tm">15:30:40</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">vuntz:</span> it's not the 4.6 or 4.5 default wallpaper
+<a name="l-482"></a><span class="tm">15:30:41</span><span class="nk"> &lt;wstephenson&gt;</span> sec, finding it
+<a name="l-483"></a><span class="tm">15:30:55</span><span class="nk"> &lt;metalgod&gt;</span> ok can i propose something ?
+<a name="l-484"></a><span class="tm">15:31:08</span><span class="nk"> &lt;metalgod&gt;</span> what about doing a different wallpaper
+<a name="l-485"></a><span class="tm">15:31:12</span><span class="nk"> &lt;metalgod&gt;</span> (stick with green)
+<a name="l-486"></a><span class="tm">15:31:15</span><span class="nk"> &lt;metalgod&gt;</span> or dark green
+<a name="l-487"></a><span class="tm">15:31:20</span><span class="nk"> &lt;metalgod&gt;</span> and use the same on all desktops
+<a name="l-488"></a><span class="tm">15:31:22</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, green is the hardest color to work
+<a name="l-489"></a><span class="tm">15:31:23</span><span class="nk"> &lt;psankar&gt;</span> metalgod, +1
+<a name="l-490"></a><span class="tm">15:31:24</span><span class="nk"> &lt;wstephenson&gt;</span> i wouldn't worry about it being 'teh tainted by KDE'
+<a name="l-491"></a><span class="tm">15:31:32</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, green never looks like the same on different monitors
+<a name="l-492"></a><span class="tm">15:31:32</span><span class="nk"> &lt;metalgod&gt;</span> i know nmarques i designed CM theme
+<a name="l-493"></a><span class="tm">15:31:37</span><span class="nk"> &lt;wstephenson&gt;</span> but that other distributions all have their own flavours.
+<a name="l-494"></a><span class="tm">15:31:43</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, I dont use CM ;)
+<a name="l-495"></a><span class="tm">15:31:52</span><span class="nk"> &lt;wstephenson&gt;</span> (and every android phone has something similar too)
+<a name="l-496"></a><span class="tm">15:32:02</span><span class="nk"> &lt;metalgod&gt;</span> that's why most of distros use dark green
+<a name="l-497"></a><span class="tm">15:32:28</span><span class="nk"> &lt;nmarques&gt;</span> I really don't care about what wallpaper to use
+<a name="l-498"></a><span class="tm">15:32:33</span><span class="nk"> &lt;nmarques&gt;</span> as long as its full of life
+<a name="l-499"></a><span class="tm">15:32:40</span><span class="nk"> &lt;nmarques&gt;</span> and transmits a strong positive feeling
+<a name="l-500"></a><span class="tm">15:32:41</span><span class="nk"> &lt;nmarques&gt;</span> ;)
+<a name="l-501"></a><span class="tm">15:32:44</span><span class="nk"> &lt;badshah400&gt;</span> fwiw, http://ivan.fomentgroup.org/blog/2010/08/12/stripes-wallpaper/
+<a name="l-502"></a><span class="tm">15:32:45</span><span class="nk"> &lt;nmarques&gt;</span> that should be the concern
+<a name="l-503"></a><span class="tm">15:32:57</span><span class="nk"> &lt;nmarques&gt;</span> the feeling we want users to have
+<a name="l-504"></a><span class="tm">15:33:03</span><span class="nk"> &lt;badshah400&gt;</span> says KDE SC 4.5 comes with a new wallpaper named "Stripes"
+<a name="l-505"></a><span class="tm">15:33:11</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">metalgod:</span> because I have to do the bootsplash also
+<a name="l-506"></a><span class="tm">15:33:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">wstephenson:</span> well, upstream gnome has something similar too
+<a name="l-507"></a><span class="tm">15:33:28</span><span class="nk"> &lt;wstephenson&gt;</span> yeah i saw Adwaita too
+<a name="l-508"></a><span class="tm">15:33:28</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">metalgod:</span> and that should be neutral
+<a name="l-509"></a><span class="tm">15:33:28</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">wstephenson:</span> which is why it's a bit hard to not use the one from upstream gnome for us...
+<a name="l-510"></a><span class="tm">15:33:35</span><span class="nk"> &lt;nmarques&gt;</span> wstephenson, I don't share that thought about 'tainted'
+<a name="l-511"></a><span class="tm">15:34:08</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">gnokii:</span> bootsplash doesn't need to be equal to desktop wallpapers
+<a name="l-512"></a><span class="tm">15:34:14</span><span class="nk"> &lt;metalgod&gt;</span> as long as you keep the same color
+<a name="l-513"></a><span class="tm">15:35:03</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">vuntz:</span> go ahead, it's your wallpaper :)
+<a name="l-514"></a><span class="tm">15:35:08</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">metalgod:</span> it should look familiar not very different
+<a name="l-515"></a><span class="tm">15:35:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">wstephenson:</span> the issue is that if we want a consistent theme for the whole distro, we can't do that
+<a name="l-516"></a><span class="tm">15:35:29</span><span class="nk"> &lt;nmarques&gt;</span> metalgod, I tend to agree with gnokii, a consistent look is better
+<a name="l-517"></a><span class="tm">15:35:49</span><span class="nk"> &lt;metalgod&gt;</span> well as i said... i love the current artwork (i like the dark dark dark green)
+<a name="l-518"></a><span class="tm">15:36:04</span><span class="nk"> &lt;metalgod&gt;</span> feels futuristic but i have to agree also that it's a bit morbid
+<a name="l-519"></a><span class="tm">15:36:04</span><span class="nk"> &lt;vuntz&gt;</span> anyway
+<a name="l-520"></a><span class="tm">15:36:12</span><span class="nk"> &lt;vuntz&gt;</span> we're not really moving here
+<a name="l-521"></a><span class="tm">15:36:17</span><span class="nk"> &lt;gnokii&gt;</span> +1
+<a name="l-522"></a><span class="tm">15:36:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">vuntz:</span> i think Adwaita could be made consistent in palette with Stripes without breaking anyone's heart.
+<a name="l-523"></a><span class="tm">15:36:22</span><span class="nk"> &lt;metalgod&gt;</span> ok
+<a name="l-524"></a><span class="tm">15:36:26</span><span class="nk"> &lt;psankar&gt;</span> nmarques, well, what pleases gnome may not please KDE and vice versa. So , I believe we should give up and just choose something that the coreteeam feels good
+<a name="l-525"></a><span class="tm">15:36:29</span><span class="nk"> &lt;metalgod&gt;</span> what options do we have right now vuntz ?
+<a name="l-526"></a><span class="tm">15:36:38</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">wstephenson:</span> I pinged jimmac if he can do it with celadon
+<a name="l-527"></a><span class="tm">15:36:41</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">wstephenson:</span> it'sd still be a different image from the boot splash, eg
+<a name="l-528"></a><span class="tm">15:36:42</span><span class="nk"> &lt;psankar&gt;</span> all eyes towards vuntz ;-)
+<a name="l-529"></a><span class="tm">15:37:06</span><span class="nk"> &lt;vuntz&gt;</span> based on what I can see here, there's no agreement so far
+<a name="l-530"></a><span class="tm">15:37:28</span><span class="nk"> &lt;nmarques&gt;</span> psankar, I think we should face it from the scope of 'distribution' and not project ;)
+<a name="l-531"></a><span class="tm">15:37:43</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> what's the right mailing list to discuss this?
+<a name="l-532"></a><span class="tm">15:37:48</span><span class="nk"> &lt;vuntz&gt;</span> opensuse-artwork?
+<a name="l-533"></a><span class="tm">15:38:23</span><span class="nk"> &lt;nmarques&gt;</span> psankar, it would be nice if people recognized the distro by the looks of the screenshot/wallpaper, that would earn major points for openSUSE ;)
+<a name="l-534"></a><span class="tm">15:38:41</span><span class="nk"> &lt;nmarques&gt;</span> psankar, despite of being GNOME or KDE... the apps often will tell that
+<a name="l-535"></a><span class="tm">15:38:58</span><span class="nk"> &lt;gnokii&gt;</span> vuntz, when u like to do it, do it but dont make it too long, because there is a lot of work to do after it
+<a name="l-536"></a><span class="tm">15:39:23</span><span class="nk"> &lt;psankar&gt;</span> nmarques, yeah. we will have a gecko in the wallpaper and make it green-ish :-)
+<a name="l-537"></a><span class="tm">15:39:34</span><span class="nk"> &lt;nmarques&gt;</span> psankar, thats not what I meant :)
+<a name="l-538"></a><span class="tm">15:39:45</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> I'll start a thread on opensuse-gnome, and try to summarize the result
+<a name="l-539"></a><span class="tm">15:39:52</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> does that work for you?
+<a name="l-540"></a><span class="tm">15:40:06</span><span class="nk"> &lt;gnokii&gt;</span> the right, mailinglist, mmh gnome for gnome, kde for kde, and project for all
+<a name="l-541"></a><span class="tm">15:40:16</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> so it's not opensuse-artwork?
+<a name="l-542"></a><span class="tm">15:40:24</span><span class="nk"> &lt;psankar&gt;</span> should be spam -project for this ?  ;_)
+<a name="l-543"></a><span class="tm">15:40:29</span><span class="nk"> &lt;gnokii&gt;</span> vuntz work with me, but as I said think on it not to long
+<a name="l-544"></a><span class="tm">15:40:30</span><span class="nk"> &lt;psankar&gt;</span> s/be/we/
+<a name="l-545"></a><span class="tm">15:40:34</span><span class="nk"> &lt;vuntz&gt;</span> I'm fine with using -project ;-)
+<a name="l-546"></a><span class="tm">15:40:35</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">vuntz:</span> having the same image in bootsplash, gfxboot, displaymanager and logged in desktop is boring anyway. they can be related but distinct.
+<a name="l-547"></a><span class="tm">15:40:49</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">vuntz:</span> yeah better have a thread on -project or -gnome and go on votes for the next meeting
+<a name="l-548"></a><span class="tm">15:40:56</span><span class="nk"> &lt;metalgod&gt;</span> otherwise we will talk a lot about this
+<a name="l-549"></a><span class="tm">15:41:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">wstephenson:</span> in the plymouth+gdm+gnome world, having the same image makes the boot experience much smoother
+<a name="l-550"></a><span class="tm">15:41:12</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-551"></a><span class="tm">15:41:19</span><span class="nk"> &lt;metalgod&gt;</span> even making it on -project would be hard
+<a name="l-552"></a><span class="tm">15:41:36</span><span class="nk"> &lt;nmarques&gt;</span> if you want my 2 cents on this
+<a name="l-553"></a><span class="tm">15:41:37 </span><span class="nka">* psankar</span> <span class="ac">believes making any decision on -project is hard ;-)</span>
+<a name="l-554"></a><span class="tm">15:41:44</span><span class="nk"> &lt;gnokii&gt;</span> <span class="hi">psankar:</span> +1
+<a name="l-555"></a><span class="tm">15:41:45</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to start discussion on opensuse-gnome about the background, and get this discussed on opensuse-project afterwards</span>
+<a name="l-556"></a><span class="tm">15:41:47</span><span class="nk"> &lt;psankar&gt;</span> metalgod, ^ ;-) (just for fun)
+<a name="l-557"></a><span class="tm">15:41:51</span><span class="nk"> &lt;vuntz&gt;</span> any other Q&amp;A?
+<a name="l-558"></a><span class="tm">15:41:57</span><span class="nk"> &lt;ReferenceSeete&gt;</span> GNOME 3.0 LiveCDs.  If I understand there will not be one based upon 11.4 until GM release?
+<a name="l-559"></a><span class="tm">15:42:05</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, 1 more
+<a name="l-560"></a><span class="tm">15:42:16</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">ReferenceSeete:</span> we're trying to get some earlier than this
+<a name="l-561"></a><span class="tm">15:42:21</span><span class="nk"> &lt;metalgod&gt;</span> yeah maybe wstephenson can get this on -kde too
+<a name="l-562"></a><span class="tm">15:42:31</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, for Unity we could use libzeitgeist... any negative issues on libzeitgeist and eggdbus ?
+<a name="l-563"></a><span class="tm">15:42:53</span><span class="nk"> &lt;metalgod&gt;</span> <span class="hi">nmarques:</span> well libzeitgeist should be ported to gtk3 and use gdbus from glib
+<a name="l-564"></a><span class="tm">15:42:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> eggdbus got dropped from Factory because it's deprecated, not maintained anymore, and dead
+<a name="l-565"></a><span class="tm">15:42:56</span><span class="nk"> &lt;nmarques&gt;</span> vuntz, I know you already told me, eggdbus was dropped from factory... any special reason ?
+<a name="l-566"></a><span class="tm">15:43:05</span><span class="nk"> &lt;metalgod&gt;</span> afaik all eggdbus stuff is on gdbus
+<a name="l-567"></a><span class="tm">15:43:09</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> eggdbus has become gdbus, which is in glib now
+<a name="l-568"></a><span class="tm">15:43:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">nmarques:</span> so libzeitgeist should be ported to gdbus
+<a name="l-569"></a><span class="tm">15:43:23</span><span class="nk"> &lt;vuntz&gt;</span> should be easy
+<a name="l-570"></a><span class="tm">15:43:37</span><span class="nk"> &lt;nmarques&gt;</span> ok... that sorts it... wait for upstream ;)
+<a name="l-571"></a><span class="tm">15:43:45</span><span class="nk"> &lt;nmarques&gt;</span> thats all from me then
+<a name="l-572"></a><span class="tm">15:43:57</span><span class="nk"> &lt;nmarques&gt;</span> psankar, I'm available if you want to work the features for marketing :)
+<a name="l-573"></a><span class="tm">15:44:05</span><span class="nk"> &lt;gnokii&gt;</span> vuntz wstephenson can we make that for next version of openSUSE in an other way?
+<a name="l-574"></a><span class="tm">15:44:15</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> make what? :-)
+<a name="l-575"></a><span class="tm">15:44:19</span><span class="nk"> &lt;psankar&gt;</span> nmarques, nope. I need to run for my dinner before the shops close. this meeting has laster for 2+ hours ;-)
+<a name="l-576"></a><span class="tm">15:44:22</span><span class="nk"> &lt;gnokii&gt;</span> the design stuff
+<a name="l-577"></a><span class="tm">15:44:38</span><span class="nk"> &lt;nmarques&gt;</span> psankar, no worries, just let me know when you have some time so we can do it ;)
+<a name="l-578"></a><span class="tm">15:44:49</span><span class="nk"> &lt;nmarques&gt;</span> psankar, the sooner I report this to marketing the better
+<a name="l-579"></a><span class="tm">15:44:55</span><span class="nk"> &lt;psankar&gt;</span> nmarques, okay
+<a name="l-580"></a><span class="tm">15:44:59</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> not sure
+<a name="l-581"></a><span class="tm">15:45:04</span><span class="nk"> &lt;nmarques&gt;</span> psankar, have a good meal!
+<a name="l-582"></a><span class="tm">15:45:37</span><span class="nk"> &lt;gnokii&gt;</span> vuntz wstephenson like to sit with u down and speak before the work is done for the next version
+<a name="l-583"></a><span class="tm">15:45:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">gnokii:</span> let me close the meeting, and I'll be available for you
+<a name="l-584"></a><span class="tm">15:45:54</span><span class="nk"> &lt;kay&gt;</span> <span class="hi">vuntz:</span> /etc/init.d/xdm is another fine piece of SUSE art :)
+<a name="l-585"></a><span class="tm">15:46:04</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

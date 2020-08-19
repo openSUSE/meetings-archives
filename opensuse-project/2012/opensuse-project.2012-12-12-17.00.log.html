@@ -1,0 +1,452 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:00:13</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE Project Meeting</span>
+<a name="l-2"></a><span class="tm">17:00:13</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Dec 12 17:00:13 2012 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:00:13</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:00:13 </span><span class="nka">* hendersj</span> <span class="ac">waves at suseROCKs</span>
+<a name="l-5"></a><span class="tm">17:00:15</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">suseROCKs:</span> you? life? lies
+<a name="l-6"></a><span class="tm">17:00:32</span><span class="nk"> &lt;vuntz&gt;</span> here we go
+<a name="l-7"></a><span class="tm">17:00:37</span><span class="nk"> &lt;vuntz&gt;</span> so, who's here?
+<a name="l-8"></a><span class="tm">17:00:41</span><span class="nk"> &lt;Ilmehtar&gt;</span> o/
+<a name="l-9"></a><span class="tm">17:00:50 </span><span class="nka">* tux93</span> <span class="ac">lurks</span>
+<a name="l-10"></a><span class="tm">17:00:51</span><span class="nk"> &lt;robjo&gt;</span> you are ;)
+<a name="l-11"></a><span class="tm">17:01:32</span><span class="nk"> &lt;vuntz&gt;</span> let's look at the agenda we have for today
+<a name="l-12"></a><span class="tm">17:01:42</span><span class="nk"> &lt;vuntz&gt;</span> Quick review of action items from last meeting
+<a name="l-13"></a><span class="tm">17:01:47</span><span class="nk"> &lt;vuntz&gt;</span> openSUSE presence at SUSECon 2013
+<a name="l-14"></a><span class="tm">17:01:52</span><span class="nk"> &lt;vuntz&gt;</span> openSUSE Conference 2013
+<a name="l-15"></a><span class="tm">17:01:56</span><span class="nk"> &lt;vuntz&gt;</span> and that's it for now
+<a name="l-16"></a><span class="tm">17:02:08 </span><span class="nka">* warlordfff</span> <span class="ac">here</span>
+<a name="l-17"></a><span class="tm">17:02:30</span><span class="nk"> &lt;robjo&gt;</span> Doubt we'll get through both of those in 1 hour, but lets start ;)
+<a name="l-18"></a><span class="tm">17:02:38</span><span class="nk"> &lt;vuntz&gt;</span> heh
+<a name="l-19"></a><span class="tm">17:02:45</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Quick review of action items from last meeting</span>
+<a name="l-20"></a><span class="tm">17:03:05</span><span class="nk"> &lt;vuntz&gt;</span> so, there was a very short meeting two weeks ago, and the real action items are from one months ago
+<a name="l-21"></a><span class="tm">17:03:08</span><span class="nk"> &lt;vuntz&gt;</span> see http://community.opensuse.org/meetings/opensuse-project/2012/opensuse-project.2012-11-14-17.01.html
+<a name="l-22"></a><span class="tm">17:03:24</span><span class="nk"> &lt;vuntz&gt;</span> darix to ask henne about getting someone else to help with administrating the mailing lists
+<a name="l-23"></a><span class="tm">17:03:34</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">robjo:</span>  actual oSC13 meeting is tommorow at 15:00 UTC
+<a name="l-24"></a><span class="tm">17:04:09</span><span class="nk"> &lt;vuntz&gt;</span> hrm, I didn't check with darix, so I guess it's still valid unless darix is here and can say it was done
+<a name="l-25"></a><span class="tm">17:04:20</span><span class="nk"> &lt;vuntz&gt;</span> cboltz to ask scott about status of wiki update
+<a name="l-26"></a><span class="tm">17:04:23</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> here? :-)
+<a name="l-27"></a><span class="tm">17:04:34</span><span class="nk"> &lt;cboltz&gt;</span> yes, but still ENOTIME :-(
+<a name="l-28"></a><span class="tm">17:04:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> can you think of anyone who could help with this?
+<a name="l-29"></a><span class="tm">17:05:14</span><span class="nk"> &lt;cboltz&gt;</span> well, _asking_ shouldn't be too hard ;-)
+<a name="l-30"></a><span class="tm">17:05:40</span><span class="nk"> &lt;vuntz&gt;</span> that's assuming people all know which scott we're talking about ;-)
+<a name="l-31"></a><span class="tm">17:06:14</span><span class="nk"> &lt;cboltz&gt;</span> and actually doing the wiki update is at least difficult without write/deploy access to the staging server
+<a name="l-32"></a><span class="tm">17:07:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">for the wiku update AI, cboltz could do with some help pushing this forward</span>
+<a name="l-33"></a><span class="tm">17:07:29</span><span class="nk"> &lt;vuntz&gt;</span> bah
+<a name="l-34"></a><span class="tm">17:07:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-35"></a><span class="tm">17:07:31</span><span class="nk"> &lt;bugbot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Action object at 0x175ab90&gt;
+<a name="l-36"></a><span class="tm">17:07:35</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">for the wiku update AI, cboltz could do with some help pushing this forward</span>
+<a name="l-37"></a><span class="tm">17:08:11</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> I guess we'll keep this AI for you, but feel free to recruit some people to help!
+<a name="l-38"></a><span class="tm">17:08:20</span><span class="nk"> &lt;vuntz&gt;</span> vuntz to find a replacement chair in case he can't make it for next meeting
+<a name="l-39"></a><span class="tm">17:08:25</span><span class="nk"> &lt;vuntz&gt;</span> that was done (thanks again hendersj!)
+<a name="l-40"></a><span class="tm">17:08:27</span><span class="nk"> &lt;cboltz&gt;</span> ok
+<a name="l-41"></a><span class="tm">17:08:34</span><span class="nk"> &lt;vuntz&gt;</span> vuntz to write some short doc on what chairing involves, and how to do it
+<a name="l-42"></a><span class="tm">17:08:36</span><span class="nk"> &lt;hendersj&gt;</span> No problem, vuntz. :)
+<a name="l-43"></a><span class="tm">17:08:42</span><span class="nk"> &lt;suseROCKs&gt;</span> I assume next meeting is Jan 9th?
+<a name="l-44"></a><span class="tm">17:08:45</span><span class="nk"> &lt;vuntz&gt;</span> this is available at the end of http://en.opensuse.org/openSUSE:Project_meeting
+<a name="l-45"></a><span class="tm">17:08:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">suseROCKs:</span> (yes)
+<a name="l-46"></a><span class="tm">17:09:01</span><span class="nk"> &lt;vuntz&gt;</span> vuntz to talk to toscalix about a paid designer for openSUSE
+<a name="l-47"></a><span class="tm">17:09:08</span><span class="nk"> &lt;vuntz&gt;</span> hrm, I think I forgot that one
+<a name="l-48"></a><span class="tm">17:09:30</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">doc on what chairing involves and how to do it is on http://en.opensuse.org/openSUSE:Project_meeting</span>
+<a name="l-49"></a><span class="tm">17:09:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">keeping other AI that weren't completed</span>
+<a name="l-50"></a><span class="tm">17:09:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">darix to ask henne about getting someone else to help with administrating the mailing lists</span>
+<a name="l-51"></a><span class="tm">17:09:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">cboltz to ask scott about status of wiki update</span>
+<a name="l-52"></a><span class="tm">17:09:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to talk to toscalix about a paid designer for openSUSE</span>
+<a name="l-53"></a><span class="tm">17:10:11</span><span class="nk"> &lt;vuntz&gt;</span> any question on those action items?
+<a name="l-54"></a><span class="tm">17:10:24</span><span class="nk"> &lt;Ilmehtar&gt;</span> paid designer for openSUSE? is that really necessary? We have active artwork contributors...
+<a name="l-55"></a><span class="tm">17:10:50</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> that was a question from andi
+<a name="l-56"></a><span class="tm">17:10:54</span><span class="nk"> &lt;Ilmehtar&gt;</span> I mean, more help is great and all, but I'm not sure I understand the need
+<a name="l-57"></a><span class="tm">17:10:56</span><span class="nk"> &lt;Ilmehtar&gt;</span> ah..
+<a name="l-58"></a><span class="tm">17:11:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> he asked me to see if there was interest inside SUSE for this
+<a name="l-59"></a><span class="tm">17:12:01</span><span class="nk"> &lt;vuntz&gt;</span> (I'm not saying we should do it, but it's fair to relay the question, I guess)
+<a name="l-60"></a><span class="tm">17:12:18</span><span class="nk"> &lt;vuntz&gt;</span> moving on to the topic about summit!
+<a name="l-61"></a><span class="tm">17:12:20</span><span class="nk"> &lt;robjo&gt;</span> Sounds more like he is looking for a job ;)
+<a name="l-62"></a><span class="tm">17:12:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE presence at SUSECon 2013</span>
+<a name="l-63"></a><span class="tm">17:12:57</span><span class="nk"> &lt;suseROCKs&gt;</span> +1 robjo   :-)
+<a name="l-64"></a><span class="tm">17:13:02</span><span class="nk"> &lt;vuntz&gt;</span> for those who are not aware of this topic at all, see the thread starting at http://lists.opensuse.org/opensuse-project/2012-12/msg00017.html
+<a name="l-65"></a><span class="tm">17:13:24</span><span class="nk"> &lt;vuntz&gt;</span> I just want to highlight that the board will need to tell suse what option is preferred this week
+<a name="l-66"></a><span class="tm">17:13:47</span><span class="nk"> &lt;vuntz&gt;</span> we had some good input on the list, and what I take away from that is that we want a presence
+<a name="l-67"></a><span class="tm">17:14:07</span><span class="nk"> &lt;vuntz&gt;</span> there are two suggestions: doing a summit like last year vs having some openSUSE track during SUSECon itself
+<a name="l-68"></a><span class="tm">17:14:16</span><span class="nk"> &lt;suseROCKs&gt;</span> openSUSE should be at/around SUSECon.   Whether openSUSE presence = Summit is a quesiton you'll have to figure out what the focus of the event is.
+<a name="l-69"></a><span class="tm">17:14:23</span><span class="nk"> &lt;vuntz&gt;</span> (+ the idea of having a booth at SUSECon, which is orthogonal to the two suggestions)
+<a name="l-70"></a><span class="tm">17:14:46</span><span class="nk"> &lt;robjo&gt;</span> I share some of Ilmehtar's views, but IMHO our biggest problem is to avoid the "second class citizen effect"
+<a name="l-71"></a><span class="tm">17:14:56</span><span class="nk"> &lt;suseROCKs&gt;</span> I don't see why they should be and/or, tbh.
+<a name="l-72"></a><span class="tm">17:15:13</span><span class="nk"> &lt;robjo&gt;</span> meaning people that do not pay vs. people that pay and get to participate in everything
+<a name="l-73"></a><span class="tm">17:15:52</span><span class="nk"> &lt;robjo&gt;</span> I doubt SUSE would be interested in sponsoring evening events for Summit participants that do not fork over the $$
+<a name="l-74"></a><span class="tm">17:16:12</span><span class="nk"> &lt;robjo&gt;</span> Thus people get rejected at the door, not good advertisement for SUSE or openSUSE
+<a name="l-75"></a><span class="tm">17:16:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">suseROCKs:</span> you mean we can mix the two suggestions? (we can indeed)
+<a name="l-76"></a><span class="tm">17:16:39</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">robjo:</span> exactly, I'm worried about the same
+<a name="l-77"></a><span class="tm">17:17:30</span><span class="nk"> &lt;suseROCKs&gt;</span> vuntz,   meaning that presence AT SUSECon is more of an ambassador endeavor.  Whereas Summit is more of a conference  endeavor.   openSUSE Ambassadors should definitely strive to be at SUSECon (booth, talks, etc.)  But not only SUSECON, also Brainshare and GWAVACons, etc.
+<a name="l-78"></a><span class="tm">17:17:43</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> assuming SUSE is not fine with an openSUSE track (for whatever reason -- this is hypothetical, as I didn't get an answer so far), do you think doing a Summit like last year is the best option?
+<a name="l-79"></a><span class="tm">17:18:20</span><span class="nk"> &lt;suseROCKs&gt;</span> It odesn't have to be a track within SUSECON either.   Just presence via a booth and 1 or 2 talks  or ask to give 15 minute overview of openSUSE during one of keynotes, etc.
+<a name="l-80"></a><span class="tm">17:18:30</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">vuntz:</span> yes,especially if its tied with more promineant marketing and support to draw people there for both events
+<a name="l-81"></a><span class="tm">17:18:43</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">vuntz:</span> I do not think the question is specific enough, openSUSE track can mean many things
+<a name="l-82"></a><span class="tm">17:19:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> for instance?
+<a name="l-83"></a><span class="tm">17:19:05</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">vuntz:</span> is also ignoring the money situation
+<a name="l-84"></a><span class="tm">17:19:53</span><span class="nk"> &lt;suseROCKs&gt;</span> I don't think he's ignoring it.  He's asking in the right order.  First question is "Do we want it?"  second question is "ok how much is it going to cost us then?"
+<a name="l-85"></a><span class="tm">17:19:57</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">vuntz:</span> openSUSE track could mean that openSUSE topics are in one track but that we have no non paying participant that are openSUSE community members at SUSECOn other than the speakers
+<a name="l-86"></a><span class="tm">17:20:50</span><span class="nk"> &lt;robjo&gt;</span> or openSUSE track could mean a merged (SUSECon - Summit) event in which case the "second class" question looms very large
+<a name="l-87"></a><span class="tm">17:20:56</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm not wild about the "track" idea per se.  I don't think it would work well in this situation, in part because of some of the issues robjo points out.
+<a name="l-88"></a><span class="tm">17:21:00</span><span class="nk"> &lt;warlordfff&gt;</span> one question if I may
+<a name="l-89"></a><span class="tm">17:21:16</span><span class="nk"> &lt;warlordfff&gt;</span> do we really want to be a part of SUSEcon
+<a name="l-90"></a><span class="tm">17:21:22</span><span class="nk"> &lt;warlordfff&gt;</span> ?
+<a name="l-91"></a><span class="tm">17:21:24</span><span class="nk"> &lt;warlordfff&gt;</span> I mean
+<a name="l-92"></a><span class="tm">17:21:42</span><span class="nk"> &lt;warlordfff&gt;</span> we can have 3-4 people go there and present openSUSE
+<a name="l-93"></a><span class="tm">17:21:47</span><span class="nk"> &lt;warlordfff&gt;</span> that would be great
+<a name="l-94"></a><span class="tm">17:21:51</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> yes, at least in the "ambassador" capacity suseROCKs mentioned
+<a name="l-95"></a><span class="tm">17:22:06</span><span class="nk"> &lt;warlordfff&gt;</span> but the whole community, I don't really know abou it
+<a name="l-96"></a><span class="tm">17:22:12</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-97"></a><span class="tm">17:22:37</span><span class="nk"> &lt;suseROCKs&gt;</span> Summit should be a separate event.  Whther it happens immediately around SUSECOn time or at a different time of the year is subject to debate though.
+<a name="l-98"></a><span class="tm">17:22:38</span><span class="nk"> &lt;warlordfff&gt;</span> just send some people there to 'challenge' people to stay more for the Summit
+<a name="l-99"></a><span class="tm">17:22:57</span><span class="nk"> &lt;robjo&gt;</span> well that was one of the concerns raised at oSC12, that the summit kep people from participating in oSC, also a concern pointed out by Ilmehtar on the ML
+<a name="l-100"></a><span class="tm">17:23:14</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-101"></a><span class="tm">17:23:20</span><span class="nk"> &lt;tampakrap&gt;</span> not only participating, but also contributing to the organization of osc12
+<a name="l-102"></a><span class="tm">17:23:30</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-103"></a><span class="tm">17:23:30</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm not convinced Summit kept people away from OSC.   we didn't have THAT many community people at Summit.
+<a name="l-104"></a><span class="tm">17:23:31</span><span class="nk"> &lt;tampakrap&gt;</span> or contributing late
+<a name="l-105"></a><span class="tm">17:23:36</span><span class="nk"> &lt;warlordfff&gt;</span> there is that too
+<a name="l-106"></a><span class="tm">17:23:39</span><span class="nk"> &lt;warlordfff&gt;</span> but
+<a name="l-107"></a><span class="tm">17:23:46</span><span class="nk"> &lt;suseROCKs&gt;</span> Majority of people were actually from SUSECon and LUG Day.   Most were new to openSUSE.
+<a name="l-108"></a><span class="tm">17:23:49</span><span class="nk"> &lt;tampakrap&gt;</span> we didn't have THAT many community people in osc12 either :)
+<a name="l-109"></a><span class="tm">17:23:57</span><span class="nk"> &lt;suseROCKs&gt;</span> they wouldn't have gone to oSC anyway.
+<a name="l-110"></a><span class="tm">17:24:00</span><span class="nk"> &lt;warlordfff&gt;</span> suseROCKs did a great job last year with this
+<a name="l-111"></a><span class="tm">17:24:13</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">suseROCKs:</span> I agree, not convinced either but it was raised and is certainly a reasonable concern
+<a name="l-112"></a><span class="tm">17:24:32</span><span class="nk"> &lt;warlordfff&gt;</span> guys, lets try to change things
+<a name="l-113"></a><span class="tm">17:24:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> the feedback from people who came to the summit was positive
+<a name="l-114"></a><span class="tm">17:24:36</span><span class="nk"> &lt;warlordfff&gt;</span> I mean
+<a name="l-115"></a><span class="tm">17:24:45</span><span class="nk"> &lt;warlordfff&gt;</span> excactly
+<a name="l-116"></a><span class="tm">17:24:47</span><span class="nk"> &lt;suseROCKs&gt;</span> I have no idea what the dynamics were that influenced oSC12 though.    But pointing at Summit as a reason would be extremely misleading.
+<a name="l-117"></a><span class="tm">17:24:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> and the feedback so far on the list is positive about doing "something"
+<a name="l-118"></a><span class="tm">17:25:03</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-119"></a><span class="tm">17:25:04</span><span class="nk"> &lt;tampakrap&gt;</span> it was not the major point, but it was a factor
+<a name="l-120"></a><span class="tm">17:25:22</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">suseROCKs:</span>  it effected oSC12 because they were too close
+<a name="l-121"></a><span class="tm">17:25:43</span><span class="nk"> &lt;suseROCKs&gt;</span> I don't believe that either
+<a name="l-122"></a><span class="tm">17:25:43</span><span class="nk"> &lt;robjo&gt;</span> Well this time the Summit would be after oSC
+<a name="l-123"></a><span class="tm">17:25:48</span><span class="nk"> &lt;warlordfff&gt;</span> and because you did a great job with Summit
+<a name="l-124"></a><span class="tm">17:25:54</span><span class="nk"> &lt;robjo&gt;</span> thus it is a different dynamic
+<a name="l-125"></a><span class="tm">17:25:57</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-126"></a><span class="tm">17:26:03</span><span class="nk"> &lt;warlordfff&gt;</span> this year is different
+<a name="l-127"></a><span class="tm">17:26:10</span><span class="nk"> &lt;Ilmehtar&gt;</span> I think openSUSE should have a 'presence' at SUSEcon, and at the very least, I think that 'presence' should be compariable with that of SUSE's major partner - ie. at least a decent sized booth, and certainly a talk or two from community members about community stuff
+<a name="l-128"></a><span class="tm">17:26:25</span><span class="nk"> &lt;hendersj&gt;</span> I know a number of groups that hold various summit events around a "main event" (my experience is largely with BrainShare) - and I held events like that "in conjunction" with BrainShare - that works well and doesn't make the additional event "secondary".  But it does boost attendence to the additional event, generally.
+<a name="l-129"></a><span class="tm">17:26:28</span><span class="nk"> &lt;suseROCKs&gt;</span> Summit 2013 will have new challenges though, if the schedule is definitely for November.   That's a hard travel month here in the US
+<a name="l-130"></a><span class="tm">17:26:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> the goal of the board is to have the events six months away, to minimize the conflict (in terms of resources, goals, etc.) between the two
+<a name="l-131"></a><span class="tm">17:26:38</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">Ilmehtar:</span>  yeap but no more 5-6 people, my opinion
+<a name="l-132"></a><span class="tm">17:27:25</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">vuntz:</span>  last year I had concerns with the time thing, and I was not the only one, this year I think thing are cool
+<a name="l-133"></a><span class="tm">17:28:14</span><span class="nk"> &lt;warlordfff&gt;</span> not too many but enough so that people from the community can help in both events
+<a name="l-134"></a><span class="tm">17:28:37</span><span class="nk"> &lt;warlordfff&gt;</span> and this is the important thing here
+<a name="l-135"></a><span class="tm">17:28:50</span><span class="nk"> &lt;warlordfff&gt;</span> people to be able to contribute on both
+<a name="l-136"></a><span class="tm">17:28:50</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">hendersj:</span> The "secondary" effect kicks in as soon as there is a "sponsored" event/dinner/party where you only admit part of those that know about it.
+<a name="l-137"></a><span class="tm">17:29:09</span><span class="nk"> &lt;Ilmehtar&gt;</span> I think whatever scale the presence is, I think its focus should be on engaging with the other partners, customers, and SUSE folk there - I personally don't see the benefit of it being a introspective 'bring the community together' type event
+<a name="l-138"></a><span class="tm">17:29:18</span><span class="nk"> &lt;suseROCKs&gt;</span> yeah   I wanted to see Blue Man Group  :-(*****
+<a name="l-139"></a><span class="tm">17:29:18</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">suseROCKs:</span>  and my last sentence was for you :D
+<a name="l-140"></a><span class="tm">17:29:26</span><span class="nk"> &lt;Ilmehtar&gt;</span> we have those already and doing another at SUSEcon just seems to be an expensive proposition that doesn't make the most of what is unique to SUSEcon (lots of sponsers and SLE customers)
+<a name="l-141"></a><span class="tm">17:30:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> interesting; I do feel that a 'bring the community together' type event is beneficial
+<a name="l-142"></a><span class="tm">17:30:13</span><span class="nk"> &lt;warlordfff&gt;</span> +1
+<a name="l-143"></a><span class="tm">17:30:29</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> I mean, sure, I will see you at FOSDEM, but I won't have that much time to chat with you there
+<a name="l-144"></a><span class="tm">17:30:31</span><span class="nk"> &lt;hendersj&gt;</span> robjo - I'm not sure I follow, but maybe I wasn't clear enough - in those instances, it's generally a completely separate event (for example, the Technology Transfer Partners at BrainShare - they hold a two-day summit the sat/sun before BrainShare) that's using the timing to help increase attendence.
+<a name="l-145"></a><span class="tm">17:30:36</span><span class="nk"> &lt;suseROCKs&gt;</span> vuntz,   sure.  But we can have more "bring togethers" if we approach the Summit concept ina  different way.
+<a name="l-146"></a><span class="tm">17:30:37</span><span class="nk"> &lt;Ilmehtar&gt;</span> I think it's beneficial, but at an expensive Disney hotel in Florida?
+<a name="l-147"></a><span class="tm">17:30:55</span><span class="nk"> &lt;suseROCKs&gt;</span> Orlando definitely priced us out of the ball park.
+<a name="l-148"></a><span class="tm">17:31:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> true, the money matters
+<a name="l-149"></a><span class="tm">17:31:22</span><span class="nk"> &lt;Ilmehtar&gt;</span> the venue and the 'main event' aren't exactly the usual sort of place you expect a FOSS event
+<a name="l-150"></a><span class="tm">17:31:28</span><span class="nk"> &lt;suseROCKs&gt;</span> Ilmehtar,  however, we were beholden to the "gift of SUSE" giving us space to begin with.    We can certainly re-assess how to push the Summit branding in a more strategic way.
+<a name="l-151"></a><span class="tm">17:31:41</span><span class="nk"> &lt;robjo&gt;</span> I like the idea of a Summit, but starting to lean the way that we may be better of having a number of talks at SUSECon and a booth rather than having a "get the community together event"
+<a name="l-152"></a><span class="tm">17:31:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">Ilmehtar:</span> but we get the venue for free as well as some logistical help, which can usually cost money/time.
+<a name="l-153"></a><span class="tm">17:32:11</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">robjo:</span>  the truth is in the midle for me
+<a name="l-154"></a><span class="tm">17:32:29</span><span class="nk"> &lt;suseROCKs&gt;</span> Caribe definitely trapped us.  We had to buy everyone's meals because you couldn't easily go down the street somewhere.  That cost us about $40 a head per meal.   All that money spent elsewhere would increase our investment tenfold, I'm sure.
+<a name="l-155"></a><span class="tm">17:32:57</span><span class="nk"> &lt;warlordfff&gt;</span> the get together event should not be that close to SUSEcon but we don't have the resources for something like that
+<a name="l-156"></a><span class="tm">17:33:15</span><span class="nk"> &lt;warlordfff&gt;</span> or we just use the given resources
+<a name="l-157"></a><span class="tm">17:33:24</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">vuntz:</span> very true, but do we make the most of that free venue and logistical help if a big chunk of our community cant afford to get or stay there - of the few community members we had at Summit this year, a number had to change hotels because it was bleeding them dry staying at the Caribe
+<a name="l-158"></a><span class="tm">17:33:25</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">hendersj:</span> But that's the difference between having a "merged event" and a "separate event" SUSECon Tu-Fr, Summit Fr-Su, vs. SUSECOn &amp; Summit Tu-Fr
+<a name="l-159"></a><span class="tm">17:33:49</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,   that's how it looked to us in the beginning,  but then as we progressed we realized how much more this would cost and it was not "free" completely.   It came out of Jos's budget and had an impact.
+<a name="l-160"></a><span class="tm">17:34:03</span><span class="nk"> &lt;hendersj&gt;</span> <span class="hi">robjo:</span>  OIC, yes, that would be a separate event rather than a merged event.
+<a name="l-161"></a><span class="tm">17:34:09</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">suseROCKs:</span>  with you on that
+<a name="l-162"></a><span class="tm">17:34:41</span><span class="nk"> &lt;warlordfff&gt;</span> maybe to think to hold Summit seperate from SUSEcon for that reason
+<a name="l-163"></a><span class="tm">17:35:05</span><span class="nk"> &lt;warlordfff&gt;</span> do it on a more hacker friendly enviroment
+<a name="l-164"></a><span class="tm">17:35:12</span><span class="nk"> &lt;warlordfff&gt;</span> meaning costs and stuff
+<a name="l-165"></a><span class="tm">17:35:27</span><span class="nk"> &lt;suseROCKs&gt;</span> right,  we could literally have 5 Summits a year for what we spent in Orlando.
+<a name="l-166"></a><span class="tm">17:35:27</span><span class="nk"> &lt;warlordfff&gt;</span> but this is another BIG conversation
+<a name="l-167"></a><span class="tm">17:35:48</span><span class="nk"> &lt;vuntz&gt;</span> so, stupid question: do we have a concrete proposal to do a summit elsewhere in 2013?
+<a name="l-168"></a><span class="tm">17:35:55</span><span class="nk"> &lt;warlordfff&gt;</span> I fully support the idea of an American event for openSUSE
+<a name="l-169"></a><span class="tm">17:36:09</span><span class="nk"> &lt;suseROCKs&gt;</span> but Orlando had its awesome benefits too.  Especially in terms of marketing and awareness.  There are still ways to leverage SUSECon resources   but in a more sensible way.
+<a name="l-170"></a><span class="tm">17:36:09</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">suseROCKs:</span> Well, the new location will not necessarily be better in this respect.
+<a name="l-171"></a><span class="tm">17:36:24</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">vuntz:</span>  I think this idea goes for 2014
+<a name="l-172"></a><span class="tm">17:36:39</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">vuntz:</span> no
+<a name="l-173"></a><span class="tm">17:36:57</span><span class="nk"> &lt;suseROCKs&gt;</span> vuntz,   I think it is as warlordfff says.  Big discussion on what exactly we want to get out of Summit.
+<a name="l-174"></a><span class="tm">17:37:02</span><span class="nk"> &lt;suseROCKs&gt;</span> or Summits, per se.
+<a name="l-175"></a><span class="tm">17:37:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> I'm fully supporting discussing what we should do in 2014, but I guess I'd prefer to first know what we do in 2013 ;-)
+<a name="l-176"></a><span class="tm">17:37:24</span><span class="nk"> &lt;robjo&gt;</span> +1 vuntz
+<a name="l-177"></a><span class="tm">17:37:33</span><span class="nk"> &lt;suseROCKs&gt;</span> if we want a US Summit for sure in 2013, then focus should be more on west coast where we actually have many openSUSE fans
+<a name="l-178"></a><span class="tm">17:37:47</span><span class="nk"> &lt;warlordfff&gt;</span> +1 vuntz
+<a name="l-179"></a><span class="tm">17:37:51</span><span class="nk"> &lt;vuntz&gt;</span> one way to do it is keep piggybacking on SUSECon for 2013, and prepare now for summits elsewhere in 2014
+<a name="l-180"></a><span class="tm">17:37:57</span><span class="nk"> &lt;vuntz&gt;</span> or
+<a name="l-181"></a><span class="tm">17:38:01</span><span class="nk"> &lt;warlordfff&gt;</span> that is why I said it is a BIG conversation
+<a name="l-182"></a><span class="tm">17:38:05</span><span class="nk"> &lt;vuntz&gt;</span> do no summit in 2013, and prepare stright away for 2014
+<a name="l-183"></a><span class="tm">17:38:51</span><span class="nk"> &lt;vuntz&gt;</span> let me try to summarize what we said so far
+<a name="l-184"></a><span class="tm">17:38:57</span><span class="nk"> &lt;warlordfff&gt;</span> I think guys that made Summit last year are the ones to answer all that since they know better than all of us
+<a name="l-185"></a><span class="tm">17:38:59</span><span class="nk"> &lt;suseROCKs&gt;</span> I suggest openSUSE prsence in SUSECon + maybe ask for one additional day to have a "FOSS event hosted by openSUSE"   more general audeince.   (we have the facilities, might as well leverage it) and then do a quick analysis of where we can/should have 2013 Summit
+<a name="l-186"></a><span class="tm">17:39:01</span><span class="nk"> &lt;vuntz&gt;</span> (please correct me if I don't summarize correctly)
+<a name="l-187"></a><span class="tm">17:39:12</span><span class="nk"> &lt;vuntz&gt;</span> 1) having a booth at SUSECon
+<a name="l-188"></a><span class="tm">17:39:19</span><span class="nk"> &lt;robjo&gt;</span> If we have a summit that is separate from SUSECon and that is suppossed to be 6 or so month separated from oSC we will have practically no resources from SUSE
+<a name="l-189"></a><span class="tm">17:39:22</span><span class="nk"> &lt;vuntz&gt;</span> 2) having a few talks at SUSECon if possible
+<a name="l-190"></a><span class="tm">17:39:46</span><span class="nk"> &lt;vuntz&gt;</span> that's the two points that, I think, everybody agrees on
+<a name="l-191"></a><span class="tm">17:39:49</span><span class="nk"> &lt;suseROCKs&gt;</span> robjo,   all depends on what we define Summits to be and what resources are needed for it.
+<a name="l-192"></a><span class="tm">17:39:56</span><span class="nk"> &lt;suseROCKs&gt;</span> we're doing too much cart before horse imo.
+<a name="l-193"></a><span class="tm">17:40:05</span><span class="nk"> &lt;warlordfff&gt;</span> +1
+<a name="l-194"></a><span class="tm">17:40:20</span><span class="nk"> &lt;vuntz&gt;</span> then, we have:
+<a name="l-195"></a><span class="tm">17:40:38</span><span class="nk"> &lt;vuntz&gt;</span> a) having a full track at SUSECon (different flavours for this, as robjo pointed out)
+<a name="l-196"></a><span class="tm">17:40:50</span><span class="nk"> &lt;vuntz&gt;</span> b) having a Summit just after SUSECon
+<a name="l-197"></a><span class="tm">17:40:54</span><span class="nk"> &lt;suseROCKs&gt;</span> vuntz,   yes.    Summit deserves better focus discussion.   While I'm significantly reducing my role these days in openSUSE, I'm willing to sit down with a group of people and convey my experiences and observations.
+<a name="l-198"></a><span class="tm">17:40:57</span><span class="nk"> &lt;vuntz&gt;</span> c) having a Summit elsewhere
+<a name="l-199"></a><span class="tm">17:41:03</span><span class="nk"> &lt;vuntz&gt;</span> d) having no summit in 2013
+<a name="l-200"></a><span class="tm">17:41:25</span><span class="nk"> &lt;vuntz&gt;</span> option a depends on SUSE; I asked, so we wait for an answer
+<a name="l-201"></a><span class="tm">17:41:51</span><span class="nk"> &lt;vuntz&gt;</span> option c is, well, purely theoretical right now as there's no concrete proposal
+<a name="l-202"></a><span class="tm">17:41:57</span><span class="nk"> &lt;suseROCKs&gt;</span> I think option e) should be  To have a discussion on what we want out of Summit in the first place
+<a name="l-203"></a><span class="tm">17:42:07</span><span class="nk"> &lt;suseROCKs&gt;</span> in which case I would vote for a) + e)
+<a name="l-204"></a><span class="tm">17:42:17</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">suseROCKs:</span> if we take more time for discussion, then this will kill option b
+<a name="l-205"></a><span class="tm">17:42:23</span><span class="nk"> &lt;vuntz&gt;</span> as we need an answer this week
+<a name="l-206"></a><span class="tm">17:43:05</span><span class="nk"> &lt;vuntz&gt;</span> (deadline is to secure the venue for the week-end)
+<a name="l-207"></a><span class="tm">17:43:07</span><span class="nk"> &lt;robjo&gt;</span> We had the "what do we want out of a Summit" discussion last year, do we really need to go through it again?
+<a name="l-208"></a><span class="tm">17:43:12</span><span class="nk"> &lt;suseROCKs&gt;</span> Can we vote for B) and then reneg on it with a new proposal?   I mean primairly the reason to ask for B) is to make sure SUSE allocates some funds.
+<a name="l-209"></a><span class="tm">17:43:17</span><span class="nk"> &lt;robjo&gt;</span> has the world around us changed that much?
+<a name="l-210"></a><span class="tm">17:43:27</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">robjo:</span> +1 for this year at least
+<a name="l-211"></a><span class="tm">17:43:34</span><span class="nk"> &lt;suseROCKs&gt;</span> To go back to them in January or Feb and say "Hey we got a better idea using the same money... Here's our idea" wouldn't be a death knell, I don't think.
+<a name="l-212"></a><span class="tm">17:44:08</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">suseROCKs:</span> if we go for b now, I'm not sure we can go back (without SUSE losing money for reserving the venue for nothing)
+<a name="l-213"></a><span class="tm">17:44:36</span><span class="nk"> &lt;robjo&gt;</span> +1 vuntz
+<a name="l-214"></a><span class="tm">17:44:39</span><span class="nk"> &lt;hendersj&gt;</span> They might lose a deposit, but not the whole amount - but it would be better not to cost them money unnecessarily.
+<a name="l-215"></a><span class="tm">17:44:44</span><span class="nk"> &lt;warlordfff&gt;</span> +1 vuntz
+<a name="l-216"></a><span class="tm">17:44:57</span><span class="nk"> &lt;suseROCKs&gt;</span> vuntz,   true, though I don't think it would be a significant hit on the deposit.  Nevertheless,  given the extremely limited time frame for discussion here, we're going to have to go with B) and do a Summit assessment separately that may apply to 2013 or 2014.
+<a name="l-217"></a><span class="tm">17:45:18</span><span class="nk"> &lt;hendersj&gt;</span> So maybe a question to ask would be how much the deposit is in the venue and when the cutoff is for changing our minds and losing the deposit
+<a name="l-218"></a><span class="tm">17:45:19</span><span class="nk"> &lt;robjo&gt;</span> once the venue is reserved and we do not show there is a net loss
+<a name="l-219"></a><span class="tm">17:45:50</span><span class="nk"> &lt;warlordfff&gt;</span> and it will look bad to people who give us money and support us
+<a name="l-220"></a><span class="tm">17:45:51</span><span class="nk"> &lt;suseROCKs&gt;</span> hendersj,   well in practice, SUSE is putting up a deposit anyway.  Its a question of whether to deposit for 2 extra days or not.
+<a name="l-221"></a><span class="tm">17:45:55</span><span class="nk"> &lt;hendersj&gt;</span> Depends on if the contract allows a change to be made with no loss of deposit up to a certain date (usually when the venue is less likely to be able to reserve the space for someone else)
+<a name="l-222"></a><span class="tm">17:45:58</span><span class="nk"> &lt;vuntz&gt;</span> hendersj, suseROCKs: I'm writing a mail to see if it's possible to change our mind without losing too much money
+<a name="l-223"></a><span class="tm">17:46:09</span><span class="nk"> &lt;hendersj&gt;</span> Seems the best option. :)
+<a name="l-224"></a><span class="tm">17:46:23</span><span class="nk"> &lt;hendersj&gt;</span> Gives us some breathing space (possibly) to make a fully-informed decision
+<a name="l-225"></a><span class="tm">17:46:32</span><span class="nk"> &lt;suseROCKs&gt;</span> vuntz,   that's good.  Gives us a feeling we're exploring without our nuts in a vise.  :-D
+<a name="l-226"></a><span class="tm">17:47:17</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">suseROCKs:</span> some people like that
+<a name="l-227"></a><span class="tm">17:47:37</span><span class="nk"> &lt;suseROCKs&gt;</span> Ilmehtar,   seriously, we don't need to know your deep dark gothic secrets
+<a name="l-228"></a><span class="tm">17:47:40</span><span class="nk"> &lt;vuntz&gt;</span> my personal opinion is that, for 2013, the two serious options are a and b (ie, do something along SUSECon)
+<a name="l-229"></a><span class="tm">17:47:55</span><span class="nk"> &lt;hendersj&gt;</span> +1 vuntz
+<a name="l-230"></a><span class="tm">17:48:26</span><span class="nk"> &lt;Ilmehtar&gt;</span> +1 vuntz  also
+<a name="l-231"></a><span class="tm">17:48:27</span><span class="nk"> &lt;vuntz&gt;</span> and I really like the idea of trying to expand and move the summit to other events in 2014
+<a name="l-232"></a><span class="tm">17:51:24</span><span class="nk"> &lt;robjo&gt;</span> So now the pointed question, as the board ultimately makes this decision, how many of the decision makesr are actually here following this?
+<a name="l-233"></a><span class="tm">17:51:45</span><span class="nk"> &lt;robjo&gt;</span> s/makesr/makers/
+<a name="l-234"></a><span class="tm">17:52:25</span><span class="nk"> &lt;vuntz&gt;</span> I'll summarize the discussion on the board list
+<a name="l-235"></a><span class="tm">17:52:28</span><span class="nk"> &lt;suseROCKs&gt;</span> :-)
+<a name="l-236"></a><span class="tm">17:52:31</span><span class="nk"> &lt;robjo&gt;</span> or is vuntz going to be "the voice of this meeting" ?
+<a name="l-237"></a><span class="tm">17:53:25</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">robjo:</span>  there is your answer :D
+<a name="l-238"></a><span class="tm">17:53:31</span><span class="nk"> &lt;suseROCKs&gt;</span> robjo,   valid point, but more of a rhetorical question, really
+<a name="l-239"></a><span class="tm">17:53:50 </span><span class="nka">* vuntz</span> <span class="ac">finished his mail</span>
+<a name="l-240"></a><span class="tm">17:54:05</span><span class="nk"> &lt;suseROCKs&gt;</span> vuntz can multi-task?
+<a name="l-241"></a><span class="tm">17:54:34</span><span class="nk"> &lt;vuntz&gt;</span> so, I guess we need some info for the minutes
+<a name="l-242"></a><span class="tm">17:54:40</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">suseROCKs:</span> not rhetorical at all, if those that make the decision are not here to listen/take part in the discussion, then why bother?
+<a name="l-243"></a><span class="tm">17:54:45</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">for background, see discussion at http://lists.opensuse.org/opensuse-project/2012-12/msg00017.html</span>
+<a name="l-244"></a><span class="tm">17:55:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">agreement that having a booth at SUSECon would be great</span>
+<a name="l-245"></a><span class="tm">17:55:13</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">agreement that we should try to have talks at SUSECon</span>
+<a name="l-246"></a><span class="tm">17:56:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">many questions on whether a summit or a track is best, whether doing this at SUSECon or at another event is best, etc. (see log)</span>
+<a name="l-247"></a><span class="tm">17:56:10</span><span class="nk"> &lt;robjo&gt;</span> I thing the second part depends on other things, thus the agreement has caveats
+<a name="l-248"></a><span class="tm">17:56:34</span><span class="nk"> &lt;suseROCKs&gt;</span> and to that info point, I suggest to warlordfff to focus (as Ambassador leader) on increasing ambassador presence at all SUSE-related enterprise events.  Including brainshare, GWAVACons, etc.
+<a name="l-249"></a><span class="tm">17:56:45</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-250"></a><span class="tm">17:56:58</span><span class="nk"> &lt;warlordfff&gt;</span> Trust me I am really trying this
+<a name="l-251"></a><span class="tm">17:57:01</span><span class="nk"> &lt;suseROCKs&gt;</span> <span class="hi">fyi:</span> warlordfff    Brainshare is this February.   Time is running out.
+<a name="l-252"></a><span class="tm">17:57:12</span><span class="nk"> &lt;suseROCKs&gt;</span> and I think GWAVACon (US version) is in January.
+<a name="l-253"></a><span class="tm">17:57:25</span><span class="nk"> &lt;robjo&gt;</span> Note, Brainshare is not a SUSE event, SUSE will be there as a sponsor as well
+<a name="l-254"></a><span class="tm">17:57:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">suggestion to rethink how we should organize a summit (or summits) in 2014; a discussion to start after we decide what to do in 2013</span>
+<a name="l-255"></a><span class="tm">17:57:39</span><span class="nk"> &lt;suseROCKs&gt;</span> robjo,  yes but still...  :-)
+<a name="l-256"></a><span class="tm">17:57:49</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">suseROCKs:</span>  can I have those on e-mail please, I will take care of it asap
+<a name="l-257"></a><span class="tm">17:57:50</span><span class="nk"> &lt;robjo&gt;</span> Here is the answer to the question
+<a name="l-258"></a><span class="tm">17:58:10</span><span class="nk"> &lt;robjo&gt;</span> if we cancel in February the cost is 90% of the cost
+<a name="l-259"></a><span class="tm">17:58:17</span><span class="nk"> &lt;robjo&gt;</span> thus this is not an option.
+<a name="l-260"></a><span class="tm">17:58:19</span><span class="nk"> &lt;warlordfff&gt;</span> honestly I am a bit lost those days
+<a name="l-261"></a><span class="tm">17:58:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">potential options for 2013: do like last year, push to have a track during SUSECon, do a summit at another event (no concrete proposal so far), do no summit</span>
+<a name="l-262"></a><span class="tm">17:59:02</span><span class="nk"> &lt;vuntz&gt;</span> did I summarize things correctly? Did I forget anything major?
+<a name="l-263"></a><span class="tm">17:59:04</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">robjo:</span> I find it interesting that my contacts at NetIQ and Novell speak about Brainshare as a 'NetIQ/Novell/SUSE joint event' - which also seems to be the reflection on Brainshare website (http://www.brainshare.com/) but you're not the first SUSE-er to de-emphasise what the event is to SUSE
+<a name="l-264"></a><span class="tm">18:00:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> re your earlier "why bother?": people might not be here, but it doesn't mean they won't use your input when taking a decision
+<a name="l-265"></a><span class="tm">18:00:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">robjo:</span> (of course, I'd prefer if everyone could be here)
+<a name="l-266"></a><span class="tm">18:00:38</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">vuntz:</span>  this is another BIG discution I believe
+<a name="l-267"></a><span class="tm">18:00:51</span><span class="nk"> &lt;robjo&gt;</span> so considering the cost the cancel later option has disappeared, we need to make a decision this week, summit on the weekend yes or no
+<a name="l-268"></a><span class="tm">18:00:59</span><span class="nk"> &lt;warlordfff&gt;</span> and I am on with robjo on that
+<a name="l-269"></a><span class="tm">18:01:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> hint: agenda item for next meeting ;-)
+<a name="l-270"></a><span class="tm">18:01:49</span><span class="nk"> &lt;warlordfff&gt;</span> you mean 'Why members of the board do not attend Project meetings?'
+<a name="l-271"></a><span class="tm">18:02:21</span><span class="nk"> &lt;vuntz&gt;</span> phrase it the way you want, not something we have time to discuss today
+<a name="l-272"></a><span class="tm">18:02:28</span><span class="nk"> &lt;warlordfff&gt;</span> okz
+<a name="l-273"></a><span class="tm">18:02:30</span><span class="nk"> &lt;vuntz&gt;</span> (and I agree it's a topic we should discuss)
+<a name="l-274"></a><span class="tm">18:02:47</span><span class="nk"> &lt;hendersj&gt;</span> I agree as well.
+<a name="l-275"></a><span class="tm">18:03:14</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,  read your mail now  :-)
+<a name="l-276"></a><span class="tm">18:03:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">there is no real option to decide to do the Summit and then cancel in February (too expensive)</span>
+<a name="l-277"></a><span class="tm">18:03:27</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">suseROCKs:</span>  thanks
+<a name="l-278"></a><span class="tm">18:04:01</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">suseROCKs:</span>  will take care of this by the weekend
+<a name="l-279"></a><span class="tm">18:04:16</span><span class="nk"> &lt;vuntz&gt;</span> we're getting overtime, but I'd like to quickly get the feeling of everyone
+<a name="l-280"></a><span class="tm">18:04:36 </span><span class="nka">* suseROCKs</span> <span class="ac">jumps as vuntz attempts to feel suseROCKs</span>
+<a name="l-281"></a><span class="tm">18:04:53</span><span class="nk"> &lt;vuntz&gt;</span> if SUSE tells me "yes, we can do a track (exact format to be defined)", do people prefer a track, or a summit?
+<a name="l-282"></a><span class="tm">18:05:10</span><span class="nk"> &lt;warlordfff&gt;</span> do not worry I just he 5 thinks to say in quick mode for those who won't be able to be here tomorrow at !5:00 UTC
+<a name="l-283"></a><span class="tm">18:05:19</span><span class="nk"> &lt;suseROCKs&gt;</span> I'm not in favor of a track.  talks yes,  track no.  (Second class citizenship)
+<a name="l-284"></a><span class="tm">18:05:40</span><span class="nk"> &lt;hendersj&gt;</span> A track also tends to require a fair number of sessions to fill, and that might prove a challenge
+<a name="l-285"></a><span class="tm">18:06:03</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">vuntz:</span>  do not worry about time I just have 5 thinks to say in quick mode for those who won't be able to be here tomorrow at 15:00 UTC
+<a name="l-286"></a><span class="tm">18:06:10</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">hendersj:</span> that's a good point
+<a name="l-287"></a><span class="tm">18:06:23</span><span class="nk"> &lt;suseROCKs&gt;</span> talk should be "this is why openSUSE is so great, this is why you should get involved,  want to know more?  come to Summit"  kind of thing.    Bait them, don't feed them.
+<a name="l-288"></a><span class="tm">18:06:24</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">hendersj:</span> to be fair, we also have to fill a summit with sessions ;-)
+<a name="l-289"></a><span class="tm">18:06:55</span><span class="nk"> &lt;suseROCKs&gt;</span> vuntz,   you can handle 8 sessions by yourself, can't you?
+<a name="l-290"></a><span class="tm">18:07:10</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">suseROCKs:</span> who'd want to listen to him talk for that long?
+<a name="l-291"></a><span class="tm">18:07:16</span><span class="nk"> &lt;warlordfff&gt;</span> lol
+<a name="l-292"></a><span class="tm">18:07:25</span><span class="nk"> &lt;suseROCKs&gt;</span> Ilmehtar,   but it ties into his "turn everything French" goal
+<a name="l-293"></a><span class="tm">18:07:38</span><span class="nk"> &lt;suseROCKs&gt;</span> ok enough debate about Summit, let's let warlordfff do his oSC speech
+<a name="l-294"></a><span class="tm">18:07:40</span><span class="nk"> &lt;robjo&gt;</span> A full track has IMHO too much of a "merged event effect" that brings with it the issues already raised
+<a name="l-295"></a><span class="tm">18:07:59</span><span class="nk"> &lt;vuntz&gt;</span> okay, it feels to me like the summit option comes a bit ahead here
+<a name="l-296"></a><span class="tm">18:08:13</span><span class="nk"> &lt;robjo&gt;</span> I think everything hinges on "have a summit yes/no"
+<a name="l-297"></a><span class="tm">18:08:17</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">vuntz:</span> my preference is a 'track'/'talk', assuming the 2nd class citizenship concerns can be addressed - seperate rooms for the sessions? Geeko central? but with shared access to the showroom floor and a booth there
+<a name="l-298"></a><span class="tm">18:08:28</span><span class="nk"> &lt;vuntz&gt;</span> I'll try to properly summarize the discussion to the board
+<a name="l-299"></a><span class="tm">18:08:35</span><span class="nk"> &lt;robjo&gt;</span> If we have a summit than we'd have a booth and maybe a talk or two at SUSECon
+<a name="l-300"></a><span class="tm">18:08:39</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">vuntz:</span> as time is limited and I'm not sure all those concerns can be addressed, a well publicised summit is probably looking like the most sensible option to me
+<a name="l-301"></a><span class="tm">18:08:55</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to summarize discussion to the board</span>
+<a name="l-302"></a><span class="tm">18:08:59</span><span class="nk"> &lt;robjo&gt;</span> if we have no summit we'd have a talk and maybe 10 talks at SUSECon but not necessarily a track
+<a name="l-303"></a><span class="tm">18:09:15</span><span class="nk"> &lt;vuntz&gt;</span> okay, thanks for the discussion
+<a name="l-304"></a><span class="tm">18:09:20</span><span class="nk"> &lt;vuntz&gt;</span> let's move to the next topic
+<a name="l-305"></a><span class="tm">18:09:29</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE Conference 2013</span>
+<a name="l-306"></a><span class="tm">18:09:33</span><span class="nk"> &lt;Ilmehtar&gt;</span> <span class="hi">robjo:</span> +1 - that's one way we can have our cake and eat it - SUSEcon talks to appeal to the SUSEcon attendees, but have summit as a community gathering
+<a name="l-307"></a><span class="tm">18:09:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> there you go!
+<a name="l-308"></a><span class="tm">18:09:35</span><span class="nk"> &lt;warlordfff&gt;</span> ok
+<a name="l-309"></a><span class="tm">18:09:38</span><span class="nk"> &lt;warlordfff&gt;</span> thanks
+<a name="l-310"></a><span class="tm">18:09:45</span><span class="nk"> &lt;warlordfff&gt;</span> First of all the actual kick-start meeting for oSC13 is tomorrow at 15:00 UTC
+<a name="l-311"></a><span class="tm">18:09:59</span><span class="nk"> &lt;warlordfff&gt;</span> so if you can, be here tomorrow
+<a name="l-312"></a><span class="tm">18:10:02</span><span class="nk"> &lt;warlordfff&gt;</span> now
+<a name="l-313"></a><span class="tm">18:10:12</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">kick-start meeting for oSC13 is tomorrow at 15:00 UTC</span>
+<a name="l-314"></a><span class="tm">18:10:25</span><span class="nk"> &lt;warlordfff&gt;</span> first more good news for all
+<a name="l-315"></a><span class="tm">18:10:28</span><span class="nk"> &lt;warlordfff&gt;</span> National Geographic proposes Thessaloniki as one of the 20 top cities of the word to visit in 2013 http://travel.nationalgeographic.com/travel/best-trips-2013/#/white-tower-thessaloniki-greece_61109_600x450.jpg
+<a name="l-316"></a><span class="tm">18:10:35</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-317"></a><span class="tm">18:10:48</span><span class="nk"> &lt;warlordfff&gt;</span> also
+<a name="l-318"></a><span class="tm">18:10:50</span><span class="nk"> &lt;suseROCKs&gt;</span> vuntz,   probably should have changed topic to make it more clearer in the automated minutes where #infos and #actions apply.
+<a name="l-319"></a><span class="tm">18:10:54</span><span class="nk"> &lt;warlordfff&gt;</span> People who want to help are more than welcome to join the Trello board we created and start pushing ideas ( https://trello.com/board/opensuse-conference-2013/4fbbad2bb16117957efeff5c )
+<a name="l-320"></a><span class="tm">18:11:08</span><span class="nk"> &lt;warlordfff&gt;</span> and we need you all
+<a name="l-321"></a><span class="tm">18:11:13 </span><span class="nka">* suseROCKs</span> <span class="ac">hates trello.  Thinks wiki is still the way to go.</span>
+<a name="l-322"></a><span class="tm">18:11:23</span><span class="nk"> &lt;warlordfff&gt;</span> you can help there too
+<a name="l-323"></a><span class="tm">18:11:26</span><span class="nk"> &lt;robjo&gt;</span> <span class="hi">warlordfff:</span> on the timing, please consider that July 4 is a major holiday in the US and thus weekend before or after would be very bad days for oSC
+<a name="l-324"></a><span class="tm">18:11:27</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-325"></a><span class="tm">18:11:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">people willing to help can join the trello board: https://trello.com/board/opensuse-conference-2013/4fbbad2bb16117957efeff5c</span>
+<a name="l-326"></a><span class="tm">18:11:44</span><span class="nk"> &lt;warlordfff&gt;</span> the thought is 19-20-21 of July
+<a name="l-327"></a><span class="tm">18:12:11</span><span class="nk"> &lt;Ilmehtar&gt;</span> so, bring sunscreen, got it
+<a name="l-328"></a><span class="tm">18:12:23</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">19-20-21 of July is currently the target dates</span>
+<a name="l-329"></a><span class="tm">18:12:25</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,   that would be around Community Leadership Summit and OSCON.  Many FOSS leaders you'd want to invite won't be able to make it.
+<a name="l-330"></a><span class="tm">18:12:26</span><span class="nk"> &lt;warlordfff&gt;</span> and this is the dates we are negotiating with the available places
+<a name="l-331"></a><span class="tm">18:12:35</span><span class="nk"> &lt;robjo&gt;</span> sounds reasonable, how quickly can the dates be firmed up?
+<a name="l-332"></a><span class="tm">18:12:41</span><span class="nk"> &lt;warlordfff&gt;</span> well
+<a name="l-333"></a><span class="tm">18:12:47</span><span class="nk"> &lt;tampakrap&gt;</span> july 5 and july 6 is public holiday in CZ for the record
+<a name="l-334"></a><span class="tm">18:12:50</span><span class="nk"> &lt;warlordfff&gt;</span> for us it is kind of standard
+<a name="l-335"></a><span class="tm">18:13:08</span><span class="nk"> &lt;warlordfff&gt;</span> so if you agree we stick to those dates
+<a name="l-336"></a><span class="tm">18:13:24</span><span class="nk"> &lt;warlordfff&gt;</span> for us also it is the greatest time
+<a name="l-337"></a><span class="tm">18:13:31</span><span class="nk"> &lt;suseROCKs&gt;</span> its not about agreeing, we're just informing you of important stuff that happens in July for your consideration
+<a name="l-338"></a><span class="tm">18:13:43</span><span class="nk"> &lt;warlordfff&gt;</span> so that we can also have collaboration Summer camp for the 3rd  year
+<a name="l-339"></a><span class="tm">18:13:58</span><span class="nk"> &lt;suseROCKs&gt;</span> July is a tough month, period.  But if you can make it happen, great!
+<a name="l-340"></a><span class="tm">18:14:05</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">suseROCKs:</span>  done some investigation, but thanks , really
+<a name="l-341"></a><span class="tm">18:14:15</span><span class="nk"> &lt;warlordfff&gt;</span> now
+<a name="l-342"></a><span class="tm">18:14:24</span><span class="nk"> &lt;warlordfff&gt;</span> I made a connect group named 'oSC13 The summer is comming' for people to submit any articles of blogs or whatever so that there will be feedback about that.
+<a name="l-343"></a><span class="tm">18:14:43</span><span class="nk"> &lt;robjo&gt;</span> being in conflict with OSCON is probably not great, but I am not certain it will have a big effect, we might have to work a bit harder to get a keynote speaker
+<a name="l-344"></a><span class="tm">18:14:44</span><span class="nk"> &lt;warlordfff&gt;</span> of course I would love to see you all blogging about it
+<a name="l-345"></a><span class="tm">18:15:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">there is a connect group named 'oSC13 The summer is comming' for people to submit any articles / blog posts / etc.</span>
+<a name="l-346"></a><span class="tm">18:15:20</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">robjo:</span>  sooner and later from that date we have Akademy and Quadec
+<a name="l-347"></a><span class="tm">18:15:35</span><span class="nk"> &lt;warlordfff&gt;</span> so it is in the midle
+<a name="l-348"></a><span class="tm">18:15:37</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">everyone should blog about the conference!</span>
+<a name="l-349"></a><span class="tm">18:15:54</span><span class="nk"> &lt;warlordfff&gt;</span> Also last but not least there is https://en.opensuse.org/Portal:Conference where people can go and see anything related, though it is still under construction
+<a name="l-350"></a><span class="tm">18:16:03</span><span class="nk"> &lt;warlordfff&gt;</span> and if you like you can help
+<a name="l-351"></a><span class="tm">18:16:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">https://en.opensuse.org/Portal:Conference is the place where all the information about the event is gathered</span>
+<a name="l-352"></a><span class="tm">18:16:35</span><span class="nk"> &lt;warlordfff&gt;</span> we want to make everyone participate on the organization of this years oSC
+<a name="l-353"></a><span class="tm">18:17:03</span><span class="nk"> &lt;differentreality&gt;</span> +1
+<a name="l-354"></a><span class="tm">18:17:05</span><span class="nk"> &lt;robjo&gt;</span> I think you need to nail down the dates, whatever they are, then people can decide if that fits and that will have an effect on their contributions to the organization.
+<a name="l-355"></a><span class="tm">18:17:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">everybody is welcome to participate in the organization</span>
+<a name="l-356"></a><span class="tm">18:17:10</span><span class="nk"> &lt;zoumpis_mobile&gt;</span> +1
+<a name="l-357"></a><span class="tm">18:17:21</span><span class="nk"> &lt;warlordfff&gt;</span> openSUSE community has the power to do this away from SUSE centered places and it is a great oportunity to prove that
+<a name="l-358"></a><span class="tm">18:17:22</span><span class="nk"> &lt;suseROCKs&gt;</span> seriously, if you want everyone to participate, get away from Trello then.
+<a name="l-359"></a><span class="tm">18:17:34</span><span class="nk"> &lt;suseROCKs&gt;</span> that tool sucks and is closed.   ptooey.
+<a name="l-360"></a><span class="tm">18:17:37</span><span class="nk"> &lt;suseROCKs&gt;</span> ok I'm done yammering  :-)
+<a name="l-361"></a><span class="tm">18:17:40</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">suseROCKs:</span>  trello works for some reason
+<a name="l-362"></a><span class="tm">18:18:01</span><span class="nk"> &lt;warlordfff&gt;</span> anyway
+<a name="l-363"></a><span class="tm">18:18:10</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">suseROCKs:</span> I am just curious, what alternatives would you suggest instead of trello?
+<a name="l-364"></a><span class="tm">18:18:18</span><span class="nk"> &lt;warlordfff&gt;</span> I would like to see you all tomorrow at the meeting
+<a name="l-365"></a><span class="tm">18:18:37</span><span class="nk"> &lt;suseROCKs&gt;</span> differentreality,   use the wiki.  We've used it for task management for years and it wasn't problematic.
+<a name="l-366"></a><span class="tm">18:18:42</span><span class="nk"> &lt;warlordfff&gt;</span> that is a great question actually
+<a name="l-367"></a><span class="tm">18:18:52</span><span class="nk"> &lt;suseROCKs&gt;</span> and at least on the wiki, everyone can see it.  On trello, you have to be logged in to see it.
+<a name="l-368"></a><span class="tm">18:18:53</span><span class="nk"> &lt;vuntz&gt;</span> I suggest to discuss trello vs wiki vs whatever at the meeting tomorrow :-)
+<a name="l-369"></a><span class="tm">18:19:00</span><span class="nk"> &lt;warlordfff&gt;</span> yeap
+<a name="l-370"></a><span class="tm">18:19:02</span><span class="nk"> &lt;robjo&gt;</span> Can we get away from the "patronizing, bickering over tools, and marketing"? Is there anything to discuss or will all substantial metters be talked about tomorrow?
+<a name="l-371"></a><span class="tm">18:19:26</span><span class="nk"> &lt;warlordfff&gt;</span> actually I don't think so robjo
+<a name="l-372"></a><span class="tm">18:19:31</span><span class="nk"> &lt;tampakrap&gt;</span> trello worked surprisingly well for osc12 ftr
+<a name="l-373"></a><span class="tm">18:19:59</span><span class="nk"> &lt;warlordfff&gt;</span> I just wanted to inform people that won't be able to be in the meeting tomorrow
+<a name="l-374"></a><span class="tm">18:20:16</span><span class="nk"> &lt;warlordfff&gt;</span> I am done
+<a name="l-375"></a><span class="tm">18:20:25</span><span class="nk"> &lt;robjo&gt;</span> trello works for me for some things. I am with suseROCKs. If people have to ask permission to participate you loose them.
+<a name="l-376"></a><span class="tm">18:20:27</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> thanks!
+<a name="l-377"></a><span class="tm">18:20:37</span><span class="nk"> &lt;vuntz&gt;</span> any very very very quick question on this topic?
+<a name="l-378"></a><span class="tm">18:20:46</span><span class="nk"> &lt;warlordfff&gt;</span> shoot vuntz
+<a name="l-379"></a><span class="tm">18:21:05</span><span class="nk"> &lt;hendersj&gt;</span> No, don't shoot vuntz, we need him. :)
+<a name="l-380"></a><span class="tm">18:21:16</span><span class="nk"> &lt;vuntz&gt;</span> heh
+<a name="l-381"></a><span class="tm">18:21:18</span><span class="nk"> &lt;robjo&gt;</span> I am not going to ask anyone for permission to help. If the tasks are no accessible without login, permission whatever, I just will not do any of them ;)
+<a name="l-382"></a><span class="tm">18:21:47</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> can you make sure trello will be discussed tomorrow?
+<a name="l-383"></a><span class="tm">18:21:52</span><span class="nk"> &lt;suseROCKs&gt;</span> +1 robjo
+<a name="l-384"></a><span class="tm">18:21:54</span><span class="nk"> &lt;warlordfff&gt;</span> you have a point I haven't thought untill now
+<a name="l-385"></a><span class="tm">18:22:01</span><span class="nk"> &lt;warlordfff&gt;</span> thanks
+<a name="l-386"></a><span class="tm">18:22:02</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-387"></a><span class="tm">18:22:31</span><span class="nk"> &lt;vuntz&gt;</span> okay
+<a name="l-388"></a><span class="tm">18:22:38</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">vuntz:</span>  yeap I will
+<a name="l-389"></a><span class="tm">18:22:39</span><span class="nk"> &lt;vuntz&gt;</span> no question, let's move on
+<a name="l-390"></a><span class="tm">18:22:56</span><span class="nk"> &lt;robjo&gt;</span> got to to go before the cafetria closes need food -- gone
+<a name="l-391"></a><span class="tm">18:22:58</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Brief Q&amp;A</span>
+<a name="l-392"></a><span class="tm">18:23:16</span><span class="nk"> &lt;vuntz&gt;</span> any question on anything else?
+<a name="l-393"></a><span class="tm">18:23:26</span><span class="nk"> &lt;suseROCKs&gt;</span> Question:
+<a name="l-394"></a><span class="tm">18:23:32</span><span class="nk"> &lt;vuntz&gt;</span> (if it's a hard question, we'll keep it for next meeting)
+<a name="l-395"></a><span class="tm">18:23:36</span><span class="nk"> &lt;suseROCKs&gt;</span> How many of you are coming over to my house for XMAS Eve dinner?
+<a name="l-396"></a><span class="tm">18:23:49</span><span class="nk"> &lt;vuntz&gt;</span> heh
+<a name="l-397"></a><span class="tm">18:24:00</span><span class="nk"> &lt;warlordfff&gt;</span> <span class="hi">suseROCKs:</span>  you are so far away...
+<a name="l-398"></a><span class="tm">18:24:17</span><span class="nk"> &lt;suseROCKs&gt;</span> good, then you're one less person I have to shop for, warlordfff   -P
+<a name="l-399"></a><span class="tm">18:24:19</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">suseROCKs:</span> is that an open invitation ?
+<a name="l-400"></a><span class="tm">18:24:34</span><span class="nk"> &lt;suseROCKs&gt;</span> differentreality,   You have a standing invitation anytime to come to Chicago.
+<a name="l-401"></a><span class="tm">18:24:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">warlordfff:</span> I'll put your question about meeting attendance from board members in the agenda for the next meeting
+<a name="l-402"></a><span class="tm">18:24:51</span><span class="nk"> &lt;warlordfff&gt;</span> hey differentreality aren't you cooking on Xmas Eve?
+<a name="l-403"></a><span class="tm">18:24:55</span><span class="nk"> &lt;vuntz&gt;</span> ok, no question
+<a name="l-404"></a><span class="tm">18:25:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Next meeting date &amp; chair</span>
+<a name="l-405"></a><span class="tm">18:25:06</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">suseROCKs:</span> :DD
+<a name="l-406"></a><span class="tm">18:25:20</span><span class="nk"> &lt;suseROCKs&gt;</span> warlordfff,   I can take her to Greektown to buy supplies for cooking  :-P
+<a name="l-407"></a><span class="tm">18:25:25</span><span class="nk"> &lt;vuntz&gt;</span> in theory, we would have the next meeting on the 26th
+<a name="l-408"></a><span class="tm">18:25:25</span><span class="nk"> &lt;victorhck&gt;</span> <span class="hi">suseROCKs:</span> Then I will eat by 2 persons
+<a name="l-409"></a><span class="tm">18:25:27 </span><span class="nka">* suseROCKs</span> <span class="ac">wonders if there are Greektowns in Greece.</span>
+<a name="l-410"></a><span class="tm">18:25:31</span><span class="nk"> &lt;victorhck&gt;</span> Mine and warlordfff
+<a name="l-411"></a><span class="tm">18:25:34</span><span class="nk"> &lt;differentreality&gt;</span> hahaha
+<a name="l-412"></a><span class="tm">18:25:39</span><span class="nk"> &lt;vuntz&gt;</span> but I guess too many people won't be there
+<a name="l-413"></a><span class="tm">18:25:53</span><span class="nk"> &lt;victorhck&gt;</span> I do
+<a name="l-414"></a><span class="tm">18:25:54</span><span class="nk"> &lt;victorhck&gt;</span> ;)
+<a name="l-415"></a><span class="tm">18:25:58</span><span class="nk"> &lt;vuntz&gt;</span> so let's schedule the next meeting for January 9th
+<a name="l-416"></a><span class="tm">18:25:59</span><span class="nk"> &lt;differentreality&gt;</span> <span class="hi">warlordfff:</span> xmas... no... nop... Hopefully though sb else will be cooking so that I can eat quite a lot of nice home made food on xmas day :D
+<a name="l-417"></a><span class="tm">18:26:07</span><span class="nk"> &lt;warlordfff&gt;</span> :D
+<a name="l-418"></a><span class="tm">18:26:08</span><span class="nk"> &lt;suseROCKs&gt;</span> vuntz,   in the past, we always cancelled the meeting between xmas/NYE ahead of time.  Pointless to have that meeting.
+<a name="l-419"></a><span class="tm">18:26:13</span><span class="nk"> &lt;vuntz&gt;</span> I should be available, so I can chair there (unless someone wants to do it)
+<a name="l-420"></a><span class="tm">18:26:30</span><span class="nk"> &lt;warlordfff&gt;</span> nop lets meet next year
+<a name="l-421"></a><span class="tm">18:26:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">no meeting on December 26th</span>
+<a name="l-422"></a><span class="tm">18:26:43</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">next meeting on January 9th (chair: vuntz)</span>
+<a name="l-423"></a><span class="tm">18:26:47</span><span class="nk"> &lt;vuntz&gt;</span> and we're done!
+<a name="l-424"></a><span class="tm">18:26:49</span><span class="nk"> &lt;vuntz&gt;</span> thanks all!
+<a name="l-425"></a><span class="tm">18:26:52</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

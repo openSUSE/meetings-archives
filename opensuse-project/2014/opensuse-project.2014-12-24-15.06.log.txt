@@ -1,0 +1,161 @@
+15:06:44 <ilmehtar> #startmeeting openSUSE Project Meeting
+15:06:44 <bugbot> Meeting started Wed Dec 24 15:06:44 2014 UTC.  The chair is ilmehtar. Information about MeetBot at http://wiki.debian.org/MeetBot.
+15:06:44 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+15:07:10 <infiniteNOP_noid> How does this stuff work, ilmehtar ?
+15:07:15 <infiniteNOP_noid> (All those commands)
+15:07:36 <ilmehtar> infiniteNOP_noid: the details, and the agenda for todays meeting, are all on the wiki
+15:07:37 <ilmehtar> https://en.opensuse.org/openSUSE:Project_meeting
+15:07:46 <ilmehtar> #topic Action Items Review
+15:08:09 <infiniteNOP_noid> Thanks ilmehtar
+15:08:13 <ilmehtar> so, reviewing the action items from the last meeting - http://community.opensuse.org/meetings/opensuse-project/2014/opensuse-project.2014-12-10-15.00.html
+15:08:52 <ilmehtar> I know Robert has been pushing oSC 15's progress, and in fact theres a lot more about oSC 15 in the minutes from the last oSC 15 meeting - http://community.opensuse.org/meetings/opensuse-project/2014/opensuse-project.2014-12-16-13.00.html
+15:09:25 <ilmehtar> That was the only action item from the last Project Meeting
+15:09:36 <infiniteNOP_noid> Where will oSC '15 be held?
+15:09:41 <ilmehtar> #info oSC 15 organisation is progressing, more details are available in the minutes of the last meeting http://community.opensuse.org/meetings/opensuse-project/2014/opensuse-project.2014-12-16-13.00.html
+15:10:07 * microchip_ bans ilmehtar :PPP
+15:10:16 <ilmehtar> infiniteNOP_noid: oSC 15 will be in the Hague in the Netherlands https://news.opensuse.org/2014/12/11/conference-at-bink36-kicks-into-high-gear/
+15:10:26 <infiniteNOP_noid> Mah.. Too far from Greece :-(
+15:10:32 <infiniteNOP_noid> I will watch from afar
+15:10:34 <ilmehtar> #info More information about the current status of oSC 15 organisation is available on news.opensuse.org - https://news.opensuse.org/2014/12/11/conference-at-bink36-kicks-into-high-gear/
+15:10:36 <microchip_> close to Belgium!
+15:10:42 * infiniteNOP_noid kicks microchip_
+15:10:52 <infiniteNOP_noid> Is the meeting logged?
+15:10:56 <ilmehtar> infiniteNOP_noid: yes, it is
+15:11:00 <infiniteNOP_noid> np
+15:11:10 * infiniteNOP_noid has no problem with that
+15:11:39 <ilmehtar> so, unless I'm missing something, there is no action items outstanding from the last Project Meeting. There's no topics actually posted on the wiki, so ,does anyone have anything they'd like to raise today?
+15:11:41 <microchip_> !seen ajeager
+15:11:41 <SUSEhelp> microchip_: Sorry, no such luck! I don't remember seeing ajeager!
+15:11:58 <ilmehtar> microchip_: why are you looking for AJ?
+15:12:03 <infiniteNOP_noid> nope ilmehtar, not me
+15:12:11 <microchip_> ilmehtar: haven't seen his in a loooooong time
+15:12:16 <microchip_> him*
+15:12:27 <ilmehtar> microchip_: he's alive, I see him in the office at least 3 times a week ;)
+15:12:38 <microchip_> ahhh good! :)
+15:12:48 <ilmehtar> microchip_: he's working on Cloud and other stuff for SUSE these days, doesn't really have much to do with openSUSE, besides giving me tons of good advice when I need it
+15:12:58 <microchip_> ic
+15:13:35 <ilmehtar> No one has any topics they'd like to discuss? Nothing on anyones mind about the project, the distributions? anything?
+15:13:41 <IngeSv> I'd like if next openSUSE could again be installed with lower resulution screens in GUI mode.
+15:13:42 <infiniteNOP_noid> nope.
+15:13:56 <infiniteNOP_noid> Ah yeah!
+15:14:00 <infiniteNOP_noid> I remembered something
+15:14:05 <microchip_> ilmehtar: any ETA as to when the next release will happen and how long 13.2 will be supported (excluding evergreen)?
+15:14:31 <ilmehtar> IngeSv: have you filed a bug to that effect? and how low a resolution do you want to see? we test at 1024x768
+15:14:36 <ilmehtar> infiniteNOP_noid: speak up?
+15:14:49 <infiniteNOP_noid> Maybe we should look at the problem that causes inability to get working graphics/screen resolution/etc after install on low-end intel GMA-based notebooks
+15:14:57 <infiniteNOP_noid> More specifically, I have this machine:
+15:14:59 <infiniteNOP_noid>  HexChat: 2.9.5 ** OS: Linux 2.6.32-504.3.3.el6.i686 i686 ** Distro: CentOS release 6.6 (Final) ** CPU: 2 x Intel(R) Atom(TM) CPU N455   @ 1.66GHz (GenuineIntel) @ 1000MHz ** RAM: Physical: 994.6MB, 42.9% free ** Disk: Total: 73.2GB, 76.5% free ** VGA: Intel Corporation Atom Processor D4xx/D5xx/N4xx/N5xx Integrated Graphics Controller ** Sound: HDA-Intel - HDA I
+15:14:59 <infiniteNOP_noid> ntel ** Ethernet: Realtek Semiconductor Co., Ltd. RTL8101E/RTL8102E PCI Express Fast Ethernet controller ** Uptime: 3h 12m 32s **
+15:15:05 <infiniteNOP_noid> (Sorry for spam)
+15:15:18 <ilmehtar> microchip_: in the new year, I expect there to be a discussion about the release schedule for 13.3.
+15:15:25 <microchip_> ok :)
+15:15:35 <ilmehtar> microchip_: however, 13.2 will be supported using the same formula as all previous releases
+15:15:40 <ilmehtar> microchip_: 2 releases + 2 months
+15:15:54 <ilmehtar> microchip_: so, the longer the release schedule, the longer 13.2 will be supported :)
+15:15:58 <infiniteNOP_noid> After a mesa update, the resolution wasn't correct, and, when I tried re-installing a more recent version, I noticed the resolution was not correctly detected after the first phase of install
+15:16:04 <IngeSv> ilmehtar: I have that resulution and I had to do a text install.
+15:16:07 <microchip_> ilmehtar: but are we still back to 8 months or do we stick to 1 year support?
+15:16:29 <infiniteNOP_noid> So, ilmehtar , can you guys investigate this?
+15:16:49 <ilmehtar> microchip_: at the moment, we're at 'undecided' - the general feedback on the opensuse-factory mailinglist so far though seems very much to be for 12 months or longer
+15:17:05 <microchip_> ilmehtar: +1 for 12 months :)
+15:17:14 <infiniteNOP_noid> Yeah, +1 for 12 mo.
+15:17:18 <ilmehtar> IngeSv: have a look at http://openqa.opensuse.org - every single test you see there is at 1024x768, including using the GUI
+15:17:34 <IngeSv> ok
+15:18:01 <ilmehtar> infiniteNOP_noid: for your issue, do you have a bug idea - these project meetings are generally about the project..specific hardware/technical issues are probably best discussed on opensuse-factory or the other appropriate technical mailinglist :)
+15:18:12 <ilmehtar> infiniteNOP_noid: bug idea / bug ID..gimme the number :)
+15:18:32 <infiniteNOP_noid> I understand.
+15:18:37 <infiniteNOP_noid> ilmehtar, I didn't file a bug...
+15:18:46 <infiniteNOP_noid> Mainly due to lack of documentation
+15:18:54 <ilmehtar> infiniteNOP_noid: I'd strongly recommend you file one - that sounds like something we want to fix. Lack of documentation? about ohw to file a bug?
+15:19:02 <IngeSv> ilmehtar: i filed no bug
+15:19:04 <infiniteNOP_noid> ilmehtar, No. About the problem
+15:19:42 <ilmehtar> infiniteNOP_noid: well, if you're the first one to find the bug, you probably wont have much documentation..
+15:19:42 <infiniteNOP_noid> ilmehtar, With now way to document my issue, it's kinda difficult to file a bug
+15:20:10 <infiniteNOP_noid> Also, can nolonger document the bug without loosing data (aka reinstalling 'suse again in place of CentOS
+15:20:13 <ilmehtar> infiniteNOP_noid: I dont understand, you seem to be doing a good job documenting your issue here..explaiing what is wrong, what you changed, what you expect, all that stuff..
+15:20:27 <infiniteNOP_noid> ilmehtar, It's too late now
+15:20:29 <infiniteNOP_noid> ...
+15:20:30 <ilmehtar> infiniteNOP_noid: well, without a bug ID, we're not going to be able to get anyone to have a look at it
+15:20:36 <infiniteNOP_noid> k
+15:20:37 <ilmehtar> infiniteNOP_noid: especially as we probably dont have anyone with matching hardware..
+15:20:52 <infiniteNOP_noid> </issue> ;-)
+15:21:25 <ilmehtar> IngeSv: If you can if you still have problems after you've had a fresh look at it, that'll be cool, because 1024x768 should certainly work :)
+15:21:38 <ilmehtar> Anything else?
+15:22:04 <infiniteNOP_noid> nope.
+15:22:34 <microchip_> not from me
+15:22:42 <IngeSv> no
+15:23:55 <ilmehtar> #topic Any other business
+15:24:12 <ilmehtar> #info a few questions about 13.3's release schedule and 13.2's support lifetime
+15:26:11 <ilmehtar> #info 13.2 will follow the same support formula as all openSUSE releases - 2 releases + 2 months. So it will depend on the (currently undecided) release schedule for 13.3, but assuming a release schedule of *at least* 8 months, then it should have a support lifecycle of *at least* 18
+15:26:32 <ilmehtar> #info a longer release cycle for 13.3 and beyond will increase the support lifecycle of 13.2 and subsequent releases
+15:26:50 <microchip_> all clear now :)
+15:27:18 <ilmehtar> #info Also, remember to file your bugs on bugzilla.opensuse.org if you have issues with 13.2 or Tumbleweed :)
+15:27:31 <ilmehtar> Oh, I have an item to bring to the meeting
+15:27:36 <ilmehtar> #topic openSUSE Board Elections
+15:28:11 <microchip_> when is it?
+15:28:25 <ilmehtar> Already started ;)
+15:28:31 <microchip_> oh
+15:28:46 <ilmehtar> #info Campaigning has started for the openSUSE Board Election 2014/2015 http://lists.opensuse.org/opensuse-project/2014-12/msg00026.html
+15:29:31 <microchip_> i know only one guys from that list, also the one i banned and unbanned LOL
+15:29:41 <ilmehtar> #info the Candidates this year are Kostas Koudaras, Michal Hrusecky, Craig Gardner (*), Petter Linnel (*) and Robert Schweikert (*) - Candidates marked with * are SUSE employees
+15:29:52 <CygniX> Can none opensuse members vote?
+15:29:58 <ilmehtar> #info Ballots will open on Janurary 13 2015
+15:30:19 <ilmehtar> #info only openSUSE Members can vote, but there might still be time to apply for Membership
+15:30:21 <microchip_> CygniX: they can
+15:30:34 <ilmehtar> #info each openSUSE member will recieve 3 votes, one for each open Board Seat
+15:30:39 <CygniX> I want membership
+15:30:41 <ilmehtar> microchip_: they cannot - Board elections are for openSUSE Members only
+15:30:49 <microchip_> oh
+15:31:04 <ilmehtar> CygniX: then apply for it :) https://en.opensuse.org/openSUSE:Members
+15:31:19 <CygniX> Am afraid I will get rejected again :)
+15:31:35 <ilmehtar> CygniX: make sure your connect profile does a good job of reflecting your contributions to the projcet
+15:31:45 <ilmehtar> CygniX: I got rejected my first time...now look at me..
+15:31:49 <infiniteNOP_noid> CygniX, Are your contributions visible?
+15:32:11 <ilmehtar> #info Good luck to all the standing Board Candidates
+15:32:44 <CygniX> infiniteNOP_noid:  I need to be a little more active.
+15:32:52 <infiniteNOP_noid> maybe...
+15:33:02 <microchip_> CygniX: you ARE active, at least in IRC
+15:33:18 <CygniX> IRC participation doesn't count for much
+15:33:20 <infiniteNOP_noid> Is IRC activity considered grounds for membership?
+15:33:21 <ilmehtar> IRC is one of the harder areas of contribtion for the Membership team to verify
+15:33:31 <infiniteNOP_noid> ilmehtar, Why don't we log #suse?
+15:33:38 <infiniteNOP_noid> That will make verification easier
+15:33:46 <ilmehtar> it counts for a lot, but, the membership team can only consider contributions which they can individually verify
+15:34:03 <infiniteNOP_noid> Adding a logbot ain't that difficult...
+15:34:07 <ilmehtar> so, for heavy IRCers, examples of other people the Membership commitee can ask to vouch often works
+15:34:25 <ilmehtar> infiniteNOP_noid: Freenode frowns on logging :) we're allowed to do it for meetings, but doing it all the time, would be questionable
+15:34:31 <infiniteNOP_noid> ilmehtar, http://echelog.com/
+15:34:38 <infiniteNOP_noid> ilmehtar, Informed logging is OK AFAIK
+15:34:53 <ilmehtar> infiniteNOP_noid: https://freenode.net/channel_guidelines.shtml
+15:34:54 <CygniX> Will try to make my contributions more active. And then apply again...
+15:35:09 <infiniteNOP_noid> Yeah I know
+15:35:15 <infiniteNOP_noid> But many channels do
+15:35:26 <infiniteNOP_noid> (After informing users about it)
+15:35:46 <ilmehtar> infiniteNOP_noid: okay, why don't you put your suggestion into an email to opensuse-project@opensuse.org for wider discussion? your idea might have legs
+15:36:18 <infiniteNOP_noid> IDK....
+15:36:50 <infiniteNOP_noid> "If you're publishing logs on an ongoing basis, your channel topic should reflect that fact. Be sure to provide a way for users to make comments without logging, and get permission from the channel owners before you start"
+15:37:52 <infiniteNOP_noid> ^^TL;DR: You can log, as long as you provide some kind of opt-out for specific statements (fe begin your line with '-' to be excepted from logging) and as long as you inform users about it
+15:37:59 <ilmehtar> infiniteNOP_noid: personally, when I started giving the membership comittee examples of people on IRC they could talk to who would vouch for my contributions to openSUSE on IRC ,I got membership soon afterwards
+15:38:40 <microchip_> ilmehtar: screenshots of helping someone ain't enough?
+15:38:45 <infiniteNOP_noid> IDK, but I think logging the support channels *only* would make gaining membership easier
+15:38:54 <infiniteNOP_noid> microchip_, Screenshots can be easily forged ;-)
+15:39:01 <ilmehtar> microchip_: Membership requires 'sustained and substantial' contribution - a few specific examples doesn't help
+15:39:06 <microchip_> indeed
+15:39:12 <infiniteNOP_noid> yeah
+15:40:20 <infiniteNOP_noid> So, what do you guys think?
+15:40:27 <microchip_> back in 2007 when i got my membership, i offered links to help on SLS and the wiki. it was enough to get accepted
+15:40:27 <IngeSv> afk
+15:42:20 <ilmehtar> Okay, so ,any other questions? If not, I'll close up this meeting and return to my family for Christmas :)
+15:42:39 <infiniteNOP_noid> no, not from me
+15:43:02 <cboltz> I proposed to merge the "openSUSE Factory" and "openSUSE distribution" bugzilla products some time ago
+15:43:08 <microchip_> nothing from me either
+15:43:10 <infiniteNOP_noid> I guess it's time for poor ilmehtar to close the meeting
+15:43:28 <cboltz> IIRC the only reason not to do this was that it would produce mails for 2000 bugs
+15:43:59 <ilmehtar> cboltz: 'tidying up the products in Bugzilla'  is still an open topic
+15:44:40 <ilmehtar> cboltz: there's a number of reasons I (or anyone else with such priviledges) haven't pressed the button yet.. in my case, I know of some things around the corner which potentially could change that kind of thing..so I want to see what comes from that first
+15:44:48 <ilmehtar> cboltz: but, it wont be forgotten..I dont like the status quo
+15:45:07 <cboltz> good to know ;-)
+15:45:38 <cboltz> when will those things you are waiting for "come around the corner"?
+15:45:44 <cboltz> (and what "things" are that?)
+15:46:20 <ilmehtar> Janurary I hope..and I can't go into great detail I'm afraid. it's one of those rare things I cant talk about in advance :)
+15:46:39 <ilmehtar> #endmeeting

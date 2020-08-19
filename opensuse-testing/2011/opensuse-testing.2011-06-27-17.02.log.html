@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:02:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:02:42</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Jun 27 17:02:42 2011 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:02:42</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:03:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting - with 2 topics so far
+<a name="l-5"></a><span class="tm">17:03:05</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-6"></a><span class="tm">17:03:28</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">MS2 experience</span>
+<a name="l-7"></a><span class="tm">17:03:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> do you want to start?
+<a name="l-8"></a><span class="tm">17:04:47</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-9"></a><span class="tm">17:05:35</span><span class="nk"> &lt;LWFinger&gt;</span> I first tried the KDE Live CD on a VB VM.
+<a name="l-10"></a><span class="tm">17:06:29</span><span class="nk"> &lt;LWFinger&gt;</span> Everything worked at first, then the network died and had to switch from NetworkManager to ifup.
+<a name="l-11"></a><span class="tm">17:07:00</span><span class="nk"> &lt;LWFinger&gt;</span> I then use the NET Install CD to upgrade an MS1 install on that VM.
+<a name="l-12"></a><span class="tm">17:08:06</span><span class="nk"> &lt;LWFinger&gt;</span> The first problem was a warning that "YaST was unable to find the correct control file". Ignoring that seemed to be OK.
+<a name="l-13"></a><span class="tm">17:08:58</span><span class="nk"> &lt;LWFinger&gt;</span> Next, I got an error "Cannot read license file". Ignoring that was also OK.
+<a name="l-14"></a><span class="tm">17:10:01</span><span class="nk"> &lt;LWFinger&gt;</span> After that, update seemed to go OK, other than the "Installing Packages" progress bar did not advance.
+<a name="l-15"></a><span class="tm">17:10:42</span><span class="nk"> &lt;LWFinger&gt;</span> In addition, there are references to "11.4" in the slide show that need to be changed to "12.1".
+<a name="l-16"></a><span class="tm">17:11:33</span><span class="nk"> &lt;LWFinger&gt;</span> After reboot, I got lots of oops messages from kernel 2.6.39-2-desktop.
+<a name="l-17"></a><span class="tm">17:12:14</span><span class="nk"> &lt;LWFinger&gt;</span> In 12.1 MS2, the KDE plasmoid NetworkManager applet does not work.
+<a name="l-18"></a><span class="tm">17:12:48</span><span class="nk"> &lt;LWFinger&gt;</span> I was agle to get both wired and wireless networking working with ifup.
+<a name="l-19"></a><span class="tm">17:13:30</span><span class="nk"> &lt;LWFinger&gt;</span> The whode KDE desktop then failed to respond to any clicks! I do not know why.
+<a name="l-20"></a><span class="tm">17:13:54</span><span class="nk"> &lt;LWFinger&gt;</span> Next I installed from the KDE Live CD. That went better.
+<a name="l-21"></a><span class="tm">17:14:40</span><span class="nk"> &lt;LWFinger&gt;</span> Again the NM applet fails, but switching to NetworkManager-Gnome (aka nm-applet) fixed that.
+<a name="l-22"></a><span class="tm">17:15:23</span><span class="nk"> &lt;LWFinger&gt;</span> The KDE shutdown/restart/logoff process fails - Bug #702220.
+<a name="l-23"></a><span class="tm">17:15:43</span><span class="nk"> &lt;LWFinger&gt;</span> I have not filed any other bugs yet.
+<a name="l-24"></a><span class="tm">17:15:48</span><span class="nk"> &lt;LWFinger&gt;</span> Done.
+<a name="l-25"></a><span class="tm">17:17:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> I guess, we should file something about KDE NetworkManager
+<a name="l-26"></a><span class="tm">17:18:29</span><span class="nk"> &lt;LWFinger&gt;</span> Yes, I agree. It should also be in the most-annoying list.
+<a name="l-27"></a><span class="tm">17:19:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> could you manage this?
+<a name="l-28"></a><span class="tm">17:19:22</span><span class="nk"> &lt;LWFinger&gt;</span> I also plan to see file about the license file missing and the bad control file, at least.
+<a name="l-29"></a><span class="tm">17:19:28</span><span class="nk"> &lt;LWFinger&gt;</span> Yes.
+<a name="l-30"></a><span class="tm">17:19:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> I did a quick search on bugzilla and it did not find such a NetworkManager bug
+<a name="l-31"></a><span class="tm">17:20:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> I did not see the license and control things on openQA, so they might just be when updating from MS1?
+<a name="l-32"></a><span class="tm">17:21:04</span><span class="nk"> &lt;LWFinger&gt;</span> Good point. I'll start an install from NET CD to check that.
+<a name="l-33"></a><span class="tm">17:21:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> otherwise, yast logs will be good to have
+<a name="l-34"></a><span class="tm">17:22:36</span><span class="nk"> &lt;LWFinger&gt;</span> The original ones are gone as I blew away the original installation, but it would be easy to duplicate. Nice thing about VMs.
+<a name="l-35"></a><span class="tm">17:23:50</span><span class="nk"> &lt;bmwiedemann&gt;</span> I did follow the openQA results prior to MS2 and filed two instsys/yast/zypper bugs: 698284 700881 (both linked on openQA)
+<a name="l-36"></a><span class="tm">17:24:32</span><span class="nk"> &lt;bmwiedemann&gt;</span> suspected to be caused by the major rpm upgrade
+<a name="l-37"></a><span class="tm">17:26:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> I still need to make a 11.4 reference image to include in automated dist-upgrade tests. And then I want to dist-upgrade one of my laptops soon.
+<a name="l-38"></a><span class="tm">17:26:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> done.
+<a name="l-39"></a><span class="tm">17:27:45</span><span class="nk"> &lt;LWFinger&gt;</span> I did not see 698284 and I have3 not done any DVD testing.
+<a name="l-40"></a><span class="tm">17:29:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> tigerfoot (or anyone else): do you want to share MS2 experience?
+<a name="l-41"></a><span class="tm">17:30:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> then we should move towards the second topic...
+<a name="l-42"></a><span class="tm">17:31:40</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-43"></a><span class="tm">17:31:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Request to rename MS6 to Beta</span>
+<a name="l-44"></a><span class="tm">17:32:35</span><span class="nk"> &lt;LWFinger&gt;</span> This one was mine, so I'll start.
+<a name="l-45"></a><span class="tm">17:33:25</span><span class="nk"> &lt;LWFinger&gt;</span> I got no suggestions for changes to my original draft. Does that mean "it was super", or "noone read it"?
+<a name="l-46"></a><span class="tm">17:34:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> I read it and thought that it is OK... just the end was a bit apprupt. could use some nice conclusive sentence.
+<a name="l-47"></a><span class="tm">17:35:24</span><span class="nk"> &lt;LWFinger&gt;</span> Do you have a specific wording change?
+<a name="l-48"></a><span class="tm">17:36:42 </span><span class="nka">* cartman</span> <span class="ac">tries to catchup with the log</span>
+<a name="l-49"></a><span class="tm">17:36:51</span><span class="nk"> &lt;bmwiedemann&gt;</span> e.g. add "Thanks for considering this proposal to further enhance the user experience."
+<a name="l-50"></a><span class="tm">17:37:24</span><span class="nk"> &lt;LWFinger&gt;</span> The test is available at http://ietherpad.com/DLUpjHL2jI.
+<a name="l-51"></a><span class="tm">17:38:54</span><span class="nk"> &lt;cartman&gt;</span> Very good idea.
+<a name="l-52"></a><span class="tm">17:40:07</span><span class="nk"> &lt;bmwiedemann&gt;</span> looks good.
+<a name="l-53"></a><span class="tm">17:40:12</span><span class="nk"> &lt;LWFinger&gt;</span> I added a little more so that it reads "Thanks for considering this proposal to further enhance the user experience and the quality of the final 12.1 release.". OK?
+<a name="l-54"></a><span class="tm">17:41:46</span><span class="nk"> &lt;LWFinger&gt;</span> I've forgotten where this should be sent.
+<a name="l-55"></a><span class="tm">17:42:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> opensuse-project ML would be good
+<a name="l-56"></a><span class="tm">17:43:09</span><span class="nk"> &lt;LWFinger&gt;</span> One other question: Should it come from the Testing Core Team, the Team with individual names, or just names?
+<a name="l-57"></a><span class="tm">17:46:11</span><span class="nk"> &lt;bmwiedemann&gt;</span> good question. I'd favour the second variant as we hardly ever get a majority of the Team members in IRC meetings or writing on the testing ML
+<a name="l-58"></a><span class="tm">17:47:55</span><span class="nk"> &lt;LWFinger&gt;</span> OK. The whole team, or just the ones that show up for these meetings?
+<a name="l-59"></a><span class="tm">17:49:01</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">Holgi:</span> Is the list of members of the TCT up to date?
+<a name="l-60"></a><span class="tm">17:50:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> hmm... we could just have a list of names of people who said, that they support this proposal. e.g. "Larry Finger, Bernhard M. Wiedemann, ... support this proposal"
+<a name="l-61"></a><span class="tm">17:51:24</span><span class="nk"> &lt;bmwiedemann&gt;</span> or "of the Testing Core Team, Larry ... support"
+<a name="l-62"></a><span class="tm">17:52:36</span><span class="nk"> &lt;LWFinger&gt;</span> That sounds better. I also heard from r.seete@gmail.com.
+<a name="l-63"></a><span class="tm">17:53:09</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">cartman:</span> I don't know your other name. Are you a member of the TCT?
+<a name="l-64"></a><span class="tm">17:53:22</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">LWFinger:</span> I am a bystander
+<a name="l-65"></a><span class="tm">17:53:28</span><span class="nk"> &lt;LWFinger&gt;</span> OK.
+<a name="l-66"></a><span class="tm">17:53:29</span><span class="nk"> &lt;cartman&gt;</span> sorry!
+<a name="l-67"></a><span class="tm">17:53:35</span><span class="nk"> &lt;LWFinger&gt;</span> No problem.
+<a name="l-68"></a><span class="tm">17:53:52</span><span class="nk"> &lt;cartman&gt;</span> I might be the guy fixing KDE bugs though, :)
+<a name="l-69"></a><span class="tm">17:54:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> we want anyone be able to support our proposal, though :)
+<a name="l-70"></a><span class="tm">17:54:18</span><span class="nk"> &lt;LWFinger&gt;</span> In that case, anything I can do?
+<a name="l-71"></a><span class="tm">17:54:35</span><span class="nk"> &lt;cartman&gt;</span> nope, I'll go over the reported bugs
+<a name="l-72"></a><span class="tm">17:54:42</span><span class="nk"> &lt;cartman&gt;</span> and see what we can do for M3
+<a name="l-73"></a><span class="tm">17:54:45</span><span class="nk"> &lt;cartman&gt;</span> and 12.1 in the end
+<a name="l-74"></a><span class="tm">17:55:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">cartman:</span> great
+<a name="l-75"></a><span class="tm">17:55:27</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">bmwiedemann:</span> TC Team is great :)
+<a name="l-76"></a><span class="tm">17:55:45</span><span class="nk"> &lt;LWFinger&gt;</span> Indeed - I really want KDE to be good. I have one machine that must use Gnome, and I much prefer KDE.
+<a name="l-77"></a><span class="tm">17:56:19</span><span class="nk"> &lt;cartman&gt;</span> Gnome is good enough for 12.1, for KDE the worst offender is NetworkManager
+<a name="l-78"></a><span class="tm">17:56:22</span><span class="nk"> &lt;cartman&gt;</span> we'll see :(
+<a name="l-79"></a><span class="tm">17:56:44</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">LWFinger:</span> if I remember right you are part of linux-wireless team right?
+<a name="l-80"></a><span class="tm">17:57:03</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">cartman:</span> Yes.
+<a name="l-81"></a><span class="tm">17:57:17</span><span class="nk"> &lt;cartman&gt;</span> nice :)
+<a name="l-82"></a><span class="tm">17:57:45</span><span class="nk"> &lt;cartman&gt;</span> ok sorry for distruption, please resume
+<a name="l-83"></a><span class="tm">17:57:54</span><span class="nk"> &lt;LWFinger&gt;</span> My parts are the RealTek and Broadcom drivers.
+<a name="l-84"></a><span class="tm">17:59:00</span><span class="nk"> &lt;cartman&gt;</span> one of you guys should learn C++ and fix Plasma Network Applet for once and all =)
+<a name="l-85"></a><span class="tm">17:59:48</span><span class="nk"> &lt;LWFinger&gt;</span> I think we are done with this topic. The content of the E-mail and the recipient are clear. Should I send it, or have one other cycle of review?
+<a name="l-86"></a><span class="tm">18:00:16</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">cartman:</span> Shh, but I do know C++. I just dont like it.
+<a name="l-87"></a><span class="tm">18:00:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> we could ask for more people here to support it.
+<a name="l-88"></a><span class="tm">18:01:28</span><span class="nk"> &lt;LWFinger&gt;</span> OK. I'll send a revised version to the testing ML and ask anyone that supports it to let me know.
+<a name="l-89"></a><span class="tm">18:01:41</span><span class="nk"> &lt;bmwiedemann&gt;</span> Holgi, a-865, anaumov, cartman, CzP, [daemon], EGD, [jmp], Jonathan_R, tigerfoot, zaitor : do you support the rename of MS6 to Beta as detailled in  http://ietherpad.com/DLUpjHL2jI ?
+<a name="l-90"></a><span class="tm">18:02:29</span><span class="nk"> &lt;cartman&gt;</span> I support the proposal.
+<a name="l-91"></a><span class="tm">18:04:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> I guess, email to testing ML will be better to give people time to read.
+<a name="l-92"></a><span class="tm">18:05:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> but we should give it some deadline - e.g. in 7 days
+<a name="l-93"></a><span class="tm">18:06:36</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">bmwiedemann:</span> I don't mind
+<a name="l-94"></a><span class="tm">18:06:42</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">cartman:</span> What is your real-world name?
+<a name="l-95"></a><span class="tm">18:06:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-96"></a><span class="tm">18:07:21</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> about the list of TCT, I just know that one person resigned official
+<a name="l-97"></a><span class="tm">18:07:38</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> about the others, I have no information
+<a name="l-98"></a><span class="tm">18:07:58</span><span class="nk"> &lt;bmwiedemann&gt;</span> I also wanted to mention that http://connect.opensuse.org has a Testers group (currently on bottom of page 2 of groups) that you can join
+<a name="l-99"></a><span class="tm">18:08:36</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">LWFinger:</span> "Ismail Donmez"
+<a name="l-100"></a><span class="tm">18:11:59</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">Holgi:</span> Thanks. I think I'll go with the names that respond to the next E-mail.
+<a name="l-101"></a><span class="tm">18:12:13</span><span class="nk"> &lt;Holgi&gt;</span> <span class="hi">LWFinger:</span> ok
+<a name="l-102"></a><span class="tm">18:13:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> and then we should schedule our next IRC meeting - e.g. 2011-07-18 17:00 UTC would be the Monday shortly after MS3 release
+<a name="l-103"></a><span class="tm">18:14:02</span><span class="nk"> &lt;Holgi&gt;</span> sounds a reasonabkle
+<a name="l-104"></a><span class="tm">18:14:08</span><span class="nk"> &lt;Holgi&gt;</span> sounds a reasonable date
+<a name="l-105"></a><span class="tm">18:15:08</span><span class="nk"> &lt;LWFinger&gt;</span> OK with me.
+<a name="l-106"></a><span class="tm">18:15:36</span><span class="nk"> &lt;a-865&gt;</span> http://ietherpad.com/DLUpjHL2jI won't open
+<a name="l-107"></a><span class="tm">18:16:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> server appears to be down atm
+<a name="l-108"></a><span class="tm">18:16:36</span><span class="nk"> &lt;LWFinger&gt;</span> It is down from here as well.
+<a name="l-109"></a><span class="tm">18:17:23</span><span class="nk"> &lt;LWFinger&gt;</span> I'll check it in an hour, or so.
+<a name="l-110"></a><span class="tm">18:18:03</span><span class="nk"> &lt;cartman&gt;</span> <span class="hi">LWFinger:</span> did you send the email yet?
+<a name="l-111"></a><span class="tm">18:18:27</span><span class="nk"> &lt;LWFinger&gt;</span> Not yet.
+<a name="l-112"></a><span class="tm">18:18:48</span><span class="nk"> &lt;cartman&gt;</span> cool I just subscribed :)
+<a name="l-113"></a><span class="tm">18:19:01</span><span class="nk"> &lt;LWFinger&gt;</span> Good.
+<a name="l-114"></a><span class="tm">18:19:25</span><span class="nk"> &lt;bmwiedemann&gt;</span> do we have any more testing-topics to discuss?
+<a name="l-115"></a><span class="tm">18:20:27</span><span class="nk"> &lt;bmwiedemann&gt;</span> Then I will close today's meeting. Thanks everyone for attending. I will add links to the logs on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-116"></a><span class="tm">18:20:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

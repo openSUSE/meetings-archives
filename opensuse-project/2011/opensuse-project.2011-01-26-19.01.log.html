@@ -1,0 +1,582 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">19:01:15</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">19:01:15</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Jan 26 19:01:15 2011 UTC.  The chair is henne. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">19:01:15</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">19:01:21</span><span class="nk"> &lt;suseROCKs&gt;</span> yes rhorstkoetter   some people have decided to relocate the Project to the moon and call it a Moonject
+<a name="l-5"></a><span class="tm">19:01:25</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">openSUSE Board meeting</span>
+<a name="l-6"></a><span class="tm">19:01:39</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#chair </span><span class="cmdline">prusnak suseROCKs rhorstkoetter AlanClark yaloki</span>
+<a name="l-7"></a><span class="tm">19:01:39</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: AlanClark henne prusnak rhorstkoetter suseROCKs yaloki
+<a name="l-8"></a><span class="tm">19:01:43</span><span class="nk"> &lt;rhorstkoetter&gt;</span> <span class="hi">suseROCKs:</span> sounds awesome :-D
+<a name="l-9"></a><span class="tm">19:02:09</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#chair </span><span class="cmdline">prusnak suseROCKs rhorstkoetter AlanClark yaloki  henne</span>
+<a name="l-10"></a><span class="tm">19:02:09</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: AlanClark henne prusnak rhorstkoetter suseROCKs yaloki
+<a name="l-11"></a><span class="tm">19:02:10</span><span class="nk"> &lt;suseROCKs&gt;</span> For the record, before we proceed....
+<a name="l-12"></a><span class="tm">19:02:15</span><span class="nk"> &lt;henne&gt;</span> ups
+<a name="l-13"></a><span class="tm">19:02:33</span><span class="nk"> &lt;suseROCKs&gt;</span> I must apologize.  I was awaiting more feedback approval of the minutes before posting to news.o.o and then it slipped my mind.  I should have gone ahead and posted.
+<a name="l-14"></a><span class="tm">19:02:41</span><span class="nk"> &lt;henne&gt;</span> the agenda for this meeting is
+<a name="l-15"></a><span class="tm">19:02:44</span><span class="nk"> &lt;henne&gt;</span> 1. openSUSE Foundation
+<a name="l-16"></a><span class="tm">19:02:45</span><span class="nk"> &lt;henne&gt;</span> 2. Where do we need to improve ?
+<a name="l-17"></a><span class="tm">19:02:45</span><span class="nk"> &lt;henne&gt;</span> 3. Questions &amp; Answers
+<a name="l-18"></a><span class="tm">19:03:01</span><span class="nk"> &lt;suseROCKs&gt;</span> I will thus make the effort to combine today and the previous meeting minutes and post soon.
+<a name="l-19"></a><span class="tm">19:03:02</span><span class="nk"> &lt;henne&gt;</span> any additional topics?
+<a name="l-20"></a><span class="tm">19:03:29</span><span class="nk"> &lt;suseROCKs&gt;</span> I think that is a sufficient set of topics considering today's the last meeting of the current board  :-)
+<a name="l-21"></a><span class="tm">19:03:29</span><span class="nk"> &lt;AlanClark&gt;</span> Not from me, as I'd like to get back to hackweek ;-)
+<a name="l-22"></a><span class="tm">19:03:48</span><span class="nk"> &lt;suseROCKs&gt;</span> Unless we want to come up with some really difficult topic and hand it off to the newbies next time  :-D
+<a name="l-23"></a><span class="tm">19:04:10</span><span class="nk"> &lt;suseROCKs&gt;</span> AlanClark,   What are you hacking?
+<a name="l-24"></a><span class="tm">19:05:02</span><span class="nk"> &lt;prusnak&gt;</span> no additional topic, we can start :)
+<a name="l-25"></a><span class="tm">19:05:08</span><span class="nk"> &lt;henne&gt;</span> okay
+<a name="l-26"></a><span class="tm">19:05:15</span><span class="nk"> &lt;yaloki&gt;</span> .
+<a name="l-27"></a><span class="tm">19:05:15</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">openSUSE Foundation</span>
+<a name="l-28"></a><span class="tm">19:05:37</span><span class="nk"> &lt;henne&gt;</span> we had 2 action items for this topic
+<a name="l-29"></a><span class="tm">19:05:52</span><span class="nk"> &lt;henne&gt;</span> # suseROCKs dig out the records of the foundation discussion from the private board meetings and put them to the wiki
+<a name="l-30"></a><span class="tm">19:05:55</span><span class="nk"> &lt;henne&gt;</span> # AlanClark write an announcement about the new process of creating the foundation. where the latest information is and how you can contribute
+<a name="l-31"></a><span class="tm">19:06:13</span><span class="nk"> &lt;suseROCKs&gt;</span> still doing that, just been a real nudgehead and not moving along faster than I should.
+<a name="l-32"></a><span class="tm">19:06:18</span><span class="nk"> &lt;suseROCKs&gt;</span> Apologies on this
+<a name="l-33"></a><span class="tm">19:06:55</span><span class="nk"> &lt;AlanClark&gt;</span> The second action item, we decided to hold until we are ready with the first AI
+<a name="l-34"></a><span class="tm">19:07:37</span><span class="nk"> &lt;AlanClark&gt;</span> but I will get a draft posted on the wiki, so that we are ready
+<a name="l-35"></a><span class="tm">19:07:55</span><span class="nk"> &lt;suseROCKs&gt;</span> ok  didn't realize yours was contingent on mine.  My apologies AlanClark
+<a name="l-36"></a><span class="tm">19:08:13</span><span class="nk"> &lt;henne&gt;</span> I'm  bit frustrated with this i must say...
+<a name="l-37"></a><span class="tm">19:08:41</span><span class="nk"> &lt;henne&gt;</span> there are people ready to discuss _now_
+<a name="l-38"></a><span class="tm">19:09:31</span><span class="nk"> &lt;suseROCKs&gt;</span> seems people are ready to discuss already  :-)
+<a name="l-39"></a><span class="tm">19:10:13</span><span class="nk"> &lt;yaloki&gt;</span> I'd propose helping out but I'm in full fosdem mode atm :\
+<a name="l-40"></a><span class="tm">19:10:28</span><span class="nk"> &lt;suseROCKs&gt;</span> I will complete my AI by the end of the weekend, for sure
+<a name="l-41"></a><span class="tm">19:10:32 </span><span class="nka">* [daemon]</span> <span class="ac">is busy as hell :)</span>
+<a name="l-42"></a><span class="tm">19:10:32</span><span class="nk"> &lt;henne&gt;</span> i fear if we take another 4 weeks to come up with the data again then this initial steam will be blown
+<a name="l-43"></a><span class="tm">19:10:43</span><span class="nk"> &lt;suseROCKs&gt;</span> and will help get AlanClark's AI started as well
+<a name="l-44"></a><span class="tm">19:10:46</span><span class="nk"> &lt;henne&gt;</span> i already have people complaining to me :-/
+<a name="l-45"></a><span class="tm">19:10:57</span><span class="nk"> &lt;suseROCKs&gt;</span> so we can see something happening by Mon or Tues at the latest
+<a name="l-46"></a><span class="tm">19:11:19</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   What's stopping them?  there's already discussions going on in the ML.   The discussions are happening whether we like it or not  :-)
+<a name="l-47"></a><span class="tm">19:11:28</span><span class="nk"> &lt;AlanClark&gt;</span> By the way there have been some good postings on the foundation mailing list, which has surfaced a question of sorts.
+<a name="l-48"></a><span class="tm">19:11:34</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">henne:</span> ever thought about scrum to organize this?
+<a name="l-49"></a><span class="tm">19:12:00</span><span class="nk"> &lt;henne&gt;</span> well a discussion can only yank results if its somehow organized
+<a name="l-50"></a><span class="tm">19:12:20</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">[daemon]:</span> scrum/kanban/whatever is a bit difficult with people all over the internet with different timezones and a high busy-o-meter :\
+<a name="l-51"></a><span class="tm">19:12:34</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">[daemon]:</span> however we do that i'm fine
+<a name="l-52"></a><span class="tm">19:12:44</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">yaloki:</span> I have the same problem at work but it always works out
+<a name="l-53"></a><span class="tm">19:13:05</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">henne:</span> you're the boss :)
+<a name="l-54"></a><span class="tm">19:13:10</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">[daemon]:</span> it specifically helps tracking stuff, yeah, but I don't think it'll make suseROCKs' nights any longer :)
+<a name="l-55"></a><span class="tm">19:13:10</span><span class="nk"> &lt;suseROCKs&gt;</span> this time of year is one of those weird periods where everything seems to be happening at once
+<a name="l-56"></a><span class="tm">19:13:16</span><span class="nk"> &lt;henne&gt;</span> well anyhow. its not that we lack idea's. its that we don't do this...
+<a name="l-57"></a><span class="tm">19:13:27</span><span class="nk"> &lt;suseROCKs&gt;</span> yaloki,   LOL   nights?  What are those?
+<a name="l-58"></a><span class="tm">19:14:00</span><span class="nk"> &lt;henne&gt;</span> how about we limit the discussion for the next two weeks to one topic
+<a name="l-59"></a><span class="tm">19:14:09</span><span class="nk"> &lt;henne&gt;</span> purpose of the foundation
+<a name="l-60"></a><span class="tm">19:14:34</span><span class="nk"> &lt;henne&gt;</span> and try to have something ready by the next board meeting?
+<a name="l-61"></a><span class="tm">19:14:40</span><span class="nk"> &lt;suseROCKs&gt;</span> ok
+<a name="l-62"></a><span class="tm">19:14:57</span><span class="nk"> &lt;henne&gt;</span> because there we already have a lot of input from a lot of people
+<a name="l-63"></a><span class="tm">19:15:05</span><span class="nk"> &lt;suseROCKs&gt;</span> but do remember that next board meeting will be new board.  So you gotta give new board time to get its feet wet
+<a name="l-64"></a><span class="tm">19:15:11</span><span class="nk"> &lt;henne&gt;</span> alan, klaas, jdd, KDE, me..
+<a name="l-65"></a><span class="tm">19:15:18</span><span class="nk"> &lt;suseROCKs&gt;</span> luckly the majority of the board is intact so we won't have too much of a learning curve
+<a name="l-66"></a><span class="tm">19:15:18</span><span class="nk"> &lt;henne&gt;</span> feet?
+<a name="l-67"></a><span class="tm">19:15:46</span><span class="nk"> &lt;henne&gt;</span> they get thrown into the north see without a savety suit
+<a name="l-68"></a><span class="tm">19:15:47 </span><span class="nka">* yaloki</span> <span class="ac">hopes to have time to get knee deep into the foundation topic again after fosdem</span>
+<a name="l-69"></a><span class="tm">19:16:02</span><span class="nk"> &lt;suseROCKs&gt;</span> :-)
+<a name="l-70"></a><span class="tm">19:16:05</span><span class="nk"> &lt;yaloki&gt;</span> okay, any questions? or next item then?
+<a name="l-71"></a><span class="tm">19:16:12</span><span class="nk"> &lt;suseROCKs&gt;</span> next item
+<a name="l-72"></a><span class="tm">19:16:30</span><span class="nk"> &lt;henne&gt;</span> ill take that action item to drive that discussion
+<a name="l-73"></a><span class="tm">19:17:20</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#action </span><span class="cmdline">henne lead discussion on the foundation list about the purpose. goal: have some consensus by the next board meeting</span>
+<a name="l-74"></a><span class="tm">19:17:25</span><span class="nk"> &lt;suseROCKs&gt;</span> yaloki,   any action items for you?  :-)
+<a name="l-75"></a><span class="tm">19:17:36</span><span class="nk"> &lt;yaloki&gt;</span> hehe
+<a name="l-76"></a><span class="tm">19:17:57</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> well, foundation is not just for the board ;)
+<a name="l-77"></a><span class="tm">19:18:03</span><span class="nk"> &lt;suseROCKs&gt;</span> :-)
+<a name="l-78"></a><span class="tm">19:18:11</span><span class="nk"> &lt;yaloki&gt;</span> but as said, I'm only taking AIs for after fosdem, anything else is unrealistic
+<a name="l-79"></a><span class="tm">19:18:31</span><span class="nk"> &lt;henne&gt;</span> no further AI's needed. just have an eye on the list
+<a name="l-80"></a><span class="tm">19:18:42</span><span class="nk"> &lt;henne&gt;</span> and don't keep your mouth shut. not that you could ;)
+<a name="l-81"></a><span class="tm">19:18:49</span><span class="nk"> &lt;henne&gt;</span> next topic?
+<a name="l-82"></a><span class="tm">19:18:51</span><span class="nk"> &lt;yaloki&gt;</span> yes
+<a name="l-83"></a><span class="tm">19:19:08</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Where do we need to improve?</span>
+<a name="l-84"></a><span class="tm">19:19:45</span><span class="nk"> &lt;yaloki&gt;</span> hah, so much :)
+<a name="l-85"></a><span class="tm">19:19:46</span><span class="nk"> &lt;henne&gt;</span> you can find suggestions in the openSUSE queue in openfate
+<a name="l-86"></a><span class="tm">19:19:53</span><span class="nk"> &lt;suseROCKs&gt;</span> I think we "the board" need to improve itself in keeping on top of important topics
+<a name="l-87"></a><span class="tm">19:19:54</span><span class="nk"> &lt;yaloki&gt;</span> anyone, ideas? :)
+<a name="l-88"></a><span class="tm">19:20:20</span><span class="nk"> &lt;yaloki&gt;</span> I think the board needs some mechanism to replace people who don't do anything while being on the board
+<a name="l-89"></a><span class="tm">19:20:39</span><span class="nk"> &lt;suseROCKs&gt;</span> How do we not forget about some topics that are sent to us?   For example, we were sent the final Strategy proposal for review a  while ago and frankly we didn't do anything about it yet.
+<a name="l-90"></a><span class="tm">19:20:49</span><span class="nk"> &lt;henne&gt;</span> http://bit.ly/eIjUtU
+<a name="l-91"></a><span class="tm">19:20:55</span><span class="nk"> &lt;henne&gt;</span> thats the queue in openfate
+<a name="l-92"></a><span class="tm">19:21:57</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> yes, some tracking tool would definitely help
+<a name="l-93"></a><span class="tm">19:22:05</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   So what should we do to stay on top of things?
+<a name="l-94"></a><span class="tm">19:22:05</span><span class="nk"> &lt;yaloki&gt;</span> just email isn't enough :\
+<a name="l-95"></a><span class="tm">19:22:18</span><span class="nk"> &lt;yaloki&gt;</span> track stuff
+<a name="l-96"></a><span class="tm">19:22:20</span><span class="nk"> &lt;henne&gt;</span> what do you mean?
+<a name="l-97"></a><span class="tm">19:22:21</span><span class="nk"> &lt;prusnak&gt;</span> well, we have tickets for board in retro
+<a name="l-98"></a><span class="tm">19:22:21</span><span class="nk"> &lt;yaloki&gt;</span> easy
+<a name="l-99"></a><span class="tm">19:22:23</span><span class="nk"> &lt;suseROCKs&gt;</span> I have to say that I'm not a fan of retro
+<a name="l-100"></a><span class="tm">19:22:24</span><span class="nk"> &lt;prusnak&gt;</span> but we don't use it
+<a name="l-101"></a><span class="tm">19:22:25</span><span class="nk"> &lt;AlanClark&gt;</span> how about posting the AI's on the agenda page
+<a name="l-102"></a><span class="tm">19:22:25</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">prusnak:</span> sort of
+<a name="l-103"></a><span class="tm">19:22:42</span><span class="nk"> &lt;prusnak&gt;</span> also i didn't know about tracking stuff in openfate /o\
+<a name="l-104"></a><span class="tm">19:22:45</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">prusnak:</span> it's only partly usable for !boosters
+<a name="l-105"></a><span class="tm">19:22:52</span><span class="nk"> &lt;yaloki&gt;</span> openfate, bugzilla, retro.. ridiculous
+<a name="l-106"></a><span class="tm">19:23:21</span><span class="nk"> &lt;suseROCKs&gt;</span> AlanClark,   Except we only look at agenda when its time for a meeting  :-)
+<a name="l-107"></a><span class="tm">19:23:26</span><span class="nk"> &lt;yaloki&gt;</span> retro is probably the most suitable tool for the job, but we need to use it, and only use that
+<a name="l-108"></a><span class="tm">19:23:40</span><span class="nk"> &lt;yaloki&gt;</span> but then there are work items that are public, and a very few that aren't
+<a name="l-109"></a><span class="tm">19:23:43</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">suseROCKS:</span> part of my point
+<a name="l-110"></a><span class="tm">19:23:46</span><span class="nk"> &lt;suseROCKs&gt;</span> We need to start being more of a board that works in between meetings as well  (And I think we're moving in that direction in a good way nowadays)
+<a name="l-111"></a><span class="tm">19:23:48</span><span class="nk"> &lt;yaloki&gt;</span> and neither tool gives us that ability
+<a name="l-112"></a><span class="tm">19:23:55</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> yes, we do
+<a name="l-113"></a><span class="tm">19:24:03</span><span class="nk"> &lt;yaloki&gt;</span> had that topic a while ago already
+<a name="l-114"></a><span class="tm">19:24:10</span><span class="nk"> &lt;yaloki&gt;</span> have one person take on a task and drive it
+<a name="l-115"></a><span class="tm">19:24:10</span><span class="nk"> &lt;henne&gt;</span> guys i really really don't think this is a tool issue
+<a name="l-116"></a><span class="tm">19:24:29</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> it is, in the sense that there is no list of things to do anywhere, only bits here and there (hence nowhere)
+<a name="l-117"></a><span class="tm">19:24:39</span><span class="nk"> &lt;yaloki&gt;</span> but, obviously, it's only part of the problem
+<a name="l-118"></a><span class="tm">19:24:49</span><span class="nk"> &lt;prusnak&gt;</span> not only a tool issue, but certainly there is a problem with that
+<a name="l-119"></a><span class="tm">19:25:34</span><span class="nk"> &lt;suseROCKs&gt;</span> aguably, the Strategy proposal was something that was of pretty serious importance and we totally put that on backburner lately.    Out of sight = out of mind
+<a name="l-120"></a><span class="tm">19:25:37</span><span class="nk"> &lt;yaloki&gt;</span> but why am I discussing that anyway.. :D
+<a name="l-121"></a><span class="tm">19:25:50</span><span class="nk"> &lt;yaloki&gt;</span> point is, if there is some public place where the board can track progress
+<a name="l-122"></a><span class="tm">19:25:55</span><span class="nk"> &lt;yaloki&gt;</span> it's automatically visible for everyone
+<a name="l-123"></a><span class="tm">19:26:07</span><span class="nk"> &lt;yaloki&gt;</span> and for most topics, we don't need to work in isolation either
+<a name="l-124"></a><span class="tm">19:26:24</span><span class="nk"> &lt;yaloki&gt;</span> for the very hypothetical case where someone has an eye on that list and proposes to help, it's a win
+<a name="l-125"></a><span class="tm">19:26:38</span><span class="nk"> &lt;suseROCKs&gt;</span> So... should we put it on the Agenda page then as AlanClark suggested and then start treating it as more than just an agenda page?
+<a name="l-126"></a><span class="tm">19:26:45</span><span class="nk"> &lt;henne&gt;</span> sure. but thats a simple list right?
+<a name="l-127"></a><span class="tm">19:26:48</span><span class="nk"> &lt;yaloki&gt;</span> the board mailing-list isn't suited for that, for obvious reasons
+<a name="l-128"></a><span class="tm">19:26:50</span><span class="nk"> &lt;suseROCKs&gt;</span> e.g. start treating it as a page we should be visitin frequently to remind ourselves of where we are at?
+<a name="l-129"></a><span class="tm">19:27:05</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> well, a list of things with assignment and comments to report progress or issues (retro ?)
+<a name="l-130"></a><span class="tm">19:27:18</span><span class="nk"> &lt;henne&gt;</span> bugzilla?
+<a name="l-131"></a><span class="tm">19:27:20</span><span class="nk"> &lt;yaloki&gt;</span> what's the "Agenda page"? for board meetings on the wiki?
+<a name="l-132"></a><span class="tm">19:27:27</span><span class="nk"> &lt;suseROCKs&gt;</span> yes
+<a name="l-133"></a><span class="tm">19:27:35</span><span class="nk"> &lt;AlanClark&gt;</span> let's start with the board agenda page before trying something more complicated
+<a name="l-134"></a><span class="tm">19:27:38</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> would work too (but then why have openfate ? bugzilla would work too ;))
+<a name="l-135"></a><span class="tm">19:27:55</span><span class="nk"> &lt;yaloki&gt;</span> board agenda is totally unsuited for that purpose IMHO
+<a name="l-136"></a><span class="tm">19:28:00</span><span class="nk"> &lt;henne&gt;</span> yeah
+<a name="l-137"></a><span class="tm">19:28:18</span><span class="nk"> &lt;yaloki&gt;</span> many tasks go beyond the time frame from one meeting to the next
+<a name="l-138"></a><span class="tm">19:28:24</span><span class="nk"> &lt;henne&gt;</span> a tool with assignments and comments to report progress is a bugtracker
+<a name="l-139"></a><span class="tm">19:28:28</span><span class="nk"> &lt;yaloki&gt;</span> and the wiki isn't the right tool for keeping track of things like that
+<a name="l-140"></a><span class="tm">19:28:32</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> yes
+<a name="l-141"></a><span class="tm">19:28:34</span><span class="nk"> &lt;yaloki&gt;</span> that, or retro
+<a name="l-142"></a><span class="tm">19:28:35</span><span class="nk"> &lt;prusnak&gt;</span> so we should pick one - retro, openfate, bugzilla
+<a name="l-143"></a><span class="tm">19:28:42</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-144"></a><span class="tm">19:28:45</span><span class="nk"> &lt;yaloki&gt;</span> IMHO bugzilla would be fine too
+<a name="l-145"></a><span class="tm">19:28:48</span><span class="nk"> &lt;suseROCKs&gt;</span> I probably would like retro.  but frankly its not user friendly to me
+<a name="l-146"></a><span class="tm">19:29:04</span><span class="nk"> &lt;yaloki&gt;</span> ok, one of them, you guys (and the new ones) sort it out :)
+<a name="l-147"></a><span class="tm">19:29:13</span><span class="nk"> &lt;suseROCKs&gt;</span> the first issue being as soon as you log in, you land in the booster page and no clear navigation how to get to your own team pages
+<a name="l-148"></a><span class="tm">19:29:16</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> bugzilla is better for you ?
+<a name="l-149"></a><span class="tm">19:29:24</span><span class="nk"> &lt;yaloki&gt;</span> then again, with bugzilla, you won't really be able to have a list of stuff for the board
+<a name="l-150"></a><span class="tm">19:29:29</span><span class="nk"> &lt;yaloki&gt;</span> the queries are mind boggling...
+<a name="l-151"></a><span class="tm">19:29:36</span><span class="nk"> &lt;suseROCKs&gt;</span> true yaloki
+<a name="l-152"></a><span class="tm">19:29:41</span><span class="nk"> &lt;AlanClark&gt;</span> <span class="hi">yaloki:</span> exactly my concern
+<a name="l-153"></a><span class="tm">19:29:55</span><span class="nk"> &lt;AlanClark&gt;</span> we
+<a name="l-154"></a><span class="tm">19:30:01</span><span class="nk"> &lt;suseROCKs&gt;</span> sounds like Wiki is still the way to go.    A new page under /Board category?   That lists topics and AI's?
+<a name="l-155"></a><span class="tm">19:30:02</span><span class="nk"> &lt;AlanClark&gt;</span> we'll still end up keeping a list
+<a name="l-156"></a><span class="tm">19:30:06</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">prusnak:</span> how about a separate retro instance for the board then? retro doesn't seem all that well suited for "multi-project" setups :\
+<a name="l-157"></a><span class="tm">19:30:14</span><span class="nk"> &lt;henne&gt;</span> well
+<a name="l-158"></a><span class="tm">19:30:19</span><span class="nk"> &lt;yaloki&gt;</span> ohnoes not the wiki...
+<a name="l-159"></a><span class="tm">19:30:30</span><span class="nk"> &lt;yaloki&gt;</span> worst tool for the job :(
+<a name="l-160"></a><span class="tm">19:30:30</span><span class="nk"> &lt;henne&gt;</span> you are forgetting one thing
+<a name="l-161"></a><span class="tm">19:30:33</span><span class="nk"> &lt;prusnak&gt;</span> well, there is no clear navigation path, but bookmark will do
+<a name="l-162"></a><span class="tm">19:30:40</span><span class="nk"> &lt;prusnak&gt;</span> i guess we don't need another instance
+<a name="l-163"></a><span class="tm">19:30:41</span><span class="nk"> &lt;suseROCKs&gt;</span> we really don't even do well of documenting what it is we do/did/cleared off the table  either
+<a name="l-164"></a><span class="tm">19:30:42</span><span class="nk"> &lt;henne&gt;</span> tracking is not exclusively about reading
+<a name="l-165"></a><span class="tm">19:30:53</span><span class="nk"> &lt;henne&gt;</span> somebody also has to add things to the tracker
+<a name="l-166"></a><span class="tm">19:30:56</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> of course, it must be used
+<a name="l-167"></a><span class="tm">19:31:07</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> but e.g. the AIs from board meetings can be put in there
+<a name="l-168"></a><span class="tm">19:31:20</span><span class="nk"> &lt;yaloki&gt;</span> I used to put them there a while ago, but we didn't stick with it
+<a name="l-169"></a><span class="tm">19:31:23</span><span class="nk"> &lt;henne&gt;</span> yes. then please lets use bugzilla
+<a name="l-170"></a><span class="tm">19:31:28</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   I think that's the "human factor" you were alluding to, and you're absolutely right on that point.  But I think as we clear up the right tool to use, we can then ingrain the humanity into it  :-)
+<a name="l-171"></a><span class="tm">19:31:36</span><span class="nk"> &lt;henne&gt;</span> we already use it for AI's in other meetings
+<a name="l-172"></a><span class="tm">19:31:46</span><span class="nk"> &lt;yaloki&gt;</span> ok, good point
+<a name="l-173"></a><span class="tm">19:31:50</span><span class="nk"> &lt;prusnak&gt;</span> do we have a board product in bugzilla? :)
+<a name="l-174"></a><span class="tm">19:32:03</span><span class="nk"> &lt;henne&gt;</span> no need to
+<a name="l-175"></a><span class="tm">19:32:05</span><span class="nk"> &lt;yaloki&gt;</span> if someone makes a bitly link for the 8192 character URL for searching for board items :)
+<a name="l-176"></a><span class="tm">19:32:09</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   but how does that resolve the issue of making sure people can see a good overview of what the board is up to these days?
+<a name="l-177"></a><span class="tm">19:32:12</span><span class="nk"> &lt;henne&gt;</span> we have an action item component in opensuse.org
+<a name="l-178"></a><span class="tm">19:32:26</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> but we need a specific list of things for the board
+<a name="l-179"></a><span class="tm">19:32:38</span><span class="nk"> &lt;prusnak&gt;</span> aha, okay, then let's use bugzilla
+<a name="l-180"></a><span class="tm">19:32:38</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> and some way to have that list with a bugzilla search
+<a name="l-181"></a><span class="tm">19:32:43</span><span class="nk"> &lt;henne&gt;</span> we can use that and use [board] in the subject
+<a name="l-182"></a><span class="tm">19:32:51</span><span class="nk"> &lt;henne&gt;</span> others also do this already
+<a name="l-183"></a><span class="tm">19:33:02</span><span class="nk"> &lt;prusnak&gt;</span> so bit.ly link it is :)
+<a name="l-184"></a><span class="tm">19:33:27</span><span class="nk"> &lt;henne&gt;</span> well whats the difference to any other link? :)
+<a name="l-185"></a><span class="tm">19:33:48</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">BTW:</span> we already HAVE 3 AIs in there ;)
+<a name="l-186"></a><span class="tm">19:33:51</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so let's summarize....
+<a name="l-187"></a><span class="tm">19:33:52</span><span class="nk"> &lt;prusnak&gt;</span> ol
+<a name="l-188"></a><span class="tm">19:34:03</span><span class="nk"> &lt;suseROCKs&gt;</span> 1.  We have a way to keep track of AI's
+<a name="l-189"></a><span class="tm">19:34:09</span><span class="nk"> &lt;henne&gt;</span> http://bit.ly/opensuse_action_items
+<a name="l-190"></a><span class="tm">19:34:10</span><span class="nk"> &lt;suseROCKs&gt;</span> 2.  We have a way to get reminders
+<a name="l-191"></a><span class="tm">19:34:24</span><span class="nk"> &lt;prusnak&gt;</span> okay, so who will migrate stuff from openfate to bugzilla? or we just open a tracker bug? :)
+<a name="l-192"></a><span class="tm">19:34:29</span><span class="nk"> &lt;suseROCKs&gt;</span> 3.  But we don't have an easy user-friendly way of giving the community and externals a simple overview of everything
+<a name="l-193"></a><span class="tm">19:34:31</span><span class="nk"> &lt;henne&gt;</span> huh?
+<a name="l-194"></a><span class="tm">19:34:41</span><span class="nk"> &lt;suseROCKs&gt;</span> wait wait...
+<a name="l-195"></a><span class="tm">19:34:42</span><span class="nk"> &lt;henne&gt;</span> migrate stuff from openfate to bugzilla?
+<a name="l-196"></a><span class="tm">19:34:45</span><span class="nk"> &lt;suseROCKs&gt;</span> migrate stuff from openfate?
+<a name="l-197"></a><span class="tm">19:34:55</span><span class="nk"> &lt;henne&gt;</span> which stuff?
+<a name="l-198"></a><span class="tm">19:35:00</span><span class="nk"> &lt;suseROCKs&gt;</span> openfate is for the "where are we screwed up?"  that's a completely different issue than AI's
+<a name="l-199"></a><span class="tm">19:35:15</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-200"></a><span class="tm">19:35:28</span><span class="nk"> &lt;prusnak&gt;</span> ah, i see
+<a name="l-201"></a><span class="tm">19:35:43</span><span class="nk"> &lt;cboltz&gt;</span> hint regarding bugzilla: you can share saved searches...
+<a name="l-202"></a><span class="tm">19:35:44</span><span class="nk"> &lt;henne&gt;</span> i will clean up the queue
+<a name="l-203"></a><span class="tm">19:35:50</span><span class="nk"> &lt;suseROCKs&gt;</span> This is so we don't lose track of what we're responsible for  :-)
+<a name="l-204"></a><span class="tm">19:35:59</span><span class="nk"> &lt;henne&gt;</span> and add action items that are still vaild from the last meetings
+<a name="l-205"></a><span class="tm">19:36:05</span><span class="nk"> &lt;henne&gt;</span> and try to add other stuff
+<a name="l-206"></a><span class="tm">19:36:20</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">cboltz:</span> good point
+<a name="l-207"></a><span class="tm">19:36:35</span><span class="nk"> &lt;henne&gt;</span> and then we track this from then on in bugzilla
+<a name="l-208"></a><span class="tm">19:36:41</span><span class="nk"> &lt;henne&gt;</span> agreed?
+<a name="l-209"></a><span class="tm">19:36:46</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> sounds great
+<a name="l-210"></a><span class="tm">19:37:00</span><span class="nk"> &lt;yaloki&gt;</span> or at least as an improvement :)
+<a name="l-211"></a><span class="tm">19:37:06</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   one question... when assigning... how do I know which person's address to assign to?
+<a name="l-212"></a><span class="tm">19:37:06</span><span class="nk"> &lt;AlanClark&gt;</span> hang on, I want to walk through an example
+<a name="l-213"></a><span class="tm">19:37:22</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> keep a list ;D that totally sucks in the novell bugzilla
+<a name="l-214"></a><span class="tm">19:37:36</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> we tried to get that solved a good while ago, but to no avail
+<a name="l-215"></a><span class="tm">19:37:40</span><span class="nk"> &lt;henne&gt;</span> well you can just search for users?
+<a name="l-216"></a><span class="tm">19:37:43</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> has to do with permissions and all that
+<a name="l-217"></a><span class="tm">19:37:48</span><span class="nk"> &lt;henne&gt;</span> wait
+<a name="l-218"></a><span class="tm">19:38:09</span><span class="nk"> &lt;henne&gt;</span> user search does not work for you yaloki?
+<a name="l-219"></a><span class="tm">19:38:47</span><span class="nk"> &lt;yaloki&gt;</span> not last time I checked
+<a name="l-220"></a><span class="tm">19:39:04</span><span class="nk"> &lt;cboltz&gt;</span> you don't know the trick how to do that ;-)
+<a name="l-221"></a><span class="tm">19:39:16</span><span class="nk"> &lt;yaloki&gt;</span> great, a trick is needed...
+<a name="l-222"></a><span class="tm">19:39:20</span><span class="nk"> &lt;cboltz&gt;</span> you can enter a _part of_ the mail address in the "assigned to" field
+<a name="l-223"></a><span class="tm">19:39:24</span><span class="nk"> &lt;henne&gt;</span> no its not
+<a name="l-224"></a><span class="tm">19:39:28</span><span class="nk"> &lt;henne&gt;</span> please!
+<a name="l-225"></a><span class="tm">19:39:32</span><span class="nk"> &lt;cboltz&gt;</span> for example, you can assign a bug to "cboltz"
+<a name="l-226"></a><span class="tm">19:39:37</span><span class="nk"> &lt;suseROCKs&gt;</span> didn't know user search existed
+<a name="l-227"></a><span class="tm">19:39:39</span><span class="nk"> &lt;henne&gt;</span> on any address field there is a little icon
+<a name="l-228"></a><span class="tm">19:39:41</span><span class="nk"> &lt;cboltz&gt;</span> and bugzilla will find out my real mail address
+<a name="l-229"></a><span class="tm">19:39:42</span><span class="nk"> &lt;yaloki&gt;</span> and you have to know it's "cboltz"...
+<a name="l-230"></a><span class="tm">19:39:47</span><span class="nk"> &lt;henne&gt;</span> noooo
+<a name="l-231"></a><span class="tm">19:39:49</span><span class="nk"> &lt;yaloki&gt;</span> that's the point
+<a name="l-232"></a><span class="tm">19:39:51</span><span class="nk"> &lt;henne&gt;</span> please!
+<a name="l-233"></a><span class="tm">19:39:54</span><span class="nk"> &lt;henne&gt;</span> ARGH
+<a name="l-234"></a><span class="tm">19:40:07</span><span class="nk"> &lt;yaloki&gt;</span> hehe
+<a name="l-235"></a><span class="tm">19:40:08</span><span class="nk"> &lt;suseROCKs&gt;</span> all quiet on deck for henne!
+<a name="l-236"></a><span class="tm">19:40:15</span><span class="nk"> &lt;henne&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=614866
+<a name="l-237"></a><span class="tm">19:40:17</span><span class="nk"> &lt;henne&gt;</span> go there
+<a name="l-238"></a><span class="tm">19:40:19</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 614866 in openSUSE.org (Action Items) "[Board] 1st board post: How to behave and what happens when you don't?" [Normal,New]
+<a name="l-239"></a><span class="tm">19:40:33</span><span class="nk"> &lt;henne&gt;</span> look for "assigned to"
+<a name="l-240"></a><span class="tm">19:40:37</span><span class="nk"> &lt;henne&gt;</span> click edit
+<a name="l-241"></a><span class="tm">19:40:55</span><span class="nk"> &lt;henne&gt;</span> click on the little guy behind my name
+<a name="l-242"></a><span class="tm">19:40:57 </span><span class="nka">* yaloki</span> <span class="ac">logs in for the 20th time into something .opensuse.org/.novell.com for today</span>
+<a name="l-243"></a><span class="tm">19:41:06</span><span class="nk"> &lt;henne&gt;</span> which brings you to
+<a name="l-244"></a><span class="tm">19:41:19</span><span class="nk"> &lt;henne&gt;</span> another window where you simply can search for users
+<a name="l-245"></a><span class="tm">19:41:26</span><span class="nk"> &lt;henne&gt;</span> standard bugzilla user search
+<a name="l-246"></a><span class="tm">19:41:30</span><span class="nk"> &lt;yaloki&gt;</span> there's no little guy
+<a name="l-247"></a><span class="tm">19:41:39</span><span class="nk"> &lt;cboltz&gt;</span> ... which is only available for novellonly group :-/
+<a name="l-248"></a><span class="tm">19:41:44</span><span class="nk"> &lt;yaloki&gt;</span> right :)
+<a name="l-249"></a><span class="tm">19:42:03</span><span class="nk"> &lt;henne&gt;</span> okay. then this is something where we fail :)
+<a name="l-250"></a><span class="tm">19:42:08</span><span class="nk"> &lt;yaloki&gt;</span> totally
+<a name="l-251"></a><span class="tm">19:42:21</span><span class="nk"> &lt;yaloki&gt;</span> and tried to solve it already, but a no-no from novell
+<a name="l-252"></a><span class="tm">19:42:23</span><span class="nk"> &lt;henne&gt;</span> great. easily workable!
+<a name="l-253"></a><span class="tm">19:42:32</span><span class="nk"> &lt;yaloki&gt;</span> yes, let's have another bugtracker for opensuse :D
+<a name="l-254"></a><span class="tm">19:42:33</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> who did so?
+<a name="l-255"></a><span class="tm">19:42:42</span><span class="nk"> &lt;prusnak&gt;</span> hehe i never knew the guy is not there :-/
+<a name="l-256"></a><span class="tm">19:42:52</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">cboltz:</span> do you know?
+<a name="l-257"></a><span class="tm">19:42:53</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> I don't remember, it went to the bugzilla team in NUE IIRC, maybe poke dragotin
+<a name="l-258"></a><span class="tm">19:43:04</span><span class="nk"> &lt;cboltz&gt;</span> yes, it was me *g*
+<a name="l-259"></a><span class="tm">19:43:11</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> that topic is 2 years old IIRC, benJIman tried to get it changed
+<a name="l-260"></a><span class="tm">19:43:18</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">cboltz:</span> and how did you try? :)
+<a name="l-261"></a><span class="tm">19:43:27</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">cboltz:</span> ah, you too? hehehe
+<a name="l-262"></a><span class="tm">19:43:32</span><span class="nk"> &lt;cboltz&gt;</span> with a bugreport against bugzilla
+<a name="l-263"></a><span class="tm">19:43:38</span><span class="nk"> &lt;cboltz&gt;</span> wait a minute, I'll look it up...
+<a name="l-264"></a><span class="tm">19:43:54</span><span class="nk"> &lt;henne&gt;</span> thanks :)
+<a name="l-265"></a><span class="tm">19:44:00</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">cboltz:</span> no need to
+<a name="l-266"></a><span class="tm">19:44:22</span><span class="nk"> &lt;henne&gt;</span> i'll just start another one
+<a name="l-267"></a><span class="tm">19:44:29</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> please do
+<a name="l-268"></a><span class="tm">19:44:35</span><span class="nk"> &lt;cboltz&gt;</span> https://bugzilla.novell.com/show_bug.cgi?id=197429
+<a name="l-269"></a><span class="tm">19:44:38</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 197429 in openSUSE.org (Bugzilla) "user lookup locked" [Normal,Closed: wontfix]
+<a name="l-270"></a><span class="tm">19:44:45</span><span class="nk"> &lt;suseROCKs&gt;</span> guys... AlanClark wanted to do some kind of walkthrough scenario.  Can we let him say something now before get falls off his chair itching to say something?  :-)
+<a name="l-271"></a><span class="tm">19:45:00</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">AlanClark:</span> just shout :)
+<a name="l-272"></a><span class="tm">19:45:13</span><span class="nk"> &lt;AlanClark&gt;</span> I did but it scrolled of the screen ;-)
+<a name="l-273"></a><span class="tm">19:45:19</span><span class="nk"> &lt;yaloki&gt;</span> we're women, we can multi.. hey, wait..
+<a name="l-274"></a><span class="tm">19:45:22 </span><span class="nka">* suseROCKs</span> <span class="ac">sings  ... "You know you wanna make shout! Come on now! Shout! Ayyheyy-ay ay!"</span>
+<a name="l-275"></a><span class="tm">19:45:34</span><span class="nk"> &lt;AlanClark&gt;</span> But it's ok, let's start with bugzilla and figure it out as we go
+<a name="l-276"></a><span class="tm">19:45:39 </span><span class="nka">* yaloki</span> <span class="ac">signs  ... "Our Bugtracker sucks Monkey Balls"</span>
+<a name="l-277"></a><span class="tm">19:45:46</span><span class="nk"> &lt;yaloki&gt;</span> "sings", even
+<a name="l-278"></a><span class="tm">19:45:46</span><span class="nk"> &lt;suseROCKs&gt;</span> :-)
+<a name="l-279"></a><span class="tm">19:45:47</span><span class="nk"> &lt;AlanClark&gt;</span> everytool has its challenge
+<a name="l-280"></a><span class="tm">19:46:24</span><span class="nk"> &lt;yaloki&gt;</span> okay, anyway
+<a name="l-281"></a><span class="tm">19:46:27</span><span class="nk"> &lt;yaloki&gt;</span> wrapping that item up
+<a name="l-282"></a><span class="tm">19:46:39</span><span class="nk"> &lt;yaloki&gt;</span> 1) use bugzilla (or whatever, doesn't matter, but *one* tool)
+<a name="l-283"></a><span class="tm">19:46:56</span><span class="nk"> &lt;yaloki&gt;</span> 2) that way, have a public list/log of board todos and their progress, and who's in charge
+<a name="l-284"></a><span class="tm">19:47:01</span><span class="nk"> &lt;henne&gt;</span> ermmm
+<a name="l-285"></a><span class="tm">19:47:03</span><span class="nk"> &lt;yaloki&gt;</span> win
+<a name="l-286"></a><span class="tm">19:47:23</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">cboltz:</span> your last comment in this is: Just verified - I can now really use the user lookup :-)
+<a name="l-287"></a><span class="tm">19:47:37</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> must be ironic
+<a name="l-288"></a><span class="tm">19:47:42</span><span class="nk"> &lt;yaloki&gt;</span> or sarcastic
+<a name="l-289"></a><span class="tm">19:47:50</span><span class="nk"> &lt;cboltz&gt;</span> no, it's a different thing
+<a name="l-290"></a><span class="tm">19:48:01</span><span class="nk"> &lt;yaloki&gt;</span> because it definitely doesn't work as a list
+<a name="l-291"></a><span class="tm">19:48:10</span><span class="nk"> &lt;cboltz&gt;</span> "user lookup" means typing part of the mail address in the "assigned to" field (which works)
+<a name="l-292"></a><span class="tm">19:48:15</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,    So next question....   in regards to assignments
+<a name="l-293"></a><span class="tm">19:48:16</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> that's the knowing-part-of-the-email-address-already
+<a name="l-294"></a><span class="tm">19:48:23</span><span class="nk"> &lt;cboltz&gt;</span> but the better thing would be user search with the little icon
+<a name="l-295"></a><span class="tm">19:48:33</span><span class="nk"> &lt;henne&gt;</span> okay then this just got lost
+<a name="l-296"></a><span class="tm">19:48:33</span><span class="nk"> &lt;cboltz&gt;</span> which can search for realnames AFAIK
+<a name="l-297"></a><span class="tm">19:48:34</span><span class="nk"> &lt;henne&gt;</span> great
+<a name="l-298"></a><span class="tm">19:48:41</span><span class="nk"> &lt;yaloki&gt;</span> definitely, on names, and not on email addresses
+<a name="l-299"></a><span class="tm">19:48:49</span><span class="nk"> &lt;suseROCKs&gt;</span> Suppose we receive an item to look at  (e.g. Jos's strategy statement) and one of us diligently goes to the bugzilla and files it as an AI  but unassigned because not one of us claimed it yet...
+<a name="l-300"></a><span class="tm">19:48:50 </span><span class="nka">* henne</span> <span class="ac">opens another bugreport</span>
+<a name="l-301"></a><span class="tm">19:48:55</span><span class="nk"> &lt;suseROCKs&gt;</span> how does it work?
+<a name="l-302"></a><span class="tm">19:48:57</span><span class="nk"> &lt;henne&gt;</span> then we solve two things
+<a name="l-303"></a><span class="tm">19:49:05</span><span class="nk"> &lt;henne&gt;</span> tracking board AI's
+<a name="l-304"></a><span class="tm">19:49:06</span><span class="nk"> &lt;cboltz&gt;</span> see also https://bugzilla.novell.com/show_bug.cgi?id=374374 for a longer, earlier discussion about this
+<a name="l-305"></a><span class="tm">19:49:10</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> if it doesn't mention "[board]" in it, no one will notice
+<a name="l-306"></a><span class="tm">19:49:26</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> seriously, I'd think that a "board" component would be a lot better, even if it's going to be a pain to get it added
+<a name="l-307"></a><span class="tm">19:49:28</span><span class="nk"> &lt;AlanClark&gt;</span> can't go to bugzilla until it can be assigned
+<a name="l-308"></a><span class="tm">19:49:32</span><span class="nk"> &lt;suseROCKs&gt;</span> yaloki,   but should an "unassigned bug" be assigned to board@?
+<a name="l-309"></a><span class="tm">19:49:45</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> you can't, unless you do have a "board" component
+<a name="l-310"></a><span class="tm">19:50:11</span><span class="nk"> &lt;suseROCKs&gt;</span> AlanClark,    What do you mean you can't go to bugzilla unless its assigned?   Isn't that the problem that got us here in the first place?
+<a name="l-311"></a><span class="tm">19:50:40</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> I think AlanClark meant that as a process, but not as enforceable from a technical POV
+<a name="l-312"></a><span class="tm">19:51:09</span><span class="nk"> &lt;yaloki&gt;</span> anything unassigned for the product "openSUSE.org" and component "Action Items" goes to adrianS, apparently
+<a name="l-313"></a><span class="tm">19:51:19</span><span class="nk"> &lt;yaloki&gt;</span> sounds EWRONG
+<a name="l-314"></a><span class="tm">19:51:28</span><span class="nk"> &lt;AlanClark&gt;</span> sounds like we need a default
+<a name="l-315"></a><span class="tm">19:51:37</span><span class="nk"> &lt;suseROCKs&gt;</span> that's what I'm saying  :-)
+<a name="l-316"></a><span class="tm">19:51:39</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> can't we have one of our tools not suck at least once, please ?
+<a name="l-317"></a><span class="tm">19:51:46</span><span class="nk"> &lt;henne&gt;</span> well _a_lot_ is in the product
+<a name="l-318"></a><span class="tm">19:52:01</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> youre such a tool nazi dude
+<a name="l-319"></a><span class="tm">19:52:21</span><span class="nk"> &lt;henne&gt;</span> really ;)
+<a name="l-320"></a><span class="tm">19:52:23</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> no, I know how good tools can be used nowadays, didn't remain stuck in 1990
+<a name="l-321"></a><span class="tm">19:52:28</span><span class="nk"> &lt;henne&gt;</span> not everything is soooooo bad.
+<a name="l-322"></a><span class="tm">19:52:33</span><span class="nk"> &lt;yaloki&gt;</span> you don't even realize how badly our infrastructure sucks
+<a name="l-323"></a><span class="tm">19:52:40</span><span class="nk"> &lt;yaloki&gt;</span> compared to what's possible
+<a name="l-324"></a><span class="tm">19:52:52</span><span class="nk"> &lt;henne&gt;</span> oh i do. but i also know what happens if you change things
+<a name="l-325"></a><span class="tm">19:53:15</span><span class="nk"> &lt;suseROCKs&gt;</span> uhh  do I have to list in the minutes  "infrastructure sucks" ?  :-)
+<a name="l-326"></a><span class="tm">19:53:15</span><span class="nk"> &lt;henne&gt;</span> people (who also mainly come from the 90s) run away screaming :)
+<a name="l-327"></a><span class="tm">19:53:20</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> so what's the problem with getting a "board" component in bugzilla ?
+<a name="l-328"></a><span class="tm">19:53:33</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> nothing!
+<a name="l-329"></a><span class="tm">19:53:36</span><span class="nk"> &lt;yaloki&gt;</span> have board@o.o assigned to it as default
+<a name="l-330"></a><span class="tm">19:53:46</span><span class="nk"> &lt;yaloki&gt;</span> and then reassign when someone takes the AI
+<a name="l-331"></a><span class="tm">19:53:47</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> nothing.
+<a name="l-332"></a><span class="tm">19:53:57</span><span class="nk"> &lt;henne&gt;</span> but i would still would like to have user search for you!
+<a name="l-333"></a><span class="tm">19:54:07</span><span class="nk"> &lt;yaloki&gt;</span> yes, of course
+<a name="l-334"></a><span class="tm">19:54:16</span><span class="nk"> &lt;henne&gt;</span> so thats what i was trying to do now
+<a name="l-335"></a><span class="tm">19:54:24</span><span class="nk"> &lt;henne&gt;</span> its really no problem to have a new component
+<a name="l-336"></a><span class="tm">19:54:31</span><span class="nk"> &lt;suseROCKs&gt;</span> ok so I think my question got answered... We can assign unassigned AI's to board@... Right?
+<a name="l-337"></a><span class="tm">19:54:37</span><span class="nk"> &lt;henne&gt;</span> i can have it ready by tomorrow
+<a name="l-338"></a><span class="tm">19:54:48</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> I was just relating to "20:32:43 &lt;@henne&gt; we can use that and use [board] in the subject
+<a name="l-339"></a><span class="tm">19:54:58</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> yes
+<a name="l-340"></a><span class="tm">19:55:03</span><span class="nk"> &lt;yaloki&gt;</span> that way, yes
+<a name="l-341"></a><span class="tm">19:55:11</span><span class="nk"> &lt;yaloki&gt;</span> you can define a default assignee per component (afaik)
+<a name="l-342"></a><span class="tm">19:55:13</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> yeah but you know who will have to put AIs in there?
+<a name="l-343"></a><span class="tm">19:55:20</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> me :)
+<a name="l-344"></a><span class="tm">19:55:24</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,  No
+<a name="l-345"></a><span class="tm">19:55:28</span><span class="nk"> &lt;suseROCKs&gt;</span> Absoltuley NO!
+<a name="l-346"></a><span class="tm">19:55:28</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> the board, or people if they're properly informed about it
+<a name="l-347"></a><span class="tm">19:55:46</span><span class="nk"> &lt;suseROCKs&gt;</span> We.. the Board! have to put in AIs  not just one person.   We need to start training ourselves to deal with the admin stuff around here
+<a name="l-348"></a><span class="tm">19:55:57</span><span class="nk"> &lt;yaloki&gt;</span> but it has to be clarified whether such matters should go as an email to the board or whether it should be poured directly into bugzilla
+<a name="l-349"></a><span class="tm">19:55:59</span><span class="nk"> &lt;suseROCKs&gt;</span> we failed in that and next board, we're going to put an end to that  :-)
+<a name="l-350"></a><span class="tm">19:56:19</span><span class="nk"> &lt;yaloki&gt;</span> one, and only one way of contacting the board on such issues
+<a name="l-351"></a><span class="tm">19:56:27</span><span class="nk"> &lt;adrianS&gt;</span> <span class="hi">yaloki:</span> I can change the default owner of the Action Items
+<a name="l-352"></a><span class="tm">19:56:27</span><span class="nk"> &lt;yaloki&gt;</span> write that up on the board page on the wiki
+<a name="l-353"></a><span class="tm">19:56:29</span><span class="nk"> &lt;suseROCKs&gt;</span> yaloki,   I say let people do whatever they like best.    And then we the board, if we get an email or whatever, we turn around and file it
+<a name="l-354"></a><span class="tm">19:56:47</span><span class="nk"> &lt;adrianS&gt;</span> <span class="hi">yaloki:</span> you just need me to tell to which account
+<a name="l-355"></a><span class="tm">19:56:49</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> i was not talking about technical limitations
+<a name="l-356"></a><span class="tm">19:57:00</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> i was talking about reality...
+<a name="l-357"></a><span class="tm">19:57:06</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> well yes, but I meant that it should be _one_ way of submitting things, not a dozen (openfate).. and probably not even 2 (board@ + bugzilla)
+<a name="l-358"></a><span class="tm">19:57:12</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">adrianS:</span> you can also do another component right?
+<a name="l-359"></a><span class="tm">19:57:20</span><span class="nk"> &lt;adrianS&gt;</span> <span class="hi">yaloki:</span> it is a relict from the days where I was responsible for openSUSE project from novell side;)
+<a name="l-360"></a><span class="tm">19:57:29</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> this is NOT for submitting things
+<a name="l-361"></a><span class="tm">19:57:40</span><span class="nk"> &lt;yaloki&gt;</span> a component of its own for board would also make it a lot easier to have a list of all the items the board has on its plate
+<a name="l-362"></a><span class="tm">19:57:49</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> it's what I meant, that has to be clarified somewhere too
+<a name="l-363"></a><span class="tm">19:57:50</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   Today's reality may be that you're the one doing the filing.  But doesn't necessarily mean it always has to be the reality.   Its a mentality
+<a name="l-364"></a><span class="tm">19:58:07</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> submitting things =&gt; email to board@o.o, and the board then makes AIs if appropriate in bugzilla
+<a name="l-365"></a><span class="tm">19:58:21</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> you really do believe in the good of mankind do you? ;)
+<a name="l-366"></a><span class="tm">19:58:34</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   Yeah I do.   :-)
+<a name="l-367"></a><span class="tm">19:58:38</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> no one except us needs to know about bugzilla
+<a name="l-368"></a><span class="tm">19:58:43</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> because, precisely, some people are going to start putting stuff for the board directly in bugzilla
+<a name="l-369"></a><span class="tm">19:58:47</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> ummm
+<a name="l-370"></a><span class="tm">19:58:51</span><span class="nk"> &lt;henne&gt;</span> and no one except us should submit anything to us
+<a name="l-371"></a><span class="tm">19:58:57</span><span class="nk"> &lt;henne&gt;</span> if we want to use this as tracking!
+<a name="l-372"></a><span class="tm">19:59:04</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> well no, everyone can have a look at the bugzilla items for the board to know the state of things
+<a name="l-373"></a><span class="tm">19:59:22</span><span class="nk"> &lt;henne&gt;</span> yes sure
+<a name="l-374"></a><span class="tm">19:59:23</span><span class="nk"> &lt;yaloki&gt;</span> ... and comment...
+<a name="l-375"></a><span class="tm">19:59:24</span><span class="nk"> &lt;yaloki&gt;</span> hmh
+<a name="l-376"></a><span class="tm">19:59:30</span><span class="nk"> &lt;yaloki&gt;</span> well, why not, just try it
+<a name="l-377"></a><span class="tm">19:59:46</span><span class="nk"> &lt;yaloki&gt;</span> it's definitely an improvement
+<a name="l-378"></a><span class="tm">19:59:49</span><span class="nk"> &lt;yaloki&gt;</span> (famous last words :))
+<a name="l-379"></a><span class="tm">19:59:50</span><span class="nk"> &lt;henne&gt;</span> people can do whatever they like
+<a name="l-380"></a><span class="tm">19:59:55 </span><span class="nka">* suseROCKs</span> <span class="ac">facepalms at the strenuous discussion this has become from a simple... How do we stay on top of that one email we missed?    :-)</span>
+<a name="l-381"></a><span class="tm">19:59:57</span><span class="nk"> &lt;henne&gt;</span> and will always do
+<a name="l-382"></a><span class="tm">20:00:02</span><span class="nk"> &lt;henne&gt;</span> the question is how we use this
+<a name="l-383"></a><span class="tm">20:00:08</span><span class="nk"> &lt;henne&gt;</span> now what one can possibly do with it
+<a name="l-384"></a><span class="tm">20:00:25</span><span class="nk"> &lt;henne&gt;</span> s/now/not/
+<a name="l-385"></a><span class="tm">20:00:37</span><span class="nk"> &lt;yaloki&gt;</span> new AI in meeting or mail to board@o.o that seems appropriate for being tracked =&gt; someone on the board makes a new bug with the board component
+<a name="l-386"></a><span class="tm">20:00:46</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-387"></a><span class="tm">20:00:48</span><span class="nk"> &lt;yaloki&gt;</span> and then please track progress there on a regular basis
+<a name="l-388"></a><span class="tm">20:00:51</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-389"></a><span class="tm">20:01:00</span><span class="nk"> &lt;yaloki&gt;</span> that list can be easily found and read by everyone
+<a name="l-390"></a><span class="tm">20:01:01</span><span class="nk"> &lt;AlanClark&gt;</span> with review as part of the boardmeeting
+<a name="l-391"></a><span class="tm">20:01:08</span><span class="nk"> &lt;yaloki&gt;</span> and be used as an AI list for board meetings
+<a name="l-392"></a><span class="tm">20:01:11</span><span class="nk"> &lt;yaloki&gt;</span> yep
+<a name="l-393"></a><span class="tm">20:01:13</span><span class="nk"> &lt;henne&gt;</span> which also means we need to review them here :)
+<a name="l-394"></a><span class="tm">20:01:19</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> yes
+<a name="l-395"></a><span class="tm">20:01:22</span><span class="nk"> &lt;henne&gt;</span> same as with project meetings...
+<a name="l-396"></a><span class="tm">20:01:24</span><span class="nk"> &lt;AlanClark&gt;</span> that's 3 in agreement
+<a name="l-397"></a><span class="tm">20:01:31</span><span class="nk"> &lt;yaloki&gt;</span> sounds a lot more practical than a wiki page IMHO
+<a name="l-398"></a><span class="tm">20:01:40</span><span class="nk"> &lt;yaloki&gt;</span> but please
+<a name="l-399"></a><span class="tm">20:01:46</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">adrianS:</span> can you add a board component please?
+<a name="l-400"></a><span class="tm">20:01:46</span><span class="nk"> &lt;suseROCKs&gt;</span> make it 4 just so I don't appear anti-social  :-)
+<a name="l-401"></a><span class="tm">20:01:58</span><span class="nk"> &lt;yaloki&gt;</span> 1) write up that board should be contacted by email to board@ and *not* by putting new bugs in bugzilla
+<a name="l-402"></a><span class="tm">20:02:06</span><span class="nk"> &lt;yaloki&gt;</span> 2) add an URL to the list of board bugs
+<a name="l-403"></a><span class="tm">20:02:12</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> we can just tell that whoever does it
+<a name="l-404"></a><span class="tm">20:02:12</span><span class="nk"> &lt;yaloki&gt;</span> and put those things on the board page on the wiki
+<a name="l-405"></a><span class="tm">20:02:38</span><span class="nk"> &lt;adrianS&gt;</span> <span class="hi">henne:</span> sure ...
+<a name="l-406"></a><span class="tm">20:02:53</span><span class="nk"> &lt;adrianS&gt;</span> <span class="hi">henne:</span> who should be the default assignee ?
+<a name="l-407"></a><span class="tm">20:03:00</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">adrianS:</span> board@opensuse.org
+<a name="l-408"></a><span class="tm">20:03:02</span><span class="nk"> &lt;yaloki&gt;</span> hehehe
+<a name="l-409"></a><span class="tm">20:03:18</span><span class="nk"> &lt;yaloki&gt;</span> lemme guess, it's not in the user list in bz and it's going to be a nightmare to add it... :D
+<a name="l-410"></a><span class="tm">20:03:20</span><span class="nk"> &lt;adrianS&gt;</span> <span class="hi">yaloki:</span> this is not a bugzilla account ...
+<a name="l-411"></a><span class="tm">20:03:21</span><span class="nk"> &lt;henne&gt;</span> i create that account tomorrow
+<a name="l-412"></a><span class="tm">20:03:22</span><span class="nk"> &lt;AlanClark&gt;</span> can it be board@ or does it have to be a person?
+<a name="l-413"></a><span class="tm">20:03:28</span><span class="nk"> &lt;adrianS&gt;</span> <span class="hi">yaloki:</span> I think that does not work
+<a name="l-414"></a><span class="tm">20:03:30</span><span class="nk"> &lt;suseROCKs&gt;</span> can a default assignee be a non-ichain account?
+<a name="l-415"></a><span class="tm">20:03:32</span><span class="nk"> &lt;henne&gt;</span> it can be board
+<a name="l-416"></a><span class="tm">20:04:04</span><span class="nk"> &lt;yaloki&gt;</span> henne, adrianS: you guys sort it out :)
+<a name="l-417"></a><span class="tm">20:04:10</span><span class="nk"> &lt;yaloki&gt;</span> just hack the sources ;D
+<a name="l-418"></a><span class="tm">20:04:19</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">adrianS:</span> ill create that account tomorrow and tell you when to hit enter okay?
+<a name="l-419"></a><span class="tm">20:04:24</span><span class="nk"> &lt;AlanClark&gt;</span> I'll volunteer to be the default if board@ doesnt work
+<a name="l-420"></a><span class="tm">20:04:41</span><span class="nk"> &lt;AlanClark&gt;</span> that way I can re-asign them ;-)
+<a name="l-421"></a><span class="tm">20:04:43</span><span class="nk"> &lt;yaloki&gt;</span> mv AlanClark SPOF
+<a name="l-422"></a><span class="tm">20:04:44</span><span class="nk"> &lt;yaloki&gt;</span> :)
+<a name="l-423"></a><span class="tm">20:04:52</span><span class="nk"> &lt;suseROCKs&gt;</span> SPOF?
+<a name="l-424"></a><span class="tm">20:04:57</span><span class="nk"> &lt;yaloki&gt;</span> single point of failure
+<a name="l-425"></a><span class="tm">20:05:04</span><span class="nk"> &lt;AlanClark&gt;</span> lol
+<a name="l-426"></a><span class="tm">20:05:05</span><span class="nk"> &lt;henne&gt;</span> okay the rest i'll do too
+<a name="l-427"></a><span class="tm">20:05:06</span><span class="nk"> &lt;yaloki&gt;</span> :)
+<a name="l-428"></a><span class="tm">20:05:13</span><span class="nk"> &lt;yaloki&gt;</span> done?
+<a name="l-429"></a><span class="tm">20:05:26 </span><span class="nka">* yaloki</span> <span class="ac">preps the drinks</span>
+<a name="l-430"></a><span class="tm">20:05:48</span><span class="nk"> &lt;suseROCKs&gt;</span> yaloki,   interesting.  usually people refer to me as SF  (single failure)  :-D
+<a name="l-431"></a><span class="tm">20:05:49</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#action </span><span class="cmdline">henne make board component in bugzilla useful. add link to it to the board wiki page. move AI's into that component</span>
+<a name="l-432"></a><span class="tm">20:05:51</span><span class="nk"> &lt;adrianS&gt;</span> <span class="hi">henne:</span> actually it has worked with board@opensuse.org
+<a name="l-433"></a><span class="tm">20:06:00</span><span class="nk"> &lt;adrianS&gt;</span> it seems something has changed
+<a name="l-434"></a><span class="tm">20:06:17</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">adrianS:</span> (shhh, don't tell anyone, dragotin is listening ;D)
+<a name="l-435"></a><span class="tm">20:06:30</span><span class="nk"> &lt;adrianS&gt;</span> <span class="hi">henne:</span> so the "Board Request" component is created now, but it will take some hours to get synced to bugzilla
+<a name="l-436"></a><span class="tm">20:06:40</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">adrianS:</span> gmbl
+<a name="l-437"></a><span class="tm">20:06:49</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">adrianS:</span> just "Board", not "Board Request"
+<a name="l-438"></a><span class="tm">20:06:51</span><span class="nk"> &lt;yaloki&gt;</span> ^^
+<a name="l-439"></a><span class="tm">20:06:51</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">adrianS:</span> its not about requests
+<a name="l-440"></a><span class="tm">20:07:06</span><span class="nk"> &lt;adrianS&gt;</span> it is about bugs in in the board ? ;)
+<a name="l-441"></a><span class="tm">20:07:19</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">adrianS:</span> no, stuff the board does and that needs to be tracked
+<a name="l-442"></a><span class="tm">20:07:30</span><span class="nk"> &lt;adrianS&gt;</span> okay, I change it ...
+<a name="l-443"></a><span class="tm">20:07:34</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">adrianS:</span> thanks
+<a name="l-444"></a><span class="tm">20:07:38</span><span class="nk"> &lt;yaloki&gt;</span> no bugs in the board, we all take showers on a regular basis
+<a name="l-445"></a><span class="tm">20:07:51</span><span class="nk"> &lt;yaloki&gt;</span> but I can't vouch for the new guys :D
+<a name="l-446"></a><span class="tm">20:08:02 </span><span class="nka">* henne</span> <span class="ac">had a huge bug in his cabbage yesterday</span>
+<a name="l-447"></a><span class="tm">20:08:07</span><span class="nk"> &lt;suseROCKs&gt;</span> umm  bugs in the board is a moot topic.  yaloki's last day is today.
+<a name="l-448"></a><span class="tm">20:08:13</span><span class="nk"> &lt;suseROCKs&gt;</span> :-)
+<a name="l-449"></a><span class="tm">20:08:14</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> it's called "a cat" ;)
+<a name="l-450"></a><span class="tm">20:08:26</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">yaloki:</span> a cat has only 4 legs
+<a name="l-451"></a><span class="tm">20:08:31</span><span class="nk"> &lt;yaloki&gt;</span> oh, ic
+<a name="l-452"></a><span class="tm">20:08:45</span><span class="nk"> &lt;henne&gt;</span> from the size you might be right...
+<a name="l-453"></a><span class="tm">20:08:56</span><span class="nk"> &lt;yaloki&gt;</span> I wonder what those 2 things are that are running around downstairs then... hmm..
+<a name="l-454"></a><span class="tm">20:09:00</span><span class="nk"> &lt;henne&gt;</span> okay back to user search
+<a name="l-455"></a><span class="tm">20:09:08</span><span class="nk"> &lt;henne&gt;</span> which is now the only FAIL topic we have
+<a name="l-456"></a><span class="tm">20:09:22</span><span class="nk"> &lt;lupinstein&gt;</span> <span class="hi">yaloki:</span> thanks for all your work on the board.
+<a name="l-457"></a><span class="tm">20:09:24</span><span class="nk"> &lt;henne&gt;</span> right?
+<a name="l-458"></a><span class="tm">20:09:25</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> maybe just re-start the topic?
+<a name="l-459"></a><span class="tm">20:09:32</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">lupinstein:</span> I'm not done just yet!! lol
+<a name="l-460"></a><span class="tm">20:09:39 </span><span class="nka">* henne</span> <span class="ac">looks for the rest button on yaloki</span>
+<a name="l-461"></a><span class="tm">20:09:45</span><span class="nk"> &lt;lupinstein&gt;</span> :-)
+<a name="l-462"></a><span class="tm">20:09:47</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> maybe, just maybe it was just a misunderstanding.. *cough*
+<a name="l-463"></a><span class="tm">20:09:51</span><span class="nk"> &lt;henne&gt;</span> is the left or the right one?
+<a name="l-464"></a><span class="tm">20:10:02</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> bottom, always bottom
+<a name="l-465"></a><span class="tm">20:10:10</span><span class="nk"> &lt;prusnak&gt;</span> :)
+<a name="l-466"></a><span class="tm">20:10:17</span><span class="nk"> &lt;henne&gt;</span> okay back to being productive
+<a name="l-467"></a><span class="tm">20:10:21</span><span class="nk"> &lt;yaloki&gt;</span> ah cmon, let's be serious or PJ will think we're a bunch of amateurs again
+<a name="l-468"></a><span class="tm">20:10:25</span><span class="nk"> &lt;henne&gt;</span> bugzilla user search
+<a name="l-469"></a><span class="tm">20:11:06</span><span class="nk"> &lt;suseROCKs&gt;</span> lol
+<a name="l-470"></a><span class="tm">20:11:11</span><span class="nk"> &lt;henne&gt;</span> i can take the 5th AI today to create another bug against bugzilla
+<a name="l-471"></a><span class="tm">20:11:13</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> not much to do except open a new bug in bugzilla, or re-open the old one cboltz told us about, or use the short path and you talk to some people in ze offize
+<a name="l-472"></a><span class="tm">20:11:26</span><span class="nk"> &lt;henne&gt;</span> or does someone else want to? :)
+<a name="l-473"></a><span class="tm">20:11:57</span><span class="nk"> &lt;suseROCKs&gt;</span> why stop henne?   He's on a roll
+<a name="l-474"></a><span class="tm">20:12:04</span><span class="nk"> &lt;yaloki&gt;</span> he's on fire!
+<a name="l-475"></a><span class="tm">20:12:33</span><span class="nk"> &lt;henne&gt;</span> i just recently had a nice experience with the bugzilla team
+<a name="l-476"></a><span class="tm">20:12:41</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> tbh, that specific item would prolly be best with you, as you can talk to some people irl
+<a name="l-477"></a><span class="tm">20:12:50</span><span class="nk"> &lt;henne&gt;</span> rhorstkoetters idea of public searchable bugs has gone through a nice discussion
+<a name="l-478"></a><span class="tm">20:12:55</span><span class="nk"> &lt;henne&gt;</span> and now gets implemented
+<a name="l-479"></a><span class="tm">20:13:17</span><span class="nk"> &lt;henne&gt;</span> i need every positive experience i can get at the moment ;)
+<a name="l-480"></a><span class="tm">20:13:20</span><span class="nk"> &lt;yaloki&gt;</span> hehe
+<a name="l-481"></a><span class="tm">20:13:39</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> cmon, just take the AI
+<a name="l-482"></a><span class="tm">20:13:52 </span><span class="nka">* yaloki</span> <span class="ac">gives henne a little hug</span>
+<a name="l-483"></a><span class="tm">20:14:02 </span><span class="nka">* suseROCKs</span> <span class="ac">humps henne's leg</span>
+<a name="l-484"></a><span class="tm">20:14:14</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> PJ is watching!
+<a name="l-485"></a><span class="tm">20:14:15</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#action </span><span class="cmdline">open another bug like 374374 to get user search working in bugzilla</span>
+<a name="l-486"></a><span class="tm">20:14:20</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-487"></a><span class="tm">20:14:20</span><span class="nk"> &lt;bugbot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Action object at 0x14c2650&gt;
+<a name="l-488"></a><span class="tm">20:14:27</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#action </span><span class="cmdline">henne open another bug like 374374 to get user search working in bugzilla</span>
+<a name="l-489"></a><span class="tm">20:14:42</span><span class="nk"> &lt;suseROCKs&gt;</span> yaloki,   Hmm i guess that's what my horocope was trying to warn me about today... "Think before you speak today of ALLLL days, dude!"
+<a name="l-490"></a><span class="tm">20:14:48</span><span class="nk"> &lt;henne&gt;</span> next topic then?
+<a name="l-491"></a><span class="tm">20:15:02</span><span class="nk"> &lt;yaloki&gt;</span> there is no next topic, is there?
+<a name="l-492"></a><span class="tm">20:15:25</span><span class="nk"> &lt;AlanClark&gt;</span> close this topic
+<a name="l-493"></a><span class="tm">20:15:27</span><span class="nk"> &lt;suseROCKs&gt;</span> Q&amp;A I believe
+<a name="l-494"></a><span class="tm">20:15:30</span><span class="nk"> &lt;henne&gt;</span> yes
+<a name="l-495"></a><span class="tm">20:15:39</span><span class="nk"> &lt;henne&gt;</span> <span class="topic">#topic </span><span class="topicline">Questions and Answers</span>
+<a name="l-496"></a><span class="tm">20:15:52</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">Q:</span> where are the drinks ?
+<a name="l-497"></a><span class="tm">20:15:56</span><span class="nk"> &lt;henne&gt;</span> there are no questions on the wiki page
+<a name="l-498"></a><span class="tm">20:16:06</span><span class="nk"> &lt;henne&gt;</span> any additional topics we need to discuss now?
+<a name="l-499"></a><span class="tm">20:16:40</span><span class="nk"> &lt;suseROCKs&gt;</span> I'd like to stop calling openSUSE the base for SLE and start referring to openSUSE formally as the upstream project.   Where should I begin that discussion?
+<a name="l-500"></a><span class="tm">20:17:02</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> please use proper speling, it's "The Upstream Project" then
+<a name="l-501"></a><span class="tm">20:17:14</span><span class="nk"> &lt;suseROCKs&gt;</span> :-)
+<a name="l-502"></a><span class="tm">20:17:21</span><span class="nk"> &lt;yaloki&gt;</span> or, rather, as we're at openSUSE, it prolly should be "tHe uPstream pRoJect" :)
+<a name="l-503"></a><span class="tm">20:17:26</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">henne:</span> nah, call it a day
+<a name="l-504"></a><span class="tm">20:17:35</span><span class="nk"> &lt;yaloki&gt;</span> I wanna be done with it :)
+<a name="l-505"></a><span class="tm">20:17:38</span><span class="nk"> &lt;henne&gt;</span> <span class="hi">suseROCKs:</span> if only you want to stop calling it that then: your bed
+<a name="l-506"></a><span class="tm">20:17:54</span><span class="nk"> &lt;prusnak&gt;</span> <span class="hi">suseROCKs:</span> maybe you should discuss with people that refer so :-)
+<a name="l-507"></a><span class="tm">20:18:00</span><span class="nk"> &lt;suseROCKs&gt;</span> no seriously where should we direct such a discussion?  here or in -project meeting?
+<a name="l-508"></a><span class="tm">20:18:16</span><span class="nk"> &lt;AlanClark&gt;</span> marketing group
+<a name="l-509"></a><span class="tm">20:18:51</span><span class="nk"> &lt;henne&gt;</span> well you just have to call it that and hope
+<a name="l-510"></a><span class="tm">20:18:56</span><span class="nk"> &lt;suseROCKs&gt;</span> there's documents all over the place that calls openSUSE "base of SLE" and I think it needs to be changed.  If we're striving for independence then we need to start thinking of ourselves as upstreams, not lackeys
+<a name="l-511"></a><span class="tm">20:18:56</span><span class="nk"> &lt;henne&gt;</span> that people pick it up
+<a name="l-512"></a><span class="tm">20:19:01</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> not relevant for the board, discuss it afterwards :)
+<a name="l-513"></a><span class="tm">20:19:10</span><span class="nk"> &lt;suseROCKs&gt;</span> ok ok yaloki   :-)
+<a name="l-514"></a><span class="tm">20:19:12</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> yeah but you can't change the perception of the lazy press
+<a name="l-515"></a><span class="tm">20:19:20</span><span class="nk"> &lt;henne&gt;</span> well you can
+<a name="l-516"></a><span class="tm">20:19:21</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> as much as we can't get them to spell openSUSE correctly
+<a name="l-517"></a><span class="tm">20:19:31</span><span class="nk"> &lt;henne&gt;</span> its just not a single place you go to and turn a knob
+<a name="l-518"></a><span class="tm">20:19:42</span><span class="nk"> &lt;yaloki&gt;</span> or to ask us for an opinion before writing some drawn together crap they read on boy
+<a name="l-519"></a><span class="tm">20:19:44</span><span class="nk"> &lt;henne&gt;</span> and there really imho is no need to discuss
+<a name="l-520"></a><span class="tm">20:19:47</span><span class="nk"> &lt;henne&gt;</span> just do it :)
+<a name="l-521"></a><span class="tm">20:19:59</span><span class="nk"> &lt;suseROCKs&gt;</span> ok move on
+<a name="l-522"></a><span class="tm">20:20:11</span><span class="nk"> &lt;henne&gt;</span> alrighty
+<a name="l-523"></a><span class="tm">20:20:11</span><span class="nk"> &lt;suseROCKs&gt;</span> let yaloki have his soul back so he can live freely until the next election cycle
+<a name="l-524"></a><span class="tm">20:20:14</span><span class="nk"> &lt;henne&gt;</span> thats it then
+<a name="l-525"></a><span class="tm">20:20:17</span><span class="nk"> &lt;henne&gt;</span> no further topics
+<a name="l-526"></a><span class="tm">20:20:22</span><span class="nk"> &lt;suseROCKs&gt;</span> yaloki,   just one thing..
+<a name="l-527"></a><span class="tm">20:20:23</span><span class="nk"> &lt;henne&gt;</span> no further questions
+<a name="l-528"></a><span class="tm">20:20:31</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">suseROCKs:</span> no, I'm dressed
+<a name="l-529"></a><span class="tm">20:20:32</span><span class="nk"> &lt;suseROCKs&gt;</span> giving you the soul back is only a loaner.  We expect you back here someday!
+<a name="l-530"></a><span class="tm">20:20:32</span><span class="nk"> &lt;AlanClark&gt;</span> as a final - thanks to yaloki for spending time on the board
+<a name="l-531"></a><span class="tm">20:21:09 </span><span class="nka">* yaloki</span> <span class="ac">closes the door and vanishes into ether :D</span>
+<a name="l-532"></a><span class="tm">20:21:11 </span><span class="nka">* lupinstein</span> <span class="ac">stand and claps for yaloki</span>
+<a name="l-533"></a><span class="tm">20:21:14 </span><span class="nka">* henne</span> <span class="ac">expects yaloki to be back full force after fosdem</span>
+<a name="l-534"></a><span class="tm">20:21:24 </span><span class="nka">* yaloki</span> <span class="ac">tells henne "dream on"</span>
+<a name="l-535"></a><span class="tm">20:21:25</span><span class="nk"> &lt;henne&gt;</span> no matter if he's on the board or not
+<a name="l-536"></a><span class="tm">20:21:26</span><span class="nk"> &lt;yaloki&gt;</span> hehe
+<a name="l-537"></a><span class="tm">20:21:37</span><span class="nk"> &lt;AlanClark&gt;</span> does that mean yaloki is Tron?
+<a name="l-538"></a><span class="tm">20:21:37</span><span class="nk"> &lt;prusnak&gt;</span> horray for yaloki! :)
+<a name="l-539"></a><span class="tm">20:21:50</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">AlanClark:</span> hm.. I would be evil then
+<a name="l-540"></a><span class="tm">20:21:53</span><span class="nk"> &lt;henne&gt;</span> it means that you don't need a title to do shit :)
+<a name="l-541"></a><span class="tm">20:22:00</span><span class="nk"> &lt;henne&gt;</span> and we need to do shit
+<a name="l-542"></a><span class="tm">20:22:14</span><span class="nk"> &lt;yaloki&gt;</span> I do that every day, don't you ?
+<a name="l-543"></a><span class="tm">20:22:26</span><span class="nk"> &lt;suseROCKs&gt;</span> I get constipated
+<a name="l-544"></a><span class="tm">20:22:28</span><span class="nk"> &lt;henne&gt;</span> latest the day before yesterday :)
+<a name="l-545"></a><span class="tm">20:22:41 </span><span class="nka">* yaloki</span> <span class="ac">hands henne some sauerkraut</span>
+<a name="l-546"></a><span class="tm">20:22:42</span><span class="nk"> &lt;suseROCKs&gt;</span> henne,   PJ will have something to say about that
+<a name="l-547"></a><span class="tm">20:22:50</span><span class="nk"> &lt;henne&gt;</span> so yaloki simply can't leave
+<a name="l-548"></a><span class="tm">20:22:53</span><span class="nk"> &lt;lupinstein&gt;</span> I say we making him the official bouncer for the chat rooms.
+<a name="l-549"></a><span class="tm">20:23:05</span><span class="nk"> &lt;yaloki&gt;</span> <span class="hi">lupinstein:</span> I am one of them already
+<a name="l-550"></a><span class="tm">20:23:06</span><span class="nk"> &lt;henne&gt;</span> anyway
+<a name="l-551"></a><span class="tm">20:23:06</span><span class="nk"> &lt;lupinstein&gt;</span> he seem to be able to the wild ones
+<a name="l-552"></a><span class="tm">20:23:10</span><span class="nk"> &lt;henne&gt;</span> this meeting will end in
+<a name="l-553"></a><span class="tm">20:23:16</span><span class="nk"> &lt;yaloki&gt;</span> NAO
+<a name="l-554"></a><span class="tm">20:23:20</span><span class="nk"> &lt;henne&gt;</span> 5, 4, 3, 2, 1
+<a name="l-555"></a><span class="tm">20:23:22</span><span class="nk"> &lt;henne&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

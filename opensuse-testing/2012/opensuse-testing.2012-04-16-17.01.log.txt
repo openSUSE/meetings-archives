@@ -1,0 +1,123 @@
+17:01:42 <bmwiedemann> #startmeeting
+17:01:42 <bugbot> Meeting started Mon Apr 16 17:01:42 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+17:01:42 <bugbot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+17:01:52 <bmwiedemann> Hello everyone
+17:01:52 <bmwiedemann> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+17:01:52 <bmwiedemann> You can still add to the agenda on the wiki while the meeting is in progress
+17:02:54 <bmwiedemann> #topic 12.2 testing
+17:03:06 <bmwiedemann> LWFinger: do you want to start?
+17:03:19 <LWFinger> Yes.
+17:04:36 <LWFinger> I have installed the KDE Live CD Build 0318 on a VirtualBox VM. Other that the need to 'zypper in grub2' before installing, it went OK.
+17:06:06 <LWFinger> I am in the process of a 'zypper dup' on a VM that had an MS2 NET install of LXDE on it. That seems to be going OK.
+17:07:11 <LWFinger> I do not have any real machines running MS3, thus I have not tested graphics drivers, etc; however, kernel 3.3 and 3.4-rc2 all work OK on my hardware.
+17:07:51 <LWFinger> I have not seen any problems other than what are reported in the "most annoying bugs" list.
+17:07:55 <LWFinger> Done.
+17:08:31 <bmwiedemann> I saw in the Most-annoying-bugs list: su -c "zypper install grub2"
+17:08:35 <bmwiedemann> did sudo not work there?
+17:09:27 <LWFinger> I forgot that one. On KDE, sudo fails. It seems that it is OK under gdm, but not kdm.
+17:10:08 <bmwiedemann> what about xdg-su ?
+17:10:26 <LWFinger> I do not know.
+17:10:30 <bmwiedemann> it should map to the kdesu / gnomesu variants.
+17:12:06 <bmwiedemann> I spent little time on testing Factory. But kept openQA running
+17:12:34 <bmwiedemann> merging contributions from two people (one SUSE Maintenance QA guy)
+17:12:54 <a-865> would be nice to type most annoying bugs in search box on wiki and get a most annoying bugs URL instead of hundreds of pages with only a link to a most annoying bugs page
+17:13:53 <bmwiedemann> a-865: that comes from the default wiki search settings. I also don't like it
+17:14:09 <bmwiedemann> but I think, you can click "everything" on the results page
+17:14:43 <a-865> none on first page of hits are about 12.2
+17:15:32 <a-865> oh, there are only 6 total
+17:16:38 <bmwiedemann> a-865: I just clicked "everything" and the good results were on position 2-4
+17:16:52 <bmwiedemann> but it could indeed be default
+17:18:36 <a-865> easier for me to just look in browser history :-p
+17:18:50 <bmwiedemann> yep. this is what I do, too
+17:19:21 <LWFinger> Mine is well trained. All I do is type Most in the address line, and it is the first offering.
+17:19:34 <a-865> no one but me annoyed by bug 746595 ? Or does everyone else also install sysvinit-init?
+17:19:49 <bmwiedemann> I did not do any 12.2 testing outside of openQA, yes, but I will upgrade my fallback Laptop this month.
+17:20:42 <bmwiedemann> I just don't care about numlock
+17:21:01 <a-865> there doesn't seem to be a lot of point of testing runlevel 5 until X upgrade to something non-antique is complete
+17:21:24 <a-865> lots of mention on factory list, but not yet pushed to Factory
+17:22:18 <bmwiedemann> X-upgrade is non-trivial.
+17:22:28 <a-865> I'm a touch typer who uses numpad about as often as the whole rest of the keyboard
+17:22:42 <a-865> without NUM on not much works
+17:23:07 <a-865> it was late into 12.1 as well
+17:23:08 <bmwiedemann> but you can press the num-lock key and have it working?
+17:23:15 <LWFinger> My main keyboard does not have a separate numpad.
+17:23:32 <a-865> of course, but remembering only happens after screwing up login
+17:23:39 <a-865> i don't use laptops
+17:23:52 <a-865> I do have upwards of 30 desktops
+17:24:34 <bmwiedemann> a lot... how many of those run something newer than 12.1?
+17:25:49 <BManojlovic> it is annoying really so a-865 you are not alone on that one
+17:25:52 <a-865> I selected openSUSE primary OS of choice (and Mandriva as secondary) because Redhat/Fedora and Debian don't have support to keep NUM on on all ttys from boot
+17:27:30 <bmwiedemann> a-865: you could file a bug for the wiki search problem... it might not get far, but at least, this would raise the issue
+17:27:41 <bmwiedemann> select as component openSUSE.org
+17:28:49 <a-865> bmwiedemann: 9 machines with at least one Factory partition, 6 of those updated or installed fresh within past 60 days, delayed others waiting on X to be non-antique
+17:29:57 <bmwiedemann> having it on a partition is a good start, but do they get actual use?
+17:30:20 <a-865> mostly to see what is broken
+17:30:38 <a-865> bug follow up and discovery
+17:30:53 <a-865> different video chips and HD controllers
+17:31:17 <bmwiedemann> that is quite useful
+17:32:36 <a-865> oh, a 10th machine waiting too on X to be non-antique
+17:33:32 <a-865> and an 11th
+17:34:02 <a-865> when you have a lot it's hard to keep up with everything that's different among them
+17:35:30 <bmwiedemann> hehe. would need tools to track system state
+17:35:33 <LWFinger> My upgrade to MS3 failed. On reboot, it gets the GRUB printed, and then hangs. I don't know what's wrong yet.
+17:35:54 <a-865> I've been running into GRUB instead of boot a lot lately
+17:36:16 <a-865> like last night
+17:37:50 <a-865> found pecular bug Friday, 757081
+17:39:30 <bmwiedemann> grub2 issues?
+17:39:36 <bmwiedemann> or did someone break old grub1
+17:40:11 <LWFinger> Mine failure is with GRUB1, not 2.
+17:40:14 <a-865> bmwiedemann: I use a spreadsheet to track which machine has which OS installed, last update date, and which KDE is installed
+17:41:12 <a-865> as a multi multibooter, I'm putting off Grub2 until forced, having seen it on *buntu before ready like KDE4
+17:42:12 <bmwiedemann> a-865: Debian provided grub2 as default one year ago and they are often more conservative than the SLES guys
+17:42:29 <LWFinger> I would prefer nice graphics, but I generally plan to use GRUB2 as much as possible.
+17:43:24 <a-865> I have a #3 HD with 12.1 & 12.2 and by-id in device.map that Grub can't figure out how to successfully install to, claiming success, but resulting in GRUB instead of gfxmenu
+17:43:38 <LWFinger> On my main machine, I will use the old version until a kernel "make install" adds the new kernel to the list the way the old version does.
+17:44:36 <bmwiedemann> which is an important feature for a kernel developer :)
+17:44:45 <LWFinger> Indeed.
+17:44:52 <a-865> you think :-D
+17:46:39 <LWFinger> We have figured out what scripts need to be run, but it is not yet automatic.
+17:47:53 <bmwiedemann> tigerfoot: has added some testing report to the Testing_meeting wiki page
+17:48:43 <bmwiedemann> about grub2 & plymouth working great
+17:50:12 <bmwiedemann> is the sudo problem already filed on bnc?
+17:51:12 <LWFinger> Yes, 746704. By the time I found it, it had already been reported.
+17:53:07 <LWFinger> The amazing part was that I found it using search on bnc.
+17:54:11 <bmwiedemann> some month ago I had got one change done to bnc: advanced search also includes duplicates, so you have a better chance to find common bugs there
+17:54:20 <bmwiedemann> but maybe the title was just good
+17:55:42 <LWFinger> The title is "sudo doesn't run commands", which is quite good.
+17:56:29 <LWFinger> Of course, it was reported by Jiri Slaby.
+17:58:28 <bmwiedemann> he also does kernel development, doesn't he?
+17:59:34 <bmwiedemann> anyway... let us come to an end of this topic
+17:59:51 <LWFinger> Yes.He is the maintainer of ath5k and two other drivers.
+18:00:17 <bmwiedemann> #topic next meeting
+18:01:14 <bmwiedemann> how about 2012-05-07 which is ~10 days after MS4
+18:01:33 <LWFinger> That is OK for me.
+18:02:39 <bmwiedemann> so far every milestone has been one week late (which is good because we got mostly usable milestones)
+18:03:26 <LWFinger> Or in other words, the bugs have been so bad that they prevented booting! ;)
+18:03:58 <bmwiedemann> it is a good type of bug, though. perfectly reproducible etc
+18:04:09 <bmwiedemann> #agreet next meeting 2012-05-07 17:00
+18:04:13 <bmwiedemann> #agreed next meeting 2012-05-07 17:00
+18:04:24 <bmwiedemann> #topic open discussion
+18:05:19 <bmwiedemann> the grub2 and usrmerge have caused quite some change and trouble in 12.2, but I hope, that things will become calmer as the Beta gets closer
+18:06:39 <LWFinger> Those problems were to be expected. The transition to Plymouth seems to be fairly easy.
+18:07:24 <bmwiedemann> because tittiacoke is an experienced guy - it seems he only pushes tested code
+18:08:35 <LWFinger> We need more of that kind of developer.
+18:08:36 <bmwiedemann> I saw some strange effects on openQA though. e.g. a framebuffer of 1024x767
+18:09:01 <bmwiedemann> and green color
+18:09:20 <LWFinger> Was that really 767, and not 768?
+18:09:50 <bmwiedemann> yes. e.g. http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-NET-i586-Build0323-lxde/yast2_lan-2.png
+18:09:57 <bmwiedemann> it caused my md5sums to not match
+18:10:29 <bmwiedemann> and this only started with Build0318
+18:10:48 <bmwiedemann> the green color has been there some weeks before.
+18:11:10 <bmwiedemann> is plymouth already active by default?
+18:12:48 <LWFinger> Unknown.
+18:13:44 <bmwiedemann> I guess, I'll have to find someone like AJ or coolo who knows.
+18:13:54 <bmwiedemann> or tittiacoke
+18:14:11 <LWFinger> From his posting, tigerfoot should know.
+18:14:22 <bmwiedemann> right.
+18:16:47 <tigerfoot> hello.... big late for me :D
+18:17:08 <tigerfoot> I don't know if plymouth is already by default
+18:17:16 <tigerfoot> at least not in M3 ...
+18:18:13 <tigerfoot> and yes plymouth grub2 package are high quality ... we spend hours to fix completely the luks part of plymouth, we have nice patches to forward to lnussel
+18:18:42 <tigerfoot> but the gitorious repo is not accepting direct pull request, then it takes more times to get fixes inside it ...
+18:22:50 <bmwiedemann> OK. then let's close the meeting for today
+18:23:52 <bmwiedemann> #endmeeting

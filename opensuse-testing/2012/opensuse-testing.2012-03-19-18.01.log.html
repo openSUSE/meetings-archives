@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-testing log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:01:20</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:01:20</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Mon Mar 19 18:01:20 2012 UTC.  The chair is bmwiedemann. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:01:20</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:01:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> As always, today's agenda is on http://en.opensuse.org/openSUSE:Testing_meeting
+<a name="l-5"></a><span class="tm">18:01:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> You can still add to the agenda on the wiki while the meeting is in progress
+<a name="l-6"></a><span class="tm">18:01:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> # topic 12.2 testing
+<a name="l-7"></a><span class="tm">18:01:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">12.2 testing</span>
+<a name="l-8"></a><span class="tm">18:03:00</span><span class="nk"> &lt;bmwiedemann&gt;</span> MS2 was delayed for a week with openQA test-results showing poor quality until coolo fixed some bug
+<a name="l-9"></a><span class="tm">18:03:18</span><span class="nk"> &lt;bmwiedemann&gt;</span> so now only the LiveCDs had problems installing
+<a name="l-10"></a><span class="tm">18:03:43</span><span class="nk"> &lt;bmwiedemann&gt;</span> and for some reason, the consoletests ran in text mode instead of framebuffer
+<a name="l-11"></a><span class="tm">18:04:29</span><span class="nk"> &lt;bmwiedemann&gt;</span> I did not do manual testing so far.
+<a name="l-12"></a><span class="tm">18:04:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> how was your experience so far?
+<a name="l-13"></a><span class="tm">18:05:48</span><span class="nk"> &lt;LWFinger&gt;</span> I have installed both the NET Install (with an LXDE desktop) and the KDE Live CD, both on a VB VM.
+<a name="l-14"></a><span class="tm">18:06:48</span><span class="nk"> &lt;LWFinger&gt;</span> The NET Install seemed to go OK, but I have not yet done much testing. I was mainly checking to see that the DHCP problem was still fixed.
+<a name="l-15"></a><span class="tm">18:08:06</span><span class="nk"> &lt;LWFinger&gt;</span> The KDE Live CD had the GRUB2 problem with 2 missing files. I added the Bug # and the workaround to the most annoying bugs list.
+<a name="l-16"></a><span class="tm">18:09:01</span><span class="nk"> &lt;bmwiedemann&gt;</span> great.
+<a name="l-17"></a><span class="tm">18:09:04</span><span class="nk"> &lt;LWFinger&gt;</span> One other problem with KDE. No matter whether you select "Logg Off", "Restart", or "Shut Down", the effect is "Log Off".
+<a name="l-18"></a><span class="tm">18:09:22</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes, I also saw that one on openQA.
+<a name="l-19"></a><span class="tm">18:09:47</span><span class="nk"> &lt;LWFinger&gt;</span> That is a minor annoyance as you still have to shut down or reboot from the Login screen.
+<a name="l-20"></a><span class="tm">18:10:02</span><span class="nk"> &lt;LWFinger&gt;</span> Otherwise, no problems.
+<a name="l-21"></a><span class="tm">18:11:23</span><span class="nk"> &lt;LWFinger&gt;</span> Done.
+<a name="l-22"></a><span class="tm">18:12:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> tigerfoot, mrdocs, Ilmehtar: do you have any testing experience to share?
+<a name="l-23"></a><span class="tm">18:12:27</span><span class="nk"> &lt;LWFinger&gt;</span> One thing about the GRUB2 problem. Coolo was added to the Cc list for the bug report. It should be fixed soon.
+<a name="l-24"></a><span class="tm">18:12:58</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">bmwiedemann:</span> not recently.. just following along for the moment.. been trying to fix gcc4.7 fails
+<a name="l-25"></a><span class="tm">18:13:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">mrdocs:</span> also a good thing :)
+<a name="l-26"></a><span class="tm">18:13:38</span><span class="nk"> &lt;LWFinger&gt;</span> Have you tried a kernel build with 4.7?
+<a name="l-27"></a><span class="tm">18:18:40</span><span class="nk"> &lt;bmwiedemann&gt;</span> hmm... anything else to add to the 12.2 MS2 testing topic?
+<a name="l-28"></a><span class="tm">18:20:02</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">Next Meeting</span>
+<a name="l-29"></a><span class="tm">18:20:09</span><span class="nk"> &lt;LWFinger&gt;</span> I just looked at the Beta forum to see what was reported there. One problem with "popping" in sound, but better than MS1.
+<a name="l-30"></a><span class="tm">18:20:40</span><span class="nk"> &lt;LWFinger&gt;</span> One other user reported Video driver (Intel) problems.
+<a name="l-31"></a><span class="tm">18:20:53</span><span class="nk"> &lt;bmwiedemann&gt;</span> could be pulseaudio or kernel probs
+<a name="l-32"></a><span class="tm">18:21:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> on factory ML there was also one report about Nvidia driver, which did not compile on MS2 (needed a patch)
+<a name="l-33"></a><span class="tm">18:22:31</span><span class="nk"> &lt;LWFinger&gt;</span> That is always a problem - The patch I saw was not enough for my system with kernel 3.3. Nvidia is slow to react to new kernel API changes.
+<a name="l-34"></a><span class="tm">18:22:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> How about 2012-04-16 for the next meeting (would be 11 days after scheduled MS3 date)?
+<a name="l-35"></a><span class="tm">18:23:31</span><span class="nk"> &lt;LWFinger&gt;</span> OK here. That would be income tax day in the US, but mine are already done.
+<a name="l-36"></a><span class="tm">18:24:16</span><span class="nk"> &lt;LWFinger&gt;</span> Will Europe be on Summer Time by that date?
+<a name="l-37"></a><span class="tm">18:24:19</span><span class="nk"> &lt;bmwiedemann&gt;</span> yes
+<a name="l-38"></a><span class="tm">18:24:35</span><span class="nk"> &lt;bmwiedemann&gt;</span> so should we say 17:00 UTC then?
+<a name="l-39"></a><span class="tm">18:25:31</span><span class="nk"> &lt;LWFinger&gt;</span> I think that is right.
+<a name="l-40"></a><span class="tm">18:26:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> good. I'll update it in the wiki after our meeting
+<a name="l-41"></a><span class="tm">18:26:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="topic">#topic </span><span class="topicline">open discussion</span>
+<a name="l-42"></a><span class="tm">18:26:20</span><span class="nk"> &lt;tigerfoot&gt;</span> sorry was in late ...
+<a name="l-43"></a><span class="tm">18:26:54</span><span class="nk"> &lt;LWFinger&gt;</span> <span class="hi">tigerfoot:</span> Any MS2 experiences?
+<a name="l-44"></a><span class="tm">18:27:01</span><span class="nk"> &lt;tigerfoot&gt;</span> about factory, tittiatcoke made really nice progress with grub2/plymouth/systemd
+<a name="l-45"></a><span class="tm">18:27:46</span><span class="nk"> &lt;tigerfoot&gt;</span> we just have a pb with the boot luks.sh script but that should be solved in the next 10 days. (I need to unlock now my crypted lvm/btrfs)
+<a name="l-46"></a><span class="tm">18:27:48</span><span class="nk"> &lt;bmwiedemann&gt;</span> was thinking: what are you guys thinking about how we do testing / QA for Factory. Is the overall quality sufficient?
+<a name="l-47"></a><span class="tm">18:28:25</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> absolutely not we miss lot's of case
+<a name="l-48"></a><span class="tm">18:28:41</span><span class="nk"> &lt;mrdocs&gt;</span> it is definitely better with the automated things.. unfortunately you still need real people to find/fix things
+<a name="l-49"></a><span class="tm">18:28:50</span><span class="nk"> &lt;LWFinger&gt;</span> I think so. I used the summary to tell when to start testing post-MS1 builds.
+<a name="l-50"></a><span class="tm">18:28:56</span><span class="nk"> &lt;tigerfoot&gt;</span> and I think real cases, but writing scenarios then convert them in automated tests is time consuming
+<a name="l-51"></a><span class="tm">18:29:11 </span><span class="nka">* mrdocs</span> <span class="ac">noda</span>
+<a name="l-52"></a><span class="tm">18:29:12</span><span class="nk"> &lt;tigerfoot&gt;</span> this time is not paid, then it didn't exist ...
+<a name="l-53"></a><span class="tm">18:29:15</span><span class="nk"> &lt;mrdocs&gt;</span> nods even
+<a name="l-54"></a><span class="tm">18:29:48</span><span class="nk"> &lt;tigerfoot&gt;</span> but in the overall things to test and fixes, openQA is a wonderfull tools ...
+<a name="l-55"></a><span class="tm">18:30:21</span><span class="nk"> &lt;tigerfoot&gt;</span> we just need 10000 more tests, and find a way to run them quite easily on bare machine (ala Yast autoinstall)
+<a name="l-56"></a><span class="tm">18:30:21</span><span class="nk"> &lt;LWFinger&gt;</span> Should oversize Live CD's be added to most-annoying bugs list?
+<a name="l-57"></a><span class="tm">18:30:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> the goal of openQA was not to ensure 100% bug-freeness, but to have something testable
+<a name="l-58"></a><span class="tm">18:30:49</span><span class="nk"> &lt;mrdocs&gt;</span> any thoughts to auto-testing upgrades ?
+<a name="l-59"></a><span class="tm">18:30:50</span><span class="nk"> &lt;mrdocs&gt;</span> eg
+<a name="l-60"></a><span class="tm">18:31:04</span><span class="nk"> &lt;mrdocs&gt;</span> going from 12.1 &gt; 12.2 ?
+<a name="l-61"></a><span class="tm">18:31:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> openQA is testing dist-upgrades both with zypper dup and from .iso
+<a name="l-62"></a><span class="tm">18:31:34</span><span class="nk"> &lt;mrdocs&gt;</span> cool
+<a name="l-63"></a><span class="tm">18:31:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> just need to add 12.1 as a base-image
+<a name="l-64"></a><span class="tm">18:31:49</span><span class="nk"> &lt;bmwiedemann&gt;</span> so for now it is only 11.3-&gt;12.2 and 11.4-&gt;12.2
+<a name="l-65"></a><span class="tm">18:32:23</span><span class="nk"> &lt;LWFinger&gt;</span> Do those 11.X to 12.1 upgrades work?
+<a name="l-66"></a><span class="tm">18:32:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> this testing had caught a serious bug one day before 12.1 GM
+<a name="l-67"></a><span class="tm">18:32:59</span><span class="nk"> &lt;mrdocs&gt;</span> wow
+<a name="l-68"></a><span class="tm">18:33:13 </span><span class="nka">* tigerfoot</span> <span class="ac">remember ...</span>
+<a name="l-69"></a><span class="tm">18:33:38</span><span class="nk"> &lt;bmwiedemann&gt;</span> http://openqa.opensuse.org/viewimg/openqa/testresults/openSUSE-NET-i586-Build0263-11.4gnome32zdup/zdup-3.png looks like a bug from USRmerge
+<a name="l-70"></a><span class="tm">18:33:59</span><span class="nk"> &lt;bmwiedemann&gt;</span> or something else?
+<a name="l-71"></a><span class="tm">18:34:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> but another zypper dup from 11.4kde worked
+<a name="l-72"></a><span class="tm">18:35:29</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> perhaps for the /usr merge, having a script that at least try to open each bash script and check shebang or dig inside them path about tools mis-using /bin /sbin
+<a name="l-73"></a><span class="tm">18:36:02</span><span class="nk"> &lt;tigerfoot&gt;</span> and another one finding all rpm who put binaries in /bin /sbin in place of symlink ?
+<a name="l-74"></a><span class="tm">18:36:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> IMHO, shell scripts should keep using /bin/sh
+<a name="l-75"></a><span class="tm">18:36:20 </span><span class="nka">* tigerfoot</span> <span class="ac">doesn't speak perl that much ...</span>
+<a name="l-76"></a><span class="tm">18:36:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> otherwise, you are loosing portability
+<a name="l-77"></a><span class="tm">18:36:34</span><span class="nk"> &lt;LWFinger&gt;</span> How is that development coming? will /usr change be ready for 12.2?
+<a name="l-78"></a><span class="tm">18:36:42</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> shell script should use #!/usr/bin/env sh
+<a name="l-79"></a><span class="tm">18:36:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> really? no!
+<a name="l-80"></a><span class="tm">18:37:28</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> then your scripts normally are fully portable (even bsd etc .. with ksh, dash, bash etc )
+<a name="l-81"></a><span class="tm">18:37:55</span><span class="nk"> &lt;tigerfoot&gt;</span> python or ruby should use also the env way,
+<a name="l-82"></a><span class="tm">18:37:55</span><span class="nk"> &lt;bmwiedemann&gt;</span> you mean, those do not have /bin/sh ?
+<a name="l-83"></a><span class="tm">18:38:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> I found, that using env does make a slight difference
+<a name="l-84"></a><span class="tm">18:38:30</span><span class="nk"> &lt;bmwiedemann&gt;</span> that is: you can not use killall NAMEOFYOURSCRIPT
+<a name="l-85"></a><span class="tm">18:39:26</span><span class="nk"> &lt;bmwiedemann&gt;</span> because $0 of the process is set differently
+<a name="l-86"></a><span class="tm">18:41:13</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> oh really, was not aware of that ...
+<a name="l-87"></a><span class="tm">18:41:36</span><span class="nk"> &lt;bmwiedemann&gt;</span> as for automated testing, I would like to start with those programs, that would impact most users if they failed
+<a name="l-88"></a><span class="tm">18:42:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> inkscape and gimp are already included ;)
+<a name="l-89"></a><span class="tm">18:42:42</span><span class="nk"> &lt;bmwiedemann&gt;</span> maybe postfix &amp; thunderbird could be worthwile
+<a name="l-90"></a><span class="tm">18:42:52</span><span class="nk"> &lt;LWFinger&gt;</span> Firefox?
+<a name="l-91"></a><span class="tm">18:42:56</span><span class="nk"> &lt;bmwiedemann&gt;</span> long done
+<a name="l-92"></a><span class="tm">18:43:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> firefox was about the first thing to test after xterm
+<a name="l-93"></a><span class="tm">18:44:21</span><span class="nk"> &lt;bmwiedemann&gt;</span> (though, the firefox test is one of the hardest to maintain with the fast version updates / design changes and different theming for every of our 4 desktop environments)
+<a name="l-94"></a><span class="tm">18:47:18</span><span class="nk"> &lt;LWFinger&gt;</span> The only other program I use very much is LibreOffice.
+<a name="l-95"></a><span class="tm">18:47:23</span><span class="nk"> &lt;bmwiedemann&gt;</span> I think, I'll do auto-test of postfix+courier-imap+thunderbird next. covers a good part of the TCP/IP stack in the kernel, too
+<a name="l-96"></a><span class="tm">18:48:15</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">LWFinger:</span> testing oowriter and oomath for now. are calc and impress important?
+<a name="l-97"></a><span class="tm">18:48:27</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">bmwiedemann:</span> calc is
+<a name="l-98"></a><span class="tm">18:48:38</span><span class="nk"> &lt;tigerfoot&gt;</span> think about financial, etc ...
+<a name="l-99"></a><span class="tm">18:48:53</span><span class="nk"> &lt;tigerfoot&gt;</span> budget for openSUSE fundation :D
+<a name="l-100"></a><span class="tm">18:48:54</span><span class="nk"> &lt;LWFinger&gt;</span> For me, calc is important.
+<a name="l-101"></a><span class="tm">18:49:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK, so I'll also do that soon
+<a name="l-102"></a><span class="tm">18:50:14</span><span class="nk"> &lt;bmwiedemann&gt;</span> do we have any example tables with complicated macros?
+<a name="l-103"></a><span class="tm">18:52:57</span><span class="nk"> &lt;LWFinger&gt;</span> A quick Google search did not show anything, but I found a thread that references their automated testing. Perhaps I can find something there.
+<a name="l-104"></a><span class="tm">18:53:04</span><span class="nk"> &lt;bmwiedemann&gt;</span> I'll surely find or make me one
+<a name="l-105"></a><span class="tm">18:53:39</span><span class="nk"> &lt;bmwiedemann&gt;</span> how about instant messaging programs? aren't they important, too?
+<a name="l-106"></a><span class="tm">18:53:55</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">bmwiedemann:</span> poke mmeeks.. he might know how they do testing
+<a name="l-107"></a><span class="tm">18:54:34</span><span class="nk"> &lt;LWFinger&gt;</span> I never do IM.
+<a name="l-108"></a><span class="tm">18:55:02</span><span class="nk"> &lt;LWFinger&gt;</span> I also only do IRC for these meetings.
+<a name="l-109"></a><span class="tm">18:55:09</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="hi">mrdocs:</span> on last year's FOSDEM, I spoke to Mechtilde of openOffice QA, who told be about their testsuite, that can run core-tests in hours or extensive tests in days :)
+<a name="l-110"></a><span class="tm">18:56:17</span><span class="nk"> &lt;bmwiedemann&gt;</span> OK. testing IM would be hard anyway, as we don't seem to have any IRC or Jabber servers that could be setup in the VM
+<a name="l-111"></a><span class="tm">18:56:54</span><span class="nk"> &lt;bmwiedemann&gt;</span> ah, we have in OBS
+<a name="l-112"></a><span class="tm">19:00:16</span><span class="nk"> &lt;bmwiedemann&gt;</span> any other ideas on what to improve how?
+<a name="l-113"></a><span class="tm">19:03:13</span><span class="nk"> &lt;bmwiedemann&gt;</span> then we should conclude today's meeting
+<a name="l-114"></a><span class="tm">19:03:34</span><span class="nk"> &lt;bmwiedemann&gt;</span> thank you all for attending and making this more than a chat between me and Larry :)
+<a name="l-115"></a><span class="tm">19:03:59</span><span class="nk"> &lt;LWFinger&gt;</span> :)
+<a name="l-116"></a><span class="tm">19:04:08</span><span class="nk"> &lt;bmwiedemann&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

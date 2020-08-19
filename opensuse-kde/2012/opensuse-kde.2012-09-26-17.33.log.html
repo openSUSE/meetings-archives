@@ -1,0 +1,625 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:33:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">17:33:23</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Sep 26 17:33:23 2012 UTC.  The chair is tittiatcoke. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:33:23</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:33:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#meetingtopic </span><span class="cmdline">Welcome to the openSUSE KDE community IRC meeting! Please wait with other discussion until the meeting is over. This meeting is logged.</span>
+<a name="l-5"></a><span class="tm">17:34:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Let's start with the meeting. Who is all present ?
+<a name="l-6"></a><span class="tm">17:34:19</span><span class="nk"> &lt;skunze1&gt;</span> ping
+<a name="l-7"></a><span class="tm">17:34:30 </span><span class="nka">* mrdocs</span> <span class="ac">waves</span>
+<a name="l-8"></a><span class="tm">17:34:33</span><span class="nk"> &lt;maxlin&gt;</span> \o
+<a name="l-9"></a><span class="tm">17:34:45</span><span class="nk"> &lt;cb400f&gt;</span> o/
+<a name="l-10"></a><span class="tm">17:34:51</span><span class="nk"> &lt;NicoK&gt;</span> hi
+<a name="l-11"></a><span class="tm">17:34:55</span><span class="nk"> &lt;alin&gt;</span> hi
+<a name="l-12"></a><span class="tm">17:35:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> Topics for tonight's meeting are:
+<a name="l-13"></a><span class="tm">17:35:21</span><span class="nk"> &lt;tittiatcoke&gt;</span> 1) Team organization
+<a name="l-14"></a><span class="tm">17:35:33</span><span class="nk"> &lt;tittiatcoke&gt;</span> 2) KDE Repositories and our plans for 12.3
+<a name="l-15"></a><span class="tm">17:35:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> 3) Status reports
+<a name="l-16"></a><span class="tm">17:35:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> 4) Q&amp;A, misc
+<a name="l-17"></a><span class="tm">17:35:55</span><span class="nk"> &lt;tittiatcoke&gt;</span> any other topics that we should discuss ?
+<a name="l-18"></a><span class="tm">17:36:28</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Then lets start with the first topic.
+<a name="l-19"></a><span class="tm">17:36:44</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Team organization</span>
+<a name="l-20"></a><span class="tm">17:37:00</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77_work:</span> ping
+<a name="l-21"></a><span class="tm">17:37:15</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">cartman:</span> ping
+<a name="l-22"></a><span class="tm">17:37:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> einar77 indicated that he would be a little later
+<a name="l-23"></a><span class="tm">17:37:42</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> italians are always late...
+<a name="l-24"></a><span class="tm">17:37:51</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> joking...
+<a name="l-25"></a><span class="tm">17:38:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> I raised the topic of Team organization to discuss how we as an community team want to continue. I guess that everybody read on the mailinglist that Will can no longer full time support the KDE team as that the Boosters also has to take other tasks. Based on his indication I had the feeling that we seem to be a little lost (so to speak)
+<a name="l-26"></a><span class="tm">17:39:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> Any comments on this /
+<a name="l-27"></a><span class="tm">17:39:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> ?
+<a name="l-28"></a><span class="tm">17:40:31</span><span class="nk"> &lt;alin&gt;</span> first we shall know on whom we can really to break things
+<a name="l-29"></a><span class="tm">17:40:35</span><span class="nk"> &lt;NicoK&gt;</span> so packaging mainly needs to be done by community members?
+<a name="l-30"></a><span class="tm">17:40:41</span><span class="nk"> &lt;alin&gt;</span> I do not see rabauke
+<a name="l-31"></a><span class="tm">17:41:13</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">NicoK:</span> That's what I understood
+<a name="l-32"></a><span class="tm">17:41:14</span><span class="nk"> &lt;alin&gt;</span> krop is missing too
+<a name="l-33"></a><span class="tm">17:41:28</span><span class="nk"> &lt;NicoK&gt;</span> what does this exactly mean (will not being available), e.g. which tasks have to be done by someone else now?
+<a name="l-34"></a><span class="tm">17:41:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Correct. I had a discussion with Dimstar on the situation in the Gnome team and it is the same situation there. Gnome is community driven at the moment
+<a name="l-35"></a><span class="tm">17:41:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> rabauke couldn't make it. He seems to have only time during the weekend.
+<a name="l-36"></a><span class="tm">17:43:03</span><span class="nk"> &lt;NicoK&gt;</span> we should identify and make a list of the tasks that we need to do now - also it seems that there are some scripts out there to ease packaging in case a new version comes out - it wuold be nice to have them available somewhere
+<a name="l-37"></a><span class="tm">17:43:11</span><span class="nk"> &lt;NicoK&gt;</span> to avoid double work
+<a name="l-38"></a><span class="tm">17:43:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> A lot is already done by community members. Look at the KR49 repo. A perfect example of community work. Also KUSC is community driven.
+<a name="l-39"></a><span class="tm">17:44:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> One of the tasks that needs to be handled is the coordination of the team efforts, leading/organization the team meetings and sometimes to make a final decision on something
+<a name="l-40"></a><span class="tm">17:44:33</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> I think we shall nominate one person for each repo
+<a name="l-41"></a><span class="tm">17:44:41</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">tittiatcoke:</span> i see you in the same place as Dimstar - our benevolent overlord :)
+<a name="l-42"></a><span class="tm">17:44:50</span><span class="nk"> &lt;skunze1&gt;</span> teh things i can think of is packaging, bug assignees and support (in a broad sense) and documentation
+<a name="l-43"></a><span class="tm">17:45:00</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">mrdocs:</span> Lol :-) but I am not sure if the whole team sees it also that way
+<a name="l-44"></a><span class="tm">17:46:12</span><span class="nk"> &lt;cb400f&gt;</span> it's a meritocracy.. whoever will package stuff and fix bugs in KDF automatically becomes an/the overlord
+<a name="l-45"></a><span class="tm">17:46:24</span><span class="nk"> &lt;mrdocs&gt;</span> true
+<a name="l-46"></a><span class="tm">17:47:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> true. But still there are some things that goes beyond just packaging and fixing stuff
+<a name="l-47"></a><span class="tm">17:47:55</span><span class="nk"> &lt;skunze1&gt;</span> I guess the persons who can tell us are the ones who did the job before
+<a name="l-48"></a><span class="tm">17:48:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> Which is Bille in this case :-)
+<a name="l-49"></a><span class="tm">17:49:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> I don't think we have to sort it out tonight, but I wanted to catch your thoughts on this subject and to see if the team is ready to become completely community-driven :-)
+<a name="l-50"></a><span class="tm">17:49:43</span><span class="nk"> &lt;skunze1&gt;</span> he will be able to read this later - might be an idea to create a list of things so far done by the boosters team - for KDE of course
+<a name="l-51"></a><span class="tm">17:50:13</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">tittiatcoke:</span> I think we do not have a big choice in that - the alternative is to fail I guess
+<a name="l-52"></a><span class="tm">17:50:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> Yes. I will ask him to put some things in an email so that we can see what needs to be done and how to organize this.
+<a name="l-53"></a><span class="tm">17:50:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">skunze1:</span> :-)
+<a name="l-54"></a><span class="tm">17:51:41</span><span class="nk"> &lt;NicoK&gt;</span> maybe don't just put it into an email but also the wiki - or at least we need to sum it up in the wiki at some point...
+<a name="l-55"></a><span class="tm">17:51:57</span><span class="nk"> &lt;skunze1&gt;</span> the wiki is also a point
+<a name="l-56"></a><span class="tm">17:52:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> Another item in this category is the indication that alin did. We had the same thing in the past, but the old masters disappeared slowly. I think it would be good to nominate a responsible person for each of the repositories we have. (In my opinion this would be KRxy, KDS, KDF, KUSC).
+<a name="l-57"></a><span class="tm">17:52:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Ok. I will create a wiki page for this, where we can list the tasks we see and put also our comments there.
+<a name="l-58"></a><span class="tm">17:52:45</span><span class="nk"> &lt;NicoK&gt;</span> it should be clear then what this person is supposed to do
+<a name="l-59"></a><span class="tm">17:53:11</span><span class="nk"> &lt;Bille&gt;</span> here's an old list of the general maintainers' responsibilities: http://en.opensuse.org/openSUSE:KDE_Maintainers_Cheat_Sheet
+<a name="l-60"></a><span class="tm">17:54:05</span><span class="nk"> &lt;tittiatcoke&gt;</span> That looks like a good starting point
+<a name="l-61"></a><span class="tm">17:54:21</span><span class="nk"> &lt;NicoK&gt;</span> indeed
+<a name="l-62"></a><span class="tm">17:54:49</span><span class="nk"> &lt;mrdocs&gt;</span> dont forget if Bille is busy I can access private bugs now
+<a name="l-63"></a><span class="tm">17:55:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> noted :-)
+<a name="l-64"></a><span class="tm">17:55:11</span><span class="nk"> &lt;skunze1&gt;</span> L3 Bugs - we need to cut that out or find a solution - I think no community member has access to those
+<a name="l-65"></a><span class="tm">17:55:21</span><span class="nk"> &lt;Bille&gt;</span> i'm on leave for the next 2 weeks btw
+<a name="l-66"></a><span class="tm">17:55:38</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">skunze1:</span> the short term solution is I negitate :)
+<a name="l-67"></a><span class="tm">17:55:43</span><span class="nk"> &lt;mrdocs&gt;</span> negotiate
+<a name="l-68"></a><span class="tm">17:55:52</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">Bille:</span> btw, congrats :-)
+<a name="l-69"></a><span class="tm">17:55:53</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">skunze1:</span> yep, and we're even trying to kick those out of the openSUSE Team's task list. but it needs kde maintenance skills in another team
+<a name="l-70"></a><span class="tm">17:55:57</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">mrdocs:</span> thanks
+<a name="l-71"></a><span class="tm">17:56:18</span><span class="nk"> &lt;Bille&gt;</span> and we should do this without scoring the own goal of getting SLE to drop all kde packages :)
+<a name="l-72"></a><span class="tm">17:56:49</span><span class="nk"> &lt;skunze1&gt;</span> true :)
+<a name="l-73"></a><span class="tm">17:56:51</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">Bille:</span> you mean no more KDE in SLE ?
+<a name="l-74"></a><span class="tm">17:56:52</span><span class="nk"> &lt;maxlin&gt;</span> :)
+<a name="l-75"></a><span class="tm">17:56:59</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">mrdocs:</span> yes
+<a name="l-76"></a><span class="tm">17:56:59</span><span class="nk"> &lt;einar77&gt;</span> late late late!
+<a name="l-77"></a><span class="tm">17:57:08</span><span class="nk"> &lt;einar77&gt;</span> Is the meeting still ongoing?
+<a name="l-78"></a><span class="tm">17:57:16</span><span class="nk"> &lt;einar77&gt;</span> couldn't make any faster than this
+<a name="l-79"></a><span class="tm">17:57:25</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">einar77:</span> we're still at the first topic ;)
+<a name="l-80"></a><span class="tm">17:57:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Yup. We are at the same topic :-) Team organization
+<a name="l-81"></a><span class="tm">17:57:35</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">Bille:</span> then the question is can we maintain SLE build then ?
+<a name="l-82"></a><span class="tm">17:57:52</span><span class="nk"> &lt;mrdocs&gt;</span> even if unoffical builds
+<a name="l-83"></a><span class="tm">17:58:05</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">mrdocs:</span> *we* can certainly build vs sle releases
+<a name="l-84"></a><span class="tm">17:58:12</span><span class="nk"> &lt;skunze1&gt;</span> I mean if Gnome is in the same situation - SLE will not drop Gnome and KDE
+<a name="l-85"></a><span class="tm">17:58:17</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">mrdocs:</span> anyway that is only one bad possible outcome i want to avoid
+<a name="l-86"></a><span class="tm">17:58:23</span><span class="nk"> &lt;Bille&gt;</span> it hasn't happened
+<a name="l-87"></a><span class="tm">17:58:51</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> before we decide on reps for kde repos maybe we shall first decide on repos
+<a name="l-88"></a><span class="tm">17:59:07</span><span class="nk"> &lt;Bille&gt;</span> and it would be a dishonest outcome given that there is customer demand for kde
+<a name="l-89"></a><span class="tm">17:59:14</span><span class="nk"> &lt;Bille&gt;</span> anyway, not really on-topic
+<a name="l-90"></a><span class="tm">17:59:19</span><span class="nk"> &lt;skunze1&gt;</span> true
+<a name="l-91"></a><span class="tm">17:59:33</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> Any comments/hints from your side on how we should organize ourselves as a team
+<a name="l-92"></a><span class="tm">18:00:02</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">tittiatcoke:</span> not too many people on each responsibility, so people don't assume someone else will do a task
+<a name="l-93"></a><span class="tm">18:00:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> I would like to have first an alignment if we need such persons per repo. Then later when we have the repo's we can assign a person if required
+<a name="l-94"></a><span class="tm">18:00:34</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> Ok.
+<a name="l-95"></a><span class="tm">18:01:43</span><span class="nk"> &lt;NicoK&gt;</span> I'd say, have at least 2 persons per repo for cases of unavailability
+<a name="l-96"></a><span class="tm">18:01:45</span><span class="nk"> &lt;skunze1&gt;</span> in maintenance i'm out - I'm neither a developer nor packager (yet) and it will take a while to reach an level to take on task like this
+<a name="l-97"></a><span class="tm">18:02:16</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">NicoK:</span> +1
+<a name="l-98"></a><span class="tm">18:03:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> That would be good. I see the tasks of such person(s) to review/accept the SR's, be the main contact for that repo and in the case of KRxy when to update to a newer version.
+<a name="l-99"></a><span class="tm">18:04:28</span><span class="nk"> &lt;tittiatcoke&gt;</span> and of course to coordinate the work in that repo.
+<a name="l-100"></a><span class="tm">18:05:01</span><span class="nk"> &lt;einar77&gt;</span> not to mention that different repos have different levels of maintenance in my view
+<a name="l-101"></a><span class="tm">18:05:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> can you elaborate a little more on that ?
+<a name="l-102"></a><span class="tm">18:05:22</span><span class="nk"> &lt;NicoK&gt;</span> if main development is happening only in KDF though - then the other repo's "gurus" don't have much to do... so basically we need someone for KDF
+<a name="l-103"></a><span class="tm">18:05:50</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> a KDF needs in my view more work than a KRxy
+<a name="l-104"></a><span class="tm">18:05:59</span><span class="nk"> &lt;einar77&gt;</span> not to say that the latter is no work
+<a name="l-105"></a><span class="tm">18:06:06</span><span class="nk"> &lt;einar77&gt;</span> quite the opposite
+<a name="l-106"></a><span class="tm">18:06:24</span><span class="nk"> &lt;tittiatcoke&gt;</span> I agree, but KRxy would have monthly updates, etc. And I think that KRxy is much more exposed to the outside world than KDF
+<a name="l-107"></a><span class="tm">18:06:48</span><span class="nk"> &lt;einar77&gt;</span> hm, I gueess you're right
+<a name="l-108"></a><span class="tm">18:07:16</span><span class="nk"> &lt;NicoK&gt;</span> but KRxy should only link to KDF versions, so imho this means, after/immediately before a new release: get it building in KDF, then link it to KRxy
+<a name="l-109"></a><span class="tm">18:07:51</span><span class="nk"> &lt;NicoK&gt;</span> the only exception to that was the period of the 12.2 freeze for KDF recently
+<a name="l-110"></a><span class="tm">18:08:15</span><span class="nk"> &lt;alin&gt;</span> can we define x?
+<a name="l-111"></a><span class="tm">18:08:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> Correct, but the question would be if we have 4.9.3 in KR49 and KDF is jumping from 4.9.3 to 4.10 beta, would we no longer update KR49 to 4.9.4 when that comes ?
+<a name="l-112"></a><span class="tm">18:08:38</span><span class="nk"> &lt;alin&gt;</span> let us say.. we maintain x=current and x-1
+<a name="l-113"></a><span class="tm">18:08:47</span><span class="nk"> &lt;alin&gt;</span> the rest people are on their own?
+<a name="l-114"></a><span class="tm">18:09:01</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> I would keeep the Rxy repos until upstream EOLs
+<a name="l-115"></a><span class="tm">18:09:03</span><span class="nk"> &lt;NicoK&gt;</span> anyway, we need to keep (double) work down as much as possible; concentrating on one repo alone is already much to do
+<a name="l-116"></a><span class="tm">18:09:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> So you mean we would support KR49 and KR48 ?
+<a name="l-117"></a><span class="tm">18:09:20</span><span class="nk"> &lt;skunze1&gt;</span> for KDS the question wouldbe bugfixes for the 2 year maintenanceperiod
+<a name="l-118"></a><span class="tm">18:09:30</span><span class="nk"> &lt;einar77&gt;</span> As upstream, I would say there's little gain unless it's KDS
+<a name="l-119"></a><span class="tm">18:09:39</span><span class="nk"> &lt;NicoK&gt;</span> KDF only ever got RC's - and after an RC, normally no new minor release of the previous version comes out - 4.8.5 is the only exception I know of
+<a name="l-120"></a><span class="tm">18:09:42</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> KDS is the one that somehow is related with sled?
+<a name="l-121"></a><span class="tm">18:09:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> I am not sure. Bille ^^
+<a name="l-122"></a><span class="tm">18:10:03</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">alin:</span> no
+<a name="l-123"></a><span class="tm">18:10:22</span><span class="nk"> &lt;skunze1&gt;</span> nope KDS is the KDE Version a release was shipped with
+<a name="l-124"></a><span class="tm">18:10:24</span><span class="nk"> &lt;ctrippe&gt;</span> it is the devel project for updates for the last relaease version of opensuse
+<a name="l-125"></a><span class="tm">18:10:37</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">alin:</span> no
+<a name="l-126"></a><span class="tm">18:10:42</span><span class="nk"> &lt;alin&gt;</span> then what is the reason of a KDS?
+<a name="l-127"></a><span class="tm">18:10:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> as far as I understood KDS was created in the past where we didn't had the current maintenance support
+<a name="l-128"></a><span class="tm">18:11:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> KDS should build updates that then could be incorporated in the latest openSUSE official release.
+<a name="l-129"></a><span class="tm">18:11:21</span><span class="nk"> &lt;alin&gt;</span> then the discussion is for each repo against what base we build?
+<a name="l-130"></a><span class="tm">18:11:45</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> can't that be done in the official update repo of the oss?
+<a name="l-131"></a><span class="tm">18:11:46</span><span class="nk"> &lt;skunze1&gt;</span> KDS should only build against the release for which it was shipped
+<a name="l-132"></a><span class="tm">18:11:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> you are going to fast :-)
+<a name="l-133"></a><span class="tm">18:12:16</span><span class="nk"> &lt;skunze1&gt;</span> lets start from the top then - KDF :)
+<a name="l-134"></a><span class="tm">18:12:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> before we jump to the repository topic, can we close the first topic. I would suggest that we all look at the link that Bille provided and add our comments there. Then in the next meeting we can discuss changes and responsibility assignments. Everybody ok ?
+<a name="l-135"></a><span class="tm">18:12:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">skunze1:</span> just a sec :-)
+<a name="l-136"></a><span class="tm">18:13:10</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> ok
+<a name="l-137"></a><span class="tm">18:13:14</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">tittiatcoke:</span> ok
+<a name="l-138"></a><span class="tm">18:13:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">everyone Check the Team tasklist on http://en.opensuse.org/openSUSE:KDE_Maintainers_Cheat_Sheet</span>
+<a name="l-139"></a><span class="tm">18:14:18</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">KDE Repositories What do we want to achieve with which repo</span>
+<a name="l-140"></a><span class="tm">18:14:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Now let's have the big discussion :-)
+<a name="l-141"></a><span class="tm">18:14:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> Let's start with the number one on the list. KDE:Distro:Stable.
+<a name="l-142"></a><span class="tm">18:14:58</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> I propose to ax it
+<a name="l-143"></a><span class="tm">18:15:01</span><span class="nk"> &lt;alin&gt;</span> axe it
+<a name="l-144"></a><span class="tm">18:15:14</span><span class="nk"> &lt;NicoK&gt;</span> I personally don't have any plans with it; nor do I see its use now that we have KRxy
+<a name="l-145"></a><span class="tm">18:15:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> Currently that one contains the KDE release shipped with 12.2 and was intended to provide KDE minor updates as that there was no maintenance workflow yet.
+<a name="l-146"></a><span class="tm">18:15:41</span><span class="nk"> &lt;cb400f&gt;</span> if there are different ways to prepare patches, it has no use
+<a name="l-147"></a><span class="tm">18:15:51</span><span class="nk"> &lt;cb400f&gt;</span> (different _better_ ways)
+<a name="l-148"></a><span class="tm">18:16:05</span><span class="nk"> &lt;NicoK&gt;</span> ship updates from the according KRxy
+<a name="l-149"></a><span class="tm">18:16:24</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">NicoK:</span> probably the best
+<a name="l-150"></a><span class="tm">18:16:34</span><span class="nk"> &lt;cb400f&gt;</span> KRxy is still links from KDF no?
+<a name="l-151"></a><span class="tm">18:16:37</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">tittiatcoke:</span> i'd dispute that purpose for KDS
+<a name="l-152"></a><span class="tm">18:16:55</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> only the when x=c
+<a name="l-153"></a><span class="tm">18:16:59</span><span class="nk"> &lt;alin&gt;</span> current
+<a name="l-154"></a><span class="tm">18:17:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> Ok.Can you help out on it's purpose ?
+<a name="l-155"></a><span class="tm">18:17:13</span><span class="nk"> &lt;Bille&gt;</span> as that use was removed by KRxy and osc maintenance
+<a name="l-156"></a><span class="tm">18:17:18</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">cb400f:</span> fixed links, i.e. it does not always point to the latest version in KDF
+<a name="l-157"></a><span class="tm">18:17:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> Ok, but in the past when we didn't had KRxy and osc maintenance, it was had that purpose ?
+<a name="l-158"></a><span class="tm">18:17:46 </span><span class="nka">* tittiatcoke</span> <span class="ac">removes was</span>
+<a name="l-159"></a><span class="tm">18:18:01</span><span class="nk"> &lt;cb400f&gt;</span> say 12.2 has amarok 2.5 ... krxy has amarok 2.6.. how do prepare a patch for amarok in KRxy?
+<a name="l-160"></a><span class="tm">18:18:08</span><span class="nk"> &lt;Bille&gt;</span> the purpose it still has is to test updates to the distro release KDE
+<a name="l-161"></a><span class="tm">18:18:27</span><span class="nk"> &lt;cb400f&gt;</span> there's the test-update repo though
+<a name="l-162"></a><span class="tm">18:18:35</span><span class="nk"> &lt;Bille&gt;</span> the difference to KRxy is that you can leave it publish-enabled without affecting many users
+<a name="l-163"></a><span class="tm">18:19:06</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">Bille:</span> isn't that, what the test-update repo is there for?
+<a name="l-164"></a><span class="tm">18:19:08</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">cb400f:</span> then each revision has got to go through the maintenance team
+<a name="l-165"></a><span class="tm">18:19:27</span><span class="nk"> &lt;cb400f&gt;</span> ah, not good
+<a name="l-166"></a><span class="tm">18:20:21</span><span class="nk"> &lt;Bille&gt;</span> it also serves to define the set of packages that we maintain for the distro release
+<a name="l-167"></a><span class="tm">18:20:21</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> Do we have examples from the past where we used KDS ?
+<a name="l-168"></a><span class="tm">18:20:22</span><span class="nk"> &lt;skunze1&gt;</span> so if I understand taht correctly KDS contains the shipped state + Updates fro KDE since shipment but no new Versionsupdates
+<a name="l-169"></a><span class="tm">18:21:00</span><span class="nk"> &lt;Bille&gt;</span> otherwise how do you tell which packages to update and test? querying with osc maintainer, looking at the patterns, etc
+<a name="l-170"></a><span class="tm">18:21:16</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">skunze1:</span> not quite, we have done some .z updates in the patst
+<a name="l-171"></a><span class="tm">18:21:37</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">tittiatcoke:</span> every maintenance update to KDE went through there
+<a name="l-172"></a><span class="tm">18:21:37</span><span class="nk"> &lt;NicoK&gt;</span> only 1 or 2 iirc
+<a name="l-173"></a><span class="tm">18:21:49</span><span class="nk"> &lt;Bille&gt;</span> ie testing and adding patches
+<a name="l-174"></a><span class="tm">18:22:21</span><span class="nk"> &lt;NicoK&gt;</span> do we have the manpower to maintain that?
+<a name="l-175"></a><span class="tm">18:22:29</span><span class="nk"> &lt;ctrippe&gt;</span> IMHO the question is, do we want to ship updates to KDE SC regulrarly then we could use KRxy instead of KDS
+<a name="l-176"></a><span class="tm">18:22:31</span><span class="nk"> &lt;NicoK&gt;</span> that should be the question...
+<a name="l-177"></a><span class="tm">18:22:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> But that would mean that we should setup multiple KDS repo's. How else can we support the KDE version of 12.1 with the current KDS ?
+<a name="l-178"></a><span class="tm">18:22:43</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">ctrippe:</span> that's a question and an answer
+<a name="l-179"></a><span class="tm">18:22:59</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">tittiatcoke:</span> in practise we only tried hard to support the previous release
+<a name="l-180"></a><span class="tm">18:23:13</span><span class="nk"> &lt;Bille&gt;</span> anything else was supported via osc branches
+<a name="l-181"></a><span class="tm">18:23:37</span><span class="nk"> &lt;Bille&gt;</span> since we never had the manpower to offer perfect support for all  maintained releases
+<a name="l-182"></a><span class="tm">18:24:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. So the question would be more if we want to ship updates to KDE SC regurlary to our users.
+<a name="l-183"></a><span class="tm">18:24:43</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> as in point releases?
+<a name="l-184"></a><span class="tm">18:24:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> Correct.
+<a name="l-185"></a><span class="tm">18:25:04</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">NicoK:</span> if we, and the opensuse project (via its maintenance team) accept to ship all .z point releases as maintenance updates, you could use KRxy for that
+<a name="l-186"></a><span class="tm">18:25:08</span><span class="nk"> &lt;einar77&gt;</span> Although there may be regression, I would encourage that
+<a name="l-187"></a><span class="tm">18:25:11</span><span class="nk"> &lt;einar77&gt;</span> regressions
+<a name="l-188"></a><span class="tm">18:25:25</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">Bille:</span> +1
+<a name="l-189"></a><span class="tm">18:25:30</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">einar77:</span> +1
+<a name="l-190"></a><span class="tm">18:25:32</span><span class="nk"> &lt;einar77&gt;</span> as I said, I happen to see quite often people in the forums that have issues with version X while X.1 has it fixed
+<a name="l-191"></a><span class="tm">18:25:37</span><span class="nk"> &lt;Bille&gt;</span> the drawback is you risk pissing off regular KRxy users while you are testing yet another unproven patch from the kdepim or nepomuk teams
+<a name="l-192"></a><span class="tm">18:25:52</span><span class="nk"> &lt;cb400f&gt;</span> I'd prefer not to have nepomuk and akonadi blow up in my face every month
+<a name="l-193"></a><span class="tm">18:25:56</span><span class="nk"> &lt;cb400f&gt;</span> or plasma
+<a name="l-194"></a><span class="tm">18:25:59</span><span class="nk"> &lt;NicoK&gt;</span> this is probably the most tested repo as (and I think, I'm not only talking about myself) we developers don't use KDS...
+<a name="l-195"></a><span class="tm">18:26:12</span><span class="nk"> &lt;cb400f&gt;</span> and what about non-SC stuff?
+<a name="l-196"></a><span class="tm">18:26:21</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">cb400f:</span> toe be honest, the only big issue with 4.9.0 -&gt; 4.9.1 was the kwin regression
+<a name="l-197"></a><span class="tm">18:26:45</span><span class="nk"> &lt;cb400f&gt;</span> does that also mean pushing feature releases of digikam and amarok etc. as official updates?
+<a name="l-198"></a><span class="tm">18:26:50</span><span class="nk"> &lt;NicoK&gt;</span> and we resolved that in the packages quite quickly...
+<a name="l-199"></a><span class="tm">18:26:57</span><span class="nk"> &lt;Bille&gt;</span> anyway, thats all i have to add KDS, and i've said it already on the list
+<a name="l-200"></a><span class="tm">18:27:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> I guess we would have KUA for that one.
+<a name="l-201"></a><span class="tm">18:27:08</span><span class="nk"> &lt;skunze1&gt;</span> if we ship x.y+.z updates regularily through online updates what do we do with the users that do not want to upgrade to a newer KDE in a release - in that case we would not fix bugs - or as a alternative - we could offer a block for KDE Updates in apper ?
+<a name="l-202"></a><span class="tm">18:27:17</span><span class="nk"> &lt;NicoK&gt;</span> before shipping KRxy as an update, we should probably let 2 weeks pass...
+<a name="l-203"></a><span class="tm">18:27:36</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">cb400f:</span> i wouldn't conflate non sc app version update policy with whether to use KDS or osc branches or KRxy for maintenance update development
+<a name="l-204"></a><span class="tm">18:27:36</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">NicoK:</span> +1
+<a name="l-205"></a><span class="tm">18:27:41</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">cb400f:</span> different discussion...
+<a name="l-206"></a><span class="tm">18:27:50</span><span class="nk"> &lt;einar77&gt;</span> agreed, non SC stuff is another matter entirely
+<a name="l-207"></a><span class="tm">18:27:59</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">NicoK:</span> +1
+<a name="l-208"></a><span class="tm">18:28:12</span><span class="nk"> &lt;einar77&gt;</span> (especially since some non SC stuff is... exotic in the way they do things)
+<a name="l-209"></a><span class="tm">18:28:42</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">NicoK:</span> how would you prefer to test inter-point release patches for critical bugs that show up after you've published? osc branch?
+<a name="l-210"></a><span class="tm">18:29:21</span><span class="nk"> &lt;cb400f&gt;</span> they'd be tested in kdf I guess?
+<a name="l-211"></a><span class="tm">18:29:37</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">Bille:</span> first testing in KDF (since this is the main development project), then (if successful), update link in KRxy
+<a name="l-212"></a><span class="tm">18:29:52</span><span class="nk"> &lt;NicoK&gt;</span> before KDF probably a osc branch
+<a name="l-213"></a><span class="tm">18:29:59</span><span class="nk"> &lt;NicoK&gt;</span> that's what I did in the past
+<a name="l-214"></a><span class="tm">18:30:02</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">cb400f:</span> what if kdf is 4.10 and the last opensuse release had 4.9?
+<a name="l-215"></a><span class="tm">18:30:04</span><span class="nk"> &lt;NicoK&gt;</span> if it affects only one package
+<a name="l-216"></a><span class="tm">18:30:44</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">Bille:</span> when 4.10 lands KDF, there shouldn't be any extra point releases of 4.9
+<a name="l-217"></a><span class="tm">18:31:13</span><span class="nk"> &lt;NicoK&gt;</span> anyway, if KDF and KR49 are decoupled, packages are copied to KR49 and thus we can test 49 specific patches there
+<a name="l-218"></a><span class="tm">18:31:36</span><span class="nk"> &lt;NicoK&gt;</span> the preiod where this is necessary (and we really have 2 dev branches) should be rather short
+<a name="l-219"></a><span class="tm">18:31:41</span><span class="nk"> &lt;NicoK&gt;</span> *period
+<a name="l-220"></a><span class="tm">18:32:32</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. If I conclude on what has been said, then the KDE team would like very much to provide point releases throught the standard update process of an openSUSE release.And the preferred way of providing these updates is to utilize the KRxy reo for this.
+<a name="l-221"></a><span class="tm">18:32:44</span><span class="nk"> &lt;einar77&gt;</span> agreed
+<a name="l-222"></a><span class="tm">18:32:51</span><span class="nk"> &lt;NicoK&gt;</span> +1
+<a name="l-223"></a><span class="tm">18:33:08</span><span class="nk"> &lt;cb400f&gt;</span> most users won't be able to install them anyway thanks to pk/zypp-pk &gt;:-)
+<a name="l-224"></a><span class="tm">18:33:16</span><span class="nk"> &lt;Bille&gt;</span> cynic :)
+<a name="l-225"></a><span class="tm">18:33:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> Who in the maintenance team should be contact for this ?
+<a name="l-226"></a><span class="tm">18:33:29</span><span class="nk"> &lt;skunze1&gt;</span> sounds good for me - but I predict a shitstorm on the mailinglist
+<a name="l-227"></a><span class="tm">18:33:53</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> one more thing...what versions we build against?
+<a name="l-228"></a><span class="tm">18:34:04</span><span class="nk"> &lt;ctrippe&gt;</span> I also agree and fear the cb400f might be right :(
+<a name="l-229"></a><span class="tm">18:34:07</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">skunze1:</span> maybe on the opensuse@opensuse.org list... the opensuse-kde only has version whores
+<a name="l-230"></a><span class="tm">18:34:13</span><span class="nk"> &lt;alin&gt;</span> do we offer the last kdexy for the stone age oss?
+<a name="l-231"></a><span class="tm">18:34:37</span><span class="nk"> &lt;Bille&gt;</span> <span class="hi">tittiatcoke:</span> maintenance@opensuse.org
+<a name="l-232"></a><span class="tm">18:34:53</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">cb400f:</span> ctrippe not if they remove packagekit
+<a name="l-233"></a><span class="tm">18:35:12</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke contact the maintenance team to discuss the possiblity to provide KDE point releases throught the maintenance workflow</span>
+<a name="l-234"></a><span class="tm">18:35:14</span><span class="nk"> &lt;skunze1&gt;</span> the best would be to do it for all supported releases  if Evergreen wants to keep a version going I doubt that they keep updating the KDE Version then
+<a name="l-235"></a><span class="tm">18:35:33</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">alin:</span> sure, that's the problem :)
+<a name="l-236"></a><span class="tm">18:35:48</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">skunze1:</span> the problem is that new kde means new base libs
+<a name="l-237"></a><span class="tm">18:35:59</span><span class="nk"> &lt;NicoK&gt;</span> for peoply not wanting to update, "zypper al" should be made available more prominently in the updaters, e.g. in YOU, it should block the patch, not the packages...
+<a name="l-238"></a><span class="tm">18:36:07</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">alin:</span> if it is clear that the repo is frozen without updates and maintenance - then why not
+<a name="l-239"></a><span class="tm">18:36:09</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">skunze1:</span> and you end up forcing them to update packages they do not want... a lot of work for us
+<a name="l-240"></a><span class="tm">18:36:24</span><span class="nk"> &lt;skunze1&gt;</span> then only the space on the server is limiting
+<a name="l-241"></a><span class="tm">18:36:40</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">skunze1:</span> kr49 shall we build it against 12.1?
+<a name="l-242"></a><span class="tm">18:36:59</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">skunze1:</span> or only 12.2 and factory... maybe troubleweed?
+<a name="l-243"></a><span class="tm">18:37:23</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">alin:</span> I only would decide this on a case by case basis. If it can be done with reasonable work I am all for it otherwise don't build for the oldest oS release
+<a name="l-244"></a><span class="tm">18:37:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> I would propose to build the KRxy releases to the current openSUSE release and the release -1.
+<a name="l-245"></a><span class="tm">18:38:01</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">alin:</span> difficult
+<a name="l-246"></a><span class="tm">18:38:02</span><span class="nk"> &lt;einar77&gt;</span> speaking of version updates, I have some thoughts but I'd rather put them at the end of the topics unless there's something in the queue to discuss
+<a name="l-247"></a><span class="tm">18:38:02</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">ctrippe:</span> reasonable for you and I means one thing... always you will find people who think is reasonable to run 49 on 11.4
+<a name="l-248"></a><span class="tm">18:38:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> what would be your proposal for KR49 ?
+<a name="l-249"></a><span class="tm">18:38:59</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">alin:</span> sure, but if we don't provide it they have to live with it.
+<a name="l-250"></a><span class="tm">18:39:51</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> if we agree to ship point releases as updates, there won't be anything to do for 12.2 anyway since 4.8.5 was the last in the 4.8 series...
+<a name="l-251"></a><span class="tm">18:39:53</span><span class="nk"> &lt;skunze1&gt;</span> tumbleweed should not really concern us - as it is only a link anyway
+<a name="l-252"></a><span class="tm">18:40:25</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">tittiatcoke:</span> I agree with your KR49 proposal (although I have no idea how its state for 11.4 is).
+<a name="l-253"></a><span class="tm">18:40:36</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">NicoK:</span> you would propose to only update .z releases but not .y
+<a name="l-254"></a><span class="tm">18:40:41</span><span class="nk"> &lt;skunze1&gt;</span> its one option
+<a name="l-255"></a><span class="tm">18:41:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">skunze1:</span> You are thinking of shipping KDE 4.9.1 to the 12.2 users as an update ?
+<a name="l-256"></a><span class="tm">18:41:13</span><span class="nk"> &lt;NicoK&gt;</span> that's how I read the discussion - me personally, I'll go for the latest release anyway :P
+<a name="l-257"></a><span class="tm">18:41:41</span><span class="nk"> &lt;skunze1&gt;</span> but the f.e we probably will skip some releases (like there will never be an official release with 4.9
+<a name="l-258"></a><span class="tm">18:41:50</span><span class="nk"> &lt;skunze1&gt;</span> me to personally
+<a name="l-259"></a><span class="tm">18:42:26</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">tittiatcoke:</span> it would be a major break from the past
+<a name="l-260"></a><span class="tm">18:42:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> In my opinion if people want to update to a newer KDE version, then they either should switch to tumbleweed or utilize the newer KRxy repo. (in this case KR49).
+<a name="l-261"></a><span class="tm">18:43:00</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> I'm on the fence, as I said earlier
+<a name="l-262"></a><span class="tm">18:43:09</span><span class="nk"> &lt;skunze1&gt;</span> but in the end what do we save when we cut KDS but maintain a lot of KDRx.y#s
+<a name="l-263"></a><span class="tm">18:43:13</span><span class="nk"> &lt;einar77&gt;</span> especially wrt point updates
+<a name="l-264"></a><span class="tm">18:43:43</span><span class="nk"> &lt;cb400f&gt;</span> mine too.. the point releases are bad enough, major feature upgrades is madness of fedoraesque proportions
+<a name="l-265"></a><span class="tm">18:43:46</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">tittiatcoke:</span> +1
+<a name="l-266"></a><span class="tm">18:43:49</span><span class="nk"> &lt;NicoK&gt;</span> we don't maintain a lot of KRxy - only the latest! (same as with KDS - there was only one)
+<a name="l-267"></a><span class="tm">18:44:28</span><span class="nk"> &lt;tittiatcoke&gt;</span> If we have a sudden bug in the KDE version shipped with 12.1, then KDS wouldn't help us here either.
+<a name="l-268"></a><span class="tm">18:45:18</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> but we have a chance of fixing it in the appropriate KRxy if someone put the patch there...
+<a name="l-269"></a><span class="tm">18:45:21</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">NicoK:</span>  weoffer on the server KDR 4.7 for 11.4 , 4.8 for 11.4/12.1/12.2 and 4.9 for 11.4712.1/12.2 if I'm not mistaken - some might be only mirrored but they are there
+<a name="l-270"></a><span class="tm">18:45:42</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> +yes, but we have...
+<a name="l-271"></a><span class="tm">18:45:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Correct, :-)
+<a name="l-272"></a><span class="tm">18:45:55</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">cb400f:</span> actually I am of the opposite view
+<a name="l-273"></a><span class="tm">18:46:09</span><span class="nk"> &lt;einar77&gt;</span> from my user support (distro-agnostic) PoV
+<a name="l-274"></a><span class="tm">18:46:32</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">einar77:</span> user support can be a pain :)
+<a name="l-275"></a><span class="tm">18:46:44</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> But I would like to prevent that we are creating a kind of KDE tumbleweed :-)
+<a name="l-276"></a><span class="tm">18:46:57</span><span class="nk"> &lt;maxlin&gt;</span> sorry, just back. so we supposed cut KDS and do maintenance update from KRxy?
+<a name="l-277"></a><span class="tm">18:47:04</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">skunze1:</span> they are there, but after having polished their latest updates, they barely ever rebuild and thus contain a stable state without additional effort necessary for the old KRxys
+<a name="l-278"></a><span class="tm">18:47:07</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">maxlin:</span> That is the current proposal
+<a name="l-279"></a><span class="tm">18:47:27</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">NicoK:</span> ok - as I said i'm not a packager
+<a name="l-280"></a><span class="tm">18:47:30</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> agreed as well
+<a name="l-281"></a><span class="tm">18:47:46</span><span class="nk"> &lt;maxlin&gt;</span> then how about the rest of applications, ex. ktorrent, etc
+<a name="l-282"></a><span class="tm">18:47:56</span><span class="nk"> &lt;maxlin&gt;</span> if they need a update?
+<a name="l-283"></a><span class="tm">18:48:06</span><span class="nk"> &lt;ctrippe&gt;</span> Do we do this, dropping KDS, already now, or do we leave it for 12.2?
+<a name="l-284"></a><span class="tm">18:48:17</span><span class="nk"> &lt;skunze1&gt;</span> currentlywe have the updatedapps repo?
+<a name="l-285"></a><span class="tm">18:48:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> So I would propose to build KR47 for 11.4,  KR48 for 11.4/12.1/12.2 and KR49 for 12.1/12.2. Anyway in a few months we would drop the overall support for 11.4
+<a name="l-286"></a><span class="tm">18:48:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">maxlin:</span> If there are bugfixes, then we provide them through the normal maintenance workflow. Otherwise we have KUA for this
+<a name="l-287"></a><span class="tm">18:49:02</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">skunze1:</span> KUA is non-SC version upgrades ... not patches for existing versions in the released distro
+<a name="l-288"></a><span class="tm">18:49:13</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">maxlin:</span> Until now we only discussed the KDE SC, how this effects updates for e.g. amarok has to follow
+<a name="l-289"></a><span class="tm">18:49:27</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">cb400f:</span> ok
+<a name="l-290"></a><span class="tm">18:49:29</span><span class="nk"> &lt;maxlin&gt;</span> ok
+<a name="l-291"></a><span class="tm">18:49:47 </span><span class="nka">* Bille</span> <span class="ac">is going to bed</span>
+<a name="l-292"></a><span class="tm">18:49:53</span><span class="nk"> &lt;Bille&gt;</span> 2 hours sleep in last 27
+<a name="l-293"></a><span class="tm">18:49:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">Bille:</span> Good night and thanks
+<a name="l-294"></a><span class="tm">18:50:02</span><span class="nk"> &lt;Bille&gt;</span> i look forward to the minutes!
+<a name="l-295"></a><span class="tm">18:50:15</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">Bille:</span> good night
+<a name="l-296"></a><span class="tm">18:51:02</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">Bille:</span> good night (and congrats as I didn't say this earlier)
+<a name="l-297"></a><span class="tm">18:51:06</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> me... current and factory
+<a name="l-298"></a><span class="tm">18:51:49</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> if people want to use new versions update... if not remain with the maximum offered by some previous KRxx
+<a name="l-299"></a><span class="tm">18:52:13</span><span class="nk"> &lt;Bille&gt;</span> thx
+<a name="l-300"></a><span class="tm">18:52:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> why would we build KR49 against factory ? Do we not have KDF for that
+<a name="l-301"></a><span class="tm">18:52:40</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> true
+<a name="l-302"></a><span class="tm">18:53:05</span><span class="nk"> &lt;einar77&gt;</span> indeed
+<a name="l-303"></a><span class="tm">18:53:20</span><span class="nk"> &lt;NicoK&gt;</span> +1
+<a name="l-304"></a><span class="tm">18:53:52</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> I go to grub something to munch... but I shall be back for our goals
+<a name="l-305"></a><span class="tm">18:54:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> ok
+<a name="l-306"></a><span class="tm">18:55:23</span><span class="nk"> &lt;NicoK&gt;</span> let's continue though - we don't have all night ;)
+<a name="l-307"></a><span class="tm">18:55:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> So we agree on my proposal ?
+<a name="l-308"></a><span class="tm">18:56:03</span><span class="nk"> &lt;NicoK&gt;</span> KR47 for 11.4,  KR48 for 11.4/12.1/12.2 and KR49 for 12.1/12.2?
+<a name="l-309"></a><span class="tm">18:56:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> Yup
+<a name="l-310"></a><span class="tm">18:56:21</span><span class="nk"> &lt;NicoK&gt;</span> and additionally KDF for 12.1, 12.2, Factory?
+<a name="l-311"></a><span class="tm">18:56:31</span><span class="nk"> &lt;ctrippe&gt;</span> +1
+<a name="l-312"></a><span class="tm">18:56:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> I believe KDF should only be build for Factory and 12.2
+<a name="l-313"></a><span class="tm">18:56:39</span><span class="nk"> &lt;cb400f&gt;</span> what would be the point of pushing 4.9 to 12.2?
+<a name="l-314"></a><span class="tm">18:56:55</span><span class="nk"> &lt;cb400f&gt;</span> it's extra work, and with zero benefit to anyone
+<a name="l-315"></a><span class="tm">18:57:01</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> Just to provide a repo for those 12.2 that would like to update
+<a name="l-316"></a><span class="tm">18:57:09</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> fine with me
+<a name="l-317"></a><span class="tm">18:57:26</span><span class="nk"> &lt;cb400f&gt;</span> ah, crap, I misunderstood.. thought it was about official updates
+<a name="l-318"></a><span class="tm">18:57:28</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> restricting it to 12.2 and Factory also reduces build load
+<a name="l-319"></a><span class="tm">18:57:31</span><span class="nk"> &lt;cb400f&gt;</span> carry on, nothing to see
+<a name="l-320"></a><span class="tm">18:57:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-321"></a><span class="tm">18:57:56</span><span class="nk"> &lt;maxlin&gt;</span> fine with me
+<a name="l-322"></a><span class="tm">18:58:22</span><span class="nk"> &lt;maxlin&gt;</span> next?
+<a name="l-323"></a><span class="tm">18:58:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. I assume this is agreed then
+<a name="l-324"></a><span class="tm">18:58:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#info </span><span class="cmdline">KR47 builds for 11.4, KR48 builds for 11.4/12.1/12.2, KR49 build for 12.1/12.2 and KDF builds for 12.2/Factory</span>
+<a name="l-325"></a><span class="tm">18:59:51</span><span class="nk"> &lt;skunze1&gt;</span> sounds good
+<a name="l-326"></a><span class="tm">19:00:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">development workflow for new opensuse releases</span>
+<a name="l-327"></a><span class="tm">19:01:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Next topic
+<a name="l-328"></a><span class="tm">19:01:35 </span><span class="nka">* tigerfoot</span> <span class="ac">arrive only now, what a backlog ... congrats guys :-)</span>
+<a name="l-329"></a><span class="tm">19:02:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> The current development workflow is to have the newer KDE release (snapshots) in KUSC, then when it reaches RC level to move it to KDF and then move it to Factory.
+<a name="l-330"></a><span class="tm">19:02:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess we should add that once it moves to Factory we also should start setting up the KRxy repo for it.
+<a name="l-331"></a><span class="tm">19:02:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> Based on what we discussed I do not see a reason to change this.
+<a name="l-332"></a><span class="tm">19:03:02</span><span class="nk"> &lt;ctrippe&gt;</span> +1
+<a name="l-333"></a><span class="tm">19:03:16</span><span class="nk"> &lt;tigerfoot&gt;</span> +1
+<a name="l-334"></a><span class="tm">19:03:18</span><span class="nk"> &lt;NicoK&gt;</span> so KRxy repo just before the release with the final version in it?
+<a name="l-335"></a><span class="tm">19:03:32</span><span class="nk"> &lt;NicoK&gt;</span> or are you talking about setting it up with the RCs, too?
+<a name="l-336"></a><span class="tm">19:03:46</span><span class="nk"> &lt;NicoK&gt;</span> I'd go for the first...
+<a name="l-337"></a><span class="tm">19:03:47</span><span class="nk"> &lt;tigerfoot&gt;</span> and especially if the publish build is looked down until the release is real
+<a name="l-338"></a><span class="tm">19:04:23</span><span class="nk"> &lt;NicoK&gt;</span> publish will be disabled before the release in KRxy as well...
+<a name="l-339"></a><span class="tm">19:04:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> +1
+<a name="l-340"></a><span class="tm">19:04:45</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">NicoK:</span> My understanding would be only before the final version
+<a name="l-341"></a><span class="tm">19:05:10</span><span class="nk"> &lt;NicoK&gt;</span> ok (@final version only)
+<a name="l-342"></a><span class="tm">19:05:21</span><span class="nk"> &lt;tittiatcoke&gt;</span> +1
+<a name="l-343"></a><span class="tm">19:06:05</span><span class="nk"> &lt;NicoK&gt;</span> in general, this means that KRxy will probably be delayed a bit in publishing the latest release as it needs to be fully building in KDF first before we link it in KRxy
+<a name="l-344"></a><span class="tm">19:06:35</span><span class="nk"> &lt;NicoK&gt;</span> so depending on how long we need to polish in KDF, KRxy may not have build and published right at release day - hopefully KDF will though
+<a name="l-345"></a><span class="tm">19:06:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#info </span><span class="cmdline">Development workflow remains the same KUSC -&gt; KDF (rc's) -&gt; Factory. KRxy repo will be setup just before the openSUSE release.</span>
+<a name="l-346"></a><span class="tm">19:07:13</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> KRxy repo will be setup just before the KDE xy release
+<a name="l-347"></a><span class="tm">19:07:17</span><span class="nk"> &lt;NicoK&gt;</span> noe openSUSE
+<a name="l-348"></a><span class="tm">19:07:24</span><span class="nk"> &lt;NicoK&gt;</span> *not
+<a name="l-349"></a><span class="tm">19:07:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok
+<a name="l-350"></a><span class="tm">19:07:29</span><span class="nk"> &lt;maxlin&gt;</span> yeah
+<a name="l-351"></a><span class="tm">19:07:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#info </span><span class="cmdline">Development workflow remains the same KUSC -&gt; KDF (rc's) -&gt; Factory. KRxy repo will be setup just before the KDE release</span>
+<a name="l-352"></a><span class="tm">19:07:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> Will correct that in the minutes :-)
+<a name="l-353"></a><span class="tm">19:08:24</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Targetted KDE release for 12.3</span>
+<a name="l-354"></a><span class="tm">19:08:40</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> also this is just the development workflow for new major KDE releases - not minor like 4.9.2
+<a name="l-355"></a><span class="tm">19:08:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> Maybe this is an open door, but are we targetting to release 12.3 with KDE 4.10 or 4.9.x ?
+<a name="l-356"></a><span class="tm">19:08:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Correct
+<a name="l-357"></a><span class="tm">19:09:21</span><span class="nk"> &lt;skunze1&gt;</span> first question - when will 12.3 be released?
+<a name="l-358"></a><span class="tm">19:09:25</span><span class="nk"> &lt;cb400f&gt;</span> assuming 12.3 is released in March, 4.10
+<a name="l-359"></a><span class="tm">19:09:45</span><span class="nk"> &lt;cb400f&gt;</span> but we don't know that.. only it's pretty certain it will not be _before_ march
+<a name="l-360"></a><span class="tm">19:09:52</span><span class="nk"> &lt;skunze1&gt;</span> if march I would target 4.10 - depending on when the freeze is
+<a name="l-361"></a><span class="tm">19:10:05</span><span class="nk"> &lt;NicoK&gt;</span> since we'd like to ship point releases as updates now, we could go with 4.10, right?
+<a name="l-362"></a><span class="tm">19:10:09</span><span class="nk"> &lt;cb400f&gt;</span> the freeze would be about 2 months before.. so it would be tight
+<a name="l-363"></a><span class="tm">19:10:17</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">mrdocs:</span> Are you aware of any timing for 12.3 ?
+<a name="l-364"></a><span class="tm">19:10:41</span><span class="nk"> &lt;cb400f&gt;</span> exactly like 11.4 which shipped in march 2011 with nice and byggy 4.6.0
+<a name="l-365"></a><span class="tm">19:10:56</span><span class="nk"> &lt;skunze1&gt;</span> March would be the regular release of 12.3 - not counting the 12.2 delay - so it would be 6month after 12.2
+<a name="l-366"></a><span class="tm">19:11:01</span><span class="nk"> &lt;rabauke&gt;</span> good evening gentlemen! :)
+<a name="l-367"></a><span class="tm">19:11:04 </span><span class="nka">* tigerfoot</span> <span class="ac">look around in rumor thread .... look the bird's fligth and say March is good :-)</span>
+<a name="l-368"></a><span class="tm">19:11:18</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">05/03/2012:</span> 4.10.1 release - if that's around the same time of 12.3, we could immediately ship that, too
+<a name="l-369"></a><span class="tm">19:11:35</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">tigerfoot:</span> this question should to coolo :)
+<a name="l-370"></a><span class="tm">19:11:35</span><span class="nk"> &lt;einar77&gt;</span> I can keep up to speed with upstream's changed
+<a name="l-371"></a><span class="tm">19:11:35</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">tigerfoot:</span> evil forces are fighting for the 12 year cycle
+<a name="l-372"></a><span class="tm">19:11:37</span><span class="nk"> &lt;einar77&gt;</span> changes
+<a name="l-373"></a><span class="tm">19:11:41</span><span class="nk"> &lt;skunze1&gt;</span> like we did the 4.8.5 this time
+<a name="l-374"></a><span class="tm">19:11:44</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">tittiatcoke:</span> this question should to coolo :)
+<a name="l-375"></a><span class="tm">19:11:48</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">tigerfoot:</span> sorry
+<a name="l-376"></a><span class="tm">19:11:55</span><span class="nk"> &lt;cb400f&gt;</span> (of course because their real agenda is to promote tumbleweed over opensuse)
+<a name="l-377"></a><span class="tm">19:11:58</span><span class="nk"> &lt;einar77&gt;</span> I'm keeping watch of many things upstream
+<a name="l-378"></a><span class="tm">19:12:00</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">maxlin:</span> no problems :-)
+<a name="l-379"></a><span class="tm">19:12:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">maxlin:</span> Will check tomorrow with coolo
+<a name="l-380"></a><span class="tm">19:12:26</span><span class="nk"> &lt;einar77&gt;</span> what I can tell you already for 4.10
+<a name="l-381"></a><span class="tm">19:12:36</span><span class="nk"> &lt;skunze1&gt;</span> if we get to a 12 months cycle - someone would always be screwed - either GNOME or KDE
+<a name="l-382"></a><span class="tm">19:12:38</span><span class="nk"> &lt;mrdocs&gt;</span> <span class="hi">tittiatcoke:</span> no idea on timing for 12.3, the sum up at the summit was 12.2 delay was an exception
+<a name="l-383"></a><span class="tm">19:12:46</span><span class="nk"> &lt;skunze1&gt;</span> so the would be the worst possible option
+<a name="l-384"></a><span class="tm">19:12:49</span><span class="nk"> &lt;rabauke&gt;</span> I'd go for shipping 4.10 and those that want a more stable KDE release wait until 4.10.1 or .2 has been shipped.
+<a name="l-385"></a><span class="tm">19:12:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke check with coolo the release calendar for 12.3 and when the freeze would be</span>
+<a name="l-386"></a><span class="tm">19:12:57</span><span class="nk"> &lt;mrdocs&gt;</span> and no one at the sumiit mentioned changing our schedule
+<a name="l-387"></a><span class="tm">19:12:58</span><span class="nk"> &lt;cb400f&gt;</span> september would also be a quite sucky release time for 12 month releases imho
+<a name="l-388"></a><span class="tm">19:13:08</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">rabauke:</span> bear in mind that a lot of new things might introduce regressions
+<a name="l-389"></a><span class="tm">19:13:12</span><span class="nk"> &lt;cb400f&gt;</span> with the summer holidays and such
+<a name="l-390"></a><span class="tm">19:13:30</span><span class="nk"> &lt;einar77&gt;</span> (I'm seeing some atm, not saying that they won't be fixed, but these aren't minor bugs)
+<a name="l-391"></a><span class="tm">19:13:35</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess that with 12.3 we would have the first option to release utilize the new maintenance updates as that we would have then a release that ships either the .0 or .1 relase
+<a name="l-392"></a><span class="tm">19:13:35</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">einar77:</span> that's why people can wait until after the .0 release. assuming .1 etc. are shipped.
+<a name="l-393"></a><span class="tm">19:13:56</span><span class="nk"> &lt;mrdocs&gt;</span> cartman can also be pinged about the release... we now have a real review team :)
+<a name="l-394"></a><span class="tm">19:14:12</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">einar77:</span> and 12.3 as such is "a lot of new things". AFAIK kdelibs is "frozen" anyway until KDE5.
+<a name="l-395"></a><span class="tm">19:14:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">mrdocs:</span> Ok.
+<a name="l-396"></a><span class="tm">19:14:20</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">rabauke:</span> plasmoids -&gt; QML
+<a name="l-397"></a><span class="tm">19:14:37</span><span class="nk"> &lt;einar77&gt;</span> often the transition is not painless
+<a name="l-398"></a><span class="tm">19:14:39</span><span class="nk"> &lt;cb400f&gt;</span> also there'd be about 6 weeks after 12.3 freeze to backport patches from upstream.. so it wouldn't be completely fresh, vanilla 4.10
+<a name="l-399"></a><span class="tm">19:14:46</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">einar77:</span> could they be worst than actually ...
+<a name="l-400"></a><span class="tm">19:14:57</span><span class="nk"> &lt;einar77&gt;</span> on the topic of patches
+<a name="l-401"></a><span class="tm">19:14:59</span><span class="nk"> &lt;rabauke&gt;</span> sure, but as I said, shipping .0 and minor releases until .5 will give users the choice when to change their distro.
+<a name="l-402"></a><span class="tm">19:15:17</span><span class="nk"> &lt;einar77&gt;</span> I was thinking that perhaps there should be a way to keep a lits of things we might want in
+<a name="l-403"></a><span class="tm">19:15:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> what do you mean with things we might want in ?
+<a name="l-404"></a><span class="tm">19:15:52</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> example in case is udisks2
+<a name="l-405"></a><span class="tm">19:15:54</span><span class="nk"> &lt;einar77&gt;</span> for example
+<a name="l-406"></a><span class="tm">19:16:05</span><span class="nk"> &lt;einar77&gt;</span> no one noticed it was there
+<a name="l-407"></a><span class="tm">19:16:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. But that one is already in KDF :-)
+<a name="l-408"></a><span class="tm">19:16:15</span><span class="nk"> &lt;einar77&gt;</span> but I mean, we discovered it existed and it didn't work
+<a name="l-409"></a><span class="tm">19:16:22</span><span class="nk"> &lt;einar77&gt;</span> because alin had a problem with mounting
+<a name="l-410"></a><span class="tm">19:16:48</span><span class="nk"> &lt;skunze1&gt;</span> but udisks2 comes anyway for gnome so worst case udisk1 needs to be maintained by KDE if we are the only one shipping it - or am I completely wrong here?
+<a name="l-411"></a><span class="tm">19:16:51</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">Bille:</span> how would you classify a patch to be applied from upstream after freeze?
+<a name="l-412"></a><span class="tm">19:16:54</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">skunze1:</span> it was an example
+<a name="l-413"></a><span class="tm">19:17:08</span><span class="nk"> &lt;einar77&gt;</span> I mean, the questions are actuqlly 2
+<a name="l-414"></a><span class="tm">19:17:08</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Bille isn't there anymore. He went to bed after a rough night :-)
+<a name="l-415"></a><span class="tm">19:17:23</span><span class="nk"> &lt;einar77&gt;</span> 1. what makes a patch worthy of inclusion?
+<a name="l-416"></a><span class="tm">19:17:35</span><span class="nk"> &lt;einar77&gt;</span> 2. how do we keep in touch with upstream to know what's needed?
+<a name="l-417"></a><span class="tm">19:17:42</span><span class="nk"> &lt;einar77&gt;</span> I can probably give a hand with point 2
+<a name="l-418"></a><span class="tm">19:17:49</span><span class="nk"> &lt;rabauke&gt;</span> 1. crash/data loss for sure
+<a name="l-419"></a><span class="tm">19:17:54</span><span class="nk"> &lt;einar77&gt;</span> since I follow development quite closely
+<a name="l-420"></a><span class="tm">19:18:13</span><span class="nk"> &lt;einar77&gt;</span> (I read k-c-d, kde-pim, nepomuk and I'm subscribed to plasma-devel)
+<a name="l-421"></a><span class="tm">19:19:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess we also have to look at what components are being upgraded by other parties in Factory. udisks2 was announced by the Gnome team, so we had time to prepare ourselves. The next big chunck is going to be the removal of ConsoleKit, where we would require additional patches to kdebase4-workspace so that it gets systemd awareness. Those patches are not even upstream
+<a name="l-422"></a><span class="tm">19:19:43</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> powerdevil support for systemd is in since today
+<a name="l-423"></a><span class="tm">19:19:46</span><span class="nk"> &lt;einar77&gt;</span> (FYI)
+<a name="l-424"></a><span class="tm">19:19:58</span><span class="nk"> &lt;einar77&gt;</span> that's what I meant by reporting this stuff
+<a name="l-425"></a><span class="tm">19:20:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> That one, yes. But without the workspace patch, you would loose shutdown, suspend, etc
+<a name="l-426"></a><span class="tm">19:20:18</span><span class="nk"> &lt;einar77&gt;</span> but I'd rather keep a list somewhere, I assume the wiki *cannot* be used for this?
+<a name="l-427"></a><span class="tm">19:20:37</span><span class="nk"> &lt;skunze1&gt;</span> metabug?
+<a name="l-428"></a><span class="tm">19:20:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> I guess this is exactly what the next topic should cover. :-)
+<a name="l-429"></a><span class="tm">19:20:55</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> so I was a little on a rush ;)
+<a name="l-430"></a><span class="tm">19:21:12</span><span class="nk"> &lt;tittiatcoke&gt;</span> To close the current topic. I guess that most votes goes to provide KDE 4.10 with 12.3 (if the release schedule allows it) ?
+<a name="l-431"></a><span class="tm">19:21:24</span><span class="nk"> &lt;einar77&gt;</span> being upstream-biased I say +1
+<a name="l-432"></a><span class="tm">19:21:30</span><span class="nk"> &lt;skunze1&gt;</span> yes
+<a name="l-433"></a><span class="tm">19:21:31</span><span class="nk"> &lt;rabauke&gt;</span> +1
+<a name="l-434"></a><span class="tm">19:21:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> ?
+<a name="l-435"></a><span class="tm">19:21:54</span><span class="nk"> &lt;cb400f&gt;</span> like you have to ask ;-)
+<a name="l-436"></a><span class="tm">19:21:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-437"></a><span class="tm">19:21:58</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">einar77:</span> after freeze...in my experience, if that patch fix the crash, segmentation fault, feature lost, such critical bug, even they possibly cause ship-block
+<a name="l-438"></a><span class="tm">19:22:01</span><span class="nk"> &lt;skunze1&gt;</span> otherwise we would be in the same situation like with 12.2 - shipping with a not current version
+<a name="l-439"></a><span class="tm">19:22:31</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">maxlin:</span> good point
+<a name="l-440"></a><span class="tm">19:22:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#info </span><span class="cmdline">Target is shipping KDE 4.10 with openSUSE 12.3</span>
+<a name="l-441"></a><span class="tm">19:22:56</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">einar77:</span> other minor bugs could throught maintenance update after release
+<a name="l-442"></a><span class="tm">19:22:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Improvement and other points for KDE in openSUSE 12.3</span>
+<a name="l-443"></a><span class="tm">19:23:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Your topic :-)
+<a name="l-444"></a><span class="tm">19:23:15</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> mine too
+<a name="l-445"></a><span class="tm">19:23:31</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> ok, so basically we need to keep a list of tihngs we want applied
+<a name="l-446"></a><span class="tm">19:23:44</span><span class="nk"> &lt;einar77&gt;</span> and eventually *remove* them once they're no longer needed (upstream etc)
+<a name="l-447"></a><span class="tm">19:23:49</span><span class="nk"> &lt;einar77&gt;</span> ti would IMO help packaging
+<a name="l-448"></a><span class="tm">19:23:50</span><span class="nk"> &lt;tittiatcoke&gt;</span> So as indicated we have current udisks2 support in KDF, based on upstream. fcrozat is working on a new version of systemd which would obsolete ConsoleKit.
+<a name="l-449"></a><span class="tm">19:24:19</span><span class="nk"> &lt;einar77&gt;</span> current KDE isn't as patched as in the good old days, but there are a number of patches still
+<a name="l-450"></a><span class="tm">19:24:21</span><span class="nk"> &lt;alin&gt;</span> I have 2 points... 1 build a desktop theme with a colour scheme consistent with our branding (Produkt with changed colours?) 2. ktp?
+<a name="l-451"></a><span class="tm">19:24:43</span><span class="nk"> &lt;NicoK&gt;</span> sorry, I was away for 2 min - yes@4.10 for 12.3 as mentioned earlier
+<a name="l-452"></a><span class="tm">19:24:46</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">alin:</span> for 2 I think the next version might probably be enough for daily use
+<a name="l-453"></a><span class="tm">19:25:25</span><span class="nk"> &lt;einar77&gt;</span> it should be put in a repo that's not KUP (once the next version is out) and be throroughly tested
+<a name="l-454"></a><span class="tm">19:25:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> I would propose to do two things. Let's create a wiki page that lists these items that we would like to see or need to do. Another is that we should create a metabug to list those bugs that could cause a ship-block.
+<a name="l-455"></a><span class="tm">19:25:45</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">einar77:</span> the ideaisto move it in kr people can see it... bugs discovered
+<a name="l-456"></a><span class="tm">19:25:50</span><span class="nk"> &lt;skunze1&gt;</span> I started using ktp as my work messenger since 12.2 is out - it works quite well - but what we definitely would need is a metapackage - now you have to install every plugin manually
+<a name="l-457"></a><span class="tm">19:26:00</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> ++
+<a name="l-458"></a><span class="tm">19:26:00</span><span class="nk"> &lt;rabauke&gt;</span> artwork is always hard to get and very subjective. So I wonder whether it's worth the effort. In fact the air theme fits any branding since it is transparent.
+<a name="l-459"></a><span class="tm">19:26:01</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">tittiatcoke:</span> +1
+<a name="l-460"></a><span class="tm">19:26:09</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">tittiatcoke:</span> +1
+<a name="l-461"></a><span class="tm">19:26:12</span><span class="nk"> &lt;rabauke&gt;</span> you could adjust the blue to green
+<a name="l-462"></a><span class="tm">19:26:40</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">rabauke:</span> yes... and we shall... product does more is more subtle
+<a name="l-463"></a><span class="tm">19:26:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke create a wiki page to list the items we need to do and create a metabug to be used to list the ship-block bugs</span>
+<a name="l-464"></a><span class="tm">19:27:00</span><span class="nk"> &lt;NicoK&gt;</span> tittiatcoke +1 @ wiki page
+<a name="l-465"></a><span class="tm">19:27:12</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">tittiatcoke:</span> and maybe a 2nd metabug for the smaller bugs - something like the papercut initiative - not a must fix but a list of nice to have fixes
+<a name="l-466"></a><span class="tm">19:27:16</span><span class="nk"> &lt;tigerfoot&gt;</span> +1 and offer link to ml
+<a name="l-467"></a><span class="tm">19:27:25</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">tigerfoot:</span> definitely
+<a name="l-468"></a><span class="tm">19:27:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">skunze1:</span> +1
+<a name="l-469"></a><span class="tm">19:27:47</span><span class="nk"> &lt;NicoK&gt;</span> +1
+<a name="l-470"></a><span class="tm">19:27:52</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">alin:</span> when aya was used there was a discussion about it being too old fashioned etc. That's why I would vote for using whatever upstream uses and just adjust the colours, i.e. highlight colour, shadowe etc.
+<a name="l-471"></a><span class="tm">19:28:30</span><span class="nk"> &lt;skunze1&gt;</span> I have to admit that i actually always liked our artwork
+<a name="l-472"></a><span class="tm">19:28:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> As soon as the wiki-page is there you could list your proposal. It can then be discussed at the next meeting.
+<a name="l-473"></a><span class="tm">19:28:51</span><span class="nk"> &lt;rabauke&gt;</span> currently it's upstream.
+<a name="l-474"></a><span class="tm">19:29:10</span><span class="nk"> &lt;rabauke&gt;</span> = least work for opensUSE
+<a name="l-475"></a><span class="tm">19:29:38</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> +1
+<a name="l-476"></a><span class="tm">19:30:05</span><span class="nk"> &lt;rabauke&gt;</span> sounds good
+<a name="l-477"></a><span class="tm">19:30:10</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">rabauke:</span> yes... at the moment we do not do it
+<a name="l-478"></a><span class="tm">19:30:27</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> I can help on the todo things
+<a name="l-479"></a><span class="tm">19:30:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. I guess we can close this topic. We can add our items to the wiki page as soon as I have created it :-)
+<a name="l-480"></a><span class="tm">19:30:31</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">rabauke:</span> I would prefer a more dark greenish with very light gray for font, so errors and bugs are less visible :-)
+<a name="l-481"></a><span class="tm">19:30:45</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">tigerfoot:</span> LOL
+<a name="l-482"></a><span class="tm">19:30:45</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> in fact I can try to keep it up to date wrt the upstream work
+<a name="l-483"></a><span class="tm">19:30:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> Thanks
+<a name="l-484"></a><span class="tm">19:30:57</span><span class="nk"> &lt;rabauke&gt;</span> that'S the problem with artwork, many like different things. :)
+<a name="l-485"></a><span class="tm">19:30:59</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">einar77:</span> thx ...
+<a name="l-486"></a><span class="tm">19:31:16</span><span class="nk"> &lt;einar77&gt;</span> <span class="hi">tittiatcoke:</span> you may want to set up an action, so I don't forget and I'm motivated ;)
+<a name="l-487"></a><span class="tm">19:31:24</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">rabauke:</span> and packaging it, is a pain, or at least not yet efficient ...
+<a name="l-488"></a><span class="tm">19:31:33</span><span class="nk"> &lt;alin&gt;</span> so nobody tried produkt
+<a name="l-489"></a><span class="tm">19:31:44</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> You were talking about the artwork ?
+<a name="l-490"></a><span class="tm">19:31:52</span><span class="nk"> &lt;einar77&gt;</span> no, patches etc
+<a name="l-491"></a><span class="tm">19:31:56</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok :-)
+<a name="l-492"></a><span class="tm">19:32:00</span><span class="nk"> &lt;tigerfoot&gt;</span> :-)
+<a name="l-493"></a><span class="tm">19:32:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">einar77 helping out with patches</span>
+<a name="l-494"></a><span class="tm">19:32:20</span><span class="nk"> &lt;einar77&gt;</span> I said because I need to take my leave now
+<a name="l-495"></a><span class="tm">19:32:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok.
+<a name="l-496"></a><span class="tm">19:32:29</span><span class="nk"> &lt;einar77&gt;</span> but I'll read the rest of the minutes later or tomorrow morning
+<a name="l-497"></a><span class="tm">19:32:29</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">alin:</span> the screenshots I saw looked dark grey + orange, plain layout.
+<a name="l-498"></a><span class="tm">19:32:29</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">alin:</span> produkt is too blue :)
+<a name="l-499"></a><span class="tm">19:32:38</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">einar77:</span> have a good night
+<a name="l-500"></a><span class="tm">19:32:39</span><span class="nk"> &lt;einar77&gt;</span> see you later guys!
+<a name="l-501"></a><span class="tm">19:32:44</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">einar77:</span> See you later. Thanks
+<a name="l-502"></a><span class="tm">19:32:53</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">einar77:</span> cu :)
+<a name="l-503"></a><span class="tm">19:33:05</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. guys let's push this a little :-)
+<a name="l-504"></a><span class="tm">19:33:14</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Status Report.</span>
+<a name="l-505"></a><span class="tm">19:33:18 </span><span class="nka">* tigerfoot</span> <span class="ac">going out, not with einar77 , continue this excellent mood of meeting ...</span>
+<a name="l-506"></a><span class="tm">19:33:26</span><span class="nk"> &lt;tittiatcoke&gt;</span> Any status reports ?
+<a name="l-507"></a><span class="tm">19:33:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">tigerfoot:</span> thanks. Have a good night
+<a name="l-508"></a><span class="tm">19:33:35</span><span class="nk"> &lt;tigerfoot&gt;</span> cu
+<a name="l-509"></a><span class="tm">19:33:42</span><span class="nk"> &lt;skunze1&gt;</span> <span class="hi">tigerfoot:</span> cu
+<a name="l-510"></a><span class="tm">19:33:44</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> What is the status of KR49 atm ?
+<a name="l-511"></a><span class="tm">19:33:59</span><span class="nk"> &lt;NicoK&gt;</span> there are still some packages that differ from KDF :(
+<a name="l-512"></a><span class="tm">19:34:11</span><span class="nk"> &lt;NicoK&gt;</span> the main reason is because development diverged between the two
+<a name="l-513"></a><span class="tm">19:34:25</span><span class="nk"> &lt;NicoK&gt;</span> and at least two changelog entries exist now and I don't really know how to proceed with them
+<a name="l-514"></a><span class="tm">19:34:33</span><span class="nk"> &lt;cb400f&gt;</span> dunno if this qualifies.. but we seem to have shipped krita crashing on startup with 12.2.. and the same happens with calligra 2.4.3... any plans of getting calligra 2.5.x to KDF?
+<a name="l-515"></a><span class="tm">19:34:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Which packages ?
+<a name="l-516"></a><span class="tm">19:34:53</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">cb400f:</span> I already tried that
+<a name="l-517"></a><span class="tm">19:35:27</span><span class="nk"> &lt;NicoK&gt;</span> and had problems with the changelogs...
+<a name="l-518"></a><span class="tm">19:35:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> So KR49 has Calligra 2.5.x ?
+<a name="l-519"></a><span class="tm">19:35:53</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> yes, 2.5.2 iirc
+<a name="l-520"></a><span class="tm">19:36:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Ok. Let me check that tomorrow and then get calligra 2.5.x in KDF asap
+<a name="l-521"></a><span class="tm">19:36:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">tittiatcoke check calligra packages in KR49 and push it to KDF</span>
+<a name="l-522"></a><span class="tm">19:36:43</span><span class="nk"> &lt;NicoK&gt;</span> it is not only calligra that differs...
+<a name="l-523"></a><span class="tm">19:36:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Any other packages ?
+<a name="l-524"></a><span class="tm">19:36:57</span><span class="nk"> &lt;cb400f&gt;</span> wonder if there's reasonably simple fix for 2.4.x.. krita is one of the crown jewels.. it's pretty embarassing to ship a version that doesn't even start with the distro :-/
+<a name="l-525"></a><span class="tm">19:37:12</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> a lot actually
+<a name="l-526"></a><span class="tm">19:37:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> I agree.
+<a name="l-527"></a><span class="tm">19:37:24</span><span class="nk"> &lt;ctrippe&gt;</span> <span class="hi">cb400f:</span> there is https://bugzilla.novell.com/show_bug.cgi?id=778260#c2
+<a name="l-528"></a><span class="tm">19:37:27</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 778260 in openSUSE 12.2 (KDE4 Applications) "Krita crashes during start" [Major,New]
+<a name="l-529"></a><span class="tm">19:37:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Can you send me a short email with the packages that have those issues ?
+<a name="l-530"></a><span class="tm">19:38:01</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">ok:</span> the main question there (which I also posted to the opensuse-kde ml) is whether and how to keep the attributions or KR49 packagers
+<a name="l-531"></a><span class="tm">19:38:32</span><span class="nk"> &lt;cb400f&gt;</span> hmm.. so 2.5 will prolly be affected too without the change :-/
+<a name="l-532"></a><span class="tm">19:38:46</span><span class="nk"> &lt;NicoK&gt;</span> regarding calligra: see https://build.opensuse.org/request/show/135527
+<a name="l-533"></a><span class="tm">19:38:48 </span><span class="nka">* cb400f</span> <span class="ac">wonders if RH maintains ld too</span>
+<a name="l-534"></a><span class="tm">19:38:57</span><span class="nk"> &lt;NicoK&gt;</span> I polished that one in another try at this regard
+<a name="l-535"></a><span class="tm">19:39:56</span><span class="nk"> &lt;NicoK&gt;</span> for another mess at package diffs, see https://build.opensuse.org/package/rdiff?opackage=kdebase4-workspace&amp;oproject=KDE%3ADistro%3AFactory&amp;package=kdebase4-workspace&amp;project=KDE%3ARelease%3A49&amp;rev=75
+<a name="l-536"></a><span class="tm">19:40:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> That one seems to be fine.
+<a name="l-537"></a><span class="tm">19:40:46</span><span class="nk"> &lt;NicoK&gt;</span> which?
+<a name="l-538"></a><span class="tm">19:41:15</span><span class="nk"> &lt;tittiatcoke&gt;</span> the latest Calligra submit
+<a name="l-539"></a><span class="tm">19:41:23</span><span class="nk"> &lt;NicoK&gt;</span> I hope so, too :)
+<a name="l-540"></a><span class="tm">19:41:51</span><span class="nk"> &lt;NicoK&gt;</span> but I couldn't keep the timestamps of the KR49 changes - anyway, they probably don't matter that much
+<a name="l-541"></a><span class="tm">19:42:00</span><span class="nk"> &lt;NicoK&gt;</span> at least the attributions are still there
+<a name="l-542"></a><span class="tm">19:42:31</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Well, I will accept that one now :-)
+<a name="l-543"></a><span class="tm">19:42:49</span><span class="nk"> &lt;NicoK&gt;</span> I don't know if there are any further changes in KR49 but already the changes in KDF make re-linking KR49 not easy
+<a name="l-544"></a><span class="tm">19:43:14</span><span class="nk"> &lt;tittiatcoke&gt;</span> Can imagine.
+<a name="l-545"></a><span class="tm">19:43:45</span><span class="nk"> &lt;NicoK&gt;</span> anyway, as mentioned before, iirc Dirk had some scripts easing KDE updates - I'd like to have those scripts documented/available somewhere
+<a name="l-546"></a><span class="tm">19:43:52</span><span class="nk"> &lt;NicoK&gt;</span> if possible
+<a name="l-547"></a><span class="tm">19:44:00</span><span class="nk"> &lt;NicoK&gt;</span> (for next updates)
+<a name="l-548"></a><span class="tm">19:44:46</span><span class="nk"> &lt;NicoK&gt;</span> atm though there is a lot of work to be done to get KR49 clean and push changes to KDF before development continues even more in KDF
+<a name="l-549"></a><span class="tm">19:44:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> What type of scripts ? I have a script with which I am pushing the updates of KUSC (and creating the tarballs automatically from the git sources). But I guess I can adjust it to download the tarballs from a certain location
+<a name="l-550"></a><span class="tm">19:45:57</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Any further updates ?
+<a name="l-551"></a><span class="tm">19:46:02</span><span class="nk"> &lt;NicoK&gt;</span> I always thought of "download release/pre-release tarballs" -&gt; "adapt package spec" -&gt; "osc ar"-&gt; "osc ci..."
+<a name="l-552"></a><span class="tm">19:46:32</span><span class="nk"> &lt;NicoK&gt;</span> and from what I read, I suspect the final tarballs are available somewhere before the release for us packagers...
+<a name="l-553"></a><span class="tm">19:46:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> I will change my script a little and then send it to you
+<a name="l-554"></a><span class="tm">19:46:44</span><span class="nk"> &lt;NicoK&gt;</span> I'm not on the appropriate ml though
+<a name="l-555"></a><span class="tm">19:46:46</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Correct.
+<a name="l-556"></a><span class="tm">19:47:00</span><span class="nk"> &lt;NicoK&gt;</span> ok, could we publish that for the other maintainers?
+<a name="l-557"></a><span class="tm">19:47:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> Sure
+<a name="l-558"></a><span class="tm">19:47:11</span><span class="nk"> &lt;maxlin&gt;</span> btw I have a talk of our KDE working model on osc'12(the topic is maintenance model though)
+<a name="l-559"></a><span class="tm">19:47:25</span><span class="nk"> &lt;NicoK&gt;</span> that would be great
+<a name="l-560"></a><span class="tm">19:47:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok
+<a name="l-561"></a><span class="tm">19:47:34</span><span class="nk"> &lt;tittiatcoke&gt;</span> nothing secret :-)
+<a name="l-562"></a><span class="tm">19:47:49</span><span class="nk"> &lt;maxlin&gt;</span> if we decided new working model before osc, I will modify my slides :)
+<a name="l-563"></a><span class="tm">19:48:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">maxlin:</span> It depends if the maintenance team is accepting point release updates through the maintenance channel. I will drop them an email tomorrow and communicate their response to the team
+<a name="l-564"></a><span class="tm">19:49:06</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">tittiatcoke:</span> ok, tnx
+<a name="l-565"></a><span class="tm">19:49:11</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">maxlin:</span> welcome
+<a name="l-566"></a><span class="tm">19:49:14</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">maxlin:</span> maybe you can adjust it to be about the new state of the kde team
+<a name="l-567"></a><span class="tm">19:49:36</span><span class="nk"> &lt;NicoK&gt;</span> <span class="hi">tittiatcoke:</span> the action item at re-linking KR49 to KDF and pushing changes it top-priority imo (further divergations make it only worse to maintain the packages)
+<a name="l-568"></a><span class="tm">19:49:36</span><span class="nk"> &lt;maxlin&gt;</span> <span class="hi">cb400f:</span> I will
+<a name="l-569"></a><span class="tm">19:50:22</span><span class="nk"> &lt;NicoK&gt;</span> I'm afraid, I don't have too much time during the next few days though
+<a name="l-570"></a><span class="tm">19:50:22</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Correct. For now we should put priority on that and try to prevent package maintainance in KDF until KR49 is in shape.
+<a name="l-571"></a><span class="tm">19:50:30</span><span class="nk"> &lt;NicoK&gt;</span> +1
+<a name="l-572"></a><span class="tm">19:50:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Can you send me a list of the packages that needs work? I will try to help out there.
+<a name="l-573"></a><span class="tm">19:51:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#info </span><span class="cmdline">Current team priority is to get KR49 is the right shape before work on KDF continues.</span>
+<a name="l-574"></a><span class="tm">19:51:38</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#action </span><span class="cmdline">NicoK send a list of packages to tittiatcoke that needs working on.</span>
+<a name="l-575"></a><span class="tm">19:51:39</span><span class="nk"> &lt;NicoK&gt;</span> I'll try to get one - probably every package that has a diff compared to KDF
+<a name="l-576"></a><span class="tm">19:51:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> That is fine :-)
+<a name="l-577"></a><span class="tm">19:51:52</span><span class="nk"> &lt;tittiatcoke&gt;</span> Will try as much as I can.
+<a name="l-578"></a><span class="tm">19:52:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> Next week I would have also quite some time in the evenings :-)
+<a name="l-579"></a><span class="tm">19:52:05</span><span class="nk"> &lt;NicoK&gt;</span> there are some that don't have a baserev yet either...
+<a name="l-580"></a><span class="tm">19:52:14</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">NicoK:</span> Ok. Just list them.
+<a name="l-581"></a><span class="tm">19:52:22</span><span class="nk"> &lt;NicoK&gt;</span> k
+<a name="l-582"></a><span class="tm">19:52:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Let's move to the last topic :-)
+<a name="l-583"></a><span class="tm">19:52:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A, Misc.</span>
+<a name="l-584"></a><span class="tm">19:52:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> Any other things to mention, comment, etc ?
+<a name="l-585"></a><span class="tm">19:53:52</span><span class="nk"> &lt;rabauke&gt;</span> A big thanks to all of you for contributing to KDE on openSUSE!
+<a name="l-586"></a><span class="tm">19:53:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess this is a no ?
+<a name="l-587"></a><span class="tm">19:54:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> Thanks for supporting the team :-)
+<a name="l-588"></a><span class="tm">19:54:34</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Let's conclude the meeting. It was a long but productive one.
+<a name="l-589"></a><span class="tm">19:54:38</span><span class="nk"> &lt;maxlin&gt;</span> anyone will go osc'12?
+<a name="l-590"></a><span class="tm">19:54:53</span><span class="nk"> &lt;tittiatcoke&gt;</span> Thanks for your participation
+<a name="l-591"></a><span class="tm">19:55:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">maxlin:</span> not me :-)
+<a name="l-592"></a><span class="tm">19:55:05</span><span class="nk"> &lt;maxlin&gt;</span> sorry, off-topic :p
+<a name="l-593"></a><span class="tm">19:55:11</span><span class="nk"> &lt;maxlin&gt;</span> k
+<a name="l-594"></a><span class="tm">19:55:16</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">maxlin:</span> no problem, it is the Misc topic anyway
+<a name="l-595"></a><span class="tm">19:55:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> so everything is on-topic
+<a name="l-596"></a><span class="tm">19:55:34</span><span class="nk"> &lt;maxlin&gt;</span> :-)
+<a name="l-597"></a><span class="tm">19:56:19</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. Let's end the meeting :-)
+<a name="l-598"></a><span class="tm">19:56:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

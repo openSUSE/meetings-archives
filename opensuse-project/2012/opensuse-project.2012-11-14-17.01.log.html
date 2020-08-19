@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-project log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">17:01:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE Project Meeting</span>
+<a name="l-2"></a><span class="tm">17:01:05</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Wed Nov 14 17:01:05 2012 UTC.  The chair is vuntz. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">17:01:05</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">17:01:20</span><span class="nk"> &lt;vuntz&gt;</span> here we go!
+<a name="l-5"></a><span class="tm">17:01:28</span><span class="nk"> &lt;vuntz&gt;</span> so, who do we have for the meeting?
+<a name="l-6"></a><span class="tm">17:01:31 </span><span class="nka">* vuntz</span> <span class="ac">looks left and right</span>
+<a name="l-7"></a><span class="tm">17:01:39</span><span class="nk"> &lt;hendersj&gt;</span> I'm here today. :)
+<a name="l-8"></a><span class="tm">17:01:56</span><span class="nk"> &lt;tigerfoot&gt;</span> half of me
+<a name="l-9"></a><span class="tm">17:02:00 </span><span class="nka">* lnussel</span> <span class="ac">is here</span>
+<a name="l-10"></a><span class="tm">17:02:11</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">tigerfoot:</span> where's the other half? :-)
+<a name="l-11"></a><span class="tm">17:03:07</span><span class="nk"> &lt;vuntz&gt;</span> so, here's the agenda we have on the wiki right now:
+<a name="l-12"></a><span class="tm">17:03:07</span><span class="nk"> &lt;vuntz&gt;</span> Update on inactive mailing lists (see bug)
+<a name="l-13"></a><span class="tm">17:03:08</span><span class="nk"> &lt;vuntz&gt;</span> Update on GCI (Google Code-In) (Manu)
+<a name="l-14"></a><span class="tm">17:03:08</span><span class="nk"> &lt;vuntz&gt;</span> Update on admin@o.o reactiveness (Vincent)
+<a name="l-15"></a><span class="tm">17:03:08</span><span class="nk"> &lt;vuntz&gt;</span> Status of Board elections (Vincent)
+<a name="l-16"></a><span class="tm">17:03:10</span><span class="nk"> &lt;vuntz&gt;</span> Next meeting chair (current chair)
+<a name="l-17"></a><span class="tm">17:03:36</span><span class="nk"> &lt;vuntz&gt;</span> if there's any topic people want to add, no problem, we'll have the topic after those ones
+<a name="l-18"></a><span class="tm">17:03:55</span><span class="nk"> &lt;vuntz&gt;</span> and of course, there's Q&amp;A at the end
+<a name="l-19"></a><span class="tm">17:04:13</span><span class="nk"> &lt;vuntz&gt;</span> so first topic
+<a name="l-20"></a><span class="tm">17:04:19</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Update on inactive mailing lists</span>
+<a name="l-21"></a><span class="tm">17:04:56</span><span class="nk"> &lt;vuntz&gt;</span> so we had a bug to track this: https://bugzilla.novell.com/show_bug.cgi?id=785517
+<a name="l-22"></a><span class="tm">17:05:01</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 785517 in openSUSE.org (Infrastructure) "Closing down of Inactive Mailing Lists" [Enhancement,Resolved: upstream]
+<a name="l-23"></a><span class="tm">17:05:10</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">vuntz:</span> sorry migrating postgresql Gigabyte server with new packages ... which part (right or left) did you prefer here ;-)
+<a name="l-24"></a><span class="tm">17:05:18</span><span class="nk"> &lt;vuntz&gt;</span> but it was closed because the admin team is already tracking this
+<a name="l-25"></a><span class="tm">17:05:31</span><span class="nk"> &lt;vuntz&gt;</span> afaik, it's not done yet
+<a name="l-26"></a><span class="tm">17:06:00</span><span class="nk"> &lt;cboltz&gt;</span> henne told me at the conference it's the usual ENOTIME
+<a name="l-27"></a><span class="tm">17:06:01</span><span class="nk"> &lt;vuntz&gt;</span> don't have any more update on this, I guess manu might know more (but he's sleeping)
+<a name="l-28"></a><span class="tm">17:06:11</span><span class="nk"> &lt;cboltz&gt;</span> (see also http://lists.opensuse.org/opensuse-project/2012-11/msg00033.html )
+<a name="l-29"></a><span class="tm">17:06:26</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">not done yet, mostly due to lack of time</span>
+<a name="l-30"></a><span class="tm">17:07:04</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> do you know if henne is the one who will handle that at some point?
+<a name="l-31"></a><span class="tm">17:07:29</span><span class="nk"> &lt;cboltz&gt;</span> in theory yes - he's the ML admin on many (all?) lists
+<a name="l-32"></a><span class="tm">17:07:41</span><span class="nk"> &lt;cboltz&gt;</span> in practise, I don't know if/when he has time
+<a name="l-33"></a><span class="tm">17:08:00</span><span class="nk"> &lt;cboltz&gt;</span> I also don't know who else has access to lists.o.o
+<a name="l-34"></a><span class="tm">17:08:07</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">henne will likely be the one dealing with this</span>
+<a name="l-35"></a><span class="tm">17:08:46</span><span class="nk"> &lt;tigerfoot&gt;</span> vuntz a todo, create a backup ML admin no?
+<a name="l-36"></a><span class="tm">17:09:15</span><span class="nk"> &lt;tigerfoot&gt;</span> one people that Henne can instruct ...
+<a name="l-37"></a><span class="tm">17:09:32</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">tigerfoot:</span> let me move to the "Update on admin@o.o reactiveness" topic so we can discuss this :-)
+<a name="l-38"></a><span class="tm">17:09:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Update on admin@o.o reactiveness</span>
+<a name="l-39"></a><span class="tm">17:10:05</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">suggestion to create a backup admin for mailing list, so that previous topic can be dealt with faster</span>
+<a name="l-40"></a><span class="tm">17:10:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">some discussion about admin@ was summarized by christian: http://lists.opensuse.org/opensuse-project/2012-11/msg00033.html</span>
+<a name="l-41"></a><span class="tm">17:10:48</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">tigerfoot:</span> it's not a bad idea, indeed
+<a name="l-42"></a><span class="tm">17:11:02</span><span class="nk"> &lt;vuntz&gt;</span> we might need to know who's doing what in admin@ first (there might already be a backup?)
+<a name="l-43"></a><span class="tm">17:12:11</span><span class="nk"> &lt;cboltz&gt;</span> do we have a list of the *.opensuse.org infrastructure?
+<a name="l-44"></a><span class="tm">17:12:11</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> is there some documentation of who is doing what on admin@? (and if no, do you think it's reasonable to ask for such a list, so people can know where to step up?)
+<a name="l-45"></a><span class="tm">17:12:27 </span><span class="nka">* vuntz</span> <span class="ac">is only aware of http://en.opensuse.org/openSUSE:Services_team</span>
+<a name="l-46"></a><span class="tm">17:12:43</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> http://en.opensuse.org/openSUSE:Services_help ?
+<a name="l-47"></a><span class="tm">17:13:26</span><span class="nk"> &lt;vuntz&gt;</span> (darix is in another meeting at the same time, so might be slow to answer)
+<a name="l-48"></a><span class="tm">17:13:41</span><span class="nk"> &lt;cboltz&gt;</span> indeed, Services_help looks good
+<a name="l-49"></a><span class="tm">17:13:59</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">vuntz:</span> which items are handled slow mainly for people?
+<a name="l-50"></a><span class="tm">17:15:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> I've heard about additions to planet.o.o and mailing list-related things, but maybe those were exceptional cases -- can't tell
+<a name="l-51"></a><span class="tm">17:15:56</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">vuntz:</span> well planet was slow because pascal stepped down and i didnt jump up fast enough.
+<a name="l-52"></a><span class="tm">17:16:02</span><span class="nk"> &lt;darix&gt;</span> i might have someone to help me with that.
+<a name="l-53"></a><span class="tm">17:16:16</span><span class="nk"> &lt;vuntz&gt;</span> that's great news!
+<a name="l-54"></a><span class="tm">17:16:20</span><span class="nk"> &lt;darix&gt;</span> for ml it is similar ... henne is officially assigned
+<a name="l-55"></a><span class="tm">17:16:31</span><span class="nk"> &lt;darix&gt;</span> but not sure we can easily give access to this
+<a name="l-56"></a><span class="tm">17:17:18</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">someone might step up soon to help with planet.o.o administration</span>
+<a name="l-57"></a><span class="tm">17:17:54</span><span class="nk"> &lt;tigerfoot&gt;</span> more precisely from darix words, someone internal of SUSE no?
+<a name="l-58"></a><span class="tm">17:18:11</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">tigerfoot:</span> well for planet it will be a community member
+<a name="l-59"></a><span class="tm">17:18:27</span><span class="nk"> &lt;tigerfoot&gt;</span> oh okay .. cool
+<a name="l-60"></a><span class="tm">17:18:41</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">helping with ML might be possible only from SUSE people at the moment (due to access restrictions)</span>
+<a name="l-61"></a><span class="tm">17:19:00</span><span class="nk"> &lt;vuntz&gt;</span> tigerfoot, cboltz: have you heard of any other issues with admin@ reactiveness?
+<a name="l-62"></a><span class="tm">17:20:15</span><span class="nk"> &lt;vuntz&gt;</span> and do you feel we should try to find a SUSE guy to help henne with ML maintenance?
+<a name="l-63"></a><span class="tm">17:20:16</span><span class="nk"> &lt;cboltz&gt;</span> IIRC not - except wiki update, but that's not directly related to admin@
+<a name="l-64"></a><span class="tm">17:21:05</span><span class="nk"> &lt;cboltz&gt;</span> for the MLs - merging and closing some of the MLs was decided at least a year ago IIRC - does that answer the question? ;-)
+<a name="l-65"></a><span class="tm">17:21:13</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">vuntz:</span> not recently for admin ( and well the infrastructure is going right the last weeks)
+<a name="l-66"></a><span class="tm">17:21:21</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> heh, fair enough :-)
+<a name="l-67"></a><span class="tm">17:21:23</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">cboltz:</span> i can try to poke henne about it
+<a name="l-68"></a><span class="tm">17:21:51</span><span class="nk"> &lt;tigerfoot&gt;</span> darix beware of the bear
+<a name="l-69"></a><span class="tm">17:22:09</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">tigerfoot:</span> i got a weight advantage
+<a name="l-70"></a><span class="tm">17:22:33</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">darix:</span> you'll have to change the importance of the MLs on his TODO list - not sure how to manage that ;-)
+<a name="l-71"></a><span class="tm">17:22:48</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> can you also ask henne if he's okay having someone helping him with ML?
+<a name="l-72"></a><span class="tm">17:25:04</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">vuntz:</span> yes
+<a name="l-73"></a><span class="tm">17:25:20</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> sweet, thanks!
+<a name="l-74"></a><span class="tm">17:25:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">darix to ask henne about getting someone else to help with administrating the mailing lists</span>
+<a name="l-75"></a><span class="tm">17:25:32</span><span class="nk"> &lt;vuntz&gt;</span> anything else on this topic?
+<a name="l-76"></a><span class="tm">17:25:54</span><span class="nk"> &lt;cboltz&gt;</span> maybe the status of the wiki update
+<a name="l-77"></a><span class="tm">17:26:04</span><span class="nk"> &lt;cboltz&gt;</span> in case someone knows more than I know ;-)
+<a name="l-78"></a><span class="tm">17:26:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> maybe tell us what you know, and then we'll see if someone knows more :-)
+<a name="l-79"></a><span class="tm">17:27:15</span><span class="nk"> &lt;cboltz&gt;</span> I know that Scott had 1.19 in git, but it didn't work for some reason
+<a name="l-80"></a><span class="tm">17:27:32</span><span class="nk"> &lt;cboltz&gt;</span> now git (and enstage.o.o) is back to 1.17
+<a name="l-81"></a><span class="tm">17:27:45</span><span class="nk"> &lt;cboltz&gt;</span> and I can't find 1.19 in git anymore
+<a name="l-82"></a><span class="tm">17:28:08</span><span class="nk"> &lt;digitltom&gt;</span> <span class="hi">cboltz:</span>  we need to ask scott, he was the only one involved
+<a name="l-83"></a><span class="tm">17:28:37</span><span class="nk"> &lt;cboltz&gt;</span> I was afraid of this answer ;-)
+<a name="l-84"></a><span class="tm">17:28:39</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> what's the git repo url?
+<a name="l-85"></a><span class="tm">17:29:06</span><span class="nk"> &lt;digitltom&gt;</span> https://github.com/openSUSE/wiki
+<a name="l-86"></a><span class="tm">17:29:22</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">digitltom:</span> thanks!
+<a name="l-87"></a><span class="tm">17:29:43</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> isn't this a 1.19 branch: https://github.com/openSUSE/wiki/tree/mw_upgrade_1.19
+<a name="l-88"></a><span class="tm">17:30:02</span><span class="nk"> &lt;cboltz&gt;</span> yes, but the files in it are from 1.17
+<a name="l-89"></a><span class="tm">17:30:09</span><span class="nk"> &lt;cboltz&gt;</span> (check for example the release notes)
+<a name="l-90"></a><span class="tm">17:30:39</span><span class="nk"> &lt;vuntz&gt;</span> hrm, weird
+<a name="l-91"></a><span class="tm">17:30:50</span><span class="nk"> &lt;vuntz&gt;</span> I guess someone force-pushed an old revision
+<a name="l-92"></a><span class="tm">17:31:08</span><span class="nk"> &lt;digitltom&gt;</span> it looks like that
+<a name="l-93"></a><span class="tm">17:32:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">status of wiki update: an attempt to update to 1.19 was in git, but it didn't work, so everything went back to 1.17. The git branch (repo: https://github.com/openSUSE/wiki) also got force-pushed :/</span>
+<a name="l-94"></a><span class="tm">17:32:27</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> did you try to talk to scott about this?
+<a name="l-95"></a><span class="tm">17:32:46</span><span class="nk"> &lt;cboltz&gt;</span> ENOTIMEYET, sorry
+<a name="l-96"></a><span class="tm">17:33:01</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> no worry :-)
+<a name="l-97"></a><span class="tm">17:33:14</span><span class="nk"> &lt;cboltz&gt;</span> but I promise to do it before the mailinglist cleanup is done ;-)
+<a name="l-98"></a><span class="tm">17:33:18</span><span class="nk"> &lt;vuntz&gt;</span> heh
+<a name="l-99"></a><span class="tm">17:33:21</span><span class="nk"> &lt;vuntz&gt;</span> works for me
+<a name="l-100"></a><span class="tm">17:33:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">cboltz to ask scott about status of wiki update</span>
+<a name="l-101"></a><span class="tm">17:33:39</span><span class="nk"> &lt;vuntz&gt;</span> ok
+<a name="l-102"></a><span class="tm">17:33:46</span><span class="nk"> &lt;vuntz&gt;</span> anything else on infrastructure?
+<a name="l-103"></a><span class="tm">17:34:31 </span><span class="nka">* vuntz</span> <span class="ac">takes this as a no</span>
+<a name="l-104"></a><span class="tm">17:34:33</span><span class="nk"> &lt;vuntz&gt;</span> next topic!
+<a name="l-105"></a><span class="tm">17:34:36</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Update on GCI (Google Code-In)</span>
+<a name="l-106"></a><span class="tm">17:34:52</span><span class="nk"> &lt;vuntz&gt;</span> manu is not here, but he gave me an update on this earlier today
+<a name="l-107"></a><span class="tm">17:35:00</span><span class="nk"> &lt;vuntz&gt;</span> so we didn't make it
+<a name="l-108"></a><span class="tm">17:35:33</span><span class="nk"> &lt;vuntz&gt;</span> the selected organizations can be found at: http://google-opensource.blogspot.fr/2012/11/mentoring-organizations-for-google-code.html
+<a name="l-109"></a><span class="tm">17:36:03</span><span class="nk"> &lt;vuntz&gt;</span> there's a good reason we didn't make it, though: we didn't have any ideas in our list of ideas, so there was no real point in applying :/
+<a name="l-110"></a><span class="tm">17:36:52</span><span class="nk"> &lt;vuntz&gt;</span> my guess is that we failed at pushing people to think about ideas to put on the list
+<a name="l-111"></a><span class="tm">17:37:08</span><span class="nk"> &lt;vuntz&gt;</span> and we might not have had someone with enough time to do that push
+<a name="l-112"></a><span class="tm">17:37:12</span><span class="nk"> &lt;vuntz&gt;</span> (manu was busy, for instance)
+<a name="l-113"></a><span class="tm">17:37:32</span><span class="nk"> &lt;vuntz&gt;</span> so something we should get better at for next year...
+<a name="l-114"></a><span class="tm">17:37:51</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we're not participating this year</span>
+<a name="l-115"></a><span class="tm">17:38:03</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">list of selected organizations: http://google-opensource.blogspot.fr/2012/11/mentoring-organizations-for-google-code.html</span>
+<a name="l-116"></a><span class="tm">17:38:27</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">we did a bad job at creating a list of ideas for students since we didn't have any ideas :/</span>
+<a name="l-117"></a><span class="tm">17:38:40</span><span class="nk"> &lt;vuntz&gt;</span> any question/comment on this topic?
+<a name="l-118"></a><span class="tm">17:39:36</span><span class="nk"> &lt;darix&gt;</span> hmm
+<a name="l-119"></a><span class="tm">17:39:41</span><span class="nk"> &lt;darix&gt;</span> no osc gsoc next year?
+<a name="l-120"></a><span class="tm">17:39:45</span><span class="nk"> &lt;vuntz&gt;</span> (it's worth pointing out that selected orgs don't have hundreds of tasks listed; so we could have done that)
+<a name="l-121"></a><span class="tm">17:39:46</span><span class="nk"> &lt;}ls{&gt;</span> is there still a chance to get on this list?
+<a name="l-122"></a><span class="tm">17:40:13</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> no, that's just code-in; I don't think it will have any specific influence on our participation for GSoC next year
+<a name="l-123"></a><span class="tm">17:40:15</span><span class="nk"> &lt;tigerfoot&gt;</span> Shouldn't we ( we has people knowing how GCI works) educate, and publish more in advance topis on news, and drive/mentor futur mentoring candidate ?
+<a name="l-124"></a><span class="tm">17:40:25</span><span class="nk"> &lt;darix&gt;</span> ah
+<a name="l-125"></a><span class="tm">17:40:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">}ls{:</span> as far as I know, no, not for this year
+<a name="l-126"></a><span class="tm">17:41:02</span><span class="nk"> &lt;tigerfoot&gt;</span> and yes clarify GCI versus GSOC
+<a name="l-127"></a><span class="tm">17:41:14</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">tigerfoot:</span> I guess we should, yes...
+<a name="l-128"></a><span class="tm">17:41:15</span><span class="nk"> &lt;vuntz&gt;</span> sure
+<a name="l-129"></a><span class="tm">17:41:40</span><span class="nk"> &lt;vuntz&gt;</span> so both GCI and GSoC are programs sponsored by Google to get students to contribute to free software projects
+<a name="l-130"></a><span class="tm">17:41:57</span><span class="nk"> &lt;vuntz&gt;</span> GCI is targetted at high-school students, and is about short/easy tasks
+<a name="l-131"></a><span class="tm">17:42:05</span><span class="nk"> &lt;vuntz&gt;</span> there's no more money involved
+<a name="l-132"></a><span class="tm">17:42:13</span><span class="nk"> &lt;digitltom&gt;</span> <span class="hi">vuntz:</span>  maybe we should just decide not to participate in gci, when we don't have the manpower to do a proper application
+<a name="l-133"></a><span class="tm">17:42:20</span><span class="nk"> &lt;vuntz&gt;</span> GSoC is for university students, and last 3-4 months
+<a name="l-134"></a><span class="tm">17:42:23 </span><span class="nka">* tigerfoot</span> <span class="ac">don't have money, and did we have easy tasks :-)</span>
+<a name="l-135"></a><span class="tm">17:43:15</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">digitltom:</span> well, we thought we'd have manpower as we had people stepping up to do the admin work. But without mentor manpower, indeed...
+<a name="l-136"></a><span class="tm">17:44:50</span><span class="nk"> &lt;vuntz&gt;</span> my feeling is that we didn't try that much to get people to be mentors, so we don't even know if people didn't want that or not
+<a name="l-137"></a><span class="tm">17:45:47</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">next time, we will need to evaluate if there's interest for mentoring students in GCI, so we can know if it's worth applying</span>
+<a name="l-138"></a><span class="tm">17:46:20</span><span class="nk"> &lt;vuntz&gt;</span> okay, moving on to next topic, I guess
+<a name="l-139"></a><span class="tm">17:46:33</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Status of Board elections</span>
+<a name="l-140"></a><span class="tm">17:46:41</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">digitltom:</span> do you want to say a few words on this?
+<a name="l-141"></a><span class="tm">17:48:22</span><span class="nk"> &lt;digitltom&gt;</span> we already have 2 candidates
+<a name="l-142"></a><span class="tm">17:49:00</span><span class="nk"> &lt;digitltom&gt;</span> we have the page: http://en.opensuse.org/openSUSE:Board_election
+<a name="l-143"></a><span class="tm">17:49:13</span><span class="nk"> &lt;darix&gt;</span> <span class="hi">vuntz:</span> got to run
+<a name="l-144"></a><span class="tm">17:49:14</span><span class="nk"> &lt;darix&gt;</span> later
+<a name="l-145"></a><span class="tm">17:49:43</span><span class="nk"> &lt;digitltom&gt;</span> so please tell us if you want to apply, or want to nominate a candidate until 27.11.
+<a name="l-146"></a><span class="tm">17:49:49</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">elections fully documented at http://en.opensuse.org/openSUSE:Board_election</span>
+<a name="l-147"></a><span class="tm">17:49:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">already two candidates</span>
+<a name="l-148"></a><span class="tm">17:50:01</span><span class="nk"> &lt;digitltom&gt;</span> Ballots will open on 5.12.
+<a name="l-149"></a><span class="tm">17:50:25</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">people can apply to run, or nominate a candidate until November 27th</span>
+<a name="l-150"></a><span class="tm">17:50:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">darix:</span> thanks!
+<a name="l-151"></a><span class="tm">17:52:20</span><span class="nk"> &lt;vuntz&gt;</span> as digitltom mention, we can nominate people. So don't hesitate to nominate people you'd like to see on the board!
+<a name="l-152"></a><span class="tm">17:52:34</span><span class="nk"> &lt;vuntz&gt;</span> (or don't hesitate to run! :-))
+<a name="l-153"></a><span class="tm">17:52:45</span><span class="nk"> &lt;digitltom&gt;</span> please send nominations to election-officials@opensuse.org
+<a name="l-154"></a><span class="tm">17:52:46</span><span class="nk"> &lt;vuntz&gt;</span> any comment/question?
+<a name="l-155"></a><span class="tm">17:52:49</span><span class="nk"> &lt;nmarques&gt;</span> nominations have a sad history :)
+<a name="l-156"></a><span class="tm">17:52:49</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">digitltom:</span> you said 2 candidates but only one is visible on the wiki page
+<a name="l-157"></a><span class="tm">17:53:22</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">nmarques:</span> we don't get busy with past things, only bright future has our attention :-)
+<a name="l-158"></a><span class="tm">17:53:44</span><span class="nk"> &lt;nmarques&gt;</span> tigerfoot, "those who can not remember the past are condemned to repeat it" - Alexander Dumas
+<a name="l-159"></a><span class="tm">17:55:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">tigerfoot:</span> second candidate is tittiatcoke (he sent a mail to opensuse-project); I guess wiki page didn't get updated so far :-)
+<a name="l-160"></a><span class="tm">17:56:49</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">vuntz:</span> cool
+<a name="l-161"></a><span class="tm">17:57:12</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">nmarques:</span> those who look at the past, forget the present, and have no idea for the future ... (me)
+<a name="l-162"></a><span class="tm">17:57:20</span><span class="nk"> &lt;tigerfoot&gt;</span> :-)
+<a name="l-163"></a><span class="tm">17:57:31</span><span class="nk"> &lt;vuntz&gt;</span> ok, let's move on to next topic?
+<a name="l-164"></a><span class="tm">17:58:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Next meeting chair</span>
+<a name="l-165"></a><span class="tm">17:58:26</span><span class="nk"> &lt;vuntz&gt;</span> I'm not 100% sure I can attend the next meeting
+<a name="l-166"></a><span class="tm">17:58:54</span><span class="nk"> &lt;vuntz&gt;</span> so it'd be nice to have someone step up to chair it in case I can't make it :-)
+<a name="l-167"></a><span class="tm">17:59:25 </span><span class="nka">* vuntz</span> <span class="ac">looks at hendersj ;-)</span>
+<a name="l-168"></a><span class="tm">18:00:01</span><span class="nk"> &lt;vuntz&gt;</span> (I can see if some board member can be there, but afaik, the current time is not too good for most of them)
+<a name="l-169"></a><span class="tm">18:00:17</span><span class="nk"> &lt;hendersj&gt;</span> :)
+<a name="l-170"></a><span class="tm">18:00:37</span><span class="nk"> &lt;hendersj&gt;</span> I'd be happy to if my schedule allows and if I know what I need to do to get the ball rolling. :)
+<a name="l-171"></a><span class="tm">18:01:00</span><span class="nk"> &lt;hendersj&gt;</span> I do, however, have a meeting next time around that overlaps by 30 minutes.
+<a name="l-172"></a><span class="tm">18:01:12</span><span class="nk"> &lt;vuntz&gt;</span> ah, not perfect then
+<a name="l-173"></a><span class="tm">18:01:33</span><span class="nk"> &lt;hendersj&gt;</span> If the current time isn't good for the board, though, maybe we should evaluate a time that is better?
+<a name="l-174"></a><span class="tm">18:01:39</span><span class="nk"> &lt;vuntz&gt;</span> okay, I'll see if I can find someone in case I'll be busy
+<a name="l-175"></a><span class="tm">18:02:46</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">hendersj:</span> well, there's generally no good time that work for most people; my understanding was that this time works okay-ish for other people who want to join the meetings
+<a name="l-176"></a><span class="tm">18:02:51</span><span class="nk"> &lt;tigerfoot&gt;</span> <span class="hi">vuntz:</span> a small post on -project ml with the different steps or a link to wiki page, how to stand up and act correctly ...
+<a name="l-177"></a><span class="tm">18:03:12</span><span class="nk"> &lt;vuntz&gt;</span> http://en.opensuse.org/Portal:Meetings has some info on how to use bugbot
+<a name="l-178"></a><span class="tm">18:03:23</span><span class="nk"> &lt;vuntz&gt;</span> and that's really what most people need to know
+<a name="l-179"></a><span class="tm">18:03:33</span><span class="nk"> &lt;vuntz&gt;</span> I can write down some more stuff, though
+<a name="l-180"></a><span class="tm">18:03:48</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to find a replacement chair in case he can't make it for next meeting</span>
+<a name="l-181"></a><span class="tm">18:04:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to write some short doc on what chairing involves, and how to do it</span>
+<a name="l-182"></a><span class="tm">18:04:08</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">vuntz:</span> I don't think this is a "technical" problem ;-)
+<a name="l-183"></a><span class="tm">18:04:27</span><span class="nk"> &lt;hendersj&gt;</span> <span class="hi">vuntz:</span>  That URL is interesting but it looks like op privs are needed to use bugbot (unless I'm reading that wrong)?
+<a name="l-184"></a><span class="tm">18:04:27</span><span class="nk"> &lt;cboltz&gt;</span> IMHO the problem is that the chair should know something about the topics of the meeting
+<a name="l-185"></a><span class="tm">18:04:37</span><span class="nk"> &lt;cboltz&gt;</span> or at least know who knows it ;-)
+<a name="l-186"></a><span class="tm">18:04:56</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">hendersj:</span> yeah, we can give you that
+<a name="l-187"></a><span class="tm">18:04:58</span><span class="nk"> &lt;hendersj&gt;</span> <span class="hi">cboltz:</span>  Yes, that's what happened last time - I'd have happily started it if I'd known it was OK to do so (now I know), but I had no idea about any of the topics.
+<a name="l-188"></a><span class="tm">18:05:19</span><span class="nk"> &lt;hendersj&gt;</span> <span class="hi">vuntz:</span>  OK - that sounds good. :)
+<a name="l-189"></a><span class="tm">18:05:24</span><span class="nk"> &lt;anditosan&gt;</span> maybe contact the people who proposed the ideas about the agenda and explain better what they mean by it
+<a name="l-190"></a><span class="tm">18:05:29</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> all topics should have a name associated to them, so we know who shall lead them (imho)
+<a name="l-191"></a><span class="tm">18:05:46</span><span class="nk"> &lt;hendersj&gt;</span> That would be a good idea - always good to know whose item an agenda item is. :)
+<a name="l-192"></a><span class="tm">18:05:57</span><span class="nk"> &lt;anditosan&gt;</span> hendersj, true!
+<a name="l-193"></a><span class="tm">18:06:09</span><span class="nk"> &lt;vuntz&gt;</span> "If you add things to the agenda make sure to leave your name" (from the agenda page)
+<a name="l-194"></a><span class="tm">18:06:28</span><span class="nk"> &lt;vuntz&gt;</span> :-)
+<a name="l-195"></a><span class="tm">18:06:34</span><span class="nk"> &lt;vuntz&gt;</span> we're already overtime
+<a name="l-196"></a><span class="tm">18:06:38</span><span class="nk"> &lt;vuntz&gt;</span> let's quickly move to Q&amp;A
+<a name="l-197"></a><span class="tm">18:06:42</span><span class="nk"> &lt;vuntz&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A</span>
+<a name="l-198"></a><span class="tm">18:07:55</span><span class="nk"> &lt;vuntz&gt;</span> any question?
+<a name="l-199"></a><span class="tm">18:08:14</span><span class="nk"> &lt;hendersj&gt;</span> Not from me.
+<a name="l-200"></a><span class="tm">18:09:31</span><span class="nk"> &lt;vuntz&gt;</span> ok, no question :-)
+<a name="l-201"></a><span class="tm">18:09:38</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">no question!</span>
+<a name="l-202"></a><span class="tm">18:09:38</span><span class="nk"> &lt;hendersj&gt;</span> Actually....speaking of op privs on IRC, I remember now thinking that maybe it would be useful if we had that for the forum admins for the forums channel.
+<a name="l-203"></a><span class="tm">18:09:42</span><span class="nk"> &lt;anditosan&gt;</span> did you consider my idea of hiring a designer from suse to help the project?
+<a name="l-204"></a><span class="tm">18:10:16 </span><span class="nka">* cboltz</span> <span class="ac">recomments a #undo</span>
+<a name="l-205"></a><span class="tm">18:10:23</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-206"></a><span class="tm">18:10:23</span><span class="nk"> &lt;bugbot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Info object at 0x15a1890&gt;
+<a name="l-207"></a><span class="tm">18:10:30</span><span class="nk"> &lt;hendersj&gt;</span> (or selected staff, I know malcolmlewis is around on IRC on occasion)
+<a name="l-208"></a><span class="tm">18:10:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">cboltz:</span> thanks, that's what I was looking for ;-)
+<a name="l-209"></a><span class="tm">18:10:47 </span><span class="nka">* malcolmlewis</span> <span class="ac">hides</span>
+<a name="l-210"></a><span class="tm">18:10:53</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">hendersj:</span> the forum channel is #opensuse-forum?
+<a name="l-211"></a><span class="tm">18:11:07</span><span class="nk"> &lt;hendersj&gt;</span> <span class="cmd">#opensuse-forums</span><span class="cmdline"></span>
+<a name="l-212"></a><span class="tm">18:11:53</span><span class="nk"> &lt;vuntz&gt;</span> I have absolutely no idea how to do that :-)
+<a name="l-213"></a><span class="tm">18:12:02</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">hendersj:</span> I recommend you talk to darix about that
+<a name="l-214"></a><span class="tm">18:12:17</span><span class="nk"> &lt;hendersj&gt;</span> OK, will do - just e-mail admin@o.o?
+<a name="l-215"></a><span class="tm">18:12:44</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">hendersj asking about handling op privs on #opensuse-forums; nobody present knows, but darix or admin@ should know</span>
+<a name="l-216"></a><span class="tm">18:13:00</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">hendersj:</span> http://en.opensuse.org/openSUSE:Services_help#irc_channels
+<a name="l-217"></a><span class="tm">18:13:15</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-218"></a><span class="tm">18:13:15</span><span class="nk"> &lt;bugbot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Info object at 0x16b3e90&gt;
+<a name="l-219"></a><span class="tm">18:13:18</span><span class="nk"> &lt;hendersj&gt;</span> Perfect, thanks - will follow up offline. :)
+<a name="l-220"></a><span class="tm">18:13:31</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">hendersj asking about handling op privs on #opensuse-forums; nobody present knows, but darix or ircops@o.o should know</span>
+<a name="l-221"></a><span class="tm">18:13:54</span><span class="nk"> &lt;vuntz&gt;</span> <span class="hi">anditosan:</span> re your question
+<a name="l-222"></a><span class="tm">18:14:14</span><span class="nk"> &lt;anditosan&gt;</span> has the board thoght about the idea of having a paid designer for the project?
+<a name="l-223"></a><span class="tm">18:14:21</span><span class="nk"> &lt;anditosan&gt;</span> I have not received word from Benito
+<a name="l-224"></a><span class="tm">18:14:40</span><span class="nk"> &lt;vuntz&gt;</span> the board itself didn't discuss that
+<a name="l-225"></a><span class="tm">18:14:44</span><span class="nk"> &lt;anditosan&gt;</span> right
+<a name="l-226"></a><span class="tm">18:14:46</span><span class="nk"> &lt;tigerfoot&gt;</span> toscalix
+<a name="l-227"></a><span class="tm">18:14:55 </span><span class="nka">* tigerfoot</span> <span class="ac">oups sorry</span>
+<a name="l-228"></a><span class="tm">18:15:16</span><span class="nk"> &lt;vuntz&gt;</span> and this is indeed something that, I feel, would feel in toscalix' hands
+<a name="l-229"></a><span class="tm">18:15:23</span><span class="nk"> &lt;vuntz&gt;</span> but I can chat with him about this if you want?
+<a name="l-230"></a><span class="tm">18:15:27</span><span class="nk"> &lt;anditosan&gt;</span> vuntz, could you bring the up the question to SUSE? I don't seem to get an answer
+<a name="l-231"></a><span class="tm">18:16:25</span><span class="nk"> &lt;anditosan&gt;</span> I know that right now kwwii and a another designer are the desgin team but an extra person would be ideal if SUSE thought this was worthwhile
+<a name="l-232"></a><span class="tm">18:16:28</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#info </span><span class="cmdline">anditosan raises the topic of having a paid designer (from SUSE) to work on openSUSE; vuntz will chat with toscalix to see if there's a possibility for this</span>
+<a name="l-233"></a><span class="tm">18:16:43</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#action </span><span class="cmdline">vuntz to talk to toscalix about a paid designer for openSUSE</span>
+<a name="l-234"></a><span class="tm">18:16:47</span><span class="nk"> &lt;anditosan&gt;</span> thank you
+<a name="l-235"></a><span class="tm">18:17:08</span><span class="nk"> &lt;anditosan&gt;</span> that's all for me
+<a name="l-236"></a><span class="tm">18:17:33</span><span class="nk"> &lt;vuntz&gt;</span> if there's nothing else, I suggest we close the meeting since we're nearly 20 minutes late :-)
+<a name="l-237"></a><span class="tm">18:17:49</span><span class="nk"> &lt;vuntz&gt;</span> 1
+<a name="l-238"></a><span class="tm">18:17:51</span><span class="nk"> &lt;vuntz&gt;</span> 2
+<a name="l-239"></a><span class="tm">18:17:55</span><span class="nk"> &lt;vuntz&gt;</span> 3
+<a name="l-240"></a><span class="tm">18:17:58</span><span class="nk"> &lt;vuntz&gt;</span> ok, we're done :-)
+<a name="l-241"></a><span class="tm">18:18:00</span><span class="nk"> &lt;vuntz&gt;</span> thanks all!
+<a name="l-242"></a><span class="tm">18:18:00</span><span class="nk"> &lt;cboltz&gt;</span> <span class="hi">vuntz:</span> you'll have to wait 3 minutes - we are only 17 minutes late ;-)
+<a name="l-243"></a><span class="tm">18:18:04</span><span class="nk"> &lt;tigerfoot&gt;</span> thx
+<a name="l-244"></a><span class="tm">18:18:06</span><span class="nk"> &lt;vuntz&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

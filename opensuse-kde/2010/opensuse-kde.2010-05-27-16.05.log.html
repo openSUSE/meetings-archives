@@ -1,0 +1,647 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#opensuse-kde log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">16:05:28</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">openSUSE KDE Contributors and Users meeting.  Please wait until the Q&amp;A section at the end if you join during the meeting with questions</span>
+<a name="l-2"></a><span class="tm">16:05:28</span><span class="nk"> &lt;bugbot&gt;</span> Meeting started Thu May 27 16:05:28 2010 UTC.  The chair is wstephenson. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">16:05:28</span><span class="nk"> &lt;bugbot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">16:05:46</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#chair </span><span class="cmdline">remur_030</span>
+<a name="l-5"></a><span class="tm">16:05:46</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: remur_030 wstephenson
+<a name="l-6"></a><span class="tm">16:06:17</span><span class="nk"> &lt;wstephenson&gt;</span> anyone else want to chair?
+<a name="l-7"></a><span class="tm">16:06:55</span><span class="nk"> &lt;wstephenson&gt;</span> let;s go then.
+<a name="l-8"></a><span class="tm">16:07:14</span><span class="nk"> &lt;wstephenson&gt;</span> Agenda:
+<a name="l-9"></a><span class="tm">16:07:19</span><span class="nk"> &lt;wstephenson&gt;</span> * old action items
+<a name="l-10"></a><span class="tm">16:07:37</span><span class="nk"> &lt;wstephenson&gt;</span> * http://help.opensuse.org/ksuseinstall
+<a name="l-11"></a><span class="tm">16:07:42</span><span class="nk"> &lt;wstephenson&gt;</span> * most annoying 11.3 bugs
+<a name="l-12"></a><span class="tm">16:07:49</span><span class="nk"> &lt;wstephenson&gt;</span> * making the meetings more interesting/well attended
+<a name="l-13"></a><span class="tm">16:07:54</span><span class="nk"> &lt;wstephenson&gt;</span> * default Akonadi startup/usage
+<a name="l-14"></a><span class="tm">16:08:00</span><span class="nk"> &lt;wstephenson&gt;</span> * repository reorganization
+<a name="l-15"></a><span class="tm">16:08:09</span><span class="nk"> &lt;wstephenson&gt;</span> * Q&amp;A, misc
+<a name="l-16"></a><span class="tm">16:08:15</span><span class="nk"> &lt;wstephenson&gt;</span> Any more items for the agenda?
+<a name="l-17"></a><span class="tm">16:08:26</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> you suggested M7 status
+<a name="l-18"></a><span class="tm">16:08:44</span><span class="nk"> &lt;remur_030&gt;</span> but well that fits nice into the status section =)
+<a name="l-19"></a><span class="tm">16:08:50</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> covered by most annoying 11.3 bugs too
+<a name="l-20"></a><span class="tm">16:09:23</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">old action items</span>
+<a name="l-21"></a><span class="tm">16:09:45</span><span class="nk"> &lt;wstephenson&gt;</span> * lunak,wstephenson document how-to-maintain Extra
+<a name="l-22"></a><span class="tm">16:09:58</span><span class="nk"> &lt;wstephenson&gt;</span> no progress from me, but i did think about it.
+<a name="l-23"></a><span class="tm">16:10:06</span><span class="nk"> &lt;llunak&gt;</span> I intend to have a look at this during the weekend
+<a name="l-24"></a><span class="tm">16:10:50</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">lunak,wstephenson document how-to-maintain Extra</span>
+<a name="l-25"></a><span class="tm">16:11:01</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">http://help.opensuse.org/ksuseinstall</span>
+<a name="l-26"></a><span class="tm">16:11:16</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> this is about providing a link to it from the greeter splash?
+<a name="l-27"></a><span class="tm">16:11:18</span><span class="nk"> &lt;llunak&gt;</span> was that the only old AI?
+<a name="l-28"></a><span class="tm">16:11:44</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">llunak:</span> according to last meetings minutes yes
+<a name="l-29"></a><span class="tm">16:11:47</span><span class="nk"> &lt;llunak&gt;</span> ok
+<a name="l-30"></a><span class="tm">16:12:11</span><span class="nk"> &lt;llunak&gt;</span> so, this url is provided in the ksuseinstall dialog when it says it cannot find the package and asks whether to run 'yast2 repositories'
+<a name="l-31"></a><span class="tm">16:12:49</span><span class="nk"> &lt;llunak&gt;</span> which is not the simplest UI there (and we can't really provide a simpler one anyway for reasons), so the URL should try to explain to Joe User what to do if their Amarok or Drkoqi show this
+<a name="l-32"></a><span class="tm">16:13:04</span><span class="nk"> &lt;wstephenson&gt;</span> so effectively this URL has to untangle the gordian knot of which repo means what and how it can kill your system? :)
+<a name="l-33"></a><span class="tm">16:13:31</span><span class="nk"> &lt;wstephenson&gt;</span> and at the same time not say anything that would cause a lawyer to get an ulcer
+<a name="l-34"></a><span class="tm">16:13:44</span><span class="nk"> &lt;llunak&gt;</span> it should say what a repository is, warn about not being completely stupid with adding them :), and possibly should also cover drkonqi and amarok/kaffeine
+<a name="l-35"></a><span class="tm">16:14:16</span><span class="nk"> &lt;llunak&gt;</span> for those cases it can say even exact steps, with the catch it this page itself cannot say anything about it :)
+<a name="l-36"></a><span class="tm">16:14:32</span><span class="nk"> &lt;llunak&gt;</span> but that can be solved if the pages is done like http://software.opensuse.org/codecs
+<a name="l-37"></a><span class="tm">16:14:41</span><span class="nk"> &lt;llunak&gt;</span> it has links out of opensuse space and a disclaimer
+<a name="l-38"></a><span class="tm">16:14:58</span><span class="nk"> &lt;llunak&gt;</span> now, we'd need a person who could and would write this
+<a name="l-39"></a><span class="tm">16:15:07</span><span class="nk"> &lt;llunak&gt;</span> would somebody try?
+<a name="l-40"></a><span class="tm">16:15:15</span><span class="nk"> &lt;wstephenson&gt;</span> sure. i feel mouthy today.
+<a name="l-41"></a><span class="tm">16:15:23</span><span class="nk"> &lt;javier_&gt;</span> I can help too
+<a name="l-42"></a><span class="tm">16:15:47</span><span class="nk"> &lt;wstephenson&gt;</span> cool. javier_, have you got time after the meeting?
+<a name="l-43"></a><span class="tm">16:15:51</span><span class="nk"> &lt;javier_&gt;</span> btw, is ksuseinstall translatable? i haven't seen any pots yet
+<a name="l-44"></a><span class="tm">16:16:00</span><span class="nk"> &lt;llunak&gt;</span> it's in kde4-openSUSE.pot
+<a name="l-45"></a><span class="tm">16:16:02</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> yes, i do
+<a name="l-46"></a><span class="tm">16:16:02</span><span class="nk"> &lt;wstephenson&gt;</span> we are already in extra time for i18n
+<a name="l-47"></a><span class="tm">16:16:27</span><span class="nk"> &lt;javier_&gt;</span> ah ok, I didn't know that, I'll take a look.
+<a name="l-48"></a><span class="tm">16:16:47</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson, javier_ write http://help.opensuse.org/ksuseinstall text</span>
+<a name="l-49"></a><span class="tm">16:16:56</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> EOT?
+<a name="l-50"></a><span class="tm">16:17:07</span><span class="nk"> &lt;llunak&gt;</span> yes
+<a name="l-51"></a><span class="tm">16:17:24</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">The most annoying 11.3 bugs and M7 status</span>
+<a name="l-52"></a><span class="tm">16:17:54</span><span class="nk"> &lt;wstephenson&gt;</span> whose topic?
+<a name="l-53"></a><span class="tm">16:18:05</span><span class="nk"> &lt;llunak&gt;</span> mine, without the status part :)
+<a name="l-54"></a><span class="tm">16:18:11</span><span class="nk"> &lt;remur_030&gt;</span> sounds like a general discussion topic ;-)
+<a name="l-55"></a><span class="tm">16:18:25</span><span class="nk"> &lt;llunak&gt;</span> basically, the usual bugzilla rules apply: if it should be fixed for the release, set the bugreport to P2
+<a name="l-56"></a><span class="tm">16:18:32</span><span class="nk"> &lt;llunak&gt;</span> if it's something really really broken, P1
+<a name="l-57"></a><span class="tm">16:18:54</span><span class="nk"> &lt;llunak&gt;</span> feel free to set to P1 even easy small stuff if it's something stupid and easy to fix (flicker during login e.g.)
+<a name="l-58"></a><span class="tm">16:19:20</span><span class="nk"> &lt;llunak&gt;</span> that's all from me about this
+<a name="l-59"></a><span class="tm">16:19:22</span><span class="nk"> &lt;cb400f&gt;</span> I have p2'ed a few bugs (akonadi always starting, nepomuk broken, desktop effects not auto-enabled with intel)
+<a name="l-60"></a><span class="tm">16:19:47</span><span class="nk"> &lt;cb400f&gt;</span> as time goes those would be p1 candidates :-)
+<a name="l-61"></a><span class="tm">16:19:57</span><span class="nk"> &lt;wstephenson&gt;</span> akonadi (bnc#596582) is now p1
+<a name="l-62"></a><span class="tm">16:20:00</span><span class="nk"> &lt;llunak&gt;</span> akonadi could go even to p1 possibly, but that's separate topic for this meeting
+<a name="l-63"></a><span class="tm">16:20:15</span><span class="nk"> &lt;wstephenson&gt;</span> i'm testing a fix now
+<a name="l-64"></a><span class="tm">16:20:53</span><span class="nk"> &lt;wstephenson&gt;</span> what else vexeth us?
+<a name="l-65"></a><span class="tm">16:21:11</span><span class="nk"> &lt;cb400f&gt;</span> the missing battery and device notifier widgets
+<a name="l-66"></a><span class="tm">16:21:14</span><span class="nk"> &lt;wstephenson&gt;</span> for me the generally broken knetworkmanager and NetworkManager is a problem. wpa-eap still doesn't work
+<a name="l-67"></a><span class="tm">16:21:25</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">cb400f:</span> report, set priority
+<a name="l-68"></a><span class="tm">16:21:41</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> 597162, p2
+<a name="l-69"></a><span class="tm">16:21:49</span><span class="nk"> &lt;wstephenson&gt;</span> i need to get back to notmart and co on that
+<a name="l-70"></a><span class="tm">16:21:59</span><span class="nk"> &lt;wstephenson&gt;</span> they said it should be fixed in 4.4.3
+<a name="l-71"></a><span class="tm">16:22:38</span><span class="nk"> &lt;EagleScreen&gt;</span> i always get akonadi errors when I log in KDE
+<a name="l-72"></a><span class="tm">16:22:49</span><span class="nk"> &lt;remur_030&gt;</span> should we try another bug triage week, weekend, day?
+<a name="l-73"></a><span class="tm">16:23:04</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> yes
+<a name="l-74"></a><span class="tm">16:23:06</span><span class="nk"> &lt;EagleScreen&gt;</span> http://img375.imageshack.us/my.php?image=akonadierrors.png
+<a name="l-75"></a><span class="tm">16:23:09</span><span class="nk"> &lt;wstephenson&gt;</span> suggestions?
+<a name="l-76"></a><span class="tm">16:23:17</span><span class="nk"> &lt;llunak&gt;</span> we could, but I don't have much time for it
+<a name="l-77"></a><span class="tm">16:23:27</span><span class="nk"> &lt;wstephenson&gt;</span> modprobe castellan
+<a name="l-78"></a><span class="tm">16:23:39</span><span class="nk"> &lt;llunak&gt;</span> would somebody take care of the bug triage running (announce, whatever)?
+<a name="l-79"></a><span class="tm">16:23:55</span><span class="nk"> &lt;cb400f&gt;</span> another thing.. would it be possible to make some test-patches to test kupdateapplet? .. I don't trust that son of a .....
+<a name="l-80"></a><span class="tm">16:24:08</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">EagleScreen:</span> es una problema cronologica muy dificil con la empezar de akonadi :'(
+<a name="l-81"></a><span class="tm">16:24:24</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">cb400f:</span> I think such a repo exists, at least it did in the past
+<a name="l-82"></a><span class="tm">16:24:53</span><span class="nk"> &lt;wstephenson&gt;</span> _Marcus_ and lnussel usually set up a test update repo about now
+<a name="l-83"></a><span class="tm">16:25:10</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">cb400f:</span> what's broken about the battery widget?
+<a name="l-84"></a><span class="tm">16:25:34</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">cb400f:</span> there is a pattern that adds testing updates
+<a name="l-85"></a><span class="tm">16:26:04</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">llunak:</span> I could announce it by blogging about it, sending a msg to -kde, etc
+<a name="l-86"></a><span class="tm">16:26:30</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">sebas:</span> iirc it's not shown when first logging into a freshly installed openSUSE 11.3 milestone X system
+<a name="l-87"></a><span class="tm">16:26:35</span><span class="nk"> &lt;javier_&gt;</span> oh wstephenson habla castellano :)
+<a name="l-88"></a><span class="tm">16:26:41</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> if you are willing to oversee the bug triage week or whatever, then ok - it's up to you now
+<a name="l-89"></a><span class="tm">16:26:49</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> can you spare most of a day at the weekend to hang around on irc and keep it moving?
+<a name="l-90"></a><span class="tm">16:26:58</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">cb400f:</span> hm, ok
+<a name="l-91"></a><span class="tm">16:27:32</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">llunak:</span> wstephenson: I haven't been involved in any bug triage weekend yet... so I would need from somebody else
+<a name="l-92"></a><span class="tm">16:27:37</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">javier_:</span> I'll try my best to hang around in the channel as well then
+<a name="l-93"></a><span class="tm">16:27:41</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">sebas:</span> the other problem is that device notifier is not in a default 4.4 system tray
+<a name="l-94"></a><span class="tm">16:27:53</span><span class="nk"> &lt;wstephenson&gt;</span> the upstream code to add it is broken.
+<a name="l-95"></a><span class="tm">16:27:59</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> there are wiki pages that describe most of it, so that should have you a lot of work
+<a name="l-96"></a><span class="tm">16:28:12</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> if you like i can get one of the upstream bug triage people to go over it with you
+<a name="l-97"></a><span class="tm">16:28:53</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#action </span><span class="cmdline">llunak point javier_ to already-existing bug triage wiki pages</span>
+<a name="l-98"></a><span class="tm">16:29:02</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> yes, please
+<a name="l-99"></a><span class="tm">16:29:07</span><span class="nk"> &lt;javier_&gt;</span> that way i could learn
+<a name="l-100"></a><span class="tm">16:29:10</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> I think someone from the upstream bugsquad would be very useful
+<a name="l-101"></a><span class="tm">16:29:26</span><span class="nk"> &lt;javier_&gt;</span> and, yes any url with info about it would be helpful
+<a name="l-102"></a><span class="tm">16:29:36</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">sebas:</span> https://bugzilla.novell.com/show_bug.cgi?id=597162
+<a name="l-103"></a><span class="tm">16:29:39</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 597162 in openSUSE 11.3 (KDE4 Workspace) "Device Notifier should be in the system tray by default" [Major,Assigned]
+<a name="l-104"></a><span class="tm">16:30:05</span><span class="nk"> &lt;AlbertoP&gt;</span> wstephenson, thanks for the gift :)
+<a name="l-105"></a><span class="tm">16:30:06</span><span class="nk"> &lt;llunak&gt;</span> ok, so just the AIs for bug triage and I think this is covered for now
+<a name="l-106"></a><span class="tm">16:30:21</span><span class="nk"> &lt;sebas&gt;</span> <span class="hi">wstephenson:</span> aight, I'll have a look
+<a name="l-107"></a><span class="tm">16:30:34</span><span class="nk"> &lt;wstephenson&gt;</span> anything more that really kills us in M7?
+<a name="l-108"></a><span class="tm">16:30:49</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> feels pretty solid to me
+<a name="l-109"></a><span class="tm">16:30:51</span><span class="nk"> &lt;wstephenson&gt;</span> branding is TBD but we have the artwork from jimmac and nuno now.
+<a name="l-110"></a><span class="tm">16:30:54</span><span class="nk"> &lt;remur_030&gt;</span> how about branding?
+<a name="l-111"></a><span class="tm">16:30:59</span><span class="nk"> &lt;remur_030&gt;</span> heh k
+<a name="l-112"></a><span class="tm">16:31:05</span><span class="nk"> &lt;wstephenson&gt;</span> on my desk
+<a name="l-113"></a><span class="tm">16:31:16</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">cb400f:</span> will you take care of looking at kupdateapplet (testing) ?
+<a name="l-114"></a><span class="tm">16:31:16</span><span class="nk"> &lt;wstephenson&gt;</span> has anyone else noticed instability with xrandr on intel?
+<a name="l-115"></a><span class="tm">16:31:56</span><span class="nk"> &lt;cb400f&gt;</span> I can dig around for a test patches repo and I can poke _marcus_
+<a name="l-116"></a><span class="tm">16:31:59</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> don't forget to record AI(s) for bug triage
+<a name="l-117"></a><span class="tm">16:31:59 </span><span class="nka">* javier_</span> <span class="ac">has to try m7 on his machine with intel graphics</span>
+<a name="l-118"></a><span class="tm">16:32:02</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> haven't tried around much yet, but for now everything is working nice
+<a name="l-119"></a><span class="tm">16:32:18</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">cb400f:</span> that would involve poking opensuse-maintenance to setup a test update repo and doing the QA
+<a name="l-120"></a><span class="tm">16:32:20</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#action </span><span class="cmdline">cb400f test kupdateapplet</span>
+<a name="l-121"></a><span class="tm">16:32:20</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">llunak:</span> I have them in the minuts =)
+<a name="l-122"></a><span class="tm">16:32:28</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#chair </span><span class="cmdline">llunak</span>
+<a name="l-123"></a><span class="tm">16:32:28</span><span class="nk"> &lt;bugbot&gt;</span> Current chairs: llunak remur_030 wstephenson
+<a name="l-124"></a><span class="tm">16:33:05</span><span class="nk"> &lt;javier_&gt;</span> btw, what's the state of sysinfo?
+<a name="l-125"></a><span class="tm">16:33:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> pls repeat your actions, i think meetbot fails silently, because leet debian irc meeting people never make mistakes
+<a name="l-126"></a><span class="tm">16:33:33</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">AlbertoP:</span> np :)
+<a name="l-127"></a><span class="tm">16:33:58</span><span class="nk"> &lt;AlbertoP&gt;</span> :)
+<a name="l-128"></a><span class="tm">16:33:58</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> the manual doesn't say I need to be chair for # action
+<a name="l-129"></a><span class="tm">16:34:13</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> latest svn version is in packages
+<a name="l-130"></a><span class="tm">16:34:35</span><span class="nk"> &lt;javier_&gt;</span> last time i tried it, it didn't work
+<a name="l-131"></a><span class="tm">16:34:35</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> what is a chair for then?
+<a name="l-132"></a><span class="tm">16:34:54</span><span class="nk"> &lt;wstephenson&gt;</span> works here
+<a name="l-133"></a><span class="tm">16:35:06</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#save</span><span class="cmdline"></span>
+<a name="l-134"></a><span class="tm">16:35:13</span><span class="nk"> &lt;javier_&gt;</span> i'll try the latest version
+<a name="l-135"></a><span class="tm">16:35:14</span><span class="nk"> &lt;wstephenson&gt;</span> although State: No Charge is a bit worrying on the battery
+<a name="l-136"></a><span class="tm">16:36:14</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">javier_ organise bug triage day</span>
+<a name="l-137"></a><span class="tm">16:36:30</span><span class="nk"> &lt;llunak&gt;</span> anyway, at least we'll see if it needs one to be chair or not, I remember the AI
+<a name="l-138"></a><span class="tm">16:36:38</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson get blauzahl to give javier_ a bug triage runner introduction</span>
+<a name="l-139"></a><span class="tm">16:37:29</span><span class="nk"> &lt;wstephenson&gt;</span> next topic
+<a name="l-140"></a><span class="tm">16:37:45</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">Making the meetings more interesting/well attended</span>
+<a name="l-141"></a><span class="tm">16:37:51</span><span class="nk"> &lt;wstephenson&gt;</span> this is mine
+<a name="l-142"></a><span class="tm">16:38:04</span><span class="nk"> &lt;wstephenson&gt;</span> tbh i am very pleasantly surprised with this week's meeting
+<a name="l-143"></a><span class="tm">16:38:12</span><span class="nk"> &lt;wstephenson&gt;</span> lots of motivated people around
+<a name="l-144"></a><span class="tm">16:38:29</span><span class="nk"> &lt;wstephenson&gt;</span> after a few which were somewhat muted
+<a name="l-145"></a><span class="tm">16:38:56</span><span class="nk"> &lt;wstephenson&gt;</span> so a general question to everyone who's here and wasn't the last few times
+<a name="l-146"></a><span class="tm">16:39:01</span><span class="nk"> &lt;wstephenson&gt;</span> what changed?
+<a name="l-147"></a><span class="tm">16:39:11</span><span class="nk"> &lt;wstephenson&gt;</span> what blocks you from meeting or talking meetings?
+<a name="l-148"></a><span class="tm">16:39:13</span><span class="nk"> &lt;rabauke&gt;</span> in my case it's a simply matter of lack of time.
+<a name="l-149"></a><span class="tm">16:39:27</span><span class="nk"> &lt;rabauke&gt;</span> a woman :p
+<a name="l-150"></a><span class="tm">16:39:30</span><span class="nk"> &lt;remur_030&gt;</span> +1, I got sports on that timeslot now
+<a name="l-151"></a><span class="tm">16:39:49</span><span class="nk"> &lt;javier_&gt;</span> the level of knowledge and how things work internally at openSUSE/KDE
+<a name="l-152"></a><span class="tm">16:39:59 </span><span class="nka">* wstephenson</span> <span class="ac">looks outside, looks like sports weather today :)</span>
+<a name="l-153"></a><span class="tm">16:40:02</span><span class="nk"> &lt;llunak&gt;</span> I think the question should be rather 'what could be improved?'
+<a name="l-154"></a><span class="tm">16:40:17</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> it's canceled this week because of pfingsten at our university
+<a name="l-155"></a><span class="tm">16:40:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> one is derived from the other :)
+<a name="l-156"></a><span class="tm">16:40:32</span><span class="nk"> &lt;wstephenson&gt;</span> so, do we need a different timeslot?
+<a name="l-157"></a><span class="tm">16:40:39</span><span class="nk"> &lt;javier_&gt;</span> I was thinking about having my blog added to planetkde.org and blog about these meetings :)
+<a name="l-158"></a><span class="tm">16:40:41</span><span class="nk"> &lt;wstephenson&gt;</span> more flexible timeslots?
+<a name="l-159"></a><span class="tm">16:40:48</span><span class="nk"> &lt;wstephenson&gt;</span> more, smaller meetings?
+<a name="l-160"></a><span class="tm">16:40:50</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> +1
+<a name="l-161"></a><span class="tm">16:40:51</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">javier_:</span> that's a really good idea
+<a name="l-162"></a><span class="tm">16:40:52</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">javier_:</span> there are even simpler things to do, like several items today, it doesn't always need that much knowledge to be useful/helpful
+<a name="l-163"></a><span class="tm">16:41:13</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">javier_:</span> very good idea, regarding blogging.
+<a name="l-164"></a><span class="tm">16:41:18</span><span class="nk"> &lt;cb400f&gt;</span> I think it's mostly about announcing a bit earlier, and having sexy stuff on the agenda
+<a name="l-165"></a><span class="tm">16:41:33</span><span class="nk"> &lt;wstephenson&gt;</span> do we need to lower the bar to new contributors?
+<a name="l-166"></a><span class="tm">16:41:48</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">cb400f:</span> a bit earlier when? and you know it's always the same time, periodically? or you mean it as a reminder?
+<a name="l-167"></a><span class="tm">16:41:58</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> what was the factor that tipped you over the edge, from lurking to speaking out and doing stuff independently?
+<a name="l-168"></a><span class="tm">16:42:00</span><span class="nk"> &lt;cb400f&gt;</span> .. and maybe highlighting some people.. I sometimes simply forget, even though I'm available to participate :-(
+<a name="l-169"></a><span class="tm">16:42:11</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> what bar? there is nothing we expect from people attending here =)
+<a name="l-170"></a><span class="tm">16:42:25</span><span class="nk"> &lt;rabauke&gt;</span> It won't solve "lack of time issues" but I think that weekly blgs about what you guys are doing increases opensuse's visibility on planetkde and spreads the information to those that might be interested but always forget about the meetings etc.
+<a name="l-171"></a><span class="tm">16:42:38</span><span class="nk"> &lt;rabauke&gt;</span> bullet points would be enough
+<a name="l-172"></a><span class="tm">16:42:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> the difference between just being here and feeling able to get stuff done here.
+<a name="l-173"></a><span class="tm">16:42:52</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> well, when you are new and want to help you have to observe how things work first, where the help is needed, what's going on regarding openSUSE/KDE, ...
+<a name="l-174"></a><span class="tm">16:43:03 </span><span class="nka">* herby</span> <span class="ac">if often here but mostly silent.</span>
+<a name="l-175"></a><span class="tm">16:43:08 </span><span class="nka">* wstephenson</span> <span class="ac">has been super slack about blogging lately, personal issues but those are getting less now.</span>
+<a name="l-176"></a><span class="tm">16:43:19 </span><span class="nka">* herby</span> <span class="ac">thinks why.</span>
+<a name="l-177"></a><span class="tm">16:43:34</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">llunak:</span> sending the e-mail 2-4 days before the meeting maybe, usually it's only sent on the day or the day before, but getting the meeting in the news.o.o calendar is an important step I think
+<a name="l-178"></a><span class="tm">16:43:35</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> haha, I think you're in for figuring out that was pretty naive &gt;:)
+<a name="l-179"></a><span class="tm">16:44:07</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> i'm better at handling one big issue than lots of little ones, you should know me well enough by now. the big issue keeps getting bigger, happily :)
+<a name="l-180"></a><span class="tm">16:44:12</span><span class="nk"> &lt;rabauke&gt;</span> I hardly read the wiki but daily planetkde, so at least for me blogging about opensuse and your kde work would be more accessible
+<a name="l-181"></a><span class="tm">16:44:21</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#action </span><span class="cmdline">llunak add additional meeting reminder mail more days in advance</span>
+<a name="l-182"></a><span class="tm">16:44:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> sorry guys, for being late, but had something private to do :-)
+<a name="l-183"></a><span class="tm">16:44:48</span><span class="nk"> &lt;wstephenson&gt;</span> it's in the calendar at news.opensuse.org but that is basically useless, unless someone clicks on the calendar day.
+<a name="l-184"></a><span class="tm">16:44:54</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> np, good to have you here
+<a name="l-185"></a><span class="tm">16:45:20</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">herby:</span> any ideas?
+<a name="l-186"></a><span class="tm">16:45:35</span><span class="nk"> &lt;wstephenson&gt;</span> maybe herby is the guy for whom everything *just works* ;)
+<a name="l-187"></a><span class="tm">16:45:43</span><span class="nk"> &lt;wstephenson&gt;</span> i know there is one out there...
+<a name="l-188"></a><span class="tm">16:45:57</span><span class="nk"> &lt;herby&gt;</span> <span class="hi">wstephenson:</span> No that's not the case...
+<a name="l-189"></a><span class="tm">16:46:14</span><span class="nk"> &lt;wstephenson&gt;</span> people with no time at 1800UTC thursdays, what's a better time?
+<a name="l-190"></a><span class="tm">16:46:18</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">llunak:</span> +1, i almost missed this meeting :P
+<a name="l-191"></a><span class="tm">16:46:41</span><span class="nk"> &lt;javier_&gt;</span> i think that the problem is not the day but the time
+<a name="l-192"></a><span class="tm">16:46:54</span><span class="nk"> &lt;javier_&gt;</span> most people have the same work schedule, no?
+<a name="l-193"></a><span class="tm">16:46:55</span><span class="nk"> &lt;remur_030&gt;</span> we shouldn't forget it's summer =)
+<a name="l-194"></a><span class="tm">16:46:57</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#action </span><span class="cmdline">llunak update meeting howto to highlight people on IRC about meeting starting (or something similar)</span>
+<a name="l-195"></a><span class="tm">16:46:59</span><span class="nk"> &lt;herby&gt;</span> I have little time to do real work. Only maintainif some small packages nobody else cares about.
+<a name="l-196"></a><span class="tm">16:47:01</span><span class="nk"> &lt;javier_&gt;</span> that's right
+<a name="l-197"></a><span class="tm">16:47:10</span><span class="nk"> &lt;tittiatcoke&gt;</span> Does it need to be in the evening hours ? Or would it be possible to move it up to maybe 3/4pm CET ?
+<a name="l-198"></a><span class="tm">16:47:14</span><span class="nk"> &lt;wstephenson&gt;</span> i agree with rabauke that visibility is important, if we can attract lots of people with a bit of time we can still get stuff done.
+<a name="l-199"></a><span class="tm">16:48:00</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> so it's currently in the time when you do stuff after work (sport, commute, cook dinner...)?
+<a name="l-200"></a><span class="tm">16:48:33</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">herby:</span> maintaining packages is real work.
+<a name="l-201"></a><span class="tm">16:48:35</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> moving it up is fine by me, but i wonder if it's worse for people with less flexible schedules...
+<a name="l-202"></a><span class="tm">16:48:40</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> yepp, for me 18:00 UTC is ok
+<a name="l-203"></a><span class="tm">16:48:42</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> I think time is a topic for the mailing list, not here - people who have problem with this timeslot are mostly not here
+<a name="l-204"></a><span class="tm">16:48:54</span><span class="nk"> &lt;javier_&gt;</span> +1
+<a name="l-205"></a><span class="tm">16:48:58</span><span class="nk"> &lt;tittiatcoke&gt;</span> +1
+<a name="l-206"></a><span class="tm">16:49:16 </span><span class="nka">* remur_030</span> <span class="ac">agrees</span>
+<a name="l-207"></a><span class="tm">16:49:20</span><span class="nk"> &lt;herby&gt;</span> <span class="hi">rabauke:</span> Time is OK for me.
+<a name="l-208"></a><span class="tm">16:49:23</span><span class="nk"> &lt;wstephenson&gt;</span> i mentioned having more, more focused meetings on eg plasma default config, KKUD, 11.3 testing
+<a name="l-209"></a><span class="tm">16:49:29</span><span class="nk"> &lt;rabauke&gt;</span> I think there is no ideal time and the question was raised on the ml already a few times. AFAIR there was hardly any response.
+<a name="l-210"></a><span class="tm">16:49:29</span><span class="nk"> &lt;wstephenson&gt;</span> perhaps not on a regular schedule
+<a name="l-211"></a><span class="tm">16:49:51</span><span class="nk"> &lt;wstephenson&gt;</span> that might workaround the "no good time for everyone" issue
+<a name="l-212"></a><span class="tm">16:49:55</span><span class="nk"> &lt;herby&gt;</span> <span class="hi">rabauke:</span> Yes it's real work, but I wished I could more of it
+<a name="l-213"></a><span class="tm">16:50:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">herby:</span> does the learning curve block you from doing a few small bits of pkging work when you have time?
+<a name="l-214"></a><span class="tm">16:51:20</span><span class="nk"> &lt;herby&gt;</span> No, I am an experinenced packager Long time packmamn member.
+<a name="l-215"></a><span class="tm">16:51:36</span><span class="nk"> &lt;herby&gt;</span> ... but a bad typist ;-)
+<a name="l-216"></a><span class="tm">16:51:50</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">herby:</span> ah, i didn't know :)
+<a name="l-217"></a><span class="tm">16:52:18</span><span class="nk"> &lt;minton&gt;</span> focused meetings seem good to me =)
+<a name="l-218"></a><span class="tm">16:52:25</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">herby:</span> so is it finding out things to do that don't need much time? low hanging fruit jobs?
+<a name="l-219"></a><span class="tm">16:52:47</span><span class="nk"> &lt;wstephenson&gt;</span> maybe if we had something like KDE's englishbreakfastnetwork.org that lists all the rpmlint warnings and links to the suggested fixes...
+<a name="l-220"></a><span class="tm">16:52:57</span><span class="nk"> &lt;javier_&gt;</span> instead of apples, strawberries perhaps ;)
+<a name="l-221"></a><span class="tm">16:53:06</span><span class="nk"> &lt;wstephenson&gt;</span> hey bitshuffler
+<a name="l-222"></a><span class="tm">16:53:15</span><span class="nk"> &lt;bitshuffler&gt;</span> hi :)
+<a name="l-223"></a><span class="tm">16:53:26</span><span class="nk"> &lt;wstephenson&gt;</span> you're missing a legendary meeting :)
+<a name="l-224"></a><span class="tm">16:53:48</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> no, packaging is a lemon tree
+<a name="l-225"></a><span class="tm">16:54:08</span><span class="nk"> &lt;minton&gt;</span> limes. they are green
+<a name="l-226"></a><span class="tm">16:54:11</span><span class="nk"> &lt;initialZero&gt;</span> well its legendary now that bitshuffler is present
+<a name="l-227"></a><span class="tm">16:54:12</span><span class="nk"> &lt;wstephenson&gt;</span> true
+<a name="l-228"></a><span class="tm">16:54:21 </span><span class="nka">* bitshuffler</span> <span class="ac">blushes :D</span>
+<a name="l-229"></a><span class="tm">16:54:22</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">initialZero:</span> hehe
+<a name="l-230"></a><span class="tm">16:54:27</span><span class="nk"> &lt;wstephenson&gt;</span> so
+<a name="l-231"></a><span class="tm">16:54:28 </span><span class="nka">* herby</span> <span class="ac">promises to be less passive from now on.</span>
+<a name="l-232"></a><span class="tm">16:54:31</span><span class="nk"> &lt;wstephenson&gt;</span> timing issues
+<a name="l-233"></a><span class="tm">16:54:37</span><span class="nk"> &lt;wstephenson&gt;</span> and unspecified contributing issues
+<a name="l-234"></a><span class="tm">16:54:53</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">herby:</span> no need to promise. we just need to make contributing fun and rewarding
+<a name="l-235"></a><span class="tm">16:55:06</span><span class="nk"> &lt;wstephenson&gt;</span> then people will do it instead of e.g. washing the car :)
+<a name="l-236"></a><span class="tm">16:55:15 </span><span class="nka">* wstephenson</span> <span class="ac">adds 'easy' to that list</span>
+<a name="l-237"></a><span class="tm">16:55:24</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">tittiatcoke:</span> do you blog about your constant contribution?
+<a name="l-238"></a><span class="tm">16:55:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> To be honest, no. I am a silent contributor :-)
+<a name="l-239"></a><span class="tm">16:55:49</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> I need a ping cause usually I forget about it
+<a name="l-240"></a><span class="tm">16:56:01</span><span class="nk"> &lt;javier_&gt;</span> green limes, hehe :)
+<a name="l-241"></a><span class="tm">16:56:14</span><span class="nk"> &lt;rabauke&gt;</span> I think you should blog on planetkde.org everytime you updated UNSTBALE to a new snapshot or added another kde app to a repo.
+<a name="l-242"></a><span class="tm">16:56:16</span><span class="nk"> &lt;alin&gt;</span> probably you should setup a ping all in the channel with meeting time
+<a name="l-243"></a><span class="tm">16:56:25</span><span class="nk"> &lt;wstephenson&gt;</span> there's a maxim "good work is done quietly" which i am often guilty of adhering to
+<a name="l-244"></a><span class="tm">16:56:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">rabauke:</span> I guess that I should :-)
+<a name="l-245"></a><span class="tm">16:56:39</span><span class="nk"> &lt;wstephenson&gt;</span> but it is essential that somebody makes a noise about the cool stuff we do
+<a name="l-246"></a><span class="tm">16:56:41</span><span class="nk"> &lt;cb400f&gt;</span> now the meeting really is legendary :-)
+<a name="l-247"></a><span class="tm">16:56:45</span><span class="nk"> &lt;wstephenson&gt;</span> because "good work attracts more good work"
+<a name="l-248"></a><span class="tm">16:56:48</span><span class="nk"> &lt;tittiatcoke&gt;</span> Now the legendary meeting is complete :-)
+<a name="l-249"></a><span class="tm">16:56:51</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> if needed I can write them
+<a name="l-250"></a><span class="tm">16:56:52</span><span class="nk"> &lt;wstephenson&gt;</span> at least in this sphere.
+<a name="l-251"></a><span class="tm">16:56:54</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">rabauke:</span> +1
+<a name="l-252"></a><span class="tm">16:56:56</span><span class="nk"> &lt;rabauke&gt;</span> and if you don't wstephenson etc. shoudl include things like that into their weekly "what is happening at opensuse regarding kde"
+<a name="l-253"></a><span class="tm">16:56:57 </span><span class="nka">* cb400f</span> <span class="ac">calls for group hug</span>
+<a name="l-254"></a><span class="tm">16:57:01</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> creatively of course
+<a name="l-255"></a><span class="tm">16:57:09</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">rabauke:</span> that way, it would attract kde developers
+<a name="l-256"></a><span class="tm">16:57:20</span><span class="nk"> &lt;rabauke&gt;</span> I think so too
+<a name="l-257"></a><span class="tm">16:57:36</span><span class="nk"> &lt;rabauke&gt;</span> it would increase the visibility and give at least some credit to those contributing
+<a name="l-258"></a><span class="tm">16:57:48</span><span class="nk"> &lt;javier_&gt;</span> exactly
+<a name="l-259"></a><span class="tm">16:57:50</span><span class="nk"> &lt;wstephenson&gt;</span> so maybe it's good if people who like to blog more than package run around and collect what the quiet workers are doing then bang some drums.
+<a name="l-260"></a><span class="tm">16:58:20</span><span class="nk"> &lt;javier_&gt;</span> yep, we need more visibility on planet kde
+<a name="l-261"></a><span class="tm">16:58:20</span><span class="nk"> &lt;rabauke&gt;</span> If I get the news I could even blog once a wweek and simply list those things.
+<a name="l-262"></a><span class="tm">16:58:41</span><span class="nk"> &lt;wstephenson&gt;</span> obvious statement really but it's hard to notice when a project gets to the stage where it can house all kinds of roles.
+<a name="l-263"></a><span class="tm">16:58:49</span><span class="nk"> &lt;rabauke&gt;</span> but I'm not around that much anymore, so I would simply gather them from emails, private irc messages and maybe some wiki page.
+<a name="l-264"></a><span class="tm">16:59:20</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> or how about having a list of active contributors to ping once a week when writing the "kernel cousin opensuse-kde"? =)
+<a name="l-265"></a><span class="tm">16:59:21</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok. I will give it a try to start blogging :-)
+<a name="l-266"></a><span class="tm">16:59:27</span><span class="nk"> &lt;rabauke&gt;</span> I cannot force people to tell me what they did last week :)
+<a name="l-267"></a><span class="tm">16:59:37</span><span class="nk"> &lt;wstephenson&gt;</span> dunno if kernel cousin still exists actually
+<a name="l-268"></a><span class="tm">16:59:43</span><span class="nk"> &lt;javier_&gt;</span> hehe
+<a name="l-269"></a><span class="tm">16:59:48</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> I can do that.
+<a name="l-270"></a><span class="tm">16:59:49</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> only if you want to
+<a name="l-271"></a><span class="tm">17:00:04</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-) I know, but I will give it a shot :-)
+<a name="l-272"></a><span class="tm">17:00:13</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> obviously if you're around and can *see* what we are doing then you don't need to ping
+<a name="l-273"></a><span class="tm">17:00:36</span><span class="nk"> &lt;rabauke&gt;</span> I'll check out the buildservice if there is a way to get some notifications if a package changes version, I could include those as well and list its maintainer
+<a name="l-274"></a><span class="tm">17:00:44</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> since my experience is if you try to force someone to do something they don't enjoy, then they don't enjoy being around the project so much...
+<a name="l-275"></a><span class="tm">17:00:54</span><span class="nk"> &lt;llunak&gt;</span> obviously, having a "spokesperson" would have some advantages - praise from others is better than self-praise :)
+<a name="l-276"></a><span class="tm">17:00:56</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> i can tell you that. i even blogged it a while back
+<a name="l-277"></a><span class="tm">17:01:08</span><span class="nk"> &lt;wstephenson&gt;</span> yeah, praise and recognition
+<a name="l-278"></a><span class="tm">17:01:23</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> tell me about it. I have this in my work life also :-)  But that is why I said I will give it a try and see :-)
+<a name="l-279"></a><span class="tm">17:01:45</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess that I already have a nice blog because of Beta 1 and KDEPIM4.5
+<a name="l-280"></a><span class="tm">17:01:59</span><span class="nk"> &lt;wstephenson&gt;</span> i like to tell people if i notice them doing a good job, but just seeing "XXX did YYY" on a newsletter is motivating too.
+<a name="l-281"></a><span class="tm">17:02:21</span><span class="nk"> &lt;rabauke&gt;</span> I have an account at kdedevelopers and even though I'm not I could use that one. the only bad thing about it is that one has to be a member to comment if I remember correctly
+<a name="l-282"></a><span class="tm">17:02:31</span><span class="nk"> &lt;wstephenson&gt;</span> yes. kdevelopers is a bit sucky
+<a name="l-283"></a><span class="tm">17:02:42</span><span class="nk"> &lt;javier_&gt;</span> I also think that besides trying to get ppl from upstream using openSUSE, we should also do it the other way around and try to get openSUSE/KDE contributors to help upstream
+<a name="l-284"></a><span class="tm">17:03:00</span><span class="nk"> &lt;wstephenson&gt;</span> lizards.opensuse.org is also usable for us
+<a name="l-285"></a><span class="tm">17:03:04</span><span class="nk"> &lt;wstephenson&gt;</span> if sucky in its own ways
+<a name="l-286"></a><span class="tm">17:03:12</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> +1
+<a name="l-287"></a><span class="tm">17:03:15</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> any suggestions where to host the blog? lizards?
+<a name="l-288"></a><span class="tm">17:03:25</span><span class="nk"> &lt;rabauke&gt;</span> or is there a third site one should use?
+<a name="l-289"></a><span class="tm">17:03:28</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">rabauke:</span> beineri activated mine, i think i can use it for making comments
+<a name="l-290"></a><span class="tm">17:03:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> Maybe we can hook up with the opensue news ?  To have a section there that describes new things and changes. and if available a link to a blog post ?
+<a name="l-291"></a><span class="tm">17:03:47</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> that's the main way to differentiate ourselves from the brown plague. make openSUSE about improving FLOSS generally, not just take take.
+<a name="l-292"></a><span class="tm">17:04:03</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> exactly
+<a name="l-293"></a><span class="tm">17:04:09</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> saigkill would love it if we did a detailed section every week.
+<a name="l-294"></a><span class="tm">17:04:10</span><span class="nk"> &lt;javier_&gt;</span> that's the whole point
+<a name="l-295"></a><span class="tm">17:04:30</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">tittiatcoke:</span> that would aim at getting opensuse users to use kde. planetkde is about getting kde users to use opensuse. both valid :)
+<a name="l-296"></a><span class="tm">17:04:55</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> which site doesn't really matter. an own wordpress or blogspot seems to be the most powerful regarding freedom to comment though.
+<a name="l-297"></a><span class="tm">17:05:03</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">rabauke:</span> i think that it doesn't matter where you host the blog as long it is active and it doesn't have black text with a black background ;)
+<a name="l-298"></a><span class="tm">17:05:07</span><span class="nk"> &lt;Beineri&gt;</span> <span class="hi">wstephenson:</span> isn't purple the new brown?
+<a name="l-299"></a><span class="tm">17:05:30</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">javier_:</span> I do not know any blog hosts, that's why I'm asking I do not want to set-up one on my server.
+<a name="l-300"></a><span class="tm">17:05:34</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">Beineri:</span> purple bruises fade to brown eventually
+<a name="l-301"></a><span class="tm">17:06:09</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> wasn't it you who wanted to use purple for opensuse and cursed because it was already taken ;)
+<a name="l-302"></a><span class="tm">17:06:19 </span><span class="nka">* wstephenson</span> <span class="ac">coughs</span>
+<a name="l-303"></a><span class="tm">17:06:23</span><span class="nk"> &lt;rabauke&gt;</span> :D
+<a name="l-304"></a><span class="tm">17:06:27</span><span class="nk"> &lt;wstephenson&gt;</span> i think i wanted fuchsia.
+<a name="l-305"></a><span class="tm">17:06:32</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">rabauke:</span> ahh I understand. well, lizards.o.o is a collective blog so it isn't very customizable. wordpress.com is also a good choice
+<a name="l-306"></a><span class="tm">17:07:40</span><span class="nk"> &lt;rabauke&gt;</span> ok, I'll set up one there and use my opensuse email (do I have one if I'm a member) to contact maintainers etc.
+<a name="l-307"></a><span class="tm">17:07:41</span><span class="nk"> &lt;wstephenson&gt;</span> so may i start pulling some actions out of this?
+<a name="l-308"></a><span class="tm">17:07:52</span><span class="nk"> &lt;wstephenson&gt;</span> you should have an email
+<a name="l-309"></a><span class="tm">17:08:00</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> put me up for creating a blog
+<a name="l-310"></a><span class="tm">17:08:04</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">rabauke:</span> if you need an account at lizards, let me know. I could set up an account for you
+<a name="l-311"></a><span class="tm">17:08:11</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">rabauke start blogging regularly about happenings in the project</span>
+<a name="l-312"></a><span class="tm">17:08:40</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">everyone start blogging about the specifics you do - if you want to - else summarize to rabauke</span>
+<a name="l-313"></a><span class="tm">17:09:00</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">everyone add your blogs to planetkde.org for the stuff that is upstream-relevant</span>
+<a name="l-314"></a><span class="tm">17:09:17</span><span class="nk"> &lt;wstephenson&gt;</span> but can i ask you to think twice what tags you use on your syndicated blogs
+<a name="l-315"></a><span class="tm">17:09:21 </span><span class="nka">* javier_</span> <span class="ac">sees lots of actions today :D</span>
+<a name="l-316"></a><span class="tm">17:09:42</span><span class="nk"> &lt;initialZero&gt;</span> legendary actions
+<a name="l-317"></a><span class="tm">17:09:42</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> you mean to use a kde tag only?
+<a name="l-318"></a><span class="tm">17:09:46</span><span class="nk"> &lt;wstephenson&gt;</span> since nothing annoys me more than when i read about Ubuntu Pet Dogs day on planetkde.org because someone has their entire blog syndicated
+<a name="l-319"></a><span class="tm">17:09:53</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">javier_:</span> yeah
+<a name="l-320"></a><span class="tm">17:10:06</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">wstephenson:</span> +1
+<a name="l-321"></a><span class="tm">17:10:07</span><span class="nk"> &lt;wstephenson&gt;</span> for example everyone knows markusK here?
+<a name="l-322"></a><span class="tm">17:10:13</span><span class="nk"> &lt;wstephenson&gt;</span> kamikazow
+<a name="l-323"></a><span class="tm">17:10:22</span><span class="nk"> &lt;javier_&gt;</span> kamikazow, yes
+<a name="l-324"></a><span class="tm">17:10:33</span><span class="nk"> &lt;javier_&gt;</span> he's a KDE contributor
+<a name="l-325"></a><span class="tm">17:11:02</span><span class="nk"> &lt;wstephenson&gt;</span> and an opensuse user.  he's on planet now but some of his blogs have been causing 'discussion' upstream because it seemed either not relevant or a bit aggressive
+<a name="l-326"></a><span class="tm">17:11:09</span><span class="nk"> &lt;wstephenson&gt;</span> so consider your audience
+<a name="l-327"></a><span class="tm">17:11:18</span><span class="nk"> &lt;wstephenson&gt;</span> hm i shouldn't have named names.
+<a name="l-328"></a><span class="tm">17:11:28</span><span class="nk"> &lt;javier_&gt;</span> it's ok
+<a name="l-329"></a><span class="tm">17:11:41</span><span class="nk"> &lt;javier_&gt;</span> I understand what you're saying
+<a name="l-330"></a><span class="tm">17:11:58</span><span class="nk"> &lt;wstephenson&gt;</span> but i've also asked other planet bloggers to be cool, daddy.
+<a name="l-331"></a><span class="tm">17:12:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> I will contact you with regards to creating those tags and how to contact my blog to planetkde.org
+<a name="l-332"></a><span class="tm">17:12:22</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> most blog software creates an rss feed for each tag
+<a name="l-333"></a><span class="tm">17:12:43</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> Ok. I will check it out :-)
+<a name="l-334"></a><span class="tm">17:12:44</span><span class="nk"> &lt;wstephenson&gt;</span> the links in the header of planetkde.org explain how to add your blog (edit a file in svn)
+<a name="l-335"></a><span class="tm">17:13:09 </span><span class="nka">* wstephenson</span> <span class="ac">is generally for friendly, relevant, quality Planets</span>
+<a name="l-336"></a><span class="tm">17:13:14</span><span class="nk"> &lt;wstephenson&gt;</span> anyway
+<a name="l-337"></a><span class="tm">17:13:18</span><span class="nk"> &lt;wstephenson&gt;</span> more actions on this topic?
+<a name="l-338"></a><span class="tm">17:13:46</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">everyone consider how to feed KDE info to saigkill for openSUSE Weekly News</span>
+<a name="l-339"></a><span class="tm">17:14:14</span><span class="nk"> &lt;javier_&gt;</span> perhaps we could also have identi.ca/twitter feeded with our blogposts
+<a name="l-340"></a><span class="tm">17:14:16</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstpehenson see if rpmlint warnings can be hung on a lime tree for easy plucking</span>
+<a name="l-341"></a><span class="tm">17:14:18</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> The feed towards saigkill, do you want to channel this through one person ? Maybe rabauke ?
+<a name="l-342"></a><span class="tm">17:14:20</span><span class="nk"> &lt;javier_&gt;</span> there's a tool for that
+<a name="l-343"></a><span class="tm">17:14:32</span><span class="nk"> &lt;javier_&gt;</span> twitterfeed?
+<a name="l-344"></a><span class="tm">17:14:38</span><span class="nk"> &lt;remur_030&gt;</span> I think we have enough, maybe we should evaluate this in the second meeting from now
+<a name="l-345"></a><span class="tm">17:14:45</span><span class="nk"> &lt;wstephenson&gt;</span> good point.
+<a name="l-346"></a><span class="tm">17:15:03</span><span class="nk"> &lt;remur_030&gt;</span> it's a big topic and shouldn't loose focus here
+<a name="l-347"></a><span class="tm">17:15:18</span><span class="nk"> &lt;wstephenson&gt;</span> yes. lets see how we get on with the current actions
+<a name="l-348"></a><span class="tm">17:15:20</span><span class="nk"> &lt;wstephenson&gt;</span> (all 5!)
+<a name="l-349"></a><span class="tm">17:15:46</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> and it woudl be great if you can highlight the other ideas in the minutes for the next time
+<a name="l-350"></a><span class="tm">17:15:49</span><span class="nk"> &lt;wstephenson&gt;</span> would
+<a name="l-351"></a><span class="tm">17:15:57</span><span class="nk"> &lt;remur_030&gt;</span> I tried to collect most of them yes
+<a name="l-352"></a><span class="tm">17:16:01</span><span class="nk"> &lt;wstephenson&gt;</span> super.
+<a name="l-353"></a><span class="tm">17:16:02</span><span class="nk"> &lt;wstephenson&gt;</span> #
+<a name="l-354"></a><span class="tm">17:16:05</span><span class="nk"> &lt;tittiatcoke&gt;</span> I guess it would be good that in the coming two weeks people will try things out with regards to this and then we can report back how and what
+<a name="l-355"></a><span class="tm">17:16:22</span><span class="nk"> &lt;remur_030&gt;</span> how about the topic specific meetings? discuss in the timing mail on -kde as well?
+<a name="l-356"></a><span class="tm">17:16:39</span><span class="nk"> &lt;wstephenson&gt;</span> yes, if we find out our individual time commitments don't work with the assigned actions, we can juggle things around.
+<a name="l-357"></a><span class="tm">17:16:45</span><span class="nk"> &lt;llunak&gt;</span> I think that would be part of it
+<a name="l-358"></a><span class="tm">17:16:55</span><span class="nk"> &lt;remur_030&gt;</span> btw who will write that mail?
+<a name="l-359"></a><span class="tm">17:17:22</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> yes, although it was just a brain fart from me, i'm not really sure what the topics would be or how to split things up without reducing the 'critical mass' of community in a negative way...
+<a name="l-360"></a><span class="tm">17:18:13</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> so you'll write that mail?
+<a name="l-361"></a><span class="tm">17:18:16</span><span class="nk"> &lt;wstephenson&gt;</span> i suspect that if we have enough to do and are all contributing efficiently then people will say 'let's have a meeting to sort this out' without us setting them up in advance...
+<a name="l-362"></a><span class="tm">17:18:29</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> +1
+<a name="l-363"></a><span class="tm">17:18:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> i'll include that topic in the meeting mail
+<a name="l-364"></a><span class="tm">17:18:42</span><span class="nk"> &lt;wstephenson&gt;</span> for consideration.
+<a name="l-365"></a><span class="tm">17:18:51</span><span class="nk"> &lt;javier_&gt;</span> +1
+<a name="l-366"></a><span class="tm">17:18:54</span><span class="nk"> &lt;wstephenson&gt;</span> ok, moving on.
+<a name="l-367"></a><span class="tm">17:19:14</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">default Akonadi startup/usage</span>
+<a name="l-368"></a><span class="tm">17:19:26</span><span class="nk"> &lt;llunak&gt;</span> I added that
+<a name="l-369"></a><span class="tm">17:19:30</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> for which version?
+<a name="l-370"></a><span class="tm">17:19:31</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> what is the current status?
+<a name="l-371"></a><span class="tm">17:19:43</span><span class="nk"> &lt;wstephenson&gt;</span> i need to take the contacts runner out of the default config.
+<a name="l-372"></a><span class="tm">17:20:06</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson mail list about meeting times</span>
+<a name="l-373"></a><span class="tm">17:20:24</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> 4.4.3, this is all 11.3 stuff.
+<a name="l-374"></a><span class="tm">17:20:33</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> is there any possibility not using akonadi at all, for certain setups? e.g. I don't use any akonadi-based stuff, only konversation needs it for some weird reason
+<a name="l-375"></a><span class="tm">17:20:40</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> then is simple axe it
+<a name="l-376"></a><span class="tm">17:21:08</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> let us speak about akonadi in september when kmail sends mails
+<a name="l-377"></a><span class="tm">17:21:43</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> yes, it should only be started on demand. the problem is a lot of things that were written to call KABC::StdAddressbook::self() at some point in KDE 3 still do so and now that launches akonadi.
+<a name="l-378"></a><span class="tm">17:22:01</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> can you fix this then in time for 11.3?
+<a name="l-379"></a><span class="tm">17:22:16</span><span class="nk"> &lt;llunak&gt;</span> (to make akonadi start only when really needed)
+<a name="l-380"></a><span class="tm">17:22:20</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> for the contacts runner, yes. not sure about konversation
+<a name="l-381"></a><span class="tm">17:22:37</span><span class="nk"> &lt;llunak&gt;</span> hmm, ok
+<a name="l-382"></a><span class="tm">17:23:08</span><span class="nk"> &lt;llunak&gt;</span> another question: the dialog turns up every time, either about something missing, or about convering addressbook (successfully, but every time)
+<a name="l-383"></a><span class="tm">17:23:10</span><span class="nk"> &lt;wstephenson&gt;</span> basically it should also defer touching the addressbook
+<a name="l-384"></a><span class="tm">17:23:18</span><span class="nk"> &lt;llunak&gt;</span> what is the status there?
+<a name="l-385"></a><span class="tm">17:23:21</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> being worked on by me with help from krake
+<a name="l-386"></a><span class="tm">17:23:39</span><span class="nk"> &lt;llunak&gt;</span> the in time for 11.3 question again then :)
+<a name="l-387"></a><span class="tm">17:23:40</span><span class="nk"> &lt;wstephenson&gt;</span> caused by kdepim never having tested empty account migration
+<a name="l-388"></a><span class="tm">17:24:00</span><span class="nk"> &lt;wstephenson&gt;</span> i'm optimistic.
+<a name="l-389"></a><span class="tm">17:24:14</span><span class="nk"> &lt;llunak&gt;</span> ok, all from me here then; if you need help, shout
+<a name="l-390"></a><span class="tm">17:24:24</span><span class="nk"> &lt;wstephenson&gt;</span> as of 1755 today i had it narrowed down to one source line.
+<a name="l-391"></a><span class="tm">17:24:44</span><span class="nk"> &lt;wstephenson&gt;</span> the default systray applets scares me more.
+<a name="l-392"></a><span class="tm">17:24:46</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> cool
+<a name="l-393"></a><span class="tm">17:25:07</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> what's there?
+<a name="l-394"></a><span class="tm">17:25:18</span><span class="nk"> &lt;llunak&gt;</span> is there a bugreport?
+<a name="l-395"></a><span class="tm">17:25:33</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> 597162 again
+<a name="l-396"></a><span class="tm">17:26:03</span><span class="nk"> &lt;remur_030&gt;</span> novell #597162
+<a name="l-397"></a><span class="tm">17:26:03</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 597162 in openSUSE 11.3 (KDE4 Workspace) "Device Notifier should be in the system tray by default" [Major,Assigned] https://bugzilla.novell.com/597162
+<a name="l-398"></a><span class="tm">17:26:03</span><span class="nk"> &lt;llunak&gt;</span> I see
+<a name="l-399"></a><span class="tm">17:26:10</span><span class="nk"> &lt;wstephenson&gt;</span> neither i nor upstream really understand what happens during plasma first run, and some things happen at the same time that makes plasma think the applets being added to the default setup are already present.
+<a name="l-400"></a><span class="tm">17:26:36</span><span class="nk"> &lt;cb400f&gt;</span> <span class="hi">llunak:</span> https://bugzilla.novell.com/show_bug.cgi?id=591483 :-)
+<a name="l-401"></a><span class="tm">17:26:39</span><span class="nk"> &lt;bugbot&gt;</span> openSUSE bug 591483 in openSUSE 11.3 (KDE4 Workspace) "Akonadi tries migrate address book with every login" [Major,Assigned]
+<a name="l-402"></a><span class="tm">17:26:54</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> cool that explains why sometimes I have something in the systry and on the panel too
+<a name="l-403"></a><span class="tm">17:27:16</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> hm?
+<a name="l-404"></a><span class="tm">17:27:26</span><span class="nk"> &lt;wstephenson&gt;</span> it should be deterministic
+<a name="l-405"></a><span class="tm">17:27:33</span><span class="nk"> &lt;wstephenson&gt;</span> once it is in the config (eg manually added) its fine
+<a name="l-406"></a><span class="tm">17:27:44</span><span class="nk"> &lt;wstephenson&gt;</span> it should not be there one minute, gone the next.
+<a name="l-407"></a><span class="tm">17:28:20</span><span class="nk"> &lt;remur_030&gt;</span> I have no akonadi systray element
+<a name="l-408"></a><span class="tm">17:28:36</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> for examp[le today I had to device notifiers asfter the 45 update one in the try one in the panel
+<a name="l-409"></a><span class="tm">17:28:39</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">remur_030:</span> this is now about the device notifier
+<a name="l-410"></a><span class="tm">17:28:51</span><span class="nk"> &lt;llunak&gt;</span> ok ... next topic?
+<a name="l-411"></a><span class="tm">17:29:00</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">llunak:</span> whops I see =)
+<a name="l-412"></a><span class="tm">17:29:05</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> meta-topic was 'bugs that wstephenson might not get to that need to be done'
+<a name="l-413"></a><span class="tm">17:29:18</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> not relevant for 11.3
+<a name="l-414"></a><span class="tm">17:29:38</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#action </span><span class="cmdline">wstephenson summarise to list</span>
+<a name="l-415"></a><span class="tm">17:29:52</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">Repository reorganisation update</span>
+<a name="l-416"></a><span class="tm">17:29:57</span><span class="nk"> &lt;llunak&gt;</span> this is mine
+<a name="l-417"></a><span class="tm">17:30:00</span><span class="nk"> &lt;wstephenson&gt;</span> it's likeour own little git migration
+<a name="l-418"></a><span class="tm">17:30:09</span><span class="nk"> &lt;llunak&gt;</span> apparently there is still not consensus on some things
+<a name="l-419"></a><span class="tm">17:30:12</span><span class="nk"> &lt;llunak&gt;</span> :(
+<a name="l-420"></a><span class="tm">17:30:19</span><span class="nk"> &lt;llunak&gt;</span> I've created http://en.opensuse.org/KDE/RepositoryRenaming
+<a name="l-421"></a><span class="tm">17:30:27</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">llunak:</span> Would it be able to take decisions now ?
+<a name="l-422"></a><span class="tm">17:30:40</span><span class="nk"> &lt;llunak&gt;</span> it lists the reorganization again, with the undecided things listed as questions
+<a name="l-423"></a><span class="tm">17:30:58</span><span class="nk"> &lt;llunak&gt;</span> questions are mostly 1) names, 2) the Unstable repo
+<a name="l-424"></a><span class="tm">17:31:16</span><span class="nk"> &lt;llunak&gt;</span> see the instructions near the top, I suggest we do the voting there
+<a name="l-425"></a><span class="tm">17:31:19</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">llunak:</span> do not touch the unstable is my reason d'etre
+<a name="l-426"></a><span class="tm">17:31:33</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">llunak:</span> I like the name KDE:Snapshots :-)
+<a name="l-427"></a><span class="tm">17:32:11</span><span class="nk"> &lt;alin&gt;</span> how many people use unstable from here?
+<a name="l-428"></a><span class="tm">17:32:20</span><span class="nk"> &lt;llunak&gt;</span> the Unstable/Snapshots questions are basically all based on the issue - what is contains and how is it related to KKFD
+<a name="l-429"></a><span class="tm">17:32:26</span><span class="nk"> &lt;alin&gt;</span> should be the only one allowed to vote on the issue
+<a name="l-430"></a><span class="tm">17:32:58</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">alin:</span> me on the netbook
+<a name="l-431"></a><span class="tm">17:33:00</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">tittiatcoke:</span> so I'd like to hear your ideas on the repo - can you quickly see the questions and say what you think about it
+<a name="l-432"></a><span class="tm">17:33:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok
+<a name="l-433"></a><span class="tm">17:33:16</span><span class="nk"> &lt;alin&gt;</span> so that makes 3 of us
+<a name="l-434"></a><span class="tm">17:34:30</span><span class="nk"> &lt;rabauke&gt;</span> shoudl we add our answers to the wiki or here?
+<a name="l-435"></a><span class="tm">17:34:35</span><span class="nk"> &lt;llunak&gt;</span> my take is that the repo should be just SVN snapshots and unrelated to KKFD, but Dirk's mail today e.g. went back to having it aligned with KKFD and calling them together :Desktop: , which is against the original idea of having KKFD as the openSUSE:Factory stuff (maybe Dirk missed that, I don't know)
+<a name="l-436"></a><span class="tm">17:34:49</span><span class="nk"> &lt;llunak&gt;</span> add your answers to the wiki, as said there
+<a name="l-437"></a><span class="tm">17:35:04</span><span class="nk"> &lt;rabauke&gt;</span> ok
+<a name="l-438"></a><span class="tm">17:35:11</span><span class="nk"> &lt;llunak&gt;</span> i.e. edit the page, add another "** mynick: I think this"
+<a name="l-439"></a><span class="tm">17:35:13</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">dirk:</span> around?
+<a name="l-440"></a><span class="tm">17:35:33</span><span class="nk"> &lt;remur_030&gt;</span> how about the netbook reference platform users, don't they have any idea?
+<a name="l-441"></a><span class="tm">17:35:42</span><span class="nk"> &lt;remur_030&gt;</span> they propably also want extragear etc
+<a name="l-442"></a><span class="tm">17:36:05</span><span class="nk"> &lt;[daemon]&gt;</span> o.O
+<a name="l-443"></a><span class="tm">17:36:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">llunak:</span> I agree with your statements regarding Unstable.  We can keep it close to KDE SC (with just additional required libraries). Applications, etc should then be pushed in Playground.
+<a name="l-444"></a><span class="tm">17:36:17</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> i don't think there are enough of them atm to have a voice..
+<a name="l-445"></a><span class="tm">17:36:20</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">remur_030:</span> why would I want that?
+<a name="l-446"></a><span class="tm">17:36:38</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">tittiatcoke:</span> ok, thanks
+<a name="l-447"></a><span class="tm">17:36:38</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">remur_030:</span> and we usually package extragear in with main modules
+<a name="l-448"></a><span class="tm">17:36:39</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">[daemon]:</span> many consider amarok a nice showcase for kde technolofy
+<a name="l-449"></a><span class="tm">17:36:41</span><span class="nk"> &lt;wstephenson&gt;</span> or what am i missing?
+<a name="l-450"></a><span class="tm">17:36:43</span><span class="nk"> &lt;remur_030&gt;</span> *technology
+<a name="l-451"></a><span class="tm">17:36:55</span><span class="nk"> &lt;remur_030&gt;</span> and other similar applications
+<a name="l-452"></a><span class="tm">17:36:55</span><span class="nk"> &lt;[daemon]&gt;</span> I just dont want to have the akonadi server started on my netbook
+<a name="l-453"></a><span class="tm">17:36:56</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">tittiatcoke:</span> maybe you should say that in an answer to dirk's mail on the list, just so that he knows
+<a name="l-454"></a><span class="tm">17:37:01</span><span class="nk"> &lt;alin&gt;</span> techmology
+<a name="l-455"></a><span class="tm">17:37:03</span><span class="nk"> &lt;tittiatcoke&gt;</span> Yup. Will do.
+<a name="l-456"></a><span class="tm">17:37:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> I will also place the answers in the wiki
+<a name="l-457"></a><span class="tm">17:37:12</span><span class="nk"> &lt;dirk&gt;</span> <span class="hi">wstephenson:</span> yes
+<a name="l-458"></a><span class="tm">17:37:20</span><span class="nk"> &lt;dirk&gt;</span> <span class="hi">llunak:</span> hmm, missed what?
+<a name="l-459"></a><span class="tm">17:37:36</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">dirk:</span> see http://en.opensuse.org/KDE/RepositoryRenaming
+<a name="l-460"></a><span class="tm">17:37:54</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> Will, how are my chancs to get that disabled
+<a name="l-461"></a><span class="tm">17:38:03</span><span class="nk"> &lt;dirk&gt;</span> <span class="hi">llunak:</span> I mentioned in the email that maybe encoding teh policy (only packages in factory) in the project name is maybe not a really important thing
+<a name="l-462"></a><span class="tm">17:38:03</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">dirk:</span> we specifically designed KKFD as the repo with all KDE packages in o:F - so calling it :Desktop: is misnaming it
+<a name="l-463"></a><span class="tm">17:38:23</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">dirk:</span> but that was the intended purpose of that repo
+<a name="l-464"></a><span class="tm">17:38:34</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">[daemon]:</span> what does akonadi have to do with extragear?
+<a name="l-465"></a><span class="tm">17:38:44</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">remur_030:</span> nothing
+<a name="l-466"></a><span class="tm">17:38:47</span><span class="nk"> &lt;wstephenson&gt;</span> s/akonadi/extragear/?
+<a name="l-467"></a><span class="tm">17:38:54</span><span class="nk"> &lt;wstephenson&gt;</span> argh
+<a name="l-468"></a><span class="tm">17:38:57</span><span class="nk"> &lt;wstephenson&gt;</span> s/akonadi/amarok/?
+<a name="l-469"></a><span class="tm">17:39:06 </span><span class="nka">* [daemon]</span> <span class="ac">slaps wstephenson</span>
+<a name="l-470"></a><span class="tm">17:39:06</span><span class="nk"> &lt;wstephenson&gt;</span> bring back k-ism.
+<a name="l-471"></a><span class="tm">17:39:09</span><span class="nk"> &lt;rabauke_&gt;</span> my internet disconnected in case I did not answer some question.
+<a name="l-472"></a><span class="tm">17:39:22</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke_:</span> no question.
+<a name="l-473"></a><span class="tm">17:39:24</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">rabauke_:</span> handy this internet
+<a name="l-474"></a><span class="tm">17:39:39</span><span class="nk"> &lt;[daemon]&gt;</span> I'm especially pissed about having to have a mysql installed just to run KDE
+<a name="l-475"></a><span class="tm">17:39:39 </span><span class="nka">* remur_030</span> <span class="ac">is confused</span>
+<a name="l-476"></a><span class="tm">17:39:47</span><span class="nk"> &lt;dirk&gt;</span> <span class="hi">llunak:</span> ok
+<a name="l-477"></a><span class="tm">17:39:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">[daemon]:</span> OT
+<a name="l-478"></a><span class="tm">17:40:00</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> as usual :)
+<a name="l-479"></a><span class="tm">17:40:00</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">tittiatcoke:</span> just to be clear on this - you would vote for the unstable repo not to be in KDE:Distro: (or whatever the exact name) ?
+<a name="l-480"></a><span class="tm">17:40:08</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">[daemon]:</span> huh? I was asking about extragear for the netbook spin, not akonadi or mysql
+<a name="l-481"></a><span class="tm">17:40:25</span><span class="nk"> &lt;dirk&gt;</span> <span class="hi">llunak:</span> did you see the mail on the list that said that it doesn't make sense tohave KDE:Unstable and KDE:&lt;distro&gt;.Factory on two different levels
+<a name="l-482"></a><span class="tm">17:40:33</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">remur_030:</span> but you still didnt answer my question
+<a name="l-483"></a><span class="tm">17:40:55</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">llunak:</span> I would indeed prefer if the two are not groupped
+<a name="l-484"></a><span class="tm">17:40:57</span><span class="nk"> &lt;wstephenson&gt;</span> remur_030, [daemon]: please focus on the repo naming
+<a name="l-485"></a><span class="tm">17:41:03</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">remur_030:</span> what is it good for and why should I as netbook user need it
+<a name="l-486"></a><span class="tm">17:41:04</span><span class="nk"> &lt;remur_030&gt;</span> ugh yes sorry
+<a name="l-487"></a><span class="tm">17:41:39</span><span class="nk"> &lt;wstephenson&gt;</span> we can gladly play akonadi pinata in the next topic
+<a name="l-488"></a><span class="tm">17:41:44</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">dirk:</span> I disagree with that - a) I'd like the possibility of instaling Unstable in addition for KKFD, for testing SVN, b) generally I think apps from KKFD should work with KDE SC from Unstable
+<a name="l-489"></a><span class="tm">17:41:45</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> BloodingEdge... sorry BleedingEdge
+<a name="l-490"></a><span class="tm">17:42:49</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">llunak:</span> Some of those apps might need to be recompiled before they really work
+<a name="l-491"></a><span class="tm">17:43:25</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">tittiatcoke:</span> that would be against the promised backwards compatibility, but even if this occassionally happens, I still think the advantages win
+<a name="l-492"></a><span class="tm">17:43:34</span><span class="nk"> &lt;dirk&gt;</span> <span class="hi">llunak:</span> could work as long as the qt version does not change, indeed
+<a name="l-493"></a><span class="tm">17:43:58</span><span class="nk"> &lt;[daemon]&gt;</span> .oO(hmmm Will-Pinata sounds good)
+<a name="l-494"></a><span class="tm">17:44:21</span><span class="nk"> &lt;llunak&gt;</span> I mean, after all, we are talking about an unstable repo - if somebody is stupid enough to install and not except problems, that's stupidity that deserves punishment
+<a name="l-495"></a><span class="tm">17:44:23</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> while i'd like a) too, the implications scare me.  we'd need parallel-installable Qt, Unstable,, and KDEHOME and XDG_DATA|CONFIG_DIRS hacks to keep things separate
+<a name="l-496"></a><span class="tm">17:44:28</span><span class="nk"> &lt;wstephenson&gt;</span> lot of work
+<a name="l-497"></a><span class="tm">17:44:32</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> llunak and tittiatcoke suggested using only kde main svn for unstable, and push applications into playground, that means the netbook reference guys get alot of unstable stuff here
+<a name="l-498"></a><span class="tm">17:44:51</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> I don't think it's that much work, I consider it doable
+<a name="l-499"></a><span class="tm">17:45:02</span><span class="nk"> &lt;wstephenson&gt;</span> well we did it once for 4.0 vs 3...
+<a name="l-500"></a><span class="tm">17:45:05</span><span class="nk"> &lt;remur_030&gt;</span> I am just trying to see what the netbook reference guys will think about that
+<a name="l-501"></a><span class="tm">17:45:11</span><span class="nk"> &lt;wstephenson&gt;</span> maybe post 11.3 project
+<a name="l-502"></a><span class="tm">17:45:29</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">fregl:</span> ^
+<a name="l-503"></a><span class="tm">17:45:30</span><span class="nk"> &lt;tittiatcoke&gt;</span> Well, I would definitely need help on that topic :-)
+<a name="l-504"></a><span class="tm">17:45:42</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> I think it's mostly using a different prefix in .spec and making sure we don't hardcode /usr anywhere
+<a name="l-505"></a><span class="tm">17:45:46</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">wstephenson:</span> but that's for later
+<a name="l-506"></a><span class="tm">17:45:51</span><span class="nk"> &lt;dirk&gt;</span> <span class="hi">llunak:</span> how is the co-instalability of unstable/KKFD relevant for the repository naming?
+<a name="l-507"></a><span class="tm">17:46:07</span><span class="nk"> &lt;dirk&gt;</span> <span class="hi">llunak:</span> are you saying it must not contain the :&lt;Distro&gt;: part in the name because it could be made coinstallable?
+<a name="l-508"></a><span class="tm">17:46:25</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">dirk:</span> an argument for keeping KKFD, Stable and Unstable together was that you can have only one of them at a time
+<a name="l-509"></a><span class="tm">17:47:33</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">dirk:</span> so making them co-installable would make this argument void, and since tittiatcoke doesn't want to keep Unstable too close to KKFD, I think the naming should keep them apart
+<a name="l-510"></a><span class="tm">17:48:39</span><span class="nk"> &lt;llunak&gt;</span> ok, unless there are more important things to discuss for the topic, I suggest everybody adds their vote to the page
+<a name="l-511"></a><span class="tm">17:48:56</span><span class="nk"> &lt;llunak&gt;</span> if you disagree, feel free to add longer explanation on why/how it should be done differently
+<a name="l-512"></a><span class="tm">17:49:16</span><span class="nk"> &lt;dirk&gt;</span> good idea
+<a name="l-513"></a><span class="tm">17:49:23</span><span class="nk"> &lt;dirk&gt;</span> thanks llunak for writing the wiki page
+<a name="l-514"></a><span class="tm">17:49:26</span><span class="nk"> &lt;llunak&gt;</span> <span class="cmd">#action </span><span class="cmdline">everybody vote and add comments on repository reorganization at http://en.opensuse.org/KDE/RepositoryRenaming according to the instructions there</span>
+<a name="l-515"></a><span class="tm">17:49:27</span><span class="nk"> &lt;wstephenson&gt;</span> +1
+<a name="l-516"></a><span class="tm">17:49:36</span><span class="nk"> &lt;tittiatcoke&gt;</span> +1
+<a name="l-517"></a><span class="tm">17:49:55</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="topic">#topic </span><span class="topicline">Q&amp;A, Misc</span>
+<a name="l-518"></a><span class="tm">17:49:59</span><span class="nk"> &lt;llunak&gt;</span> <span class="hi">dirk:</span> I was getting lost in the topic, so I needed a good place to keep the data
+<a name="l-519"></a><span class="tm">17:50:00</span><span class="nk"> &lt;cb400f&gt;</span> maybe unstable could be separated somehow both from stable/factory _and_ the "add-on" repos
+<a name="l-520"></a><span class="tm">17:51:06</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">cb400f:</span> You mean with it's own playground and Community repos ?
+<a name="l-521"></a><span class="tm">17:51:15</span><span class="nk"> &lt;llunak&gt;</span> no topic from me, and if nobody wants anything from me, I'll run
+<a name="l-522"></a><span class="tm">17:52:06</span><span class="nk"> &lt;cb400f&gt;</span> no.. like kde:keep-out:unstable  + kde:playground_unstable like now
+<a name="l-523"></a><span class="tm">17:52:13</span><span class="nk"> &lt;tittiatcoke&gt;</span> Ok.
+<a name="l-524"></a><span class="tm">17:52:16</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> run, run, be free :)
+<a name="l-525"></a><span class="tm">17:52:26</span><span class="nk"> &lt;alin&gt;</span> boys I need to run but before let me put something serious... change the deps of kontact so when you select it will pull all the components (kmail, kaddress, knode, kjots, akgr, ktimetracker...)
+<a name="l-526"></a><span class="tm">17:52:39</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> deps or suggests?
+<a name="l-527"></a><span class="tm">17:52:44</span><span class="nk"> &lt;wstephenson&gt;</span> it's modular for a reason
+<a name="l-528"></a><span class="tm">17:52:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> Already happened in KKUD and I used there suggests
+<a name="l-529"></a><span class="tm">17:53:16</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> probably suggests... I mean tittiatcoke it did not happened at least not for me
+<a name="l-530"></a><span class="tm">17:53:37</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">alin:</span> Because maybe you had already everything installed ?
+<a name="l-531"></a><span class="tm">17:53:49</span><span class="nk"> &lt;ctrippe&gt;</span> suggests are ignored by yast and zypper AFAIK
+<a name="l-532"></a><span class="tm">17:53:51</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> suggests are basically decorative value, nothing installs them automatically yet
+<a name="l-533"></a><span class="tm">17:54:02</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> the problem with modular is that was done only half.... if you do not have all the modules installed you still have the icons of the uninstalled modules active
+<a name="l-534"></a><span class="tm">17:54:09</span><span class="nk"> &lt;tittiatcoke&gt;</span> Hmm :-( I will change it to Requires :-)
+<a name="l-535"></a><span class="tm">17:54:24</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">ctrippe:</span> that explains why then
+<a name="l-536"></a><span class="tm">17:55:15</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> then we need to fix the module split so the kontact .desktop files are in the subpackages. afaik that was done for kde 4.1 there is a lot of ugly code in kdepim4.spec for htat.
+<a name="l-537"></a><span class="tm">17:55:39</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> will check that one out in KKUD :-)
+<a name="l-538"></a><span class="tm">17:55:56</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">wstephenson:</span> .spec? I thought the mainissue is in the design of the main windows of kontact
+<a name="l-539"></a><span class="tm">17:56:10</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> no, it's just a shell
+<a name="l-540"></a><span class="tm">17:56:27</span><span class="nk"> &lt;wstephenson&gt;</span> so before everyone runs too much
+<a name="l-541"></a><span class="tm">17:56:38</span><span class="nk"> &lt;wstephenson&gt;</span> candidates for Official Praise?
+<a name="l-542"></a><span class="tm">17:56:48</span><span class="nk"> &lt;wstephenson&gt;</span> i've been very distracted so i won't suggest any myself
+<a name="l-543"></a><span class="tm">17:57:06</span><span class="nk"> &lt;wstephenson&gt;</span> but if there is a community member you've noticed doing great contributions, speak up now!
+<a name="l-544"></a><span class="tm">17:57:10</span><span class="nk"> &lt;javier_&gt;</span> official praise?
+<a name="l-545"></a><span class="tm">17:57:18</span><span class="nk"> &lt;javier_&gt;</span> what do you need?
+<a name="l-546"></a><span class="tm">17:57:26</span><span class="nk"> &lt;javier_&gt;</span> some help with those packages?
+<a name="l-547"></a><span class="tm">17:57:37</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">tittiatcoke:</span> for his continuous fight with unstable, obs and me
+<a name="l-548"></a><span class="tm">17:57:47</span><span class="nk"> &lt;wstephenson&gt;</span> no, i just want to ack who has been a star the last 2 weeks
+<a name="l-549"></a><span class="tm">17:57:47</span><span class="nk"> &lt;tittiatcoke&gt;</span> :-)
+<a name="l-550"></a><span class="tm">17:57:50</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> lol :)
+<a name="l-551"></a><span class="tm">17:57:53</span><span class="nk"> &lt;javier_&gt;</span> oops, n/m I was distracted
+<a name="l-552"></a><span class="tm">17:58:00</span><span class="nk"> &lt;tittiatcoke&gt;</span> especially the alin part there :-)
+<a name="l-553"></a><span class="tm">17:58:12</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> for keeping on with KKUD and kontact
+<a name="l-554"></a><span class="tm">17:58:48</span><span class="nk"> &lt;remur_030&gt;</span> well tittiatcoke is one awesome contributor, *pats shoulder*
+<a name="l-555"></a><span class="tm">17:58:59</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">llunak:</span> for doing all the SLE11SP1 grunt work like a hero
+<a name="l-556"></a><span class="tm">17:59:07</span><span class="nk"> &lt;[daemon]&gt;</span> LOL
+<a name="l-557"></a><span class="tm">17:59:08 </span><span class="nka">* tittiatcoke</span> <span class="ac">starts slowly to blush here</span>
+<a name="l-558"></a><span class="tm">17:59:09</span><span class="nk"> &lt;javier_&gt;</span> <span class="hi">remur_030:</span> +1
+<a name="l-559"></a><span class="tm">17:59:10</span><span class="nk"> &lt;remur_030&gt;</span> running unstable with all the breakage looks pretty hard
+<a name="l-560"></a><span class="tm">17:59:40</span><span class="nk"> &lt;wstephenson&gt;</span> and covreing my back to grow a huge bug list^W^W^W^W^Wdo 11.3 stuff
+<a name="l-561"></a><span class="tm">17:59:40</span><span class="nk"> &lt;alin&gt;</span> <span class="hi">remur_030:</span> what breakage? quantum behaviour I will call it
+<a name="l-562"></a><span class="tm">17:59:44</span><span class="nk"> &lt;javier_&gt;</span> bleeding edge taken to the very extreme
+<a name="l-563"></a><span class="tm">18:00:15</span><span class="nk"> &lt;alin&gt;</span> ok so let us call it short tittiatcoke gets the prize and the medal
+<a name="l-564"></a><span class="tm">18:00:28</span><span class="nk"> &lt;alin&gt;</span> cut it
+<a name="l-565"></a><span class="tm">18:00:41</span><span class="nk"> &lt;tittiatcoke&gt;</span> and the price is that I am allowed to continue the fight ?
+<a name="l-566"></a><span class="tm">18:00:51</span><span class="nk"> &lt;wstephenson&gt;</span> hey there's plenty to go round, i didn't use any the last few weeks...
+<a name="l-567"></a><span class="tm">18:00:52</span><span class="nk"> &lt;rabauke&gt;</span> Honour to whom honour is due.
+<a name="l-568"></a><span class="tm">18:01:09</span><span class="nk"> &lt;wstephenson&gt;</span> well to everyone who's been doing stuff for opensuse-kde
+<a name="l-569"></a><span class="tm">18:01:28</span><span class="nk"> &lt;wstephenson&gt;</span> if reporting bugs, i18n packaging or just keeping the lights on here
+<a name="l-570"></a><span class="tm">18:01:37</span><span class="nk"> &lt;wstephenson&gt;</span> you know you're doing good stuff; well done from me
+<a name="l-571"></a><span class="tm">18:02:20</span><span class="nk"> &lt;wstephenson&gt;</span> any more Q&amp;A, Misc?
+<a name="l-572"></a><span class="tm">18:02:22</span><span class="nk"> &lt;alin&gt;</span> see you boys and girls later... time for dart... that is dublin area rail transport
+<a name="l-573"></a><span class="tm">18:02:29</span><span class="nk"> &lt;tittiatcoke&gt;</span> and thanks to wstephenson for being a good teacher
+<a name="l-574"></a><span class="tm">18:02:46</span><span class="nk"> &lt;wstephenson&gt;</span> np :)
+<a name="l-575"></a><span class="tm">18:02:47</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> I have a Q
+<a name="l-576"></a><span class="tm">18:02:48</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">alin:</span> cu
+<a name="l-577"></a><span class="tm">18:02:51</span><span class="nk"> &lt;tittiatcoke&gt;</span> and being there for us with our questions :-)
+<a name="l-578"></a><span class="tm">18:02:52</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">[daemon]:</span> go
+<a name="l-579"></a><span class="tm">18:03:02 </span><span class="nka">* wstephenson</span> <span class="ac">watches the hand with the bo stick in it.</span>
+<a name="l-580"></a><span class="tm">18:03:12</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> can you come over and fix my bike again - it has a flat tire
+<a name="l-581"></a><span class="tm">18:03:44</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">[daemon]:</span> no, you have to come here. i have a repair stand in the new flat's cellar/personal bike shop
+<a name="l-582"></a><span class="tm">18:03:51</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> again on the back where I dont dare to change
+<a name="l-583"></a><span class="tm">18:03:59</span><span class="nk"> &lt;wstephenson&gt;</span> and i'll only charge you a fair rate.
+<a name="l-584"></a><span class="tm">18:04:06</span><span class="nk"> &lt;wstephenson&gt;</span> either that or man up and do it yourself.
+<a name="l-585"></a><span class="tm">18:04:13</span><span class="nk"> &lt;[daemon]&gt;</span> hehe
+<a name="l-586"></a><span class="tm">18:04:17</span><span class="nk"> &lt;rabauke&gt;</span> give him fully rubber tires. they never go flat
+<a name="l-587"></a><span class="tm">18:04:19</span><span class="nk"> &lt;Jetchisel&gt;</span> d(•‿•)b
+<a name="l-588"></a><span class="tm">18:05:11</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">[daemon]:</span> or else you have to ride with me for as long as it takes me to fix the flat - course of my choosing =:)}&gt;
+<a name="l-589"></a><span class="tm">18:05:34</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> if done. could you tell me how to get notifications on changed packages from the buildservice? if not now some time later.
+<a name="l-590"></a><span class="tm">18:05:36</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> deal
+<a name="l-591"></a><span class="tm">18:05:47</span><span class="nk"> &lt;wstephenson&gt;</span> notlocalhorst has yet to take me up on that offer
+<a name="l-592"></a><span class="tm">18:05:54</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> sure
+<a name="l-593"></a><span class="tm">18:06:08</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> will I need a helmet and/or other gear
+<a name="l-594"></a><span class="tm">18:06:40</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">[daemon]:</span> http://lizards.opensuse.org/2010/01/27/hot-off-the-opensuse-build-service-press/
+<a name="l-595"></a><span class="tm">18:06:44</span><span class="nk"> &lt;wstephenson&gt;</span> just bring a sick bag
+<a name="l-596"></a><span class="tm">18:06:56</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">rabauke:</span> ^
+<a name="l-597"></a><span class="tm">18:07:40</span><span class="nk"> &lt;tittiatcoke&gt;</span> <span class="hi">wstephenson:</span> I guess the meeting is over ?
+<a name="l-598"></a><span class="tm">18:07:43</span><span class="nk"> &lt;rabauke&gt;</span> <span class="hi">wstephenson:</span> ta
+<a name="l-599"></a><span class="tm">18:07:51</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> what should I do with hermes? do I have to write some software to test it?
+<a name="l-600"></a><span class="tm">18:08:22</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> sick back not needed I puke in the open :)
+<a name="l-601"></a><span class="tm">18:08:37</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">tittiatcoke:</span> yes, if there are no more questions
+<a name="l-602"></a><span class="tm">18:08:47</span><span class="nk"> &lt;wstephenson&gt;</span> anyone falling asleep at the back there?
+<a name="l-603"></a><span class="tm">18:09:02</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">minton:</span> nice to see you around
+<a name="l-604"></a><span class="tm">18:09:19</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">herby:</span> thanks for joining in
+<a name="l-605"></a><span class="tm">18:09:46</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> but aside of that - is it really nec. to start the aconadi server
+<a name="l-606"></a><span class="tm">18:09:46</span><span class="nk"> &lt;wstephenson&gt;</span> and please everyone welcome sebas to our little konspiracy
+<a name="l-607"></a><span class="tm">18:09:58</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">[daemon]:</span> no, as above, it's a bug
+<a name="l-608"></a><span class="tm">18:10:07</span><span class="nk"> &lt;herby&gt;</span> <span class="hi">wstephenson:</span> I will see, if  can be a bit more active here...
+<a name="l-609"></a><span class="tm">18:10:28</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> good
+<a name="l-610"></a><span class="tm">18:10:48</span><span class="nk"> &lt;[daemon]&gt;</span> <span class="hi">wstephenson:</span> my EeePC really does not like it
+<a name="l-611"></a><span class="tm">18:10:50 </span><span class="nka">* wstephenson</span> <span class="ac">also waves to bitshuffler, binarylooks and the absent initialZero</span>
+<a name="l-612"></a><span class="tm">18:10:56</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="hi">[daemon]:</span> i bet
+<a name="l-613"></a><span class="tm">18:11:05</span><span class="nk"> &lt;wstephenson&gt;</span> upstream are working on a sqlite backend
+<a name="l-614"></a><span class="tm">18:11:20</span><span class="nk"> &lt;wstephenson&gt;</span> but it should not be started until you do sth to require it.
+<a name="l-615"></a><span class="tm">18:12:32</span><span class="nk"> &lt;[daemon]&gt;</span> and make sure that kopete does not need it :)
+<a name="l-616"></a><span class="tm">18:13:30</span><span class="nk"> &lt;[daemon]&gt;</span> Okay - there is still some sun - I gonna go and fix my race car
+<a name="l-617"></a><span class="tm">18:15:27</span><span class="nk"> &lt;remur_030&gt;</span> <span class="hi">wstephenson:</span> wrap it up?
+<a name="l-618"></a><span class="tm">18:15:41</span><span class="nk"> &lt;wstephenson&gt;</span> done
+<a name="l-619"></a><span class="tm">18:15:46</span><span class="nk"> &lt;wstephenson&gt;</span> thanks for coming
+<a name="l-620"></a><span class="tm">18:15:49</span><span class="nk"> &lt;wstephenson&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>
